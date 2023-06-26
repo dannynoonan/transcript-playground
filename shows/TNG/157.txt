@@ -1,0 +1,2495 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A green light is being cast over a place very similar to the duck hide in Who Watches. Four figures beam in."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Someone sure stripped this place.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The reactor's gone.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No wonder they didn't answer our hail for two days. Nothing here to answer with.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I am detecting life signs from behind that door.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, take a look at this.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's red stuff on a sharp piece of metal"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Blood.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but not human. I'm going to have to do some analysis on it.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "failing to force the door",
+                    "line": "It's jammed.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data opens it easily. There are two people on the floor behind it"
+                }
+            ],
+            "location": "Federation\r\noutpost"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The two scientists are suffering from phaser stuns. I'd guess several hits each.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Several?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It'll take us a while to bring them around, but they will recover. We found a sample of blood. It's a rare iron-copper composite, unique to one humanoid species. The Acamarians.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acamarians? Then that would suggest the Gatherers.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a likely hypothesis. The nomadic marauders who refer to themselves as Gatherers have raided other outposts in neighbouring sectors.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've never come out this far before.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher, set course for the Acamar system.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 43421.9. In an effort to put an end to the Gatherer raids, we have come to the Acamar System to enlist the aid of Marouk, the Sovereign of Acamar Three.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Marouk is a dignified middle-aged woman"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their raids have made this sector unsafe. They've ransacked our research facilities, our trade routes have been disrupted.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Gatherers are elusive. We've only managed to capture a handful of them. But with the Starfleet's help",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hunting them down is not what I am proposing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reconciliation with the Gatherers is impossible. It's been tried. Every time we've offered amnesty, they've rejected it.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When was the last attempt made?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eighteen years ago.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eighteen years?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For almost a century now, they've been parasites, moving from star system to star system, living on what they could find or steal.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're still your people.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Captain, you have to understand our history. A hundred years ago, before the Gatherers split off from our culture, we were a savage, violent race. Clans battled clans. Bloody, vengeful feuds that lasted for generations. But we overcame those ways, all except for the Gatherers.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After a century of wandering, they may be ready to come home.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Despite your progress, you are a divided society, and so it will remain until the Gatherers return to Acamar.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The attempt may be futile.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But there is so much to gain and there is so little to lose by the effort. The problem affects us all. It cannot be ignored.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sovereign Marouk, welcome to the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Captain.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How soon will you be ready to leave Acamar?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am ready now, Captain. I need only bring aboard two more servants.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll see to that, and to your accommodations.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have reason to believe there is a Gatherer encampment somewhere in the Hromi Cluster.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Federation has charted but not explored several class M planets in that area. Any one of these planets might well serve as a base.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher, set course for the Hromi Cluster.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A fine ship, Commander.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're all very proud of her.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yuta, a light meal in twenty minutes.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a young woman",
+                    "line": "May I be shown the kitchen, Commander?",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're the chef?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I'll prepare all meals for the Sovereign and her servants.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can provide you with a kitchen, but it won't really be necessary. These food dispensers can synthesise anything that you may been. I'll show you. Sovereign, may I offer you a drink?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, thank you. Cold water.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, a glass of water, five degrees.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She takes the glass and sips it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're also the food taster?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's part of the cook's duty.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She takes the drink to Marouk"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure the Sovereign will wish to sample many of the cuisines your ship has to offer, but there are some Acamarian dishes that she will insist upon.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will arrange for a technician to help programme your recipes into the computer. Of course, I'll have to try some of them. What's your specialty?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have none.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't be modest. You can't tell me you haven't come up with a few culinary delights.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is a spiced parthas dish.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Parthas?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A green vegetable with fleshy roots.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Parthas a la Yuta. I look forward to tasting it. Sovereign. Chef.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Marouk's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now entering standard orbit of Gamma Hromi Two, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I am detecting life readings from the planet surface, as well as several small areas of thermal radiation and carbon dioxide emissions, indicative of combustion.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Campfires, Data.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that not what I said?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's worth a look.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, Worf.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "It looks like a junk yard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Artonian lasers. Tonkian homing beacons. Quite a collection.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Noranium alloy, sir. It's salvage value is quite low.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looks like these Gatherers weren't too discriminating in what they steal.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander? Ambush!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Gatherers start firing at them as they hide behind barrels"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rigelian phaser rifles, sir. Not particularly powerful.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Powerful enough. We came to talk!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a phaser",
+                    "line": "Your words are wasted, Commander. They understand only this.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're here to establish a dialogue, Worf.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, tell me about noranium. It vaporises at?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two thousand three hundred fourteen degrees. Of course, noranium carbide",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Data.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Setting seven ought to do it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three, two, one, now!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They fire at some of the metal junk, which creates a smoke screen."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enterprise, four to beam up.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cowards!",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He puts the fire out with a bucket of soil"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your ambushes would be more successful if you bathed more often.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've brought the Sovereign of Acamar.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Marouk? Here?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With an offer of amnesty.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Later, Yuta is tasting a drink again, this time from a metal jug"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Full dispensation will be extended to all Gatherers who are willing to return to Acamar Three.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't trust me, Marouk.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Should I?",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Marouk drinks from the goblet, then Yuta takes it to Brull"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you expect me to trust you. Maybe you just poisoned it yourself. Taste this, Temarek.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Temarek doesn't want to, so Brull pushes him down and pours some on his face before taking a drink himself"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Barbarians. This is futile.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sovereign. Brull!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go home, old woman.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You people haven't changed in a hundred years.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should know. You were there.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sit down! Please. Please. Now, we're here to talk.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a waste of time, Captain. They don't care about how they live.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Am I supposed to believe that you care how we live?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brull, she's here, isn't she?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe you forced her to come, Picard.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nobody forces me anywhere, Brull.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is there for us on Acamar Three?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A life. A home. You can end your wanderings, your miserable existence.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do I look miserable to you?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The clan wars are over, Brull. It is a past we're ashamed of. It is why you had to leave. Now, it is time to come home.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to speak privately with Sovereign Marouk and Picard. Everyone else, get out.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "We follow the followers leaving their masters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any insights?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brull's ready to negotiate. He just wants privacy so that he won't appear weak in front of the other Gatherers.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are of the clan Lornak.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "an old man",
+                    "line": "What of it? I've seen you before.",
+                    "spoken_by": "VOLNOTH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it's impossible.",
+                    "spoken_by": "VOLNOTH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Look closer. I am Yuta of the clan Tralesta.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She touches his cheek and he falls backwards in agony"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am the last of my line, but my clan will outlive yours.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Back at the camp fire"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Marouk's offer has value.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But still, I don't know.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you'll agree it is enough to present to your leader.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chorgan is a better judge of these matters. I will take it to him. You will hear from me in twenty days.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brull, in twenty days, I hope to be very far away from here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With all due respect, Brull, I would like to make the offer to Chorgan myself.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll gladly take you with us on the Enterprise. How many of your men do you want to accompany you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll come alone. If this is a trap.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, it isn't.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mallon, you'll be in charge while I'm gone. If I'm not back in ten days",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brull! Brull!",
+                    "spoken_by": "TEMAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They dash to where Volnoth is lying"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Volnoth.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Away team to Enterprise. Medical Emergency.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Volnoth was an old man. There's nothing to be done.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a chance that our doctors can do something.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You found him?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. And there are no other members of the Lornak clan here, so I claim his possessions.",
+                    "spoken_by": "TEMAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Granted.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Temarek pulls off Volnoth's boots"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you no respect for the dead?",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's there to respect about a corpse?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher beams down. Riker pulls Temarek off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Temarek, no. Calm down.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's been dead too long.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cardiac arrest?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't sound convinced.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, he died of a heart attack, all right, but I can't find the cause. His cardiac muscle is strong and there's no sign of arterial occlusion.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Gatherer camp"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brull, will you show Mister Crusher the course to set to the Hromi Cluster?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A child? This doesn't inspire my confidence.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard gives him a withering glare. Brull goes over to the console but clearly doesn't know what he's looking at"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is our present position.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set a heading for three four three mark seven two.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's going to take us through the centre of an asteroid belt.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the matter, kid? Can't you fly yourself around a couple of rocks?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure I can, but if we take this heading we can avoid the belt completely, and only lose twelve point one minutes at warp seven.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have it your way, kid.",
+                    "spoken_by": "BRULL"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For centuries, my planet was in chaos. Loyalty to one's clan was absolute. The slightest injury to one member demanded violent retaliation.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And these blood feuds could last for decades?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The obsession with vengeance would be passed from generation to generation. And with each act of retribution, the violence would escalate.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not unlike much the history of my own planet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi and Riker enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your pardon, Sovereign. May I be excused briefly? Commander Riker requested that I prepare him an Acamarian dish.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, Yuta.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brull enters and goes straight to the bar. He takes another man's drink then heads over to Wesley's window seat"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Homework.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Math.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can see that, but what does it mean?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the locally Euclidean metrisation of a k-fold contravariant Riemannian tensor field.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You good at it? You don't like me.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't say that.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No problem. I have many friends that don't like me. But what do you know about me?",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're a thief.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do it to survive, not because I enjoy it. We Gatherers value our freedom. We do as we want and we answer to no creature.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then why are you helping Sovereign Marouk to change all that?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe because I want something better for me, and for my children.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have children?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, two sons. One's just about your age. He's not any good at math.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Yuta brings a tray to Troi and Riker's table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Parthas a la Yuta.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With the help of one of your food stations.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's wonderful.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Truly excellent.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you care to join us?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to intrude.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not. I was just leaving. Please, sit down.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It really is delicious.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm glad it pleases you, Commander.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not your commander. My name is William.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will call you William if you prefer.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do. When you say Commander you say it like you say Sovereign to Marouk.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As a servant. You're an excellent commander, but you'd make a poor sovereign.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why's that? Not that I disagree.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not comfortable with servants.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I prefer the company of equals.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you treat me as an equal.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you're not comfortable with that?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not used to it. I've always been a servant. Not that I'm complaining. The Sovereign treats me well. I have all that I could want.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about freedom?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can never have that.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because you're the property of the Sovereign?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I'm not her slave. I can leave whenever I wish.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you have no place to go?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just the opposite. My path is all too clear.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yuta, you're an excellent chef, but you speak in riddles.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never been very good at conversation.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yuta.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe the Sovereign wants me to return. Enjoy the parthas.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Sickbay to Commander Riker. I've discovered something interesting, Will.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my way.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're scowling, Doctor.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm thinking.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The old Gatherer on the planet? I know what caused his heart attack. The medical tricorder almost missed it, but there was a microvirus in his body, blocking his autonomic nerve impulses.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And that stopped his heart?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But here's the really interesting part. This microvirus will only attach itself to cells which contain a very specific DNA sequence.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How specific?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Without knowing more about their genetic makeup, I can't be sure. But my guess is, this virus would only kill one Acamarian in a million.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pretty single-minded bug.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too single-minded. I can't believe it's a naturally occurring virus.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Meaning somebody engineered it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Meaning Volnoth was murdered.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Sir, Acamar Three has agreed to your request for access to their databases. They are now being transmitted into our computer over subspace link.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Notify Doctor Crusher when Acamar's medical database is online. Riker out. Come in.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm disturbing you.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As the Sovereign has no further need for my services this evening, she suggested I might spend some time with you.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What a charming suggestion.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She appreciates the affection you've shown me.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Was I that obvious?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I've already dined. Maybe you know a good Acamarian dessert recipe.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A kiss, of course"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does that not please you? Tell me what you want, William. I will do anything you wish.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait a minute.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand. Don't you want me to give you pleasure?",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not as a servant. I told you, I prefer equals.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even in the matters of love?",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Especially in matters of love.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've offended you.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I only want to make you as happy as you want to make me. You're entitled to that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I'm not.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yuta.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not feel pleasure, or passion. I haven't been able to for a long time.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know who did this to you, or why, but it can change.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish it could. Tonight most of all. I'm sorry.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She turns to go, he pulls her back into his embrace, then Red Alert sounds and the ship shakes"
+                }
+            ],
+            "location": "Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your people prepare a warm welcome.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's Chorgan's ship.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields holding.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, contact Chorgan. Tell him Brull has brought us to talk.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chorgan is not responding.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, can we knock out their shields without seriously damaging their ship?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe we can, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prepare phasers and open a channel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Phasers locked. Channel open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chorgan, this is Captain Jean-Luc Picard of the Enterprise. All right, let's focus their attention. Mister Worf, fire phasers.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their forward shields are inoperative.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well done, Lieutenant.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are being hailed, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's better. On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Brull, you traitor! You have led them here to destroy me!",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chorgan, if I had wanted you destroyed, you would not be talking to me now. Obviously, I wanted something else.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "And what is that?",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have on board Sovereign Marouk of Acamar Three. I want you to hear what she and Brull have to say.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's worth listening to.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I don't wish to listen to either of you.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have no choice. Prepare to receive us. We're beaming on board. Picard out. Cancel Red Alert. Tell Sovereign Marouk meet me in transporter three.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're going alone, Captain?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The danger is minimal, Number One. Chorgan is unlikely to do anything rash with the Enterprise's phasers trained on his ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are still risks.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For these negotiations to succeed I must be a mediator, not an enforcer. You have the Bridge, Number One. Brull.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chorgan, this is Sovereign Marouk.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You may sit.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chorgan, I think you will find Marouk's proposal",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, Picard, I could take you prisoner. Oh, don't worry, I've no intention of doing so. I know what trouble it's been for you to get here, and I am curious why.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then let's proceed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quite simply, I am proposing amnesty for every Gatherer.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amnesty? You mean slavery.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chorgan, if you want to know what I think",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't. Say what you came to say, though I doubt that I'm going to believe you.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't believe this very persuasive Federation Captain when he suggested that we could reconcile our differences. I'm convinced now it's the right thing, not just for you, but for us too. We need you back. I've brought some Acamarian brandy. I'm sure it's been a long time.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Yuta serves the glasses"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! You have spent a century hunting us down.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is trying to put an end to all that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, by luring us back and putting us in prison.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, by accepting you back as free men.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you feed and clothe us, too?",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, of course I won't. What I will do is give you the means to feed and clothe yourselves. We've set aside some land and you can use it to",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Land? Do we look like farmers to you?",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then don't farm. Use the land as you wish. It is yours. And the moment you set foot on it, you'll be better off than you are today. You won't be running any longer.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will need autonomy.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Autonomy?",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sovereign, we can at least acknowledge that Chorgan appears willing to discuss your offer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are many levels of autonomy. Certainly your region would have certain rights.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, and those rights will be spelled out before I agree to anything.",
+                    "spoken_by": "CHORGAN"
+                }
+            ],
+            "location": "Chorgan's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I'm afraid the only entry we have on Volnoth in the Acamarian database is a birth record.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Probably one of the last of the Gatherers to be born on their planet.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander? I've been digging through the medical database from Acamar Three for hours, and I have found another victim of the same microvirus that killed Volnoth. But only one. Fifty three years ago, a Gatherer named Penthor-Mul.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data? Anything in your file on Penthor-Mul?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. He was a member of the Lornak clan. He was captured while leading a Gatherer raid on an Acamarian outpost. He died of a heart attack before his trial ended.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Display Volnoth's birth record again.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lornak. The same clan.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The only two recorded deaths by this microvirus both from the same clan. What does that tell us, Doctor?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If these microbes were engineered for murder, I'd say somebody could be going after a whole family.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, Chorgan, the present leader of the Gatherers, is also from the Lornak clan.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to know just how this clan was involved in the Acamarian blood feuds, and I'd like to know any clue as to who their enemies were. How could this virus have been transmitted, Doctor?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More ways than I can count. And it's perfectly safe to the carrier as long as he doesn't have the same DNA patterns.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tailor made for their enemies.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, eighty years ago the Lornaks massacred a rival clan, the Tralestas. It ended a feud that had lasted for two hundred years.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ended it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "According to these records, there were no survivors. The Tralestas were annihilated.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something tells me they weren't all been wiped out.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There must be a missing link here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, any members of the Acamarian delegation from the Tralesta clan?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Clan affiliation is not within provided records.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I believe I have found a correlation between the two deaths. Your missing link. That is Penthor-Mul being led from his trial.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a still image on the monitor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't see the connection.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Behind him and to the left, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, scan left and magnify.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The computer can extrapolate and reconstruct the rest of the face, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "It is Yuta"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But that photograph was taken over fifty years ago.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fifty three years ago, and she hasn't aged a day.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three seats on the ruling council?",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we're going to be subject to your laws, we want a part in making it.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well I agree you're entitled to representation but not on the ruling council.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unacceptable. The real power is in the council. You're shutting us off already.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! You're trying to take too much! No group has three seats on the council.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't care what others have.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You only care about what you can take.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sovereign, if the situation were reversed, I'm sure you would be demanding equal levels of representation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right, Captain. I apologise for my temper.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps a brief pause would be helpful.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I agree. Maybe a little touch of that brandy?",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yuta.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, thank you, it is remarkable how very much alike the two of you actually are.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's ridiculous.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really, Captain.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I'm quite serious. You are both able negotiators, strong leaders.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't obey weak leaders.",
+                    "spoken_by": "BRULL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have nothing in common at all. We haven't agreed to anything.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're wrong, Chorgan. We've agreed to have some brandy together.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Yuta is serving Marouk when Riker beams in. He has to stun a Gatherer guard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't move!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Federation trap!",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chorgan, I assure you, my First Officer has a good reason for his actions. You do, Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yuta. Move away from Chorgan. Do it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because of a man you once knew named Penthar-Mul.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Penthar-Mul? How do you know Penthar-Mul?",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell him, Yuta.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were with Penthar-Mul when he died.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was fifty years ago. How could I?",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know, Yuta. Stop! Chorgan, keep perfectly still. Your life is in danger. Step back, Yuta.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "William, this is not your concern.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is now. You're about to commit a murder.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It isn't murder. It's justice.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yuta of the clan Tralesta.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are no more Tralestas.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Five survived the last Lornak raid. But on that day, a century ago, my life ended and my search began. I was the one chosen, transformed. My cells were altered, my aging slowed, enough to finish my task.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You used me in order to get to the last few you couldn't reach.",
+                    "spoken_by": "MAROUK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Sovereign.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will never leave this ship alive.",
+                    "spoken_by": "CHORGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're the last. Once you're dead, what happens to me doesn't matter.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The wars are over, Yuta.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You cannot understand.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right, I can't. Because I've seen the part of you that regrets what you've become. Listen to me. You don't have to do this any more.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no choice.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You do.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "William, I. I'm sorry.",
+                    "spoken_by": "YUTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stop.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The first shot is a mild stun. Yuta staggers, then reaches for Chorgan again. The next shot is higher. Then Riker puts the phaser up to full power"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yuta, don't do this.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She moves towards Chorgan again, and Riker vapourises her"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I am in your debt.",
+                    "spoken_by": "CHORGAN"
+                }
+            ],
+            "location": "Chorgan's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters, and is handed a PADD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to waiter",
+                    "line": "Oh, yes, thank you. New orders from Starfleet. The rendezvous.  Nothing, thank you. The rendezvous with the Goddard has been postponed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the meantime?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starbase three four three. We're to take on medical supplies for the Alpha Leonis system.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sounds pretty routine.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With the Gatherer truce in effect, it certainly should be. We won't require a full ship's complement. I'm going to extend shore leave on the starbase to anyone who wants it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll pass that along to the crew, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Ten Forward"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "157",
+    "transcript_url": null
+}

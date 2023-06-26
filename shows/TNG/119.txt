@@ -1,0 +1,2827 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jake! Jake! Jake, wait a second. How're you doing?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm fine. Really.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jake, I'm sorry.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acting Ensign Crusher, report to transporter room eight.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not your fault.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, I know. I wish both of us were going.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. Only thirty two points.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Mister Crusher, respond.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm on my way, Doctor. I've got to go.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know. Hey, Wes. Do well for both of us, okay?",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41416.2. We're orbiting Relva Seven, where Wesley Crusher is about to be tested for entrance into Starfleet Academy. And to my great surprise, I have just learned that my old friend Admiral Gregory Quinn is on Relva Seven, and has requested to be beamed aboard the Enterprise immediately.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Immediately after Wesley is beamed down, Quinn and Remmick are beamed aboard. Quinn is old, silver-haired. Remmick is probably thirties, high forehead"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome aboard, Admiral.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Captain Jean Luc Picard, Lieutenant Commander Dexter Remmick.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Allow me to introduce my staff. First Officer William Riker, Chief Medical Officer Beverly Crusher, Chief of Security, Natasha Yar. Well, what can we do for you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need to speak with you.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Certainly. This way. Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alone.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is this a personal matter?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Official business.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well then my First Officer",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alone, Captain.",
+                    "spoken_by": "QUINN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Remmick is with the Inspector General's office.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He'll be conducting a full investigation of the Enterprise.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you looking for?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have reason to believe there may be something very wrong on this ship.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell me what you suspect.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's inappropriate to discuss it at this time. Mister Remmick, Starfleet is counting on you. You will find out what is wrong on this ship.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Nothing and no one will stand in my way.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you, Captain, are ordered to cooperate in every way necessary with this investigation. Is that clear?",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Remmick, unless there are any further questions.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No questions, sir.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get on with your duties.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Remmick leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've known one another for years. Tell me what you believe is wrong.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, it is vitally important that my orders be followed exactly. I'll be staying on the ship.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you wish, Admiral.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a young red-head",
+                    "line": "What is it?",
+                    "spoken_by": "OLIANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The unit you just put down. Don't worry. I won't tell anyone.",
+                    "spoken_by": "OLIANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a flux coordinating sensor.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm Oliana Mirren, one of the other finalists. You must be Wesley Crusher.",
+                    "spoken_by": "OLIANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. Do you know me?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I heard there was a very smart, very young man who'd be tough competition.",
+                    "spoken_by": "OLIANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, you wouldn't be here",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I weren't smart. I know. But there's a lot more to it than just that. You're lucky. You've had practical experience aboard the Enterprise.",
+                    "spoken_by": "OLIANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Other young people enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Wesley",
+                    "line": "Oliana.  T'Shanik of Vulcana Regar.",
+                    "spoken_by": "T'SHANIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley Crusher of the Enterprise.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You do not look as if you meet the age requirements.",
+                    "spoken_by": "T'SHANIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Uh, I'll be sixteen next month.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Happy birthday.",
+                    "spoken_by": "OLIANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "goes over to the third newcomer",
+                    "line": "Excuse me.  I'm Wesley Crusher.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mordock.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mordock? The Mordock? The Benzite who constructed the Mordock Strategy? I thought you already were in the Academy.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Only a hopeful, like you.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "An officer enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Finalists, please take your seats I'm Tac Officer Chang. Welcome. You are here because you are all top candidates. Although only one student will be chosen for the Academy, you have shown from the preliminary testing that any of you could easily qualify. This may be the most difficult, exhausting experience of your life, and the most exciting challenge. Expect the unexpected. May you all do your best.",
+                    "spoken_by": "CHANG"
+                }
+            ],
+            "location": "Classroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Remmick is tapping notes into his PADD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I help you, Mister Remmick?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Keep on doing whatever it is you're doing, Commander Data.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's nothing much to see here, Commander. We're in a standard orbit, and the station has to be manned even if it's just routine.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something I can help you with, Mister Remmick?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When I'm ready, Mister Riker, I'll want to speak with you. Privately.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, just having that guy around makes me feel guilty. What's he after, anyway?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know, Geordi, but I'm going to find out. Right now.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, may I speak frankly?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Always, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As First Officer, I should be informed. I should know everything that you know.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right, you should.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what's this about? Remmick is going to turn this ship upside down.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's his job.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And my job is to see that this ship runs smoothly.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which you do very well.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, am I under investigation?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if you did?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I couldn't tell you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand, sir. This is extremely frustrating.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No less so for me. But I promised cooperation, and that's what we shall give.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want some answers from you now, Commander Riker.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Later.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were ordered to cooperate",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "enters turbolift",
+                    "line": "Not now.  When it doesn't interfere with my duties, Remmick.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Last question on the hyperspace physics test. If the matter and antimatter tanks on a Galaxy class starship are nine tenths depleted, calculate the intermix ratio necessary to reach a starbase a hundred light years away at warp factor eight. Begin.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley is straight in with 1:1. Oliana runs out of time"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Time elapsed. You now have one hour free before the next test.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must admit, Wesley, you have a very fast mind.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Once as I realised it was a trick question, there was only one answer.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, there is only one ratio with matter antimatter. One to one.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't know how lucky you are. I can't imagine what it would be like to have things come so easily. I have to push every step of the way.",
+                    "spoken_by": "OLIANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, no, Oliana, it doesn't come that easily. I have to study all the time.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a good thing you're cute, Wesley, or you could really be obnoxious. See you later.",
+                    "spoken_by": "OLIANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Oliana leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you hear what she said, Mordock? She said I was cute.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that good, Wesley?",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes! I think.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Classroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I should apologise, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No need, Number One. Mister Remmick's presence is unnerving, to say the least.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you available now, Mister Riker? Or do you still have duties to perform?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm available, Mister Remmick.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any problem with using your Ready room, Captain?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Mister Remmick. Be my guest.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Remmick sits himself in the Captain's chair and gestures Riker to sit too"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker sits",
+                    "line": "If you prefer to stand, fine, Mister Riker. It won't have an effect on the length of my inquiry.  Now, there are several seeming discrepancies in the Captain's log. Let's go over them one by one, shall we?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain's log?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. To the best of your knowledge, has the Captain ever falsified a log?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you discussed this with him?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right now, I'm asking you.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you want to discuss anything about Captain Picard, you bring him in here and ask him face to face.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are required to answer my questions, Mister Riker, unless you're trying to cover something up! Now, there are several discrepancies in the Captain's log. Shall we go over them one by one?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, you are saying Captain Picard had no control over this vessel. He handed it over to Kosinski, who took the entire crew to the edge of the universe.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. That's not what I'm saying. Now, Kosinski was sent by Starfleet to improve our warp drive system. Captain Picard was ordered to take him aboard.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "According to his own logs, his Bridge crew didn't think highly of Mister Kosinski's theories, yet the Captain allowed him to access to the engines anyway. Is that true, La Forge?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not exactly, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One way or the other, La Forge, Picard lost control of this ship. Is that true?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but that's not how it happened.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, the answer is yes.",
+                    "spoken_by": "REMMICK"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you believe the captain is emotionally and psychologically fit for command of this starship? There is nothing in his history or his personality that would suggest mental lapses?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not even the Ferengi incident with his old ship, the Stargazer?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He was being controlled by a mind altering machine, Commander. Without his knowledge.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would call that a mental lapse.",
+                    "spoken_by": "REMMICK"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There is no programme running"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, what are you doing on the holodeck? I thought you were still on Relva Seven.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm finished testing for the day.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've disturbed you. I'll leave.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait. I thought I wanted to be alone, but I guess I don't.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is the testing?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay. So far. It's not the ones that I've studied for that I'm worried about. It's the psych test. Facing my deepest fear and living through it. I'm trying to figure out what images to bring up.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess I want to scare myself. What do you think? Bulgallian rats? Lightning storms?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do those things frighten you?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sort of, I guess.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The psych test is no more or less important than the rest of the process.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's what they said, but I can't stop thinking about it.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thinking about what you can't control only wastes your energy and creates its own enemy.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can they know what my deepest fear is when I don't?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By analysing your psychological profile. They were very accurate about everyone I tested with. Including myself.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You? I thought there was nothing that could frighten a Klingon warrior.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only fools have no fear.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, Lieutenant. I'm asking too many personal questions.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is very difficult for me to depend on anyone for anything. But especially for my life.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But on the Enterprise you do that every day. Everyone depends on everyone else to protect them.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you overcame it?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. It is still my enemy.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With this new extricator, sir, we can eliminate three more bulky machines from cargo space.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's excellent, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, there's an unauthorised entry in main Shuttlebay.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unauthorised?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is it, Lieutenant?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer reads the ID number of Jake Kurland. Bridge to main Shuttlebay. Mister Kurland, this is Lieutenant Yar. Respond.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isn't the area secured?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not now, Remmick. He's going to take this out, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm locking off the bay launch doors, Captain.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too late. He's using the flight emergency override",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Smart kid.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kid?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's launching.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On viewer. lieutenant Yar, open channel. Enterprise to shuttlecraft. Mister Kurland, this is Captain Picard. Mister Kurland.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, I'm going to Beltane Nine",
+                    "spoken_by": "JAKE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To sign onto a freighter. Tell my father I'm sorry.",
+                    "spoken_by": "JAKE"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can tell him yourself, in person. Bring that ship back at once.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "No.",
+                    "spoken_by": "JAKE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "alarm sounds",
+                    "line": "I can't face him. I'm leaving.",
+                    "spoken_by": "JAKE"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, he's unbalanced the dilithium reaction.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've lost power!",
+                    "spoken_by": "JAKE"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All he's got left are his manoeuvring jets, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At this trajectory, he'll enter the atmosphere and burn up at two hundred kilometres.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Probable impact?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Atmospheric entry seventy eight seconds.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Options?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tractor beam?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not possible. He's too far away for a positive lock.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's out of transporter range.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, you are completely responsible for that boy's life.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Remmick, either get out of my way and keep quiet, or I will have you removed from the Bridge. Viewer on shuttle cockpit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Visual on main viewer.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Kurland.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I can't get the engine started. What am I going to do? I'm going to crash.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He needs another fifty seconds for the core to cool down before it can restart.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stay calm, Jake. We'll get you back.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, help me!",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Jake!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's no use, Captain. I'm going to die out here.",
+                    "spoken_by": "JAKE"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He'll need another thirty seconds before he can restart.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Irrelevant, sir. Even if he restarts his engine now, he will not have enough thrust to escape impact.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Kurland, you are not going to die out there. You are going to do exactly what I tell you. Now, take the nose of the shuttlecraft and aim it directly at Relva Seven.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aim it at Relva? I can't do that. It's crazy.",
+                    "spoken_by": "JAKE"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do it!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "But I'll burn up!",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Twenty eight seconds to impact.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jake, listen very carefully. This is Captain Picard and I am giving you an order. Aim the shuttle at Relva!",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay. It's done.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Good.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, monitor your speed exactly. When it hits point zero two zero, I want you to restart the engine",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "And when I tell you, pull up hard. JAKE: Point zero two zero speed. Captain, I sure hope you're right.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "You'll just have to trust me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Point zero zero three.",
+                    "spoken_by": "JAKE"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Zero zero nine. Zero one two.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Six seconds to impact.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold on, Jake. It's going to be a little bumpy.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Zero one five.",
+                    "spoken_by": "JAKE"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Zero one nine.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Restart the engine, now! Pull up hard!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "amongst others",
+                    "line": "Yeah!",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Incredible, Captain!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did he do it? I thought",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He built up enough speed and then bounced her off the atmosphere!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Kurland, I assume you can manoeuvre it home?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, sir.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do it. Then report to Mister Riker.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Yes, sir!",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very original, Captain. But how did that child acquire access to a shuttlecraft?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kurland is a highly qualified Enterprise Academy candidate, fully trained in many areas including shuttles.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And did this full training include discipline?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Remmick, young men sometimes make rash choices. Which is why Mister Kurland will receive a strong refresher specifically in discipline",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll note that in my report.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Full cooperation, Number One.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You. I have a package for Operations. Where is it?",
+                    "spoken_by": "RONDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "End of the corridor, room on your right. One oh four.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The seven foot tall man bumps Wesley as he walks between him and Mordock"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You blocked my path. you Bulgallian sludge rat!",
+                    "spoken_by": "RONDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, it was an honest mistake. I apologise.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there a problem here, gentlemen?",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir, I",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How dare you! I am Rondon, you despicable Melanoid slimeworm! Liar!",
+                    "spoken_by": "RONDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who do you think you're bullying? You bumped into me. It was your mistake. You were at fault. Do you want this to become violent?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Friend. I like you.",
+                    "spoken_by": "RONDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rondon leaves, smiling"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A very strange reaction.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not really. When he raised his hand, I saw that it was webbed. The sign of a Zaldan.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you became hostile.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Zaldans are infuriated by courtesy. They view it as a form of phony social behaviour, designed to cover true feelings.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Congratulations, Mister Crusher. You handled that particular incident very well.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Was this incident deliberate?",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's important to know how you candidates deal with other cultures, other species.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then it was a test.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Not all tests are announced, or what they appear to be.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Chang leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Zaldans have webbed fingers? I wouldn't have passed.",
+                    "spoken_by": "MORDOCK"
+                }
+            ],
+            "location": "Relva 7 Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're an android, correct?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And as an android, you are programmed to tell the entire truth?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is a problem with this ship, Mister Data. It's in the records, somewhere. I need your help to find it.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All of the ship's records are available to you, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This information is very cleverly hidden. Your Captain is not what he appears to be. Do not forget you have loyalty to Starfleet above all else.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Loyalty is not the issue, Commander. There is nothing wrong with Captain Picard or the ship's logs. Therefore there must be something wrong with your original assumption.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is not acceptable, Mister Data.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acceptable or not, sir, it is the truth.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just how did this contaminant get aboard the ship?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By accident, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Meaning Captain Picard has no standing procedure for this type of situation?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Meaning by accident, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't like me very much, do you?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it required, sir?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How would you characterise your relationship with Captain Picard?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're Starfleet officers who've known each other for many years.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything said here is confidential, Doctor. You can be completely open with me.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "About what?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "About how you feel serving with a man who is responsible for the death of your husband.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My personal feelings about Captain Picard are irrelevant to this investigation, and none of your business.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you confirm the accuracy of the log report. You violated the Prime Directive with the Edo. You deliberately interfered with their laws.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. It's exactly as I explained it in the log records.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All to save Doctor Crusher's son?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A member of my crew was being held unjustly. I stand by my decision. Mister Remmick, you have talked to every member of this ship. I think you've had enough time to find out whatever it is you're looking for.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you afraid if I keep looking that I'll find you're guilty?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The only thing I'm guilty of is allowing this charade to go on so long.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation Lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral, if it is me you're investigating, ask me directly what it is you want to know. And please tell me exactly what is going on.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need a little more time, Jean-Luc.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How much time? I won't tolerate my crew being harassed any longer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remmick's full report is almost ready.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to be here when he presents it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That has always been my intention. Commander Remmick, report to Admiral Quinn.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "On my way, sir.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This has been a strain on our friendship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know. Believe me, Jean Luc, I regret that, but it has been necessary.",
+                    "spoken_by": "QUINN"
+                }
+            ],
+            "location": "Admiral's Quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The dynamics relationships test is on the screens, and there are a lot of beeps going on"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't get it.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, you can. Don't fight it. Relax into it and let it come by itself.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it's going too fast. Wesley, I can't do it.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley turns from his own screen to look at Mordock's"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes you can. You've got your rotation factor. Just put in your vector coordinates.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Mordock finishes first, Wesley second. The Vulcan finished too."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Time elapsed.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Chang enters."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Congratulations, Mordock. That was the second fastest time ever recorded on this test. You all did well.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it should not have been that way. Mister Crusher helped me.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I know. An interesting choice, Mister Crusher. Especially considering how close you and Mister Mordock are in overall score. You all have an hour to prepare for your last test.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The psych test, sir?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We prefer to think of it as a psychological evaluation based on reactions to various individual problems, but psych test will do.",
+                    "spoken_by": "CHANG"
+                }
+            ],
+            "location": "Classroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Remmick enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please sit down, Mister Remmick. Proceed with your report.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral, I've done my best to be thorough during this investigation.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Continue.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I couldn't find what you asked, sir. I spoke to officer after officer, at length. I pried into the ships log reports. And yet I could find nothing wrong. Except, perhaps, a casual familiarity among the Bridge crew, but mostly that comes from a sense of teamwork, and the feeling of family. I'm sorry, sir. I did my best.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quite. You're dismissed, Commander.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Captain Picard, my tour in the Inspector General's office will be up in six months. When I'm finished, this is where I'd like to serve, sir.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "No reply, and Remmick leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't judge the young man too harshly. He's a good officer.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not him I'm inclined to judge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't judge me too harshly either, until I've finished. We had to be very sure of you. Some of us at Starfleet Command became suspicious of certain problems in the Federation.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What kind of problems?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something or someone is trying to destroy the fabric of everything we've built up in the last two hundred years.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's your evidence?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't go into that. There are too many people involved.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you want from me?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know whether the threat comes from the inside or whether it's from outside. I need people I can trust in strong positions throughout the Federation.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have my complete support. You know that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not enough. I want to promote you to Admiral, and I want you to take over as Commandant of Starfleet Academy.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Academy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Academy?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need you close.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then there was never a problem with the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, but I had to be sure you hadn't been co-opted.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Greg, this is politics, and I'm not good at politics. Surely there are others who are better suited.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. Even if I am wrong, and I hope I am, you're still the best man for the job.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I appreciate the value of what you're offering. It's not a decision I can make quickly.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need an answer soon.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. You'll have it tonight, Admiral. Thank you.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Admiral's Quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley is sitting nervously on a bench when Chang comes out of a room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Mordock will be finished with his psych test momentarily.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The door to room 101 opens, Mordock is shaking"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mordock? Are you all right?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will be.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher. You're next. Good luck.",
+                    "spoken_by": "CHANG"
+                }
+            ],
+            "location": "Relva 7 Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A small room with bare walls and a single chair in the middle"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "nothing",
+                    "line": "I'm here. I'm ready.  Maybe they forgot. Breathe. Got to remember to breathe.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The sound of an explosion outside. Wesley goes to investigate"
+                }
+            ],
+            "location": "Room 101"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's a series of bangs, and the sound of a voice calling out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Evacuate immediately. Sixty five seconds to seal off.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Somebody help! There's something's wrong in the Environmental lab!",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Help!",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley opens the door"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's steam from ruptured pipes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Help! We're trapped. I can't move. Please, help me.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley sees him pinned under a piece of pipe"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're going to die in here!",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's a second man cowering in the corner"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The liquid hydrogen's going to blow! The shut off valve ruptured. Hurry up! My legs are crushed. You've got to help me!",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley goes to lift the debris, and calls to the uninjured man in the corner"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give me a hand with this!",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're going to die!",
+                    "spoken_by": "MAN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Help me!",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't! It's too late!",
+                    "spoken_by": "MAN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thirty seconds to seal off.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley gets the pipe off the injured man"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on!",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we don't get out of here fast, they'll seal us in to contain the explosion.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "dragging the casualty",
+                    "line": "Come on, you're not hurt.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't go through that!",
+                    "spoken_by": "MAN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, you can. You've got to.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Twenty seconds to seal off.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on! I can't carry you both! You're not hurt.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ten seconds to seal off.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on!",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's too late.",
+                    "spoken_by": "MAN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The doors are closing as Wesley drags the casualty out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Environmental Maintenance Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Officer Chang! There's",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley! It's all right.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The casualty gets to his feet, dusts himself off and shakes Wesley's hand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An excellent performance, Mister Crusher.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The other man walks out of the lab and leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Performance? That was the test?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A man could have died.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Theoretically, yes. You had to make a choice. And you did. There's no right or wrong about it. Your greatest fear has been that you couldn't make that decision.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because of my father? Because Cap. Because someone made that choice, and my father died.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Relva 7 Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Remmick has left the ship.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. He found nothing wrong on the Enterprise. And you can inform the crew that Admiral Quinn is most impressed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. They'll be pleased that. Can you explain now what he was after?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They were after me, Number One. They want me to take over as Commandant, Starfleet Academy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Congratulations! What a wonderful choice, sir. You'll be able to shape the minds of the future leaders of Starfleet. You haven't decided what you're going to do.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I have, Number One. I've decided I'm going for a walk.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm proud of all of you. You've done a superb job. Each of you would make a fine Starfleet officer. It's unfair that only one candidate from Relva will attend the Academy this year, and a loss to the Federation if the rest of you do not return to test again. Mister Mordock will be the candidate. His results were slightly higher than Mister Crusher's. Congratulations, Mister Mordock. You're the first Benzite in Starfleet.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir, but it's not right. It shouldn't be me. Wesley lost points because he helped me. He should not be punished for his generosity.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He wasn't. He lost time, but it wasn't only that. Candidates, thank you. And good luck.",
+                    "spoken_by": "CHANG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Chang leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am sorry, Wesley.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's okay. You deserved to win. Besides, you would have done the same thing for me.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I believe I would.",
+                    "spoken_by": "MORDOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Congratulations.",
+                    "spoken_by": "T'SHANIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, personally, I hate losing. So you'd better be ready next year, Wesley. I won't be easy to beat.",
+                    "spoken_by": "OLIANA"
+                }
+            ],
+            "location": "Classroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is in dress uniform when he meets an embarrassed Jake"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Kurland!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you feeling better?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir, Look, I'm sorry I damaged the shuttle, Captain. But Mister Riker says I can work on fixing it as part of my discipline training.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good idea. I hope you learned that running away solves nothing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. And I am sorry I messed up.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least you kept your wits about you out there. Don't forget that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. And thank you. Thank you for saving my life.",
+                    "spoken_by": "JAKE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's my job, young man.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "JAKE"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher? Why aren't you in your dress uniform for Admiral Quinn's farewell dinner?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't think that would be appropriate.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why not?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I failed, Captain. I didn't get into the Academy. I failed you and I failed the Enterprise.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ridiculous. Did you do your best?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When you test next year, and you will test next year, do you think your performance will improve?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. The only person you're truly competing against, Wesley, is yourself.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you're not disappointed?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley, you have to measure your successes and your failures within, not by anything I or anyone else might think. But, if it helps you to know this, I failed the first time. And you may not tell anyone!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You? You failed?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. But not the second time. Now, you'll do me the courtesy of joining us at dinner. I have to disappoint an old friend.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation Lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wish I could convince you to change your mind.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll serve you better here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is where you belong.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you need me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been playing politics too long. Perhaps I see conspiracies everywhere. Don't worry. Safe travels, my friend.",
+                    "spoken_by": "QUINN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course to Algeron Four, Mister Crusher.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Course plotted and laid in, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then shall we continue with our mission?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent. Mister Crusher, engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "119",
+    "transcript_url": null
+}

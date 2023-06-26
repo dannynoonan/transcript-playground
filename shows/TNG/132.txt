@@ -1,0 +1,2400 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reduce to half impulse.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reducing velocity to one half impulse.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard has a holographic representation of a solar system over his desk, with some very erratic orbits in it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come. Ah, Number One. Look at this. Ever since we left the Lima Sierra system, I have been puzzling over how the third planet could maintain such an orbit, when it is theoretically impossible. But consider this.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no degeneration.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why? I haven't a clue.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps this facsimile lacks the proper mass.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps, but if this is an accurate representation, it could explain what happened in that system.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, not a matter of great moment, just a knot I had to untie. So, what do you want to see me about?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've arrived at Ramatis Three.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh well, time to leave.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standard orbit, Mister Crusher.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standard orbit.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, you have the Bridge.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter room five. I'm still a little uncomfortable with your leading this away team.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not an away team, Commander. I consider this a ceremonial function. For me not to go could be construed as lack of interest.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will be careful, sir",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, cluck, cluck, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're being a mother hen. I appreciate your concern. Actually I'm looking forward to meeting this mediator.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We came a long way to get him.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They wanted the best. That, according to all reports, is Riva.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If he can put an end to all the years of blood-letting on those planets, I think we should do everything in our power to assist him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our job is not to police the galaxy.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isn't that my speech, Number One? No, of course you're right. We must not get involved.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "O'Brien is transporter chief today"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Coordinates have been input, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have your sensors indicated any problem down there, Lieutenant?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you're feeling a certain confusion about this mission.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I've never known you to have such strong emotions, except when you're expecting to do battle.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not expecting battle.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what is bothering you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riva.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah. Riva negotiated several treaties between the Klingons and the Federation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Before him, there was no Klingon word for peacemaker.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I can understand why you're feeling uneasy.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now look, this is a simple ceremonial greeting, nothing more. All right?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard, Troi and Worf get on the transporter pads"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energise.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They arrive in a marbled room, and walk forward to an area with a slightly raised dais in front of a stained glass window. There is no one there."
+                }
+            ],
+            "location": "Room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, this is the Enterprise.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've arrived safely, Number One, but so far we've been ignored. I'll keep you informed.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would appreciate it.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A well build man with red hair and beard has entered. He stops in front of each of them in turn. Please note this actor really is deaf."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riva.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He goes and stands on his dais. Picard steps forward but is gestured to stop. Two men and a woman in white enter and stand in front of Riva"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, come closer. Before I start, is there anything you need? Food, refreshments?",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, no.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the man in the hat",
+                    "line": "Then proceed.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Greetings from the United Federation of Planets. I am Captain Jean Luc Picard, of the USS Enterprise. This is Counsellor Troi. Lieutenant Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Greetings.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to Ramatis.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been expecting you.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are empathic.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riva walks towards Troi"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then although you already know my feelings toward you, allow me to put them into words. I am looking forward to this journey, now more than ever, because it gives me the chance to be in your company.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am flattered. I too am look forward to learning more about you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riva goes back to his dais"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are aspects to Riva of which we have not been informed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Precisely. Our way of communicating has developed over the centuries and its one that I find quite harmonious.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then Riva the mediator",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is deaf.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deaf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Born, and hope to die.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the three of you speak for him?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "CHORUS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We serve as translators. We convey not only his thoughts, but his emotional intent as well. I am the Scholar. I represent the intellect, and speak in matters of judgement, philosophy, logic. Also, I am the dreamer, the part that longs to see the beauty beyond the truth which is always the first duty of art. I am the poet who",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Artists, they tend to ramble, neglect the moment. I am passion, the libido. I am the anarchy of lust, the romantic and the lover. I am also the warrior, the perfect line which never wavers.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am that which binds all the others together. I am harmony, wisdom, balance.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remarkable. And so these",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riva steps forward, angry"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Speak to me!",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Speak directly to me.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The uniqueness of this presentation provoked this inadvertent breach in protocol. No insult was intended.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then none is perceived.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm curious about how this rare form of communication came about.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The gene for hearing is not present in my planet's ruling line.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not that unusual, indeed it is similar to the House of Hanover of your planet Earth, all who had haemophilia. Or the leaders of Fendaus Five, who were without limbs.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Many of the galaxy's greatest contributors have been similarly special.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My Chorus is so attuned, they can hear my thoughts and translate to you. It is a relationship which goes back for centuries. Their ancestors provided the same service to my ancestors.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your method of communication is most elegant and quite beautiful.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It takes a fine mind to realise that, Counsellor Troi.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This part of you doesn't speak very often.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only when the spirit moves me.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riva, if you are ready, the situation at Solais Five is very critical. We should not delay.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With your permission, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so, Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enterprise, this is the away team. Seven to beam up.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Riker. The away team, plus four, is on board.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged. Ensign, set your course for Solais Five.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Course is set.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Velocity, warp eight.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Warp eight, aye.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage, Ensign.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The party enters the Bridge"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riva id deaf. These three speak for him. Treat them as interpreters. Address yourselves directly to Riva. Now, may I present my First Officer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "First, Captain, may I say it is an honour to be on board such a fine vessel. Now, please, continue with the introductions.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is my First Officer, Commander Riker.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is an honour to meet you.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riva places his right hand in the centre of Riker's chest"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Commander Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a pleasure to meet such a unique individual.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is my pleasure to meet you, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is that you're wearing?",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A visor. It interprets the electromagnetic spectrum and then carries the readings to my brain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And without it, can you see?",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Without it I'm as blind as a stump.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then your visor serves the same function as my Chorus, which interprets my thoughts and translates them into sound?",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you don't resent it?",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The visor or being blind?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Either.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, since they're both part of me, and I really like who I am, there's no reason for me to resent either one.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is your position on the ship?",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm the Chief Engineer, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a blessing to understand we are special, each in his own way.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Yes, that's the way I feel exactly.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I offer the hospitality of my vessel. And at your convenience, there is a briefing on the Solari wars. If you wish, I'll have you conducted to your quarters.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps, if it is not inconvenient, Counsellor Troi could escort me. With your permission.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This way.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi leaves with Riva and the Adonis"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At times like this, we become an encumbrance.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, if you have rooms for us?",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf will escort you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riva's not what I expected.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Much of what we do is similar.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I suppose in a way it is.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have both learned how to allow people to examine feelings hidden deep within their psyche. In fact, with you here now is provoking an emotional revelation.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean some emotion buried in your psyche?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, not that deep.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly what are you feeling?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can't you tell?",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some of it.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well I feel that soon, perhaps after the briefing by your Captain, that you will be hungry, and that perhaps we could dine together and compare experiences.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like that.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As will I.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will he be with us?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, until we find our own method of communication.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I look forward to that time.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As do I.",
+                    "spoken_by": "ADONIS"
+                }
+            ],
+            "location": "Guest quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, Data. Begin the briefing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The factions on Solais Five are historical enemies. So many have died that both societies are on the verge of extinction.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enough. Thank you, Captain, there is no need to continue. The specific issues of the conflict have no relevance.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So none of the background which we have provided would be helpful in understanding why they continue to fight?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The portfolio will indicate that the conflict is over a piece of land, or wealth, or some other tangible asset. But we both know that is not the case.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've been at war for so long, it has become personal.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly. The basis for peace must also be personal. This is an historic confrontation, correct?",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The factions have been at war for fifteen centuries.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's changed?",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not know what you mean.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They have been killing each other for a long time, now they want to talk peace. So something about this situation has recently changed. What's the new piece to the puzzle?",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unknown, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps they have run out of people to kill. In any case, whatever the reason, peace is now preferred, which should make your job easier.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, if not easier, at least possible, for now they are motivated. But it doesn't matter. I'll find something. I always have.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Always?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To date, I have never failed. Now, unless there is something else?",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. This is for your benefit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then, thank you for your time and effort.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe I have to get ready for a dinner appointment.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "as the men are already heading out the door",
+                    "line": "If you will excuse me.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, of course. The meeting is adjourned.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our mediator is very self assured. We'll know soon enough if he can deliver.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're approaching Solais Five.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Half impulse.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slowing to one half impulse.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi and Riva are eating, as the Adonis stands nearby"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The sound of this ship is quite remarkable. Can't you feel it?",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It moves through my body like a great pulse.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've grown so accustomed to it, I forget it's there.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's easy to let that happen. Sometimes we must allow the surroundings to flow over us, to dwell on each separate part, how it feels, to allow it to fill you.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Adonis leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do we communicate? I know you can read lips, but I need your words.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riva begins to use sign language and Troi works out their meaning."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Words are here on top. What's under them, their meaning, is what's important. Yes, that's true. We both know how to express important words, like dream. Being here with you. Yes, being here with you know is very special to me, too.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Guest quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standard orbit.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm reading laser activity on the Solais Five.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How concentrated is the activity?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is localised, but very intense.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So much for the cease fire.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm receiving one side only.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is Captain Jean Luc Picard, commander of the Federation starship USS Enterprise. If you continue to violate the cease fire, I will abort this mission.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The viewscreen image has lots of interference."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "You have no jurisdiction here, Picard. Where is Riva?",
+                    "spoken_by": "ALIEN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riva is in charge of the summit. I command the ship that brings him. I will not endanger this ship under any circumstances.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The other faction is breaking through, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Riva gave his word we would speak to no one else. Now who breaks the rules? Where is Riva?",
+                    "spoken_by": "ALIEN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I shall summon him for you. Get Riva here.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Counsellor Troi, please have Riva report to the Bridge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They need you on the Bridge, now.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Guest quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi, Riva and the whole Chorus enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The cease fire has been broken.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure I can resolve that. Put them on the viewscreen.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Viewer on.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The quality of the transmission is very poor.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is sufficient.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brothers. Your bravery as fighters is known. Now you must demonstrate courage in a new way. Cease hostilities. Allow us to meet.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The laser fire has ceased.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For how long? These Solari don't seem likely candidates for peace.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will need to see a topographical overlay of the battle area in order to pick a site for the meetings. Then I will need your help in creating the proper setting.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, prepare your security team.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not necessary.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it is prudent.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I prefer to arrive with the smallest possible complement. We do not want to add to an already tense situation.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If that is your judgement, so be it. We are here to provide whatever service you require.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Captain.",
+                    "spoken_by": "ADONIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "At an aft station, looking at a map"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There. beam us down to that hilltop and inform the factions to join us. The time for killing is come to an end.",
+                    "spoken_by": "SCHOLAR"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Phasers on stun, Mister Worf.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You won't need those.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure we won't. Energise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "O'Brien beams the six away"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A flat area with the top of the mountain forming a back wall. It's windy and desolate."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, this will do. It is important that we set this up properly. Commander. If it be possible, I would like torches here and here.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Hilltop"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "This is the away team.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Commander.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We are going to need your help.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you might.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riva nods",
+                    "line": "We would like two torches. Head high?  And what else?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A table here.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Describe it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three sided, and if possible made to resemble indigenous rock.",
+                    "spoken_by": "SCHOLAR"
+                }
+            ],
+            "location": "Hilltop"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Did you read that, Geordi?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did. That should be no problem.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When will the emissaries arrive?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It shouldn't be too long.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how long do you think the negotiations will take?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They won't go quickly.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're coming, Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The first few minutes will be very tense. Please stay calm, and do not respond even if you are provoked.",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll do our best.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The first pair enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is Riva?",
+                    "spoken_by": "ALIEN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Riva.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The other faction enters."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Be at ease. I commend you both. To come here proves not only your courage, but your wisdom. Please, give this conference a chance.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no magic. You have been fighting all your lives. You know only",
+                    "spoken_by": "SCHOLAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The second faction's guard interrupts him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, never! Death first!",
+                    "spoken_by": "ALIEN 3"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riva!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker gets Riva out of the line of fire, but the Chorus are vapourised"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't! Traitor!",
+                    "spoken_by": "ALIEN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And he kills the assassin himself. The first faction draw their weapons"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, wait. Wait.",
+                    "spoken_by": "ALIEN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Away team to Enterprise. Beam us up. Now!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His words are not mine. Please, Riva.",
+                    "spoken_by": "ALIEN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "But Riker, Worf and Riva are beamed away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need you. We need you!",
+                    "spoken_by": "ALIEN 2"
+                }
+            ],
+            "location": "Hilltop"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riva is gesturing angrily to Troi and Data as Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did this happen?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A total surprise. Apparently a member of one of the factions didn't like the idea of peace.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand what you're trying to say. Counsellor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riva, go slowly. Slowly.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you write it out? I am so sorry that your friends were killed. I'm sorry, I don't know what you are trying to tell me. We have to find some way to communicate with him. Data, he knows some kind of gestural language. Find our which one and learn it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "grabs Riva's head",
+                    "line": "Counsellor, take him to Sickbay. Maybe Pulaski can help.  Listen to me. You are not alone. Do you understand? We are all in this together now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We are monitoring increased military activity on Solais Five. I fear that without Riva, we will be unable to keep the Solari from destroying themselves.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How's it going?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have eliminated all but five distinct forms of signing. I will learn them all. Computer, show me gestural language designation M nine.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interesting. A technique of communication which is both silent and covert. It could be very useful.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The use of gestures and hand signals pre dates the spoken word in most cultures. The major exception being the Leyrons of Malkus Nine who actually developed a written language first. Computer, continue presentation. Increase. Increase. Increase. Increase.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi and Pulaski enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How's our mediator.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The same. He's withdrawn. He's very frightened. All of his life he's been in control, and now for the first time he doesn't have any answers. The doctor gave him a complete medical examination.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His condition is hereditary. His brain cannot receive auditory information. So all the prosthetics and surgical techniques I can use wouldn't work.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know what we can do to help him.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't do anything.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's up to him, and he's stopped cooperating.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, couldn't you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Confidence is faith in oneself. It can't easily be given by another.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "doorbell",
+                    "line": "You're right, of course.  Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I have reviewed and stored five distinct signing languages. Here is an example of the first. This is blue. This is a blue ocean. This is a blue ocean at sunset. This is two people walking along the beach by a blue ocean at sunset. This is two happy people in love walking along the beach by a blue ocean at sunset. This is two people",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enough. Let's talk to Riva.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "for Data, read as if Riva is talking"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riva, Commander Data has learned your sign language. Talk to us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was my fault. I am responsible for their deaths. In my arrogance I thought no one could possibly harm the great Riva. I am such a fool.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are not to blame. What happened appears to have been the work of one desperate man. It may not reflect the feelings of the others.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They were more than my interpreters. They were also my friends. They were a part of me. I did not realise how much a part until now.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have been contacted by the factions on Solais. They want to renew negotiations.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot. I will not.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't turn away. You have a chance to make some good come out of this tragedy. This could be the catalyst which binds them together.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Someone else will have to speak with them, not me. Not after what I allowed to happen/ How could I?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But Data can understand you. Use him. Let him explain your words.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When Data speaks for me, can you hear my anguish, my despair? Data is a fine machine, but he cannot take the place of my chorus. It took years to develop a communication. That cannot be easily replaced.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Solari need you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot help them. Captain, please take me back to Ramatis.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is regrettable. A lot more people are going to die.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riva storms out of the room"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi is having a check-up on his implants"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's possible to install optical devices which look like normal eyes, and would still give you about the same visual range as the visor.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Done? You say almost. How much reduction?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Twenty percent. There is another option. I can attempt to regenerate your optic nerve, and, with the help of the replicator, fashion normal eyes. You would see like everyone else.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait a minute. I was told that was impossible.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've done it twice, in situations somewhat similar to yours. Geordi, it would eliminate the constant pain you are under. Why are you hesitating?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, when I came to see you, it was to talk about modifying this. And now you're saying it could be possible for me to have normal vision?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. I'd be giving up a lot.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's something else you must know. This is a one shot. If you decide to change your mind, there's no going back. And there are risks. I can offer choices, not guarantees.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, this is a lot to think about. I'll get back to you, Doctor. Thank you.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi and Data enter. Data speaks for Riva"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain is going to take you to Ramatis. But first, he's given me permission to attempt to settle the conflict down on Solais. Yes. We've come so far, and paid such a terrible price, I must try. Help me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You would be better off without my help.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have never attempted anything like this before. When dealing with two factions so diametrically opposed, so entrenched in their positions, where do you start?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You want to know if I had some special technique?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to know anything you can tell me that could help.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no trick. I had no magic.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about your Chorus?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, my Chorus was special. They allowed me to combine different perceptions.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So there was a trick.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not really. My technique was to look for some thing, no matter how small, that was common to both groups, and then to begin a process where one person or one group expresses themselves to each other.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's very hard to accomplish.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but what is even more difficult is to get each side to listen, really listen to each other, and to understand.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This isn't going to be easy for me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are very good with people.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But what I do is different.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The real secret is turning disadvantage to advantage.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why can't you do that? Why can't you turn your disadvantage into an advantage?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Troi",
+                    "line": "That is an interesting. It would give them something in common.  I do not understand, Counsellor. To what is he referring?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riva kisses Troi on the cheek, and thanks Data"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Thank me? Ah!",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will have the Captain contact then down on the planet and tell them to prepare for your return.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Guest quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "O'Brien at the controls, of course"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are no life signs in the immediate area.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, stay sharp. We may have to get out of there in a hurry. Set phasers on stun. Energise.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The area is clear, Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "translating Riva",
+                    "line": "Put the table over there.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering, this is Commander Riker.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Go ahead, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can beam the table and torches down now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Light the torches to let them know that I am back.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It may be quite a while before the emissaries arrive. They'll be more cautious after the last incident.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You may leave whenever you choose. I will send out a message when I am ready to go.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, I don't understand what he's going to do. How can he mediate without his interpreters? He won't even be able to talk to them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riva is going to teach them sign language.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it is turning a disadvantage into an advantage. Learning sign will be a part of their process of learning how to live together in peace.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "While they are learning how to communicate with Riva, they'll be learning how to communicate with each other.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And that is the first and most important aspect of any relationship. Counsellor, it took me only moments to learn sign language. It will take them months.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Time well spent.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These people have been fighting all of their lives. They know only hatred, suspicion, and fear. Even with my Chorus, I could not have changed their attitudes in a day. We have a chance. They want the talks to be successful.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm still not comfortable leaving you here alone.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Troi",
+                    "line": "Thank you for your concern. I will be fine.  And thank you, for everything.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enterprise, four to beam up. Good luck.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They beam up, and Riva stands in front of the triangular table, to wait."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First Officer's log, Stardate 42479.3. We leave the Solais system confident that Riva will help the Solari achieve a lasting peace."
+                }
+            ],
+            "location": "Hilltop"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Coordinates set, Commander.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take us out of orbit.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is back to that strange planetary orbit problem"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wanted to see me?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. You read me well enough to sense how I feel about you and what you do on this ship. But I just wanted to say the words. Thank you. Well done.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Ready room"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "132",
+    "transcript_url": null
+}

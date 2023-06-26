@@ -1,0 +1,2482 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "In reference to your most recent letter, I agree that your study lacks sufficient primary source information on my programming and operation. Therefore, in response to your request, this correspondence will include a complete record of my activities during a normal day, with particular emphasis on my perceptions of friendship.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the dayshift arrive"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker, you are fifteen minutes early.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it's a very special day. I thought the father of the bride would enjoy being relieved early on the wedding day.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nervous?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot become nervous, sir. However, I do sense a certain anticipation regarding my role in the wedding.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything to report?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All systems normal, sir. Sickbay reports that Lieutenant Juarez went into labour at zero four hundred hours. We remain at station awaiting the arrival of Starship Zhukov and guest quarters have been prepared for Ambassador T'Pel.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. I have the Bridge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Begin day watch.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Initially, Commander Maddox, I found it difficult to maintain friendships, since human emotions are often puzzling to me.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Eventually, I developed a programme enabling me to predict human emotional responses to specific actions.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is time for the wedding rehearsal.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know. Data, I've decided not to go through with it.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You do not wish to rehearse?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I'm calling off the wedding.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I ask why?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just the right thing to do.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have your feelings for Chief O'Brien changed?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm supposed to be getting married, Data. I should be happy, but I'm not. I just feel this weight pressing down on me.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will cancelling the wedding make you happy?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. He'll probably be just as relieved as I am. Data, you introduced us to each other. You mean a lot to both of us. I would really appreciate it if you would tell Miles for me.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you wish.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Keiko's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "My friend Chief O'Brien often says that above all else, he wants to make Keiko happy. Since cancelling the wedding will make her happy, I must conclude the Chief will be pleased at her decision.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have good news.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh?",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Keiko has made a decision designed to increase her happiness. She has cancelled the wedding.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She what? Cancelled the wedding? Today? Without even a word? Of all the childish, selfish, irresponsible things to do!",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "O'Brien storms out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Next time, maybe I should break the good news.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Maddox, it would appear that my programme designed to predict the emotional responses needs adjustment.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Second Officers personal log, supplemental. This is the one thousand five hundred fiftieth day since the Enterprise was commissioned. Besides the arrival of Ambassador T'Pel, other events occurring today include four birthdays, two personnel transfers, a celebration of the Hindu Festival of Lights, two chess tournaments, one secondary school play, and four promotions. Overall, an ordinary day."
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Zhukov is ready for transport, sir.",
+                    "spoken_by": "TECHNICIAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energise.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome aboard the Enterprise, Ambassador.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would meet with your Captain.",
+                    "spoken_by": "T'PEL"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Sine I am not affected by emotional considerations, I am closer to being Vulcan than human. However, while their devotion to logic does have a certain appeal, I find their stark philosophy to be somewhat limited.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come. Ambassador T'Pel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I come to serve.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your service honours us. This is my first officer, Commander William Riker.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Leave us, please.",
+                    "spoken_by": "T'PEL"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Charming woman.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The tone of Commander Riker's voice makes me suspect that he is not serious about finding Ambassador T'Pel charming. My experience suggests that in fact he may mean the exact opposite of what he says. irony is a form of expression I have not yet been able to master.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a Bolian hairdresser is dealing with Geordi, but it's not Mot"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't need a haircut. You were just in here last week.",
+                    "spoken_by": "V'SAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hey, if you'd done it right the first time I wouldn't be back here so soon.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know you want to look beautiful, but I'm just a barber, not a miracle worker.",
+                    "spoken_by": "V'SAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just try to keep my ears on straight today, all right?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Friendly insults and jibes, another form of human speech that I am attempting to master, in this case with the help of Commander Geordi La Forge.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I consider Geordi to be my best friend.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here for a trim?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My hair does not require trimming, you lunkhead.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My hair does not require trimming",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lunkhead?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am experimenting with friendly jibes and insults. It was not meant as a serious disparagement.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, just don't try it on the Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Geordi, I am still confused by Chief O'Brien's reaction this morning.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. He was just surprised, Data. He didn't mean to blow up like that. He knows that Keiko probably doesn't want to call off the marriage. She's just getting cold feet.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cold feet? Jitters. A nervous reaction to an impending event of great importance.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right. Don't worry, everything's going to be fine. She'll change her mind again.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She will?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Absolutely.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you believe the wedding will still proceed?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Trust me, they're going to get married. So you'd better find a gift.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Hairdresser's salon"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I find Lieutenant Worf to be what is called a kindred spirit. We were both orphans rescued by Starfleet officers. In many ways, we are both still outsiders in human society.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you here to find a wedding gift?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would appreciate your help in selecting an appropriate item.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. I have attended human weddings before.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he runs through few pictures and stops at glasses"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is a traditional gift?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, my adoptive parents often give these things at family weddings. A human custom.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he changes the picture to a glass swan"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is my understanding that the item selected should reflect the personality of whoever is giving it. This does not remind me of you. Have you ever been an actual participant in a human wedding?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You would not consider it to be an honour?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An honour, perhaps. But human bonding rituals often involve a great deal of talking and dancing and crying.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dancing.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Replicator centre"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I am rarely in need of Doctor Beverly Crusher's professional services as my bio-mechanical maintenance programme is self sufficient. But I often observe as she practices medicine on others and have learned a great deal about human interaction from her.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, may I ask a favour of you?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, Data.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you teach me how to dance?",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would like to learn how to dance.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why me?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was in your service record. Awarded first prize tap and jazz competition, Saint Louis Academy.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay, okay.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have I said something to upset you?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just that, that was a long time ago, and I don't want to be known as the dancing doctor. Again.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then your answer is no.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. But let's keep this between you and me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Data, please report to the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Crusher's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "T'Pel is with Picard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, I want a tactical projection of possible future Romulan deployments along the Neutral Zone. Access all Federation records on the subject and report to my Ready Room.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, is there a specific area you wish me to study?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Ambassador. Number One, set a course one three zero mark two four six, warp seven.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That will take us very close to the Neutral Zone, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm aware of that, Number One. Proceed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and T'Pel go back into the Ready room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lay in the course.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "It is fortunate that I am able to perform my duties without emotional distractions. If that were not the case, a sudden course correction toward the Neutral Zone would make me very nervous.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Personal Log, supplemental. Commander Maddox, there are still many dynamics of social interaction which I do not understand.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, based on your analysis, what is the current Romulan strategy behind the deployment of their ships in this sector?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their ships are deployed to support a policy of confrontation designed to test Federation defenses along the Neutral Zone.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you predict any change in the near future?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I project a ninety percent probability that they will continue to support that policy.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there any indication of a more conciliatory attitude on their part?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Caution is clearly called for, Captain. However, the mission must proceed as planned.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet Command agrees with you, but I would feel better if you would consent to an escort or",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "one look cuts him off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Mister Data.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Feline supplement seventy four.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he puts the bowl down and a hairy ginger cat eats it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, run fluidic sensor diagnostic.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the cat jumps on his lap, and he strokes it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Diagnostic complete. All systems functioning within normal parameters.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Am I intruding, Commander?",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Would you care to sit down?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "When one of my friends is distraught, I have learnt that the thoughtful thing to do is to attempt to make him feel more comfortable.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "But O'Brien can't settle"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I offer you some refreshment, Chief?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, thank you, sir. First of all I'd like to apologise for this morning in Ten Forward",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no need to apologise. I was not offended. Would you like a pillow or a more comfortable chair to sit upon?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. Thank you, sir.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps you would like some music? Brahms? Aurelia?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, really, sir I'm fine. I came to ask for your help. It's about Keiko. I'd like you to talk to her. Convince her to go through with the wedding.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would Counsellor Troi not be a more appropriate choice to speak with Keiko?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She already has. It didn't help. You've known her longer than I have. I just thought she might listen to you. She won't even talk to me",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not know what to say to her.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just talk with her. Make her see reason. She's going off half-cocked, not thinking this through. You've worked with her for a long time. She respects your opinion.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps she has not fully analysed her decision. I will try.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir. I won't forget this.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Maddox, I noted that Keiko was quite calm and rational when she informed me of her decision this morning. Therefore, I can predict that she will respond to an objective analysis of the situation based on the available facts. It is fortunate that she has not let emotional considerations cloud her judgement. It should make my task much simpler.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Data's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe you made an incorrect analysis of the facts at hand.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean?",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You do not seem happy.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your decision was based on the assumption that cancelling the wedding would bring you happiness. This has proved to be incorrect.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, it's not that simple.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Since your action did not produce the desired results, the only advisable solution should be to re-examine your decision making process, and look for errors.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I knew what I was doing. It's my decision.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That fact is not in dispute. However, you may have acted with undue haste and in doing so, unintentionally hurt Chief O'Brien's feelings.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did what I had to! Why are you doing this? I thought you were my friend.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am your friend.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then leave me alone.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I have offended.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just leave me alone.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "It is clear that I need guidance to resolve this situation. Counsellor Troi's advice should be useful.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Arboretum"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "In many ways, Deanna Troi is the friend that I understand the least. Her life and her duties are predicated on her understanding and perception of emotions. Since I have none, no doubt she finds me as much of a mystery as I find her.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chief O'Brien talks to me. Keiko talks to you. Why do they not talk to each other?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's a good question, Data. I wish I had a good answer for you. Perhaps when they're ready, they will.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Many aspects of this situation are puzzling to me. I have been studying various texts on the subject of marriage, but I have not found a suitable guide.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A suitable guide for what?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In an effort to be helpful, I am attempting to calculate the variables involved in a successful marriage.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good luck.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are many opinions. On Galvin Five, a marriage is considered successful only if children are produced within a year of the wedding. Andorian marriages require groups of four people unless",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, would you like my advice on how to help them? Don't. This is something they have to work out for themselves.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I am their friend. Should I not stand with them in a time of difficulty?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are many ways to help a friend, and sometimes the best way is to leave them alone.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you believe it to be the right decision for them to marry?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. They're very much in love, but sometimes that isn't enough. Marriage is an agreement to share who you are with someone else. To spend your lives together. To grow old together.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To grow old together? That is an integral component of marriage?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Usually. Why do you ask?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Although I am an android, I have not excluded the possibility that I, too, may someday marry.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, I had no idea you'd thought about getting married.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe I have much to offer a potential mate. However, we cannot grow old together because I will not grow old.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, you do have a lot to offer.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Data, this is Ambassador T'Pel. Please report to my quarters.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Troi's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "T'Pel is pacing when the doorbell chimes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enter.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she sits"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have priority three clearance aboard the Enterprise?",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is correct, Ambassador.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I require information on this ship's defence and navigational systems. Access code kappa alpha four six zero one seven zero four.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The code is valid.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is the field strength of the ship's deflector shields at maximum output?",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I ask the purpose of your request?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I require the information.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have the same safeguards as the ship's computer. Therefore, I must report any inquiry regarding restricted information to the Captain. Your reaction suggests you do not wish the Captain to be informed of your inquiry.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was not interested in the information. I was curious as to your security safeguards. They appear to be adequate. Cancel the request. You may leave.",
+                    "spoken_by": "T'PEL"
+                }
+            ],
+            "location": "T'Pel's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Maddox, I have often wished for the sense that humans call intuition or instinct. Since Vulcans are incapable of lying, I must accept the Ambassador's explanation as the truth, but I would still prefer a gut feeling to back up this conclusion.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Programme Crusher four in progress.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Outside Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Parquet floor, windows, potted palms and wall mirrors. Beverly is wearing tap shoes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi, Data. Well what do you think? It is a recreation of the studio I had my first dance lesson in.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It appears to be quite suitable, Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's start with something simple. Stomp. Hop. Try it.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he does"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Again. Good! Good.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Am I dancing, Doctor?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not quite. Stop, Data. Now try this.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, perhaps it would be beneficial to show me the final lesson.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "so she goes into a tap routine and he copies her exactly"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's great. Watch. Good. Triples. Watch. Stop, Data. And you say you've never done this before? Try this.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she does advanced steps and he copies her perfectly"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "out of breath",
+                    "line": "Stop, Data. Not bad.  Yeah, not bad.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I have successfully learned to dance?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd say you've picked up the basics.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Doctor. I am now prepared to dance at the wedding.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wedding?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Keiko's wedding.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, you never told me this was for the wedding.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that important?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well yes. They don't do a lot of tap dancing at weddings.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Data, because, I don't really know why, Look, why don't I just teach you a style of dancing that they will do at the wedding? Computer, run 'Isn't It Romantic'.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The slow music starts, and Beverly gets Data into a close ballroom hold"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Compared to what we've just doing, this will be simple. Just look up and follow me. One, two, ready, and",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he is useless, no rhythm, and he treads on her toes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Data, wait a minute. Ow! No, no, you're just. Ow! Move slowly. Ow! Ow! Stop music.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry, Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand, Data. You picked up the tap dancing so quickly.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot reproduce your performance if I cannot see your feet.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, let's try it again. And this time, watch my feet. Computer, start music. And.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "This is far better, and less painful"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, don't just imitate me. You've got to lead.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lead where, Doctor?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indicate to your partner where you want her to step.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how is that accomplished?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll show you. I'll lead. Now, you'll notice that I don't just repeat the same pattern over and over. I improvise. Now you lead. That's good. Now, look up, Data. Look into my eyes. You're holding me too tight.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is a very complex set of variables to coordinate, Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are doing fine. Now, smile. Act like you're enjoying yourself",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Doctor Crusher, please report to Sickbay.",
+                    "spoken_by": "NURSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it Lieutenant Juarez?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Doctor. Her contractions are now one minute apart.",
+                    "spoken_by": "NURSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm on my way. Why don't you programme up an artificial dance partner. And don't be afraid to experiment.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will. Thank you, Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, create dance partner. Female. Begin music.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Holodeck dance studio"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And just as the headsman swings his axe and the blade is about to fall, the Count says, wait, wait, I'll talk! But it was too late. And the moral of the story is? Never hatchet your Counts before they chicken.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Thanks to Jonathan for the full joke. Appreciated. OC",
+                    "line": "Commander Riker's easy going manner and sense of humour is fascinating to me. I believe it to be one reason he is so popular among the crew. It may also be partly responsible for his success in matters of love. There may be a correlation between humour and sex. The need for more research is clearly indicated.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to the Bridge. All stop.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "HELM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and T'Pel enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, we have reached the designated coordinates.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold this position. Long range scan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I am detecting a ship in the Neutral Zone. Configuration, Romulan warbird.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yellow alert. Hail the Warbird, Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. They are responding. Text only. We are to proceed to the agreed coordinates.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course zero three seven mark zero zero five, warp four. Take us into the Neutral Zone, Ensign.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a little later"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the warbird is holding position. In three minutes we will be within phaser range.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Red alert. I trust my crew, Ambassador. They will take no provocative action unless I order them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold position on these coordinates.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slow to half impulse.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a channel.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Ambassador T'Pel.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I am Admiral Mendak.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no established protocol for a meeting of this nature. The logical course is that I transport aboard your ship and begin the negotiations.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Yes. Captain, I note your defensive systems have been activated.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As have yours.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "It was not meant as an accusation Indeed, I salute your show of strength. Ambassador, we are honoured by your presence. You may transport aboard at your convenience.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The honour is mine.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have your Transporter room stand by. I will beam to their ship with no further delay.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador, I urge you once more to reconsider. The Enterprise can accommodate a Romulan delegation without sacrificing our security or",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard, I find your argument illogical. Please carry out my instructions.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Chief O'Brien.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "O'Brien here.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prepare to transport Ambassador T'Pel to the Romulan ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, maintain a lock on her signal once she's aboard. At the first sign of trouble I want to be able to bring her back.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood. Transporter activated. Captain!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Transporter emergency! I'm losing her signal!",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Boosting power to autosequencers.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engaging computer override.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "O'Brien, what happened down there?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I'm losing the pattern. Trying to re establish. I'm sorry, sir. I wasn't able to retrieve the signal. The Ambassador's dead.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Second officer's personal log, supplemental. The risks aboard a starship are accepted by all who serve, but I have never failed to observe a deep emotional response to the loss of a comrade. It is at times like this that I greatly miss the ability to share human feelings."
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The signal lock wasn't broken, sir. I had just entered the transfer sequence when the Ambassador's pattern began to break up. I tried to switch to emergency manual control, but the pattern deteriorated too quickly and",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, there is no prior record of this type of accident occurring aboard a starship. Backup systems and safeguards are designed to prevent just such an occurrence.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't find any system flaws in the unit, Captain. The Engineering status reports were all normal. None of the backups were activated and the autosequencers were all functioning normally.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any prior malfunctions on this transporter unit?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. In fact, we replaced the transition coils only last week.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could there have been some kind of interference from the Romulans?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing that I could see. Their shields were down. There was no power interruption, no subspace bias.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want this unit pulled and its systems checked again. I want a level one diagnostic on all transporters.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her molecular structure dissipated instantly once the pattern was lost. There were some organic compounds left on the pad, but there wasn't enough material to do an autopsy.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To die on a transporter. Hardly a fitting end for one of the Federation's most honoured diplomats.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Bridge to Captain Picard. Admiral Mendak is hailing. He wishes to speak with you.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "We're still waiting, Captain. Is there a problem?",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's been an accident. Ambassador T'Pel has been killed in a transporter malfunction.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "What kind of malfunction?",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are still investigating that. As soon as",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I should have known the Federation wasn't serious about this conference.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral, I assure you. The Federation places the highest priority on this mission and its goal.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Well played, Captain well played. Starfleet opposes normalisation of relations with the Romulan Empire, and so you are ordered to create an accident.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're mistaken. I am ready and willing to discuss the establishment of full diplomatic relations under the same terms as Ambassador T'Pel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "A generous offer, since you know we were willing only to negotiate with T'Pel. I salute you again, Captain. It was a manoeuvre worthy of a Romulan. I suggest we both leave the Neutral Zone before there is another accident.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course for Federation territory, warp two. Engage. Mister Data, I want you to take charge of this investigation. Study computer logs, sensor information everything. I refuse to believe that this was a simple malfunction.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain Picard was the person who first interested me in the works of Sir Arthur Conan Doyle. I have subsequently become a great admirer of the fictional detective Sherlock Holmes and his ability to solve mysteries by careful examination of the available evidence.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "doing test transports"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I have found Holmes' methodology of deductive reasoning to be quite useful. One of his adages is that once you have eliminated the impossible, whatever remains, however improbable, must be the truth.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, I don't have time to give you another lesson right now, Data.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is not my purpose. I would like to examine the remains of Ambassador T'Pel left on the transporter pad.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm working on the report right now.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you compared the genetic code with the Ambassador's last recorded transporter ID traces?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, that's not standard procedure. Why?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could be chasing an untamed ornithoid without a cause.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A wild-goose chase? All right. Computer, access the transporter ID trace for Ambassador T'Pel. All right, there's the genetic record of the Ambassador when she beamed aboard the Enterprise. Now, the breakdown of the organic material found on the transporter pad should be identical. Mitochondrial structure fits the general parameters, no change in the nucleotide bases. There's a slight discrepancy in the base pair sequence. Chemically, these are identical. However, the organic sample from the transporter is showing numerous single-bit errors, like replicated material.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you postulate an explanation for the discrepancy?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd say the DNA was either mutated by the transporter during the rematerialisation process",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A supposition not supported by the transporter records.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or these aren't the remains of the Ambassador.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Crusher's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The only abnormality found during my investigation was a temporary increase in the matter to energy signal ratio. Due to the circumstances, I decided to investigate the possibility that a second transporter signal had caused the fluctuation. Although this was highly improbable, it was the only remaining theory.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A second transporter signal? From where?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From the Devoras.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Romulan transporters operate on a similar subspace frequency to our own. With only minor adjustments, they can be made to simulate our own transporter carrier wave.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you saying they beamed the Ambassador off our own pad?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "While simultaneously, a small amount of genetically similar material was left in the Ambassador's place.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To make us believe she had died as a result of the malfunction'",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, where is the Devoras now?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The ship is still in the Neutral Zone on course zero seven nine mark one two five. Speed, warp two.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Heading for home.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The safest and most logical decision in this situation is to contact Starfleet and await further instructions. However, based on past experience, I project only a seventeen percent chance Captain Picard will choose that alternative.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Red Alert. All hands stand to battle stations.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lay in an intercept course for the Romulan ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields up. Load all torpedo bays. Stand by phasers.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Warp factor eight. Engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "later"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a channel to the Devoras.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. No response.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Devoras is dropping out of warp, sir. Their weapon systems are powering up.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go to impulse power.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Message coming in, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Captain, you agreed to leave the Neutral Zone without",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral Mendak, you have taken our Ambassador captive.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I can assure you there is no one being held captive aboard this ship.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We know about the transporter malfunction and that you are holding Ambassador T'Pel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, Romulan warbird decloaking to starboard.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I suggest you leave. Now.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is my responsibility to protect the lives of Federation citizens. I will not permit this abduction to succeed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Captain, you're not going to start an incident which might",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral Mendak, I will take whatever action is necessary to obtain the return of the Ambassador.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "In the game of poker, there is a moment when a player must decide if an opponent is being deceptive or actually holds a winning hand. This decision is based not only on the odds, but also on an appraisal of the man. Is he bluffing or does he have the cards?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Fortunately, Captain, I am not ready to start a war today.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a female Romulan officer steps into view"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "T'Pel.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Sub-Commander Selok, actually.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A spy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "A patriot, Captain. She has performed her service to the Empire with distinction.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Thank you for your help, Captain.",
+                    "spoken_by": "T'PEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "You see now that we are not holding one of your citizens, and we thank you for returning our sister to us. But my patience has limits. The game is over. I expect you to leave peacefully. Now.",
+                    "spoken_by": "MENDAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, long range sensors detect three Romulan warbirds entering this sector.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some days you get the bear, and some days the bear gets you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reverse course. Take us back to Federation territory, warp six. Engage.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Keiko, I need your help. I have offended you and need to find a way to rectify my mistake. I am not sure what to do.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You haven't offended me.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I should not have interfered. It would be best if I apologised.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would be best if you got dressed. For the wedding?",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come here. I have the most beautiful carnation for the father of the bride. Now, don't be nervous.",
+                    "spoken_by": "KEIKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not nervous. I am confused.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Arboretum"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Japanese music plays, Keiko is in traditional dress, everyone else in dress uniform. The happy couple both drink from a cup, then"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Since the days of the first wooden sailing ships, all captains have enjoyed the happy privilege of joining together two people in the bonds of matrimony. And so it is my honour to unite you, Keiko Ishikawa, and you, Miles Edward O'Brien, together in matrimony",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "There are still many human emotions I do not fully comprehend. Anger, hatred, revenge. But I am not mystified by the desire to be loved or the need for friendship. These are things I do understand.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the ceremony is over"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Congratulations.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and later, Data dances very nicely with Keiko"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was looking for Doctor Crusher.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shh.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Juarez child?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A boy. At the same time we were facing destruction, this small miracle was taking place. Welcome aboard.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Nursery ward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the night shift enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All systems normal, sir. We are on course for Adelphous Four. Engineering is realigning the main deflector dish. Sickbay reports Lieutenant Umbato broke two ribs during a holodeck exercise, and sensors continue to gather long-range information on the Murasaki quasar.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. I have the Bridge.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "If being human is not simply a matter of being born flesh and blood, if it is instead a way of thinking, acting and feeling, then I am hopeful that one day I will discover my own humanity.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Begin night watch.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Until then Commander Maddox, I will continue learning, changing, growing, and trying to become more than what I am.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "185",
+    "transcript_url": null
+}

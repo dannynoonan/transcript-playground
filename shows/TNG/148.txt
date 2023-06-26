@@ -1,0 +1,2596 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker is sitting disconsolate as Geordi splashes towards him through the water"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There you are. What's wrong?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something jabbed me here in the calf.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The fabric is torn, the flesh bloody and swollen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "O'Brien, Commander Riker's been injured. Lock on and bring him up.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Stand by.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, it's just",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A scratch. Right. Sorry, Commander. We can't take any chances. We're the first survey team to set foot on this planet. We don't know what the risks are.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Steamy\r\nmangrove swamp"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "O'Brien, what's the hold up?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The transporter's detected unidentified microbes in Commander Riker's body.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, can't the bio-filter screen them out?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Apparently not.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Steamy mangrove swamp"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But Doctor Pulaski has been notified.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wasn't ready to leave here anyway.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Steamy mangrove swamp"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here's the biofilter's analysis of the microbes.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not much to go on.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can override and beam Commander Riker aboard .",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I'd better go down and make an evaluation there.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She takes a deep, reluctant breath and gets on the pad"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope these are the right coordinates. Just kidding, Doctor. I know how much you love the transporter.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "About as much as I love comical Transporter Chiefs.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready?",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Over here, Doctor.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fill me in.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was walking along minding my own business, doing a simple geological sweep. Something stuck me in the leg.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any pain?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Just a little numb, that's all.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know what it was that stuck you?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've been looking for it. No luck.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, whatever it was, it left something behind. I'm going to take you up to Sickbay. O'Brien, this is Doctor Pulaski.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Steamy mangrove swamp"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Medical override is authorised.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the strangest feeling. My whole leg just went dead.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42976.1. During a geological survey on Surata Four, Commander Riker has become infected by an unidentified microbe.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Put your foot where it didn't belong?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Doctor said she was getting bored. I just thought I'd give her a challenge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That you did. The Commander's nervous system has been invaded by an unknown microorganism. Not a bacteria, not a virus, but with the elements of both. There's the point of entry. The microbes are infecting the great sciatic nerve, and they are multiplying at an incredible rate. There.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you remove it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not surgically. The organisms fuse to the nerve, intertwining at the molecular level.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's why the transporter's biofilters weren't able to extract it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no evidence of nerve damage, but the organisms are impeding nervous function.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My leg's still asleep.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prognosis?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The infection is spreading. It will eventually reach the brain.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if it interfered with neural activity there?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker could die.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can I help?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need to know more about its composition.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And for that, you need a sample.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Data, Mister La Forge, prepare to beam down to the planet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must reiterate, it would be better if I went alone.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't like my company?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your company is not at issue. Your vulnerability to the microorganism is.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll watch where I step. Besides, how do we know that this bug doesn't like androids more than it likes humans?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Possible, but highly unlikely. In any event, why risk both of us?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because I know exactly where Commander Riker was when it happened.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister O'Brien, energise.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He was right over here.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am detecting no animal life within fifty kilometres. However, I am reading extensive animal remains, mostly fossilised.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A graveyard?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not know.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, that a look at this.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "an external root"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The structure is rhizomatous.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Careful.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am always careful.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It appears to be dead.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not so sure. I can see thermal variations. Let it go for a second, Data. Let's try something. Perhaps it likes humans more than androids.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you are correct, you are placing yourself in grave danger.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm counting on those great android reflexes of yours.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Even as he spoke, the root moved towards Geordi, and Data grabbed it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That must be what we're looking for.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would tend to agree.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi phasers the wicked thorn from the side of the root. This seems to hurt the plant"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand by, O'Brien. Got it. Energise!",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Steamy mangrove swamp"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks, O'Brien. Another minute, and we'd have been fossils ourselves.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not precisely, Geordi. True fossilisation requires several millennia.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here's your sample, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get it to Sickbay right away.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Report.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, Commander Riker's injury was not accidental. Certain vines on the planet evidently seek out warm-blooded beings and deliberately infect them.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To what end?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unknown, sir. It is conceivable there is a symbiotic relationship involved.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go on.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are numerous animal remains in the area, leading me to hypothesize that the vines could be predatory.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Vines infect animals in order to kill them?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is possible. For Commander Riker's sake, I hope my hypothesis is in error.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unfortunately, Mister Data, your hypotheses rarely are.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All negative.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there nothing that will cure this infection?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This microorganism is very mysterious. I can't even figure out what's keeping it alive.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or how to kill it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I can kill it but not without destroying the nerves it's inhabiting.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know you're doing your best, Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My best may not be good enough.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Pulaski's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Comfortable?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why wouldn't I be comfortable? They're waiting on me hand and foot. I hope that they don't find out that I'm faking it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish you were faking it. I've seen the thorn.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Doctor showed it to me, too. Rather harmless-looking thing, I thought.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And deadly. I'm sorry.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, these things happen.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When least expected.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm surprised they don't happen more often. After all, we are exploring the unknown.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the unknown can be benign or malevolent.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, one of the things I've learned anything on these voyages, on this ship, and from you, is that most life forms act out of an instinct for survival, not out of malice.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's an important lesson, and I admire your lack of resentment, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you drop a hammer on your foot, it's hardly useful to get mad at the hammer.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not yet.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What can I do?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can get out of my hair.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye aye, Doctor.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Pulaski's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A male nurse is scanning Riker to check the progress of the infection"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This bug is persistent, I'll admit that. But I'm not worried. We Rikers are ornery, too. As a matter of fact, my great grandfather once got bit by a rattlesnake. After three days of intense pain, the snake died.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're a very entertaining patient.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I try.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. you're making quite an effort to be cheerful.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You, of all people, should know.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You feel what anyone in your position would feel.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As the First Officer on this ship, I have to set an example.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even now?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now more than ever. Deanna, facing death is the ultimate test of character. I don't want to die, but if I have to, I'd like to do it with a little pride.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And a lot of impudence.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You bet. Dying is bad enough but, to lose my sense of humour? Forget it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Imzadi.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't given up yet.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "But his eyes close and the machine beeps a warning as his indicators drop into the red. Pulaski runs in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's spread to the spinal column. It's weakening his autonomic nervous system. Judging by its present rate of growth and its infiltration pattern, the infection will spread to the brain within an hour.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Medical log, Stardate 42976.3. I can't keep the alien infection from spreading to Commander Riker's brain. Once there, it will kill him by dampening neural impulses. The only way I can keep him alive is to force the neurons to stay active by stimulating them directly with electrical impulses."
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker has been stripped of his uniform and covered with a blanket. Above and around his head is a framework with what look like five giant hypodermic needles pointing towards his head. Troi winces as each goes in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's proceed.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The needles extend themselves down into Riker's brain"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Stand by with five milligrams of tricordrazine in case of seizure. Here goes.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker's eyelids flutter, and we go off into his 'memories' as triggered by the treatment, and the need to produce a very cheap episode"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "alone in a hostile land",
+                    "line": "Tasha? Data? Geordi? Worf? Anybody?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "The Last Outpost"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've stimulated random wave activity, but the patterns are dangerously erratic.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hang on, Will. Hang on.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The wave patterns are still too irregular.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why won't they stabilise?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait. I've found the right amplitude. There. The patterns are steadier.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is the stimulation preventing the infection from taking hold?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For now. The vertex waves indicate a K-complex corresponding to an REM state.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's dreaming.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He finds Data whistling 'Pop goes the Weasel', and finishes the tune for him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Marvellous. How easily humans do that. I still need much practice.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are some puzzles down on the planet that the Captain wants answered. He suggested that I take you with me on the away team I'll be leading.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I shall endeavour to function adequately, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. When the captain suggested you, I looked up your record.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. A wise procedure, sir, always.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then your rank of Lieutenant Commander is honorary?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. Starfleet class of '78. Honours in probability mechanics and exobiology.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But your files they say you're a",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Machine? Correct, sir. Does that trouble you?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To be honest, yes, a little.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood, sir. Prejudice is very human.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now that does trouble me. Do you consider yourself superior to us?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am superior, sir, in many ways. But I would gladly give it up to be human.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nice to meet you, Pinocchio. A joke.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah! Intriguing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're going to be an interesting companion, Mister Data.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Encounter at Farpoint- Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What should I say? How do I act? What do I do?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Guinan, I need your help. Could you step over here a minute?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sounds simple enough.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, the first words out of your mouth are the most important. You may want to start with something like this here. You are the most beautiful woman in the galaxy. But that might not work.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Yes, it would.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't know how long I've wanted to tell you that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you were afraid.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of me?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of us. Of what we might become.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or that you might think that was a line.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe I do think it's a line.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you think I'm not sincere?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't say that. There's nothing wrong with a line. It's like a knock on the door.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you're inviting me in?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sending you away.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's more than I expected.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it as much as you hoped?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To hope is to recognise the possibility. I had only dreams.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dreams can be dangerous.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not these dreams. I dream of a galaxy where your eyes are stars and the universe worships the night.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Careful. Putting me on a pedestal so high, you may not be able to reach me.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I'll learn how to fly. You are the heart in my day and the soul in my night.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think this is my style.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shut up, kid. Tell me more about my eyes.",
+                    "spoken_by": "GUINAN"
+                }
+            ],
+            "location": "The Dauphin - Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't want to leave without saying goodbye.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't like goodbyes. How about, until next time.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How about, until next time.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's been a pleasure working with you, Commander.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The feeling is mutual, Counsellor.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm supposed to know how everyone feels, but I can't read you right now.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps your own feelings are getting in the way.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My job is to help others sort out their emotions. My own feelings are beside the point.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not to me. Our feelings are what make us all human.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you feeling sad?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I am.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So am I.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "The Icarus Factor - Troi's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's relaxed. Experiencing feelings of warmth and friendship.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's reliving memories. It's a natural side effect of neural stimulation. Look at this. The organisms' metabolism has changed. I wonder if the stimulation is affecting them somehow. I'm going to refocus the impulse pattern on the interpretative cortex.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To intensify his memories?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly. We'll see if that has an effect on the microbes.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everyone! We've brought the visitors.",
+                    "spoken_by": "RIVAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, enjoy what we have.",
+                    "spoken_by": "LIATOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Justice - Edo Council Chambers"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gentlemen, if this is what you call enhancement, you've got a gift for understatement. What's a knockout like you doing in a computer-generated joint like this?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Waiting for you.",
+                    "spoken_by": "MINUET"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Waiting for me? You can't be serious?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh yes, Will. I've never been more serious in my life.",
+                    "spoken_by": "MINUET"
+                }
+            ],
+            "location": "11001001 - Bourbon Street Bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something wrong?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it's just that Commander Riker's emotions are rather passionate.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As in erotic?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very much so.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A dream? Is that what this is? Is that what I am?",
+                    "spoken_by": "MINUET"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know you are a computer-generated image, but your smell, your touch, the way you feel. Even the things you say and think seem so real.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "MINUET"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How far can this relationship go? I mean, how real are you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As real as you need me to be.",
+                    "spoken_by": "MINUET"
+                }
+            ],
+            "location": "11001001 - Bourbon Street Bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You resist. Don't you find me attractive?",
+                    "spoken_by": "BEATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I find you very attractive.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You attract me like no man ever has.",
+                    "spoken_by": "BEATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not my function to seduce or be seduced by the leader of another world.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not the reason.",
+                    "spoken_by": "BEATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it's not. But will you still respect me in the morning?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope so.",
+                    "spoken_by": "BEATA"
+                }
+            ],
+            "location": "Angel One - Beata's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "William, is something wrong?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you not like girls?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course I do. Oh, is there a technique to this foot washing?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You generally start at the top and work your way down.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I can handle that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was hoping you might.",
+                    "spoken_by": "BRENNA"
+                }
+            ],
+            "location": "Up The Long Ladder - Riker's\r\nquarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The organisms responded all right. Their growth rate has doubled.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then all we've done is made things worse.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now we know the organism's growth rate is related to the memories he's experiencing.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or the emotions that they produce.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Different mental processes generate different chemicals. Perhaps the organisms are sensitive to brain endorphins.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then if some types of endorphins attract them",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Others will repel them. I'm going to change the differential current pattern and see what happens.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're not going without our shuttle crew.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I warn you.",
+                    "spoken_by": "ARMUS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enough! We have people who need attention. We won't hurt you, but we must help them.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Armus lets lose a bolt of energy which sends Tasha flying a long way. Riker and Data's phasers have no effect on Armus"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Number One!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The creature attacked us. Lieutenant Yar is down.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It seems to feed on our phaser energy.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We had no effect on it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Armus sinks back into the slick"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's Lieutenant Yar's condition? Doctor Crusher, report!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's dead.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Skin of Evil"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm losing life signs.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must save him.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "The Child - Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Growth rate has definitely slowed. What is he feeling? Can you tell?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sadness.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which is the opposite of before, and it's having the opposite effect on the infection.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then your theory's correct. The organisms are sensitive to different types of endorphins.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And negative emotions",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Such as sadness",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Produce endorphins that inhibit the organisms' growth.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then we've found a way to repel the infection.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Assuming we're not too late already.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How much time do we have?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure. His vital signs are getting weaker. I don't want to risk another dose of tricordrazine unless I have to. I must refocus the pattern again. We need to isolate memories that generate stronger negative emotions.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "I know I can count on every Klingon warrior in this crew to serve and die in that battle. So I ask you again, Commander Riker. Where are your loyalties?"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been assigned to serve this ship and to obey your orders. And I will do exactly that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you take an oath to that effect?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I just did.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Klingon",
+                    "line": "Do not believe him! He lies!",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Klingon",
+                    "line": "Speak in their language. This is your Second Officer, Lieutenant Klag.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there something you wanted to say to me, Lieutenant?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes sir. I do not believe you.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I take it you challenge my authority over you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Correct.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And your position on this, Captain?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would say it your first command decision.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker looks around and thumps Klag in the stomach before throwing him on the floor, then kicking him down before he can get up again, and finally ramming his head into a computer panel. Lots of sparks. Kargan laughs"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "A Matter of Honour - Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready for your tour, Admiral?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quite ready, Commander.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's in the case?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, I brought it for Doctor Crusher. But perhaps you would like you to see it first?",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A form of life. It was discovered accidentally by a survey team on an uncharted planet.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why haven't we heard anything about that?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, you'll be hearing about it shortly, but first there remains much scientific study to be done. After all, it is a superior form of life.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Superior?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Totally. Come, have a look.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I'll summon my Science Officer.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Quinn grabs his arm with a surprising amount of strength"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It won't like your Science Officer. It does like you! Vitamins. They do wonders for the body.",
+                    "spoken_by": "QUINN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's a very one-sided fight - Quinn easily throws Riker around the room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Security. Guest quarters seventeen. Emergency.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Quinn knocks Riker out cold"
+                }
+            ],
+            "location": "Conspiracy - Quinn's quarters"
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "Skin of Evil"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've reduced the growth rate even further, but not enough. And his vital signs are deteriorating.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But we've isolated the specific areas to stimulate. The feelings were primal. Survival emotions.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They must be producing a type of endorphin that's poisonous to the organisms.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can't you intensify that emotion?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can refocus the impulse pattern even tighter. But I don't know if he can withstand it. He's extremely weak.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do we have a choice?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. If we don't neutralise the infection, within half an hour he'll be dead.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Medical log, supplemental. Commander Riker's condition is still critical. I've discovered a way to reverse the infection's growth rate, but I may be too late."
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's getting weaker, isn't he?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Respiration shallow, heartbeat extremely irregular, but we can't delay any longer.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "T'Jon uses his electric power on Riker"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will take us to our planet and leave us there with our medicine or this person dies. Don't you see I have no choice? We were sent to bring the felicium back. The suffering on my planet is too great. People are dying. It doesn't matter whether we're entitled to it or not. We must have it.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let him go.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will take us there now, or give us a shuttle. But we must have the medicine. If you refuse, this person will die.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not be coerced.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will do it. I will kill him.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Symbiosis - Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ferengis are watching them. Little crouching men with whips in their hands"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ferengi let fly energy bolts from their whips, knocking the three men out. Actually, it takes two jolts to knock out Riker"
+                }
+            ],
+            "location": "The Last Outpost"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker is grabbed by an invisible force and dragged by the feet to the slick"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Help! Data, something's got me!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Touch him and he dies.",
+                    "spoken_by": "ARMUS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! No, don't!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker disappears into the slick"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enterprise?",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Skin of Evil"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Armus has enveloped Commander Riker.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm beaming you up.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If any of you leave now, he dies.",
+                    "spoken_by": "ARMUS"
+                }
+            ],
+            "location": "Planet surface"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "And so do the survivors of the crash.",
+                    "spoken_by": "ARMUS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker's screaming face appears in the slick, and sinks away again"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The growth rate's down to seven percent. The organisms are still impairing his neural functions. Respiration's erratic, pulse grossly irregular, blood pressure almost nil. Tricordrazine.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we tighten the pattern further?",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "male",
+                    "line": "Recognise Picard, Jean-Luc, Captain. Recognise Riker, William T, Commander.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set auto-destruct sequence.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does the First Officer concur?",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Set auto-destruct sequence. Now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Auto-destruct will detonate in four minutes and fifty-nine seconds.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "11001001 - Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Korris.",
+                    "spoken_by": "KORRIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll handle the formalities later. Right now we have to get off this ship. Are there any others survivors?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "KORRIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe I have found a quicker way out of here, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Check him out.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There is a body on a table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is alive, sir, but just barely.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then pick the body and let's get out of here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I will carry him.",
+                    "spoken_by": "KORRIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you wish.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on, let's go!",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Heart of Glory - Batris"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tasha, go to transporter room three. I want you there when the away team returns.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "TASHA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, we are out of time. This ship is blowing.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter room, have you got a lock on us?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Batris Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too much interference. You have to get farther away from the Engineering section.",
+                    "spoken_by": "TASHA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, the Engineering section is critical. Destruction of the Batris is imminent.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're out of options. Do it!",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Now!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The first attempt fails and the group arrive back on the Batris as explosions head towards them. The ship goes bang."
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The growth rate's almost down to zero.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not good enough.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Remmick's neck bulges with movement"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We seek peaceful co-existence.",
+                    "spoken_by": "REMMICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "T'Jon attacks Riker. Quinn shoots at Picard and Riker at Starfleet Headquarters. They set Autodestruct again. Data tries to fix the computer in Naked Now. Armus grabs him again. He fights Klag. 'Autodestruct'. The Loud as a Whisper assassin gets killed. Klag's head goes into the computer panel. 'Now'. The Lantree goes Bang. 'Now'. Batris goes Boom. Remmick and the parasites get phasered to atoms. 'Now.' Tsiolkovsky gets smashed by the stellar matter."
+                }
+            ],
+            "location": "Conspiracy - Room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Data, something's got me!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker's face contorts, then relaxes, and he appears to wakes up, but is asleep again in the next camera angle"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sickbay to Bridge.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Doctor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've eradicated the infection.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I'm on my way.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The apparatus is removed from Riker's head and he wakes properly"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're still here?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could ask you the same question.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you feel?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beat. You wouldn't believe the dreams I was having.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh yes we would.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll be pleased to know that we've terminated the infection.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Great work, Doctor. Now, if I can get out of here, I'd like to get back",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lie still. I have a few dozen tests to run first.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why? I feel fine.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There may be some residual memory loss. I just want to be sure you still know who you are.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data and Picard have entered and are now at his bedside. Riker looks straight at them"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course I know who I am. I'm Captain Jean-Luc Picard of the USS Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "cue Original Series comedy sequence music"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm delighted that you're feeling better, Captain. The Admiral and I were worried about you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I do not believe you have the authority to promote me to the rank of Admiral.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Sickbay"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "148",
+    "transcript_url": null
+}

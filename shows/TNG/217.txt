@@ -1,0 +1,2420 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the J'naii are wearing loose-fitting one-piece suits and all have short hair"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we are approaching the designated coordinates.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen. Long range scan, Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors find no evidence of the shuttle anywhere within the star system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It couldn't have travelled outside the system.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, reconfigure high resolution sweep, radius one million kilometres. Check for any debris.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Scan shows no debris within that radius.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand it. A shuttle doesn't simply vanish.",
+                    "spoken_by": "KRITE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There has to be an explanation.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I am detecting an unusual reading. It appears to be a neutrino emission with no visible source.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Explanation?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have none, sir. I recommend we launch a probe.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Probe is launched.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors show no evidence of any unusual phenomenon.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "then the probe vanishes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The probe is no longer transmitting.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened? Where did it go?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. The sudden disappearance of our probe suggests that we may have found the first instance of what is called null space, an anomaly which until now had been only theoretical. Commander Riker has been working around the clock with a team of J'naii specialists to formalise this hypothesis.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "During the creation of a star system, when clouds of interstellar dust and gas coalesce, turbulent regions of magnetic and gravitational fields may develop. If certain conditions occur, these fields can condense into abnormal pockets of space.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We think your system contains one of these null pockets. If we're right, the pocket would absorb electromagnetic energy from anything that entered it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Like a shuttlecraft.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or a probe. Making them powerless.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But outside the pocket, all the energy is bent around it, making it naturally cloaked. That's why we cannot see it, and our sensors cannot read it.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is the shuttle still there?",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We think so. The shuttle probably wasn't able to sustain its energy, but other than that it wouldn't be damaged.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Since our shuttles carry plestorene based backup systems, we think life support would sustain for as long as ten days.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then perhaps our crew has survived.",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can send one of our own shuttles, but its energy would also be absorbed. Our Chief Engineer is working on a way to maintain the power reserves long enough to rescue your crew.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, we're grateful for your help. Whatever resources we can provide are yours.",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the council members leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been thinking. When the time comes, I would like to pilot the shuttle.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a Starfleet craft.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot ask you to put yourself in danger to rescue our crew.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can't pilot a shuttle you're not familiar with.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I happen to be a good pilot",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I happen to be a good pilot, too. And I know my way around the Starfleet shuttle. So what if we team up?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When can we go over the shuttle flight operations?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right now.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Civic chamber"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "shuttle 15 Magellan, with Onizuku in the foreground"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is this the one?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is it. Short-range craft, two twelve hundred fifty millicochrane warp engines.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looks like microfusion thrusters.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Armament?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None, usually. This one's been fitted with two type-four phaser emitters. We'll use those to chart the null space.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chart it?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge wants to get an idea of the size of the pocket. He thinks the rate of energy absorption is linked to its size.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure how we go about mapping something we can't see.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, that's where the emitters come in. We shoot out a series of photon pulses into the pocket and chart where each one disappears. From that we should get a fairly complete outline.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's take a look at the controls.",
+                    "spoken_by": "SOREN"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Later we'll try a flight simulation. Right now let's do a systems review. I'll talk you through it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me try it. Propulsion system, transfer conduits. Where's the schematic reactor assembly? Oh, there it is. Engine nacelles. There's nothing here that's unfamiliar. Navigational deflector, redundant graviton polarity source generators.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You handle these controls like you grew up in a shuttle.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did. My parents were pilots. I was flying with them before I could walk. And as soon as I was old enough, I entered flight school. Krite was my instructor.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He had a good student.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He? Commander, there are no he's or she's in a species without gender.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay. For two days I've been trying to construct sentences without personal pronouns. Now I give up. What should I use? It? To us, that's rude.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We use a pronoun which is neutral. I do not think there is really a translation.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I'll just have to muddle through. So forgive me if a stray he or she slips by, okay?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, if that's the systems review, I don't see any problem. What's next?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lunch.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Split pea soup. It's my father's recipe. I had it programmed into the replicators. Well?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unusual, but I think I like it.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's very healthy. Helps to keep you warm on cold Alaskan nights.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We prefer to stay warm by sleeping with a friend.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not to mate. Just to sleep together for warmth.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Still sounds better than pea soup.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are puzzling to you, aren't we?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A little. It's hard to grasp the idea of no gender.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just as hard for us to understand the strange division in your species. Males and females. You are male. Tell me about males. What is it that makes you different from females?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Snips and snails and puppy dog tails?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have a dog's tail?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's an old nursery rhyme. Girls are made from sugar and spice, and boys are made from snips and snails.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That makes it sound better to be female.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's an old-fashioned way of looking at the sexes. Not to say that there's no real difference between them. Physically, men are bigger, stronger in the upper body. We have different sexual organs. Men can't bear young.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what about feelings, or emotional attitudes? Are they different?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Most people think so. But that's the kind of question that would take a lifetime to answer. Let me ask you, what's it like on a planet where the people have no gender?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid I don't understand.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, who leads when you dance? If you dance.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We do, and whoever's taller leads.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Without the battle of the sexes you probably don't have as many arguments.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just because we don't have gender doesn't mean we don't have conflicts. We're very strong-minded. We love a good fight.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From the sound of it there's not that much difference between our species.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe not. What kind of woman do you find attractive?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I like one who's intelligent and sure of herself, who I can talk with and get something back. But the most important thing of all? She has to laugh at my jokes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "smiling",
+                    "line": "Tell me, is that the kind of woman that all human males prefer?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all. Some like quiet, demure women. Others prefer a lot of energy. Some only respond to physical attractiveness. Others couldn't care less. There are no rules.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You make it sound very complex.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Believe me, it is.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, perhaps it is that complexity which makes differences in the sexes so interesting.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good evening, Commander.",
+                    "spoken_by": "KRITE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good evening.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please take my place, Krite. I have to be going. Thank you for going over the flight protocols, Commander. It was very helpful.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. Commander Riker and the J'naii pilot have set out to chart the null space pocket. If they are successful, we can then proceed with a rescue attempt.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've illuminated the delta four grid map. We'll start there and expand.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand by, forward phaser array.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pulse vanished at delta four point two by point three.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Firing second burst.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Delta four point four by point five.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is working. Initiating computer task hand-off.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, tell me about your sexual organs.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Er.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that an uncomfortable subject for humans?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, but it doesn't tend to be a topic of casual conversation.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm interested in your mating practices. What is involved with two sexes?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Correcting course. Zero two one mark zero.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mating?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right. Well, it's pretty simple. Men inseminate the women. Women carry the baby.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our foetuses are incubated in fibrous husks, which the parents inseminate. From what we know of other species, our method is less risky and less painful.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And less enjoyable.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Less enjoyable?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For humans, the sexual act brings a closeness and intimacy. It can be a very pleasurable experience. Inseminating a husk.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's just the last step. Mating is a long ritual for us, full of variety and invention. I assure you, it is extremely pleasurable.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm picking up a neutrino emission from within the null space.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That may be coming from our shuttle. I'll note these coordinates.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wonder.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If a human and a J'naii would be sexually compatible.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course it would never be permitted.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why not?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The idea of gender. It is offensive to my people. You see, long ago we had two sexes, as you do. But we evolved into a higher form. I don't mean to sound insulting, but on my planet we have been taught that gender is primitive.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Primitive?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Less evolved.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe so, but sometimes there's a lot to be said for an experience that's primitive.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Delta five grid map is fully plotted.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Adjusting course. Zero two nine mark zero.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the shuttle's port nacelle workings are exposed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The port engine's down.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reducing power in the starboard nacelle.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not enough. I have to activate the manoeuvring thrusters.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thrusters aren't responding. I'll try to reroute the firing sequence.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Inertial dampers are failing. Hang on!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Soren gets thrown across the floor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Enterprise to shuttle, do you read me?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Affirmative. We've lost an engine.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We'll try to get a tractor beam on you.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The sooner the better. Enterprise, we have an injury. Transport Soren directly to Sickbay.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Right away, Commander.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just a mild concussion. You're going to be fine. This will reduce the inflammation.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, you are female.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forgive me, I do not mean to be rude, but I'm curious. What is it like?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it's just the way I am. I've never really thought about what it's like.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've noticed you tend to have longer hair, and you arrange it more elaborately. And you apply colour to your bodies.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Colour?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You put colour on your mouths, and your eyes, your cheeks, your fingernails. The men don't.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's true.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then it is up to women to attract the men.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, no. Men want to be attractive too, believe me. They just go about it differently.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No colour.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No colour. They like to pretend they're not doing anything to attract a woman, even when it's the most important thing on their minds.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is very confusing. Then, are women considered more superior, or are men?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Neither. In the past, women were often considered weak and inferior. But that hasn't been true for a long time.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will, your co-pilot is going to be fine. The injury was minor.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm glad to hear it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid you're not rid of me yet, Commander. I will be able to complete the mission.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Glad you feel better.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened? What made the shuttle go into a spin?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The port nacelle must have nipped one of the protrusions from the null pocket and shut it down.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are we still on schedule, then?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That depends on how you're doing.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm fine. We should go check the port engine.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whoa. Maybe we should get the doctor's opinion first.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't see any problem. But if you feel any symptoms, headache, dizziness, come back.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have my word.",
+                    "spoken_by": "SOREN"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "I'm assuming that from the deerstalker and cape on the hat stand behind Worf"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. This hand, the game is Federation Day.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is that?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, the Federation was founded in Twenty One Sixty One, so, twos, sixes, and aces are wild.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is a woman's game.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh? Why is that?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All those wild cards. They support a weak hand. A man's game has no wild cards.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me get this straight. Are you saying it's a woman's game because women are weak and need more help?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And just this afternoon I was insisting to one of the J'naii that those attitudes were but a distant memory.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The J'naii. They bother me.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why, Worf?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They just do. They're all alike. No males, no females.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well I'm sure we're just as strange to them.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well one of them seems to be overcoming the differences, at least in regards to one of us.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you saying, Doctor?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could be wrong, but I get the definite impression that Soren is attracted to Commander Riker.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A human and a J'naii? Impossible.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good question. Worf?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With all these wild cards, it is difficult to know exactly what is in my hand. However, I will open with fifty.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Data's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The portable transporter array is in. When we get into null space, we'll need to initialise it before we can transport the J'naii crew to this shuttle. But there should still be enough power left to beam all of us back to the Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is the buffer field generator installed?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not yet. Geordi thinks that'll be ready by oh eight hundred hours tomorrow. But before that, we should see if we can balance this engine. Can you access the starboard manifold thrust?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Soren crawls under the control panel"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set the arc at six point three. I'll optimise the plasma flow.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I'd like to tell you something. Something that's not easy to say.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's that?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I find you attractive. I'm taking a terrible risk telling you that. It means revealing something to you, something that, if it were known on my planet, would be very dangerous for me. Occasionally, among my people, there are a few who are born different, who are throwbacks from the era when we all had gender. Some have strong inclinations to maleness, and some have urges to be female. I am one of the latter.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to admit I had a feeling you were different.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was hoping you would. But in front of Krite and the others, I must be careful not to reveal myself.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On our world these feelings are forbidden. Those who are discovered are shamed and ridiculed, and only by undergoing psychotectic therapy and having all elements of gender eliminated can they become accepted into society again. Those of us who have these urges live secret and guarded lives. We seek each other out, always hiding, always terrified of being discovered.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long have you known that you were like this?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've known I was different all my life. But I didn't understand how or why until I was older.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And when you realised, what then?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I remember when I was very young, before I knew what I was, there was a rumour in my school that one of the students preferred a gender, in that case, male. The children started making fun of him, and every day they were more cruel They could tell he was afraid and somehow that seemed to encourage them. One morning in class, he appeared, bleeding and in ripped clothes. He said he had fallen down. And of course the school authorities found out and took him away, and gave him psychotectic treatments. When he came back, he stood in front of the whole school and told us how happy he was now that he had been cured. After that, I realised how dangerous it was to be different. And once I got older, and knew what I was, I was terrified. I have had to live with that fear ever since.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have relationships with others?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, with those who have discovered they are male. I have had to live a life of pretence and lies, but with you I can be honest. Please, don't say anything. Just think about it.",
+                    "spoken_by": "SOREN"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's it, Commander, everything checks out. The energy buffer is installed and functioning. I estimate it should reduce the power drain to your systems by about forty percent.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any guess how long we'll have?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lets just say you don't want to waste any time once you get in there. You'll have to give him continuous readouts on energy consumption. I can't even predict if the drain will be at a constant rate.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then that's it. Commander, I'll monitor you as far as I can, but once you get inside that pocket you're on your own.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't have any idea what condition the shuttle crew is in, so we'll all beam directly to Sickbay.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll notify Doctor Crusher to be standing by.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Soren and Riker get in the shuttlecraft"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "La Forge to Bridge.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Picard here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're ready to initiate shuttle pre-launch sequence.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed, Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Initiating pre-launch sequence.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Request flight clearance.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Clearance is granted. The shuttle is under way, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good hunting, Commander.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Thank you, sir. See you for dinner.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Heading confirmed. Energy readings are normal, with power reserves stabilised at one hundred percent.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's dead ahead, approximately fifty kilometres.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Enterprise, we're taking her in.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and the little craft disappears"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Enterprise? Riker to Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Power reserves are down to eighty four percent.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the other shuttle",
+                    "line": "Look.  Try hailing them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Calling the Taris Murn. Do you read me?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Getting sensor readings. They're unconscious but they're alive. Stand by. I'm going to transport them over here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Power reserves at sixty eight percent and dropping.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "two figures start to materialise then vanish again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The null space must be affecting the annular confinement beam.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We used ten megajoules with that attempt. We're down to thirty four percent of reserves.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can give it one more try. More than that, we won't have enough power to get ourselves out of here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "this time the two bodies solidify"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They need medical attention quickly.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay. Stand by to transport to the Enterprise. Here we go.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "but that doesn't work"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energy consumption?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're down to nine percent. We don't have enough to get back.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we just sit here, we'll lose all of our systems within an hour, including life support. Okay, I'm rerouting the propulsion system to the transporter. Re-channel the navigation systems. Let's transfer every microjoule of energy we've got. Sensors, life support. This might give us one last shot.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But if we use an energy shift of that size, it'll overload the phase compensators. The shuttle",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will explode. But if we stay here, we're dead anyway. Maximum energy levels, five seconds. See you in a minute.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KaBOOM"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and the four materialise safely"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've been oxygen deprived. There doesn't seem to be any significant damage. Prepare some dexalin.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Doctor.",
+                    "spoken_by": "MEDIC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, thank you.",
+                    "spoken_by": "KRITE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your colleague Soren was very helpful.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, would you all join us this evening? We would like to express our gratitude.",
+                    "spoken_by": "KRITE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'd be happy to.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Noor will be eager to get a first hand report. We should return to the surface.",
+                    "spoken_by": "KRITE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will see you later tonight, Commander.",
+                    "spoken_by": "SOREN"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There you are, Commander. I wondered what had happened to our guest of honour.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I just needed some air. I can only take so much of these social functions, and then I need to breathe a little.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would think you had attended so many affairs like this that it would become second nature to you.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was raised outdoors. I'm never been very comfortable in crowded rooms.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you think of our planet? Isn't it beautiful?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it is. It's beautiful.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have many varieties of plant life. Perhaps you would like to inspect some of them?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I would. I've always been interested in exobotany.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, let me take you on a tour.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. It's kind of you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Krite is watching suspiciously"
+                }
+            ],
+            "location": "Courtyard"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One of my favourites is this menellen tree. The leaves first turn pure white, and then blue, when the weather gets cold. This is called a falla bush. It produces a fragrant flower on only one day of the year.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and finally they get down to the real purpose of the walk, with Riker trying to eat her tonsils"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45620.4. In the hope that a detailed map of null space will prevent the loss of other ships, we remain in orbit of J'naii, charting the anomaly.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Woods"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi is taking a woollen doll from a suitcase when the doorbell rings"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in. Hello, Will.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's all this?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wonderful things. My mother sent me a box that belonged to one of my father's ancestors. It was stored on Earth and just recently turned up.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know who any of these people are?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Some of the pictures have names on, but most of them don't. I look at these faces and I wonder who they are and if they could be related to me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a cuddly toy",
+                    "line": "This one looks like you.  Deanna, I have something on my mind. I had to see you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Has something happened?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've met someone. Someone who's becoming important to me.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Soren.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. You're my friend. I thought, I don't know, I thought I should tell you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm glad you did.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing will change between us, will it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course it will. All relationships are constantly changing. But we'll still be friends, maybe better friends. You're a part of my life, and I'm a part of yours. That much will always be true.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and they kiss, too"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello. I'm here to see Soren.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know.",
+                    "spoken_by": "KRITE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We had an appointment. We were going to discuss",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think so, Commander.",
+                    "spoken_by": "KRITE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We know about the two of you. We know what you're doing.",
+                    "spoken_by": "KRITE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is Soren?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're going to make sure it doesn't happen again.",
+                    "spoken_by": "KRITE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Answer me. Where is Soren?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In custody, and there's nothing you can do about it.",
+                    "spoken_by": "KRITE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The hell there isn't.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Guest quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are aware of the charges against you?",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you intend to dispute them? Well? What is your response?",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker, these proceedings are closed to everyone.",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I just opened them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, this is a private matter. We are grateful for your recent help, but that gives you no right to interfere with our personal concerns.",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want you to know what really happened. It's all my fault. I was attracted to Soren. I pursued. I insisted. I didn't understand your ways until she explained them to me and rejected me. Nothing happened between us. I ask your forgiveness. I behaved inappropriately.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is this true?",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Soren.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am tired of lies. I am female. I was born that way. I have had those feelings, those longings, all of my life. It is not unnatural. I am not sick because I feel this way. I do not need to be helped. I do not need to be cured. What I need, and what all of those who are like me need, is your understanding and your compassion. We have not injured you in any way. And yet, we are scorned and attacked. And all because we are different. What we do is no different from what you do. We talk and laugh. We complain about work and we wonder about growing old. We talk about our families, and we worry about the future. And we cry with each other when things seem hopeless. All of the loving things that you do with each other, that is what we do. And for that we are called misfits and deviants and criminals. What right do you have to punish us? What right do you have to change us? What makes you think you can dictate how people love each other?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I congratulate you, Soren. Your decision to admit your perversion makes it much more likely that we can help you.",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait, wait, wait. You don't have to do this.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander?",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me take her with me. She can go back to the Enterprise. We would give her asylum. You would never have to see her again. That would solve the problem, wouldn't it? You'd be rid of her. She would never be able to influence anyone again.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, after Soren's diatribe, you must think that we are a cruel, repressive people. Nothing could be further from the truth.",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm just trying to find a solution that would satisfy everyone.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are concerned about our citizens. We take our obligations to them seriously. Soren is sick, and sick people want to get well.",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did it occur to you that she might like to stay the way she is?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't understand. We have a very high success rate in treating deviants like this. And without exception, they become happier people after their treatment, and grateful that we care enough to cure them. You see, Commander, on this world, everyone wants to be normal.",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take Soren to quarters. Treatment will begin tomorrow.",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't do this. Soren!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No more, Commander.",
+                    "spoken_by": "NOOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Enterprise. One to transport.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Civic chamber"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't just leave her there. They'll give her these psychotectic treatments. I don't know what to do.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I could talk to Noor. Perhaps there's a way to work something out.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, their minds are set. They don't want to hear another alternative.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I'm not sure that there's much that we can do.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There has to be. My relationship with Soren is not trivial. She's very important to me. It's my fault that this happened. I have to help her.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will, if you've come here for sanction to take matters into your own hands, I can't give it to you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know that, but I have to do something.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interfering in the internal matters of the J'naii is prohibited by the Prime Directive.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm aware of that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you violate it, you may jeopardising your career. Starfleet doesn't take these matters lightly, Will. I can't defend you if you go too far. Do you understand that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've made yourself very clear, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't risk everything you've worked for.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. May I be excused now?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker is putting items in a small case when the doorbell rings"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Lieutenant Worf.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker hides the case"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I have the plan for deploying warning buoys around the null space.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fine. Leave it, I'll take a look at it later.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. You're dismissed.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I am aware of what transpired on the planet surface. Are you by any chance considering an unannounced visit? I will go with you.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, you are my commanding officer. If you order me to stay on board, I will obey. But I ask you not to give that order. A warrior does not let a friend face danger alone.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "we are watching a group of people in a room, through binoculars"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something's happening. They're leaving.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Riker make their way through the plants to the edge of the courtyard, and watch people leaving"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he steps out",
+                    "line": "Okay.  Excuse me. I need to speak to her alone for a moment.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Riker scuffle with Soren's guards, then Riker drags her off into the bushes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't worry. We'll be out of here in a minute.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please. don't.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, 1e're almost there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You cannot do this.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't let them hurt you. You'll be safe on the Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am so sorry. It was my fault that you got involved in all this.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything's going to be all right. Everything's going to be fine.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it is not.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you talking about?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was all a mistake, and I should have realised it from the beginning.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That I was sick. I had these terrible urges, and that is why I reached out to you. But it was wrong, and I see that now. I do not understand how I could have done what I did.",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe Doctor Crusher can treat you and bring you back to the way you were.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why would I want that?",
+                    "spoken_by": "SOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Soren. I love you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry.",
+                    "spoken_by": "SOREN"
+                }
+            ],
+            "location": "Courtyard"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long to the Phelan system, Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker enters, Worf is already at his post"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At warp six, fifty three hours, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet has sent a message asking us to proceed to the Phelan system to negotiate a trade agreement.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't know when to tell them we will be there. Is our business with the J'naii finished?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Finished, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. Ensign, take us out of orbit. Set a course for the Phelan system, warp six.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "217",
+    "transcript_url": null
+}

@@ -1,0 +1,2706 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've got a problem. Our core fragment is going to pass by Moab Four in six days.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isn't that exactly what we anticipated?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We didn't anticipate that somebody would be living there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An artificial environment has been constructed on the southern continent, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you definitely established that there's someone's inside it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain. Sensors are reading human life forms.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Human?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are they responding to our hails, Mister Worf?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any starships ever reported missing in this sector, Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How the hell did they find themselves on a deserted planet?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm pretty sure they know we're here.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our sensors are picking up deep EM readings. Looks like wave patterns from an obsolete subspace relay.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which would suggest they also have the ability to communicate with us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, open the lower band frequencies most commonly used in the last century.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Channel open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is Captain Jean-Luc Picard of the Federation Starship Enterprise. It is urgent that you respond.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, defensive shield around the structure is increasing in strength.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not exactly a welcome mat.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We mean you no harm. We must warn you that your planet is about to experience massive seismic disruptions due to an approaching stellar core fragment. No structure will be able to withstand them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are responding.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreena thirty-something man",
+                    "line": "Enterprise, I am Aaron Conor.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Conor, we were unaware that there were human colonies in this system.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I don't want to be rude, Captain, but we don't wish to interact with outsiders. I'm only responding because of your warning.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The fragment will have serious effects on your planet within six days.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Yes, I know. We have been tracking it. But our biosphere has been constructed to withstand quakes of eight point seven on the Richter Scale.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The fragment has a density of one hundred billion kilograms per cubic centimetre. As a result, when it passes Moab Four, it will cause tectonic shifts well beyond eight point seven on the Richter Scale.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid we're going to have to evacuate your people.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Evacuate? That is not possible. There must be an alternative.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, we will gladly explore the possibility of it with you, Mister Conor. Would you like to come aboard to discuss it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Our environment is sealed. No one can get in or out.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are capable of matter-energy transport.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Matter-energy?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can take you directly through the structure.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Really? That's quite remarkable.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May we arrange for your transport?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "No, I must stay here. But under the circumstances, I will permit a small delegation from your ship inside the biosphere. If only to see this matter-energy transportation you speak of.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very good. Commander Riker and an away team will join you shortly. Picard out.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "an older man",
+                    "line": "This is a mistake, Aaron.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good Lord, Martin. What would you have me do?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything that would keep them out of here.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have nothing to hide.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have a great deal to lose.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transporter sound"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is that?",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's them. Look at this, Martin.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker, Troi and La Forge appear"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "after the credits"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's lovely I can understand why you are reluctant to leave, Mister Conor.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not just reluctant, Miss Troi. It is imperative that we remain.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would be suicide to evacuate. It would destroy everything we've worked for two centuries to accomplish.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You see, this is an engineered society.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineered?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Genetically engineered. Our ancestors came from Earth to develop a perfect society. They believed that through controlled procreation, they could create people without flaws and those people would build a paradise.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All of you have been selectively bred? Your DNA patterns chosen?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eight generations of us.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have immeasurably extended the potential of humanity, physically, psychologically. We have evolved beyond, beyond",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beyond us.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Frankly, yes. No one in this society would be blind, for example. No offence intended.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can see you just fine, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Well, my point was just.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Martin. Perhaps you've also made it clear there are still a few imperfections we're working on. For the most part, we've achieved a fully integrated existence. Not just among ourselves but with our environment. We don't just live here, we're a part of our environment. it is part of us. Every plant life, every microscopic lifeform is part of a master design. We cannot separate ourselves from it without irreparably altering who and what we are.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your presence here has already begun to affect the entire balance of our society.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we do not survive, the balance of our society won't mean a great deal, will it?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Martin leaves in a huff"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I apologise. But he is performing his function as he is designed to do.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What function might that be?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is the interpreter of our founders' intentions for this society.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A judge?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, more or less. Obviously, he has no diplomatic talents.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And obviously you do.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been bred to fill this specific role. We grow up knowing exactly what our society needs from us. What we are expected to do.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That must take some of fun out it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all. My entire psychological makeup tells me that I was born to lead. I am exactly what I would choose to be. Think of it another way. Are there still people in your society who have not discovered who they really are, or what they were meant to do with their lives? They may be in the wrong job, they may be writing bad poetry. Or worse yet, they may be great poets working as labourers, never to be discovered. That does not happen here. It is, for us, an ideal existence. We will not give it up easily.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will do whatever we can to help you preserve it.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Courtyard"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hannah, I'd like you to meet our guests.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh yes, of course, from the starship. I've been looking forward to speaking with you.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hannah Bates is one of our scientists. If there's any way to shore up our defences, Hannah will find it. She has a remarkable talent with theoretical physics.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've worked up a few schematics based on gravimetric potentials and deflector energy allocation.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, Troi and I will return to the Enterprise. When you've reached a conclusion, you can contact us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, if Mister Conor doesn't mind, I'd like to stay and see more of his colony.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, that would be fine. I'd like you to see it.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Enterprise. One to beam up.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acknowledged, Commander.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energise.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're sure my being here is not going to be disruptive?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Disruptive? You mean, what Martin was saying.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I certainly wouldn't wish to throw off your entire balance.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too late. The damage is done.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Seriously.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I sometimes think that strict interpreters like Martin have forgotten we're still human. We'll adjust, accommodate.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There must be other unexpected events you have to deal with. An untimely death, an accident.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our geneticists are able to screen out any congenital health risks before conception. Our population is diverse enough to maintain a genetic balance in the event of accidental death. But very little that is unexpected occurs here. Am I making this sound incredibly dull?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll tell you the truth, but I'll deny it if you tell Martin. I've found today exhilarating. Meeting you, meeting new people, with new ideas.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I feel the same about being here. I'm something of a student of human nature, and I find this all fascinating.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A student of human nature?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm the ship's Counsellor.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, I'm afraid you wouldn't find much work here, Counsellor.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd book my next vacation at your hotel, if you had one.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well in that case, I shall have to have them build one.",
+                    "spoken_by": "CONOR"
+                }
+            ],
+            "location": "Shrubbery"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The biosphere's superstructure will never withstand the tectonic shocks. The environment would be compromised.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's how I see it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your ship. What kind of energy output is it capable of generating?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have a matter-antimatter warp reaction system, the most powerful in the Starfleet. Normally, it kicks plasma up into the terawatt range. Why?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, either we're going to have to move or that fragment is.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can move a small moon or an asteroid, but a stellar core fragment? That's much too massive for our tractor beam.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she calls up a diagram on a screen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A wild idea, purely theoretical.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A multiphase tractor beam?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When we first spotted the fragment approaching, I came up with the idea, but we can't generate the kind of energy we would need. You can.",
+                    "spoken_by": "HANNAH"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they are discussing it round a small table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'd need Hannah on the ship.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With my theories and their equipment, we might be able to alter the fragment's path. It's our only chance to avoid evacuation.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No one had ever come here and no one had ever left, until today. This is a date to note in our history books.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is in direct violation of the intentions of our founders, Aaron.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think they intended us to die, Martin.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her absence will create an additional imbalance.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Temporarily. The circumstances require us to be flexible.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have no idea how molecular transport will affect her DNA.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It won't affect her DNA at all. There's been over a century of evidence to prove that.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can go, Hannah.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I return later?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I look forward to it.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enterprise, three to beam up. Energise.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. Commander La Forge and Hannah Bates have spent three days trying to find a way to adjust the path of the core fragment. If they do not succeed in the next forty eight hours, we will need to begin evacuation.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Courtyard"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe some will choose to risk death rather than leave, Captain.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've spent a good deal of time on the surface. How do you suggest we change their minds?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure we can. It would mean abandoning their fundamental way of life.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've managed to turn a dubious scientific endeavour into dogma.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't approve of genetic engineering.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a bad idea whose time is long past.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They seem to have made it succeed.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've given away their humanity with this genetic manipulation. Many of the qualities that they breed out, the uncertainty, the self-discovery, the unknown, those are many of the qualities that make life worth living. Well, at least to me. I wouldn't want to live knowing that my future was written, that my boundaries had been already set, would you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've asked myself that question a lot during the past few days. I don't know. I doubt it. Nevertheless, it's what they believe in, and it won't be an easy matter to talk them into leaving.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This leader of theirs, Conor, he seems to be a reasonable man.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I find him very reasonable. Open to suggestions, thoughtful, quite disarming. The perfect administrator.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure. Will he leave when he sees there's no other choice?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. I hope so.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You admire him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then help him to see the reality of what may happen to his colony. If he makes the right decision, if he's as good a leader as he's designed to be, then perhaps the others will follow.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we increase warp power transfer by eighty percent.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just going to blow the emitters again.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We won't be able to reinforce the conduit to hold that power level. It just doesn't work.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. I haven't had any sleep in so long, my eyelids feel like they have lead weights attached.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi sits down and takes his visor off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hmm?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Were you always blind?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry. I probably shocked the hell out of you, didn't I?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll put it back on.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't. I'm sorry. I didn't mean to embarrass you.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never been embarrassed by this, Hannah. Never. I was born blind. I've always been this way.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I see it? Your visor?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure. So, I guess if I had been conceived on your world, I wouldn't even be here now, would I?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I'd've been terminated as a fertilised cell.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was the wish of our founders that no one had to suffer a life with disabilities.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who gave them the right to decide whether or not I should be here? Whether or not I might have something to contribute.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know what to say. Here you go. How does it work?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, the visor scans the electromagnetic spectrum between one hertz and one hundred thousand terahertz, converts it all to usable frequencies and then transmits that information directly to my brain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about the data conversion rates? How do you avoid a sensory overload?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A bank of pre-processors compresses the data stream into pulses, you see. That way, my visual cortex never. Wait a minute. Wait just a minute. We should be able to send a high-energy pulse through the tractor system. If it's short enough, it shouldn't overload the emitters. The technology is right here. If we could adapt those pulse compression routines and then apply them to the warp power conduits.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'd have to avoid tractor force rebounding, but that shouldn't be hard.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure. With a few modifications. Oh, that's perfect.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the answer to all of this is in a visor created for a blind man who never would have existed in your society. No offence intended.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Evening if the crickets are an indication, and a young man is playing Chopin to a small audience when there is a tremor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, Matthew, continue.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Conor leaves, and Troi follows him"
+                }
+            ],
+            "location": "Courtyard"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a transparent divide"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's hard to believe. So much loveliness here, just a few metres away from such desolation.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's hard to believe we're about to lose it.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This must sound incredibly simplistic but, can't you re-engineer all this on another planet?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A nursery rhyme my mother used to read to me has been running round and round my mind since this all began.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A nursery rhyme?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Humpty Dumpty sat on a wall. Humpty Dumpty had a great fall.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All the King's horses and all the King's Men, couldn't put Humpty together again.",
+                    "spoken_by": "CONOR + TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do we tell our children such ghastly stories?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps to prepare them for times like these.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are every bit as fragile as an egg and as impossible to reconstruct. We are integrated and refined to such a degree that any fundamental change would lead to chaos.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm so sorry, Aaron. I wish I could do something to help.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have helped. You've been wonderful these past few days. You've been my Counsellor.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, a Counsellor has to maintain a discreet distance. I'd rather think of us as friends.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Friends? That just won't do either.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He kisses her"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will it?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aaron.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must confess, a part of me knows that if I transport through these walls, you'll be on the other side.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He kisses her again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is wrong.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Terribly wrong.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "but they do it anyway"
+                }
+            ],
+            "location": "Biosphere wall"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In order to move the core fragment to a safe trajectory, we needed our tractor beam to be able to handle high power pulses.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we needed a much more efficient emitter to do that.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "About four times more efficient.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we couldn't get anywhere near that without overloading the emitter arrays.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, we added a little visor technology to the process and we were able to boost the effective force and, at the same time, lower the power conduit stress levels.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the increase in efficiency?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Up to almost three hundred percent.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not enough.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's true. We won't be able to move the fragment as far as we'd like to, but",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But if we also fortify the biosphere's structural integrity at the same time",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With some of the shield improvements I've discovered here, it could work.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, we'll have to lend them some of our engineering support crews.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Advise Mister Conor, Number One, and brief the appropriate officers. Prepare them for transport as soon as Mister Conor approves.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Deanna is playing the piano when Aaron joins her"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're up early.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm still on Enterprise time. Aaron, I'm going back to the ship. I'm not going to see you again.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because it's the right thing to do.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not convinced of that.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know it as well as I do.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're angry.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I'm angry. I'm angry with myself for allowing this to happen.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could fall in love with you so easily, but we both know the end of that story, don't we? How would Martin feel about introducing half-Betazoid DNA into the genetic balance?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we have to evacuate, anything's possible.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Listen to yourself. A few days ago you wouldn't even talk to us. This is my fault. I'm so sorry.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need you here. This doesn't have to happen again.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to go.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge and Hannah beam in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good news, Aaron. We should be able to change the course of the core fragment, but we'll also need to fortify the structure. And we're going to need help to do it.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll need to bring down engineering crews from the Enterprise to work with your people for the next forty eight hours.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering crews?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They have to install five new shield generators and power supplies.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fifty officers are waiting for your approval to transport down. We don't have much time, Aaron.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there any other choice?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Conor nods"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enterprise, you may begin transport when ready.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the first five plus equipment arrive immediately. There's another tremor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. The Enterprise has moved to a parallel course with the core fragment. We must adjust its trajectory by a minimum of one point two degrees to ensure the colony's safety.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Courtyard"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bring us within range of the fragment, Ensign.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "FELTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You may proceed",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Mister La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Good luck.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You, too.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage tractor beam. Okay, let's give it a try. Shutting down non-critical systems.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Emitter circuits one hundred seventy percent over standard.",
+                    "spoken_by": "HANNAH"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Increasing impulse power to tractor emitters. EPS power levels rising.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transferring warp power to tractor beam generator.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Graviton generators operating normally. Surge pulse now synchronised. Emitters radiating at three hundred twenty percent over standard.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge, we need more power.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reduce life support to minimum requirements, Mister Data.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three hundred ninety percent over standard.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on, come on.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No change in the fragment's course.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've got to increase the pulse frequency.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The emitter circuits won't hold for long.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We won't need them for long.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Four hundred percent over standard.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay. Now we're getting there.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The fragment's moved point four degrees off its previous heading. Point six five. It's working.",
+                    "spoken_by": "HANNAH"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have lost one of the emitter circuits.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Life support failure. Decks nine, twelve, and thirteen.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage evacuation procedures for those decks. Geordi, we're going to need power back soon.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acknowledged.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fragment's new heading adjustment is at one point zero one degrees. Is it enough?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not yet. Hold on.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We've lost",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The second lateral emitter circuit.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Losing life support systems on decks five through nine. Evacuation procedures initiated.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Hold on, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shipwide life support failure in fifteen seconds, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Almost there, Geordi. Course shift is at one point one six degrees.",
+                    "spoken_by": "HANNAH"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Termination of all life support in five seconds.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One point one eight.",
+                    "spoken_by": "HANNAH"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, Mister La Forge.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Shutting down all tractor emissions. Transferring power back to life support.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One point two. We've got it.",
+                    "spoken_by": "HANNAH"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Life support normal on all decks.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The fragment's course has been altered by one point two one degrees, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hail the colony.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Yes, Captain.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Success, Mister Conor. With the upgrades to your biosphere, the core fragment should no longer be a danger.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I cannot adequately express my appreciation to your crew. Is Hannah able to hear me?",
+                    "spoken_by": "CONOR"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, yes. Go ahead, Aaron.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "This is an historic achievement, Hannah. You've done a wonderful thing for our people.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "We look forward to honouring you appropriately when you return. Thank you again, Captain. Conor out.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. The stellar core fragment has passed safely out of the Moab system. The colony was shaken by powerful temblors, but fortunately there were no injuries and only minor damage was reported.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the original five crew are beamed away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That should do it. All members of the Enterprise crew are accounted for, Mister Conor.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've been invaluable, Commander. Thank you again.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If there's nothing else, we'll be on our way.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you tell Deanna Troi for me that I'm sorry I didn't have the opportunity to say goodbye personally?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure she'll feel the same way.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a klaxon sounds"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A breach in the biosphere. Get Hannah Bates.",
+                    "spoken_by": "CONOR"
+                }
+            ],
+            "location": "Courtyard"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apparently, the refortification wasn't adequate. There's definite structural damage. It appears that the tectonic shifts created a breach.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can it be repaired?",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. I'll have to run a diagnostic in the lab. Unless we seal it and fast we may have to evacuate.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long do we have, Hannah?",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Based on the level of toxicity I'm reading, it may be only a matter of hours.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mind if I give her a hand, Commander?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By all means.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Biosphere wall"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isn't it amazing after all we went through?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. Amazing.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looks bad. It's cracked well beneath the surface.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why are you doing this?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no breach.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you talking about. Look at it, it's right here. I measured the toxic leak. You saw me.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hannah, my visor's positronic scan would have detected the leak. Its molecular pattern enhancer would have picked up even the smallest crack.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The damn thing doesn't miss much, does it. Fine. I'll tell them the truth. Will that make you happy?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why are you doing this?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was born to be one of the best scientific minds of my generation, and in the past five days I have encountered technology that I have barely imagined. And I've got to ask myself, If we're so brilliant how come we didn't invent any of these things?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, maybe necessity really is the mother of invention. You never really look for something until you need it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But all my needs have been anticipated and planned for before I'm even born. All of us in this colony have been living in the dark ages. It's like we're victims of a two hundred year old joke. Until you came, we could only see to the wall of our biosphere. Suddenly our eyes have been opened to the infinite possibilities.",
+                    "spoken_by": "HANNAH"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Asylum?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She wants to leave the colony.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She may not be the only one. The science teams that went down to the surface fielded a lot of questions from colonists who were more than curious about what's outside their world.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why shouldn't we grant them asylum?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't do that.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have to do that.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you understand what it would do to the colony?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand these are human beings, Counsellor, with free will. If she wants to leave, she has every right to.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what happens to the colony if she does? If others join her?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The society is genetically integrated. Suddenly there would be gaps, missing pieces.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would destroy them.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There must be something we can do to help.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We may have done too much to help them already, Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We saved them from destruction.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did we? Counsellor, I think it's time you took me to meet Mister Conor.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter room three.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, halt. Captain, I have to tell you something, and it isn't easy for me because I've used very poor judgement. Actually, I've acted quite unprofessionally.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, what is it you say? Take a deep breath.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Conor and I have had a relationship.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It should never have happened. I knew there was concern about outside influences and I should have been more careful.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is your status with him now?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did not intend to see him again.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you prefer not to return to the surface?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I think I should come with you, but I wanted you to know before we went down.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I appreciate that. Computer, resume.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wanted so much to help him, to be there for him, but the more I was.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, we all went into this with the best intentions.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I should have walked away as soon as I saw what was happening.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you didn't. And that's human. We make mistakes. Genetic manipulation or not, nobody's perfect.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You would ignore the welfare of the colony for your own selfish interests.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The welfare of this colony would be best served by rejoining the human race.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has been contaminated by the people on that ship.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi and Picard enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aaron.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Conor, I believe that you and I should talk.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is your doing. We should never have answered your hails.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we'd followed that advice, Martin, we'd all be dead by now. So much for the welfare of this colony.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are not taking her with you.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm leaving. And I'll tell you something else. There are at least a dozen others who are ready to go with me.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hannah, let's allow Aaron and Captain Picard to discuss this. Why don't we go for a walk?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's nothing else for them to talk about.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Hannah and Troi leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Martin.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think it would be helpful if I.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to talk with Captain Picard alone.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Martin.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Martin leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The irony is, he's the one who saw this coming from the moment you arrived. Because I didn't want to hear it, I chose not to listen.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You made decisions you felt would save your colony.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. No, I wish it were that simple, but I can't forgive myself so easily. You see, Captain, I know what Hannah Bates is feeling. I've been feeling it as well. I've found your people intriguing and stimulating as she has. I've been every bit as curious about you as the next man. But I am not the next man. I am the leader of these people. And every genetic fibre in my being demands that I protect them. Instead, I have betrayed them. I have allowed this to happen.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have both allowed this to happen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then let us both find a way to stop it from going any further.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I could see a way.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard, I was born to govern this colony, not to dismantle it.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you force them to stay, you will be suppressing their human rights.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If even a handful leave, the damage to this society will be devastating. What about the rights of those who would stay behind? They are the ones who will inherit the social chaos that will follow for generations. Your arrival created this problem. Your departure solves it.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is simplistic.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Refuse them passage.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot ignore the requests of people, humans, who ask for transport away from here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nor can you ignore the fact that thousands will suffer if you agree to take them. And as suffering grows, more will demand to leave. We are witnessing the end of this existence. I implore you, Captain, do not let this happen.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You would have me make the decision for you, nut I can't do that. I am willing to talk to these people with you, and I will urge them not to make an impulsive choice, but if finally they choose to leave, the Enterprise will not turn them away.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard has decided to grant transport to any individuals who wish to leave Genome Colony. I'm asking you to stay.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aaron, don't you see we can't be happy here any longer? We were innocent. it will never be that way again.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The experiences of the past week will become part of our heritage. We will adjust. In a few generations, we will be able to",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're not willing to stay here a few generations.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give me six months. Just wait six months before you leave.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What will that accomplish?",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's true that our presence here has had an unintended influence on your society. But it's done and there is no way to undo it. But feelings are running very high. Perhaps it's not such a bad idea that you should take adequate time to weigh carefully the consequences of what you're about to do. We are prepared to return in six months.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In other words, we are being asked to stay here for six months while they pressure us to change our minds.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In five days, you have seen only the most superficial evidence of what life is like outside this biosphere.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you ever choose to live aboard a ship in a bottle, Captain? You are in command of a starship. You live to explore the unknown. We ask for that same privilege.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hannah, this is your home. We are all, in a sense, your family. Don't we deserve an opportunity to open a dialogue on this issue at the very least? I am only asking for six months.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It won't make any difference. You'll only be putting the people of this colony through unnecessary pain and anguish.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are the ones who are causing pain and anguish in this colony. You.",
+                    "spoken_by": "MARTIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't you see, Aaron? It's over. It's time for you to lead our people into a new era. You could come with us.",
+                    "spoken_by": "HANNAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When you're ready to come home, you will be welcome.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Later"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What will you do now?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Attempt to assess the damage. Spend the rest of my life on the near impossible task of rebuilding this society without the proper pieces.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aaron, you acted in the best interests of your people. There was no way to avoid what happened.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I replay each step of this in my mind, looking for the wrong turn, the mistake in judgement. I can find only one. And as hard as I try, I cannot regret even that one. In fact, I'm quite certain that, given the opportunity, I would choose to make the same mistake again. I can only wonder why, with all the hundreds of genetically compatible women, I would fall in love with you.",
+                    "spoken_by": "CONOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't say that.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it's your imperfections which make you so unique. But I am in love with you, Deanna Troi, and I will always be.",
+                    "spoken_by": "CONOR"
+                }
+            ],
+            "location": "Courtyard"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The colonists are all on board, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many finally?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Twenty three.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we ever needed reminding of the importance of the Prime Directive, it is now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Prime Directive doesn't apply. They're human.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doesn't it? Our very presence may have damaged, even destroyed, their way of life. Whether or not we agree with that way of life or whether they're human or not is irrelevant, Number One. We are responsible.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We had to respond to the threat from the core fragment didn't we?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course we did. But in the end we may have proved just as dangerous to that colony as any core fragment could ever have been.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Ready room"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "213",
+    "transcript_url": null
+}

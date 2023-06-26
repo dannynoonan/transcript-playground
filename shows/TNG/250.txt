@@ -1,0 +1,2298 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "it's jazz night, and the quartet are in full swing, with Riker on 'bone playing 'Tell them I remember you'"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Thank you very much. Thank you. Thank you very much. Any requests tonight?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Night Bird.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi is given a Look"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any request?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Night Bird!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ladies and gentlemen, Night Bird. One, two.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was that all about?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will's been trying to get this piece right for ten years now. He's never made it through the solo.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he certainly looks worried"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here it comes.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Data to Commander Riker.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander, you are needed on the Bridge.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my way. Saved by the bell.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at the science stations"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wanted to see me, Mister Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. It appears we will be able to transport to the surface sooner than anticipated.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is the planet's distortion field re-phasing sooner than we predicted?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. Using the Potemkin's transport logs from the original evacuation, Commander La Forge and I were able to modify the transporters.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So we can beam through a higher distortion field.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The transporters are considerably more efficient than those used on the Potemkin eight years ago.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's a good thing. I almost didn't make it off the surface. When can we get started?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ninety seven minutes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long will the transport window be open?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Twenty six minutes. After that, the distortion field will re-phase.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That doesn't give us much time to retrieve the database.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The planet's proximity to its sun will create two additional transport windows in the next three days.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's hope that's enough.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will have to be, sir. The next transport window will not occur for another eight years, when the planet's orbit will bring it close enough to the sun to de-phase the distortion field.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay, notify the away team that we're going in ahead of schedule. I'll tell the Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "consoles are lit up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is different than I remember. The place was a mess when we left.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Someone was here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A ship could have been caught in the distortion field and crashed. The survivors may have taken refuge here.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, someone is approaching. A humanoid. Forty metres due east and closing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they take up defensive positions and a figure in tattered clothing comes through the door. He looks like Riker's identical twin!"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm Commander William Riker from the Federation Starship Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not possible. I'm Will Riker.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I ask how you got here?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eight years ago, I led a team to evacuate this station.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What ship were you on?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Potemkin.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you not return to the Potemkin with the others?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was the last one out. The distortion field must have interfered with the transport. They lost their signal lock on me. When I tried to contact the ship, I couldn't get through the interference. If you check with Starfleet I'm sure they will have recorded that I was lost on that day.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not what happened. I was the last one out and I made it back to the Potemkin.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't believe me?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not that we don't believe you. It's just hard to see how both stories could be true. Would you be willing have our Doctor check you out?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, take him directly to Sickbay, and notify the Captain once you're on board. Let's get to work.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf to Enterprise. Two to beam up.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir. Stand by.",
+                    "spoken_by": "CREWMAN"
+                }
+            ],
+            "location": "Research station"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looks like you fractured your arm a few years ago.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was doing some repairs under the station when an earthquake hit. I got caught in a rockslide. I had to set it myself.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc Picard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Will Riker.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope you understand our need to verify your claim.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Genetically, he's indistinguishable from Commander Riker.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could there be some sort of cloning involved here?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think so. There's no genetic drift.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it's not conclusive.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's why I compared their brain scans. Brain organisation patterns are as unique as fingerprints. Except for minor, minor differences, theirs are identical.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But can't brain patterns be cloned?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. They're determined by experience, mostly from early childhood.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can two grown men share the same childhood experiences? It just doesn't make any sense.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Will Riker. I don't know who or what made it back to the Potemkin that day, but it wasn't me.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, our Chief Engineer is checking the transport logs of the Potemkin. Perhaps that will shed some light on the matter. Don't worry, we will get to the bottom of this. And in the meantime, you will be taken to your quarters. Try and make yourself as comfortable as possible.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will. The replicators on the station haven't worked for a long time ago. It's been a while since I've had a decent meal. Doctor.",
+                    "spoken_by": "RIKER 2"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apparently there was a massive energy surge in the distortion field around the planet just at the moment you tried to beam out. The Transporter Chief tried to compensate by initiating a second containment beam.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An interesting approach. He must have been planning to reintegrate the two patterns in the transport buffer.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, it wasn't really necessary. Commander Riker's pattern maintained its integrity with just the one containment beam. He made it back to the ship just fine.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened to the second beam?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Transporter Chief shut it down, but somehow it was reflected back to the surface.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And another William Riker materialised there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How was the second pattern able to maintained its integrity?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The containment beam must have had the exact same phase differential as the distortion field.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which one of them is real?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's the thing. Both. You were both materialised from a complete pattern.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Up until that moment, you were the same person.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But of course, as you and Lieutenant Riker have lived very different lives for the past eight years, you are now very different people. I suppose it's a little like meeting someone's twin. But no matter how strange it may seem to us, we now have two Will Rikers on board. And as Lieutenant Riker will be with us for several days, I think we should do everything we can to make him comfortable and welcome.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We still have the problem of retrieving the database. The computer on the station is not completely operational.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Many of its components have been removed. Apparently Lieutenant Riker used them to keep the station's radiation shield operational.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can it be repaired, at least enough to access the database?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Without knowing what he did, that'll be tough.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps he can help us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He was alone down there for a long time. I'm hesitant to let him go back until he's been evaluated.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll talk to him.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Counsellor.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Lieutenant is in a fresh gold uniform, and finishing a meal when the doorbell rings"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, Will.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He sweeps her off her feet, literally, and kisses her"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Imzadi.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I never thought I'd see you again.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need to talk.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're on board because of him.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Commander Riker and I are friends. Close friends, but nothing more. Why don't we sit down? Do you remember the last time we saw each other?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Like yesterday. The Janaran Falls on Betazed.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was the day before you started your tour on the Potemkin.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we were going to meet on Risa, six weeks later.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We never did.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, what I mean is, Commander Riker and I never did. You see, he earned a promotion very quickly.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know that too. 'For exceptional valour during the evacuation of the research station on Nervala Four'. I looked at his service record.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He chose to make his career a priority. There wasn't much time for anything else. We kept in touch but we didn't see each other again until we were both posted to the Enterprise two years later. By then our feelings for each other had changed. We've served together for six years. Things never went back to the way they used to be.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had a lot of time on my hands when I was down on that station. There were days I felt so alone I thought I might lose my mind. Do you know how I made it through? I thought if I hung on for more day, they'd rescue me. Maybe I'd see you again. I guess things don't always work out the way you expect them to.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know this isn't what you were hoping for, but that doesn't mean you can't make a future for yourself.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard wanted me to find out if you'd be willing to help us retrieve the station's database.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I reconfigured that computer so many times they probably can't make heads or tails of it. I'd be happy to help.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you feel up to it?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Absolutely.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. I'll tell the Captain. Well, I have to go.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna. I know it's been a long time since we've been together, and I know your feelings have changed. Mine haven't. I can't just give up. I'd like to be with you again.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodnight, Will.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "that loud cracking noise is the sound of a breaking heart"
+                }
+            ],
+            "location": "Lt Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "everyone say Hi! to Doctor Mae Jemison, genuine astronaut"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Phase distortion is dropping. The second transport window opens in forty two seconds.",
+                    "spoken_by": "PALMER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long will we have, Lieutenant?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thirty six minutes, sir.",
+                    "spoken_by": "PALMER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are losing time. Lieutenant Riker should be here.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, locate Lieutenant",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he dashes in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cancel inquiry.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were supposed to report here at eight hundred hours.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, I was",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess it's been a while since you've had to punch a clock. Let's go. Energise.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've shut down most of the consoles to save power. I re-routed just about everything through here.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Check out the primary EPS system. See if you can get some power to the rest of these consoles.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I shunted the database to the main core underneath the station.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we access it from here?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's been a lot of seismic activity over the years. If the servo-links were damaged we may not be able to. I'll try to tap into the command pathways. You see if you can access and disable the file server.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker 2 goes under a console while Number One sits on a chair"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, I've been thinking we should probably let Dad know what happened.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure he'll be thrilled to know there are two of us now.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, he and I have been able to patch a few things up.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been able to get by for a long time without seeing him. I'm not about to start now. What made you contact him?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't. He came on board the Enterprise to brief me when I was offered the Aries.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did he say when you turned down your own command?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He couldn't understand why I did it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For once he and I agree on something.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The primary EPS coupling is fused. The entire unit will have to be replaced.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've accessed the command pathways. The interlink pathways are functioning now.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "See if that did the trick. No, it's not working.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The servo-link must be damaged. We're going to have to go under the station and access the core directly.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have less than three minutes left.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll stay here. I'll be finished by the time the third window opens.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's too dangerous. Our scans show the caverns are unstable.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been down there dozens of times. I know my way around.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll come back during the third window, We'll bring a new EPS coupling and try to access the core from another console up here. Riker to Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "La Forge here.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're ready to beam out.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You go ahead. I'll be finished by the time you get back.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold it! I gave you an order, Lieutenant.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Research station"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, valerian root tea, hot.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "there's a note in the fruit bowl"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "reading",
+                    "line": "Meet me in Transporter room three at nineteen hundred hours. It's important.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "there's another note, tied with a pink flower and bow"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "reading",
+                    "line": "It pulses unendingly all through the night. Seek out the crystal that powers our flight.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can I help you, Counsellor?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi reaches across to get the next note, and its chocolate"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, thank you.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "reading",
+                    "line": "What the future holds no one can know, But forward we look and forward we go.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she spots the table with the vase for her flower, and the gift-wrapped box. It contains a etching."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Janaran falls.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I remember. Where did you get this?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I made it a couple of years ago down on the station.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You made this?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should have seen the first two. It took a while to get a fine enough beam out of the phaser.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's lovely. Thank you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you stay and talk? I wanted to remember our last night together.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, how does it feel being with people again?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Great. Strange. For a long time I did whatever I wanted, whenever I wanted. It's been hard taking orders again.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can imagine.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I guess I'll have to get used to it if I want to get my career going again.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that what you've decided to do?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remember, I'm the one who wanted to make Captain by the time I was thirty five. I'm a little behind schedule, I'll admit that.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's good you don't feel set back.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do. Things are a little more complicated than I had planned, but there's nothing going to stand in the way of my getting what I want.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There you go.",
+                    "spoken_by": "WAITER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks. You don't know how many times I thought about you, about us. For weeks after the evacuation, I kept thinking they'd find a way through the distortion field and come back for me. I even thought we'd meet on Risa like we planned. But days went by and nobody came. Then I realised why. They thought that I had been killed in the beam out. No one came down because they thought there was no one to come down for. So I figured that they'd had a memorial service for me. Somehow that made me feel better.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can understand that.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were there, all dressed in black. Very flattering on you, by the way.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure I looked terrible with my eyes all red and swollen from crying.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sometimes I would look up into the sky and I'd think, if I tried hard enough, I could make you feel my presence. That if I could let you know that I was alive, maybe you'd wait for me. I know it sounds crazy, but there were times when I could've sworn. What am I talking about?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The other day, when I told you about how Commander Riker and I didn't meet on Risa, what I didn't say was how disappointed I was.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You didn't have to. I knew.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I started to hear from him less and less. I knew his career was taking him away from me but I didn't want to believe it was over. I spent a lot of time thinking about him. Wondering where he was, what he was doing. Sometimes I'd look into the sky and imagine that he knew, and that somehow he could sense me thinking about him. So, who knows? Maybe one night we were looking up at the same star, and you were thinking about me, and in a way, I was thinking about you.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wanted to see me, sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Number One. Come in.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Riker has been to see me to talk about the away mission. He believes that the only way to retrieve the database is by directly accessing the main core underneath the station.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The seismic activity makes those caverns very unstable. In my opinion, it's too risky.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He said that he was down there recently. He seemed confident that it could be done safely.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a good chance we will be able to retrieve the database from one of the consoles inside the station.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But if it doesn't work, we won't have another chance for eight years.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Riker's plan is more dangerous, but it does have a better chance of succeeding.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Given the importance of the data, I think that it's worth the risk.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll look over the schematics and I'll draw up a mission plan.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure that Lieutenant Riker will be happy to help you with that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll talk to him.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Riker 2",
+                    "line": "Sir.",
+                    "spoken_by": "CREWWOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I just met with the Captain about your mission recommendation. I would appreciate it if next time you came to me first.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I tried talking to you yesterday on the station. You wouldn't hear me out.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I heard you, Lieutenant. I rejected your plan.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I ask what the Captain decided?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain has decided to go with your recommendation, but that's not the point.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isn't it?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you think I'm coming down on you because the Captain overruled me, think again. I happen to disagree with his decision, but he is my commanding officer and I follow his orders. Just so there's no confusion, I am your commanding officer and I expect you to do the same. If you can't, there's no place for you on my away team.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There will be a meeting in the Observation lounge at fourteen hundred hours to draw up a mission plan.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly and Deanna are doing the mok'bara exercises"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We stayed in Ten Forward talking for hours.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what happened?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He walked me to my quarters.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what happened?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm just asking.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know it's been over between Will and me for a long time.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's not Will. He is Will but, you know what I mean.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's really hard for me to separate my feelings for them.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, just because things turned out the way they did between you and Commander Riker, doesn't mean you shouldn't let things between you and Lieutenant Riker take their own course.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I knew you'd encourage me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought that's that why you brought it up.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they resume the forms, as Lt. Riker enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I think I'll call it a day.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "hisses",
+                    "line": "Beverly.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker limbers up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bye.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some form of tai chi chuan?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Klingon exercises, actually. Lieutenant Worf teaches a class.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The forms are very similar. Do that move again.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she does, and he copies"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You just did the KoH-man-ara.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tai chi chuan. It's called the crane block. Now let's try something else.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he does a move that reaches out to her, she takes the arm, bends it back and rolls him onto his back"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was that called? Mister Worf's a very good teacher.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and now she has him on the floor, lips connect in a prelude to horizontal jogging"
+                }
+            ],
+            "location": "Gymnasium"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, Will.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you want to be with him, you don't have to ask my permission. It's the look in your eyes. I recognise it. You used to have it for me.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've both had relationships with other people. This is different. I didn't know how you'd feel about it.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Flattered, sort of.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This must be very strange for you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ever since he came on board, I find myself thinking about the choice you and I made.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Me too.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do me a favour. Be careful.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will, I know you and he have had some problems.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not what I'm talking about. If he had gotten off the planet instead of me, don't you think he would have made the same choices that I made? I just don't want you to be hurt again.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two pair.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Full boat, kings over. I'd like to thank you both for your very generous contributions.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "doorbell"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you'd be alone. Excuse me.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why don't you join us?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the two Rikers are sitting opposite each other"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The game is five card draw, no limit. Ante, please.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data deals"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three. please.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Four.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll play these.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dealer takes two. You control the bet, Lieutenant.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fifty.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fold.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here's your fifty. And ten more.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You didn't take any cards. You must be holding something. Why not make it a little sweeter?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, thanks.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Playing it safe?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You in?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will call.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here's your ten, and it will cost you another one hundred.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've practised in the mirror too long to be fooled by that face. You're bluffing. Here's your hundred and twenty more.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dealer folds.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought if one thing were clear by now, it's that you and I play things a little differently.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why don't we wait and see who comes out on top.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you were willing to settle for second. Commander.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never settled for anything in my life. I know what I want, I know what I've got, and you'd be lucky to do as well. Lieutenant.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here's your twenty. Three hundred more.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now I know you're bluffing.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you in or not?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why don't we get this over with? I'll call your three, and I'll raise you anything you've got left. Well?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take it. You always had the better hand, in everything.",
+                    "spoken_by": "RIKER 2"
+                }
+            ],
+            "location": "Cmdr Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi. I'm sorry to just stop by like this but there's something I'd like to talk to you about.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard made has some inquiries. He managed to get me a posting on the Gandhi. And considering how long I've been out of commission, it's an amazing opportunity.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When would you leave?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In about a week.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna. After I've served for six months, I'm eligible to bring family aboard. If we got married",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said those exact words to me before you went to serve on the Potemkin.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know. I was just held up for a while.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But if you hadn't been, what would have happened between us?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wouldn't've made the mistake of leaving you. I know that much.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know if I can believe that. It took me a long time to get over what happened between Commander Riker and me. I don't know that I want to put myself in that position again.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would never hurt you, Deanna.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not just that. I've worked hard to make a life for myself on the Enterprise. I'm happy here.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the situation were different, I'd stay. But I can't. Not while he's aboard.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you saying it's over?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. No. I just don't know if I'm ready to give up my life here. Maybe we both need some time.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a kiss"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodnight.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. The third transport window has opened and the away team is making their final attempt at retrieving the database.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Once we restore the servo link, you can shunt the database up to this console. Are you ready, Commander Data?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're with me, Lieutenant.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought Commander Data's expertise.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It doesn't take that much expertise to repair a servo link. You and I can handle it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the two Rikers leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, I am curious about something. If you met a double of yourself, would you have difficulty interacting with him?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think so.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not easy to get along with.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But Commander Riker and Lieutenant Riker are. Yet they seem to have trouble getting along with each another. I have found that humans value their uniqueness, that sense that they are different from every one else. The existence of a double would preclude that feeling. Could that be the source of the friction?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or perhaps it is more a matter of seeing something in your double. Something you do not like in yourself.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Research station"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "twisted metal and various bits and pieces of scaffolding and gantry across a chasm"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is it. There's the core, over there.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You waiting for something?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your orders, sir. How would you like me to get over there, sir?",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've been down here dozens of times. I'm sure you know the best way.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. I do.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they head through the scaffolding, then Riker 2's tricorder beeps"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's leaking ion radiation.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why didn't you report this?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It wasn't here before. This must have just happened recently. If we have to repair this conduit, we won't have time to access that computer core.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker 1 goes to a wall panel and pulls a switch. Something switches off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Scan it now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's working. The radiation levels are dropping to normal.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Next time, don't give up so easily.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they head off across a metal bridge to the core. It gives way and Riker 2 is hanging over a very deep drop. Riker 1 lies down and grabs his arms."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "but Riker 2 can't get a foothold",
+                    "line": "Hang on! Come on, grab on. Come on! Come on, climb! Come on!  I'm being pulled in.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let go! One of us has to get out of here.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Climb! Come on! Climb! Climb!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and finally Riker 2 scrambles to safety over the top of Riker 1"
+                }
+            ],
+            "location": "Cavern"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They have restored the servo link to the core. We can begin downloading the database.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Initiating data transfer.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46920.1. We have retrieved the database from Nervala station and are headed for our rendezvous with the Gandhi.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Research station"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hear the Gandhi's going on a terraforming mission to the Lagana Sector.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right. It'll take us four months just to get there.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't be joining you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess I'm not surprised to hear that.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm just not ready to give up my life here. Not yet.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "as they stand close together, the doorbell rings"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's all right.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wanted to give you something.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My quarters are full of things that I suppose belong to both of us. The least I could do is give you this.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a trombone, of course"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good luck, Will.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I actually thought I might go with the name Thomas.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your middle name.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess we really are different. I never really cared for that name.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I sort of like it. I guess I'd better get going.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker 2 tenderly kisses Deanna farewell"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Riker",
+                    "line": "I waited a long time. I guess I can wait a little longer.  Take care of her.",
+                    "spoken_by": "RIKER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker 2 leaves. Riker holds out his hand to Deanna, and they leave arm in arm"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Lt. Riker's quarters"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "250",
+    "transcript_url": null
+}

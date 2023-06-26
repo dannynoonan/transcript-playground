@@ -1,0 +1,2449 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45233.1. Our terraforming mission to Doraf One has been cancelled and the Enterprise recalled to Starbase two thirty four. Fleet Admiral Brackett would not discuss the matter on subspace for reasons she said would soon be clear.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I apologise, Captain, for the mystery, but we must attempt to contain the information I'm about to reveal to you at least as long as possible.",
+                    "spoken_by": "BRACKETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must admit you've piqued my curiosity, Admiral.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three weeks ago, one of our most celebrated Ambassadors, an advisor to Federation leaders for generations, disappeared. He left no word of his destination. Two days ago, intelligence reports placed him on Romulus and I assure you it was an unauthorised visit. Computer, initiate linkage between this terminal and starbase computer system alpha two nine.",
+                    "spoken_by": "BRACKETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Linkage complete.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A defection?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If it is, the damage to Federation security would be immeasurable. Taken on Romulus, by long range scanner. Computer, enhance image in section four delta.",
+                    "spoken_by": "BRACKETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and there on LCARS 40275 are the unmistakable craggy features of a certain former Science Officer of the Enterprise"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45236.4. As I study the intelligence reports on Ambassador Spock's disappearance, I cannot help but feel a deeper, more personal concern about this mission, for I know this man through his father. It was barely a year ago that I shared a mind meld with the Vulcan, Sarek. Now we must meet again as I attempt to find an explanation for his son's actions.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll be coming into orbit of Vulcan in less than an hour, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We should tell Sarek's wife of our plans.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Already been taken care of. She's transporting over at oh seven hundred.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Sarek?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She says he's too ill to make the trip.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The man is dying. And it's my honour to tell him that his son may have betrayed the Federation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How well do you know Spock?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I met him once. What I know of him comes from history books, and of course my mind meld with his father.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That must cover a lot of ground.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not as much as you'd imagine. Sarek and Spock. Well, sometimes, fathers and sons.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, one other thing. Take a look at this. Turned up during an intelligence sweep.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard hands over a PADD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Metal fragments.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you make of it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Possibly disassembled components, identified as Vulcan, recovered from a downed Ferengi vessel?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They were found in crates marked Medical Supplies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Contraband.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's been sent to Vulcan for identification. Starfleet have requested that we lend a hand.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mint tea. It's been years since I've had it. Vulcans have some kind of strange concoction they call mint. You'd never recognise it.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perrin, do you know why I've come to Vulcan? I must talk to you about Spock.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He didn't even say goodbye to his father before he left.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it possible he could have been abducted?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. He wrapped up all of his affairs carefully. He knew he was going.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have any idea why he might have disappeared like this?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, as far as I'm concerned, he disappeared a long time ago.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would it be inappropriate to ask what happened between you and Spock?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not between us. Between Spock and his father. They had argued for years. That was family. But when the debates over the Cardassian war began, he attacked Sarek's position publicly. He showed no loyalty to his father.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was not aware that Sarek was offended by Spock's opposition.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was offended. I made sure Spock knew it. I'm very protective of my husband. I do not apologise for it.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does Sarek have any idea why Spock might have left?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. If you could see Sarek as I do, wasting in bed, whispering to himself. He wants to see his son. He wants to heal any rift that may still remain. Now, it may be too late.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perrin, would you allow me to see Sarek?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If it were anyone else I would never permit it, but you are a part of him and he of you.",
+                    "spoken_by": "PERRIN"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "bits of twisted metal all over the place"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Vulcans haven't figure out what these fragments are but they've determined that the metal is a dentarium alloy.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That pretty well indicates that they're Vulcan. And dentarium also means that whatever this was, it was originally designed for use in space. From the look of the damage, it must've been a high speed impact.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. A Ferengi cargo ship that went down in the Hanolin asteroid belt. The debris was spread over a hundred square kilometres.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could it be a weapons array?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That was my first thought, but the Vulcans have no record of any stolen weapons or stolen parts, for that matter.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is going to be like putting together a big jigsaw puzzle when you don't know even know what the picture's supposed to be.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yep.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on a hard, flat bed, an elderly man with dementia writhes and moans to himself"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is like this most of the time. His emotions have taken over. Sometimes, I can bring him out of it. Sarek! You will listen!",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go from me!",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard is here.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No more chaos! No more.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will leave you alone with him. He will either acknowledge you or he won't.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Perrin leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek! I've come a long way to see you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not answer!",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must speak to you about your son.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish no one with me.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "About Spock.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Spock?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. He's missing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that you, Picard?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, old friend.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're here, on Vulcan.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need your help. I must find Spock.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's not here.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know. He's been reported on Romulus.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On Romulus?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "why?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had hoped to find that out from you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On Romulus? You're going there, aren't you? To find him.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sarek gets out of bed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Do you have any idea what might have taken him to Romulus?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there anyone on Romulus he might know, or choose to contact?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pardek?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is Pardek?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It could be Pardek.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is Pardek?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is a Romulan Senator. Spock has maintained a relationship with him over the years. I don't know how they met. At the Khitomer Conference, I'd imagine.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pardek represented Romulus?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I'm sure he did. In fact, I recall Spock coming to me with optimism about a continuing dialogue with the Romulans. I told him it was illogical to maintain such an expectation. Spock was always so impressionable. This Romulan, Pardek, had no support at home. Of course, in the end I was proven correct. I gave Spock the benefit of experience, of logic. He never listened. Never listened.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's been suggested that Spock might have defected.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Never! I will accept many things, but never that.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you believe he might have gone there to see Pardek?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Romulan Senator? How do you know Pardek?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've heard of him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's what he's done. He's gone to see Pardek.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know what business they might have together?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "lies down again",
+                    "line": "No. I never knew what Spock was doing. When he was a boy, he would disappear for days into the mountains. I asked him where he had gone, what he had done, he refused to tell me. I insisted that he tell me. He would not. I forbade him to go. He ignored me. I punished him. He endured it, silently. But always he returned to the mountains. One might as well ask the river not to run.  But secretly I admired him, the proud core of him that would not yield.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek, we're a part of each other. I know that he has caused you pain but I also know that you love him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell him, Picard.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sarek tries to make the hand signal, but Picard has to put his fingers into the correct positions"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Peace and long life.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Live long and and. Live long and. Spock. My son.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And prosper.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45240.1. To cross the Neutral Zone, I will require a cloaked ship. To that end, I have set a course for the Klingon home world. After all we did for Gowron during the recent war, I am certain he will be happy to return a favour.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Sarek's chamber"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Still no response from the Klingons, Mister Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's ignoring me. What other explanation is there?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Seems after hailing him for three days, he could've found a minute to talk to you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Lieutenant?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe I know why our messages are not being answered. Gowron has been rewriting Klingon history.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rewriting history?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. He is claiming it was his courage, his genius, which brought an end to the civil war.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the new version there is no mention made of the Federation's help in his rise to power.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If Worf's right, then our arrival would be an uncomfortable reminder of the facts.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He can take all the credit he wants, I don't caret. But I do need a ship. Well if Gowron won't talk to me, get someone who will. Somebody on the High Council. K'Tal, perhaps.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at the science station"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I have a visual identification of Senator Pardek of Romulus. This is a Barolian record of a trade negotiation in which Pardek participated four years ago.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's all?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Run it again. Computer, freeze. Call up the intelligence scan of Spock on Romulus. Computer, enhance far left figure and compare. Same man. Pardek. One question answered. What do we know of him?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has been in public service since he was a young man, a senator for nine decades. He is considered a man of the people. He has sponsored many reforms. Reportedly, Romulan leadership considers him to be somewhat of a radical because he has been an advocate of peace throughout his career.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can see why Spock would cultivate a relationship with him. Where would we find him other than on the floor of the Romulan Senate?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The district he represents is called the Krocton segment. He maintains a dwelling there.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is more, sir. I have taken the liberty of expanding the parameters of my search, and have discovered that Pardek has several relatives in the Krocton segment. I believe you will be able to locate him there on the third day of the Romulan week when the Senate is not in session.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, your resourcefulness never ceases to amaze me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we are being hailed by the Klingon home world.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gowron or K'Tal?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Neither, sir. It is the junior adjutant to the diplomatic delegation.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Junior adjutant.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Name.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "B'iJik, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Greetings, Captain. I regret to inform you that Gowron and the High Council are quite busy and won't be able to speak with you today.",
+                    "spoken_by": "B'IJIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is Gowron aware that we have been transmitting messages for the past three days?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Captain, Gowron wishes it were possible to talk with everyone who wants an audience. But he is one man. The demands on his time are formidable. If you would like me to take him a message.",
+                    "spoken_by": "B'IJIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A message? Very well. Tell Gowron, leader of the High Council of the Klingon Empire, that his Arbiter of Succession, Jean-Luc Picard, needs a favour.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "A favour?",
+                    "spoken_by": "B'IJIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I require a cloaked vessel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "A cloaked vessel. This is no small favour, Captain.",
+                    "spoken_by": "B'IJIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is for a mission that could have repercussions throughout the quadrant.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "How would it benefit the Klingon Empire? I'm sure Gowron will ask.",
+                    "spoken_by": "B'IJIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The only benefit to the Klingon Empire would be our gratitude.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "That is what you want me to tell him?",
+                    "spoken_by": "B'IJIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. And please add that if he is unable to provide a ship, then I am sure there are others in the Klingon Empire who would be willing to help me. And then, they would have our gratitude.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I see.",
+                    "spoken_by": "B'IJIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Also, please tell him that I am immensely gratified that he is prospering so well. A tribute to his skilled leadership.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're not removable, are they, Data?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Removable?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your ears.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Doctor. They are fully integrated components.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll have to do some moulds of his ears as well.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about his skin colour?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll have to do some tests on his skin pigmentation. Changing it to appear Romulan shouldn't be too difficult. We just have to make sure we can change it back again afterwards. Your right eye is point zero zero four higher than your left.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nobody's perfect, Doctor, but",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you want a proper fit to your prosthetic, trust your tailor.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything from Gowron?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. But after your tailor is done, would you join me in the cargo bay? Mister La Forge has made some progress with the metal fragments.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These two still have an appointment with Mister Mott to have their hairpieces designed.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thirty minutes, Number One.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What we seem to have here is a navigational deflector array. Or at least what's left of one.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why would anyone want a Vulcan shield array?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beats me, Commander. Every question we answer here seems to bring up two more.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're certain this is Vulcan?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Metallurgical analysis confirmed that and by running a molecular pattern trace, we were actually able to identify the ship as T'Pau. It was decommissioned years ago and sent to the surplus depot at Qualor Two. As far as anybody knows it's still there.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Worf to Captain Picard.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Lieutenant?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "A Klingon vessel is decloaking off our port bow. Compliments of Gowron.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, will you convey my gratitude to the Captain and advise him that Mister Data and I will be transporting over shortly.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to take the Enterprise to Qualor Two, sir. See what's out there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed. Thank you, Mister La Forge.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know my duty, Captain. When I am given orders, I follow them, but I do not like secrets. I want to know why we are going on this mission.",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry. It's a classified matter.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're going after the defector, aren't you?",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Defector?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you think information like that stays a secret? Ambassador Spock has gone to Romulus and you are going after him.",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, your orders are to take us to a set of co-ordinates near Romulus and to bring us back, and that is all I am prepared to discuss.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we are discovered by the Romulans it means death for us all.",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I realise that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hechu' ghoS. Very well, Captain. We have set a course for Romulus.",
+                    "spoken_by": "K'VADA"
+                }
+            ],
+            "location": "Klingon Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It may not be what you're used to on a Starfleet ship.",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quite nice. Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain K'Vada, is this the Captain's quarters, or my own?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Both. We have limited space. We are a military ship, not a pleasure craft.",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. This will be fine.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll sleep Klingon style. We do not soften our bodies by putting down a pad.",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. I prefer it that way.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll take your meals with us but we do not serve Federation food.",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been looking forward gagh. Haven't had it for quite a while. Very fresh.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "MeH HoD.",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jatlh!",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "MeHmaH ghoS.",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So'wl'chu'. Well, Captain, we're at the border of the Neutral Zone. You mean to do this, do you?",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I do.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First Officer's log, stardate 45240.6. The Enterprise is nearing Qualor Two, home of a Federation surplus depot operated by the Zakdorn. We hope to find out how the salvaged deflector array ended up in the hands of the Ferengi."
+                }
+            ],
+            "location": "Klingon quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have made contact, Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen. I'm Commander William Riker from the Federation Starship Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Klim Dokachin, Quartermaster, Surplus Depot Zed One Five.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need some information about a Vulcan ship, the T'Pau. It was sent to you a few years ago.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Did you arrange an appointment?",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An appointment? No.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Then I will be unable to help you. You may communicate with scheduling.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who does he think he is?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Quartermaster of the supply yard, with information you need.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right. Mister Worf re-establish communication.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Dokaychin?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Dokachin. Klim Dokachin.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Dokachin, the information I need involves a matter of major importance to the Federation. I'll need access to your logs, your files. My people can do the work.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I don't allow outsiders into my computer system..",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, one of your people can do the work.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I wish I had the people to spare. but I don't.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, sir what would you suggest?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I don't know. Contact me when you reach orbit.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't believe this.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's king of his particular hill, Commander. You'll have to treat him that way.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, this feels like a perfect job for you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "later, Enterprise sails into the spaceship graveyard of the supply depot, and avid fans play spot the old model ship"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you for coming on board, Mister Dokachin.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quite a ship you have.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've tied into your computers, if you'd like to access the files.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't usually see them in such good condition. By the time they get to me, they're always falling apart.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Dokachin, we must find this ship and you're the only one who can help us.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna Troi, Ship's Counsellor.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "goes to science station",
+                    "line": "He probably figures that we don't get to see a lot of handsome women out this way and someone like you might get a little more cooperation from me. He's probably right. What was the name of that ship? The T'Pau?  The T'Pau. Vulcan registry. There. Logged in stardate 41334.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where's the ship now?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Docked. Section eighteen gamma twelve. Do you want me to take you there?",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd appreciate it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Helmsman, lay in a heading one four one by two zero eight. Ahead slow, two hundred kph. I suppose this is your first visit to a junkyard, isn't it? You'd be surprised at some of the things I find on board these ships. I once found a fourteen foot Caldorian eel on board a freighter, in someone's locker.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you serious?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you have time, I'll show it to you. I still have it. Nursed her back to health.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are approaching the designated coordinates, Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "empty space"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What? Where is it? What happened to it? These are the correct coordinates.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The T'Pau is missing?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The T'Pau is missing.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How could a ship disappear from your depot?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not accustomed to losing things, Commander. I will find your ship for you. I have the T'Pau cross-referenced in four different directories.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When it was brought here was it stripped of material, armament, sensors?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you tell us what happened to its navigational deflector?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was routed to the Tripoli, a holding vessel on the outer rim of the shipyard.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not there any more. What's left of that deflector is laid out on the floor of our cargo bay.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can that be?",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps we should to pay a visit to the Tripoli.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "another short but slow journey"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In all the time that the Zakdorn have operated this depot, nothing has ever been lost. Never.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Approaching the coordinates of the Tripoli, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "more empty space"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not understand this. This is not possible. We beam goods to the Tripoli on a regular schedule. There was a shipment yesterday. Another is set for today. It must be there.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When is today's transport?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just over two hours from now. A shipment of deuterium storage tanks.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, align the Enterprise so we appear to be one of the abandoned ships. Mister La Forge, when we're in position, shut down the engines and all systems except sensors and life support.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've a feeling somebody's going to be here to receive those storage tanks. I'd be very interested to know who that is.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These quarters were obviously intended for one crewmember, sir. There is but a single sleeping space.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure the Klingons found it amusing to put us in here together.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Since I do not require sleep, I propose you take the shelf, sir. I am content to stand.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well, Mister Data. Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard lies down on the metal shelf with a bulkhead only just above his head"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you comfortable, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good night, Captain. Sleep well, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir? Was I making noise, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not exactly",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was processing all of the information we have accumulated on Romulan society. I am preparing for the task of impersonating a Romulan.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you like me to discontinue, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Please go on.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you looking at?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not looking at anything, sir. I am continuing to organise my files.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you're looking at me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am sorry if I was disturbing you, sir. I will not look in your direction.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data turns around, Picard gives up and gets up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you not wish to sleep, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think so, Mister Data. Let's go on with the files.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would be happy to. I have been studying the Krocton segment, as you asked, and have selected an appropriate site for our transport.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain K'Vada to Picard. Please come to the bridge.",
+                    "spoken_by": "K'VADA"
+                }
+            ],
+            "location": "Klingon quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. We've monitored a subspace message that might interest you.",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard reads the PADD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek is dead.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Klingon Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, sensors detect a ship approaching at warp speed.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Identification?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative. No transponder signal, no subspace marker.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sounds like they don't want to be identified.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The ship is coming out of warp, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors indicate a combat vessel, origin undetermined, heavily armed. Mass and density suggest that it's fully loaded with cargo. I'd say from these internal scans, a good deal of that cargo is weaponry.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The ship is entering sector twelve delta four",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's taking the position assigned to the Tripoli. The coordinates are identical.",
+                    "spoken_by": "DOKACHIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, readings indicate surface to ship transport has begun.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, bring the engines back online and restore all systems to normal.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's powering up engines, turning to starboard.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a channel.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is Commander William Riker of the USS Enterprise. Identify yourself. I repeat, you have entered a Federation depot. Identify yourself.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, the ship is locking phasers.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields up. Red alert.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That ship easily matches our armament, Commander.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's coming about.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you do not respond to our hails, we will take that as evidence of hostile action.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is an energy build up in their phaser banks. Sir, they're activating weapons.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "thump"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forward shields down to seventy two percent.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Boost power to the shields.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, lock onto their weapon systems only and prepare to fire.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Enterprise takes more hits"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forward shields down to sixty eight percent, aft shields forty percent.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my mark, point seven five burst. We just want to get their attention.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fire.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their forward shields are damaged, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We destroyed one of their phaser arrays. Looks like collateral damage in the cargo area. Commander, I'm picking up massive power fluctuations, internal explosions. With all the armament that ship is carrying, it's going to blow.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KaBOOM. Geordi was right"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Mister Data? What do you think?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They are both now Romulan"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would not have thought it possible, sir. I am eager to test the success of our efforts. It does remain to be seen if the Romulans will accept us. Captain, you have seemed unusually pensive since we received the news of Ambassador Sarek's death.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek and I share a particular bond. Our lives touched in an unusual way. I admit I feel the effects of his death. The tenor of this mission has changed, Mister Data, at least it has for me. We were sent to confront Spock about his disappearance. Now, I also have to tell him that his father is dead.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not entirely understand, sir. As a Vulcan, Ambassador Spock would simply see death as the logical result of his father's illness.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's never quite that simple, not even for a Vulcan. Certainly not for Spock who is half-human. Years spent in conflict. And now the chance to resolve all of those differences is gone.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Considering the exceptionally long lifespan of Vulcans, it does seem odd that Sarek and Spock did not choose to resolve those differences in the time allowed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Father and son. Both proud, both stubborn, more alike than either of them were prepared to admit. A lifetime spent building emotional barriers. They're very difficult to break down. And now the time has come, it's too late. It's a difficult moment. It's a lonely one. It's a moment Spock is about to face.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Klingon quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't you two look sweet. Be careful, android. Some Romulan beauty might take a liking to you. Lick that paint right off your ears. You. Do you know what the Romulans will do to you if they discover who you are?",
+                    "spoken_by": "K'VADA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have a good idea. We're ready to transport down to the surface.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just so we understand each other, my orders don't include rescue missions.",
+                    "spoken_by": "K'VADA"
+                }
+            ],
+            "location": "Klingon Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pardek, a stocky man, enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, Senator Pardek. You received my message.",
+                    "spoken_by": "NERAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I got here as quickly as I could, Proconsul.",
+                    "spoken_by": "PARDEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you know of this human? Jean-Luc Picard, a Starfleet Captain.",
+                    "spoken_by": "NERAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know nothing of him.",
+                    "spoken_by": "PARDEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You haven't seen him recently?",
+                    "spoken_by": "NERAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To my knowledge, I have never seen him.",
+                    "spoken_by": "PARDEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have received intelligence indicating he's on his way here. Perhaps here already.",
+                    "spoken_by": "NERAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here on Romulus?",
+                    "spoken_by": "PARDEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Curious, isn't it. I suppose we'd better find out if the report is accurate or merely rumour. Circulate his likeness among the security forces. Remind them that if he is here, he's probably disguised as one of us.",
+                    "spoken_by": "NERAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll see to it.",
+                    "spoken_by": "PARDEK"
+                }
+            ],
+            "location": "Romulan office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is definitely the street on which the intelligence scan of Spock and Pardek was taken, sir. Adjusting for the optical distortions, I am able to verify the architectural features.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where were they standing? Data, you're moving about in a very, well, android way.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am sorry, Captain. I will be more careful.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't call me Captain.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand, sir. I have found the place where they were standing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is here, at this doorway. A legal intercessor's office. The name is similar to Pardek's. It would appear to be one of his relatives.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard knocks, then tries the handle"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's not open for business yet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nonetheless, I recommend we keep this location under observation. I have clearly determined Pardek's routine. On days when the Senate is not in session, he invariably comes to this section after the median hour.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. Let's sample the local cuisine, shall we?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Romulan street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "an old woman brings two bowls to their table, no chairs"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you happen to know what time the intercessor's office across the way opens?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you want to know?",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need his services. He was recommended.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't seen you here before.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are here for the day, from the city of Rateg.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rateg? I don't think so.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you say that?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't sound like you're from Rateg.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a misconception that all Rategs speak with a particular inflection. In fact, there are twelve different",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We come from several kilometres outside the city.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or perhaps you come from the security forces to watch the intercessor's office. Is he in trouble?",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're mistaken, madam.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doesn't matter to me. I don't know when he opens. Eat your soup, courtesy of a loyal establishment. Jolan tru.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "from the look on Picard's face, the soup is horrible"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think we can stay here too long.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We may not have to. Direct your view to the far corner, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very good, Senator.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Senator, we seem to be having some problems",
+                    "spoken_by": "LADY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that not Pardek?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe it is.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps you should appear to enjoy your soup, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to lady",
+                    "line": "I'll take care of that. Come.",
+                    "spoken_by": "PARDEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Data follow Pardek, and are stopped by two armed soldiers"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do not move.",
+                    "spoken_by": "ROMULAN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What? You've made a mistake.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quiet. Come with us.",
+                    "spoken_by": "ROMULAN 1"
+                }
+            ],
+            "location": "Cafe"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Caves with a convenient set of steps and lots of lighting"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait here.",
+                    "spoken_by": "ROMULAN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For what? What have you brought us here for?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to Romulus, Captain Picard. Don't let our soldiers frighten you. We had to get you off the street as quickly as we could. Romulan Security knows that you're here. I am Pardek. You are among friends, Captain.",
+                    "spoken_by": "PARDEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have come on an urgent mission from the Federation. I'm looking for Ambassador Spock.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed. You have found him, Captain Picard.",
+                    "spoken_by": "SPOCK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "To Be Continued..."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Romulan caves"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "208",
+    "transcript_url": null
+}

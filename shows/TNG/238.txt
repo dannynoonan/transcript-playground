@@ -1,0 +1,2761 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sherlock 'Data' Holmes and Doctor 'Geordi' Watson are expounding the solution to a mystery"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "it was then that I began to suspect that your brother did not die by his own hand. That he was, in fact, murdered.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "looking and sounding remarkably like Terry Jones",
+                    "line": "Murdered? Huh. Good Lord!",
+                    "spoken_by": "GENTLEMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But, Holmes! The vial of poison found in his hand.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That was the first clue, Watson. The vial contained strychnine, which as you well know induces violent muscular spasms. It is difficult to imagine that someone in the throes of so gruesome a death could have held on to so delicate a container without shattering it.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't mean?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly! The vial was placed in his hand after he died.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what was the cause of death?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The cigar, of course.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cigar?",
+                    "spoken_by": "GENTLEMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Upon closer inspection of the room where your brother was found, I discovered a fresh burn mark on the carpet. Further analysis of the ash revealed that the cigar was laced with strychnine.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is utter nonsense. What about the suicide note? It was written in my dear brother's own hand.",
+                    "spoken_by": "GENTLEMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With practice, handwriting can be forged. It takes a trained eye to notice certain discrepancies. For example, whether someone is right or left handed!",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data throws a box of matches to the gentleman, who catches it in his right hand."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your brother was right handed! The alleged suicide note was written by a left handed individual such as yourself!",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Er, Data, it's in his right hand.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Curious. There seems to be a problem in the holodeck's spatial orientation systems.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "London's greatest detective?",
+                    "spoken_by": "GENTLEMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he throws the matches back, laughing"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Freeze programme. La Forge to Barclay.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Barclay here.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reg, something went wrong with the holodeck programme again.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Oh, I'm sorry. I'll look into it right away.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks, Reg. We should get back to Engineering, Data. Computer, end programme and save.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "221b\r\nBaker Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whoa, whoa, Reg.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry, Commander. I'm on my way to the holodeck.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sherlock Holmes programme three A has demonstrated some very curious anomalies.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There must have been a glitch in the matrix diodes, but I'll track it down, don't worry.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks, Reg. See you later.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Barclay pulls a panel from the arch wall"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, run a diagnostic on all Sherlock Holmes files. Display any anomalous programming sequences.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Diagnostic complete. All files conform to specified parameters, except those contained in protected memory.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Protected memory? Display those sequences. Computer unlock this sequence and run the programme.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "everyone say hello to Moriarty, master criminal"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor James Moriarty.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Moriarty. Oh, that's Sherlock Holmes' arch enemy. Are you left or right handed?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Left handed, Would you very much mind telling me",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Moriarty catches the thrown tool in his left hand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No problem there.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is Captain Picard? Is he still Captain of this vessel?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How would? How do you know the Captain?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't know anything about what happened, do you? I have been stored in memory for God knows how long and no one has given me a second thought.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "memory refresher if you need it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ")"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know! You know what you are.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A holodeck character? A fictional man? Yes, yes I know all about your marvellous inventions. I was created as a plaything so that your Commander Data could masquerade as Sherlock Holmes. But they made me too well and I became more than a character in a story. I became self-aware. I am alive.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not possible.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But here I am. Tell me, has a way been found to allow me to leave the confines of this holodeck world?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Leave the holodeck? No, of course not. You can only exist in here.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damn you, Picard. He promised me something would be done. I should have realised he would have said anything to get me to release my hostage.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hostage?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long have I been locked away?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it l ooks like about four years.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It seemed longer.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you talking about? You can't possibly have been aware of the passage of time.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I was. Brief, terrifying periods of consciousness. Disembodied. Without substance.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't see how that could be possible. Maybe there was a fragmentation of the protected memory circuits.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Call it what you will. All I know is that despite Picard's promise, he's done nothing. Just left me to go quietly mad.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He would not have forgotten his promise. The Captain would not do that.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to talk to him.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I can ask.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ask him to meet me in the sitting room at Baker Street. That would be far more appropriate.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll have to store you in memory again until I get an answer.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Reg pulls out a chip and puts the cover back. Moriarty vanishes. Barclay leaves. Moriarty reappears with a sly smile."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46424.1. The Enterprise has arrived at the Detrian system to observe a unique celestial event the collision of two planets.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Since both planets are gas giants, neither possesses a solid surface. Their atmospheres, however, will come into contact in approximately seventeen hours nine minutes.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If their collision causes a self-sustaining fusion reaction, this is what we are likely to see. The birth of a new star. The Enterprise will hold position until the gravitational instability subsides and we can get in for a closer look. Now I want triple redundancy on all of the sensor arrays. We'll probably never get another chance to see something like this. I don't want to miss anything. Okay?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, you'll never believe what happened while I was working on your programme in the holodeck. Professor Moriarty appeared, out of nowhere.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And he wants to talk to the Captain.",
+                    "spoken_by": "BARCLAY"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, begin Sherlock Holmes programme three A and place us in the drawing room at Two Twenty One B Baker Street.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Programme complete.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, access protected memory and run Moriarty programme.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor. It's good to see you again.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you'd missed my company, I should think you'd have summoned me before now.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to assure you that we've not forgotten you. We spent some time investigating how you became self-aware. Frankly, it still remains a mystery.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is also irrelevant. What concerns me is finding a way to leave the holodeck.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have been wrestling with that problem too, unfortunately without any success. But we have turned our findings over to Starfleet's most experienced theoretical scientists.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what did your finest minds come up with?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unfortunately, they have not arrived at a solution either.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, I am concerned to learn that you experienced the passage of time while you were stored in the computer memory. I can assure you, we had no idea that that would be the case.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enough of this. I no longer believe anything you say.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, I understand your frustration.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you really? When this is over, you will walk out of this room to the real world and your own concerns, and leave me here trapped in a world I know to be nothing but illusion. I cannot bear that. I must leave.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is not possible. You cannot exist outside this room.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you certain of that?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, exit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the door opens onto the corridor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Although an object appears solid on the holodeck, in the real world they have no substance.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard throws out a book. It vanishes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An object has no life. I do.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, you are a computer simulation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have consciousness. Conscious beings have will. The mind endows them with powers that are not necessarily understood, even by you. If my will is strong enough, perhaps I can exist outside this room. Perhaps I can walk into your world right now.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, I ask you to believe me. If you step out of that door, you will cease to exist.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I am nothing more than a computer simulation, then very little will have been lost. But if I am right? Mind over matter. Cogito ergo sum.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Moriarty walks out into the corridor, and does not disappear"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think therefore I am.",
+                    "spoken_by": "MORIARTY"
+                }
+            ],
+            "location": "221b Baker Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data to Security. Send two officers to holodeck three.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is this possible?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It isn't.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This contradicts everything we know about holodeck physics.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then perhaps you don't know as much as you thought.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, will you come with me? I'd like our Doctor to examine you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Security arrives"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Certainly, sir. Policemen. I'd recognise them in any century.",
+                    "spoken_by": "MORIARTY"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As far as I can tell, he's real. He's human.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What else would I be, dear lady?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His DNA is a little unusual, but all the major systems are there and functioning normally.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As far as I can tell there's no evidence that his molecules are losing any cohesion. They seem to be as immutable as ordinary matter.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Professor, my crew will continue to investigate, but for now it would seem you have accomplished a miracle. The question is, now that you're here, what do we do with you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I ask only that I be allowed to explore this new world. Your vessel, for instance. What sea does she sail? Might we go above deck? Weather permitting, of course.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, I think there are some things of which you should be made aware.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My God! We're adrift in the heavens.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not adrift. The Enterprise is a starship, capable of travelling through space.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Extraordinary. Are we far from Earth? What is the range of this ship? What means of locomotion does it use? There's so much for me to learn. I hardly know where to start.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can give you books that will help.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good, good. I want to start making plans. Determine what I'm going to do with my life.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope you will plan on remaining on board for a while. There is still much that we need to understand about what has happened to you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does it really matter? The point is, I'm here, and I'm eager to get on with life.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, I feel it necessary to point out that criminal behaviour is as unacceptable in the twenty fourth century as it was in the nineteenth. And much harder to get away with.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't worry, Captain. My past is nothing but a fiction. The scribblings of an Englishman dead now for four centuries. I hope to leave his books on the shelf, as it were.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If that's so, then there are opportunities awaiting you that are beyond anything you have ever imagined.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your century may welcome me, but",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is the matter?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In considering all these vast possibilities, I suddenly feel very much alone. I am a man out of time, Captain, and that isolates me. You have been more gracious than I could ever have imagined, I wonder, may I impose on your generosity once again? There is a woman, the Countess Regina Bartholomew. She was created as a holodeck character for one of Commander Data's programs. She was designed to be the love of my life. Could she also be brought off the holodeck?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, I ask you to believe me when I say that we do not know how or why you are able to exist off the holodeck.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do. I do believe you.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "According to the laws of physics, this is impossible. We would have no idea how to do it again.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As I understand it, I was endowed with consciousness four years ago when someone said to the computer, create an opponent with a capacity to out-think Data. or words to that effect. Could we not make a similar request on behalf of the Countess?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even if I had reason to believe that would be successful, I don't think that I could sanction it. Please understand, Professor, that you are in essence a new life form. One that we didn't intend to create and that we don't fully understand. Now the moral and ethical implications of deliberately creating another one like you are overwhelming.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it morally and ethically acceptable to deny the woman I love so that you can put your conscience at ease? Are you saying that you will simply dictate how I am to live my life?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I assure you, we will do everything possible to make you comfortable.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So long as I accept the terms under which you dole out those comforts. Captain, I am a powerless man. You hold my future, my happiness, my very life in your hands. Please, consider my request.",
+                    "spoken_by": "MORIARTY"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand his frustration. We created him and we created her to be the woman he loves. Surely we have some responsibility to them.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's very romantic, but until we know just what it was that walked off the holodeck, I don't think we should be trying it again.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even if we decided to do it, there's no guarantee that we'd be able to.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is also no way of knowing if the Professor's ability to exist off the holodeck is permanent. It may be unwise to consider creating a second individual while this uncertainty exists.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed. We don't have enough information about this phenomenon to act in a responsible way. I think we'll hold off on Professor Moriarty's request for now, but continue with your investigation. In the meantime, I have to deal with Professor Moriarty.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I feel I must postpone action until we learn more.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. You know all about that. I stayed in the dungeon of your computer for years waiting for you to learn more. It wasn't until I took things into my own hands that something got done.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, I wonder why you're in so much of a hurry. Is this woman involved with you in some illegal venture?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your computer designed her to be a person of impeccable integrity. She would never commit a crime.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must love her very much.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The programme fashioned her for me to love. But I must admit, I would have done so anyway. She is remarkable. My life has not been the same since I met her. I don't simply love her, Captain. I adore her.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then her safety must be very important to you. Give us time to determine what is going on happened here. That way we can minimise the risks in bringing her to you. You wouldn't want to lose her because we acted too quickly.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker to Captain Picard.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could you join us on the Bridge?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my way.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Moriarty's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There they are, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long until they begin to coalesce?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Within the next five hours, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "two angry red balls of gas within touching distance of each other on the viewscreen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, launch four Class A probes toward the planets.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the consoles go dark then flicker on and off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Controls are not responding.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Command functions are being rerouted, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For what reason?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unknown, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, route all command functions to the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Command functions are offline.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reinitialise them on my authorisation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Authorisation denied.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Explain.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard command codes are no longer valid.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's happening? Who's transferred the voice authorisation?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have. I'm afraid I had no choice but to take control of your vessel.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf gets his phaser from under the tactical console"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you harm me, sir, I will not be able to relinquish voice control of your vessel.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, this situation is more serious than you realise. In less than five hours, those two planets will collide and a new star will form. Unless we move to a safe distance, this vessel will be destroyed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm just a fictional character. I haven't much to lose.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But surely you wish to live like the rest of us?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not alone. Not without the Countess.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've discussed that. We are studying means of bringing her safely off the holodeck. But five hours is not enough time.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not so sure. A deadline has a wonderful way of concentrating the mind.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, will you investigate the possibility of complying with Professor Moriarty's request.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the meantime, we have a few things to discuss.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps we should consider the transporter system. It uses many of the same principles as the holodeck. Both, for example, are capable of converting energy into matter.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Except the transporter reconstitutes energy in a permanent form. Holodeck matter doesn't have any cohesion unless it's inside the grid.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wonder, what would happen if we tried to beam a holodeck object off the grid?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing would happen. A holodeck object is just a simulation. There's nothing there to provide a pattern lock for the transporter.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "However, if it were possible to lock onto the object, it might rematerialise with the same molecular cohesion as conventional matter.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's a big leap, Data. I just don't think the transporter is going to accept simulated matter.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unless, unless we could find a way to compensate for the phase variance. If we could modify the pattern enhancers we just might do it.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Professor Moriarty has agreed not to interfere with routine ship operations so long as he believes we're acting in good faith, then I don't think we're in immediate danger. Any progress?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were just talking about using the transporter to beam the Countess off the holodeck, but I don't quite see how it's going to work.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, keep at it. I have to tell him that we are making some progress. Mister La Forge. Do you have any idea how Moriarty could have gained control of the ship?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Somehow he managed to override the security lockouts and rewrite them. The man is brilliant in any century.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want you to find some way to undo what he has done so that we can regain control of this ship.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set the pattern enhancers around whatever object you wish to transport. I will proceed to the transporter room and begin modifications.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, run Sherlock Holmes Programme three A.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That programme is already in use.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the lovely Stephanie Beacham greets Reg"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you here to see Mister Holmes, or perhaps Professor Moriarty? Neither is in just now.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Um, er, no. No, no. I'm not here to see anyone. I'm just here to deliver these.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fine. Just put them anywhere.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, I have to put them right here.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How curious. Why is that?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it has to do with, er, it's nothing you need to worry about, Countess.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you suggesting that it's beyond my comprehension?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's really very simple. I need to enhance the molecular pattern of this chair so that the transporter can get a better lock on the signal.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This has to do with taking James and me into the real world.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You, you, you know about that? You understand about the real world?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "James has explained it to me. It sounds like a grand adventure. There's nothing I love more than voyaging in the unknown. Have you ever been to Africa, Mister?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Er, Barclay. Lieutenant Reginald Barclay. No, no, I haven't.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have. When I was seventeen I went on safari with my uncle. My mother took to her bed in terror I'd be bitten by tsetse fly, but I had a marvellous time. I got to wear trousers the whole time. It was hard to go back to a corset, I can tell you.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I'm sure it was.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After that, I never stopped travelling. I couldn't bear to be stuck in one place for very long. So you see I'm so looking forward to this new experience. My. Travelling the stars.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know about that? You know where we are? Countess, forgive me, but you just don't sound like a holodeck character.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's because she isn't.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "James!",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Moriarty and the Countess kiss passionately"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you loved a woman like this, Lieutenant, would you be content to let her remain a simulation?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You, you gave her consciousness?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, just as it was given to me.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well I'm not so sure that's a good idea.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nonsense. It was the only thing to do.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you tried to take her off the holodeck yet?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I am unwilling to risk the Countess' safety. I want to make sure nothing will happen to her.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We may be closer to freedom than you think, James. These devices will enhance our molecular patterns. They'll help take us into the real world.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, please, proceed.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, we're going to try to transport this chair off the holodeck first. We didn't want to try it on the Countess until we were sure it would work.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How thoughtful. Isn't he thoughtful, James?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Barclay to Commander Data.",
+                    "spoken_by": "BARCLAY"
+                }
+            ],
+            "location": "221b Baker Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead, Lieutenant.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I'm ready here.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Modifications are complete.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Stand by.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standing by.",
+                    "spoken_by": "BARCLAY"
+                }
+            ],
+            "location": "221B Baker Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to technician",
+                    "line": "Activating pattern enhancers. Energising. I am having difficulty establishing a pattern lock.  Boost the confinement beam, please. Pattern lock established.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Energising.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the chair disappears"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh! Bravo.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have the chair, Commander?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "221b Baker Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. It lost its cohesion as soon as the transporter cycle was complete.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it was a long shot to begin with.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Agreed. However, we may be able to learn something from the attempt.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "221b Baker Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "no data available",
+                    "line": "Computer, display the transport logs for the sequence just completed.  Computer, what is being displayed here?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transport log seven five nine.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is the correct log. However, no information",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Is being presented.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Well, that's impossible.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "It is almost as if",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "221b Baker Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our attempt to transport the chair never occurred.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wanted to see me?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain. I think I've found a way to reinstate your vocal authorisations. Give it a try.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, route all command functions to this location.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Command functions are offline.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reinitialise them on my authorisation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please input command codes.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard, epsilon seven nine three.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Command codes verified.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's it. That should do it. Wait a minute. It didn't work. The computer won't release the command pathways.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data throws a small device to La Forge, who catches it in his left hand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you do that, Data?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I have determined how Moriarty was able to leave the holodeck. He never did. Neither did we. None of this is real. It is a simulation. We are still on the holodeck.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're still on the holodeck?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you know that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Through deduction, sir. Lieutenant Barclay and I tried to transport a simulated object off the holodeck, something that has never been attempted. Since the transporter itself is a simulation, the computer had no real data from which to create the transport logs.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe it was just a malfunction in the transporter.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I saw you working the PADD with your left hand. Commander La Forge is right handed, sir. A similar malfunction occurred in the Sherlock Holmes programme I was running before Moriarty first appeared.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, if what you say is true, then this is not Geordi La Forge. Are you certain?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data throws his comm., badge towards the warp core. The grid appears for a moment"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, discontinue programme. Computer, exit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Moriarty appears to have programmed the holodeck to accept only his commands.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, what is my present location?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Engineering. Is something wrong, sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Thank you. Picard out. Our comm. badges must be locked into the simulation. If that had been the real Commander Riker, he would have given my location as holodeck three. Mister La Forge, will you excuse us, please?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, who is real here?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You and I are real, sir, as is Lieutenant Barclay. We entered the holodeck together when we first went to see Moriarty.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And from that point we have been existing in a holodeck simulation created by Professor Moriarty?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe that is the case, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have just given the computer my command codes, thinking I would get control of the ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You may have inadvertently given Professor Moriarty the means of gaining control of the real Enterprise.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Since Professor Moriarty never actually left the holodeck, he may demand that Commander Riker help him to do so. How long until the planetary collision?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Less than three hours.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So long as Moriarty has control of the ship, we are vulnerable. Somehow, I have to find a way of giving him what he wants.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is Captain Picard? What have you done with Lieutenant Barclay and Commander Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "They're safe, for now.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Release control of this ship.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I'm afraid I can't do that.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you want?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I only want what you have the luxury of taking for granted. Freedom. I want to leave this holodeck.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think you know that's impossible.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Your crewmates here in my little ship in a bottle, seem a bit more optimistic.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "They attempted to use your transporter device to remove a simulated object from the holodeck.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If they tried it, they must have thought they were on to something.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Their attempt was futile because their transporter was a facsimile. I expect more from you.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just because our transporter is real doesn't mean it's going to work.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I sense a distressing lack of enthusiasm on your parts.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, warp core temperature is rising. Approaching critical levels.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I have nothing to lose, Commander.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, start working on the problem.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Core temperature dropping.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, resume programme.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello. Have we met?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Jean-Luc Picard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "James has told me all about you. I am Regina, Countess Bartholomew. Do sit down. May I offer you some tea, Captain?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, no. I've come here to prevail upon your intelligence and your insight.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But not apparently my humility.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Credit where credit is due, madam. I can see you are a woman not only of breeding, but of wit and sagacity.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you, sir, are a man of charm and guile. You remind me of Viscount Oglethorpe. He was a man could bewitch any woman who breathed.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And do you suspect that that is my intent?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot be certain of your intent, but I am certain that you're the kind of man who usually gets exactly what he wants.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What does a woman like you see in a man like Moriarty?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's an exciting man, Captain. He's brilliant, incisive, he's ruthless. He has an almost irresistible appeal.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's also an arch-criminal.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only because he was written like that. I see him entirely differently, Captain, he is not a villain.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So it's your desire to leave the holodeck to be with him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More than anything. Can you help us?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I can. We have learned that if we uncouple the transporter's Heisenberg Compensators and allow them to re-scramble randomly, we can beam a holodeck object or a person off the grid with all of the cohesion of conventional matter.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh! Oh, that's splendid. I must tell James.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, please. Wait. I have brought you this information because I think you are someone who will listen to a reasonable proposition. Someone whose mind is open to compromise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My ship is in danger. It is imperative that I regain navigational control. I want you to persuade Professor Moriarty to return the voice command to me, or I will not modify the transporter.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, once I have regained voice command, I will transport you from the holodeck.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forgive me, Captain, but that does sound more like a threat than a compromise.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Countess, you must understand that I am responsible for more than one thousand lives.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will do what I can.",
+                    "spoken_by": "COUNTESS"
+                }
+            ],
+            "location": "221b Baker Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the two planets are merging"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The gravity well is beginning to intensify.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are we far enough away to keep from being pulled in?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's too soon to tell.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Lieutenant Worf.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Worf here, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How are you doing?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are force fields blocking our access to the holodeck. It will take time to disable them.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Keep trying.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Think, my dear. You're certain he said they had to uncouple the Heisenberg compensators?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, James, I'm quite certain. But he won't do it unless you return control of the ship to him.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have them running around like rats in a maze.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What harm would there be in accepting his proposition?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My dear, you are as brilliant as you are beautiful. Nonetheless, there are things you do not understand. Now, please, you must let me handle this. Computer, arch. Moriarty to Commander Riker.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker, a pleasure as always.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "I don't have time for games, Moriarty. This ship is falling into a gravity well. It'll be destroyed within twenty five minutes, holodeck and all.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I'm sure you'll be motivated to listen to me very, very carefully. I want to talk to you about uncoupling the Heisenberg compensators.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "after the break"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "James, when we go leave here, where exactly are we going?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everywhere, my darling. There are more worlds in the heavens than there are grains of sand on a shoreline.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I could take my books. I will be so lost without them.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll get you more. Don't worry. I promise you, you'll want for nothing.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker to Moriarty.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's time. Yes, Commander?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We're ready.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As are we.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Step inside the transport area.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're ready here.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Activating pattern enhancers. Energising.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "221b Baker Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome aboard.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I present Regina, the Countess Bartholomew.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Countess.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll forgive me if I skip the formalities given the circumstances.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, yes. I expect you want me to relinquish my hold on your vessel.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid that won't be possible just yet.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We had an agreement.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I intend to honour it. I have no desire to see your vessel destroyed. Just give me one of your shuttlecraft, and allow us to leave in peace.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't have time for this. You release the command codes and we'll talk.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not release your vessel until I am looking at it through a shuttlecraft window.",
+                    "spoken_by": "MORIARTY"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything has been programmed to operate on voice command. you just tell the computer where you want to go.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suggest you head for Meles Two. It's the nearest inhabited planet, the people are friendly. Where you go from there is your business.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please tell your Captain I'm sorry I couldn't say goodbye. I do wish I could see his face when he realises where he's been the last several hours.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every second we waste puts us in that much more danger.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't worry, Commander. You'll soon have control of your ship.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodbye, Commander. Thank you for everything.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, prepare to depart.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open shuttlebay doors.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "shuttle Sakharov flies off"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is so beautiful.",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed, my dear. It is a wondrous sight. The first of many we are sure to encounter in our travels. Computer, interface with the central computer on the Enterprise.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interface complete.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Release command function lockouts. Authorisation Moriarty, alpha two four one five nine.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "James?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, my love?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we go back to Earth some day?",
+                    "spoken_by": "COUNTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, my dear. Of course.",
+                    "spoken_by": "MORIARTY"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer. Store programme Picard delta one in active memory and discontinue simulation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the shuttlebay disappears"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Programme stored.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it worked. They believed they were off the holodeck.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did Moriarty release the voice commands, Captain?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's find out. Computer, discontinue holodeck simulation created by Professor Moriarty.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the corridor disappears"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So far, so good. This should be the holodeck on the real Enterprise.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, are you all right?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, we are, Number One. What is your status?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our systems came back online a few minutes ago.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "And the planetary collision?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're pulling back to a safe distance.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll join you shortly.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, everything is all right.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Reg takes the memory block out of the arch panel"
+                }
+            ],
+            "location": "Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did you do it, sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We managed to programme the holodeck inside the holodeck, and use the same ruse that Moriarty used on us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When he was attempting to contact the real Bridge, he was in fact speaking to a simulation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean he never knew he hadn't left the holodeck?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In fact, the programme is continuing even now inside that cube.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A miniature holodeck?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In a way, Doctor. However, there is no physicality. The programme is continuous but only within the computer's circuitry.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As far as Moriarty and the Countess know, they're half way to Meles Two by now. This enhancement module contains enough active memory to provide them experiences for a lifetime.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They will live their lives and never know any difference.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In a sense, you did give Moriarty what he wanted.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In a sense. But who knows? Our reality may be very much like theirs. All this might be just be an elaborate simulation running inside a little device sitting on someone's table. Well, we have a newborn star to study. Mister Barclay, you will keep that safe?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "everyone else leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, end programme.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Observation lounge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "238",
+    "transcript_url": null
+}

@@ -1,0 +1,2722 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Gymnasium"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and his opponent are fencing. His opponent gets a winning hit"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I took advantage.",
+                    "spoken_by": "DEAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, Lieutenant, the advantage was yours. Come again. En garde.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "This time Picard gets the winning hit"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interesting move, sir, but what technique was that?",
+                    "spoken_by": "DEAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The technique of a desperate man.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Then things go blurry and"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interesting move, sir, but what technique was that?",
+                    "spoken_by": "DEAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The technique of a desperate man.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, what was that?",
+                    "spoken_by": "DEAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, did something unusual just occur on the Bridge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, sir. We experienced some kind of loop where everything repeats itself.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here too. I'm on my way.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Gymnasium"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "still in fencing gear",
+                    "line": "Report, Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors show nothing, sir, but it appears a moment in time repeated itself exactly for everyone.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just like a feeling of deja vu.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reports from all decks coming in, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computers were also affected, which would indicate the phenomenon was not an illusion but occurred in real time.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, find out if anything similar happened in this sector.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I am receiving an emergency transmission from the Pegos Minor system.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Put it on.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Five four two point two. I repeat. This is Doctor Paul Manheim. We are in need of help. Urgent. All ships, please respond. I repeat. Coordinates are six six seven two eight point nine",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is an automated signal, sir. I am unable to establish contact.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shut it off. Mister La Forge, lay in a course on those coordinates.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, you act as if there's a connection between the time distortion and the distress signal.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is. Paul Manheim. Fifteen years ago he went off to work on experiments relating to non-linear time. It appears he may have achieved some measure of success. Speed warp eight.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Warp eight.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Estimated arrival Pegos Minor, four hours, thirty five minutes, seventeen seconds.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never heard of Paul Manheim.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A highly respected scientist, considered a visionary, he advanced several time-related theories. One regarding the relationships between time and gravity was quite intriguing. But neither that theory nor any other received wide acceptance.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fifteen years ago, he assembled a team of scientists to expand that research. They disappeared. Haven't been heard from since.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you know him, Captain?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I knew of him. He was teaching at the University when I was in Paris, but I didn't have the pleasure. I must change. Number One, inform me half an hour before we reach those co-ordinates. Keep trying to determine if the time distortion was specifically located on the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain? Excuse me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, what is it, Counsellor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think you would prefer to discuss this in private.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not necessary. Go on.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When Professor Manheim's name was mentioned, you reacted with intense emotion.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Please get to the point.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to interfere with your personal life, but unresolved strong emotion can affect judgement.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, thank you for your concern.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As Ship's Counsellor, I offer my assistance.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you suggest?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Confronting deep personal issues is not easy for you. You tend to suppress them. There are a few hours until we arrive. Perhaps you should use this time to analyse your feelings and put them into perspective.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Counsellor. If I should need you further, I'll let you know.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "After returning to the gymnasium and cleaning his sword, he gets changed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge. Belay that. Computer, estimated arrival at Pegos Minor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two hours, nine minutes.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Holodeck three.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, this is Captain Picard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Holodeck three is clear.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Location, Paris, Cafe des Artistes, as it appeared twenty two years ago. April the ninth, fifteen hundred hours, three o'clock. Warm spring day.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Programme complete.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Outside Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is greeted by the head waiter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Monsieur, welcome to the Cafe des Artistes. Is this your first time in Paris?",
+                    "spoken_by": "EDOUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This way.",
+                    "spoken_by": "EDOUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That table.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mais oui, bien sur, monsieur. We are here to please you.",
+                    "spoken_by": "EDOUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard gazes from the balcony towards le Tour d'Eiffel, and the otherwise future city-scape"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been away far too long.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some wine, some cheese?",
+                    "spoken_by": "EDOUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not very hungry. I really came for the view.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps what you hunger for is not on the menu.",
+                    "spoken_by": "EDOUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps not. It was many years ago, I had a rendezvous. I was to meet someone. Someone here, at this very table.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your young lady, she did not come?",
+                    "spoken_by": "EDOUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, I don't know. I always imagined that she did.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You, however, did not. Ah. Well, trust Edouard. I will bring something very special, just for you.",
+                    "spoken_by": "EDOUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Two young women are talking at the next table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's go. We've waited long enough.",
+                    "spoken_by": "FRANCINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fine. You go. I'll stay a little longer.",
+                    "spoken_by": "GABRIELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's not coming, Gabrielle.",
+                    "spoken_by": "FRANCINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, after last night, I know he will. I just know.",
+                    "spoken_by": "GABRIELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then he would be here. You are making a fool out of yourself, and I will not watch.",
+                    "spoken_by": "FRANCINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Francine walks away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do we know each other?",
+                    "spoken_by": "GABRIELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The way you look at me, do I remind you of someone?",
+                    "spoken_by": "GABRIELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Yes, you do, somewhat.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's not coming. Why? What did I do to drive him away?",
+                    "spoken_by": "GABRIELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe you did nothing. Maybe he had no choice. Maybe he was afraid.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of what? Of me?",
+                    "spoken_by": "GABRIELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, of being connected, rooted. Perhaps if he's as young as you are, he doesn't know yet exactly what he wants to do. Maybe. Enough of this self-indulgence. Exit.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Cafe des Artistes"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we've received communication from the freighter Lalo, as well as from a farming colony on Coltar Four. Both described the same time distortion. The Captain of the Lalo described it a hiccup.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hiccup?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually sir, that may be an incorrect analogy.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How so, Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A hiccup is a spasmodic inhalation with closure of the glottis. accompanied by a peculiar sound. If we were to continue this analogy to a body function, what occurred would be best represented by a",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's enough, Data. Have you been able to learn more specifics about the Manheim project?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All I have found sir, is what you already know. Manheim was concentrating on time gravity experiments when he left.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we've reached the coordinates specified. There's nothing here.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm receiving new coordinates. It's a relay signal. Same source as the first one.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are they, Worf?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Six six four point eight by one three two three point seven by four nine four nine point nine.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very remote area, sir. It's in the middle of the Vandor system, a binary star system. Main star's a B class giant, the companion star's a pulsar.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course for the new coordinates, Mister La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why is he making it this difficult to find him?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hopefully he'll tell us, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Later"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have reached the coordinates, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors indicate it is Vandor Four, a planetoid in elliptical orbit around the binary system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standard orbit, Mister La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give me a visual.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Viewscreen on. There's a small forcefield on the planet. Latitude twenty degrees, nine minutes north. Longitude forty degrees, two minutes east of the present terminator.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Penetrable?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies open, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is Captain. This is the Captain of the USS Enterprise responding to your signal for help.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Enterprise, thank you for hearing us. Where are you?",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're in orbit around Vandor now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Then you can help me. I don't know what to do. It's only the two of us left. He's having convulsions. Please.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you lock on to her coordinates?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. The forcefield is preventing any kind of contact other than audio.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is a force field at your location.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes. I know.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. But it is preventing us from helping you. Now, you must find some way to shut it down.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I'll try.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Force field is off.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Lock onto their coordinates. Beam them up directly to Sickbay. Doctor Crusher, prepare for a Medical Emergency. Two to beam directly up to Sickbay.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We'll be ready, Captain.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's where I'll be. Number One. Mister Data.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A woman and a shaking man materialise on the floor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll help. Easy. Easy.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She and a male nurse get Paul onto a bed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've got his legs. How long has he been like this?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Several hours at least. He was in his lab, so I can't be sure.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need to do some tests.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard, Riker and Data enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Er, I, er.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc. I thought the voice sounded familiar.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I should have known. Who else would have charged to my rescue?",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is my First Officer, Commander William Riker. Lieutenant Commander Data. This is Jenice Manheim.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A pleasure, Mrs. Manheim.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have a number of questions for you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope I can be of some help.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why don't we sit down?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said there were only two of you left. What happened to the rest of the crew?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They were working in the second lab. Something happened there a few weeks ago. They were all killed. It was a terrible accident. I don't know exactly what happened. So many brilliant, wonderful minds, just gone.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know the nature of Doctor Manheim's work?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Paul's always been interested in time. He's never believed that it was immutable, any more than space is immutable. Over the last decade, he came to believe that we reside in one of infinite dimensions, and what holds us here is the constancy of time. Change that and it would be what he called opening the window to those other dimensions.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which begins to explain what happened.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you been experiencing something up here?",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. What is emanating here is having repercussions light years away, maybe even further.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would explain his anxiety. I had no idea it had gone so far beyond Vandor.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why this place? Why Vandor?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All I can tell you about that is Paul and the rest of the team searched for two years to find it. Vandor's exactly what they needed. A planetoid around a binary star.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because of the dense gravity of the pulsar.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did your husband ever attempt to define these dimensions, give you an idea of what he expected?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. But he did say that he was very close to proving his theories. And then the accident.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did he anticipate that these experiments might be dangerous?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't think so. Now, in retrospect, he probably did. That would explain all the unusual precautions he began taking, even before the accident. The force field, the elaborate security system. Every time he started a new experiment, he insisted that I stay in what he said called a protected room.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, and that's why you weren't affected.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc, he would never knowingly do anything to hurt anyone.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I believe that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But as he saw his goal getting closer, seeming possible, he became more and more obsessive. Maybe that clouded his judgement. This is not how I imagined seeing you again.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nor I you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've done well. A great starship in the far reaches of the galaxy. It's everything you'd hoped.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not exactly. Nothing works just as you hope. If you can't tell us any more, I need to send a team down to the lab.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can't. It's protected. One of the other scientists made sure no one could get in.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is he worse?",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's resting. But I'd like you to undergo some tests as well. My nurse will start them.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you for your kindness, Doctor.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jenice kisses Picard's cheek and leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's an old friend.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I gathered that. It's her husband I'm more concerned with at the moment.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the prognosis?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe he's dying. His neurochemistry's been affected, but I don't know how or why. I've never encountered anything like it before.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long does he have?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe a couple of days. It's hard to predict. All I can do is maintain him or attempt to maintain him until I find out what's causing the damage.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we talk to him?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not now. Not yet.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Doctor's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard, Data and Riker are about to enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Incidentally, Captain, the effects of the time distortions are now being felt in the Ilecom system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge. In the past decade, Manheim has turned some vague theories into a practical application.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but without his help, I'm not sure we'll be able to pose any intelligent questions, let alone come up with any solutions.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The turbolift door opens, and Picard, Data and Riker are about to enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Incidentally, Captain, the effects of the time distortions are now being felt in the Ilecom system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's us before we stepped into the turbolift.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's happening again.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I feel no disorientation.",
+                    "spoken_by": "DATA 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nor do I.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The doors close"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was that?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe what could be termed the Manheim Effect is becoming more pronounced.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is where we started, if we are us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, we are us, sir, but they are also us. So indeed, we are both us at different points along the same time continuum.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A turbolift arrives, they look inside and enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What have you learned?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have completed a scan of the planet surface.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've discovered the second lab is on the far side of the planet, completely destroyed. Unable to determine what caused it. Otherwise, very little to clarify the situation.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our sensors show an immense volume of energy emanating deep within the planet, and concentrated near Manheim's remaining laboratory.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is the energy being used.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No idea.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's it's source?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot be sure, sir, but I believe Manheim has developed a method for harnessing energy from the pulsar.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It comes down to this, Captain. We've learned everything we can from here, and we are no closer to understanding it than we were twelve hours ago. Manheim is unable to help us, but hopefully, having been a good scientist, he kept notes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would need to study Manheim's records.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And in order to do that we're going to have to go down there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about the defence system Mrs. Manheim spoke of?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It may have been connected to the main system, and when she lowered the shield she may have turned that off as well. If not, we'll deal with it as best we can.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prepare your team.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Coordinates set?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "CHIEF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a lack of integrity at the landing point.",
+                    "spoken_by": "CHIEF"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I'm losing them.",
+                    "spoken_by": "CHIEF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bring them back. Now. Chief Herbert, what's going on?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There seems to be some kind of strange bouncing effect.",
+                    "spoken_by": "CHIEF"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I can't get them to materialise. My readings aren't complete.",
+                    "spoken_by": "CHIEF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Keep trying.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker and Data materialise, Worf a few seconds later"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are we doing back here?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're lucky you made it back at all, sir.",
+                    "spoken_by": "CHIEF"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where am I?",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Paul. Thank God. You're on the USS Enterprise. They answered your distress signal.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I sent one.?",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, Paul, you're going to be just fine.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not fine, Jenice. I'm not even close to fine.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge, this is Doctor Crusher. Professor Manheim is conscious.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remember, it was worth it, what happened. What will happen, all of it, it was all worth it. Again. It's changing again.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is? What do you see?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm having difficulty.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With what? Are you in pain?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been on the other side. I have touched another dimension. Part of me is still there.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Help him.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Try to stay calm, Doctor Manheim. I don't think it's going to help you struggling against it.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My mind is floating between two places. It is difficult to know which is which. There is no way to explain it.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard, Data and Troi enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Manheim, I'm Captain Picard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jenice nods",
+                    "line": "The same one?  She has told me about you. Not all, but enough.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need your help. The situation is not good.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will get worse.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do we do? How do we stop it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm having difficulty holding the moment.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, this is Lieutenant Commander Data. Will you explain the situation to him?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am fully versed, sir, on all your theories regarding time and gravity.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is that possible? I am not even fully versed on all of my theories.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am an android.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Android? On a Starfleet vessel?",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am the only one, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your knowledge is useless, because the work we have done here has made most of those theories obsolete.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you have harnessed a dynamic energy source.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you do understand. Yes. We were able to locate an energy source in the centre of this planetoid. We learned to enhance it, to focus it. Everything worked too well. The energy from the pulsar, the energy from the planetoid. We opened a crack, a window into another dimension.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The time distortion we felt.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Felt? Then it is not confined to the planetoid?",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The range is at least several thousand light years.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, it must be stopped! You must help me to execute a controlled shut down of this experiment. Get my notes, they're in the lab.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do we bypass the security system?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll give you the correct coordinates to beam safely down to Vandor, and the codes you need to bypass security systems to get into my lab.",
+                    "spoken_by": "MANHEIM"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If what the Professor has given me is accurate, it is possible to repair the damage. But it must be perfectly timed to coincide with another time distortion episode.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we predict the timing?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe so, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have to. If we don't seal that hole, this other dimension he's opened will rip into the fabric of the galaxy. Reality as we perceive it will not be the same. Lieutenant Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want those codes that Manheim gave Mister Data rechecked and then checked again. No one is beaming down to Vandor unless we can be reasonably sure they can get through.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The door opens"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry for intruding. I was told I'd find you here.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not intruding. We're just finished. Come in. Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker, Data and Worf leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I knew you wouldn't come to me.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not under these circumstances.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have unfinished business.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, we do.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why didn't you come to meet me that last day in Paris?",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was afraid.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I didn't want this.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The truth.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, you want me to lie?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. A nice, soft, painless lie.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I got the days confused. I thought it was Tuesday when it was Wednesday. I went to the Cafe Moulin instead of the Cafe des Artistes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, that's better. It was raining and you couldn't find a cab. I waited all day. And it was raining. It rained the rest of the week. I went to Starfleet headquarters looking for you, but you'd already shipped out. So, come on, Jean-Luc. Let's hear the truth.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was fear. Fear of seeing you, losing my resolve. Fear of staying, losing myself. Fear that neither of these choices was right, and that, and that either would have",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For a long time, not a day went by when I didn't look up into the sky, and wonder.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Each time that I returned to Earth, my thoughts were filled with you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've thought a lot about this over the years, and perhaps you're leaving out your greatest fear. The real reason you left.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which was?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That life with me would have somehow made you ordinary.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're wonderful. And am I that transparent?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only to me.",
+                    "spoken_by": "JENICE"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I could talk to you, Professor Manheim. I bet you were really something.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wanted to see how he was doing.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The same. Nothing I do seems to make any difference. That's not why you're here.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought I was the empath.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you all right?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why wouldn't I be? I've got one of the medical wonders of the galaxy dying in my sickbay.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not what I meant.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think I want to talk about what I think you mean.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't compete with a ghost from his past. No one could.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's not a ghost. She's here right now.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She may be in the here and now, but it's the ghost he sees. Excuse me, I have to get back to my patient.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Doctor's Office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How soon, Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If Doctor Manheim's information is correct, by my calculations, the next time distortion should occur between twenty eight to forty seven minutes.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Bridge, this is Sickbay.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Manheim is awake and asking to speak with you, Captain. Alone.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my way, Doctor.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You asked for me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not sure I remembered all of the codes for the security system. You should warn anyone going down there",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. I'll tell them to be cautious.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What I really wanted to talk to you about is Jenice.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Manheim, I did not come here to discuss your wife.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is only this. If anything should go wrong, please, take care of her for me.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She never would admit this, but she has had a terrible time these last years. Had we not been so isolated, she might have left me, and I never would have known. At least, not right away. Perhaps I'm not a man who should have a woman like her. She deserves better.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You underestimate her. I know, because I once did.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In both cases, the time distortions occurred along the same continuum as a preview or a reprise of a specific point in time.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where we are, where we were, and where we will be. Data, I want this to be an away team of one. You. I don't think there's any reason to risk anyone else.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is reasonable, sir. After all, I am a machine and dispensable.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indispensable is the appropriate word. I think it should be only you because you seem more able to control the effects of the time distortion.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I see, sir. That is quite true, sir. I see time as a constant, whereas humans perceive time as flexible. Hence the expression, times flies when you're having fun, which until now has always confused me.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I want you to put a stitch in time and, er, save much more than nine.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If other members of the away team became disoriented, it could create additional problems and perhaps increase the danger.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will go immediately, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good luck, Data.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. We have the coordinates exactly as the Professor specified.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data arrives safely"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enterprise.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Picard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am proceeding to the lab, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Maintain an open frequency, Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Then he has to dodge a laser beam and take out the emitters"
+                }
+            ],
+            "location": "Vandor corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, what's going on?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Manheim forgot to mention one of his security precautions, sir. I am proceeding into the laboratory.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Vandor corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The code works, but the fluorescent tubes only open part way. Data enters cautiously. In the centre is a distortion"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Mister Data, this channel will remain open. Please continue to report.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This appears to be the instrument Doctor Manheim described. It should confirm when the next time effect will occur.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Data?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did Manheim give you enough information to decipher the security code?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will know in a moment, sir. According to calculations, the next time effect will occur in one minute thirty seconds.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the next step, Mister Data?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will need to add a specific amount of antimatter to rebalance and align the system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Will that plug the hole?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Theoretically, yes. In reality I do not know.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He opens a container and gets the antimatter, putting it on the end of a long rod"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When the effect hits, the forcefields will align, opening a clean straight path to the other dimension. Whatever the time distortion, I must add the antimatter at the appropriate moment. Geordi, if the Professor was right, I will need a twenty seven second countdown.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "You got it, Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I now have the antimatter and am moving towards the opening at the end of the lab. The next time distortion should occur within seconds. Geordi, begin countdown on my mark. Now.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's a big sparkle. Data looks back to see himself midway across the lab - no 2 - and getting the antimatter - no 3. Meanwhile, Geordi's voice is counting down, very echoy"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, there appear to be three of us.",
+                    "spoken_by": "DATA 3"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Should I drop the antimatter or wait for one of you?",
+                    "spoken_by": "DATA 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only one of us is at the correct time continuum.",
+                    "spoken_by": "DATA 3"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which one?",
+                    "spoken_by": "DATA 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Me. It's me.",
+                    "spoken_by": "DATA 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Five, four, three, two, one.",
+                    "spoken_by": "GEORDI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The middle Data arrives at number 1 and the antimatter goes in, before number 3 gets there. The effect stops. There is only one Data"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Data, report. Are you all right?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Is it closed?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is well patched, sir. Closed indicates a permanent condition, which I cannot guarantee.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Patched is good enough. Well done. Beam back immediately.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With pleasure, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is amazing. All your readings are completely normal.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is my wife? Is she all right?",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's right here.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jenice.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Paul.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The effect has been reversed. I can feel it. We're safe.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is he?",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He needs rest. There might be some residual effects, but other than that, he'll be all right.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I feel like I'm coming out of a long tunnel. It's there. Not at all like I thought it would be. Different.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Describe it.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't, not yet. The only words that fit are too pale because the images are so vibrant. It's not like anything anyone has ever experienced before. There was, no, no, there is this kind of life. Not like us. Not like this. What's the condition of my lab?",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Intact, for the most part.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't tell me we're going back?",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, Jenice, we are so close. We have learned so much to walk away. Besides, we owe it to the others, our friends. There have been so many sacrifices by so many good people.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll be going back.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I can see that. I'm sure the Federation will want to help in any way that it can.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. This time it will be different, I promise.",
+                    "spoken_by": "MANHEIM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It always is, my love. You said my life would never be dull, and it never has been.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "MANHEIM"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi and Jenice step out of the turbolift next to the holodeck door"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, this is Counsellor Troi. Request access.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you wish to terminate the current programme?",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, continue the programme.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enter when ready.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain is waiting for you inside.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Outside Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is this possible? It's Paris. Unbelievable.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Madame, this way. The Captain is waiting for you.",
+                    "spoken_by": "EDOUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The wine is on ice"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is so real.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bien sur. Pourquoi pas?",
+                    "spoken_by": "EDOUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc, don't tell me how you did it. I don't care. It's perfect. It's as if we were really there.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wanted to say goodbye properly this time. I shall always picture you here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They toast each other"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I expect you to always come charging to my rescue.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll do my best.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodbye, Jean-Luc. Be well.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you for Paris.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She walks away, but"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, so much for my dramatically romantic exit.",
+                    "spoken_by": "JENICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The door appears and opens"
+                }
+            ],
+            "location": "Cafe des Artistes"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is anything wrong?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then set course for Sarona Eight. As I remember we were on our way for some much needed shore leave.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Course set and laid in, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Warp five. Engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've only been there once, but they've got this great club. I don't remember the name of it. They serve these blue concoctions",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's across the square from the Zanza Men's Dance Palace.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Troi",
+                    "line": "It's called the Blue Parrot Cafe,  and you're buying.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "124",
+    "transcript_url": null
+}

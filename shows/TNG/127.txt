@@ -1,0 +1,2931 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Repulse shuttle has cleared docking bay three.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sporting a very Naval beard",
+                    "line": "Open hailing frequencies.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies opened.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Repulse, this is the Enterprise. We are getting underway.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acknowledged, Enterprise. Transfer complete. Good luck on your mission.",
+                    "spoken_by": "REPULSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And to you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Give my regards to your Captain. Repulse out.",
+                    "spoken_by": "REPULSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in new uniform",
+                    "line": "Shuttlebay is secure, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Mister Crusher. Make all preparations to get underway.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is looking at a transparent hexagonal container"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're constructing the enclosure on cargo deck five.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "doorbell"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The transfer's been complete. Doctor Pulaski is being shown to her quarters. We're ready to get underway.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "back to his Yorkshire roots",
+                    "line": "Grand. Take a look at the containment module our Chief Engineer has designed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chief Engineer. It still has a nice ring to it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Each of these units will have total environmental control. Gravity, temperature, atmosphere, light, all in a protective stasis field.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And these get put into the large containment unit.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right. See, these modules will keep the specimens alive, but it's this large containment area that's going to keep us alive. Now, I have to go and replicate this five hundred and twelve times, which means I'll have to divert power from the warp engines to the replicator for a while.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long will we be on impulse power?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A couple of hours. Can't be helped.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When we leave 'audet Nine, I'm going to need all the power you can slam into those warp engines.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll have it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll relieve you at zero three zero zero.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take us out of orbit, Mister Crusher. Set course for 'audet Nine.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Course for 'audet Nine has been input.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maximum impulse velocity.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "as they head off, a light follows them and enters the hull"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering, this is Science One. I have just observed what appeared to be a random energy transference.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aft. Outboard of the port nacelle.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold on, I'll check.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "La Forge's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I show nothing here, Data.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Problem, Commander?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Possibility, sir. An unexplained power fluctuation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me know if it reoccurs.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The light pops up through the floor, hides from them follow a couple of crew, and goes up into crew quarters. It seems to examine one man asleep, then passes through a bulkhead, goes underneath the sheets and into Deanna Troi, who wakes up panting"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42073.1. There has been an outbreak of an unclassified plasma plague in the Rachelis system. We are on an emergency run to collect specimens of the deadly plague and transport them to Science Station Tango Sierra, where hopefully an antidote can be produced.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How's it going?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Finished. Just waiting to insert the modules.",
+                    "spoken_by": "CREWMAN"
+                }
+            ],
+            "location": "Cargo deck five"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant La Forge says we will be able to engage the warp drive within the hour.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Grand. Mister Data, when we have a complete list of all the specimens we will be carrying, I want you and Doctor er,",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pulaski, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Pulaski. I want you to go through them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By the way, where is our new doctor? Has she reported in?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not yet.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sickbay, this is the captain.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sickbay, aye.",
+                    "spoken_by": "SICKBAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is Doctor Pulaski there?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Er, no, sir. The Doctor is in Ten forward.",
+                    "spoken_by": "SICKBAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "SICKBAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A few hours on board and already she's found Ten forward.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll go get her.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I'll go.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "nice new heavy baldric",
+                    "line": "Not the best way to meet your new Captain.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley has come out of the lift and gone straight back in with Picard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deck ten, forward station one.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, Captain.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign. I'm sorry this mission will delay your reunion with your mother.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's all right. That will give me the time to finish some projects I have to do. It's going to be hard leaving the Enterprise.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mixed feelings for all of us. It's always difficult leaving any ship, just as it was for your mother",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When she left to become head of Starfleet Medical. But going from one assignment to another is part of the life which you are choosing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know, but this isn't any ship.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How true.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A social area, with a long bar. A woman in a big flat hat comes to greet Picard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Guinan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Guinan points",
+                    "line": "Where is Doctor Pulaski?  Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard goes over to a table by a window occupied by Troi and another woman. Everyone say Hi! t"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ann Mulhall"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ", or"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Miranda Jones"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "if you prefer)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Katherine Pulaski?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah you must be Captain Picard.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, protocol may have been lax on your last assignment, but here on the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sit down, Captain. You'd better listen to this.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Ten forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant La Forge, status report.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The containment area is completed, Captain, and the last of the modules are being inserted.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take us to warp six as soon as possible.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acknowledged.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is Doctor Katherine Pulaski. We will handle the formal introduction later. Counsellor Deanna Troi is pregnant. She is going to have a baby.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Baby? This is a surprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Deanna is sitting alone at the end, somewhat embarrassed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More so for me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "goes to wall screen",
+                    "line": "This pregnancy is unlike anything I have ever encountered. Since she came to me a few hours ago, I have done two complete examinations of Counsellor Troi.  This is from the first examination. The foetus is about halfway through the first trimester, about six weeks old. Now, understand we believe conception took place eleven hours ago.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It gets better. This is the second exam one hour later. Now, it's consistent, except for the fact that it appears the foetus is several weeks older. At this growth rate, Counsellor Troi will have her baby in about thirty six hours. The normal gestation rate for a Betazoid is ten months.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't mean to be indelicate, but who's the father?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Last night, while I slept, something which I can only describe as a presence, entered my body.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A life form of unknown origin and intent is breeding right now inside Counsellor Troi. Our purpose here is to determine what is to be done about this very unusual situation. Discussion.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, wait. Let me get this straight. Deanna was impregnated by by what? Doctor, what do the tests show? Is it a humanoid? An alien?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a male human, or in this case half-human half-Betazoid.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly the same as Deanna.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In every way. In fact, there is nothing to indicate that there are any genetic patterns other than hers.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think this is a random occurrence. I think there's a purpose here. A reason. What, I don't know.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, obviously the pregnancy must be terminated for the safety of the ship and crew.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, you can't assume the intent was belligerent.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is the safest assumption.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, this is a life form. Not to allow it to develop naturally would deny us the opportunity to study it.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the foetus is aborted, laboratory analysis is still possible.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, is there any health risk to Counsellor Troi if the foetus is aborted?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, do whatever you feel is necessary to protect the ship and the crew, but know this. I'm going to have this baby.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then it seems that the discussion is over.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We have finally arrived at 'audet Nine, where we will pick up the specimens of plasma plague for transport to Rachelis. It is only because so many lives are at stake that I am willing to put this ship and crew at such great risk. Meanwhile, Counsellor Troi's pregnancy continues to progress at an astonishing rate.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi enters, very out of uniform and with a noticeable bump"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How are you feeling?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I should be feeling uncomfortable with all the changes in my body but, I don't. I feel fine. Better than fine. Wonderful.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standard orbit.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standard orbit, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "'Audet Nine, this is Captain Jean-Luc Picard of the USS Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Ah, the Enterprise, here at last. Well, good. Let's get going.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me, to whom am I speaking?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "To whom are you speaking? Oh I'm Lieutenant Commander Hester Dealt, Medical Trustee, Federation Medical Collection Station.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are the specimens ready for transfer?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Yes, but with your permission I would like to inspect the containment area before we proceed. Now it's not that I doubt the ability of your crew, but we cannot afford a mistake.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I appreciate your caution. In the like vein, I want a complete, detailed manifest of everything you intend to bring on board my ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Very good. I will allow access you to my computer banks, okay?",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, download the inventory and cross-reference it with the medical computer. Number One, arrange to have Hester Dealt transported up.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. Although it's been fourteen hours since we arrived at 'audet Nine. Hester Dealt has still not completed inspection of the containment unit. A transfer will not be permitted until he's assured of zero growth during our voyage. Meanwhile, the desperate pleas from the Rachelis System continue.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the final manifest has been received.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At last. Review it with Doctor Pulaski. I want you both to be completely familiar with it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, will you help me get to Sickbay.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's time.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, you bet it is. Let's get you to Maternity.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, assemble your security team in Sickbay.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that necessary?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Doctor. Captain's orders.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it's strange to need armed guards in a delivery room. This way.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Pulaski's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How frequent are your contractions?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very close together.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In my other deliveries, except for a couple, the father was always present.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Difficult under the circumstances.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps I could serve in that capacity.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor Troi is going to need the comfort of a human touch, not the cold hand of technology.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, I think Commander Data will do very nicely.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your choice.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A little later, Deanna is in the birthing chair, almost upright"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't have to do anything, Data. Just be with me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is nothing to be nervous about.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nervous? I find this very interesting. Although I understand, in technical terms, how life is formed, there is still a part of the process which eludes me. The child inside you, are you able to access his thought process? Does he have thoughts? You are aware of him. Is he aware of you? And when does that awareness begin?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's happening.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How does it feel?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now? Now! Doctor! Doctor! Doctor!",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is an impatient baby. He's eager to make his appearance. Do you want something for the pain? It will in no way diminish the experience.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have felt no pain.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, none at all.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and two guards enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have your Security men stand back. I understand the importance of having you here, but keep out from underfoot. Foetal position?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Normal.",
+                    "spoken_by": "NURSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Foetal pulse?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One thirty seven.",
+                    "spoken_by": "NURSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The baby is showing healthy respiratory movements.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker sneaks in to watch"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "kneeling in front of Troi",
+                    "line": "The action of the heart rate is good. The baby's doing wonderfully, Troi. Breathe slowly. You're doing great. Stay calm. That's it. There it is. I've got him. You can relax.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Baby crying"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "cleaning him off hands him to Troi",
+                    "line": "There, there. That's a good boy. It's okay. Oh, my, he's beautiful.  Are easy births the norm for Betazoids?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not according to my mother.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Worf",
+                    "line": "You can come in the rest of the way now. There's no threat, Lieutenant. You and your men can relax. It's just a baby.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf looks and leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you for allowing me to participate. It was remarkable.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have a name?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ian Andrew, after my father.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker comes forward"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Were you hear all along?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. He's beautiful, Deanna. Just like his mother.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you feel?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fine. Wonderful. Thank you, Doctor, for everything.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amazing.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor. Welcome to the Bridge. Please, sit down. How is Counsellor Troi? Did she have a good night?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've delivered dozens of babies, but none like this. There was no pain, no trauma.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's true.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was effortless for both of them.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure of your point.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She had her baby yesterday. If I were to examine her now, I would not be able to tell she had a baby, or had ever had a baby. It was as if the incident never happened.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, how long before we begin the transfer?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two hours nineteen minutes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, you have the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will accompany me, Doctor? Please? I think it's time I paid my respects.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, I wanted to see how you were and have a look at your baby! My goodness. How old is he?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The boy is walking, and about waist height to Troi"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In actuality, a day.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In appearance, almost four earth years old.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ian, say hello to Captain Picard.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean he can talk?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulaski shudders"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, Ian.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please don't worry. Everything is okay.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We are faced with two major problems. Troi's child and the deadly cargo we are about to take on. In the hours since his birth, Troi's baby has continued his rapid growth and now appears, physically and mentally, to be a child of eight. Still there is no indication as to who he is, or why he is here.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sickbay, this is the Bridge. We are ready to begin loading.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We need a little more time. It's taking longer than we anticipated to categorise these specimens.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "h",
+                    "line": "Data, look at this.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My name. It is pronounced Data.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "h",
+                    "line": "You called me Data.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the difference?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One is my name. The other is not.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "returns to the monitor",
+                    "line": "Is this possible? With all of your neural nets, algorithms, and heuristics, is there some combination makes up a circuit for bruised feelings? Possible?  I am unfamiliar with this symbol.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It indicates a genetically engineered biological life form.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "About twenty percent of the specimens fall into that category. Some eager beaver at play.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Query. Eager beaver?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well in this case, eager beaver refers to some overachieving genetic engineer, who, probably because of lack of anything better to do, has forced this strain of virus to mutate, just so we can see how bad, bad can get. Captain Picard.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Pulaski's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I just wanted you to know what risks we're about to take.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go on.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the most innocuous specimen on the manifest list gets loose,",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Pulaski's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "It will destroy all life on the Enterprise in a matter of hours.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand, Doctor. Do you have a recommendation?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Considering how desperately this is needed, no, I don't. I just wanted you to know what we were carrying.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Pulaski's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Data, if you have completed your review, you are needed in transporter room three.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Excuse me, Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "h",
+                    "line": "That's all right. Data. Data. Whatever.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Pulaski's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "some children are cuddling puppies"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ian? Ian!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's a very tactile child. He wants to touch and feel everything.",
+                    "spoken_by": "MISS GLADSTONE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's time to go, sweetheart.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unbelievable. I think he's actually grown since you dropped him off.",
+                    "spoken_by": "MISS GLADSTONE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "getting on for Troi's shoulder height",
+                    "line": "I like it here, Mommy.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you would. Say thank you to Miss Gladstone for having you, and let's go get something to eat.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bye.",
+                    "spoken_by": "BOY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Children's play area"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bio-transfer authorisation complete.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cargo deck five, we will commence transportation",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "On your command.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter three, we are ready to receive.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Hexagons start to appear on the display and in the container"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, the first batch is in place, and we're ready for the next.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll inform me when loading is complete and the cargo secure.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Cargo deck five"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wanted to stop by and see how Ian was doing.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're doing fine. I was just about to get him his supper.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you want your supper now, too?",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Ian, but thank you for the invitation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're welcome. Have you ever played with puppies?",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They had a litter today in the nursery.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Ian, I don't think I've played with puppies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should come to the nursery while the puppies are still there.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps later.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ian puts his finger in his hot soup"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ow! Mom.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "treats the scald",
+                    "line": "Let me see that.  That's not so bad.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My face is wet.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that better, sweetheart? Everything's going to be fine.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He allowed himself to be burned.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For the experience.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is he? Why is he here? What does he want?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ian, could you tell us why you are here?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because Mommy said it was time to eat.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I mean, why you are here on this ship?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I live here.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ian, I think the Captain wants to know if you are ready to tell us why you came here.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not yet.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The answer is within him. When his cognitive powers have sufficiently developed, he will be able to articulate it.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope he will tell us soon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bye.",
+                    "spoken_by": "IAN"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cargo has been loaded and is secure.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then take us out of orbit, Number One. Set a course for Rachelis, warp six.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley is staring out of a window"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can I get you something?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, nothing. I just like to stand here.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't blame you. It's beautiful.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How about some nice Mareuvian Tea?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, nothing. Thank you.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll be leaving soon.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you see when you look out there?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Lorenze cluster, and there Arneb and there Epsilon Indi.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not what I mean. I mean, when you look there, don't you see your future?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It'll still be there.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How about a cup of nectar direct from Prometheus?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, nothing. That's the third time you've asked me.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's what I'm expected to do. Don't you always do what's expected?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I try.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even if it's not what you really want?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sometimes. Sometimes it's more important to consider others before yourself.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. But sometimes the game is to know when to consider yourself before others. Give yourself permission to be selfish.",
+                    "spoken_by": "GUINAN"
+                }
+            ],
+            "location": "Ten forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something's wrong.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Growth.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "L seven three.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge, this is cargo deck five.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Cargo deck five"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, La Forge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, we have a malfunction in the containment area.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How serious?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. For reasons as yet unknown, one of the deadly specimens of plasma plague has begun to grow.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Cargo deck five"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Report, Mister La Forge.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we've checked everything. There's no reason for this to be happening. I can't even isolate the cause of the problem.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Cargo deck five"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on Data, we'd better get down there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Pulaski.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Captain?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're having a little difficulty on cargo deck five. Your presence is requested.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I'm on my way.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at the bar"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You never talk about yourself.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure I do. All the time.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "People say you're very old.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And that you knew Captain Picard when he was on the Stargazer.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I never knew the Captain till I came onboard.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everyone's very curious about you.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I'll bet they are.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They want to know where you're from.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where do they say?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I heard that you're from Nova Kron and that",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Mister Crusher, report to the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Got to go. Thanks.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For a dish of Delovian soufflé?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not for the soufflé. I meant, for the rest.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's why I'm here.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks. Bye.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Ten forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why this module and not the others?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, run diagnostic on module L seven three.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "male",
+                    "line": "All circuits functional.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Environment's as programmed. Temperature ninety seven degrees Kelvin. Radiation flux zero. Stasis field nominal. Everything exactly as it should be, right down the line.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it is a sensor malfunction. Computer, inquiry. Is growth actually occurring in module L seven three?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Confirmed.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulaski enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, one of the specimens is growing.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Destroy it now.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, prepare to jettison the module.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't do that either. It will go into a spore and remain until it comes in contact with a planet or another ship. The results would be disastrous.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, your attitude tells me that however bad I think it is, it's actually worse.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not going to hold it.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go on.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The rate of growth is increasing so rapidly, within thirty minutes it's going to push out of it's module. Within two hours, it'll break out of the containment area.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, no. It can't break through this.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it will.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we may not be able to get control of this situation. I recommend we arrange transfer of all non-essential personnel to the saucer section.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Cargo deck five"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "If we lose containment, we should be prepared to separate.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why this one specimen and none of the others? Something is stimulating it. Do you have its etiology? Do you know how it was developed?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it's right over here.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a mutated strain developed by Doctor Susan Nuress during an outbreak of plasma plague seventy years ago in the Oby System. It was number nine in a series of fifty eight tests. This particular one bombarded by low levels of Eichner radiation. Could exposure to Eichner radiation stimulate growth?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It could, but I. I've got something.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why didn't you detect this before?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. It wasn't here before.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it is now. What emits that type of radiation?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A subspace phase inverter.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't have one.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Certain cyanoacrylates.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Also not on this ship. What else? Because it's here and we better find it.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Cargo deck five"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "It's Ian's bed time"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can feel that some of the people are very worried.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I feel it too, but don't you worry.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's me, Mommy. I'm the reason.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's me.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I have to leave you now, or it'll be very bad for everyone.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you saying?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to leave now.",
+                    "spoken_by": "IAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Leave? You are going to die. No, you can't! Sickbay, this is Counsellor Troi, I need the Doctor in my quarters now! Ian! Ian, no. Ian.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulaski arrives with Data and Riker"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's Ian. Hurry.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened? Did he eat anything? Did he fall?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, the child is the source of the unusual radiation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ian said he's the reason the ship is in danger.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That analysis is correct.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm losing life signs.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must save him.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "As Troi weeps by the bed, Ian turns into a ball of light which she can hold in her hands. She calms and smiles, then it flies out into space"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Riker, the containment field has stabilised.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Lieutenant.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then Ian was right. He was the cause.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apparently so.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is a life force entity. When we passed each other in space, he was curious about us, so he decided the best way to learn was to go through the process. To be born, to live as one of us and in that way to understand us. He never meant any harm.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was a moment when you smiled.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He said, thank you. I told him we will miss him. And I will.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "approaching a space station"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standard station orbit, Mister Crusher.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir, standard orbit.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter room three, this is the Captain. We have arrived.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Let's make this transfer with all deliberate speed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be glad to be relieved of this cargo.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have the Bridge, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. Could I see you when you have a moment?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In my Ready room, when your duties permit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long is it going to take to develop a vaccine?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We may never develop one.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All of this might have been in vain?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's hope not.",
+                    "spoken_by": "DEALT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Stand by to energise.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good luck.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Dealt is beamed away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, you can lock on to the first group and begin transporting on my mark.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Cargo deck five"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard, I've thought about this a lot. I want to remain on the Enterprise.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you discussed this with your mother?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. Before I do that, I'd like your permission to stay.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley, it's a little more complicated than that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, this is where I want to be. This is where I feel I belong.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, transfer complete. We are ready to leave orbit.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so, Number One. Return to your position.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All stations secure.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take us out of orbit, Mister Crusher. Lay in a course for the Morgana Quadrant.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign Crusher has requested to remain on the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not surprised. How did you respond?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't as yet, Number One. I didn't think it was my responsibility alone. His remaining will create difficulties for us all.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, indeed. With his mother gone, who will see to his studies?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly. Of course, that duty will fall to Commander Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And who will tuck him in at night?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on, Commander.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will accept that responsibility.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, we know he'll get his sleep.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That takes care of the practical, but there's more to growing up than that. It's my belief, Number One, that you're best qualified to supervise that. Are you willing to serve?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Difficult decision. Yes, I can do that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Mister Crusher, communicate with your mother at Starfleet Medical headquarters. Give her my regards, and tell her you have my permission to remain on the Enterprise, but I will abide by her wishes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Thank you, sir. I know she'll agree.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "argh!"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, if you have course and speed laid in.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes sir, they are.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then, Mister Crusher, engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "127",
+    "transcript_url": null
+}

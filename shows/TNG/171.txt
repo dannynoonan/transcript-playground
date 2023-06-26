@@ -1,0 +1,2448 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I remember studying his career in school. The treaty of Alpha Cygnus Nine, the Coridan admission to the Federation, the Klingon Alliance.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I met him once, many years ago, very briefly at his son's wedding. I can tell you that was quite a moment for a young lieutenant, standing in the presence of such history. I remember he spoke to me and I just stood there grinning like an idiot.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You? Tongue-tied?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed. How do you make small talk with someone who shaped the Federation?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it true that he'll be retiring after this mission?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unofficially, that's what I hear. What a crowning achievement for his career. The benefits of relations with the Legarans are incalculable.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "O'Brien beams in two men, a tall Vulcan and a stockier human"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah Captain Picard. I am Ki Mendrossen, the ambassador's chief of staff. This is Sakkath, his personal assistant.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Has the ambassador been delayed?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He will be joining us momentarily. But first we must discuss some matters of the utmost delicacy.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please go ahead.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To be frank, Captain, the ambassador is not a young man. He tires easily.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's going to need a lot of rest to prepare himself for the difficult job that awaits him.",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which is why it is imperative that he be allowed to conserve his strength. I must request that you dispense with any formal activities normally associated with a visitor of his rank.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We had planned a ship's concert this evening.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe the Ambassador is extremely fond of Mozart.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid it would be impossible for him to attend. Upon his arrival he will be taken directly to his quarters where he will remain in seclusion until we reach Legara Four.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have my assurance that the Ambassador will not be disturbed during the voyage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's all we ask. Well, now that's settled, the Ambassador is waiting.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sarek and Perrin are beamed aboard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome aboard the Enterprise, Ambassador Sarek.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We come to serve.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your service honours us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Allow me to present she who is my wife.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mrs. Sarek.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please call me Perrin, Captain.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is my first officer, Commander William Riker.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, would you be so kind as to show us to our quarters?",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I prefer to view the conference room first.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador, I'm sure Sakkath and I can handle all the necessary details.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will examine it for myself.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it would be best if we settled in first.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They worry about my health, Captain. Too much. You will take me to the conference room, please.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you'll follow me, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's a huge swimming pool filled with pink frothy gunk in the room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are the Legarans really going to sit in this stuff?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I'm sure not.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you believe this smell?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What smell? What can I say? To us it's a slime pit, but to them it's home.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay, the environmental controls are ready. What's next?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What, are you in some kind of hurry or something?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, I have a date.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A date? With who?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign Dumont.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really? She's very attractive. I've got to admit, Wes, I'm a bit surprised.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What, that she'd go out with me?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, that you'd actually have the nerve to ask her. Way to go.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sarek, Picard et al enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The room is not ready.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No Ambassador. Commander La Forge and Ensign Crusher are",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Legarans are very sensitive in matters of protocol. You will remove all the furniture from the room. The walls must be bare.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure everything will be set up according to our specifications before the Legarans arrive. Isn't that right, Captain?",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I assure you, Ambassador, everything will be ready before the conference begins.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My husband and I have every confidence in you, Captain.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have worked for ninety three years in preparation for this meeting. It is vital that no detail be overlooked.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps we should allow these gentlemen to return to their work, Ambassador.",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That will be acceptable. These walls are too bright.",
+                    "spoken_by": "SAREK"
+                }
+            ],
+            "location": "Conference room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The way Mendrossen described him, I expected to see a frail old man.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope I'm that frail when I'm two hundred and two years old. But his aides did seem to be a little overprotective, didn't they?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From what I could see, the Ambassador doesn't need to be protected from anything.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, we'll respect Mister Mendrossen's request and allow Ambassador Sarek his privacy. I suppose they were foolish and vain, my expectations of this voyage. Sharing his thoughts, memories, his unique understanding of the history he's made.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does this mean you're going to cancel the concert this evening?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, the concert will ahead as scheduled. But it's a pity that the guest of honour will be absent.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For all we know, the Ambassador might enjoy an evening's entertainment",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why not ask his wife if she'd like to attend?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's an excellent idea, Counsellor. You have the Bridge, Number One.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope I'm not intruding.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all, Captain, but Sarek is in meditation at the moment.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, I came to see you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, how nice. I so rarely get visitors of my own. Usually everyone wants to see the Ambassador.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I find that hard to believe. Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They sit"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These quarters are quite comfortable. The Ambassador and I were very pleased when we heard that the negotiations were going to take place aboard the flagship of the Federation.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The honour is ours.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My husband has taken an interest in your career. He finds it to be satisfactory.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My word! High praise from a Vulcan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some people who expect an emotional response often find Vulcans quite cold when they are merely being",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Logical.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I came to invite you, and your husband if he is available, to a Mozart recital this evening.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What a tempting offer. I doubt that the Ambassador will be able to attend, but I will make it a point to ask him.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, then I hope to see you tonight.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As do I.",
+                    "spoken_by": "PERRIN"
+                }
+            ],
+            "location": "Guest quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are still unable to meditate?",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is of no importance.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It has eluded you for many weeks.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I said it is of no importance.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know I am right.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My wife, you will leave me now. I require solitude.",
+                    "spoken_by": "SAREK"
+                }
+            ],
+            "location": "Guest quarters - bedroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The temperature in the tank is now one hundred fifty degrees Celsius.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay, lock it off.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that it? Can I get out of here now?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's your hurry? You don't really think something's going to happen with Suzanne Dumont, do you?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least I'm not spending the night with a good book like some people.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's that supposed to mean?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just what it sounds like.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me tell you something. You'd get more action out of a good book than you'll ever see on this date, I'll guarantee it. She's not going to waste her time on someone like you.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Someone like me?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's way out of your league.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Since when did you become an expert on women?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Compared to you, every male on this ship is an expert on women.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well at least I don't have to find my women on the holodeck!",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did you say?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You heard me!",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, I heard you. Just what do you think is going to stop",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something wrong? I asked a question.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. Nothing wrong here.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I be excused, Commander?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley storms out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything you'd like to talk about, Geordi?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Conference room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The band is tuning up, and the audience is arriving"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I noticed that Lieutenant Worf put Ensign D'Amato on report for insubordination.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "D'Amato's been an exemplary officer.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed he has. Would you look into it, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard sits next to Beverly"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good evening.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good evening.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I assume the work is progressing on the conference room?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I checked in with Wesley and Geordi a few hours ago. There was a moment when I actually thought that the two of them were going to hit one each other.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sarek and his party arrive. Everyone stands"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador Sarek, Perrin, on behalf of the entire crew, welcome.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was my wife's suggestion that we attend. It seemed an ideal diversion. Perrin can be quite logical, when she so chooses.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It seems that the Ambassador had more free time than I anticipated.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Data will be our featured soloist this evening.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been programmed to reproduce the individual musical styles of over three hundred concert violinists, including Heifetz, Menuhin, Grak-tay and Tataglia. Do you have a preference?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tataglia would be lovely.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope you find the performance pleasing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I look forward to it.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At your convenience, Mister Data. Please.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ambassador's party sit in front of Picard. The lights dim and the string quartet plays. Later, they get to sad, emotional piece. Deanna notices Sakkath watching Sarek intently. A single tear rolls down Sarek's cheek. Perrin gently wipes it away, and the party leave quietly"
+                }
+            ],
+            "location": "Ship's theatre"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi Mom. I got a message you wanted to see me?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you were going to be at the concert last night.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I said I may be going. Suzanne wanted to go to the arboretum.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard asked me where you were. I don't like making excuses for you.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuses? Come on, Mom. It wasn't an official function.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Listen, young man. You have responsibilities and I want you to live up to them.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't you think you're overreacting a little?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't talk back to me!",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay, I won't.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where do you think you're going?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Away from you.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly slaps Wesley's cheek"
+                }
+            ],
+            "location": "Crusher's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And then I just slapped him. Really hard. I slapped Wesley.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know why you did it?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never hit my son in his life.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly, this is important. What were you thinking when you hit Wes?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wasn't thinking about anything. I was just angry.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Wesley didn't provoke you in any way? It wasn't anything he said, or anything he did?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, that's just it. It was a sudden burst of anger. I still can't believe I did it.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know why you did it either, but I can tell you that I've heard the same kind of story from ten different people over the last two days.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Troi's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is your command centre.",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. It is normally occupied by Captain Picard, Commander Riker, and Counsellor Troi.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor Troi is a Betazoid?",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Half-Betazoid. Her father was human.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then she is not a true telepath?",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her skills are empathic in nature. She is able to sense the emotions of other beings.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is Captain Picard's background in diplomacy?",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Extensive. The Captain's first diplomatic contact dates back to",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what of his knowledge of the Legarans? Would he be able to conduct negotiations with them should the need arise?",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you foresee such a circumstance occurring? Is Ambassador Sarek unable to",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forgive me. I was merely exploring various possible permutations of our mission. Your tour of the Bridge has been most informative.",
+                    "spoken_by": "SAKKATH"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Three men in science blue sit at a table that O'Brien and a friend are walking to"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me, we were sitting here.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well we're sitting here now.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on, fella. This is our table.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really? Funny, I don't see your name on it.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Didn't your mother teach you manners?",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They square up to each other"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hey, hey guys. Is there some kind of problem here?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There seems to be a question of who's table this is.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are plenty of other tables, right?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose you're right.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why don't I get everyone another round of drinks? All right?",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't need to tell you that insubordination is a serious charge to level against any officer.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am aware of that, Commander. However, Ensign D'Amato directly challenged my authority.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it my imagination, or have tempers become a little frayed on this ship lately?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hadn't noticed.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And they walk straight into an old-fashioned bar brawl"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see what you mean.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf stops two men strangling Geordi"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Security team to Ten Forward.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, what the hell is going on here?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I knew.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, that's enough!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And he gets punched in the face"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Later, the staff are clearing up the broken furniture, and the medics the broken crew"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The next thing I know somebody's left hook is on its way to my chin.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, this is not an isolated incident. There have been reports of random violence all over the ship.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you suggesting this is somehow contagious?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no indication of any bacteria or virus. I've run every test I know. I've checked the water, food replicators, airborne samples.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is a hell of a time. Whatever it is, I don't want it to affect the Ambassador. I want his quarters isolated from the rest of the crew until we've identified the cause.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not that simple, Captain.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have determined that the outbreak of violence started at virtually the same time Sarek and his party beamed onto the ship.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We do have a working theory. We believe that it's possible Ambassador Sarek himself is responsible for these incidents.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I felt something during the concert. Vague and undefined, but very disturbing",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He cried. I saw that. I couldn't believe it. A Vulcan moved to tears by music? It's",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Vulcans have the same basic emotions we do. They've just learned to repress them. What I sensed during the concert was that he'd lost control.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What would cause such a loss of control?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a very rare condition that sometimes affects Vulcans over the age of two hundred. Bendii Syndrome. Its early symptoms include sudden bursts of emotion, mostly irrational anger. Eventually, all emotional control is lost.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can imagine nothing that would be more offensive to a Vulcan. Their emotional detachment is the very core of their being. How would this affect others on board the ship?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Vulcans possess telepathic ability. Sarek may unintentionally be projecting intense emotions onto other people, at random.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And when the Legarans beam on board?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They could very well be affected too.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there a treatment?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can't someone else take his place?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek has built a personal relationship with them. They will accept no one else. How can we confirm your diagnosis?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can grow a culture from the tissue of the metathalamus, but the results will take several days.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have twelve hours.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Crusher's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's impossible, Captain Picard. I cannot delay the conference. Not for a day, not for an hour. The schedule itself required three months of negotiations.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nevertheless, we appear to be facing",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I give you my word of honour that the Ambassador is in perfect health. Is that enough?",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Mendrossen",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are dealing with a theory full of holes, Captain. Why am I not affected by Sarek's supposed condition? And Perrin. How could his wife function normally if this theory of yours is correct?",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot explain that. Hundreds of others on board have not been affected either. I have not. It appears to be random. Proximity, apparently, has no bearing on the phenomenon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are accusing the greatest man of his time of losing his mind on the eve of his greatest triumph, and you cannot explain why. I won't report this to the Ambassador, for the moment. I don't want to divert his attention from the mission. But if I were you, in the interests of your career, I'd be very concerned about finding the real cause of these outbursts before the Legarans arrive.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Mendrossen leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, will you please report to my Ready room.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard is not satisfied with Ki Mendrossen's assurances that the Ambassador is in good health. Do you consider Sarek capable of carrying out his mission?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have I given you cause to think otherwise?",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have voiced certain reservations to me about his abilities.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not recall making such a statement.",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not directly, no. But you did question me about the diplomatic capabilities of both Captain Picard and Counsellor Troi.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am honour-bound to help Sarek carry out this mission. That is the only answer I can give.",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you must decide which is your greater obligation. Your loyalty to Sarek or your duty to the Federation. Can you accept the logic of continuing this mission?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell your Captain the mission is in jeopardy.",
+                    "spoken_by": "SAKKATH"
+                }
+            ],
+            "location": "Conference room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sakkath has been able, until recently, to use his telepathic skills to reinforce Sarek's emotional control, thus protecting others from the effects of his deterioration.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He hasn't been doing a very good job.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The strain of this mission on Sarek has made it impossible.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's ironic, isn't it? All this magnificent technology and we find ourselves still susceptible to the ravages of old age. The loss of dignity, the slow betrayal of our bodies by forces we cannot master. Do you still want to be one of us, Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, it is conceivable, even for me, that time will eventually lead to irreparable circuit failure. But there is one thing I do not understand. Sarek is a logical, intelligent being. The effects of Bendii Syndrome are apparent. Why would such a man choose to ignore them?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Logic fails us sometimes, Data. I think this is one of those times. I can only guess that he does not see, or he does not wish to see, the truth. And he is being insulated against that truth by those who love him most.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Someone has to confront him.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not a task that I'm looking forward to.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand this. Everyone is protecting Sarek. His wife, Mendrossen, even you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What would you have me do? March down there and destroy the man?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The mission with the Legarans cannot be carried out with Sarek in this condition!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know that!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "shouting",
+                    "line": "Then tell him that there is no way",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't you tell me what to do!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. Commander.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. You're right, Number One. It's a task that I will attend to.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I don't think I understand what you're telling me. My husband is responsible for your crew assaulting one another?",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is very ill, Perrin.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bendii Syndrome is more a folk tale than a disease. There hasn't been a true case of it in my husband's lifetime.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's one now. Sakkath knows.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sakkath? Sakkath knows nothing my husband didn't teach him.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He knows. And more than that. On this mission he has been consciously holding Sarek's mind together as well as he could.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is not true!",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must see Sarek.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I know a good deal about the Vulcan mind and I know a good deal about the heart of one particular Vulcan. I am his wife, and he is fine. He does not have Bendii Syndrome, and that shall be the end of it.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, you must not do this to him.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sarek, Sakkath and Mendrossen come out of the bedroom"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Must not do what, my wife? If Captain Picard wishes to see me, he may do so. I regret that we have seen so little of each other during this voyage, Captain.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The loss is mine, Ambassador.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, may I talk with you in private?",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were speaking of your belief that I suffer from Bendii Syndrome. I have been accused of many things in my life, never an excess of emotion.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek, I see no reason to continue this discussion.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On the contrary, I wish to assuage any fears the Captain may have regarding my capabilities. I believe there is a test for Bendii Syndrome. I will take it immediately.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unfortunately the results would not be available for several days, which is why I must ask for a postponement of the conference.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would be a mistake. Captain, I give you my word. I am in perfect health.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then why must Sakkath help to contain your emotions?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is what the captain says true?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Ambassador, absolutely not.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perrin, were you aware of this? Sakkath, I await an answer.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been using my limited abilities to strengthen your mental discipline.",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your efforts will no longer be required!",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would not be wise.",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It may not be wise but it is necessary.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sakkath leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Leave me. I wish to speak with Captain Picard.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek, I ask you to reconsider.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Obey my wishes. There is nothing to fear.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Perrin and Mendrossen leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope I've not embarrassed you, Ambassador.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You seem to forget, Captain, that I am a Vulcan. I am not affected by emotional considerations.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think you are affected, sir, far more than you realise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am a logical being. Present your arguments. I will listen.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is an epidemic of violent incidents aboard the Enterprise. As we speak, the situation is worsening.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And it is your hypothesis that I am the cause of these incidents?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. My Chief Medical Officer has explored all other probable causes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I share your concern for your crew. However, you must agree it is not unusual for a starship to encounter unexplained phenomena.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is correct.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Therefore, since I can assure you that I am not the cause of your difficulties, the logical course would be to have your doctor to continue her search.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is. It is also a fact that these incidents began shortly after your arrival.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is your entire argument to be based on mere coincidence?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it also coincidence that your wife and chief of staff are carefully isolating you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah. I believe I see the flaw in your logic. You are reacting to their overprotective attitudes towards me. They are both somewhat emotional concerning my age.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Surely Sakkath cannot be influenced by emotion?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Am I to be blamed for the judgment of a child? Sakkath is young and inexperienced. He erred in his assumption that I needed help!",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you needed his help at the concert. Or is there possibly some other logical explanation for what happened that night?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I saw you crying.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not cry.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was there I saw the tears.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You exaggerate, Captain. I recall only one tear.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you were emotionally affected by the music.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is not possible!",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You still haven't answered my question, Sarek. Is it logical for a Vulcan to cry?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was late. I was fatigued. Nothing more. The Legarans trust only me. They will not meet with any other member of the Federation. I must be allowed to complete my mission! There are no other logical solutions!",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No other logical solutions? But Ambassador, there are always other solutions. You have said so yourself many times.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What I meant was that",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek of Vulcan would never be afraid of looking straight at something he did not want to see.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I warn you! Your efforts to discredit me will not succeed!",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek of Vulcan never confused what he wanted with the truth.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not be spoken to in this manner!",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do I hear anger in your voice?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would be illogical for a Vulcan to show anger! It would be illogical! Illogical! Illogical! Illogical!",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. In three hours time we are scheduled to meet with the Legaran delegation. However, it is now all too evident that Ambassador Sarek is in no condition to proceed with the conference.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Guest quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're entering the Legaran system, sir. Shall I have Mister Worf contact their ambassador?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I will present our regrets to the Legarans personally. It is vital that they understand our reasons for cancelling these negotiations.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I think you did the right thing.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But at what cost, Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "door bell"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come. Perrin?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must speak with you, Captain.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be on the Bridge, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is the Ambassador?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Resting. I've come to ask you to reconsider your position.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know that is impossible.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sarek is a good man. He's given the Federation a lifetime of service. I beg you to let him keep the respect he has earned.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He'll never lose that respect.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mendrossen and I never wanted to deceive you. My husband's condition came on him so gradually it was so easy to delude ourselves and pretend that nothing was wrong. We convinced ourselves that he could complete this one last task and end his career with dignity. Help him, Captain. Help him regain his pride, his honour.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Believe me, it would give me great pleasure, but there is nothing I can do.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The mission can be saved. But he needs your help to do it.",
+                    "spoken_by": "PERRIN"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A mind-meld? Between the two of us? Do you realise the dangers involved in what you are proposing, Captain?",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I do, Ambassador. But I also realise the potential benefits.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We would be linked telepathically, sharing our thoughts, becoming in essence one mind.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which, for a few hours, should provide the emotional control you need. In that time, you can meet with the Legarans and conclude the treaty.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a generous offer. But I must warn you that while I would gain your stability, you would experience the fierce onslaught of emotions unleashed by my condition. Vulcan emotions are extremely intense. We have learned to suppress them. No human would be able to control them. They would overwhelm you. The mind-meld can be a terrible intimacy. I cannot allow it.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm aware of the risks. But it is the only logical solution.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your courage honours me, Captain.",
+                    "spoken_by": "SAREK"
+                }
+            ],
+            "location": "Conference room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't say I approve of this, Jean-Luc.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't expect that you would, Beverly.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't suppose I could talk you out of it?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid not, though I do admit to a certain trepidation. Your company is much appreciated.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "doorbell chime"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see that you are ready, Captain.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Crusher will monitor our responses.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A sensible precaution.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They sit on opposite sides of a small table, then Sarek reaches across to Picard in the time-honoured fashion"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My mind to your mind. Your thoughts to my thoughts.",
+                    "spoken_by": "SAREK"
+                }
+            ],
+            "location": "Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, the Legarans are ready to beam aboard.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, please inform the Legaran delegation that Sarek of Vulcan is on his way to welcome them.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Ambassador.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I take it the mind-meld was a success?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. All went as planned.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is Captain Picard all right?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't worry, Number One.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the Ambassador?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am myself again. It has been a long time.",
+                    "spoken_by": "SAREK"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jean-Luc is voicing the agony Sarek had been keeping locked inside himself"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! It is wrong. It is wrong! A lifetime of discipline washed away, and in its place bedlam. Bedlam! I am so old. There is nothing left but dry bones and dead friends. Tired, oh so tired.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will pass, all of it. Just another hour or so. You're doing fine. Just hold on.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! This weakness disgusts me! I hate it! Where is my logic? I am betrayed by desires. I want to feel. I want to feel everything. But I am a Vulcan. I must feel nothing. Give me back my control.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc!",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perrin. Amanda. I wanted to give you so much more. I wanted to show you such tenderness. But that is not our way. Spock, Amanda, did you know? Perrin, can you know how much I love you? I do love you!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly comes over to wipe his tears"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm here, Jean-Luc. I'm not going anywhere.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's quite difficult. The anguish of the man, the despair pouring out of him, all those feelings, the regrets. I can't stop them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He falls, sobbing, into her arms"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't stop them. I can't. I can't.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't even try.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First Officer's log, Stardate 43920.7. Ambassador Sarek has successfully concluded the negotiations with the Legarans. The USS Merrimac has arrived and will transport the Ambassador and his party back to Vulcan."
+                }
+            ],
+            "location": "Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope your journey aboard the Merrimac will be uneventful.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With the pressures of the conference behind him, I believe I can help maintain his control until we return to Vulcan.",
+                    "spoken_by": "SAKKATH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What will happen to him then?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The effects of Bendii Syndrome are irreversible. Medical research is always continuing, of course.",
+                    "spoken_by": "MENDROSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister O'Brien, stand by for transport.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Captain.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He loves you very much.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know. I have always known.",
+                    "spoken_by": "PERRIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sarek enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will take my leave of you now, Captain. I do not think we shall meet again.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope you are wrong, Ambassador.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We shall always retain the best part of the other inside us.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe I have the best part of that bargain, Ambassador. Peace and long life.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Live long and prosper.",
+                    "spoken_by": "SAREK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And, holding Perrin's hand, Sarek and his party are beamed away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Transporter room"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "171",
+    "transcript_url": null
+}

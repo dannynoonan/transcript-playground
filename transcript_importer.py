@@ -34,7 +34,7 @@ def parse_show(show_arg: str):
                 show_meta = s_meta
                 break
     if not show_key:
-        raise Exception(f"Transcript import request error: no match for show={args.show}")
+        raise Exception(f"Transcript import request error: no match for show={show_arg}")
     return show_key, show_meta
 
 
@@ -96,18 +96,10 @@ def main():
             print('----------------------------------------------------------------------------')
             print(f'Begin processing transcript_url={transcript_url}')
 
-            transcript_extractor = TranscriptExtractor(show_key, transcript_type)
+            transcript_extractor = TranscriptExtractor(show_key, show_meta, transcript_type, transcript_url)
             transcript_response = requests.get(transcript_url)
             transcript_soup = BeautifulSoup(transcript_response.content.decode('utf-8'), 'html.parser')
             episode = transcript_extractor.extract_transcript(transcript_soup)
-
-            # extract title from url (temporary hack)
-            episode.transcript_url = transcript_url
-            title = transcript_url.removeprefix(show_transcripts_domain)
-            title = title.removeprefix(show_meta['episode_subdir'])
-            transcript_type_string_match = show_meta['transcript_types'][transcript_type]
-            title = title.replace(transcript_type_string_match, '')
-            episode.title = title
 
             # json_episode = json.dumps(episode.toJSON())
             # print(episode.toJSON())

@@ -1,0 +1,2710 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid the numbers coming in are already indicating climatic changes, Commander.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What kind of drop can we expect?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the Pentharan spheral forecasts are correct, ten to twelve degrees Celsius within the first ten days.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If it continues like that, their entire ecosystem will be shot to hell.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I doubt they're prepared to cope with the kind of cold that's coming.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Riker.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you join me on the bridge, please.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Right away, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you certain, Mister Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was a space-time distortion, sir, and there is something back there. We passed within three hundred kilometres of it.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's too close to be a coincidence. Mister La Forge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Captain?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would a delay of one hour affect your plans?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not unless another asteroid decides to pay a call on Penthara, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The odds of that occurring, Captain, are extremely unlikely, given the time frame.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Thank you, Mister Data.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, bring the ship about. Let's take a look at Mister Worf's distortion.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf's what?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Lieutenant's sensors detected a temporal distortion almost in our current course. There's a small object back there that wasn't there a few moments ago.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The object is fifty kilometres ahead, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Full stop, Ensign.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dimensions, Worf?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Approximately five metres in length, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lifesigns?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No signs of any kind. Our sensors do not penetrate the hull.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Try hailing it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's odd.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's odd?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've received a response, sir, but",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Mister Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They want you to move over, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reply that the Enterprise isn't going anywhere, Lieutenant.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not the Enterprise, Captain. You.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you trying to tell me?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and as Picard walks back towards Worf a figure appears where he was standing"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oops. Excuse me, Captain, but you were standing right where I needed to be.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rasmussen's the name, sir. Professor Berlinghoff Rasmussen. Ah, this is wonderful. Actually, quite a bit larger than I thought.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where I come from, every historian knows the bridge of old 1701D.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where exactly do you come from?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why, Earth. Late twenty sixth century Earth, to be exact. I've travelled back nearly three hundred years just to find you.",
+                    "spoken_by": "RASMUSSEN"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the lanky man is peering at a book on a stand - Shakespeare I presume"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly what kind of historian are you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My focus is on the twenty second through the twenty fourth centuries. Early interstellar history. You know, it was always believed this was on your desk, not here. Fascinating. Don't move it on my account.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can't expect me to believe that the layout of my ready room can possibly be of interest to future historians.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "points at painting",
+                    "line": "No less so than your legendary modesty, Captain. If I could describe to you what a thrill it is to be here.  This is the original.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You flatter me Professor, but I can't help but wonder what could possibly have caused you to select me as the subject of your study. Even in this decade, there are far wiser and more experienced humans in and out of Starfleet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "paces out the room",
+                    "line": "I'd love to tell you, Picard. I really would, but try and imagine what a young Caesar might have done differently had someone had given him a hint of what lay ahead, or if Lincoln had been coerced into changing his theatre plans. I truly wish I could be more specific on why you were selected, but I'm afraid the exchange of information will have to flow in one direction only.  Five, six, seven metres. Ha! I was right.",
+                    "spoken_by": "RASMUSSEN"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why now?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right. If you've came back to study us, to study the captain, why would you pick today? Why not a year ago or a year from now?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I picked the right day all right. Just wait, you'll see. Do you always sit there, on that side of the table?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Usually. Why?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not important.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, at what point does time travel become a tool for historians?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, now, Commander, you know better than that. I've studied a great deal about your century, including the fact that you're all quite aware of the dangers of anyone altering the past, and that's exactly what I'd be doing if I were to divulge information like that.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Telurian plague.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I beg your pardon?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The telurian plague. Was it cured? I mean, did they find the cure by your century? Oh, it can't do any harm to ask that.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I realise that it's difficult, but we must keep to ourselves questions regarding the future. Go on, Professor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be preparing questionnaires for each of you. Please complete them at your convenience. If you're concerned about a possible breach of security, I'm sure your Captain can make a determination. And thank you in advance for curbing your curiosity.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I hand my assignment in on time, can I get a glimpse into next week's poker game?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, would you escort the Professor to his quarters.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This way, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data and Rasmussen leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did he mean, he picked the right day?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know everything I do, Will.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's hard to tell, but he is holding something back.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course he is. All the things he could tell us. All the things he would like to tell us.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It might be that, I don't know.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What if he's an imposter? God knows we've seen enough of them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is human. The medical scans have proved that, right, Doctor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's human, all right.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And there was a temporal distortion back there, correct Mister Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And no one can deny that ship of his is unlike anything we've ever seen before.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The hull is made of some kind of plasticised tritanium mesh. We've nothing like it on record, at least not till now.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, I do appreciate your caution. I share it. Bring his vessel into the shuttlebay. Place it under guard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I realise that this visit is going to be difficult for some of us, but I've examined his credentials, and everything seems to be in order, so I think we should extend to him every courtesy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Including questionnaires?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Including questionnaires, Mister Worf.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rasmussen is peering closely at Data"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is really a thrill, Data, like running across a Redstone missile or a Gutenberg bible. To think, the Model T of androids.",
+                    "spoken_by": "RASMUSSEN"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you're referring to the first production model automobile of the twentieth century, perhaps the subsequent Model A might be a more apt analogy, since I am Doctor Noonian Soong's revised prototype.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I stand corrected.",
+                    "spoken_by": "RASMUSSEN"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there a problem, Professor?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose it will have to do, for now. I'll get you a list of the things I'll be needing, okay?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would I be correct, Professor, in assuming that you know whether or not I am still alive in the twenty sixth century?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rasmussen washes his hands and then holds them out for a towel. Data obliges"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Since you seemed to know so much about Captain Picard and the ship, I assumed that you would.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It'd be best if you kept your assumptions to yourself, wouldn't it?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Sorry, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45350.3. We have arrived at Penthara Four and can see for ourselves the atmospheric devastation caused by the asteroid impact.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Rasmussen's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a lot of snow has fallen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've located three underground pockets of carbon dioxide, here, here and here. Our drilling phasers can release enough of the gas to form an envelope which would temporarily hold in the heat of the sun.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've spend years, decades, trying to avoid anything that would lead to a greenhouse effect and now here we are about to create one on purpose.",
+                    "spoken_by": "MOSELEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Less than twenty percent of your normal sunlight is getting through that dust, Doctor. If we can hold enough heat in with the CO2, that should give the planet time to mend itself.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me, Doctor Moseley.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What now?",
+                    "spoken_by": "MOSELEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "New Seattle's reporting a cloud depth of twelve kilometres. Two rivers, tropical rivers, are beginning to freeze.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'd better get started before there's nothing left to mend.",
+                    "spoken_by": "MOSELEY"
+                }
+            ],
+            "location": "Penthara science lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rasmussen walks in and goes to the bar"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look who's here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hate questionnaires.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, come and join us.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope I'm not intruding.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all. I'm sure you're the topic of conversation at every table in this room.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As I promised, here are your assignments. I'm sure they'll be painless. Please try and complete them by tomorrow.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "hands out transparent chips, taking time to hold Beverly's hand while he does it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tomorrow?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No problem, Professor.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're all very calm.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there some reason we shouldn't be?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "History always records where people were, what they were doing, when important events took place. But it rarely remembers their activities say, a week before, or a day or even an hour.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you suggesting that an important event is imminent?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't say that, did I? Please, just go on doing what you were doing and pretend I'm not here.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why is there no record of other future historians travelling back to witness important events?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're obviously very careful. As a matter of fact, a colleague and I recently paid a call on a twenty second century vessel.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They hadn't perfected quarantine fields. You probably saw some surgical masks and gloves.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isn't it fascinating how everyone has different interests when it comes to history. Different perspectives on progress.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rasmussen opens a ring and looks inside"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you mind telling me what that is?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just checking the time. No problem.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is something important supposed to be happening here?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it's nothing, nothing. What about you, Commander? What do you see as the most important example of progress in the last two hundred years?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose the warp coil. Before there was warp drive, humans were confined to a single sector of the galaxy.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Spoken like the consummate explorer.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is going on? Are you expecting someone?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Phasers.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I beg your pardon?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There were no phasers in the 22nd century.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, you see, Doctor? Our Klingon friend is a perfect example of what I was trying to tell you. He views history through the eyes of a hunter, a warrior. His passion lies in the perfection of the tools of violence. How delightfully primitive.",
+                    "spoken_by": "RASMUSSEN"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to a crewwoman",
+                    "line": "As soon as we input this atmospheric data from Moseley, the computer should tell us how many holes we'll have to punch.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What have you learned about the tectonic stability around the drilling sites?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Couldn't be better. Our scans were all clear and Moseley says there hasn't been so much as a quiver down there in well over a century.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah ha, just the two I'm looking for. I've brought you the forms I need you to complete. Shouldn't take any more than a couple of hours.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're kind of busy here, Professor. Tomorrow would probably be better. Data, we've got about twenty three thousand thermal simulations. You think you could check them through for anomalies?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Certainly.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data starts working at the console at fast-forward speed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that as fast as he can go?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not fast enough for you, Professor?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's little known about Data's efficiency. Almost nothing about his part in this mission. It's a topic of great conjecture.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two hundred nine anomalies all within acceptable parameters.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks, Data. You're here to witness this mission. That's it, isn't it?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It'd be best if you just thought of me as a fly on the wall, and went about your business.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will have your answered questions as soon as possible, Professor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data at Penthara Four!",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you'll excuse me.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your prosthesis. What do you call it again?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A visor.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Visor. Right. A visor. You know, I have a picture of you wearing that in my office. How do you like it?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It allows me to see. I like it just fine.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, Homer was blind and Milton. Bach, Monet, Wonder.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A fly on the wall, huh?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A fly on the wall.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The computer has configured the drilling pattern and specified depths.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we've got everything we need. I'm ready to transport down to the surface.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I'll notify Doctor Moseley. Good luck, Geordi.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gentlemen.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi leaves and Rasmussen pockets a PADD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who said these moments were any less exciting when you know the outcome?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know of no one who said that, Professor.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise will monitor the CO2 concentrations at six different altitudes. If all goes well, it shouldn't take more than twenty bore sites.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's hope all goes well.",
+                    "spoken_by": "MOSELEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "La Forge to Commander Riker. How are you doing?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've gotten word from the monitoring stations. They're all online. We're ready when you are, Geordi.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's excellent. All we need now is an open channel to Data.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Penthara Science lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a channel, Mister Worf, and prepare to fire at target one.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The computer has locked in phaser depth calculations.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Ready, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fire.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "two shots hit the snow-covered ground"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Target one is emitting two thousand cubic metres per second.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Target two, one thousand six hundred.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Surface wind patterns over the target are stable.",
+                    "spoken_by": "MOSELEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You picking up anything at altitude, Data?",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Penthara Science lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "CO2 concentrations remain unchanged at upper elevations.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "three more phaser shots, then Rasmussen enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have I missed much?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Target fourteen complete, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "What have you got?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No change, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "How are the surface winds, Geordi?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Holding steady, sir.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Pentara Science lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The computer has stopped drilling.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should be getting something",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Now, Data.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Elevated CO2 levels at twenty kilometres, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Now you're",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Talking. We've got some new temperatures coming in.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All thermal monitoring stations are reporting no further temperature drops.",
+                    "spoken_by": "MOSELEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Correction, Doctor. Two equatorial stations are showing slight increases.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Thank you all. You've given us what we need. Time.",
+                    "spoken_by": "MOSELEY"
+                }
+            ],
+            "location": "Penthara Science lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're glad to be of help, Doctor. The Enterprise will remain in orbit and continue to monitor your progress. Picard out.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've given us what we need. Time.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, return to synchronous orbit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very clever, Picard. And well done. We've always known how you did it, but to experience the moment, to witness the nuances, it's indescribable.",
+                    "spoken_by": "RASMUSSEN"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly is treating an injured knee"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's after more than a history lesson. I can tell you that.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it? What are you getting from him?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. It's like he's trying to confuse us, misdirect us somehow.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rasmussen enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There you are. Well, that certainly was exciting, wasn't it?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, is everything alright? Are you well?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, couldn't be better, thank you. I just thought we might chat about your questionnaire. Buck up, crewman. You're a credit to that uniform.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've got some things to take care of.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, please, Counsellor. I would very much appreciate your remaining.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, in response to my sixth question, you spoke of a neural stimulator. May I see one?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't see why not. Give me a minute.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't like me very much, do you?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't dislike you, Professor.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to a young boy",
+                    "line": "Keep your eyes wide, soldier. You'll be telling your grandchildren how you were there at Penthara Four. But you don't trust me. You should, you know.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Should I?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard's empath won't trust you. That's what they all said.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard's empath?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're not that unalike, you and I. You possess a sense that is foreign to the others. My knowledge of the future is similar. You know, some of my best friends are empaths. They trust me.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why should you care whether I trust you or not?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're birds of a feather. We're colleagues. We could learn a lot from each other.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right. I don't trust you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I knew you'd say that.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure you did.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly returns with the equipment"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it's nice to see you two are finally getting along.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I really have to be going.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi leaves and Beverly hands the wand device to Rasmussen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "reading a PADD from a nurse",
+                    "line": "Why don't you try a berylite scan? I'd be interested to see where his micro-levels are.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the nurse leaves them"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, what else can I show you?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're a very curious woman. No, no, I don't mean curious like that. I mean you're curious about things. About berylite levels, about the future.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, curiosity is why all of us are out here, isn't it?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand. But you're different, you're more vibrant. More",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More vibrant. That's nice, I like that.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, whenever I travel back, I meet very interesting people, men and women. But I've never anyone who gave me thoughts about not going home.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not supposed to be influencing the past, remember? And I am beginning to feel a little influenced. Anyway, I could be your great, great, great, great, grandmother.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What kind of questions did he have for you, Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All he wanted to know about was previous starships. What I thought was innovative about the last Enterprise, the one before that. He said he wanted to see if we had a grasp of the fundamentals.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His queries to me primarily focused on Doctor Soong's",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "an alarm beeps"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I am detecting a massive earthquake on the surface. Two earthquakes.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Location?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Both epicentres are beneath the two southernmost drill sites, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is La Forge still down there?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Find him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've also got some volcanic activity. Pretty severe.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Magnify.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "La Forge here, Captain. Moseley and I are on our way back to his lab.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you all right?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We're okay, but those were pretty big, sir. If this was Earth, I'd say around an eight or an eight five on the Richter Scale. We're starting to see some volcanic plumes, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two more eruptions, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is likely that we overestimated the geologic stability around the CO2 pockets, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We're in the lab, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "We're fairly well quake-proof down here, Picard. It's the volcanic dust I'm worried about.",
+                    "spoken_by": "MOSELEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about the dust?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The ash the volcanoes are throwing into the atmosphere is going to compound the existing problem. In a matter of days, there'll be no sunlight getting through those clouds.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "No amount of CO2 will help us then.",
+                    "spoken_by": "MOSELEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at science two",
+                    "line": "Captain, take a look at this.  These are the coordinates of the eruptions, and these are the coordinates of the phaser drilling sites.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The mantle is collapsing where the pressure was released.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Captain, Doctor Moseley and I have a couple of ideas, but it's going to take some time to sort out.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sort them out, Commander.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We came here to help these people.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And look what we've done.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rasmussen walks into a cacophony of sound"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What in God's name is that?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Music, Professor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Music?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Mozart's Jupiter symphony in C major, Bach's Brandenburg Concerto number three, Beethoven's Ninth Symphony, second movement, molto vivace and La Donna e Mobile from Verdi's Rigoletto.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you think you could thin it out a bit?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "glances at Rasmussen",
+                    "line": "Computer, eliminate programme one. Computer, eliminate programme two.  Computer, eliminate programme three. Computer, half volume.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How the hell can you listen to four pieces of music at the same time?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, I am capable of distinguishing over one hundred and fifty simultaneous compositions, but in order to analyse the aesthetics, I try to keep it to ten or less.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only four today?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am assisting Commander La Forge with a very complex calculation. It demands a great deal of my concentration.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I came to thank you for answering my questions, though I probably should have asked you to limit yourself to fifty thousand words.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You did ask me to be thorough.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I realise it's hard to believe, Data, but very few records of Doctor Soong's work survived to the twenty sixth century, so it would be invaluable to myself and other historians, if you could provide us with some schematics.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Certainly, as soon as my work here is completed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As long as it's before oh nine hundred tomorrow. That's when I'll be heading back.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Bridge to Commander Data.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Worf.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander La Forge is hailing you from the surface, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Patch him through, please.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Have you rerun the phase reversal figures, Data?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There were no errors, Geordi. The variance must be no more than point zero six terawatts.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Well, I don't see any other choice. We'll continue to run the numbers down here but I doubt we'll come up with anything different. You better inform the captain of the good news and the bad news. La Forge out.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rasmussen pockets a tricorder"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which do you suppose he's going to want to hear first?",
+                    "spoken_by": "RASMUSSEN"
+                }
+            ],
+            "location": "Data's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The good news.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The motion of the dust has created a great deal of electrostatic energy in the upper atmosphere. With a modified phaser blast, we could create a shock front that would encircle the planet and ionise the particles.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would be like striking a spark in a gas-filled room.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With one exception, sir. The particles would be converted into a high energy plasma which our shields could absorb and then re-direct harmlessly into space.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Turn the Enterprise into a lightning rod?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Precisely, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the bad news?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If our phaser discharge is off by as little as point zero six terawatts, it would cause a cascading exothermal inversion.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Meaning?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We would completely burn off the planet's atmosphere.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. While Doctor Moseley takes La Forge's plan to the leaders of the colony, I find myself weighing the potential consequences of a more philosophical issue.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rasmussen enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I imagine you know why I've asked you here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, I have a fairly good idea.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm faced with a dilemma. There is a planet beneath us which is slowly turning to ice, and unless we do something about it, I'm told that in a matter of weeks thousands, maybe tens of thousands, will die.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That'd be a shame.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it would. It would be quite a shame.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, what's your dilemma?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander La Forge has a possible solution. The margins of error are extremely critical, but if successful, there'll be no more threat.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if it's not successful?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every living thing on the planet will perish.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So do nothing and thousands will die. Do something and millions could die. That's a tough choice.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not if you were to help me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not suggesting I tell you the outcome of your efforts?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh no, I'm not. Everything that Starfleet stands for, everything that I have ever believed in, tells me I cannot ask you that. But at the same time, there are twenty million lives down there, and you know what happened to them. What will happen to them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, it seems you have another dilemma. One that questions your convictions.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I've never been afraid of reevaluating my convictions, Professor, and now, I have twenty million reasons to do so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And why did you ask to see me?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because your presence gives me potential access to a kind of information that I've never had available to me before, and if I am to re-examine my beliefs, then I must take advantage of every possible asset. It would be irresponsible of me not to ask you here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "However you come to terms with your beliefs, Captain, I must tell you that I'm quite comfortable with mine.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can you be? How can you be comfortable watching people die?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me put it to you this way. If I were to tell you that none of those people died, you'd easily conclude that you tried your solution and it succeeded. So, you'd confidently try again. No harm in that. But what if I were to tell you they all died? What then? Obviously, you'd decide not to make the same mistake twice. Now, what if one of those people grew up",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Professor, I know. What if one of those lives I save down there is a child who grows up to be the next Adolf Hitler or Khan Singh? Every first year philosophy student have been asked that question ever since the earliest wormholes were discovered. But this is not a class in temporal logic. It's not theoretical, it's not hypothetical, it's real. Surely you see that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see it all too well. But you must see that if I were to influence you, everything in this sector, in this quadrant of the galaxy could change. History, my history, would unfold in a way other than it already has. Now what possible incentive could anyone offer me to allow that to happen?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have two choices. Either way, one version of history or another will wend its way forward. The history you know or another one. Now who is to say which is better? What I do know is here, today, one way, millions of lives could be saved. Now isn't that incentive enough?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everyone dies, Captain. It's just a question of when. All of those people down there died years before I was born. All of you up here, as well. So you see, I can't get quite as worked up as you over the fate of some colonists who, for me, have been dead a very, very long time.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, you know of the Prime Directive, which tells us that we have no right to interfere with the natural evolution of alien worlds. Now I have sworn to uphold it, but nevertheless I have disregarded that directive on more than one occasion because I thought it was the right thing to do. Now, if you are holding on to some temporal equivalent of that directive, then isn't it possible that you have an occasion here to make an exception, to help me to choose, because it's the right thing to do?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're not just talking about a choice. It sounds to me like you're trying to manipulate the future.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every choice we make allows us to manipulate the future. Do I ask Adrienne or Suzanne to the spring dance? Do I take my holiday on Corsica or on Risa? A person's life, their future, hinges on each of a thousand choices. Living is making choices. Now you ask me to believe that if I make a choice other than the one found in your history books, then your past will be irrevocably altered. Well, you know, Professor, perhaps I don't give a damn about your past, because your past is my future and as far as I'm concerned, it hasn't been written yet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, the electrostatic conditions are about as good as they're going to get. If we're going to try this, now's the time.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please don't ask me, Captain. I can't help you. I'm sorry.",
+                    "spoken_by": "RASMUSSEN"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long will it take to programme the phasers, Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've just got to tie in Geordi's atmospheric sensors.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you've made your choice after all, and without my help.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, on the contrary, Professor, you were quite helpful.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How's that?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By refusing to assist me, you left me with the same choice I had to began with. To try or not to try, to take a risk or to play it safe. Your arguments have reminded me how precious the right to choose is. And because I've never been one to play it safe, I choose to try. Mister Data, programme the firing sequence.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45351.9. Doctor Moseley has met with the colony leaders, who all agree they are willing to take the risk.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Warp power has being rerouted to the main deflector dish, Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Keep those phasers on active surge control, Worf. We're only going to get one shot at this.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, this is it!",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have the sequence locked in, Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. After an eight point three second burst from the dish, we'll discharge all EPS taps through the phasers.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's time for you return to the ship, Mister La Forge. Mister O'Brien, stand by to transport.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Excuse me, Captain, but I can be of a lot more help down here. We've going to have to compensate for density variations right up to the last second.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Moseley's computers can accomplish the same task, sir. but Geordi would be better able to anticipate unexpected variances.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, you know better than anyone there's no guarantee this will work. If it fails",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "There's no guarantee it's going to fail, Captain. I'd like your permission to remain here on the surface.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Permission granted.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "La Forge remained below.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good luck, Commander.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Thank you, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The deflector dish has been reconfigured, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed, Mister Data.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand by for auto-phaser interlock. Activating deflector beam.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "EPS taps online. Phasers firing.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a wicked red glow quickly spreads through the atmosphere, and is then pushed back into a single point by azure blue. A stream of energy leaps out at the Enterprise and envelopes it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Activating shield invertors, now.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Enterprise does a neat 180 and pours the energy off into space"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "La Forge here. Still breathing, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "We've got particulate levels right where they're supposed to be and the sun is shining!",
+                    "spoken_by": "MOSELEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "You see, Captain, I told you there was nothing to worry about.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Report back to the ship when you're ready, Commander. Doctor, we'll stay in orbit and analyse the remaining volcanic disturbances, but the best advice would be to let them cool down on their own.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I'm getting in the habit of thanking you, Picard.",
+                    "spoken_by": "MOSELEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I'd love to see more, but it's nearly time for me to go. I am tickled pink to have had the opportunity of witnessing this, Picard. And you did it all without any help. well, must run. Got some packing to do. You know, you're taller in person, Commander.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rasmussen leaves, and Picard gives Worf the nod"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, would you look at this. Who would have expected a teary farewell?",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid we're going to have to take a look in your vessel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Curious till the end, eh, Captain? You can't be serious, Picard. We've been through this more than once.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A number of objects have been discovered missing in the last two days, and if they're in your possession, then we would like them returned.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not here in search of relics. I'm sure they'll turn up.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you will not open the vessel, I will. With explosives, if necessary.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I doubt you have the means.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we don't get in that thing, I guarantee you don't either.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Considering the sensitive nature of my equipment, I think you'll understand if I request that only Mister Data be allowed to see it.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because if I order Data never to divulge what he sees in there, he won't, with the exception of anything that might belong to us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Back in a minute.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rasmussen puts his hand on the ship, it scans him and a door appears. They enter and it closes again"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "tricorder, the neural stimulator, a hypospray, one of Geordi's visors, a PADD, a Klingon knife"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not believe any of these items belong to you, Professor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nor does this. This phaser is set at the highest stun setting. If I'm correct, that is sufficient to immobilise even you.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why have you stolen these objects? To put in a museum?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Far too valuable for that. You see, in the century I come from, they haven't even been invented yet.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But this vessel? And the temporal distortion that coincided with your arrival?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, this is a time pod, and it is from the twenty sixth century. At least that's what the poor fellow said. You see, he decided to travel back to the twenty second century, that's my time, and he had the misfortune of meeting me. His clothes fit quite well, don't you think? Took me weeks to figure out how to work this thing.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you are not an historian.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More of an inventor. Up till a few weeks ago, a dismally unsuccessful one.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are your intentions, Professor?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, thanks to your captain, it seems my intentions have changed slightly. I was quite content with the notion of returning with those trinkets. I'd invent about one a year. But now, look what fortune has graced me with. You will take a little longer to figure out than a tricorder, but it should be well worth the effort. If the auto timer is programmed the way I think it is, in about two minutes we should be on our way back to a place called New Jersey. I'm afraid you won't be awake for the ride.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "but the phaser doesn't fire"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I assume your hand print will open the door whether you are conscious or not.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Time ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That weapon was working yesterday.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were correct to suspect him, sir. But he is not from the future, he is from the past.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Trying to make my history unfold in a way other than it already has, eh, Professor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This was all a misunderstanding, Picard. Just let me back in there and we'll forget the whole thing.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now what possible incentive could anyone offer me to allow that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe you will find all of the missing items in the vessel, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A very nice performance.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not all of it. Some of it was real. Captain.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He claims to be a twenty second century inventor, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A pity you weren't a bit more inventive. If fewer things had disappeared, we might never have suspected you. As it was, the only stumbling block was your ship. Our sensors couldn't penetrate it. But once the door was opened, the computer was able to detect and deactivate everything you'd stolen, including this.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd love to hear more, Picard, but I really must get back in that pod.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take him to a detention cell, Mister Worf, and notify Starfleet that we'll be dropping him off at Starbase two one four.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can't do this. I've got to get back. I don't belong here.",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the time ship shuts its door and vanishes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No!",
+                    "spoken_by": "RASMUSSEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure there are more than a few legitimate historians at Starfleet who will be quite eager to meet a human from your era. Oh, Professor. Welcome to the twenty fourth century.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Shuttlebay"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "209",
+    "transcript_url": null
+}

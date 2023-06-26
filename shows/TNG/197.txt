@@ -1,0 +1,2436 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly and her paramour are kissing in the turbolift before it stops to pick up another passenger"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador Odan, Doctor Crusher. I was just on my way to speak to you.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, Data.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have completed my study on the atmospheric variations which have occurred on the moon since the new technology was implemented.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Commander. That will be most helpful in my efforts to mediate the quarrel.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could go over it with you now. It would not require more than two hours.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We do appreciate that, Data, but the Ambassador and I have set aside this time to analyse the incidence of the lung disease on the moon's inhabitants.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then it is perfect timing, Doctor. What better occasion to integrate my results into your study?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now that I think about it, you're absolutely right, Commander. Unfortunately, I'm not feeling very well. Perhaps Doctor Crusher could get you started inputting your information. I myself must return to my quarters.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador, are you still having those awful headaches? I'd better bring you a hypospray to take care of it.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would be most grateful.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "exiting the turbolift"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Put a cold cloth on your forehead, Ambassador. I'll do my best to be with you shortly.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the turbolift door closes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll set you up at the medical monitor, Data. It'll take you a while to input the figures, won't it?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least an hour, but I do not believe much time can be saved by exhibiting such haste now.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, there are times when every second does count.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "something moves in Odan's abdomen. He bathes it with light from a device"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Later, after the opening credits, Beverly is brushing her hair"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Somehow, I had an unnatural fear that Data was going to barge in and ask to discuss the peripheral effects of magnetospheric energy taps.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well if I don't get back soon and take a look at his projections, he just might come looking for me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know, when I first met the formidable Doctor Beverly, what, ten days ago? I thought to myself, this woman is ice through to her bones. Who would have ever guessed that instead of ice, there is fire.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Odan.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stay here, don't go.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Odan, are we? Is this interfering with your work on the Peliar Zel problems?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fortunately, I've done about as much as I can until we get there. Because I just can't seem to keep my mind on my work right now.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Odan, I have to go.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Promise me we'll be together tonight.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I promise.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he kisses the inside of her wrist"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you may go, Doctor Beverly.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just Beverly.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not just Beverly. It's Beverly's smile, it's her kindness, her beauty within and without. So much more than just Beverly.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Picard to Ambassador Odan.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Odan's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Captain? This is Odan.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Federation representative from Peliar Zel has come on board. Would you care to meet us in the Observation Lounge?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be right there, Captain.",
+                    "spoken_by": "ODAN"
+                }
+            ],
+            "location": "Odan's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the news were encouraging, I assume you would not be here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid you're correct, Captain. The situation's growing progressively worse.",
+                    "spoken_by": "LEKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where've you been?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With a patient. Minor emergency.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Odan enters through another door"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador Odan, this is Governor Leka Trion of Peliar Zel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador. thank you for coming. I knew your father. His efforts helped keep our people at peace for several generations.",
+                    "spoken_by": "LEKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would hope to serve you as well as he.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Governor. Ambassador.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "all sit"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope Doctor Crusher was able to help you with your headache.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Actually, she was.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Governor Leka has intercepted us before we reach her planet in order to update us on the situation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The people on our moons have been in discord ever since they migrated from our planet five centuries ago. To us on the planet They're like two squabbling children. We try to help settle their arguments by not taking sides, but this time we are at a loss.",
+                    "spoken_by": "LEKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been studying the information you sent. If I understand correctly, the people of Alpha moon have found a way to tap directly into the magnetic field of your planet, and now rely exclusively on that energy source.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but the Beta moon is now suffering some environmental damage as a result.",
+                    "spoken_by": "LEKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the monitor shows the Beta moon's orbit is inside that of Alpha"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My design models suggest that Beta will eventually experience rising temperatures, erratic tide surges and in general the beginnings of global warming.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The impact on the health of the Betan people is clear. There will be profound medical repercussions.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alpha is unwilling to give up its new-found energy source. Beta accuses them of intentionally courting genocide. Our efforts to reach a compromise have failed. And now, we have received intelligence that both sides are arming for war. If that happens the people of my planet will begin to take sides, and the outcome can only be disastrous.",
+                    "spoken_by": "LEKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will be in orbit around Peliar Zel within six hours. If you could arrange for the representatives of Alpha and Beta to be there, then Ambassador Odan could beam directly down to the planet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me, Captain. I prefer to shuttle to the surface.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would not recommend it. There are many radical factions involved in this dispute. It would be difficult to guarantee your safety.",
+                    "spoken_by": "LEKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure I'm not the first who has expressed discomfort at the idea of molecular transport. Thank you, but I prefer to remain intact. I'll shuttle down.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you wish.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "all leave except Picard and Troi"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, what is it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's Ambassador Odan. I continually feel fluctuations of emotion from him.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it's perfectly normal among the Trill.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It could be. We know so very little about them.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Quite.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly is getting her toenails coloured, while soaking her hands in green gunk and with a padded eye-shade on"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi, Deanna.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi. Is that the colgonite astringent you have on your eyes?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I guess so.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never tried it.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Someone just put it on me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't know you even came in here.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't. At least, not very often.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it feels good to indulge yourself sometimes.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess so.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Especially when you haven't done so in a while.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is that supposed to mean?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly, you're in love.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sometimes I wish you weren't so empathic",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't really think it's really a secret.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It isn't?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've been glowing.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh. Must be the astringent. What?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes, there is. What is it?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just something I sense in Odan.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What? What do you sense?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just, how well do you really know him?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I feel I know him better than I've known anyone in my life. Am I being foolish? I don't think so. And yet, I've only known him for a couple of weeks. Of course, that could be infatuation, but I am a grown up and I know the difference between love and infatuation. All I know is, I haven't felt this way for a long time.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you like it.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I like it.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Beauty parlour"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wanted to see me, Captain?",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Ambassador. Please, sit down. We have entered orbit. We shall be transporting you to the planet in a few minutes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am ready, Captain.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How will you proceed when you're there?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I cannot answer that. I never know until I am into the situation, meet the people involved. I work very much by instinct, not by pre-arranged plan.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It seems to work well for you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I do like to go into a situation as well-informed as possible, and I must say that your staff has been quite helpful in briefing me on the problems down here. Particularly Doctor Crusher.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My staff is quite capable. I'm glad they've been useful.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your Doctor Beverly is an extraordinary person, both as a scientist and as a woman.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I'm sure that's true. Well, shall we make our way to the shuttlebay?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, you know her better than I. Do you have any idea how committed she is to remaining with Starfleet?",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wouldn't presume to speak for her.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh no, of course not. I just thought, well, you've known her so much long than I.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Ensign Taggart to Captain Picard.",
+                    "spoken_by": "TAGGART"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Ensign.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The shuttle is ready to transport the Ambassador.",
+                    "spoken_by": "TAGGART"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll find my own way, Captain. I hope to return with good news.",
+                    "spoken_by": "ODAN"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker has asked to pilot you himself, Ambassador.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am honoured.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he embraces Beverly"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know when I'll be back.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know. Have a safe trip.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will stay safe, Doctor Beverly. I have good reason to return. I've researched Earth customs. This flower is given to express love.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a single red rose"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it is.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Initiate shuttle preflight sequence.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Preflight underway. Counting to clearance.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shuttle has cleared the bay door.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker, you will be out of shield range in five seconds.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acknowledged",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant. We'll be entering the upper ionosphere in two minutes and twenty seconds.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, an unidentified ship is emerging from the limb of the moon.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hail the vessel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I have visual contact. I don't recognise it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It claims to be an escort vessel from the Beta moon.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was no mention of an escort. Request a security clearance code.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They do not answer, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker, prepare to return to the shuttlebay.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acknowledged.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, they are loading its phaser banks.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Increasing power to the shields.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the ship starts taking pot-shots at them. at least one hits them"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Coming about.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Odan is thrown out of his seat and the shuttle is damaged"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage tractor beam. Report, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We've lost port thrusters",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And both backup stabilisers. I'm losing control.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We're bringing you in.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the tractor beam grabs them and the other ship veers off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the shuttle hull has been weakened. We're breaking up. You can't tow us. You'd better beam us directly on board.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, don't do it.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't stabilise the shuttle.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you transport me, it will kill me. Please.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Number One we're ready to beam you aboard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Belay that order, Captain. I'll bring her in manually.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Advise Doctor Crusher we have a medical emergency.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's in shock, he's lost a lot of blood, but that still doesn't explain these readings. Eosinophilia in the cerebrospinal fluid at forty six percent.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sedimentation rate is twenty nine, but his lymphocytes are still intact.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's as though there's a parasite at work. Odan, Odan. I need to do exploratory surgery. You may have a parasitic infection.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must not.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you won't survive.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "then she notices the movement in his abdomen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is that?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly, that is me.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This body is just a host. I am that parasite. That is what must survive. It has always been this way. The Trill are a joined species. A host and a symbiont, and in this fashion we have survived for millennia.",
+                    "spoken_by": "ODAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're dying. What can I do?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The host body is dying. You must contact the Trill quickly. Tell them I need another host. They will send a replacement. I know this is difficult to accept, but I beg you, Doctor Beverly, help me. This mission must be completed.",
+                    "spoken_by": "ODAN"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Odan's host body died of the injuries just over an hour ago. But the symbiont being, Odan, is still alive. Odan is the one who negotiated the last treaty, but the man everyone thought was his father was just another host body.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the reason Odan refused the transporter?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would have damaged the symbiont.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've contacted the Trill. Another host will be here in forty hours.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've placed Odan in stasis. He can survive another hour, maybe two, but not beyond that.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would it be possible for me to serve as a temporary carrier?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Data. The relationship requires a biological being.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are at a desperate impasse in the Peliar system. The attack on the shuttlecraft has inflamed the dispute.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who was responsible?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No one will admit anything. Each side accuses the other and the threats are mounting. We need Odan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, could a human host carry him?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe so. From Odan's description of the process it should be possible. But I don't have",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I volunteer.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's been no precedent for a human host. I couldn't guarantee what might happen.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The risk is too great, Commander.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Weigh it against the prospect of war.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's your choice, Will.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's get to it.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've given you a local anaesthetic. You must be conscious during the implantation. Drugs might damage the symbiont.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Laser scalpel.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She cuts up from his navel, then gets the creature from it's jar and places it on his belly. It finds its own way inside him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you feel? Is there pain?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, just some strange sensations.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Vital signs?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Heart rate one hundred ten. Blood pressure ninety over forty.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't close yet, The assimilation's not complete.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pulse one thirty and climbing. EEG is erratic.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's going to start fibrillating. Two hundred milligrams of metrazene.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Doctor.",
+                    "spoken_by": "NURSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hang on, Will.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've got incorporation, Doctor.",
+                    "spoken_by": "NURSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm closing.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brain waves are still irregular.",
+                    "spoken_by": "NURSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The metrazene should have stabilised him. I'll give it ten seconds more before we go in again.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here we go. EEG approaching regular.",
+                    "spoken_by": "NURSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Blood pressure levelling off.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's better. Signs are returning to normal. Will, it's Beverly. Can you hear me?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're going to be all right. How do you feel?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm fine. You look a little tired, Doctor Beverly.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know this must be disturbing, Governor, but you must convince the inhabitants of the moons that I am Odan. I have his skills, his thoughts, his memories.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "They will perceive you as a Starfleet officer, perhaps with your own agenda.",
+                    "spoken_by": "LEKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The man they knew as my father, the man who stands before them, both are merely hosts. It is your task to help them understand.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I will try. I cannot promise they will listen. They are more factionalised than ever. Listening is a skill which seems to have evaporated with the heat of argument.",
+                    "spoken_by": "LEKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Speak softly, Governor. Those who cannot hear an angry shout may strain to hear a whisper.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I will do what I can.",
+                    "spoken_by": "LEKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well done. Mister Worf, will you escort the Ambassador to his quarters.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm just a little dizzy. I'll be fine. I just need to lie down.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Doctor Crusher.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Captain?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, the Ambassador is not well. Will you please attend to him in his quarters.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Right away, sir.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "White cell count is elevated, six tenths of a degree of temperature. But no sign of rejection.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's good.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You look awfully pale.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just a little weak and light-headed.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cerebral blood flow looks normal. I'll leave you a metabolic booster. Use it if the symptoms get worse.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beyond that, I don't know what to do. This is all new to me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is new to me as well. Please, don't go. We've got to talk about this.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know what to say.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nor do I, but I know that this silence will injure us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well maybe you should have thought about that sooner. Maybe you should have told me what you were. It didn't seem to bother you to remain silent yesterday.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It never occurred to me. This is what I am. Did you ever tell me that you are only a single being? Of course not. That was normal to you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know who you are.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must understand, whoever I seem to be, I am Odan, who loved you. That has not changed. I still love you. I can't help that. If this causes you pain, I will suppress it, I will keep my distance. Doctor Beverly, I would never hurt you.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Odan's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I join you?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, Deanna, the first man I ever loved unconditionally was named Stefan. He was a soccer player, and I would watch him as he would race down the field and I thought my heart would stop because he was so beautiful. We married and had three children. Twin boys, Andrew and Alexander, and then later a little girl, Jennifer. Stefan became an artist, very famous. He created huge, breathtaking, metal sculptures. He came to adore me as much as I worshipped him. In my daydreams at least. Stefan was eleven and I was eight. He never even knew I existed. Oh, Deanna, I loved Odan. I'm sure of it. I had no doubts, no fears, but what it was I loved? His eyes? His hands? His mouth? They're gone. If that was all it was, I should mourn him and go on. But it was more than that. I felt completely free with him. Unguarded. At ease with myself. There were so many things that made him special to me. Where are they? Are they still here, alive in Will Riker? I look at Will and I see someone I've known for years. A kind of brother. But inside, is he really Odan? Help me, please.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do your feelings tell you?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I feel his pull. It's very powerful. I wish he'd never come on this ship.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't wish that, Beverly. You can't be open to love if you don't risk pain.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't care. I'd give anything not to feel the way I do now. He's here, isn't he?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look at him.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to look at him. Talk to me. Just keep talking to me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The first man I ever loved was my father. He was strong and tall. He carried me when the ground was muddy. He chased away the monsters that hid under my bed at night. And he sang to me, and kept me safe. And he went away. What I wouldn't give to hear those songs again. To feel his arms protect me. I never will, but I can still feel his warmth and his love as though he were here with me. If you can feel those things from the man we know as Will Riker, accept them. Accept the love.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44823.8. Representatives of the two moons of Peliar Zel have agreed to come on board to meet the new Ambassador Odan.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "White count is elevated. It's getting higher and higher every time I read it. Are you in pain?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not much.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador, we can stall the representatives.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They would see that as deception. I must meet with them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But surely, to present yourself in this condition is not going to help our cause.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I promise you, Captain, they will never know that I am ill.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the emissaries.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I present Kalin Trose of Alpha Moon, and Lathal Bine of Beta Moon.",
+                    "spoken_by": "LEKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you for receiving us, Captain.",
+                    "spoken_by": "KALIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is this Ambassador Odan?",
+                    "spoken_by": "LATHAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lathal Bine. It was your aunt who represented Beta thirty years ago.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is correct.",
+                    "spoken_by": "LATHAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She was a formidable woman. I had the utmost respect for her.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And who was it who spoke for Alpha so long ago?",
+                    "spoken_by": "KALIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That was you, of course, Kalin Trose. Then you were a young man, bristling with passion and zeal, yet wise enough to understand that your people needed peace to ensure their future.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how did you manage to achieve a compromise between that young man and the iron willed woman of Beta Moon?",
+                    "spoken_by": "KALIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They agreed to trade places for a week, to understand each other's situation with more informed eyes. After that an agreement came swiftly.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing that you have said is beyond what a school child could learn in a history book.",
+                    "spoken_by": "KALIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is not commonly known that during those negotiations, you, Kalin Trose, quelled a plot by a radical from your moon who was attempting to assassinate the Beta delegate.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is true.",
+                    "spoken_by": "KALIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps he was wiser in his youth than he is now. Odan, you must convince him to stop.",
+                    "spoken_by": "LATHAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you accept me? Will you allow me to work with you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "LATHAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Alpha moon?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will consider it, but I must consult others.",
+                    "spoken_by": "KALIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is a typical tactic. He is an obstructionist. You can see that.",
+                    "spoken_by": "LATHAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kalin Trose, you may confer with your people, but we must have your answer within eight hours.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You shall have it.",
+                    "spoken_by": "KALIN"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His vital functions are overworked. His immune system is under attack. I can only guess that he's suffering from classic rejection syndrome.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there any treatment you can give him?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can administer an immunosuppressant. That could help relieve the symptoms but it Can't correct the underlying cause. There is a foreign organism in his body. Medical school didn't exactly prepare me for situations like this.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're doing all you can.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't worry about me, Captain. I'm fine.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador, when you feel up to it, would you join me in my Ready room?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm giving you something that should help with the pain. At least for a little while.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The pain's gone. Thank you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he takes her arm"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please don't.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please let me touch you, just for a moment.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he leans in for a kiss"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Please.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a fast decision, which we must take as positive. The Alphan representative has agreed, however reluctantly. to let you mediate the dispute.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I knew they would. They are reasonable people, they're just trapped in their own anger.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no doubt, however, that they will bolt if something goes wrong in the discussion.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then it's my job to see nothing goes wrong. Did I said something wrong, Captain Picard?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it's just that for a moment you sounded more like Will Riker. We have received information that the new host will arrive in eighteen hours. Will you be all right until then?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The medication Doctor Beverly gave me has helped. I will find a way to keep going.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lemon tea.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Crusher's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, location of Doctor Beverly Crusher.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Crusher is in her quarters.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you make balso tonic?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no formula on record. Please supply a molecular structure.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Never mind.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly stares at the red rose, then makes a decision"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought I should see how you were doing. If you needed another hypospray?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think so. The symptoms haven't returned.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh. Well, that's good.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tomorrow's an important day. Do you feel ready for it?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be fine. I've been preparing.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's good.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll check your vital signs in the morning before the representatives get here.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want them knowing I'm taking any medication.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe you could schedule a series of breaks.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's good.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly, I want you. If you're going to leave, you'd better go right now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not leaving.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44824.4. Governor Leka and the representatives of the two moons are ready to transport on board. We have learned that they each have troops massed and are ready for combat if this final effort at peace is not successful.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Odan's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "White count is back up, temperature is elevated. The effects of the medication are wearing off faster every time. I'll administer one now and hope that it will hold for an hour or two.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no more.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador, it's clear you're in pain. You can't get through the next hours without help.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are the injections damaging to the host's body, Riker's body?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. We can't put him through any further risk.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But how can you function, conduct the meeting?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll manage.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll respect your wishes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One more thing. I will conduct the mediations today, but at the end of today, regardless of the outcome, I must be removed from Riker's body. Even if the new host has not arrived.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you wouldn't survive.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker will not survive if I am removed. He has done enough. Your word.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Worf to Captain Picard.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Mister Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The Governor and the two representatives have returned. I will escort them to the Observation Lounge.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker-Odan totters out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll stand by with the medication, just in case. The pain may become so intense that I'll have to",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly. Whatever else I may be to you, I am your friend. I can only imagine what you're going through, and I want you to know I'm here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they hug"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, what is the time?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fifteen thirty five hours.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've been in there for almost six hours.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I am receiving a message from the ship carrying the Trill host.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are they here, Worf?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, they are experiencing difficulty. They do not anticipate their arrival for another nine hours.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nine hours.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker-Odan enters, looking like hell"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was worth it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he collapses"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They will not go to war.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, see that the representatives are safely transported off the ship. Ensign, set a course to intercept with the Trill ship. Prepare to go to warp nine.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, it could take more than two hours to reach the vessel.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must remove him. I gave my word.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will is going to be all right. His vital signs have stabilised and he's sleeping now.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is Odan?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've placed him in stasis. He's fine for the moment.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You need some rest, Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. If Odan is to survive, he needs to be implanted in the new host as soon as he arrives. I'll wait here.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It'll be some time.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Later, Beverly is sleeping by the stasis jar"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is the Trill host here?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Bring him in.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "but a woman enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Kareel. I am to become host to Odan.",
+                    "spoken_by": "KAREEL"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The operation to implant Odan into the new host was completed at nineteen hundred hours and appears to have been successful. There were no difficulties in assimilation.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Beverly, could we talk for a moment?",
+                    "spoken_by": "KAREEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should be sleeping. You need to rest.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never felt better, except once or twice. My poor Beverly. This has been so hard for you. I want to thank you for your caring, for your standing by me.",
+                    "spoken_by": "KAREEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I congratulate you. You averted a war that would have cost many lives.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. It seems as though everything has turned out for the best. And yes, I am still Odan, and I still love you. I cannot imagine that ever changing.",
+                    "spoken_by": "KAREEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am glad that you're all right.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there to be nothing more?",
+                    "spoken_by": "KAREEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it is a human failing, but we are not accustomed to these kinds of changes. I can't keep up. How long will you have this host? What would the next one be? I can't live with that kind of uncertainty. Perhaps, someday, our ability to love won't be so limited.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand.",
+                    "spoken_by": "KAREEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Odan, I do love you. Please remember that.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Kareel takes Beverly's hand and kisses her wrist"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will never forget you.",
+                    "spoken_by": "KAREEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Crusher's office"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "197",
+    "transcript_url": null
+}

@@ -1,0 +1,3140 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The satellite's trajectory is continuing to deteriorate, Captain. This orbit will put it within five hundred kilometres of the planet surface.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "We're predicting the atmospheric drag will bring it down on the next orbit.",
+                    "spoken_by": "GARIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Have you been able to find any explanation for this?",
+                    "spoken_by": "SCIENTIST"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Doctor. It is a most unusual phenomenon.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Won't the moon disintegrate prior to impact?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "No, it has a ferrous crystalline structure and it will be able to withstand tidal forces, Captain",
+                    "spoken_by": "SCIENTIST"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could we blow it into pieces?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The total mass of the moon would remain the same, Commander, and the impact of thousands of fragments would spread destruction over an even wider area.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long before impact?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Twenty nine hours, sir. Projecting it somewhere on the western continent. That would destroy an area eight hundred kilometres in radius.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "That damage would be insignificant, Captain, compared to the seismic repercussions massive landquakes, and tsunami.",
+                    "spoken_by": "SCIENTIST"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "The force would raise a cloud of dust around the planet, leading to a significant temperature reduction. We could be looking at our own ice age.",
+                    "spoken_by": "GARIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, is there any way that the Enterprise could coax that satellite",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Back where it belongs?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'd need to apply a delta vee of about four kilometres per second. Even with warp power to the tractor beam, it would mean exceeding recommended impulse engine output by at least forty-seven percent. It'd be like",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "An ant pushing a tricycle. A slim chance at best.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Given a choice between slim and none, I'll take slim any day.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf, contact all ships in this sector to rendezvous and join us in relief efforts.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll keep you informed of our progress. Picard out.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The tiny tractor beam is sent out against the huge moon"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you give us any more, Geordi?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Not without burning out the tractor beam emitter. The circuits are already beyond the thermal limit.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Delta vee is ninety two metres per second. The mass is too great. We are having an effect but it is negligible.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A high-pitched noise penetrates the Bridge"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is that?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unable to identify source.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Impulse engines passing safety limits. We're seconds",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "From automatic shutdown.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reduce engine power. Tractor beam off.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf, what the hell do the sensors say?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The sound is not registering, Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There is a bright flash, and a naked Q is suspended in mid air, lying on his side, with modesty maintained by the camera angle"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Red alert.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We are no closer to finding a solution to the deteriorating orbit of the Bre'el Four moon, but with the arrival of Q, we now have a good idea of the cause.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our options?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've done everything by the book and a little extra. We need more time or more power, and we're short on both. I'll take a look and see if there are any rules I haven't broken.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Keep me advised.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge leaves. Q is now dressed in a pale mauve and olive jumpsuit"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We know you're behind this, Q.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These aren't my colours. And what are you blathering about, Riker?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What kind of twisted pleasure does it give you to bring terror into their lives?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whose lives?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The millions of people down there who are watching as their moon falls out of the sky.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't the vaguest idea what you're talking about and I have a much more serious problem. I'm no longer a member of the Continuum. My superiors have decided to punish me.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And punish us as well, it would seem.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They said I've spread chaos through the universe, and they've stripped me of all my powers. You don't believe me, do you? Do you think I would humiliate myself like this?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If it served your purpose, yes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the truth. I stand before you defrocked. Condemned to be a member of this lowest of species. A normal, imperfect, lumpen human being.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They made you human as part of your punishment?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it was my request. I could have chosen to exist as a Markoffian sea lizard or a Belzoidian flea. Anything I wished as long as it was mortal. And since I only had a fraction of a second to mull and I chose this and asked them to bring me here.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because in all the universe you're the closest thing I have to a friend, Jean-Luc.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, he is reading as fully human.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What, is there an echo in here?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am sensing an emotional presence, Captain. I would normally describe it as being terrified.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How rude.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "what is it you want, Q?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your compassion. All right, Sanctuary on this ship, dreary as it may sound to both of us.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Return that moon to its orbit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no powers. Q the ordinary.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q the liar. Q the misanthrope.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q the miserable. Q the desperate. What must I do to convince you people?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Die.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, very clever, Worf. Eat any good books lately?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fine. You want to be treated as a human?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Absolutely.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. Mister Worf, throw him in the brig.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Delighted, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can't do this to me, Jean-Luc.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will walk or I will carry you.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Given the option, I'll walk. You've disappointed me, Jean-Luc. I'm very disappointed. Hey, I'm claustrophobic, I don't like it in here.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a mistake. I never should have picked human. I knew it the minute I said it. To think of the future in this shell. Forced to cover myself with fabric because of some outdated human morality. To say nothing of being too hot or too cold, growing feeble with age, losing my hair, catching a disease, being ticklish, sneezing, having an itch, a pimple, bad breath. Having to bathe.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too bad.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Klingon. I should have said Klingon. In my heart of hearts, I am a Klingon, Worf.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q puts his hand on Worf's shoulder and quickly removes it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry. So you understand I could never survive in confinement. I mean, this is cruel and unusual punishment. The universe has been my back yard. As a fellow Klingon, if you would speak to the Captain on my behalf, I would be eternally grateful. which doesn't mean as much as it used to, I admit.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Be quiet! Or disappear back where you came from.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't disappear any more than you could win a beauty contest.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He enters the cell",
+                    "line": "If I ask a very simple question, do you think you might be able to answer it without it troubling your intellect too much?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready? Here goes. Would I permit you to lock me away if I still had all my powers?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have fooled us too often, Q.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perspicacity incarnate. Please don't feel compelled now to tell me the story of the boy who cried Worf.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, activate force field.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I demand to be let out of here, immediately. Do you hear me? You will deactivate this cell immediately! Romulan!",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I should have said Romulan, that Klingon goat!",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Brig"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The question is, what sort of jaded game is he up to this time?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe he just wants a big laugh. He'll take Bre'el Four to the edge of disaster, and then pull the moon back.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or he may have nothing to do with it at all.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You honestly think Q is telling the truth?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I agree this is highly unlikely, but we have to proceed with our current dilemma as though Q is powerless to prevent it, don't we?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And there he sits, and he watches us struggle.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't see that we have any choice. Mister Worf, will you hail the Bre'el Four science station,",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "They're standing by, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Yes, Captain Picard.",
+                    "spoken_by": "GARIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, but I have to report that our first attempt to restore the moon to its proper orbit has failed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "We have less than twenty five hours before impact, Captain.",
+                    "spoken_by": "GARIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our Chief Engineer is working on ways to reinforce our tractor beam.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So there is a hope, but if you have an evacuation plan",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "We have already started moving people from the coastal areas of the western continent.",
+                    "spoken_by": "GARIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are going to make another attempt shortly. Picard out.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've got to tell you Geordi is not at all optimistic.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A bright light fills the room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What the devil?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The light is everywhere"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors are showing broadband emissions, including Berthold rays",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lethal?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Commander. Overall exposure is less than seventy five rems. Very low intensity, more like a soft medical scan. I would speculate we are being probed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By whom?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The sensors cannot identify the point of origin. It seems to be coming from all around us.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The light becomes a globe hovering over the sleeping Q, then disappears. He is awake when Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, you've come to apologise. How nice. All's forgiven. No offense taken.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enough. Q, what exactly is going on.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, how can I know what's going on? I've been in this dungeon of yours, alone, helpless, bored to tears.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have a moon inexplicably falling out of orbit, and just now this ship was probed with Berthold radiation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wasn't aware of this. Truthfully, Jean-Luc. I have been entirely preoccupied by a most frightening experience of my own. A couple of hours ago, I realising that my body was no longer functioning properly. I felt weak. I could no longer stand. The life was oozing out of me. I lost consciousness.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You fell asleep.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Terrifying. How can you stand it day after day?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You get used to it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What other dangers await me? I'm not prepared for this. I need guidance.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, I'm not going to play along with this. If you want to continue this charade, you can do it alone.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "walks into the forcefield",
+                    "line": "Jean-Luc, wait!  This is getting on my nerves, now that I have them. You have a moon in a deteriorating orbit. I've known moons through the universe. Big ones, small ones. I'm an expert. I could help you with this one, if you let me out of here.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, there are millions of lives at risk. If you have the power to",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't have any powers. But I have the knowledge, locked up in this puny brain. You cannot afford to not take that advantage, can you?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, report to detention cell three.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "On my way, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, remove the forcefield. If you are human, which I seriously doubt, you will have to work hard to earn our trust.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not worried about that, Jean-Luc. You only dislike me. There are others in the cosmos who truly despise me.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, you are hereby assigned to Q for the remainder of his stay. You will escort him to Mister La Forge in Engineering.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can I have a Starfleet uniform? What are you looking at?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was considering the possibility that you are telling the truth, that you really are human.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the ghastly truth, Mister Data. I can now stub my toe with the best of them.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An irony. It means that you have achieved in disgrace what I have always aspired to be.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Brig"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Humans are such commonplace little creatures. They roam the galaxy looking for something, they know not what.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The human race has an enduring desire for knowledge, and for new opportunities to improve itself.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's certainly room for improvement, but the truth is, Data, they are a minor species in the grand scheme. Not worth your envy.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I do not feel envy.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, that's good.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I feel nothing at all. That is part of my dilemma. I have the curiosity of humans, but there are questions I will never have the answer to. What is it like to laugh, or cry, or to experience any human emotions.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, if you ask me, these human emotions are not what they're cracked up to be.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The moon will hit its perigee in ten hours. Now, we match its trajectory, increase emitter coolant rate so we can apply continuous warp-equivalent power nine to the tractor beam. We can push it for nearly seven hours and I think that just might do it. But, there's a problem.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise will be dangerously close to the atmosphere.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's the problem.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is incredible.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You see something here, Q?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I just hurt my back. I'm feeling pain. I don't like it. What's the right thing to say? Ow?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ow.",
+                    "spoken_by": "LAFORGE + DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ow! I can't straighten up.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Medical assistance to Engineering.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, I've got a few people down on Bre'el Four who are going to be hurt",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, yes, your marvellous plan will not only tear the moon to pieces but your precious ship as well.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You got a better idea?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would certainly begin by examining the cause and not the symptom.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've done that, Q, and there's no way to",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is obviously the result of a large celestial object passing through at near right angles to the plane of the star system. Probably a black hole.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you recommend a way to counter the effect?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Simple. Change the gravitational constant of the universe.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Change the gravitational constant of the universe, thereby altering the mass of the asteroid.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Redefine gravity? How am I supposed to do that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You just do it. Where's that Doctor, anyway?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi is trying to say that changing the gravitational constant of the universe is beyond our capabilities.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh. In that case, never mind.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, Doctor Crusher. I see Starfleet has shipped you back into exile.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q says he has hurt his back.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah ha. Well, if I didn't see it with my own eyes, I wouldn't believe it. According to this, he has classic back trauma. Muscle spasms.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been under a lot of pressure lately. Family problems.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well. don't expect too much sympathy from me. You've been a pain in our backside often enough.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your bedside manner is admirable, Doctor. I'm sure your patients recover quickly just to get away from you.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, this might work. We can't change the gravitational constant of the universe, but if we wrap a low level warp field around that moon, we could reduce its gravitational constant. Make it lighter so we can push it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Glad I could help. Ow. I think.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now what?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's something wrong with my stomach.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It hurts?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's making noises.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe you're hungry.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never eaten before. What do I ask for?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The choice of meal is determined by individual taste.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you like?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Although I do not require sustenance, I occasionally ingest semi-organic nutrient suspension in a silicon-based liquid medium.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it good?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would be more accurate to say it is good for me, as it lubricates my bio-functions.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It doesn't sound very appealing. What else is there?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A wide variety of items. The replicator can make anything you desire.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do I know what I desire?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have observed that the selection of food is often influenced by the mood of the person ordering.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm in a dreadful mood. Get me something appropriate.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When Counsellor Troi is unhappy, she usually eats something chocolate.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chocolate?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A chocolate sundae, for example. Although I do not speak from personal experience, I have seen it have a profound psychological impact.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll have ten chocolate sundaes.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ten?",
+                    "spoken_by": "WAITRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never seen anyone eat ten chocolate sundaes.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm in a really bad mood, and since I've never eaten before, I should be very hungry.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "We hear the doors open and close"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not a moment I've been looking forward to.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hear they drummed you out of the Continuum.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I like to think of it as a significant career change.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just one of the boys, ay?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One of the boys with an IQ of two thousand and five.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain and many of the crew are not yet convinced he is truly human.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "So she picks up a fork and stabs it into Q's hand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Argh!",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Seems human enough to me.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is a dangerous creature. You have no idea. Why Picard would make her a member of the crew and not me",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It must be terribly frightening for you, to be totally defenceless after all of those centuries being omnipotent.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm warning you. I still have friends in high places.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Frightening one race after the other, teasing them like frightened animals, and you enjoying every moment of your victims fears.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From now on I'll do missionary work, okay?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would be a most noble cause, Q.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You could learn a lot from this one.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure, the robot who teaches the course in humanities.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am an android, not a robot.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I beg your pardon.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd enjoy that, and you'd better get used to it.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Begging. You're a pitiful excuse for a human. The only way you're going to survive is by the charity of others.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ten chocolate sundaes arrive"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not hungry.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, sensors are picking up a cloud of energetic plasma. Bearing, three-four one mark two zero. Range, twelve kilometres and closing.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energy patterns are reading as highly organized.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A lifeform?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Attempt to make contact, Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Receiving a signal, sir. On speaker.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "but it's unintelligible"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, analyse signal",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Signal patterns indicate intelligence. Unable to derive necessary referents to establish translation matrix.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The fuzzy thing can be seen through the windows, but Q is sulking and doesn't notice it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's that? I don't know.",
+                    "spoken_by": "VOICES"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Calamarain.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A white globe comes through the window and envelopes Q. He leaps up, trying to brush it off"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we're being hit by a field of energetic tachyons penetrating the hull. Location, deck ten, forward.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Red alert.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, increase power to shields.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Increasing power by twenty percent",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No effect",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Increasing to forty percent.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Still no effect",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data tries to assist Q, but encounters static electricity and a possible forcefield"
+                }
+            ],
+            "location": "Ten forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Adjusting shield harmonics, diverting power to the forward grids.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The added harmonics are blocking the tachyon field.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q is freed, and falls to the floor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Help me! Somebody, help me!",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How the mighty have fallen.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We have sustained light damage from an attack by an alien species known as the Calamarain. They apparently have a grievance with Q. No doubt one of many lifeforms that do.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Ten forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Calamarain are not very hospitable creatures. They exist as swirls of ionised gas.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did you do to them, Q?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing bizarre, nothing grotesque.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You tormented them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A subjective term, Riker. One creature's torment, is another creature's delight. They simply have no sense of humour, a character flaw with which you can personally identify.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I say we turn him over to them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I take it back. You do have a sense of humour. A dreadful one at that.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm serious.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. You knew this would happen, didn't you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One can never anticipate the Calamarain. They're very intelligent, but very flighty.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but you must have so many enemies. Certainly you knew that once you became mortal some of them might look you up.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It had occurred to me.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And for all your protestations of friendship, your real reason for being here is protection.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're very smart, Jean-Luc, but I know human beings. They're all sopping over with compassion and forgiveness. They can't wait to absolve almost any offence. It's an inherent weakness in the breed.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On the contrary, it is a strength.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You call it what you will, but I think you'll protect me even though I've tortured you now and again.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fighting off all the species you've insulted would be a full time mission. That's not the one I signed up for.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed. Human or not, I want no part of you. We will deposit you at the first starbase. Let them deal with you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I could be a valuable member of the team. I'm human, I can learn.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has provided important theoretical guidance for Geordi's analysis of the Bre'el satellite, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It seems you have an advocate, Q.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am merely stating a fact, Counsellor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, your status?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I've been putting together a programme to extend the forward lobe of the warp field. The field coils",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aren't designed to envelop such a large volume. But I'm attempting to modify their alignment parameters.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Maintaining field integrity will be difficult, Geordi.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm pretty sure we can do it manually. The moon will come to its perigee in fourteen minutes.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, you will escort Q to Engineering. You will assist Mister La Forge. Mister Worf, hail the Bre'el Four science station.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard thinks I can't cut it on his starship. I can do anything his little trained minions can do.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not perceive your skills to be in doubt, Q. The Captain is more concerned with your ability to interact successfully with his little trained minions.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Human interpersonal relationships are more complex. Your experiences may not have adequately prepared you.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not interested in human interpersonal relationships. I just want to prove to Picard that I'm indispensable.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering. To function aboard a starship, or in any human activity, you must learn to form relationships.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's so hard.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And of more immediate importance is your ability to work within groups.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not good in groups. It's difficult working in a group when you're omnipotent.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "The tides reached ten metres on the last orbit. They are already beginning to swell again. We have a lot of frightened people down here, Captain.",
+                    "spoken_by": "GARIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your moon has begun moving toward its perigee. We're prepared to make our attempt.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Our population has already taken shelter, but I'm afraid no shelter will be adequate if you fail. Especially for the people on the western continent.",
+                    "spoken_by": "SCIENTIST"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Whatever the results, we know you've done your best, Picard. It's appreciated.",
+                    "spoken_by": "GARIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll keep you advised, Doctor. Picard out.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, sensors are picking up an increased energy output from the Calamarain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "La Forge to Bridge.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The moon has reached its minimum orbital distance. It's time, Captain.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll have to lower shields.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed. Mister Worf, keep a close eye on Q's friends out there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, everyone, this is what we're going to be doing.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, everybody already knows what they're going to do, except for you, Now here's what I need.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "La Forge, obviously my knowledge and experience far exceed yours by about a billion times. So, if you'll just step aside gracefully.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, your experience will be most valuable to me if you can manually control the field integrity.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't be foolish. That would be a waste of my talents.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, get to the controls or get the hell out of here. Data, you're my liaison to the Bridge. I'll need you with me.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who does he think he is, giving me orders.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi thinks he is in command here, and he is correct.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering, holding at station keeping, range six hundred and forty metres.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Containment fields to flight tolerance.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Warp core to ninety percent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "nudges Q",
+                    "line": "Engage field coils. Tractor beam to stand by. Field output?  Field output?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two seventeen.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Impulse engines to full. Ready to engage tractor beam.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lowering shields. Engage tractor beam.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Extending warp field forward.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Engineering, is that the forward limit?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain. We are unable to encompass the entire moon.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Do you recommend that we proceed?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The two parts of the moon will have different inertial densities.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand by, Captain. I can adjust the field symmetry to compensate.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I doubt it.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't know what this ship can do, Mister. Yes, Captain, I still believe it'll work. Increasing power and warp field and tractor beam.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if you're wrong, the moon will crumble due to subspace compression. Don't say I didn't warn you.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shut up, Q.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not be spoken to in this manner!",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, I strongly suggest that you cooperate.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Inertial mass of the moon is decreasing to approximately two point five million metric tonnes.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's working. We can move it. Firing impulse engines.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, the moon's trajectory has moved point three percent. Point-four percent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Emergency! Shields up.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Disengage tractor beam.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "big jolt",
+                    "line": "Calamarain attacking.  Shields holding. Tachyon field repelled.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, the impact of the blast is pushing us into the upper atmosphere.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hull temperature rising. Two thousand degrees.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Two thousand five hundred degrees.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Moving to full impulse power.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Calamarain resuming attack.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The ship is filled with bright light again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've overpowered the shields. Hull penetration, deck thirty six, Engineering.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, can you direct any more power to the shields?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need all the power we have to get out of the atmosphere, Commander.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Once again, the light wraps itself around Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Try activating the structural integrity field.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q is pulled into the air. Data grabs his legs and the light wraps around him, too"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not working. Structural field harmonics on manual.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "La Forge. Hull temperature falling. We're in the clear.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Diverting power to forward sections now.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q falls back to the deck, Data also falls over, with residual electricity running over his body"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That charge nearly knocked out his positronic net.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What can you do for him?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can try to discharge and reset the motor pathways, recouple the autonomic nodes.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's overpressure in his fluidic systems. Thermal shock. If he was mortal, he'd be dead.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let us not overstate the matter here, Doctor. I'm mortal and I survived. The cheers are overwhelming.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, you exceed your own standards of self-preoccupation. You have no concern for an officer who may have saved your life.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's strong, he'll survive.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Osmotic pressure still rising. Maybe we can by-pass the flow regulator.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would be helpful if everybody just got out of here now.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to guard, as he leaves",
+                    "line": "Stay with Q.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll let you know as soon as there's anything to tell you.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi? The moon's trajectory?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All we did was buy ourselves another orbit, at most. We can try again when the moon comes back to its perigee.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And when we drop our shields, the Calamarains go after Q again.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, he's not worth it.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right, of course. I am extraordinarily selfish. But it has served me so well in the past.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will not serve you here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't be so hard on me, Jean-Luc. You've been a mortal all your life. You know all about dying. I've never given it a second thought. Or a first one, for that matter. I could have been killed. If it hadn't been for Data and that one brief delay he created, I would have been gone. No more me. And no one would have missed me, would they? Data may have sacrificed himself for me. Why?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is his special nature. He learned the lessons of humanity well.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When I ask myself if I would have done the same for him, And I am forced to answer no, I feel, I feel ashamed.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, I'm not your father confessor. You will receive no absolution from me. You have brought nothing but pain and suffering to this crew. And I'm still not entirely convinced that all this isn't your latest attempt at a puerile joke.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a joke. A joke on me. The joke of the universe. The king who would be man. As I learn more and more what it is to be human, I am more and more convinced that I would never make a good one. I don't have what it takes. Without my powers, I'm frightened of everything. I'm a coward, and I'm miserable, and I can't go on this way.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q enters. Data is sitting up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's going to be all right.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're recalibrating his language circuits, so he can't talk yet.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are creatures in the universe who would consider you the ultimate achievement, android. No feelings, no emotions, no pain. And yet you covet those qualities of humanity. Believe me, you're missing nothing. But if it means anything to you, you're a better human than I.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where's the main shuttlebay?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Main shuttlebay is located on deck four.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take me there.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, an unscheduled shuttle has just been launched.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On main viewer. Hailing frequency.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Frequencies open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shuttle occupant, identify yourself.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Don't try to talk me out of it, Jean-Luc.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, return to the ship immediately.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I just can't get used to following orders.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the plasma cloud is moving toward the shuttle.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "It's easier this way. They won't bother you after I'm gone.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering, prepare to extend shields.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Please, don't fall back on your tired cliché of charging to the rescue just in the nick of time. I don't want to be rescued. My life as a human being has been a dismal failure. Perhaps my death will have a little dignity.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, there is no dignity in this suicide.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Yes, I suppose you're right. Death of a coward, then. So be it. But as a human, I would have died of boredom.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This goes against my better judgment. Transporter room three, lock on to shuttle one. Beam it back into it's bay.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, Captain.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a perfectly good shuttlecraft.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, unable to transport. For some reason, I can't lock on to the shuttlecraft.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, are you sensing any sort of interference from the Calamarain?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir, but they are still moving toward the shuttle.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, extend shields around shuttle one.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Extending shields.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, the shields are frozen.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Cause?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unknown.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Lock on tractor beam.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tractor beam is not functioning either.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What the hell is going on?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not bad, Q. Not great. But not bad.",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Dressed in a similar fashion, and stepping through the bulkhead. This Q looks at his hands as if they are something completely new to him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q!",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sacrificing yourself for these humans? Do I detect a little selfless act?",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You flatter me. I was only trying to put a quick end to a miserable existence.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What a dreadful colour.",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. What are you doing here?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been keeping track of you.",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I always felt you were in my corner.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, I was the one who got you kicked out. You know, you're incorrigible, Q. A lost cause. I can't go to a single solar system without having to apologise for you, and I'm tired of it.",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wasn't the one who misplaced the entire Deltived asteroid belt.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hey, this isn't about me. I've got better places to be. But somebody had to keep an eye on you to make sure you still didn't find a way to cause trouble. Even as a member of this limited species.",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I hope I've been entertaining you.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Barely. But I find these humans rather interesting. I'm beginning to understand what you see in them. After all the things that you've done, they're still intent on keeping you safe.",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A genetic weakness of the race.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And they're still at it. They just tried to beam you up, back, whatever it is they call it.",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I stopped them.",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, if the Calamarains hurry up and finish me off, we can get you back on your way.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Afraid I had to put them on hold too. You see, there's still this matter of the selfless act. You and I both know that the Calamarain would have eventually destroyed the Enterprise to get to you. And that's really why you left, right?",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a teeny bit selfless, wasn't it?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And there's my problem. See, I can't back to the Continuum and tell them you committed a selfless act just before the end. If I do there's going to be questions and explanations for centuries.",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've learned my lesson, Q.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remember who you're talking to. All knowing, all seeing. Fine, you got your powers back. Try and stay out of trouble.",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q2 vanishes, and Q snaps his fingers. He gets himself a Starfleet uniform"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So they wanted to destroy me, did they?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Calamarain are in the palm of his hand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you think I tormented you in the past, my little friends, wait until you see what I do with you now.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q?",
+                    "spoken_by": "Q2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was just seeing if you were still watching.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q blows the Calamarain away, gently"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the aliens have disappeared, and so has the shuttle.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Scan the sector.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I suppose that is the end of Q.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A Mexican Mariachi band appear, with Q as lead trumpet"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Au contraire, mon capitaine! He's back!",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Cigars for everyone"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm forgiven. My brothers and sisters of the Continuum have taken me back. I'm immortal again. Omnipotent again.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Swell.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't fret, Riker. My good fortune is your good fortune.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "two women are fawning over Will"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't need your fantasy women.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, you're so stolid, Commander. You weren't like that before the beard. Very well.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the women vanish from Riker and reappear with Worf"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I feel like celebrating.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The women vanish"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All of it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Bye, bye, band, hello uniform"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, at the risk of being rude.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, once again I've overstayed my welcome. As a human, I was ill-equipped to thank you, but as myself you have my everlasting gratitude. Until next time. Ah, but before I go, there's a debt I wish to repay to my professor of the humanities. Data, I've decided to give you something very, very special.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If your intention is to make me human, Q.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, no, no, no, no. I would never curse you by making you human. Think of it as a going away present.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q vanishes, and Data turns into a quivering heap of helpless, contagious laughter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data? Data, why are you laughing?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not know. But it was a wonderful feeling.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, Bre'el Four is hailing us.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen, Lieutenant.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Captain Picard you've done it",
+                    "spoken_by": "GARIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "The moon. It's back to its normal orbit. How ever you did it, thank you.",
+                    "spoken_by": "SCIENTIST"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's see it, Worf.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a diagram of a circular orbit on the screen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, your analysis?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The moon's altitude is fifty five thousand kilometres. Projected orbit is circular. There is no further danger to the planet.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, set course for Station Nigala Four.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps there's a residue of humanity in Q after all. Ensign, en",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a lit cigar appears in Picard's hand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Don't bet on it, Picard.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "161",
+    "transcript_url": null
+}

@@ -1,0 +1,3172 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Intense magnetic fields have a disruptive effect on electrical systems. Therefore we can expect communications interruptions, as well as potential temporary loss of other systems. As a precaution, we are now going to Yellow Alert. Stay sharp, everyone.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Attention all decks. Yellow Alert.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Engineering, this is Lieutenant Commander Data. Bring all systems online and direct full power to the shields.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All sections secure, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant La Forge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Course is set, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Half impulse.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir, one half impulse.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On main viewer. Mask out the photosphere. Magnify. Quadrant one seven, magnification factor twelve.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never seen anything like this before. The violence of these eruptions is awesome.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm reading an unusual number of sunspots and eruptive prominences, sir. The magnetic field is extremely irregular.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, deflectors are being hit by a huge burst of X-rays.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The science station lights up with blue static and he steps away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wow! Look. Captain, my console seems to be overloading.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The X-ray burst is disrupting systems, Captain. I'm adjusting deflectors to compensate.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Engineering, increase power to forward shields.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forward deflectors online, sir.",
+                    "spoken_by": "CREWWOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Her console lights up blue as well"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Status report.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All systems operational, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the level of tension on the ship is mounting.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understandable. Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we are to investigate, sir, we must get closer.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, move us in closer. This is the Captain. We will be pushing the shields to the limit, but we are getting a splendid view of this phenomenon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I have intercepted what appears to be a distress signal.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me hear it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OCgarbled",
+                    "line": "This is T'Jon. I am on the Ornaran freighter . We have a serious problem here. Can't seem to fix it. We need help.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The transmission is coming from a freighter in orbit around the fourth planet in the system. However, the receiving station is on the third planet.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies open.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unidentified freighter, this is the USS Enterprise. May we be of assistance?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreena very poor image",
+                    "line": "Whoever you are, yes! I'm having trouble navigating. We can't maintain a steady course. Please help us if you can.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can't you enhance the frequency?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too much interference.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course to intersect with the freighter. Warp two.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maintain Yellow Alert.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I can't control the helm any longer. I'm losing orbit. We're heading into the atmosphere. Please, do something. We're going to burn up. We haven't much time.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a freighter, very old.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, our sensors are being severely affected by the sun flares.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Helm, take us in as close as possible to the freighter's orbit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Moving in, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are six life forms aboard the freighter, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the freighter's orbit is decaying.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long before it loses integrity?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A matter of minutes.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unidentified freighter, this is the USS Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Enterprise, this is the Ornaran freighter Sanction.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Put this on the main viewer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The visual transmission is still breaking up.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Freighter Sanction, this is the Enterprise. What is your situation?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Not so good. Helm isn't working right. What is the problem?",
+                    "spoken_by": "VOICES"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the Enterprise. With all this interference it is difficult to copy your transmission. If you all talk at once it is almost impossible. Now, please say again. What is your situation?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I am T'Jon, Captain of the Sanction.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At last. How can we help?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "We have lost, I don't know, something. I am no longer able to maintain this orbit, nor am I able to use the main thrusters. It's all, you know, dead, I guess. It's all shut down?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, that is a little vague. What is the computer analysis?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Well, the computer's not working very well.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, can you tap into their computer and clarify the situation?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will attempt it, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the tractor beam is available, if you want it.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least we can pull them out of orbit before they enter the atmosphere.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Freighter, we're going to lock on the tractor beam and pull you out of orbit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Hey, that's, that's great.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the freighter's orbit continues to deteriorate.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The solar flares are interfering with the tractor beam, Captain. I can't lock on.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain T'Jon, we are unable to attach our tractor beam because of the intense solar activity.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I understand. Thanks for trying.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I have determined what is malfunctioning on the freighter.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we have analysed your problem.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Great.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your ship's design uses an electromagnetic coil to constrict the exhaust flow. That coil is misaligned.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Really?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have the necessary tools to realign the coil?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I don't think so.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe, Captain, we can provide them with a temporary substitute. Our ship's stores contain a coil of the proper type.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we beam one over?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we're beaming over a replacement coil.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "That's great. And that'll fix us up?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, once it's installed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Right. And how do we do that?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is the matter with these people? How can he be Captain of that vessel and not understand its simplest function?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, how long have you been in command of this freighter?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Seven years. This is my twenty-sixth voyage to Brekka.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you don't know how to align a control coil?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "It's never come up.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can anyone else over there do it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Hold on. I'll ask. Sorry. Nobody here knows anything about it.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd better get over with a team.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I strongly recommend against anyone from this ship beaming over. The solar interference is too great.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The freighter has entered the planet's atmosphere. Disintegration is imminent.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're running out of options.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's get them off there. T'Jon, stand by to beam over.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "If you think that's best.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unless you have any other options, yes, I think that's best.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Whatever you say.",
+                    "spoken_by": "T'JON"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Blue is playing on the transporter controls"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't maintain a positive lock.",
+                    "spoken_by": "TASHA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unusual E-M burst, sir. Readings off scale.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Freighter Sanction, this is the Enterprise. We're having difficulty getting a fix.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have them go to their own transporter room. It will be tricky, but perhaps I can link the two transporters in series and get them over with the increased power.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's worth a try. Captain T'Jon go to your transporter room. Contact me from there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Right, Enterprise. It's right next door. But if you can't get us with your transporter, what makes you think ours will do the job?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm going to interconnect them.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I didn't know you could do that.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hurry! We're running out of time.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We're on our way.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think they're going to make it.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain T'Jon doesn't sound like he cares one way or the other.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, how much time do we have?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "One minute, twenty eight seconds.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain T'Jon, are you there?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We're in the transporter room.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Great. Activate your transporter. Set coordinates nine seven zero three mark two six eight.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Did you say two eight six or eight eight six.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mark two six eight!",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Got it.",
+                    "spoken_by": "T'JON"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, the hull temperature of the freighter is passing three thousand degrees.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the hold up, Number One?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're establishing the link right now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We're ready.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then all six of you, get on the transporter platform. On my signal, energise. I've got their initial transporter signal. Interlock complete. Energise on my mark. Four, three, two, one, energise.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A big barrel arrives, no people"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Number One, did you get them off?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. They stayed in the freighter",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But they beamed over their cargo.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cargo? Are those people crazy? What could possibly be so important?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, the freighter is disintegrating.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their lives are in danger and they're beaming over cargo? Number One, I don't understand these people.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the freighter's hull temperature is approaching critical.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unbelievable.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We're losing the freighter. Got to beam those people over now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Clear the cargo. Beam it to a hold.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Freighter Sanction, this is the Enterprise, Get to your transporter pad and. No, forget about that. Lock on to any life form you can find and get them over now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Trying, sir.",
+                    "spoken_by": "TASHA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The freighter is going down.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter Room. You're out of time.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reading six life forms, but I can't get a solid lock.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have no choice. Energise. I thought you said there were six. Where are the other two?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The lock didn't hold.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Re-establish.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's too late.",
+                    "spoken_by": "TASHA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The freighter goes bang"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Two scruffy men, one smart man and a smart woman arrive"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two are lost, sir. But we saved four. I'm Commander William Riker of the USS Enterprise. I'm sorry we were unable to rescue the other two. We did everything we could. If you had come instead of sending your cargo, you all would have made it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The cargo. Where is it?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You did save it, didn't you?",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The two men are scruffy, with five o'clock shadow"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, we did. It's in one of our cargo holds. You act like it's more important than your comrades.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The cargo. May we see it?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Follow me.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Thank you. We thought we had lost it.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the smart man",
+                    "line": "Careful with your choice of words, T'Jon. It's ours, not yours.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We paid a fair price for it!",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the woman",
+                    "line": "You offered a fair price. We have not received it.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You accepted our goods in trade!",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then where are they? Tell me.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not our problem.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No more than the barrel is your property. It's as simple as this. The goods were never delivered. They were destroyed with your ship.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hence the deal was incomplete. Hence possession of the felicium remains ours.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need it.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I request you transport my associate and myself down to Brekka, with our merchandise.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, get them out of here. But the barrel stays.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no reasoning with you.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Langor, you expect too much from them. You always have, and you've always been disappointed. You didn't pay for it, therefore it's not yours.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damn you, Sobi.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "T'Jon puts his hand on Sobi's chest and electricity sparks. Sobi returns the attack. Langor immobilises Romas when he tries to interfere"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stop this. Now!",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Security to cargo bay eleven.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tasha's phaser separates Sobi and T'Jon"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Behave yourselves, gentlemen.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Security arrive"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Escort our visitors to the observation lounge.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A natural electrical charge?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Formidable.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, and a difficult weapon to confiscate.",
+                    "spoken_by": "TASHA"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have never seen humanoids with that power.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Neither have I. I wonder how it evolved?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wonder if the strong magnetic field of their sun might have something to do with it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could be. I wonder how much power our guests can produce?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or if they need to recharge?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's an interesting ability. The question is, how do I defend against it?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You think our visitors pose a threat?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. But if they do, I'd better be ready for it.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Precisely, Lieutenant.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have to resolve this soon. There isn't much time.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What can you offer?",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything we had went down with the Sanction.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then it's going to be difficult to accommodate you.",
+                    "spoken_by": "SOBI"
+                }
+            ],
+            "location": "Observation Lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Solar flares are increasing in magnitude, Captain. Shields are shaky, but they're holding.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maintain.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker and Tasha enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How are our rather quarrelsome guests?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're waiting for you in the observation lounge, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, what information can you give us about the inhabitants of this system?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not very much, sir. The only recorded contact with the Delos system was over two hundred years ago. A scout ship reported two inhabited planets, one of which was on the verge of acquiring space travel.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Odd that in two centuries neither civilisation advanced much further.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I find it strange that none of our visitors feels much remorse about the two freighter passengers who perished. Yet that barrel of cargo is a source of great anxiety to them.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Let's pay a call, get some answers. Number One, Mister Data. Mister La Forge, you have the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, may I present Sobi and Langor from the planet Brekka, and T'Jon and Romas from Ornara.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am sorry we couldn't save your ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell me, you could have repaired it.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have only two left. Neither works properly. They are critical to our survival. Will you fix them?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our computer has downloaded the specifications for the magnetic coils the freighters depend on. Assuming the malfunction is similar, suitable replacements can be fabricated.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Instruct Engineering to proceed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, as for our cargo.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our cargo, Captain.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wrong, Sobi.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My First Officer has said that ownership of this cargo is in dispute, but this question must be settled by whatever legal mechanism exists between your societies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, you don't understand. This is a matter of life and death.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why is that? What is this cargo?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Medicine.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our planet is in desperate need, Captain. We have people suffering from a lethal plague.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The cargo you have impounded is the only hope of life for our people.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that so?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must think us heartless brutes, Captain, but look at our side of it. The plant which yields the medicine felicium grows only in remote areas of Brekka.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It must be painstakingly cultivated, harvested, purified. A complex and expensive process.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That single shipment of felicium represents an enormous investment. We can't just give it away.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We paid for it. We are asking only for what is ours.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is your viewpoint. Ours, of course, differs.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are going to hold to that position?",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am constrained to abide by the terms of our agreement.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you condemn us to death!",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Romas.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You disgust me! If you could see the suffering the plague has caused. Well, you are going to, when you see what it does to us.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Romas, are you and T'Jon carrying this plague?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Every Ornaran does.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you may have brought it aboard this ship. Was there a medical scan when they transported?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unverified. The solar flares could have caused a malfunction in the biofilter.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Med Alert. Medical emergency. Doctor Crusher to the observation lounge at once.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation Lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Romas is suffering on a bed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You find us well, I trust?",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As far as I can tell. Your physiology is somewhat different than I've ever encountered, but I detect no dangerous virus or bacteria.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I assure you we're in perfect health.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But we are not. We need our medicine.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our medicine.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We paid for it. It's ours now.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enough!",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. You are right, Doctor. Could we leave now?",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see no reason why not. Escort them to their quarters.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, could I speak with you please? In private.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not right now. Captain.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What have you learned?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Brekkians show no sign of infection. The Ornarans show all the symptoms of a disease but I can't find a cause.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it was filtered out by the transporter when they were beamed aboard?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no record of it. Then again, the solar flare activity might have caused a malfunction in the biofilters or their monitors.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are they going to die?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need to check further, but my instinct says no.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you think we are in danger from this plague?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Again, I need more time.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are some missing pieces to this puzzle.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's missing is a little compassion.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are we losing our professional detachment, Doctor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps. But Captain, I must tell you, I'm developing a very active dislike for these Brekkians.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understandable.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Doctor's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, you must give us back our cargo.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't do that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why? It belongs to us.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Brekkians claim it belongs to them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They lie.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That may be so, but it's not my decision.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need some now. Now! I don't care if it's your decision. Get us some.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, what is happening to us, is happening to thousands more on Ornara. Please understand the magnitude of the problem.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your people don't need it. The Brekkians don't need it. Our people do.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you don't give it to us, you will be a party to murder, not only of us, but of an entire civilisation. I'm sorry, I do not mean to insult you. I'm feeling very shaky.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We cannot hold out much longer.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They believe it will help them. That in itself might control their symptoms.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll talk with the Brekkians.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Captain. We appreciate anything you can do.",
+                    "spoken_by": "T'JON"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Langor and Sobi are relaxing and enjoying a drink when the doorbell chimes. Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I say, Captain, how impressed we are with your ship and all its facilities.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And its crew. Everyone is so efficient and professional.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am glad you are comfortable. I've come to seek your agreement to an Ornaran request.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We cannot agree",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait. Let the Captain speak. We want to be reasonable.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The two Ornarans are really quite ill and insisting that they need felicium.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is not surprising.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you object to giving them enough for their own immediate needs?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we Brekkians are in business. We are not in the habit of giving away what has not been paid for.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You would see them die rather than share the medicine?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We want to be fair, Captain. We agree to permitting them two dosages for immediate use.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No charge.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll let my Medical Officer handle it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I trust you won't mind if we're present while you open the cargo.",
+                    "spoken_by": "LANGOR"
+                }
+            ],
+            "location": "Guest quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The barrel is opened and a device lifted from the top of the powder"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What does that device do?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This measures the individual portions.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He takes a few grains and puts them into the device"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the dosage?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Point zero one millilitres.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very potent substance.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've improved our distillation process over the years.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In my grandfather's day, the same amount of felicium would have filled five rooms this size.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But now with our improved processes, this one barrel contains over four billion doses.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would estimate four billion, three hundred seventy five million",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long is the dosage effective?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It varies with the individual.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But never more than seventy two hours.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And then the symptoms return.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Unfortunately, there is no cure for the plague.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But felicium inhibits the sickness with total efficiency.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Allowing the Ornarans to lead normal lives.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An unusual disease. Virulent, extremely persistent, yet I can't isolate it.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The plague has baffled doctors on both planets for two hundred years.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've therefore concentrated on treatment, finding new ways to improve the potency and purity of felicium.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No doubt you have applied your technology from other industries to the refinement of this product.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have no other industry.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None at all?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't need any. The Ornarans provide us everything we need in exchange for this.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fascinating. Your society is dedicated exclusively to the production of a single product.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A product for which you have no use, but which the Ornarans can't live without.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One of the little ironies of life, Captain.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But one we'd be fools not to take advantage of. It's mutually beneficial.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Ornarans provide us with the necessities of life, and we provide them with the necessities of living. It is a fair exchange.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interesting relationship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me. I'll take that to Sickbay.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "T'Jon and Romas pounce on the device"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can I help?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "T'Jon puts a hypo onto the device and sets it going"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hurry up!",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "T'Jon injects Romas, then himself. Their shakes vanish and they become very, very calm and relaxed. Totally blissed out, in fact, man"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're feeling better?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, thank you. I'm fine now.",
+                    "spoken_by": "T'JON"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly enters, face like thunder"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I may not know felicium's full effect on Ornarian physiology, but I know how to interpret physical reactions.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are the Ornarans recovering?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "T'Jon and Romas are feeling fine. In fact, too fine. Felicium's a narcotic.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then T'Jon, and Romas, indeed everyone on their world?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is a drug addict.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think you'll find it's a fascinating tale that we've come across here, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've piqued my interest, Number One. Please continue.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, what have we got?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beginning several thousand years ago, the two worlds took different paths. Ornara became technologically sophisticated, Brekka did not. Then two hundred years ago, Ornara was stricken by a devastating plague.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their advanced technology could provide no solution.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Somehow, and there is limited information on this point, the cure was found in a plant indigenous to only Brekka, and which resisted all attempts at cultivation on Ornara.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In any case, a trading situation developed which still exists.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A nice arrangement for the Brekkians.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And for the Ornarans. Without the medicine, they would all die.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No they wouldn't. Despite what the Ornarans have been saying, it's not a medicine. It was a medicine, but it cured the plague two hundred years ago. The plague is irrelevant now. It doesn't exist.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then why are they so desperate for the felicium?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's an addiction. The physical and psychological need is very real.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you going to do?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Based on what we know so far, there's nothing I can do.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't think drug addiction and exploitation is sufficient cause to do something?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This situation has existed for a very long time. These two societies are intertwined in a symbiotic relationship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With one society profiting at the expense of the other.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's how you see it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can synthesise a non-addictive substitute which will ease their withdrawal symptoms.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I can't do that either.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can't let them have the felicium.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why? Because it offends against our sensibilities? It is not our mission to impose Federation or Earth values on any others in the galaxy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well in this case, Captain, I disagree, one hundred percent.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm receiving a call from Ornara. The signal is ragged, but I think I can put it on the viewscreen.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I'm Margan. Are my people on board your ship?",
+                    "spoken_by": "MARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some of them, yes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "May I speak to them?",
+                    "spoken_by": "MARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "end transmission",
+                    "line": "Yes. Lieutenant Yar, have the Ornarans brought in. No, wait, I don't want them to have access to the Bridge. We will contact you in a few minutes.  I will continue this in the guest quarters. Commander, Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard, Riker and Crusher leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, I can understand how this could happen to the Ornarans. What I can't understand is why anyone would voluntarily become dependent on a chemical.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Voluntary addiction to drugs is a recurrent theme in many cultures.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley, no one wants to become dependent. That happens later.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it does happen. So why do people start?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my home planet, there was so much poverty and violence, that for some the only escape was through drugs.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can a chemical substance can provide an escape.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It doesn't, but it makes you think it does. You have to understand, drugs can make you feel good. They make you feel on top of the world. You're happy, sure of yourself, in control.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it's artificial.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It doesn't feel artificial until the drug wears off. Then you pay the price. Before you know it, you're taking the drug not to feel good, but to keep from feeling bad.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And that's the trap?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All you care about is getting your next dosage. Nothing else matters.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess I just don't understand.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley, I hope you never do.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Lieutenant Yar, we're ready in the guest quarters.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "T'Jon. Have you got it?",
+                    "spoken_by": "MARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it's here, but",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "You've got to get it to us. T'Jon, please. We're dying down here. You don't know. It's worse than it's ever been before.",
+                    "spoken_by": "MARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm doing everything I can. You see, what happened was",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Stop! I can't listen any more! T'Jon, there are so many people here. So much suffering. We need the medicine. You've got to get it to us. I can't go on. Help, T'Jon. Please.",
+                    "spoken_by": "MARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "T'Jon uses his electric power on Riker"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will take us to our planet and leave us there with our medicine or this person dies. Don't you see I have no choice? We were sent to bring the felicium back. The suffering on my planet is too great. People are dying. It doesn't matter whether we're entitled to it or not. We must have it.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let him go.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will take us there now, or give us a shuttle. But we must have the medicine. If you refuse, this person will die.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not be coerced.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will do it. I will kill him.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. No, you won't. You're not a killer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "T'Jon lets Riker go"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Help us, please. Help us.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure that I can.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My insides are still shaking, but I'm all right.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The door opens"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard, could I see you a moment?",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll stay here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come with me, Doctor. This could be interesting.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ornaran Guest quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have thought about this a great deal.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We both of us feel deeply about what is happening on Ornara.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Although it is going to cause hardship to us and to our people, we have decided to give the felicium to them.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They can pay whenever they are able.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't want to be the ones responsible for their suffering.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There goes the other shoe. They know.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do they know?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They know that the Ornarans no longer have the plague. They know that felicium is no longer a medicine. So, of course, they are willing to give this shipment because they don't want to take the chance that the Ornarans will lose their addiction. They don't want to lose their only customers.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How would they have known all that, unless the plague had once infected their world as well.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They were infected. They used the felicium to cure themselves, but somehow their ancestors realised that it was a narcotic.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They broke the cycle of addiction and never told the Ornarans. They let them continue to believe that without the felicium they would die.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think it's worse than that. My guess is this refining process of which you are so proud",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "is only to increase the potency of the felicium and tighten your grip!",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you going to do?",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you going to tell them?",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I'm bound by the rules of the United Federation of Planets, which order me not to interfere with other worlds, other cultures. If I were to tell them any of this, I would violate that Prime Directive.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you are talking to us about it.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is information you already know. And so nothing has changed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you can't interfere, then you are going to allow the Ornarans to have the felicium?",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I am.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! Don't do it. Jean-Luc, this is not a symbiotic relationship. This is exploitation, pure and simple! The Brekkians have caused all of this suffering and hardship only to make their pitiful lives easier! And all of it based on a lie. No, deny them this shipment. It is the least we can do.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From the moment they agreed to give them the felicium, my hands were tied.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are absolutely right, Captain. It's not your business.",
+                    "spoken_by": "LANGOR"
+                }
+            ],
+            "location": "Brekkian Guest quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are these the spare parts for our freighters?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They look complicated.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are they already?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aligned?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'd have to ask the Captain.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard, Crusher, Sobi and Langor enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain Picard, we've arrived at Ornara and assumed standard orbit.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged. Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, please. My planet is suffering.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We beg you to give us our medicine.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The matter is already decided. You're beaming down to your world with the felicium.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Great.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I knew it. I knew you'd help us.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We thank you.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't thank me. Sobi and Langor, they decided to let you have it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll discuss the payment terms later.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the mean time, there's no need to deprive you of your needed medicine.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's terrific.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure we can come to a fair deal for payment.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May we beam down with you and discuss it?",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are quite welcome on Ornara.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We appreciate your hospitality.",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Captain, we appreciate your gift of the coils.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Once our freighters are fixed, everything'll be back to normal.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No?",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The coils stay here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about our freighters?",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You want to repair them, you'll have to learn to do it yourselves.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you don't help us, our ships will soon be inoperable.",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quite possibly.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you withhold those coils, you'll be disrupting the stability of both our planets.",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And interfering with a trade arrangement that has lasted for generations! What of your Prime Directive?",
+                    "spoken_by": "LANGOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In this situation, Prime Directive prohibits me from helping you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's absurd!",
+                    "spoken_by": "SOBI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You did not think so when it worked in your favour.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you want our world to suffer?",
+                    "spoken_by": "ROMAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh no, I don't want that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Without the freighters, there will be no more shipments of felicium. We will die.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must trust yourselves. There are other options.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, prepare to beam our guests and their cargo down to Ornara.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I hope you realise what you've done to us.",
+                    "spoken_by": "T'JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of that you can be sure. Good luck.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Main Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When the Felicium runs out, the people of Ornara will suffer horrible withdrawal pains.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No doubt, but they will pass.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That seems so cruel. We could have made their burden easier.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could we have? Perhaps in the short term. But to what end? Hold. Beverly, the Prime Directive is not just a set of rules. It is a philosophy, and a very correct one. History has proved again and again that whenever mankind interferes with a less developed civilisation, no matter how well intentioned that interference may be, the results are invariably disastrous.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's hard to be philosophical when faced with suffering.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Believe me, Beverly, there was only one decision.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I just hope it was the right one.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we may never know. Resume.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, take us out of orbit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Destination, sir?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't care. Let's just get some distance between us and this system.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Course nine seven zero mark three one eight. Speed, warp three.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where will that take us, Mister La Forge?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Opraline system.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An interesting choice. Why?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Curiosity. We've never been there.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "123",
+    "transcript_url": null
+}

@@ -1,0 +1,2135 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bring the stasis units in here, and have them online.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Doctor.",
+                    "spoken_by": "MEDIC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell Doctor Selar she can use ward three for the ambulatory cases, and I'll stay here.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Transporter room four to Sickbay. They're coming in now.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged. Stand clear and be ready.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is carrying Picard, Riker and a security man have their phasers out, and a security woman is supporting an injured colleague"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's go, let's go. Get him on here.",
+                    "spoken_by": "MEDIC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Lenarians attacked us outside of the conference room.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard has a big hole in his chest"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's in cardiac arrest. Connect the pulmonary support units. He's got internal haemorrhaging. The bioregulator of his artificial heart's been fused. He's got liver and spleen damage. What kind of weapon caused this?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A compressed teryon beam.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard jerks",
+                    "line": "Forty cc's inaprovaline. The activity in the isocortex is falling. Cortical stimulators. Now.  Again. His respiratory system is shutting down. The levels in the isocortex are still falling. Damn. Prepare a four percent series",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A bright white void. There is a figure also in shimmering white nearby. Picard touches its hand and then sees who it is."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to the afterlife, Jean-Luc. You're dead.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, what is going on?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I told you. You're dead. This is the afterlife, and I'm God.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are not God.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Blasphemy! You're lucky I don't cast you out, or smite you or something. The bottom line is, your life ended about five minutes ago, under the inept ministrations of Doctor Beverly Crusher.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I am not dead. Because I refuse to believe that the afterlife is run by you. The universe is not so badly designed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. If you really require more evidence of your post-mortem status, I guess I'll just have to provide you some.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc, I told you not to go running off to that Academy.",
+                    "spoken_by": "MAURICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Father.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I told you that Starfleet would bring you to a bad end, but you wouldn't listen. Now look at you. Dead before your time.",
+                    "spoken_by": "MAURICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, enough of this.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enough what?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why couldn't you have listened? Didn't you know that I was working for your best interests?",
+                    "spoken_by": "MAURICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, stop this.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After all these years, even now, you manage to disappoint me, Jean-Luc.",
+                    "spoken_by": "MAURICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's not the only one who'd like to have a word with you.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Why, Jean-Luc? Why did you do it?",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, there are still people down there. You can't abandon them.",
+                    "spoken_by": "CREWWOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "There must be some other way, Captain. Some other choice than firing on them.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "If you continue on this course.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "A direct hit, sir. The ship is destroyed.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These are the voices of all the people you've killed throughout the years.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whom I've killed? What do you mean?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Death has made you a little dim, Jean-Luc. These are the voices of all the people who have died through your actions or your inactions. Now, if you have any words of apology or regret, I believe they're all listening. They're a surly bunch, actually, so don't drag this out too long.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've no intention of performing for your amusement.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not for me. This is for you, Jean-Luc. This is your opportunity to make peace with your sordid past.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I find it hard to believe that you are doing this for the benefit of my soul.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, now that you've shuffled off the mortal coil, we're free to spend a little time together.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A little time together? How much?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eternity. Now, you're sure you have no regrets or feelings of guilt about your former life? I can't have you whining and complaining through time.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I'm really dead, then my only regret is dying and finding you here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wound me, Jean-Luc. After all, I was not the cause of your death. This was.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He holds up the contraption Kate Pulaski put in him all those seasons ago"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your artificial heart. You might have lived if you had a real one instead of this unreliable piece of technology. By the way, how did you lose yours anyway?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A mistake.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that a regret I hear?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I regret a great many things from those days.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A Nausicaan and a young man in old-style uniform are fighting. Then a second Nausicaan joins in, and a third stabs the man through the back. The blade sticks out of his chest. The young man falls to his knees, looks at the knife point and laughs, then falls to the floor."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It wasn't very smart of you to take on three Nausicaans, was it?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it wasn't.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And did I hear a laugh? It's so unlike you, Jean-Luc, to have a sense of humour, especially about getting stabbed through the back.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was a different person in those days. Arrogant, undisciplined, with far too much ego and too little wisdom. I was more like you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you must have been far more interesting. Pity you had to change.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The pity is that I had to be impaled through the back before I learned that lesson. I started that fight with those Nausicaans. I started it because, because I was young and cocky. If I'd been more responsible in those days, I wouldn't have needed this heart, and I wouldn't have died from a random energy surge thirty years later.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, if you had it to do all over again?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Things would be different.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Limbo"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard, in old style uniform, gets slapped across the face by a woman who then storms out of the room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bravo! Bravo!",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nicely done.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cortan? Cortan Zweller?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a red-haired young man",
+                    "line": "Yes. Boy, she must've hit you pretty hard. Of course, you deserved it.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a dark-haired young woman",
+                    "line": "You're slowing down there, Johnny. You should've seen that one coming.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Marta Batanides.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you okay?",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I'm fine. I'm just a little disoriented, that's all.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on, he's just playing for sympathy now. Look, I'm going to get something to eat and head over to the casino at Bonestell. You coming?",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll catch up with you there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You sure you're okay?",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I'm fine. Really, Marta, I'm fine.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on, Marty. I bet he's got another date.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's it, isn't it? You are incorrigible.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Corey and Marta leave, and Q appears in modern uniform"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Try not to end up in the hospital.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Attention on deck, Ensign Picard.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's Captain Q to you, young man.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the point of creating this fantasy?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is no fantasy, I assure you. It's all very real. You're twenty one years old again. A brash young man, fresh out of the Academy.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I certainly don't look it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, to everyone else you do.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, Q, I thought you told me that I was dead. Now it seems that I'm alive.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, you mortals are so obtuse. Why do you persist in believing that life and death are such static and rigid concepts. Why, I can take your life and give it back to you again with the snap of a finger.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's say for the moment that may be true. What is the purpose of bringing me here?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said you regretted a great many things in your life. Well, here's a chance to change some of them.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Change them? You mean change the past? Q, even if you have been able to bring me back in time somehow, surely you must realise that any alteration in this timeline will have a profound impact on the future.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please. Spare me your egotistical musings on your pivotal role in history. Nothing you do here will cause the Federation to collapse or galaxies to explode. To be blunt, you're not that important.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't do it. I won't alter history.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, very well. Since you attach so much importance to the continuity of time, I will give you my personal guarantee that nothing you do here will end up hurting anyone, or have an adverse affect on what you know of as history. The only thing at stake here is your life and your peace of mind. Now, whether you believe me or not, you are here, and you have a second chance. What you choose to do with it is entirely up to you. Do you know where you are?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starbase Earhart. We came here right after graduation to await our first deep space assignments.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right. It's two days before your unfortunate encounter with a Nausicaan sword. You have that long to make whatever changes you wish. If you can avoid getting stabbed through the heart this time, which I doubt, I will take you back to what you think of as the present. And you can go on with your life with a real heart.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I won't die?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course you'll die. It'll just be at a later time.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What if I don't avoid the fight? What if I won't make the changes?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you die on the table, and we spend eternity together.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wonderful.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm glad you think so. I am curious about one thing, Johnny. Why did that rather attractive woman strike you just now? Something you said?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her name was Corlina. I'd arranged to take her out today, and then she discovered that I had already made a second date with another woman called, er, Penny, and Corlina was naturally upset.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd no idea you were such a cad. I'm impressed.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, what is the time right now?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sixteen eleven hours.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In fact, Penny is waiting for me right now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, carry on.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Starbase - Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're awfully quiet today. What happened to the dashing young Ensign from last night? The one with the winning smile and the smooth talk about my eyes?",
+                    "spoken_by": "PENNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm just a little more contemplative.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what are you contemplating?",
+                    "spoken_by": "PENNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Penny, er, do you think we could just talk for a while. I don't know anything about you. Where you're from, what your interests are, your last name.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I come from Rigel, my last name is Muroc and I like men in uniform. I think that's enough talking.",
+                    "spoken_by": "PENNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the older woman moves in for a kiss"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's wrong? I don't look as attractive to you as I did last night?",
+                    "spoken_by": "PENNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, not at all. I think you're a very handsome woman.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Handsome. That's something you say to old ladies.",
+                    "spoken_by": "PENNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're certainly not an old lady.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she throws her drink in his face"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't want your pity.",
+                    "spoken_by": "PENNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Penny leaves in high dudgeon. The bartender has a new face."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Penny for your thoughts? You never told me you were such a lady's man.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wasn't. I was a puerile adolescent who allowed himself to be led by his hormones instead of his head.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looks like your friends know how to have fun. You ought to take lessons.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The gang are playing a variation of pool where the ball bounces off coloured lights on the table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Bonestell Facility bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's winning.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you had a date.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She decided to leave.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're getting old, Johnny.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Corey bounces his ball off a light and down a hole in the middle of the table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Thank you all. Thank you.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very, very nice. I think you should forget about Starfleet and play dom-jot for a living.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nah, this is nothing. A little trigonometry, some minor wrist action. Now barokie, there's a game.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Human! Play dom-jot, human.",
+                    "spoken_by": "NAUSICAAN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I could be persuaded to play one more game.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Corey, don't play him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It'll cause trouble. He's a Nausicaan. They can get very ill-tempered if they lose.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So can I.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Corey, listen to me. This is a big mistake. Don't play him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's gotten into you? Let's go.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see you've found your Nausicaan friend. You seem unimpaled so far.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry to disappoint you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign Zweller seems to be doing well.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's going to lose. The Nausicaan is cheating.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really? I'm beginning to like these Nausicaans.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If history repeats itself, Corey will figure it out later tonight, and then he'll want revenge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And will you help your best friend avenge this injustice?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did last time. I rigged the table so that he would win in a rematch.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard, you cheated? Picard, I'm impressed.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a stupid mistake. The Nausicaan didn't take kindly to losing. Nor his friends. They were outraged. They wanted a fight. I gave them one.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's a beautiful story. It gets you right here, doesn't it?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ten.",
+                    "spoken_by": "NAUSICAAN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the Nausicaan puts a bet down and makes his play, then laughs and pots the winner"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dom-jot. Human play dom-jot.",
+                    "spoken_by": "NAUSICAAN 1"
+                }
+            ],
+            "location": "Bonestell Facility casino"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've played a lot of dom-jot in a lot of places. I've never seen the balls roll that well for anyone.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So he was cheating?",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll bet you that he had some sort of magnetic device in his belt. It was controlling the balls.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's terrible.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've got to get even.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did you have in mind?",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, we could do to him what he did to us. Cheat. Only this time we'll rig the table so his device'll backfire on him.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Corey, that won't solve anything.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It'll teach him that he can't go round cheating Starfleet officers.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All it'll do is provoke him. And provoking a Nausicaan is not a good idea.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can handle him.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What if he's not alone? What if he brings some of his Nausicaan friends with him?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well then I guess that when I'll have to depend on my friends to help me out.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Corey, there's got to be a better way to handle this.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When did you start backing away from a good fight?",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look Corey, we're not cadets anymore. We're officers. We should start to set a higher standard for ourselves.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a good idea,, but let's just forget it, okay?",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Corey leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He'll get over it.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope so. What?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing. It's just you'd usually be the one plotting revenge.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, that would be more in character, wouldn't it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Much. But I always suspected you had a hidden streak of responsibility somewhere.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it's just that I'm getting older.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe these bars are just starting to feel a little heavy, Ensign. Ensign Picard and Ensign Batanides. It sounds weird, doesn't it?",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's going to take some getting used to.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's too bad we can't get used to it together. The three of us, I mean.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, of course.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "doorbell"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Flowers! Is there a John Luck Pickard here?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From one of your conquests, no doubt. I guess some things aren't going to change.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Marta leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did I interrupt anything sordid, I hope?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Q, you did not.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pity. She's quite attractive.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were friends, nothing more.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that another regret I hear? My, my. We're simply riddled with regrets about our youth, now aren't we?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My friendship with Marta is not something I regret.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you wish it had been more than just friendship, don't you? Well, maybe you can change all that.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, what is it you want?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you'd like to know that Mister Zweller has decided not to take your advice. He's in the Bonestell Facility right now, rigging the table to beat the Nausicaan. I guess you weren't that persuasive.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Starbase - Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Corey is under the don-jot table with a screwdriver"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Corey.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ow! Johnny, don't sneak up on me like that. I thought you were the gambling foreman.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm glad you're here. Hand me that magnaspanner.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Corey, I'm not here to help you. I'm here to stop you from making a serious mistake.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You sound like my mother.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cheating the Nausicaans could have serious consequences for all of us. It's a risk we can't afford to take.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are my mother. Well gee, Mom, I guess I'll have to go tell those Nausicaans I don't mind if they cheat me.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not a joke, Corey.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It better be. Now, I'm going to finish my work here. If you want to help me, fine. If not, I'll see you back at the Starbase.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I said you're not doing this.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you going to hit me, Johnny?",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. But I'll tell the gambling foreman someone's been tampering with his dom-jot table.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. Have it your way, Ensign Picard.",
+                    "spoken_by": "COREY"
+                }
+            ],
+            "location": "Bonestell Facility casino"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I just couldn't make him understand.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least he did finally give it up.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but he didn't take it very well.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, you know Corey. He'll forget all about it by tomorrow.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope you're right, because he and I were friends for years after this. I mean, I hope we will be. You know, you keep smiling at me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I've just never seen you like this before. You're so serious.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do I really seem that different?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe I'm just not used to seeing you in your officer's uniform. No, it's more than that. You do seem different. Well, I'm not complaining or anything. I think it suits you.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. It's very attractive. Johnny. Haven't you ever thought about us getting together?",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I have, actually. I've thought about it for a long time.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why didn't you ever say so?",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. And at this moment, I really have no idea why not.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've said so now.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and they kiss"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "next morning, uniforms are scattered on the floor, and a hand tickles Picard's ear"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Morning, darling. Feeling a little jumpy this morning? Are we guilty, perhaps?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't feel guilty about anything, Q.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No? We're just friends, Q, nothing more.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we're still friends.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So what's next?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. What I do know is, things will be different.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Starbase - Marta's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good morning.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Johnny.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's wrong?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, this is the morning after, huh?",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look, I don't regret anything that happened last night. I hope you don't either.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. We've been friends for a long time and, and now I'm afraid we've ruined that friendship.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then perhaps we should forget about what happened and try to",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I could. It would make it much easier to say goodbye tomorrow. We're all supposed to get together later for our last big night before we ship out.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want you to do anything that makes you uncomfortable.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've planned it. I'll be there.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Marta leaves, her breakfast on the table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, let's see. You've managed to get slapped by one woman, a drink thrown in your face by another, and alienate your two best friends. Doing very well so far. The only thing left to avoid is getting stabbed through the heart.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Bonestell Facility bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think you'll like serving on board the Ajax. I hear that Captain Narth is an excellent officer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So I hear.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, here's to the class of 'twenty seven.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "three Nausicaans enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Play dom-jot, human. Give you a better chance. Give you a bigger stick maybe.",
+                    "spoken_by": "NAUSICAAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think we're interested.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are undari. Cowards.",
+                    "spoken_by": "NAUSICAAN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did you say?",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Coward. Like all Starfleet you talk and you talk, but you have no guramba.",
+                    "spoken_by": "NAUSICAAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why don't we find out.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't be a fool, Corey. Look, there are plenty of other people to play dom-jot with. Now just go about your business.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe I play with her. Give her good time.",
+                    "spoken_by": "NAUSICAAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Corey is about to hit the Nausicaan when Picard pushes him over"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Orcho lok resnik. Starfleet.",
+                    "spoken_by": "NAUSICAAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, Corey. He was reaching for a weapon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know who you are any more, but you're not my friend.",
+                    "spoken_by": "COREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodbye, Johnny.",
+                    "spoken_by": "MARTA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Corey and Marta leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Congratulations, mon capitaine. You did it.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Can I help you?",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bonestell Facility casino"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is a science lieutenant"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can I help you, Mister Picard?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf takes a PADD from Picard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not for me. You should take it to Commander La Forge in Engineering.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's happened?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is something wrong?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure. Mister Worf, what is my rank and position?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are a Lieutenant junior grade, Assistant Astrophysics officer.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you feeling all right?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who's the captain of this ship?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Thomas Halloway. Perhaps I should escort you to Sickbay.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I can find my own way there. Thank you, Commander.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly, something's happened to me. I'm not sure",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "German accent",
+                    "line": "Vell, vell, vell. Vhat seems to be de trouble, Lieutenant Picard?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, what have you done?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've done exactly as I promised. I've returned you to the present.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But this is not the present I remember. You said nothing would change.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing has changed, Jean-Luc, except for you. But then again, that's what you wanted, wasn't it? To change the man you were in your youth? Well, you did it. This is the man you are today. And You should be happy. You have a real heart beating in your chest, and you get to live out the rest of your life in safety, running tests, making analyses, and carrying reports to your superiors.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Doctor's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker and Troi are at a table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me, am I interrupting?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not at all. Have a seat.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. I'd like to talk to you for a moment about my future on the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, Lieutenant. Jean-Luc, isn't it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe I should go.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, please, Counsellor, I would very much like to hear your thoughts. First of all, and I would like you to be absolutely straightforward with me. How would you evaluate me as an officer?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, er, your performance records have always been good. You're thorough, dedicated.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "searching desperately",
+                    "line": "Reliable, steady,  punctual.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see. What would you say if I told you that I believed that I was capable of being very much more.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps we should discuss this at your next evaluation.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would appreciate it if we could discuss it now. You see, I feel that I would like to move beyond astrophysics to Engineering or Security, something that might even lead to Command.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Frankly, Lieutenant, I don't think that's realistic.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I really don't think this is the place to be discussing this.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please. This is important to me. I believe that I can do more.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hasn't that been the problem all along? Throughout your career you've had lofty goals, but you've never been willing to do what's necessary to attain them.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would that be your evaluation as well, Commander?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I have to agree with the Counsellor. If you want to get ahead, you have to take chances, stand out in a crowd, get noticed.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, we don't want to lose you. You're a very good officer.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just not one who stands out.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why don't I talk to Commander La Forge in Engineering and we'll see what we can do.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But, Command?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, we'll see.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Senior officers, please report to the Captain's Ready room.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We should talk about this later.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker and Troi leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, Q, that's enough. You've made your point. Q?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "La Forge to Lieutenant Picard. I'm still waiting for that statistical analysis.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm on my way, sir.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Main Engineering. Are you having a good laugh now, Q? Does it amuse you to think of me living out the rest of my life as a dreary man in a tedious job?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I gave you something most mortals never experience. A second chance at life. And now all you can do is complain?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't live out my days as that person. That man is bereft of passion and imagination. That is not who I am.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Au contraire, he's the person you wanted to be. One who was less arrogant, and undisciplined as a youth. One who was less like me. The Jean-Luc Picard you wanted to be, the one who did not fight the Nausicaan, had quite a different career from the one you remember. That Picard never had a brush with death, never came face to face with his own mortality, never realised how fragile life is or how important each moment must be. So his life never came into focus. He drifted for much of his career, with no plan or agenda, going from one assignment to the next, never seizing the opportunities that presented themselves. He never lead the away team on Milika Three to save the ambassador, or take charge of the Stargazer's Bridge when its Captain was killed. And no one ever offered him a command. He learned to play it safe. And he never, ever got noticed by anyone.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right, Q. You gave me the chance to change and I took the opportunity. But I admit now, it was a mistake.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you asking me for something, Jean-Luc?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give me a chance to put things back the way they were before.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Before you died in Sickbay. Is that what you want?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would rather die as the man I was than live the life I just saw.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Limbo"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Coward. Like all Starfleet. You talk and you talk but you have no guramba.",
+                    "spoken_by": "NAUSICAAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did you say?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I said, you are a coward.",
+                    "spoken_by": "NAUSICAAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's what I thought you said.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and Picard hits the Nausicaan. Corey and Marta take on the other two but don't do nearly as well. Finally Picard gets stabbed, sees the knife sticking out of his chest, and laughs"
+                }
+            ],
+            "location": "Bonestell Facility casino"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "{Picard is laughing on the biobed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His vital signs are stable. Captain. Jean-Luc. You've been injured, but I think you're going to be all right.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I still don't know what to make of it. Was it a dream? Was it one of Q's elaborate tricks?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A lot of people near death have talked about strange experiences, but I've never heard one so detailed.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And, you know, there's still a part of me that cannot accept that Q would give me a second chance, or that he would demonstrate so much compassion. And if it was Q, I owe him a debt of gratitude.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In what sense? It sounds like he put you through hell.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are many parts of my youth that I'm not proud of. There were loose threads, untidy parts of me that I would like to remove. But when I pulled on one of those threads it unraveled the tapestry of my life.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was just trying to imagine a hell-bent for leather young officer insulting a Nausicaan twice his size. I wish I'd had a chance to know that Jean-Luc Picard.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, well, to tell the truth, that wasn't the first run-in I'd had with a couple of surly Nausicaans.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes. During my sophomore year, I was assigned to training on Morikin Seven. Well, there was a Nausicaan outpost on one of the outlying asteroids, and one day",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Observation lounge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "241",
+    "transcript_url": null
+}

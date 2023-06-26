@@ -1,0 +1,2396 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker walks from a very unrestful night's sleep. The clock says 10:37"
+                }
+            ],
+            "location": "Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Shipley, let's get a triangulation on these sector points.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "SHIPLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry I'm late. I overslept again. What have we got?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, the cluster's a lot more dense than we thought. It's going to take three days just to map out one tenth of it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three days?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think we've found a way to speed that up a bit. We've been testing a way of channelling warp energy directly to the main deflector grid. It should enhance the long range sensors.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The modification would increase our sensor efficiency and imaging resolution by twenty five percent or more.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That sounds like that'll use up a lot of warp energy.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'd channel it through the EPS mains on deck four, near Cargo bay four.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay, let's give it a try.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, let's get those field taps online.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I would like to remind you about my poetry reading this afternoon.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wouldn't miss it for the world.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't wait to see what he's come up with.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data is giving his recital to a slightly restless audience"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then we sat on the sand for some time and observed",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "How the oceans that cover the world were perturbed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "By the tides from the orbiting moon overhead"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "'How relaxing the sound of the waves is,' you said."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "I began to expound upon tidal effects"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "When you asked me to stop, looking somewhat perplexed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "So I did not explain why the sunset turns red"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And we watched the occurrence, in silence, instead."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "applause"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That poem was written in anapaestic tetrameter. For my ninth poem,",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand. I can barely keep my eyes open.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Throughout the ages, from Keats to Jorkemo, poets have composed odes to individuals who have had a profound effect on their lives. In keeping with that tradition, I have written my next poem in honour of my cat. I call it Ode to Spot.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Felis catus is your taxonomic nomenclature."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "An endothermic quadruped, carnivorous by nature."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Your visual, olfactory, and auditory senses"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Contribute to your hunting skill and natural defences."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "I find myself intrigued by your subvocal oscillations."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A singular development of cat communications"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "That obviates your basic hedonistic predilection,"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "For a rhythmic stroking of your fur to demonstrate affection."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A tail is quite essential for your acrobatic talents."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "You would not be so agile if you lacked its counterbalance."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And when not being utilised to aid in locomotion"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "It often serves to illustrate the state of your emotions."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker snores, Deanna pokes him awake and he starts clapping"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, you have anticipated my denouement. However, the sentiment is appreciated. I will continue.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Oh, Spot, the complex levels of behaviour you display"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Connote a fairly well developed cognitive array."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And though you are not sentient, Spot, and do not comprehend"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "I nonetheless consider you a true and valued friend."
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no problem getting to sleep. Then I think I'm sleeping all night. When I wake up, I feel exhausted.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long has this been going on?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two, three days. Do you have to hold that thing that close? I'm sorry. I've been on edge all day.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well. other than some muscle tension in your neck, I don't see anything physically wrong with you. Have you been having bad dreams?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not that I can remember.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This could be the result of lack of REM sleep.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you recommend?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she programs a PADD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Drink this before going to bed.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A recipe for a warm milk toddy.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A hot milk toddy? You're kidding.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The heat activates amino acids in the lactose, making it a natural sedative. Besides, this is a recipe of the Captain's Aunt Adelle. It's delicious.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well. at this point, I'll try anything.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And listen, if it still bothers you tomorrow, come and see me and I'll run further tests.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything's in place. Warp grid couplers, subspace field taps. All right, let's do it. Lieutenant Shipley, initiate warp power transfer.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye sir. Verifying sensor calibration. EPS mains holding stable. Sensor array online.",
+                    "spoken_by": "SHIPLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on, work.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, active scanner output has increased by twenty six percent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Inform Astrophysics that the new La Forge sensor array is online and awaiting major scientific discoveries.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "SHIPLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, may I make a personal inquiry? It concerns my poetry reading.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure, Data. What is it?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I noticed that many spectators seemed distracted during my presentation. Was my poetry uninteresting?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it was very well constructed, a virtual tribute to form.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. And?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did it evoke an emotional response?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your hesitation suggests you are trying to protect my feelings. However, since I have none, I would prefer you to be honest. An artist's growth depends upon accurate feedback.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, your poems were clever, Data, and your Haiku was clever, and your sonnet was clever. But did it evoke an emotional response? To be honest, no, I don't think so.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I did not succeed in my efforts.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it's not that you didn't succeed. You accomplished a lot, but, if you want to touch people, don't concentrate so much on rhyme and metre. Think more about what you want to say instead of how you're saying it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a alarm sounds"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's the power grid warning.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am reading a massive EPS explosion.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am attempting to localise it. It is Cargo bay four.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've got three people in there. Damage control, medical team to Cargo bay four. Let's go.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "everyone strolls along calmly"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The field imbalance has subsided.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There may still be a residual discharge. Stand clear.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there something wrong, sir?",
+                    "spoken_by": "ENGINEER"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And there's no evidence of an EPS explosion.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors seemed to think there was.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think my modification to the sensor array may have caused a pattern recognition failure.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just a sensor glitch?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's my guess.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's perform a level three diagnostic on the internal sensor network and make sure that we haven't overlooked anything.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could we pick this up in the morning, Geordi? Get a fresh start? Would you do me a favour? Stop by my quarters, oh seven hundred hours. I'm having trouble waking up.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure, Commander. Goodnight.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodnight.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker drinks his prescription toddy, and lies down"
+                }
+            ],
+            "location": "Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gordon.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi rings a doorbell"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "It's La Forge.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good morning.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Morning? I just went to bed.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, it's oh seven hundred hours.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She said, if they're not squirming, we won't eat 'em!",
+                    "spoken_by": "MOT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, Mister Worf, my good Klingon. Sir, welcome. What a pleasure it is to have you with us again so soon. So, Lieutenant, haircut today? Trim your beard?",
+                    "spoken_by": "MOT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would like my hair trimmed.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah. A trim, of course.",
+                    "spoken_by": "MOT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not like last time.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh no, just a little off the top. I took way too much off last time. I was just telling my colleague, Mister Setti, how thick and luxuriant Klingon hair is. It's such a pleasure to cut. Sometimes I get carried away. All those away missions, the wind and dry air, the elements really are harsh on the hair. I'd like to suggest that you start using a conditioning agent.",
+                    "spoken_by": "MOT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf sees the scissors and grabs Mot's arm"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I promise, not too much off the top.",
+                    "spoken_by": "MOT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf leaves"
+                }
+            ],
+            "location": "Barber shop"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi is up a ladder, looking inside a panel"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just before the grid alarm sounded, we were running warp power through this junction. Somehow, it must've tripped the internal scanners.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And it showed up as an EPS explosion?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but the question is, why? I've made modifications to the sensors before but nothing like this has ever happened.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He comes down the ladder"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't waste time chasing down sensor ghosts. We should probably keep the whole array offline until we can get take a closer look.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "yawns",
+                    "line": "Excuse me.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know the feeling. The past few nights, it seems like as soon as my head hits the pillow, it's time to get up in the morning.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure we could all use a little shore leave after this survey's completed.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Definitely. Keep me posted?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. Data, I'm wondering if you could give me a hand. I need to run a structural integrity scan. I want to make sure that none of the conduit was",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi sways"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the second time today that my visor's just cut out like that.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you all right, Geordi?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. I just had a very weird feeling. Maybe I should go to Sickbay.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will run the integrity scan.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks, Data.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is curious. There's a slight bacterial infection around your neural inputs. It was probably interrupting the data stream.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An infection? From what?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It doesn't match any bacterial strains on record. I'm going to have to sterilise the area. But I need to run a resonance tissue scan to search for any signs of additional infection. Come over here. Sit down. Now, come forward. Now, you're going to need to hold very still.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How's the scan going, Data?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have just started the scan. Did you not go to Sickbay?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, I've been there for over an hour and a half.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is not possible. My internal chronometer indicates you have been gone for exactly one minute, fifteen seconds.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm telling you, Data, I've been gone for over an hour.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, what is the time, please?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The time is fourteen twenty seven hours.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are correct. Ninety two minutes, seventeen seconds have passed since you left the room.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What have you been doing all this time?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no memory of events during that period. When we are finished here, I will perform a self-diagnostic.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, first we picked up a false EPS explosion, then my visor cuts out twice, and now you lose an hour, all in the Cargo Bay. La Forge to Engineering I want a diagnostic team to Cargo bay four immediately.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "On our way, sir.",
+                    "spoken_by": "SHIPLEY"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign Rager, cartography needs a better position to study cluster FGC thirteen. Bring us about, heading one twenty three mark four.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye sir. Helm won't lock to those coordinates, sir.",
+                    "spoken_by": "RAGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "First time navigating through a globular cluster, Ensign? You have got to compensate for gravimetric interference before",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker sits at helm and stares at the edge of the console"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there something wrong, sir?",
+                    "spoken_by": "RAGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I don't know. Put us back on our original heading, Ensign.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi is muttering at a console"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't tell me. This can't be right. Data, come here and take a look at this, would you? I think we have another sensor glitch.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors are functioning normally. They are detecting a subspace particle emission originating from within this room.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From within this room? That's impossible.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The emission is emanating from this direction. Geordi.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "something is going on at the panel Geordi was examining earlier"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a little later, Picard is there"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The structure of the bulkhead has been altered on a subatomic level. The metal itself is in a state of quasi-molecular flux.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's causing it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is where it gets a little wild, Captain. Behind that panel is a junction we were using to transfer warp power to the sensor array. We're reading a subspace particle stream emanating from that junction.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It appears to be composed of spatially inverted tetryon particles. We believe they are emanating from a tertiary subspace manifold.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I thought that tetryons were unstable in normal space.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't understand it either, sir. Something from that deep in subspace shouldn't be able to exist in our universe. But there it is.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does it pose a danger to the ship?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not unless it spreads. If it does, we can beam the bulkhead into space and erect a forcefield in its place.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, keep that option ready. In the meantime, proceed with the analysis.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When I sat down at the console, it triggered a response like I had been trapped. I had to get out of there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Was it something about the console itself?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I felt like I was disconnected. Like it was something I had dreamed.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're the third person today who's come to me with something like this. An intense emotional response provoked by an object.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did any of them know why they'd the response?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, they couldn't explain it any more than you could. You know, at this point I'm not willing to say it's coincidence.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe we should all get together.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Talking about it would help you understand your response. I'm going to find out if anyone else on the ship has had these kind of experiences.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will, you told me you had an unusual experience when you sat down at the console. Why don't you describe it?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was vague, the way you recall a dream. I remember the sensation of feeling trapped and something about a smooth surface.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had a similar response, but to a pair of scissors.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you dreamt about scissors recently?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I may have. I do not have a distinct memory of it.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When my visor cut out in the cargo bay, I had a weird feeling too. It was something about a smooth surface. It was smooth and cold, Yeah, it was cold.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a civilian woman",
+                    "line": "Yes, cold.",
+                    "spoken_by": "KAMINER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was elevated? A platform.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right. Like a bench, or a table",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It seems you've all had a similar experience. Is there anything else you remember besides a table?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe there's a way we can all help ourselves to remember more.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, you all remember a table, so let's start with that. Computer show me a table.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are five thousand forty seven classifications of tables on file. Specify design parameters.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you be more specific about the table? You mentioned it was smooth and cold. Can you remember what shape it was?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Long. It was long.",
+                    "spoken_by": "KAMINER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, and it had a rectangular shape.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, show me a rectangular conference table.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's too high. Computer, reduce the height of the table by twenty five percent.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, the table was smaller. And it was inclined. Computer, decrease the table's surface area by twenty percent and incline the top fifteen degrees.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it wasn't made of wood. It was smoother, more metallic.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, make this a metal table.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a sort of operating table appears"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, that's starting to look right.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Was there anything else in the room? Furniture? Chairs? A door? Other people?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it was dark.",
+                    "spoken_by": "KAMINER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it was dark. I couldn't see beyond the table.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, lower the surrounding light level.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was a light right in my face. A bright light. Computer, give me a bright light right above the table.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Specify light source.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I couldn't tell. It was above me. An overhead lamp.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Estimated distance of light source.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. It was at least two or three metres above. Brighter. Brighter.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said you were uneasy when you sat down at the conn. position.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I felt trapped by the console. But it wasn't like this. There was something else here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A restraint of some kind?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, there was a restraint. It was flat and metal. It was made of metal. it came down over my legs. No, no, it was across my chest, right here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was holding you down?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it was part of the table. It was here. It was right here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, create a restraining arm attached to the right side of the table, at the mid-point.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Was it like that?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, put controls on the restraining arm. A control panel. Lights.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was something else there. Over the head of the table. A metal swing arm. Computer, create a metal swing arm, double jointed, total length one metre. Connect it to the head of the table.",
+                    "spoken_by": "KAMINER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was something attached to it. A tool of some sort. Scissor-like. Computer, produce a pair of scissors attached to the armature. The handle is wrong. It was not scissors. Computer, make the handle a single grip ten centimetres long, solid metal. Now make one blade longer, curved inward. And give the other blade a jagged edge.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, you were lying on the table. You had a bright light shining in your eyes. Were there any smells in the room? Were there any sounds?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Yes, there was a sound. Computer, there were noises coming from the darkness. Strange, like whispering.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More like clicks. Clicking sounds.",
+                    "spoken_by": "KAMINER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Louder. Faster. More of them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been in this room before.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've all been here before.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a lot of examinations are going on"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here it is again. Something has caused high levels of serotonin to be produced in Geordi's visual cortex. When I examined him earlier today, I thought it was the result of a bacterial infection, but now I'm finding the same thing in all three. They all have elevated levels of serotonin. It's concentrated in the hippocampus, which suggests that they've been exposed to a neuro-sedative. And that's not all. I have detected minute tetryon particle traces in their subdermal tissues.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tetryons? Like the emissions in the cargo bay.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have completed my self diagnostic, and have confirmed that I was not aboard the Enterprise for ninety minutes seventeen seconds yesterday afternoon.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you sure?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whenever I am on the ship, the warp field leaves an electromagnetic signal on my internal servo-fluid system. Between the period of twelve fifty four and fourteen twenty six hours that signature is missing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, are there any members of the crew of the Enterprise missing?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are two crewmembers unaccounted for.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Identify them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Edward Hagler and Ensign Sariel Rager.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When did they leave?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They have not been present since twenty three thirty two hours.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did they leave?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Method of departure unknown.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Bridge here, Captain.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Raise shields. And I want a level four security alert. I need to know if anyone comes on or off this ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, Mister Data. I believe that if we find the source of those tetryon emissions, we'll find the missing crewmembers.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're on it, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data and LaForge leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Crusher? You'd better take a look at this.",
+                    "spoken_by": "MEDIC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My God.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It looks as though your arm has been severed and then reattached.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The skeletal structure in your radius and ulna is offset by point zero two microns. Your arm has been amputated then surgically reattached.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data and La Forge enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any progress with the analysis, Lieutenant?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take a look at this.",
+                    "spoken_by": "SHIPLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "there's a glow in the middle of the bay, and the bit on the wall is brighter too."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, the tetryon emissions have intensified. They seem to be focusing in this direction, coalescing here. They're reading as a point of subspace energy.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It appears to be the beginnings of a spatial rupture.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The tetryon emissions are modulating in a way that looks like somebody's controlling the energy. You know, the signals from the modifications I made to the sensor array, some of them dig pretty deep into subspace. Maybe they caught somebody's attention.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At the rate the rupture is expanding, we will soon be in danger of hull breach.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe we should try surrounding it with a subspace containment field.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Other than the tetryon emissions in cargo bay four, our internal sensors haven't recorded anything unusual in the past three days.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Initiate a metallurgical analysis of the ship's hull. Subspace field incursions may have left a trace.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, sensors indicate that Lieutenant Hagler has returned to the Enterprise. He is in his quarters, deck seven, section nineteen.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "outside quarters 09-1947, Lt Hagler"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, emergency entry, Chief Medical Officer Beverly Crusher.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Hagler falls out into her arms"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Crusher to Sickbay. Get a plasma infusion unit to deck seven, section nineteen.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Riker arrive"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His blood is turning into a liquid polymer.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've set up a containment field in cargo bay four, but the rupture just keeps expanding. I'd say we've got another five or six hours before it breaches the hull.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we still beam the affected sections out into space?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. The spatial rupture is creating severe nucleonic interference. It is impossible to obtain a positive lock on the bulkheads.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Has your analysis suggested any way in which we might seal this rupture?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We think we can close the rupture by neutralising the tetryon emissions with a coherent graviton pulse. But we'd have to do that at the source.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do we find the source?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good question. The emissions are coming from a tertiary subspace domain, but subspace has an infinite number of domains. It's like a huge honeycomb with an endless number of cells. We need to isolate the exact cell that these emissions are coming from.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If someone homed onto the subspace signals created by our modified signal array, could we do the same to them? Track the tetryon emissions to their universe?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tetryon particles have a random momentum. Our sensors cannot track them, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps we could construct a homing device. Something that our sensors could track.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's a good idea, but there's no way to get that device to the source.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, there is. Give it to me. They've taken me for the last few nights. If I'm right, the same thing'll happen tonight.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you had a homing device, we could track it to your location in subspace. And as soon as they send you back to the ship, we could transmit the graviton pulse and neutralise the tetryon emissions.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If they send him back. Ensign Rager still hasn't been returned.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're going to take me whether I want to go or not.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, we could wait as long as possible for you to be returned, Number One, but when the spatial ruptures begin to threaten the ship, then we would have to transmit that graviton pulse.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps there's a way that we could give you an advantage. A way of keeping you conscious after they have taken you. Doctor, can you develop some counter-agent to the neuro-sedative that they have been giving the crew?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could give you a neuro-stimulant, but the dosage would have to be rather high to counteract the effects. It could be risky.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm willing to take that risk.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so. Mister La Forge, begin work on that homing device.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This should be enough to ward off their neuro-sedative for about twelve hours.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope it's enough.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's going to have to be. I can't risk giving you a higher dosage.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've locked this tricorder into a continuous cycle. That way, it'll keep recording whether you open it or not. Hopefully you can bring back some information about their domain. We've modified a sensor relay emitter to transmit a subspace beacon. When this indicator lights up, it means that we've locked onto your location.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi fastens the device to Riker's arm"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in uniform, Riker is lying on his bed when he hears a click. Then a light like the one in the cargo bay comes through the wall at him, and he is sucked through the hole to somewhere"
+                }
+            ],
+            "location": "Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. Commander Riker has been taken from the Enterprise.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker is on the metal table, wicked knife pointing at his throat and clicking sounds from shrouded figures. Rager is on another table, with her eyes staring and large tubes coming out of an arm. One of the figures comes over and removes Riker's phaser, leaving the restraint open."
+                }
+            ],
+            "location": "Alien lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, report.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I still can't locate the homing signal. We've covered the entire upper subspace energy band. We're extending the scan to adjacent levels.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, your status?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The rupture has expanded another four point two percent.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Without further reinforcement, containment field integrity will fail in approximately fourteen minutes.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you divert more power to the containment field?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can try to augment the field with auxiliary power, but it won't be much.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "An alien returns to Riker and scans him then shuffles off again. The emitter starts beeping"
+                }
+            ],
+            "location": "Alien lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I've located the homing signal. Locking onto it now. It's coming from a subspace energy level of sixteen point two keV.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand by to initiate the graviton pulse.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Graviton emitters at full power, sir. Standing by.",
+                    "spoken_by": "SHIPLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, how much time?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At the present rate, containment failure will occur in approximately nine minutes.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The alien removes Riker's head restraint"
+                }
+            ],
+            "location": "Alien lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the containment field is beginning to fluctuate. Failure anticipated in",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Three minutes, eleven seconds.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't afford to wait any longer. Begin the graviton pulse.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Initiating pulse now.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a bright hole appears in the wall. The alien rushes to confer with a colleague"
+                }
+            ],
+            "location": "Alien lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data to Engineering. The graviton pulse is having an effect. Tetryon emissions have decreased by nineteen percent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the light gets brighter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, additional subharmonics have appeared. They are reinforcing the tetryon emissions. They appear to be counter-acting the graviton pulse.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The rupture is beginning to expand again, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looks like somebody is fighting back.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you strengthen the graviton pulse?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can try to set up a random frequency shift. If we can keep them from guessing our pulse modulation, they might not be able to compensate.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker is sitting up and being ignored by the aliens"
+                }
+            ],
+            "location": "Alien lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tetryon emissions continue to increase. The rupture is still expanding.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Hull breach is imminent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're reacting faster than we can shift frequencies. Shipley, programme the emitters for full spectrum pulse compression. I want to channel all of the graviton energy into a single burst. Let's see if they can handle that.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready, Commander.",
+                    "spoken_by": "SHIPLEY"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Now there are four aliens fussing around a control panel"
+                }
+            ],
+            "location": "Alien lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The rupture is beginning to close, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Recharge the emitters. Let's hit them again. Come on.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready.",
+                    "spoken_by": "SHIPLEY"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker sneaks over to Rager, and uses a phaser to stun an alien"
+                }
+            ],
+            "location": "Alien lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The rupture is eighty six percent closed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're almost there. One more burst should do it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Emitters recharging.",
+                    "spoken_by": "SHIPLEY"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker picks up Rager and dashes through the rupture into"
+                }
+            ],
+            "location": "Alien lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the rupture turns into a blue streak which whizzes around then flies out into space"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46191.2. The tetryon emissions in cargo bay four have ceased, and there have been no further indications of alien intrusions. All Enterprise crewmembers are safe and accounted for. But we are still left with some unanswered questions.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Cargo bay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Based on the information gathered by Commander Riker's tricorder, we have determined that the molecular structure of the alien life forms is solanogen-based.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We think that's why they couldn't come through into our space, as easily as they could take us into theirs. They needed to learn how to remodulate their cellular energy states in order to survive in our universe.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The tricorder readings indicate they created a small pocket of our universe in their laboratory to keep those they abducted alive.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Like putting a fish in a bucket of water.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's probably what they were trying to do in cargo bay four. Create a pocket of their universe in ours.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What can we do to prevent this from happening again?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It looks like they found us initially by discovering my modified sensor signal. We should warn all Starfleet ships not to make that same mistake.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have we any idea what came through the rupture before we were able to shut it down?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No sir. We were unable to track it once it left the cargo bay.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe it was a probe of some kind.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Possibly they were simply curious. Explorers like ourselves.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign Rager and I were lucky to have escaped. Lieutenant Hagler's dead. Whoever it was sent that thing was more than simply curious.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Observation lounge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "231",
+    "transcript_url": null
+}

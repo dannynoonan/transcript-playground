@@ -1,0 +1,2623 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is restless, and growling to himself"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, will you join me in the Ready room?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've just come from a meeting with Admiral Moore. He wanted to discuss this.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He plays a regular sound pattern"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Recognise it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sounds like it might be an SOS.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good guess. You're quicker than Starbase research. It took them hours to determine this was a distress beacon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When was it detected?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Last month. Just kicked in without any warning.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who used the beacon?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's Terran.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm familiar with most Earth codes, and",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interesting. Yes, that code hasn't been used in centuries.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was its origin point?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ficus sector.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I don't think there's any record of an Earth colony in that area.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now we know there's someone out there and they're asking for help.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But who?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's try and find out. Computer, download all information regarding signal beacon from Starbase mainframe.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Distress beacon used by the European Hegemony.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The European Hegemony?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A loose alliance formed in the early part of the twenty second century. It was the first stirrings of world government. You should read more history, Number One. Computer, locate exact dates in which this signal beacon was in general use.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Old Earth calendar, 2123 until 2190.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No extraterrestrial source ever used this code?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Locate all Earth deep space launches from 2123 until 2190, with a destination in or near the Ficus sector.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Working.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The usual list of staff names appear as commanders of various vessels, including Melinda Snodgrass and Gene Roddenberry"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing for Ficus.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damn it, who's out there?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lost sheep.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's go see if we can find them.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crew are gathered around a figure on the floor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Medical emergency. Doctor Pulaski to the Bridge.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is out cold"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He just collapsed, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 42823.2. We're departing from Starbase Seven Three to investigate the source of the mysterious distress signal. Meanwhile, my Security Officer remains in Sickbay, where Doctor Pulaski is searching for the cause of his collapse.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am fine.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not fine. You fainted.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did not faint. Klingons do not faint.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me, I'll rephrase. This Klingon suffered a dramatic drop in blood pressure, his blood glucose level dropped, there was deficient blood flow resulting from circulatory failure. In other words, he curled up his toes and laid unconscious on the floor.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, there is no need to insult me.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, I am worried. Now, something is wrong. Klingons don't faint. Forgive me. I just can't think of another word that applies. You're sick.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Klingons do not give in to illness.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just stay right where you are. I have to check something with the computer. Lieutenant, you have rop'ngor.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But that is a childhood ailment!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How shall I live down the humiliation?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, you can't help.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Still, for a warrior to find himself in such a situation.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you've got the Klingon version of the measles.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How would Commander Riker feel if he had the measles.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pretty silly.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Doctor Pulaski, how is Lieutenant Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's in no danger. Worf was just observing a Klingon ritual involving fasting, and he didn't take into account that you have to decrease your physical activity as you decrease your caloric intake. Pulaski out.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. I am in your debt.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I have been considering the problem of the missing ship. Although there is no record of a launch to the Ficus sector, which would not be unusual considering the chaos of the early twenty second century, someone had to load that ship.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The manifest.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There it is. SS Mariposa, loaded 27th November, 2123. Destination Ficus sector. Captain Walter Granger, commanding.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mariposa. The Spanish word for butterfly.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought it might be significant, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It doesn't appear to be, Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You learn a lot about people from their luggage. Two hundred and twenty five Yoshimitsu computers, five monitor beacon satellites, seven hundred cellular commlinks, fifty spinning wheels.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "over Picard",
+                    "line": "Spinning wheels? Accessing. A device for spinning yarn or thread that consists of a large foot or hand driven wheel and one spindle.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cattle, chickens, pigs. Not DNA, the actual livestock. Incredible. Why would anyone carry such an insane mix of cargo?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Spindle, a thin rounded tapering rod",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps they were planning for the worst, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Theorise, Data. Give me some background.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the early twenty-second century, Earth was recovering from World War Three. A major philosopher of the period was Liam Dieghan, founder of the Neo-Transcendentalists, who advocated a return to a simpler life in which one lived in harmony with nature, and learned under her gentle tutelage",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Data. But if this was a ship full of utopians, why carry all this technological baggage?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have insufficient information from which to form a cogent theory, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is carrying a tray"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor. I wished to thank you for protecting my",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your secret is safe with me. Worf, I'm honoured. No one has ever performed the Klingon tea ceremony for me.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She places some stones and a flower in the cups"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There, that should do it.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know the ceremony?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand the externals, not the mysteries. I'm not a Klingon.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must not drink the tea. It is deadly to humans.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And none too good for Klingons.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a test of bravery, of one's ability to look at the face of mortality. It is also a reminder that death is an experience best shared, like the tea.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, you're a romantic.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is among the Klingons that love poetry achieves its fullest flower.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold that thought.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She dashes into Sickbay, returns with a hypo and injects herself"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they drink",
+                    "line": "Antidote. If we're going to share, let's share.  Now, quote me a little of that poetry.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Pulaski's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Initiate sensor sweeps.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. The system's sun has entered a period of severe flare activity.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now we know what triggered the SOS.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Class M readings from the fifth planet in the system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take us in.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields at maximum.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors indicate human life form readings thirty metres below the planet's surface.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing on all frequencies. No response so far, but the flares may be interfering with communications.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no evidence of an advanced communication network.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They brought a lot of technology. Where is it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no artificial power source on the planet.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The stellar flares are increasing in magnitude and frequency. Computer projections indicate they will brush the planet in three point six hours.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Evacuation will be difficult. We can lower our shields for transport only between the flares.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, these people have been isolated for three hundred years. They could be very unsophisticated. The shock of suddenly being transported onto a spaceship could frighten them, to say the least.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your point is well taken, Counsellor. Number One, you're going to have to go down there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my way.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 42827.3. Commander Riker has reached the caverns, where he is making preparations to begin the evacuation.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the situation, Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "There are roughly two hundred people down here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their condition?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Surprisingly good.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are they willing to leave?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, but",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, get them up here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I'm having a little debate with the colony's leader. It seems",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no time, Number One. Initiate the transport.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "But, sir",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whatever the problem, we'll handle it up here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, aye, sir, we're on our way. All of us. Riker out.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "First load ready, Mister O'Brien.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energising.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And onto the pad come - six adult, one child, a sheep, goat, chicken, barrels, hay.... and cod-Irish background music for the big clue as to the upcoming accents"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, you'd better get somebody down here. Right away.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The second transport group includes a porker, ducks in a crate and so on"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take the pig out there, will you? Very good.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "O'Brien, I think that third wave should be in position.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shoo, damn you, shoo.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "shakes hands",
+                    "line": "O'Brien, is it?  I should have known t'would be a good Irishman that was running this ship.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Worf enter as Danilo offers a hip flask"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What the devil is going on here, Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, Captain Picard is it. The man who makes decisions for me and mine without so much as a by your leave.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is my Security Chief, Lieutenant Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "swallows and removed hat",
+                    "line": "I don't suppose security is much of a problem for you. Danilo Odell, sir, at your service.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are these animals doing here, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, sir. It was either this or arguing till hell froze over.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard, sir, we can't leave our animals here to die. Besides, how could we build our future without our animals?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. Chief O'Brien, transport this group directly to cargo hold seven, and beam the remaining refugees from the planet directly to that hold.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right, lads. Everybody back onto the infernal machine.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everybody up here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain! Captain, t'was very good of you, sir, to rescue us from our troubles.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My pleasure.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, you must be worth quite a bit to own a fine ship like this.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't own the Enterprise, I command her.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whatever. Sir, would you happen to be married?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Why?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No? Well, you see, sir, I have a daughter.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Felicitations.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you be interested, sir?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're quite sure?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quite sure.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's quite sure.",
+                    "spoken_by": "DANILO"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the total?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two hundred and twenty three.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Count on two more in the next few days.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course for the nearest starbase.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, they were anachronistic in 2123. It will be interesting to see how they cope.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They'll learn and adapt. If Danilo Odell's any indication, they'll be running this place inside of a week.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and alarm sounds"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf, here. Report.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Fire in cargo hold seven.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Bringloidi.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What have they done to my ship now?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Keep the area clear.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Report.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fire has been contained. No damage.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unseal the doors.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My God, Picard, the place is a bloody death trap! Lightning bolts falling from the ceiling!",
+                    "spoken_by": "DANILO"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What the hell was that thing?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Automated fire system. A force field contains the flame until the remaining oxygen within the field has been consumed.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What if I had been under that thing?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You would have been standing in the fire.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, leaving that aside for the moment, I mean, what would have happened to me?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You would have suffocated and died.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sweet mercy.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, there you are. Your hospitality leaves a hell of a lot to be desired! You don't offer us a bite or a sup, and when we build a fire to cook a little something, the place goes mad!",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My apologies. I was unaware that you had not been instructed in the use of the food dispensers.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what are you staring at? Have you never seen a woman before?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought I had.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, may I present my daughter, Brenna Odell.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pleased to meet you, ma'am.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You may have all the time in the world, but I've dozens of frightened and hungry children and women to look after.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what about the men?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I'm sure they'll find their comfort as they always do, in the bottom of a mug of home brew!",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pay no heed, Commander. She's a fine girl. She's not usually so sharp tongued.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dado!",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Danilo scuttles away across the room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is laughing",
+                    "line": "Sir?  That's the last thing I expected.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sometimes, Number One, you just have to bow to the absurd.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, Captain, sir. How did the ship sense the fire?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The ship's computer",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The ship's computers sense a localised increase",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Men! Always talking when there's work to be done. And shouldn't you be flying this ship, or whatever it is you do?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I think I'll stay and give her some help.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Worf leave. Riker goes to where Brenna is using hay to clean up what animals leave lying around naturally"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That isn't necessary. The ship will clean itself.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "long pause as she appraises him",
+                    "line": "Well, good for the bloody ship.  Tell me, Commander Riker, where does a girl go to wash her feet on this ship?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As the First Officer, I feel it's my responsibility to show you all the amenities.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Cargo hold"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is very like a Klingon woman.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, Captain, there's just one other thing. It slipped my mind in all the hustle and bustle.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The point, Mister Odell.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, in all your travels, have you heard anything from the other colony?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The other colony?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. A review of stellar charts has revealed a Class M planet only half a light year from the Bringloid system. I am proceeding on the premise that it was the destination of the colony which possessed the more sophisticated equipment.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "William Riker, you're a mess.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She starts picking things up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't have to do that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if I don't, who will?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can see why your father wants to marry you off.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, and why is that?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So he can have a pipe and mug of beer in peace.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've shown me so many wonders on your great ship, but there's still one thing you haven't shown me.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's that?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm still waiting to wash my feet.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right behind that door.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "William, is something wrong?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you not like girls?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course I do. Oh, is there a technique to this foot washing?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You generally start at the top and work your way down.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I can handle that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He lets down her hair and kisses her"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was hoping you might.",
+                    "spoken_by": "BRENNA"
+                }
+            ],
+            "location": "Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You sent for me?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, yes, yes. Now, we're brewing poteen, but we need to find a way to heat it without this bloody ship firing bloody lightning bolts at us.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can obtain spirituous liquours from the food dispensers.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, no, no, no. It's not that synthehol bilge that O'Brien offered me, is it?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, if you wish, it can be real alcohol.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With all of the deleterious effects intact.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As it should be. You see, lad, every moment of pleasure in life has to be purchased by an equal moment of pain. Whiskey.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a glass appears, and Danilo samples it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Terrible. It's got no bite.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chech'tluth.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A Klingon mug, with steam coming off it. The top Danilo's head does a somersault"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now that's what I call a wee drop of the creature.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Father!",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remember what I said about the moment of pain? Well, tis about to begin. Hello, my darling.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, my darling, is it? I might have known! Are you drunk yet, or can you talk with Doctor Pulaski about the children?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about them?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She wants to send them to school with the ship's children.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you think?",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to the other men to Worf",
+                    "line": "I think it's a good idea. So go handle it!  I'm sure there's something you can be doing with your time.  And as for you.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you have to tell them that this magic wall can give them more than meat and potatoes? Now we'll never get a lick of work out of them.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Madam, have you considered a career in security?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If it's anything like babysitting, I'm an authority.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The women laugh"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We are approaching the class M planet where we hope to find the other colonists.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Cargo hold"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Signal from the planet, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen. This is Jean-Luc Picard of the USS Enterprise, representing the United Federation of Planets.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "This is wonderful. Welcome, Captain. I'm Wilson Granger, Prime Minister of Mariposa.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No doubt a descendant of Captain Walter Granger.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Not quite a descendant. We feared Earth had suffered some catastrophe when no one came back to check on us.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid the truth is, you got lost in the bureaucracy. But despite the lateness of our arrival, we're here now and we're eager to renew ties.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Splendid. Please, come down, and allow us to extend our hospitality to you and your crew.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Form an away team, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would urge caution.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Caution? What's wrong?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's hiding something.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll check it out. Mister Worf. Doctor Pulaski, join us in Transporter room three for an away detail.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a very modern looking building, and clothing style"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to Mariposa. I'm Victor Granger, Minister of Health.",
+                    "spoken_by": "GRANGER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander William Riker, Doctor Pulaski, Lieutenant Worf.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A pleasure. I'll escort you to the Prime Minister. This way please.",
+                    "spoken_by": "GRANGER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Twin brothers?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your arrival really is serendipitous.",
+                    "spoken_by": "GRANGER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, how so?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, perhaps I'll let the Prime Minister to explain that.",
+                    "spoken_by": "GRANGER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Three identical women are standing by a desk"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Triplets? Worf, there is something damn odd down here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a fourth woman walks by"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quadruplets.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Reception"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, is your title scientific or medical?",
+                    "spoken_by": "GRANGER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Medical.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, excellent.",
+                    "spoken_by": "GRANGER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there some medical problem we should know about?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think it best if the, er",
+                    "spoken_by": "GRANGER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prime minister explains that. Somehow I thought you might.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Excuse me. Gentlemen? Please, follow me.",
+                    "spoken_by": "GRANGER 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulaski runs a secret scan on another man as Worf and Riker catch up with them"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This way please. Doctor.",
+                    "spoken_by": "GRANGER 2"
+                }
+            ],
+            "location": "Hallway"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to Mariposa.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Katherine Pulaski.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is my Chief of Staff, Elizabeth Vallis.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell me, is your entire population made up of clones, Prime Minister?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Clones?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Clones?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Clones.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. Prime Minister Granger has requested an urgent meeting to discuss the future of the Mariposan colony. I've invited him to the Enterprise.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Granger's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we need your help. Three hundred years ago during our landing on Mariposa, the skin of our ship was breached. Only five of the colonists survived. The progenitors weren't willing to just give up and die, and they were scientists",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, they used that expertise and turned to cloning.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. We had no other option. Two women and three men represented an insufficient gene pool from which to build a society.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did you suppress the natural sexual drive? Drugs? Punitive laws?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the beginning, a little bit of each. Now, after three hundred years, the entire concept of sexual reproduction is a little repugnant to us.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did you overcome the problem of replicative fading?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We haven't.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have got a problem.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait. I don't understand replicative fading.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Each time you clone, you're making a copy of a copy. Subtle errors creep into the chromosomes, and eventually you end up with a non-viable clone.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can we help you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need an infusion of fresh DNA. I was hoping that you would be willing to share some tissue samples.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You want to clone us?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No way, not me.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can you possibly be harmed?",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not a question of harm. One William Riker is unique, perhaps even special. But a hundred of him, a thousand of him diminishes me in ways I can't even imagine.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You would be preserving yourself.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Human beings have other ways of doing that. We have children.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think you will find that attitude prevalent among all the Enterprise people.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see. Well, if you are not willing to share your DNA, will you at least send some people to repair our malfunctioning equipment?",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, of course. Number One, put a technical team together. Let's get these repairs underway.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Lieutenant La Forge. Prepare a technical support away team. Meet me in transporter room three.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, with your permission, I would like to return to the planet. It could be my last opportunity to study replicative fading. With your permission, of course, Mister Prime Minister.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'd be most welcome. Perhaps you will find a solution that we have overlooked.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I appreciate the compliment, but I don't think that's very likely. And repairing that equipment will certainly not solve your problems.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What other solution do we have? Doctor, remember, there are only five of us.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. Commander Riker and Doctor Pulaski have returned to Mariposa with a team of Enterprise technicians.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The repairs are almost complete. I wish there was something more we could do.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you sure you won't reconsider?",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "About the cloning?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Out of the question.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "so an aide stuns Kate and Riker, and they are dragged off through another door. Then Geordi enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me, sir, I was looking for Commander Riker.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid I haven't seen him.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Pulaski?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry, I can't help you.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I guess I'll just have to hunt for them. Sorry to disturb you.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Granger's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Eyes wide open, but oblivious to what is happening, Pulaski and Riker are having needles pushed into their abdomens"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hey. So what happened to you two down on Mariposa? Is everything all right?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there any reason why it shouldn't be?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. Every time I asked where you were, some clone lied to me.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lied to you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, with this I can see better than your average person. Now when someone lies there are certain physical manifestations. Variations in blush response, pupil dilation, pulse, breath rate. Doesn't always work with aliens, but humans? Got'em nailed.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The clones lied about our whereabouts? I don't remember anything happening. I was working in their medical facility and got a call to report to Granger's office. I ran into Will on the way",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now wait a minute. Granger said he hadn't seen either one of you. Did you make it to his office?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think, I don't remember.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulaski runs a medical tricorder over them all"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So what's the prognosis, Doc?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, you'll be pleased to know that you're not missing any epithelial cells.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Great.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will and I, however, are.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Meaning?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Although you can clone from any cell in the body, the cells lining the stomach are the best choice because they're relatively undifferentiated.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where are you going?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To their cloning lab.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Pulaski's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker, La Forge and Pulaski beam straight in, and find adult-sized replicas of themselves in cloning tubes. With Kate's consent, Riker phasers them out of existence"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stop! Murderers!",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Like hell! You're a damn thief!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gentlemen, please.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What else could we do? We asked for your help and you refused us. We're desperate. Desperate!",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And that gave you the right to assault us, to rob us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have the right to survive!",
+                    "spoken_by": "GRANGER"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, how desperate is the colony's situation?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've got two or three generations, then the fading will be terminal. They're among the walking dead now. They just haven't been buried.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want the cloning equipment inspected. Who knows how many tissue samples were stolen. We certainly have a right to exercise control over our own bodies.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll get no argument from me.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know the Mariposan culture seems alien, even frightening, but really, we do have much in common. They're human beings fighting for survival. Would we do any less?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you saying we should give them the DNA samples they require?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's just postponing the inevitable. If they get an infusion of fresh DNA, in fifteen generations they'll just go back to the same problems. Cloning isn't the answer. What they need is breeding stock.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Bringloidi.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. They have the energy and drive, and the clones possess the emotional maturity and the technological knowledge.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They started out together. It seems only fitting they should end up together.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a match made in heaven.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unfortunately it will have to be a shotgun wedding.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, Captain, it's out of the question. You're trying to dump your problems on us. We have problems of our own.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't you understand? The Bringloidi can help you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look at him. How could we ever integrate that into our society?",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're no prize yourself.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Primitive, hostile, disruptive. It would require enormous effort to even educate them.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, forget it, Captain Picard. I'm not going to come in here with my hat in my hand begging charity from this blatherskite.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now stop! I will not allow posturing and bigotry to destroy this meeting. Now please, sit down. Now, Commander Riker has asked that your laboratories be inspected for stolen tissue samples, and I understand his concern. We may have to transport all your equipment here, to the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see. When reason fails, you'll resort to blackmail.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fine. Destroy yourselves.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not so bad, Captain. In fifty years we'll have a new class M planet, complete with cities, and ready for colonisation.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You see, the end is closer than you like to think.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. There are so many difficulties.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look, man. We are decent, hard working people. We're willing to learn.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're so different.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is the differences that have made us strong.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For three hundred years, we have denied the carnal side of our nature. How can we learn to put that aside?",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, you put a young couple together and you let nature take its course.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now if this is going to work, you're going to have to alter your society, too. Monogamous marriage will not be possible for several generations.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't quite understand.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thirty couples are enough to create a viable genetic base. But the broader the base the healthier and the safer the society. So it will be best if each woman, Bringloidi and Mariposan, had at least three children by three different men.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I could handle that, yes.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, God, it's so",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Frightening?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Repugnant.",
+                    "spoken_by": "GRANGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "complete with spit",
+                    "line": "So, it's a done deal? And here's my hand on it.  Right, now, let's go and stake out my three women. Send in the clones.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must be out of my mind.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet will probably agree with you.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me, sir. Captain. Thank you. Brenna. Brenna, a word.",
+                    "spoken_by": "DANILO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He takes her behind some cargo modules to explain the agreement. Meanwhile Granger gazes in awe at a very pregnant woman"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isn't that just like a man! You make these grandiose decisions, but you never stop to consider the poor women.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Miss Odell, I",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You men draw a mug, and solve all the problems of the world while the beer goes down, but, when it comes to the practical matters, it always falls to the women to make your grand dreams come true.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Miss Odell, you were the one who wanted a new home.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I don't know if I want to be Eve.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's your choice. If you wish, you can stay on the Enterprise. We will drop you at a starbase, then you can go where you wish.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Leave my da?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If this is going to work, these people will need your strength, your guidance.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, damn. What does he do again?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prime Minister.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sounds important.",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, it is.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sounds like he might have more than two coins to rub together. Three husbands?",
+                    "spoken_by": "BRENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Cargo hold"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "144",
+    "transcript_url": null
+}

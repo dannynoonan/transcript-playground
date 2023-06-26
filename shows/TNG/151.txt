@@ -1,0 +1,2418 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields up, maximum strength.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields up. Sensors do not indicate the presence of any armed space vehicles operating in the Rana system.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They could be cloaked, or otherwise shielded. Mister Crusher, bring us in well clear of the planet's three moons.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we are not receiving Rana Four's call sign.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a frequency to Colony Operations.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No response. Rana Four is emissions quiet.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, there are eleven thousand inhabitants in this colony. At this range, I should be sensing something. I'm not.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, put the planet on the main viewer. Magnify.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a scene of bare devastation"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My God!",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Helm, put us in high equatorial orbit. Scan for survivors.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Survivors? Down there?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors are scanning ninety degrees of longitude as we orbit. I am detecting no bodies of water, no vegetation, no artificial structures.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Life form readings are negative.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could the colonists have escaped?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is highly unlikely. Rana Four possessed no interstellar spacecraft.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who would cause devastation on that order?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold it. Captain, I've got something here. Thirty seven degrees north and sixty two degrees east. It's a structure.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Life?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two life forms, possibly human.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Put that area on the main viewer. Magnify.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "amid the brown bleakness, a green square. Totally out of place"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The structure is located at the centre of the vegetation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An entire planet obliterated except for a few acres of trees and grass and one building?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It must be some kind of illusion.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative. It is as you see it.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, I think you had better see who's at home.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If they're the only survivors of a nuclear holocaust, they can't be in very good shape.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand. Counsellor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What I sense of them is human.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And something else?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's difficult to explain. I feel there's something different about these two people. I'm sorry. I can't be clearer than that.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're ready.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good luck, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker, Crusher, La Forge, Data and Worf are the away team"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energise.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A nicely kept square in front of an L-shaped futuristic house. Edged with trees to stop us seeing the ruined countryside"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, what can you tell me?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The house is a typical settlement structure with adaptations. Its thermal properties all seem to conform to known materials.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If there are indicators as to why this particular area has remained intact, I cannot detect them.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, the interior of the house?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is one individual is located at the south end of the house, the other toward the north. There is a weapon, a low-yield phaser, nonfunctional, in proximity to the front-room individual.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess a frontal assault is unwarranted. Stay here. I think I'll try an old-fashioned knock on the door.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, wait. There's something concealed under the surface",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "too late. Riker has triggered an booby trap and is now hanging upside down from a pole. An elderly man challenges them"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing there? This is private property Who are you people?",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm Commander William Riker of the USS Enterprise. Crewmembers. May I comet down and approach you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You leave him right where he is.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Should I incapacitate him, Commander?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. We're a rescue party. We picked up your colony's distress call and we came as fast as we could.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a small elderly but spry woman rushes out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin! Kevin, what are you doing? Can't you see they're here to help us? Can't you see they're human?",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go back in the house, Rishon. This could be some kind of a trick.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'd almost given up hope. We were afraid maybe the whole Federation had been attacked.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in the background, Riker is released from the snare"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about the colony? Do you know of any other survivors?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's been days since we've seen or heard from anybody. No, don't. Don't tell me that we're the only ones.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They came in a spaceship so big you could see it in orbit. They took our world apart piece by piece.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't know. We never saw their faces.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't know where they came from? Where they are now?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess they've gone away.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I'm sorry. I'm only performing a physical. Could I have your names, please, just for the record.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm Rishon Uxbridge and this is my husband Kevin.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Botanists. Originally from the aquatic city New Martim Vaz in Earth's Atlantic Ocean. Residents of the Rana Four colony for five years. You, ma'am, are eighty two years of age and a composer of Tao classical music. You, sir, are eighty five years of age and a specialist in symbiotic plant life. You have been married for fifty three years. I memorised the colony register on the way to Rana Four, in the event that such information would be needed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is something wrong?",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With your permission, I'd like to look inside of the house.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why? What could interest you in there?",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Uxbridge, as far as we've been able to determine, you and your wife and this house are all that survived that attack. That's was either a bizarre coincidence or by design, and I don't favour the coincidence theory.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you saying that we were kept alive intentionally?",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand. You don't think Rishon and I did something that merited survival, do you? I mean, betrayed the others?",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not accusing you of anything, Mister Uxbridge. The attacking force spared you for some reason. We'd like to know why. Now, may I go inside?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Lawn"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "realises",
+                    "line": "I'll make everyone a nice cup of tea. We have lovely tea here on Rana. It grows wild nearly every",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir. May I say your attempt to hold the away team at bay with a nonfunctioning weapon was an act of unmitigated gall.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Didn't fool you, huh?",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I admire gall.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data is looking at ornaments on a shelf"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead, pick it up. It's a music box. It's been in my family for generations.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "As Data watches the little man and woman dance, Troi hears the tune in her quarters on the Enterprise"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's nothing unusual about this house, except the fact that it's here. What about them?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're in reasonably good health. Both show signs of stress, which is understandable considering what they've been through.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Somehow, they're different. Let's get back to the ship. We'll take them with us. Excuse, Mrs. Uxbridge. We'd better return to our ship now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I haven't finished fixing your tea, Commander.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, but we're finished here. Now, I can allow time for you and Kevin to pack.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean, pack?",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not thinking of taking us with you, are you?",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Surely you don't want to remain here? How can you take care of yourselves?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin, I can't leave my home. Don't let them do this to us.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No one's going to make us leave.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll be protected on our ship. You could still be in danger here on Rana.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, we appreciate your concern but we're not going anywhere. We'll manage. We always have.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "takes off his comm. badge",
+                    "line": "All right. I can't make you come with us.  Are you familiar with one of these? We'll be in the system for the next several days at least. If you reconsider, please contact us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll be fine, Commander. We have each other.",
+                    "spoken_by": "RISHON"
+                }
+            ],
+            "location": "Living room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are they collaborators? Did they provide the colony's assailants with something that abetted the total destruction of Rana Four in order to protect their own lives?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What could two botanists in their eighties possess that could possibly aid whoever attacked the planet?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't know what the enemy needed, Doctor. Love? Fear? Hope?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The sound of the music in Troi's head almost drowns out the next two lines"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe they're being held hostage in some fashion?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing in the tricorder readings indicated they were under that kind of stress.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor? Counsellor Troi?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry. I don't sense them well enough.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Once again the music renders the dialogue increasingly inaudible"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, you say the couple is incapable of sustaining themselves?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a fusion reactor in the house, good for another five years of power. But their water table is tainted. They have nothing to feed themselves except for a small garden.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They won't come to the ship?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They were adamant.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll do all that we can to help them but in the meantime I want them kept under surveillance.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, I'm not feeling very well. I'd like to go to my quarters.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By all means.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there anything I can do?",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, a search of the Ranian system has determined that the hostile force that attacked this planet is no longer present.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I remember a Starfleet admiral once saying the same thing about some renegade Andorians in the Triangulum system. It turns out that they had dismantled their ship and hidden it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Those Andorians did not have to contend with someone of my thoroughness. I will stake my reputation.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't listen. Think of something else. Stop! Please, stop!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The doorbell chimes and she pulls herself together"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was concerned. I came to see if I could be of any help.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm fine. There's nothing wrong. I'm just tired, that's all.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, I may not have your gifts at reading emotions, Counsellor, but I can tell when someone is in pain and hiding it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's so silly. I hear music. In my mind. Music that won't stop.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it's a symptom of fatigue. We've all been inflicted one time or another with that melody that won't go away.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it's deeper than that. The song doesn't stops for an instant. It plays in perfect clarity from beginning to end over and over again. I don't even know what song it is. I never heard it before.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When did this start?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A few hours ago, while the away team was on the surface. I was trying to, I was thinking of Rishon and Kevin.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rishon and Kevin? And?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't explain it, Captain. They're elusive. They're, I'm sorry",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, try and rest. Take the necessary sleep inducements if you have to.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Red alert sounds"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, give us a visual. Magnification factor fifty.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a dagger shaped warship comes into view"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look at the size of that!",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now where did that come from?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apparently it was riding a Lagrange point, hiding behind Rana Four's furthest moon.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our vehicle classification index can put no identity to it. Its design is completely foreign.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But that's our boy. Approximately five times our mass and carrying enough armament to pulverize a planet.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I, er, cannot explain this, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's heading for the planet.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, ask them to identify themselves and match our orbit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They have received the message, Captain, but are ignoring it.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maximum shields, ready all weapon systems.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's assuming an attack posture. Don't be surprised if",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Boom"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Boom, boom",
+                    "line": "The vessel is firing jacketed streams of positrons and antiprotons. Equivalent firepower, forty megawatts. Shields are holding.  Again, forty megawatts. No damage.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If that's the best they can do, this should last about five minutes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, let's raise our voice a little. Fire phasers. Just a warning shot. Mister Data, invite them to stand to.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "One feeble phaser shot and the ship high-tails it away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The vessel has assumed a position outside of the Rana system, and it is rapidly increasing velocity.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Helm, initiate pursuit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. The vessel has reached warp two and continues on a steady acceleration curve. We're not getting any closer, Commander.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give us a superior curve, Mister Crusher.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Warp three. Warp four. The warship continues to match our curve simultaneously point for point. Warp four point five. Warp five. Warp five point five.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to La Forge. Give us everything you can to close the gap, Geordi.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, sir.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll get you to nine point three seven in fifteen seconds.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Warp eight point five. Warp nine. The warship continues to match our acceleration curve perfectly.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, I have the distinct impression that we're being toyed with. Take us back to Rana Four.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Back?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have unfinished business there. I need to have a talk with those two people. You have the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reduce speed. Bring us around on a return course. This one's getting away.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Worf beam is as Kevin and Rishon are tending some shrubs"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good afternoon. I'm sorry if I startled you. I'm Jean-Luc Picard, Captain of the Enterprise. I have brought you something you will need if you're going to stay on Rana Four. It's a matter replicator. It has limited capabilities, but",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, but we have no use for such a thing.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will provide you with clothing, food and clean water. Lieutenant Worf demonstrate its operation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't need it.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin, you know we do. Thank you, Captain. Kevin and I were about to have afternoon tea. You and Mister Worf must join us.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like that very much.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rishon, they only want to spy on us like this morning.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin Uxbridge, I have never turned anyone away from this house, and I'm not going to start now. Captain.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Garden"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stop! Stop! Please, I'll do anything! Make it stop!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher enters the darkened room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please. I'm here to help.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's so loud! It's getting louder! Please, I can't stand it. Make it stop!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Move her to the bed.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "two assistants get Troi out of the chair"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This will help you relax.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hear it. It's still there! It's so loud!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take her to Sickbay.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I want to stay in my quarters.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can get you to sleep.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to sleep. The music will only follow me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can induce delta sleep. Lock out even your deepest dreams.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not a dream. It's real.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin and I first saw each other on a ship at sea. He was a starving student with this threadbare suit and mismatched shoes. I was travelling with my parents who did not like the way that he kept hanging around. Two hours after I met him, I asked him to marry me. And he knew I was serious. I don't think that he has ever recovered from that day.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A suction sound as Worf drains the tiny cup"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, what do you think, Mister Worf?",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good tea. Nice house.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you leave the Earth and come to a brand new planet when you did?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean at our age. Well, we thought it might make us fall in love all over again. It worked.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Must have been terrible when the colony was fighting for its life.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it was. Fires lit the sky. There was thunder, this unbelievable thunder. The ground never stopped shaking.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And yet you survived.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't know why we survived and the others didn't. I've tried to put some purpose to it, but I can't.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was wondering, Captain, when you and your ship would be leaving.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't have an answer for that. A few hours ago, we encountered a warship. Possibly the one which attacked you. We forced it to leave the system but we were unable to affect it otherwise. It could return.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin, you said it had gone away.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess I was wrong. Don't worry. It didn't hurt us before, it won't hurt us now.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know that for a fact, Kevin?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, but I don't enjoy seeing my wife frightened. We've told you time and time again, we don't know why we were spared.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But there had to be some reason. In some way, you were different from the other colonists. Your geographical location, your philosophical beliefs, the colour of your eyes. In some way you were set apart from them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was a difference. I'm a man of special conscience. While the others were doing what they could, I chose not to fight.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well that is your protected right.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I can assure you the attacking ship had no way of realising this. I expected to die like all the others. There's no reason for you and your ship to remain, Captain. We can manage without you.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Kevin leaves the room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin grieved for the others, Captain, but he did nothing. He is a very gentle man. You must understand that.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about you, Rishon? Is that how you feel?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wanted to fight but I stayed with my husband. Well, Captain, thank you again for the replicator. I'd better clean up now.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Before we leave, I ask you one more time to come to the ship. For your own safety.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I am frightened but I can't leave Rana, even if it means my life.",
+                    "spoken_by": "RISHON"
+                }
+            ],
+            "location": "Living room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand it. I've inhibited almost all the activity of the neocortex and she continues to behave as if she's hearing the music. We're going to have to shield her from all outside stimuli by inducing coma.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Red alert"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have a positive identification, Commander. It is the vessel that attacked us earlier. It is re-entering the system at high velocity and is approaching Rana Four.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give us a tight visual, Data. Is it my imagination or does it look a lot meaner this time? Shields up. Weapons ready.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Worf enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our friend is back.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not surprised. Mister Worf, open a hailing frequency. Warn the vessel to stay clear of the planet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir, but they are already within firing range.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Three massive blasts of energy hit the Enterprise"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields are down. Captain, they hit us with four hundred gigawatts of particle energy.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damage?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "another hit",
+                    "line": "Superficial, but I'm having trouble reassembling the shields.  Shields down. There is thermal damage to the hull.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The warship is capable of striking us with far more powerful bursts.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're manoeuvring to come between the Enterprise and Rana Four.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, we have been exemplary in our patience.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf, fire phasers on full with a simultaneous spread of torpedoes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He does so"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The vessel appears undamaged, sir. Its defences are apparently able to absorb incoming matter and energy.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commence rapid fire with all weapons on full.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The enemy returns fire and things go bang this time"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields down. Internal damage. Weapon systems control has been lost.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Sickbay. Medical assistance to the Bridge!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "On our way, Commander.",
+                    "spoken_by": "MEDIC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher, move the Enterprise out of range of the attacking vessel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The vessel has terminated its pursuit. It is assuming an orbit around Rana Four.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin and Rishon?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't help them. But it's my guess they're in no danger.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number of casualties?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sixty-six.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fatalities?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None. We've been able to treat everyone.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you help her?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've done everything I can. I don't understand the nature of this music she says she's hearing, or where it's coming from.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could it be telepathic?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. But I'm not the expert at determining that.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're blocking her sensitivity. They're stopping her from seeing the truth.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who's stopping her?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin and Rishon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They wanted us to leave Rana and that's exactly what we're doing. Picard to Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, I want you to maintain this course for another hour",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "And then turn the Enterprise around and take it back to Rana Four.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We still won't have our shields restored by then.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take it back, Number One, and this time nothing is going to lure us away.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, sensors indicate no spacecraft in the vicinity of Rana Four. But, Captain",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forget your previous error, Mister Worf. There is no way you could have prevented it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the Uxbridge house is coming into transporter range.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, will you accompany me to the Transporter Room? You have the Bridge, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I think you should reconsider. The warship has come after us twice. It could come back.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I disagree, Number One. I don't think it knows we're here. I think it believes that it has run us off for good. However, that will all change once I'm back on board.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's protecting Kevin and Rishon. It responds to their wishes. Indirectly or directly, I'm not sure, but that's what I'm going to put to the test.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Kevin and Rishon are dancing to the music box"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Celebrating?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing here? What do you want?",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the second time that you have shown surprise at my appearance, Kevin. The first time was understandable, but now? Unless it is because you never expected to see me again.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you keep interfering with our lives, Captain?",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is not my intention to interfere. Only to help you and Rishon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then please, leave us alone.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I promise you that when I leave this house I will never set foot in it again. But the Enterprise will remain in orbit over the planet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To protect you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not necessary. I thought you understood.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is necessary. You're in great danger. A warship has returned.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin!",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's lying, Rishon.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have fought a pitched battle with it, and lost. Many of my crew have been injured including a woman who's mind is slowly being destroyed by telepathic manipulation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Please no.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is a form of intimidation. I have my rights.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your rights? What about Rishon? Is she in favour of being here left here? Come to the Enterprise. Let me take you where you'll be safe.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I can't leave Kevin.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm staying. She's safe here with me. in this house.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why are you safe?. Why is this house a sanctuary? Does it have to do with you? With your refusal to fight? Tell me this. If Rishon were in danger, would you kill to save her life?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not for her. Not for anyone. I will not kill.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please stop hurting him. Captain, leave our house.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is my sworn duty to protect you. The Enterprise will remain in orbit around Rana Four as long as the two of you are alive.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Living room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, an update, please.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Little change, Captain. Our shields are still inoperable. We have partial control of our weapons, and I've doubled the repair crews.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The warship is approaching from high orbit. It is very close three hundred thousand kilometres distant.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is that possible? Is something wrong with the sensors?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's no concern, Number One. It's here and it's precisely on schedule.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The vessel has altered its course to a direct intercept with the Enterprise.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, arm phasers and photon torpedoes. Prepare to fire.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Belay those orders, Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The vessel is now within twenty thousand kilometres of the Enterprise and closing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let it come, let it come. Activate the main viewer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Evasive action, sir?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise will hold its position, Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Weapons, sir?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my orders, not before.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The vessel is entering a low orbit around Rana Four. It appears it is preparing to fire at the planet, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My calculations indicate that its target is the house of Kevin and Rishon Uxbridge.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There will be no interference from us, Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The house has been obliterated.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Scan for survivors.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are no survivors.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, prepare a photon torpedo. Fire at the enemy vessel when ready.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And a single photon does what the salvo could not do earlier. Ka-Boom"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, what reason does the Enterprise have for remaining at Rana?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The unknown vessel has been destroyed. The Uxbridges have been destroyed. There's no reason for the Enterprise to remain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Helm, move us into a higher orbit so that we may keep the surface of the planet under surveillance.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. But, Captain, what are we watching for?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything. Everything. I'll be in my Ready room if I'm needed. That will be all for now.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, may I speak with you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's my pleasure, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've been observing the planet very carefully for three hours. We've seen nothing. I have the feeling you're waiting for something to happen.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your Captain is acting on an assumption, Will, and I'm not sure what the result will be, or even that my assumption is correct. We found two people alive in a house on a devastated planet. But there was only one survivor of the war on Rana Four.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why is it we maintain watch on a planet that is now totally dead?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge to Captain Picard. You had better come see this.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Riker enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. Commander. The house is back. Trees, grass, everything. Happened right in front of us.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, do you see any survivors?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I detect two life forms inside the house. It appears Kevin and Rishon were not destroyed.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Helm, take us within transporter range. We're going to beam them aboard directly onto the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But, Captain, will they not protest?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Kevin and Rishon appear"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My apologies if I interrupted a waltz.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why have you brought us here against our will?",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to end the suffering of one of my crewmembers.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kevin does. He's the cause. At first I couldn't understand why your house survived the holocaust when the others hadn't. Then it occurred to me. It had been destroyed. That dwelling, where you served me tea, where you danced your waltzes, is a reproduction. Real to the touch but capable of being created, destroyed, and created. All on a whim.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're joking with us, Captain. Can't you see this is hurting my husband?",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rishon. Hear what he has to say.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More than anything else, you wanted the Enterprise away from Rana, because the house, the plot of land, your very existence, were incongruities that you were not prepared to explain. The warship, another recreation, tried to chase us away twice, and failed. But when I came to your house the second time, I provided you with the only condition that would make the Enterprise leave. Your deaths. You did your best to satisfy that condition.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm deeply sorry about the woman. I will help her. But I must know what you intend to do with me afterwards.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll be taken to the nearest starbase and held responsible for the attack on the Enterprise, and possibly the deaths of eleven thousand people.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. He never killed anyone.",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The destruction of the planet happened just as I told you.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you haven't told us the whole story. How it ended. The part about Rishon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is he saying?",
+                    "spoken_by": "RISHON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rishon, I can touch you. I can hear your voice, I can smell your perfume. In every respect you are a real person with your own mind and beliefs, but you do not exist. You died along with the others, defending the colony. He recreated you, just as he recreated the house.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rishon vanishes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are the only living thing that really exists on Rana. And though you look human, you're not.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Kevin turns briefly into a creature of light, then disappears"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's in the turbolift.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let him go.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, he is dangerous!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So dangerous, Mister Worf, that he could have destroyed us in an instant had he wished. Track him. Alert the crew to keep clear of hm. I want him to understand we mean him no harm",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will he return to the planet?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If he is the creature of conscience I believe him to be, he has someone to help first.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher enters to see Kevin holding his hand over Troi's head"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've taken the music from her mind. She's alright now. She's sleeping. She was beginning to sense who I really was. I've been living as a human for over fifty years but I couldn't hide from her. She has suffered because of my pride and selfishness. It will not happen again.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard has entered during that speech"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened on Rana Four? The truth this time. All of it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. For what it's worth. I am a Douwd. An immortal being of disguises and false surroundings. I have lived in this galaxy for many thousands of years although until today, no one has known my true identity. Once, while traveling in human form, I chanced to fall in love with an Earth woman. I put aside my powers and became her husband. Our life was happy and rich. Eventually we came to this planet to live our final years. Now she is dead. She never knew what I really was.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your colony was attacked by a warship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Belonging to the Husnock, a species of hideous intelligence who knew only aggression and destruction. I could have destroyed them with a mere thought, but I did not do so.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You had the power to stop them but you didn't?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I refused to for the same reason I refused to stop the Enterprise. I will not kill.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you let the colonists fight a hopeless battle.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I tried to fool the Husnock as I tried to fool you. It only made them angrier. More cruel.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And then what you most feared, happened. Rishon went to fight with the colonists, and died with them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How I wish I could have died with her.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you couldn't. You were left alone.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I saw her broken body. I went insane. My hatred exploded, and in an instant of grief I destroyed the Husnock.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you try to hide this from all of us? Was it out of guilt for not helping Rishon and the others when they were alive?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, no, no. You don't understand the scope of my crime. I didn't kill just one Husnock, or a hundred, or a thousand. I killed them all. All Husnock everywhere. Are eleven thousand people worth fifty billion? Is the love of a woman worth the destruction of an entire species? This is the sin I tried so hard to keep you from learning now. Why I wanted to chase you from Rana.",
+                    "spoken_by": "KEVIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're not qualified to be your judges. We have no law to fit your crime. You're free to return to the planet and to make Rishon live again.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi is back in her seat"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Helm, break orbit. Full impulse.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 43153.7. We are departing the Rana system for Starbase One Three Three. We leave behind a being of extraordinary power and conscience. I am not certain if he should be praised or condemned. Only that he should be left alone.",
+                    "spoken_by": "PICKARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "151",
+    "transcript_url": null
+}

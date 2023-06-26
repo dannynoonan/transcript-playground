@@ -1,0 +1,2588 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There she is.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enlarge. What is their course?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are now angling through that solar system, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Identify.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Listed as Delphi Ardu, sir. Eleven planets, unexplored.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stay with them, La Forge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors read a power surge from their last manoeuvre, Captain.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are dropping to subwarp speed.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reduce to impulse power.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensor record fluctuations in the energy readings from it, Captain.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Possibility, a malfunction in their engines, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Breaks my heart.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In visual range, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fully enlarge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ferengi ship is nicely curved"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, stranger.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very impressive design.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything on that design, Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing specific, sir. As you know, Ferengi technology is estimated to be generally equal to our own.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But that does not mean identical, however.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Correct, sir. We are no doubt advanced in some areas, they in others.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Showing another power surge, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are firing on us.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damage report?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields holding.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mostly electromagnetic, sir. Fusion generator and batteries down by thirty percent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our impulse engines are surging now.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're firing again.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A bright, bright flash on the viewscreen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deflector shield power weakening, Captain. Phasers ready. Photon torpedoes ready.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do we return their fire, sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative, Number One. They're just reacting to our close pursuit. Fall back a bit but stay with them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are slowing too, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They may be turning to fight.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "puzzled",
+                    "line": "Open hailing freq.  Why are we gaining on them? Don't anticipate.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not, sir. Something's wrong.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, something is dragging us forward.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I read that, too. Lieutenant Yar, what do your sensors show?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not certain, sir. I'm getting very confusing readings.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, this shouldn't be. Our ship's power systems are failing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deflector shield failing. Phasers going inoperative, Captain.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, something is completely immobilising us.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Immobilised by the damn Ferengi.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need more information. What the hell are they are using?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Obviously we've underestimated their technology, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Considerably. It appears the Ferengi have us right where they want us. In their sights. Are you searching all frequencies? Any sign of any kind of messages?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Weapons report, Lieutenant.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have phasers and torpedoes armed, but I show insufficient power to fire them.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering, give me status on power recovery. Engineering, come in. Why aren't they answering? La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get me a full report from Engineering.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's impossible they could be draining all power from all systems.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sensing nothing from them Captain. Which could mean they can shield their thoughts and emotions from others.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It still makes it our move.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, they may know as little about us as we do about them.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Except that they know they've got us in deep trouble.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If so, the question becomes how will they use that knowledge? Data, do you have any information touching this on any file?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None, sir. Only hearsay and third hand reports, most of which conflict.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which reports do not conflict?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That the Ferengi are, well, the best description may be traders.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What kind of traders?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A comparison modern scholars have drawn from Earth history likens the Ferengi to the ocean-going Yankee traders of eighteenth and nineteenth century America, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From the history of my forebears. Yankee traders.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who in this case sail the galaxy in search of mercantile and territorial opportunity.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And are those scholars saying the Ferengi may not unlike us?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hardly, sir. I believe this analogy refers to the worst quality of capitalists. The Ferengi are believed to conduct their affairs of commerce on the ancient principle caveat emptor. Let the buyer beware.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yankee traders. I like the sound of that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, sir, I doubt they wear red, white and blue, or look anything like Uncle Sam.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering? Join La Forge down below in Engineering, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Without warp capacity, we're just a floating target.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Uncle who?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What have bright, primary colours got to do with it?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand the allusion. Colours representing countries at a time when they competed with each other. Red, white and blue for the United States. Whereas the French more properly used the same colours in the order of blue, white and red.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the German nation red, black and gold. The Italians green, white and red. The British",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's enough, Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was you who",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're discussing the Ferengi. I wish I had some clue as to what they will do next.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Given what is now happening to our ship, sir, their weapons could be vastly superior to ours.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Data, that is a natural assumption. Engineering?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bottom line, La Forge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not good, sir. The Ferengi forcefield that holds this ship compensates almost as fast as we can increase power.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Almost?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, there's a point three hundred seventy two millisecond delay between use of our power and the neutralising counter force of the Ferengi. See, we push and they push back in equal force, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's our acceleration delay between slow-reverse impulse and top warp speed?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "realisation",
+                    "line": "That's point three-hundred milliseconds. There's  Ah, I see where you're going. We shift down and then kick hard into warp nine. Yeah! Come back fighting! whooey!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we do it, Geordi?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to engineer",
+                    "line": "Ask me after it's done, sir.  I want a slow reverse into drop off over five minutes. We'll show them what this baby can do, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give me everything you've got.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, aye, sir.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In a sudden, abrupt power surge to high warp speed, Captain, we may be able to break loose from that Ferengi forcefield.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wonder what they're thinking over there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're wondering what we're going to do next.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I say fight, sir. There's nothing shameful in falling before a superior enemy.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And nothing shameful in a strategic retreat, either.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All systems ready, Captain. And communication now restored to Engineering.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent, La Forge. Now let's, er, let's throw them off guard. Lieutenant Yar. Open hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies open, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least we won't begin with weakness. Attention Ferengi starship! This is Captain Jean-Luc Picard of the USS Enterprise. In the name of the United Federation of Planets, I demand you return the T9 energy converter you removed from Gamma Tauri Four. Send that in all language forms.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All language forms, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sometimes, Riker, the best way to win a fight is not to be there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. He will triumph who knows when to fight and when not to fight.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Glad the Academy's still teaches the strategies of Sun Tzu. This delay had better prove out, LaForge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Point three hundred milliseconds, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's blast full power into warp nine. Ready?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On your command, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On a count of three. Stand by on phasers. One, set warp to nine. Two, divert shield power to the main engines. Three.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Everything vibrates, but they don't leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Merde. Shields up.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I think you had better see this.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's wrong?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Someone is reading every file, every bit of information stored in the Enterprise memory banks.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They can do that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And more, perhaps.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, if I may recommend? With our attention on the Ferengi vessel, we have ignored the planet.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, consult the charts on this planet. See what we've got on it. Conference evaluation.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, while we still have some power left, it is time for difficult decisions. Opinions please.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I say put all available power into a full-out combined phaser and photon torpedo salvo. Destroy their ability to sustain this forcefield, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes! Hit them hard and hit them fast.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Impractical and provocative. Even assuming that we have the power to sustain such a tactic.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But Captain, isn't firing on us an act of war?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The facts are the Ferengis did fire at us, but we were chasing them. Since then, all they've done is searched our computers, trying to learn who and what we are.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your point, Counsellor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's talk to them.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's been tried. No response.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But did we tell them anything they wanted to hear?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "La Forge? Other opinions? Thank you for your advice.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The staff start to leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will? I haven't had your assessment.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe we've covered every available alternatives, Captain. Are there other options that you want to analyse?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The only one remaining is the one that needs no conversation. The only one we must avoid.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The one that leads to total annihilation.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Attention, Ferengi starship. This is Captain Picard. It is obvious that we are in a situation here which needs resolving, and we are willing to do whatever is required, whatever is necessary. I would like, I would request, that you present your terms to us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41386.5. It is with a heavy heart that I have offered to meet whatever reasonable and necessary terms are demanded by the Ferengi. I fear for my people and my vessel in the event the unknown Ferengi ask the unreasonable. How can I oppose even unreasonable demands?",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's moving, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We ask to surrender and now they fire on us?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready torpedoes, sir? We have enough power for a few of them.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready, but hold on ready. Open hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies open, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ferengi vessel, we are awaiting your response.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Suggest first strike, sir. Our shields now only have sixty three seconds of power left before lowering.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the Ferengi ship's sensors can read us, sir, they will be waiting until we are most vulnerable.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid I agree, Captain. They have not responded.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll wait a bit more, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fifty seconds.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Patience. Patience.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The quicker we can come to terms, the better, NCC 1701-D.",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is speaking?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Tarr. DaiMon of the Ferengi. You wish to discuss surrender, Captain Picard?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What I said, DaiMon Tarr, is",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Unconditional surrender, I warn you, is totally unacceptable! We will die to the last one of us before such dishonour!",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies closed, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Geordi",
+                    "line": "Something has seized their ship too. They're in the same predicament as us.  Launch a sensor probe. Set it to search for the source of whatever this something is that is holding both ships. Go back to hailing frequency, fast. And I regret, DaiMon Tarr, that I can no longer negotiate unless it is conducted visually.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Your complete message not received, Enterprise, but visual communication is against our custom.",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And it is against Starfleet orders to accept a surrender otherwise. Do you withdraw your surrender?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "You give us no choice, Enterprise. May we have a visual on you as well?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed, DaiMon Tarr. You should be able to view us now. Are we on your screen?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The face of a humanoid with enormous ears fills the viewscreen. He even has crooked pointed teeth"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Yes. The ugliness of the human was not an exaggeration. I do not know how your twisted alien culture has paralysed our vessel, but I concede your Enterprise is superior. We will return your worthless T9 device and we offer the life of our second officers as required by the Ferengi code.",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sotto voce to Geordi",
+                    "line": "Fortunately, Starfleet has no such rules involving our second officers.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is this to your satisfaction, Picard Captain?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your offer may be inadequate, but I will discuss it with my staff. Stand by for further communications.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A couple of kids are playing by the Enterprise tableau"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they scurry out as Picard enters",
+                    "line": "Matthew! Pola! You know this area is off limits. Come on, come on.  Boys will be boys, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, have you launched the probe?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. We should getting those readings soon.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, if we're not holding the Ferengi and they're not holding us, who the hell is?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The probe will give us some of those answers, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data has found a Chinese finger puzzle that the children have left behind"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, you were going to show us something.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As requested, Captain, library computer information on this planet. It has been charted only from long range scans. It is Class M, but shows no indications of life forms, sentient or otherwise. However, you may find this of interest. Resolving it into our language.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a holographic display over the table of the Tkon Empire data entry"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The centre of a huge space federation, a population of trillions.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Trillions? I've never heard the word Tkon before.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "his forefingers are stuck in the puzzle",
+                    "line": "Understandable. It has been extinct six hundred thousand of our  of our years. These planets were once outposts of that empire.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, what are you doing?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apologies, Captain. I seem to have reached an odd functional impasse. I am stuck.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then get unstuck and continue with the briefing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. That is what I am trying to do, sir, but the solution eludes me.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My hero.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard reaches across, pushes his fingers together and removes the puzzle"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Continue, Commander.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Intriguing. It describes the Empire as being highly advanced and powerful, and capable of actually moving stars.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stars whose planets are their defence system?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Correct, sir. Outposts. The planet below was possibly one of them.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Excuse the interruption, Captain, but this may be worth it. We're now receiving a signal from the probe.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll take it here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The display changes to the planet with streams of energy heading out to both ships"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Incredible!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's our mysterious something, Captain. It is a forcefield of some kind.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reaching up from the planet surface. Amazing power. Data, what does the legend say about the end of the Tkon Empire?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their sun went supernova, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could this planet have escaped that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This planet may have been the most distant outpost, sir, but it shows no life form readings.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We should take a look at it, Number One. Stand by with an away team.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if the Ferengi also realise the forcefield emanates from the planet, sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's a complication. Maybe we should ask them to join us in this.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Team up with the Ferengi, sir?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've been ordered to learn all we can about them. Do you know a better way?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi throws the finger puzzle to him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. In orbit of a mysterious planet, whose unexplained forcefield has seized us with a power almost beyond imagination. If there is a solution to this, it almost certainly will involve cooperation from the Ferengi.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ship's power drain is critical, Captain. I must now shut down our shields to maintain life support systems.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood. Open hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies open, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ferengi vessel from Enterprise, come in.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Your alien images again shock us.",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With regard to the surrender, DaiMon Tarr. The facts are somewhat different.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Our own probe has already shown us your trickery, human. We withdraw our surrender.",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed. Perhaps you would agree to a more productive relationship?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I prefer a more profitable one, human.",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yankee trader.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Explain what means yankee traders?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He heard that.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He recognises your interest in profit. Or is that an incorrect assumption?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "We seek only what is equitable. What do you seek? Why did you begin by attacking us?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We did not attack you. We gave chase in order to recover a Federation-owned energy device which",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Which we know is ours. Your barbarous Federation placed it on one of our planets!",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On the contrary, Gamma Tauri Four is recognised by all civilised members of",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "The Ferengi are not uncivilised, human! Are you suggesting otherwise?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All I'm saying is that you removed something which clearly did not belong to you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Are you now calling us thieves?!",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On the contrary, I have no wish to discuss issues of property or of territory, when our mutual problem remains. Like it or not, we are both trapped by this energy draining forcefield from the planet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "On that matter there can be no argument.",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would like to propose a swap.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "And what is a swap?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a trade, an exchange.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Yes, trade, human. What do you offer?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will tell you what we know about the planet, and in trade, you will give us your information.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Ridiculous. How will we know you will not withhold information?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We must trust each other, Tarr.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Amusing, human. Trust each other?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I propose that we test this relationship by cooperating in a joint exploration of the planet surface.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "And what profit is in this, Picard Captain?",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The profit, DaiMon Tarr, of saving all our lives.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "We will agree, no doubt foolishly. But you are warned that any further trickery on your part will be met with no mercy.",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed. If you care to join us, we have a well-proven transporter device",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "We have a matter-energy device of our own. We will beam a science team of three to whatever co-ordinates you propose.",
+                    "spoken_by": "TARR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent. We will transmit the information shortly. Enterprise out.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies off.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would log that agreement as promising, at least.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wonder, Captain. I'm not usually one for distrust at first sight, but this may be an exception.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Especially in view of the fact the image he transmitted, sir, was somehow distorted.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I sensed the same thing, Captain. He's hiding something.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With this power drain we can't delay. Now, I'd like some additional help in case we run into trouble. Can you spare Worf?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take him. And be careful, Number One.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With this power drain, we may have trouble communicating with the Enterprise, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood. Anything else?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Due to this forcefield, there is presently no way to beam us back, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You had to ask.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood. Energise.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "It's a barren place with interesting crystalline structures here and there, and lightning flashes almost continuously. Riker appears alone"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tasha? Data? Geordi? Worf? Anybody?!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He goes searching for the others"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He finds him standing on one of the crystalline outcrops"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing up there?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Most intriguing, sir. I assume a problem of inaccurately transmitted programme coordinates due to the force field around the ship, sir. Are we alone, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unfortunately. Let's find the others. What do you make of these?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Crystalline. Mostly inert. Nothing to write home about.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slang, sir. I did use it correctly, did I not?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've got to be around here somewhere.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They carry on searching"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's that?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That! Geordi!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi is hanging upside down from the only tree in the area"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you conscious?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do I look conscious?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm resting, sir. My foot's stuck. Up there. I materialized upside down above the planet surface.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tricorder's useless, sir. Communication's gone too. Fortunately you did not break any",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, who's that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ferengis are watching them. Little crouching men with whips in their hands"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ferengi let fly energy bolts from their whips, knocking the three men out. Actually, it takes two jolts to knock out Riker"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. It is now six hours since our away team beamed down to the planet surface. On the Enterprise, our condition is rapidly worsening. Ordinarily, with reserve power alone, we could maintain life support for several months. But the force holding has closed down all engines and is draining our reserve power too.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Planet surface"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Blankets are being handed out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's getting much, much colder, sir. How far down is it likely to go?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A lot. Even in orbital space it'll get below minus two hundred degrees.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We won't have to worry much past minus seventy or so.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Feels like that right now. Good. Thank you.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Recreation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Inquisitive fingers remove Geordi's comm. badge. Worf is dragged in to join his colleagues"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If he moves, kill him.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Letek, has what we've done broken our agreement with their captain?",
+                    "spoken_by": "MORDOC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the comm. badge",
+                    "line": "We will accuse the humans of preparing to ambush us. It will be our word against theirs and who is more trustworthy, Mordoc?  It looks like gold. Tastes like gold.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is gold.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Renewed thunder and lightning makes the Ferengi try to cover their ears"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Accursed planet!",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's nothing compared to what our Captain will do when he finds out you've broken our landing party agreement.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What part of the agreement? You appeared and attacked us. Are you one of their assassins?",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm Commander William Riker, First Officer of the USS Enterprise. You have a lot to learn.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Work pounces on two of the Ferengi, Data and Riker join in the melee. The little aliens fight dirty"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've got this one!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "holding one aloft",
+                    "line": "Careful, Commander, they're much stronger than",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker gets thumped, hard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pygmy cretins!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kill them.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hideous monsters!",
+                    "spoken_by": "MORDOC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they stop",
+                    "line": "No!  Good, you've heard of phasers. Now, over there.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is this a female?",
+                    "spoken_by": "MORDOC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A human female, Letek?",
+                    "spoken_by": "KAYRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it is true. You work with females, arm them, and force them to wear clothing.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sickening.",
+                    "spoken_by": "MORDOC"
+                }
+            ],
+            "location": "Planet surface"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've diverted the reserve power to the family decks. They'll last longest. Is there anything else we can do, Doctor? Where's Wesley?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's in our quarters. I was tempted to give him a sedative.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You shouldn't.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know, but he's my son. I love him.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has the right to meet death awake.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that a male perspective?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rubbish",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Recreation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ferengi are dodging about like a live 'find the lady' game"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold it right there! Stop. Stop!",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Phasers on stun.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Already set.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She fires, but the beam is deflected into a crystalline structure"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's going on?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Letek fires his whip, and that whirls around before being sucked into the crystals. His whip does not coil again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this?",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe we can deduce that these crystalline tree shapes are actually energy collectors.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Along the same principle as that which is draining energy from our ships.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But the Ferengi weapons were working when we first arrived.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which means something new has happened.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm finally beginning to understand what my eyes have been showing me. It's patterns of force everywhere. This entire planet has been turned into a power accumulator.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And these?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the whole point of this place. I can see the planet's power emanating from. Commander.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's an impressive display of controlled energy, which resolves to a vague face"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Be you barbarians? Speak!",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ferengi clutch their heads in pain"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who meets the challenge? Who will it be?",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "points at Riker",
+                    "line": "Him.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have awakened Portal six three. Do you petition to enter the Empire?",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who asks the question?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A guardian of the Tkon Empire.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The energy turns into a humanoid figure in a long hooded cloak, leaning on a staff"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Biped. Excellent.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why should we petition to entry to an empire that no longer exists?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you attempt deception? The Empire is forever.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your empire fell prey to a supernova.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are forever.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, Please repeat the file.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a matter of record, Portal. In the Age of Makto, the central star of the Tkon Empire destabilised and",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There has never been an Age of Makto.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In fact, there have been many ages which have come and passed since Makto.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the Age of Bastu!",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid not. According to the Tkon use of galactic motionary startime charts, after Bastu came Cimi, Xora, Makto",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enough! Absurdities!",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must have been asleep, Portal, for hundreds of thousands of our years.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deception is the way of the human. We Ferengi will gladly make a petition.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We invite your petition.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Speak.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We wish to offer our services to serve the Tkon Empire at no profit. Return control of our starship to us and we will happily destroy the human criminals and their vessel which attacked us without provocation. They came to loot your empire, but we intercepted them.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are accused of deceit and treachery. Do you give yourself up for judgement?",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. If you believe those accusations, then you certainly should act on them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And there is even more. We can prove that the humans are destroyers of legal commerce, and that they selfishly withhold vital technology from backward worlds.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And necessary defensive weapons, too. We Ferengi now challenge this human madness.",
+                    "spoken_by": "MORDOC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I admit we withheld modern technology from some worlds.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You see? They are demented. Their values are insane. You cannot believe the business opportunities they have destroyed.",
+                    "spoken_by": "KAYRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proof of their barbarism. They adorn themselves with gold, a despicable use of a valuable metal. And they shamelessly clothe their females.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Inviting others to unclothe them. The very depth of perversion.",
+                    "spoken_by": "MORDOC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Paws off, Ferengi.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No female, human or Ferengi, can order Mordoc around! Submit!",
+                    "spoken_by": "MORDOC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just try it, shorty.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At ease, Lieutenant!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we still have more faults",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They should add that Starfleet has permitted several civilisations to fall. We have at times allowed the strong and violent to overcome the weak.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They admit their crimes! Hear them! They admit the evil that they do!",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Barbarian!",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, you show wisdom.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Barbarians all! But this one first, in the fashion the Empire has always challenged savages.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! For battle, come to me!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! That's an order.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have a single chance for life. One only. What is the answer to my challenge? I offer a thought. He will triumph who knows when to fight and when not to fight. You are being tested, Riker! What is the answer?",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you know my name?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Portal whirls his staff, bringing it to a sudden stop by Riker's right ear. He doesn't flinch"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ahhh. You are facing fate with composure. But what is the answer to my challenge?",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fear is the true enemy, the only enemy.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Portal lowers his staff, and becomes friendly and chatty"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unlike these little ones who close their minds, your mind holds interesting thoughts. Know your enemy and know yourself, and you will always be victorious. Why that thought? And who is this Sun Tzu you revere?",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An old Chinese philosopher from ancient Earth history.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must tell me more of this wisdom, so much like our own.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gladly. But first our starship. Can you release it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is released. All power is restored.",
+                    "spoken_by": "PORTAL"
+                }
+            ],
+            "location": "Planet surface"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The ship whirrs back into life, and people start to open their eyes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not a moment too soon, Jean. I mean, Captain.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I admit I had my doubts as your ships battled each other in overt acts of belligerence. Normally, I would have destroyed all of you and your ships, but something confused me.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which was?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "First, you wanted to murder each other. Then you were willing to help each other.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What of our vessel? We knew the same answer.",
+                    "spoken_by": "LETEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The truth is, I gave those words to this human.",
+                    "spoken_by": "MORDOC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What of them? Shall I destroy them?",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then they would learn nothing.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A most interesting conclusion. But what if they will never learn, Riker?",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is this a test also?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In life, one is always tested.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I find them very much as we were a several hundred years ago, but possessing the technology they have now, they're very dangerous .",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Untrue. We seek friendship with you.",
+                    "spoken_by": "KAYRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But we can hardly hate what we once were. They may grow and learn.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And learn ways to destroy you.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our values require us to face that possibility. What of you, with your empire gone?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The universe exists to me to create life. I shall sleep, until needed again.",
+                    "spoken_by": "PORTAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He walks away, becomes more stooped, then vanishes"
+                }
+            ],
+            "location": "Planet surface"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Compliments, Lieutenant.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi and Data enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've done well.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something to write home about.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something to write home about? Data, that's very human.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The T9 energy converter has been beamed aboard and secured, sir. The Ferengi complained bitterly, but one final roar from Portal convinced them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I commend your performance, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One final request, sir. Permission to beam a box of Data's Chinese finger puzzles over to the Ferengi. A thank you for all they tried to do.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "107",
+    "transcript_url": null
+}

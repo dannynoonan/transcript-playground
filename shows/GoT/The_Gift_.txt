@@ -300,9 +300,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "panicked",
                     "line": "Egg! Egg.. I dreamed... that I was old",
-                    "spoken_by": "AEMON (panicked)"
+                    "spoken_by": "AEMON"
                 }
             ],
             "location": "CASTLE BLACK - AEMON’S ROOM"
@@ -587,9 +587,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to Melisandre",
                     "line": "I’ve trusted in your visions, in your prophecies for years.",
-                    "spoken_by": "STANNIS (to Melisandre)"
+                    "spoken_by": "STANNIS"
                 },
                 {
                     "characters_mentioned": [],
@@ -1499,9 +1499,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "with contempt",
                     "line": "I’ve read the seven pointed star.",
-                    "spoken_by": "OLENNA (with contempt)"
+                    "spoken_by": "OLENNA"
                 },
                 {
                     "characters_mentioned": [],
@@ -1729,14 +1729,8 @@
             "location": "DORNE"
         },
         {
-            "description": null,
+            "description": "singing",
             "events": [
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Brothers oh brothers, my days here are done, the Dornishman’s taken my life. Bur what does it matter, for all men must die, and I’ve tasted the Dornishman’s wife! Yes I’ve tasted the Dornishman’s wife!",
-                    "spoken_by": "BRONN (singing)"
-                },
                 {
                     "characters_mentioned": [],
                     "context_info": "In the adjacent cell to Bronn, Tyene claps as the other Snakes glare at her."
@@ -1935,9 +1929,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "finally",
                     "line": "You.",
-                    "spoken_by": "BRONN (finally)"
+                    "spoken_by": "BRONN"
                 },
                 {
                     "characters_mentioned": [],
@@ -2069,9 +2063,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "You and you, you, you two, you, you, and you.",
-                    "spoken_by": "OWNER (O.S.)"
+                    "spoken_by": "OWNER"
                 },
                 {
                     "characters_mentioned": [],
@@ -2238,9 +2232,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "It’s true. He has.",
-                    "spoken_by": "TYRION (O.S.)"
+                    "spoken_by": "TYRION"
                 },
                 {
                     "characters_mentioned": [],
@@ -2346,7 +2340,7 @@
             "location": "KING’S LANDING - BLACK CELL"
         },
         {
-            "description": "to Cersei",
+            "description": "to Sparrowto Cersei",
             "events": [
                 {
                     "characters_mentioned": [],
@@ -2506,9 +2500,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "You will order her to let me go! I am the queen! I am the queen! Have you lost your mind? Let me go! You filthy… I am the queen! Let me go!",
-                    "spoken_by": "CERSEI (O.S.)"
+                    "spoken_by": "CERSEI"
                 }
             ],
             "location": "GREAT SEPT - CHAPEL"

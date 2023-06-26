@@ -1,0 +1,1967 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are hereby requested and required to relinquish command of your vessel to Captain Edward Jellico, Commanding Officer USS Cairo, as of this date.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want this ship ready for action, and I don't have time to give Will Riker or any one else a chance. And forgive me for being blunt, but the Enterprise is mine now.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shuttlecraft Feynman leaves the Enterprise"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our orders are to penetrate the Celtris Three installation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in the chamber"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a trap. Come on!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's go.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! There are five more of them heading this way from another tunnel.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should prove an interesting challenge. Possibly the most interesting to come through that door in many years.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you want?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why, you, of course.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And now the conclusion"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Interrogation room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is being given a truth drug"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your place of birth?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "La Barre, France.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother's name?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yvette Gessard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's ready. Keep the serum at that level. What is your current assignment?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Special operations on Celtris Three.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is your mission on Celtris Three?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To seek and destroy a metagenic weapon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many others were part of this mission?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Name and rank?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chief Medical Officer Beverly Crusher. Lieutenant Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are the Federation's defence plans for Minos Korva?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Increase the level slightly to point three one. Let's begin again, shall we? Name?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard, Jean-Luc.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Place of birth?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "La Barre, France.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46360.8. The negotiations with the Cardassians have made little progress. I believe a military confrontation may be unavoidable.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Interrogation room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gul Lemec, I assure you that what the Federation wants above all, is the preservation of peace.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then how do you explain the fact that a Federation team launched an unprovoked assault on Cardassian territory less than fourteen hours ago?",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know what you're talking about.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then let me explain. Captain Jean-Luc Picard, Lieutenant Worf, and Doctor Beverly Crusher landed on Celtris Three, attacked one of our outposts in a brutal assault, and killed over fifty five men, women and children.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What evidence do you have of that?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have all the evidence we need. We have Captain Picard.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is he alive?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Cardassian Union has yet to decided how it will respond to this latest provocation. But rest assured, we will respond.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the Cardassians leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there any truth in what he's saying?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard and the others were sent to investigate reports of a metagenic weapon on Celtris Three. It's possible that they may have been captured. But if they did escape, they'll head for the Lyshan system. The Enterprise is supposed to meet them there in eight hours. Will, I want you to take a shuttlecraft and head for the rendezvous point. The Enterprise will have to remain here until the endgame with Gul Lemec is played out.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is brought in blindfolded"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I demand to see a neutral representative as required by the Federation-Cardassian peace treaty.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Madred removes the blindfold and the guards leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard holds up his hands.",
+                    "line": "We have already sent a message to Tohvun Three, the nearest neutral planet. They assure us they will dispatch someone immediately. Will you allow me to remove your restraints?  I understand that you are a student of archaeology. Did you know that Cardassia boasts some of the most ancient and splendid ruins in the entire galaxy?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know that the burial vaults of the First Hebitian civilisation are said to be magnificent.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apparently when they were first unearthed two hundred years ago, they were. The burial vaults contained unimaginably beautiful artefacts made of jevonite, a rare, breathtaking stone. But most of those objects are gone.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened to them?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happens to impoverished societies. The tombs were plundered, priceless treasures stolen, a few were preserved in museums but even those were eventually sold in order to pay for our war efforts.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That war cost you hundreds of thousands of lives. It depleted your food supplies, left your population weakened and miserable and yet you risk another war.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's not waste time arguing about issues we can't resolve. Would you care to tour the Hebitian burial vaults?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What I would like is to be returned to my ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My dear Captain, you are a criminal. You have been apprehended invading one of our secret facilities. The least that will happen is for you to stand trial and be punished. But I am offering you the opportunity for that experience to be civilised.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is the price of that opportunity?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cooperation. We need to know the Federation's defence strategy for Minos Korva.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've injected me with drugs. Surely you must realise that I've already answered truthfully every question you've put to me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we have gone to great lengths to lure you here because we know that in the event of an invasion, the Enterprise will be the command ship for the sector encompassing Minos Korva.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then it seems you have more knowledge of the situation than I.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "two guards come in and take hold of Picard. He struggles."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wasted energy, Captain. You might come to wish you hadn't expended it in such a futile effort.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Torture is expressly forbidden by the terms of the Seldonis Four convention governing treatment of prisoners of war.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a metal piece is lowered from the ceiling, and Madred takes a knife from his desk"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the knife",
+                    "line": "Are you in good health? Do you have any physical ailments I should know about?  Beautiful, isn't it? The stone is jevonite. And now you know why it is so highly prized. From this point on, you will enjoy no privilege of rank, no privileges of person. From now on, I will refer to you only as human. You have no other identity.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Madred cuts Picard's clothes off and leaves them around his ankles. Naked, his hands are manacled and attacked to the metal piece above his head. Then the piece is raised so Picard is hanging just above the floor. In other words, a form of crucifixion."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First Officer's log, supplemental. I have returned from the rendezvous point in the Lyshan system with Doctor Crusher and Lieutenant Worf. Captain Picard's fate is still unknown."
+                }
+            ],
+            "location": "Interrogation room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was no chance to go back for the Captain. We barely made it back to the Ferengi cargo ship ourselves.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were smart not to try.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't feel so smart.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get some rest, Doctor. Will.",
+                    "spoken_by": "JELLICO"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want Geordi to analyse the readings from Beverly's tricorder. Tell him to scrutinize every detail of those caverns on Celtris Three.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Request permission to begin planning a rescue operation.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know you were close to him, Will, but we don't even know if he's still alive. Under the circumstances, a rescue mission would be foolhardy.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shouldn't we assume that he is alive until it's been proved otherwise? We cannot just abandon him.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's gone. I'm sorry, Will, but you're going to have to accept that. I want those tricorder readings analysed by fourteen hundred hours.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is lower - his feet are on the floor and his knees bent"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good morning. I trust you slept well?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard taken down. He can't lower his arms completely. Madred pours a drink from a flask"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thirsty? I would imagine so. Well, It's time to move on.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've told you all that I know.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he turns on four spotlights behind his desk",
+                    "line": "Yes, I'm sure you have.  How many lights do you see there?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see four lights.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, there are five. Are you quite sure?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are four lights.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps you're aware of the incision on your chest. While you were under the influence of our drugs, you were implanted with a small device. It's a remarkable invention. By entering commands in this PADD, I can produce pain in any part of your body at various levels of severity. Forgive me. I don't enjoy this but I must demonstrate. It will make everything clearer.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard falls to his knees in agony"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Surprising, isn't it? Most people feel at first that they can steel themselves against it but they're completely unprepared for the intensity of the pain. That was the lowest possible setting.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know nothing about Minos Korva.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I've told you that I believe you. I didn't ask you about Minos Korva. I asked how many lights you see.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are four lights.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand how you can be so mistaken.",
+                    "spoken_by": "MADRED"
+                }
+            ],
+            "location": "interrogation room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on PADD",
+                    "line": "What is your current assignment?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on PADD",
+                    "line": "Special operations on Celtris Three.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have anything to say?",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard was not acting under my orders.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if we wish to execute him?",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Under the terms of the Selonis Convention, Captain Picard must",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Selonis Convention applies to prisoners of war, which means you would have to acknowledge that he was captured during a mission authorised by the Federation. Are you willing to make such an admission?",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then he will be treated as a terrorist.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not my concern.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is, of course, an alternative.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm listening.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the Federation agreed to a complete and immediate withdrawal from this sector, then we would be disposed to release Captain Picard and forget about this incident.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll have to discuss this with my superiors.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. You have seven hours.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the Cardassians leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you going to do?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Send a message to Admiral Necheyev. I recommend that she reject Lemec's proposal and deploy additional starships along the border.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about Captain Picard?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jellico shakes his head"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not suggesting you trade an entire star system for one man's life, but you've got to acknowledge that these were Federation orders and he is a prisoner of war.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He will have the protection of the Seldonis Convention.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would play right into Gul Lemec's hand. He's just waiting for some sign of weakness on our part before he starts making more demands.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't believe you're willing to sacrifice Captain Picard's life as a negotiating tactic.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will! Captain, we're all concerned about",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you questioning my judgment, Commander?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As First Officer, it is my responsibility to point out any actions that may be mistakes by a commanding officer. sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then maybe it's time you found other responsibilities. You're relieved. Don't make me confine you to quarters as well.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data is now wearing command red and three pips"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They went to a lot of trouble to lure a Federation team to that planet. Why?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is possible that the Cardassians were specifically interested in capturing Captain Picard.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you say that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The metagenic weapon they were supposedly developing used a theta-band subspace delivery system. Captain Picard is one of only three Starfleet Captains with extensive experience in theta-band devices. The other two are no longer in Starfleet.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So they tailored a fake weapon to lure Picard. But why? They must've known we'd change all his access codes and security protocols.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe they were interested in something that he did in the past. Something that happened while he was Captain of the Enterprise.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or something he was going to do in the future. In case of a Cardassian attack, the Enterprise will be assigned as Command ship for this sector. If the Cardassians got wind of that",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They might have assumed Captain Picard would know those defence plans.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If your theory is correct, the Cardassians may be planning an attack somewhere in this sector.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The question is, where? Geordi, I want you to conduct a discreet scan of Gul Lemec's ship. Look for anything unusual, anything that might indicate where they've been lately.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Madred has brought his daughter to work, and a pet in a cage. Picard is sitting slumped in the chair, wearing a loose tunic"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want you to be very careful with your wompat from now on, Jil Orra. Now that she's separated from her mother, she depends on you.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will, father. Do humans have mothers and fathers?",
+                    "spoken_by": "JIL ORRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but human mothers and fathers don't love their children as we do. They're not the same as we are.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you read to me tonight?",
+                    "spoken_by": "JIL ORRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, of course I will. I'll see you later.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jil leaves carrying her pet"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your daughter is lovely.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I think so. And unusually bright. It's amazing, isn't it, the way they're able to sneak into your heart. I must admit, I was completely unprepared for the power she had over me from the moment she was born.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm surprised that you let her come in here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To expose a child to this. To someone who is suffering. To see that it is you that inflict that suffering.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From the time Jil Orra could crawl she's been taught about the enemies of the Cardassians, and that enemies deserve their fate.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When children learn to devalue others, they can devalue anyone, including their parents.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What a blind, narrow view you have. What an arrogant man you are. What do you know of Cardassian history?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know that once you were a peaceful people with a rich spiritual life.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what did peace and spirituality get us? People starved by the millions. Bodies went unburied. Disease was rampant. Suffering was unimaginable.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Since the military took over hundreds of thousands more have died.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But we are feeding the people. We acquired territory during the wars. We developed new resources. We initiated a rebuilding programme. We have mandated agricultural programmes. That is what the military has done for Cardassia. And because of that, my daughter will never worry about going hungry.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her belly may be full, but her spirit will be empty.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Madred hits him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shall we begin again? How many lights are there?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What lights?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and he gets punished for that"
+                }
+            ],
+            "location": "Interrogation room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "according to quantum resonance scan 047"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It looks like they had some minor hull degradation along their warp nacelles. The distribution pattern indicates a recent exposure to a molecular dispersion field.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where could they have run into a dispersion field?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The McAllister C Five nebula's just across the border. It's approximately seven light years from Federation space.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could there be Cardassian ships inside the McAllister nebula?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's possible, but they wouldn't be able to stay in there for very long. The particle flux in the nebula would begin to break down a ship's hull just after seventy two hours.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there a Federation system near the McAllister nebula that might interest the Cardassians?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Minos Korva is only eleven light years from the nebula, and the Cardassians tried to annex it during the war.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, I want to be at Minos Korva in one hour.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Set course three five zero mark two one five and engage at warp eight point five.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is lying on the floor, singing through parched lips"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sur le pont d'Avignon on y danse on y danse.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wake up. Where were you?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At home. Sunday dinner. We would all sing afterward.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What a charming picture. The Picard family, voices raised in song. Is this what's keeping you from breaking? Memories of home and hearth? Images of happier times? I must congratulate you. You're remarkably strong willed. I see no point in holding you further. You may go. Someone will give you clean clothing before we return you to your ship.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the door is opened. Picard slowly gets to his feet and shuffles towards it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will get what we need from the human female.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What female are you referring to?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The human who was part of your abortive assault team, of course. Doctor Beverly Crusher.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What have you done to her?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not a thing. She's quite safe. I wanted to finish my interviews with you before I interrogated her. I had hoped it might not be necessary.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He left us few options. We had to kill him. I'm more optimistic about getting what we need from the woman.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Crusher has no knowledge of any of Starfleet's plans. She's a Medical officer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You might be right. I'll have to determine that for myself.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard sits in the chair"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you choosing to stay with me? Excellent! I can't tell you how pleased that makes me.",
+                    "spoken_by": "MADRED"
+                }
+            ],
+            "location": "Interrogation room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet now believes the Cardassians are preparing to invade Minos Korva. I'm convinced their invasion fleet is hiding in the McAllister Nebula. I intend to hit them before they leave it.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, what if you're wrong? What if the Cardassians are in that nebula to conduct scientific research?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'd have to have some pretty good evidence to convince me of that.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're still gambling hundreds of lives.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This discussion is moot. The plan has been approved and we are going ahead. Mister Data, by your calculations, how long could the Cardassian ships stay in the nebula?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In seventeen hours their hull degradation will reach dangerous levels. They will have to leave before that.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. Worf, prepare a series of five hundred antimatter mines with magnetic targeting capabilities.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, we're going to need a shuttle specially outfitted to operate in the nebula by fourteen hundred hours. Beverly, you'll need to",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have Sickbay ready for the casualties you're about to send me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right. Dismissed.",
+                    "spoken_by": "JELLICO"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Madred is having an egg for his meal"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, you're awake. Have something to eat. I insist. Boiled taspar egg. It's a delicacy I'm happy to share with you.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Madred gives Picard a knife to slice the top off the very large egg, but this one isn't boiled. The contents are still alive and moving. Picard downs it in one"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wonderful. Wonderful. I like you, human. Most people become ill at the sight of live taspar. I remember the first time I ate a live taspar. I was six years old and living on the streets of Lakat. There was a band of children, four, five, six years old, some even smaller, desperately trying to survive. We were thin, scrawny little animals, constantly hungry, always cold. We slept together in doorways, like packs of wild gettles, for warmth. Once, I found a nest. Taspars had mated and built a nest in the eave of a burnt-out building and I found three eggs in it. It was like finding treasure. I cracked one open on the spot and ate it, very much as you just did. I planned to save the other two. They would keep me alive for another week. But of course, an older boy saw them and wanted them, and he got them. But he had to break my arm to do it.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Must be rewarding to you to repay others for all those years of misery.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Torture has never been a reliable means of extracting information. It is ultimately self-defeating as a means of control. One wonders that it's still practiced.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I fail to see where this analysis is leading.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whenever I look at you now, I won't see a powerful Cardassian warrior. I will see a six year old boy who is powerless to protect himself.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Be quiet.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In spite of all you've done to me, I find you a pitiable man.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard, stop it, or I will turn this on and leave you here in agony all night.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah! You called me Picard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are the Federation's defence plans for Minos Korva?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are four lights.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Madred uses the agoniser."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are five lights. How many do you see now?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in agony",
+                    "line": "You are six years old. Weak and helpless. You cannot hurt me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sur le pont d'Avignon, on y danse",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Interrogation room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How are we doing?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're almost done, sir. I've shielded the engine nacelles and the transporter system so they won't be affected by the particle flux from the nebula.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good.",
+                    "spoken_by": "JELLICO"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Been awhile since I flew one of these. You're a pilot yourself, aren't you Geordi?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I began my career as a shuttle pilot, on the Jovian run. Jupiter to Saturn and back once a day, every day.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that right? I was on that run myself for a while.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you must've done Titan's Turn.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yeah. You set a course directly for Titan, hold it until you're just brushing the atmosphere, throw the helm hard over and whip around the moon at point seven c.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And pray like hell nobody saw you.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, this trip into the nebula's going to need someone who can do Titan's Turn in their sleep. These mines need to be laid within two kilometres of the Cardassian ships. But the particle flux from the nebula will blind all the sensors except for this proximity detector. You're going to need one heck of a pilot to pull that off.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that you?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could do it, but truthfully, the man you want is Commander Riker. He's the best there is.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker is in casual clothes, reading, when the doorbell rings"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Am I disturbing you?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Musician.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Classical? Contemporary?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jazz.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there something I can do for you, Captain?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you aware of our plans to attack the Cardassian invasion fleet?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. I understand you've been talking to every shuttle pilot on board.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's drop the ranks for a moment. I don't like you. I think you're insubordinate, arrogant. wilful, and I don't think you're a particularly good first officer. But you are also the best pilot on the ship.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, now that the ranks are dropped, Captain, I don't like you, either. You are arrogant and closed-minded. You need to control everything and everyone. You don't provide an atmosphere of trust, and you don't inspire these people to go out of their way for you. You've get everybody wound up so tight there's no joy in anything. I don't think you're a particularly good Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't order you to fly this mission. I'm here to ask.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then ask me.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you pilot the shuttle, Commander?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jellico starts to leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're welcome.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've lost primary navigation. Switching to secondary systems.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Inertial dampers compensating.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors inoperative.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right on schedule.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The proximity detector is working. We should be able to read their ships at a distance of five hundred metres.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't make this too easy.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi goes to the rear as the detector starts beeping"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hang on.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do I want to know how close that was?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Get ready to deploy the mines.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the shuttlecraft is emerging from the nebula.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enterprise to shuttle. Were you successful, Commander?",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir. The mines are laid.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. Red alert. Stand by to detonate the mines on my command.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standing by.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a channel to the Reklar.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "This is Cardassian territory, Captain. Your presence here is another deliberate provocation to",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not going to argue with you, Gul Lemec. Every one of your ships has a mine on its belly, my finger's on the button, and you're in a very bad position.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "You can't intimidate us.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, set off alpha four two.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the Reklar shakes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That was just a baby. The big boys are sitting on your hull just waiting for me to say the word.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "What are your terms?",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your ships will leave the nebula one by one. Each ship will eject its primary phaser coil before setting course for the nearest Cardassian base.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "But that will leave us defenceless.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, prepare to detonate",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I will agree to your terms.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent. Oh, and one more thing. I understand you're holding a Starfleet officer named Jean-Luc Picard. I expect him returned. immediately.",
+                    "spoken_by": "JELLICO"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard has been left alone with the agoniser control pad. He starts to smash it against the desk as Madred enters."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That won't help. I have many more.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Still, it felt good.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enjoy your good feelings while you can. There may not be many more of them. I've just received word. There's been a battle. The Enterprise is burning in space. The invasion of Minos Korva has been successful.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't believe you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no need for any further information from you. Our troops were successful in spite of your refusal to help me. You might have saved yourself a great deal of torment by yielding at the beginning.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to see neutral representative.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no such person. The word will be that you perished with your crew. No one will ever know that you are here with us, as you will be for a long, long time. You do, however, have a choice. You can live out your life in misery, held here, subject to my whims, or you can live in comfort with good food and warm clothing, women as you desire them, allowed to pursue your studies of philosophy and history. I would enjoy debating with you. You have a keen mind. It's up to you. A life of ease, of reflection and intellectual challenge, or this.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What must I do?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing, really. Tell me how many lights you see. How many? How many lights? This is your last chance. The guards are coming. Don't be a stubborn fool. How many?",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Gul Lemec enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You told me he would be ready to go.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We had some unfinished business.",
+                    "spoken_by": "MADRED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get him cleaned up. A ship is waiting to take him back to the Enterprise. Captain Picard, if you'll go with the guards, they'll take care of you.",
+                    "spoken_by": "LEMEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are four lights!",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Interrogation room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Riker enter. Troi is still in her blue uniform but Data is back in his gold one with two pips."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain on the Bridge. Welcome home, Jean-Luc.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just the way you left it, maybe a little better. Computer, transfer all command codes to Captain Jean-Luc Picard. Voice authorisation Jellico alpha three one.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transfer complete. USS Enterprise now under command of Captain Jean-Luc Picard.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I relieve you, sir.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to all",
+                    "line": "I stand relieved.  It's been an honour serving with you.",
+                    "spoken_by": "JELLICO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jellico leaves with knives sticking out of his back"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have the Bridge, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shakespeare is back on his lectern"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I, er, I don't know where to begin. It was",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I read your report.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What I didn't put in the report was that at the end he gave me a choice between a life of comfort or more torture. All I had to do was to say that I could see five lights, when in fact, there were only four.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You didn't say it?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, but I was going to. I would have told him anything. Anything at all. But more than that, I believed that I could see five lights.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Ready room"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "237",
+    "transcript_url": null
+}

@@ -1,0 +1,2488 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is relaxing on a comfortable lounger. He puts his book down, closes his eyes, and we see a slab hovering over him. It scans him, then he disappears in a twinkle of lights"
+                }
+            ],
+            "location": "Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, ship's sensors detect an abnormal energy reading in the Captain's quarters.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Type?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Undetermined.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Captain Picard.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Security team to Captain's quarters.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard wakes up in a hexagonal room with a thing in the middle. There are a total of four beds, two more of which are occupied"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Enterprise. Anyone receiving this transmission, please respond.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Holding cell"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Security override. Priority one.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The door opens to reveal - Picard holding his book and a glass of brandy"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is something the matter, Lieutenant?",
+                    "spoken_by": "PICARD 2"
+                }
+            ],
+            "location": "Outside Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "One of the other bed occupants is also in a Starfleet engineering uniform. she is a green-tinged alien"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's all right, it's al right. I'm not going to hurt you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard, of the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard. We studied your missions at the Academy Mitena Haro, first year cadet, Starfleet Academy.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cadet Haro.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps you can explain what this is all about.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A tall, white-skinned alien wearing a hood"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unfortunately, I can't, Mister",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tholl. Kova Tholl, of Mizar Two.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Mister Tholl, all I know is that I've been brought here against my will. Wherever here is.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The same thing happened to me, sir. I was alone, studying and I fainted. When I came to, it was about three days ago.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you, sir?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been here twelve days, possibly more. I had been meditating privately and for no reason whatever, I lost consciousness.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What can you tell me about our captors?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing. They've never shown themselves.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Four sleeping areas. That implies we may be joined by another captive.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He goes to the central thing, which dispenses red roundels"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's edible, but I wouldn't call it food.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard takes a tentative bite and puts it down, then goes to the panel by the door"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wouldn't touch that.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why not?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If it's the door lock, the combination's too complex to hit at random. I tried it and was punished.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Punished? How?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Severe pain. Some sort of energy beam. I won't get near that panel again.",
+                    "spoken_by": "THOLL"
+                }
+            ],
+            "location": "Holding cell"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, the Hood has arrived at the rendezvous point. They are expecting us in thirty six hours.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Lieutenant. Mister Data, the nearest pulsar is in the Lonka cluster, is it not?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Correct, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do we know about that pulsar?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A great deal, sir. It is a rotating neutron star of approximately four point three five six solar masses.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher, how long would it take us to get there?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At warp seven, thirty four minutes.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher make it so.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course for the Lonka pulsar. Warp two.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Sir, at warp two we'll arrive at the pulsar in thirty one hours.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Ensign. Engage.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will we be delaying our rendezvous with the Hood, sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We may have to, Number One.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, contact the Hood and inform them of our delay.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Belay that order. There will be no further communication off this ship without my prior authorisation. Commander, may I have a word with you? Mister Data, you have the bridge.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, you know I like to keep you well informed as to the nature of our missions.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if I don't inform you there is a reason. I don't like keeping you in the dark, but for the next few days I may not be able to be as communicative as usual. It may make things difficult for you.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't worry about me, sir. I can handle it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the crew?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can count on all of us, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I appreciate that, Number One.",
+                    "spoken_by": "PICARD 2"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is tapping on the panel, 2 taps, then 3, then 5, and so on"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard, what are you doing?",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Attempting to let our captors know that we possess intelligence.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't think they already know that? They can hear us talking.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but they may not realise that we're communicating through language.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard is letting them know we comprehend mathematics by tapping out the first six prime numbers.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know what he's doing. I'm trying to understand why.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is imperative that we communicate with our abductors, find out what they want.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Obviously, they want us.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Obviously. But why? What made our captors choose us? What makes us special?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I couldn't say, Captain. I'm certainly not special. I am just one cadet.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's your best area of study?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Impulse propulsion systems. I'm very good with field coils.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good enough to be useful to our abductors?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. Maybe. But if they needed an engineer, sir, why didn't they take a real one? Why pick a Starfleet cadet?",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That I can't answer. The Bolians are maintaining an uneasy truce with the Moropa, are they not?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right. But this doesn't look like Moropa technology and, even assuming the Moropa wanted me, what would they want with either of you?",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never even heard of the Moropa. My race has no enemies.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None? In the last three hundred years of Mizarian history, your planet has been conquered six times!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we've survived by not resisting. Mizarians value peace above confrontation.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you have no idea who might have done this.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I don't know of anyone who bears malice toward my race.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or against you personally?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can't mean to suggest that someone with a personal grudge against me has gone to all this trouble.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not suggesting anything. I'm merely trying to come up with some explanation for your abduction.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, Picard. I can't give you one. I am neither important enough to hold for ransom nor radical enough to be dangerous. I'm a simple public servant.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nevertheless, Mister Tholl",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's a sound and a sparkling, and a figure in leather appears on the fourth bed. He has lots of red hair and sharp teeth, and pulls a dagger"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stop! We mean you no harm. We are prisoners, like yourself. We are not the enemy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who has done this?",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't know. We were brought here the same way you were. Our captors refuse to show themselves.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't trust you.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must trust us. We wish only to return to our worlds. Were you abducted from Chalna?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know my planet?",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes. I visited there twelve years ago, while commanding the Stargazer.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Holding cell"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The senior officer's floating poker game is in session"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Five, and twenty.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ouch.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If it's too rich, Geordi, fold.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm thinking, I'm thinking.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The doorbell rings"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enter.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, gentlemen. Forgive this intrusion. I was just passing by.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are always welcome, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was wondering, Mister La Forge. What's our engine efficiency status?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Operating at ninety three percent, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's very good, but I would like to increase the efficiency to ninety five percent.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No problem, Captain, I'll get right on it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not an order. You can get to it later. I don't want to disrupt your recreation.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No Captain, it's no problem. Lady Luck left me long ago.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you care to join us, Captain? We have an opening.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd rather just observe, if you don't mind.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all. Counsellor, twenty.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She and Data see Riker's bid"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pair of threes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Flush. Queen high.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That beats my fours.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well played, Counsellor. May I have a word with you for just a moment?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Certainly, sir.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forgive me, gentlemen. I'll return your player to you in a moment.",
+                    "spoken_by": "PICARD 2"
+                }
+            ],
+            "location": "Data's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, I wanted to ask you about the crew. How are they reacting to our sudden change in course?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I sense no unusual reaction, Captain. After all, such a change is hardly out of the ordinary.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're not curious or concerned as to why?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're curious, yes. But concerned? No, they trust you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How far do you think that trust goes?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know, Counsellor, that the crew has always had full confidence in me. But what if it were to change?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I'd inform you, sir, of course.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Counsellor.",
+                    "spoken_by": "PICARD 2"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My given name is Esoqq. It means fighter.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll bet half the names in the Chalnoth language mean fighter.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mizarians. Your names all mean surrender.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are a peaceful race, a race of thinkers.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A race of cowards. And you? I don't know your people.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Mitena Haro, of Bolarus Nine.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who would want to imprison a child?",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not a child.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Esoqq, I've been trying to determine if we have a common enemy. Someone with a reason for confining us here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are Chalnoth who would kill me if they could. But kidnap? There is no reason.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have many enemies?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None of consequence. I've slain all the ones who mattered. That shocks you, Bolian?",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A little.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you?",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not surprised. I've heard about your race. You're uncivilised. You have no laws, no system of government",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Chalnoth have no use for laws or governments! We are strong. We obey no one.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You live in anarchy, murdering one another, That mentality may get us all killed.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you may be the first.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Both of you. This is getting us nowhere.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Neither is asking us useless questions, Picard. But, if you must pursue the topic, How long have you and the Romulans been adversaries?",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For quite a while, Mister Tholl. I am perfectly willing to entertain the hypothesis that our captors are Romulans. But what would the Romulans want with you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My brainpower, perhaps. It's well known that my species possesses superior intelligence and I am considered among the brightest of my people.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the least modest.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this?",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Food.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The only food?",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would seem so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Poison!",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does this mean there's nothing here for you to eat?",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't even think that! Picard, you won't let him",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Esoqq, how long can you go without food?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three days. Perhaps four.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No longer?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No longer.",
+                    "spoken_by": "ESOQQ"
+                }
+            ],
+            "location": "Holding cell"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, all your tests indicate the same results. You are in great shape.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I never felt better.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see. Then why did you come in? Your annual physical isn't due for another month.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, usually you have to remind me, then badger me, and finally order me to report. For once I thought I'd save you the trouble.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc, be honest with your doctor. Are there any warning signs or symptoms that you haven't told me about?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As far as I know, I'm perfectly healthy.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, then, return to your post.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you have dinner with me tonight?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In Ten Forward?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about my quarters? More intimate.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc, you are full of surprises today.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I take that to be a yes.",
+                    "spoken_by": "PICARD 2"
+                }
+            ],
+            "location": "Doctor's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard is it wise to attempt an escape?",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's imperative.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why? Our captors haven't mistreated us.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've been kidnapped, locked in a room. You don't think that's mistreatment?",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They haven't hurt us, have they? I think we should just wait until we find out what they want. Be patient.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can no longer afford to be patient. Unless we act soon, Esoqq will starve.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we antagonise them, they may decide we're more trouble than we're worth, kill us and go capture another four.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I agree that's a risk, but I see no alternative.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I refuse to help.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you wish, Mister Tholl. We must get inside this panel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not very sturdy.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand back, Haro.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Esoqq puts his fist through the panel and rips the surround out of the wall"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The design is simple. Cross-circuiting the door mechanism should be easy.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She flips a few connections then reaches up inside the wall"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I've got it.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The door opens an inch, closes again, then a green light hits the three. They fall to the floor in pain"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I warned you.",
+                    "spoken_by": "THOLL"
+                }
+            ],
+            "location": "Holding cell"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jean-Luc and Beverly have made it to the after dinner drinks"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Out with it, Jean-Luc.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Out with what?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whatever has been on your mind all evening long.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Has it been that apparent? How well you know me.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After all this time, I ought to.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it's true, I have been preoccupied. I know that's not very flattering to you, but I have been thinking about us. And about the choices I've made.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've both made choices.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I've been wondering if they were the right ones. Sometimes I feel we've allowed our positions to isolate us.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our positions necessitate a degree of professional detachment.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But there's a danger in becoming too detached, of never permitting ourselves to get closer.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that what you want, Jean-Luc? To get closer?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're a very attractive woman.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you're a very attractive man. But we both know it's not as simple as that.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would it be simpler if I were not your commanding officer?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Simpler, perhaps, but that's not the only issue. I guess, right now, I'm comfortable with our relationship just the way it is.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you care to dance?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you didn't dance.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On special occasions.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He holds her close in a slow shuffle"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think I told you, but I'm glad you're back on the Enterprise. I missed our friendship.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did too.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The dance become more of a vertical embrace, and then they kiss"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc, if I didn't know you better, I would think you were playing games with me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're sorry you came tonight?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't say that.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Because I'm delighted you did. But, perhaps we should call it a night.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He opens the door for her"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodnight.",
+                    "spoken_by": "PICARD 2"
+                }
+            ],
+            "location": "Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I warned you not to provoke our captors. The next beams might be lethal.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not to you. You moved far from the door.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course I did! Being stunned once was enough.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You claim you were hit by the stun beam before the rest of us arrived. You could be lying. Maybe our enemy is watching us from inside.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you accusing me of collaborating with our abductors?",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Collaboration is what your species does best.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You did try to talk us out of attempting to escape.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For all we know, you may be our captor.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Impossible. I'm a Mizarian. My people are not aggressive.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can we be sure you're a Mizarian? You could be an impostor.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is nonsense. What if you're an impostor? Esoqq was the last one to appear, and he is the only one with a weapon.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Keep talking and I will use it.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tholl, our captors have transporters, they have stun beams. It is hardly likely that they would try to hold us at bay with a knife.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, then, maybe she's an impostor. She could have triggered the stun beams deliberately.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was hit, too.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To forestall suspicion. You were very quick to volunteer.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tholl, I asked her to open the door.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You ordered her, you mean. You've been giving orders from the moment you got here, trying to make everyone do what you want.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tholl, what I want is for everyone to escape!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why should we believe you?",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard's put his life at stake for others many times. The primitive culture on Mintaka Three, the Wogneer creatures in the Ordek Nebula.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the penny has dropped for Picard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Cor Caroli Five.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right. Helping to cure the Phyrox Plague.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how do we know this is the heroic Captain Picard? We have no proof of his identity.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've wasted our time with failed attempts to communicate with them or escape. Is that your task? To keep us busy so we're off guard?",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First officer's log, supplemental. Although we're still eighteen hours from the Lonka pulsar, the Captain has ordered us to slow to one half impulse. He has offered no explanation."
+                }
+            ],
+            "location": "Holding cell"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know why we're going to this pulsar. And creeping up on it at half impulse makes even less sense.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain has given unusual orders before.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know, but this is different. He's different. I can't put my finger on it, but I'm worried.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain does seem detached from his emotions.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters and goes to the bar"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge. We are operating at ninety six percent engine efficiency. Well done.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When we arrive at the pulsar, I shall require everyone at their best. I know that I can rely on both of you.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent. An ale for me, and for my officers. In fact, ales for everyone.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "General ah's and thanks"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here's to the finest crew in Starfleet. You know, back when I was in the Academy, we would follow every toast with a song. I wonder if I can, oh, yes.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Clears his throat and starts to sing Hearts of Oaks"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come cheer up my lads, 'Tis to glory we steer. To find something new in this wonderful year. To honour we call you as free men and brave. For who are so free as the sons of the waves? Hearts of Oak are our ships, Jolly tars are our men. We always are ready. Steady, boys, steady. We'll fight and we'll conquer again and again.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The verse is repeated with others joining in under the dialogue"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, what's the Captain up to?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not the Captain I know.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're a mission that has no apparent purpose. In itself, I can accept that. All of us can, because the Captain says it's important and we trust him. Then he runs the crew through efficiency drills for the first time in my tour of duty, but he says we need them, so we need them, because we trust our Captain. But we also have a captain singing drinking songs with his men.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Captain who's come to the poker game for the first time.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And he was very odd with me afterwards. He wanted me to warn him if the crew started to lose confidence in him.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any signs of mental stress or trauma?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He came in for a physical with no word from me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything unusual, Doctor?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every test result identical to his last physical, which is kind of unusual in itself, actually.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Almost as though he wanted to establish that there was nothing wrong.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was one other thing. He asked me to dinner in his cabin, and it was a very unusual evening.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which brings up a very serious possibility. What if there's an outside influence at work here?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I detect no evidence of telepathic coercion.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, there is still one fact we have not considered. The abnormal energy reading in the Captain's quarters was never explained.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is not enough evidence to justify mutiny.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nobody has suggested removing the Captain from command. Right now, all we have are suspicions. Not enough to act upon. The next move is his.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Riker's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Picard? Prove to us you're not the enemy.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't. You're right, Mister Tholl. Any of us may be the enemy. And there is no way to prove that we aren't. But until we set aside our mutual fears and trust one another, we have no hope of escape.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But sir, how can we trust each other?",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's right. There may be an enemy among us.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what if there is, Mister Tholl? Shall we continue accusing one another until hostility leads to violence? Shall we allow our suspicions to destroy us? Now, let's see if we can override this stun mechanism.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Holding cell"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Helm take us in to twenty million kilometres.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, divert enough power to the shields to offset the increased radiation and magnetic fields.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, at twenty million kilometres, our shields will only be effective for eighteen minutes.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Noted, Mister Data.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, may I have a word with you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have the Bridge, Mister Data.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is our mission?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm under no obligation to tell you that.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you don't, you force me to take command of this vessel.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On what grounds?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are endangering this ship for no reason.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No reason you're aware of.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not good enough. Your behaviour has been erratic.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Erratic enough to justify mutiny? Do you honestly believe you have sufficient evidence to convince a board of inquiry?",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I don't. But I can't let you risk the lives of this crew.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, has it occurred to you that you might be the one with the problem? I'm aware you've been under stress, and I am willing to let the matter drop if you will report to Sickbay for a full examination. Otherwise, I will have to relieve you from duty. Think about it.",
+                    "spoken_by": "PICARD 2"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Esoqq hands over his vicious knife to Picard, for use as a tool. He shorts out a power line"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cadet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Haro gets the door to open slightly"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I may have overloaded it, sir.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Esoqq try to prise the doors further apart"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Tholl!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I still think this is a mistake.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Finally the door opens - onto a blank wall"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now what? We're no better off than when we started.",
+                    "spoken_by": "THOLL"
+                }
+            ],
+            "location": "Holding cell"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, number four shield has failed. Increasing power to number three shield to compensate.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Helm, move us closer. Ten million kilometres.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, at that distance, the ship will not withstand the magnetic fields and radiation. We will not survive.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take us in, Mister Crusher.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Belay that order.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're relieved of duty, Commander. Mister Worf, confine Mister Riker to his quarters.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf stands still and puts his hands behind his back"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, I gave you an order.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maintain your position, Lieutenant.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're destroying yourself and anyone who is foolish enough to listen to you.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've shown none of the concern that Captain Picard would for the safety of his ship, the welfare of his crew.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, escort Commander Riker from the Bridge.",
+                    "spoken_by": "PICARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign Crusher, take us away from this pulsar. Heading one eight five mark three two. Full impulse.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Full impulse. Aye, Commander.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope you're satisfied, Picard. You've accomplished nothing.",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The sound of your voice is beginning to anger me.",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Haro",
+                    "line": "Well, I think this charade has gone far enough.  Don't you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh yes, you do. This isn't a holding cell. It's a laboratory maze, a carefully structured test. It's an experiment to see how well we react under pressure.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you know?",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the only explanation. Look at the four of us. We do have something in common. We all react differently to authority. You, the collaborator, defer to whoever has control. You, the anarchist, reject authority in any form. I, a Starfleet Captain, trained to command. And you, a Starfleet cadet, sworn to obey a superior officer's authority. Our captors have placed us here and have devised obstacles for us to overcome. They give us food which Esoqq can't eat, to make him a threat. They give us a door we can't open until the four of us co-operate. And each time we succeed, they deal us reverses to set us against each other again, while you observe our reactions.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I've been trying to help.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I found it unlikely that a first year cadet would know of the Enterprise's visit to Mintaka Three, so I tested you. Starfleet has classified the Cor Caroli Five plague as secret. No cadet would have knowledge of that incident.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you may as well drop this pretence. I'm not playing any further. I'm quitting the game. As far as I am concerned, this experiment is over!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are correct, Captain Picard.",
+                    "spoken_by": "HARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And she morphs into three balls of light which then become three identical aliens with the same voice"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To further our knowledge of alien interaction, we borrowed you, Tholl, and Esoqq, and replaced you with replicas.",
+                    "spoken_by": "ALIEN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Replicas?",
+                    "spoken_by": "ESOQQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our transporter is able to replicate living matter, including the brain's many trillion dendritic connections where memory is stored.",
+                    "spoken_by": "ALIEN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean there's a copy of me on Mizar Two?",
+                    "spoken_by": "THOLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An impostor running my ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No longer. Commander Riker has taken charge of the Enterprise.",
+                    "spoken_by": "ALIEN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our species is telepathically linked. We are all in continual contact.",
+                    "spoken_by": "ALIEN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Much more efficient than your primitive vocal communications.",
+                    "spoken_by": "ALIEN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We would like to pursue this study, but of course your awareness of it would taint the results.",
+                    "spoken_by": "ALIEN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will therefore return you to your places of origin.",
+                    "spoken_by": "ALIEN 2"
+                }
+            ],
+            "location": "Holding cell"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and an alien appear on the Bridge"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold your positions. Take no action.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard 2 changes into Alien 4"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you choose to study the concepts of authority and leadership?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because our species has no such concepts.",
+                    "spoken_by": "ALIEN 4"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As we are all identical, distinctions among ourselves are meaningless. Hence we have no leaders no followers.",
+                    "spoken_by": "ALIEN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker taps commands into a panel"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We wanted to examine the nature of command.",
+                    "spoken_by": "ALIEN 4"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our replicas of Tholl and Esoqq explored this issue on Mizar Two and on Chalna, just as our Picard replica did on the Enterprise.",
+                    "spoken_by": "ALIEN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data follows Riker's lead and puts instructions into his console"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your responses were most intriguing.",
+                    "spoken_by": "ALIEN 4"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have no right to put us through this just to satisfy your curiosity.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why not?",
+                    "spoken_by": "ALIEN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because kidnapping is an immoral assault. The rights of other races must be respected.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This concept of morality is a very interesting human characteristic. We shall have to study it sometime.",
+                    "spoken_by": "ALIEN 4"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the two aliens are pinned in a forcefield"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "ALIEN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you hold us?",
+                    "spoken_by": "ALIEN 4"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because there is something else you can learn. With an alert crew, even our primitive vocal communications are unnecessary. With a single look I was able to inform my crew that I wanted to hold you here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But why?",
+                    "spoken_by": "ALIEN 4"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because I've decided to conduct an experiment of my own. I want to see how you react to being imprisoned.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, our species cannot bear captivity.",
+                    "spoken_by": "ALIEN 1+4"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were merely curious. We meant no harm.",
+                    "spoken_by": "ALIEN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We did not, after all, injure you in any way.",
+                    "spoken_by": "ALIEN 4"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Imprisonment is an injury, regardless of how you justify.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard signals Worf to release the forcefield"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And now that you have had a taste of captivity, perhaps you will reconsider the morality of inflicting it upon others. In any event, we now know about your race and we know how to imprison you. Bear that in mind. Now get off my ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The aliens vanish"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher. Set course to rendezvous with the Hood. Warp eight.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. It's good to have you back, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Status, Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ship and crew functioning normally, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then my doppelganger caused no serious damage? The replica was convincing?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very convincing, but not perfect.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not perfect in what way?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, sir, I find it hard to believe you're that good a singer.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A singer? I look forward to reading your report, Commander. At least, I think I do.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Doctor Crusher enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Her steady gaze and smile unnerves him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Course laid in, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "166",
+    "transcript_url": null
+}

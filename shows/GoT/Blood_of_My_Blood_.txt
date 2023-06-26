@@ -321,9 +321,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to LITTLE SAM",
                     "line": "You have a curious mind, I can tell. You’ll be a scholar like your father.",
-                    "spoken_by": "MELESSA (to LITTLE SAM)"
+                    "spoken_by": "MELESSA"
                 },
                 {
                     "characters_mentioned": [],
@@ -603,9 +603,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to GILLY",
                     "line": "I imagine it’s common where you’re from. We once met a man, Lord Umber from Last Hearth, wasn’t it, Randyll, who said he taught all his daughters how to hunt.",
-                    "spoken_by": "MELESSA (to GILLY)"
+                    "spoken_by": "MELESSA"
                 },
                 {
                     "characters_mentioned": [],
@@ -787,9 +787,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to SAM",
                     "line": "Your mother’s a fine woman. You’re not worthy of her. To please her, I’ll take the wildling in. She can work in the kitchens. The bastard will be raised here. But this will be the last night you ever spend at Horn Hill.",
-                    "spoken_by": "RANDYLL (to SAM)"
+                    "spoken_by": "RANDYLL"
                 }
             ],
             "location": "HORN HILL - DINING HALL"
@@ -1127,9 +1127,9 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "No worse child ever stained this land.",
-                    "spoken_by": "IZEMBARO (O.S.)"
+                    "spoken_by": "IZEMBARO"
                 }
             ],
             "location": "SHEELBA SQUARE BACKSTAGE"
@@ -1161,9 +1161,9 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "Then sail across the Narrow Sea to do unto you more treachery.",
-                    "spoken_by": "BOBONO (O.S.)"
+                    "spoken_by": "BOBONO"
                 },
                 {
                     "characters_mentioned": [],
@@ -1171,9 +1171,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "Don’t fear the winter.",
-                    "spoken_by": "BOBONO (O.S.)"
+                    "spoken_by": "BOBONO"
                 }
             ],
             "location": "SHEELBA SQUARE BACKSTAGE"
@@ -1195,14 +1195,8 @@
             "location": "SHEELBA SQUARE STAGE"
         },
         {
-            "description": null,
+            "description": "O.S.",
             "events": [
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Thank you. Ladies and gentlemen, I give you Bianca, Clarenzo.",
-                    "spoken_by": "IZEMBARO (O.S.)"
-                },
                 {
                     "characters_mentioned": [],
                     "context_info": "ARYA retrieves a vial of from her satchel. She uncorks LADY CRANE’s bottle of rum."
@@ -1237,9 +1231,9 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "And last but not least, sweet Lady Crane.",
-                    "spoken_by": "IZEMBARO (O.S.)"
+                    "spoken_by": "IZEMBARO"
                 },
                 {
                     "characters_mentioned": [],
@@ -1257,9 +1251,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to BIANCA",
                     "line": "That crowd was shit.",
-                    "spoken_by": "IZEMBARO (to BIANCA)"
+                    "spoken_by": "IZEMBARO"
                 },
                 {
                     "characters_mentioned": [],
@@ -2176,9 +2170,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to OLENNA",
                     "line": "What’s happening?",
-                    "spoken_by": "MACE (to OLENNA)"
+                    "spoken_by": "MACE"
                 },
                 {
                     "characters_mentioned": [],
@@ -2508,9 +2502,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to BRAN",
                     "line": "When I last saw you, you were a boy. A fearless boy. Loved to climb the castle walls, frighten his mother.",
-                    "spoken_by": "RIDER (to BRAN)"
+                    "spoken_by": "RIDER"
                 },
                 {
                     "characters_mentioned": [],
@@ -2694,9 +2688,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "speaking Dothraki",
                     "line": "I’m going after her. Wait for me here.",
-                    "spoken_by": "DAARIO (speaking Dothraki)"
+                    "spoken_by": "DAARIO"
                 },
                 {
                     "characters_mentioned": [],
@@ -2704,9 +2698,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "speaking Dothraki",
                     "line": "Every khal who ever lived chose three blood riders to fight beside him and guard his way. But I am not a khal. I will not choose three blood riders. I choose you all.",
-                    "spoken_by": "DAENERYS (speaking Dothraki)"
+                    "spoken_by": "DAENERYS"
                 },
                 {
                     "characters_mentioned": [],
@@ -2714,9 +2708,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "speaking Dothraki",
                     "line": "I will ask more of you than any khal has ever asked of his khalassar! Will you ride the wooden horses across the black salt sea?",
-                    "spoken_by": "DAENERYS (speaking Dothraki)"
+                    "spoken_by": "DAENERYS"
                 },
                 {
                     "characters_mentioned": [],

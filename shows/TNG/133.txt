@@ -1,0 +1,2704 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wanted to see me, Captain?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Counsellor. Come, sit down. Counsellor, you've had the opportunity to observe Doctor Pulaski for some time now. How would you evaluate her as a Chief Medical Officer?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never met a more dedicated physician. I would say she has a passion for her work.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, of course. I entirely agree. Is it possible that such consuming dedication could interfere with her judgement?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I feel your concern, Captain, but I don't share it. Perhaps because I've had the opportunity to spend more time with her and get to know her better.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, perhaps you're right.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, we are picking up a faint distress signal on an open subspace frequency. It appears to be coming from an adjacent sector.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Respond on the same frequency.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you locked on to that transmission?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. A voice only transmission from the USS Lantree, a Federation supply ship.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "USS Lantree, this is Picard of the Enterprise. What is the nature of your emergency?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Can't hold out any more. People dying. Too many to help.",
+                    "spoken_by": "VOICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are still receiving their signal, Captain, but there is no message.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lantree. Are you under attack? Lantree? USS Lantree, this is the Enterprise. Come in, Lantree. Replay that last transmission.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Can't hold out any more. People dying. Too many to help.",
+                    "spoken_by": "VOICE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have we got a fix on her?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two point two milli-parsecs, bearing three zero at one four five degrees.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'd better take a look. What kind of vessel is she?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Lantree is a Class Six Federation supply ship assigned to Gamma seven sector, Captain L.I. Telaka commanding. Normal complement, twenty six officers and crew.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Armed?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Class three defensive only.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is she still underway?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Adjust course to intercept. Warp seven.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Adjusting course to intercept. Warp seven, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering, transfer to Bridge.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are closing on the Lantree, Captain.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take us out of warp. Establish parallel course. Match speed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lantree, this is the Enterprise. Captain Telaka, this is Picard of the Enterprise. Do you read me?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No life signs, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing, Captain.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What else have we got in the neighbourhood?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No other vessels of any kind within two parsecs.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No battle damage.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All systems seem functional, Captain. Everything is in perfect order.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have to board her, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Possibly, Mister Worf. Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we gain control of her systems remotely, we could activate the viewscreen. That way we could at least look at the Bridge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, security override request.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Identify.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard, Jean-Luc, Captain, USS Enterprise. Request control access Starfleet ship USS Lantree, Isao Telaka commanding.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enter access code.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Omicron omicron alpha yellow daystar two seven. Enable.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "At the rear stations"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have verified receipt of the access codes for the Lantree, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Grand. Commence operations.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our first move will be shut down the engines.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standing by, Commander.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Lantree computer reports access codes received and accepted, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulaski enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sickbay on alert, Captain.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interlock is engaged. The Lantree is responding, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have override control of her Bridge, Captain. All systems answering.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, let's have a look.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lantree Bridge monitor engaging.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The viewscreen shows very old people dead in their seats"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you reading anything, Doctor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Still no signs of life, Captain.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Magnify. That must be Captain Telaka on the left. Let's look at him. Closer. My God.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looks like they had a battle with time.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And lost.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Heart, lungs, liver, everything.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They died of natural causes.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Natural causes? What in nature could cause that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For the record, Captain, they died of old age.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've downloaded the Lantree's log, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Play back the Captain's last entry.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain's log, stardate 42493.1. There are only six of us left. We've set course for the nearest Federation outpost, but I am afraid it's too late. All attempts to analyse what is happening have failed. In the last few hours I've watched friends grow old and die, and I'm seeing it happen to me. Captain L.I. Telaka, USS Lantree.",
+                    "spoken_by": "TELAKA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Telaka was my age, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every member of the Lantree crew had a complete examination at the beginning of this duty cycle eight weeks ago. They were in perfect health.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing else since?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A single medical entry noting that the First Officer was treated for Thelusian flu five days ago.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thelusian flu?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's an exotic but harmless rhinal virus. It couldn't have caused this.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The last port of call of the Lantree was the Darwin Genetic Research Station on Gagarin Four three days ago.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whatever happened, it could be something that the Lantree crew already had or it could have come from Gagarin. At the very least, the people from Darwin Station deserve a warning. We may have to consider a quarantine.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll agree that we should quarantine the Lantree.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Absolutely.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, initiate the quarantine transmitters on the Lantree and activate her marker beacons. We'll need to find her again.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quarantine warnings active on all frequencies, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Extreme caution. The USS Lantree is a quarantined vessel by order of Starfleet Command. Do not board.",
+                    "spoken_by": "LANTREE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course for Gagarin Four, warp seven.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Course and speed set, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We're en route to the Federation Research station on Gagarin Four. The mere thought of a possible connection between the Lantree tragedy and a genetic research facility fills me with profound apprehension.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're approaching Gagarin Four, Captain.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standard orbit, Mister Crusher.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Darwin Station, this is Captain Jean-Luc Picard of the USS Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A middle aged woman comes on the viewscreen. She seems harassed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Enterprise, this is Darwin Station. I'm Doctor Kingsley. We've just declared a medical emergency here. We need your help.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Kingsley, what is the nature of your emergency?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "To whom am I speaking, please?",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm Doctor Pulaski, Chief Medical Officer.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Katherine Pulaski, author of Linear Models of Viral Propagation?",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That was a long time ago.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "But still the standard. I can't think of anyone I'd rather be dealing with. Doctor, we're experiencing the rapid onset of geriatric phenomena. The first symptom is sudden, acute arthritic inflammation. Then the aging process accelerates.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Lantree.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Doctor Pulaski, I celebrated my thirty fifth birthday a week ago.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, we understand that Darwin Station is involved in genetic research. Is there a possible connection?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Our research here is limited to human genetics. I can assure you we're not dealing with something that got away from us. We believe that we were infected by a supply ship that was here three days ago.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, if you're speaking of the Lantree, we encountered it a few hours ago. All the crew members were dead.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which would seem to confirm our suspicion. Were you able to establish a pathology, Doctor?",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, did you hear what I said? All the twenty six men and women aboard that ship were dead.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I heard you, Captain, and the prognosis is alarming, but my immediate concern is our children.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Children?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They represent years of advanced genetic research. You must evacuate them as soon as possible.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, but under the circumstances, until we know what's going on I'm imposing a full quarantine on Darwin Station.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But the children have been in protective isolation since this was detected. They show no symptoms. You cannot leave them here to die!",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, our options in a quarantine situation are extremely limited. We are going to consider the possibilities. I suggest you do the same.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I recommend against contact, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to agree, sir. I wish there was something we could do, but the risk is too great.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the children are free of disease, as Doctor Kingsley said, they should be evacuated. I would like to bring one of them aboard within a force field for a complete examination.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, do you sense anything?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Kingsley sincerely believes the children are not a threat, but she's not telling us the whole truth. I recommend caution.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have only Doctor Kingsley's assurance that these children are not infected, whereas we have seen the results of this disease first hand. In a case like this, I think we should err on the side of caution.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. We could beam up one child in styrolite in suspended animation. That way I could scan for possible infection without any danger to ourselves or to the child.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But we don't know what we're looking for.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly. And we won't know until we begin gathering data. Captain, that's worth some risk.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's always risk, Doctor. Proceed with the examination, but I shall require positive proof that these children are harmless before I place any of my crew in jeopardy.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The forcefield's ready, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Activate it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The forcefield goes up around a single examination table in the middle of the room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "This is Chief O'Brien, sir. Almost ready.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there a problem?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Science lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the styrolite. I'm altering the delta-T so the styrolite coding materialises two micro-seconds ahead of the child.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "It has to be right the first time.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well take all the time you need.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Entering corrections now, sir.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Science lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready, Captain.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Kingsley, are you ready to transport?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "You have the coordinates. We have one twelve year old male encased in number six styrolite.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter, energise.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A male older than twelve appears on the table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A trick!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter, reverse",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One moment, Lieutenant. Whoever he is, he's still in stasis.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The styrolite is intact, Captain.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Force field down.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, there's a definite presence, a distinct personality. Even in stasis it's quite strong. The child is unquestionably telepathic.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A child this mature? We could be looking at the future of humanity.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least Doctor Kingsley's vision of it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Later, as two nurses do most of the examining with various instruments, Picard returns to the lab"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This child is in better health than we are. His immune system is so advanced it may not be possible for him to contract disease. I want to free him from the styrolite.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That seems rather risky, Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can do no further tests until he's out of it.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But what if you're wrong? You saw what happened on the Lantree.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know I'm right.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't expose the Enterprise until I know where this disease came from and how it is transmitted.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I realise that, Captain. Naturally, we'll establish a force field containment.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But if we lose the force field for any reason, we lose the ship. Force fields can fail, and until",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't have that kind of time. These children can't survive in the lab once their parents are dead. Look at him, Captain. He's a human being who needs our help.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But the risk is",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Minimal.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you can demonstrate that he is biologically harmless without risk to the crew, I'll do everything in my power to assist. And Doctor, God knows I'm not one to discourage input, but I would appreciate it if you'd let me finish my sentences once in a while.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Science lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, do you have a minute? You've known the Captain for some time. I think I need some advice. I don't seem to be dealing with him very well.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you say that?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, my arguments don't seem to have any affect on him. We just end up quoting regulations to each other. He has such a consuming dedication to his ship, he doesn't seem able to step back to see the human side of the equation.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi smiles"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the matter?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kate, I don't think he'd be where he is if he couldn't see the human side of the equation. Perhaps the two of you aren't all that different.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's just say you both have well established personalities.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Kingsley, this is Kate Pulaski.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Doctor? Do you have a decision?",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid it's bad news.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "How can that be?!",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The risk to the ship and crew is too great. Until we absolutely know the cause of the disease, the children",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "The children are harmless. Every test on them has been negative. I demand that you do something to save them. Please, Doctor. For God's sake, we haven't got much time.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand by. I'll get back to you.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Doctor's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, I need your help.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it, Doctor.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need to prove the children are harmless. I can only do that in a fail-safe environment.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The problem is there's no area on the ship that can be sealed off with absolute certainty, even with force fields.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sickbay has an isolated system.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it's not possible to totally cut it off from the rest of the ship. The only truly independent environment would be something like a shuttlecraft.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A shuttlecraft. Why didn't you say so?",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'd like permission to put the boy in a shuttlecraft. I can study him there without risk to anyone else.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm prepared to take that risk. Someone has to breathe the same air he breathes, to touch him. I'm volunteering to make that test myself.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, you have a responsibility to this ship which goes",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I also have a responsibility to humanity.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet guidelines about contact with quarantined",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't have to quote the rule book. You were saying?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Request approved.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, you said if I. Approved?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I recognise that you're trying to satisfy my conditions.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shuttlecraft Sakharov is being prepped for launch"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You sent for me, Doctor?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did, Commander. I assume that you're qualified to pilot this shuttlecraft.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Certainly. I took advanced training in the operation of auxiliary space vessels at Starfleet Academy, where I received",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A more than passing grade, no doubt. Please, come aboard. We don't have much time.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shuttlebay three force field activated.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're certain the Captain approved this, Doctor?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll take us a few hundred metres away from the Enterprise and hold position.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Begin shuttlecraft launch sequence.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good luck, Doctor.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are in position, Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the only way to prove they're harmless.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if they are not?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hate to keep reminding you, but you are a machine. You'll be perfectly safe.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is by no means certain, Doctor, but I was referring to you.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Medical research is sometimes a risky business. It's all part of being human. Shall we proceed?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready to transport.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "You have the coordinates, Chief O'Brien.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shuttlecraft, maintain your position and stand by.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Standing by.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter control, what's our status?",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Science lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have a green panel, sir.",
+                    "spoken_by": "CREWMAN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand by to transport.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energise.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Science lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The boy is beamed in, and Pulaski uses a device to remove the styrolite covering from him. He sits up and looks into Kate's eyes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes, I do. I understand you perfectly.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How could you, Doctor? He has not said anything.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh yes, he has. Troi's right. He's telepathic.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Time?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Zero three two two exactly.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's been in direct contact with the boy for eighteen minutes.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data is giving Pulaski a medical examination"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All systems are functioning within normal specifications, Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The manufacturer will be pleased to hear it. I appreciate your help, but your bedside manner needs work.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bedside manner?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulaski scans the boy, then drops the instruments and clutches her elbow in agony"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Doctor, I don't understand. What has happened?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was no warning.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Explain.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Arthritic inflammation. It's the initial symptom of the disease.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "What can we do?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Return the boy to Darwin Station. Apparently the children are carriers.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Chief O'Brien, are you ready?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have the original coordinates of the Darwin isolation lab, Captain.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Quickly, please.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shuttle One, hold your position.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Holding.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulaski gives herself a painkilling hypo"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Stand by to transport.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It wasn't your fault.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The boy is beamed away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Tell us what you need, Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's nothing you can do, Captain. I'm not going to make myself an exception to the Darwin quarantine. Shuttle One out.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is your condition, Doctor?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not exactly up to factory specs. I'm sorry. The pain is tolerable, thank you.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shall I set course for Darwin Station?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're already under quarantined. What do we have to lose?",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can no longer consider the Darwin Station crisis our most immediate concern, although Doctor Pulaski's condition is inseparably linked with that emergency. Her safe return and that of Commander Data must take priority, please.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shouldn't Doctor Pulaski be involved in this?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From what we've seen on the Lantree, Doctor Pulaski may not have time to help herself.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well I suggest we beam them both back onto the ship. Commander Data is most likely immune and surely the biofilter will",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The transporter's biofilter won't protect us. The boy was transported twice already and still infected Doctor Pulaski.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Couldn't we adjust the biofilter? We could alter the filter to screen out whatever it is that's causing the disease.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But we don't know what's causing the disease. We can't protect ourselves against the unknown. What we need is some kind of filter that doesn't depend on known biological factors.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We might try the trace.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The transporter trace?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you know, the transporter keeps a record of all transmissions, a pattern if you will. Usually it's just stored for security purposes, but if we use the transporter trace to control the reconstitution process",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think it's ever been tried quite that way before, but theoretically it is possible.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd have to make extensive modifications.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then do it. It seems we have no alternative.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where will we get the trace pattern? The Doctor's never used our transporter.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Never?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. She's a woman of very strongly held opinions, sir. What was her previous assignment?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her last ship was the Repulse.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge, Picard. Contact the USS Repulse using subspace captain's priority channel.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, Doctor Pulaski. I can only tell you how much I regret the burden we've imposed on you. On both of you.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Data is an android, Doctor. He is unaffected. As for me, I chose this. I was convinced the children were safe.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I still can't believe you were infected by one of our children.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The evidence is fairly conclusive.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't understand. They were designed to resist disease.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think it's time we talked about that.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me show you something.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They go up some steps to an observation window on the Isolation lab. Seven 'children' are playing games"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our ultimate achievement. The oldest is twelve, and all are telekinetic. Watch.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A chess piece glides to an upper level of the three-d board"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Genetically engineered?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not engineered, created. Perfect in every way. Their body structure, their musculature, their minds.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were telling me about their immune system.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That was our masterpiece. We gave these children an aggressive immunity. The rest of us were infected by the supply ship, but they were protected.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Lantree logs indicated that only one crewman had any illness prior to arrival here. The First Officer had a mild case of Thelusian flu.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, he was one of the crewmen who came in direct contact with us.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Thelusian flu would have little effect on you, but tell me, how would they react?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their immune system would release an active antibody that would attack the virus.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even at a distance?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their immune systems don't wait for a disease to attack the body. It would seek out an airborne virus and destroy it.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Destroy it? How, exactly?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The antibody would adapt itself to alter the genetic code of the virus.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I want an analysis of the interaction between the Thelusian flu and the children.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On a molecular genetic level?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't have time for that. Genetic analysis could take months.",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not necessarily. Commander Data has a way with computers.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Darwin Station Lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Sorry, Picard. We erased Doctor Pulaski's transporter pattern right after she transferred. Not that she used the transporter much, she preferred using the shuttlecraft. I would have given her a shuttle if it would have kept her here.",
+                    "spoken_by": "TAGGERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell me, Taggert, if she served you as well as you say, why did you let her go?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "I see you haven't run into her stubborn streak yet. As soon as she found out about an opening on the Enterprise, she put in a request for transfer. Knew your service record backward and forward. Apparently she's been an admirer of yours for some time.",
+                    "spoken_by": "TAGGERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Extraordinary.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, what have you got?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The answer, I believe, Doctor. The Lantree was not the source of the disease, but it was the trigger.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Trigger?",
+                    "spoken_by": "KINGSLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Lantree's First Officer exposed your children to Thelusian flu for the first time. Their active immune systems set out to attack the virus, and once it was triggered, it kept going. The antibody created an unexpected side-effect. It alters the genetic make-up of normal humans. This is a comparison of the normal and altered DNA. These are the two molecules that have been transposed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And since our DNA is self replicating, the process",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is irreversible.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Judging from what happened on the Lantree, anyone is a carrier once they're infected.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Darwin Station lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you made any progress, Doctor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I'm afraid so, Captain. The children don't carry the disease, they are the cause.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Their advanced immune system has created an antibody that changes normal DNA. The altered genes are the ones that control aging.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then why did it attack you more quickly than Doctor Kingsley?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "The enclosed environment of the shuttlecraft concentrated my exposure. The Lantree's First Officer carried the antibody onto his ship. It had the same effect on his crew.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right, what's the next step?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "The children will survive, but the rest of us are just about out of time.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, I want you back aboard this ship. We'll beam you up in suspended animation like the boy. That will give us more time.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Captain, I appreciate what you're trying to do, but I got into this by leaping before I looked, and I won't allow you to make the same mistake. Chief Medical Officer's log. This will be my final report to the Enterprise. Just as changes in evolution are known to be caused by changes in the environment, we now know the process also works in reverse. An attempt to control human evolution has resulted in a new species that's lethal to its predecessors. The children will be condemned to live out their lives in isolation. Quarantine of the Darwin Station must be maintained for ever.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "By now Pulaski is white-haired and wrinkled"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am sorry I could not be more helpful, Doctor Pulaski.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You did everything you could, Commander. As androids go, you're in a class by yourself.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, give my best to the Captain.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enterprise. Commander Data ready to beam aboard.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Darwin Station lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, Kate knew what she was doing.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I could be certain that we'd tried everything.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Data is ready to come aboard, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have the Bridge, Number One.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No life forms present.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You may step down, sir.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, tell me if. It's good to see you again.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, quickly. If the changes in Doctor Pulaski's DNA were reversed, would it be possible",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is not reversible, sir. The subtle molecular transposition of",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, yes, yes. But say if it were undone, would she be normal again?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As normal as ever, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said that the transporter could be modified to filter out the changes in Doctor Pulaski?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir, but we were unable to locate her trace pattern.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, what if we used a sample of her DNA, say from a blood test taken before she was exposed to the disease? Could that be used to filter out the genetic changes?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I'd have to get into the biofilter bus to patch in a molecular matrix reader. That's no problem. But the waveform modulator will be overloaded without the regeneration limiter in the first stage circuit.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interesting. However, theoretically,",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you do the modifications?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think so, sir.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then make it so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You heard what he said. Let's get those panels off.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A blood test, a tissue sample, anything that would have a sample of Doctor Pulaski's original DNA.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. Her records were shipped by way of Starfleet headquarters. They have not caught up with us yet.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is ridiculous. A cell, a single cell. Let's check her quarters.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Doctor's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything. A fingernail, a hair.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hair brush.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Which for some reason she keeps at the back of a clothes drawer"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It has a follicle, sir. Live cells.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Pulaski's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Darwin Station, this is the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Go ahead, Captain. I'm here.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, we may have a solution. We have a sample of your normal DNA to use as a filter in the transporter. We think that we can beam you aboard while filtering out any of the genetic problems caused by the disease.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Interesting theory, Captain. If it works, we could use the same technique to save Doctor Kingsley and her colleagues.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think you should know, this has never been attempted before.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Well, I'll tell you one thing. If I live through this, I'll have a much better understanding of geriatrics.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge and Data are assisting O'Brien and his crewman with the modifications"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All set, Chief?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Almost ready, sir. There's just one thing.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This modification's one way only. If it doesn't work we won't be able to reverse transport the Doctor back to the planet.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I'll operate the transporter controls myself. If she's going to be consigned to oblivion, then",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir. I'll be monitoring the medical scans. But you'll be able to tell if it's worked by watching the stack.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Pulaski, are you ready?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I suppose I am, Captain.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here we go.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The figure that starts to materialise is white-haired and old"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not working.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, wait.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He taps his board and she becomes younger, and solid. Picard and Pulaski embrace."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good to see you, Doctor.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome back, Doctor. Come.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, if this hadn't worked?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If this hadn't worked, it would have been necessary to beam your energy into empty space.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And spread my atoms spread across the galaxy.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I'm sorry.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, don't be sorry. Every time I get into the damn thing, I'm convinced that's what's going to happen.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Chief Medical Officer's log, supplemental. The adults of Darwin Station have been restored to normal health using our transporter. They will remain on Gagarin Four and continue their research in hopes of one day rejoining their children."
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Impulse speed.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There she is, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OCcontinuing log",
+                    "line": "Scientists believe no experiment is a failure, that even a mistake advances the evolution of understanding.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Close to forty kilometres.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forty kilometres, aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "But all achievement has a price. For one brief glimpse at the mysterious blueprint of human evolution, the men and women off the USS Lantree paid with their lives. Their sacrifice is thus noted in this scientist's log.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf, arm the photon torpedoes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Torpedoes ready, Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Extreme caution. The USS Lantree is a quarantined vessel by order of Starfleet Command. Do not board.",
+                    "spoken_by": "LANTREE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Every one stands"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gentlemen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Extreme caution. The USS Lantree is a quarantined vessel by order of Starfleet Command. Do not board.",
+                    "spoken_by": "LANTREE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Lantree is cremated in an instant. After a brief moment of reflection"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course and speed for Star Station India.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Course and speed set, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "133",
+    "transcript_url": null
+}

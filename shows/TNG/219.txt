@@ -1,0 +1,1864 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, Starfleet Academy is requesting an update on our estimated arrival.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We should be arriving at Earth in ten hours sixteen minutes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please inform the Academy, Mister Worf, and send my regards to Superintendant Brand.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know Admiral Brand?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've met a few times. She's a formidable woman.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sounds like my superintendent. When I was at the Academy, we had a Vulcan Superintendent who had memorised the personnel files of every single cadet. He knew everything about them. It was like having your parents around all the time.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My superintendent was a Betazoid, a full telepath. When he sent for you to his office, he didn't have to ask what you'd done.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You got called into the superintendent's office? That's a story I'd like to hear.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, we are being hailed again by the Academy. It is Admiral Brand.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, she is requesting a private channel.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In my Ready room.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral Brand. What can I do for you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Hello, Captain. I know you're a close friend of the Crusher family.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "I wanted to inform you personally. There's been an accident.",
+                    "spoken_by": "BRAND"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He had second degree burns on his chest and multiple fractures of his right arm, but he's going to be fine.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "curses, mutters the transcriber whose hopes had been raised by the teaser"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have they completed the regeneration series?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not certain.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley's allergic to metorapan treatments. I think they'll have to use a bicaridine substitute. I should send his complete records to the Academy infirmary. Of course, they probably have them already, but you can't be too sure.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly. He's fine.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know he's fine. I know he's fine. How did it happen?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apparently, his squadron was practicing on the Academy flight range near Saturn. they were flying a close formation. There was a collision. All five ships were destroyed. Four of the cadets managed to transport out. One didn't make it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know who it was?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. His name was Joshua Albert.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley spoke of him. They were friends. Wesley was so excited to make the flight team. Of course, I was a little nervous, but I was proud of him. I always knew there was a chance that something like this might",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly, Wesley's alive and he's well.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Crusher's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Admiral is addressing a pair of parents, Picard, Crusher and another Starfleet officer"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was very little left to salvage from the wreckage. We did recover one of the ships' data recorders, but it was badly damaged. We're attempting to restore the information, but that will take some time. Standard procedure calls for an immediate investigation by two command level officers. Captain Satelk and I will be taking depositions from Nova Squadron at fifteen hundred hours today. Commander Albert. I'm sure that everyone in this room joins me in expressing my deepest sympathies to you on the tragic loss of your son. There will be a memorial service for Cadet Albert this evening in the west garden. It has been suggested that we should cancel the graduation ceremonies in the light of what's happened. Commander Albert and I have discussed this and we've agreed that commencement should go forward as planned. The cadets should know that even after a tragedy like this, there are still duties to perform and life continues. Thank you all for coming.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard gets up and walks over to Brand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's good to see you again, Captain. I wish it were under better circumstances.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is an unhappy way to begin commencement. If you require any assistance, then the Enterprise is at your disposal.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure we'll be able to conduct the investigation, but thank you for your offer.",
+                    "spoken_by": "BRAND"
+                }
+            ],
+            "location": "Academy hearing room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley is using a resistance device to strengthen his broken arm. There's a knock on the door. He goes to open it by turning the handle!"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wes. I was so worried about you.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How are you feeling, Wesley?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not bad. The arm's a little sore.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were very sorry to hear about Joshua.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you like to talk about it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I don't think so. No, thank you. I know you're trying to be helpful, sir, but it seems like that's all I've talked about for the last two days. I don't want to go through it again.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand. But I just want you to know I'm available if you should change your mind.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "another knock on the door"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "enter Robert Duncan McNeill, who will become Tom Paris in Voyager"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, sir.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At ease, Cadet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is my squadron leader, Nicholas Locarno. This is Captain Jean-Luc Picard of the Enterprise. My mother, Doctor Beverly Crusher.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, Doctor.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Locarno.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I came by to see if Wes had healed up all right.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how are you feeling, Nicholas?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm okay. I just never lost anyone under my command before.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid that never gets easier.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, Mom, will you excuse us please? Nick and I have some things we need to talk about.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. Let me know if you need anything.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll see you at the inquiry. Good to meet you, Mister Locarno.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You too, sir.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Beverly leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The inquiry is scheduled for fifteen hundred hours. Are you ready?",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think so.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't worry about it, Wes. Everything's going to be all right so long as we stick together.",
+                    "spoken_by": "LOCARNO"
+                }
+            ],
+            "location": "Wesley's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard strolls across the Japanese bridge"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Hey! Can't you see that's a flower bed?",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Sorry. I'm really sorry.",
+                    "spoken_by": "CADET"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A cadet has been sitting under a tree. The old gardener goes to repair the damage caused"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Boothby? Jean-Luc Picard, class of twenty seven.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know that. What happened to your hair?",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How are you?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm pretty damned cranky, thank you. I've already replanted this bed four times this week.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me give you a hand.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You?",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've acquired an interest over the years.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, don't plant 'em too deep. The stems",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will rot.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard. Of the Enterprise, no less. And giving the commencement address.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You sound surprised.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Surprised? Uh, uh. Nothing you ever did surprised me, son. Except that time you caught that Ligonian with a reverse body lift and pinned him in the first fourteen seconds of the match. Didn't think you had it in you.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it was all in the legs, all that running I did. Boothby.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hmmm?",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think I ever. I don't think I ever told you how much I appreciate.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's nothing to tell.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They go walking"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, there is. I just wanted to, while I was here. Look, you know as well as I do I would never have graduated if you",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You made a mistake. There isn't a man among us who hasn't been young enough to make one.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nevertheless.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You did what you had to do. You did what you thought was best. I just made sure that you listened to yourself.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At the time I thought you were a mean-spirited, vicious old man.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was. And by the way, I was about the same age you are now.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't speak to you for months.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You needed to get your bearings. I knew that. The important thing is, what you did with your life afterwards. Seems you did okay. That's thanks enough for me.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you know the boy from Nova Squadron who was killed?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Josh Albert? Yeah. Crusher, Hajar, Sito, Locarno. I know them all.",
+                    "spoken_by": "BOOTHBY"
+                }
+            ],
+            "location": "Academy gardens"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Locarno is inspecting his troops"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You nervous?",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a Bajoran woman",
+                    "line": "No. Yes.",
+                    "spoken_by": "SITO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's okay. So am I. But we're going to be all right. We've got some tough times ahead but we've always come through for each other. Whatever happens, I want you all to know that leading this team has been the high point of my years at the Academy. No one could have asked for a better team, or better friends. Let's go.",
+                    "spoken_by": "LOCARNO"
+                }
+            ],
+            "location": "Wesley's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's a bigger audience as Nick stands by a diagram of Saturn and its moon's orbits is on the screen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At this point, we accelerated and executed a starboard turn of twenty seven degrees. We came out of the turn on course for Titan.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you were still in the lead position?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Continue.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As we entered Titan's gravitational sphere, I gave the signal to tighten up and move into a diamond slot formation. Remaining in the diamond formation, we executed a low apogee turn around Titan then began a z-plus twenty five degree climb in preparation for a Yeager loop.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "named for Chuck Yeager, who broke the sound barrier in 1947"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Approximately nine seconds later, Cadet Albert's ship collided with Cadet Hajar's. We had less than two seconds to activate our emergency transporters and beam to the evac stations at Mimas. Everyone made it except Josh.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Mister Locarno. Cadet Hajar.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the young woman stands up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As team navigator, you filed a flight plan with the Academy Range Officer before the exercise. Correct?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "HAJAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did Nova Squadron deviate from that flight plan after you entered the Saturn range?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "HAJAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then how do you explain the fact that the low apogee turn around Titan was at least two thousand kilometres closer to the moon than indicated in your plan?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were still within flight safety parameters, sir.",
+                    "spoken_by": "HAJAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That was not my question, Cadet.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We had discussed changing our approach after I filed the flight plan. The final decision was made en route to Saturn. I didn't consider it significant enough to mention here. I apologise for the confusion, sir. I should have been more precise.",
+                    "spoken_by": "HAJAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a Vulcan",
+                    "line": "Did you see Mister Albert's ship break formation before it collided with your ship?",
+                    "spoken_by": "SATELK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. My first indications of trouble was when my proximity alarm went off.",
+                    "spoken_by": "HAJAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You may be seated. Did any of you see the collision take place?",
+                    "spoken_by": "SATELK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cadet Sito, you were in the tail position, therefore you should have seen any sign of trouble from Cadet Albert. Yet you saw nothing?",
+                    "spoken_by": "SATELK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is correct, sir.",
+                    "spoken_by": "SITO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did your attention falter?",
+                    "spoken_by": "SATELK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. I was flying solely on sensor readings at the time. I did not have any visual contact with Cadet Albert's ship when he broke formation.",
+                    "spoken_by": "SITO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensor readings?",
+                    "spoken_by": "SATELK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a murmur goes around the room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's wrong?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it's unusual to fly on sensors alone in this type of manoeuvre. The pilot relies on visual clues from the other ships to maintain formation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you were flying on sensors alone, perhaps you could tell us the orientation of his ship before the collision.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know, sir.",
+                    "spoken_by": "SITO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were flying a ship, travelling eighty thousand kph, with Cadet Albert's ship less than ten metres away and you don't know what his orientation was?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't remember, sir.",
+                    "spoken_by": "SITO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, may I?",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral, Josh was a good pilot but lately he'd been having difficulties. He'd get nervous during close fly-bys and pull away in the final seconds. His formation flying was a little erratic.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you didn't report this to anyone?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir, I didn't. We'd flown together a long time. I thought he could handle it if I gave him a chance. I was wrong.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you are saying that the accident was Cadet Albert's fault?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think Josh got frightened and tried to pull out of the turn prematurely, and then crashed into Cadet Hajar. Josh was our friend. We didn't want him to be remembered as someone who panicked.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please be seated. I'm very disturbed by what I've heard here today. By your own admission, you allowed your teammate to fly when you knew he was having difficulties maintaining formation. That demonstrates a serious lack of judgment. I am also disturbed by the fact that you did not come forward with this information immediately. We should have the first data from Mister Crusher's flight recorder tonight. We will reconvene at thirteen hundred hours tomorrow.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything's fine. Trust me.",
+                    "spoken_by": "LOCARNO"
+                }
+            ],
+            "location": "Academy hearing room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data is also present"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know, Captain. The Academy has one of the best reconstructive analysis labs in Starfleet. I'm not sure there's much we could contribute to the investigation.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, that may well be. But Wesley's one of our own.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood, sir. We'll get right on it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. I've spoken with Admiral Brand and she's agreed to allow us access to all of the physical evidence and testimony. Thank you, gentlemen.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You shouldn't have said it, Nick. Josh wasn't responsible for what happened.",
+                    "spoken_by": "SITO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had to do something.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said we wouldn't have to lie to them. We all agreed not to lie to them.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't lie. Everything I said was the truth.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The accident was not Josh's fault.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look, he was my friend too, Wes. I worked to get him on this team. But the truth is, he panicked.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't know that.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course we do. None of us has wanted to say it out loud, but we've all had the same thought. Haven't we?",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He must have pulled away too soon. I think he got scared.",
+                    "spoken_by": "HAJAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sito?",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she nods"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wes, I know you want to protect his memory, We all do. But we have to look out for ourselves now. What do you want us to do, walk in and tell them everything that happened?",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We might as well turn in our uniforms and start packing our bags.",
+                    "spoken_by": "SITO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are we ready for that? We'll take this one step at a time. This is the preliminary report from your flight recorder. It was so badly damaged in the crash, that the lab could only retrieve a third of the total telemetry on the recorder. And all of it is before the collision. There's no problem here.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know if I can do this, Nick.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't have to lie. Just don't volunteer any new information.",
+                    "spoken_by": "SITO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The first night I met you, Wes, I knew I wanted you on this squad. You, more than any of the rest, would understand what it means to be able to count on someone, because you've been out there, putting yourself on the line. You know you've got to be able to count on the people on your team, because your life is in their hands, and their lives are in yours. We made a promise to each other right in the beginning, that we'd stick together. We were Nova Squadron. Nobody else could say that. And even after we graduated, we'd try to get posted to the same duty. We were going to be a team for a long time. Josh can't be a part of those plans anymore, but I think he would still want us to be a team. What do you think?",
+                    "spoken_by": "LOCARNO"
+                }
+            ],
+            "location": "Wesley's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley is checking the data from his flight recorder against the display on the screen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher?",
+                    "spoken_by": "ALBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At ease. Am I interrupting?",
+                    "spoken_by": "ALBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I was just going over my deposition for tomorrow.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They told me you'd be here. I found this in Josh's room. I think it belongs to you.",
+                    "spoken_by": "ALBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our ski trip. Josh and I went to Calgary last month. He forgot his sweater so he borrowed one of mine.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He told me you helped him with his classes.",
+                    "spoken_by": "ALBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A little. He only needed help in statistical mechanics.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If Josh had a weakness, it was mathematics.",
+                    "spoken_by": "ALBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, he could do it. He just didn't like to.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His mother and I thought he'd never get out of calculus. Then he found out what the Academy entrance requirements were like. That turned him around. He stayed after class, got a tutor. He really worked hard. Never gave up on anything. And he had a lot of respect for you, and everybody on the team. I realise it was his fault. That everybody could have been killed. And I want to say that, I want to say I'm sorry. I'm sorry that he let you down.",
+                    "spoken_by": "ALBERT"
+                }
+            ],
+            "location": "Academy hearing room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "it is now next morning"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you ready, Mister Crusher?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. This is the beginning of our run toward Titan. I'm on the right wing.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is Mister Albert at this point?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He was on my port quarter, approximately fifty metres away. We've just received the signal to begin the diamond slot formation. That's Cadet Locarno coming into view. We're in a twenty degree turn around Titan. We should be coming out of Titan's gravity well about now.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is the extent of the data we were able to recover from the flight recorder. Mister Crusher, would you describe what happened after you left orbit of Titan?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Once we cleared the moon, Mister Locarno led us into a Yeager loop. Approximately nine seconds later, my proximity alarm went off. I tried to veer away, but it was too late and I was hit. I lost control of my ship. A power coupling exploded in my cockpit. I don't know how, but I managed to activate my escape transporter, and the next thing I remember is finding myself on the emergency evac station on Mimas with the rest of the squadron, except Josh.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have anything to add to your testimony?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher, will you describe a Yeager loop?",
+                    "spoken_by": "SATELK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The ships begin in a diamond slot formation, and climb and loop backwards at a steep angle, and at the peak of the loop, turn over and accelerate in a new direction.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher, did your team remain in formation throughout the loop?",
+                    "spoken_by": "SATELK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want you to be absolutely clear on this point, Mister Crusher. Before the collision, was Nova Squadron in a diamond slot formation?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, display Saturn NavCon file six dash three seven nine. These images were obtained by a navigational control satellite in orbit around Saturn during a standard sensor sweep. Computer, freeze image. Magnify sector gamma three and enhance.",
+                    "spoken_by": "SATELK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the five little ships are forming a circle, not a diamond"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This image was recorded when your ships moved briefly into the satellite's sensor range. According to the time index, what you see on the monitor took place seven seconds after Nova Squadron completed the Yeager loop.",
+                    "spoken_by": "SATELK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Crusher, are these ships in a diamond slot formation?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is your explanation, Mister Crusher?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have none, sir.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Academy hearing room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything's going to be okay, Wesley. There must be an explanation for all this. Data and Geordi are already analysing the flight recorder and the satellite transmission.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There must be something wrong with the satellite data. It might have been tampered with.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mom.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, there must be some explanation for this. I know you're telling the truth but the satellite data made it look as if you were lying. I've spoken with the other parents. I am going to talk to Admiral Brand and ask her to delay the inquiry",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mom. Don't. You can't do that.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not going to let them ruin your career, Wesley. You haven't done anything wrong.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mom, don't try to protect me. Please stay out of this.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Wesley's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Boothby is trying to pull grass out of the middle of a shrub"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These weeds keep popping up in the pittosporum. Poor plants don't have a chance to grow.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You could use a good herbicide instead of pulling the weeds with your bare hands.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you could explore space on a holodeck instead of a starship.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Boothby, tell me some more about Nova Squadron.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not going well, is it.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it isn't.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you remember the parrises squares tournament of 'twenty four?",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The final game against Minsk.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It took me three weeks to repair the grounds after the celebration.",
+                    "spoken_by": "BOOTHBY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We had a lot to celebrate. Our team wasn't supposed to win. We were very proud of them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well the cadets today are just as proud of the Nova Squadron. The celebration they held after Nova won the Rigel Cup made 'twenty four look like a dinner party. To the other cadets, the members of that team are gods, and that's a hard image to live up to. But Nick Locarno, he watches out for them. He keeps them together. Nick is what makes that team special. He's their coach, surrogate father and best friend all in one. A natural leader. The members of that team love him. If he asks them to do something, they do it, even if it means going right over a cliff.",
+                    "spoken_by": "BOOTHBY"
+                }
+            ],
+            "location": "Academy gardens"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Crusher enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Report.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing conclusive. We do know that the collision occurred about four seconds after the satellite images were recorded, but we still don't know how the ships got into the new formation or why the crash occurred.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We unsuccessfully tried fifty three different computational models in an effort to simulate the movements of the Nova Squadron just prior to the crash.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There're just too many variables to take into consideration. Speed, attitude, course.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did Wesley's flight recorder indicate that there was anything unusual about the ship or the way it was operating?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The starboard power flow was fluctuating.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "However it was well within operational limits.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fluidic pressure in the landing struts was low, but I don't know what difference that would make.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We did find that Wesley opened his coolant interlock just before beginning the manoeuvre around Titan.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is a bit unusual. Normally the interlock is closed unless you're performing a check on the engine coolant levels. But there's no evidence Wesley was performing that sort of check.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Filling the primary coolant tanks requires an open interlock but that can only be performed in a maintenance bay. Is there any other reason for opening the valve?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the first step in purging the plasma exhaust.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That procedure would be extremely hazardous while the ship was in flight.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, the engine would probably ignite the plasma.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ignite the plasma. That's exactly what they were trying to do.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you tell me what manoeuvre this is?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on the PADD we see five ships go into a circle, cross each other's paths and light up a five pointed star"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a Kolvoord Starburst, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Five ships crossing within ten metres of each other and igniting their plasma trails. One of the most spectacular and difficult demonstrations of precision flying. It hasn't been performed at the Academy team in over a hundred years. Do you know why?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was banned by the Academy following a training accident, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An accident in which all five cadets lost their lives. I think that Nicholas Locarno wanted to end his Academy career in a blaze of glory. That he convinced the four of you to learn the Kolvoord Starburst for the commencement demonstration. If it worked, you would thrill the assembled guests and Locarno would graduate as a living legend. Only it didn't work, and Joshua Albert paid the price. Am I correct? Cadet, I asked you a question. Am I correct?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I choose not to answer, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You choose not to answer? But you've already given an answer to the inquiry, and that answer was a lie.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I said the accident occurred after the loop. It did.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What you neglected to mention was that following the loop your team attempted a manoeuvre that was the direct cause of the crash. You told the truth up to a point. But a lie of omission is still a lie. Do you remember the day you first came aboard this ship? Your mother brought you on the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You even sat in my chair. I was annoyed. Presumptuous child playing on my ship. But I never forgot how you already knew every control, every display. You behaved as though you belonged on the Bridge. And then later when I decided to make you an acting ensign, I was convinced you could be an outstanding officer. I've never questioned that conviction, until now. The first duty of every Starfleet officer is to the truth. Whether it's scientific truth, or historical truth, or personal truth. It is the guiding principle upon which Starfleet is based. If you can't find it within yourself to stand up and tell the truth about what happened you don't deserve to wear that uniform. I'm going to make this simple for you, Mister Crusher. Either you come forward and tell Admiral Brand what really took place, or I will.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dismissed.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your message said it was urgent.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They know, Nick. They know what we did.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Calm down. Calm down. Now tell me exactly what happened.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard called me to the Enterprise. when I got there he told me that he knows. The Kolvoord manoeuvre, the cover up, everything. He said that if I didn't come forward and tell the truth now, he would.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said he'd figured it out. Does he have any evidence?",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, but he knew exactly how it happened.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard doesn't know anything. He has a theory. So let him tell the inquiry what he thinks happened. They'll ask us, is it true? We'll say, no, sir. There's no evidence, so there's no case. We'll get off with a reprimand.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't call Captain Picard a liar.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley, we have to hang on just a little longer, then this will all be over.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's wrong, Nick.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I'm going to tell them what happened.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're going to tell them what happened? You? Alone? Are going to decide what happens to me, to Sito, to Jean? You're going to decide that?",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not going to lie to them again, Nick. I can't live with it.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can't lie to them. You can't live with this. You have to tell them what happened. Who the hell are you?",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nick!",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're going to turn us in?",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now wait a minute.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, you wait a minute. He got to you, didn't he? Picard told you some big story about duty and honour. It must've been a pretty good speech to make you turn your back on your friends.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're Starfleet cadets. We have a duty to the truth.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about your duty to your friends? I got you on this team. I gave you a chance when there were upperclassmen waiting in line. I said, He won't let us down. He was on the Enterprise. He knows what it's like to trust somebody with his life. I guess I was wrong.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we all come forward together and tell Admiral Brand",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't want to come forward. Sito, Jean and me, we don't have a problem with this. But if you do, then resign your appointment to the Academy and walk away. Don't make us pay for your guilty conscience.",
+                    "spoken_by": "LOCARNO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'd let me do that? You'd let me throw my career away just to save your neck?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To save the team. That's more important than you, and it's more important than me. And if I was in your place I'd do it without hesitation. But that's me.",
+                    "spoken_by": "LOCARNO"
+                }
+            ],
+            "location": "Wesley's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Satelk and I have gone over your testimony and the physical evidence from the crash. Your statements cannot be reconciled with the data collected from the NavCon satellite. Your unwillingness to offer any explanation for this contradiction is disappointing, and raises suspicion. We cannot escape the conclusion that either the data is faulty in some way, or you have lied to us. However suspicion is not proof and I have no proof that you have lied to this inquiry. Therefore, if no further evidence is presented, I have no choice but to close this investigation. For filing an inaccurate flight plan, and for allowing Cadet Albert to fly when you knew he was having difficulties, I am ordering a formal reprimand placed on each of your permanent records. I am also revoking your flight privileges. This inquiry is closed.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir. I would like to add something to my testimony.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed, Mister Crusher.",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yesterday I testified that the crash occurred following a Yeager loop. That is not entirely true. We performed a loop, and afterwards broke formation and attempted a Kolvoord Starburst. We knew it was prohibited. We knew it was dangerous, but we wanted to do something spectacular for the commencement demonstration. We pushed Josh into it and he wasn't ready. We thought we could do it. We thought we could do anything. We were wrong, and Josh died. Josh didn't let us down, sir. It wasn't his fault.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Locarno, you are the leader of Nova Squadron. Do you have anything to say? Mister Locarno?",
+                    "spoken_by": "BRAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "LOCARNO"
+                }
+            ],
+            "location": "Academy hearing room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Locarno has been expelled.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They should've expelled all of us.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They very nearly did. Mister Locarno made an impassioned plea for the rest of you. He said that he'd used his influence as squadron leader to convince you to attempt the Kolvoord manoeuvre and then to cover up the truth. He asked to take full responsibility.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He did exactly what he said he would. He protected the team. I feel awful. I've let down everyone. My mother, my friends, you.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should feel bad, and you will pay for what you've done. Admiral Brand has decided that in addition to a formal reprimand, your academic credits for the past year will be cancelled and you will not advance with your class.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not going to be easy, staying here on campus, everyone knowing what you did. You have difficult times ahead.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Thank you, Captain.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You knew what you had to do. I just made sure you listened to yourself. Goodbye, Cadet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodbye, Captain.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Academy gardens"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "219",
+    "transcript_url": null
+}

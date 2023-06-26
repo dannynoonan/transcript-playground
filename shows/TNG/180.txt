@@ -1,0 +1,2797 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you trying to fill another inside straight, Worf? Don't say I didn't warn you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pah!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I fold.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will raise you three.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No cards? The best poker face I've ever seen. Dealer takes two. Your three and ten more.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will see your ten, and raise you twenty.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, Have you got a flush or a full house?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will cost you twenty to make that determination, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dealer folds.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You two have successfully divided the evening between you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suspect conspiracy. Far be it for me to accuse my superior officers.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're getting harder and harder to bluff, Data. You've learned this game very well.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes sir, I believe I have.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell you what. I'll bet that I can find any card that you hide in this deck. And furthermore, I will make you help me find it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Careful, Data.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your guidance is much valued, Counsellor. However.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jack of hearts",
+                    "line": "Pick a card. Don't let me see it.  Now lose it in the deck. Cut the deck into two even piles.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker removes one pile"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay. Once more time. And again. How many cards?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eleven.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take five. Throw them away.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He does, literally, over his shoulder"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pick three more. Okay, now pick one of those. Is that your card?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Yes, it is."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Incredible.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all, Counsellor. You surreptitiously placed the edge of your left thumb against the card. When you divided the deck to reshuffle, you kept that card on top. You thus were able to have me either save or discard, depending on the location of the card, which you followed at each step until we were left with just one. The card I originally chose. Sir, I believe under the circumstances",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and Data gathers in the pile of poker chips"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Picard to Riker.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We've received a distress call. We're changing course to intercept.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44215.2. The Enterprise has bypassed its scheduled archaeological survey of Camus Two in response to a distress call from the Federation freighter Arcos, which has assumed an emergency orbit around Turkana Four, birthplace of our late comrade, Tasha Yar.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Riker's\r\nquarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will be entering the Turkana system in eleven minutes, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engine status.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stable. But we have maintained warp factor nine for longer than is recommended, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Subspace message from the Arcos. Their transmitter is failing, sir. Audio only.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's hear it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Enterprise, this is Tan Tsu, Arcos engineer. Estimate five minutes till warp drive containment breach. Make that three minutes. Thanks for trying, Enterprise.",
+                    "spoken_by": "TAN TSU"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, warp nine point three. How much time?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Seven minutes and fifteen seconds will bring us within transporter range, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nine point six.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Mister O'Brien, prepare to lock onto the two crewmen.",
+                    "spoken_by": "PICARD :"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, Captain.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are now entering the Turkana system, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slow to impulse.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Visual contact.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get them out of there, O'Brien.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's a bright flash on the viewscreen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Status, O'Brien?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "There's nothing to lock onto, Commander.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am reading an ion trail characteristic of a freighter escape pod.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unable to establish contact.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It could have been damaged by the explosion. They may have been able to maintain orbit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's hope they stay clear of the colony.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is exactly where the ion trail is leading, Commander.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hail the colony.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been trying to, Captain. No response.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They haven't been able to maintain reliable communications since their government fell apart.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The last Federation vessel to make contact was the Potemkin, six years ago. They were warned that anyone transporting down to the colony would be killed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, ready an away team.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We are in orbit above Turkana Four, an Earth colony that severed relations with the Federation nearly fifteen years ago. I am concerned about sending an away team, but if we are to discover the fate of the two missing Federation crewmen, I see no alternative.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The surface settlement appears to be all but destroyed. Sensors show that the colonists now live in structures that extend nearly three kilometres beneath the city.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you located the escape pod's landing point, Chief?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Three hundred metres beyond the colony perimeter.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, we can anticipate a violent response to our presence. Perhaps the Doctor should wait here until we signal.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I appreciate your concern. I think it's exaggerated.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The colony is completely lawless. Lieutenant Yar spoke of rape gangs and",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, I can handle myself.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's coming. The Arcos crewmen may require immediate medical assistance. Phasers on maximum stun. Energise.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "very man-made, with iron bars, neon signs, and other metallic detritus"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The dispersion trail continues in this direction. The concentration gradient definitely increases along this vector. The escape pod was apparently moved into the tunnels ahead of us.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The people they meet take no obvious notice of them, but carry on with what they are doing"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hardly the response we expected.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pardon me.",
+                    "spoken_by": "PASSER-BY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe things have changed here.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Then an alarm goes off, and an armed group appears"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Freeze! Identify yourselves.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're from the Federation Starship Enterprise. We tracked two of our crewmen to this area. Do you know anything about them?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Possibly.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A light on the man's chest flashes yellow"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They found us.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proximity detectors. I've seen them used on Manu Three.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Follow me.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "His group run off, carrying a case. The away team follow"
+                }
+            ],
+            "location": "Tunnel"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The case is crow-barred open"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Alliance is holding your men hostage, Commander Riker, not us. You can expect a ransom demand.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Alliance?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our good friends. Our good friends are going to be upset when they realise we took their last crate of Telluridan synth-ale.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe I should take this to the authorities.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are the authorities. The Coalition, our cadre, runs this side of the city. The Alliance controls the other side. Take your choice.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you offering to help us?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In return for some consideration. Phasers are in short supply down here. A starship isn't going to miss a few.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is no better than a ransom demand.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No matter what you give the Alliance, they'll eventually kill your crewmen anyway. With our help, at least there's a chance you'll get your men back alive. All I'm asking for is help in maintaining our defence. We are trying to keep the peace.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything we've seen would indicate otherwise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A prank. The proximity implants prevent either side from doing any serious damage. They warn us when an enemy is approaching.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then why do you need more phasers?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Alliance just discovered a large cache of weapons. I'm just trying to make things even, to preserve the peace.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You keep using the word peace. We've heard a different version of life on Turkana Four.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ancient history. Where did you hear that?",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A former crewman was born here.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where's he now?",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She was killed in the line of duty.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's as good a way to die as any. As I said, ancient history. This is now, and your men are in trouble.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll return to the Enterprise and consider your proposal.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A gift for your Captain.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he hands a bottle of synth-ale to Riker"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Enterprise. Energise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The team beam away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want everything there is to know about the starship Enterprise.",
+                    "spoken_by": "HAYNE"
+                }
+            ],
+            "location": "Coalition headquarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "According to Hayne, the Coalition and the Alliance raid each other for supplies, much of it non-essential.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A battle exercise.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their defences apparently prevent deep strikes into each other's territory. Minor skirmishes are all that's left.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Coalition. Alliance. It all sounds so reasonable, but what you've described is the behaviour of urban street thugs. We certainly won't trade weapons for crewmen. How do you suggest we deal with them?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have to tell them something.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No promises, no denials.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For now, Hayne's Coalition is our only safe access to the colony. We'll keep the door open, see where it leads us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. Transmission coming in from Turkana Four, on a secure channel.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Hello, Enterprise. Commander Riker, would you introduce me to your Captain?",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm Captain Jean-Luc Picard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I have someone here you might like to meet. This is Ishara. Ishara Yar.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Tasha was my sister.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "There's an old saying, Captain. The enemy of my enemy is my friend. I've decided it's in my best interest to help you get your crewmen back.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With nothing from us in return?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "You could be forced into paying my adversary a ransom in weapons. I'll do anything I can to avoid that possibility.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you propose?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Ishara will be our liaison.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I know Alliance territory. I can help you with a rescue plan.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One moment.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mute.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reactions?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not trust him.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She could be a fake. We told him a member of our crew was from the colony.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All Hayne had to do was search through their database had on Starfleet to come up with Tasha's name.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's deceiving us, and he's clearly hoping to manipulate us. As for the identity of the young woman, I can't really tell.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Neverthe less, this is an option we cannot neglect. We'll continue on other fronts as they present themselves. For now, let's see what she has to say.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have decided to accept your proposal.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Thank you. Good luck.",
+                    "spoken_by": "HAYNE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to the Enterprise, Ishara. I am Commander Data.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not human.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am an android.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Built for fighting?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On what do you base that assumption?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A cybernetic device serving on a starship.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise is not a ship of war. It is a ship of exploration.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The first thing to do is help you map the colony. This is a general grid of the tunnel system. I can fill in the specific details from memory.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My orders are to escort you to the Observation Lounge. Please come with me.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your sister never spoke of you.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not surprising.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is surprising to me. Tasha and I spent much time together. We had a considerable number of conversations.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did she talk at all about the colony?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only to say that she was lucky to have escaped.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It wasn't luck. It was cowardice.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cowardice is a term that I have never heard applied to Tasha.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is something wrong?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. It is just that for a moment, the expression on your face reminded me of her.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's been fifteen years. I don't even remember what she looked like.",
+                    "spoken_by": "ISHARA"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data and Ishara enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't believe I'm Tasha's sister.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have considered the possibility.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not surprised. You can sample my DNA if you like.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I will.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, sit down.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker offers her his seat"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it would help if you gave us some idea of what we're dealing with on Turkana Four. The last information describes a colony in almost complete disarray.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It started falling apart almost thirty years ago. There were dozens of factions. They fought until the city above ground was in ruins.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Coalition and the Alliance are all that's left?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were the two strongest factions. When the government couldn't stop the violence, they gave us police powers. The proximity detectors were originally designed by the government to keep us under control.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apparently, that part of the plan didn't work very well.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. After a few months, we didn't need the government any more.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tasha left you in the middle of all that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She didn't abandon me, if that's what you mean. Tasha asked me to go with her, but I had already joined the Coalition. They were my family. Captain, we don't have a lot of time. Maybe we should get started.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Incoming transmission from the colony, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Enterprise, I'm being held by Turkana Four Alliance. I've been instructed to say that you have twenty hours to make reparations for Federation intrusion into this colony, or my pilot and I will be killed.",
+                    "spoken_by": "TAN TSU"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ask them if we can at least send some medical",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take that threat seriously, Captain. They'll torture them and then they'll kill them. My cadre has never recovered a hostage alive from the Alliance. Your crewmen could be held in any number of places. The Alliance has two main headquarters and thirteen ancillary bases of operation. All underground, all heavily guarded.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, if I could get to the myographic scanner.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's that?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A sensing device from the escape pod. It monitors the bioelectric signatures of the crew, in the event they get separated from the pod.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could install a booster on the device that would relay its signals to the Enterprise. Then we could track the men from up here.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unfortunately, we don't know where the escape pod is.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Level three C, section five four seven. We have our sources.",
+                    "spoken_by": "ISHARA"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ishara's data file is up on a monitor. There are a lot of underground levels"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Access tunnels are here and here.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We could transfer the away team right into this intersection.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't underestimate them, Commander. They'll be ready for that. I've seen them use this kind of strategy before. I know it looks isolated and easily accessible, but my guess is they have hundreds of men on the levels above and below just waiting for you to make your move.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will need a diversion.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transport a couple of photon grenades into the adjoining chamber. At minimum intensity it wouldn't kill anybody, but it would shake them up a bit.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That won't give us enough time. We need to occupy them long enough for you to install the relay.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transport me into this corridor. My magnetic implant will set off the defence alarms. They'll think it's a raid by the Coalition.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too dangerous. We've seen what those tunnels look like. You could easily be cut off from the rest of us. Worf, if we",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker. I was ordered to assist you in any way possible. That doesn't mean as long as it's safe or convenient. If you had the time, we could come up with another plan, but you don't. Right now, I'm your best option.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She would have to be armed, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to discuss this with the Captain. Take Ishara down to see Doctor Crusher.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have Tasha's DNA on file?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The ship's computer does. There's always some differentiation between sonomic chromosomes, but not enough to affect results. It should take me a few hours to run the sonomic comparison.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That wasn't too bad. So, all that's left of my sister is a file in a computer.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tasha exists in our memories as well.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did she die?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Yar was killed on Vagra Two by a malevolent entity.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In battle?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. She was killed as a demonstration of the creature's power, without provocation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not how I intend to die.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain approves. You're with us.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The shuttlepod is under guard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enterprise, we're in position.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Level 3C, 547"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Mister O'Brien, energise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, Captain.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ishara is beamed into a tunnel and immediately the alarms go off."
+                }
+            ],
+            "location": "Tunnel"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The people guarding the shuttlepod start to move off, leaving just two behind"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're at level two.",
+                    "spoken_by": "GUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tunnel sixteen.",
+                    "spoken_by": "GIRL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on.",
+                    "spoken_by": "GUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Josh, you're with us.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Spread out.",
+                    "spoken_by": "GUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker and Worf take out the remaining two guards, then Geordi gets to work"
+                }
+            ],
+            "location": "Level 3C, 547"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's check five.",
+                    "spoken_by": "GUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "GUARD 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Check on three.",
+                    "spoken_by": "GUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Checking.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ishara makes her way through the area, and her proximity alarm goes off again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Somebody's here.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Watch your backs.",
+                    "spoken_by": "GUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm right behind you.",
+                    "spoken_by": "GIRL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Their proximity alarms go off too"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "This way.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Go, go.",
+                    "spoken_by": "GUARD"
+                }
+            ],
+            "location": "Tunnel"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damn!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, what is taking so long?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a lot of damage here. The myographic scanner is operational, but the power source keeps fluctuating.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you fix it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can probably run a shunt from the convertor.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long will that take?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ten minutes?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do it. O'Brien, lock onto Ishara and get her out of here!",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Level 3C, 547"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a transformer substation directly above the chamber she just entered. It's masking her signal.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand by. Stay here and cover La Forge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's an order. Return to the ship as soon as you're finished. I'll signal for transport as soon as I can.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Level 3C, 547"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ishara is hit by weapon fire. Her assailant is bending over her when Riker shoots him. More Alliance arrive as Riker picks her up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get us out of here.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Tunnel"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energising.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The rest of the away team are already on board"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is she?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A couple of cracked ribs. She'll be all right.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Crusher just called me with the results of the DNA comparison. Ishara is Tasha's sister.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After what she did for us down there, that doesn't surprise me one bit.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You took some unnecessary personal risks, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We lost Tasha on an away team under my command. The thought of the same thing happening to her sister",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's an emotional response, Will. We can't afford it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander. Well done.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've fused the bone tissue along both fractures. The muscles around the area will be weak for a day or two, but you shouldn't feel any pain.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Doctor.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ishara, I wanted to thank you personally for what you did for us down on the colony. It was more than I expected.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't run away when things get tough, like some people. Like my sister did.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me tell you about your sister. The first time I saw Tasha Yar, she was making her way through a Carnelian mine field to reach a wounded colonist. Her ship had responded to their distress call, as had mine. When it was all over, I requested that she be assigned to the Enterprise. Her ship's captain owed me a favour. In the months that followed, she never once failed to put the safety of the crew before her own, and she died doing the same. I'm sorry you never knew the woman Tasha became. I think you would have been proud of her. And she of you.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ishara is in a tight catsuit now, with Data at a rear science station and looking at her schematic"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this structure?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A main fusion source. There's one next to each of the Alliance headquarters. It powers all of their defensive systems. This chamber is accessed from the level below. Entry points are evenly spaced along this wall every twenty five metres. Data, where was Tasha's post?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tactical station. Where Lieutenant Worf is now.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did Tasha have many friends here?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. She was especially close to Commander Riker and Lieutenant Worf. And to myself.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you able to have friends?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you don't have feelings, do you?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not as such. However, even among humans, friendship is sometimes less an emotional response and more a sense of familiarity.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you can become used to someone?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly. As I experience certain sensory input patterns, my mental pathways become accustomed to them. The inputs eventually are anticipated, and even missed when absent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Like my sister.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, like your sister.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've been moved so far underground it's been difficult to pinpoint their signatures. But the men are here, next to one of the Alliance headquarters. That's about two kilometres of solid granite above their heads.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So much for the transporter.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not necessarily. We could use the ship's phasers to cut a shaft through the bedrock to this storage tunnel here. With a clear path through the rock, we'd be able to transport through the tunnel. That would put us close enough to get to the crewmen. But I'll need two hours to refit the ship's phasers for drilling.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a real maze down there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I spent a lot of time in that section before they took it over. There are blind tunnels and dead ends that don't even show up on this map.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We do not have much choice.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If it wasn't for my implant setting off all the alarms, I could guide you to your men.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We could remove the implant.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it has a micro explosive inside that detonates on contact with air. When you join a cadre, you join for life.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A small force field containing xenon or another inert gas could be placed over the incision site. The explosive could possibly be disarmed at the same time it is removed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is something you're going to have to decide for yourself, Ishara. Think about it while we're waiting for Geordi.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our parents were killed in some crossfire just after I was born. Some people took care of us for a few months, then one day we came home and they were gone. So Tasha took care of me, and when I was old enough I joined the Coalition.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Tasha did not?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My sister hated the cadres. She blamed them for our parents death. For everything. She refused to join, and she left as soon as she had the chance. I always thought she was weak for doing that, but maybe I was wrong. Maybe, maybe she made the right choice. To work together for something besides killing, to be close to someone without having to protect your back. Very appealing. You're the perfect example. I hardly even know you, Data, but already I completely trust you. I even consider you a friend.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. I would like to consider you my friend as well.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I had known about this place fifteen years ago, things might've been different. Maybe it's not too late.",
+                    "spoken_by": "ISHARA"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ishara is willing to have the implant removed, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Inform Doctor Crusher.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She also expressed a desire to leave the colony. She hopes to apply to the Academy and eventually join Starfleet.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does she understand the magnitude of these decisions?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She claims to, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I get a sense of ambiguity from her. Her loyalties are clearly divided, Captain.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you suggesting we deny her an escape from this environment?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I'm just not sure she wants to escape. It's the only way of life she's ever known.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ultimately, it is her decision to make, not ours. Mister Data, proceed with the mission as planned.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Counsellor?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You seem so strong in your support. I'm curious.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We must free the crewmen. She appears to be our best hope of doing so. In addition, I have become used to her.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ishara.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Data.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are welcome. Doctor Crusher is expecting you in Sickbay.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's all so different.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To what are you referring?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On the colony, nobody does anything for anyone else unless they have something to gain from it.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I do have something to gain from it. Your continued presence on this ship. Is something wrong?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to tell Hayne and the others. I owe it to them. Guess I ought to get it over with.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you desire privacy, you may use the Observation lounge.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would probably make things a little easier.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she gives Data a little kiss on the cheek"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Report.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's working.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44225.3. Doctor Crusher has successfully removed Ishara's magnetic implant, enabling the young woman to guide our rescue attempt. Without my intending it, she has virtually become an active member of the crew.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cardiovascular functions normal. Metabolism, immunity, all other vital signs excellent. How do you feel?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Data",
+                    "line": "Better than I've ever felt.  Thanks for staying with me.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You might want to keep this. It's been with you a long time.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly hands her the implant, and leaves."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You keep it, Data, so you won't forget me.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you reconsidered your decision to stay with us?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Just in case something goes wrong down there.",
+                    "spoken_by": "ISHARA"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand you wish to join Starfleet.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some day. If I'm lucky.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On that day, it is we who will be lucky.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Ishara enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Picard to Riker. Is your away team ready?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Waiting for your signal, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Status, Mister La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Phasers in alignment and ready to fire.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How far must we penetrate to safely allow transporter function?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One point six kilometres.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fire phasers.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The beam begins drilling into the planet surface"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One point three kilometres. One point four. One point five kilometres. One point six kilometres. Deep enough for transport, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cease fire. Mister O'Brien, energise.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The team beam in and move off slowly, weapons drawn"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This way.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Caution is indicated.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're near the heart of the Alliance. Security is minimal here. They aren't expecting anybody this far in.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ishara?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Follow me.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you certain?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I'm not. I'm trying to remember. I was here, but it was a long time ago. There have been changes. It's through here.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a man is guarding a door"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There. Your men are behind that door.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker, Worf and Data move forward. Riker shoots the guard, then he and Worf phaser open the door"
+                }
+            ],
+            "location": "Tunnel"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold out your hands.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He uses his phaser to undo their handcuffs"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Meanwhile, Ishara is heading off somewhere else. She shoots a guard, but he manages to use his weapon to set off an alarm"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's get moving.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Chamber"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is she?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, look.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What the hell happened here?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She probably tried to draw their fire. It triggered the alarm.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, get these men back to the Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, you're with me.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Tunnel"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ishara takes out the guard, then breaks into the generator's control panel and taps in commands"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ishara. What are you doing? The fusion generator is overloading. You are attempting to disable the defence system. For what reason? We have rescued the crewmen.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't care about your crewmen. We have three thousand troops waiting at the perimeter. When the defences go down, they'll come in. The Alliance will fall.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Federation will be responsible for the resulting deaths. I cannot allow that.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't have a choice.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is not so.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to kill you, Data. But I will.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will both be destroyed by the explosion.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Coalition's been all I've had for fifteen years. They've given me a life. I don't mind dying for them. But you won't have to if you just get out of here now.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Was this your intention from the beginning?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We never could have gotten this deep into Alliance territory without your help.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our help was not deliberate. You deceived us.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the difference? You got what you came for. Why do you care about what we do?",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your friendship with me was part of the deception, was it not? You misled me at each step, and yet I was completely unaware.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That doesn't matter now! None of it does! Now get out of here, Data, please. Now!",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My duty requires me to intercede.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data dodges her phaser shot"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ishara!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She fires at Riker and Data stuns her. Then he goes to the control panel and stops the overload"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was she doing?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Disabling the detection system so her forces could attack.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "looking at her phaser",
+                    "line": "Set to kill.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Power generator room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ishara is back in her old clothes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your strategy failed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "It was a calculated risk. You gave us an opportunity we couldn't ignore. Ishara, are you hurt?",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I want her returned immediately.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not in a position to dictate to anybody. She attacked two Federation officers.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "You have no jurisdiction here!",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't talk about legal rights. Your jurisdiction is based entirely on the threat of violence.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "You have your crewmen back. Isn't that enough?",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you know about",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard signals him to be quiet"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Data, escort Ishara to the transporter room.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Thank you, Captain. I'm just trying to preserve the peace.",
+                    "spoken_by": "HAYNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Close the channel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're far more charitable than I would have been, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand your feelings, Number One. I share them. But perhaps the fault lies in ourselves. We were so eager to accept her. Each of us, myself included, wanted to see something of Tasha in this woman. We saw more than what was there.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You haven't said one word to me.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you wish to talk about?",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did what I had to do. I'm sorry if I hurt you in the process.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am an android. It is not possible for me to be injured in that fashion.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whenever you're ready.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, Data, I wasn't always lying to you. That time we spent talking, that was the closest thing to friendship I've ever had. If that means anything to you.",
+                    "spoken_by": "ISHARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energise.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, what's on your mind?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Recent events have left me puzzled, sir. It has been days since Ishara left, and yet my thoughts seem to dwell on her. Almost as if I were experiencing a feedback loop in my mnemonic network.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know what you mean.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is curious that I was so easily misled.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make that we.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, sit down.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In all trust, there is the possibility of betrayal. I'm not sure you were prepared for that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Were you prepared, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think anybody ever is.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then it is better not to trust.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Without trust, there's no friendship, no closeness. None of the emotional bonds that make us what we are.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And yet you put yourself at risk.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every single time.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps I am fortunate, sir, to be spared the emotional consequences.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data walks back out into the corridor, and looks at the proximity chip that Ishara gave him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Riker's quarters"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "180",
+    "transcript_url": null
+}

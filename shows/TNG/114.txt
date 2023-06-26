@@ -1,0 +1,2174 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, we are now twenty minutes from Omicron Theta, mark!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand by for subwarp. Head for standard orbit of Data's planet. I wonder why Data hasn't come up here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He said he wanted to be alone. Perhaps it's a bigger moment for him than we thought.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aah, ahh, ahh",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data!",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Choo!",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sneezing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you got a cold?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A cold what?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a disease my mom says people used to get.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah. But humans still sneeze for other reasons and I cannot seem to do it right.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can you be practicing something like sneezing when we're arriving at your home planet for the first time? Aren't you interested in that?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More than interested. Fascinated. One might say agog. But I also find sneezing interesting.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard wishes to see you on the Bridge.",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Data's Quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, confirming class M reading there. But the sensors aren't showing any life readings. Not even vegetation.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Strange. The cruiser that found Data reported farmlands here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data and Wesley enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you want to take her into orbit, Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, thank you, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Continue on into close parking orbit.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could say home sweet home, sir, if I understood how the word sweet applies.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It usually refers to the memories.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It usually refers to one's own memories, Captain. Do the memories you were given include farms, Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Affirmative, sir. But the colony's principal interest was science.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, I can't understand how you can hold the memories of four hundred and eleven people. If that means every experience, every day of their life?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It does not, unfortunately. It means only the knowledge they had accumulated. Actually, I am quite deficient in some basic human information. Sneezing, for example.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sneezing?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Approaching close parking orbit, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Assemble your away party, Commander. This must be an exciting moment for you, Mister Data. I'm tempted to lead the away team myself, except that my First Officer would object.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How would Starfleet judge me if I didn't? An entire Earth colony did disappear down there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You see?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now in close parking orbit, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, welcome home.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First Officer's log, stardate 4124.5. We have found Data's home to be a completely dead world made out of lifeless vegetation. No insects, not even soil bacteria. What is it that could kill everything on an entire planet?"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker, Data, Tasha, Worf and Geordi beam down"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Recording signal locked onto the Enterprise, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This looks like anything but farmland.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed, sir. The soil appears almost completely lifeless.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the exact position listed in the Tripoli log. Do you recognise anything, Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The land contours are familiar, sir. Topographically, this is the correct area.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This once was rich farmland. I'd say something like twenty to thirty years ago.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was discovered twenty six years ago.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I'd say that everything on this planet was either dead or dying at the time Data was found.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was found twenty metres in that direction, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They walk down steps cut into the rock, to a cave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, any idea at all why you were given the colonists' memories?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have always felt that it was done hurriedly, but I know little more. Here, sir. This is where the cruiser's landing party found the signal device that had led them here. And they found me lying there, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He indicates a platform, obviously man-made, on a rock shelf"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were just lying out there in the open? No identity record, no instructions?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only a layer of dust.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the first thing you remember, Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Opening my eyes. Looking into the eyes of the Tripoli landing party. They believed that the signal device sensed their presence and activated me.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then this very spot was your birthplace.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I think I've got this place figured out here. This was really very cleverly done to make this look like a natural hollow in the terrain here. There are signs of it being constructed in a hurry as if to hide something here.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, that was it, Geordi. This wakens a memory remnant of how the colonists hoped to remain hidden, but their fear of being discovered led to their storing information in me.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, thought so.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He has found the catch to the secret door. The back of the cave swings open to reveal a passageway into"
+                }
+            ],
+            "location": "Planet surface"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker turns the lights on"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No life readings in here either, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They walk on until they come to a circular door, which opens for them"
+                }
+            ],
+            "location": "Underground Complex"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The lights come on. The apparatus is still functioning. Lasers and indicators are flashing and blinking"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The colony laboratory. Extremely well equipped. Does this stir any memories, Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only a vague impression of some of my functions being tested here.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There are crude pictures on a notice board of a spiky object in the sky"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Posted by proud parents?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It depicts something that feels familiar, sir. And dangerous. But I have no idea what it represents. And that is all. Except for an impression of this being a Doctor Soong's work area.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who? You don't mean Doctor Noonien Soong?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He was called that here, but his memories indicate he travelled here under a different name.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Noonien Soong, my friend, happens to have been Earth's foremost robotics scientist.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Until he tried to make Asimov's dream of a positronic brain come true.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A positronic brain. He promised so much. And then when he failed completely, Doctor Soong disappeared. Now we know he went somewhere else to try a second time. Data, Geordi, we'll get a close look at this lab. You and Lieutenant Worf reconnoitre where these corridors lead.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tasha and Work leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker presses a button and a cover slides back to reveal a transparent torso and face mask. Data puts the mask over his own face"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, it's you.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An epidermal mold. Made to give your exterior the desired finish.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Lieutenant Yar to Commander Riker.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in, Lieutenant.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Sir, this installation is big enough to hold hundreds of people. But all that's here now is empty beds.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Lieutenant. Complete your record scans and report back here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker, looks like some sort of storage area.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data opens the new door and dry ice pours out before revealing another android, in pieces"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many more Datas are there?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looks like just these two. I mean, that and the real Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, can this be another me? Or possibly my brother?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I honestly don't know, Data.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He needs assembling.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He? Data, we don't know that this can become alive.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is very important for me to know that, sir. I never dreamed it was possible I might find some link with some form like my own.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood. We'll take it back to the ship with us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 41242.45. Despite having only a few hours in which to explore Data's home planet we've discovered something which may explain Data's beginnings, if we can properly assemble and communicate with what we've found.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A mass of people are working on putting the pieces together, while Data looks on"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Signal from the Captain. They need you at the debriefing.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been most anxious to hear the Chief Engineer's opinion, Mister Argyle. Do you believe he can be made to function?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It appears to include all the components in your body. Not that we fully understand your construction either.",
+                    "spoken_by": "ARGYLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have our top specialists working on its construction, Mister Data.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just one thing. Without disassembling you, of course, if we should need more",
+                    "spoken_by": "ARGYLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we should need to compare this with the way you're put together?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data nods"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bringing it up here was the right thing to do, Number One. We were just saying, Data, that if your duplicate functions, it might answer a lot of questions.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does it appear to have all your parts?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Completely, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will we know how to turn it on?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, all right. Legitimate questions about any of this need not be asked apologetically. You feel uncomfortable about aspects of your duplicate, Data. We feel uncomfortable too, and for no logical reason. If it feels awkward to be reminded that Data is a machine, just remember that we are merely a different variety of machine. In our case, electrochemical in nature. Let's begin to handle this as we would do anything else.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's begin with you, Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, sir, a good starting point may be, why was I given human form?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, to make it easier for humans to relate to you. Had to be. But your designer may have had something else to prove as well.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That human-shaped robots need not be clumsy or limited. You certainly operate as well as we do, Data",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Better in some ways, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You might want to have a look at this, Captain. Could be a link to the disappearance of the colonists. It was displayed in the lab, no doubt by proud parents. It could be just a child's imagination, but several children did similar drawings.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Doctor Crusher to Captain. At this point, sir, we very much need Mister Data's help.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's on his way, Doctor.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation Lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "While technobabbnle goes on over the new android, Data is talking quietly with Crusher"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the small of his back",
+                    "line": "Press your fingers there, Doctor.  There. It operates almost as a switch.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And these small projections?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An android alarm clock. Is that amusing? They time how long I remain unconscious.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you certain about us using these heating devices, Data?",
+                    "spoken_by": "ARGYLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will feel nothing at all.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Marvellous. It should all be a lot simpler once we can see how your circuitry's connected.",
+                    "spoken_by": "ARGYLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't mention it to anyone. You have my word.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you had an off switch Doctor, would you not keep it secret?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess I would.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data and his twin are lying on biobeds, as the Argyle and Crusher gaze at Data's magnified innards"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Notice the micro-circuitry here and here. And another fibroid-like connection here.",
+                    "spoken_by": "ARGYLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's close up.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Later, Riker and Picard enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It seemed to go well, thanks to a look inside Mister Data. But there have been no signs of consciousness, yet",
+                    "spoken_by": "ARGYLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It certainly is a good match for Data, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you think so, really? I wonder which of them was made first?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he twitches",
+                    "line": "He was. But they found him imperfect and I was made to replace him.  You may call me Lore.",
+                    "spoken_by": "LORE"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm also a bit troubled by it describing you as imperfect.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Human language gives me difficulty too, sir. Imperfect could mean I lack certain abilities he possesses.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wonder. But the point of this is, whether you and it have approximately the same capabilities.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We do, sir, and your referring to him as an it suggests that I, too, fit into the category of a thing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see your point. My apologies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gladly accepted, sir. As for Lore's abilities, his use of syntax and grammar suggests he was given human memories similar to my own.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you have about equal physical strength and mental abilities?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe so, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which requires I now ask you a very serious question. Since the two of you are closely related to each other.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The answer, sir, is that my loyalty is to you and Starfleet. Completely.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Commander. I was certain of that.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready Room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lore is in a brown overall, getting an introduction to ship's operations"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And helm control is here, with the ship's heading given in measurements we call degrees. Three hundred and sixty of them in a full circle this way.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you say mark.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On the nose.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which separates it from another full three hundred and sixty degree circle this way on a right angle to this one.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So by ordering a heading so many degrees this way and so many this way, the ship can travel in any direction. All three dimensions.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the square of the hypotenuse of a right triangle",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is equal to the sum of the square of the other two. Two something. Which I once heard, but never understood.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All of which you will learn more about when the Captain has approved your being on the Bridge.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have I committed an offence?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will find that there are many rules on starships that must be learnt.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're very clever, Wesley. I now have duties to perform. Correct?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Were you ever this anxious to please, Data?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Never. I judge Lore to be superior in that desire.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because I was designed to be so human, my brother, I enjoy pleasing humans.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My brother. That has a nice sound to it, Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You consider it important to please humans?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not important?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are many things of importance. Some more than others.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you realise that Commander Riker's hypotenuse question tricked you into showing your knowledge was greater than you were indicating?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He didn't seem that clever. I'll be more careful.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You tend to underestimate humans, my brother. Praising young Wesley on the helm, for example",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A child!",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has a child's body, but we have found him to be much more.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you for that information, too. You do care about how I perform. I pledge to be worthy of your teaching, my brother. Try not to be jealous of my abilities.",
+                    "spoken_by": "LORE"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data sits at a computer terminal"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What information are you requesting?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything available on a Doctor Noonien Soong.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good old Often Wrong Soong. A joke, brother. Actually, he was a genius by human standards.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But he had destroyed his own reputation by making what seemed wild promises about his positronic brain design, almost all of which failed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Promises he later proved to be true. Which made you and me possible, brother. Our beloved father. Will I soon have a uniform like that, brother?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you get one the way I did, Lore, it will mean four years at the Academy, another three as ensign, ten or twelve on varied space duty in the lieutenant grades.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A system designed to compensate for limited human ability. And you, brother, are beginning to think as a human. You and I are completely different from them. Are you truly satisfied with the knowledge and memory of a few hundred human colonists? Suppose it could reflect thousands? Or millions? Or the knowledge of hundreds of millions of life forms of every kind?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will discuss that in time.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And will we also discuss, Lore, which of us was constructed first?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would be foolish to underestimate you, brother. Yes, I lied when I said you were made first, but with good reason. Doctor Soong made me perfect in his first attempt. But he made me so completely human the colonists became envious of me.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You lived with the colonists?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sings laughs",
+                    "line": "Until they petitioned Soong to make a more comfortable, less perfect android. In other words, you, brother. Haven't you noticed how easily I handle human speech? I use their contractions. For example, I say can't or isn't, and you say cannot or is not.  I say tomato, you say tomahto. I say potato, you say potahto.  A very old joke. But then you also have trouble with their humour. Am I right?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quite true. I keep trying to be more human, and keep failing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you realise, brother, I can help you become more human?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And do you realise, Lore, that I am obligated to report all of this to our ship's Captain?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I assumed as much when I began studying you. May I use this to learn more of this vessel and its customs?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Use it also to describe for the Captain the time you spent among the colonists. Including everything you know about what happened to them.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I promise a report of great detail and accuracy.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Lore. I now have duties to perform. Unless of course, you need something more.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have more than I dreamed possible, brother.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And Lore starts accessing ship's records at great speed from terminal 40271"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41242.5. Thanks to Lore's report, we now know what happened to the colonists. Beginning with a child's drawing, enhanced by Lore's description, our computer has constructed the image of a great crystalline entity which feeds on life, insatiably ravenous for the life force found in living forms, capable of stripping all life from an entire world.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Data's Quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But how did Data escape that thing? Or Lore?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lore had been disassembled. He explained it as jealousy from the colonists. And Data wasn't yet alive at that time.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which explains why Data could be left outside in no danger from that creature. Whatever happened to the colonists, he would be found by the first Starfleet crew that responded to the signal he transmitted.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By which Doctor Soong left proof behind that his experiment did work.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, how believable do you find that crystal thing?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With so little of even our galaxy explored, I find it at least possible.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, are you expecting Lore to come up here? He left your quarters some time ago.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To go?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My turbo-sensors say he went to deck four. Worf?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where he examined some micro-miniature work tools, and some fine grind quadratanium ?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which is used in our construction. That particular compound is no more suspicious, sir, than a human looking for an antiseptic or an ointment. Nevertheless, I should check it out.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're watching everything he does, Data? Is that the act of a brother?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the act of a Starfleet officer obeying his Captain, Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain? Speaking strictly as Security Chief, how much can you trust Data now?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I trust him completely. But everyone should also realise that that was a necessary and legitimate security question.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "TASHA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lore pours out two glasses of champagne, and adds a substance to one of them. Data enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lesson number one in becoming more human. You must observe all human customs.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Champagne?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An ancient ritual still practiced when they celebrate events of importance. My brother, I toast our discovery of each other. May it fill our lives with new meaning.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data drinks from the doctored glass"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "feels an effect",
+                    "line": "I have some doubts about the value of human customs  in this. My brother!",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And let us toast also Doctor Soong, who gave me the full richness of human needs and ambitions. A perfect match for my mind, my body.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data collapses"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And let us toast also the great Crystal Entity with whom I learned to communicate. Before Doctor Soong disassembled me, I earned its gratitude by revealing the way to the colonists. Can you image its gratitude when I give it the life on this vessel?",
+                    "spoken_by": "LORE"
+                }
+            ],
+            "location": "Data's Quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is strange, sir. I show Commander Data transmitting on a subspace channel.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know Data's been doing considerable research on Doctor Soong's background. Let's be sure. Wesley, would you look in on Commander Data? Discreetly?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes sir!",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Obviously, Lore is now impersonating Data and has donned his uniform"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "door bell",
+                    "line": "Crystal Entity. Upon arriving here you can identify me as the machine named Data.  End of message. Come in, please.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley enters and sees Lore, or rather Data in Lore's overall, on the floor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Glad you are here, Wesley. Lore suddenly attacked me and I had to turn him off.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did he do that, Data?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "twitch",
+                    "line": "He discovered we have been using sensors to follow what he does.  I practiced his facial tic. Do I have it right?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd suggest you forget imitating him. If you'd said we've been using the sensors, instead of we have, I might have suspected you were Lore.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I do use language more formally than Lore. Please inform the Captain I will come up to the Bridge and report on this.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley leaves, and Lore uses a laser to recreate his tic on Data, and cure his own"
+                }
+            ],
+            "location": "Data's Quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wes, tell me again how Data said he immobilised Lore.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He told me he just turned him off, Mom, er, Doctor.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lore as Data enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Question, Mister Data. Did you or did you not swear me to secrecy about your off switch?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A change of mind, Doctor. If I cannot trust the bridge crew, whom can I?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm picking up a bogey coming in on a five o'clock tangent.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's transmitting no ID signal, Captain.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set main viewer on that tangent.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields up. Go to Yellow Alert. Transmit friendly greetings, all languages, all frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Crystal Entity whooshes towards them"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't believe anything's overtaking us this fast.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beautiful, isn't it?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I recognise it, sir. It's the crystal image Lore described.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My God.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Enterprise is dwarfed by the Entity"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Still no ID being transmitted, sir. Also no answer to our inquiries.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi enters, or re-enters. Some time must have passed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you get a direct look at it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's like a giant snow flake crystal, but much more complex. The entire electromagnetic spectrum seems to play about inside it, but I haven't the slightest idea what it is, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Lieutenant. Data, is there anything else that Lore can tell us about it, it may be important. Can you control him enough to question him?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will have to examine him to know, sir.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, recommend that you do not let him roam the ship freely.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley is only showing himself to be alert and responsible. Something to encourage. Come, you can watch everything I do.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not if I have a choice.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is enough, Ensign. When addressing a senior officer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've guided his training, sir, I'm the one at fault. You will show the proper respect. I will accompany you down there to make certain of it. With your approval, of course, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "flicks Data's switch on and off",
+                    "line": "Be careful of Lore. Good. He is still unconscious. Notice the same twitch, even though he is unconscious? Stay back. We may have problems if he senses someone else is near.  Lore, I have a few questions to ask you.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lore, it is Data. He senses you. I cannot control him if you stay. Please! I will record everything he says.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will bring it to the Bridge, immediately.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker and Wesley leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you want to be as stupid as them, dear brother?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lore kicks Data in the head, opening a flap of skin"
+                }
+            ],
+            "location": "Data's Quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Number One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was Lore, sir. Same facial twitches that we've seen all along. Lying unconscious on the floor exactly as Data had described. But then it suddenly became violent, apparently sensing that Wesley and I were present.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or is it Lore pretending to be Data and faking it all?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I asked for Commander Riker's report, Acting Ensign Crusher. And since it now seems clear that you are unable to function within the limits of that appointment",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The entity is starting to send rays their way"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deflector shields holding, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bring photon torpedoes to ready. Main phasers to ready. Go to Red Alert, please.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data/Lore enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Weapons now ready, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Captain, let me talk to it.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the ship shakes",
+                    "line": "You didn't say you could do that.  Affirmative. Talk to it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open hailing frequencies. Crystal form, I identify myself as Data, advising you to stop your attack. The humans here are powerful, capable of injuring or even destroying you.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The attack stops"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now I call that communicating.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Suggest moving fast to confirm what I told it, sir. Permission to use the large transporter in cargo room three. There I can beam up some living pattern, perhaps a large tree.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which you'll beam over next to the entity",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is correct, Riker. Our ship's phasers will then blast and disintegrate it, proving we are dangerous.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lore leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I know this may finish me as an Acting Ensign, but",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shut up, Wesley! Lieutenant, pick a good security team, let me know what he does.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shut up, Wesley?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And since I am finished here, sir, may I point out that",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shut up, Wesley!",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That everything that I have said would have been listened to if it came from an adult officer. Request permission to return to my quarters, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed. Doctor, go with him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're putting me off the Bridge?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm asking that you keep an eye on your son during all of this, Doctor.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is leading the security team, but gets cut off from them when -"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Emergency close!",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He slaps the phaser out of Worf's hand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, show me your warrior fierceness.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Of course, flesh and blood is no match for the machine"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll look. But I shouldn't have let you talk me into this.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mom, it's Data. He's been hurt. It's Data, Mom. I heard you know how to turn them on.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is very serious.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So just tell me to shut up, Wesley, and I will.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're being very unfair, Wes.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She switches Data on"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, the Crystal Thing is outside somewhere close to the ship, and Lore is loose on the inside.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How badly are you hurt, Data?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will function sufficiently to stop Lore, Doctor",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Data's Quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lore is at the cargo transporter console"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Crystal entity form, it's your old friend.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data, Crusher and Wesley enter unnoticed as Lore receives a reply from the Entity"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very good. You've understand perfectly so far. Next, I'll signal that I'm about to transport something out, at which time the deflector shields will turn off for a moment, and if you move in at that time",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lore realises that Data has snuck up behind him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How sad, dear brother. You make me wish I were an only child.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sees Wesley",
+                    "line": "Then why this marvellous gift? The troublesome little man-child. Are you prepared for the kind of death you've earned, little man?",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly steps out, with her phaser"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you take one step toward my son",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, motherhood.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lore grabs Data, pushes him into Crusher and grabs her weapon"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Back off, or I'll turn your little man into a torch. I promise him exquisite pain unless you obey me too, brother.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Move away, Data. Please.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you see now the advantages of being completely human? It includes kindness. I give you your life, Doctor. Go home. Quickly. And I may not injure your son at all.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will stay with Wesley, Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go! Or he'll be shrieking by the count of five. One, two, three, four",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher runs for it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you for my human quality, Doctor Soong. Wait! A small payment for your son's misdeeds.",
+                    "spoken_by": "LORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lore shoots Beverly in the arm. Data jumps Lore and they fight across the cargo bay, sending barrels and containers flying."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wes! The transporter.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data throws Lore onto the pad, and just as Lore aims the phaser"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley, now!",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley beams Lore out, somewhere. Tasha and Riker arrive, armed, followed by Picard and Crusher"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lore's gone, sir. Permanently.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, now that Wesley's safe, go to Sickbay at once.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the crystal thing has begun to move away.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, are you all right?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "twitch",
+                    "line": "Yes, sir. I'm fine.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get rid of that damned twitch and put on the correct uniform.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign Crusher, are you able to return to duty?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then do so, and let the Bridge know that all is well down here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley, Data, Tasha leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's gone, sir. Without Lore, it had no way to reach us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we're overdue for our computer refit. Number One, have you ever considered whether Data is more human, or less human than we want?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I only wish we were all as well balanced, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Cargo bay"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "114",
+    "transcript_url": null
+}

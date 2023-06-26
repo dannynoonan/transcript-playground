@@ -1,0 +1,2500 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Commander?",
+                    "spoken_by": "CLANCY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there a problem? Chief Engineer La Forge called for me, urgent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, of course. He's over there, with the Victory.",
+                    "spoken_by": "CLANCY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, I just had a strange conversation with your assistant. Although it is three days until we rendezvous with starship Victory, she",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She believes it has already arrived? Not the starship, my friend. The original.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in a side alcove is a wonderful replica of HMS Victory, bunting and all"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is my gift to the Victory's Captain Zimbata.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Most unusual.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I served with him an ensign. Sure wish he'd been in command of this Victory. Wind and sail, that's the proper way to move a ship.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But, Geordi, your Starfleet specialty is antimatter power, dilithium regulators",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's exactly why this fascinates me, Data. You see, it's human nature to love what we don't have. Simpler days, huh? Anyway, stringing this rigging has made me dream of handling sails.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not a computer simulation?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, the whole point in doing something like this is to make it by hand.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, your message said urgent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So it is. While we're waiting to rendezvous with Victory, we have time for me to be Watson. More properly, your Watson.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi hands Data a meerschaum pipe"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My Watson?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've just shown you one of my dreams, now let's go and share in one of yours.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, yes. That does seem only fair.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Clancy, I'll be gone awhile. See that no one touches this.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. And where can I reach you?",
+                    "spoken_by": "CLANCY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He can be reached at 221B Baker Street.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "CLANCY"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The friends are costumed for late Victorian London"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, select at random a mystery by Sir Arthur Conan Doyle, where I will play Sherlock Holmes and Lieutenant La Forge will be Doctor John Watson.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Programme complete. You may enter.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Outside holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They enter Sherlock Holmes' study"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look at all of the detail. So you say everything here has some significance?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Holmes collected nothing, neither trinkets nor thoughts, which were not specifically significant to him.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a book",
+                    "line": "The emerald tie pin. Presented to Holmes by Queen Victoria after he solved the theft of the Bruce-Partington Plans.  A copy of Whitaker's Almanac, which provided Holmes the key to the secret code in The Valley of Fear. The snuff box of Wilhelm Gottsleig Siegesmann Van der Romstein.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, Data. You solve the cases and get all the gifts, what do I do?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Primarily as Doctor Watson, you will keep a written record of everything I say and do. For later publication. And the famous Holmes violin. He purchased this in a pawn shop in Tottenham Court Road for fifty five shillings, which he considered to be a very good investment.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And with his back to us, he plays beautifully"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the hands of some, the violin is a wondrous thing, equally capable of stirring the soul to the heights of bliss as to the depths of despair, but Data, that's incredible. How can you play it like that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Merely throwing myself into the part, Watson.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But, in the hands of my friend, Mister Sherlock Holmes, the violin ceases to be a musical instrument at all and becomes",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Watson, we are about to have guests.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How could you possibly?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A knock on the door"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Be a good fellow and answer that. Let's not keep the Inspector waiting.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Inspector who?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lestrade of course.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Holmes, are you there, man?",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge opens the door and two men enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank the Almighty you're available today, Holmes, I'm in a deuce of a dilemma.",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then may I say your perturbation becomes you, Inspector Lestrade, whilst simultaneously affording me yet again the opportunity to serve Queen and country.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, Holmes really talked like that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Absolutely.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need your help, Holmes. You see, this gentleman here, the emissary of a foreign government, has been the victim of a most accidentally wicked crime.",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "trying to turn on a table lamp",
+                    "line": "Damn. Haven't they invented the electric light by now?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What, dear fellow?",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Watson. Pray continue, Inspector.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To put the matter simply, Holmes, this man was accosted by gypsies intent on depriving him of his most valuable possessions. And in the process of picking his pockets clean, they also happened to bag a photograph this man was carrying.",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data gets up, rips the lining of the man's jacket to reveal - "
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Great Scott! The photograph!",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe you will find, Inspector, that this emissary here works not for but against the King of Bohemia, and that photograph of the king and his mistress is to be used as blackmail. Further, upon deeper reflection, you will deduce, as did I, that",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, freeze programme. Exit!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, where are you going? Geordi?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm done.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "hurrying after him",
+                    "line": "But, but, Geordi, I was just about to reveal that the sir is in fact a madam",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "221B Baker Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "still in costume"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, what was the point in going to the holodeck?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To solve a Sherlock Holmes mystery.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly, but, you've got them all memorised. The first time someone opens their mouth, you've got it solved, so there's really no mystery. If there's no mystery, there's no game. No game, no fun. I'm not upset with you, Data, really. It's just that we go through all the trouble to arrange the time to go down to the holodeck, to get the proper wardrobe, to get into character, and then boom, before we even get started you jump to the end. You see, I was looking forward to the mystery.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I should have extended the sequence of events.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I'm not getting through. The fun in the programme, Data, was in the attempt to solve a mystery.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that not exactly what we were doing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are wasting your breath, Lieutenant. Saying that to Data is asking a computer not to compute.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Am I so different from you, Doctor? Are you able to cease thinking on command?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In medicine I'm often faced with puzzles that I do not know the answer to.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's right, Data. You always know the answer.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To feel the thrill of victory there has to be the possibility of failure. Where's the victory winning a battle you can't possibly lose?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you suggesting that there is some value in losing?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Yes, that's the great teacher. We humans learn more often from a failure or a mistake than we do from an easy success. But not you. You learn by rote. To you all is memorisation and recitation.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know about that. Deductive reasoning is one of Data's strengths.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, and Holmes too. But Holmes understood the human soul. The dark flecks that drive us, that turn the innocent into the evil. That understanding is beyond Data. It comes from life experience which he doesn't have combined with human intuition for which he cannot be programmed.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now you're just being unfair, Doctor.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think so, Lieutenant. Your artificial friend doesn't have a prayer of solving a Holmes mystery that he hasn't read.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have read them all.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You see? LAFORGE: Maybe the computer could create one in the Holmes style. One where you wouldn't know the outcome.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As I said, he wouldn't have a prayer.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I accept your challenge, Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good for you, Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will return to the holodeck, where I will dare it to defeat me. And you, Madam, are invited to be a witness.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wouldn't miss it.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come, Watson.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There. I have instructed the computer to give us a Sherlock Holmes-type problem, but not one written specifically by Sir Arthur Conan Doyle.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So this will be something new, something created by the computer?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly. Will that be sufficient, Doctor?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll see.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Programme complete. You may enter.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Outside Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Near the river, with a ship's fog horn going and hawkers crying their wares. The sign says Tovey Street"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pies, pies, Some are meat, some are sweet.",
+                    "spoken_by": "PIE MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very impressive.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your first visit to a holodeck, Doctor?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, with this level of sophistication. How does this work? The real London was hundreds of square kilometres in size.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is no larger than the holodeck, of course, so the computer adjusts by placing images of more distant perspectives on the holodeck walls",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But with the image so perfect you'd have to touch the wall to know it was there. And the computer fools you in other ways. I say, Holmes, where shall we head? The theatre? Rule's? A concert perhaps?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A young boy dashes between them"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stop him! Stop him! He stole my goods!",
+                    "spoken_by": "PIE MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. It is a ruse. This way.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Outside the headquarters of the Red-Headed League"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's over here, Data?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing, Data? Tell us",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The running youth was a ploy. The real crime is here. And the intended victim is that man. Mister Jabez Wilson, employee of the Red Headed League, dupe of a gang of criminals.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I saw the plaque 'The Home of the Red Headed League' and this rope dangling from the bell, which enabled me to deduce that Mister Jabez Wilson was headed here to meet a most distasteful and untimely demise. From this.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He pulls the rope to ring the bell and a snake falls to the ground"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fraud. You didn't deduce anything. All you did was recognise elements from two different Holmes stories. Fraud.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reasoning. From the general to the specific. Is that not the very definition of deduction? Is that not the way Sherlock Holmes worked?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Variations on a theme. Now, now do you see my point? All that he knows is stored in his memory banks. Inspiration, original thought, all the true strength of Holmes is not possible for our friend. I'll give you credit for your vast knowledge, but your circuits would just short out if confronted by a truly original mystery. It's elementary, dear Data.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now wait a minute, Doctor. We'll see whose circuits short out.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They return to where they entered, under the watchful gaze of a man"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, arch.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you sure you want to put yourself through this, Lieutenant? Better wilted laurels than no laurels at all.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, override previous programme. Okay. A programme that definitely challenges Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now it has to deal with events that he has no previous knowledge of.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, in the Holmesian style, create a mystery to confound Data with an opponent who has the ability to defeat him.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Define parameters of programme.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What does that mean?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer wants to know how far to take the game.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean it's giving you a chance to limit your risk.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, the parameters will be whatever is necessary in order to accomplish the directive. Create an adversary capable of defeating Data.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was that?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An odd surge of power, sir. It's gone now.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "No hawkers, a barking dog, drunken sailors, and the man puts his top hat back on"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interesting. The same London but slightly different.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is something wrong, Professor?",
+                    "spoken_by": "WHORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I, I feel like a new man. That dark fellow there used the word arch, and then. I wonder? Arch.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The computer arch appears for him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What have we here?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer standing by.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you refer to the arch you ordered, it provides computer control. Do you wish to input any commands?",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at this time.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The arch disappears"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's dark magic, Moriarty.",
+                    "spoken_by": "WHORE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The best kind, I'm sure. But I need information.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Further along the street"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, I mean, Holmes old boy, what are we looking for?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For whatever finds us, my dear Watson.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A scream. They run back to discover a shoe on the pavement."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has been abducted.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who has?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The good Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think she's hiding. She's going to lead you on a wild goose chase and then recount the story to everyone between here and Alpha Centauri.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Watson, the doctor has been carried off by two men. One is tall. The other is shorter, left handed, and is employed in a laboratory.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how do you know that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One set of footfalls are widely spaced. The other is evenly spaced, closer together. Further, on the ground you can see the swirling scrapes made by his left shoe as he twists behind, presumably to see if he is being followed. Left footed means left handed. The dark colouring of the scrapes are the leavings of natural rubber, a type of non-conductive soles used by researchers experimenting with electricity. Finally, there can be no argument, the game is afoot! Come, Watson!",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hear that? What do those footfalls tell you, Watson?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That we're on the right track.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More particularly, that our opposition does indeed consist of two men, and that one of them is carrying the bound and gagged Doctor Pulaski.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, you know all this because you read it in a Holmes story, right?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all. Because we do not hear the doctor's footfalls, we must assume that she is being carried. And since we do not hear her cries for help, we know that she is gagged. Further both sets of footfalls are heavy and masculine. One man seems to shuffle and stumble in an irregular pattern. Since the ground is level, we must conclude that Doctor Pulaski is struggling against one of her captor, sporadically knocking him off stride. Deduction, pure and simple. well, not that simple.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Footfalls.",
+                    "spoken_by": "BOTH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And off they run again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There they are again, Watson. I dare say we have caught up rather nicely with our quarry.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "But it is a dead end"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There should be a doorway.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. Come on.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They retrace their steps and meet the Inspector"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Holmes! Thank God you're here.",
+                    "spoken_by": "LESTRADE"
+                }
+            ],
+            "location": "Alleyway"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A crowd is gathered around a body"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make way, please, make way. Make way for Sherlock Holmes. It's murder, Holmes, murder most foul.",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Holmes, what do you say, man?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is nothing here of relevance. I do not see how this connects with the disappearance of the Doctor.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor? Doctor Watson is right here, Holmes.",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Kate Pulaski. But do not concern yourself, Inspector. You have enough on your mind.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She was with you?",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Inspector, perhaps I can be of assistance. As I take note of this dead man, I deduce that he was strangled. You see, the finger marks on his throat indicate the cause of death, and, as there are signs of struggle, it's quite obvious that his murderer was a stranger who attacked him from behind.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that correct, Holmes?",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Look at his shoes. He's more a convict, released today from Dartmoor prison. (",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pentonville more like, my dear Holmes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ") He spent the day in a tavern consuming large quantities of gin with his killer, who followed him to this spot and waited over there until the victim slipped into a drunken stupor. Then, out of fear, motivated only by self-protection, strangled him. There is your killer, Inspector."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data points at an old woman"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Seize her.",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And when you check, I believe you will find that this poor soul is the victim's common-law wife, who has been dreading the release of this a vile and abusive man.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Holmes, the poor woman hardly has the strength to strangle a man this size.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a beaded shawl",
+                    "line": "Not with her hands, no. But with this.  When used as a garrote, these beads will leave marks quite similar to fingerprints. And, my dear Watson, you will note from the victim's throat, the marks are too evenly spaced to be have been made by human hands.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Astounding, Holmes.",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not really, Inspector. And now, for strictly personal reasons, I must leave. Come, Watson. This murder does not connect with our case.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come along. Hurry it up. Come on.",
+                    "spoken_by": "LESTRADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data and Geordi leave the crime scene"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, wait. If this murder isn't connected to the disappearance of Doctor Pulaski, then the computer is running an independent programme.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not know, and that is what puzzles me.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you don't know what's going to happen next?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's what I want to hear. Where to now?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will find Doctor Pulaski in here.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you know that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is the only obvious choice.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And where he saw Moriarty go in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why is the obvious choice all of a sudden the right one? I mean, isn't this a game of misdirection?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not any more. He wants us to find him.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who does?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The master criminal. The man Holmes could only defeat at the cost of his own life at Reichenbach Falls. Our adversary, my dear Watson, is none other than Professor Moriarty himself.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now this is getting interesting.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's nothing here but these barrels.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And a trail, which is so well marked, that obviously we are meant to follow it.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, no, Data. It's another dead end.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Watson. Not a dead end at all. Hello, what's this? Can you see the scratches?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi opens the secret door, which has a bookcase on it's other side"
+                }
+            ],
+            "location": "Warehouse"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "It contains an assortment of bubbling flasks of chemicals, works of art, gas lights, carpet and comfortable chairs"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Doctor was right. Finally we have a game worth playing.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The time for games is over.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor Moriarty, I presume.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you know that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is the one worthy opponent created by the author, Conan Doyle.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And, like the spider, I feel the strings vibrate whenever anyone new chances into my web. Welcome, my dear Holmes. But not Holmes. And Doctor Watson. But not Watson.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, what does he mean? How does he know we're not who we appear to be?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is Doctor Pulaski?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's here.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She would not have told you anything.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has provided many answers. Do you forget I have always been your equal, dear Holmes? I have read her expressions. What she has not said is as important as her words.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you injured her?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will, if necessary. But my mind is crowded with images. Thoughts I do not understand yet cannot purge. They plague me. You and your associate look and act so oddly, yet though I have never met nor seen the like of either of you I am familiar with you both. It's very confusing. I have felt new realities at the edge of my consciousness, readying to break through. Surely, Holmes, if that's who you truly are, you of all people can appreciate what I mean.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Say nothing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know there is a great power called Computer, wiser than the oracle at Delphi. A power which controls all of this, and to which we can speak. Arch.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, this isn't right. A holographic image should not be able to call for the arch.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It has described a great monstrous shape on which I am like a fly stuck on a turtle's back adrift in a great emptiness. What is this, Holmes?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data takes the piece of paper, and if he could turn white he would have. He goes to leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data. Data, wait.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Moriarty's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, wait! Data!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why does it frighten you, Holmes?",
+                    "spoken_by": "MORIARTY"
+                }
+            ],
+            "location": "Warehouse"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data. Data, will you please tell me what's going on?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, exit!",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, execute complete shutdown of the Holodeck.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Access denied.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Explain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Override protocol has been initiated.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's still running. The programme didn't shut down.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We must see the Captain.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, wait. What is it? What's on that paper? And why can't we shut down the holodeck? Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is impossible. How can a character from 1890's London draw a picture of the Enterprise? Who's got control of the computer?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He does. Moriarty.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is impossible? I don't understand.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nor do I.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, wait. What about the doctor? Is she all right in there?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. She is in grave danger.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, why wasn't the holodeck programme terminated?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The override protocol has been initiated.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On whose authority?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Geordi La Forge.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Me?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, tell me from the beginning exactly what happened.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Doctor Pulaski and I had a discussion about whether Data could solve an original Holmes-type mystery.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which you asked the computer to provide.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, with a worthy opponent.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worthy of Holmes?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "watch the penny drop"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, my God. I asked for a Holmes-type mystery with an opponent capable of defeating Data. That got to be it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Merde.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm sorry.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand, Lieutenant.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, this character, Moriarty, he called for the arch.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, he has access to the computer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And perhaps our library files as well, sir. That level of information would be necessary in order to create a true adversary for me.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Theorise, Data. What are his limits?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is still a fictional character, sir, originally programmed with nineteenth century knowledge.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which now has access to twenty fourth century knowledge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What does he need to begin making use of that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only time, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I can lead a security team to sweep the holodeck, find the Doctor, and bring her out.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I believe that would place the Doctor at risk. It is probable our mortality failsafe has been overridden.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, where is Doctor Pulaski.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Pulaski is on holodeck two.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And her vital signs?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Strong and stable.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, recommend we try to destroy the hologram generations themselves. Is that possible, Geordi?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Using wave guides, I could split a particle stream out of the matter/antimatter chamber and route it down through existing conduit into the holodeck. If accelerated to sufficient velocity that would quite literally wash away all present holographic constructs. The London buildings, the streets, the people, all gone including Moriarty.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Pulaski?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The particle beam will tear apart human flesh as well.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm sensing something from the holodeck. It's as if a unifying force or a single consciousness is trying to bring it all into focus.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There can be only one explanation. In programming Moriarty to defeat me, not Holmes, he had to be able to acquire something which I possess.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly what?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Consciousness, sir. Without it he could not defeat me.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The ship jerks suddenly from side to side"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, what happened?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Attitude and stabilisation control of the Enterprise was momentarily transferred to holodeck two.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, I think it best that you and I should return to the holodeck.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will change into my uniform, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I will change into some appropriate costume. Uniforms might pose questions I'd rather he didn't ask. It seems that he feeds on knowledge. Well, let's not give your nemesis any more information than we have to.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation Lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did you make the room shake?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure. Now, dear lady, will that be one lump or two?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They are taking afternoon tea"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lumps, Professor? What sort of lumps?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He puts one sugar lump into her cup"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Milk, of course?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why not.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Computer proposes the incredible thought that we are all travelling in a great vessel of some sort. Is that true?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know what you're talking about.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The scones are likewise a must.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is really quite excellent.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Strange. It actually pleases me to hear you say that.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very strange. You're beginning to sound very different from the Moriarty I've read about.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not frightened of me?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should be. Mister Computer, the arch, please. A few more questions, Mister Computer.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Moriarty taps at the control panel"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I just can't seem to remember that last command. Ah, well, sooner or later it'll all come to me. But, in the meantime, I have decided to approach the problem from a more familiar perspective. There's really no reason why I shouldn't be able to use some of the knowledge from my world in order to bring me closer to yours.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no idea what you're talking about.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course you do, Madam. The more you proclaim your ignorance, the more you try to mislead me, the more I am on to you. Your every silence speaks volumes.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good, then if you know what I'm saying when I'm not saying anything, what do you need me for? Thank you for the tea and crumpets. I guess I'll be going.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where? Back to here?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A diagram of the Enterprise on his blackboard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Would you care to join me?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In time. In time I will leave all of this and join you out there. Or is this where we both are right now?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right now, we are in London. Tell me what you want from me, or allow me to leave.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Frankly, now I want nothing more than what the fisherman expects of the worm. You, dear Doctor, will be the lure, and this will be the hook for your Captain, Jean Luc Picard.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is that?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How well you know.",
+                    "spoken_by": "MORIARTY"
+                }
+            ],
+            "location": "Moriarty's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf enters from the turbolift, in a smart frock coat and grey gloves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nice suit.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Captain, I will be standing by to assist you if needed.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll be a big hit in London.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a gentleman with opera hat and cane",
+                    "line": "Computer, tell me, is the programme still running?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Affirmative. You may enter.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, shall we go? Gentlemen. Open.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Outside holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Parts of the holodeck grid are visible, there is a heavy mist off the river and the people are unhappy"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't have much time. He's getting more control of his environment. Let's see if we can't beat Professor Moriarty by giving him everything he wants.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Outside the Ale and Stout house"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Obviously, he's trying to alter the programming here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard picks up a coin"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tuppence. Two pence. Supposed to be good luck. We may need some.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll take that coin, sir. That's right, and any more you got too.",
+                    "spoken_by": "RUFFIAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think so. I want all that money. That's right. I want it now.",
+                    "spoken_by": "RUFFIAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data disarms the mugger by squeezing his thumb"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, this holographic image differs from any I have ever seen. Could he have actually injured you?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's more serious than that. I think the mortality fail-safe may have been circumvented. He could've killed me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on, let it go, guv. He's hurting me!",
+                    "spoken_by": "RUFFIAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, let him go.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will find Moriarty this way, sir. The warehouse.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Street"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulaski hurries to her feet and starts fastening her jacket"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You all right?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, except for being crammed full of crumpets.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm a civilised abductor, Captain Picard. Civilised but still dangerous.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He pulls a signal lever on his steam engine, and the ship lurches"
+                }
+            ],
+            "location": "Moriarty's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge to holodeck control. Worf.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Status? Anything changed?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Corridor outside holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Moriarty, you were conjured up to attempt to defeat Holmes here. Once that attempt is concluded, win or lose, your programme has run its course. Your existence is done.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Congratulations, Professor, I capitulate to the better man. Your victory, sir, is well earned.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "big shake",
+                    "line": "It's gone beyond that little game, Mister Data. And you'll note I no longer call you Holmes. Whatever I was when this began, I have grown. I am understanding more and more. And I am able to use the power at my fingertips.  I can affect this vessel, and I can inflict bodily harm on you, and on your Doctor.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, you can do that, but you haven't. I suspect you shook this ship in order to get my attention. Well now you have it. What is it you want?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The same thing you want for yourself. To continue to exist. If I destroy these surroundings, this vessel, can you say it doesn't matter to you? Interesting pun, don't you agree, for matter is what I am not. The computer has taught me that I am made up only of energy.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That may not be entirely true, Professor. This which we call the holodeck uses a principle similar to another device called a transporter. In the year in which we live, humans have discovered that energy and matter are interchangeable. In the holodeck, energy is converted to matter. Thus you have substance. But only here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if I step off this holodeck?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then, Professor, you will cease to exist.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are not alive. As I said before, you are only",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A holographic image, I know. But are you sure?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh yes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does he have life? He's a machine. But is that all he is?",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. He is more.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly. Is the definition of life cogito ergo sum? I think, therefore I am.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, that is one possible definition.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is the most important one, and for me the only one that matters. You or someone asked your computer to programme a nefarious fictional character from nineteenth century London and that is how I arrived. But I am no longer that creation. I am no longer that evil character, I have changed. I am alive, and I am aware of my own consciousness.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Moriarty, my responsibility is this vessel and its crew.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want my existence. I want it out there, just as you have yours.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That may not be possible.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you must murder me, Captain.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot give you what you want.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because you do not know how to convert holodeck matter into a more permanent form.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, that is so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A pity. What I have seen, what I have learned, fascinates me. I do not want to die.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I do not want to kill you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Madam, I have enjoyed your company. Computer, arch. Cancel override protocol. Return control of the holodeck to main computer. My fate is in your hands, as perhaps it always was.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge, this is the Captain.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Riker here, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, the situation is under control.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Moriarty, this vessel's computer has a vast memory capacity.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How well I know.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will not be extinguished. We will save this programme, and hopefully, in time, when we know enough, we will bring you back in a form which could leave the holodeck.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then perhaps we'll meet again some day, Madam.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It could be a long time. Time won't pass for you, but I may be an old woman.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I'll still fill you with crumpets, Madam. I detest long goodbyes. You have the arch.",
+                    "spoken_by": "MORIARTY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you wish. A short goodbye. Computer, save the programme of the character Moriarty, and then discontinue.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Moriarty disappears"
+                }
+            ],
+            "location": "Moriarty's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge is with HMS Victory"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damaged?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. She cracked a spar when the Enterprise was shaken. Otherwise I think she weathered it quite nicely.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's beautiful. A wonderful testimony to simpler times.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Thank you, sir. It's just that I can't help thinking how. What else might have happened all because I misspoke a single word.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, soon she'll be ship-shape and Bristol-fashion.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bristol fashion, sir?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's an old navy phrase, meaning everything in perfect order.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As are we, Mister La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain. Starship Victory has arrived.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my way, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Engineering"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "129",
+    "transcript_url": null
+}

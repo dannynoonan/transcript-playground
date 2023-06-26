@@ -1,0 +1,2823 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are approaching Starbase one seven nine.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Half impulse, Mister Crusher.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Going to half impulse.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, this is the Bridge. We have arrived at Starbase one seven nine.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acknowledged, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Establish position zero nine zero mark three four five at twenty seven thousand kilometres. Hailing frequencies.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starbase one seven nine, this is the Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Enterprise, this is Starbase one seven nine. We are ready for transfer on your mark.",
+                    "spoken_by": "STARBASE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Commander Data, you have the bridge. Ensign Crusher, you're with me.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starbase one seven nine. We are ready to commence transfer.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acknowledged, Enterprise. Begin transfer.",
+                    "spoken_by": "STARBASE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Four new science specialists are beamed aboard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to the Benzite",
+                    "line": "Welcome aboard the Enterprise. I'm Commander William Riker, your First Officer. Those of you who are here as replacements will step outside follow Lieutenant Lewis. He will assign you to your crew quarters.  Ensign, you're here on the exchange programme. If you'll just follow Mister Crusher.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mordoc, what are you doing here? You couldn't have graduated from the Academy already.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not Mordoc. I am Mendon. Ensign Mendon from the planet Benzar.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry. It's a friend of mine. You look just like him.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are from the same geostructure. Naturally we look alike.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you tell each other apart?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We just do.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's nice to have you here, Ensign. There will be a briefing and indoctrination session in fifteen minutes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to tell you how happy I am to be assigned to the Enterprise. It wasn't just luck. I requested it. I know I can be of great help to the ship.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, of course. If you'll just follow Mister Crusher.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Riker, report to the Phaser Range, please",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On the way.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Target practice involves shooting at moving coloured lights"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was wondering if you had any feelings about the Officer Exchange Programme initiated by Starfleet Command.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just positive ones, sir. Actually, I just welcomed Ensign Mendon on board. He certainly seems eager to please.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, that's a Benzite trait. It's been suggested that an officer from the Enterprise might participate in the programme.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's probably a good idea.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, there is a Klingon vessel in the area.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't recall hearing of a Federation officer serving ever on a Klingon vessel.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, neither have I.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It might prove to be beneficial.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Having Worf on board certainly has been.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Who did you intend to send, sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought of asking for a volunteer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I might be interested, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "missing a target",
+                    "line": "Damn. Sorry, Number One, what was that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I said I wouldn't mind the assignment, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any particular reason?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because nobody's ever done it before.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll notify Starbase of your acceptance They'll contact the Klingon vessel, make the arrangements.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 42506.5. We have departed from Starbase one seven nine and are headed for a rendezvous with the Klingon vessel, Pagh. I have informed the staff of Commander Riker's temporary assignment.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Phaser range"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have studied and know everything about my heritage.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you're just the person I need to talk to, clear something up. It's my understanding that one of the duties of the First Officer of a Klingon ship is to assassinate his Captain?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wouldn't that bring about chaos?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course not. When and if the Captain becomes weak and unable to perform, it is expected that his honourable retirement should be assisted by his First. Your Second Officer will assassinate you for the same reasons.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The method of attrition must take a little getting used to.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Klingon system has operated successfully for centuries.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is different.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Many things will be different.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Mendon leaves his aft station and has a look around"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at Worf's station",
+                    "line": "Can I help you, sir?",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's a wonderful method of maintaining a constant control factor over defensive shields, but I'm sure there's a way to improve response time. Sorry. Didn't mean to interrupt you. Just thought I could be of some help. However, I am correct in what I said.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He moves on down to the helm and ops stations"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is superb designing. Absolutely first rate.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it is. Would you care to be more specific?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The input sampling. It's simple yet efficient enough. Of course a minor change of the helm readout would be much more helpful in emergency situations.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've never had any problems with it. Have you seen it work?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not in a practical exercise, but in theory, my theory, it would be more than a marginal improvement. I'll have to mention this to the Captain. He is open to some astute observations, isn't he?",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never known the Captain not to listen to one of his officers.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Outstanding. Soon we'll get things running perfectly.",
+                    "spoken_by": "MENDON"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker has plates and bowls of alien protein on his table. You expect some of it to get up and walk away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is that?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a Klingon delicacy. Pipius claw. This is heart of targ. This, of course, is gagh.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gagh?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, serpent worms. Would you like some?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, thanks. I've never heard of a Klingon starving to death on his own vessels, but you might.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not if I weaken first.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know all about that. Their beliefs are rather brutal, but usually what kills us kills them.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's certainly good to know. Would you like something to drink?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm abstaining in honour of your last hour on board.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your sacrifice will not go unnoticed.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I'm familiar with the practice of the feast before the transfer. I've done it dozens of times. However, I usually made more palatable choices.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These are the more palatable choices.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker offers Picard a jug of something rather solid-looking with tentacles"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. We know so little about them. There really is so much to learn. This is a great opportunity. I envy you, Mister Riker.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Another tray of dishes arrives, and Riker tucks in while Picard leans back and Pulaski wrinkles her nose"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He gives Riker a small metal tube"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An emergency transponder?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slightly altered to transmit an omnidirectional signal and an emergency call.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You suspect trouble?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Simply a security precaution. I want to insure your return to this ship.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sentiment, Lieutenant Worf?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Efficiency, Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand. Thank you.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have a Klingon vessel approaching.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open. They are returning our hail in proper language. It is the Pagh.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On viewscreen. I'm Captain Picard of the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "This is Captain Kargan of the Klingon vessel, the Pagh. Beam your First Officer on board immediately.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are preparing to do so. And, Captain, you're getting a fine officer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you for your opinion, but I will judge that for myself. Screen off.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not very hospitable, are they?",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is not your concern. Observe your station, Ensign Mendon.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Didn't mean to offend you.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You didn't. Yet.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Mendon's duty station has a scan of the Pagh. The computer has detected something on the hull. Mendon puts in a command - Request substance analysis. Answer - inconclusive. Category - Microbiotic colony. Bacterial colony. Subatomic. Life form analysis - inconclusive"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter, prepare to beam Commander Riker aboard the Pagh.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acknowledged, Captain.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, you have the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good luck, Commander.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks, O'Brien.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wouldn't want to go.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not afraid, are you.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I'm not.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would be. Ready, sir.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks. Energise.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The much smaller Pagh turns and moves off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Resume course, Mister Crusher.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take over, Commander Data, I'll be in observation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir. I am Ensign Mendon. I just wanted to tell you how pleased I am to be aboard the Enterprise.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, of course. Good to have you aboard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you have a few minutes, I've noted a few procedural items which might speed up operations on the Bridge. I pick things up very fast.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, of course you do. You have an excellent record. However, here on the Enterprise we use the chain of command. You will report your observations to Lieutenant Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I beg your pardon, Captain. I just wanted to impress upon you",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No need to apologise, Ensign. We should have explained it better to you at your indoctrination.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign Mendon. You may impress me.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Mendon doesn't look happy at the prospect"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker is being escorted along a gloomy corridor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is something wrong?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. It's just I have never seen anyone of your species before",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm just an average, everyday human who happens to be a Commander. Now, what were your orders?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To escort you to the Captain.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Commander.",
+                    "spoken_by": "TACTICS"
+                }
+            ],
+            "location": "Pagh corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Bridge is also dimly lit with red light. Support struts form obstacles"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander William Riker of the Starship Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is incorrect.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are Commander William Riker, First Officer of the Klingon cruiser, the Pagh. Or do you intend to disobey Federation orders?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no such intention, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly where are your loyalties, Commander?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid I still don't understand, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This ship is equipped with our best weapons and our finest warriors. Although we are on a peaceful mission, we are ready to go into battle instantly. I know I can count on every Klingon warrior in this crew to serve and die in that battle. So I ask you again, Commander Riker. Where are your loyalties?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been assigned to serve this ship and to obey your orders. And I will do exactly that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you take an oath to that effect?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I just did.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Klingon",
+                    "line": "Do not believe him! He lies!",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Klingon",
+                    "line": "Speak in their language. This is your Second Officer, Lieutenant Klag.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there something you wanted to say to me, Lieutenant?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes sir. I do not believe you.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I take it you challenge my authority over you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Correct.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And your position on this, Captain?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would say it your first command decision.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker looks around and thumps Klag in the stomach before throwing him on the floor, then kicking him down before he can get up again, and finally ramming his head into a computer panel. Lots of sparks. Kargan laughs"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My oath is between Captain Kargan and myself. Your only concern is with how you obey my orders. Or do you prefer the rank of prisoner to that of Lieutenant?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will take your orders.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you, Commander Riker, will obey my orders.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, Captain Kargan.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, automatic scan has registered an unknown substance on the aft quarter of the exterior skin of the dorsal section.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Target that location and define.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've located it sir. The dorsal of the Engineering section.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Viewscreen on. Focus on area. Magnification factor ten. Increase magnification to fifty.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "It looks like a rust stain"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Analyse.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The substance appears to be a rare form of subatomic bacteria, capable of doubling itself in size every fifteen minutes. It seems to be reacting with two of the compounds present in the Enterprise structure.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Origin.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. I noticed it when I did an intensive scan of the Pagh. The Klingon ship.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And whom did you inform?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No one. I have not yet completed my full analysis.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are supposed to report whatever is out of the ordinary.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I think that falls into this category.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But sir, as I said, I have not yet completed my full analysis. It would be improper to report it until then.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did you come to that decision?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a Benzite regulation. No officer on the deck of one of our ships would report an occurrence like this until he had a full analysis and a resolution. I have simply followed proper procedures.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is our procedure, Ensign, to notify command of any possibility of danger to the ship. The decision is not yours. Do you understand?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, you will continue with your analysis and determine the danger, not only to our ship, but the Klingon vessel also.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain. That will take a couple of hours.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Use whatever resources are necessary. It appears we may have encountered a new life form. I want to know everything about it as quickly as possible. Commander Data, supervise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And then I will instruct you in Enterprise etiquette.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First Officer's personal log. I have aboard the Pagh a short time, but long enough to be impressed with the abilities and single-mindedness of the Klingons."
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, you're not eating very much.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not that hungry.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is the food all right, Commander?",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's delicious. The pipius claw was excellent. I also enjoyed this Bregit lungs.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the Rokeg blood pie?",
+                    "spoken_by": "VEKMA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Delicious.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Then you'll also enjoy this.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isn't that gagh?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very good. You did some research on our nutritional choices.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but, it's still moving.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gagh is always best when served live. Would you like something easier?",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Easier?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. If Klingon food is too strong for you, perhaps we could get one of the females to breast feed you.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "laughter all round the tables"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not worried about my weakening, are you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look around you. There are no old warriors.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir, I'm sure they all died with honour.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly. You may live long enough to learn about us.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is not very attractive, but I will have him.",
+                    "spoken_by": "VEKMA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are inquisitive. They would like to know how you would endure.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Endure what?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Them.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One or both?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he grins, they all laugh, and the bonding has started"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I may be back for you.",
+                    "spoken_by": "VEKMA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is she serious?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Other Klingons leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, would you say you're a typical Federation officer?",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose so. Why?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it's just you're not what I expected.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In what way?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have a sense of humour.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was thinking the same thing about you. In all my dealings with Klingons, including our Lieutenant Worf, the thought never occurred to me of Klingons laughing.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is much about us you do not know.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's why I'm here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should ask.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I may. After this tour, I may have some worthy questions.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Questions about what? About our future? Our future is honour. Our present is serving this ship.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Like you, I have a mother and a father. They look like me, I look like them.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are they still alive?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My mother lives, My father was killed in battle at Tranome Sar.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And your father?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My father? My father was captured in battle by Romulans and not allowed to die. He eventually escaped.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is he now?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is on our planet. He waits.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He waits for his death.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He will eventually fade of a natural illness and die, weakened and useless. Honourless. I will not see him.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's your father.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Klingon is his work, not his family. That is the way of things.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's your father.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Klingons do not express feeling the way you do.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps you should.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We would not know how.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yesterday, I did not know how to eat gagh.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Pagh Mess hall"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is confirmed that the organisms feed on some of the compounds that make up the hull of the Enterprise.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the Klingon ship, the Pagh?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are much more susceptible. Their hull contains more of the compounds.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Projection.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "According to the rate of reproduction, there should be a twelve centimetre opening in the Klingon hull at this time.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Signal them at once. They could be unaware of the danger. They may need our help.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Change course to intercept.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will take some time to locate them, sir. They are on undesignated manoeuvres in the Pheben system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Find them.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell me, Commander Riker, what do you make of this?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The hole in their hull is displayed on the viewscreen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I felt no collision. Were we hit by a small meteor?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. No collision.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Corrosion, then?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not corrosion.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Science Station, analyse.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We already have, and fortunately the cavity opened onto a section that could withstand the change in pressure.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what is it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A space organism eating away at our hull.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you talking about? What is it? I mean, you must have some way to repair it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid not.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our estimate is that in less than eight hours we will have lost too much of our shell to remain intact.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The only vessel we've had contact with recently is the Enterprise.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was no direct contact with the Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tactics Officer, report to Commander Riker.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise did conduct an extensive scan of this vessel.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's normal procedure.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What type of beam did the Enterprise use to cause this damage in our hull?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None. Why would they do that? We're allies.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But my logs indicate that the Enterprise directed an intense scanning beam at this specific area for a duration of two minutes.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Explain that.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It could be a weapon.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's no weapon. The Enterprise has no reason to do that, especially with me on board. It makes no sense. Why?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why is no longer important. What is important is our response to this attack. Engage cloaking device. Change course to intercept the Enterprise.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you intend to do, Captain?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Intend? There is only one response. I intend to attack the Enterprise and destroy it.",
+                    "spoken_by": "KARGAN"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're making some progress. You've eliminated half the possibilities already.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, but I seem to have become efficient a little later than was needed. It was my responsibility to learn and adapt to the Enterprise's regulations, and I didn't do that.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not really. You just made an error. Captain Picard may not like them, but he knows they turn up from time to time.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I failed, I had an opportunity to show the Captain my superior capabilities and I failed. I can never recover from that.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mendon, it was a mistake. You didn't put the organism on the hull, you discovered it. You were trying to analyze it and messed up on protocol a little.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I realise you're trying to be nice to me, and I appreciate it. What I don't understand is why.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why not? I thought you could use a friend.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. I only hope I can learn your ways before I mess up again. I imagine my methods must seem foolish to you.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're different. But that's what this exchange programme is all about. You learn the way we do things and take that information back to your command. It's up to them to decide which is better.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right. I'll do it your way. I'll work even harder than I did before, and I'll succeed brilliantly.",
+                    "spoken_by": "MENDON"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The hole in the hull is a lot bigger"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is the status?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unchanged. The rate of increase continues.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker, check the organism growth with Engineering.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Keep him under scrutiny.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm not convinced Riker knew of any plot against us. If he did, why would he have come on board?",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because he was ordered to.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To die?",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the expectation of any officer to be ordered to die at any time.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For a Klingon perhaps, but Riker's people do not volunteer for death so easily. He may be a spy, but he's no coward.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That only proves that he is intelligent. And you might not be as strong as you used to be.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I've picked up the Enterprise.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So soon?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise is on an intercept course with us.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You almost had me believing this was a misunderstanding.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise has changed course and is following us. Why?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ask them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The reason is obvious. Their intent is clear. How long before we make contact?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Less than fifteen minutes, sir.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Put the ship on full battle alert. Arm all photon torpedoes. Let them charge into their destruction.",
+                    "spoken_by": "KARGAN"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, our bearings show that we should be in contact with the Klingon vessel now.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slow to impulse.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Impulse speed.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies are open. There is no response.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Continue transmitting.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Pagh is either cloaked or destroyed, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Conduct an intensive scan of the area.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise has slowed to impulse speed and is making an intensive sweep.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold your position. Let them come to us.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They may be here to help you. Don't be a fool!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do not forget my rank.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't. I am simply trying to help you understand.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand fully. Now, you understand. I am still Captain of this vessel and you are still crew and sworn to obey me. You gave me your oath.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir, I did.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then fulfill that oath and serve this ship as you swore to. Tell me of the surest method of attack against the Enterprise.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must. It is a matter of honour and loyalty to your oath.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not surrender the secrets of the Enterprise to you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If your word is no good, then how can we ever trust Starfleet?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not break any vow I have taken in the past. I have also taken an oath a loyalty to your ship. I will not break that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are in conflict!",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir, they are not! I will obey your orders. I will serve this ship as First Officer, and in an attack against the Enterprise I will die along with this crew. But I will not break my oath of loyalty to Starfleet.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you had told those secrets about the Enterprise, I would have labeled you a traitor and killed you where you stood. But instead you will die with us. You'll die like a Klingon.",
+                    "spoken_by": "KARGAN"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I have something to report to you immediately.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, go ahead, Ensign.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have managed to isolate the organisms on our hull. They are a sub-micron form capable of breaking nuclear bonds in the tritanium plating.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But can they be removed from the hull?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. They are controllable and can be removed from the hulls of both ships by using a tunnelling neutrino beam.",
+                    "spoken_by": "MENDON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Ensign. Well done. Initiate that procedure . Lieutenant, add that information to hailing messages.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise has changed hailing messages. They now include a promise of cleaning the organisms and helping in repairs.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I told you, they're here to help.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not believe them. Arm all weapons. Prepare to attack!",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42507.8. Although our search has been extensive, we are still unable to locate the Klingon ship or any evidence of it's destruction.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Considering the absence of debris, Captain, it is reasonable to assume the Klingon vessel is in the area and cloaked.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And since we do not know it's intent, I recommend we go to Red Alert.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so, Lieutenant.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise has raised its shields.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's normal procedure when entering into a suspicious situation. It's not an act of aggression. The Enterprise will not fire first.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then they are fools, for we will.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll get only one shot.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll only need one. Stand by on phasers and torpedoes. Prepare to fire them simultaneously.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I recommend you don't fire until you're within forty thousand kilometres.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will cut down their response time.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are honouring your promise to serve us?",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you do less?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will give the order to fire, Commander Riker. Call out distances. Any questions, Mister Riker?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's one thing I'd like to say. I question your judgment. In my opinion, your reason for forcing this confrontation is not valid.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you finished?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commence with attack as ordered.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fifty five thousand kilometres and closing.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker takes the emergency transponder from his boot"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that a weapon, Commander?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker switches it on"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give it to me.",
+                    "spoken_by": "KARGAN"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are getting an emergency signal from a command transponder. Location zero three five mark three one three. Frequency and code designate it as Commander Riker.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chief O'Brien, lock onto that transponder signal.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain. We're not yet in safe range for a transfer",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And defensive shields are still in place.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We may have to stretch it.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We have to know what's going on",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Commander Riker is the only one who can tell us. Beam him directly here onto the Bridge",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "On my command.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. I'll wait till forty thousand.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forty eight thousand. Forty four thousand.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter Room, stand by.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "You control the shields.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready, sir.",
+                    "spoken_by": "O'BRIEN"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forty thousand.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forty thousand kilometres.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prepare to drop cloaking shields, and fire when ready. Steady.",
+                    "spoken_by": "KARGAN"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter room, energise.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Captain Kargan is beamed away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold where you are, Klag. I've relieved Captain Kargan. He was acting in an irrational manner. I'm your Captain now. Serve this ship as I have!",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where am I?",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're on board the starship Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker has no honour. He tricked me!",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He turns to shoot Picard, but Worf shoots him first"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's only dazed, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well that's fine, but where's Commander Riker?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cloaking shields off. Obey my orders.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will be destroyed.",
+                    "spoken_by": "TACTICS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we are, it will be in battle, and I will die with you. So I repeat, cloaking shields off!",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is the Pagh, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It has all armament locked on us and ready to fire.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold this position. Hailing frequencies. Calling the Pagh. This is the Enterprise. We are here to assist. Do not fire.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They will not believe you.",
+                    "spoken_by": "KARGAN"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Pagh, we're here to assist. Do you read me?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Enterprise, this is Captain William Riker of the Klingon vessel, Pagh. I order you to lower your shields and surrender.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lower shields. Surrender, as ordered.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I demand to be beamed back aboard my vessel!",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter Chief, prepare to beam Captain Kargan back aboard the Pagh.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Riker, we can carry out your repairs immediately.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Captain Picard.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should have killed me.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want your command.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you tricked me to get it.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Either way, you can have it back.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then return to your station.",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker holds his ground, so Kargan gives him a massive back-hander that sends him flying. Klag checks his injuries"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get him off my ship!",
+                    "spoken_by": "KARGAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain. You understand the Klingons better than I thought, Commander.",
+                    "spoken_by": "KLAG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, my friend.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Pagh Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That might have been one of the shortest assignments in the history of Starfleet.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wrong, Number One. It was almost the longest. Well done.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Actually, I learned quite a bit.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apparently, not when to duck.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When not to duck would be more accurate.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome aboard, Number One. Now, Lieutenant, conduct the Commander to Sickbay.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Commander?",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your little toy worked. Thanks.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm glad it did.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You come from a very brave and unique people. I'm glad you're with us on the Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Commander, and welcome home.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Corridor"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "134",
+    "transcript_url": null
+}

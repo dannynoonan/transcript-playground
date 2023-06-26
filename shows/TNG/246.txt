@@ -1,0 +1,2416 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I have completed the spectral evaluation of the outer shell. Our survey of this protostar is complete.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, lay in a course to the next one, three quarters impulse.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker to Captain Picard.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "May I see you in the Observation Lounge, sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be right there.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the room is dark when Picard enters. On the table is a stylistic pottery item, semi-Buddha shaped"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, my God.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you can identify this object, Mister Picard.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor Galen?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, lights up.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose I should say Captain Picard.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor Galen contacted me from his shuttle an hour ago. He suggested that we surprise you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To clarify. I insisted and your First Officer was good enough to accommodate me. I trust I'm not being overly presumptuous, now that my star pupil is master of the stars.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No one is could be more welcome on the Enterprise. I never thought I would see a Kurlan naiskos. Fifth Dynasty?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that your conclusion, Mister Picard. Forgive me again. I should say Captain.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, please, Mister will do fine. Well, the overall configuration is certainly Fifth Dynasty. The surface ornamentation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes?",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Green polychrome over the eyes, and the eyes themselves are closed. This is third Dynasty. From the workshop of the Master of Tarquin Hill.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well done.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will, the Master of Tarquin Hill designed ceramic objects that were three hundred years ahead of their time. All we know of him is the work. His name has never been discovered. This object is over twelve thousand years old.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The planet Kurl? It's a hell of a long way outside Federation territory.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed. I thought your study of Kurlan artefacts was done long ago.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I happened to be in the neighbourhood last summer. I couldn't resist. Go ahead.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean it's complete?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard raises the top half of the pot to reveal a cluster of little pots inside it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will, the Kurlan civilisation believed that an individual was a community of individuals. Inside us are many voices, each with its own desires, its own style, its own view of the world. The Kurlan civilisation died out thousands of years ago. It is extraordinarily rare to find a figurine intact. Professor, this is an incredible find.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's yours, Jean-Luc.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, no. No. How can I accept this?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Graciously, Mister Picard. You could accept it graciously.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. How long can you stay? There's so much to talk about.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Professor is scheduled to meet a Vulcan transport the day after tomorrow.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two days? But that's not enough time.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We may have considerably more than that.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am currently on an expedition. A journey into an unexplored and historical territory, and I intend to take you with me.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. It's been over thirty years since I last saw my archaeology professor. His presence has taken me back to a time when I had considered a very different career.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I ask you a frank question?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your published writings have been sporadic for the last decade. Your appearance at symposia has been rare, or scheduled and then cancelled at the last moment. The finest archaeologist of the century is now shrouded with a cloak of mystery.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And as a result my reputation has no doubt grown.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've never heard of anyone that didn't love a good mystery.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Satarran of Sothis Three disdained them, but as a general idea, your statement holds.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, what have you been doing for the past decade?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you familiar with micropaleontology?",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it's the study of fossil records at the microscopic level. I read your papers on the subject, but that was years ago. It seemed as though the work had stopped.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. The work continued. I made a discovery so profound in its implications that silence seemed the wisest course. This work has occupied my every waking thought, it's intruded upon my dreams, it's become my life. When finished and I announce my findings, it will be heard half way across the galaxy.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm cannot, Mister Picard. That information comes with a price. Your agreement to join me on the final leg of this expedition.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For how long?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three months, perhaps a year. If I had complete diplomatic access and a starship, it'd be a matter of weeks. But as it is, we'll have only my shuttle and whatever arrangement we can make with transports, combined with our talents.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you need my help in this?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not a young man. There will be hazards along the way. I don't want my own inadequacies to jeopardise the completion of this work.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm deeply honoured that you'd think of me, but I have responsibilities.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To History. What if you could have helped Schliemann discover the City of Troy, or been with M'Tell as she first stepped on Ya'Seem. How could anything compare?",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I sleep on it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dream not of today, Mister Picard.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dream not of today. The night blessing of the Yash-El.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As I recall, you missed that question on the final exam.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I've had a few years to look it up. Professor, the Enterprise is yours for as long as you're here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dream not of today.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the Kurlan naiskos is on a table, open"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good morning. Looks like you've been up for a while.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly pours herself a cup of tea"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's hear it.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had a long talk with Professor Galen last night. He asked me to leave the Enterprise, to join him in an archaeological expedition which could last for nearly a year.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That must be tempting.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I couldn't leave the Enterprise. But the offer raised in me certain feelings of regret.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That you could have been an archaeologist and not a starship Captain?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not really. I'm not sorry for the path I chose. But the Professor did not choose this figure at random. The many voices inside the one. You see, he knows that the past is a very insistent voice inside of me. This gift is meant to remind me of that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the exploration of space? Surely that must count for something.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wouldn't trade it for anything, and I would still make the same choice I made all those years ago. I just wish that I didn't have to say no to him a second time.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Were you two very close?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had a father, but he was like a father who understood me. And he had his own children but they didn't follow in his footsteps, so I was like the son who understood him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And yet you turned your back on him.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In a way, I wish he'd never come on board the ship.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a map of the known galaxy is up on a wall monitor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good morning, Mister Picard.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Vulcan ship will take us as far as DS Four. An Al-Leyan transport is scheduled to arrive at the station three weeks later. They'll take us as far as Caere, and then we'll use the shuttle to get us to Indri Eight, our first stop.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor, I'm afraid I won't be going. The Enterprise isn't something that I can leave and then come back to. If I go, I go for good. It's not something I'm not prepared to do.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not some undergraduate study project that you're turning down. This is the chance of a lifetime. Don't make the same mistake twice.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't believe that my career in Starfleet has been a mistake.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing at this very moment? A study mission. You're like some Roman centurion out patrolling the provinces, maintenancing a dull and bloated Empire.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We both know that's not true.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know this. I know that as a scholar, you're nothing but a dilettante. Years ago, I gave you the opportunity to become the finest archaeologist of your generation. Your achievements could have outstripped even my own, but no, you decided to reject a life of profound discovery. You walked out on me.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I never wanted to become",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you come with me?",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be going.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But Professor, you're not scheduled to catch the Vulcan ship for another two days.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's nothing for me here. Goodbye, Captain.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We have completed our mission in the nebula and are en route to a diplomatic conference on Atalia Seven. I must admit I've lost my enthusiasm for those proceedings.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At our present speed, we will arrive at the Atalia system in thirty seven hours.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm going for a walk in the arboretum. I wouldn't mind some company.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, a distress call from Professor Galen's shuttle. On screen.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Enterprise! I'm being boarded.",
+                    "spoken_by": "GALEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transmission has been blocked.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have located the shuttle. It is under attack.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take us out of warp. On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Yridian destroyer.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Battle stations.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Professor Galen is still inside his vessel, sir. His vital signs are barely registering.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get him out of there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The shuttle is enveloped by a tractor beam. The transporter cannot penetrate it.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hail the Yridians.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are not responding.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the Enterprise rocks under weapons fire"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Return phaser fire. Disable their offensive systems.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "but instead, the big ship goes KaBOOM!"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand, Commander. The phaser blast was not powerful enough to destroy the ship.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter Room One, lock on to Professor Galen and transport him directly to Sickbay.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "CREWMAN"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He took a disruptor hit point blank. There is nothing I can do.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the life-signs monitor starts to flat-line"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc, I was too harsh.",
+                    "spoken_by": "GALEN"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd say at least three Yridians boarded the Professor's shuttle.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did they want?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure, but it looks like they were trying to download something from his computer.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When he was attacked, Professor Galen began to protect certain files in his computer memory.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were able to partially reconstruct the shuttle's computers, so at least we have some of those files. We found nineteen different blocks of numbers like this one.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "five digit groups in white, orange and pink"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do they mean?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They could mean anything. Unless we can narrow the parameters of the search, it would be almost impossible for the computer to identify the pattern with any accuracy.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We tried every decryption key on record in case Professor Galen was using some kind of code. We still can't make heads or tails of them.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Were the Yridians able to get these number blocks?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least some of them. It's impossible to say know many.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apparently, the Yridians knew more about the Professor's work than we do. They may have known what these numbers mean.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If they did, that information died with them.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not necessarily. The Yridians are information dealers. They may have been delivering the number blocks to someone else. Did they send a signal before they were destroyed?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. We detected no transmissions.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And there were no other vessels in the vicinity.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did the shuttle's flight logs show where Galen had been before coming to the Enterprise?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. The logs indicate Professor Galen visited an unexplored star system, Ruah Four.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the distance from our present position?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Four days at warp six, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The conference can wait. Set a course for the Ruah system.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standard orbit, Ensign.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ruah Four is a class-M planet. Sixty seven percent of its surface is covered with water. Its landmass contains multiple animal species, including a genus of proto-hominids.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Scan for earthworks or monuments that might indicate a previous civilisation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is nothing to indicate former occupancy by even a primitive culture, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what was the foremost archaeologist in the Federation doing here? He left the Enterprise in a Vulcan ship for Deep Space Four, and then an Al-Leyan transport to Caere, and then the shuttle to Indri Eight. Mister Data, what do we know about Indri Eight?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Indri system was first identified by Federation vessels nearly sixty years ago. The eighth planet is L-class. It is covered by deciduous vegetation, unexplored, with no apparent evidence of civilisations, either present or past. The planet possesses no animal life whatsoever.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, we'll proceed to Indri Eight.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With all due respect, sir, we've already run into one dead end. Indri Eight doesn't seem much more promising. And we're late for the conference on Atalia Seven.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm aware of the Federation's timetable, Number One. Professor Galen visited here a few days ago. And he was on his way to Indri Eight when he was killed. There's some connection between these two planets. I'm going to find it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Ensign, lay in a course for Indri Eight, warp seven.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is shuffling the number blocks on his desk monitor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How's it going?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought if I stared at these number blocks long enough then I would begin to see some kind of pattern. So far, nothing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I meant, how's it going with you?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I had gone with him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, you can't start thinking like that. You didn't abandon him. You chose not to abandon a life-long career. It was the right decision, and in no way responsible for his death.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I realise that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know how much the Professor meant to you and how much you want to find out what happened, but staring at these numbers isn't going to bring him back. The conference on Atalia Seven has been scheduled for six months. Starfleet is relying on your mediation efforts to",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, this is not simply a case of me taking the Enterprise and its crew on some wild goose chase to purge myself of guilt and remorse. I will not let Galen's death to be in vain. Now, if that means inconveniencing a few squabbling delegates for a few days, then so be it. I will take the full responsibility.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and he goes back to staring at numbers"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are about to enter the Indri system, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Picard. We are approaching Indri Eight.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "On my way.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors are picking up severe atmospheric fluctuations on the planet.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Assume a high orbit.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen, Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a pretty blue green planet is turning a nasty orange-brown"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some kind of plasma reaction is consuming the lower atmosphere.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we stop it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. The reaction is global.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All life on the planet is being destroyed, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why would anyone want to destroy all the life on an uninhabited, neutral planet with no strategic importance whatsoever?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All the life. Perhaps the Professor's number blocks had something to do with organic matter.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we narrow the search parameters to the biological database, it might increase the chances of the computer finding a match.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be in the lab.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pattern match found.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Specify.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The number blocks are mathematical representations of fragments of deoxyribonucleic acid strands.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "DNA fragments?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Each from a different lifeform from nineteen different worlds.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The planets that these fragments are from are scattered across the quadrant. No wonder it took the Professor so long to collect them. But why?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait a minute. These fragments all seem to have similar protein configurations. They may be chemically compatible.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But how can that be possible? They're different species from different planets. There should be no compatibility at all.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know, but look at the base pair combinations, they're uniform. If I'm right. Computer, connect the DNA fragments according to protein link compatibility.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no idea.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not a natural design. Captain. This is part of an algorithm, coded at the molecular level.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An algorithm? Are you saying that these DNA fragments are elements in some kind of computer programme?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know how it sounds, but there's no way this could be a random formation. This is definitely part of a programme.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This fragment has been part of every DNA strand on Earth since life began there, and the other fragments are just as old. Someone must have written this programme over four billion years ago.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, four billion years ago someone scattered this genetic material into the primordial soup of at least nineteen different planets across the galaxy?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The genetic information must have been incorporated into the earliest lifeforms on these planets, and then passed down through each generation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But why would anyone do this in the first place?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what was this programme designed to do?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, we couldn't know that until we assembled the entire programme and then ran it. We've tried all the DNA material in the Federation computer, but we haven't been able to come up with any with compatible protein configurations.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then they must be from worlds outside the Federation. Mister Data, how many people on the Enterprise are from non-Federation planets?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Seventeen, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, this may be a long shot, but we should check each one of these seventeen people to see if they have the correct protein configurations.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll begin collecting DNA samples now.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, Captain, I've been thinking. Somebody else must know about this programme. I bet one of the missing fragments was on Indri Eight. That's why it was destroyed.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To keep us from finding that piece of the puzzle. It's four billion years old. A computer programme from a highly advanced civilisation, and it's hidden in the very fabric of life itself. Whatever information this programme contains could be the most profound discovery of our time. Or the most dangerous. And the Professor knew that.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They all came up negative.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well I have been through every page of the Professor's published works, looking for some clue as to where to go next. So far, nothing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe we've been at this too long. Why don't we both get some sleep and start again tomorrow morning.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was in the neighbourhood. When I asked the Professor why he went all the way to Kurl, he said, I was in the neighbourhood. Doing what?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Collecting DNA samples.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's only one planet in the Kurlan system capable of supporting life. Loren Three.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. There is no Loren Three sample from the data downloaded from the Professor's shuttle. If he did have one it must have been taken by the Yridians when they attacked.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, set course for Loren Three, maximum warp.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are approaching the Loren system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slow to half impulse, and take us into orbit above the third planet.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is a good chance that our competition may be here before us. Battle stations, Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are now entering orbit.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were right, Captain, we've got company. Cardassians.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are hailing us.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "My name is Gul Ocett. Identify yourselves and state your business in this star system.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "tara ra boom di ay - it's Linda Thorsen under the latex"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Captain Jean-Luc Picard of the Federation Starship Enterprise and I see no reason why I should answer to you. Cardassians have no claims in this sector.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I suppose not. But my admittedly hasty estimate shows one Federation Starship and two Cardassian war vessels. Perhaps I have miscounted.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all. But we are on a purely scientific mission. You have no reason to interfere with us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "And you have nothing to lose by delaying a purely scientific mission for a few days. I invite you to withdraw.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, a Klingon attack cruiser decloaking off the starboard bow. They are hailing us.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "This is the Klingon vessel Maht-H'a. What are you doing here?",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. It seems that we have not one, but two competitors in our attempt to complete Professor Galen's puzzle. I have prevailed upon the Cardassian and Klingon captains to meet with me.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe we all know why we're here. If we admit that, then we can move forward.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were merely scouting the planet for possible colonization",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pah! A ridiculous story.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What were you doing here, then?",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Scientific research.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ha!",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look, if we try to deceive one other, then we shall get nowhere. I think we all know about Professor Galen's research, and about the computer programme composed of DNA fragments. I'll take your silence as confirmation. Now, it stands to reason that none of us has the DNA fragments necessary to complete the programme. You were the first to arrive in this system. Do you have an organic sample from the planet below?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. And I will fire on anyone who attempts to obtain another one.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As if we fear Cardassian threats.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe that one of you has a fragment from Indri Eight.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. And there will be no other samples from Indri Eight.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is that supposed to mean?",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He destroyed the biosphere of the planet after he had taken the sample.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Typical Klingon thinking. Take what you want and destroy the rest.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're all missing some of the fragments, not necessarily the same ones. Unless we combine the ones we have, we will never learn the secret of the programme.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no secret. It is an ancient weapon design of incredible power. And the Klingon Empire will not allow it to fall into an enemy's hands. Or even a friend's.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A weapon? The Yridian who sold us the information claimed that the programme would yield the key to an unlimited power source.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But until we assemble it, we will never know its purpose.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's right. As far as we know, it might just be a recipe for biscuits.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Biscuits? If that is what you believe, then go back to Cardassia. I will send you my mother's recipe.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How dare you!",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Myriap! Enough. Without cooperation we will get nowhere.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you propose?",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you each bring your samples on board the Enterprise, I will combine them with ours. And then we will all observe the results simultaneously, giving no one the advantage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if we refuse?",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then this endeavour dies here, in this room.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Klingon enters his data and more sections link up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ocett adds her data, and it looks a good three quarters done"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's still one missing piece.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pahk! We have surrendered what we had for nothing.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are remarkably short sighted, Nu'Daq. We are closer to the answer than we were.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We may be very much closer indeed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can that be? We have no idea where to start looking for the missing DNA fragment.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is a jigsaw puzzle whose pieces are scattered across the galaxy. Doesn't it make it natural to assume that the original designers of the puzzle should want us to find it? Why else would they have put the pieces in our DNA? And in turn, doesn't suggest they would try to make it easy for us to find those pieces, that there might be some pattern to their distribution?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The computer might be able to find that pattern.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, programme the computer to analyse the distribution of the pieces that we have, correcting for changes in star configurations over four billion years, then extrapolate for the missing piece.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's going to take several hours to set up and to process. If you'll excuse me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you wish, you can stay on board while we wait.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I intend to.",
+                    "spoken_by": "NU'DAQ"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data is at a table, reading a PADD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good evening, Commander Data.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there any word yet on the missing fragment?",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The computer is processing the data. I will be notified as soon as there is any information.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, your reputation for physical strength is known even in the Klingon Empire. You are familiar with the B'aht Qul challenge?",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am familiar with many Klingon rituals, including the B'aht Qul.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Nu'Daq sits opposite Data, both elbows on the table and hands raised. Data mirrors him, putting his hands inside Nu'Daq's"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wa' Cha' Wej",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data instantly pushes Nu'Daq's arms back onto the table, and returns to his PADD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maw' tok!",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Nu'Daq head-butts Data, but falls backwards himself"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My upper spinal support is a polyalloy designed to withstand extreme stress. My skull is composed of cortenide and duranium.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand your intellectual prowess is equally impressive. If I were to learn of the results from the computer search before the others, the Klingon Empire would have a strategic advantage. A being of your abilities would go far in the Empire.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are attempting to bribe me.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You suggested a plan that would work to your advantage, one that I would be capable of executing. You then implied a reward. Clearly you were",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, never mind.",
+                    "spoken_by": "NU'DAQ"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a display is beeping"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What the hell? Computer, perform a level three diagnostic on the primary defensive systems. La Forge to Captain Picard.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "What is it, Geordi?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You might want to come down here. I found something that I think you should see.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The computer has completed its analysis.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The computer was able to extrapolate this geometric pattern based on the distribution of the fragments.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "it is a zigzag or helix with one line missing, that overlays a star chart"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, highlight the section of the missing pattern. The missing DNA fragment should be in this system.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The star is in sector two one four five nine. The Rahm Izad system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and Ocett instantly beams out. The Enterprise is fired on by both Cardassian ships"
+                }
+            ],
+            "location": "Laboratory"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Direct hit on our port nacelle. They are powering up for another volley.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's make it look good. Ensign, release the inertial dampers.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are firing.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "everything shakes as the Cardassians target the nacelle again and fly off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Report, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The power boost to the structural integrity field protected the nacelles. We used the inertial dampers to simulate complete shield failure.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is fortunate that your Engineer discovered Gul Ocett's attempt to tamper with your defensive systems. Maht-H'a. Status.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Minor damage to starboard nacelle. We will be operational in less than one hour.",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What? You incompetent Top'a. You were supposed to be prepared.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Cardassian vessels have set a course for Rahm Izad.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it won't take them long to realise that Rahm Izad is the wrong planet. Captain, you're welcome to join us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will go with you.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, set in a course for the Vilmoran System. Warp nine.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "later",
+                    "line": "Engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am scanning all seven planets of the Vilmoran system. None appears to support life.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can that be? The Professor's data depends on",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Correction. The second planet shows evidence of an ancient ocean, now dry.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It once supported life.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, and it still may, in a limited fashion not detectable by our long range sensors.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lay in a course, Ensign. Full impulse. Riker to Transporter room one.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, we've located a planet that may still support life. We'll know in a minute.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any sign of the Cardassians?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Not yet. We don't know how long it'll stay that way.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am reading a small pocket of vegetative life. A primitive lichen growing in a fossilised seabed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter room one. I am programming the coordinates. Stand by.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "with rock walls on three sides, ridged as if eroded by water and wind to make handy ledges and paths"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There. Over there.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, we've got company. I'm ready to pull you out of there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait for my order, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ocett and an aide beam in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You dishonorable top'a!",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps we could exchange insults some other time. I'm rather busy now.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it was quite a chase, wasn't it, my friends?",
+                    "spoken_by": "ROMULAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How?",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We intercepted several communiqués between the Yridians and Cardassia. My ship was watching under cloak when Professor Galen's shuttle was attacked.",
+                    "spoken_by": "ROMULAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you have been shadowing us ever since.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And now the reward. Step clear, please.",
+                    "spoken_by": "ROMULAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I shall destroy the entire rockface and every trace of DNA with it. You will go back to Romulus empty-handed. Your superiors will be quite pleased.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps we could come to a compromise? You give us the gene code.",
+                    "spoken_by": "ROMULAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sotto to Crusher",
+                    "line": "The seabed it may be only partially fossilised. It could still contain organic material.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which would still contain the DNA.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not be eliminated now.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can be eliminated by a disrupter. Now, what do you say to my offer.",
+                    "spoken_by": "ROMULAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can I be sure you won't kill me if I acquiesce.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've given you my word.",
+                    "spoken_by": "ROMULAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Etched in stone, no doubt. No deals. There will be no deals as long as I'm still alive.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do not press me, Klingon. I don't care whether you live or die.",
+                    "spoken_by": "ROMULAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you fire, others will also. Many will die.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher hands Picard her scan results and he adds them to his tricorder"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The programme has been activated. I think it's reconfiguring the tricorder.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We die together, Brother. Tash Koh Tah.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's modifying the emitter diode to project something.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the tricorder projects a hologram. It's Salome Jens in a blank latex head, the first but not the last she will wear on Trek"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're wondering who we are, why we have done this, how it has come that I stand before you, the image of a being from so long ago. Life evolved on my planet before all others in this part of the galaxy. We left our world, explored the stars, and found none like ourselves. Our civilisation thrived for ages, but what is the life of one race, compared to the vast stretches of cosmic time? We knew that one day we would be gone, that nothing of us would survive. So, we left you. Our scientists seeded the primordial oceans of many worlds, where life was in its infancy. The seed codes directed your evolution toward a physical form resembling ours. This body you see before you, which is, of course, shaped as yours is shaped, for you are the end result. The seed codes also contained this message, which we scattered in fragments on many different worlds. It was our hope that you would have to come together in fellowship and companionship to hear this message. And if you can see and hear me, our hope has been fulfilled. You are a monument, not to our greatness, but to our existence. That was our wish, that you too would know life, and would keep alive our memory. There is something of us in each of you, and so, something of you in each other. Remember us.",
+                    "spoken_by": "HUMANOID"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "message ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's all? If she were not dead, I would kill her.",
+                    "spoken_by": "NU'DAQ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The very notion. That a Cardassian could have anything in common with a Klingon, it turns my stomach.",
+                    "spoken_by": "OCETT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Standing by, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46735.2. Our frequent use of high warp over the last few days has overextended the propulsion systems. We are finishing minor repairs before returning to Federation territory.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Planet surface"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a shame Professor Galen didn't live to see the end result of his search.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't think of anyone who would have appreciated it more.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If it hadn't been for you, his dream to solve that puzzle would never have been realised. You left him a wonderful legacy.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but it would've been a more fitting legacy if the message had not fallen on such deaf ears.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You never know. Well, I have to get this day started.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Both of us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "See you this afternoon.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker to Captain Picard.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Picard's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Incoming transmission from the Romulan command ship.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Put it through.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Captain, my ships are leaving orbit for Romulan space. Until our next encounter.",
+                    "spoken_by": "ROMULAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Until then.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "It would seem that we are not completely dissimilar after all, in our hopes, or in our fears.",
+                    "spoken_by": "ROMULAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Well, then. Perhaps, one day.",
+                    "spoken_by": "ROMULAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One day.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard picks up one of the little Kurlan figures"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Picard's quarters"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "246",
+    "transcript_url": null
+}

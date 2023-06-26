@@ -953,9 +953,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "gestures to Lollys",
                     "line": "This is my betrothed, Lollys.",
-                    "spoken_by": "BRONN (gestures to Lollys)"
+                    "spoken_by": "BRONN"
                 },
                 {
                     "characters_mentioned": [],
@@ -1063,9 +1063,9 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "My future queen.",
-                    "spoken_by": "TRYSTANE (O.S.)"
+                    "spoken_by": "TRYSTANE"
                 },
                 {
                     "characters_mentioned": [],
@@ -1197,9 +1197,9 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "The Unsullied are too conspicuous.",
-                    "spoken_by": "DAARIO (O.S.)"
+                    "spoken_by": "DAARIO"
                 },
                 {
                     "characters_mentioned": [],
@@ -1463,9 +1463,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "nods",
                     "line": "Your Grace.",
-                    "spoken_by": "BARRISTAN (nods)"
+                    "spoken_by": "BARRISTAN"
                 }
             ],
             "location": "MEEREEN - PYRAMID"
@@ -1695,9 +1695,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to hunters",
                     "line": "You heard the man. Over there.",
-                    "spoken_by": "MERYN (to hunters)"
+                    "spoken_by": "MERYN"
                 },
                 {
                     "characters_mentioned": [],
@@ -1783,9 +1783,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "cutting him off",
                     "line": "Uncle Kevan, in light of your position as commander of the Lannister armies, it would please the king if you would serve as his Master of War. No man living better deserves the title.",
-                    "spoken_by": "CERSEI (cutting him off)"
+                    "spoken_by": "CERSEI"
                 },
                 {
                     "characters_mentioned": [],
@@ -1935,9 +1935,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to Shireen",
                     "line": "How old were you when you learned to read?",
-                    "spoken_by": "GILLY (to Shireen)"
+                    "spoken_by": "GILLY"
                 },
                 {
                     "characters_mentioned": [],
@@ -1947,9 +1947,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "interjecting",
                     "line": "Three?! Who taught you, your mother?",
-                    "spoken_by": "SAM (interjecting)"
+                    "spoken_by": "SAM"
                 },
                 {
                     "characters_mentioned": [],
@@ -1959,9 +1959,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "gently",
                     "line": "What do you call it in the South, what happened to your face?",
-                    "spoken_by": "GILLY (gently)"
+                    "spoken_by": "GILLY"
                 },
                 {
                     "characters_mentioned": [],
@@ -2017,15 +2017,15 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to Sam and Gilly",
                     "line": "Leave us.",
-                    "spoken_by": "SELYSE (to Sam and Gilly)"
+                    "spoken_by": "SELYSE"
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "nodding",
                     "line": "Your Grace.",
-                    "spoken_by": "SAM (nodding)"
+                    "spoken_by": "SAM"
                 },
                 {
                     "characters_mentioned": [],
@@ -2239,9 +2239,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "confused",
                     "line": "But you'd be Lord of Winterfell.",
-                    "spoken_by": "SAM (confused)"
+                    "spoken_by": "SAM"
                 },
                 {
                     "characters_mentioned": [],
@@ -2255,9 +2255,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "Crowded. You'd think we were serving venison stew.",
-                    "spoken_by": "ALLISER (O.S.)"
+                    "spoken_by": "ALLISER"
                 },
                 {
                     "characters_mentioned": [],
@@ -2339,9 +2339,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "Sam the Slayer.",
-                    "spoken_by": "JANOS (O.S.)"
+                    "spoken_by": "JANOS"
                 },
                 {
                     "characters_mentioned": [],
@@ -2573,9 +2573,9 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "Valyrian",
                     "line": "She doesn't belong here. And no matter how many of your traitors call her \"Mhysa\", she will never be your mother.",
-                    "spoken_by": "HARPY (Valyrian)"
+                    "spoken_by": "HARPY"
                 },
                 {
                     "characters_mentioned": [],
@@ -2600,9 +2600,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": "kneels",
+                    "context_info": "Valyriankneels",
                     "line": "For you, Mhysa.  You wanted the Harpy dead, but your hands were tied. I set you free, as you did all of us.",
-                    "spoken_by": "MOSSADOR (Valyrian)"
+                    "spoken_by": "MOSSADOR"
                 },
                 {
                     "characters_mentioned": [],
@@ -2668,9 +2668,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to Daario and Ashter",
                     "line": "She should have cut off the traitor's head in the Great Pyramid and been done with it.",
-                    "spoken_by": "HIZDAHR (to Daario and Ashter)"
+                    "spoken_by": "HIZDAHR"
                 },
                 {
                     "characters_mentioned": [],
@@ -2688,9 +2688,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "Valyrian, to crowd",
                     "line": "You opened your gates to me because I promised you freedom and justice. One cannot exist without the other.",
-                    "spoken_by": "DAENERYS (Valyrian, to crowd)"
+                    "spoken_by": "DAENERYS"
                 },
                 {
                     "characters_mentioned": [],
@@ -2698,27 +2698,27 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "Valyrian",
                     "line": "Brother! Brother!",
-                    "spoken_by": "CROWD (Valyrian)"
+                    "spoken_by": "CROWD"
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "Valyrian",
                     "line": "Mhysa, please! Forgive me!",
-                    "spoken_by": "MOSSADOR (Valyrian)"
+                    "spoken_by": "MOSSADOR"
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "Valyrian",
                     "line": "A citizen of Meereen was awaiting trial and this man murdered him. The punishment is death.",
-                    "spoken_by": "DAENERYS (Valyrian)"
+                    "spoken_by": "DAENERYS"
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "Valyrian",
                     "line": "Mercy! Mercy!",
-                    "spoken_by": "CROWD (Valyrian)"
+                    "spoken_by": "CROWD"
                 },
                 {
                     "characters_mentioned": [],
@@ -2782,9 +2782,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "shocked",
                     "line": "Drogon...",
-                    "spoken_by": "DAENERYS (shocked)"
+                    "spoken_by": "DAENERYS"
                 },
                 {
                     "characters_mentioned": [],

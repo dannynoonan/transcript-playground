@@ -1,0 +1,2108 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Worf's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is doing his bat'leth exercises when the doorbell rings"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enter.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Am I intruding?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. My apologies, Captain. I can be back in uniform",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, that won't be necessary, Mister Worf. I'm not here as your captain. I'm here as the man who stood with you before the High Council. Your cha'DIch. We will arrive at your home world in less than a day.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is not time yet.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That doesn't sound like the man who came to me a year ago fiercely determined to return home and to clear his father's name or die trying. Isn't it time to confront the Council? To regain your family name? Let the truth be known?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been told that patience is sometimes a more effective weapon than the sword.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Patience is a human virtue, one which I am glad to see you've taken to heart. But doesn't this situation require a more Klingon response? Your discommendation is a facade to protect less honourable men. It is a lie. Lies must be challenged.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have grown weary of bearing this dishonour.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker to Picard.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead, Number One.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Worf's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've been intercepted by the Klingon vessel Bortas.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "They claim to be our escort.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No escort was scheduled.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Worf's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Bortas is standing by, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen. Gowron. This is an unexpected pleasure.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I must speak with you, Picard. We will have to move quickly if we are to be successful.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Successful?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Yes. In preventing a Klingon civil war.",
+                    "spoken_by": "GOWRON"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The family of Duras is massing support. They have many allies on the Council.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Duras died in disgrace. By Klingon tradition, his family should share that disgrace.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their corruption has poisoned the Empire. Honour will soon have no meaning.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And who speaks for his family now?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lursa and B'Etor, the sisters of Duras.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And they would claim the leadership of the Council?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Women may not serve on the Council.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then how",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. But they are plotting something. They have secured the loyalty of at least three fleet commanders. Lursa and B'Etor are feared, and fear is power.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not see what I can do to assist.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were first chosen as Arbiter of Succession because no Klingon could be trusted. You accepted this duty and you must see it through to the end. You must ensure my installation.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is beyond my purview.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will not support me?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not step outside the traditional role of the Arbiter.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if they attempt to block my installation?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I can only assure you that I will deal with any challenge according to Klingon law.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I fear that will not be enough.",
+                    "spoken_by": "GOWRON"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, would you escort our guest to the transporter room?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Gowron enter the turbolift"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Begin monitoring Romulan activity along the Neutral Zone, Mister Data. Have the outpost stations send us their tactical reports.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Duras family are preparing to move against Gowron.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Backed by Romulans?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. But there is too much history between the Duras and the Romulans to discount the possibility.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dismissed.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the transporter technician leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would speak with you.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not hear the words of traitors.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not a traitor.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You admitted your guilt before the Council.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I accepted discommendation to protect the Empire.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Protect it? How?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was Duras' father who betrayed our people to the Romulans at Khitomer, not mine.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Duras? There is proof of this?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why would you accept dishonour to protect Duras?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His family was too powerful. To expose him would have split the Empire. Instead, the Council chose to blame my father.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Council knew?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe you to be a man of honour, Gowron. I ask you, restore my family name.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, you killed Duras. I consider that no small favour. But what you ask is impossible.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But after your installation",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The grasp of Duras reaches out from the grave. Much of the Council is still loyal to his family. I must have the Council's support to survive. I cannot expose their treachery. You chose to accept this disgrace for the good of the Empire. Now you must live with your decision, like a Klingon.",
+                    "spoken_by": "GOWRON"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is practicing shooting moving coloured targets when someone enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Guinan?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a little quiet down in Ten Forward, so I thought I'd get off a little target practice. Do you mind if I join you?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You? Practise?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I like to keep my eye sharp.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I practice at level fourteen.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Guess I could come down to that level for a while. Begin programme.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and Guinan gets the first target before Worf realises it has started"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, I had a bet with the Captain that I could make you laugh before you became Lieutenant Commander.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not a good bet today.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've seen you laugh. I like it.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Klingons do not laugh.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he misses"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh yes they do. Absolutely they do. You don't. But I've heard some Klingon belly laughs that would curl your hair.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Guinan gets three hits, Worf gets two hits and a miss"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your son laughs. He's a Klingon.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is a child and part human.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right. And you're not, you're full Klingon except you don't laugh.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not laugh because I do not feel like laughing.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Other Klingons feel like laughing. What does that say about you?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it says that I do not feel like other Klingons.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "another miss"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Programme complete.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good game. Don't feel bad. I was doing this long before you were born. So how is he? Your son.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is having difficulty adjusting to life on Earth.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can see where it might be hard for the little guy. Living with humans, being Klingon. Could be very confusing.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will not be easy for him.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it won't. But at some point he's going to want to know what it's like to really be a Klingon. Just as you're learning.",
+                    "spoken_by": "GUINAN"
+                }
+            ],
+            "location": "Phaser range"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I request a leave of absence.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, request granted.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant. Qapla!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And good luck.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lieutenant Worf, personal log, stardate 44996.1. I have located the Klingon ship on which my brother Kurn serves as captain, and have arranged to join him."
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It has been too long, my brother.",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too long. We have much to discuss. I have asked Gowron to restore our family honour. He has refused.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gowron will not live to see the day he leads the Council.",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He stands alone, surrounded by his enemies. Lursa and B'Etor will have him killed. And if they don't, I will.",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gowron is weak. The family of Duras must never be allowed to lead the Council. Our leaders have failed us. They no longer deserve our loyalty. It is time to sweep away the old Council and put a new one in its place.",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How can this be done?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I already have the support of four squadron commanders in key strategic sectors. When the time comes, they will follow me. Join us, Worf, and we will usher in a new era and regain our family name.",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf thinks about it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gowron has completed the Rite of Succession. It is our duty to support him.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gowron spits in your face when you ask him to give back what is rightfully ours and you would support him?",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We cannot regain honour by acting dishonourably.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not support Gowron.",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am the elder brother, Kurn. I speak for our family. We will back Gowron. But not now. Not yet. We will wait until he feels the grasp of his enemies around his throat. Then we will offer him our support. And the price will be the restoration of our family name.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will be difficult to convince my allies to back Gowron. But I will try. I must go to the Mempa sector to meet with the other squadron commanders.",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Contact me when you have gained their support. Then I will be ready for Gowron.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44996.8. My role as Arbiter of Succession has again brought me to the Great Hall of the Klingon High Council.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Kurn's ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "naDev ghoS!",
+                    "spoken_by": "K'TAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard walks forward"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you reached a decision regarding the succession of power?",
+                    "spoken_by": "K'TAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Qaja plu d'itch jung. La woq you ghir klas qimha. Gowron. Doj hon. Doj hon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gowron, son of M'Rel, hakt'em. The Arbiter confirms that you have completed the Rite of Succession. Your enemies have been destroyed. You stand alone. Do you wish to claim leadership of the Council?",
+                    "spoken_by": "K'TAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish it.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are there no other challengers?",
+                    "spoken_by": "K'TAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "just as Picard is about to put the cloak on Gowron's shoulders"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is one. I will challenge him.",
+                    "spoken_by": "TORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An arrogant child!",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "K'TAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Toral, son of Duras.",
+                    "spoken_by": "TORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Duras had no son.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But he did, Gowron.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, this is your doing, Lursa.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We wish to address the Council.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lursa, B'Etor, come forward.",
+                    "spoken_by": "K'TAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Members of the High Council, it is a day of great rejoicing for the family of Duras and the Klingon Empire. We have discovered that our brother did indeed have a son and heir.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is outrageous. Duras had no mate. Where did you find him, Lursa? In a harlot's bedchamber?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will personally cut your tongue out, Yintagh!",
+                    "spoken_by": "TORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Impudent wretch.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A simple genetic scan will prove his bloodline is valid.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The illegitimate son of Duras cannot rule the High Council.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Arbiter will consider his validity. Len'mat.",
+                    "spoken_by": "K'TAL"
+                }
+            ],
+            "location": "Great Hall"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the sisters have Romulan visitors"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our allies on the Council backed Toral's claim. It's in Picard's hands, now.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent. Everything is proceeding as scheduled.",
+                    "spoken_by": "MOVAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why not just kill Picard?",
+                    "spoken_by": "TORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fool! Do we want the Federation as our enemy?",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "TORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and from the shadows, that familiar voice again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least, not yet. But when the time is right we will deal with the Federation and Captain Picard.",
+                    "spoken_by": "WOMAN"
+                }
+            ],
+            "location": "Duras home"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "I have met with the other squadron commanders here. Three will join us, one will not. That gives us enough strength to control seven key sectors.",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know the strength of our enemies?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "They have at least seven squadrons, but most of the fleet has not decided which banner to follow.",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gowron is nearly out of options. Soon he will have no choice",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "I will return soon to the home world. We shall meet then.",
+                    "spoken_by": "KURN"
+                }
+            ],
+            "location": "Worf's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you also require the original logs recorded during the attack, Lieutenant?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything we have on the Khitomer massacre.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can provide you with our analysis of the communications between the Khitomer outpost and the Romulan ships. However, for a complete record you will have to contact Starbase twenty four",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf. Have you cancelled your leave?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, would you join me in my Ready room?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, you're using our files on the Khitomer massacre as evidence against Duras' father?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you not see an inherent conflict of interest here?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, those Federation records will help me prove that my father was falsely accused of treason.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are using your position as a Starfleet officer to affect political change on your planet. There could not be a worse compromise of our fundamental principles.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do not tie my hands now. I must be able to prove my father's innocence. Those Federation records can do that.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf. Here I am lecturing you on a conflict of interest while I'm desperately trying to avoid one of my own. Do you think I wish to allow the Duras family to solidify their hold on the Council? Do you think I cannot see for myself the implications for the Federation? Good Lord, Duras tried to have me killed! All of my instincts, my training, my very being as a Starfleet officer are at odds with my responsibilities as Arbiter of the Klingon High Council. We walk the same tightrope between two worlds, you and I. We must try our very best to keep those two worlds separate, or we shall certainly fall.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will make the Khitomer massacre files available to anyone who wants them. To the High Council, to the Duras family, to you. Anyone.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, this is as far as I can go.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker to Picard.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Number One.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a message coming in for you from the surface. It's coded personal.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Send it through.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, welcome. Please, come in. Be seated.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "B'Etor is a very tactile woman, she likes to touch people"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something to drink, Captain? Tea. Earl Grey, perhaps?",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You come alone, and unarmed",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing would be served by killing the Arbiter before his decision.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nevertheless, a brave act, Captain.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "B'Etor.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your invitation was unexpected.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We should have extended it much sooner.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't want you to judge us by your experience with our brother.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Duras was a fool.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He deserved to die.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forget him. We have.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We do not wish to be your enemy.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quite the opposite.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That pleases me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you made your decision regarding Toral's challenge?",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am pursuing it with due vigilance.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "B'Etor kneels by Picard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Allow me to heat your tea.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Toral has the bloodline to lead the Empire into the next century. He has the support of the people.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then it remains to see if he has the support of the law.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But he must. Surely, you can see that.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll tell you what I see. If I find Toral's challenge valid, the two of you will very quickly gain control of the Council and Gowron will be found dead shortly thereafter. If I reject Toral's claim, you will accuse me of serving Federation interests. It will serve as a rallying cry to declare war and overthrow Gowron.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You see very clearly, Captain. But one thing is missing. If you rule against us and we are victorious in a war against Gowron.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which we would be>",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will mean the end of the alliance with the Federation.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we would hate to see that happen as much as you would.",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not a threat, Captain. Just an unfortunate truth.",
+                    "spoken_by": "LURSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So why be our enemy, when you can be our friend?",
+                    "spoken_by": "B'ETOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have manipulated the circumstances with the skill of a Romulan. My decision will be announced at high sun tomorrow. Excellent tea. Good day, ladies.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Duras home"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is your decision?",
+                    "spoken_by": "K'TAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "K'Tal, this Council knows the law of heredity well. G'now juk Hol pajhard. A son shall share in the honours or crimes of his father. Toral is Duras' son. That has been established by the genetic scan. But with due respect to the traditions and laws of this High Council, there is no basis for accepting a petition for leadership from a boy who has fought no battles, shed no blood for his people, or earned no honour for himself. One day, perhaps he shall. But not now. Duras is dead. His claim to the leadership died with him. Gowron shall lead the Council.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Arbiter has ruled. There are no more challengers.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does the Federation dictate Klingon destiny or do we? Follow me and I will show you honour.",
+                    "spoken_by": "TORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Follow him and you reject all Klingon law.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "but council members move to stand behind the Duras group"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you not see what you are doing? Are you blind to what they represent? Then go. Your blood will paint the way to the future.",
+                    "spoken_by": "GOWRON"
+                }
+            ],
+            "location": "Great Hall"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your message said it was urgent. What do you want?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your forces are weak, Gowron. You need help to fight the family of Duras.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From one dishonoured Klingon.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I offer you four Klingon squadrons.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why would they follow you, a Starfleet officer?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are pledged to support my brother, Kurn.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kurn is your brother?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. His true bloodlines were hidden to protect him.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kurn will follow me? He has opposed me in the past.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am the elder brother. He will do as I say.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it you want in return?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know my price.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The return of your honour. For the support of four squadrons? No, that will not be enough. The Duras family controls most of the fleet. We must have Federation help.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They will not intervene.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps not yet, but Starfleet Command will listen to Picard and Picard listens to you.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can ask nothing more of him in this matter.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My duty as a Starfleet officer",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You come to me and demand the restoration of your family honour and now you hide behind human excuses? What are you, Worf? Do you tremble and quake with fear at the approach of combat, hoping to talk your way out of a fight like a human? Or do you hear the cry of the warrior calling you to battle, calling you to glory like a Klingon?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and someone opens fire on the Bortas"
+                }
+            ],
+            "location": "Gowron's Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Status!",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aft shields down.",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Warp coils damaged.",
+                    "spoken_by": "HELMSMAN"
+                }
+            ],
+            "location": "Gowron's Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Red alert.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A second ship has joined the attack on the Bortas.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's begun.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Send an emergency signal to any loyal ships!",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Impulse engines not responding!",
+                    "spoken_by": "HELMSMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "there's an explosion. Worf takes the Klingon's station"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage emergency override!",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Override engaged. Disruptors still not responding.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Gowron's Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Bortas has lost her port shields, sir. It is unlikely they will withstand another hit at that quarter. Their primary life support has failed, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Bortas has put out a general distress call.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign Riol, plot a course to take us safely away from the combat area. Half impulse.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the Bortas is Gowron's ship. If he's the legitimate leader of the Empire, shouldn't we help him?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we go to the aid of the Bortas, we'll be dragging the Federation into a Klingon civil war.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about Worf?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, engage.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Port shields are still down.",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Disruptors online.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lock on target.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Don't you see? Their sensors will detect the weapons lock. If they think we're helpless, they will try to board the ship. I can aim and fire disruptors manually when they drop their shields.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "GhoS.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thirty five thousand kellicams. Twenty thousand kellicams. Now within transporter range.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "SuH.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're dropping their shields.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "BaH!",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KaBOOM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Firing on second target.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They were able to raise the shields in time. Minor damage only.",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the ship fires on the Bortas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Disruptors offline.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All power to shields.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields failing!",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "another Klingon ship swoops in and drives off their attacker"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Incoming message.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On viewer.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "This is Captain Kurn of the Hegh'ta. We come to defend the Empire and to follow the banner of Gowron.",
+                    "spoken_by": "KURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The enemy has sustained major damage to its life support systems They have disengaged.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have done well, Commander Kurn. Lursa and B'Etor have moved more quickly than I anticipated. We shall not underestimate them again. Meet us at the Great Hall.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Advise the Enterprise that their delegation is welcome to attend my installation as leader.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44998.3. With new-found support, Gowron has chosen to proceed with the installation ceremony. The Enterprise has returned so that I may perform my final duty as Arbiter of Succession.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Gowron's Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard places the Chancellor's cloak on Gowron's shoulders"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Receive now the loyalty of the Council and of the Empire.",
+                    "spoken_by": "K'TAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Qapla!",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "naDev ghoS.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Kurn step forward"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You both fought as warriors. You have proved your hearts are Klingon.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he draws a dagger, and Worf grips its blade firmly"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I return your family honour. I give you back that which was wrongfully taken from you. Let your name be spoken once again. You are Worf, son of Mogh.",
+                    "spoken_by": "GOWRON"
+                }
+            ],
+            "location": "Great hall"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Duras family is gathering a large force near Beta Thoridar. As per the terms of the Treaty of Alliance, I now formally request your assistance in fighting these enemies of the Empire.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These enemies are Klingons.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By right and tradition, I am the sole leader. All who oppose me are traitors.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand your position, but I', sure you're aware that the Federation cannot interfere in what is, by definition, an internal Klingon affair.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You arbitrated the Rite of Succession. You are already involved.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My duties in that regard are finished.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we must intervene. The Duras family is corrupt and hungry for power with no sense of honour or loyalty. They represent a grave threat to the security of the Federation. Captain, you and I know that they have conspired with Romulans in the past. If they should be victors in this war, they will surely form a new Klingon-Romulan alliance. That would represent a fundamental shift of power in this quadrant. Starfleet must support Gowron. It is in the interests of both the Federation and the Empire. I beg you, support us in our cause.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, I don't have to lecture you on the principle of non interference. As Starfleet officers, we have all sworn an oath to uphold that principle whatever our personal feelings. I'm sorry. I must refuse your request.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf starts to follow Gowron out of the room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf. I'm afraid I must recall you to duty. The Enterprise will be leaving this sector immediately.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I respectfully request that I be allowed to take an extended leave of absence.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, your responsibilities as a Starfleet officer are incompatible with remaining on board a Klingon ship during a time of war.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I order you to return to duty at once.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I resign my commission as a Starfleet officer.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf puts his comm. badge on the table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will await you aboard the Bortas.",
+                    "spoken_by": "GOWRON"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is now in Klingon uniform, and packing a case when the doorbell rings"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enter.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Am I intruding?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand that you'll be serving on board the Bortas.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As weapons officer.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your tactical knowledge and experience will serve them well.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, are you certain that this is the right decision?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was rescued from Khitomer by humans. Raised and loved by human parents. I've spent most of my life around humans, fought beside them. But I was born a Klingon. My heart is of that world. I do hear the cry of the warrior. I belong with my people.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Being the only Klingon ever to serve in Starfleet gave you a singular distinction, but I felt that what was unique about you was your humanity, compassion, generosity, fairness. You took the best qualities of humanity and made them part of you. The result was a man who I was proud to call one of my officers. I'll have your belongings transported to the Bortas.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Worf's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Picard exit the turbolift to find the way to the transporter room lined with crewmembers, last one being Guy Vardeman"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Attention on deck.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the senior staff are here"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Permission to leave the ship, sir?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Permission granted. Qapla'",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodbye.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and Worf is beamed away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dismissed.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a Romulan aide brings a message on a PADD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard has rejected Gowron's plea for help. The Enterprise has left orbit.",
+                    "spoken_by": "MOVAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Coward! He didn't have the courage to face us. The Federation is",
+                    "spoken_by": "TORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Celebrate later, Toral. We should not discount Jean Luc Picard yet. He is human, and humans have a way of showing up when you least expect them.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "especially as we can now clearly see the familiar voice belongs to Tasha Yar"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Duras family home"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "200",
+    "transcript_url": null
+}

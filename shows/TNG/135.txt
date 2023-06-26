@@ -1,0 +1,2226 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Data's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulaski, La Forge, Data (wearing a dealer's shade) O'Brien and Riker are sitting down for an evening's entertainment"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold it, that's my chair. My luck is always lousy unless I start on the dealer's right.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would seem to be superstition.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bitter experience has taught me it's a fundamental truth.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay, the game is five card stud, nothing wild. Ante up.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This game is exceedingly simple. With only fifty two cards, twenty one of which I will see, and four other players, there are a limited number of winning combinations.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's more to this than just the cards, Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. The bets will indicate of the relative strength of each hand.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Time to pluck a pigeon.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Kate starts the betting"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Five.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm in.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I too.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Call.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The first lot of face up cards are dealt"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A seven, and a six, and the ace.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I bet ten.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "See that.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Call.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fold.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, me too. I'm out.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Another deal. Riker is showing the ten, Jack and five of hearts. Data has two Queens and an Ace"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I bet five.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Same.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your five. And five.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data sees the bet"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too rich for me.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Final card"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No help.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He gives himself the four of hearts. Ooo's all round"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I bet ten.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your ten and ten.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "We discover that Data has a third Queen. He looks at Riker"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that what is known as a poker face?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you playing or not?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I fold.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker's hole card was the two of spades. Busted"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You had nothing!",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He bluffed you, Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It makes very little sense to bet when you cannot win.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I did win. I was betting that you wouldn't call.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How could you tell?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Instinct, Data, instinct. The game is seven card high/low with a buy on the last card. And just to make it more interesting, the man with the axe takes all.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Data's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Enterprise is docked at a space station. You can see her from the window"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is relaxing in the coffee lounge when he sees a woman at the top of the stairs"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He walks over to her",
+                    "line": "My God.  Phillipa Louvois. And back in uniform. It's been ten years, but seeing you again like this makes it seem like fifty. If we weren't around all these people, do you know what I would like to do?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bust a chair across my teeth?",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ain't love wonderful.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They sit together at a table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, what are you doing out here?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am in charge of the Twenty third Sector JAG office. We're brand new. I have no staff but one terrified little Ensign. Hopefully we can make some good law out here.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything is possible. So you came back to Starfleet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Still the most exciting and worthwhile place to be.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You had no reason to leave.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They forced me out.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. That was your own damn stubborn pride.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When I prosecuted you in the Stargazer court martial, I was doing my job.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, you did more than your job. You enjoyed it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not true! A court martial is standard procedure when a ship is lost. I was doing my duty as an officer of the Judge Advocate General.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You always enjoyed the adversarial process more than arriving at the truth. Well, I hope you've learned a little wisdom along the way.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, I never thought I would say this, but it's good to see you again. It brings a sense of order and stability to my universe to know that you're still a pompous ass. And a damn sexy man.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard?",
+                    "spoken_by": "NAKAMURA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Louvois. You're acquainted with Captain Picard?",
+                    "spoken_by": "NAKAMURA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes. We're old friends. Excuse me. Picard, call me. You can buy me dinner.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Phillipa exits"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, it's good to see you again.",
+                    "spoken_by": "NAKAMURA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I present Commander Bruce Maddox.",
+                    "spoken_by": "NAKAMURA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has an interesting proposal for you, but that can wait for a while. I'm eager to see the Enterprise.",
+                    "spoken_by": "NAKAMURA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. This way.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Starbase 173"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral on the Bridge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was a little surprised at the decision to put a base in force so close to the Neutral Zone.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you know, we've had disturbing news from both sides of the zone. We're here to respond when needed. And it won't hurt to have the Romulans know that we're nearby. Well, Captain, I want to thank you for this opportunity. For five hundred years every ship that has borne the name of the Enterprise has been a legend. This one is no different.",
+                    "spoken_by": "NAKAMURA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh yes, Captain. Commander Maddox is here to do some work on your android. Please take care of him.",
+                    "spoken_by": "NAKAMURA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Nakamura leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How have you been, Data?",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My condition does not alter with the passage of time, Commander.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The two of you are acquainted?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I evaluated Data when it first applied to the Academy.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And was the sole member of the committee to oppose my entrance on the grounds that I was not a sentient being.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What exactly will this work entail?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am going to disassemble Data.",
+                    "spoken_by": "MADDOX"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, explain this procedure.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ever since I first saw Data at the entrance evaluation at the Starfleet Academy, I've wanted to understand it. I became a student of the works of Doctor Noonien Soong, Data's creator, and I've tried to continue his work. I believe I am very close to the breakthrough that will enable me to duplicate Doctor Soong's work and replicate this. But as a first step I must disassemble and study it. Data is going to be my guide.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It sounds intriguing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How will you proceed?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will run a full diagnostic on Data, evaluating the condition of its current software. I will then dump its core memory into the starbase mainframe computer and begin a detailed analysis of its construction.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've constructed a positronic brain?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you determined how the electron resistance across the neural filaments is to be resolved?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not precisely.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would seem to be a necessary first step.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am confident that I will find the answer once I examine the filament links in your anterior cortex.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But if the answer is not forthcoming, your model will not function.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not anticipate any problems.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You seem a little vague on the specifics.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are the risks to Commander Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negligible.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I believe his basic research lacks the specifics necessary to support an experiment of this magnitude.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Data is a valued member of my Bridge crew. Based on what I've heard, I cannot allow Commander Data to submit himself to this experiment.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was afraid this might be your attitude, Captain. Here are Starfleet's transfer orders separating Commander Data from the Enterprise, and reassigning it to Starbase one seventy three under my command. Data, I will see you in my office tomorrow at zero nine hundred hours.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You sent for me, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, please sit down. Well, we have a problem.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I find myself in complete agreement with that assessment of the situation, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your service to this ship has been exemplary. I don't want to lose you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not submit to the procedure, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, I understand your objections, but I have to consider Starfleet's interests. What if Commander Maddox is correct, there is a possibility that many more beings like yourself could be constructed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard looks away",
+                    "line": "Sir, Lieutenant La Forge's eyes are far superior to human biological eyes. True? Then why are not all human officers required to have their eyes replaced with cybernetic implants?  I see. It is precisely because I am not human.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That will be all, Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, pull all relevant information with regard to Starfleet regulations on the transfer of officers.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Working.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My God, twice in as many days.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need your help.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An historic moment.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been trying to make sense of this gobbledygook, but it's beyond me. The fact is, my android officer, Data, is being transferred compulsorily to be made part of a highly dangerous, ill-conceived experiment, and I want it stopped.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He can refuse to undergo the procedure, but we can't stop the transfer.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Once this Maddox has got control of Data, anything could happen. I don't trust that man.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We agree to certain risks when we join Starfleet.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Acceptable risks, justified risks, but I can't accept this. It's unjustified. It's unfair. He has rights.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All this passion over a machine?",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't start. This is important to me. Is there an option?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is always an option. He can resign.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you came to me for help.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I came to you. You're the JAG officer for this sector. I had no choice but to come to you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait! I didn't mean it that way. I'm glad that you felt you could, well, come to me.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The word trust just isn't in your vocabulary, is it. Good try, nine out of ten for effort.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish things were different.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I could believe that.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "JAG office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data is packing a very small carry case. It's contents include a small holo-projector that displays an image of Tasha Yar, an impressive collection of medals, He puts a book on the desk and then Maddox walks in without even knocking. Data comes back with another item to find Maddox reading"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "'When in disgrace with fortune and men's eyes, I all alone beweep my outcast state'. Is it just words to you, or do you fathom the meaning?",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shakespeare's sonnet 29"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it not customary to request permission before entering an individual's quarters?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought that we could talk this out, that I could try to persuade you. Your memories and knowledge will remain intact.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reduced to the mere facts of the events. The substance, the flavour of the moment, could be lost. Take games of chance.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Games of chance?",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I had read and absorbed every treatise and textbook on the subject, and felt myself well prepared for the experience. Yet, when I finally played poker, I discovered that the reality bore little resemblance to the rules.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the point being?",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That while I believe it is possible to download the information contained in the positronic brain, I do not think you have acquired the expertise necessary to preserve the essence of those experiences. There is an ineffable quality to memory which I do not believe can survive your procedure.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ineffable quality. I had rather we had done this together, but one way or the other, we are doing it. You are under my command.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir, I am not under your nor anyone else's command. I have resigned from Starfleet.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Resigned? You can't resign.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I regret the decision, but I must. I am the culmination of one man's dream. This is not ego or vanity, but when Doctor Soong created me he added to the substance of the universe. If by your experiments I am destroyed, something unique, something wonderful will be lost. I cannot permit that, I must protect his dream.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And so must I. But keep packing, because one way or the other, you will be reporting.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. Commander Bruce Maddox, having been thwarted by Data's abrupt resignation, is now seeking a legal remedy for his woes. Captain Louvois has requested my presence at those discussions.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Data's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your response is emotional and irrational.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Irrational?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are endowing Data with human characteristics because it looks human. But it is not. If it were a box on wheels I would not be facing this opposition.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Overt sentimentality is not one of Captain Picard's failings. Trust me, I know.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will tell you again. Data is a valued member of my crew. He is an outstanding Bridge officer.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I am permitted to make this experiment, the horizons for human achievement become boundless. Consider, every ship in Starfleet with a Data on board. Utilising its tremendous capabilities, acting as our hands and eyes in dangerous situations.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look, you're preaching to the choir here. Why don't you get to the point?",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data must not be permitted to resign.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data is a Starfleet officer. He still has certain rights.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rights! Rights! I'm sick to death of hearing about rights! What about my right not to have my life work subverted by blind ignorance?",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have rule of law in this Federation. You ca not simply seize people and experiment with them to prove your pet theories.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now you're doing it. Data is an extraordinary piece of engineering, but it is a machine. If you permit it to resign it will destroy years of work in robotics. Starfleet does not have to allow the resignation.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, who do you think you're working for? Starfleet is not an organisation that ignores its own regulations when they become inconvenient. Whether you like it or not, Data does have rights.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me put it another way. Would you permit the computer of the Enterprise to refuse a refit?",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's an interesting point. But the Enterprise computer is property. Is Data?",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There may be law to support this position.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then find it. A ruling with such broad ranging implications must be supported. Phillipa, I hope you will use the same zeal that you did in the Stargazer court martial.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "JAG office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data is very neatly undoing the wrapping of a present"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, you're supposed to rip the wrapping off.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With the application of a little care, Wes, the paper can be utilised again.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, you're missing the point.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Now that he has carefully removed it, Data rips the paper in half, then reads the book title"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Dream of the Fire, by K'Ratak. Thank you, Worf.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was in the hands of the Klingons that the novel attained its full stature.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I couldn't disagree more. We'll save that argument for another day. DATA: Excuse me, please.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data goes over to Geordi, who is sitting on his own"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is something wrong?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course there is. You're going away.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No one regrets that necessity more than myself. You do understand my reasons?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure, I understand. I just don't like your being forced out. It's not fair.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As Doctor Pulaski would at this juncture, no doubt, remind us, life is rarely fair.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry, that just doesn't make it any better.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I shall miss you, Geordi.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. Me too. Take care of yourself, Data.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Ten forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Riker are present to hear the outcome of the research into Data's status"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have completed my research, based on the Acts of Cumberland passed in the early twenty first century. Data is the property of Starfleet. He cannot resign and he cannot refuse to cooperate with Commander Maddox.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What if I challenge this ruling?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I shall be required to hold a hearing.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I so challenge. Convene your hearing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, that would be exceedingly difficult. This is a new base. I have no staff.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But surely, Captain, you have regulations to take care of such an eventuality.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are. I can use serving officers as legal counsel. You as the senior officer would defend.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very good.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the unenviable task of prosecuting this case would fall on you, Commander, as the next most senior officer of the defendant's ship.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't. I won't. Data's my comrade. We have served together. I not only respect him, I consider him my friend.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When people of good conscience have an honest dispute, we must still sometimes resort to this kind of adversarial system.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You just want me to prove that Data is a mere machine. I can't do that because I don't believe it. I happen to know better. So I'm neither qualified nor willing. You're going to have to find someone else.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I will rule summarily based upon my findings. Data is a toaster. Have him report to Commander Maddox immediately for experimental refit.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see. I have no choice but to agree.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. And I expect you to do your duty in that courtroom. If I find for one minute that you are not doing your best, I will end this then and there.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't have to remind us of our duty. You just remember yours.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have never forgotten it. Not then, and certainly not now.",
+                    "spoken_by": "PHILLIPA"
+                }
+            ],
+            "location": "JAG office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, Captain Louvois has issued a ruling. You are the property of Starfleet Command. You can not resign.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see. From limitless options I am reduced to none, or rather one. I can only hope that Commander Maddox is more capable than it would appear.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, you're not going to submit. We're going to fight this. I challenged the ruling. Captain Louvois will be compelled to hold a hearing. She may be overly attached to the letter of the law, but I suspect that she still understands its spirit. We will put to rest this question of your legal status once and for all. Now, I have been asked to represent you, but if there is some other officer with which you would feel more happy?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I have complete confidence in your ability to represent my interests.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, identify Riker, William T. Access code theta alpha two seven three seven, blue, enable.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker, William T, identified. Ready.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Access all available technical schematics on Lieutenant Commander Data.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Working.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Then up pops 'emergency manual control' and Data's off-switch location is displayed. Riker is fascinated at this new information, then realises the implication"
+                }
+            ],
+            "location": "Computer room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This hearing, convened on stardate 42527.4, is to determine the legal status of the android known as Data. The office of the Judge Advocate General has rendered a finding of property, the defence has challenged. Commander Riker?",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your honour, there is only one issue, and one relevant piece of evidence. I call Lieutenant Commander Data.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data goes to the witness chair and puts his hand on a scanner on the table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Verify. Lieutenant Commander Data. Current assignment, USS Enterprise. Starfleet Command Decoration for Valour and",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your honour, we'll stipulate to all of this.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Objection, Your Honour, I want this read. All of it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sustained.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Valour and Gallantry, Medal of Honour with Clusters, Legion of Honour, the Star Cross.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed, Commander.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, what are you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An android.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which is?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Webster's Twenty Fourth Century Dictionary, Fifth Edition, defines an android as an automaton made to resemble a human being.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Automaton. Made. By whom?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who built you, Commander?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Noonien Soong.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And he was?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The foremost authority in cybernetics.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More basic than that. What was he?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Human?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Commander, what is the capacity of your memory, and how fast can you access information?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have an ultimate storage capacity of eight hundred quadrillion bits. My total linear computational speed has been rated at sixty trillion operations per second.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your Honour, I offer in evidence prosecution's exhibit A, a rod of par-steel. Tensile strength, forty kilobars. Commander, would you bend that?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Objection. There are many life forms possessed of mega strength. These issues are not relevant to this hearing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid I can't agree, Captain. Proceed with you demonstration, Commander.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data bends the heavy rod neatly into a U shape"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Drawing on the log record of the construction of the prototype android Lore, also constructed by Noonien Soong, I request to be allowed to remove the Commander's hand for your inspection.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "changes his mind",
+                    "line": "Objection!  It doesn't matter. Objection withdrawn.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed, Commander.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker twists and pulls off Data's left forearm and hand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Commander is a physical representation of a dream, an idea conceived of by the mind of a man. It's purpose is to serve human needs and interests. It's a collection of neural nets and heuristic algorithms. Its responses dictated by an elaborate software programme written by a man. Its hardware built by a man. And now. And now a man will shut it off.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A flick of the hidden off switch, and Data slumps across the table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pinocchio is broken. Its strings have been cut.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A horrified silence descends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I request a recess.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Granted.",
+                    "spoken_by": "PHILLIPA"
+                }
+            ],
+            "location": "Courtroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There is only one customer present, sitting at the bar"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you mean his argument was that good?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker's presentation was devastating. He almost convinced me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've got the harder argument. By his own admission, Data is a machine.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's true.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're worried about what's going to happen to him?",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've had to send people on far more dangerous missions.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then this should work out fine. Maddox could get lucky and create a whole army of Datas, all very valuable.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes. No doubt.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's proved his value to you.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In ways that I cannot even begin to calculate.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And now he's about to be ruled the property of Starfleet. That should increase his value.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In what way?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, consider that in the history of many worlds there have always been disposable creatures. They do the dirty work. They do the work that no one else wants to do because it's too difficult, or to hazardous. And an army of Datas, all disposable, you don't have to think about their welfare, you don't think about how they feel. Whole generations of disposable people.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're talking about slavery.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think that's a little harsh.",
+                    "spoken_by": "GUINAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think that's a little harsh. I think that's the truth. But that's a truth we have obscured behind a comfortable, easy euphemism. Property. But that's not the issue at all, is it?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ten forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker has dramatically demonstrated to this court that Lieutenant Commander Data is a machine. Do we deny that? No. Because it is not relevant. We too are machines, just machines of a different type. Commander Riker has also reminded us that Lieutenant Commander Data was created by a human. Do we deny that? No. Again it is not relevant. Children are created from the building blocks of their parents' DNA. Are they property? I call Lieutenant Commander Data to the stand.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard has Data's case with him. He opens it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are these?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My medals.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you pack them? What logical purpose do they serve?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not know, sir. I suppose none. I just wanted them. Is that vanity?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And this?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The book"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A gift from you, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You value it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a reminder of friendship and service.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard activates the hologram of Tasha"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And this? You have no other portraits of your fellow crew members. Why this person?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would prefer not to answer that question, sir. I gave my word.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Under the circumstances, I don't think Tasha would mind.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She was special to me, sir. We were intimate.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Phillipa sits up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Commander. I have no further questions for this witness.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker, do you want to cross?",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no questions, Your Honour.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. You may step down.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I call to the stand Commander Bruce Maddox as a hostile witness.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Verify, Maddox, Bruce, Commander. Current assignment, Associate Chair of Robotics, Daystrom Technological Institute. Major papers",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, yes, yes. Suffice it to say, he's an expert. Commander, is your contention that Lieutenant Commander Data is not a sentient being and therefore not entitled to all the rights reserved for all life forms within this Federation?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data is not sentient, no.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, would you enlighten us? What is required for sentience?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Intelligence, self awareness, consciousness.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prove to the court that I am sentient.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is absurd! We all know you're sentient.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So I am sentient, but Data is not?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why? Why am I sentient?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, you are self aware.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, that's the second of your criteria. Let's deal with the first, intelligence. Is Commander Data intelligent?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. It has the ability to learn and understand, and to cope with new situations.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Like this hearing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about self awareness. What does that mean? Why am I self aware?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because you are conscious of your existence and actions. You are aware of yourself and your own ego.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Data, what are you doing now?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am taking part in a legal hearing to determine my rights and status. Am I a person or property?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what's at stake?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My right to choose. Perhaps my very life.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My rights. My status. My right to choose. My life. It seems reasonably self aware to me. Commander? I'm waiting.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is exceedingly difficult.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you like Commander Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know it well enough to like or dislike it.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you admire him?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh yes, it's an extraordinary piece of",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering and programming. Yes, you have said that. Commander, you have devoted your life to the study of cybernetics in general?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Commander Data in particular?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And now you propose to dismantle him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So that I can learn from it and construct more.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many more?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As many as are needed. Hundreds, thousands if necessary. There is no limit.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A single Data, and forgive me, Commander, is a curiosity. A wonder, even. But thousands of Datas. Isn't that becoming a race? And won't we be judged by how we treat that race? Now, tell me, Commander, what is Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is he?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A machine!",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is he? Are you sure?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes!",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Riker to Phillipa",
+                    "line": "You see, he's met two of your three criteria for sentience, so what if he meets the third. Consciousness in even the smallest degree. What is he then? I don't know. Do you?  Do you?  Do you? Well, that's the question you have to answer. Your Honour, the courtroom is a crucible. In it we burn away irrelevancies until we are left with a pure product, the truth for all time. Now, sooner or later, this man or others like him will succeed in replicating Commander Data. And the decision you reach here today will determine how we will regard this creation of our genius. It will reveal the kind of a people we are, what he is destined to be. It will reach far beyond this courtroom and this one android. It could significantly redefine the boundaries of personal liberty and freedom, expanding them for some, savagely curtailing them for others. Are you prepared to condemn him and all who come after him to servitude and slavery? Your Honour, Starfleet was founded to seek out new life. Well, there it sits. Waiting. You wanted a chance to make law. Well, here it is. Make a good one.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It sits there looking at me, and I don't know what it is. This case has dealt with metaphysics, with questions best left to saints and philosophers. I'm neither competent nor qualified to answer those. I've got to make a ruling, to try to speak to the future. Is Data a machine? Yes. Is he the property of Starfleet? No. We have all been dancing around the basic issue. Does Data have a soul? I don't know that he has. I don't know that I have. But I have got to give him the freedom to explore that question himself. It is the ruling of this court that Lieutenant Commander Data has the freedom to choose.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data walks over to Maddox"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I formally refuse to undergo your procedure.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will cancel that transfer order.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. And, Commander, continue your work. When you are ready, I will still be here. I find some of what you propose intriguing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's remarkable.",
+                    "spoken_by": "MADDOX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You didn't call him it.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Maddox leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You see? Sometimes it does work.",
+                    "spoken_by": "PHILLIPA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Phillipa. Dinner?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You buying?",
+                    "spoken_by": "PHILLIPA"
+                }
+            ],
+            "location": "Courtroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, there is a celebration on the Holodeck.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no right to be there.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because you failed in your task?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, God, no. I came that close to winning, Data.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I almost cost you your life!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it not true that had you refused to prosecute, Captain Louvois would have ruled summarily against me?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That action injured you, and saved me. I will not forget it.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're a wise man, my friend.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not yet, sir. But with your help, I am learning.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Observation lounge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "135",
+    "transcript_url": null
+}

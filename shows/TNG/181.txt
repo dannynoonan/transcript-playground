@@ -1,0 +1,2368 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No changes, Commander. I can detect no abnormalities in the star's radiant energy.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prepare two class one probes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Probes ready, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Initiate launch sequence.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, Klingon attack cruiser de-cloaking, bearing zero one zero mark two three seven.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Belay that order, Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did Starfleet mention any Klingon ships in this sector?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are being hailed.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All stop, Mister Crusher.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. All stop.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a channel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Hello, Captain Picard.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador K'Ehleyr. This is an unexpected pleasure.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "It's good to see you again, Captain. Lieutenant Worf.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How may we be of assistance, Ambassador?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "There is an urgent matter we must discuss, Captain. Permission to come aboard?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Granted.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, please receive our guest.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I must request permission to send another officer.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I know your reason?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My dishonour among Klingons may offend Ambassador K'Ehleyr.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, you are a member of this crew, and you will not go into hiding whenever a Klingon ship uncloaks.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I withdraw my request, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I just received coordinates, sir. Ready to transport two from the Klingon vessel.",
+                    "spoken_by": "CHIEF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "CHIEF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energise.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "K'Ehleyr is beamed in, with a little boy"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope he'll be all right. Alexander hasn't had much contact with other children.",
+                    "spoken_by": "K'EHLEYR"
+                }
+            ],
+            "location": "Schoolroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not even a bite on the cheek for old time's sake?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps you're not aware of my dishonour. I have accepted discommendation.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've heard. So now what? I have to perform some ridiculous ritual to talk to you?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You may not respect our traditions, but I do.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry. I just thought you might want to talk. A few minutes ago, you looked like someone with a question to ask.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Must I ask the question?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, you must.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf gets out of the turbolift"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What should I tell Alexander? That he has no father?",
+                    "spoken_by": "K'EHLEYR"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Klingon Empire is at a critical juncture. We may be facing civil war.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "War over what?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The usual excuses. Tradition, duty, honour.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The word excuses implies ulterior motives for a conflict.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't bore you with the intricacies of Klingon politics. Basically, two factions are trying to seize power.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you believe there is a threat to the Federation in this struggle?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Klingon wars seldom remain confined to the Empire. Sooner or later they'll drag in the neighbouring star systems, then the Tholians, the Ferengi. The Federation won't be able to stay out of it for long. This has been coming for some time. Only K'mpec, the head of the Council, has been able to maintain the peace.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now something has changed that.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Correct. K'mpec is dying. He is aboard the cruiser. He has come specifically to meet with you, Captain. Alone.",
+                    "spoken_by": "K'EHLEYR"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is escorted into K'mpec's quarters. There's a lot of red in the decor, and the chairs are massive"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's about time you arrived, Picard. Sit.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He dismisses the guard with a wave of his hand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need your help.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the Enterprise medical facility can do anything to help.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too late. For some months I have been poisoned with small doses of Veridium six. The wine. There is no cure.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you want of me?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After I die, you will act in my name to arbitrate the struggle for power.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No one on the Council can be trusted, and I have my reasons for wanting an outsider.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "K'mpec, you cannot possibly be serious. A Federation officer has no business in",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nonsense. You are an accomplished mediator. This is no different than any other dispute requiring your services.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On the contrary, I think this is very different. And I must respectfully decline.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you refuse the dying request of the Klingon Supreme Commander it will be a insult by the Federation to all Klingons. Besides, I've already sent the order to the leaders of the two opposing factions. They're on their way.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You had no right to involve me without my permission.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I'd asked, you would have said no.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not a case of simple mediation. You are asking me to choose the next leader of the Klingon Empire.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. By tradition, the two strongest challengers fight for the right of succession. As mediator, only you can designate those challengers.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you have just said there are only two challengers arriving. What is the point?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want you to discover which one of them has killed me. Gowron or Duras. Yes, Duras. I thought you would find that interesting.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interesting? You could say that, since he tried to have me killed, and conspired to strip Worf of his good name.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I approved. All for the glory of the Empire. That should be my epitaph. Find the assassin. The Klingon who kills without showing his face has no honour. He must not lead the Empire. Such a man would be capable of anything. Even war with the Federation.",
+                    "spoken_by": "K'MPEC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. I accept.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "K'mpec takes another drink of poisoned wine"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. K'mpec, who ruled the Klingon Empire longer than anyone in history, is dead. We await the arrival of Duras and Gowron, rivals for the leadership of the High Council.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "K'mpec's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alexander is not playing nicely and sharing the toys. Note, he is about half the height of Worf"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no honour in attacking the weak.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would have won.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. You must earn victory.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Schoolroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where are the other Klingons?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are no others on board.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Federation and the Klingon Empire were enemies for many years. No other Klingons have asked to serve in Starfleet.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A warrior does not ask so many questions.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to be a warrior.",
+                    "spoken_by": "ALEXANDER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alexander runs in and gets a hug"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello! Well, you're back early.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He made me leave.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe you should go to your room and play.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alexander runs off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is he under arrest?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He knows nothing of our ways!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our ways? You mean Klingon ways, don't you?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is Klingon!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is also my son and I am half-human. He will find his own ways. Why the sudden concern? You won't even acknowledge that he's yours.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you not tell me?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What would you have done? That's right. You would have insisted that we take the oath, just as tradition would demand.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You should not have kept this from me.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, now you know.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot acknowledge my relationship to the boy. It would only harm him.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because you were dishonoured?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As my son, he would also bear my disgrace, as would his children.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you accept discommendation from the High Council?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My father was accused of collaborating with the Romulans at Khitomer.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know. And I also know that you challenged it.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes at first. Ultimately I withdrew my challenge.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But why, Worf? I can't believe you'd just give up. What really happened?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Lieutenant Worf, Ambassador K'Ehleyr, report to the Bridge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On our way, Commander.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "K'Ehleyr's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Klingon vessels Vorn and Buruk holding stations at thirteen kilometres.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a channel, Mister Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Channel is open, sir. Vorn responding to hail.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Let's get this over with, Picard.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In good time, Duras.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Even in death, K'mpec makes foolish decisions. You should not be involved in this, human.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Sonchi ceremony will take place in one hour aboard K'mpec's ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "One hour? What is the delay?",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no delay. It is the time I have chosen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Exactly one hour, Picard. Do not be late.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and K'Ehleyr enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Keep that pahtk away from the ceremony, Picard. He has no place on a Klingon ship.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard out.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Contact Gowron's ship. Tell him to meet us aboard K'mpec's vessel. Ambassador, meet me in Transporter room six in an hour. We will begin the ceremony a little late. Mister Worf.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, the next few days will be difficult for you",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have made it clear that I am to perform my regular duties, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want you to know that I am aware of your discomfort.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador K'Ehleyr will be preparing me for my role in the rite of succession.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Permission to speak freely, sir?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Granted.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Duras must not be allowed to lead the council.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has a legal claim, Mister Worf. Your personal feelings toward him",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is not personal, sir. His father betrayed my people to the Romulans. Duras is a traitor.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Klingon tradition may hold the son responsible for his father's sin. I cannot, Worf. Treason was his father's crime. Duras' crime was to lay that blame on your father. I will not forget that. But you should not forget that you chose to accept the consequences of that lie.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To preserve the Empire.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The issue now is whether or not he killed K'mpec.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He was murdered. Poisoned.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Klingon would not use poison. His murder would have no honour.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "K'mpec believed that it was either Duras or Gowron.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I know little of Gowron. Only that he is an outsider who has often challenged the Council. But Duras? I know him. His heart is not Klingon.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "K'mpec's body is still sitting in his chair. Picard and K'Ehleyr stand beside it. She is holding a painstick."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's Gowron.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope this will be brief.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will be just long enough to prove that K'mpec is dead.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Duras enters with two guards. K'Ehleyr hands the painstick to Picard. He stands in front of K'mpec's body"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and presses the painstick to the corpse",
+                    "line": "Qab jIH nagil",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Qab jIH nagil!",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he does the same with a painstick he has brought"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Qab jiH nagil!",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "slightly more sadistically than Gowron"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sonchi.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, complete the Rite of Succession. It's obvious who the two challengers are.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will proceed according to the traditions and the precedents set down in Klingon law.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you know of Klingon law, human?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will reconvene on the Enterprise, wherein",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! Finish it here, now!",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's an explosion, people go flying"
+                }
+            ],
+            "location": "K'mpec's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have not received your report on the explosion.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two Klingons killed. A few minor injuries. Were you concerned about me?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As Head of Security, it is my duty to be concerned.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that it? Just official concern for my well being?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know my feelings.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe I've forgotten.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were right. I would have insisted we take the oath. But not just because of tradition.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought about telling you. Wanted to tell you. But I wasn't ready. When I left, you said you'd never be complete without me. It took some time but, I came to realise I need you too. You're part of me, Worf.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "jIH dok.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "maj dok.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a long pause as they gaze into each others eyes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I cannot allow you to suffer my humiliation.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There would be no suffering I don't care what other Klingons think of you.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But what of the boy? He may want to live in the Empire someday. He would be an outcast. Another traitor from a family of traitors.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Family of traitors. I don't believe that for a minute.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Respect my wishes in this matter. I cannot take the oath with you. Nor can I claim your son.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you cannot be his father, at least be his friend.",
+                    "spoken_by": "K'EHLEYR"
+                }
+            ],
+            "location": "K'Ehleyr's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We haven't completed our analysis of the bomb debris. Doctor Crusher is still studying the remains of the two men killed in the explosion. We need more time.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Duras and Gowron will be here in a few minutes. I don't think you can delay this meeting again.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there some way of stretching out the formalities once they arrive?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the modern Rite of Succession, only a brief proclamation that two challengers have been chosen is necessary.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said modern rite. How was the ritual performed in the past?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The old forms dictated that the challengers perform the ja'chuq. It's a long, involved ceremony where the challengers list the battles they've won, the prizes they've taken, the idea being to prove their worthiness to lead the Council.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can the old form still be used?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's up to you. You can use whatever form you want.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, what do you know about Worf's discommendation? My interest is personal. I understand that you were there. You stood by him before the Council. I'd like to know what happened.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, I can't discuss it.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "both Duras and Gowron have an armed Starfleet guard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Council must have a leader now! Complete the rite so I can kill this ha'DIbah.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will die slowly, Duras.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have already proved you don't have the courage to face me. Perhaps you should plant another bomb!",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they square up to fight"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "mev yap! Sit down. We will begin the ja'chuq.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This woman has been giving you bad advice, Picard. The ja'chuq is obsolete.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is my choice to respect the ancient rituals. Each of you will have to prove your worthiness to lead the High Council.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That will take hours.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or days, depending on your cooperation.",
+                    "spoken_by": "K'EHLEYR"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alexander is gazing at a large curved weapon on the wall"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A bat'leth. It belonged to my father. It has been in our family for ten generations.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me hold it.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf takes it down and the little boy holds it, instinctively moving it in curving motions"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, no. Do not think of it as a weapon. Make it part of your hand. Part of your arm. Make it part of you.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Worf's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "K'Ehleyr is working alone when Gowron of the bug-eyes enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The next meeting is in three hours.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would speak with you alone, Ambassador.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm honoured.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard is prolonging the ja'chuq. Why?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has sufficient reason to proceed carefully.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He relies on you for his knowledge of Klingon law.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then he values your advice. You could quicken the pace.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Possibly. Why should I?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your position is unique. Have you never wondered about serving the Klingon Empire?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I serve in my own way.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As a Federation Ambassador. A few rewards, but little glory.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you want?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you want? Command of a ship? A seat on the Council? There are many opportunities for you in the Empire.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Opportunities that will present themselves only if you come to power. You talk like a Ferengi.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "K'mpec was also stubborn. He too refused to listen. Now, he's gone. You need not make the same mistake.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "K'mpec was old and weak. I am not.",
+                    "spoken_by": "K'EHLEYR"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've completed our analysis of the bomb debris, Commander.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The explosive was a triceron derivative.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the entire device couldn't have been more than three cubic millimetres in size.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It could have been hidden anywhere in that room.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's one more thing. The bomb had a molecular-decay detonator.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only one race uses that device, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Romulans.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How could the Romulans plant a bomb on board a Klingon attack cruiser?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would be impossible.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not if the Romulans had help from one of the Klingons.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Klingons and Romulans working together? They've been blood enemies for seventy five years.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps Duras or Gowron wishes to improve that relationship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A new Klingon alliance with the Romulans?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If true, it would represent a fundamental shift of power in the quadrant.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed. It would put the Federation in a very difficult position.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Duras or Gowron?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gowron came to me alone. He wanted me to speed up the ja'chuq. Offered me a seat on the Council if I'd help him.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That doesn't suggest a Romulan connection?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He also implied I'd end up like K'mpec if I didn't cooperate.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I disagree. It must be Duras.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have had prior dealings with Duras that show him to be untrustworthy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you be more specific?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Mister Worf, we have a conspiracy on our hands that could be a direct threat to the security of the Federation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As Chief Security Officer, you will accompany me to the next transition proceeding.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, they will be incensed. My presence will be disruptive.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it will.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, list stardates of the last Enterprise mission to the Klingon home planet.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stardates 43685 through 43689.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many ship's logs during that period?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forty three officer's logs. Ten personal logs.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there a personal log for Lieutenant Worf?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Affirmative. Access is restricted.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eliminate all personal logs. List the remaining forty three in chronological order. We'll just take them one at a time.",
+                    "spoken_by": "K'EHLEYR"
+                }
+            ],
+            "location": "K'Ehleyr's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "jIH DoQ batlh!",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Both your claims have been properly made and recorded. We are ready for the final phase of the ja'chuq. There will be a recess while I review your petitions. I'm sure you're as concerned as I am about the explosion aboard K'mpec's vessel. I assume that you are both continuing your investigations?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The investigations are complete. They revealed nothing of any importance.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "into comm.",
+                    "line": "Now that's very surprising. Our analysis turned up some startling results.  Will you join us, Lieutenant?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this?",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has no place here, Picard!",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not sit at the same table with that!",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is my prerogative to investigate anything that may be relevant to the Rite of Succession. Lieutenant Worf is my Chief Security Officer. His presence is required.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will not proceed.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you wish to withdraw from the ja'chuq, that is your option. Proceed, Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did your investigations reveal about the explosion?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a bomb.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And was your analysis just as insightful?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a common explosive.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What type?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Triceron.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about the detonator?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is pointless! The findings were inconclusive.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fortunately, our investigation was more thorough. The bomb used a molecular-decay detonator.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Romulan device.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will return to my ship to confirm these conclusions myself.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As will I.",
+                    "spoken_by": "GOWRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, please be sure to send a complete record of our findings to both vessels and to the High Council.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That will be all.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, interlock with the Klingon Imperial Information Net.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Interlock established.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Federation Ambassador K'Ehleyr requesting diplomatic access to High Council record. Security code pah doQ cha!",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, display summary of the most recent High Council inquiry regarding Khitomer massacre.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Access denied. Restricted materials, du ko cha clearance only.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By whose order?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Council member Duras.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Access biographical files. Subject name, Councillor Duras.",
+                    "spoken_by": "K'EHLEYR"
+                }
+            ],
+            "location": "K'Ehleyr's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Advise my counsellors on the Vorn to convene. There is much to discuss.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look.",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this?",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Priority message to you from the home planet. It seems Ambassador K'Ehleyr is looking into things she should not be.",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Distract the guard for me.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "And simply walks out of the room into the corridor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir. Excuse me, sir. You cannot leave your quarters without an escort.",
+                    "spoken_by": "GUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and Duras slips out in the other direction"
+                }
+            ],
+            "location": "Duras' quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been informed of your attempt to access restricted Council records.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been investigating what happened at Khitomer. Not at all an easy task, considering that most of the records are sealed.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf's father was a traitor.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, the evidence was altered to make it appear that way. I found it interesting to read that your father was also at Khitomer and you are the one who sealed the records.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You would dare to insult my father's name?",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't play the wounded Klingon for me, Duras. You don't do it very well. What happened in that Council Chamber? How did you get Worf to take the blame for you?",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do not pursue this matter further.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The son betrays his people to the Romulans just as his father did, Duras?",
+                    "spoken_by": "K'EHLEYR"
+                }
+            ],
+            "location": "K'Ehleyr's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One of the Klingons who died in the explosion was with Duras, the other was with Gowron. I've been examining the bodies, trying to get a clue to where the bomb was hidden. There's always a pattern in the lacerations and tissue damage. It would normally give a clear indication as to the direction, distance, force of impact.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Normally?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In this case, the pattern was virtually impossible to detect. I couldn't understand it until I looked at the dynoscans. This wound is different from all of the others. It was made from the inside out. The bomb was implanted in one of their forearms.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's considered an honourable way for a Klingon to die, a suicide that takes an enemy with it. Which one of them was it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Duras' man.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Doctor's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When we have more time I will take you to the holodeck and demonstrate in more detail",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Alexander enter to find a broken table and K'Ehleyr lying across a chair. There is blood"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Medical emergency, deck eight, room one four two!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf takes K'Ehleyr in his arms. She is very badly injured and can barely whisper"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gowron?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Duras!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alexander.",
+                    "spoken_by": "K'EHLEYR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She puts Alexander's hand into Worf's, then dies"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "K'Ehleyr. K'Ehleyr!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He does the death roar, which frightens Alexander, then lays her on the floor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have never seen death. Then look. And always remember.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher arrives with an assistant"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stay with the doctor.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, when did you",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "But he has already left"
+                }
+            ],
+            "location": "K'Ehleyr's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf removes his baldric, takes the bat'leth from the wall. As an afterthought, he takes off his comm. badge too"
+                }
+            ],
+            "location": "Worf's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "K'Ehleyr's body is being removed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Multiple stab wounds to the chest and abdomen. Too much trauma to the internal organs. There wasn't time enough to take her into stasis.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where's Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. He disappeared just after I arrived.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Lieutenant Worf. Computer, locate Lieutenant Worf.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf is not aboard the Enterprise.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is he?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf transported to the Klingon ship Vorn at seventeen thirty hours.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my way.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "K'Ehleyr's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Duras.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is that doing here?",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has claimed the right of vengeance.",
+                    "spoken_by": "KLINGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have no rights here, traitor!",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "K'Ehleyr was my mate.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Duras takes a sword"
+                }
+            ],
+            "location": "Duras' quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If Lieutenant Worf resists, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's coming back with us one way or another. Set phasers on maximum stun.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The fight is underway, and the two are evenly matched"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm the only one, Worf, the only one who can prove your innocence. Kill me and you're a traitor for ever.",
+                    "spoken_by": "DURAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then that is how it shall be.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Finally, Worf knocks Duras to the floor. The door opens to reveal Riker and Data"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf deals the killing blow anyway"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Klingon ships depart"
+                }
+            ],
+            "location": "Duras' quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, your service aboard the Enterprise has been exemplary. Until now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I have acted within the boundaries of Klingon law and tradition.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The High Council would seem to agree. They consider the matter closed. I don't. Mister Worf, the Enterprise crew currently includes representatives from thirteen planets. They each have their individual beliefs and values and I respect them all. But they have all chosen to serve Starfleet. If anyone cannot perform his or her duty because of the demands of their society, they should resign. Do you wish to resign?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had hoped you would not throw away a promising career. I understand your loss, We all admired K'Ehleyr. A reprimand will appear on your record. Dismissed. Mister Worf, isn't it time for the truth about your father's innocence to be told? After all, you only accepted this dishonour to protect the name of Duras and hold the Empire together. Now that he has died in disgrace, what is gained by further silence?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Each member of the Klingon High Council has shared in that lie. They will not be so willing to admit their own dishonour. But the day will come when my brother and I will convince them to speak the truth.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My parents, my human parents, will meet us at Starbase seventy three. They will care for you.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why can't I stay with you?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You deserve a home, a family. They can provide that I cannot. I miss her too.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you my father?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I am your father.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and they hug"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Worf's quarters"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "181",
+    "transcript_url": null
+}

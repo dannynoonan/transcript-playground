@@ -1,0 +1,2148 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the weapons fire definitely hits the starboard nacelle"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Direct hit to the port nacelle. Only minimal damage. Hit to the starboard nacelle. Still, no appreciable damage.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will must've done something to their weapons.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe you are right, Counsellor. It is now up to us to play along. Release inertial dampers and cut power to decks thirty one through thirty seven.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "GIUSTI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set phasers to twenty five percent. Return fire.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Continue firing!",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've lost three plasma relays on the disruptors. Auxiliary power is, is not available.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transfer weapons control to my station. There's a way to bypass the relays and feed power",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "another hit"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The antimatter containment units are starting to buckle!",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise has been badly damaged but they still have superior firepower. If we remain here, we will be destroyed. The logical course of action is to withdraw.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've done enough damage. Narik, set course one eight zero, mark two one five. Warp six. Initiate.",
+                    "spoken_by": "BARAN"
+                }
+            ],
+            "location": "Mercenary Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're preparing to activate their warp drive, Commander.",
+                    "spoken_by": "GIUSTI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, we cannot be able to track them with our sensors if they go to warp. I can still disable them",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am aware of the tactical situation, Lieutenant. Let them go.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "after the opening credits, at the science station"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've gone over every word, every inflection, every facial response, and I still can't find any kind of code or hidden message.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I agree the existence of such a message is remote, but I believe we should check.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll keep trying.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two starships have been sent to intercept the mercenaries at Yadalla Prime and Draken Four, in case they attempt to attack those planets.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Inform Starfleet Command that we will hold this position until further notice.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, we are just going to remain here?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but we will continue to pursue all avenues of investigation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we had not let them to escape, this would not be necessary.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is correct. But I believe Commander Riker wanted us to let them escape.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I think I've got something. I've been studying the comm. link Commander Riker used to transmit his command codes. I didn't see anything at first, but then I ran the transmission through a subharmonic analysis. I found this. It was sent by the same carrier wave as the command codes.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It might be the message we've been looking for.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Possibly. I will attempt to resequence the signal. Begin running a search for a decryption key.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at another planet"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm taking the engines offline.",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long will it take to repair our battle damage?",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will take at least five hours to replace the antimatter containment unit.",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have three hours, Narik. One minute beyond that and you'll answer for it with your life. I suppose I should thank you. None of us would be alive if it weren't for you.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're welcome.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's wrong, Commander? You having second thoughts about betraying your comrades? Because that's what you've done, betrayed them. Betrayed them in order to save yourself. You used to be just a second rate officer, now you're a traitor and a coward. How does that feel?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker punches Picard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. How did that feel?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's enough. Galen, go down to the cargo hold and check out those artefacts. Move.",
+                    "spoken_by": "BARAN"
+                }
+            ],
+            "location": "Mercenary Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tallera enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can tell Baran that I'm working as fast as I can. What?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm trying to decide if you're incredibly stupid or incredibly smart. Why didn't you continue to fire on the Enterprise when their shields dropped?",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were there. The disruptors lost power. Computer, reset for diagnostic of new sample. Begin scan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've watched you handle the weapon systems before. You know exactly how to bypass a problem like that. And why do you continue to argue with Riker? It should be obvious that by alienating Riker you also alienate Baran, and yet you continue to do so. Why?",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Scan complete. Terikon profile negative.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, reset diagnostic for new sample and begin scan. Look this isn't a Romulan labour camp. I don't have to answer your questions. And I don't give a damn what you think.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Scan complete. Terikon profile positive. Ninety eight percent probability of match.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, whatever it is we're looking for, it seems we've found it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tallera to Captain.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, what is it?",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm in the cargo hold. Galen's made a positive Terikon match on",
+                    "spoken_by": "TALLERA"
+                }
+            ],
+            "location": "Mercenary Cargo hold"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "One of the artefacts.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Bring it to me immediately. Don't let anyone get near it.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Understood. Tallera out.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That sounds like good news.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very. It means we've completed half of what promises to be a very profitable mission. And even better than that, I'm almost ready to get rid of your friend Galen.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's one more artefact to find. Once Galen confirms that it's genuine, his usefulness on this ship will come to a very sudden end.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't say I'm sorry to hear that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Galen might be a loud mouthed fool, but sometimes he's quite perceptive. His observations about you, for instance.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After what you did on Calder Two, I doubt if you have much of a future in Starfleet.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I must say I've come to the same conclusion.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, assuming that you were not my prisoner, what would you do now?",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess I'd start looking for a new career. There must be a place where someone with fifteen years of Starfleet technical knowledge would be useful. You wouldn't happen to know a place like that?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, possibly. However, there's one thing that I have learned on this ship, and that's to be cautious and never to blindly embrace what might appear to be good fortune. And right now, you're a rather large stroke of good luck.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't exactly sworn my undying allegiance to you either, Baran. For instance, I'd like to know a little bit more about the job.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Such as?",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Such as what you meant by a very profitable mission.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it's enough to know right now that your share will ensure a very wealthy and long life far from the Federation.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sounds promising.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is, only you're going to have to earn it. And you can start by putting aside your dislike for Galen and becoming his friend.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Galen has allies on this ship. They could cause trouble if I decide to kill him. I want you to find out from him who they are.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One more thing, Riker. When the time comes, I want you to kill Galen.",
+                    "spoken_by": "BARAN"
+                }
+            ],
+            "location": "Baran's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "science station"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have completed my analysis of the signal from the mercenary ship. I believe these groupings represent bearings and coordinates taken from their navigational system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you think this is their flight plan?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. If I am correct, the mercenary ship is heading toward these coordinates in the Hyralan Sector.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their maximum speed is warp eight point seven. It will take them at least fourteen hours to reach that position.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We could be there in five.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Finally. Set course for the Hyralan Sector and engage at warp nine.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, may I see you in the ready room?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, I am dissatisfied with your performance as First Officer.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I ask in what way?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You continually question my orders in front of the crew. I do not believe this is appropriate behaviour.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With all due respect, sir, I have always felt free to voice my opinions even when they differ from those of Captain Picard or Commander Riker.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is true. But in those situations, you were acting as Head of Security, not as First Officer. The primary role of the second in command is to carry out the decisions of the Captain in this case, me.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But is it not my duty to offer you alternatives?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. But once I have made a decision, it is your job to carry it out regardless of how you may personally feel. Any further objections should be given to me in private, not in front of the crew. I do not recall Commander Riker ever publicly showing irritation with his Captain as you did a moment ago.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you do not feel capable of carrying out this role, I will assign it to Commander La Forge and return you to Tactical. I would not enter it into your record as a reprimand, simply as a transfer.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would prefer to remain at my current post.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I expect you to conform to the guidelines I have laid out.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dismissed. Mister Worf, I am sorry if I have ended our friendship.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, it is I who has jeopardised our friendship, not you. If you will overlook this incident, I would like to continue to consider you my friend.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would like that as well.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard pulls a weapon as the door opens"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good to see you, too.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've had some unpleasant surprises. Will, this isn't a good idea. Baran might grow suspicious.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As a matter of fact, it was Baran who sent me here. He told me to pretend to be friendly with you and help you organise a mutiny, so he can determine who your supporters in the crew and then eliminate them.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What a tangled web we weave. I have difficulty remembering whose side I'm on. So, what have you been able to find out?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When we reach the Hyralan Sector, we're supposed to rendezvous with a Klingon transport ship. I'm not sure, but I think they may be delivering another of the Romulan artefacts to us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A second artefact? Oh, by the way, that first artefacts is not Romulan. It's Vulcan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Vulcan?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have been looking over the glyphs and pictograms from the Calder Two artefact. And although I don't have enough data to translate all the inscriptions, the alphabet and symbology is much more consistent with early Vulcan than Romulan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do these artefacts have some religious or cultural significance, something that would make them valuable enough to kill for?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. If I could just get access to the Enterprise computer just for a few moments. So, what will Baran do once he's obtained the second artefact?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're supposed to verify its authenticity, and then I'm supposed to kill you, and I take your place.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will, you always seem to be after my job. Well, as soon as Baran feels that I've outlived my usefulness, he can kill me simply by using the neural servo. So, I think we had better start planning a mutiny.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Picard's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Narik is working at a small wall panel"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need a new captain and I've come to one inescapable conclusion",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I agree. But I don't think that's you.",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't trust you, Galen. I don't think the rest of the crew does either. They're not going to follow you.",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then who will they follow? You?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, but they will follow Tallera and so will I.",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Narik leaves and Tallera enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're no smuggler and I don't think your name's Galen. You will tell me who you really are and what you are doing on this ship or I will kill you right here.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you talking about?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not play games with you. I found the message you sent to the Enterprise. When Riker was using his command codes to drop their shields, you sent them a transmission on the same carrier wave. You're a Starfleet officer. Do not deny it. It is the only logical conclusion. My name is actually T'Paal, and I am a member of the V'Shar.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Vulcan Security?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is correct. I infiltrated this ship a year ago posing as a Romulan mercenary. I'm here to investigate a possible threat to Vulcan.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What sort of threat?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "First things first, Galen. Who are you?",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm Captain Jean-Luc Picard of the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. To answer your question, for several years now, there has been a small but growing movement of extreme isolationists on Vulcan. A group that believes contact with alien races has polluted our culture and is destroying Vulcan purity. This group advocates the total isolation of Vulcan from the rest of the galaxy and the eradication of all alien influences from our planet.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That sounds like an illogical philosophy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed. But extremists often have a logic all their own.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell me, Tallera, what are these artefacts we've been collecting? I know that they are Vulcan in origin.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am sure you are familiar with the ancient history of my people, before we found logic, before we found peace.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were much as my people once were. Savage, warlike.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was even a time when we used our telepathic abilities as a weapon. A time when we learned to kill with a thought.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Stone of Gol!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know of it?",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know the story from Vulcan mythology.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Stone of Gol is real, but there is nothing supernatural or magical about it. It is a psionic resonator, a device which focuses and amplifies telepathic energy. It is one of the most devastating weapons ever conceived.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But according to the legend, the Stone was destroyed by the gods when the Vulcan people found the way to peace.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The resonator was believed to have been destroyed during the Time of the Awakening. Only one piece is known to have survived and it was placed in a Vulcan museum under heavy guard. A year ago, that piece was stolen from the museum. Soon after, mercenary ships began raiding archaeological sites across the quadrant. We believe a member of the isolationist movement is attempting to reassemble the resonator.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A telepathic weapon.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My orders are to find that assassin and stop him.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would seem that Baran has to deliver these artefacts to the assassin in order to get paid. Therefore, you and I should continue our masquerade.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed. But Captain, I cannot allow the resonator to be assembled. If necessary, I will destroy this ship, its crew, all of us to prevent that from happening.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Acting Captain's log, stardate 47160.1. The Enterprise is entering the Hyralan Sector, which I believe to be the next destination of the mercenary ship."
+                }
+            ],
+            "location": "Mercenary Cargo hold"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm picking up a small vessel bearing one two seven mark three three five.",
+                    "spoken_by": "GIUSTI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it the mercenary ship?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. It's a Klingon ship.",
+                    "spoken_by": "GIUSTI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Toron class shuttlecraft. One person.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a channel. This is Lieutenant Commander Data of the Federation Starship Enterprise.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Koral.",
+                    "spoken_by": "KORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I take it that is your name? May I inquire as to your destination?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "No.",
+                    "spoken_by": "KORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I ask the purpose of your journey?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "No.",
+                    "spoken_by": "KORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps I have not made our intentions clear. We are investigating",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He seems most uncooperative.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He may have been curt, but he was also very worried and even a little scared.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, may I recommend that we bring the shuttle aboard with our tractor beam, search it, and interrogate Koral.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "According to the terms of the Klingon-Federation Treaty, Koral has every right to free transit through Federation space. We cannot board or search his vessel without cause.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. However, the Treaty does give us the right to conduct health and safety inspections of any ship in our space.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Health and safety inspections?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not sure that using this clause as an excuse to conduct a search would be consistent with the spirit of the Treaty.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "However, if Koral wishes to contest our actions he can file a protest with the Judge Advocate General's office. Bring the shuttle aboard. Then you and Doctor Crusher can begin the inspection.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Koral is the tallest Klingon in the galaxy, standing head and shoulders above the shuttlecraft hatch, let alone Worf"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello. I'm Doctor Crusher, and this is Lieutenant Worf. We're here to conduct a health and safety inspection of your ship.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Health and safety inspection?",
+                    "spoken_by": "KORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right. You know, radiation leaks, biochemical contamination, other health hazards. Excuse me.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher goes inside the shuttlecraft"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, no radiation so far. I'm sure you're glad to hear that. Right.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's an incoming message. It's from the Klingon shuttle. It was sent approximately fifteen minutes ago. He's at the rendezvous coordinates but he's been detained by the Enterprise. That's all there is. He's stopped transmitting.",
+                    "spoken_by": "VEKOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How could they have found out about the rendezvous, Commander?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quiet! All that matters now is that the Enterprise has the second artefact in their possession. We don't have a choice. We'll have to board the Enterprise and take the artefact.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have any idea how many security officers there are on board a ship like that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I don't. But he does.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could get us on the Enterprise. I can find the artefact.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes, very convenient. We beam you back aboard your old ship and we have to take a risk that you won't change your mind and betray us.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have saved your life twice already, Galen. I would think you'd begin to show some gratitude by now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Galen, if you're so worried about Riker, then you can go on the raiding party and watch him.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Draw weapons and equipment for a raiding party of five.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you're thinking of betraying us to your friends on the Enterprise, you might remember that I still have the ability to kill you at the first sign of trouble.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't forgotten.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have an additional task for you, one that will prove your loyalty. This raid is an opportunity to get rid of Galen. Once you've found that artefact, kill him.",
+                    "spoken_by": "BARAN"
+                }
+            ],
+            "location": "Mercenary Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure the health and safety inspection won't last much longer. And in the meantime, I'm really glad that we have this opportunity to get to know you. May I ask what business you're in?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "silent stare"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf has programmed our replicators to make a very good approximation of Klingon bloodwine. I believe you will find it to your liking.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Koral pours it onto the carpet"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, that's my third scan and I still haven't find anything out of the ordinary.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He must be hiding something. We should download his computer memory and analyse it.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd have a hard time defending that as part of a safety inspection.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We could claim that the computer was generating abnormal radiation signatures.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, we're on pretty shaky ground as it is. We can't just",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the raiding party beams in. Riker stuns an incoming crewman"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Watch that door.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is going on?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shut your mouth, Klingon.",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess you're surprised to see me, Doctor.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You could say that.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've had a change of profession.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not in here. Hey, you, where's the artefact?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not know what you're talking about.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Use your brain. They wouldn't be searching the shuttle if they had the artefact. Koral must have it. Where is that Klingon pilot?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the Observation lounge with Data and Troi.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How far?",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Twelve decks away.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Security will not allow you to get that far.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They won't get the chance. We'll use the transporter in that shuttle. We'll beam directly to the Observation lounge. Sorry about this.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker shoots Worf and Crusher"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's go.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you could tell us something about the nature of your mission.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the raiding party beam in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this?",
+                    "spoken_by": "KORAL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard scans Koral",
+                    "line": "Quiet!  Does he have it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard takes a small item from Koral's jacket"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you sure, Galen?",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I can recognise the inscription pattern from the first artefact.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker, by taking this action you risk charges of assault, theft, piracy, and treason.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really? Then I guess adding one more charge wouldn't hurt.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker shoots at Picard and misses. Picard doesn't miss"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is he dead?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Activate the transporter.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the raiding party beam out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Security alert. Medical emergency team to the Observation lounge. Data to Bridge. Raise shields and begin sensor sweeps for the mercenary ship.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "GIUSTI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's all right. He's only stunned.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must admit, I am experiencing a similar sensation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is going to take a little time to explain.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course three one zero mark two one five, warp six.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the four raiders walk in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is it?",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard throws the stone to Baran"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have something else for you, Baran.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard punches Baran"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell him what happened, Narik.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker turned on us. He tried to kill Galen before we beamed back.",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He might have killed all of us. And I believe he was acting under direct orders, Baran. You betrayed us. This has gone far enough. I think it is time that we had a new commander. Someone who will lead us to those profits that we've been promised.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, really? And who would that be, Galen? You? He's plotted this all along, opposed me at every turn, endangered all of us by refusing to follow his orders.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Follow your orders? The orders of a small man trying to fill a role too big for him. I say it's time for a change. Who's with me?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "everyone, by the looks of it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's over, Baran.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not quite. As long as I have this, I'm still Captain of this ship.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can't kill all of us. You need us to run the ship more than we need you to command it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't have to kill you all. Just you, Galen.",
+                    "spoken_by": "BARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Baran presses the button, then collapses in agony and dies"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened?",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I switched the transponder codes. Given his feelings about me, it seemed a sensible thing to do.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Baran was nothing. We have a mission to complete and the crew needs a leader.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard shoots the control device"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There'll be no more punishment on this ship. Now, do your duties and I'll see to it that we complete our mission and get our payment.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remove that.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Orders?",
+                    "spoken_by": "VEKOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maintain our present course and speed for now. I'm going to find out when and where we're supposed to deliver our cargo.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, Captain.",
+                    "spoken_by": "VEKOR"
+                }
+            ],
+            "location": "Mercenary Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Worf to Commander Riker. Minister Satok of Vulcan Security is standing by on a secure channel.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Put it through in here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Greetings, Commander. How may I be of service?",
+                    "spoken_by": "SATOK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Minister, I thought I should let you know that the mercenary ship which has been raiding planets in the Taugan sector is probably on its way to Vulcan right now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "I do not understand.",
+                    "spoken_by": "SATOK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry. It's been a difficult couple of days. I know that one of your operatives has been on a mercenary ship investigating the possible re-assembly of a psionic resonator. I didn't want someone to make a mistake and start firing at them when they approach your planet.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I believe there is a problem. We have no operative aboard a mercenary ship.",
+                    "spoken_by": "SATOK"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "According to Baran's logs, we are to deliver the two pieces to the T'Karath Sanctuary on Vulcan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know that place. It was an underground stronghold for one of the factions during the last civil war. It's been abandoned for centuries.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Galen to Bridge. Alter course for Vulcan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Understood.",
+                    "spoken_by": "VEKOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I wonder if you can possibly help me with something. I have been able to translate most of the writing on these two pieces For the most part, they're warnings of death and destruction to anyone who opposes the resonator, but I am not able to determine what appears on the anterior side. For example, this symbol represents the Vulcan god of war and this is the god of death, but if you look really carefully, you can see a third symbol missing. Now that obviously should belong to the final piece. Now what's odd about this is that the gods of death and war would typically always stand alone on an artefact. They would never be combined with a third glyph.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fascinating. But I am not an archaeological expert.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm really anxious to see the final artefact, because it might provide a valuable insight into Vulcan mythology.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When we arrive at Vulcan, I will take these pieces to a secure holding area before going on to the Sanctuary. I prefer to go alone. It will arouse less suspicion on the part of the isolationists.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well there should be no problem about our entering orbit. I asked Commander Riker to contact the Vulcan authorities from the Enterprise and let them know that we were approaching.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you do that?",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I didn't want to risk a misunderstanding. Someone might have mistaken this for an actual raid.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a wise precaution.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps I should contact the Enterprise, have them meet us at Vulcan just in case these isolationists try to escape.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your offer is appreciated but our security forces are more than adequate.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see. Do you think it's wise for you to go there alone? After all, they were expecting Baran to show up. Don't you think if I were to accompany you, it might seem more plausible.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I do understand your human emotional need to be there at the final moment, but this is a Vulcan matter.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "TALLERA"
+                }
+            ],
+            "location": "Baran's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have entered orbit of Vulcan.",
+                    "spoken_by": "VEKOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tallera, I've decided on a change of plan. Take one of the artefacts with you. Leave the other here. As soon as we have our payment in full, we'll complete the delivery.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That was not the agreement.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I realise that. But it's safer for all concerned to leave one behind.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They will not pay us until they get both pieces.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've been waiting a long time for this. They're not going to take any risks. Now, take one of the artefacts and beam down.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is all I was waiting for. Go to the navigational computer and check file one three seven slash omega. You'll find a message secretly transmitted to the Enterprise, containing our entire flight plan.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's right.",
+                    "spoken_by": "VEKOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The message was sent by Galen. He's a Starfleet officer.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tallera is right. But what she's not telling you is that those artefacts she's holding are part of an incredibly powerful weapon. There's no reward waiting for you down on the surface. As soon as she's got those artefacts, she'll leave you behind to be captured by Starfleet.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't care what it is you want, Tallera. I don't care if that's a weapon for your personal use or if you're really just making a delivery as planned. All I care about is my money. So I propose a compromise. Narik and I will go with you to the surface to guarantee that we receive our payment.",
+                    "spoken_by": "VEKOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After that, you can go anywhere you want.",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed. Bring him as well. We'll use him as a hostage if Starfleet arrives. If not, we'll kill him on the surface.",
+                    "spoken_by": "TALLERA"
+                }
+            ],
+            "location": "Mercenary Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a stone chamber with carved walls"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There. Your reward, as promised.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it all there?",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, this is less than half of what we were promised. Where's the rest of it?",
+                    "spoken_by": "VEKOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tallera has assembled the resonator"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is all I could manage. I suggest you take it and leave.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did not come this far to be cheated. I want it all, now.",
+                    "spoken_by": "NARIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. You will get what you deserve.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a strange field wraps Narik then throws him across the chamber. Tallera then sends a second one to do the same to Vekor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead, Captain. Pick up the phaser. See what good it will do.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll never get away with this. Starfleet will never stand and watch you tear apart one of the founding worlds of the Federation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How little you understand what you're facing, Captain. You're used to fighting enemies like yourself. People on ships with defence shields, energy weapons, warp drives. But this is unlike anything you've ever faced. This is the power of the mind. Pick up the phaser, Captain.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker, Worf and two security guards beam in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Listen to me, all of you! Drop your weapons! Do it! Don't make any aggressive movements. The resonator amplifies violent feelings and emotions. And that's why you wanted me to pick up the phaser. That's how you were able to kill Narik and Vekor. But I can see the symbol on that third artefact, and it is the Vulcan symbol for peace standing between the symbols for war and death. It's a warning that the power of the resonator can be overcome by peace.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are about to see how wrong you are.",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Empty your minds of violent thoughts.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the field passes through Riker without hurting him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No!",
+                    "spoken_by": "TALLERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Think, Tallera. Two thousand years ago your people were being consumed by war. But when peace came to Vulcan, the resonator became useless. That's why it was dismantled.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tallera tries it again on Worf and fails. She sinks to her knees"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were right, Tallera. The resonator cannot be stopped by phasers and shields, but it can be defeated by peace.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she tries again, but it's a very small field that passes through Picard before he takes the device from her hands"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 47169.2. Security Minister Satok has taken Tallera into custody and begun a search for the rest of the isolationists.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "T'Kareth sanctuary"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Once we realised that you were no longer on the mercenary ship, we scanned the surface for your neural implant. We tracked the signal into the caverns.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What will become of the resonator, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Satok has assured me that all three pieces will be destroyed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is unfortunate it cannot be studied. The resonator is a key artefact from a remarkable period of history.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Normally, I would be the first one to agree, but perhaps some things best left in the past.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's going to happen to the mercenaries?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "yawns",
+                    "line": "Oh, they will be detained by the Vulcan authorities for the moment. But they're also facing charges from the Klingons, the Cardassians,  the Ferengi, and at least seven other worlds. I don't think we'll be hearing from them for a while. Number One, will you set course for Starbase two twenty seven. I'll join you on the Bridge shortly.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait a minute. You've been declared dead. You can't give orders around here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we are to adhere to the exact letter of Starfleet regulations, then technically, sir, you have been declared a renegade. In fact, I believe you are facing twelve counts of court martial offences. You cannot give orders either, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's quite right. And as I'm supposed to be dead, I'll go and get some sleep. And, Mister Data, I suggest that you escort Commander Riker to the brig.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters his quarters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "taking Riker's arm",
+                    "line": "This way, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, he was joking. You know that, right? Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Corridor"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "257",
+    "transcript_url": null
+}

@@ -79,15 +79,15 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "Riders approaching!",
-                    "spoken_by": "MAN (O.S.)"
+                    "spoken_by": "MAN"
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "O.S.",
                     "line": "Open the gate!",
-                    "spoken_by": "MAN #2 (O.S.)"
+                    "spoken_by": "MAN #2"
                 }
             ],
             "location": null
@@ -444,9 +444,9 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to ROBIN",
                     "line": "The Defender of the Vale!",
-                    "spoken_by": "LITTLEFINGER (to ROBIN)"
+                    "spoken_by": "LITTLEFINGER"
                 },
                 {
                     "characters_mentioned": [],
@@ -606,9 +606,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to ROBIN",
                     "line": "I bring good news. My friends in the North tell me Sansa has escaped Winterfell. I expect she’s headed to Castle Black where her brother serves as Lord Commander. But she won’t be safe there, not with the Boltons after her.",
-                    "spoken_by": "LITTLEFINGER (to ROBIN)"
+                    "spoken_by": "LITTLEFINGER"
                 },
                 {
                     "characters_mentioned": [],
@@ -876,15 +876,15 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "speaking Valyrian",
                     "line": "My friends! Large sorry...you wait so fat time.",
-                    "spoken_by": "TYRION (speaking Valyrian)"
+                    "spoken_by": "TYRION"
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to TYRION",
                     "line": "Perhaps I should translate for you.",
-                    "spoken_by": "MISSANDEI (to TYRION)"
+                    "spoken_by": "MISSANDEI"
                 },
                 {
                     "characters_mentioned": [],
@@ -986,27 +986,27 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "speaking Valyrian",
                     "line": "And you, Grey Worm? You want to drink wine with these men? The men who tore us from our mothers’ arms and sold us at auction like cattle?",
-                    "spoken_by": "MAN #1 (speaking Valyrian)"
+                    "spoken_by": "MAN #1"
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "speaking Valyrian",
                     "line": "I am a soldier, not a politician. But if there is a chance for peace -- a just peace -- we should take it.",
-                    "spoken_by": "GREY WORM (speaking Valyrian)"
+                    "spoken_by": "GREY WORM"
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "speaking Valyrian",
                     "line": "Missandei, you know what these men are. How can you trust them?",
-                    "spoken_by": "MAN #2 (speaking Valyrian)"
+                    "spoken_by": "MAN #2"
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "speaking Valyrian",
                     "line": "I do not trust them. I will never trust them.",
-                    "spoken_by": "MISSANDEI (speaking Valyrian)"
+                    "spoken_by": "MISSANDEI"
                 },
                 {
                     "characters_mentioned": [],
@@ -1014,9 +1014,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "speaking Valyrian",
                     "line": "But as a wise man once said, “We make peace with our enemies, not our friends.”",
-                    "spoken_by": "MISSANDEI (speaking Valyrian)"
+                    "spoken_by": "MISSANDEI"
                 },
                 {
                     "characters_mentioned": [],
@@ -1482,9 +1482,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to LHAZAREEN WOMAN",
                     "line": "Go, show her.",
-                    "spoken_by": "LEADER (to LHAZAREEN WOMAN)"
+                    "spoken_by": "LEADER"
                 },
                 {
                     "characters_mentioned": [],
@@ -1614,9 +1614,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "speaking Dothraki",
                     "line": "And you...Have faith in me, Khaleesi. Do not betray me.",
-                    "spoken_by": "DAENERYS (speaking Dothraki)"
+                    "spoken_by": "DAENERYS"
                 },
                 {
                     "characters_mentioned": [],
@@ -2482,9 +2482,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to KEVAN",
                     "line": "You’ve got the second largest army in Westeros. You'll bring them into the city, stop queen Margaery’s humiliation before it starts, and take her back into Crown custody.",
-                    "spoken_by": "JAIME (to KEVAN)"
+                    "spoken_by": "JAIME"
                 },
                 {
                     "characters_mentioned": [],
@@ -3935,9 +3935,9 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to SANSA",
                     "line": "Sorry about the food. It’s not what we’re known for.",
-                    "spoken_by": "DOLOROUS EDD (to SANSA)"
+                    "spoken_by": "DOLOROUS EDD"
                 },
                 {
                     "characters_mentioned": [],
@@ -4041,9 +4041,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to TORMUND",
                     "line": "How many do you have?",
-                    "spoken_by": "JON SNOW (to TORMUND)"
+                    "spoken_by": "JON SNOW"
                 },
                 {
                     "characters_mentioned": [],
@@ -4053,9 +4053,9 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
+                    "context_info": "to JON SNOW",
                     "line": "You're the son of the last true Warden of the North. Northern families are loyal. They’ll fight for you if you ask.",
-                    "spoken_by": "SANSA (to JON SNOW)"
+                    "spoken_by": "SANSA"
                 },
                 {
                     "characters_mentioned": [],

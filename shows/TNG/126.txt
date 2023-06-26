@@ -1,0 +1,2670 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wonder how it got out here.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At its present speed and heading, it will eventually enter the Kazis binary system and will certainly be destroyed. I could attach a tractor beam and adjust its heading.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think not, Mister Worf. It's just a piece of space debris. If we hadn't sitting here waiting for the Captain, we wouldn't have noticed it. Leave it be. Let nature take its course. How long until Captain Picard returns?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The last communication indicated it would be several hours.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, request permission to investigate this vehicle.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why, Data? It's just a derelict.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a piece of history. The opportunity to examine such an ancient vehicle does not come around very often, and as you pointed out, we do have the time.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well. Be prepared to beam back before the Captain returns.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf, go with him.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Minimal oxygen atmosphere. An ancient solar generator, still operating.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, look at this.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The on-board computers have ceased functioning. I may be able to download this old style disk drive back to the Enterprise.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf tries to walk through the next hatch, but it does not automatically open for him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he prepares his phaser",
+                    "line": "It must be sealed, probably with age.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not necessary.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data pulls the lever and the doorway opens"
+                }
+            ],
+            "location": "Derelict ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "This module of the ship contains frost-covered capsules in groups of three, both sides of the passageway. Data scrapes the frost off the first to view a skull"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The seal was broken and the environment has been corrupted.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here's another.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This one is empty.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, look at this.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They look at the face of a woman. Other capsules reveal two men still intact"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Were they frozen for an extended journey?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If that were the purpose, there would be evidence of a more sophisticated monitoring system. These containers were designed solely for refrigeration.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Cryo chamber"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain's shuttle is approaching the main Shuttlebay, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": ": Enterprise, this is the Captain. Number One, I want to get underway as soon as the shuttle is secure.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. We'll make all preparations. Commander Data, return to the Enterprise immediately.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": ": We have run into an unusual situation, sir. There are people on board. Frozen.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Frozen. How many?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three. The vehicle has suffered severe damage. Most of her systems have failed.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Cryo chamber"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you suggesting they be transferred to the Enterprise?",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not believe we should leave them here, sir. With your permission, we will be returning with three containers.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Whatever you do, do it quickly.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Cryo chamber"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, set course zero five eight, mark one seven three.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Laying it in, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, I want a staff meeting on the observation deck.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, those coordinates will take us right into the Neutral Zone.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is correct, Mister La Forge. Warp factor eight.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Warp eight.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two Federation outposts in sector three zero have been destroyed. There's been no communication with Federation starbases in sector three one since stardate 41903.2.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Romulans.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's the assumption.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's been no direct contact with the Romulans since the Tomed Incident.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The question are, why now? What's their objective? For fifty years there's barely a whisper out of them, and now for no apparent reason they seem to be back with a roar.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything we know about them is based on rumour or conjecture.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The strategic decision is to send one ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We could get out there and find ourselves greatly over-matched.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "True enough. It's a gamble.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This first encounter, coming so suddenly after all this time. We have to assume it's a setup.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If force is necessary, we will use it, but that will mean we have failed. Our goal here is to establish some kind of relations with the Romulans. If we don't succeed, then to convince them of our resolve. The general feeling at Starfleet is that they are seeking a confrontation. They may want to test themselves in battle against a Federation starship. See how far we have advanced. If that is the case, then I need to know it. Counsellor, I shall need a full profile on them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is limited information, but I will prepare something.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, estimated arrival time at the Neutral Zone?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nineteen hours, twenty eight minutes.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's reassemble in six hours. Stay sharp. No surprises. I would rather outthink them than outfight them. Questions?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it, Doctor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the people from the capsule.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Capsule? People? What people?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The people Data beamed over.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wasn't aware that he had.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well he did, and they were frozen. I thawed them.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You what?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't know what else to do. The crypts in which they were frozen were literally falling apart.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So what's their condition?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right now, they are all sleeping. Each of them needed minor medical attention. Minor now, but then their conditions were obviously terminal. One had a heart problem, another had an advanced case of emphysema with extensive liver damage. You know the most surprising thing of all, is that each of them had been frozen after they died.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After they died?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cryonics. It was a kind of fad in the late twentieth century. People feared dying. It terrified them. At the moment of death, they would be frozen, so that later, some time in the future, when presumably medical science had a cure for whatever killed them, they could be thawed back to life, healed, and sent on about their business.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the case of this group, it apparently worked. Mister Data, will you report to Sickbay.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Immediately.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look, I am never critical of any member of my staff being curious, but it's just that the timing is so",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could not leave them there, Captain. The condition of their vehicle was deteriorating.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But Data, they were already dead. I mean, what more could have happened to them?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see your point, Captain, but at the time it seemed the proper thing to do.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, they're alive now. We're going to have to treat them as living human beings.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alive and well and ready to be awakened.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Before you wake them up, I want to have Security here. Lieutenant Worf, report to Sickbay.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have them sedated now, but they should be up and about as soon as possible.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, then we have no other choice.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None that I can see.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf enters, and Beverly puts a hypo to the woman's neck. She wakes, sees Picard, then Beverly, and smiles. Then she starts to sit up, sees Worf, and faints"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to the twenty fourth century.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was able to retrieve some information from the ancient disk I removed from the module's computer. Her name is Clare Raymond, age thirty five, occupation homemaker. Must be some kind of construction work.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She died of an embolism. It probably happened very suddenly, otherwise her physical condition was excellent.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A nurse wakes Clare up, again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His name is Ralph Offenhouse, age fifty five, occupation financier.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Advanced cardiomyopathy. Inoperable at the time, but easily correctable now. He must have known his condition was terminal for quite some time.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ralph is woken"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Much of his file we could not retrieved. His name is L Q Sonny Clemonds. Apparently his occupation had something to do with music.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was marked deterioration of every system in his body. Probably from massive chemical abuse. Unbelievable.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That sounds like someone who hated life. Yet he had himself frozen presumably so he could go through it all again.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too afraid to live, too scared to die.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, this seems to be a situation more suited to your talents. I'll leave it with you. I'll be on the Bridge.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, kindly take charge of our guests until we have time to decide what we're going to do with them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, keep them out of my way.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The three resurrected people are dressed and trying to pay attention"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know this is all very confusing to you so I'll attempt to explain. You are on the starship USS Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "American?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it's a vessel of the United Federation of Planets, and Earth is a member.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What year is this?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By your calendar two thousand three hundred sixty four.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What? My heart, is it?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's perfectly fine. In fact, you are all now in excellent health.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It worked. I made it.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a down-home country boy, y'all",
+                    "line": "What is that?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An android.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean a robot?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually there is a distinct difference between an android and a robot.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And him? The one I saw before, with the head?",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She means Worf.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's a Klingon. That takes a little more explanation.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, listen, guys. I paid some idiot a lot of money to freeze me when I died, and I just got to hear the words. Am I alive?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes. Absolutely.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the liver that was about to explode in my face?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perfectly sound.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me, could someone please tell me what's going on here?",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "About three hundred and seventy years ago, you died of a massive embolism.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't remember anything about that.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You and the others were frozen.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cryonics. You know, freeze you now and heal you later.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, I've heard of it. I just never gave it much thought. How did we get here?",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were in a space module.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The whacko who sold me this scam said that by putting us in orbit there weren't gonna be no chance of a brown out.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, several cryonics companies fell into disrepute because of power failures which adversely affected their refrigeration system. Their stocks were severely depressed.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The whole deal was a long shot but I figured what the hell, might as well give them the dough instead of leaving it to my ex-wives. But you know, son, I figured it was all just a bunch of hooey.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hooey? Ah, as in hogwash, malarky, jive. An intentional fabrication.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There you go, now you got it.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, if you didn't contract for this, who did?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It must have been my husband, Donald. If it was new and foolish, he would have popped for it. Well, I'll say this for it. It's the first thing he's ever bought into that worked.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I, for one, never had a doubt. My stock in this company must have split at least a dozen times by now.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, the process of cryonics was never more than a fad, and did not continue much beyond the mid-twenty first century.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need to make a phone call as soon as possible.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A phone call?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I have provided for myself. I have a substantial portfolio. It's critical that I check on it. Let the bank know that I am alive and well.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, that's going to be a little difficult right at the moment.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, do you at least have a copy of The Wall Street Journal?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think we should take the Doctor's advice. Take this very slowly until we've all adjusted, and then we'll talk to the Captain.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Guest lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you know, there is very little available on the Romulans.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, anything would be helpful.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They seem to be creatures of extremes. One moment violent beyond description, the next tender. They are related to the Vulcans, but as each race developed, their differences grew wider. They are intensely curious. Their belief in their own superiority is beyond arrogance. For some reason they have exhibited a fascination with humans and it is that fascination, more than anything else, that has kept the peace. One other thing. They will not initiate anything. They will wait for you to commit yourself.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counter-punchers. Thank you, Counsellor. That's quite valuable.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data and Sonny are at the food dispenser"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Talk.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like me a thick Kansas City steak, and some country fried potatoes, and a mess of greens. Oh, hell, just forget all that and give me have a martini, straight up, with two olives. For the vitamins.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The glass appears out of thin air. Sonny samples it and whistles"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there something wrong?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wrong? Only that your computer here fixed about the best martini I have ever had. I just might get to like this place. Let's see if the Braves are on. How do you turn on this teevee?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "TV?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, the boob tube. I'd like to see how the Braves are doing after all this time. Probably still finding ways to lose.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe he means television, sir. That particular form of entertainment did not last much beyond the year two thousand forty.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, what do you guys do? I mean, you don't drink, and you ain't got no TV. Must be kind of boring, ain't it?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you and Mister Data report to the Bridge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At once, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With whom were you speaking?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Would you tell him I would like to see him as soon as it's convenient?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's going to happen to us? Do we stay here with you? Do we go back to Earth?",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That will all be up to the Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, get him in here. I have to phone Geneva right away about my accounts. The interest alone could be enough to buy this ship.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Yankee's right. Let's get the big boy in here.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll pass along your request. If you'll excuse us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Data",
+                    "line": "Duty calls. Hey, I understand.  Why don't you come back later on. You and me'll find us a couple of low mileage pit woofies, and help'em build a memory.",
+                    "spoken_by": "SONNY"
+                }
+            ],
+            "location": "Guest lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is to be done with them, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, a low mileage pit woofie?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This time you've got me. I haven't a clue.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These are the most unusual humans I have ever encountered.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, from what I've seen of our guests, there's not much to redeem them. It makes one wonder how our species survived the twenty-first century.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Report.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are six hours from the Neutral Zone. I have been unable to establish communications with any Federation colony or station in this vicinity.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many outposts are there in this sector?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nine.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think we work on the assumption they've all been destroyed.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By the Romulans?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It fits their historical pattern.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Since we have no contact with the Romulans for fifty three years, seven months, eighteen days, we must consider that the information we do have, is out of date.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The positive side of that is the information they have about us is also out of date. Captain, I think it's that lack of information that this is all about.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go on.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In my opinion, the Romulans want a confrontation specifically with us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, not by name, but the Federation. They know the Federation will send their best. That'll give them a perfect chance to see firsthand how far we've advanced both in technology and technique.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you recommending?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure I have a specific recommendation. Perhaps we should assume the initiative.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I agree with Commander Riker. This may be our only opportunity. We should seize it.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The strategy is built on a single premise. The hostile intent of the Romulans. If the premise is sound, so is the proposal.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If their intention isn't hostile, what is it?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain Picard?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is Captain Picard. To whom am I speaking?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Ralph Offenhouse.",
+                    "spoken_by": "RALPH"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need to talk to you.",
+                    "spoken_by": "RALPH"
+                }
+            ],
+            "location": "Guest lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is going on here, Number One? Did you give him permission to contact me?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course not. He must have seen me use the comm. panel.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Listen, Mister Offenhouse. We're in a very important conference right now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I'm sick and tired of being put off",
+                    "spoken_by": "RALPH"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By you and your staff. This is the worst run ship I have ever been on.",
+                    "spoken_by": "RALPH"
+                }
+            ],
+            "location": "Guest lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "You should take some lessons from the QE Two. Now that's an efficient operation.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, identify. What is a QE Two?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a passenger liner which mostly travelled Earth's Atlantic Ocean during the late twentieth and early twenty first centuries.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's comparing the Enterprise to a cruise ship?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain Picard, I demand that you see me. I think I have been very, very patient.",
+                    "spoken_by": "RALPH"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I demand a phone, or a radio whatever else you have. Frankly, enough is enough. Especially under the circumstances, and considering what I paid for this procedure! I must make contact with my law",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm Captain Picard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent. Now, maybe we'll be able to get some things straightened out.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We may indeed. Those comm. panels are for official ship business.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If they are so important, why don't they need an executive key?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aboard a starship, that is not necessary. We are all capable of exercising self-discipline. Now, you will refrain from using them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now just a minute.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are in a very serious and potentially dangerous situation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure whatever it is seems very important to you, but my situation is far more critical.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think you are aware of your situation, or of how much time has passed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Believe me, I'm fully cognisant of where I am, and when. It is simply that I have more to protect than a man in your position could possibly imagine. No offence, but a military career has never been considered to be upwardly mobile. I must contact my lawyer.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your lawyer has been dead for centuries.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, of course I know that, but he was a full partner in a very important firm. Rest assured, that firm is still operating.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's what this is all about. A lot has changed in the past three hundred years. People are no longer obsessed with the accumulation of things. We've eliminated hunger, want, the need for possessions. We have grown out of our infancy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've got it all wrong. It's never been about possessions. It's about power.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Power to do what?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To control your life, your destiny.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That kind of control is an illusion.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really? I'm here, aren't I? I should be dead but I'm not.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Clare starts weeping"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. It just started and it won't stop. I keep thinking about my boys.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor Troi, will you report to the guest lounge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, we are approaching Science Station Delta Zero Five.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slow to half impulse. I'm on my way.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I need to see that pretty little Doctor of yours.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll inform her.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. I didn't mean to come on so strong. It's just that I've built my whole life on knowing what's going on. For the first time I feel completely out of touch. It's making me crazy. You can understand that?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the first thing you've said I do understand. I'll see what I can do. And, please, stay off the comm. panels.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Guest lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, will you get those people under control. We cannot afford this continuing distraction.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's a model of NCC1701 on a stand"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello. My name is Deanna.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They sent you here to settle me down?",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm the ship's Counsellor and I thought you might want to talk.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The local shrink.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, I'm not familiar with that term.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It doesn't matter.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're feeling profoundly sad.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't stop crying. I miss my sons, and then I think I'm here, but they are gone. Donald, that's my husband. I love that man but, good intentions aside, he'd mess up a free lunch. Why on Earth he ever decided to do this?",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He must have thought you would have wanted it.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I can tell you exactly what happened. He couldn't think about going on alone. I died and he couldn't face it, so he figured if he had me frozen, then in his mind I wasn't really gone. It sounds crazy, but you had to know Donald. I wish I knew what happened to my children. Did they get married, did they have kids?",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's see if we can find out. Computer, this is Counsellor Troi. Request personal history on. What are their names?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tommy. He's eight, and Eddie's five.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Full names, date and place of birth.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They were born in Secaucus, that's in Jersey. Can this really work? Can this tell me what's happened to them?",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, there must be a record somewhere. There is a good chance we can find it.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, whether we do or not, I want to thank you for trying. Date of birth. Tommy was born February seventeenth",
+                    "spoken_by": "CLARE"
+                }
+            ],
+            "location": "Clare's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I just got to have a little something to jump start the morning, and a little something else to shut down the night.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have no medical need.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It ain't a question of need, darling. It's a matter of survival.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not to worry. Old Watosh'll scuffle along the best way he can. How do I get a hold of that feller with the strange looking face?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I beg your pardon?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's his name. That android fella.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean Lieutenant Commander Data?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's the one.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll let him know you're looking for him.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Much obliged. You know, you're just about the prettiest little old Doctor I ever seen.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Much obliged.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Family trees are whizzing across the screen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is amazing. It's all right here.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ten generations of your progeny.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everyone I've ever known is dead. Do you mind? I'd like to be alone.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not at all.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Clare's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "also with a model NCC1701"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You asked to see me.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look, I'm about to go out of my mind for something to do. I mean, sitting here alone just don't get it. What say you and I put together a little party?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A celebration?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, nothing that fancy. Just some folks, some suds, and some sounds. Hell, it ain't nothing but something to do.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will speak to the Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Great, you do that.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Inquiry. You do not seem to be having as much difficulty adjusting to your current circumstances as the others.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean being here on this tub four hundred years from where I started? Heck, it's the same dance, it's just a different tune. You think anybody here's got a guitar I could borrow?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, but the computer can replicate such an instrument.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was kind of hoping to get one while I still remember the chords.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander Data, we are approaching the Neutral Zone. Report to the Bridge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must leave now.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's this Neutral Zone?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a buffer between the Romulan Empire and the Federation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why does that make me nervous?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not know.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We won't be inviting these Romulans to our party, will we?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, that would not be appropriate.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We have arrived at the edge of the Neutral Zone, where we will now have an opportunity to learn firsthand what happened to our distant outpost.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Sonny's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, there is nothing left of Outpost Delta Zero Five.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Must have been one hell of an explosion.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors indicate no evidence of conventional attack.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you determine what happened?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The outpost was not just destroyed, it's as though some great force just scooped it off the face of the planet.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could it have been a natural phenomenon?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Insufficient information, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course for the next closest station.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have spent my career being able to tell when the other guy's mouth is dry. There is something going on here. Something serious. The tension level on this ship has jumped up.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even if you're right, what can we do about it? And besides, these old boys here don't need us telling them where the bear sits. Look here what that young fella made for me.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "It's a guitar"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did he do that?",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He called it a pattern replication. It plays real good, too.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm trying to tell you that there is a situation developing on this vessel that directly affects us, and all you can talk about is that stupid guitar!",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hey, now, these folks don't need us swimming in their soup, so why don't you just relax and let'em do their jobs?",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That may be all right for you, but I am not willing to allow my fate to be decided by others. I at least want to know what is going on.",
+                    "spoken_by": "RALPH"
+                }
+            ],
+            "location": "Guest lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are approaching Tarod Nine.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The condition is identical, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everyone and everything is gone.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I strongly recommend that we go to Red Alert. If the Romulans have improved their cloaking device, and we'd be fools to believe they haven't, we should assume a more defensive posture.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I agree, Captain. I recommend we go immediately to battle stations.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I appreciate your advice and concern, but this is not the time for rash actions. We are still investigating. There are three other stations in this sector we have to visit. Let's proceed in a calm and orderly manner.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If not battle stations, may we at least take the ship to Yellow Alert?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Number One. That would be prudent. Make it so.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ralph is walking along, and notices a woman come out of a turbolift. He goes in"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, let's see. I want to go to the, er. Where would the Captain be?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard is located on the main Bridge.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well then, take me to the main Bridge.",
+                    "spoken_by": "RALPH"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, my sensors indicate a disturbance. It is large and moving, but I cannot get a positive lock nor can I get it on the viewscreen.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shields up.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I recommend we transfer all power to phasers, and arm the photon torpedoes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait. If that is a Romulan ship, they will read our intent. It'll force them into taking a similar posture. We don't want to engage in battle.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, this is sufficient evidence. Outposts have been destroyed. Countless lives have been lost.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have a positive lock. They're disengaging their cloaking device.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They'll only be vulnerable for an instant as they become visible.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, this may be our only chance.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where are they?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The signal is weakening.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ralph quietly enters the Bridge"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've lost them.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damn. Mister Data, are your sensors picking up anything? You should be detecting a disturbance.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We wanted to know if they have improved the cloaking device. Guess we have our answer.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Riker",
+                    "line": "They were trying to determine our intent. They wanted to see if we would fire.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who the hell are they?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get that man off the Bridge, now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not going anywhere.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, they're back.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A big green warbird appears on the viewscreen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amazing. I never thought I would ever see a Romulan ship. Not this close.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The last time we encountered them was decades ago. Cost thousands of lives.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can believe that.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stay calm, everyone. Open hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, these are Romulans. They are without honour. They killed my parents in an attack on Khitomer when they were supposed to be our allies. They believe humans and Klingons are a waste of skin.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, control your emotions. Please, open hailing frequencies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hailing frequencies open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Romulan vessel, this is Captain Jean-Luc Picard of the USS Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors indicate all of their systems are armed, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But they've not fired. Let's try them again.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Two seated Romulans appear, one relaxed and sitting back, one leaning forward. The relaxed one speaks"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I am Commander Tebok.",
+                    "spoken_by": "TEBOK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, you have crossed the Neutral Zone. This is Federation territory.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "It was necessary.",
+                    "spoken_by": "THEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It might be viewed as an act of aggression.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "If our intent were aggression, you would not be here now.",
+                    "spoken_by": "THEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "On viewscreen",
+                    "line": "If we go to war, let us be sure it is for the right reason. We are here because our outposts, which border the Neutral Zone, were also attacked.",
+                    "spoken_by": "TEBOK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Destroyed in the exact same manner as your own.",
+                    "spoken_by": "THEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even so, what gives them the right to enter Federation space?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Silence your dog, Captain.",
+                    "spoken_by": "TEBOK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Worf's question is valid.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "To even to ask such a question implies that we need permission. We do not.",
+                    "spoken_by": "THEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you think that we attacked your outposts?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Once we realised the level of destruction, we knew it could not have been you.",
+                    "spoken_by": "TEBOK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is responsible?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They haven't got a clue. They're hoping you know, but they're too arrogant to ask.",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're out of line, Mister.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but it's a correct assessment.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "We do not know who is responsible. Why entire outposts on both sides have been carried off.",
+                    "spoken_by": "TEBOK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would like to offer a proposal.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "An alliance? Between the Romulans and the Federation?",
+                    "spoken_by": "THEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing so grandiose. Just this. Cooperation. There was an intent here. Whoever or whatever did this is more powerful than either of us. Let's collaborate. Let's share whatever we learn about what has happened here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Agreed. On this one issue. And only if it is convenient and appropriate at the time.",
+                    "spoken_by": "THEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Captain Picard, because your actions are those of a thoughtful man, I'll you this. Matters more urgent caused our absence. Now, witness the result. Outposts destroyed, expansion of the Federation everywhere. Yes, we have indeed been negligent, Captain. But no more.",
+                    "spoken_by": "TEBOK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, we have made some progress here. Let's not ruin that with unnecessary posturing.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Your presence is not wanted. Do you understand my meaning, Captain? We are back.",
+                    "spoken_by": "TEBOK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think our lives just became a lot more complicated. Get him off my Bridge.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've found something. I have been able to locate a family living outside of Indianapolis. The man's name is Thomas Raymond.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's my son's name. My son's name is Tommy.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, let us see Thomas Raymond.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, my God. That's Donald. That's my husband.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, it's your great, great, great, great, great grandson.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's the spitting image.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I have his address. When you get back to Earth, you can go and see him.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I'll be out of time. A relic.",
+                    "spoken_by": "CLARE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps. But it's a place to start. After all, he is family.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no denying that.",
+                    "spoken_by": "CLARE"
+                }
+            ],
+            "location": "Clare's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here's what I propose. You can't stay on the Enterprise, but I have arranged for us to rendezvous with the USS Charleston, bound for Earth. They will deliver you there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what will happen to us? There's no trace of my money. My office is gone. What will I do? How will I live?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the twenty fourth century. Material needs no longer exist.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what's the challenge?",
+                    "spoken_by": "RALPH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The challenge, Mister Offenhouse, is to improve yourself. To enrich yourself. Enjoy it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, one good thing is, since everybody's forgotten everything I ever did, it'll all be brand spanking new. I'll be a bigger hit than I ever was.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps so. Anything is possible.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What say you, son. You'd make a hell of a sideman.",
+                    "spoken_by": "SONNY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That offer does present a certain fascination.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I have plotted a course to intercept the Charleston, but they've just informed me that they'll be making an extended stop at Arloff Nine.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your point, Mister La Forge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, at warp eight, we could have our guests at Starbase Thirty Nine Sierra in five days. Take months off their journey.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But they'll benefit from the extended time. It will allow them to acclimate before returning to Earth.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a pity we can't take them ourselves. Having them on board is like a visit from the past.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would take us in the wrong direction. Our mission is to go forward, and it's just begun. Set velocity. Warp six, Mister La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir. Warp six.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's still much to do. Still so much to learn. Mister La Forge, engage.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "126",
+    "transcript_url": null
+}

@@ -1,0 +1,2374 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Standard orbit, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Yar is calling from Cargo Bay One, sir. Standing by to beam Ligonian welcoming party aboard.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On our way. You have the helm, Mister Data.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cargo One. This should be an interesting experience.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed. Not only are they closely humanoid, but their history has remarkable similarities to ours.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A highly structured society. and they're exceedingly proud.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've insisted on using their own transporter device, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's their way, Lieutenant. Do they have our coordinates?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They have, sir, precisely, and they're standing by for your signal.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is Captain Picard aboard the Starfleet vessel Enterprise. Please do us the honour of visiting our vessel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Five people beam aboard. One rolls out a red carpet, then stands aside as an imposing man beams in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Lutan.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Jean-Luc Picard. Welcome aboard. These are my officers. My second in command, Commander William Riker. Ship's Counsellor, Deanna Troi. And my Security Officer, Lieutenant Natasha Yar.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A woman? Your Chief of Security?",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Lutan, that is her expertise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am honoured to meet your officers. This is my Secondary, Hagon. A sample of the vaccine.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tasha steps forward to intercept Hagon and his box before he gets to Picard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My duty, Lutan. I'm sorry, but I'm required to",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Out of my way, woman.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tasha does a neat manoeuvre which takes the box and leaves Hagon face down on the floor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How interesting. May we prove as surprising to you.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I may suggest, sir, no apology. In their view, it would weaken us.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing concealed, Captain. Would you care to accept it?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unless you care to examine it further.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Absolutely not. This vaccine sample is a gift of life and we are honoured at receiving it. Would you do us the additional honour of now letting us entertain you? LUTAN: Yes, yes. Please prepare it. We shall join you shortly.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard, Riker, Troi and Yar turn and leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I ask forgiveness.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are strange alien beings. You bear no fault.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But the female?",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May be exactly what I have needed.",
+                    "spoken_by": "LUTAN"
+                }
+            ],
+            "location": "Cargo Bay One"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data brings in a statuette of a horse"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lutan, we are aware of many of your planet's achievements, and its unique similarity to an ancient Earth culture we all admire. On behalf of the Federation, therefore, I would like to present this token of our gratitude and friendship. From China's Sung Dynasty, Fourteenth Century.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thirteenth Century, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, yes, indeed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A most thoughtful gift. We are pleased. We of Ligon have been apprehensive about strangers. We are not technologically advanced as you, yet we possess something you do not. A vaccine which has been found to be an effective antidote to your dreaded Anchilles fever. If you respect our customs and if we see that respect, we will be friends. And we will make the antidote available to all who need it.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you require respect from us, I am sure that you will see it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Surrounded by such friendship, I feel no need for my guards. I will return shortly. Prepare to transport me then.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The four guards leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If there is something else, any further courtesy?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would it possible to see one of your wondrous holodecks? We have heard how they are used to train your officers.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And used for many other things too. Commander Riker, perhaps you and Counsellor Troi will demonstrate.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would it be possible for Lieutenant Yar to do so, Captain? Some demonstration of defence training?",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've noticed you're intrigued with her having security responsibilities. But these things are not at all unusual with us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With us, it is the duty of women only to own the land, and the duty of men to protect and rule it.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Much the same has happened in human history too.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to do it, sir. As a sign of respect, perhaps.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This way, please.",
+                    "spoken_by": "TASHA"
+                }
+            ],
+            "location": "Observation Lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tasha enters a command on a control, and puts on the robe it creates"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a mat and a white clothed figure appear",
+                    "line": "Aikido one.  It won't move until my actions activate it.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can create people? Without a soul?",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not a real person, Lutan. It has no life. Everything it does is controlled by computer. Who am I? Do you hear me?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "It only moves when she feints an attack"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it will feel real when it hits you.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She demonstrates a couple of throws"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A force like that cannot possibly come from an image, Lutan.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you will show me, Hagon.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Hagon gets thrown"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Lieutenant. How very enlightening.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aikido, vanish. I could create two, even three, but really one is enough. As you fight with it, it learns, and before long it knows exactly how to defeat you.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even the extraordinary Lieutenant Yar?",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It forces us to keep improving.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your skill impresses me. I like you.",
+                    "spoken_by": "LUTAN"
+                }
+            ],
+            "location": "Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Farewell, my new friends of the noble Enterprise.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understanding has made friends of many different people. We've had a good beginning, Lutan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I also extend a personal farewell to Lieutenant Yar? In your Federation terms.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He shakes her hand then pulls her close so she, Lutan and Hagon are beamed out together"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Bridge. Red alert.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Cargo Bay One"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at Tasha's station",
+                    "line": "Shields up, photon torpedoes activated, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What comm. contact have we had with them?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With their orbital control station, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make contact there and on all hailing frequencies. This is the Enterprise to Lutan and the Ligonian government. You have committed an unfriendly act. We insist that you reply immediately.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Photon torpedoes ready, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set them for a display blast a thousand metres short of the planet's surface.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fire.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do we know the source of their transporter beam?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our own transporter people have tried to trace it, sir, but to no effect.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "turns",
+                    "line": "It reads similar to early Starfleet efforts but uses the Heglenian shift to convert matter and energy in different.  Which is actually not important at this time.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is Captain Picard of the Enterprise with a message to Lutan, whom I have so far acknowledged as a friend. But you have now committed what our laws regard as an attack upon us. Since you have visited our vessel, you most certainly know the power of it. We insist that you reply to this message. Opinion, Counsellor. Will they injure Lieutenant Yar?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe not, sir. They seem mainly curious. In the case of Lutan, however, I did feel other needs.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What kind of needs?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some sexual attraction from all the males. Lieutenant Yar is physically very attractive. But with Lutan I felt something else. Something more like avarice or ambition.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Other comments?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I may, sir. One of the things about them in the briefing studies was their respect for patience.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Strongly emphasized. And you can see it in the precise, ritualistic way they do things. I'm worried about Lieutenant Yar too, sir, but maybe we should sit and wait them out.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stardate 41235.32. I am concerned. Over a full day of waiting with no response from Lutan. We are now testing whether they are aware of our sensors probing them. So far, we believe we have pinpointed Lutan's government compound."
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The vaccine, sir.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Doctor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The vaccine. I'm a physician, I've seen death, but not on the scale this could mean.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were testing if you can replicate the vaccine.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we can't. The sample works fine when used as an injection, but it becomes unstable when we try to replicate it. You must get the vaccine from the planet, Captain. As much as you can. Immediately.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm aware of that, Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've never had to watch a patient die from this disease.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's true. But I have seen my share of death.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damn. Where are the calluses we doctors are supposed to grow over our feelings?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps the good ones never get them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I speak about my son, Wesley?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What? Oh, yes. Alright.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He seems quite interested in starship operations. And speaking as a mother, of course, he seems quite knowledgeable.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, yes, speaking as a mother.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's on the turbolift. You'll remember you ordered him to stay off of the Bridge.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Ready Room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wesley?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't stepped one foot on your Bridge, Captain.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's all right, sir, I'll see that he leaves immediately.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why don't you sit at Ops next to Lieutenant La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is the whole ship deaf?! Sit down over there, young man. Temporarily.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we have more information from the briefing studies on Ligon.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me. Doctor Crusher, some of this may interest you. Lets hear the analysis.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a highly structured society in which people live by strict codes of honour. For example, what Lutan did is similar to what certain American Indians once did called counting coup. That's from an obscure language called French. Counting coup",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, the French language for centuries on Earth represented civilisation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed? But surely, sir",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suggest you drop it, Mister Data.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Counting coup could be as simple as touching an enemy with a stick in battle, or taking something from him and escaping. It was considered extremely heroic.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And under these circumstances Lutan considers himself heroic, risking literally everything in the face of our superior power.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And it fits Lutan's personality profile as well. He has an abnormally high need for achievement. Self image to him is a function of what he thinks he's achieved. Those who set their standards too high can kill to meet them.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why Tasha?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As a Starfleet Security Officer, she may have represented his riskiest prize.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transmission from the planet surface, sir, Main viewer on.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Lutan, what do you want?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "You will display your image, please.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is required is an image of Lieutenant Yar, well and",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Are you making demands, Captain?",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir. According to the Ligon Code of Honour, Lutan has done what he set out to do, achieve recognition for being daring and bold.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've studied this in some depth now, sir. The proper thing for you to do now is to ask to get Tasha back.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ask for her?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Politely, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And now, Lutan, you have boldly taken Lieutenant Yar from us, and we ask that you now please return her.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Then come visit us, Captain, and we will return her to you.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a little later"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander? That's quite formal.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So is this request, sir. We believe it would be preferable if the Captain led this away party.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed, sir. Their customs concerning guests make it much preferable.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I'm very much against that idea. Lutan is clearly a liar, and devious. Counsellor Troi has admitted she believes he's capable of killing. It is my duty to keep the Captain from danger, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Except that Ligonian custom makes it clear that a visiting leader becomes an honoured guest. Not us, not second in command, him.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the custom requires that Lutan should die rather than violate that.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it seems reasonable put that way. But I warn you, if you get hurt, I'll put you on report, Captain.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Troi beam into a colonnaded area with a water feature"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to my Centreplace, Captain Picard. Consider yourselves my honoured guests.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every hospitality will be accorded you.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is my First One, Yareena.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lutan is a fortunate man. You've met Counsellor Troi.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. As on your vessel, you have only to name whatever courtesy we can provide.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then, sir, the courtesy of seeing Lieutenant Yar.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Yar will be returned to you tonight at a banquet I have arranged in your honour.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to see her now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bring Lieutenant Yar. I find it odd, Captain, that a man of your experience has such difficulty in understanding ordinary politeness.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Such as the politeness of saying please before abducting someone?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The expression please is used only when requesting the person back.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yours is a different world.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With clear and simple ways deeply rooted in our culture. If you are willing to ask for Lieutenant Yar's return tonight in front of all, honour will be satisfied.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One can see the importance of honour here.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Honour is everything.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tasha is brought in by two guards. She is not happy"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you been treated well, Lieutenant?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fine, Captain but they're showing some signs of wear.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There isn't any need to be concerned, Captain. She's being well cared for.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My ship's company and I are certain of your gentle wisdom in that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For a moment I thought I heard a threat implied. But that would be foolishness.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something to be carefully avoided. I agree.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The festivities for her return to you are in preparation. Shall we retire till then?",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Until tonight, Lutan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A juggler is entertaining them when Tasha enters with her guard. She is seated at Lutan's left, with Yareena at his right"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lutan, you have granted us hospitality and the safety of your Centreplace]. The gifts you give us are rare and precious. We thank you. And now, according with the customs of your ancestors, whom we honour and respect, I am here in peace to ask for the return of Lieutenant Yar.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well spoken. There are those among my equals in this gathering who were wary of my approaching the Federation. I am proud to have taken this first step towards a treaty, and proud that we have something of great value to offer you, a priceless life-giving vaccine. The abduction I have done according to our custom, for all to see. Your conduct in this matter has been beyond exemplary, Captain Picard, but now that the moment has come, I find I cannot part with her.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "General consternation!"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You speak of a code of honour, but what you are saying now, according to our customs, is called an act of war.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is not an act of war, but of love. I want Lieutenant Yar to become my First One.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I challenge your right of supercedence!",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No woman has challenged supercedence for over two hundred years!",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The right is mine and I will have it! Natasha Yar, I challenge you. A struggle to the death.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! The challenge is unequivocally refused!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you shall have no treaty, no vaccine, and no Lieutenant Yar!",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ship's log, First Officer Riker reporting. We have been informed of the challenge to Lieutenant Yar, and are maintaining combat readiness round the clock. We are probing Lutan's compound deeply with our sensors now, still unnoticed."
+                }
+            ],
+            "location": "Centreplace"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. Deanna.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you have any idea, Lieutenant, that Lutan was suddenly going to announce that he wanted you for his First One?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell me what you know about this?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it was a thrill. Lutan is such, such a basic male image and having him say he wants you",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, of course it made me feel good when he. Troi, I'm your friend and you tricked me.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only so you'd think about it, completely and clearly.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're all being manipulated, Lieutenant, myself most of all.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How simple all this would be without the Prime Directive.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That thought had passed through my mind, Counsellor.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Tasha's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this message from Starbase Fourteen?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's showing the infection rates, percentage illness increases. The plague on Styris Four has flared up out of control.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're estimating deaths in the millions, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard, come in.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know I can win. Not that I'd take her life, of course, but I'd be glad to embarrass her. The idea of accusing me of taking",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The plague?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If anything, even worse than we'd heard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which means they desperately need the vaccine, sir. And I know I can win this challenge.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have nothing to prove anything here, Lieutenant.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But the vaccine is important in this case, sir.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, you're the last person I'd expect to argue in favour of accepting the challenge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Betazoid blood is also practical, Captain. The odds are very good she'd defeat Lutan's wife easily and you would win all the bargaining points you need.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The odds are.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have pointed out yourself we are all at risk every day of every mission.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want some explanations from Lutan.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Tasha's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lutan, why are you so obsessed with this Lieutenant Yar? Surely Yareena is more desirable? Certainly she can offer you much more. She owns many things, many lands.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters, and Lutan stops Hagan talking"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a great pity you began by abducting my Security Officer, Lutan, because I should tell you I do admire the hospitality you offer here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am in the grip of forces you do not understand.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some of it I do understand. She is a rather lovely female.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You surprise me, Captain. What do you know of needs and feelings?",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing. Well, almost nothing in my position of ship's Captain.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it puzzles me. If you feel that way for Tasha, why have you challenged her to a fight to the death?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not I, Yareena. I am merely a spectator.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, but you are also a man of great importance and wealth.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "silenced by Lutan",
+                    "line": "Great importance, perhaps, but he does",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, I see. You, too, understand the proper value of women.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We understand they are highly pleasant things, but after all, unimportant. Except for the land they own.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are a truly clever person, Lutan. You stand to lose nothing, either way the challenge goes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A code of honour protects one, Captain, like a magic cloak.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will order Lieutenant Yar to fight. And may your cloak bring you all you deserve.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Centreplace"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi has his Visor off, and is using an electric shaver"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why that razor, my friend? Why not the one I adjusted to perfect efficiency?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shaving is a human art form, Data. Technological perfection can shave too close.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Puzzling. How can anything be too efficient?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thousands of things are too efficient, Data, at least for humans.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We always come back to the human equation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly. Have you continued to work on it?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Constantly, my friend. Particularly the humour. A man goes to a store to buy some kidneys.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi tries to escape",
+                    "line": "Oh, no.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He says to the shopkeeper, I'd like a pound of kiddillies, please. The shopkeeper says to him, You mean kidneys, don't you? The man says, I said kiddillies, diddle I?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's too old. And you didn't tell it very well.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you know when something is funny?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not explainable. You just do.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps it is you, Geordi. Includling the kiddillies, I've learned six hundred sixty two jokes, and you have not",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Includling the kiddillies! Now, see, that's funny.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was not meant as a joke. The tongue slipped.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, boy.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker to Commander Data, Lieutenant La Forge. Report to the Transporter Room for away party duty.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Geordi's Quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "First officer to Captain. Ready with the away personnel.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lock in on this location.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Transporter locked in, sir.",
+                    "spoken_by": "CHIEF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi and Data arrive, behind the water feature, in front of a wall decorated with weapons"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've both seen the message about the plague?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how badly the vaccine is needed. Yes, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need to know as much as possible about Ligonian armaments. Data, especially important is an analysis of their combat capabilities. Geordi, concentrate on their cutting edges, wherever applicable, durability, composition, weaknesses of material.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From any particular point of view, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From the perspective of Lieutenant Yar using them in combat with Lutan's wife.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Most interesting. Could this be human joke number six hundred sixty three?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative, Data. That's a Captain's order.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which makes it important to know which of these weapons are to be used.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And that won't be known until combat begins. You're right, Data. It does sound like a joke. With the power of the Enterprise, we could overwhelm this place easily, just take what we want.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I may not understand human humour, sir, but I am a Starfleet Academy graduate.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which means, of course",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "understanding the Prime Directive, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is, ironically, what this is about. By our standards, the customs here, their code of honour, is the same kind of pompous, strutting charades that endangered our own species a few centuries ago. We evolved out of it because no one else imposed their own. I'm sorry, this is becoming a speech.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're the Captain, sir. You're entitled.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not entitled to ramble on about something everyone knows. Carry on.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ship's log, Commander William Riker reporting. Continuing our appraisal of Ligonian technology. The Captain has made it clear he wants Lieutenant Yar beamed immediately to safety if her life should become endangered, and I fervently hope the rules of that contest make it possible."
+                }
+            ],
+            "location": "Centreplace"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Transporter Chief. Do we have our people on sensors yet?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Their general area, sir. Visual on screen now. As you see, we're still doing some fine tuning.",
+                    "spoken_by": "CHIEF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've agreed to this meeting, but I see no point to it. You've accepted the challenge and there is nothing further to say.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think you should know that there is no physical training anywhere that matches Starfleet, especially its security people.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you should know that even though these contests are rare, we have a tradition of making ourselves capable of them.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yareena, my acceptance had nothing to do with Lutan.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It has everything to do with Lutan. Lutan wants you to be his First One.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Impossible, Yareena. I am a career Starfleet officer.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How could you not love him? Every woman loves him.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I fight for the vaccine, That's the truth.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The truth is I will kill you if I can. And believe me, I can. There is nothing else to say.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In my world, it's a greater honour to refuse",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are on our world!",
+                    "spoken_by": "YAREENA"
+                }
+            ],
+            "location": "Tasha's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm your Counsellor. You brought me with you to Ligon to be of help.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then help me, please. What is a way out of this?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With the vaccine? None.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi and Data enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The weapons in that room, Captain, are surprisingly flexible, durable, and deadly.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And light, as if they were made for women to use.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some of them still have traces of blood and poison.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Poison?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alkaloid base. Lethal.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about those lengths of metal in the yard outside?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Uncertain, sir. However, joined together they would make a rectangle or square enclosing one hundred twenty one square metres. If put end to end vertically, they would make a pole forty four metres high, or two of twenty two.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're welcome, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tasha enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She won't budge. She loves him, without reservation. And she thinks I love him too.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Most interesting. Do you?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course I don't, Data. As Troi pointed out to me, I'm attracted to him but that is entirely different.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker to Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead, Riker. We're alone.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We're fine tuned enough to see your hosts gathering in the open area outside, sir. Three of them are heading for your location.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Number One. Lieutenant, do you still feel that you want to go through with this challenge? Do you judge your condition good?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I judge it excellent, sir.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Hagon enters, followed by two guards carrying boxes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your weapons, Lieutenant Yar. You may choose your size.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She opens a box containing a glove with metal spikes and a curved blade"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tasha, don't touch the spines. They're poisoned. If you're not careful, you could kill yourself.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These I understand.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Through the window they see Yareena practising on a multi-level surface, with the metal poles in it. Four lights soar to the sky"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First Officer's log, supplemental. Captain Picard, faced with a critical need for a vaccine produced on this planet, has permitted Lieutenant Natasha Yar to engage in a fight to the death. I have yet to understand his reasoning or his plan."
+                }
+            ],
+            "location": "Picard's room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley enters, shyly"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Care to lend a hand? Sit at Ops.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data beams aboard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Was I seen leaving?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've got eyes only for the programme.",
+                    "spoken_by": "CHIEF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker and Crusher enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard wanted no risk of our communications being overheard. You are to proceed now as he indicated.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's orders too.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does the Captain understand what you and Geordi reported about those weapons? They're razor sharp, split-second lethal.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm here to brief you on what he plans.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Transporter Room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Starfleet group enter, Tasha is wearing the weapon glove"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any last minute instructions, sir?",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stay alive. We'll hope to do the rest.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Yareena enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I speak for Lutan. The rules are known. Let combat continue until there is a victor. It will not be interrupted.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Yareena goes on the offensive straight away. Tasha pushes her weapon away and it hits one of the vertical laser beams. It flies off Yareena's hand into the lap of a spectator"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Combatants, hold your positions. Return the weapon.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The spectator dies of his wound and is dragged away. Yareena is given the glove back and she returns to the business of trying to kill Tasha. Tasha manages to make Yareena loose her balance"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Careful, Yareena.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Finally the two women get into very close combat, and Tasha lands a blow on Yareena's back. Then she lies across the body and the two are beamed away"
+                }
+            ],
+            "location": "Centreplace"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Move!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're too late. She's growing cold.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry, that clashes with my instructions.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She injects Yareena"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh no. No.",
+                    "spoken_by": "TASHA"
+                }
+            ],
+            "location": "Transporter Room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly what do you find unfair, Lutan? They fought to the death. You saw the final blow. You know the effects of your poison.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But what of your Lieutenant Yar? She is to become my First One now.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I certainly won't stop her, if she cares to claim that honour.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remember, you now have all Yareena's lands and wealth now.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least all has not been lost.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker to Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Since you've fulfilled your agreement, Captain, can we now beam the vaccine aboard?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, yes, of course.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No problem, Number One. Send down a medical team.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "And to complete our business here, we are locked onto you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Five to beam up. Energise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First Officer's log, Stardate 41235.6. I am returning the conn to Captain Picard as we begin loading the vaccine supply aboard. Shortly, we hope to signal mission complete."
+                }
+            ],
+            "location": "Centreplace"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard, Troi, Lutan and Hagon enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome back, Captain. You're wanted in the lounge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This way, gentlemen.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tasha and Beverly are there with Yareena"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is not dead! There was no death combat. You violated our agreement. There will be no treaty, no vaccine!",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The challenge was carried out. She died, Lutan.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was no challenge! She lives!",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am a physician and saw her die. If you doubt this poison, why don't you test it on yourself?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lutan, we can provide you with records of her death and how Doctor Crusher brought her back.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And at the instant of death, Lutan, a mating agreement dissolves.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But this is witchcraft, Yareena. To discard a mate in this manner",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is less painful than the one you selected for me.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She takes the necklace off him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yareena, no.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even as I battled, Hagon, I heard you calling out for me.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yareena, be my First One.",
+                    "spoken_by": "HAGON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All my land and all my goods, all I have is yours to rule.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She puts the necklace on Hagon"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How so sad for you. You've lost everything.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have my honour.",
+                    "spoken_by": "LUTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's such a waste.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you want him?",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. There would be complications.",
+                    "spoken_by": "TASHA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I will have you as my Number Two. Take your place accordingly.",
+                    "spoken_by": "YAREENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, as you see, Captain, you may excel in technology, but not in civilised behaviour.",
+                    "spoken_by": "HAGON"
+                }
+            ],
+            "location": "Observation Lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley is still at Ops. Data is standing by Tasha when Picard enters and notices"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What? Wesley.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Young Wesley, he'd been manning that station for me. I forgot.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, thanks again for manning one of our bridge stations, Wesley. We'll see that you have another chance.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Wesley leaves and Data takes his rightful station"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So what's the delay, Number One? Why aren't we warping out of here?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set course for Styris Four, warp three.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Course laid in for Styris Four, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engage.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "104",
+    "transcript_url": null
+}

@@ -1,0 +1,2587 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at Red Alert"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forward tubes armed and ready, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fire.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A direct hit, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The asteroid has shattered. However, the core is still intact and still on a collision course with Tessen Three.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it big enough to cause a threat?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. It is of sufficient size and density to cause planetwide damage.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Time to impact.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will reach the upper atmosphere in forty four seconds and impact on the planet eleven seconds later.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ready torpedoes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, the core is composed of nitrium and chrondite. It is unlikely another photon torpedo will be of any effect.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, prepare a tractor beam.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thirty seconds to impact.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I am unable to get a positive lock with the tractor beam. There is magnetic field interference emanating from the core materials.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Activate a deflector dish. If we project a particle beam, we may be able to produce a disruptive nuclear effect within the core.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Impact in seventeen seconds.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Particle beam activated. The target has been destroyed, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The remaining debris is of no threat to the planet, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well done, everyone . Ensign, put us back on course for the Moselina system. Warp four as soon as we're clear of the debris field.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and shiny bits of debris settle on the ship's hull as it sails through the field"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi is mediating a family dispute"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My instructions were clear.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They were not!",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Before he was allowed to play, he was to place his soiled clothing in the garment reprocessor.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was not!",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I sense a touch of hostility here, gentlemen.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were specifically told that.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You told me that yesterday, not today!",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I may suggest",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know very well the same rules apply today that",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please! Why not simply draw up a contract which clearly defines the duties of each family member.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean he tells me what he wants and I have to do it.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I means you both agree to your responsibilities. And when you've done the things that you've agreed to do, then you've earned the privilege to doing the things that you want to do. When he's cleaned his room, for instance, then perhaps he's earned a visit to the holodeck to fight his alien monsters.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You suggest bribery.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suggest working out an equitable system with the rules clearly spelled out. For the child and the parent. You must make a list of your responsibilities, too. What would you like your father to promise, Alexander?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No yelling.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "softer",
+                    "line": "I do  I do not yell.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well then you should have no trouble with that part. Why not go back to your quarters and talk this thing over? Decide on which points each of you wants in the contract.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One day you'll learn to be glad your father cared enough about you to insist on rules. It may be hard to imagine right now, but eventually, most children come to appreciate their parents.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Alexander leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker to Counsellor Troi. Your mother's just come aboard.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On the other hand",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Deanna, my dear! It's Mother!",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Troi's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I've got such deliciously exciting news, you're going to be absolutely thrilled! I'm getting married!",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, with just a bit of redecorating here and there, this Ten Forward room should make a very nice wedding hall.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I beg your pardon?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where else, my little one, but here amongst all my good friends and in the presence of my adored daughter.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, where did you, when did you meet this man? Who is he? I mean, marriage? When did all this happen?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My poor, plodding, little Deanna, with her questions, questions, questions. Wherever did you inherit such pedestrian genes? What matters, my little one, is that your mother's happy.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, if you're happy, then I'm happy for you. I only asked who he is, and where you met him. Those are not unusual questions.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's such a wonderful man, and he has such good breeding, I tell you, he's absolute perfection.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who is he?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's Campio, Third Minister to the Conference Of Judges on the planet Kostolain. Royalty, my little one, naturally.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Naturally. I didn't know you'd ever been to Kostolain. Or was he on some diplomatic mission to Betazed?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, neither, actually. You see, we haven't exactly met yet, really. Oh, but the profiles we've exchanged. Why, they're in such accord that you could weep, my little one. You would weep at the harmony between us.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, don't you think it would be a good idea if you actually met the man you're going to marry before committing to spend the rest of your life with him?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, I love you, but you do make everything sound like an epitaph.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Alexander enter, still discussing the contract"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to agree.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you have to agree. That is what an agreement is. Counsellor Troi, excuse the intrusion, but we're having some difficulty drawing up our contract. Mrs. Troi.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's not fair!",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The boy is unreasonable.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, of course he's unreasonable. He's a child. And such a child. You know, making little boys reasonable only gives them pimples.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alexander, this is my mother.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alexander! What a wonderful name. You know, I once knew a tall, handsome warrior named Alexander. Oh, he utterly adored me. We went everywhere, simply everywhere. Have you been anywhere yet? Contract? What contract?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Between father and son. A fair and balanced way to achieve a mutual sense of order.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, how ghastly for you. And you're doing this to your own child, Mister Woof?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is Worf, Madam.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Contracts are usually between people who don't really trust one another. A child who is trusted becomes worthy of that trust.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, will you kindly stay out of this?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if he does not perform his contractual duties, I assume he will be chastised?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He will be sanctioned, yes.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if you fail to perform your duties, what is the child supposed to do about it?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, will you please",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I? Not perform my duty?!",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alexander. Now life's true gift is the capacity to enjoy enjoyment. Now, have I arrived too late, or can you still smile?",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Married? She's getting married?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. If we stay on our present course, we should rendezvous with her intended groom in thirty one hours.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not continue have that woman continuing to use this ship for her convenience, simply because her daughter happens to be one of my officers.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Apparently, Deanna being on board is only part of the reason.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The other reason being?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She thinks the honour of giving away the bride should fall on you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Permission for an on-board wedding is granted, Number One. Nothing would please me more than to give away Mrs. Troi.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "as they walk on, something moves along a bulkhead joist"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alexander is playing with a table monitor when Lwaxana enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah! My little warrior. And how are you this morning? Oh, I see. Being punished for something, are we?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just my regular time to meet with Counsellor Troi. She's not here yet.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you're early. That's very responsible of you.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I just wanted to be out of my room before",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Before what? Now, if we're to be real friends, we've got to share only the truth.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, for one thing, it's easier. When you tell the truth, you never have to remember later what you lied about. But mostly, a true friend is a person you can always tell the truth to without worrying about it.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wanted to leave before my father got back.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hate him. I wish my mother was here. But she died.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not very fair, is it.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All he cares about are rules. I'm supposed to do everything right all the time. I don't know how.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To tell you the truth, little warrior, neither do I. But, I do know one marvellous thing we can do with rules.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm supposed to wait for Counsellor Troi.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Troi's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll bet you've never been to a colony of free spirits.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do they do there?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whatever they want. Artists, philosophers, free thinkers and people who don't quite fit other people's rules. Personally, I come for the mud baths. You, oh, you're going to adore the mud baths. Computer? I'm assuming you have the Parallax Colony of Shiralea VI?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That programme is available.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, good. Then run it for us, dear.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they're greeted by a multicoloured head in a bubble, who pulls faces and changes his colours"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's that?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Wind Dancer. He stands guard. You see, only those whose hearts are joyous may enter. Come on.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a fire eater blows a perfect triangle of flame, then a five pointed star"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fire sculptor. We'll chat with her later if you're not wearing anything flammable.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello. A few of us were just gathering together for our laughing hour. Would you care to come laugh with us?",
+                    "spoken_by": "JUGGLER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, we were about to experience a mud bath.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Were you? What an idea! My friends and I will join you. One can always laugh in the bath.",
+                    "spoken_by": "JUGGLER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you ever drop one?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to an identical couple",
+                    "line": "Oh, no. No, no. These are my worlds. I protect them. I am a master of worlds, and they fly only as I wish.  We're having guests for laughing hour. Would you care to join us!",
+                    "spoken_by": "JUGGLER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "see end of transcript as well",
+                    "line": "We'd love to!",
+                    "spoken_by": "YOUNG MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, thank you.",
+                    "spoken_by": "YOUNG WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "YOUNG MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "YOUNG WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you always say no when I say yes?",
+                    "spoken_by": "YOUNG MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't.",
+                    "spoken_by": "YOUNG WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You just did.",
+                    "spoken_by": "YOUNG MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There you go again. You are the most negative person!",
+                    "spoken_by": "YOUNG WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why are they arguing?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're friends. They love contradiction. They thrive on challenge. They flourish in conflict.",
+                    "spoken_by": "JUGGLER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then why are they friends?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who else are you going to fight with if not your friends?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold! What is the lesson for today?",
+                    "spoken_by": "POET"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damned if we know. We're just here for some fun and a mud bath.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every moment requires a purpose.",
+                    "spoken_by": "POET"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it doesn't.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every purpose requires a plan.",
+                    "spoken_by": "POET"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He does this every day. Usually while everybody's food gets cold. It's rather boring.",
+                    "spoken_by": "JUGGLER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The higher the fewer!",
+                    "spoken_by": "POET"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well that's a conversation stopper if I ever heard one.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not!",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, you are.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me! If you're going to argue, you should remember, the higher the fewer.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, my little warrior wants to see more in life than just fighting. The mind opens, and in creeps wisdom.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Holodeck - Shiralea"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is digging discarded clothing and toys out from underneath furniture, and muttering"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "doorbell",
+                    "line": "Alexander. Be patient, she says.  Come. I can't believe this.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he notices that Troi has entered"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isn't Alexander supposed to be with you?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He didn't show up for his appointment. I assumed he must still be here.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, what is the location of Alexander Rozhenko?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alexander Rozhenko is in holodeck two.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is he there alone?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is with Lwaxana Troi.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Worf's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the juggler, the poet and the quarrelling couple have joined Lwaxana and Alexander in the mud bath"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To all the creatures within us!",
+                    "spoken_by": "POET"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All the creatures within us?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. Every one of us has a thousand different kinds of tiny people inside of us. And some of them want to get out and be wild, some want to be sad, or happy, or inventive or even just go dancing. That's why we all have so many different urges at different times. And all those different little people inside us, we must never be afraid to take them with us wherever we go. I mean, who knows when we may need one of them to pop up and rescue us from ourselves. Variety, my little Alex. The great secret is not the variety of life, it's the variety of us.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are we ready for the entertainment?",
+                    "spoken_by": "JUGGLER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Bring on the entertainment.",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Troi enter the holodeck. The wind dancer tries to stop them, so Worf bursts the bubble. The entertainment is an apparently naked striped woman"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Little one! Mister Woof. Come, join us.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Holodeck - Shiralea"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, I'm trying to help the boy learn the value of responsibility. You're not helping by giving him a lot of mixed messages.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I exposed you to all sorts of mixed messages when you were that age. You still turned out deadly dull. What are you so worried about?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Among other things, his relationship with his father. No more holodeck, Mother. Please. And why aren't you all absorbed in your wedding plans? It's only three days away.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm letting Mister Homn take care of all the mundane details. He knows my tastes.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, there's absolutely nothing to do, you nosey little girl. Campio's already sent me his mother's wedding gown, which Mister Homn is now altering for me. Outside of that there really isn't anything else",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wedding gown? Mother, stop. You're telling me you're not going to be naked at your own wedding?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Campio is from a different planet with different traditions. He would not approve of a traditional Betazoid wedding, so I am happily adapting. Now it's as simple as that. I need some tea.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't believe I'm hearing this from the Heir to the Holy Rings of Betazed, holder of the Sacred Chalice of Rixx.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, why can't I ever work this replicator?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, I think it's time you tell me about this mysterious marriage to a man you've never met.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "which has just arrived in the tea cup",
+                    "line": "Computer, some jestral tea, please. Anyway, why shouldn't I get married if I choose to? You make everything into such a mystery. There is no mystery, Deanna, except about this Petrokian sausage.  The tea. All I wanted was a cup of tea. Oh dear, I think your replicator's having a nervous collapse.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A level-four diagnostic of the food replication systems has failed to detect any faults in the orientation terminals.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That may be, but we've still got over two hundred reports of malfunctioning replicators.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is an energy fluctuation in one of the utility access corridors.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, we'd better look into it, whatever it is, before the captain decides to order dinner.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, dash six four. Here we are. Some kind of intermittent EM field pattern. Give me a hand with that, will you, Data? There's no plasma leakage, just a little negative ion charging.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and a large dollop of orange gloop which falls from the exposed circuitry"
+                }
+            ],
+            "location": "Jefferies tube"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lwaxana has changed to white hair to match the silver grey long-sleeved throat to floor covering dress with bustle. Mister Homn looks on silently, as usual"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bad enough having to wear anything at my own wedding, but this? Perhaps if we lower the bodice? Raise the hemline, then. What a constant joy you are.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "doorbell"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Homn.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alexander is less than half Homn's height"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alexander! My little warrior, come here. Come on. Give me a great big hug. Now, you're not escaping another appointment, are you?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, ma'am.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I suppose eventually we all have to live up to our obligations. Well now, tell me. What brings you here to brighten my day?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wanted to say I'm sorry if I got you in any trouble.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's very sweet, dear, but I really wasn't in any trouble. Until I saw this dress. Ugly, isn't it?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's it for?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm getting married.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you sure my daughter didn't send you? Just a joke. People get married because they want to spend their lives with someone.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their whole life? They must have to like that person a lot.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, if you're young and lucky, it'll be someone you like a lot, yes. And if you're older.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you very old?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm alone, Alex. And when you do get older and can no longer pick and choose from whatever may come your way, then you do what we call compromise. It keeps you from being afraid.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Lwaxana's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have traced the failure to a data net interface which routes replicator selections to the correct subprocessors.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When we opened the panel, we discovered that the interface had been transformed into a gelatinous material that we haven't been able to identify.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the ship shakes and alarms go off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have an intermittent failure of the inertial damping system.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take us out of warp, Ensign.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Primary attitude control has failed. Going to secondary systems.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have lost helm control, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Try a manual bypass of the damping systems.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Backup generators.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Coming online now.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long before we regain attitude control?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're almost there.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the shaking stops"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign, put us back on course. Let's stay at impulse for now.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did something hit us, Mister Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The inertial dampers shouldn't fail without kicking in the automatic bypass. I want to know what went wrong. Analysis in thirty minutes.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi puts a container of gloop on the table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The same thing that happened to the replicator happened to the stabiliser. The transfers in both systems were turned into this.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some kind of corrosion?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have not yet identified the substance, Commander.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whatever it is, it looks like there's been a conversion process, transforming some of the metal into gelatinous residue. But what caused it is a mystery.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Replicators and stabilisers. Two totally unrelated systems.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. And we still don't know why the sensors didn't pick up the problems.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's run a mass spectrometer analysis and find out what this stuff is.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Transporter room one to Captain Picard. Minister Campio is beaming on board, sir.",
+                    "spoken_by": "CHIEF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be right there. The bridegroom.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "brown hair",
+                    "line": "Ah, Campio! My dear, your compatibility profile didn't do you justice. I, of course, am Lwaxana, and any introductory compliments you'd care to make will be happily received.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed, Mrs. Troi. You are even lovelier in person.",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now that worked just fine.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she moves to kiss Campio, but the aide puts his hand in the way"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, now we don't wish to be too familiar at this early juncture.",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forgive this tardiness. Ship's business. Minister Campio, Captain Jean-Luc Picard of the Enterprise. Welcome aboard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "bowing",
+                    "line": "I thank you and greet you with appreciation for permitting this wedding aboard your fine vessel.",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all, sir.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Campio, may I present my daughter? Deanna Troi, meet, well, your future stepfather, come to think of it.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, yes. If I recall the profile, you are the ship's counsellor?",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am, sir.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And my escort, who need not be addressed in this company: Protocol Master Erko.",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Campio? Personally I adore all the ostentation I can get, but, Protocol Master?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would not do you nor our benevolent hosts the disservice of failing to ensure that priorities are observed.",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes. How very thoughtful.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "After all, it would be unpardonable to simply abandon ourselves to the moment, would it not?",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unpardonable.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "working at the science station"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it looks like the only alloy common to both the replicator and the stabiliser is nitrium. Computer, analyze the nitrium content of both the affected stabiliser and replicator.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no nitrium present in the affected stabiliser or replicator.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is none present in the residue, either.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "According to the mass spectrometer, the elements in the residue have been broken down into simpler molecular structures.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would suggest the nitrium has been organically metabolised.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe that's it, Data. If a living organism ingested the nitrium.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This residue would be the waste left behind.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If that's true, if something's eating away at the nitrium on the ship. That means the dilithium chamber is vulnerable, as well as the power transfer conduits. We'd better get to Engineering.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ha! Ha!",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eat, son.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ha!",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing? What is that noise?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ha! It's my laughing hour. Ha! Ha!",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is enough, please. It is your dinner hour. Eat.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ha! I promised to meet Mrs. Troi for another lesson in happy wisdom. Ha!",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you stop doing that, please? Alexander, eat your food. Wisdom will wait, I assure you.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I promised. Should I break my promise, Father?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Klingon ever breaks his word.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where are you going?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said no Klingon ever breaks his word.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did not mean now. Now just sit down and eat.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand, Father. You're confusing me.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understand later. Just eat.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Father? The higher, the fewer.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and Alexander leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Worf's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't wish to be authoritative, my dear, but Master Erko says that now is our proper time for discussion of certain details.",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I certainly don't wish to be considered anti-Erko, dear, but I did promise Alexander one more holodeck trip. Come along, my little love.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Surely there'll be other occasions for you to spend time with the boy.",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My goodness, Campio. You and I are going to have the rest of our lives. I'll tell you what. I'll be back here with you in one hour exactly, all right?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Minister, the woman should not be addressing you in the familiar.",
+                    "spoken_by": "ERKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi and Worf enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, we have to talk.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, we certainly do, dear, but not just now. Well, how, er how do I address him?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, we've come for Alexander. Please, forgive the intrusion.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Preferably he should be called by his ministerial title.",
+                    "spoken_by": "ERKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah. I'll remember. Oh, Mister Homn. You make everybody comfortable until we get back. Especially the Minister, here. Now, I'll be back. One hour, darling. I'll see you then.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mrs. Troi, it is Alexander's dinner hour.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How thoughtless of me. I guess we'll just have to have a little picnic before our mud bath.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have business to deal with here. Leaving is simply not acceptable.",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, well can't we just pretend it's acceptable? We'll be back.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are missing the point.",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alexander, you will return to our quarters and have dinner.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But we're going to go to the holodeck.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, you're undermining every effort we're trying to make here.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't be absurd. You poor dear, don't they ever let you change those colourless outfits?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is essential that we begin a discussion of the wedding procedures now.",
+                    "spoken_by": "ERKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, Minister, darling, perhaps you and the Jerko here can come with us.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lwaxana, this exceeds all boundaries.",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh. Well, half hour, then. No longer, I promise. Mister Homn, your duties.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor Troi, have you no influence?",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ha!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ha!",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lwaxana, if you will remain, I may allow the boy to stay",
+                    "spoken_by": "CAMPIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Definitely not!",
+                    "spoken_by": "ERKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Definitely not. My son is to return to quarters.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nor may a servant be present during a prenuptial consultation.",
+                    "spoken_by": "ERKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lwaxana has sneaked out with Alexander"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, sir, I'm afraid even the bride won't be present for this one.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Lwaxana's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The dilithium chamber shows no anomalous readings.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So far, these transfer conduits are clean, too. Hold on, I'm getting something here. There's a severe energy fluctuation in this access panel.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge removes the cover and the silver stuff floats up the wall to the ceiling, then gloop starts to dribble down"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the Juggler is unhappy"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was just juggling and I happened to catch one in my mouth. It tasted good, so I ate it. Before I knew it, I'd eaten up every one of my worlds. It never occurred to me that once they were gone, I'd have nothing left to juggle. If you ever have a world, plan ahead. Don't eat it.",
+                    "spoken_by": "JUGGLER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, now. Almost time to get back.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you sad?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course not. I'm about to be a bride.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know that man you're going to marry? He would never come and take a mud bath, would he.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, he might. Probably not.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, maybe this would be a good time to get one of those little people that live inside of you to come out and tell you what to do, or help you, or something.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alexander, what are you talking about?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry.",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. No, don't you dare be sorry.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she notices the grid appearing through the illusion"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's wrong?",
+                    "spoken_by": "ALEXANDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come along, Alexander. Let's not leave everyone waiting for us.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Holodeck - Shiralea"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Once we saw that photonic trail moving through the wall, we realised we must be dealing with a metal parasite of some kind.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We believe the parasites came through the ship's hull after we destroyed the asteroid near Tessen Three.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are they attacking anything other than nitrium alloy?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir, not that we can tell. But we've got nitrium everywhere. The computers, the life support, the ventilation, the engines, even the dilithium chamber.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, the asteroid we destroyed. That was rich in nitrium.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And that asteroid came from the Pelloris Field. If the rest of that field is rich in nitrium, it would make a natural feeding ground.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We should think about going back there. The parasites could possibly be lured back to the asteroids for a meal that's more appealing than we are.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, how long to the field?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At warp nine, five hours twenty minutes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to the Bridge",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker here, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set a course for the Pelloris asteroid field, warp nine.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, with our sensors unable to detect the parasites and given the speed with which they appear to be moving through the ship",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We may not have five hours and twenty minutes. I'm aware of that. How can we slow them down?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In several cases, an exanogen gas barrier has been known to slow the progress of metal parasites.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They don't like cold, eh? Make it so.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The problem is finding them. As soon as we spot an energy fluctuation, they've already consumed all the nitrium and have moved on.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the lights flicker"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Primary power systems are going down. I've rerouted to the secondary generators.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Inform the Bridge. Mister Data, with me.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge. Commander, do you have any suggestions on how we could encourage the parasites to leave the ship once we reach the Pelloris Field?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we reconfigure a particle beam with a high concentration of nitrium, and project it toward one of the asteroids.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then they would follow the beam like a trail of breadcrumbs. Very well.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "gloop is dribbling down the wall"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Turbolift velocity is beginning to fluctuate, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, stop at next level. Computer, acknowledge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the turbolift stops but the doors don't open, so Data forces them"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have reached the bridge, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Report, Number One.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ventilation and life support are failing at random spots all over the ship.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we've dropped to warp five point seven.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Engineering.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "La Forge here.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's happening, Mister La Forge? We're losing speed.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The parasites must've gotten into the primary warp controllers, Captain. Trying to do a bypass patch to isolate the backup controllers but it looks like warp six is about the best I'm going to be able to give you.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At that speed, Mister La Forge, there won't be a ship left to reach the Pelloris Field. Do what you have to.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Working on it, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we're losing life support on decks eleven and twelve.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, have security evacuate all personnel from those decks.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Engineering to Bridge. We've got warp six point five but I don't know how much more coaxing",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can do here.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need more speed than that, Commander.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The matter-antimatter",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Injectors are failing. I'm rerouting to secondary injector power now. Watch the antimatter containment for any system failure.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Atmospheric systems are down twenty seven percent. We're going below tolerable oxygen limits.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We must evacuate decks twenty through twenty four, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so. Shut down life support to those decks.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Direct all evacuees to decks nine and ten.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Divert emergency life support to those decks.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Time to asteroid field?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we maintain our current speed, two hours, twenty three minutes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, the rest of us may lose consciousness. If we do, it will be your job to execute the plan as discussed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Enterprise arrives at the asteroid field. Data is the only one awake and alert"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Structural integrity of the dilithium chamber is at thirty four percent. Estimated breach in one minute.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, transfer power from warp engines to life support.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transfer complete.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Activate Bussard collector.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Activated. Breach of dilithium chamber in forty seconds.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reconfigure hydrogen plasma mixture to include thirty percent nitrium.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mixture complete.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Project emitter beam, heading zero two four mark zero four one.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "shimmering silver travels along the beam"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Structural integrity of the dilithium chamber is at twenty eight percent and holding.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the lights come back up and people start to wake up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The plan was successful, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well done. Mister Worf, coordinate your teams with Doctor Crusher and Commander La Forge. Assess damage and injury.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45733.6. Temporary repairs to the ship have been completed. Our attention now turns to matters of a more festive nature.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Erko checks the corridor again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "whispering to Campio",
+                    "line": "This is intolerable.",
+                    "spoken_by": "ERKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'd think she'd at least get to her own wedding on time.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the doors open and Mister Homn smiles as Lwaxana arrives at her own wedding, naked. Even if we do get a glimpse of the edge of the underwear that Majel is actually wearing. Campio's jaw is on the floor."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Minister! Minister! This is infamous. Infamous! We leave immediately!",
+                    "spoken_by": "ERKO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Erko hauls Campio out of the room"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in the mud bath"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, heavenly. Every pore in my body tingles with contentment. Isn't it wonderful how things work out, Alexander? I wanted to teach you how to grab the joys of living, and you turned around and taught me not to let go of them. How very mutual.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We still have to learn how to live in the real world, Mother. All of us.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's absolutely right, Alexander. But only when necessary.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're just supposed to sit here?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Holodeck - Shiralea"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "220",
+    "transcript_url": null
+}

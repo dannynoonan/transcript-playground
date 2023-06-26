@@ -1,0 +1,2604 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is in dress uniform, showing off his calves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you might find this interesting, Mister Crusher. Few humans have ever seen an Antedean in the flesh.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Two aliens and a barrel are beamed aboard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome. I'm Jean-Luc Picard, Captain of the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are they alright, Captain?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. This is their preferred way of space travel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Their physical condition is good enough, considering the circumstances.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is a self-induced catatonic state. Their way of dealing with the trauma of spaceflight.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will we try to revive them?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not until we reach the Pacifica conference, three days from now. Doctor, have you prepared a Sickbay facility to accommodate our guests?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As soon as I can make some adjustments. Their physiology is unusual. You can store them for a few hours?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure. I'll have them kept out of the way here.",
+                    "spoken_by": "O'BRIEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, provide security.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's in that container?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Vermicula. It's their food. When they come out of stasis, they'll be very hungry.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "live fish-like things"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They eat this?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In great quantities.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What a handsome race.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So what did you think of the Antedeans, Wesley?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are rather strange-looking, Commander.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Judging a being by its physical appearance is the last major human prejudice, Wesley.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your point is well taken, Mister Data. I'm sure that to the Antedeans, we are equally unattractive.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we are being hailed by a small transport vessel, just coming into range.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, my God.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the problem?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's she doing here?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen, Captain.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Starship Enterprise, come in.",
+                    "spoken_by": "PILOT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have you on our viewer, pilot.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Enterprise, I have a passenger. A VIP passenger who I'm ordered to",
+                    "spoken_by": "PILOT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Oh, let me talk to them. I'm sure I'm more articulate than that.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, we are receiving Starfleet orders granting a Lwaxana",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lwaxana Troi, daughter of the Fifth House, Holder of the Sacred Chalice of Rixx, Heir to the Holy Rings of Betazed.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Full ambassadorial status, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It looks like it's back into that dress uniform, sir.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And yours as well, Commander. She is listed as representing the Betazed government at the conference.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, please, don't do this to me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Do what to you, Little One? Oh, Jean-Luc. What naughty thoughts. But how wonderful you still think of me like that.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's so like my mother to do the unexpected.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will be pleasant to have her as a guest of the Enterprise again. Energise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lwaxana arrives sitting down, back to us"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Legs! Where are the legs?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where they belong, Mother, Right under you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I hate that. I will never completely trust this device, Jean-Luc.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard, Mother.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lwaxana turns and sees the Antedeans"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aaagh!",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Explain to her.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry they startled you, Mrs. Troi. They're Antedean delegates. They're being stored here temporarily.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Delegates? Last time I saw something like that, it was being served on a plate. Darling. Well, well, well. And you, Jean-Luc, I wasn't aware you had such handsome legs. My valet is waiting. You may beam him aboard now.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You remember Mister Homn, of course.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would be hard to forget Mister Homn.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I retain his services despite the outlandishly lustful thoughts he spews in my direction. You can put that down, Homn. We can't deny the Captain the honour of carrying my belongings.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not interfere with Homn's duties this time.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not what you're really thinking, Jean-Luc. You forget I'm a telepath.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "totally fail to lift the case",
+                    "line": "Mrs.Troi, since this obviously significant to you, I'll  I'll carry it.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just down this corridor.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "telepath",
+                    "line": "He has nice legs too, Little One. Is he still yours?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "telepath",
+                    "line": "Humans no longer own each other that way, Mother.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really? That's a custom we may have to introduce again.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Glad to help.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker leaves, Homn picks up the case as if it were empty"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I trust you will be comfortable here. If you will excuse me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am be serving a Betazoid dinner of greeting tonight, Captain. It is an ambassadorial function.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It sounds delightful.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's a fine man. Solid, reliable. He's a little on the stuffy side, but, all in all, he's not that bad.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't believe you, Mother. You sound like you're sizing up a commodity.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But that's exactly what men are, darling. Especially human men. Was your father ever unhappy with me?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. He worshipped you. But I don't think I'll ever learn to see men the way you do.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will as you mature, darling. And the men in your life are going to bless you for it. You're so beautiful.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Lwaxana's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And she actually complimented Captain Picard on his legs?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would have thought a telepath would be more discreet, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly the opposite. She knows what's in your mind and she lets you know what's on hers.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gentlemen. I think we must not lose sight of the fact that we're talking about someone who has been granted ambassadorial rank. Even though she may appear somewhat eccentric, Lwaxana Troi must be treated with the appropriate respect. Is that understood? Picard to Pulaski.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Captain.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When did you last time you look in on the Antedean guests?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doing so right now, Captain.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Are they still catatonic?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Status of the beings is unchanged. Pulse, still steady. Respiration normal for them.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood. Keep me informed. Picard out. I'll be in my quarters. It will be a dress uniform dinner, gentlemen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To which dinner was the Captain referring, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing I've been invited to. Any of you? Very interesting!",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is in dress uniform and carrying a bottle of blue liquid"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor? You're not attending the dinner with the rest of us this evening?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've already eaten, but thanks, Captain.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard hands the bottle to Mister Homn, who opens and downs the contents in one"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I seem to be a little early. I'm sure the others will be here soon. The other officers? Commander Riker? Counsellor Troi?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Homn smiles and shakes his head. The penny drops. Lwaxana is in the doorway, low cut dress and low pitched voice"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, Jean-Luc. So glad you could come.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A toast to Earthmen, who, despite their faults, have that unique ability to charm women of all races, in all corners of the galaxy.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Speaking on behalf of men of Earth, which is indeed an awesome responsibility, I thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know what you're thinking, Captain.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You do?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're wondering whether I'm seeing any other man. On a serious basis.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, actually, I wasn't",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wouldn't worry about it, Jean-Luc. Competition seems to bring out the best in the human male.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The fact is, I wasn't expecting this setting. I had assumed that my senior Bridge officers would be attending.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You never assume anything where Lwaxana Troi is concerned. Betazoid women are full of surprises. Strange, I'm not really very hungry tonight. I wonder what's made me lose my appetite? Any ideas?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Homn strikes a gong"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, you're giving thanks for your food. I'd forgotten about that. I wonder how many other cultures have similar customs.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, let's find out. Commander Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Captain?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mrs. Troi and I are having a very interesting discussion about various societies' ways of giving thanks. The Betazoid use of the chime, for instance.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The use of the chime is unique, but not at all dissimilar to the",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Lwaxana's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ooolans of Marejaretus Six, who use two large stones which are continuously struck during the meal. Those at the dinner must eat until the stones are broken.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Or the oligarchy on Atifs Four, which require a young",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, this is fascinating. Don't you agree, Mrs. Troi? Commander, if your duties permit, why don't you join us for dessert? I'm sure that Mrs. Troi would much appreciate the pleasure of your company.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Lwaxana's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed, sir. I'm on my way. Data out.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How could you possibly think I would want to share our special time together with that, that, robot of yours?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because of Data's wonderful after-dinner conversation. His anecdotes are the stuff of legends aboard this ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "later"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, by using the square root of pi and multiplying it by nine to the third power, I was able to accurately calculate the distance between the Omicron system and the Crab Nebula.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fascinating, Data, absolutely fascinating. I'm sure Mrs. Troi would love to hear the one about the anomalous chemical composition of brown dwarf stars.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not really.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain. That is a particularly spellbinding subject. In most stars, the rare Earth element europium is enriched relative to samarium and gadolinium",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that so?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is. However,",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Lwaxana's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your mother seems quite an interesting woman, Deanna.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps I should tell you something about my mother's condition at this time.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Condition at this time?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's something that occurs to Betazoid females as they enter mid-life. We call it the phase.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mid-life? As in a human female's menopause?",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Similar. It's only at mid-life that a Betazed female becomes, well, fully sexual, if you know what I mean.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I think I do. I also think that I saw the Captain on his way to her quarters.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wonder if I shouldn't warn him?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. As ship's Doctor I'd consider it excellent exercise for his reflexes and agility.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor !",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For staying ahead of your mother.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. An animal is always at its best when hunted.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or when hunting.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "we now have a graphic presentation of a planetary system on the room's view screen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And at this point, the second co-orbital satellite avoids a collision with the first.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Deanna enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, darling. Thank the Four Deities you're here.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope I'm not interrupting.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I must, as a matter of fact, be getting back to the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. Perhaps I should remain and further entertain our guest.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! I mean, I'm sure you're needed on the Bridge as well.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, thank you for a delicious meal. We must do this again sometime.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know we will.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Data leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Little One, the Captain is every bit as charming as your father was.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Lwaxana's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, you will never know just how much I owe you for that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed, Captain? I know many more interesting anecdotes, sir. For example,",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Later.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why would you come aboard at a time like this?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had no choice. I was going to Pacifica, you were going to Pacifica.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't be absurd, Mother. You knew what would happen.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Lwaxana's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What stage is it in?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have it completely under control.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What stage is it in?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, far enough along for me to enjoy it, Little One.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now I know why you wore that dress.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't be ridiculous. This simple little dress? Nothing provocative about it.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are we going to do?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm going to do the only honourable thing there is to do. And I'd say your Captain has the inside track.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, don't even think it.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why not? He was thinking about it all through dinner.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was what? I tell you, Deanna, for a telepath, your mother's accuracy leaves much to be desired.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, her telepathic prowess is quite advanced. Except for now.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Except for now?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't misunderstand me, Counsellor. Your mother is a beautiful person,",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My mother is beginning a physiological phase. It's one that all Betazoid women must deal with as they enter mid-life.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it's something Troi warned me about when we first started to see each other. A Betazoid woman, when she goes through this phase, quadruples her sex drive.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or more.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or more? You never told me that.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't want to frighten you. She has opted for the only dignified option open to her.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isolation?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has decided to focus all of her sexual energy on one male, who will, of course, eventually become her husband. It seems, Captain, that you are the early favourite.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Congratulations, sir!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not amused, Number One. There must be some way to convince her that it's quite impossible, without offending her.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You cannot apply human style logic to this, Captain. A Betazoid woman in the phase would be shocked and deeply resentful, should you spurn any such advances. She would take it personally.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, under the circumstances, I think it would be prudent if I were to make myself less available for the duration of this journey.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Setting, San Francisco California, United States Of America. The year, 1945 A.D. The office of Dixon Hill, Private Investigator.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Programme complete. You may enter when ready.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Outside the Holodeck"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi, Dix.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Madeline. Good to see you again.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're too much, Dix. You make it sound like you ain't seen me in a year. You got two calls. They're on your desk.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "New cases?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you kidding? The last time we had a new case, Hitler and Stalin were bosom buddies. The landlord came by. He wants the geetas or he wants you out.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The geetas?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The moolah, Dix. The rent. And since we're on the subject, it's been a month since I seen anything. Now I know it's been tough, since you got out of the hospital, but I got responsibilities.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I suppose I had better get a case.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It wouldn't hurt.",
+                    "spoken_by": "MADELINE"
+                }
+            ],
+            "location": "Hill's outer office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard takes off his coat and hat, turns on the radio and looks around. The song is 'Let's Get Away From It All, sung by a group that sounds like the Beverly Sisters. He sits down, puts his feet up on the desk and relaxes"
+                }
+            ],
+            "location": "Hill's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unavailable? Ship's business? You mean ship's business takes precedence over me?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid so, Mother.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, well, he was too old for me anyway. Homn, perhaps we should consider my alternate plan.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alternate plan?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You worry too much, Little One. Your mother has the situation well in hand.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Lwaxana's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a gentleman here to see you, Mister Hill. And he doesn't look like a client.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hill? The name is Slade Bender.",
+                    "spoken_by": "SLADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "turns off the radio",
+                    "line": "Excuse me.  What can I do for you, Mister Bender?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's about Alva.",
+                    "spoken_by": "SLADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll have to be a little more precise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay, you want to play stupid? That's jake with me. A week ago a man came in here. He wanted you to find his girlfriend. Name's Alva.",
+                    "spoken_by": "SLADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did I find her?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, you're getting on my nerves. You found her, all right. Face down in the river.",
+                    "spoken_by": "SLADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry to hear that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, yeah, we're all broken up about it. Especially the boyfriend, who's been indicted for murder.",
+                    "spoken_by": "SLADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what are you here to do? Ask for a refund?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nah, I'm here to kill you!",
+                    "spoken_by": "SLADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, freeze programme. Computer, this isn't what I wanted at all. It's much to violent. I'm here to relax, not to dodge bullets. Reconfigure.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please define.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More ambience. Less substance.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you wish to leave the holodeck and re-enter, or continue from this point?",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will continue.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Programme complete. You may continue.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a gentleman here to see you, Mister Hill.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Madeline.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You a private dick?",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's what it says on my door.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that supposed to be funny? 'Cos if it is, you gotta know that I ain't in the mood for funny. Now, I came here on serious business. There's a job I want you to do for me.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, freeze programme. Clear. Computer, this still isn't right. One kind of violence is being substituted for another. Reconfigure.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You may continue.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Slade bursts in with a machine gun"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're through ducking me, Hill!",
+                    "spoken_by": "SLADE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, freeze programme! Variations on a theme. Computer, perhaps I am not clearly defining my intent.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The flexibility of the programme is limited to the parameters of the Dixon Hill novels.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Of course.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Hill's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even in this state, they possess a certain dignity, a graceful countenance.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you say so, Lieutenant.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see. Is this how you felt when you first saw me?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, maybe at first, a little. But now that I've seen more Klingons, I've come to think you're handsome for a Klingon. That didn't quite come out the way I meant, sir.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lwaxana and Homn enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I still say they look better in sauce. When will the good Captain revive them?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not until we reach Pacifica, ma'am.",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You seem a fine boy. One day you'll grow up to be a big, strong man. But I'm afraid I cannot afford to wait for you to mature. Now that's more like it. Your thoughts, they're primal, savage. I like that in a man.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not a man.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which is in your favour, men so often being irrational and egotistical. But unfortunately, I've grown accustomed to human companionship. Pity. You'd have made a fine choice. Well, who's next, Mister Homn?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Homn thinks, then puts his hand across his eyes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah yes. Let's do it, I'm not getting any younger.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lwaxana and Homn leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was that all about?",
+                    "spoken_by": "WESLEY"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, Madeline, I'll see you later. Activate programme.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Leaving, Dix? You're not to Rex's bar, are you?",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rex's bar? Why do you ask?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's one of the messages I left on your desk.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That sounds like an excellent idea. Would you care to join me?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Me? Have a drink with you?",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why not?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There ain't no why not about it. It's just that this is the first time you ever asked.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that a problem?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a revolver",
+                    "line": "Not for me, but you'd better take this.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because if we're going to Rex's bar, you're gonna need it.",
+                    "spoken_by": "MADELINE"
+                }
+            ],
+            "location": "Hill's outer office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Mostly empty, Moonlight Serenade playing, ceiling fans turning lazily"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "newspaper",
+                    "line": "Hey, Dix. What do you know and what do you say? See this?  Germany's getting ready to invade England.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who's going to stop them?",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Somebody'd better.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just as long as it isn't us. The last thing America needs to do is fight in another world war.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Actually, the Second World War, although disastrous, did end with the United States taking its place as a dominant world power and cultural influence in the second half of the twentieth century. Additionally, that war was a catalyst of technological advancement. Developments in rocketry and fission resonate on into the twenty fourth century.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know if I should pour you one, Dix. Sounds like you've got a snootful already.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's this?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The usual.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, now let me see. That would be Scotch, neat.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What else?",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard takes Madeline's proffered cigarette, Rex lights it. He takes a puff then looks at it from arms length"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And for the lady?",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rye and ginger.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Rex taps the bar and rubs his fingers together. Picard imitates him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Money. I keep forgetting the need to carry money. I must remember not to let this happen again.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right. I don't mind you being on the cuff, but you're up the sleeve halfway to my collar.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that why you wanted to see me, about my bar bill?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, it's on account of Jimmy Cuzzo.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jimmy Cuzzo. I know that name.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's why I gave you the gun.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was the name of that case he was involved in? The Parrot's Claw.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jeez, Dix. Cuzzo's the guy who iced Marty O'Farron. They never would have nailed him if it hadn't been for you. Your testimony got him arraigned.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. Yours and mine.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you brought me here because you didn't want to face him alone.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to face him at all. I'm hoping that seeing us together will slow him up long enough to get some things straight.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if it doesn't?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then you just have to kill him.",
+                    "spoken_by": "REX"
+                }
+            ],
+            "location": "Rex's Bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge, this is Doctor Pulaski.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We've just completed the transfer. The Antedeans are now in Sickbay.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged, Doctor.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lwaxana and Homn enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, what are you doing here? You can't just stroll on to the Bridge whenever you feel like it.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't just stroll on, dear. I took the turbo tube, or whatever you call it. The Captain's not here?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is busy elsewhere, ma'am.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have other interests as well.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "telepath",
+                    "line": "You're scheming something, Mother. Don't try to fool me, I can tell.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "telepath",
+                    "line": "You're always so melodramatic, Little One. I'm not scheming, I'm deciding.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "telepath",
+                    "line": "Mother, not him.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "telepath",
+                    "line": "And why not him? He's adorable.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A round fish-eye flicks open"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pulaski to Bridge.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Riker here.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Antedeans are coming around. They are currently in the early stages of post hibernation.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long until they're fully conscious?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I'd guess it to be a matter of hours now.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well, I'll inform the Captain. If you'll excuse me, ma'am.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're going to see the Captain? But I thought he was tied up on ship's business.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In a manner of speaking he is. I'm not going to be disturbing him, I'll just give him the message.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent timing. Then you may also inform him about us.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Us?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't mind if I let our ship's crew know first, do you, William? Friends. Dear friends. You are all invited to a prestigious occasion on the planet Pacifica.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There, on the shores of the Western Sea, in a traditional Betazoid ceremony, your Commander Riker and I will be joined in the union of matrimony.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Married?",
+                    "spoken_by": "WESLEY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Until death us do part.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mrs. Troi, I don't know how to tell you this.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know how you feel, dear. You're overwhelmed with excitement. Believe me, I understand. We'll talk about the details later. Right now, there are preparations to be made.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lwaxana and Homn leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you stop me? Someone needs to set her straight!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I'll leave that to the Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Coward.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander. Are you planning on going into the holodeck?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought I might. Would you like to join me?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could you postpone our departure for just five minutes, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No problem.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said you had responsibilities. What exactly did you mean?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know about my mother's cousin, the girl from San Antonio I told you about?",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There's a shadow at the door"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jimmy.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Enter Data in costume, and Riker in uniform"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm as jumpy as Haircut Lapinski trying to land on a fraction.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry to bother you, Captain.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain?",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Call me Dix.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry to bother you, Dix, but our two passengers have awakened.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then it's time for me to go.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about Jimmy Cuzzo? You can't leave Rex to face him alone.",
+                    "spoken_by": "MADELINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be back before Jimmy Cuzzo arrives. I guarantee it will be taken care of. Just relax.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your friends've got time for one drink, haven't they, Dix?",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes, of course. One more round. These are my associates. This is Nails, from Chicago. And this is",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Carlos.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From South America. This is Madeline, my secretary, and I want you to meet Rex. You know, I don't think I ever heard your last name?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hm. Don't think I have one. Just Rex, that's all. So, fellas, tell me your troubles.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, troubles. We've got some, Captain. It seems that a certain woman, both wealthy and beautiful, now thinks that that she's going to marry me.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's got looks and bucks? Sounds like you've got yourself a heck of a deal.",
+                    "spoken_by": "REX"
+                }
+            ],
+            "location": "Rex's Bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My fiancé just has to see how I look in this. Come along, Homn.",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Lwaxana's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, computer? Is Commander Riker still on the Bridge?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative. Riker is currently in holodeck three.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Holodeck? Where is that?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Follow the comm. panel lights. They will lead you there.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good God, what's that?",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lwaxana and Homn enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll bet that's the broad with the big bucks. Come on over here, darlin'. I got the best stool in the house saved for you.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, this is where you've been hiding, Jean-Luc. I'm surprised you let this part of the ship get this dirty. Oh, relax, Commander. You've been making your true feelings quite clear. Obviously you feel unable to handle me.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anyway, why would a beautiful high-class lady like yourself want to hook up with a mug like that? You're too good for him, if you ask me.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are a very interesting person.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not so bad yourself. In fact, you're as much class as this joint's ever seen. Here. On the house. It's French. Almost.",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the most remarkable man. I have never met anyone quite like him.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't suppose you have.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's strong. I get no thoughts from him at all. Nothing. I've never known a man so able to keep his true feelings completely hidden.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's because",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No man has ever been such a mystery to me. I usually know their thoughts before they do.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But not with me, huh?",
+                    "spoken_by": "REX"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. And I never realised how erotic that could be. Carry my beverage to that table. We have some things to discuss.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Should we tell her?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think it would be only fair. But let's allow her the moment.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Rex's Bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Food. Food. Food. Food. Food.",
+                    "spoken_by": "ANTEDEANS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, the vermicula.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The barrel is opened, and the two fishy aliens almost dive in head first"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pulaski to Captain Picard.",
+                    "spoken_by": "PULASKI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Go ahead, Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Our passengers are on their feet.",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd better get to the Bridge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's their condition?",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Rex's Bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hungry. Would you like to be shown to your rooms?",
+                    "spoken_by": "PULASKI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you coming, Mrs. Troi?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not just yet. Tell William I'm sorry, but Rex and I are getting married.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mrs. Troi, your government expects us to deliver you to the conference on time, and that's what I intend to do.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pity. Duty calls, darling. But I'll be back for you later.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mrs. Troi, there is something you ought to know about Rex.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh?",
+                    "spoken_by": "LWAXANA"
+                }
+            ],
+            "location": "Rex's Bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Exiting a turbolift"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Imagine, allowing me to go on like that with that man, who doesn't even exist.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you always say you like surprises, Mother.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why are they still here?",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We thought that since you're going to the same conference, you might like to beam down with the other delegates.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're not delegates. Those two are assassins.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is an outrage! Lies! We demand you transport at once!",
+                    "spoken_by": "ANTEDEAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't bother to deny it. Your minds are so unsophisticated I can read your thoughts in my sleep. Their robes are lined with ultritium, highly explosive, virtually undetectable by your transporter.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is correct, sir. I am detecting large amounts of ultritium.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well of course you are. They were planning on blowing up the entire conference.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, take them to level five. Disarm them. Hold them for questioning.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah well, I didn't find a mate, but I did save the conference, as well as your reputations. All in a day's work, I suppose.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodbye Mrs. Troi, and thank you. Energise, Chief O'Brien.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in mid transport",
+                    "line": "Jean-Luc. Shame on you for thinking such a thing.",
+                    "spoken_by": "LWAXANA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Transporter room"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "145",
+    "transcript_url": null
+}

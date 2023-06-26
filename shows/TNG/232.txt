@@ -1,0 +1,2670 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to the Enterprise, Miss Rogers. I'm delighted to have you aboard.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a beautiful young blonde woman",
+                    "line": "Thank you, sir.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And congratulations. I understand that you were selected for this internship out of hundreds of applicants.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. I still can't believe they chose me. There were lots of other people with better records.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your transcript is very impressive. She's done honours work in neurobiology, plasma dynamics, and eco-regeneration. I'd say that's pretty well rounded.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's a nice way of saying that I haven't decided what I'm going to do with my life.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've arranged to have you work in all the major departments while you're here, and I'm willing to bet that by the time it's over you'll have a pretty good idea what field you're interested in.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or at least what fields you're not interested in.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "doorbell"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're bringing up the rest of the cargo now. We should be ready to leave within the hour.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, will you escort Miss Rogers to her quarters? I need to discuss the Tagran's medical needs with Doctor Crusher. And Miss Rogers?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've won yourself a rare opportunity. Avail yourself of it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will, sir. And thank you.",
+                    "spoken_by": "AMANDA"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It'll take a few days before you know where everything is. If you need any help, you just use one of these comm. panels.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're on deck seven, section four.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I practically memorised the specs on the way over here.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're a quick study. This is it.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is this for me?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's all yours.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's so big.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For honour students, only the best.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I could've brought my zoo.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your zoo?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's just what my parents call it. Three dogs isn't that many, is it?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It depends how they get along.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could have a dozen. Mother said enough is enough. I'm sure going to miss 'em.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll keep you so busy you won't have a chance to. I've got to get going. I have to get back to cargo bay two.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, thanks for walking me down.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, no. Oh, no, no, no, no. I didn't mean it.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "I count ten puppies"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "some vanish",
+                    "line": "You guys can't stay here.  Come on, all of you.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she picks up the last two"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello. Come here, little one. You too. Come on, come on.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she puts them down and they vanish"
+                }
+            ],
+            "location": "Amanda's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly is demonstrating a tricorder by using it on Amanda"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "See all these readouts? That's your heart rate, your blood pressure all your vital signs. You're in good shape. You might just live to be my age.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, all these tricorders need to be tested before they get put in the supply containers that we're taking to Tagra.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So I should scan myself with each one to make sure all the readouts are working?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any unit that doesn't, put it aside and we'll do a diagnostic on it later.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hear you've been accepted to the Academy. I have a son there.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh. Being posted on the Enterprise, I guess you don't get to see him very often?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, not as often as I'd like.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have any other children?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My husband died a number of years ago. Wes was our only child.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Was he old enough to know his father?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jack died when he was five.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My parents died when I was a baby too. I don't remember anything about them. Sometimes I wonder what they were like.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your adoptive parents are in Starfleet, aren't they?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, they're marine biologists. They've just been posted to the Bilaren system.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Sickbay to Doctor Crusher. You wanted to be told when the cultures were ready.",
+                    "spoken_by": "MEDIC"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my way. When you've finished with the tricorders, Nurse Ogawa can help you take them down to shuttlebay for loading.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay.",
+                    "spoken_by": "AMANDA"
+                }
+            ],
+            "location": "Medical lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Amanda arrives carrying two suitcases"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, thank you very much for your help. We can use every available hand we can get. This is one of the largest relief efforts we've ever mounted.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now why are you bringing everything down in shuttlecraft?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, because we can't use the transporters for all of the ionisation in the Tagran atmosphere.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From the barystatic filters?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did you know that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did a paper on eco-regeneration.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well then, you know that a thousand barystatic filters puts out quite a bit of ionisation.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A thousand?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, they've managed to pollute their atmosphere pretty badly.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's amazing to think that they go to such lengths to clean the air instead of regulating the emissions that cause the problem.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right. Actually, the only thing the filters can do is keep things from getting worse.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Amanda looks over to Riker, and sees a container fall from the level above him. With a gesture, she diverts its fall so it misses him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They shoot the air full of",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "crash"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, are you all right? You okay?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't even see it coming.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Shuttlebay two"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "this is the main control area. We can access any of the primary circuits from all of these panels. Over here is a Jeffries tube.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where most of the major conduits are routed.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've been doing your homework.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's hard to imagine how much energy is being harnessed in there.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Imagination is not necessary. The scale is readily quantifiable. We are presently generating twelve point seven five billion gigawatts per",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "an alarm goes off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Temperature in the reaction chamber has increased by forty seven percent.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Injector couplings are frozen. I can't slow down the reaction.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Temperature increase is at one hundred six percent and rising.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "La Forge to Bridge! We're looking at a core breach! We're going to have to try and vent the plasma!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Plasma inductors are not responding.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're going to lose containment. All right, everybody out of here now. Let's go! Let's move it! Data, bring down the isolation door. We're going to have to eject the warp core.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the chamber explodes, but Amanda holds out her hands and pushes the reaction back inside and seals it again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Temperature in the reaction chamber has returned to normal.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's a little shaken up, but she's going to be.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said she was adopted. Could she be an alien?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's human. There's nothing more unusual about her, not that my instruments can detect.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, have you been able to determine the cause of the warp breach?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. Everything was normal and then suddenly it's like the laws of physics went right out the window.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And why shouldn't they? They're so inconvenient.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mon Capitane.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you responsible for the incident in Engineering?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. I needed to find out if what I suspected about the girl were true.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That being?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That she's Q.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amanda's a Q?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How is that possible? Her parents, her biological parents, were human.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, not exactly. They had assumed human form in order to visit Earth, I suppose for amusement. But in vulgar human fashion they proceeded to conceive a child. And then like mawkish humans, they became attached to it. What is it about those squirming little infants that you find so appealing?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure that's beyond your comprehension, Q.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I desperately hope so.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened to Amanda's parents?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They died in an accident. None of us knew whether she had inherited the capacities of the Q, but recently they've began to emerge, and as an expert in humanity, I was sent to investigate.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You, an expert in humanity?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not a very challenging field of study, I grant you.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you saying that you created a core breach just to test this girl?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What would have happened if she couldn't stop it?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I would've known she wasn't a Q.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And now that you know, what do you intend to do?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Instruct here. If that child does not learn how to control her power, she may accidently destroy herself. Or all of you. Or perhaps your entire galaxy.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I find it hard to believe that you're here to do us a favour.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're quite right I wouldn't. But there are those in the Continuum who have an over-exaggerated sense of responsibility. They think that we need to take precautions to keep the little dear from running amuck.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And once you've taught her, then you'll go away?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And leave her here? Of course not. She'll come back to the Continuum, where she belongs.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait a minute. You can't just come in here and take her away from everything she's ever known.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I assure you I can.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has plans for herself. She wants to have a career and a family.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm rescuing her from that miserable existence.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That miserable existence is all she's known for the last eighteen years. You have no right to take it away from her.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mon Capitane, I really think that we need to speak privately.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "so Q and Picard vanish"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, there, that's better. Crusher gets more shrill with each passing year.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q, what is it you really want?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, since you know so much about the Q, I thought you'd the perfect person to introduce me to the child. Let her know she can trust me.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't trust you, Q. Why should I expect Amanda to?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well she'd better, because I'm all she's got. She needs me to help her prepare for her future with the Q.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But what if she doesn't want that future? It must be her decision.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes, yes, yes. Do you think she'll want to remain an enfeebled mortal?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But if she really is Q, she must understand what that means. Very well, I will introduce you. But we cannot argue like this in front of her. We must at least appear to be",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pals?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Civil.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I knew I could count on you, Jean-Luc.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Data, I want you to access any available records on Amanda Rogers.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to know about her biological parents, about their death. I find it odd that any Q could die in an accident.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is not consistent with what we know of them, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm convinced that Q isn't telling us everything. See what you can find out.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It started happening about six months ago. Things that I would wish for would just suddenly appear. I thought I was going crazy. In a funny way, finding this out is kind of a relief.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can understand that. This person I mentioned, from the Q Continuum, would like to meet you. If it's all right with you.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm ready.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly goes to open the door, but Q walks straight through"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's my girl!",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard enters the conventional way"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amanda, allow me to introduce, er, Q. He's er, he's an acquaintance of ours. We've er, we've known him for years.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very impressive the way you contained that explosion. What else have you done?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't understand.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Telekinesis? Teleportation? Spontaneous combustion of someone you didn't like? That sort of thing.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amanda, what Q is asking is have you ever deliberately used your abilities?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not until I came here. The first time it happened was when the container almost fell on Commander Riker.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you handled that very well. That's why I gave you a greater challenge. The warp core breach.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q grasps her face and stares into her eyes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has potential, this one. I see no reason why she can't come back to the Continuum right now.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to go anywhere.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't worry. With time you'll overcome the disadvantages you suffered as a child. No one will hold it against you for having been human. Let's go.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Amanda sends Q flying across the room"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Leave me alone! I'm not going anywhere with you!",
+                    "spoken_by": "AMANDA"
+                }
+            ],
+            "location": "Amanda's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You agreed that she has a right to choose her own future. The first chance you get you try to abduct her.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're overreacting as usual, Picard. I was merely testing her power. She's quite a little spitfire, now isn't she?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's going on, Q? What's your real purpose here?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I've been perfectly clear. The Continuum has a vested interest in this young woman.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you wish to protect that investment, I suggest that you approach her differently.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She was being impetuous. She'll just have to start behaving like a Q.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I'm not mistaken, she just did.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You understand, don't you? It's just that I have these things that I want to do. I'm going to the Academy. I want a career, and I want to join Starfleet.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can still do those things.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It just seems so complicated now. These powers that I have are just going to stand in the way. I don't want to have to deal with it.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, you're going to have to. Listen, I can only imagine how you feel. And it would be easier if this had never happened or if it would just go away. But it's not going to go away. And you need someone to help you. And the person who can help you is Q.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's so horrible.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is the only one who can help you to understand who you are. Amanda, you are going to have to make some hard choices about your future, and you can't make them if you're going to ignore the truth.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah. I know. But I don't want any of this to disrupt my time here. I want to do everything that I'm expected to do, and I don't want you to treat me any differently. Please?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've got a deal. The first free hour you have, I want to see you in the medical lab. I have an experiment I need help with.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, ma'am.",
+                    "spoken_by": "AMANDA"
+                }
+            ],
+            "location": "Amanda's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a shadow darkens the wall"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Your progress, Q?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As anticipated, there are some problems. I need time. However, there is a possibility we won't have to terminate her.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q starts to walk through her door, then thinks better of it and rings the doorbell"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, my dear. I've been told I behaved badly. I apologise. Apparently you had every reason to chastise me. But, then again, what's done is done. Right?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to ask you some questions.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What exactly are the Q?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would be so much easier to show you than to tell you. If you would agree to take a short visit to the Continuum",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, just tell me.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well. to put it simply, we're omnipotent. There's nothing, nothing we can't do.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what do you do with this power?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything we want.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you use it to help others?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think you've missed the point, my dear. Clearly, you've spent far too much time with humans. As a Q, you can have your heart's desire, instantly, whatever that may be. Would you like precious jewels? Works of art? Would you like to walk along the rings of Tautine?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not interested in any of those things.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course not. You're a Q. But surely there must be something that you want? Something that you never dreamed was possible. Tell me, Amanda. What is it?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to know what my parents looked like. My real parents.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How quaint. So do it.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Summon the image.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know how.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Think about them. Evoke the memory. You can do it, Amanda. Trust me. Close your eyes. Close your eyes. In your mind, return to the time when you were an infant. Think about your parents. Remember them. Good. Good. Now, open your eyes.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "there is a young couple with a baby sitting in front of her"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They loved me.",
+                    "spoken_by": "AMANDA"
+                }
+            ],
+            "location": "Amanda's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait for it to be metabolised. Add another twenty? Wait for it to be metabolised over and over, and then wait till the bacilli can't be absorbed any more.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right. Just be sure and record the rate of mitosis from each of the dishes.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mitosis, right.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You seem distracted.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I just saw my parents. My real parents. Q showed me how. Can you imagine how that felt?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I don't think I can.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, you were right. I can't ignore what's happened to me. I just don't know if I can cope with it.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amanda, you are stronger than you think.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, when I saw them there, right in front of me, I realised that I caused this to happen. I wanted to see them and I did. If it were you, if suddenly you could have anything you wanted, what would it be?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no idea.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, think about it. Really think. If suddenly you could make anything happen, what would it be?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I would probably want to heal people. People who are hopelessly ill.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you bring your husband back?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amanda, I don't know. And I don't think I could make a decision like that until I was actually faced with it.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am faced with it.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Try to do the work. I'll come back and check on you later.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crusher leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought she'd never leave.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know if I'll ever get used to that.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's time for another lesson.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I have to finish this experiment first.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're delivering live vaccine bacilli to Tagra. I'm supposed to find the best nutrient solution so we can keep them living while they're in stasis.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fascinating. I've just had a splendid idea. Why don't we combine what you're doing with our lesson, and we'll show you how to finish in no time.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I think that I should finish it the way Doctor Crusher showed me.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why? I'm sure she'll be delighted if we sped things along. Think what it would mean. You could double, even triple the work load.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess so.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now, as you take a look at the tissue samples, form an image in your mind.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Medical lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One Doctor Crusher has some live vaccine bacilli to be delivered to Tagra. It'll have to be shipped in a stasis field. Will you make the arrangements?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll get right on it.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, message coming in from Tagra Four.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Enterprise, I am Orn Lote, engineer. We are having difficulties with the reactor that powers the barystatic filters on our southern continent. We may have to shut it down for repairs.",
+                    "spoken_by": "LOTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps my Chief Engineer could be of assistance?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "I hope so. If we are forced to disable the reactor, it would take months to re-establish the ionic currents the filters have formed in the atmosphere.",
+                    "spoken_by": "LOTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Send us your design specifications I'm sure we'll be able to help.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Thank you, Captain.",
+                    "spoken_by": "LOTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it, Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have some information regarding Amanda Rogers' parents. Records indicate that they died in Topeka, Kansas. Their home was destroyed during a tornado.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A tornado? Why wasn't it dissipated by the weather modification net?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unknown, sir. The bodies were found in the rubble after the storm had passed.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "See if you can find out any more details, Mister Data. I'd like to know more about that storm.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, if it isn't Number Two.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was looking for Doctor Crusher. I didn't know what nutrients she wanted to send with the bacilli.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure. I'll tell her to contact you.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You could stay here and wait for her, if you, you know, wanted to.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just tell her I'll be in shuttlebay two.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker leaves with a big grin"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're attracted to him.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think you are. How repulsive. How do you stand that hair all over his face?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, Commander Riker was just here looking for you. He said he'd be in Shuttlebay Two.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Have you finished already?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did you do it so quickly?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Q helped me. It took us about half the time that it would have normally taken us.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That explains this data. I needed to know the rates of mitosis. By artificially inflating them you made the experiment useless. Now I have to do it all over again.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, Doctor.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't be sorry. If she wants to make things difficult on herself, that's her business.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you interfere with what she was doing?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's a Q. Making her plod through human chores is beneath her.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has asked not to be treated differently.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That doesn't mean she should be bored to death.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't interfere with what you're teaching her.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wouldn't be capable of interfering.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think it's too much to ask for you to do the same.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Beverly is suddenly turned into a red setter dog. Amanda restores her to human"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you stay out of mine.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, when you put it like that, I think you're absolutely right.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Medical lab"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have further information regarding the tornado that killed Amanda Rogers' parents.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was unusually compact, yet extremely powerful. Its recorded wind velocity was characteristic of a funnel three times its size.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Download the files to my Ready room. I'll study them there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you been practicing your teleportation?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. But it's kind of hard. I keep ending up somewhere I don't want to be.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it won't do to be sloppy. You should hone your abilities. I have a wonderful idea. Why don't we play a little game? I'll hide somewhere on the ship and you find me.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But how do I know how?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q vanishes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Don't worry, Amanda. You can do it.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Amanda's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Amanda reveals that Q has disguised himself as a container"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not bad. Not bad at all.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Shuttlebay two"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we can use phase buffers we may be able to devise a mechanism that can be integrated into the present system while it is in operation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Amanda appears. Data and Geordi stare at her. She's about to leave when Q sticks his head out of the warp core"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're still thinking like a human.",
+                    "spoken_by": "Q"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They are standing on the rear hull, and Amanda is entranced by being in space."
+                }
+            ],
+            "location": "Enterprise hull"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now do you understand? What do humans have to offer you that even begins to compare with that? Your future contains wonders you can't even imagine. The universe could be your playground.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "doorbell"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Crusher and Counsellor Troi. They're taking me to dinner.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't have to eat, you know. It's a nasty human habit you could easily do without.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q vanishes and Amanda opens the door"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, Amanda. Are you ready?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "AMANDA"
+                }
+            ],
+            "location": "Amanda's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Amanda has barely touched her food"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Amanda, how are you feeling about all this now? It must be overwhelming.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was at first, but actually now I'm enjoying myself.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, ladies.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, Will.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Riker. Er, won't you join us?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd love, to but I have other plans.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He joins a woman at another table right in front of Amanda"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, how are your lessons going? Is Q being patient with you? Amanda?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Amanda and Riker vanish"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Both are in Regency clothing"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this all about?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought it might be nice to spend some time alone together.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think it would be nice if you took us back to Ten Forward.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you sure you wouldn't want to stay here with me for a while? The moonlight is so beautiful. Isn't it nicer here than at Ten Forward?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it's very pleasant, but that's not the point.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh? I think it is.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She puts her arms around his neck"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. You can't just snatch people and put them in your fantasies and expect them to respond.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't you like me? Even just a little bit?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're a very lovely young lady. But none of this is real.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My feelings are real.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know. But you can't make someone love you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can't I?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and with a small gesture"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, Amanda. You are so beautiful.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he kisses her neck"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you love me?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More than anything.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right. None of this is real. I thought it would be romantic, but it's empty.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amanda.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just go back to Ten Forward.",
+                    "spoken_by": "AMANDA"
+                }
+            ],
+            "location": "Gazebo"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bon jour, mon Capitane. You wanted to talk with me?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wanted to ask you about Amanda's biological parents. When they decided to remain on Earth, what was the reaction in the Q Continuum?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We found it incomprehensible.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Were they pressured to return? Were they threatened with any punishment if they didn't?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you driving at, Picard?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, the circumstance of their death's quite odd. A tornado somehow escaped the weather modification net and touched down in only one spot. Amanda's home.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, you never can predict the weather.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But tornadoes develop from existing storm fronts. But you see, there were no storm fronts in Kansas that day. Witnesses reported that the funnel materialised spontaneously directly over Amanda's home, destroyed it, and disappeared.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you say so. I wasn't there.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Were Amanda's parents executed by the Q Continuum?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what if they were?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I think she has a right to know that before she makes a choice about her future.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a gesture",
+                    "line": "Don't be foolish, Picard. She has no choice. She never did. If she's truly Q, then she must return to the Continuum where she belongs. But if she were some kind of hybrid, neither human nor Q, then",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You would be so despicable?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't be naive. You have no idea what it means to be Q. With unlimited power comes responsibility. Do you think it is reasonable for us to allow omnipotent beings to roam free through the universe?",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So what have you concluded? Does she live or does she die?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't decided yet.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46193.8. We have arrived at Tagra Four and have begun delivering supplies. In the meantime, I am faced with a crisis of a different nature.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look, I have no reason to believe that Q is lying. He claims he has orders from the Continuum. If Amanda cannot prove that she is fully Q, then he must kill her.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have to tell her.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know if we should. It almost seems cruel.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe she can protect herself. After all, she has a great deal of power.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So did her parents. It didn't save them.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I agree with the Counsellor. Amanda deserves to know the truth of her situation. We have no right to withhold such crucial information from her. But it isn't going to be easy telling her.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's your impression of the field modulator, Mister Lote?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "coughs",
+                    "line": "Quite ingenious. Quite ingenious, indeed.  I'm amazed at the way it can be incorporated with the existing system.",
+                    "spoken_by": "LOTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, we're all loaded here. We can head for the surface whenever you're ready.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm eager to see the field modulator in place, Commander.",
+                    "spoken_by": "LOTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lote coughs and uses his inhaler"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'd better get going.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "LOTE"
+                }
+            ],
+            "location": "Shuttlebay two"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kill me? But why?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're not convinced that you are fully Q. And they are also responsible for your parent's death.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My parents? But what right do they have? Q? Answer me. Are you afraid to face me?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's such a plucky little thing, now, isn't she. I really do enjoy you, you know.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amanda's question deserves an answer, Q. You've made yourself judge, jury, and if necessary executioner. By what right have you appointed yourself to this position?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Superior morality.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I recall how you used your superior morality when we first encountered you. You put us on trial for the crimes of humanity.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The jury is still out on that, Picard, make no mistake.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your arrogant pretence at being the moral guardians of the universe strikes me as being hollow, Q. I see no evidence that you are guided by a superior moral code, or any code whatsoever. You may be nearly omnipotent, and I don't deny that your parlour tricks are very impressive, but morality? I don't see it. I don't acknowledge it, Q. I would put human morality against the Q's any day. And perhaps that's the reason that we fascinate you so. Because our puny behaviour shows you a glimmer of the one thing that evades your omnipotence, a moral centre. And if so, I can think of no crueller irony than that you should destroy this young woman, whose only crime is that she's too human.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc, sometimes I think the only reason I come here is to listen to these wonderful speeches of yours. But this time, your concern is unwarranted. We've decided not to harm her. And we're prepared to offer her a choice.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What kind of choice?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can either come to the Continuum with me",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or?",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now this choice is more difficult. You have it within yourself the ability to refrain from using the power of Q. If you can do that, you can stay here.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I'm staying here.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Think about this. This is not so easy. Your parents were given this choice and they were unable to resist the temptation of using their power.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All I've wanted since this whole thing began is to become a normal human being again. I know I can resist.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Worf to Picard. There is an emergency message from Commander Riker.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm on my way.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Captain, the damage to the reactor is greater than the Tagrans led us to believe. The field modulator is installed and operational, but it's not going to be enough. The reactor has already gone into overload.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you correct the problem?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Geordi is trying to stabilise the unit now. We will stay as long as possible. There are thousands of people in the area. If that reactor goes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Commander. Over here, quickly.",
+                    "spoken_by": "LOTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is this your doing, Q?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not this time, Picard.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q vanishes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, see if there's any way we can do to cut through the interference and beam them out of there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the next few lines are actually delivered while the camera is gazing at Amanda"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Captain, Geordi is trying a neutrino infusion. It may smother the reaction.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, there is too much ionisation in the atmosphere. Transporters are useless.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "It's no use. The heat has fused the injectors shut. We're losing containment.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "How long till meltdown?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "A few minutes at most. Going to have to",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "Commander! Look at this.",
+                    "spoken_by": "LOTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on viewscreen",
+                    "line": "This is impossible. Captain, I don't know what's happening, but the reaction is stabilising on its own.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard looks at Amanda"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I am reading a massive energy fluctuation in the planet's atmosphere.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the murky brown smog clears to reveal white clouds and blue oceans"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Atmospheric contaminants have dropped to less than one part per trillion. The ecosystem has been restored to its natural state.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Amanda?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Q reappears"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I told you it would be harder to resist than you thought.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I couldn't let all those people die",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Amanda summons Crusher"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ever since I got here, I've been fighting this. I've been denying the truth. Denying what I am. I am Q. Doctor Crusher, I've decided that I can't stay. I can't stay here.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, now that you've come to your senses, let's go.",
+                    "spoken_by": "Q"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I want to go and see my parents first. It's going to take some time to explain all this, so you'll have to be patient.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Amanda hugs Beverly"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope I can come back and see you.",
+                    "spoken_by": "AMANDA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're a Q. You can do anything you want.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Bridge"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "232",
+    "transcript_url": null
+}

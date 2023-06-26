@@ -1,0 +1,2179 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "USS Victory NCC9754 away team sensor log stardate 40164.7 17.29.46 at the bottom of the screen"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Tarchannen Three Investigation. Stardate 40164.7. Ensign Anthony Brevelle recording. Lieutenant Susanna Leijten in command.",
+                    "spoken_by": "BREVELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You up and running, Brevelle?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Lieutenant.",
+                    "spoken_by": "BREVELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've checked buildings four and five. Just like all the others. No phaser hits, no sign of a fight. It's like the entire outpost just vanished.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Leijten, you'd better come see this. No footprints, no vehicle tracks. The wind probably erased them. But look.",
+                    "spoken_by": "HICKMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he holds up a uniform"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Freeze visual.",
+                    "spoken_by": "SUSANNA"
+                }
+            ],
+            "location": "Tarchannen"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "we've been watching the wall monitor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's Hickman on the right, Mendez on the left, and as already noted, the recording was made by Ensign Brevelle five years ago.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Leijten, you said that before Brevelle deserted Starbase one one two last week, he'd been ill for several days. What about Mendez?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mendez was seen on the Aries an hour before she disappeared. According to witnesses, she seemed completely normal.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Hickman?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He just passed a routine physical on Alia Four with flying colours.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, wait, I know Paul Hickman. He's a family man, he's got two kids. He wouldn't steal a shuttle and desert.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, he was spotted by a Federation supply ship yesterday, on course to Tarchannen three.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The original Tarchannen disappearances were never solved, were they?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, we never learned what happened or why. Forty nine people gone.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And five years later, the away team that was investigating their disappearances have started to disappear themselves.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi and I are the only two left.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44664.5. We've set a course to intercept Lieutenant Hickman's stolen shuttlecraft, and, hopefully, to discover the whereabouts of the other missing officers.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And then I almost married Paul Bogrow.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bogrow? Bogrow, now which one was he?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You remember. The one with the thin moustache.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, not Bogrow.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The one who always used to drive you crazy? You always thought he was so full of himself.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I decided I had prejudged him unfairly. And then I decided that I'd been right in the first place.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bogrow.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about you?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I enjoy the bachelor's life too much.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That doesn't sound like my little brother who always wanted advice on women.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "pause",
+                    "line": "Well, obviously you were a great advisor.  Well, Suz, what do you think?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. But I'm not ashamed to tell you I'm a little scared, you know?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, I know.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, if anybody's going to figure this out, it'll be the Leitjen and La Forge Show, right?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We always made a good team.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A hell of a team.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Commander La Forge, Commander Leijten, report to the Bridge. We have a fix on the missing shuttle.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On our way, Commander.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the lady at helm",
+                    "line": "Entering the Tarchannen system, sir.",
+                    "spoken_by": "GRAHAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slow to impulse power. Mister Worf?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Long range sensors holding on the shuttlecraft, bearing zero one zero, mark two seven one.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hail the vessel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Hickman does not respond, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Put a repeating message on all subspace channels. Order the Lieutenant to come about and stand to. Make it a priority one communiqué.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Still no response, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The craft is now within visual range.",
+                    "spoken_by": "GRAHAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The shuttle's acceleration is increasing. Its trajectory is moving directly into the planet's atmosphere. He will reach an atmospheric interface at an altitude of two hundred and ten kilometres.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If he stays at that speed, he'll self-destruct.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is correct, Commander.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How soon, Mister Data?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fifty three seconds, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Options?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's out of transporter range.",
+                    "spoken_by": "GRAHAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's still too far away to get a positive lock with the tractor beam, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a channel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Hickman, listen carefully. This is Captain Picard of the Enterprise. You are in danger. You must slow your rate of approach.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The shuttle is approaching the outer thermosphere, Captain.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's panicking.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At current rate of acceleration, the shuttle will be destroyed in twenty eight seconds.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sixteen seconds to impact.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Hickman, you must do what I tell you. Reduce your velocity and bring your craft to a positive pitch of twenty degrees, now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The shuttle's entering the lower ionosphere, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "bang"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, sensors detect two more Federation shuttlecraft on the planet surface. No life signs.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Number One, prepare your away team.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, Data, Geordi.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to volunteer to join you, sir.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the same location as the sensor logs. There is a shuttlepod from 45167 on the surface, named Cousteau. The away team beam in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander Leijten, Geordi, check out the shuttle. Data, Worf, you've got the perimeter.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the shuttlepod Mendez stole from the Aries.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi checks the pod's systems while Suzanna wanders around. She finds some three-toed tracks and follows them"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No life signs, Commander.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I am certain we are being watched.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a uniform",
+                    "line": "Commander Riker. Found it in the shuttle.  Where's Commander Leijten?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riker to Susanna, report. Fan out. Let's find her.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Susanna! La Forge to Leijten.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Over here.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in among the bushes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where have you been?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mendez and Brevelle are alive. You saw the footprints?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, but they're not human.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're here. Just stand still and listen. You can feel it. They're here.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not picking up anything. Wait a minute. Where are you going? Susanna?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stay away.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Suz?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He grabs her, she struggles"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "La Forge to Enterprise, medical emergency. Two to Sickbay.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Tarchannen"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do I look as bad as I feel?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You look fine, now.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What happened?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your blood chemistry is way off. You had a histamine response, to what I don't know. I'm going to run a complete blood and tissue analysis.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need to get back to the surface.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Until we have some answers, I don't want you to leave the Enterprise.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have work to do.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look, Commander, you may have just had an anxiety reaction down there, but I've got to know for sure.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Might not be such a bad idea to take it easy for a while.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not going to stay locked up on this ship while the investigation's going on.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your devotion to duty is admirable, Commander, but Doctor Crusher is right. You will remain on the Enterprise until we know whether or not this is connected to the disappearance of the others.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have completed our survey on the surface. Analysing that data will keep us busy for a while.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. I understand.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data's got a preliminary report, if you're up to it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sure. Let's get going.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi and Susanna leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about La Forge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I gave him a complete bioscan. The results say he's in perfect shape.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's what the reports said about Mendez and Hickman before they disappeared.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain Picard's wrong. The way to handle this is to get back down there with a dozen away teams, fan out from the shuttle, we could cover a lot of ground in a hurry. Use proximity detectors, infrared sensors.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Susanna's hands are shaking"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Susanna.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, Geordi, it's started. What if what happened to the others is happening to me?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't know that. Suz, I'm here, and I'm not going to let anything happen to you, okay? Okay, come on.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "science station LCARS 40274"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "During microscopic examination of the torn uniform, I discovered these alien skin cells.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Source?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Undetermined.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Without something else to cross-reference, it would take us weeks to try and identify them.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fortunately, we have more evidence. We were able to determine that these footprints found near the shuttle were not made by any known Tarchannen life form.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we're pursuing a theory that somehow unknown aliens are involved, I think I should tell you that we didn't find tracks like that during the original investigation.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The planet is subject to frequent sandstorms. Footprints might have been obliterated prior to your arrival. Doctor Crusher and I will begin to search the medical database in an attempt to match these with some known life form.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aliens or no aliens, why would our people start returning after five years, to be abducted?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some sort of compulsion like a post-hypnotic command?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something that happened while we were down there the first time?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can go back to the mission record, construct a log of everyone's movements.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look for some commonality, something we all touched. Maybe a plant, or the sand.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Or even something we ingested. It could even be in the air itself.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The parameters are pretty broad, Data. Any match we make is going to be inconclusive at best.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am aware of that, Doctor. However, I can see no other reasonable course of investigation available to us. And we may not have much time.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're worried about Geordi, aren't you?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am an android. It is not possible",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "for you to feel anxiety.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet personnel have vanished. Others may be at risk. We must do the best we can to find out why. However, I am strongly motivated to solve this mystery.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Crusher's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi is watching the sensor log, and Susanna is increasingly jumpy"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Freeze visuals.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're wasting our time.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not how you felt before. It was your idea to look for some sort of commonality.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, well, I was wrong. We're not going to find anything this way. We should go back to the planet. It's all down there. Everything we need to know.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's just not an option. At least, not until Captain Picard says it is. Computer, resume.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't look at that anymore. It hurts my eyes. I can't think. My brain feels like it's wrapped up in a blanket.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take a break, all right? I'll work on this.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't need a break. I need to get off the ship.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Susanna, why don't we go and see Doctor Crusher?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forget Crusher and forget your logs. Tarchannen's down there, Geordi. It's waiting for us. That's where we should go.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Susanna, you can't leave. Susanna. Susanna!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi!",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She has a sort of fit and falls to the floor. There are strange veins showing on the back of her neck and the three middle fingers of each hand are fusing together"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her blood pressure's still falling. Apply the T-cell stimulator. We have got to stabilise her immune system.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alyssa goes off, Picard and Geordi enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has developed an extreme sensitivity to light. We're trying to make her as comfortable as we can.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Crusher leave Geordi to approach Susanna, who is covered in protruding blue veins on purple skin. Her eyes are green vertical slits on yellow"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, God.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Susanna, hold on, okay? Doctor Crusher will help you, so just hold on.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's inside of me, Geordi. I can't fight it. It's winning.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't give up. Do you hear me? You can't give up, Suz.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is one of Susanna's altered skin cells, and this is one of the alien cells Data found.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're almost identical. How do you explain that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jean-Luc, I think the people from Tarchannen Three who disappeared weren't abducted. I think they were transformed into another species.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you stop it, Doctor?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The T-cell stimulator will slow the rate of change, but until I find the cause.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is the Enterprise at risk?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I checked the cell wall integrity. It's viability is extremely low. I don't think it's possible for Susanna to transmit it.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then how did she get it?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I knew. The only thing I do know, Geordi, is that it's very possible that you'll be next.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I had two full bioscans today. You said I was fine.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I gave Susanna a bioscan, too. I didn't find anything wrong with her, either.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brevelle was sick for days before he left. Mendez was normal an hour before she disappeared. You may have weeks or very few hours.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then there's not much time to waste. I should get back to work.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, until I know what we're dealing with, I think you should stay here, in Sickbay.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, you said it would help if you knew the source of this. If I can continue my analysis of the mission records, I might find an answer.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister La Forge, what if you begin to change? What if you feel compelled to go down to the planet like the others?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Programme the computer to monitor my movements. That way we can be sure that I don't leave the ship. What would you do, Captain? Would you sit it out here in Sickbay or try to learn what it is that's got you and maybe stop it?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well, Mister La Forge. You proceed with your investigation, but I want you to report to Doctor Crusher for a bioscan at the start of day watch.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Geordi, if you have symptoms of any kind, I want to know immediately.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Crusher's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "One to transport.",
+                    "spoken_by": "HICKMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "I want to make another sweep of the perimeter. La Forge, you start at building four. Mendez and Brevelle begin at two. I'll take five.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and the log ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, computer. Analyse audio elements from time index fourteen four seven to fifteen five eight. List all anomalies.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No audio anomalies present.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any subspace projections, z-particle emissions, interferometric frequencies?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No subspace projections present. No z-particle emissions present. No interferometric patterns present.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Damn.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi. May I inquire how your investigation is proceeding?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you attempted an audio analysis?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Data. And a spectrographic analysis, and a screen for ionising radiation. I even ran an enhancement for micro-seismic disturbances. I've tried it all, okay? I'm sorry, Data.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no need for an apology. Perhaps if you indulged in a brief rest period, you would be able to approach this problem with a fresh point of view.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, you're probably right, Data, but I've got to keep scanning these records while I can.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I can assist you?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I knew what I was looking for. Rally, Data, I think it's just a matter of me going over it, maybe finding something I forgot. I'll let you know if I come across anything, all right? All right, computer, one more time.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry to disturb you, Doctor.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's all right. What's happened?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you should see this.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alyssa shines a torch on Susanna"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her skin is simulating light. A radiant reaction. Some sort of mimetic ability?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not all. Her body temperature is dropping.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's as if she's generating a disruptive field. I can barely get any readings off her now. What's her rate of transformation?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's increasing.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not possible. It should have been inhibited by the T-cell stimulator. Unless. If there's a foreign body inside her that's producing these changes, something like a viral crèche.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A very small one if our scans haven't found it.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want a full genetic analysis. We're going to examine any abnormality we find no matter how insignificant it seems.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "One to transport.",
+                    "spoken_by": "HICKMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, delete the audio.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait a minute. Freeze visual. Whose shadow is that?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please restate question.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, the shadow currently displayed in section B three, what is its source?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unknown.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "there's the other shadow in the background",
+                    "line": "Come on, it's got to belong to somebody. Computer, replay a visual of the last time index. No audio, and slow to fifty percent. Okay, Brevelle's behind the camera ,Susanna and I head off in that direction. Mendez moves off that way. Freeze visual. Now, magnify four times, and spectrally enhance those shadows.  Computer, do you have sufficient data to compile a holographic simulation of this visual record?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A simulation would be limited to areas scanned by the visual recording device.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good, fine. Scan the entire record and then recreate it on holodeck three.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, is the Tarchannen simulation ready?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Affirmative. Programme complete. Enter when ready.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Geordi notices his hand is starting to tremble"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, scan Starfleet records and create a simulation of Brevelle. Place him where he was while recording this. Okay, good. Computer, based on their speed and direction, can you extrapolate each officer's movements as they walk out of the recording device's field of view?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Affirmative, with an increasing probability of error reaching ninety five percent after ten seconds.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood. Run simulation.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want to make another sweep of the perimeter. La Forge, you start at building four. Mendez and Brevelle, you begin at two. I'll take five.",
+                    "spoken_by": "HOLO-SUZ"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the people move off and Brevelle switches off his recording/lighting device"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, freeze. It's all happening too fast. Computer, reverse simulation. Run it back to time index fourteen seven two.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "everyone goes backwards"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Freeze programme. Computer, remove La Forge. And now remove Leitjen. And now remove Mendez.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and we clearly see the shadow of a half-crouching person against the building"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, using vector analysis, identify the source of this shadow.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is no object in the programme which could generate the shadow.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There has to be something between the camera light and this wall. Computer, given the distance between the light and the wall, can you determine the most likely shape and position of the object causing this shadow?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is insufficient data to reconstruct the requested object.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, let's say that my friend and I here are about the same size, say one pint seven metres. Now, can you extrapolate its shape and its position?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Affirmative.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do it.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Then Geordi gets pains in his chest, and falls to his knees. The transformation is starting"
+                }
+            ],
+            "location": "Holodeck - Tarchannen"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Susanna is completely unrecognisable now"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There, in the thymus. Some sort of parasite. It's using Susanna's immune system to spread genetic instructions.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did it get there?",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She could have become infected during the original mission. It's small enough to have entered through any of the mucous membranes. But it certainly isn't behaving like a typical parasite. It isn't feeding off of her. It's transforming her DNA to match its own.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's not much of her original DNA left.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And we're going to need unaltered genes or we'll never get her back. We've got to get that thing out of her now.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any luck?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative, Commander. Nothing in our survey suggests the source of a parasitic infection.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Crusher to Bridge.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead, Doctor.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "The surgery was successful",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it's going to be a few more hours before we know how her regenerative systems are responding. In the meantime, we'd better get Commander La Forge down here.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Very well, Doctor, keep us informed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Crusher to La Forge. Computer, locate Commander La Forge.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander La Forge is not on board the Enterprise.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bridge, the Computer says Commander La Forge is no longer on board. Is that correct?",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am showing no transporter activity.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All shuttles are secure.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Negative. There's no indication that he's left the ship.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, what was the last known location of Commander La Forge?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Holodeck three.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker and Worf leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, if Geordi has transformed, he may be virtually a chameleon.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The skin develops mimetic capabilities. He may still be on board, but undetectable to our sensors.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf, Riker and two security guards enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You search the structure. I will take the perimeter.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf walks around the buildings and comes back with a uniform"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi's uniform.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Holodeck - Tarchannen"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the door opens, and a transparent blur rushes in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Security. We have an intruder in transporter room six. Argh.",
+                    "spoken_by": "HEDRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the blur operates the controls"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the security lockout on Transporter room six has been broken.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Re-engage now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot, sir. The transporter cycle has already begun.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44668.1. Doctor Crusher's research indicates that we have less than an hour before Commander La Forge's transformation becomes irreversible. However, all attempts to locate him on the surface have failed.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not read any life signs on the surface.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our sensor array is useless. We must find some other way of locating him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, if we can get close enough to Geordi, we can read his absorption spectrum with an ultraviolet light.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you modify an emergency beacon to operate on UV?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Make it so. Number One, as soon as Data is ready, I want you to lead an away team.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long, Data?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must replace the emitter module and reconnect the power supply. It will take approximately two minutes to complete the modification, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Hedrick to Commander Riker.",
+                    "spoken_by": "HEDRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "I've been able to determine La Forge's transport coordinates. He beamed down next to the Aries shuttle.",
+                    "spoken_by": "HEDRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged. He's on foot, couldn't have gotten too far. Let's assume a radius of ten kilometres.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That still leaves a search area of more than three hundred square kilometres.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've got to narrow that down. What's happening with the enhanced sensor arrays?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All scans are still negative.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've got to find a way to track him. What about the high-resolution EM scans?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are adjusting sensors to read Commander La Forge's absorption spectrum, but it will take several hours.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi doesn't have several hours.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have completed modifications, Commander.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excellent. Doctor Crusher, meet us in Transporter room six immediately.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's going to need a sedative. Give me ten cc's of kayolane.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Crusher.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "some blue veins on her but the skin is now pink and the face is human"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Say, you look a lot better than you did an hour ago.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did you do?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've removed some kind of parasite from your thymus.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, no. It's not a parasite, Doctor. It was their method of reproduction, to plant a DNA strand in a living host that causes metamorphosis. Geordi? He's gone?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's gone back to the planet?",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Try to stay calm.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, but we have to find him.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An away team is preparing to search for him.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll never be able to find him. I'm the only one who can.",
+                    "spoken_by": "SUSANNA"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the away team arrives and switches on their palm beacons"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, you must turn them off. The light frightens them.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about the ultraviolet?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's beyond their visual spectrum. They won't run away from it.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He could be several kilometres away by now.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, he's here. They're all here.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they walk towards the rocks and bushes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data shines the UV, and three blue-veined humanoids appear. Two run straight away, one hesitates"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, stop!",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the group give chase"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, wait.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she and Data go on alone around the back of the buildings and find one frightened creature"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi? Geordi, my voice is familiar. Listen to it. You can feel that we share this. You know I'm not a threat. The others, Mendez, Brevelle, they don't exist as humans any more, but a part of you still does. You're not one of them yet, Geordi. I can help you if you'll just trust me. I know what's going on inside of you, the war you're fighting with yourself. Your humanity slipping away. The instinct to run, it's overpowering, but they know how to beat it now, Geordi. Look at me! I've come back, Geordi. Let me take you back, too. Just take my hand. Please.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "slowly, tentatively, then rushing into her arms"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Crusher to Enterprise. Lock on to Commander Leitjen's signal. Prepare to beam two directly to Sickbay.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're going home, Geordi.",
+                    "spoken_by": "SUSANNA"
+                }
+            ],
+            "location": "Tarchannen"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "after Geordi's surgery"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there no hope for Brevelle or Mendez?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Susanna.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm right here, Geordi, and so are Doctor Crusher and Captain Picard.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here's your visor, Geordi.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant Commander La Forge reporting for duty, Captain.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome back, Mister La Forge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, this species, can you communicate with it?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. They act on instinct alone. In another few minutes, I wouldn't have responded to you, Susanna.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then we will leave them be. I'll order warning beacons placed in orbit and on the surface. Hopefully, no one else will have to go through what you did.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard and Crusher leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, down there, I didn't know who you were, and yet somehow I believed you, I trusted you.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Must've been because of all the good advice I used to give you.",
+                    "spoken_by": "SUSANNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Sickbay"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "192",
+    "transcript_url": null
+}

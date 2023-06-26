@@ -1,0 +1,2516 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ro!",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome home.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks. It's good to be back.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Congratulations on your promotion, Lieutenant.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Same to you, Commander.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Say, I understand that Advanced Tactical Training is a real picnic.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you see the buffet?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is real Bajoran foraiga.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It wasn't easy to find.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You shouldn't have gone to all this trouble. Really.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We wanted you to know how glad we are to have you back.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard leaves in the background"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, where are your new quarters?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deck four, section eight.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are do you planning to do",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Lieutenant Ro.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead, sir.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Please report to the Bridge.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Excuse me.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You seemed a bit overwhelmed by all the attention.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, to tell you the truth, I really want to see everyone. I'd just rather do it one at a time.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You look very fit, Lieutenant. Tactical Training seems to agree with you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know me, I enjoy a challenge.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That school is more than a challenge. Half the class washes out every year. But somehow I didn't think you'd be one of those.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I want you to know that I really appreciate your recommending me. If it weren't for you, my life would be a very different one right now.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Bridge to Picard.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're receiving a distress signal from a Cardassian ship near the Demilitarised Zone.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Change course to intercept. I'm on my way. I'd like you at the conn, Lieutenant.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ensign Gates.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Gates gives up her seat for Ro"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Report.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Cardassian ship relayed a distress signal but it was cut off before we could find out what was wrong.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have the ship on long range sensors. It appears to be under attack by several small ships.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you identify them?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. They're not transmitting identification codes.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will scan their warp signatures. Sir, sensors indicate the attacking vessels are Federation ships.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "after the opening credits"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're coming into visual range.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Those are Federation ships.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isolate one and magnify. The Maquis. Open a channel.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To all Maquis ships. Call off your attack or we will be forced to engage you.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No response.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are Federation citizens. Your actions are in violation of our treaty with the Cardassians. Call off your attack.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are not responding, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, are we in firing range?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not yet, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Arm phasers and photon torpedoes and stand by.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I never thought we'd be firing on our own people to protect a Cardassian ship.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Maquis ships are regrouping, sir. They are closing in on the Cardassian vessel.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Cardassian's shields are down to thirty percent.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They may not be able to withstand another hit.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, we are within weapons range.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, can you detonate a torpedo spread between the Maquis ships and the Cardassians?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "four bolts of light whoosh off"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Maquis are breaking formation. They are withdrawing.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Signal the Cardassians that we're standing by to assist them if they have any wounded.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you people have experience treating Cardassians?",
+                    "spoken_by": "GUL EVEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. Do you mind?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gul Evek. I'm sorry that we could not come to your aid sooner.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose we're lucky you came at all. Lately Starfleet seems to look the other way when the Maquis attack.",
+                    "spoken_by": "GUL EVEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can assure you that is not the case. We're doing everything in our power to control them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The fact that my ship was attacked suggests that your efforts have met with limited success. They came at us with photon torpedoes and type eight phasers. Tell me, Captain, how do you suppose that a group of civilians acquired such weaponry?",
+                    "spoken_by": "GUL EVEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can assure you it was not through official channels.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you don't think the fact that some of the Maquis are former Starfleet officers has anything to do with it?",
+                    "spoken_by": "GUL EVEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet does not condone the Maquis' actions in the Demilitarised Zone any more than your government would condone the paramilitary actions of Cardassian civilians.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have taken measures to deal with our colonists who have armed themselves.",
+                    "spoken_by": "GUL EVEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Considering that they destroyed a Juhryan freighter less than a week ago, I would say that your efforts are meeting with limited success.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, if the Maquis are not stopped, this situation will continue to escalate to the point where the Cardassian military will have no choice but to take matters into their own hands.",
+                    "spoken_by": "GUL EVEK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. Gul Evek and his crew have left the Enterprise, and we have proceeded to our rendezvous with Admiral Nechayev.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No Bularian canapés this time, Captain?",
+                    "spoken_by": "NECHAYEV"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought twice was pushing it a little.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just as well. They're extremely fattening.",
+                    "spoken_by": "NECHAYEV"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You missed Gul Evek by a matter of hours. I asked him to stay. I thought that an Admiral's assurances might convince him that we are trying to deal with this Maquis situation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Evek manages to make the Cardassians sound like helpless sheep being preyed on by Federation wolves. The truth is, we caught the Cardassian government supplying its colonies in the Demilitarised Zone with weapons.",
+                    "spoken_by": "NECHAYEV"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gul Evek assured me that they had stopped that practice.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ha. How comforting.",
+                    "spoken_by": "NECHAYEV"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Admiral, this Maquis situation has you worried.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Believe me, Captain, if I were living that close to the Cardassians, I'd keep a phaser under my pillow too. But in the last weeks we've seen signs that the Maquis are moving beyond self-defence. Their ranks are growing. They're acquiring ships, weapons. They seem to be preparing for a more aggressive military posture. We've got to put a stop to them before the entire Demilitarised Zone ignites. But before we stop them, we have to find them. They seem to be scattered in small cells around the Zone. And we don't have reliable intelligence about any of them.",
+                    "spoken_by": "NECHAYEV"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps you need an undercover operative.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our thinking exactly. We intend to infiltrate their organisation, and the person we want to do it is aboard your ship right now.",
+                    "spoken_by": "NECHAYEV"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet wants me to infiltrate the Maquis?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because of your recent training, because you're Bajoran, and because of your past troubles with Starfleet gives you a certain credibility.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, that's certainly true. And just how soon would this mission begin?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Immediately.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see. I've spent the better part of my life fighting the Cardassians. I never thought I'd be helping them out.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is a rare case when our interests and theirs coincide. We both want peace in the Demilitarised Zone.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've heard a lot about the Maquis. One of my instructors at Tactical Training, a Lieutenant Commander in Starfleet, a man I admired and respected, he was sympathetic to them. He resigned and left to join them.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're all sympathetic, Lieutenant. Our civilian population in the Demilitarised Zone is in a very difficult situation, but even sympathy has to end at some point. The peace treaty isn't just a piece of paper. If the Maquis force us into a war with Cardassia, it could mean hundreds of thousands of lives. Two years ago, Starfleet would never have tapped you for this mission. They must have a lot of confidence in you now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The way I see it, there's one good reason to take this mission, and that's to validate your faith in me.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Ro's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "mostly humanoid, a Vulcan, a Klingon. Ro, in civilian clothes enters and sits at a table. Worf and Data enter in uniform, so she grabs the man at the table and kisses him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are looking for a Bajoran woman, dark hair.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is responsible for the death of a Cardassian soldier.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we learn that she has been here, this establishment will be closed down.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You say she had dark hair?",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She was here. You just missed her.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know where she went?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Data leave, and Ro stops kissing the man. He's disappointed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was really nice meeting you.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ro goes to the bar"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, did you kill that Cardassian?",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet thinks I did. That's reason enough to hide. Why did you tell them that I'd left?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are worse things a person can do than kill a Cardassian soldier.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't often meet someone willing to say that out loud.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the Zone, there are a lot of us who feel that way.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to meet people like that.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Santos shoots her"
+                }
+            ],
+            "location": "Alien bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "middle aged man",
+                    "line": "Don't be afraid. You're not in danger here.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is your name?",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you kill that Cardassian soldier?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're the people who saved you from Starfleet.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks, but I'll be going now.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Kalita points a weapon at Ro"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you kill that Cardassian?",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's a risky thing to do in the Demilitarised Zone. You can end up being hunted by Starfleet and the Cardassians.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then why did he risk bringing me here?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're asking the questions. Who are you?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My name is Ro Laren. I grew up in the Bajoran camps.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would explain why you have no love for Cardassians.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know what they're capable of. They tortured my father to death and I was forced to watch.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where are you living now?",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nowhere. I was a Starfleet officer, but I was court-martialled and sent to the stockade on Jaros Two. I'm not exactly what you'd call Starfleet material.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When were you on Jaros?",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What difference does it make?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We want to check your story. When were you there?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet let me out about three years ago because I agreed to do some work for them, mostly having to do with Bajor. But I got tired of watching them placate the Cardassians, and so I left.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You resigned?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not officially. That's part of the reason why they're looking for me.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What were you doing on Omara?",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look, I think I've answered enough of your questions. I would like to know who you people are.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's say that we sympathise with those who oppose Cardassia.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you Maquis?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What if we were?",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you were, I would ask if I could join you and help you fight.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll check your story. Go ahead, I'll keep an eye on her.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Kalita hands over the weapon then she and Santos leave. Macias puts the gun on his chair"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come, let's stretch our legs.",
+                    "spoken_by": "MACIAS"
+                }
+            ],
+            "location": "Room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "it's evening and the crickets are singing"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aren't you taking a chance by letting me see all of this? What if my story doesn't check out? What if I'm not who I say I am?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, then we'll have a problem, won't we?",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are Maquis, aren't you?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Many of the people here are.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet considers you outlaws. They're afraid you'll destroy the peace treaty.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They don't understand the situation here in the Zone. I lived on Juhraya. When the treaty was signed the colony suddenly found itself in Cardassian territory. Some of us chose to stay, take our chances. Then one night I was dragged from my bed and beaten. The authorities clucked their tongues and agreed it was an unfortunate incident, and did nothing.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not surprised. The Cardassians intend to make life so unpleasant for Federation citizens that they'll leave.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Exactly. And no one seems to see that, except the Maquis. How old were you when your father was killed?",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd rather not talk about it.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hungry? Would you like something?",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, thank you.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to replicator",
+                    "line": "Hasperat.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You like hasperat?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An old Bajoran friend of mine used to make it. His was stronger. He was killed many years ago fighting the Cardassian occupation of Bajor. I miss his company, and his hasperat.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My father used to make the strongest hasperat you've ever tasted. Everything else seems mild by comparison.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did he teach you how to make it?",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. But I haven't tried it in years.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you would make the brine for a really strong hasperat. I mean eye watering, tongue searing strong, you'd make an old man very happy.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would enjoy making it again.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Macias. I've checked with my sources at Starfleet. Her story's true.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was sure it was. Kalita, she'll stay with you until we can find her a room.",
+                    "spoken_by": "MACIAS"
+                }
+            ],
+            "location": "Settlement"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah there you are.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've just heard a disturbing rumour.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Another rumour?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One that I think we should take seriously. A trader coming from Pendi Two said he could verify that the Cardassians are going to start supplying their colonists with biogenic weapons.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought every shipment coming into the Zone was searched.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Cardassians always seem to find a way around problems like that.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then we have to make a preemptive strike. Send a message to the Cardassians that we won't sit still while they kill us with toxins.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed. But we can't mount a strike without medical supplies and our stockpile is dangerously low.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we put in a request for more, it'll draw suspicion.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can get medical supplies. I served on the Enterprise. They always have extra medkits on hand for relief missions.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're wanted by Starfleet. They're not going to give you medkits just because you ask for them.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no intention of asking for them. I intend to take them.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How? The Enterprise is a fortress.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know its security systems work. Give me a ship. I can do it.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's madness.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't let her do something like this. We don't know anything about her.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know that she can make very strong hasperat.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need medical supplies. I think we should let her try.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right. But I'm going with her.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could use an extra hand at the controls. And a witness.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Meeting room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I set the transporter confinement parameters to maximum. We should be able to fill our hold with medical supplies with just one single beam out.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had no idea it was going to be so easy.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're approaching the Federation border.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you plan to get out of the Demilitarised Zone without being searched at one of the checkpoints?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're going to cross the border here.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are sensor buoys all along the border. If we cross anywhere other than a checkpoint, Starfleet will send a ship to investigate.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With the right security codes, we can disable the proximity detectors on the buoys.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet changes those codes all the time.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know the encryption algorithms. If I can access the buoy's protocol subsystem I should be able to figure out the codes.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Should be able to?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you want this mission to succeed?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course I do. We need those medical supplies.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In that case, let me do my job. I'm in.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's wrong?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I don't input the right code in the next twenty seconds, we'll trigger the proximity alarm.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm getting us out of sensor range.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't. If we break the comm. link, we won't be able to try again.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It worked. Until they change the access codes again, we can cross the border here.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 47943.2. It has been over a week since Lieutenant Ro left the Enterprise. We have yet to receive any communication from her.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Ro's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We picked up a request for emergency assistance from a Federation science ship in the Topin system.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are there any other ships in the vicinity?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're the closest.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Helm, set course for the Topin system. Mister Data, will you signal the science ship that we're on our way.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is unlikely that they would receive our communication, sir. The Topin system contains an unstable protostar. It generates significant magnetoscopic interference.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we use our sensors to find them?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Most of our sensors would be ineffective, although our directional array should cut through the interference.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That array has such a narrow scan field. We might as well break out the palm beacons and try to find them that way.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is insane. We're sitting here, no sensors, blind to the outside, waiting for a galaxy class Starship to come swooping down on us.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't worry. It'll be hard for them to locate us with just the directional sensors. Besides, they're looking for a damaged science ship that wants to be found. They're here. Standby to engage thrusters.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Ro's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Anything?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. It will take approximately six hours to scan this system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the distress call is being repeated.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, can you locate the signal?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am attempting to do so.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They're scanning our last position.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, I've locked onto their sensor beam. I'm going to use it to manoeuvre into transporter range.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How are we going to beam through their shields?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't. If we're going to get those medical supplies, we're going to have to take this ship through their shields.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Ro's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I am scanning the area from which the distress signal was sent, but I am unable to detect a vessel.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the computer has detected a piggyback communication on the last distress signal.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you decode it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will take a few moments.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do it.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "between the nacelles",
+                    "line": "The Enterprise shields have a weak point. When the ship is at impulse, the thrust destabilises the shield configuration right at this point.  I'm going to try to punch through there.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Won't they detect us?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They'll know something's penetrated the shields. With all the interference it'll take them a few seconds to find us. We'll have to beam the medical supplies aboard and get out fast.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Ro's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The message is difficult to decode. Interference has garbled much of the transmission, but it seems to be from Lieutenant Ro.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ro is on that ship?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, a vessel of some kind is attempting to penetrate our aft shields.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let it through.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're going to make it. All right, we're in.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Energising.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "their hold is filled up"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's get out of here.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Ro's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, a quantity of medical supplies was beamed from cargo bay seven.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The vessel that penetrated our shields is of the same design as the ships used by the Maquis. It is moving off.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let it go. There must be someone with her. We should make it look as though we're trying to stop them. Mister Worf, lock phasers on their previous position and fire.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now we know what they mean by Advanced Tactical Training.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You took your ship through their shields?",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ro parked us between their warp nacelles. I thought she was crazy, but it worked. She knew exactly what she was doing.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well done.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to inventory supplies and find out what we have.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "See you later.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Santos and Kalita leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it seems that Kalita has decided you're not a Federation spy after all. She's suspicious of everyone at first. And rightly so. We've learned to be cautious with strangers.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I've known since I first met you that in your heart, you're one of us.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. Having earned the Maquis' trust with her raid on the Enterprise, Lieutenant Ro has been given access to a ship and allowed to leave the settlement by herself.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Settlement"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are rumours that the Cardassians are supplying their colonists with biogenic weapons.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Frankly, I find it hard to believe. Every ship that enters the Demilitarised Zone is being searched.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Maquis are convinced that the Cardassians are finding a way around these searches.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, we could make use of that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have come up with a plan that has the potential to seriously curtail the Maquis. We want to give them a target so threatening to them that they'll be willing to commit as many ships and people as possible in order to destroy it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean, give them a target?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Biogenic weapons, for example. You could provide them with intelligence that would show that the Cardassians are, in fact, supplying their colonists with them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would get their attention, all right.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You could tell them that in order to get past the check points, they're shipping the components for these weapons through third parties, and then we could put together a convoy and send it toward the Demilitarised Zone.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And when the Maquis attack it, Starfleet will be waiting for them.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We could station our ships in the Hugora Nebula to avoid detection.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Basically, I would be leading them into a trap.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right. If you have a problem with any of this, I need to know it now.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, if I do, sir, it will not stop me from carrying out my duty.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I knew that I could count on you.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It took me a while, but I managed to patch through into Starfleet's comm. system. I intercepted a communication from one of the checkpoints on the border. They're concerned because a Pakled transport came through carrying retro-viral vaccines.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why is that a concern?",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, last week a Ferengi transport came through carrying biomimetic gels. By themselves, neither of these is dangerous, but Starfleet is concerned because with along with other components the Cardassians could put together a biogenic device.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is Starfleet going to do about it?",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They can't do anything about it. These items are all perfectly legal.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How close are the Cardassians to having the components they need?",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very close. Two days ago, a Yridian convoy left Deep Space Nine for the Demilitarised Zone. It's carrying isomiotic hypos, plasma flares and quarantine pods.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't let that convoy reach its destination.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it's too big for us to go after alone.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll discuss the situation with the other cell leaders. Considering what's at stake, they'll want to help.",
+                    "spoken_by": "MACIAS"
+                }
+            ],
+            "location": "Meeting Room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've sent a communication to the others. When this is over, we'll celebrate.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When it's over?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When Cardassia realises they can't intimidate us into leaving our colonies.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Something tells me it'll be a long time before we'll be celebrating.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't be discouraged, Ro. It'll take time, but the important thing is that we not give up.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I spent ten years in the camps. I don't give up.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been thinking a long time about what our celebration will be like. We'll have a huge dinner. You'll make hasperat and I'll make blueberry pie. We'll drink wine and we'll dance. I'll even play the belaklavion. That'll give everyone a laugh.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You play the klavion?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, badly. It's a difficult instrument, but I enjoy the challenge.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My father played the klavion. When I was very young and afraid of monsters under my bed, he'd play for me. He said that the klavion had special powers. Monsters were afraid of it and when they heard it they would disappear. When I listened to that music he played for me I was never afraid to go to sleep. When he died I realised even he couldn't make all the monsters go away.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why wait? Let's go to the market. Let's get food for a feast, for a celebration.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A celebration of what?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of absolutely nothing. Just to celebrate.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like that.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they go walking off across the square and their dialogue is under the music"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come, let's go to the market. If I'm going to make a pie, we'll have to find a substitute for blueberries. Haven't seen real ones in years.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On Bajor, there's a berry",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I know it, very sweet.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "three cowled figures go up some steps then reveal themselves to be Cardassians. They start shooting the people. Santos comes with weapons"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ro!",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she takes one, and others get handed out. Santos kills one Cardassian, Kalita another, then Macias goes to help a wounded man and gets shot himself. Ro kills the last Cardassian"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Macias?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They must have found out that there was a Maquis cell here.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kalita, get one of the medkits. Hurry. You have to hang on.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When an old fighter like me dies someone always steps forward to take his place.",
+                    "spoken_by": "MACIAS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and he dies"
+                }
+            ],
+            "location": "Settlement"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard is in civilian clothes and Ro enters. The male she kissed approaches her."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Picard",
+                    "line": "Not tonight.  Hello. Are you alone?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope not.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why don't we get acquainted? There's a table in the back that's more private.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like that.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "they sit and pretend to be getting close"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have to cancel the mission.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Maquis didn't go for the bait. They think the convoy is too big a target.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But there are only six ships. We could even cut back that number.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's the commitment of resources, of grouping so many of the Maquis together at once. They feel that it makes them too vulnerable.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every intelligence report that I get from Starfleet suggests that the Maquis are eager to expand their strikes, they want to escalate their activities. Now you're telling me this isn't true?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's probably different in every cell. The people I've met tend to be more conservative. I'm sure others have a more militant attitude.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Laren, what's going on?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have the money I asked you to bring?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Put some on the table.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By this time, you should be negotiating my price. When you sent me on this mission, I thought that I could do it. Even though it meant helping Cardassians, even though it meant betraying people who are fighting against them. Now I'm not sure where I stand.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you saying you want to back out of this mission?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, I don't want to let you down, I swear that I don't.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This has nothing to do with me. This is about you. If you back out now, you'll throw away everything you've worked for. We're committed to this mission. My only question for you is, can you carry out your orders? I could put you before a board of inquiry for having lied to me about this operation. I would certainly have you court-martialled if you sabotage it. Now, it's your decision.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll carry out my orders, sir.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I feel it necessary to have Commander Riker go back with you. He can pose as a relative. I just want to make sure that nothing happens to obstruct this mission.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard stands to leave"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry. I don't have that kind of money.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. We have received word from Commander Riker and Lieutenant Ro that the Maquis will be attacking the convoy as planned. Our ships have taken up position in the Hugora Nebula to wait for them.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Alien bar"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at the science station"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have established a relay link with the sensor probe we left on the perimeter of the Nebula. This is the convoy. We are expecting the Maquis attack force to cross the border from the Demilitarised Zone.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As soon as they cross the border, we'll intercept them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, in order to ensure that the ship Commander Riker and Lieutenant Ro are piloting does not come under fire, I have relayed their warp signature to the rest of the attack force.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, the Maquis squadron is coming into sensor range.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go to Red alert.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Squad leader to all ships.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead, squad leader.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Ro's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll be crossing the border in less than one minute. Arm your weapons.",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Acknowledged.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Santos' ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Starfleet can't make its move until we're out of the Demilitarised Zone. We're to break formation and take cover in the Nebula as soon as they appear.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The ships in the convoy are raising their shields. They've spotted us.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We cross the border in thirty seconds.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ro presses some buttons"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What the?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ro aims her phaser at him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry. I can't let this happen.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Ro's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, the vessel being piloted by Lieutenant Ro is firing a low intensity particle beam into the nebula.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What the hell is she doing?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The polarising effect being created by the beam may make it possible for us to be detected.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you counter the effect?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will attempt to do so.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ro, why are you firing?",
+                    "spoken_by": "SANTOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Scan the nebula.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Santos's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a Starfleet attack force hiding inside it.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Ro's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see it! Squad leader to all ships. Abort the mission. Repeat, abort the mission.",
+                    "spoken_by": "SANTOS"
+                }
+            ],
+            "location": "Santos' ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir, the Maquis ships are breaking formation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have they crossed the border?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir. They are withdrawing.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, Lieutenant Ro's ship is not retreating with the others. It is heading toward us.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When she comes aboard take her into custody.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alpha Seven to Alpha Nine.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Go ahead.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stand by to beam me aboard.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Standing by.",
+                    "spoken_by": "KALITA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can take this ship back to the Enterprise.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're going with them?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's been a long time since I really felt like I really belonged somewhere. Could you tell Captain Picard something for me?",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. What is it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell him I'm sorry.",
+                    "spoken_by": "RO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So long, Ro. Take care of yourself.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Goodbye, Will. Energise.",
+                    "spoken_by": "RO"
+                }
+            ],
+            "location": "Ro's ship"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She seemed very sure that she was making the right choice. I think her only real regret was that she let you down. Here's my report.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Picard doesn't move to take the PADD, so Riker puts it on the desk and leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Ready room"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "276",
+    "transcript_url": null
+}

@@ -1,0 +1,2710 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, sensors have located the transport ship. Two Rekag battle cruisers are flanking it.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Red alert. Shields up.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Phasers online. Photon torpedoes armed and ready.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is the transport still under attack?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The cruisers' weapons are powered up but sir, the Rekag ships are turning and heading out of sensor range.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They don't want to take on the Enterprise.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are within visual range of the transport, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On screen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sensors indicate damage to the Dorian's subspace emitter. Audio communication only.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open a channel, Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is Captain Jean-Luc Picard of the Federation starship Enterprise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain Talmadge of the Dorian. Glad you're here we took some shield damage from the Rekag ships but we're still intact.",
+                    "spoken_by": "TALMADGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have injuries? Can we assist you in any way?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "No injuries, but I'd like permission to transport a couple of our passengers to your ship.",
+                    "spoken_by": "TALMADGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OCbreaks up",
+                    "line": "We're conveying a mediator to Seronia. I think he's the reason the Rekags fired on us. He's",
+                    "spoken_by": "TALMADGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I'm losing you. Go ahead and beam your passengers on board. Counsellor, after you've seen to their needs will you escort them to my Ready room.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cancel Red alert. Mister Worf, take the weapons offline.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a man and an old woman are beamed aboard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm Counsellor Deanna Troi.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador Ves Alkar, and my mother, Sev Maylor. Counsellor, it's imperative that I speak to the Captain.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You think he's attracted to you, but he isn't. You offer him nothing.",
+                    "spoken_by": "MAYLOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She hasn't been feeling well. Could she be taken to quarters?",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. Chief. I'll take you to Captain Picard.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, go with her.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't pursue him. I won't have it. I'll stop you.",
+                    "spoken_by": "MAYLOR"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am grateful for the Federation's offer to escort me, but if I arrive at Rekag-Seronia on board the Enterprise, the armed flagship of Starfleet, my mission as negotiator of peace will be compromised. There must be a Federation transport ship somewhere in the area that could take me there.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With all due respect. Admiral, to put the Ambassador on board another unarmed transport would be to invite a second assault.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe the attack on us was an isolated incident, nothing more.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Ambassador Alkar, the Rekag-Seronia dispute has threatened Federation ships for many months. We are grateful that you are willing to undertake this mission and you have our full support.",
+                    "spoken_by": "SIMONS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, sir.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "However, we also recognise that safety is an issue. Not just yours, but the crew that escorts you. To send you on an unarmed transport puts everyone at risk. I think it best if you proceed to Rekag-Seronia aboard the Enterprise.",
+                    "spoken_by": "SIMONS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I have no choice.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Once you get to Rekag-Seronia, you can conduct your negotiations as you see fit. Until then, you'll be in good hands with Captain Picard.",
+                    "spoken_by": "SIMONS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand, sir.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor",
+                    "line": "Good luck, and a successful journey.",
+                    "spoken_by": "SIMONS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "transmission ends"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Commander Riker.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, sir?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set a course for Seronia.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is leading a Klingon Tai-chi class, including Troi and Alkar"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That will be all for today. There will be another class tomorrow at oh seven hundred hours.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The skills are demanding. You're very disciplined.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe in a strong connection between body and mind. You obviously share the same convictions.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I do. Only sometimes my body has a problem conforming to my mind's wishes.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Gymnasium"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would imagine that your self-discipline helps you in your work.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know about that. I think maybe my biggest asset is patience. I let everybody else talk until they're exhausted, and when I start, they're too tired to argue.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're going to need all your patience at Seronia. I can't imagine how you'll get the two sides talking to each other.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Neither can I. I won't know that until I get there. I tend to feel my way through a situation.",
+                    "spoken_by": "ALKAR"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deck nine. If I were empathic like you, I'd have a real advantage.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought Lumerians were empathic.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only with each other, not other species. So, I don't have any idea what you might be feeling just now.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Curiosity. What I sense from you is very unusual. Calmness, serenity, tranquillity. You seem to embody the very qualities that you hope to draw out in others.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell me, Counsellor, have you ever been involved in diplomatic negotiations?",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Several times with Captain Picard. There have been instances when having an empath along has been helpful.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure. I could use some of that help. Would you come with me when we reach Seronia?",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the Captain authorises it, of course I will.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. I hope to see you again.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the door opens"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're late.",
+                    "spoken_by": "MAYLOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, I told you that I'd be gone for over an hour.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're late because of her. Have you mated with him yet?",
+                    "spoken_by": "MAYLOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's what you want, isn't it?",
+                    "spoken_by": "MAYLOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, please, come in.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can always tell. The ones with a certain look in their eye.",
+                    "spoken_by": "MAYLOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd better go.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I'll tell you this. If you do, you'll regret it the rest of your life.",
+                    "spoken_by": "MAYLOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother. come in please. You should lie down.",
+                    "spoken_by": "ALKAR"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hi. It's that time again. The dreaded crew evaluation reports.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does it have to be today?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not going to be any easier tomorrow.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It might.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's wrong?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've just had a disturbing encounter with Alkar's mother. She frightens me, Will. The feelings I sense from her are malevolent. They're out of proportion. They're evil.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know she's been sick. She's very old. She's probably senile. Who knows, we could all end up that way some day.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right. Okay, let's get through these evaluations, and when they're done I'm going to reward myself with two ice cream sundaes.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "First, molecular biology. Lieutenant Jeffrey Fratis.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Worf to Commander Riker.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Can you report to Ambassador Alkar's quarters? There is an emergency.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're on our way.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Troi's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Maylor is rigid on the floor"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forty cc's inaprovaline.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry, Ambassador.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She was ill. I should never have brought her along. She was ninety three. She'd lived a long life. I should be grateful for that.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alkar, is there anything I can do?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor, there's a funeral meditation. Part of our rituals. As an empath, you're the only person on board who could perform it with me.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be glad to help.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "later - the room is darkened, and Alkar takes a pair of crystals from a box"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This meditation is one of our most sacred ceremonies. Hold the stone like this. Rohm gah sevi rohm. Say after me. An end to grief.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An end to grief.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An end to pain.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An end to pain.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Strength comes from love.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Strength comes from love.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And courage from wisdom.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And courage from wisdom.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alkar moves his crystal towards Troi's, and it glows. When they touch, both crystals glow, then just Troi's. Her eyes snap open in horror."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "ALKAR"
+                }
+            ],
+            "location": "Alkar's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Deanna checks herself in a mirror. Is that a wrinkle? "
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer today's appointment calendar.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh nine hundred hours, counselling session with Ensign Janeway. Ten hundred hours, counselling session with",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cancel them. Cancel everything till after lunch.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged.",
+                    "spoken_by": "COMPUTER"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Maylor is laid out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wanted to see me, Doctor?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Captain. I'm sorry to bother you, but I'm a little concerned. I haven't been able to determine the cause of death. She was elderly. and Alkar said she had been ill, but I found no evidence of any disease. I did find abnormally high levels of neurotransmitter residue in her cerebral cortex.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you suggesting?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to do an autopsy. I've already spoken to Alkar, and he informs me that Lumerian custom forbids it. Could you speak with him?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you suspect that her death poses some kind of threat to the Enterprise?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, no.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then we have no alternative but to concur with his wishes.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Morgue"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi is doing Klingon Tai-chi when she looks at herself in the mirror, and starts caressing herself"
+                }
+            ],
+            "location": "Gymnasium"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in, please.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you might like some company, if you're not too busy.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing that can't wait. Would you like something to drink?",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I'd like you to talk to me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "About?",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "About you. I don't know anything about you. And I'd like to.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's not much to know. I lead a very simple life.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What kind of woman do you find attractive? Do you find me attractive?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Extremely.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And when you find someone attractive, what do you usually do?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That depends on a lot of things.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it really so complicated?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It can be.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, perhaps you over think things.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she's getting very seductive"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry. If I led you to believe? You are very beautiful, but our relationship can't be like that.",
+                    "spoken_by": "ALKAR"
+                }
+            ],
+            "location": "Alkar's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "spurned and angry, Troi paces the lift. A tall young man enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deck four.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi looks at him with hungry eyes"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir.",
+                    "spoken_by": "CREWMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker gets to Deanna's door. She's not in uniform"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were supposed to finish the crew evaluation reports.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. Come in.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir!",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you were.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Thank you, sir. I was just leaving.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If there's anything else I need, I know where to find you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, ma'am.",
+                    "spoken_by": "ENSIGN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "embarrassed toy boy rushes out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you bothered by his being here?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course not.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Because it's really none of your business.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know that. I believe we were with Lieutenant Fratis i n molecular biology.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do I think you're upset?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. Could we just continue with the evaluation?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will, remember who you're talking to. You are bothered, I can tell.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, I'm sorry I intruded. When you're ready to work, why don't you give me a call.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46073.6. We have arrived without incident at Rekag-Seronia, where two members of Ambassador Alkar's delegation have been waiting. They have joined us to report on the situation in the capital city.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a man",
+                    "line": "Things have deteriorated steadily. Rekag sympathisers in outlying districts have attacked several towns.",
+                    "spoken_by": "JARTH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I was under the impression there was a cease fire agreement.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was broken before it went into effect. A Rekag shuttle strayed into Seronian space and was destroyed by fighter craft.",
+                    "spoken_by": "JARTH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a woman",
+                    "line": "Naturally, the Rekags retaliated. There's been fighting ever since.",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If they would just sit down with me.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Rekags won't go into Seronian territory for talks. And the Seronians won't go to Rekag. In the meantime, they fight.",
+                    "spoken_by": "JARTH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador, the situation sounds so volatile. Perhaps a cooling off period?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These people need an end to the fighting now. To delay a week, even a few days, could cost thousands of lives.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I would recommend that we ask both sides if they would agree to meet in the city of Darthen.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why Darthen?",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a coastal city that has been neutral throughout the conflict. Both Seronians and Rekag loyalists live there. It might be acceptable as a compromise.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Contact the leaders. If they'll meet me in Darthen, I will join them there tomorrow.",
+                    "spoken_by": "ALKAR"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a woman",
+                    "line": "I know it must be my imagination, but it seems as though Lieutenant Pinder just doesn't want me in his section.",
+                    "spoken_by": "JANEWAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What makes you think that?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's so critical. I can't ever do anything to please him and I try, Counsellor, I try to make sure there's nothing he could find fault with.",
+                    "spoken_by": "JANEWAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give me an example of what you mean.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, yesterday I was running routine diagnostics on the sensor pallets. They checked out, but Lieutenant Pinder questioned me because I'd allowed a point oh two three variance. That's well within specifications. He goes out of his way to criticise me.",
+                    "spoken_by": "JANEWAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know of any reason why he might do that?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, that's why I'm here.",
+                    "spoken_by": "JANEWAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, maybe he's just tired of hearing you complain.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pardon me?",
+                    "spoken_by": "JANEWAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know I'm certainly tired of it. How do you think it feels to sit and listen to someone whine about themselves all the time?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't realise I was",
+                    "spoken_by": "JANEWAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This isn't Starfleet Academy. You're not going to be coddled. If you can't take it here, then you might think about a transport ship. There's a lot less pressure there.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I love being on the Enterprise I don't want to be anywhere else.",
+                    "spoken_by": "JANEWAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you aren't up to it then you don't deserve to be here. Isn't that right?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I guess so.",
+                    "spoken_by": "JANEWAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you'd better take a hold of yourself, or be prepared for a transfer.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will, Counsellor. Thank you.",
+                    "spoken_by": "JANEWAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Glad I could help.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Troi's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, here we go. Biofilter log on Sev Maylor.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Geordi, could this log have been damaged in any way?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think so. Why do you ask?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's a discrepancy between the log and the tricorder readings I took just three days later. The tricorder shows massive physiological deterioration compared with her condition when she beamed aboard. I find it hard to believe that so much damage could have occurred in such a short period of time.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well I can run a diagnostic of the biofilter system and your tricorder.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks. Of course, the best way to get the information I need would be to do an autopsy.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador? We've received word from the Seronian and the Rekag delegates. They've agreed to meet with you in Darthen tomorrow.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Commander.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker walks away, and Troi sashays into the room. Long tight low-cut dress and streaked hair up."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Counsellor Troi has altered her appearance.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She goes over to Alkar's table"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Am I interrupting?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, Counsellor.",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You want him. I can tell. But you have nothing to give him.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, could I talk to you in private.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you. You're envious of him. You pretend to support him, but secretly you want him to fail.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not so.",
+                    "spoken_by": "JARTH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, you must return to your quarters.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't. I want to be here, with you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador, the Counsellor and I are needed on the Bridge.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, Commander.",
+                    "spoken_by": "ALKAR"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know what you thought you were doing in there, but you were way out of line.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deck nine.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All right, Deanna, just what the hell is all this?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Imzadi, do you still care about me?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course I care about you. I'm worried about you. What's all this?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't you think I'm attractive?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This just isn't you.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, it is. You want me, don't you?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she pulls him in for a kiss"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Her long nails scratch his neck, drawing blood"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is this?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Next morning, Troi is in uniform when the doorbell rings"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come in.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, I'm leaving for the surface.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She turns to us, showing her grey hair and lined face"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said you'd take me with you.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know, but that's not possible now.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You told me I'd be helpful. You needed me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I still do. You've done so much for me.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then take me. Don't leave me here. Is Liva going with you?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's been on Seronia for weeks. She knows the people, the situation.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She wants to take you away from me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, you are my anchor. I need you more than you can possibly realise. Do you understand that? I need you here, making it possible for me to do my work.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she follows him into the corridor",
+                    "line": "I won't let her have you! I'll stop her!  I will go with you. Take me with you. Please, Alkar. Don't leave me. Don't do this! No!",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Will is getting his scratches healed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wouldn't have recognised her. Her dress, her hair, everything about her. I'm closer to Deanna than I've ever been to anyone, but last night she was someone that I had never seen before.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you don't know of anything that might have caused her to behave like that?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. I've thought and thought about it. I don't have an answer.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, location of Counsellor Troi.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deck six, corridor B.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's go.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Crusher's office"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador, I came to alert you that the Rekags and the Seronians are in disagreement about the seating arrangements at the conference table.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not surprised.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The good news, however, is that the cease fire seems to be holding.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And that is by far the best news. Thank you, Captain.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chief.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi enters, looking even older"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you take me with you?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna, I've already told you I can't",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't let her have you",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi produces a knife, and Picard wrestles her for it, getting cut in the process. The transporter chief and Jarth pull her off him"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Security to Transporter room two.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't try and stop me! No, no, let go!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker and Crusher enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's nothing, it's superficial. What happened to Deanna?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All of the systems in her body have elevated readings. Take her to Sickbay. I want to see you in Sickbay too.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, perhaps we should delay transporting to the surface.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. You should proceed with your mission.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Chief, transport them to the planet surface.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "CHIEF"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi is writhing in a restraining forcefield"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll have to sedate her. Twenty cc's of melorazine.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Doctor.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How's it feeling?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a little stiff, but it'll be fine.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It'll disappear in a day or two.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor Crusher? I think you should see these readings, Doctor. Her neurotransmitter levels are three hundred percent above normal.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you remember, I found extremely high levels of neurotransmitter residue in Alkar's mother.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Could Deanna have picked up some kind of disease from her?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. I need to do that autopsy. I don't care about the customs of Alkar's people. I need to find out if there's a connection between what killed Maylor and what's happening to Troi.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Lieutenant Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Worf here, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, contact Ambassador Alkar. I need to speak with him.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, neural energy is now three hundred forty percent above normal.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Captain, Ambassador Alkar is at the negotiation table and cannot be disturbed.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed with the autopsy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Medical log, stardate 46075.1. I have performed an autopsy on Alkar's mother, but instead of answering our questions, the results have created an even deeper mystery."
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't have any explanation for this. When I examined Maylor's body, I found her heart, her lungs, her skeletal structure, most of the systems in her body were those of a thirty year old.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But how could that be? We both saw the woman.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not all. I compared Maylor and Alkar's DNA. I don't know who that woman was, but she was definitely not his mother. Deanna's condition is deteriorating rapidly. She could die. There are questions that only Alkar can answer.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Lieutenant Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Worf here, Captain.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Meet me in Transporter room two. We're going down to the surface.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, she wasn't my mother.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And she wasn't ninety three years old.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, did you perform an autopsy against my wishes?",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, for a very good reason. Counsellor Deanna Troi is in Sickbay, dying. Doctor Crusher doesn't know the cause of her condition, but I believe you do.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alkar, we need you. The Rekags have withdrawn some of their concessions and the Seronians are threatening to break off the talks.",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be right there.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Liva leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They've been arguing for hours in there. It seems hopeless. But now, when expectations are lowest, now is the moment I can be most effective. If I'm focused, centred, free of disquieting thoughts, I can turn these factions toward peace.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alkar",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hear me out, Captain. It's important you understand. You see, I discovered long ago I had the ability to channel my darker thoughts, my unwanted emotions, to others, leaving me unencumbered.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is this what you've done to Counsellor Troi?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hadn't planned it. I'd expected Maylor to live through the negotiation. Her death could not have been more untimely.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So then you deliberately used Deanna.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's an empath. I was reasonably certain I could establish a link with her. Frankly, I was amazed when I saw how quickly she'd aged. Usually my receptacles survive for years.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Receptacles?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come now, Captain. Surely you can see there's a broader canvas here. If I came to these peace talks hindered by unwanted emotions, the Rekags and Seronians would be condemned to go on fighting",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You cannot explain away a wantonly immoral act because you think it is connected to some higher purpose.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. do you know how many people have died on this planet in the last forty eight hours? Thousands. Deanna Troi is just one individual.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That does not justify brutalising her, nor any of the others you have used.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ask the Seronian and Rekag children who go to bed each night in fear of their lives. Captain, I get no payment, I have no power base, no agenda. I am willing to risk my life simply to help others.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you think that makes you appear courageous? Because you're mistaken. You're a coward, Alkar. You exploit the innocent because you're unwilling to shoulder the burdens of unpleasant emotions. Well, this time you will be held accountable. I'm taking you back to the Enterprise to release Counsellor Troi.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have no intention of releasing her now or ever.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alkar, everything is falling apart. You have to come now.",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you'll excuse me, Captain.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Guards take Worf's phaser"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm needed.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You and your Security Chief will leave.",
+                    "spoken_by": "LIVA"
+                }
+            ],
+            "location": "Conference chambers anteroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf and Picard have just been beamed back"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lock on to Alkar's signal. Bring him on board.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I am sure the Seronians have re-activated their security field.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then work with Mister La Forge to find a way to break through it. I want that man on this ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be in Sickbay.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Transporter room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If Alkar is flooding her with this psychic waste, that would explain the high level of neurotransmitters. All these negative emotions pouring into her have caused an abnormal chemical response in her brain.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Isn't there something you can do to counteract it?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enzymic decontaminants will be able to reduce the level of the neurotransmitters, but I can't make any headway unless Alkar stops what he's doing.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has no intention of stopping. He feels perfectly justified in using her until she dies.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then Deanna has to die. In order to save Deanna, Alkar has to break his link with her. And the only he'll do that is if she's no longer an adequate receptacle. When Maylor died, Alkar turned immediately to Deanna.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If Deanna dies, and he breaks the link with her, then he will choose someone else, possibly someone from his own delegation.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait a minute. You're talking about killing Deanna!",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll be able to resuscitate her, Will, as long as it's not more than thirty minutes. The big question is, will that be enough time? Alkar has to establish a link with someone else before we revive Deanna, or else he might turn back to her.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We must bear in mind that we'll be putting his next victim at risk. I want every possible security measure taken to protect that person.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How will you?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll give her a hypospray of dylamadon. It's the gentlest way.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Proceed, Doctor.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the delegates are gathered together"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, my friend, an era of conflict and bloodshed appears to be over.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alkar staggers"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alkar.",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "JARTH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm fine. Just a little light-headed.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're exhausted.",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you want a doctor?",
+                    "spoken_by": "JARTH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No of course not.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Enterprise to Ambassador Alkar. Respond, sir.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm here, Captain.",
+                    "spoken_by": "ALKAR"
+                }
+            ],
+            "location": "Conference chambers anteroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ambassador, You must return to the Enterprise immediately. Counsellor Troi is dying.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "We are prepared to transport you from the surface whether you come willingly or not.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are security force fields protecting us, Captain.",
+                    "spoken_by": "JARTH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "They won't protect you any longer.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Conference chambers anteroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Transporter room two, prepare to energise.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're ready, Captain.",
+                    "spoken_by": "ALKAR"
+                }
+            ],
+            "location": "Conference chambers anteroom"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alkar, Liva and Worf enter"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, make a note. Death occurred at fourteen thirty hours from respiratory and renal failure.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you wait for me in my quarters?",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Liva leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a tragic loss, but her death had a purpose.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I intend to make certain that you answer for what you have done.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your own Federation Council has granted me safe and timely passage back to my planet. I expect you to honour that, Captain.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alkar leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How much longer do we have?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three minutes and forty seconds.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Transporter Room Two lock on to the young woman in Ambassador Alkar's quarters. We may have to transport her out of there.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, Captain.",
+                    "spoken_by": "CHIEF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, I want you to station yourself outside her quarters.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, sir.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She helped me so much. Without her, I couldn't have accomplished what I did.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm so sorry. Is there anything I can do?",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, there is something. If we could share the funeral meditation.",
+                    "spoken_by": "ALKAR"
+                }
+            ],
+            "location": "Alkar's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have a minute and a half left. Prepare a hypospray of cordrazine. We'll use that in conjunction with the cortical stimulator.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Doctor.",
+                    "spoken_by": "OGAWA"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rohm gah sevi rohm. Rohm gah.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rohm gah sevi rohm. Rohm gah.",
+                    "spoken_by": "LIVA"
+                }
+            ],
+            "location": "Alkar's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't wait any longer. Release the stasis field. Ten cc's of cordrazine.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, doctor.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ten cc's cordrazine. Cortical stimulators. Now.",
+                    "spoken_by": "CRUSHER"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "twitch",
+                    "line": "An end  An end to pain.",
+                    "spoken_by": "ALKAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An end to pain.",
+                    "spoken_by": "LIVA"
+                }
+            ],
+            "location": "Alkar's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Again.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has a pulse. Blood pressure climbing. Ninety over forty. Cortical activity approaching normal levels.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's neutralise the neurotransmitters. Initiate decontamination sequence.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Levels are dropping, Doctor. Down to four hundred and twenty percent above normal. Three hundred and ninety percent.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Transporter room three",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not yet. We won't know if it's working till the levels are below three hundred percent.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alkar's stone begins to glow as Troi wakes up"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alkar drops his stone and grabs his head"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alkar! Alkar, what's wrong?",
+                    "spoken_by": "LIVA"
+                }
+            ],
+            "location": "Alkar's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Neurotransmitter levels are down to three hundred and ten percent. Two hundred and ninety percent.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Picard to Transporter room three, energise.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "an aging Alkar has grabbed Liva"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me go!",
+                    "spoken_by": "LIVA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she wriggles away, gets beamed out and Worf enters as Alkar gets very old"
+                }
+            ],
+            "location": "Alkar's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "while Troi gets younger again"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Neurotransmitter levels are down to two hundred and thirty percent.",
+                    "spoken_by": "OGAWA"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf watches impassively as the old man tries to speak, then falls over. Rigor has already set in."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf to Captain Picard. Ambassador Alkar is dead.",
+                    "spoken_by": "WORF"
+                }
+            ],
+            "location": "Alkar's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Beverly thinks Alkar must have been at a susceptible point in the meditation ceremony. He was vulnerable.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then the flow of negative emotions and feelings were reversed back to him somehow.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's our guess. Like a man with no immune system, he wasn't able to handle the overload.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Liva?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She seems to be fine. He wasn't able to establish a link on her.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looking back on the past few days, it's as though I'm looking at a holodeck projection of someone else.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's how it seemed to all of us.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks for sticking by me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I always will. Even when you're old and grey.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Troi's quarters"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "229",
+    "transcript_url": null
+}

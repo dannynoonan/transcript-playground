@@ -1,0 +1,2213 @@
+{
+    "air_date": "",
+    "duration": null,
+    "scenes": [
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "It's busy in Sickbay, minor injuries everywhere."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So why were you rolling around in Cypirion cactus?",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know Rebecca Smith?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The new Tactical officer?",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We took a walk in the Arboretum. We sat down, we got comfortable, things got a little romantic, and then I rolled over.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker has wicked long spines sticking out of his back. Ogawa starts pulling them out."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Blurred vision, dizziness, palpitations, a stinging sensation in the lower spine. It's Terrelian Death Syndrome, isn't it.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought we agreed you'd come to me before checking Starfleet Medical Database.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, well, this time I'm glad I did. Maybe we can stop the cellular decay before it's too late.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reg, you don't have Terrelian Death Syndrome.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You, you're sure?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "scans himself",
+                    "line": "Then maybe it is Symbalene blood burn.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no. I don't see anything wrong with you at all. Wait a minute, there is a slight imbalance in your K three cell count.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My K threes? Oh, no.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Barclay, I'm sure it's nothing. Look, I'll run a microcellular scan. We'll see. This'll take a couple of minutes.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "enter Data carrying something in his arms"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How's my smallest patient doing?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe she is doing well. Her appetite has increased by seven percent, and she is starting to engage in prenatal behaviour.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Spot is put down on a biobed"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, she's getting close. You'll have a fresh litter of hungry kittens before the week is over. Let me just run an amniotic scan to make sure everything's fine and then I'll",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor! My capillaries are shrinking!",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Excuse me. Alyssa, can you take care of Spot for a minute? Start a preliminary amniotic scan.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Doctor.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My intravascular pressure, it's going right through the roof.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right, it is elevated. You've also got heightened electrophoretic activity.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Electrophoretic activity? Is it serious?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, based on this, I'd say you've got seventy, maybe eighty years.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eighty? Eighty years?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Reg. What you've got a mild case of Urodelan Flu. It's nothing serious. Most humans have a natural immunity to it, but the T-cell in your DNA that would normally fight off the infection is dormant.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you mean I have bad genes?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have one dormant gene out of a hundred thousand, and I can activate that gene with a synthetic T-cell let the body attack the infection naturally. You should feel better in a couple of days.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Doctor. I feel much better.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to Riker",
+                    "line": "Good. Now, stay away from Medical Database.  And you stay out of the Arboretum.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything looks fine, Data. Do you want to know the sex of the kittens?",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have noticed that many humans prefer not to know in order to experience the surprise during birth. I believe I will preserve the mystery until then.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know what you mean. I don't want to know either.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alyssa?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Spot's not the only one who's going to be a mother.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, Alyssa, that's wonderful! How did Andrew take the news?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He was a little shocked, but he's getting over it.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have spent the past nine weeks as an expectant parent. I would be happy to share my insights with your husband. If my experience is any indication, he will need all the help he can get.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 47653.2. We're performing field tests of our new tactical systems and weapon upgrades. Mister Worf is supervising the exercises.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The next test will involve the new photon torpedoes. The explosive yield has been increased by eleven percent and I have enhanced the targeting system for increased accuracy.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sounds fascinating, Mister Worf. Please proceed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Setting targeting coordinates zero zero five mark three one seven, spread pattern delta nine four. Torpedoes armed and loaded, sir.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fire when ready.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "only two of the three find their targets in the asteroid belt"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One of the torpedoes has veered off course. It appears to be a malfunction in the guidance system.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Abort and destroy.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The torpedo is not responding. Subspace detonator will not engage.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lock on phasers.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The torpedo is out of range.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Even for your newly improved phasers?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maintain a sensor lock on the torpedo, Mister Worf. We'll have to go after it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would be inadvisable, sir. The asteroid field is unusually dense. The Enterprise is too large to safely navigate through it.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I'll take a shuttlecraft and retrieve it. Mister Data, you're with me.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the shuttle pilot who's on duty is Lieutenant Hayes.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I happen to be a reasonably qualified pilot, Number One. Besides, these tests hardly require the Captain's personal attention.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Understood. Enjoy yourself.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mister Worf, I think that you should consider analysing your new guidance system.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I will need a few minutes to attend to a personal matter.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Me?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is possible that it will take several days for Captain Picard and me to complete our mission. I would prefer to have a human present to supervise the birthing process.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I'd be honoured.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have noticed that you are the only other member of the crew whom Spot seems to like.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Really? That's hard to believe. You're such a sweet little kitty.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is to you. However, there have been several injuries to other members of the crew who have attempted to care for her.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, has she picked a place?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A place?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cats usually like to pick a specific location to give birth. It's usually dark and secluded, and I believe this is it.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Barclay drops Spot down behind a chair"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm curious, sir. Who's the father?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not certain. Spot has escaped from my quarters on several occasions and there are twelve male felines on board. I intend to run a full DNA analysis on the kittens once they",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Picard to Data. Report to Shuttlebay two.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On my way, sir. Goodbye, Spot. I believe you are in good hands.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have nothing to worry about, sir.",
+                    "spoken_by": "BARCLAY"
+                }
+            ],
+            "location": "Data's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is getting frustrated at a science station"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Problem?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have performed thirteen diagnostics of the weapons array, and I can find nothing wrong with the guidance system.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll have Geordi run a diagnostic of the torpedo bay itself. Maybe he can find something.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Must you to stand so close to me?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lieutenant, are you all right?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I am fine.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, you're not. You've been working for six hours straight. You're tired. Take a break.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's an order, Lieutenant.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf is wolfing down food"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thanks for waiting.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do not approach me unannounced, especially when I'm eating.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf we were supposed to have lunch together, remember?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was hungry.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I'm hungry too. Excuse me.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes?",
+                    "spoken_by": "WAITRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can I have an order of Ongilin caviar. Make that a double order.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Certainly.",
+                    "spoken_by": "WAITRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Caviar? For lunch?",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "downs a glass of water",
+                    "line": "I'm in the mood for something salty. Besides, it's no stranger than what you're eating.  Have you noticed how dry the air is on the ship? I wonder if the environmental controls are set properly.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf belches"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're excused.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi's caviar arrives"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is something wrong?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It has been a difficult day. The torpedo guidance system failed. It was my fault.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You always say that.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was my fault! I designed that guidance system.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, calm down. I think you're under more stress than you'd like to admit. Maybe you should get some rest.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps you are right. If you will excuse me.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "and has another glass of water",
+                    "line": "I didn't mean right now.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Ten Forward"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf can't sleep. He rips his sheet, prowls the room semi-crouched then guts the bed for material to make a nest on the floor. Now he can sleep"
+                }
+            ],
+            "location": "Worf's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We removed the torpedo bay's primary guidance module and found a power fluctuation in the forward sensor cluster. Now we think it may be a radial imbalance in the phase discriminator. Now what we want to do next is run a level four diagnostic, but we're going to have to shut down auxiliary power to nineteen decks and",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait a minute. Slow down. I lost you back there. Which sensor clusters?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The forward. It's, it's a power fluctuation in the converter nodes. It's a minor adjustment. It's minor.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's all right in here in on diagram, Commander.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll look this over later. Go ahead. You run your diagnostic. I'll inform the other departments about the power systems.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "an alarm beeps",
+                    "line": "I'll check that.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's full of energy today.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't get him to slow down. He's been working like that since last night,",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looks like a plasma conduit cut out in junction seventeen. I'll go look at it.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait a minute, Reg, I'll go with you. Keep you posted.",
+                    "spoken_by": "LAFORGE"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi is the Bridge Officer, and is shivering"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, increase ambient temperature by two degrees Centigrade and increase relative humidity by ten percent.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, reset environmental controls to standard.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf, it's freezing in here.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have already raised the temperature three times. It is too hot.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Live with it. Computer, execute my original command.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she finally can't stand it"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need a bath. You have the Bridge.",
+                    "spoken_by": "TROI"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a panel has been eaten by acid or something"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here we are. Looks like a conduit ruptured. No problem, I'll just bypass it.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Reg, wait a second here. Take a look at these corroded edges here. It looks like something has dissolved the bulkhead and eaten right through the conduit. There are high levels of cholic acid here. Enzymatic agents. You know, I wouldn't be surprised if that solvent was organic.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe we should run a biospectral analysis on the solvent. Take a closer look.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's a very good idea, but first we should take a break.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You go ahead, sir. I'll take care of it.",
+                    "spoken_by": "BARCLAY"
+                }
+            ],
+            "location": "Jefferies tube"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at the helm",
+                    "line": "Commander, we received a communication from Starfleet. They wanted to know when they could expect your performance analysis of the new weapon systems.",
+                    "spoken_by": "DERN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The weapon systems?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. The ones we've been testing for the past few days?",
+                    "spoken_by": "DERN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What should I tell them, sir?",
+                    "spoken_by": "DERN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell them, tell them we haven't finished yet.",
+                    "spoken_by": "RIKER"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Troi is in a bath, fully clothed, when Worf enters"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing here?",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had to be near you.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, increase temperature by five degrees.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get out of that water now.",
+                    "spoken_by": "WORF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Leave me alone!",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf grabs her arm and bites her on the cheek"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can I have a glass of water? It's so cold in here.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your temperature has dropped almost eight degrees. I want to run a hypothalamic series right away.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doctor, we've had three other crewmembers complaining about the temperature levels. Some feel like they have fevers, others are freezing like Counsellor Troi.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Call Doctor Selar and Doctor Hacopian. It looks like we've got some sort of viral infection going on around here. I want to check on Lieutenant Worf.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at another bed, Worf is under guard"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he doesn't move. a growth on his jaw line",
+                    "line": "Worf, have you had any unusual symptoms lately? Headaches, nausea, dizziness? Worf? Worf, do you hear me? I going to run a full bioscan. I want you to lie down.  Okay, we can do this sitting up. What is this?  Worf, how long have you had this on your neck? It looks like it's full of some bioacidic compound, almost like a venom sac. Worf, open your mouth.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf opens his mouth and sprays venom into Beverly's face. She collapses, screaming in pain and Worf escapes"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get a hypospray.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right away.",
+                    "spoken_by": "NURSE"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I managed to get her into stasis before the venom paralysed her. She's going to need reconstructive surgery, but I think she'll be all right.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "who can't stay still",
+                    "line": "Sir, we've analysed the venom and compared it to the acidic compound found in junction seventeen and on decks ten and twelve. They all have the same enzymatic composition.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you saying that Worf is spraying this",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Venom.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Venom all over the ship?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd say so.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sixty crewmen have begun exhibiting strange behavioural changes. Memory loss, fatigue, headaches. I think one thing is clear. There's some sort of disease aboard the Enterprise and it's spreading.",
+                    "spoken_by": "OGAWA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm having trouble concentrating myself. It's like my mind keeps wandering. I can't",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "La Forge runs in"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Commander, I've got seven security teams out hunting for Worf, but for some reason sensors are having a difficult time locking onto him. I've called for a level two security alert. Do you think we should go to a Level One?",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. What do you think?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think we should.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay. Sounds good. Then you'll take care of that security thing?",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. I will.",
+                    "spoken_by": "LAFORGE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Barclays already out the door",
+                    "line": "Okay, I'll notify Starfleet. I'll let them know what's happening. You have your orders.  Dismissed.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ogawa stands, resting with her knuckles on the desk, looks around then walks out with a very rolling gait."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, send a subspace message to Starfleet command. Security channel authorisation.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alpha four seven authorisation required to activate security channel.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer.",
+                    "spoken_by": "RIKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Awaiting authorisation.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "too late, he's off with the fairies"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. Commander Data and I have recovered the stray torpedo after a three day search. We are enroute back to the Enterprise.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Observation lounge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, the ship is not at the pre-arranged coordinates.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have they been delayed?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do not know. I am unable to raise them on any communication channel.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Scan the vicinity. See if you can find them.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I found it, sir, two light years away.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set a course.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "whoosh"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Enterprise appears to be adrift. I am reading power fluctuations on all decks.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Life signs?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are life signs. However, sensor readings are highly distorted. I am unable to identify specific lifeforms.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Adjust the axial stabilisers to match the attitude and rotation rate of the Enterprise, I'm going to dock the shuttle manually.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Shuttlecraft"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Main power is offline. All systems are in standby or emergency mode. There is no response from any manned station.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Any sign of the crew?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cannot access internal sensors from here. We will have to go to the Bridge.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Shuttlebay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "strange calls in the air"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That sounds like animals.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. I am able to discern over three hundred different vocalisations.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "something large rattles along a Jefferies tube"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look at this.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a shed skin"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is composed of reptilian DNA. I believe it is an epidermal layer that has been cast off during moulting.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But it seems to be humanoid.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. I cannot explain it. There are no species aboard the Enterprise that shed their skin in this fashion.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "a little further along there is a door covered in condensation"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These are Commander Troi's quarters. Can you tell if she's inside?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data, I want to have a look in here. Stand ready.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "it's tropical inside, water is dripping from the ceiling"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The environmental settings in these quarters have been altered. Data, over here.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They go into the bathroom. Troi is underwater so Picard pulls her out"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deanna.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "she starts gasping."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's happened to her?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her DNA is in a state of ribocyatic flux. Her genetic codes are being re-sequenced and her cells are mutating as a result. At a fundamental level, sir, she is no longer human.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is she?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her respiratory tissue has become capable of metabolising both water and air, and her eyes have developed nictitating membranes. I believe she is amphibian, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has been injured.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. There's Klingon DNA in the wound. It is saliva.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you saying she's been bitten?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would appear so.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Deanna go back underwater"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will need to run a full biospectral analysis.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "First we've got to get the ship under control. Let's go to the Bridge.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Troi's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Dern is dead, with scratches across his chest"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His upper spinal column has been broken in three places.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It looks like he's been attacked by some sort of animal.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Has his DNA been changed as well?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. However, it was in its initial stages when he died. Captain, I am picking up one thousand and eleven individual life forms within the ship. All exhibit a similar genetic flux to the one we observed in Counsellor Troi.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So the entire ship has been affected.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Most of the lifeforms are scattered throughout the ship. However, there are several large concentrations in the arboretum and the aquatic lab.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've regained attitude control for the ship, but main power is still offline. It looks as though the entire power transfer grid has been destroyed.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "there's thumping from the ready room"
+                }
+            ],
+            "location": "Bridge"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker is trying to get at Livingston the fish. He's hairy and brutish and his uniform has split at the shoulders"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain. His cranial plates have thickened by twenty percent. His brain is much smaller, sir. I do not believe he can comprehend our language.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps we can find a way to communicate. Will, can you understand what it is that",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Riker attacks Picard and Data stuns him using two shots"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He looks almost proto-human.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. His DNA would seem to confirm that observation. Captain, I believe the crew is de-evolving.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Ready room"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This tranquilliser should keep him unconscious for another seven hours. What have you found out?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have analysed Commander Riker's DNA structure. A synthetic T-cell has invaded his genetic codes. This T-cell has begun to activate his latent introns.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Introns?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They are genetic codes which are normally dormant. They are evolutionary holdovers, sequences of DNA that provided key behavioural and physical characteristics millions of years ago, but are no longer necessary. For instance, Counsellor Troi's gill slits and other amphibious characteristics were derived from introns which still contain amphibious codes.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So these introns are causing her DNA to re-combine in an earlier configuration?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is correct. In her case, the DNA has created an amphibious lifeform which became extinct over fifty million years ago.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And Commander Riker's introns are changing him into what appears to be one of the earlier hominids.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. I would say Australopithecine. Each of these stages is another link in the evolutionary chain which stretches back to the origins of all lifeforms on Earth. Because introns can include genetic material from many different species over millions of years of evolution, it is possible that a wide variety of transformations is occurring among the crew.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about those crewmembers who are not from Earth?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All humanoid life has a similar genetic pattern. The virus should work on non-human crewmembers in the same way. They are each de-evolving to earlier forms of life on their homeworlds. I feel I must inform you, sir, you have also been infected by the intron virus.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long before I begin to change?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "According to my calculations, within the next twelve hours, you will begin to exhibit the first signs of your eventual transformation.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what will that be",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe you will also de-evolve into some form of early primate. Possibly similar to a lemur, or a pygmy marmoset.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, before I begin swinging through the ship looking for breakfast, we'd better find some answers. How do we reverse the process?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am uncertain. We will need to run several microcellular scans. However, the ship's main computer has been damaged. Captain, the computer in my quarters has an independent processing and memory storage unit. It should not be affected. I suggest we start from there.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Agreed.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "mewing sound"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would appear that Spot has had her kittens.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They sound hungry.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. I am curious as to why Spot is not caring for them.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "it's because on the carpet is an iguana with a pink collar"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would seem the intron virus is not limited to humanoid lifeforms.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sir.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "These kittens were born less than twenty four hours. It would appear that Spot's transformation took place at approximately the same time.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So Spot was giving birth to the kittens at the same time that she was changing into a reptilian lifeform.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe so. For some reason, the intron virus was not passed on to the kittens. I do not know why.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I remember my biology, there are several natural immune systems that come into play in the mother's womb to protect the foetus from viral infections.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is true. Placental barrier, maternal antibodies and amniotic fluids all serve as a filtration system.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe we could have inhibited the intron virus by using the natural antibodies in Spot's amniotic fluid.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would take further research, but I believe to be effective on humanoid crewmembers, humanoid antibodies would be necessary.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then we should locate a pregnant humanoid.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nurse Ogawa has recently became pregnant.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is she?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have traced her comm. badge signal to deck seventeen, section twenty one alpha.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Arboretum.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ship shake"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One of the warp plasma vents has failed. Main Engineering has been abandoned. There is no one there to fix the problem.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Data's quarters"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can repair the damaged plasma vent from here.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm going to check the status of the warp core.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "it's dark, and cobwebs are everywhere. Picard looks through a window at the warp core and something with half a face and a few compound eyes throws itself at the glass"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "it skitters away"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe it was Lieutenant Barclay. He appeared to be partially transformed into an arachnid.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A spider?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, sir. Are you all right, Captain?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have these intense feelings of fear and panic. I feel as if I were being watched. I can't explain it.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You may be experiencing the initial stages of your transformation. Early primates were often prey to larger carnivores. As a result, their instincts probably included a heightened sense of awareness.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In that case, my instincts tell me that we'd better hurry.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Engineering"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alyssa the ape is on a biobed and Picard is biting his nails"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, I have analysed Nurse Ogawa's embryo. It has been unaffected by the virus. I believe I can use her amniotic fluid as a template for a retrovirus. It would neutralise the synthetic T-cell, and re-establish the original genetic patterns of each host.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How soon can you do that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will not take long to isolate the appropriate genetic material. I will need to get the Sickbay computer back on",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "something tries to batter down the door"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was that?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is large. Approximately two hundred kilograms. It is heavily armored with an exoskeleton. Life signs appear to be Klingon.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worf.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the door starts to buckle"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Set your phaser to heavy stun.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We cannot be certain a stun setting will have any effect on him. A higher setting may kill him.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the wide shot shows Riker and Troi are also on biobeds"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Listen to that. He sounds very angry, really, really aggressive. What do you think he wants? Do you think he's responding to some predatory instinct? Do you think he see us as prey?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are crewmembers in the corridors and other sections of the ship. It would be much easier for him to capture and consume one of them, than to attempt to break through a door.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what does he want? Predators use vocalisations to frighten other predators and to mark territory, and to commence mating process. A mating process. Counsellor Troi was bitten by a Klingon but not in a place that might be life-threatening. Nowhere near a major artery or organ. Data, look at this. Look at this injury. This wound was never intended to give her any kind of serious harm.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, what are you suggesting?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is it possible that Worf could see Counsellor Troi as his mate?",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If that is true, he must be trying to reach her now.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, we can't just leave. We have to stay here and protect her. And we have to keep on working on the retrovirus. If we could distract him, if we could lure him away from her.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The mating instinct is quite strong in Klingon biology. I am not certain what would be an effective lure.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Klingons have got a very powerful sense of smell. If we could duplicate Deanna's pheromones and then convince him she's no longer in Sickbay, that she'd gone into some other part of the ship.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am extracting a blood sample from one of her sebaceous glands, where the pheromones are produced. I believe I can activate the pheromones with a bioactivant solution.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you amplify the pheromones? They need to be much more powerful than Deanna's actual scent.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe this will produce the desired effect. I will use it to draw Worf to a another part of the ship.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, no. You must go on working on the retrovirus. I'll go.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, that is extremely unwise. Worf may be much faster than",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No time. No time to argue.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the terrified not-yet-a-proto-lemur sneaks out through Crusher's office door and squirts the scent into the air, backing down the dark corridor. The armoured monster leaves the door and follows the trail"
+                }
+            ],
+            "location": "Corridor"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Deck seventeen. Deck seventeen!",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the doors shut in the nick of time but it doesn't move. Worf starts hammering at the door and Picard escapes through the roof"
+                }
+            ],
+            "location": "Turbolift"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data gives Alyssa a hypospray"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, display progress of genetic re-sequencing.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf sprays venom on Picard's arm from above through a grating and Picard drops the phaser"
+                }
+            ],
+            "location": "Jefferies tube"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Genetic re-sequencing in progress. DNA to seventy percent normal.",
+                    "spoken_by": "COMPUTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Computer, increase nucleotide substitution by thirty two percent.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "at the point of the original hole, Picard insulates himself on a panel cover and jabs a live cable onto the metal framework. Finally Worf collapses."
+                }
+            ],
+            "location": "Jefferies tube"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Alyssa is back to normal"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Data to Captain Picard.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go ahead, Data.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The retro virus is working, sir.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Jefferies tube"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can release it into the ship's atmosphere in a gaseous state.",
+                    "spoken_by": "DATA"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "However it will take some time to take effect.",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Acknowledged.",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Jefferies tube"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you all right, sir?",
+                    "spoken_by": "DATA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OC",
+                    "line": "Yes, I'm",
+                    "spoken_by": "PICARD"
+                }
+            ],
+            "location": "Sickbay"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Worf snores",
+                    "line": "Fine, Mister Data. Proceed.  Well, Mister Worf, let's hope that when you wake up, you're a new man.",
+                    "spoken_by": "PICARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, supplemental. Commander Data has succeeded in returning the crew to normal. Doctor Crusher has determined that the synthetic T-cell she used to cure Mister Barclay's Urodelan flu initiated the intron virus which swept through the ship.",
+                    "spoken_by": "PICKARD"
+                }
+            ],
+            "location": "Jefferies tube"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, this is my fault?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. In a way it's mine. I didn't realise it at the time, but there's an anomaly in your genetic chemistry that caused the synthetic T-cell to mutate. Instead of activating one dormant gene, it started activating all of them, including your introns.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And that's what er, and that's what caused me to devolve?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You and every other member of the crew. The T-cell became airborne and started to spread like a virus. You know, Reg, this is a completely new disease, and it's traditional to classify a new disease with the name of the first diagnosed patient.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh! You mean you want to name the disease after me?",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right. How about Barclay's Protomorphosis Syndrome?",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Barclay's Protomorphosis. It has a nice ring to it. Thank you, Doctor.",
+                    "spoken_by": "BARCLAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Barclay leaves"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He transformed into a spider and now he has a disease named after him.",
+                    "spoken_by": "CRUSHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think I'd better clear my calendar for the next few weeks.",
+                    "spoken_by": "TROI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": ""
+                }
+            ],
+            "location": "Sickbay"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "TNG",
+    "title": "271",
+    "transcript_url": null
+}
