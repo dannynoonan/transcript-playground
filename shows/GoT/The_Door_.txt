@@ -1,0 +1,3112 @@
+{
+    "air_date": null,
+    "duration": null,
+    "scenes": [
+        {
+            "description": "Title Sequence\nINT. CASTLE BLACK - SANSA’S ROOM",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SANSA is knitting. There is a knock at the door."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A man of the Night’s Watch enters."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For you, my lady.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The man hands SANSA a scroll. It bears the mockingbird sigil of House Baelish. SANSA unrolls the scroll and reads it."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How far is Mole’s Town?",
+                    "spoken_by": "SANSA"
+                }
+            ],
+            "location": null
+        },
+        {
+            "description": "LITTLEFINGER is standing in the center of the room. SANSA and BRIENNE enter. LITTLEFINGER turns to greet them.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sansa. Lady Brienne. When I heard you had escaped WInterfell, I feared the worst. You have no idea how happy I am to see you unharmed.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unharmed? What are you doing here?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I rode north with the Knights of the Vale to come to your aid. They’re encamped at Moat Cailin as we speak.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To come to my aid? Did you know about Ramsay? If you didn’t know, you’re an idiot. If you did know, you’re my enemy.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SANSA steps closer to LITTLEFINGER."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Would you like to hear about our wedding night? He never hurt my face. He needed my face, the face of Ned Stark’s daughter. But the rest of me, he did what he liked with the rest of me as long as I could still give him an heir. What do you think he did?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can’t begin to contemplate --",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you think he did to me?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lady Sansa asked you a question.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He beat you.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, he enjoyed that. What else do you think he did?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sansa, I --",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What else?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did he cut you?",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe you did know about Ramsay all along.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn’t know.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you knew everyone’s secrets.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I made a mistake, a horrible mistake. I underestimated a stranger.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The other things he did, ladies aren’t supposed to talk about those things, but I imagine brothel keepers talk about them all the time. I can still feel it. I don’t mean in my tender heart it still pains me so. I can still feel what he did in my body standing here right now.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m so sorry.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said you would protect me.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I will. You must believe me when I tell you that I will.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t believe you anymore. I don’t need you anymore. You can’t protect me. You won’t even be able to protect yourself if I tell Brienne to cut you down. And why shouldn’t I?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you want me to beg for my life? If that’s what you want, I will. Whatever you ask that is in my power, I will do.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What if I want you to die here and now?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I will die.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You freed me from the monsters who murdered my family and you gave me to other monsters who murdered my family. Go back to Moat Cailin. My brother and I will take back the North on my own. I never want to see you again.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would do anything to undo what’s been done to you. I know that I can’t. Will you allow me to say one more thing before I go? Your great-uncle Brynden the Blackfish has gathered what remains of the Tully forces and retaken Riverrun. You might consider seeking him out. The time may come when you need an army loyal to you.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have an army.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your brother’s army.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LITTLEFINGER walks beside SANSA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Half-brother.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LITTLEFINGER exits."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In PENTOS, ASHTER sits down at a table in a big feast. The table he is sitting at has Duncan Stark, Arthur Stark (Duncan's son) and Lady Lorena sitting there. ASHTER and CASPER sit down and several sellswords sit at the table as well, there is also numerous sellswords sitting at other tables all around the room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There is a lot of laughing and talking in the room. ASHTER just eats his food while ARTHUR STARK, Ashter's cousin just stares at him. ASHTER notices."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We never got to meet, Cousin. Well, not until now. Ashter, right?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My father has never stopped talking about you ever since he heard about your reputation in Westeros. What brought you here?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Didn't your father tell you any of this? Or your mother?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My mother's dead.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lorena's not your mother?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. She is not. My mother died giving birth to me.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see. Sorry to hear it.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She was of House Hightower. You've heard of them, haven't you? One of the Hightowers served the Mad King and was killed by your father, my Uncle -- Eddard.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, Father may have mentioned that once or twice. He killed the Sword of the Morning as well... to rescue our aunt. She died, however.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see I don't have to tell you that. How is Westeros? I've never been.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The North is fucking cold. But I was born there. I've been in the Riverlands... other than that, nothing else. My experience in Westeros has only been cold or slighty cold. It's not a great place.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you wish to go back?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He seems irritated.",
+                    "line": "Because it's my home.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but... how can you be so certain that you'll win this fight?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sighs heavily",
+                    "line": "That's what I've been asking your father.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah. Well, let's talk about something else, shall we? Who's your friend?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello.",
+                    "spoken_by": "CASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have a name?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he looks annoyed",
+                    "line": "Casper.",
+                    "spoken_by": "CASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wonderful. You're -- what?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My friend.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very nice. Is the food good?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you always talk so much?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "laughs",
+                    "line": "Just trying to get to know my cousin. You're not what I expected.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What were you expecting?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A paragon of sorts... I suppose. You have the Stark name.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So do you... are you a 'paragon'?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose I can be. I know the ways of the game.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Game?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The game of thrones. You're going to need to play it once you become the King in the North.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not going after the Iron Throne.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You'll be fighting against it. Claiming your own throne. You'll need to play the game better than your brother did. And certainly better than your father did.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ASHTER looks even more irritated."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he notices ASHTER's irritation but keeps talking.",
+                    "line": "You have quite the reputation. People feared you. And they may again. You have no direwolf.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What does that matter?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "laughs",
+                    "line": "It means you won't be the Young Wolf.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't need a nickname.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your brother was feared more as soon as he gained that nickname. That fear... it sends a chilling feeling right into their bones and slowly collapses the inside. Your brother won every battle that he fought, maybe only because he had you to help him.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Robb was a better commander than me.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If everything I've heard about you is true, that's not true. You're an incredible commander. You're a Stark. It's in your blood. You're going to be feared, but first you have to learn how to make your enemies fear you. Start with the Boltons.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "rolls his eyes",
+                    "line": "No shit I'm starting with the Boltons.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're going to need help. My father is not well. By your permission, Your Grace, I shall aid you in this. In return... I wish to be your Hand or the Master-at-Arms.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "chuckles",
+                    "line": "Alright. Fine.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. But first... we'll have to test your skills on the battlefield so I can see how you are myself. I don't have doubts... I'd rather see it with my own eyes.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Getting along over there?",
+                    "spoken_by": "DUNCAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ASHTER ignores him and sighs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When are we going to kill those outlaws?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tonight. Get some rest, Ashter Stark. You too, Casper. Long night ahead of us. Eat up.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tonight!? Why the fuck were we just warned!?",
+                    "spoken_by": "ASHTER"
+                }
+            ],
+            "location": "MOLE’S TOWN - SHACK"
+        },
+        {
+            "description": "ARYA and the WAIF are dueling with staves atop the sparring platform. They both strike many blows, all of them deflected by the other. The WAIF feigns and trips ARYA with a blow to the back of the legs. ARYA falls to the ground. The WAIF points her staff in ARYA’s face.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re not ready. You should go home before it’s too late.",
+                    "spoken_by": "WAIF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The WAIF begins to walk away. ARYA jumps to her feet. The WAIF turns around and drops her staff, then approaches ARYA. ARYA swings at the WAIF several times, but the WAIF dodges and redirects the blows. The WAIF kicks ARYA in her midsection, sending her off the platform. ARYA hops back on the platform and advances. The WAIF disarms ARYA and punches her multiple times, knocking her off the platform and onto the ground."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’ll never be one of us, Lady Stark.",
+                    "spoken_by": "WAIF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Faceless Man taking on the visage of JAQUEN H’GHAR appears."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has a point.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JAQEN walks away. ARYA follows. They enter the Hall of Faces."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None of the first Faceless Men were born to lords and ladies. They began as slaves in the mines of Valyria.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who was the first?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He was no one. The Many-Faced God taught him how to shed his face and how to give the gift. The man taught others in exchange for their service. Many served, many more gifts were given. Soon all the masters and overseers were gone and the Faceless Men fled.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where did they go?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here. They founded the Free City of Braavos and built this house. These were the faces they wore in life when they were not wearing others. The first Faceless Men. And now a girl is one of them, if a girl desires.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A girl has no desires.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JAQEN holds up a small bottle."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA takes the bottle."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An actress who calls herself Lady Crane. She performs at the theater in Sheelba Square. A girl has been given a second chance. There will not be a third. One way or another, a face will be added to the hall.",
+                    "spoken_by": "JAQEN"
+                }
+            ],
+            "location": "HOUSE OF BLACK AND WHITE - TRAINING ROOM"
+        },
+        {
+            "description": "Actors are performing a play. An audience has gathered to watch. ARYA is among them. On stage, an actor dressed as Robert Baratheon walks back and forth. Two prop men mirror his movements, carrying a tarp that displays a forest landscape. Another prop man carries a cut-out of a boar and rams it into the actor’s rear end. The sound man makes a farting noise.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ahh!",
+                    "spoken_by": "ROBERT ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA laughs along with the crowd. The prop man strikes the actor with the boar prop again, this time in front. The actor recoils and the prop men replace the forest background with a black background."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, murdered by a boar. The great big hairy whore. He dug in his tusks and dug out my guts and soon I am no more.",
+                    "spoken_by": "ROBERT ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The actor produces an intestine prop from his garb. He staggers, but is supported by another actor, portraying Joffrey."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, come, Father, in bed you must lie. I love you, Father. Please don’t die.",
+                    "spoken_by": "JOFFREY ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The actor portraying Robert slaps the actor playing Joffrey. ARYA laughs with the crowd."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shut up, you swine! Cersei, more wine.",
+                    "spoken_by": "ROBERT ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The actor portraying Joffrey falls to his knees in the front of the stage. An actress, portraying Cersei, appears on the stage and walks to him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I feel the winds of winter as they lick across the land. And our son alone on that cold, cold throne without a guiding hand. Who will teach him strength? Who will teach him grace? To whom will he turn when it’s time to learn to look darkness in the face?",
+                    "spoken_by": "CERSEI ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ned stark will do fine. Now bring me more wine.",
+                    "spoken_by": "ROBERT ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "An actor portraying Tyrion appears and fills his glass. An actor portraying Ned Stark appears and adjusts his crotch."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ooh! Ooh, what’s happened here, then?",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He brought you here, Ned Stark, ‘cause you’re the brightest fellow in the land. You should be king of us all and I should be your Hand.",
+                    "spoken_by": "TYRION ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We men of the North are right good hands at keeping people lawful.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The actor portraying Ned gestures to the actor portraying Robert."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’d ask him for permission, but he smells too bloody awful.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The crowd laughs. ARYA looks around at them. She does not laugh."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I die! I die! And here I now must lie. Oh, woe. Oh, no. Oh, I am about to go.",
+                    "spoken_by": "ROBERT ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The sound man makes a farting noise."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you stay on as Joffrey’s Hand?",
+                    "spoken_by": "CERSEI ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Iron Throne’s what I demand.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You cannot.",
+                    "spoken_by": "CERSEI ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will not.",
+                    "spoken_by": "CERSEI ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You dare not.",
+                    "spoken_by": "CERSEI ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I dare yes.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The line of succession.",
+                    "spoken_by": "CERSEI ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What’s that mean?",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The proper progression.",
+                    "spoken_by": "CERSEI ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What’s that mean?",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The lawful ascension.",
+                    "spoken_by": "CERSEI ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What’s that mean?",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The crowd laughs. Music plays. The crowd claps and cheers. The actors change scenes. The actor portraying Joffrey is sitting on a cut-out of the Iron Throne. The actress portraying Cersei and the actor portraying Ned are standing next to him. The actor portraying Tyrion stands off to the side on a step stool."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So move along, give me my chair and there won’t be no more trouble.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The actor portraying Joffrey slaps the actor portraying Ned. The actor portraying Ned stumbles into the grasp of the actor portraying Tyrion, who sends him to his knees."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But we had a deal all done and dusted.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Two prop men carrying spears lift the actor portraying Ned to his feet."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m starting to think you can’t be trusted.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The prop men usher the actor playing Ned offstage. As they change the scene, the actor portraying Joffrey and the actress portraying Cersei take center stage. The Cersei actress dons the Joffrey actor with a crown. In a new scene, the actor portraying Ned is on a cut-out chopping block. The actors portraying Joffrey and Cersei stand to one side, and a prop man dressed as an executioner stands on the other. An actress portraying Sansa appears."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Save my father.",
+                    "spoken_by": "SANSA ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Truly you should. Killing the man will do you no good.",
+                    "spoken_by": "CERSEI ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Save him, please.",
+                    "spoken_by": "SANSA ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Show him mercy. Show the people what a good king should be.",
+                    "spoken_by": "CERSEI ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good people, you may all relax. My father’s friend shall be spared the —",
+                    "spoken_by": "JOFFREY ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The prop man portraying the executioner swings his axe. The actor portraying Ned ducks behind the chopping block and tosses out a prop head."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Father! No! Oh, father.",
+                    "spoken_by": "SANSA ACTRESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The executioner prop man wrenches the head from her grasp and tosses it to the other prop men."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Worry not! All is well. I have here a decree from my father Tywin Lannister, the richest man you’ll see. He proclaims me Hand of the King. The position’s mine for life. And he’s give me permission to take Sansa as my wife.",
+                    "spoken_by": "TYRION ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He slaps the actor portraying Joffrey in the face."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’ll learn that what I lack in height I make up for in appetite.",
+                    "spoken_by": "TYRION ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He rips open her shirt, exposing her breasts."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So let’s forget about your plight, and go rehearse our wedding night.",
+                    "spoken_by": "TYRION ACTOR"
+                }
+            ],
+            "location": "BRAAVOS - SHEELBA SQUARE"
+        },
+        {
+            "description": "All the actors from the play are gathered together, taking a break and attending to their costumes. The actor portraying Joffrey is examining his penis.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s a wart. Two warts. I’ve got two fucking warts on my cock.",
+                    "spoken_by": "JOFFREY ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, don’t worry, love. They usually go away in five or six years.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The actor portraying Ned walks towards ARYA and tosses her his costume cloak."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, wash this, darling. It stinks of me.",
+                    "spoken_by": "NED ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can do better, Bianca, dear. You must do.",
+                    "spoken_by": "ROBERT ACTOR (to SANSA ACTRESS)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had two lines.",
+                    "spoken_by": "BIANCA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are no small parts. You rang very false.",
+                    "spoken_by": "DIRECTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I rang very false?",
+                    "spoken_by": "BIANCA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What you need, love, is for someone to ring you true.",
+                    "spoken_by": "TYRION ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BIANCA slaps the actor portraying Tyrion upside the head."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You weren’t complaining about me last night.",
+                    "spoken_by": "BIANCA (to ROBERT ACTOR)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The actor portraying Tyrion approaches LADY CRANE."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I get you some wine, Lady Crane?",
+                    "spoken_by": "TYRION ACTOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m a rum girl, Bobono. You need to know that if we’re going to be intimate.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course we’re going to be intimate.",
+                    "spoken_by": "BOBONO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s only a matter of time.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LADY CRANE uncorks her bottle of rum and pours herself a glass. The holds her drink up to BOBONO."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To our children.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May they have your talent.",
+                    "spoken_by": "BOBONO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And your filthy mind.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They clink their glasses together and drink."
+                }
+            ],
+            "location": "BACKSTAGE"
+        },
+        {
+            "description": "JAQEN is washing a body. ARYA is standing by.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A girl will poison the rum.Lady Crane is the only one who drinks it.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JAQEN looks at ARYA and nods."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If a girl could use one of the faces from the hall…",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A girl is not ready.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She’s a good actress.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So a man has heard.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Seems like a decent woman.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does death only come for the wicked and leave the decent behind?",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. Who wants her dead?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That does not matter. The price was paid.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The younger actress. She’s jealous because Lady Crane is better.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A girl must decide if she wants to serve the Many-Faced God.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A girl has decided.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A servant does not ask questions.",
+                    "spoken_by": "JAQEN"
+                }
+            ],
+            "location": "HOUSE OF BLACK AND WHITE - WASHING ROOM"
+        },
+        {
+            "description": "BRAN is clinging to the roots of the tree. His eyes are glazed white.",
+            "events": [],
+            "location": "GREAT WEIRWOOD TREE - CAVE"
+        },
+        {
+            "description": "BRAN and the THREE-EYED RAVEN are walking together. They approach a weirwood tree encircled by many stones. The stones are formed in a spiral. A Child of the Forest runs between the stones. BRAN and the THREE-EYED RAVEN follow her. They find a group of the Children crouching in a circle, whispering to each other. LEAF stands, carrying a shard of dragonglass. She approaches a man who is bound to the weirwood tree.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No! No! No!",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LEAF slowly drives the shard into the man’s heart until it disappears inside his chest. The man’s eyes turn blue."
+                }
+            ],
+            "location": "VISION OF THE PAST - UNKNOWN LAND"
+        },
+        {
+            "description": "LEAF is watching BRAN. BRAN releases the root of the tree and wakes up from his vision.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was you. You made the White Walkers.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were at war. We were being slaughtered. Our sacred trees cut down. We needed to defend ourselves.",
+                    "spoken_by": "LEAF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From whom?",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From you. From men.",
+                    "spoken_by": "LEAF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LEAF exits. BRAN and the THREE-EYED RAVEN stare at each other."
+                }
+            ],
+            "location": "GREAT WEIRWOOD TREE - CAVE"
+        },
+        {
+            "description": "All the Ironborn are gathered together. YARA, THEON, JASPER, and AERON stand among them.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We speak in the presence of the Drowned God. In his name we father today to choose a new king as our leader. Who makes a claim?",
+                    "spoken_by": "AERON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "YARA walks out into the open."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Yara Greyjoy, daughter of Balon Greyjoy, King of the Iron Islands. I claim the Salt Throne.",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We’ve never had a queen. Not once.",
+                    "spoken_by": "MAN #1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And today will not be the day where we have one.",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are many things we’ve never done. We’ve never made our mark upon the world. The great lords of Westeros pay us no mind until our little raids buzz through their kingdoms long enough to become a nuisance. Then they swat us down. They conquer us, humiliate us, and go right back to forgetting we exist.",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye!",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are a sea people.",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye!",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our god is a sea god.",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye!",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When I am queen, we will build a fleet that —",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You shall not be queen!",
+                    "spoken_by": "MAN #2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am not finished!",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He steps forward.",
+                    "line": "I believe you are, my sweet niece.  My Lords, you all know who I am -- Lord Jasper Greyjoy, the Black Warden -- and I claim the Salt Throne. I am Balon's youngest brother. You all know my skill in combat and at sea. You all know what I did to those fuckers from the Shadowlands. And you do know that my brother Balon Greyjoy, was a foolish man. He tainted the Greyjoy name by starting that foolish rebellion over ten years ago. We never should have fought in that. Never. When I am the King, the Ironborn will be feared again as they once were!",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Uncle. I am happy to see you again, but I believe you are not the right man to rule the Iron Islands.",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JASPER looks at THEON."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My nephew... last I heard you were imprisoned by the Boltons after taking Winterfell and then losing it. Good to see you. I'd like to hear from you. Do you claim the Salt Throne?",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "THEON emerges from the crowd and turns to face them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am Theon Greyjoy...last living son of Balon Greyjoy.",
+                    "spoken_by": "THEON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "THEON points at YARA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And she is your rightful ruler. Those of you that have sailed under her, and there are many of you here, you know what she is.",
+                    "spoken_by": "THEON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JASPER sighs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye!",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is a reaver!",
+                    "spoken_by": "THEON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye!",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is a warrior!",
+                    "spoken_by": "THEON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye!",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She is ironborn!",
+                    "spoken_by": "THEON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye!",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We will find no better leader. This is our queen.",
+                    "spoken_by": "THEON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "THEON and YARA stare at each other. The men cheer and chant YARA’s name."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m Euron Greyjoy.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The men fall silent. EURON appears and walks through the crowd towards YARA and THEON. JASPER looks shocked."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I claim the Salt Throne.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "EURON emerges from the crowd and stands before YARA and THEON. He looks at JASPER."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brother.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He looks at YARA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Niece.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "EURON looks at THEON and then walks up to him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nephew. Little Theon.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "EURON pats THEON on the cheek, then turns to face the crowd."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Heard you managed to fuck things right into the ground. Captured a castle you couldn’t keep. Got yourself taken prisoner. Even heard you have no cock.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ironborn laugh. EURON points at YARA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Explains why you think a woman can be king.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When did you return, Uncle?",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A few days ago. I had some things to take care of. Long overdue.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m glad you’re here. Now I know what my first act as queen will be. To execute the man who killed my father.",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The men murmur to each other."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did. I killed him. Threw him right over a rope bridge and watched him fall. He was leading us nowhere and we would still be heading there if it weren’t for me. No one loved him. No one wanted to follow him. He led us into two wars we couldn’t win. I apologize to you all for not killing him years ago.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That would have been hard to do. You weren’t here. Last I heard, you were gallivanting around the world having a grand old time.",
+                    "spoken_by": "THEON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gallivanting? That the sort of thing you start to say once your dick gets chopped off?",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ironborn laugh."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did the great lord of Westeros teach you words like that?",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were gone. Yara was here. Being Ironborn. Leading Ironborn. Getting ready to bring us back to glory.",
+                    "spoken_by": "THEON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how will she do that?",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will build the largest fleet the world has ever seen.",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Right idea, except I’m the one who’s going to build the Iron Fleet because I’m the one who knows how to use it. I’ve been all over the world. I’ve seen more of it than all of you combined. And across the sea there is a person who hates the great lords of Westeros just as much as we do. Someone with a large army, three large dragons, and no husband. I’m going to build that fleet and I’m going to gallivant right over and give it to Daenerys Targaryen along with my big cock.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ironborn laugh."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re going to seduce the Dragon Queen?",
+                    "spoken_by": "YARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m not going to seduce her. The Iron Fleet will seduce her. And together we’re going to take the Seven Kingdoms. I wasn’t born to be king. I paid the iron price and here I stand.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ironborn cheer and chant EURON’s name. THEON and YARA exchange a glance."
+                }
+            ],
+            "location": "PYKE - SEASIDE CLIFFS"
+        },
+        {
+            "description": "Several Ironborn carrying flags stand on the shore. EURON is kneeling in the water. AERON pushes him underwater. JASPER is behind EURON, watching. Meanwhile, YARA, THEON, and some Ironborn run through a cave tunnel.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May Euron, your servant, be born again from the sea as you were. Bless him with salt. Bless him with stone. Bless him with steel.",
+                    "spoken_by": "AERON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "THEON, YARA, and the men with them run out onto a beach and into awaiting rowboats."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Listen to the waves. Listen to the god. He is speaking to us and he says we shall have no king but Euron Greyjoy. Let the sea wash your follies and your vanities away. Let the old Euron drown. Let his lungs fill with seawater.",
+                    "spoken_by": "AERSON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "EURON drowns."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let the fish eat the scales off his eyes.",
+                    "spoken_by": "AERON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "YARA, THEON, and the men board a large ship."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is dead may never die, but rises again harder and stronger.",
+                    "spoken_by": "AERON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "AERON releases his grip on EURON. Two Ironborn carrying EURON onto shore. AERON and the other Ironborn gathered in attendance all stare at EURON. EURON does not move.One man begins to walk closer to him. EURON gags and coughs. He props himself up on his arms and legs, then spits up water and gasps for air. AERON retrieves a crown made of driftwood and places it on EURON’s head."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is dead may never die.",
+                    "spoken_by": "AERON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is dead may never die.",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Ironborn cheer. EURON rises to his feet and looks around at the crowd."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where are my niece and nephew? Let’s go murder them.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "EURON leads AERON, JASPER and the Ironborn up to a seaside cliff. They stare out at the ocean. A fleet of ships is sailing away from Pyke."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They stole our best ships.",
+                    "spoken_by": "AERON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many men do they have?",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. A lot.",
+                    "spoken_by": "AERON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Won’t be enough to save them.",
+                    "spoken_by": "EURON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "EURON turns to face the Ironborn."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go back to your homes. Chop down every tree you can find. Quarter-saw the timber and start building. I want every man bending planks. I want every woman spinning flax for sails. Build me a thousand ships and I will give you this world.",
+                    "spoken_by": "EURON"
+                }
+            ],
+            "location": "PYKE - BEACH"
+        },
+        {
+            "description": "DAENERYS stands at the edge of the cliff, looking out at Vaes Dothrak. She turns to face JORAH. DAARIO is behind her.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I banished you twice. You came back twice. And you saved my life. So I can’t take you back and I can’t send you away.",
+                    "spoken_by": "DAENERYS (to JORAH)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAENERYS approaches JORAH, but he recoils."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must send me away.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JORAH rolls up his sleeve to reveal the greyscale covering his forearm."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there a cure?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t know.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How long does it take?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t know that either. But I’ve seen what happens when it goes far enough. I’ll end things before that.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAENERYS begins to cry."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m sorry. I’m so sorry.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don’t be. All I’ve ever wanted was to serve you. Tyrion Lannister was right. I love you. I’ll always love you. Goodbye, Khaleesi.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JORAH begins to walk away."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do not walk away from your queen, Jorah the Andal.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JORAH turns back to face DAENERYS. She approaches him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have not been dismissed. You pledged yourself to me. You swore to obey my commands for the rest of your life.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JORAH nods."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I command you to find the cure wherever it is in this world. I command you to heal yourself and then return to me. When I take the Seven Kingdoms, I need you by my side.",
+                    "spoken_by": "DAENERYS"
+                }
+            ],
+            "location": "VAES DOTHRAK - CLIFFS"
+        },
+        {
+            "description": "JORAH sits on a horse, watching DAENERYS, and DAARIO lead the Dothraki horde out of Vaes Dothrak. He turns his horse around and starts off into the wilderness.",
+            "events": [],
+            "location": "VAES DOTHRAK - HORSE GATE"
+        },
+        {
+            "description": "VARYS, MISSANDEI, and GREY WORM are gathered together. TYRION pours himself a glass of wine and joins them.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In the last fortnight since our pact with the Masters, how many killings have been carried out by the Sons of the Harpy?",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "None.",
+                    "spoken_by": "GREY WORM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how many Masters have been butchered by the free men.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Two, but that was the day of the pact. Since then, nothing.",
+                    "spoken_by": "GREY WORM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So it’s safe to say that a fragile peace has taken hold.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For now.",
+                    "spoken_by": "GREY WORM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For now is the best we get in our profession.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s not enough.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Considering the city was on the brink of civil war, I’d say it’s a good start.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s not enough for Meereen to have peace. They need to know Daenerys is responsible for it. The Sons of the Harpy have a good story. Resist the foreign invaders. Our queen has an even better story. Mother of Dragons, Breaker of Chains and...all that.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The people know who brought them freedom.",
+                    "spoken_by": "MISSANDEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, but do they know who brought them security? Who brought about an end to the violence? We need someone the people trust, someone they know who cannot be bought or influenced.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sounds like quite the hero. Where would we find him?",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who said anything about “him”?",
+                    "spoken_by": "TYRION"
+                }
+            ],
+            "location": "MEEREEN - GREAT PYRAMID CONFERENCE ROOM"
+        },
+        {
+            "description": "TYRION and VARYS stand on the plateau above the audience chamber. A woman stans at the bottom of the steps, and a man stand a few steps in front of her.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You stand in the presence of Kinvara, High Priestess of the Red Temple of Volantis, the Flame of Truth, the Light of Wisdom, the First Servant of the Lord of Light.",
+                    "spoken_by": "MAN (speaking Valyrian)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The man steps aside. KINVARA walks up a few steps."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to Meereen.",
+                    "spoken_by": "TYRION (speaking Valyrian)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KINVARA stops on the middle plateau."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That’s about the extent of my Valyrian.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KINVARA says nothing."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you for travelling all this way. I know from personal experience how uncomfortable the journey can be.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TYRION looks at VARYS. KINVARA says nothing."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The truth is we need your help. We had hoped that we could somehow persuade you to --",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don’t need to persuade me. I came to help.",
+                    "spoken_by": "KINVARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KINVARA continues up the steps."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Daenerys Stormborn is the one who was promised. From the fire she was reborn to remake the world.",
+                    "spoken_by": "KINVARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has freed the slaves from their chains and crucified the Masters for their sins.",
+                    "spoken_by": "KINVARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She did indeed.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Her dragons are fire made flesh, a gift from the Lord of Light. But you heard all this before, haven’t you? On the Long Bridge of Volantis. The dragons will purify nonbelievers by the thousands, burning their sins and flesh away.",
+                    "spoken_by": "KINVARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ideally we’d avoid purifying too many nonbelievers. The Mother of Dragons has followers of many different faiths.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You want your queen to be worshipped and obeyed. And while she’s gone, you want her advisors to be worshipped and obeyed.",
+                    "spoken_by": "KINVARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’d settle for obeyed.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will summon my most eloquent priests. They will spread the word. Daenerys has been sent to lead the people against the darkness in this war and in the great war still to come.",
+                    "spoken_by": "KINVARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That sounds most excellent --",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A man named Stannis Baratheon was anointed as the chosen one by one of your priestesses. He, too, had a glorious destiny. He attacked King’s Landing and was soundly defeated by the man standing beside me. Last I had heard, he’d been defeated again, this time at Winterfell and this time for good.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We’d be most grateful for any support you could provide the queen.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose it’s hard for a fanatic to admit a mistake. Isn’t that the whole point of being a fanatic? You’re always right. Everything is the Lord’s will.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything is the Lord’s will. But men and women make mistakes. Even honest servants of the Lord.",
+                    "spoken_by": "KINVARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you, an honest servant of the lord, why should I trust you to know any more than the priestess who counseled Stannis?",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My friend has a healthy skepticism of religion, but we are all loyal supporters of the queen.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "VARYS nods. KINVARA takes two more steps. She is one step away from TYRION and VARYS."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everyone is what they are and where they are for a reason. Terrible things happen for a reason. Take what happened to you, Lord Varys, when you were a child. If not for your mutilation at the hand of a second-rate sorcerer, you wouldn’t be here helping the Lord’s Chosen bring his light into the world. Knowledge has made you powerful. But there’s still so much you don’t know. Do you remember what you heard that night when the sorcerer tossed your parts in the fire? You heard a voice call out from the flames. Do you remember? Should I tell you what the voice said?",
+                    "spoken_by": "KINVARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KINVARA approaches VARYS and places her hand on his arm."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Should I tell you the name of the one who spoke?",
+                    "spoken_by": "KINVARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "VARYS scrunches up his face and stares at KINVARA. KINVARA smiles."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We serve the same queen. If you are her true friend, you have nothing to fear from me.",
+                    "spoken_by": "KINVARA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KINVARA turns and walks back down the steps."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In PENTOS, ASHTER is sitting at a table, with a letter in hand and a pen in the other hand. He sighs heavily, struggling to write a letter. He writes it to Daenerys."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "muttering",
+                    "line": "To Queen Daenerys.... this is Ashter Stark, I write to you only to express my sincere apologies for what I've done. I have hurt you in a way that I never intended to. I have found the woman who caused me to do so, she confessed to it. This may sound like an excuse, but I promise you that it is not. I write this to you to tell you... that I love you, and that I will love you until the end of my life. You mean a great deal to me and you have no idea how I felt when I remembered that I hurt you... I don't expect you to forgive me, I only wanted to write this to you... I will be sailing to Westeros to take back my home and I will be the King in the---",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He is interrupted when a SERVANT comes in."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your Grace... apologies for interrupting. This has been made for you.",
+                    "spoken_by": "SERVANT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The SERVANT presents a sword and lays it on his desk."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Valyrian Steel Sword, a gift from your Uncle, Duncan.",
+                    "spoken_by": "SERVANT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ASHTER stands up and observes the sword and unsheathes it and then observes it closer."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very nice. I will be sure to thank him for this.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He-He is not doing well... if it is alright, Your Grace, I advise you to meet with him soon before he runs out of time. May I ask... what you wish to name your new blade?",
+                    "spoken_by": "SERVANT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he thinks for a moment.",
+                    "line": "Ice.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He departs. The door does not shut as LADY LORENA walks into the room. ASHTER sighs.",
+                    "line": "Very well, my Lord. A wonderful name.",
+                    "spoken_by": "SERVANT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he rests the sword onto the table.",
+                    "line": "What do you want?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My King, I wanted to apologize to you for what I made you do... I have learned the error of my ways.",
+                    "spoken_by": "LORENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "laughs",
+                    "line": "Oh, have you?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LORENA shuts the door and then looks at ASHTER, taking off her red gown and standing there naked in front of her. ASHTER looks confused."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must produce an heir to your new Kingdom. I have Targaryen blood in my veins.",
+                    "spoken_by": "LORENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You-- What!?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An ancestor of mine is of the Targaryen dynasty. We join together and we will make a Song of Ice and Fire. I will give you a son. And he will turn his enemies to dust.",
+                    "spoken_by": "LORENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What the fuck are you talking about? Even... even if we were to do this... our son would be a bastard. No claim to the throne.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we marry, here...",
+                    "spoken_by": "LORENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whoa, what the fuck is going on here!? You're married to my Uncle. Now he's on his deathbed and you want to marry and have a child with me?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the Lord's will.",
+                    "spoken_by": "LORENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "laughs, he stares at her breasts and gulps. he tries to keep his cool, even though he is visibly pleased by the sight of her.",
+                    "line": "The Lord of Light.  First you say me and my Uncle will fight at Winterfell, now it's me and my Cousin, now... what? Me and my son?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You and Arthur will fight at Winterfell, yes... but there is a greater war that lies ahead that only you and your son will be able to defeat. The war for the dawn.",
+                    "spoken_by": "LORENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The fuck is that?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The dead are coming. For all of us. Surely you know of the things that lurk North of the Wall.",
+                    "spoken_by": "LORENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "White Walkers?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, my King. You and your son will fight the War for the Dawn and defeat every single one of them until the realm is safe from the dead. Let me show you.",
+                    "spoken_by": "LORENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She approaches him and then touches his face. ASHTER suddenly sees flashes of himself fighting in the snow, against wights and white walkers and running from them, then falling down into a huge pile of snow while wights run after him. ASHTER slips back into reality and pants heavily."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We must... the two of us... join together...",
+                    "spoken_by": "LORENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LORENA reaches into his pants and ASHTER looks at her, somewhat interested in her now."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Realm's safety depends on it.",
+                    "spoken_by": "LORENA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The two of them kiss passionately, ASHTER takes off his clothes, brings LORENA down to the ground, the both of them fully nude now. ASHTER thrusts himself inside her and LORENA cries out in pleasure. ASHTER kisses her breasts and keeps thrusting himself inside her."
+                }
+            ],
+            "location": "MEEREEN - GREAT PYRAMID AUDIENCE CHAMBER"
+        },
+        {
+            "description": "BRAN lets a handful of sand run through his fingers. He lays back and then looks SUMMER, HODOR, and the THREE-EYED RAVEN. SUMMER and HODOR are sleeping, but the THREE-EYED RAVEN has his eyes open. BRAN picks up a wood chip and throws it at the THREE-EYED RAVEN. The THREE-EYED RAVEN does not stir. BRAN drags himself over to the roots of the tree and takes hold of them. His eyes turn white.",
+            "events": [],
+            "location": "GREAT WEIRWOOD TREE - CAVE"
+        },
+        {
+            "description": "BRAN walks among the spiraling stones surrounding the weirwood tree from before, only now everything is covered in snow. He stares at the tree, then turns around. The army of the undead stands in attendance.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BRAN walks towards them, and then among their ranks. They do not react. He inspects several of them as he walks by. On the other side of the army, he finds the Night King and four White Walkers on horseback. The Night King stares at him. BRAN turns around to find the entire army of the undead staring at him. When he turns back around, the Night King is standing right behind him. He recoils, but the Night King grabs his forearm. He screams."
+                }
+            ],
+            "location": "VISION OF THE PAST - UNKNOWN LAND"
+        },
+        {
+            "description": "BRAN screams as he releases the tree root and the vision ends. MEERA jumps to her feet.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He saw me, the Night King! He saw me!",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He touched you.",
+                    "spoken_by": "THREE-EYED RAVEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LEAF and another Child of the Forest enter."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t know. He was close, but --",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He touched you.",
+                    "spoken_by": "THREE-EYED RAVEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BRAN pulls back his sleeve. There is a handprint on his forearm."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He knows you are here. He’ll come for you.",
+                    "spoken_by": "THREE-EYED RAVEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But he can’t get in.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He can now. His mark is on you. You must leave, all of you.",
+                    "spoken_by": "THREE-EYED RAVEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on, Hodor. Help me with the sledge.",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor.",
+                    "spoken_by": "HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m sorry. I didn’t mean to.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The time has come.",
+                    "spoken_by": "THREE-EYED RAVEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The time for what?",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For you to become me.",
+                    "spoken_by": "THREE-EYED RAVEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But am I ready?",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "THREE-EYED RAVEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BRAN’s eyes turn white."
+                }
+            ],
+            "location": "GREAT WEIRWOOD TREE - CAVE"
+        },
+        {
+            "description": "JON SNOW, SANSA, BRIENNE, DOLOROUS EDD, DAVOS, TORMUND, and MELISANDRE are gathered around a table. A map is spread out on the table with tokens indicating houses laid on its surface.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can’t defend the north from the Walkers and the south from the Boltons. If we want to survive, we need Winterfell, and to take Winterfell, we need more men.",
+                    "spoken_by": "JON SNOW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aside from the Starks and the Boltons, the most powerful houses in the North are the Umbers, the Karstarks, and the Manderlys.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAVOS stands and moves some of the tokens to Winterfell."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Umbers and the Karstarks have already declared for the Boltons, so we’re not doing so well there.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Umbers gave Rickon to our enemies. They can hang. But the Karstarks declared for Ramsay without knowing they had another choice.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I beg your pardon, my lady, but they know that a Stark beheaded their father. I don’t think we can count on them either.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How well do you know the North, Ser Davos?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Precious little, my lady.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My father always said Northerners are different. More loyal, more suspicious of outsiders.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They may well be loyal, but how many rose up against the Boltons when they betrayed your family? I may not know the North, but I know men. They’re more or less the same in any corner of the world and even the bravest of them don’t want to see their wives and children skinned for a lost cause. If Jon’s going to convince them to fight alongside him, they need to believe it’s a fight they can win.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There are more than three other houses in the North -- Glover, Mormont, Cerwyn, Mazin, Hornwood. Two dozen more. Together they equal all the others. We can start small and build.",
+                    "spoken_by": "JON SNOW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The North remembers. They remember the Stark name. People will still risk everything for it, from White Harbor to Ramsay’s own door.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t doubt it. But Jon doesn’t have the Stark name.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, but I do.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JON SNOW stares at SANSA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jon is every bit as much Ned Stark’s son as Ramsay is Roose Bolton’s. Ant there are also the Tullys. They’re not Northern, but they will back us against the Boltons without question.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn’t know the Tullys still had an army.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My uncle the Blackfish has reformed it and retaken Riverrun.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you know that?",
+                    "spoken_by": "JON SNOW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ramsay received a raven before I escaped Winterfell.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That’s good. The Blackfish is a legend. His support would mean a great deal. Stark, Tully, a few more houses, almost starts to look like a winning side.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SANSA smiles."
+                }
+            ],
+            "location": "CASTLE BLACK - DINING HALL"
+        },
+        {
+            "description": "BRIENNE follows SANSA down the stairs and along a walkway..",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’ve sworn to protect you, my lady.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You heard them. We need more men and my uncle has an army.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can send the Blackfish a raven.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can’t risk Ramsay intercepting it. It has to be you.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BRIENNE and SANSA enter SANSA’s chamber. BRIENNE closes the door behind them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ride for Riverrun. My uncle will talk to you and you’ll know how to talk to him.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SANSA sits down on her bed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is it?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t like leaving you here alone.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With Jon?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not him. He seems trustworthy. A bit brooding, perhaps. I suppose that’s understandable, considering. The others, though. Davos and the Red Woman helped a man murder his own brother with blood magic. And when Stannis paid for his crime, where were they? Already out looking for a leader with better prospects. And that wildling fellow with the beard --",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Jon isn’t Tormund. Jon isn’t Davos, the Red Woman, or Stannis for that matter. Jon is Jon. He’s my brother. He’ll keep me safe. I trust him.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then why did you lie to him when he asked you how you learned about Riverrun?",
+                    "spoken_by": "BRIENNE"
+                }
+            ],
+            "location": "CASTLE BLACK - BALCONY"
+        },
+        {
+            "description": "Several men of the Night’s Watch are readying horses. JON SNOW stands beside them. MELISANDRE sits on her horse behind them. BRIENNE walks past. SANSA approaches JON SNOW, carrying a bundled cloak.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "New dress?",
+                    "spoken_by": "JON SNOW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I made it myself. Do you like it?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Year, it’s -- I like the wolf bit.",
+                    "spoken_by": "JON SNOW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good, because I made this for you.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SANSA hands JON SNOW the cloak. JON SNOW looks at it. The direwolf sigil of House Stark is pressed into the leather straps."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I made it like the one Father used to wear. As near as I can remember.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Sansa.",
+                    "spoken_by": "JON SNOW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re welcome.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SANSA walks away. BRIENNE is sitting on horseback beside TORMUND. TORMUND stares at her. She catches him staring and looks away. He grins. DOLOROUS EDD approaches JON SNOW, who is donning his new cloak."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don’t knock it down while I’m gone.",
+                    "spoken_by": "JON SNOW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’ll do my best.",
+                    "spoken_by": "DOLOROUS EDD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They embrace."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good luck.",
+                    "spoken_by": "DOLOROUS EDD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JON SNOW walks to his horse and climbs atop it. He leads SANSA, MELISANDRE, PODRICK, BRIENNE, TORMUND, and the rest of the party out through the southern gates. A man of the Night’s Watch approaches DOLOROUS EDD, who is watching them leave."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Should we close the gate, Lord Commander?",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m not the Lord Comman --",
+                    "spoken_by": "DOLOROUS EDD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The men of the Night’s Watch gather around DOLOROUS EDD."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, ahem, close the bloody gate.",
+                    "spoken_by": "DOLOROUS EDD"
+                }
+            ],
+            "location": "CASTLE BLACK - COURTYARD"
+        },
+        {
+            "description": "BRAN and the THREE-EYED RAVEN are both having a vision. MEERA and HODOR are preparing for travel.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can go home now, Hodor. Well, maybe not home home, but somewhere that isn’t a cave.",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "HODOR chuckles."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor.",
+                    "spoken_by": "HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eat something that isn’t moss. I want an egg. How do you like ‘em? Boiled? Fried up with some butter?",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "HODOR laughs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor.",
+                    "spoken_by": "HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With a rasher of bacon and some blood sausage.",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor.",
+                    "spoken_by": "HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MEERA notices she can see her breath. She looks at BRAN and then runs to the entrance of the cave. LEAF and the other Children of the Forest are gathered outside. Across the field, the Night King, three White Walkers, and the army of the dead are gathered. The Night King steps forward from the others, kneels, and places his hand on the ground. A rift cracks through the ice all across the field and into the Great Weirwood Tree."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get Bran and run!",
+                    "spoken_by": "LEAF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MEERA runs back into the cave, retrieving a sword on the way back. The Night King unsheathes his blade and leads the White Walkers and the army of the dead towards the Great Weirwood. Inside, MEERA runs to BRAN and shakes him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bran. Bran, wake up. Bran.",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "HODOR sits in the corner, rocking back and forth."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor. Hodor.",
+                    "spoken_by": "HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bran, wake up.",
+                    "spoken_by": "MEERA"
+                }
+            ],
+            "location": "GREAT WEIRWOOD TREE - CAVE"
+        },
+        {
+            "description": "BRAN and the THREE-EYED RAVEN watch YOUNG NED and YOUNG BENJEN embrace. BRAN smiles.",
+            "events": [],
+            "location": "VISION OF THE PAST - WINTERFELL"
+        },
+        {
+            "description": "MEERA hauls the sledge over to BRAN and tries to drag him onto it.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor.",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor. Hodor.",
+                    "spoken_by": "HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Help me!",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Outside, LEAF and the Children of the Forest throw magic spheres at the army of the undead. The spheres explode upon contact, killing some of the undead. With one of the last bombs, LEAF lights a half-circle of flame in front of the entrance to the cave. She and the Children of the Forest run inside. The Night King and the White Walkers approach the flame. The flame parts to let them pass, then reforms. The army of the dead cannot pass through the flame, instead going around it and climbing the crag to the top of the Great Weirwood. Inside, MEERA places BRAN on the sledge."
+                }
+            ],
+            "location": "GREAT WEIRWOOD TREE - CAVE"
+        },
+        {
+            "description": "BRAN and the THREE-EYED RAVEN continue to watch.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remember that you are a Stark. Comport yourself with dignity at the Vale and try to stay out of fights.",
+                    "spoken_by": "RICKARD (to YOUNG NED)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NAN walks over to YOUNG HODOR and takes his arm."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Father.",
+                    "spoken_by": "YOUNG NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "RICKARD takes YOUNG NED by the chin."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But if you have to fight, win.",
+                    "spoken_by": "RICKARD"
+                }
+            ],
+            "location": "VISION OF THE PAST - WINTERFELL"
+        },
+        {
+            "description": "MEERA continues shaking BRAN.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bran! Bran, wake up!",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "An undead falls through the ceiling. It advances on MEERA. MEERA grabs her sword and cuts it down. Another undead falls from the ceiling. MEERA recoils. SUMMER tackles it. MEERA drops her blade and returns to BRAN."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bran! Bran! Bran, wake up.",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor. Hodor.",
+                    "spoken_by": "HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LEAF enters and runs up to BRAN and MEERA. A third undead falls from the ceiling, suspended upside by its feet. LEAF rushes over to it and beheads it with her knife."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have to wake up. We need Hodor.",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor. Hodor.",
+                    "spoken_by": "HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Another undead rushes, but LEAF shoots it with an arrow. A Child of the Forest enters to combat another undead, but the undead knocks her down and kills her. LEAF shoots it with an arrow."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor.",
+                    "spoken_by": "HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A number of undead begin piling in. LEAF and the Children of the Forest try to fight them off. An undead kills another Child of the Forest."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bran, we’re all going to die!",
+                    "spoken_by": "MEERA"
+                }
+            ],
+            "location": "GREAT WEIRWOOD TREE - CAVE"
+        },
+        {
+            "description": "BRAN hears MEERA shouting at him from the other side.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bran, wake up! We’re all going to die! Bran! Bran!",
+                    "spoken_by": "MEERA (V.O.)"
+                }
+            ],
+            "location": "VISION OF THE PAST - WINTERFELL"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bran, you have to wake up! We need Hodor!",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor. Hodor.",
+                    "spoken_by": "HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Warg into Hodor now!",
+                    "spoken_by": "MEERA"
+                }
+            ],
+            "location": "GREAT WEIRWOOD TREE - CAVE"
+        },
+        {
+            "description": "BRAN looks at YOUNG HODOR and NAN.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bran, wake up. We need Hodor. We need Hodor. Warg into Hodor now! Now!",
+                    "spoken_by": "MEERA (V.O.)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Listen to your friend, Brandon.",
+                    "spoken_by": "THREE-EYED RAVEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor. Hodor. Hodor. Hodor.",
+                    "spoken_by": "HODOR (V.O.)"
+                }
+            ],
+            "location": "VISION OF THE PAST - WINTERFELL"
+        },
+        {
+            "description": "HODOR’s eyes flash white. More undead enter the cave. One of them kills another Child of the Forest. MEERA cuts it down. Another Child of the Forest jumps forward and stabs another undead with a spear. HODOR stands and walks over to BRAN. A White Walker enters.The spear-bearing Child of the Forest lunges at it and stabs it in the chest, but the blow has no effect. The White Walker pushes the spear aside and stabs the Child of the Forest, killing her. HODOR lifts the sledge with BRAN atop it. MEERA grabs a dragonglass spear and launches it into the White Walker’s neck. The White Walker shatters and dies. MEERA and LEAF follow HODOR towards the back entrance. SUMMER growls and bares its teeth at the undead entering the cave.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Summer!",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go. Go!",
+                    "spoken_by": "LEAF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LEAF and MEERA run into the back tunnel. SUMMER attacks the undead. The undead encircle him and stab him to death. LEAF, MEERA, and HODOR hurry down the back tunnel. BRAN is still engaged in a vision on the sledge. A slew of undead pursues them. Back in the cave, the Night King enters and approaches the THREE-EYED RAVEN."
+                }
+            ],
+            "location": "GREAT WEIRWOOD TREE - CAVE"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The time has come. Leave me.",
+                    "spoken_by": "THREE-EYED RAVEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Back in the Great Weirwood tree, the Night King slashes the THREE-EYED RAVEN. The THREE-EYED RAVEN dissolves into a black mist in front of BRAN."
+                }
+            ],
+            "location": "VISION OF THE PAST - WINTERFELL"
+        },
+        {
+            "description": "The undead army is advancing. LEAF stops running.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go!",
+                    "spoken_by": "LEAF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LEAF turns to face the undead. She brandishes a magic bomb and primes it. The undead overtake her and knock her to the ground, stabbing her repeatedly. LEAF detonates the bomb, killing herself and the undead surrounding her. HODOR reaches the rear door. He puts down the sledge and begins ramming the door. More undead appear and begin advancing."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hodor, hurry!",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "HODOR heaves the door open and drags the sledge outside. He drops the sledge and returns to the door, holding it closed. MEERA lifts the sledge and begins dragging it away."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold the door!",
+                    "spoken_by": "MEERA"
+                }
+            ],
+            "location": "GREAT WEIRWOOD TREE - BACK TUNNEL"
+        },
+        {
+            "description": "BRAN turns and stares at YOUNG HODOR, who stares back at him.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold the door! Hold the door! Hold the door!",
+                    "spoken_by": "MEERA (V.O.)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "YOUNG HODOR’s eyes turn white. He falls to the ground and convulses."
+                }
+            ],
+            "location": "VISION OF THE PAST - WINTERFELL"
+        },
+        {
+            "description": "HODOR puts his weight against the door.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold the door!",
+                    "spoken_by": "MEERA"
+                }
+            ],
+            "location": "GREAT WEIRWOOD TREE - BACK ENTRANCE"
+        },
+        {
+            "description": "YOUNG HODOR continues convulsing.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold the door!",
+                    "spoken_by": "MEERA (V.O.)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wylis! What’s the matter?",
+                    "spoken_by": "NAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NAN kneels down beside YOUNG HODOR. BRAN walks over to them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold the door!",
+                    "spoken_by": "MEERA (V.O.)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold the door!",
+                    "spoken_by": "YOUNG HODOR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In the present day, HODOR struggles against the door."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold the door! Hold the door! Hold the door! Hold the door! Hold the door! Hold the door!",
+                    "spoken_by": "YOUNG HODOR"
+                }
+            ],
+            "location": "VISION OF THE PAST - WINTERFELL"
+        },
+        {
+            "description": "The undead begin to break through the door. They clutch HODOR’s clothing and begin tearing at his flesh.",
+            "events": [],
+            "location": "GREAT WEIRWOOD TREE - BACK ENTRANCE"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hold the door! Hold the door! Hold the door! Hold the door! Hold the door! Hold the door! Hold the door! Hold the door! Hold door! Hold door! Hold door! Hold door! Hodor! Hodor! Hodor! Hodor! Hodor! Hodor! Hodor!",
+                    "spoken_by": "YOUNG HODOR"
+                }
+            ],
+            "location": "VISION OF THE PAST - WINTERFELL"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "GoT",
+    "title": "The_Door_",
+    "transcript_url": "https://gameofthronesfanon.fandom.com//wiki/The_Door_(Fanon)/Transcript"
+}

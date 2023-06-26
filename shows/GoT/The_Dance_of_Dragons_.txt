@@ -1,0 +1,1992 @@
+{
+    "air_date": null,
+    "duration": null,
+    "scenes": [
+        {
+            "description": "EXT. STANNIS’ CAMP - NIGHT",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A man walks by each of the tents."
+                }
+            ],
+            "location": null
+        },
+        {
+            "description": "Melisandre stares into the fire. She exits the tent.",
+            "events": [],
+            "location": "MELISANDRE’S TENT"
+        },
+        {
+            "description": "Melisandre surveys the camp. In the distance, a tent catches on fire. Men start screaming and rushing out of their tents. A burning horse runs by Melisandre.",
+            "events": [],
+            "location": "STANNIS’ CAMP - NIGHT"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A band of 20 men, maybe less. They were in and out before anyone spotted them, burnt our food stores to the ground, all our siege weapons were destroyed, dozens of tents were--",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Horses?",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We’re still getting a count, but hundreds are dead.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "20 men rode into our camp without a single guard sounding the alarm?",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The northerners know more about their land than we ever will.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Put last night’s guards in chains, either they fell asleep or they were conspiring with the enemy. Find out the truth and then hang them.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Unless there’s a thaw, we can’t press forward to Winterfell, and we don’t have enough food to get us back to Castle Black.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We’re not returning to Castle Black.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forgive me, Your Grace, I never claimed to be an expert in military matters. But if we can’t march forward, and we won’t march back…",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stannis looks to Melisandre and Selyse. Davos follows his gaze then looks back."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have the dead horses butchered for meat.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stannis walks over to Melisandre."
+                }
+            ],
+            "location": "STANNIS’ CAMP - MORNING"
+        },
+        {
+            "description": "The Hardhome survivors, led by Jon, Tormund, Tollett, and Wun-Wun, approach the wall. Alliser looks down at the group. Jon steps forward, Alliser stares for a moment, then--",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open the gates.",
+                    "spoken_by": "ALLISER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The lower gate is lifted."
+                }
+            ],
+            "location": "THE WALL"
+        },
+        {
+            "description": "The Hardhome Wildlings are being escorted through Castle Black.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was a failure.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It wasn’t.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I went to save them, I failed.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You didn’t fail him, or him, or her. Every one of them is alive because of you, and no one else.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t think that fact’s lost on them.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Cut to many men of the Night’s Watch glaring at Jon, then Olly who exchanges a long look with Jon from the top of the stairs. Alliser walks down the steps to Jon."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have a good heart, Jon Snow. It will get us all killed.",
+                    "spoken_by": "ALLISER"
+                }
+            ],
+            "location": "CASTLE BLACK"
+        },
+        {
+            "description": "Stannis is studying his chessboard. There are 2 Baratheon pieces next to a sword and opposed to 2 Bolton pieces. Davos enters the tent.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You sent for me, Your Grace.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Find you some healthy horses and a few good men to guard you, I’m sending you back to Castle Black. Tell the Lord Commander to send food, supplies, fresh horses, in return when I take the throne I’ll make sure the Night’s Watch has all the men it requires. He can guard all 19 castles if he so wishes.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your Grace, you’ve named me your Hand.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The King’s Hand should never abandon the King, especially in a time of war.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re not abandoning me, you’re obeying a command.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A boy with a scroll could deliver this message.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if Jon Snow refuses a boy with a scroll, what does the boy say? I didn’t name you hand for your expertise in military matters, ride for Castle Black, don’t come back empty handed.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your Grace, perhaps Queen and Princess Shireen could accompany me.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My family stays with me.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least let me take Shireen. A siege is no place for a little girl.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My family stays with me.",
+                    "spoken_by": "STANNIS"
+                }
+            ],
+            "location": "STANNIS’ TENT"
+        },
+        {
+            "description": "The men are shivering, waiting in line for food. Davos walks by.",
+            "events": [],
+            "location": "STANNIS’ CAMP"
+        },
+        {
+            "description": "Shireen is reading one of her books. Davos enters.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What’s this one now?",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "\"The Dance of Dragons: A True Telling\" by Grand Maester Munkun.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well that sounds like a proper story.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ser Byron Swann wanted to kill the dragon Vhagar. He polished his shield for a week, til the steel was like a mirror. Then he crouched behind it, and crept forward, hoping the dragon would only see his own reflection.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But the dragon only saw a dumb man, holding a mirrored shield.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And burnt him to a crisp.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Davos and Shireen share a laugh."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thus ending the dragonslaying career of Ser Byron Swann. I made you something, Princess.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Davos hands her a stag carved out of wood."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you like it?",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He’s beautiful.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shireen kisses him on the cheek."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re very welcome.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you make me a doe, too, so that he can have company?",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course I will.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But why am I getting a present?",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "beat",
+                    "line": "Because you deserve it. My son was always on me trying to teach me to read. Gods, I was stubborn about it. Made it this far without reading, seemed to me I could make it to the grave. I wish I had listened to them. This is my own poor way of saying thank you for teaching me to be a grown up.  I’ll be gone for a few days, Princess. I’ll want to hear all about the dance of dragons when I’m back.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’ll just have to read it yourself.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Davos kisses Shireen on her forehead then leaves. Shireen looks over the stag."
+                }
+            ],
+            "location": "SHIREEN’S TENT"
+        },
+        {
+            "description": "Jaime is escorted by Areo to Doran’s room.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "bows",
+                    "line": "Prince Doran.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forgive us, we started without you. Please, sit.",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Princess Myrcella.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Uncle.",
+                    "spoken_by": "MYRCELLA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What a lovely dress.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don’t like it?",
+                    "spoken_by": "MYRCELLA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must be cold.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not at all. The Dornish climate agrees with me.",
+                    "spoken_by": "MYRCELLA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prince Trystane. How’s your jaw?",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A fleabite.",
+                    "spoken_by": "TRYSTANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing in Dorne?",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Looking out for the safety of my niece, the princess Myrcella.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And rather than send a raven or speak to me directly you decided to enter my country in secret and abduct our guest by force.",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We received a threatening message. The princess’s necklace in the jaws of a viper.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jaime looks at Ellaria."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That necklace was stolen from my room.",
+                    "spoken_by": "MYRCELLA (surprised)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Doran looks at Ellaria. A servant sets down food and drink before Jaime."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah. Excellent. The last meal before the beheading.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can’t behead you. Many in Dorne want war. But I’ve seen war. I’ve seen the bodies piled on the battlefields. I’ve seen the orphans starving in the cities. I don’t want to lead my people into that hell.",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, you want to break bread with the Lannisters.",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "raises glass",
+                    "line": "And that is precisely what we are doing.  Let us drink to Tommen, the first of his name, the King of the Andals and the First Men, Lord of the Seven Kingdoms.",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Everyone drinks. Ellaria dumps her cup out on the floor and looks at Doran."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "King Tommen insists on his sister’s return to the capital?",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m afraid he does.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ellaria glares at Doran",
+                    "line": "I cannot disobey my King’s command.  She will return with you to King’s Landing. And my son, Prince Trystane, will accompany you both. If the alliance between Dorne and the Iron Throne is to continue, their engagement must stand.",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I accept.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One more thing. My brother was named to the small council before his death. Your father understood the importance of keeping Dorne in the loop. With Oberyn gone, Trystane will take his place on the small council.",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have my word.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The word of a Kingslayer.",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ellaria gets up and walks to Doran."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No wonder you can’t stand. You have no spine.",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ellaria tries to leave the room. Doran grabs her wrist."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are mother to four of my nieces, girls I love very much. For their sake, I hope you live a long life. Talk to me that way again and you won’t.",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Doran lets go. Ellaria leaves the room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I inquire into the fate of my man?",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell me, Ser Jaime, in King’s Landing, how do they punish a commoner who strikes a prince?",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He said it was just a fleabite. The fault is mine. Bronn is merely a soldier following my orders. If anyone should be punished it’s me.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prince Trystane must learn judgement if he’s to rule one day. I’ll let him decide.",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jaime looks to Trystane. Trystane considers."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have learned the value of mercy from my father. I will set your man free.",
+                    "spoken_by": "TRYSTANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re a good man.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On one condition.",
+                    "spoken_by": "TRYSTANE"
+                }
+            ],
+            "location": "DORNE - PALACE"
+        },
+        {
+            "description": "Bronn is laying on the ground in his cell. Tyene and Nymeria are playing a game where one tries to slap the other’s hand before they pull their hands away. Nymeria slaps Tyene.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "slaps",
+                    "line": "Why do we play? I’m better than you, I’ll always be better than you. Have I ever missed once? I don’t think, I can’t recall. You must love humiliation or pain. Which do you love most? Humiliation or--  -- pain? That one hurt didn’t it? You going to cry? Give up, little sister.",
+                    "spoken_by": "NYMERIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re going to miss.",
+                    "spoken_by": "TYENE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I never miss.",
+                    "spoken_by": "NYMERIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You will. You’re thinking too much. Now you’re nervous. “What if she’s right?”",
+                    "spoken_by": "TYENE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Nymeria slaps at Tyene and Tyene gets out of the way in time."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Luck.",
+                    "spoken_by": "NYMERIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now it’s my turn.",
+                    "spoken_by": "TYENE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re too slow. You’ve always been too slow.",
+                    "spoken_by": "NYMERIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Nymeria sticks her hands out and blows a kiss to Tyene. Tyene slaps her across the face then blows one back. They get in fighting stances as the guards arrive. They take Bronn out of his cell."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Am I going to be happy at the end of this walk?",
+                    "spoken_by": "BRONN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’ll find out very soon.",
+                    "spoken_by": "AREO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Bronn starts leaving the prison."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Say it one more time, handsome. Who am I?",
+                    "spoken_by": "TYENE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The most beautiful woman in the world.",
+                    "spoken_by": "BRONN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And that’s the truth!",
+                    "spoken_by": "TYENE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slut.",
+                    "spoken_by": "NYMERIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tyene laughs."
+                }
+            ],
+            "location": "DORNE - CELL"
+        },
+        {
+            "description": "Areo escorts Bronn into Doran’s room.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prince Doran, Ser Bronn of the Blackwater.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn’t realize there were knights of the Blackwater.",
+                    "spoken_by": "DORAN: "
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only the one.",
+                    "spoken_by": "BRONN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe you’ve already met Prince Trystane.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prince. Sorry about the other day.",
+                    "spoken_by": "BRONN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Prince Trystane here is a man of mercy. He’s agreed to grant you your freedom.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m glad to hear it. The pie looks good.",
+                    "spoken_by": "BRONN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There was one condition.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jaime nods to Areo. Areo elbows Bronn in the jaw, knocking him to the ground."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps some soup instead?",
+                    "spoken_by": "DORAN"
+                }
+            ],
+            "location": "DORNE - PALACE"
+        },
+        {
+            "description": "Arya pushes her oyster cart through the street.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oysters, clams, and cockels! Oysters, clams, and cockels! Oysters, clams, and cockels! Oysters, clams, and cock--",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Two shady looking men approach her."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How much for your little clam?",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They laugh and walk away. Arya looks down the street and sees the Thin Man, looking over another sailor’s application."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oysters, clams, and cockels! Oysters, clams, and cockels!",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Arya stops her cart, inspects the vile Jaqen gave to her, and tucks it back in her pouch. She starts pushing the cart again and makes eye contact with the Thin Man."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on.",
+                    "spoken_by": "THIN MAN (waving)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Arya stares off into the distance."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some oysters, girl! I’m talking to you! Girl?! Are you deaf? Girl?!",
+                    "spoken_by": "THIN MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Arya looks to the dock, and sees Meryn Trant and Mace Tyrell being helped off the boat. A Iron Banker approaches him and Arya starts walking away from the Thin Man and towards them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Tyrell! On behalf of the Iron Bank, may I be the first to welcome you to the free city of Braavos. I hope your journey was trouble free.",
+                    "spoken_by": "BANKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bit of chop the last few days but nothing too awful. Good to see the old chap is still guarding the Harbor.",
+                    "spoken_by": "MACE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how goes the harvest in the Reach?",
+                    "spoken_by": "BANKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Vintnors say this might be the best year for red grapes in half a century. If we come to a satisfactory arrangement, I’ll be sure to send the Arbor’s finest your way.",
+                    "spoken_by": "MACE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m afraid I don’t partake.",
+                    "spoken_by": "BANKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Arya studies the group, focuses in on Meryn, and begins following them with her cart."
+                }
+            ],
+            "location": "BRAAVOS - RAGMAN HARBOR"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Some consider usury distasteful, dishonorable. Pure nonsense, of course.",
+                    "spoken_by": "MACE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm glad we see eye-to-eye on this matter.",
+                    "spoken_by": "BANKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you know that at one point Maegor the third tried to outlaw it in the Seven Kingdoms? Wanted to arrest anyone caught charging interest and cut off both their hands.",
+                    "spoken_by": "MACE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Meryn and Arya exchange quick looks at each other."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Most unfortunate for the glovers.",
+                    "spoken_by": "BANKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If a man charges low interest on a loan then he has nothing to gain and everything to lose, so why charge him? Whereas a reward makes a man willing to gamble.",
+                    "spoken_by": "MACE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are not gamblers here at the Iron Bank, Lord Tyrell.",
+                    "spoken_by": "BANKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are the world's best gamblers. And all those bets you won built this.",
+                    "spoken_by": "MACE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Mace gestures to the Iron Bank and the camera cuts to it."
+                }
+            ],
+            "location": "BRAAVOS - IRON BANK"
+        },
+        {
+            "description": "Arya is waiting on the steps of the building opposite the bank, eating her oysters. The men start walking out of the Bank.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m afraid I still have a good deal of work to do.",
+                    "spoken_by": "BANKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, nonsense. Work's over. Do you sing?",
+                    "spoken_by": "MACE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't have that gift.",
+                    "spoken_by": "BANKER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not a gift, it’s a skill, anyone can learn it. “So give me a kiss by the Long Canall and give me two kisses in Salty Town, for we are going to die, tomorrow. The bareheaded beggar, the king with his crown…”",
+                    "spoken_by": "MACE"
+                }
+            ],
+            "location": "IRON BANK - LATER"
+        },
+        {
+            "description": "Meryn Trant and his men walk through the doorway.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought that old shit would never stop singing.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It wasn’t bad, though.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Tyrells can all rot in hell, treasonous cunts. They were going to make that boy-fucker Renly king.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They arrive at a door."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is the place, lads. The sleekest little minks in Braavos.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re buying?",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I’m buying. But I never was good at sharing.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They enter the brothel. Arya pulls up to the doorway with her cart and sees the men entering."
+                }
+            ],
+            "location": "BRAAVOS - BROTHEL - DOORWAY"
+        },
+        {
+            "description": "Arya walks through the door with a tray of oysters. The brothel keeper stops her.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sell your fish somewhere else.",
+                    "spoken_by": "BROTHEL KEEPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh let her in, Brusco, I’m hungry. Come here, sweetness.",
+                    "spoken_by": "PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The brothel keeper gestures nods for Arya to go on. She walks to the prostitute and the man she’s with."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They say oyster’s get the juices flowing. We’ll take half a dozen.",
+                    "spoken_by": "PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three coppers.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Arya begins cutting an oyster open."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Here’s a silver because the lady likes you.",
+                    "spoken_by": "JOHN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The man places a silver on her tray in exchange for the oysters. Arya turns and sees Trant’s men being taken to a back room."
+                }
+            ],
+            "location": "BROTHEL"
+        },
+        {
+            "description": "Arya enters the room and peers through a divider to see a prostitute posing for Meryn.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too old.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brea.",
+                    "spoken_by": "HEAD PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brea poses for Meryn."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too old.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have just the one. Anara our most expensive girl, but well worth it, I assure you.",
+                    "spoken_by": "HEAD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A younger, 20-something prostitute poses for Meryn."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Too old.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The people in the room share uneasy glances as they realize what he’s asking for."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you have what I want or not?",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course. Of course.",
+                    "spoken_by": "HEAD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "One of Trant’s men crosses to the other side of the divider and confronts Arya."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fresh? Come on, the lads are hungry.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The man drags her into the room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing better for you cock stand than fresh oysters.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’ll have one.",
+                    "spoken_by": "MAN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Meryn stares at Arya."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who let this girl in? Shoo shoo!",
+                    "spoken_by": "HEAD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The head prostitute brings in a child."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The head prostitute hands Meryn an hourglass. He hands it back."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’ll tell you when we’re done.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He leads the girl towards a bedroom."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’ll have a fresh one for me tomorrow.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "HEAD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The head prostitute realizes Arya is still standing there."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’ll have you whipped, girl! Go on!",
+                    "spoken_by": "HEAD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Arya leaves the room, but takes one last glance at where Meryn is taking the girl."
+                }
+            ],
+            "location": "BROTHEL - BACK ROOM"
+        },
+        {
+            "description": "Jaqen kneels next to a man at the fountain of the center of the room and offers him a drink from the fountain.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Valaar morghulis.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The man takes a drink. Arya approaches Jaqen."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And?",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Thin Man wasn’t hungry today.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps that’s why the man is thin.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The man drops to the ground, creating a thud off-screen."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tomorrow.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tomorrow.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A girl has work to do.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Arya walks towards the man who is now collapsed on the ground."
+                }
+            ],
+            "location": "HOUSE OF BLACK AND WHITE"
+        },
+        {
+            "description": "Doran is addressing Ellaria with Areo standing guard next to the three Sand Snakes.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your rebellion is over. You can swear your allegiance to me now, or you can die.",
+                    "spoken_by": "DORAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She kneels and kisses his ring, crying. Nymeria and Obara look disgusted, Tyene’s face reveals less."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe in second chances. I don’t believe in third chances.",
+                    "spoken_by": "DORAN"
+                }
+            ],
+            "location": "DORNE - PALACE"
+        },
+        {
+            "description": "Jaime is writing a letter in his former cell that is now unlocked. Ellaria enters.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You write like a 7 year old.",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your maester kindly agreed to copy it over for me.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He didn’t try to make you pay?",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then maybe he’s changed. The Queen will be thrilled to know you’ll be bringing her daughter home",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She will.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You love her very much, don’t you?",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, she’s my niece.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wasn’t talking about her.",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jaime looks up from his writing at Ellaria."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You think I disapprove. Why? Because people disapprove of that sort of thing where you are from? They disapproved of Oberyn and me where you are from. Here, no one blinked an eye. 100 years ago, no one would have blinked an eye at you if you had been named Targaryen. It’s always changing, who we’re supposed to love and who we’re not.The only thing that stays the same is that we want who we want.",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ellaria pauses, taking a walks around the room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know your daughter had no part in the terrible thing that happened to the man I loved. Perhaps even you were innocent of that.",
+                    "spoken_by": "ELLARIA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ellaria exits the room."
+                }
+            ],
+            "location": "DORNE - JAIME’S ROOM"
+        },
+        {
+            "description": "Shireen plays with her stag figurine next to a fire and on top of her book. Stannis enters the tent.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Father. Aren’t you cold?",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. What are you reading?",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Dance of Dragons.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What’s it about?",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s the story of the fight between Rhaenyra Targaryen and her half-brother Aegon for control of the Seven Kingdoms. Both of them thought they belonged on the Iron Throne. When people started for declaring for one of them or the other, their fight divided the kingdom in two. Brothers fought brothers. Dragons fought dragons. By the time it was over, thousands were dead. And it was a disaster for the Targaryens as well. They never truly recovered.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "“The dance of dragons”? Why is that a dance?",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That’s just what they call it.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doesn’t make much sense.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think it’s poetic.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you had to choose between Rhaenyra and Aegon, who would you have chosen?",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wouldn’t have chosen either. It’s all the choosing sides that made things so horrible.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sometimes a person has to choose. Sometimes the world forces his hand. If a man knows what he is and remains true to himself, the choice is not choice at all. He must fulfill his destiny and become who he is meant to be. However much he may hate it.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s alright, father.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don’t even know what I’m talking about.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It doesn’t matter. I want to help you. Is there any way I can help?",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes there is.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good, I want to. I’m the Princess Shireen of House Baratheon and I’m your daughter.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They hug."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forgive me.",
+                    "spoken_by": "STANNIS"
+                }
+            ],
+            "location": "SHIREEN’S TENT"
+        },
+        {
+            "description": "Shireen is flanked by guards as she walks towards a pyre, clutching the stag Davos gave her. When she arrives at the pyre Melisandre steps to the front.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where’s my father? I want to see my father.",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will all be over soon, Princess.",
+                    "spoken_by": "MELISANDRE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The men drag her to the pyre and tie her up."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where’s my father? No you can’t do this, father where are you?!",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stannis watches on from the crowd."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me see my father! Where are you, please?!",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s what the Lord wants. It’s a good thing. A great thing.",
+                    "spoken_by": "SELYSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The year is now, my Lord. For you we offer up this girl, that you may cleanse her with your fire and that its light may lead our way.",
+                    "spoken_by": "MELISANDRE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we don’t act then we’ll all starve here all of us, but if we make this sacrifice…",
+                    "spoken_by": "SELYSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Accept this token of our faith, my lord and lead us from the darkness. Lord of Light show us the way!",
+                    "spoken_by": "MELISANDRE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, please mother! Mother, please mother!",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can’t.",
+                    "spoken_by": "SELYSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There’s no other way. She has King’s blood.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord of Light protect us, for the night is dark and full of terrors!",
+                    "spoken_by": "MELISANDRE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mother, don’t do this please! Please help! Don’t do this! Please, father! Mother, help!",
+                    "spoken_by": "SHIREEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Melisandre lights the pyre. Selyse runs towards the pyre and is stopped by Stannis’ men. Shireen burns as Melisandre, Selyse, and Stannis look on, Melisandre pleased, Selyse horrified, and Stannis conflicted."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No...",
+                    "spoken_by": "SELYSE"
+                }
+            ],
+            "location": "STANNIS’ CAMP"
+        },
+        {
+            "description": "Daenerys sits next to Missandei at the top of the pit, with an open seat between her and Tyrion at the end, and Daario standing behind them. Hizdahr takes the open seat. Daenerys has a mark on her neck where ASHTER choked her before.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where have you been?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just making sure everything’s in order.",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Camera pans through the fighting pit to reveal it is covered with House Targaryen sigils. An announcer steps to the middle of the pit and waves his arm to silence the crowd."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Free citizens of Meereen! By the blessings of the Graces and her majesty the Queen, welcome to the Great Games!",
+                    "spoken_by": "ANNOUNCER (Valyrian)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Announcer raises his hands and the crowd begins to roar. Cut to Daenerys’ box - she and Missandei look disgusted, Daario looks impressed. Two gladiators enter the pit."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My queen, our first contest. Who will triumph: the strong or the quick?",
+                    "spoken_by": "ANNOUNCER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I fight and die for your glory, oh glorious queen.",
+                    "spoken_by": "QUICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I fight and die for your glory, oh glorious queen.",
+                    "spoken_by": "STRONG"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They stand waiting in front of her. The crowd is silent."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They’re waiting for you. Clap your hands.",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Daenerys looks down at the two men. After a moment, and with a look of disgust on her face, she claps her hands. The crowd roars and they start fighting. After some parries, the Quick man slices at the Strong man’s neck."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That one, the smaller man, no question, that’s where you should put your money.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The smaller man it is.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m not putting my money anywhere.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kings and queens never bet on the games. Perhaps you should go find someone who does.",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "looks at Hizdahr",
+                    "line": "People used to bet against me when I fought in the pits.  He would have bet against me. Common novice mistake.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have spent much of my life in Meereen, and in my experience, larger men do triumph over smaller man, far more often than not.",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Has your experience ever involved any actual fighting? You, yourself, have you ever tried to kill a man that was trying to kill you?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Hizdahr is silent."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "he puts a dagger to his neck he puts the dagger to Hizdahr’s neck.",
+                    "line": "Whenever I got into the pit against a beast like that one, the crowd saw me, all skin and bone back then, then they saw a pile of angry muscles ready to murder me. They couldn’t get their money out fast enough. But the pile of angry muscles never had any muscles here  or here  And the big men were always too slow to stop my dagger from going where their muscles weren’t. Yes, whenever I saw a beast like that one, standing across from me making his beast faces, I knew I could rest easy.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Strong man decapitates the Quick man with one quick stroke. Hizdahr smiles and Daario looks turns away angrily. Tyrion says nothing."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don’t approve?",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There’s always been more than enough death in the world for my taste. I can do without it in my leisure time.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fair enough, yet -- it’s an unpleasant question -- but what great thing has ever been accomplished without killing or cruelty?",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s easy to confuse what is with what ought to be. Especially when what is has worked in your favor.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m not talking about myself. I’m talking about the necessary conditions of greatness.",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Cut to pit workers carrying the decapitated head out of the pit, leaving a trail of blood behind."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is greatness?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is a vital part of the great city of Meereen. Which has existed long before you arrived and will remain standing long after we have returned to the dirt.",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My father would have liked you.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We ask again: who will triumph?",
+                    "spoken_by": "ANNOUNCER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One day your great city will return to the dirt as well.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At your command?",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If need be.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Meereenese champion?",
+                    "spoken_by": "ANNOUNCER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The crowd applauds."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many people will die to make this happen?",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If it comes to that they would have died for a good reason.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Those men think they’re dying for a good reason.",
+                    "spoken_by": "HIZDAHR (looks at pit)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Someone else’s reason.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So your reasons are true, and theirs are false. They don’t know their own minds, but you do.",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well said, you’re an eloquent man. Doesn’t mean you’re wrong. In my experience, eloquent men are right every bit as often as imbeciles.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "...or a Westerosi Knight?!",
+                    "spoken_by": "ANNOUNCER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Crowd jeers."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I fight and die for your glory, oh glorious Queen.",
+                    "spoken_by": "JORAH (O.S.)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Daenerys stares at Jorah. They both hold back emotion."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your Grace--",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shut your mouth.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Daenerys claps. Jorah nods. They begin fighting, with Daenerys’ eyes following Jorah. He takes a blow to the mouth, is knocked down and starts bleeding. He gets up, has his sword knocked away, and pulls out a dagger. He wrestles with the man trying to choke him, throws him off, then stabs him in the chest. He pulls the dagger out, looking at Daenerys, throws it away, and picks up his longsword."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jorah squares off against a flashy fighter that just brutally stabbed another fighter through the back. He slices Jorah in the cheek. The other two fighters square off, with a heavily armored fighter wielding a spear killing his opponent. The crowd cheers."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jorah’s opponent slices Jorah’s arm then knocks him over, knocking his sword out of his hand. He holds his blade to Jorah’s throat. Both he and Jorah look to Daenerys."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can end this.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She cannot.",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can!",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The fighter holds his blade to Jorah’s throat. He is about to make a move when the other fighter comes over and stabs Jorah’s opponent in the back, killing him. Jorah gets up and faces the final opponent. Jorah matches the spearman, is knocked over, but catches the spear before it reaches his throat. He gets back up and the two face off again. Jorah spins, somersaults, and stabs him through the stomach, killing him. He looks up to Daenerys."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jorah reaches for his opponent’s spear. He picks it up and hurls it towards Daenerys’ seat. Daario rushes to protect Daenerys and everyone else gets out of the way. It connects with a Son of the Harpy."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Cut to the crowd. Many audience members have put on Sons of the Harpy masks."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Protect your queen!",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Sons of the Harpy start slitting the throats of former slaves and Unsullied in the crowd. Unsullied guards and Daario surround Daenerys and Missandei, fighting off the Harpys. Hizdahr starts running towards Daenerys."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your Grace, Your Grace, come with me! I know a way out! I know a way--",
+                    "spoken_by": "HIZDAHR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Two Sons of the Harpy come up on Hizdahr from behind and stab him to death. They run at Daenerys. Daario takes one out, Jorah comes up from the pit to take Hizdahr’s spot and take out the other. He offers his hand to Daenerys and she takes it. He leads her down to the pit with Daario, and the Unsullied, leaving Tyrion and Missandei."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A Harpy comes towards Missandei. Tyrion comes from behind, pulls him to his knees, and slits his throat. He leads her down to the pit."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stay close!",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sons of the Harpy have began to rush the pit. Unsullied fight them off as Daenerys, Daario, and Jorah head towards a side exit."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This way!",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They run through the exit, but a door swings shut. A Son of the Harpy steps out and Jorah kills him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The other side, follow me!",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They rush towards the other side and join up with Tyrion and Missandei."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Protect your queen!",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jorah, Daario, and the Unsullied form a ring around Missandei, Daenerys, and Tyrion in the center of the pit. Sons of the Harpy begin to rush from the other exit they were heading towards. They surround the ring, testing out the outer ring before they begin rushing. A few make it past the outer ring but are killed by Daario. Missandei and Daenerys join hands and Daenerys closes her eyes."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A roar is heard in the distance. All of the Harpys look up. Drogon appears, breathing fire and circling the pit. The Sons run away from Daenerys to the edge of the pit. One charges at her and Drogon rips him apart. He breathes fire on 4-5 of them at a time before a spear hits his back. 2 more spears connect and he starts slowing down."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Drogon!",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She takes a spear from his neck. He roars at her, but then closes his mouth. She slowly reaches to touch his nose. More spears are thrown at him by Sons of the Harpy and he turns to them and roars. Daario continues to fight off every Harpy that comes near her."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Daenerys climbs onto Drogon’s back slowly."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Valahd..",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Drogon runs towards the Harpys, starts flapping and then takes off from the Pit. He flies past the Pyramid and into the sky as Tyrion, Jorah, Daario, and Missandei stare up at him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A dragon roars in the distance."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "END EPISODE"
+                }
+            ],
+            "location": "MEEREEN - FIGHTING PIT"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "GoT",
+    "title": "The_Dance_of_Dragons_",
+    "transcript_url": "https://gameofthronesfanon.fandom.com//wiki/The_Dance_of_Dragons_(Fanon)/Transcript"
+}

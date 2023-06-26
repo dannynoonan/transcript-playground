@@ -1,0 +1,4227 @@
+{
+    "air_date": null,
+    "duration": null,
+    "scenes": [
+        {
+            "description": "[Episode opens with the king's party arriving in King's Landing. NED is at the front of the procession, followed by JORY, KORMED, and other guards. Behind them, ARYA, SANSA, and SEPTA MORDANE are riding in a cart. As they enter the courtyard, NED gets off his horse and is greeted by the ROYAL STEWARD.]",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome, Lord Stark. Grand Maester Pycelle has called a meeting of the Small Council. The honor of your presence is requested.",
+                    "spoken_by": "ROYAL STEWARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to SEPTA MORDANE to JORY and KORMED",
+                    "line": "Get the girls settled in. I'll be back in time for supper.  And, Jory, Kormed...both of you go with them.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, my lord.",
+                    "spoken_by": "JORY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you command, Lord Stark.",
+                    "spoken_by": "KORMED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you'd like to change into something more appropriate...?",
+                    "spoken_by": "ROYAL STEWARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED gives the STEWARD a blank stare before taking off his gloves. The STEWARD realizes NED’s disinterest and the two begin walking to the council chamber."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The STEWARD is leading NED through a hallway of the Red Keep when a GOLD CLOAK stops them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Stark...?",
+                    "spoken_by": "GOLD CLOAK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The GOLD CLOAK takes off his helmet and reveals himself to be CARMINE GRAYBURN."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do I know you?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's me, Carmine Grayburn.",
+                    "spoken_by": "CARMINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Carmine...? My goodness, lad, you've grown up. Last time I saw you, you were a little boy. And now you're a Gold Cloak.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He shakes CARMINE's hand."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Allow me to congratulate you on becoming Hand of the King.",
+                    "spoken_by": "CARMINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. I was glad King Robert gave me the honor. And how about you, lad? How's King's Landing treating you?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It treats me alright. I hope it does the same for you.",
+                    "spoken_by": "CARMINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how's your father been? How are things in Brightbank?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's great. Things in Brightbank are as normal as ever.",
+                    "spoken_by": "CARMINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't seen Hendrick in nearly nine years. Maybe I should invite him here for a visit sometime....",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't mean to be rude, but the Small Council is waiting for us....",
+                    "spoken_by": "ROYAL STEWARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My apologies. You have more important things to do than talk to me right now. It was nice seeing you again, Lord Stark.",
+                    "spoken_by": "CARMINE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He shakes NED's hand again."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You too, lad. Your Uncle Kormed came with me from Winterfell. Perhaps you might be able to see him if your duties permit it.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED and the STEWARD resume walking, while CARMINE stares after them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They arrive at the main throne room. NED enters and looks around. JAIME LANNISTER is seen sitting on the steps in front of the Iron Throne. When he sees NED, he gets up and walks over to him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sarcastic",
+                    "line": "Thank the Gods you're here, Stark. About time we had some stern Northern leadership.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Glad to see you're protecting the throne.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JAIME briefly glances at the throne."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sturdy old thing. How many kings' asses have polished it, I wonder? Um, What's the line? \"The King shits and the Hand wipes.\"",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "looking at JAIME's armor",
+                    "line": "Very handsome armor. Not a scratch on it.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know. People have been swinging at me for years, but they always seem to miss.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've chosen your opponents wisely then.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have a knack for it.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pause while NED stares at JAIME with an air of disapproval."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It must be strange for you coming into this room. I was standing right here when it happened. He was very brave, your brother. Your father too. They didn't deserve to die like that. Nobody deserves to die like that.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "bitter",
+                    "line": "But you just stood there and watched.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "500 men just stood there and watched. All the great knights of the Seven Kingdoms - you think anyone said a word, lifted a finger? No, Lord Stark. 500 men, and this room was silent as a crypt - except for the screams, of course, and the Mad King laughing. And later....when I watched the Mad King die, I remembered him laughing as your father burned. It felt like justice.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The bitterness has not left NED's face or his voice."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that what you tell yourself at night? You're a servant of justice? That you were avenging my father when you shoved your sword in Aerys Targaryen's back?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sardonic",
+                    "line": "Tell me....if I'd stabbed the Mad King in the belly instead of the back, would you admire me more?",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brief pause. NED is still looking at JAIME with disapproval."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You served him well, when serving was safe.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED walks away. JAIME remains there with a look of annoyance on his face."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED enters the small council’s chamber where VARYS, PETYR \"LITTLEFINGER\" BAELISH, EYRON MORVAYN, GRAND MAESTER PYCELLE, and RENLY BARATHEON are already awaiting him. VARYS is the first to stand up and greet him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Stark.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED goes to shake VARYS' hand."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Varys.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was grievously sorry to hear of your troubles on the Kingsroad. We are all praying for Prince Joffrey's full recovery.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A shame you didn't say a prayer for the butcher's son.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "VARYS looks slightly put out as NED walks past him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to RENLY",
+                    "line": "Renly! You're looking well.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He embraces RENLY."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you look tired from the road. I told them this meeting could wait another day, but...",
+                    "spoken_by": "RENLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But we have a kingdom to look after. I've hoped to meet you for some time, Lord Stark. No doubt Lady Catelyn has mentioned me.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She has, Lord Baelish. I understand you knew my brother Brandon as well.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LITTLEFINGER chuckles to himself."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All too well. I still carry a token of his esteem from navel to collarbone.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He indicates a scar beneath his clothes."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps you chose the wrong man to duel with.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It wasn't the man that I chose, my lord. It was Catelyn Tully. A woman worth fighting for, I'm sure you'll agree.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "EYRON suddenly stands."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ned!",
+                    "spoken_by": "EYRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED grins and goes over to embrace EYRON."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gods, Eyron, how long has it been? At least 16 years. You haven't aged a day.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I could say the same for you.",
+                    "spoken_by": "EYRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They both laugh."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It'll be good to have you here, Ned.",
+                    "spoken_by": "EYRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I humbly beg your pardon, my Lord Stark.",
+                    "spoken_by": "PYCELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Grand Maester.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many years has it been? You were a young man.",
+                    "spoken_by": "PYCELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you served another king.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pause while PYCELLE stares absentmindedly at NED."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, how forgetful of me!",
+                    "spoken_by": "PYCELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He rummages around in his robe for something. He pulls out the Hand of the King badge and hands it to NED."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This belongs to you, now. Should we begin?",
+                    "spoken_by": "PYCELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Without the King?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Winter may be coming, but I'm afraid the same cannot be said for my brother.",
+                    "spoken_by": "RENLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "His Grace has many cares. He entrusts some small matters to us that we might lighten the load.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We are the lords of small matters here.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sarcastic",
+                    "line": "Hmm, governing Seven Kingdoms! Yes, those are small matters compared to drinking and whoring....",
+                    "spoken_by": "EYRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "RENLY hands NED a scroll. NED opens it and starts to read."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My brother instructs us to stage a tournament in honor of Lord Stark's appointment as Hand of the King.",
+                    "spoken_by": "RENLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The King does love his tournaments...",
+                    "spoken_by": "EYRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mmm, how much?",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "40,000 gold dragons to the champion, 20,000 to the runner-up, 20,000 to the winning archer.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to LITTLEFINGER",
+                    "line": "Can the treasury bear such expense?",
+                    "spoken_by": "PYCELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll have to borrow it.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Perhaps we should ask the Blackgards? They're reasonably endowed with coin, I'm sure they can manage it.",
+                    "spoken_by": "EYRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm afraid Lord Trevyr has already found use for his treasury. He is currently arranging the marriage of his daughter.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Trevyr has always been a good friend to the Crown. He's a former Hand himself, after all. I'm sure he can...",
+                    "spoken_by": "PYCELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If the Lord of Ebonheart says no, he means it.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Lannisters will accommodate, I expect. We already owe Lord Tywin three million gold. What's another 80,000?",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "startled",
+                    "line": "Are you telling me the Crown is three million in debt?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm telling you the Crown is six million in debt.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How could you let this happen?!",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "EYRON laughs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As if Robert would have listened to us if we had tried to stop him. Ned, you know how he is...",
+                    "spoken_by": "EYRON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Master of Coin finds the money. The King and the Hand spend it.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will not believe Jon Arryn allowed Robert to bankrupt the Realm.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Arryn gave wise and prudent advice, but I fear His Grace doesn't always listen.",
+                    "spoken_by": "PYCELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "\"Counting coppers,\" he calls it.",
+                    "spoken_by": "RENLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll speak to him tomorrow. This tournament is an extravagance we cannot afford.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As you will. But still, we'd best make our plans.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "harshly",
+                    "line": "There will be no plans until I speak to Robert!",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Uncomfortable silence. NED looks around the table, then puts his face in his hands."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forgive me, my lords. I'm - I had a long ride.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are the King's Hand, Lord Stark. We serve at your pleasure.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Scene shifts to JOFFREY's chambers. CERSEI is dabbing medicine on JOFFREY's wound."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ow!",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, it's nearly healed.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's ugly.",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CERSEI finishes putting the medicine on and replaces the gauze."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A king should have scars. You fought off a direwolf. You're a warrior like your father.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not like him. I didn't fight off anything. It bit me and all I did was scream. And the two Stark girls saw it, both of them.",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not true. You killed the beast. You only spared the girl because of the love your father bears her father.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't, I -",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When Aerys Targaryen sat on the Iron Throne, your father was a rebel and a traitor. Someday you'll sit on the throne and the truth will be what you make it.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do I have to marry her?",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JOFFREY looks away, agitated."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She's very beautiful and young, and if you don't like her, you only need to see her on formal occasions and when the time comes, to make little princes and princesses. And if you'd rather fuck painted whores, you'll fuck painted whores. And if you'd rather lie with noble virgins, so be it. You are my darling boy and the world will be exactly as you want it to be. Do something nice for the Stark girl.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to...",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, but you will. The occasional kindness will spare you all sorts of trouble down the road.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JOFFREY stands up and paces around the room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We allow the Northerners too much power. They consider themselves our equals.",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How would you handle them?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd double their taxes and command them to supply 10,000 men to the royal army.",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A royal army?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why should every lord command his own men? It's primitive, no better than the hill tribes. We should have a standing army of men loyal to the Crown, trained by experienced soldiers, instead of a mob of peasants who've never held pikes in their lives.",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if the Northerners rebel?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd crush them. Seize Winterfell and install someone loyal to the Realm as Warden of the North. Uncle Kevan, maybe.",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And these 10,000 Northern troops, would they fight for you or their lord?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For me. I'm their king.",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mmm-hmm. But you've just invaded their homeland, asked them to kill their brothers.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not asking.",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The North cannot be held - not by an outsider. It's too big and too wild, and when the winter comes, the Seven Gods together couldn't save you and your royal army. A good king knows when to save his strength...",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CERSEI stands up."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CERSEI:...and when to destroy his enemies."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you agree...the Starks are enemies?",
+                    "spoken_by": "JOFFREY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everyone who isn't us is an enemy.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shift to the Starks' residential area, the dinner table, where ARYA, SANSA, and SEPTA MORDANE are all sitting down for dinner. ARYA is repeatedly stabbing the table with a knife."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enough of that, young lady. Eat your food.",
+                    "spoken_by": "SEPTA MORDANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "angrily",
+                    "line": "I'm practicing.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Practicing for what?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Prince.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SANSA looks at ARYA, alarmed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Arya, stop!",
+                    "spoken_by": "SEPTA MORDANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's a liar and a coward! And he killed my friend!",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Hound killed your friend....",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Hound does whatever the Prince tells him to do!",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're an idiot.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're a liar, and if you told the truth, Mycah would be alive!",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA slams the knife into the table one last time."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enough!",
+                    "spoken_by": "SEPTA MORDANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SEPTA MORDANE begins escorting ARYA away from the table just as NED enters."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's happening here?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "disapprovingly",
+                    "line": "Arya would rather act like a beast than a lady.",
+                    "spoken_by": "SEPTA MORDANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pause while NED looks from SEPTA MORDANE to ARYA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to ARYA",
+                    "line": "Go to your room. We'll speak later.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA leaves. NED places a wrapped package in front of SANSA on the table."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's for you, love.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED and SEPTA MORDANE sit down at the table. SANSA opens the package; it is revealed to be a doll."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The same dollmaker makes all of Princess Myrcella's toys.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SANSA looks unimpressed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't you like it?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SANSA I haven't played with dolls since I was eight."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED looks frustrated."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to SEPTA MORDANE",
+                    "line": "May I be excused?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've barely eaten a thing.",
+                    "spoken_by": "SEPTA MORDANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's all right. Go on.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SANSA gets up and leaves. NED watches her go."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "War was easier than daughters.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shift to ARYA's chambers, where she is shown unsheathing Needle. There is a knock on her door."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go away!",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Arya, open the door.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA, realizing that it is her father, goes over to open the door."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I come in?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA lets him in. NED suddenly notices Needle."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whose sword is that?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mine.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give it to me.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA holds on to it for a moment before finally giving it to NED. NED inspects it."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know this maker's mark - this is Mikken's work. Where did you get this?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA nervously looks at NED, but doesn't answer."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is no toy. Little ladies shouldn't play with swords.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED sits down."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wasn't playing. And I don't want to be a lady.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come here.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA sits down next to NED."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now what do you want with this?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's called Needle.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, a blade with a name. And who were you hoping to skewer with Needle - your sister? Do you know the first thing about sword fighting?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stick 'em with the pointy end.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED laughs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's the essence of it.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "mournful",
+                    "line": "I was trying to learn....",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pause. NED looks at ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I asked Mycah to practice with me. I asked him. It was my fault....",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED puts his arm around ARYA's shoulder in a comforting way."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, sweet girl. No, no. You didn't kill the butcher's boy.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hate them! I hate all of them! The Hound, the Queen and the King, and Joffrey, and Sansa!",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sansa was dragged before the King and Queen and asked to call the Prince a liar.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So was I! He is a liar!",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Darling, listen to me - Sansa will be married to Joffrey someday. She cannot betray him. She must take his side even when he's wrong.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But how you can let her marry someone like that?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well....",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED is clearly at a loss for words."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Look at me. You're a Stark of Winterfell. You know our words.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "\"Winter is coming.\"",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were born in the long summer. You've never known anything else. But now winter is truly coming. And in the winter, we must protect ourselves, look after one another. Sansa is your sister.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't hate her. Not really....",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't want to frighten you, but I won't lie to you either - we've come to a dangerous place. We cannot fight a war amongst ourselves. All right?",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He hands Needle back to ARYA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go on. It's yours.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can keep it?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Try not to stab your sister with it.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED chuckles. ARYA begins swiping it through the air. NED starts to leave but looks back at her. She points Needle at him, making him chuckle again."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you're going to own a sword, you'd better know how to use it.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shift to Winterfell, BRAN's chambers. BRAN in still in bed. OLD NAN, an elderly servant and the Starks' former wet nurse, is sitting at the foot of his bed, knitting. A crow lands on the window sill and caws a few times. BRAN stares it."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't listen to it. Crows are all liars.",
+                    "spoken_by": "OLD NAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brief pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know a story about a crow.",
+                    "spoken_by": "OLD NAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hate your stories.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OLD NAN:....I know a story about a boy who hated stories. I could tell you about Ser Duncan the Tall, or maybe John Barleycorn; those were always your favorites."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Those weren't my favorites. My favorites were the scary ones.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OLD NAN stops knitting."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, my sweet summer child, what do you know about fear? Fear is for the winter, when the snows fall a hundred feet deep. Fear is for the Long Night, when the sun hides for years, and children are born and live and die all in darkness. That is the time for fear, my little lord, when the White Walkers move through the woods. Thousands of years ago, there came a night that lasted a generation. Kings froze to death in their castles, same as the shepherds in their huts. And women smothered their babies rather than see them starve, and wept and felt the tears freeze on their cheeks. So is this the sort of story that you like?",
+                    "spoken_by": "OLD NAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BRAN nods."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In that darkness, the White Walkers came for the first time. They swept through cities and kingdoms, riding their dead horses, hunting with their packs of pale spiders big as hounds -",
+                    "spoken_by": "OLD NAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ROBB suddenly walks into the room, interrupting OLD NAN’s story."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you telling him now?",
+                    "spoken_by": "ROBB"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only what the little lord wants to hear.",
+                    "spoken_by": "OLD NAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get your supper. I want some time with him.",
+                    "spoken_by": "ROBB"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "OLD NAN puts down her knitting and leaves the room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to BRAN",
+                    "line": "One time she told me the sky is blue because we live inside the eye of a blue-eyed giant named Macomber.",
+                    "spoken_by": "ROBB"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Maybe we do.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pause. ROBB sits down on the edge of the bed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do you feel? You still don't remember anything?",
+                    "spoken_by": "ROBB"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BRAN shakes his head."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Bran, I've seen you climb a thousand times. In the wind, in the rain....a thousand times. You never fall.",
+                    "spoken_by": "ROBB"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did, though.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's true, isn't it? What Maester Luwin says about my legs?",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ROBB nods."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd rather be dead.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't ever say that.",
+                    "spoken_by": "ROBB"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd rather be dead.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ROBB is visibly shocked by this statement."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CATELYN and SER RODRIK have arrived in King’s Landing, entering the city through a back entrance."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fewer eyes back here, my lady. But still too many.",
+                    "spoken_by": "SER RODRIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's nine years since I've set foot in the capital. And no one knew who I was the last time I came either.",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A pair of guards are seen riding up to them. SER RODRIK notices them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My lady....",
+                    "spoken_by": "SER RODRIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Welcome to King's Landing, Lady Stark. Would you mind following us?",
+                    "spoken_by": "GUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I would. We've done nothing wrong.",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've been instructed to escort you into the city.",
+                    "spoken_by": "GUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "surprised",
+                    "line": "Instructed? I don't know who's providing your instructions, but -",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Follow me, Lady Stark.",
+                    "spoken_by": "GUARD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The GUARD hands CATELYN a scroll containing their orders."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The guards are shown leading CATELYN and SER RODRIK through a brothel in the city. Up on the top level, they find LITTLEFINGER sitting on a couch, two prostitutes flanking him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to the whores",
+                    "line": "Cat!  Go on. Go upstairs.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LITTLEFINGER stares at CATELYN expectantly. CATELYN looks insulted."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You little worm!",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She throws the scroll at him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You take me for some back-alley Sally you can drag into a - ?!",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Two naked whores interrupt, LITTLEFINGER snaps at them to leave."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I meant no disrespect to you of all people.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How dare you bring me here! Have you lost your mind?!",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No one will come looking for you here. Isn't that what like you wanted? I'm truly sorry about the locale.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did you know I was coming to King's Landing?",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LITTLEFINGER points to something over her shoulder."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A dear friend told me.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CATELYN turns around. VARYS enters from another room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lady Stark.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Varys.",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To see you again after so many years is a blessing.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He takes her hands."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your poor hands....",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CATELYN pulls away from him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "suspicious",
+                    "line": "How did you know I was coming?",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Knowledge is my trade, my lady. Did you bring the dagger with you, by any chance?",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brief pause. Both CATELYN and SER RODRIK look surprised."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My little birds are everywhere. Even in the North. They whisper to me the strangest stories.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SER RODRIK takes out the dagger and hands it to VARYS. VARYS unsheathes it and looks it over."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Valyrian steel....",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you know whose dagger this is?",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I must admit I do not.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LITTLEFINGER chuckles."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, well, this is an historic day. Something you don't know that I do.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "VARYS, CATELYN, and SER RODRIK all turn to face LITTLEFINGER."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's only one dagger like this in all of the Seven Kingdoms. It's mine.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yours?",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At least it was, until the tournament on Prince Joffrey's last nameday. I bet on Ser Jaime in the jousting, as any sane man would. When the Knight of the Flowers unseated him, I lost this dagger.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To whom?",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tyrion Lannister. The Imp.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Scene shifts to Castle Black. TYRION LANNISTER and LORD COMMANDER JEOR MORMONT are watching several recruits practicing swordplay. SER ALLISER THORNE, the master-at-arms of Castle Black, is overseeing the training, and he is being helped by SER JARAN DRAGEN, a senior member of the Night's Watch. JON SNOW is among the trainees, as are GRENN, PYP, RAST, and KONRAD GRAYBURN."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Grenn, show him what you farm boys are made of!",
+                    "spoken_by": "THORNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JON and GRENN start to fight. JON's skill is clearly superior to GRENN's. After a bit, JON knocks GRENN in the face, breaking his nose. GRENN doubles over in pain."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pity, Grenn. Real pity. I expected better from you.",
+                    "spoken_by": "JARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shut the fuck up, old man. Who even asked you anyway?!",
+                    "spoken_by": "GRENN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to PYP",
+                    "line": "If that were a real sword, you'd be dead! Lord Snow here grew up in a castle spitting down on the likes of you.  Pyp...do you think Ned Stark's bastard bleeds like the rest of us?",
+                    "spoken_by": "THORNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "PYP steps forward, but JON has him on his back after only one move. THORNE looks annoyed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Next!",
+                    "spoken_by": "THORNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "RAST starts against JON, as another joins, JON defeats the two of them almost instantly. JARAN is impressed, though the same can't be said for THORNE. Up on the balcony, TYRION looks impressed too."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Pitiful. Konrad Grayburn, let's see how you fare against the bastard.",
+                    "spoken_by": "THORNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KONRAD steps in and fights JON. He is able to hold his own, much more so than the other recruits, though JON is able to beat him down too. GRENN is still holding his nose while watching."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, Lord Snow, it appears you're the least useless person here.",
+                    "spoken_by": "THORNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to THORNE",
+                    "line": "He's a natural. Can't say the same for the rest of them though.",
+                    "spoken_by": "JARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "THORNE looks unconvinced."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go clean yourselves up! There's only so much I can stomach in a day....",
+                    "spoken_by": "THORNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "As the others disperse, JARAN pulls JON aside."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Try and ignore Thorne, Snow. He's a bully to everyone.",
+                    "spoken_by": "JARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brief pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't properly introduced myself.  I'm Jaran.  I work with the rangers and help train new recruits.",
+                    "spoken_by": "JARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He shakes JON's hand."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's nice to meet you.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know it seems like nobody likes you here now, but give it time. They'll warm up to you eventually, and you to them.",
+                    "spoken_by": "JARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JON looks around at all the other recruits, and looks unconvinced."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I could care less if they like me.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I don't blame you.  But they're more likely to have your back when you're out beyond the Wall if they like you than if they don't.",
+                    "spoken_by": "JARAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, I suppose you're right....",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JARAN nods and smiles, claps JON on the shoulder, and they both leave. THORNE is leaving too. TYRION and MORMONT are watching him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sarcastic",
+                    "line": "A charming man....",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't need him to be charming. I need him to turn this bunch of thieves and runaways into men of the Night's Watch.",
+                    "spoken_by": "MORMONT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how's that going, Commander Mormont?",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slowly.",
+                    "spoken_by": "MORMONT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pause. MORMONT pulls a scroll from his belt and hands it to TYRION."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A raven came for Ned Stark's son.",
+                    "spoken_by": "MORMONT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good news or bad?",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Both.",
+                    "spoken_by": "MORMONT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Scene shifts to the outskirts of Snake Mount, where we see an escaped PRISONER in tattered clothes coming over a hill, clearly terrified and running away from something. After a moment we see he is being chased by riders, but they are not clearly seen. After a bit, a rope is thrown around the PRISONER's neck, forcing him to the ground. We now see that one of the riders is Lucas DRAGEN, and that he is holding the other end of the rope, a sadistic smile on his face. He dismounts his horse, bow at the ready."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I must say, I am impressed. Not many have gotten this far. I believe you have set a new record!",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The PRISONER tries to stand, but he is clearly too weak."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "begging",
+                    "line": "Please, my lord! I beg you, give me mercy! Please!",
+                    "spoken_by": "PRISONER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mercy?",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas laughs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't done anything to you. Why, I even let you go. Really, how much more mercy can I possibly give you?",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The others laugh."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It was foolish of me to run! I mean it! Please, just let me live!",
+                    "spoken_by": "PRISONER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As much as I like seeing people beg to me, I have to decline your request.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "GROND, Snake Mount's master torturer, dismounts his horse and pulls out an axe."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sadistically",
+                    "line": "Shall I finish him off, m'lord?",
+                    "spoken_by": "GROND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "By all means, Grond.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas tightens the rope to hold the PRISONER in place. GROND walks towards him, his axe raised."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "NO, PLEASE! PLEASE DON -",
+                    "spoken_by": "PRISONER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "GROND promptly beheads him before he can finish speaking."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, that was fun.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas is next shown entering Snake Mount's great hall. Waiting for him are his twin sister, MIRA DRAGEN, his younger brother, ERIKAR \"ERIK\" DRAGEN, and a representative of House Bracken named ALBAR."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you have a nice hunt, Lucas?",
+                    "spoken_by": "MIRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I did, Mira. Thank you for asking.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas just now notices ALBAR."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And who is this?",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My name is Albar. I'm here on behalf of House Bracken.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, I see. I was just about to partake in a meal with my siblings. Perhaps you'd like to join us, my lord?",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "annoyed",
+                    "line": "While I appreciate the offer, Dragen, I didn't come here to have a meal. I have serious matters to attend to.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to MIRA",
+                    "line": "Well, I hope you don't mind if we at least eat.  Mira, is the soup I prepared earlier ready?",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is.",
+                    "spoken_by": "MIRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Several servants come out with bowls of soup. Lucas, MIRA, and ERIK all sit down and begin to eat."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you at least sit down, my lord?",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ALBAR sits with them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Visitors are always welcome in Snake Mount, I'm sure you can understand that. Alas, I need to ask, why have you come? This certainly isn't the first time I have had someone from House Bracken here at Snake Mount.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "House Bracken is...shall we say, displeased.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are they now?",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It seems that Rickar Bracken - Lord Jonos' nephew - still hasn't been found. Well, his body at least hasn't been found.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rickar Bracken? Rickar... Ah, of course! Lord Manderly's squire, no?",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Indeed. Were you well acquainted with him?",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not really. I only met him a few times; he didn't strike me with any particular interest.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I see.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brief pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you're asking for help in finding him, I'll speak to my father. I'm sure he can spare a few men.  If you would have them, I'd be honored.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's not why I'm here, I'm afraid. Because, you know, Rickar's disappearance did occur shortly after he came here.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brief pause. Lucas gives ALBAR a look that clearly says \"And your point is...?\""
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remember Julan Frey? Was made into a dip not so long ago. Just shortly after he left Snake Mount. And how about that coal boy....what was his name again? Keren? No, Kegan. He'd been found beheaded and his stomach cut open. His intestines had been eaten. Also, from Snake Mount.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas raises an eyebrow."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What exactly are you implying?",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sarcastic",
+                    "line": "Am I implying anything? Of course not. It is purely out of my lord's curiosity that I am here.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "\"Curiosity?\"",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A twisted smile appears on Lucas's face. ERIK notices this and looks worried."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "under his breath",
+                    "line": "Oh, no....",
+                    "spoken_by": "ERIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Albar - my lord - on occasions such as these, I would normally ask you to leave for insulting me in such a vulgar way. But, seeing as you're a most interesting creature to behold, I would like to play a little game with you.",
+                    "spoken_by": "​Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ALBAR [confused] I don't...."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MIRA now looks worried too."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My lord, please forgive my brother, he just -",
+                    "spoken_by": "MIRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas interrupts."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to MIRA to ALBAR",
+                    "line": "Hush, Mira.  You're not simply here out of the goodness of your heart, nor because of your duty to your lord, Gods forbid. If Lord Bracken suspects me of being involved in his nephew's death, he could have come here himself - in fact, he should have come here himself. Wars have been started over less. But he didn't. So why did he send you?",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lucas, please, stop this.",
+                    "spoken_by": "ERIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas ignores ERIK."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas; No, there's more to this, is there? Judging from your clothes, you're smallfolk. But not just ordinary smallfolk, otherwise Lord Bracken would not have sent you here."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas gives a quick grin while enjoying the dread in ALBAR's face. He leans in closer to him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've been fucking his wife, haven't you? And he was furious. If I know Lord Bracken, he didn't even give you the Wall as a choice, did he? So he made a deal with you: if you come here and find out what happened to his nephew, you get to keep your cock.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ALBAR shoves ERIK's bowl of soup off the table and abruptly stands up, angry. "
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How dare you, Dragen! I've had enough of this little game of yours! I owe my allegiance to the Brackens, I do what they ask me and I ask no questions in return! Lord Bracken knows what you are, oh yes, he does. And he's not the only one, either.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas and ALBAR stare at each other for a bit. After a stare down, Lucas smiles."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, my lord, have some soup.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I believe I already told you that I don't want any of your goddamn soup.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, but I insist. You've traveled a long way, after all, and you must be at least a little bit peckish.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A servant comes out and puts a bowl of soup in front of ALBAR. He also gives ERIK another bowl. He reluctantly sits back down, staring angrily at Lucas all the while. After a moment, he finally tries some of the soup."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My brother is good at preparing a meal, isn't he?",
+                    "spoken_by": "ERIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Insultingly",
+                    "line": "Not bad for a Northerner, no.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "softly, to Lucas",
+                    "line": "It is very delicious, Lucas.",
+                    "spoken_by": "MIRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sarcastic",
+                    "line": "Indeed.",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sternly",
+                    "line": "I sense a bit of sarcasm, my lord.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ALBAR laughs derisively."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And here I thought you weren't paying attention!",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I pay lots of attention. But not necessarily in a wide-eyed, indiscriminate way.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ALBAR laughs derisively again. Lucas abruptly stands and goes over to grab an ice pick laying against the far wall. He then wanders back to the table."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This might sting.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas firmly shoves the ice pick through ALBAR's head and right into his frontal lobes. He is still alive but is muttering incomprehensible and incoherent sentences. Both MIRA and ERIK are visibly shocked."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What in Seven Hells - ?!",
+                    "spoken_by": "ERIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas calmly sits down and continues his meal, followed by a brief pause. ALBAR is still mumbling incoherently. Blood is staring to leak out from the wound on his head. Both MIRA and ERIK are staring at him in horror."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That may have been impulsive of me.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "disgusted",
+                    "line": "Impulsive?!",
+                    "spoken_by": "MIRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ALBAR is struggling to form words."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where....did everyone...go? I....can't see....",
+                    "spoken_by": "ALBAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ALBAR mouths words but no sound comes out. He laughs incoherently as well. ERIK is literally too horrified to speak."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't stand this!",
+                    "spoken_by": "MIRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She stands stands up, walks up to ALBAR and pulls the ice pick out of his head. He dies instantly, crumpling onto the table in a hunched position. Blood is seen leaking onto the table."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sarcastic, to MIRA",
+                    "line": "Technically, you killed him.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ERIK looks from ALBAR's corpse to MIRA to Lucas, still looking shocked."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Seven Hells...",
+                    "spoken_by": "ERIK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ERIK runs away. We can hear vomiting down the hall."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas smirks."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't clean that up.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "There is a pause where MIRA continues to look at Lucas, disgusted."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "indignant",
+                    "line": "I hate it when you do that!",
+                    "spoken_by": "MIRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Necessity, my dear sister. I did not like his tone.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Must you decide to attack everyone who is rude to you?!",
+                    "spoken_by": "MIRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "matter-of-factly",
+                    "line": "Rudeness is an epidemic. If our guest here was more courteous, he would've lived.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MIRA looks away. After a moment, she looks back at him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lucas...",
+                    "spoken_by": "MIRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brief pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MIRA:....Did you kill Rickar Bracken?"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas remains silent."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to tell Mother and Father about this.",
+                    "spoken_by": "MIRA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Lucas laughs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Go on, tell them. See if I care.",
+                    "spoken_by": "Lucas"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MIRA stares at Lucas with a disgusted look, then leaves. A pair of servants drag the body of ALBAR away. 'Lucas picks up the ice pick and sits down, admiring it with a thoughtful look on his face."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Scene shifts back to King's Landing, the main throne room of the Red Keep. NED is seen entering from another room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "offscreen",
+                    "line": "Lord Stark?",
+                    "spoken_by": "PYCELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "PYCELLE is seen coming in from the small council chamber, wheezing. He is approaching NED with a scroll in his hand."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I meant to give you this earlier. So forgetful these days. A raven from Winterfell this morning.",
+                    "spoken_by": "PYCELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "PYCELLE bows and leaves. NED opens the scroll and starts to read. LITTLEFINGER is shown entering from the small council chamber."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good news? Perhaps you'd like to share it with your wife?",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My wife is in Winterfell.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is she?",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He grins and leaves. NED stares after him and decides to follow him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shift to the outside of LITTLEFINGER's brothel. LITTLEFINGER and NED are walking up to the front entrance."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought that she'd be safest in here. One of several such establishments I own.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED, believing that LITTLEFINGER is subtly calling his wife a whore by saying she is in a brothel, suddenly grabs him by the throat and shoves him against the wall."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're a funny man, huh? A very funny man.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LITTLEFINGER's face is starting to turn red. CATELYN suddenly pokes her head out from the top window."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ned!",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED sees her and releases his grip on LITTLEFINGER's neck, then enters the brothel."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "softly, to himself",
+                    "line": "Ah, the Starks - quick tempers, slow minds.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shift to the armory of Castle Black, where JON and RAST are putting away equipment. GRENN and PYP suddenly enter. GRENN still has blood on his face from when JON broke his nose."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You broke my nose, bastard!",
+                    "spoken_by": "GRENN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JON turns to face GRENN. Long tense pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's an improvement.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "GRENN screams as RAST holds JON's arms behind his back. GRENN charges at JON and holds a knife up to him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If we threw you over the Wall, wonder how long it'd take you to hit?",
+                    "spoken_by": "GRENN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wonder if they'd find you before the wolves did.",
+                    "spoken_by": "PYP"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TYRION enters the armory. GRENN turns to look at him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What're you looking at, halfman?",
+                    "spoken_by": "GRENN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm looking at you. You've got an interesting face. Hmmm....very distinctive faces. All of you.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you care about our faces?",
+                    "spoken_by": "RAST"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's just I think they would look marvelous decorating spikes in King's Landing. Perhaps I'll write my sister, the Queen, about it.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "PYP and RAST leave."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll talk later, Lord Snow.",
+                    "spoken_by": "GRENN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "GRENN leaves."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everybody knew what this place was and no one told me. No one but you. My father knew and left me to rot here at the Wall all the same.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Grenn's father left him too....outside a farmhouse when he was three. Pyp was caught stealing a wheel of cheese; his little sister hadn't eaten in three days. He was given a choice: his right hand or the Wall. I've been asking the Lord Commander about them. Fascinating stories.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They hate me because I'm better than they are!",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a lucky thing none of them were trained by a master-at-arms like your Ser Rodrik. I don't imagine any of them have ever held a real sword before they came here.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TYRION looks thoughtfully over at GRENN and PYP"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh....",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TYRION hands JON the same scroll that LORD COMMANDER MORMONT gave him earlier."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your brother Bran. He's woken up.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shift to King's Landing, the top floor of LITTLEFINGER's brothel. LITTLEFINGER, CATELYN, and NED are all talking."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The mere suggestion that the Queen's brother tried to kill your boy would be considered treason.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We have proof. We have the blade.",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which Lord Tyrion will say was stolen from him. The only man who could say otherwise has no throat, thanks to your boy's wolf.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to NED",
+                    "line": "Petyr has promised to help us find the truth. He's like a little brother to me, Ned. He would never betray my trust.",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll try to keep you alive, for her sake. A fool's task, admittedly, but I've never been able to refuse your wife anything.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't forget this. You're a true friend.",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't tell anyone. I have a reputation to maintain.",
+                    "spoken_by": "LITTLEFINGER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Scene shifts to the Red Keep, CERSEI's chambers. There is a knock at the door. CERSEI goes to open the door, and JAIME enters."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How could you be so stupid?!",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Calm down.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's a child! Ten years old! What were you thinking?!",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "brief pause",
+                    "line": "I was thinking of us. You're a bit late to start complaining about it now.  What has the boy told them?",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing. He's said nothing. He remembers nothing.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then what are you raving about?",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What if it comes back to him? If he tells his father what he saw -",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We'll say he was lying. We'll say he was dreaming. We'll say whatever we like. I think we can outfox a 10-year-old.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And my husband?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll go to war with him if I have to. They can write a ballad about us: \"The War for Cersei's Cunt.\"",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CERSEI slaps JAIME. He laughs. She tries to hit him again, but he spins her around and hugs her tightly from behind."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me go.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "whispering in her ear",
+                    "line": "Never.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me go....",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The boy won't talk. And if he does, I'll kill him. Him, Ned Stark, the King - the whole bloody lot of them, until you and I are the only people left in this world.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He gropes her lovingly."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The next day, CATELYN and SER RODRIK are leaving the city. NED and CATELYN are exchanging goodbyes while SER RODRIK looks on."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I could see the girls.",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's too dangerous.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just for a moment.",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Until we know who our enemies are...",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know they did it, Ned. The Lannisters. In my bones, I know it.",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Littlefinger's right...I can't do anything without proof.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And if you find the proof?",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I'll bring it to Robert....and hope he's still the man I once knew. You watch yourself on the road, huh? That temper of yours is a dangerous thing.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My temper? Gods be good, you nearly killed poor Littlefinger yesterday.",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She laughs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He still loves you.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Does he?",
+                    "spoken_by": "CATELYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They share a romantic kiss."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Off with you.",
+                    "spoken_by": "NED"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CATELYN gets on her horse, and she and SER RODRIK leave. NED watches them go, a worried look on his face."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Scene shifts back to the Red Keep, KING ROBERT's chambers. ROBERT is drinking and eating at a table. His squire, LANCEL LANNISTER, is standing beside him holding a jar of wine, while SER BARRISTAN SELMY, Lord Commander of the Kingsguard, is standing in the corner."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, it's been a long time....but I still remember every face. You remember your first?",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, Your Grace.",
+                    "spoken_by": "BARRISTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who was it?",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Tyroshi. Never learned the name.",
+                    "spoken_by": "BARRISTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hmm. How'd you do it?",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lance through the heart.",
+                    "spoken_by": "BARRISTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Quick one. Lucky for you. Mine was some Tarly boy at the Battle of Summerhall. My horse took an arrow so I was on foot, slogging through the mud. He came running at me, this dumb highborn lad, thinking he could end the rebellion with the single swing of his sword. I knocked him down with the hammer - Gods, I was strong then. Caved in his breastplate. Probably shattered every rib he had. Stood over him, hammer in the air. Right before I brought it down he shouted, \"Wait! Wait!\"",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He laughs. BARRISTAN looks on expressionlessly."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They never tell you how they all shit themselves. They don't put that part in the songs. Stupid boy.....",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to LANCEL",
+                    "line": "Now the Tarlys bend the knee like everyone else. He could have lingered on the edge of the battle with the smart boys, and today his wife would be making him miserable, his sons would be ingrates, and he'd be waking three times in the night to piss into a bowl.  Wine!",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LANCEL walks over and starts pouring wine into ROBERT's glass."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lancel. Gods, what a stupid name. Lancel Lannister. Who named you? Some halfwit with a stutter?",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ROBERT snickers. LANCEL looks insulted, but says nothing. ROBERT notices LANCEL has stopped pouring."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's empty, Your Grace.",
+                    "spoken_by": "LANCEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you mean it's empty?",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no more wine.",
+                    "spoken_by": "LANCEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "annoyed",
+                    "line": "Is that what empty means?! So get more. Tell your cousin to get in here.",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "As LANCEL leaves, we see JAIME standing guard outside the door."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Kingslayer! Get in here.",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JAIME enters and stands next to BARRISTAN."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Surrounded by Lannisters. Every time I close my eyes I see their blonde hair and their smug, satisfied faces. It must wound your pride, huh? Standing out there like a glorified sentry. Jaime Lannister, son of the mighty Tywin. Forced to mind the door while your King eats and drinks and shits and fucks....",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brief pause. JAIME has a look on his face that clearly says, 'Is there a point to this?'"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So come on. We're telling war stories. Who was your first kill, not counting old men?",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One of the outlaws in the Brotherhood.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was there that day. You were only a squire, 16 years old.",
+                    "spoken_by": "BARRISTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to BARRISTAN",
+                    "line": "You killed Simon Toyne with a counter riposte. Best move I ever saw.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A good fighter, Toyne, but he lacked stamina.",
+                    "spoken_by": "BARRISTAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your outlaw...any last words?",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I cut his head off, so no.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about Aerys Targaryen? What did the Mad King say when you stabbed him in the back? I never asked. Did he call you a traitor? Did he plead for a reprieve?",
+                    "spoken_by": "ROBERT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He said the same thing he'd been saying for hours: \"Burn them all.\"",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ROBERT looks unnerved."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If that's all, Your Grace...",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JAIME nods to BARRISTAN and leaves."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Across the Narrow Sea, KHAL DROGO is leading his khalasar through a field. DAENERYS and JORAH are fairly close to the front of the procession."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do the Dothraki buy their slaves?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Dothraki don't believe in money. Most of their slaves were given to them as gifts.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "From whom?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you rule a city and you see the horde approaching, you have two choices: pay tribute or fight. An easy choice for most. Of course, sometimes it's not enough. Sometimes a Khal feels insulted by the number of slaves he's given. He might think the men too weak or the women too ugly. Sometimes a Khal decides his riders haven't had a good fight in months and need the practice.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A nearby rider angrily whips a slave for not moving fast enough. DAENERYS looks unnerved."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tell them all to stop.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You want the entire horde to stop? For how long?",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Until I command them otherwise.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JORAH looks impressed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're learning to talk like a Queen.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not a Queen. A Khaleesi.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAENERYS dismounts her horse and walks through the field off of the path to a nearby clearing. JORAH relays her orders to the rest of the khalasar. She hears noises coming towards her and grass snapping. Her brother VISERYS storms into the clearing on horseback wielding a sword."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "angry",
+                    "line": "You dare?! You give commands to me? To me?!",
+                    "spoken_by": "VISERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "VISERYS grabs DAENERYS by the neck."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You do not command the Dragon! I am Lord of the Seven Kingdoms. I don't take orders from savages or their sluts. Do you hear me?",
+                    "spoken_by": "VISERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "VISERYS has his sword to DAENERYS’ throat. One of DROGO's bloodriders, RAKHARO, comes into the area and whips VISERYS, wrapping it around his neck and yanking him to the ground. IRRI and JORAH have both come into the clearing as well. RAKHARO asks DAENERYS a question in Dothraki."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rakharo ask if you want him dead, Khaleesi.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No!",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "VISERYS is still struggling on the ground."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "Maybe the ear will listen if it is removed from the head.",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He has a sadistic grin on his face as he says this."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rakharo say you should take ear, to teach respect.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Please, please, don't hurt him! Tell him I don't want my brother harmed.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "VISERYS is struggling to breathe."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to RAKHARO, in Dothraki",
+                    "line": "Khaleesi does not want him harmed.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Huh?",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He is clearly disappointed, but relents and releases the whip from around VISERYS' neck."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "MORMONT! KILL THESE DOTHRAKI DOGS!",
+                    "spoken_by": "VISERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JORAH exchanges a look with RAKHARO, but does not move."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I AM YOUR KING!",
+                    "spoken_by": "VISERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shall we return to the khalasar, Khaleesi?",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "VISERYS looks from JORAH to DAENERYS, insulted. IRRI helps her back onto her horse. VISERYS starts back towards his horse."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to VISERYS",
+                    "line": "Uh, uh, uh, uh, uh. You walk.",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "RAKHARO leaves to rejoin the khalasar. VISERYS remains, still looking insulted."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Scene shifts to Castle Black. JON is making his way to the lift that leads to the Wall. Along the way he bumps into KONRAD GRAYBURN."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh! Pardon me, Snow.",
+                    "spoken_by": "KONRAD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's all right.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope the others haven't been giving you too much of a hard time.",
+                    "spoken_by": "KONRAD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JON laughs softly."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's no big deal, really. They're just jealous because I'm a better fighter.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You certainly know how to swing a sword.",
+                    "spoken_by": "KONRAD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "pause",
+                    "line": "You weren't too bad yourself. Certainly better than Grenn or Pyp.  You're Ser Kormed's son, right?",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's right. I was going to ask if you knew my father, since you're from Winterfell.",
+                    "spoken_by": "KONRAD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Another pause. JON and KONRAD look out over Castle Black."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope it gets easier.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been here for about a month now. It will. At least...it has for me. I can't speak for you.",
+                    "spoken_by": "KONRAD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JON smiles and claps KONRAD on the back."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was about to head above. See my first glimpse of beyond the Wall. I guess I'll see you around, Konrad.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KONRAD. You too."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "KONRAD walks away. JON resumes walking to the lift. It doesn't take long for him to reach the top of the Wall once he gets there. He gradually makes his way to the watch point, where his uncle BENJEN is waiting for him, warming up by the fire. JON goes over and hugs him. Afterwards, he goes over and looks out at what lies beyond the Wall, clearly in awe."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wanted to be here when you saw it for the first time.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JON is still in awe. BENJEN grins at him admirably."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm leaving this morning.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're leaving?",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm the First Ranger. My job is out there. There have been disturbing reports.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What kind of reports?",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The kind I don't want to believe.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm ready. I won't let you down.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not going. You're no ranger, Jon.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I'm better than every - !",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Better than no one! Here, a man gets what he earns, when he earns it. We'll speak when I return.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BENJEN claps JON on the shoulder and leaves. JON keeps looking out over the Wall, looking slight put out."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shift to Castle Black's mess hall, where we see TYRION drinking with YOREN, a Night's Watch recruiter."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A bear's balls.",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, you're joking!",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And his brains, and his guts, his lungs and his heart, all fried in his own fat. When you're a hundred miles north of the Wall and you ate your last meal a week ago, you leave nothing for the wolves.",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He drinks from his horn."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And how do a bear's balls taste?",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A bit chewy.",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They both laugh."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what about you, my lord? What's the strangest thing you've eaten?",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do Dornish girls count?",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They both laugh again."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you roam the Seven Kingdoms, collaring pickpockets and horse thieves and bringing them here as eager recruits?",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye. But it's not all of 'em's done bad things. Some of 'em's just poor lads looking for steady feed. Some of 'em's highborn lads looking for glory.",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They have a better chance finding feed than glory.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BENJEN enters."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Night's Watch is a joke to you, is it? Is that what we are, Lannister? An army of jesters in black?",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't have enough men to be an army, and aside from Yoren here, none of you are particularly funny.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BENJEN sits down next to YOREN. TYRION takes a drink from his mug."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope we've provided you with some good stories to tell when you're back in King's Landing. But something to think about while you're drinking your wine down there, enjoying your brothels: half the boys you've seen training will die north of the Wall. Might be a wilding's axe that gets them, might be sickness, might just be the cold. They die in pain. And they do it so plump little lords like you can enjoy their summer afternoons in peace and comfort.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to YOREN to BENJEN",
+                    "line": "Do you think I'm plump?  Listen, Benjen - may I call you Benjen?",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Call me what you like.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure what I've done to offend you. I have great admiration for the Night's Watch. I've great admiration for you as First Ranger.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know, my brother once told me that nothing someone says before the word \"but\" really counts.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brief pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But....I don't believe that giants and ghouls and White Walkers are lurking beyond the Wall. I believe that the only difference between us and the wildlings is that when the Wall went up, our ancestors happened to live on the right side of it.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Another brief pause. TYRION takes a drink from his mug."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're right. The wildlings are no different from us. A little rougher, maybe. But they're made of meat and bone. I know how to track them and I know how to kill them. It's not the wildlings giving me sleepless nights. You've never been north of the Wall, so don't tell me what's out there.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BENJEN stands up."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you going below?",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "YOREN stands as well."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Keep well, keep warm.",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "YOREN and BENJEN embrace."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Enjoy the capital, brother.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, I always do.",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BENJEN leaves."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "jokingly",
+                    "line": "I think he's starting to like me.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "YOREN laughs and refills TYRION's mug."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "\"Going below\"?",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye. Into the tunnel and out the other side. He'll be north of the Wall for a month or two.",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Another brief pause while they both drink."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So, you're heading down to King's Landing too.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye. Day after tomorrow. I get about half of my recruits from their dungeons.",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let's share the road. I could use some decent company.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I, uh...I travel a bit on the grubby side, my lord.",
+                    "spoken_by": "YOREN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not this time. We'll be staying at the finest castles and inns. No one turns away a Lannister.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Scene shifts to across the Narrow Sea, where the KHAL DROGO's khalasar have once again set up camp. IRRI is braiding DAENERYS' hair and is teaching her how to better speak Dothraki."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "At Jakar.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Atjahakar.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ath Ja Haker.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Atjahakar.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Atjahakar?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Khaleesi.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "IRRI feels DAENERYS' breast."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "giggles uncomfortably",
+                    "line": "Oh. What are you doing?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When was last time you bleed, Khaleesi?",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A look of surprise comes across DAENERYS' face."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You change, Khaleesi.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAENERYS puts a hand on her stomach. IRRI does so too."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "It’s a blessing from the Great Stallion.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAENERYS looks slightly overwhelmed as IRRI resumes braiding her hair."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Later that night, in JORAH's tent. JORAH is sitting with RAKHARO examining his arakh."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For a man on horseback, the curved blade is a good thing, easier to handle. It's a good weapon for a Dothrakan. But a man in full plate - shori tawakof - the arakh won't get through the steel.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JORAH pulls out his sword."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's where the broadsword has the advantage. Designed for piercing plate.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "Dothraki don’t wear steel dresses.",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Armor.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Armor. Armor make a man....vroz?",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slow.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slow.",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's true, but it also keeps a man alive.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "My father taught me how to fight. He taught me that speed defeats size.",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "I’ve heard that your father was a famous warrior.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "He was bloodrider to Khal Bharbo.",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Brief pause."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "And your father, Jorah the Andal? He was a warrior also?",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "forlorn",
+                    "line": "He still is. A man of great honor. And I betrayed him.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "IRRI enters the tent."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "The Khaleesi wants to eat something different tonight. Kill some rabbits.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "There are no rabbits.",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "Find some ducks, she likes ducks.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "Have you seen any ducks, woman? No rabbits, no ducks. Do you have eyes in your head? Do you?",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "irritated, in Dothraki",
+                    "line": "Dog then. I have seen many dogs.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think she wants to eat dog.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Khaleesi have baby inside her. It is true. She does not bleed for two moons. Her belly start to swell.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JORAH looks conflicted."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "A blessing from the Great Stallion.",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She does not want to eat horse.",
+                    "spoken_by": "IRRI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll have the boys butcher a goat for supper.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "IRRI leaves."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need to ride to Qohor.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JORAH picks up his sword and starts to exit the tent."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "confused",
+                    "line": "Uh, we ride for Vaes Dothrak.",
+                    "spoken_by": "RAKHARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't worry. I'll catch you. The horde's easy to find.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shit to courtyard of Castle Black. JON is fighting GRENN once again, while PYP and KONRAD look on, and JARAN oversees the exercises. TYRION watches from the balcony."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to GRENN",
+                    "line": "Don't stand so still. It's harder to hit a moving target.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JON catches TYRION's eye. TYRION grins at him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "to PYP",
+                    "line": "Except for you. You move too much. I could just hold my sword out and let you do the work for me.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TYRION reenters the hall. LORD COMMANDER MORMONT and MAESTER AEMON, the elderly maester of Castle Black, are sitting at the table."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many winters have you seen, Lord Tyrion?",
+                    "spoken_by": "AEMON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Eight. No, nine.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "All of them brief?",
+                    "spoken_by": "AEMON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They say the winter of my birth was three years long, Maester Aemon.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This summer has lasted nine. But reports from the Citadel tell us the days grow shorter. The Starks are always right eventually: winter is coming. This one will be long, and dark things will come with it.",
+                    "spoken_by": "AEMON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We've been capturing wildlings, more every month. They're fleeing south. The ones who flee....say they've seen the White Walkers.",
+                    "spoken_by": "MORMONT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TYRION sits down."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "disbelieving",
+                    "line": "Yes, and the fishermen of Lannisport say they see mermaids.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One of our own rangers swore he saw them kill his companions. He swore it right up to the moment Ned Stark chopped his head off.",
+                    "spoken_by": "MORMONT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Night's Watch is the only thing standing between the realm and what lies beyond. And it has become an army of undisciplined boys and tired old men. There are less than a thousand of us now. We can't man the other castles on the Wall. We can't properly patrol the wilderness. We've barely enough resources to keep our lads armed and fed.",
+                    "spoken_by": "AEMON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "with a hint of despiration",
+                    "line": "Your sister sits by the side the King. Tell her we need help.",
+                    "spoken_by": "MORMONT"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When winter does come, Gods help us all if we're not ready.",
+                    "spoken_by": "AEMON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shit back to the Dothraki camp. DROGO and DAENERYS are intertwined in their tent via candlelight; DROGO is caressing her back."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "It’s a boy.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "How do you know?",
+                    "spoken_by": "DROGO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "in Dothraki",
+                    "line": "I know.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They both smile and share a romantic kiss."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Back at the Wall, we see TYRION peeing off the edge at the main watch point. As soon as he's done, he sees JON standing behind him, looking both amused and embarrassed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry to see you leave, Lannister.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's either me or this cold. And it doesn't appear to be going anywhere.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you stop at Winterfell on your way South?",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I expect I will. Gods know there aren't many feather beds between here and King's Landing.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you see my brother Bran, tell him I miss him. Tell him I'd visit if I could.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He'll never walk again.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you're going to be a cripple, it's better to be a rich cripple. Take care, Snow.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TYRION shakes JON's hand."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Farewell, my lord.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TYRION leaves. JON watches him go, a small grin on his face."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shift to King's Landing. ARYA is walking to her room when she sees a MAN holding two wooden practice swords, his back to her."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are late, boy. Tomorrow you will be here at midday.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He turns to face ARYA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your dancing master, Syrio Forel.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SYRIO tosses one of the practice swords to ARYA. She does not catch it."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tomorrow you will catch it. Now pick it up.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA picks it up and holds it with both hands."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is not the way, boy. This is not a greatsword that is needing two hands to swing it.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's too heavy.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is heavy as it needs to be to make you strong. Just so. One hand is all that is needed.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He demonstrates the proper way to hold it."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now you are standing all wrong. Turn your body side-face.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA turns sideways."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So. You are skinny. That is good. The target is smaller. Now the grip - let me see.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SYRIO inspects ARYA's hand and her grip on the sword."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. The grip must be delicate.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What if I drop it?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The steel must be part of your arm. Can you drop part of your arm? No.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SYRIO walks in a circle around ARYA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nine years Syrio Forel was First Sword to the Sealord of Braavos. He knows these things. You must listen to me, boy.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "annoyed",
+                    "line": "I'm a girl.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Boy, girl....you are a sword, that is all. That is the grip.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SYRIO demonstrates the proper grip. ARYA tries to imitate it."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are not holding a battle axe. You are holding...",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A needle.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ahhh....",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SYRIO gives her a look that says 'Now you're getting it', and chuckles."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just so. Now we will begin the dance. Remember, child, this is not the dance of the Westeros we are learning....the knight's dance, hacking and hammering. This is the Braavos dance....the water dance. It is swift and sudden. All men are made of water, do you know this? If you pierce them, the water leaks out and they die. Now you will try to strike me.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ha!",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA takes several attempts as SYRIO turns his back, defending her and disarming her constantly. She begins picking up on a few things, but still needs much work."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Up! Dead. Dead. Very dead. Come. Again, faster.",
+                    "spoken_by": "SYRIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "NED enters and watches the lesson from the doorway. He is initially smiling, but his smile turns to a look of worry as he feels he is training his daughter for war."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "/ BLACKOUT /"
+                }
+            ],
+            "location": null
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "GoT",
+    "title": "Lord_Snow_",
+    "transcript_url": "https://gameofthronesfanon.fandom.com//wiki/Lord_Snow_(Fanon)/Transcript"
+}

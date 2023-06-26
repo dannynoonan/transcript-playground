@@ -1,0 +1,2778 @@
+{
+    "air_date": null,
+    "duration": null,
+    "scenes": [
+        {
+            "description": "TITLE SEQUENCE\nEXT. BEYOND THE WALL\nHeavy snow is falling. MEERA is dragging BRAN’s sledge through the forest. BRAN’s eyes are glazed white. He experiences many visions of the past all at once. MEERA staggers and falls against the base of a tree. She puts all her weight into pulling the sledge, but it does not budge. She begins crying and goes to BRAN, cradling his head. BRAN continues to have rapid fire visions, then sees a group of wights running through the woods. He wakes up from the visions and looks at MEERA.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Meera. They found us.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MEERA looks out into the woods and sees the group of wights. She begins crying and embraces BRAN."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m so sorry.",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The wights converge on MEERA and BRAN. Moments before they reach them, a cloaked rider appears. The rider’s horse kicks one of the wights out of the way, then the rider extends a chain which lights on fire at the end. Two wights charge, and the rider hits them both with the chain, setting them on fire. A third wight tries to attack his horse, but the horse’s bulk rebuffs it into a tree and it crumbles. The rider plunges a chain-sickle into the chest of another wight, then rides forward, dragging the wight behind his horse. He sets another wight on fire with the chain, launching it into the air, and then approaches BRAN and MEERA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come with me, now.",
+                    "spoken_by": "RIDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A large group of wights approaches."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The dead don’t rest.",
+                    "spoken_by": "RIDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The rider leans down and hoists BRAN up onto his horse. MEERA takes the rider’s hand and joins them on the horse’s back. The three of them ride off into the forest with wights in pursuit."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In PENTOS, Ashter wakes up on the floor of his room, covered with a blanket. Underneath, he is naked. He rises up and puts clothes on. He is Confused on why he is naked and on the floor. He does not remember his encounter with Lorena."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A knock is heard on the door. ASHTER gets his sword ready with armor on and goes to the door, opening it. It is CASPER."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You ready?",
+                    "spoken_by": "CASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose. Hey, uh... has anyone been in my room lately? Do you know?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What-- What kind of question is that?",
+                    "spoken_by": "CASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "stutters",
+                    "line": "I... I had a bit to drink, I don't remember.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ASHTER awkwardly looks down, and thinks that CASPER noticed his lie."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. Hopefully you don't fuck up because you drank too much.",
+                    "spoken_by": "CASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm fine now. Let's go.",
+                    "spoken_by": "ASHTER"
+                }
+            ],
+            "location": null
+        },
+        {
+            "description": "SAM, GILLY, and LITTLE SAM are riding in a carriage escorted by several soldiers. GILLY looks out the window. SAM is holding LITTLE SAM.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s so green.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes. Once you get south of the Riverlands, very different sorts of trees start to take over. Maple, elm, beech, poplar. The odd willow. And of course now that summer’s over, you’ll start seeing the autumn colors coming in. Still, you’ll find more green here than anywhere else.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re nervous. You’re a nervous talker.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM looks away."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That’s not any better being a nervous mute.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn’t think I’d ever come back here after my father made me renounce my title and inheritance and, well, threaten to kill me if I didn’t. A person just doesn’t feel welcome at that point.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "GILLY looks at LITTLE SAM."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And I certainly didn’t expect to be introducing him to my family. So you know what to tell them.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That Little Sam is your baby.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, now that’s very important. If he thinks that Little Sam is his grandchild, he’ll take you in. He’ll get an education. He’ll learn to read. And you can help teach him. Huh?",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What did you tell your family about me?",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I told them I met you in the North.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you tell them how far north?",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, it wasn’t a very large piece of parchment.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You didn’t tell them where I’m really from? You didn’t tell them I’m a wildling?",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The thing is...my father doesn’t like wildlings. He hoped I’d make a man of myself by “killing some bloody wildlings,” so it’s probably a good subject to avoid if at all possible.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "GILLY looks out the window."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think we’re here.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM looks out the window. The carriage is approaching the castle on Horn Hill."
+                }
+            ],
+            "location": "ROAD TO HORN HILL"
+        },
+        {
+            "description": "A party of guests is lined up at the entrance to the castle courtyard. GILLY and SAM enter. GILLY is carrying LITTLE SAM. SAM’s mother, MELESS, and his sister, TALLA, descend a set of stairs and approach them.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sam. Oh, Sam.",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM and MELESSA embrace."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, hello, Mother.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I never thought I’d see you again. You look wonderful.",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TALLA embraces SAM and he grunts."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Talla? Gods, you’re a woman now.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Father says I have to marry Symun Fossoway. He has yellow teeth- -",
+                    "spoken_by": "TALLA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That’s enough, Talla.",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, um, Mother, this is Gilly.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "GILLY bows her head and curtsies."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, my. You are lovely.",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am happy to know you, Lady Tarly.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, and this, this is our son Samwell.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MELESSA and TALLA smile at each other. MELESSA approaches the baby and smiles."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello, little one. It’s me, your grandmother.",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LITTLE SAM smiles and touches MELESSA’s face."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I hold him?",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, of course.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "GILLY passes LITTLE SAM to MELESSA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have a curious mind, I can tell. You’ll be a scholar like your father.",
+                    "spoken_by": "MELESSA (to LITTLE SAM)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is Father? And Dickon?",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They’re on a hunt. They’ll join us for dinner. Come inside. Such a journey. You must be exhausted.",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MELESSA passes LITTLE SAM back to GILLY. SAM and MELESSA proceed up the steps. TALLA takes GILLY’s arm and they follow."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come, you’ll be wanting a bath after all that travel. Oh, and a dress for dinner. You can wear one of mine. What’s your color? Midnight blue or silver? Silver, maybe. Come. You can choose one of my bedrooms if you want.",
+                    "spoken_by": "TALLA"
+                }
+            ],
+            "location": "HORN HILL - COURTYARD"
+        },
+        {
+            "description": "TOMMEN and the HIGH SPARROW are standing in the central chamber. TOMMEN lights a candle.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is there no other way?",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re afraid for her?",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course I’m afraid for her! It just seems very dangerous.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She’ll be protected the entire way. The Faith Militant are very stern with those who overstep their bounds. And Queen Margaery isn’t your mother. I suspect the gods will predispose the common people to gentleness on her behalf. She’s truly opened her heart to them.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She’s always been very devoted to the poor and the unfortunate.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And now she’s devoted to the gods as well. Would you like to see her?",
+                    "spoken_by": "HIGH SPARROW"
+                }
+            ],
+            "location": "GREAT SEPT OF BAELOR"
+        },
+        {
+            "description": "MARGAERY is sitting on a bench reading a book. The door opens. TOMMEN and the HIGH SPARROW are visible outside. TOMMEN enters and stares at MARGAERY. The HIGH SPARROW closes the door behind TOMMEN. MARGAERY sets down her book and stands. They embrace.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have they hurt you? Have they mistreated you?",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, Your Grace.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’ve missed you. More than you could know.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We’ll be together again soon and everything will be better than it was before.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Better how? Soon the- - walk of atonement. He says there’s no other way.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have you spoken to him at all, the High Sparrow?",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, a few times. Have you?",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, I have. He’s not quite what we thought he was, is he?",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TOMMEN scrunches up his face. MARGAERY chuckles and turns away."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You think I’m mad. I sound mad.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. No, you don’t. You- - you could never. You’re right, he’s not. He’s a lot more- -",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He is. There’s something about him. His way of looking at the world. It’s not an easy thing admitting to yourself what you really are. It’s taken me a while. He’s helped me.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you talking about? You’re a good person. You’ve always been a good person. You’re the best person I know.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MARGAERY chuckles and retrieves her book from the bench."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was just telling him about your devotion to the poor.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, yes, I visited their hovels and I fed them soup and I made sure I was seen doing it. I never gave them what they really needed, though. I’ve had lots of time to think about how good I was at seeming good. All those stories I told myself about who I was and why I did the things I did. There were so many lies in those stories.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t understand.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MARGAERY rushes to TOMMEN and takes his hand."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s all right. It really is. It’s such a relief to let go of those lies.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MARGAERY leads him to the bench and they sit down on it together."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about Loras?",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I love my brother. I will always love my brother. His soul is pure and perfect. His sins don’t erase that purity, they only obscure it. He just needs to atone for them. We all do. Sooner or later, one way or another. The gods have a plan for us all.",
+                    "spoken_by": "MARGAERY"
+                }
+            ],
+            "location": "GREAT SEPT OF BAELOR - PRAYER ROOM"
+        },
+        {
+            "description": "SAM paces. GILLY enters on the far end of the hall. She is wearing a dress and her hair is done up.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s hard to walk in this.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s beautiful. You’re beautiful.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "GILLY takes SAM’s arm and they walk down the hall together."
+                }
+            ],
+            "location": "HORN HILL - HALLWAY"
+        },
+        {
+            "description": "SAM, GILLY, MELESSA, TALLA, DICKON, and RANDYLL are sitting around the dinner table eating. RANDYLL takes a bite and stares at SAM. GILLY looks around at others using their utensils and mimics them. SAM looks at DICKON.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This venison, it’s very tasty. Is it from today’s hunt?",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, no. We haven’t been able to cure that one yet. This is last week’s.",
+                    "spoken_by": "DICKON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, of course. Sorry. Long journey.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Brought it down from 70 yards. One shot.",
+                    "spoken_by": "DICKON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, that’s a fair distance.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So do you do much hunting up at the wall?",
+                    "spoken_by": "DICKON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes. Yes. A good amount. North of the Wall, you don’t hunt, you don’t eat.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mm-hmmm. Mostly deer or is it elk as well?",
+                    "spoken_by": "DICKON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rabbits. Sometimes squirrels. I say “we,” it’s my friend Jon mostly. Sometimes Edd. Oh, and Gilly. She’s- - she’s quite a good hunter as well. Um, huntress.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I imagine it’s common where you’re from. We once met a man, Lord Umber from Last Hearth, wasn’t it, Randyll, who said he taught all his daughters how to hunt.",
+                    "spoken_by": "MELESSA (to GILLY)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your father taught you to hunt? Our father would never teach us. I think our father could learn a thing or two from your father.",
+                    "spoken_by": "TALLA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That’s enough of that.",
+                    "spoken_by": "RANDYLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Samwell, would you care for more bread?",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, yes. Yes, please. Thank you, Mother.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A servant girl retrieves the basket of bread. She holds out the basket to SAM. SAM reaches for the bread."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not fat enough already?",
+                    "spoken_by": "RANDYLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM waves the servant away."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I travelled south under orders from the Lord Commander. He wants me to- -",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I read your letter. You’re to be a maester.",
+                    "spoken_by": "RANDYLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. And once I have my chain, I’ll return to Castle Black.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought the Night’s Watch might make a man of you. Something resembling a man at least. You managed to stay soft and fat.",
+                    "spoken_by": "RANDYLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM puts down his utensils."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your nose buried in books. Spending your life reading about the achievements of better men. I’ll wager you still can’t sit a horse or wield a sword.",
+                    "spoken_by": "RANDYLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Randyll, to be maester of the Night’s Watch is a great honor.",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He can wield a sword. He killed a Thenn. He killed a White Walker.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DICKON laughs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There’s no such thing.",
+                    "spoken_by": "DICKON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I saw it with my own eyes on our way down to Castle Black. He drove a dagger into the walker’s heart. He risked his own life to save mine more than once. He’s a greater warrior than either of you will ever be.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your way down to Castle Black? Where did he kill a white walker? Where are you from? How’d you come to meet my son?",
+                    "spoken_by": "RANDYLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Night’s Watch came to our keep.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where?",
+                    "spoken_by": "RANDYLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gilly.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "North of the Wall.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "North of the Wall? You’re a Wildling. The Seven Kingdoms have waged war against these savages for centuries and here I sit hosting one in my hall thanks to my son. See that sword?",
+                    "spoken_by": "RANDYLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "RANDYLL points to a blade mounted on a mantle beside the table."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s called Heartsbane. It’s been in our family for 500 years. It’s Valyrian steel. Only a handful of them left in the world. It’s supposed to go to my firstborn son after I die. To him. He will never wield that sword. If he were to become Lord Tarly of Horn Hill, it would be the end of this house. I took you for a Mole’s Town whore when I saw you and I made my peace with that. Who else would have him? But I overestimated him. No. It was a wildling whore that seduced my son. This you getting back at me, boy? Hmm? Bring that to my table and making me dine with it. And you got what you were after, didn’t you? A bastard. A half-breed bastard. Your invitation into our home.",
+                    "spoken_by": "RANDYLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MELESSA throws down her utensils and stands. She walks to GILLY."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come, my dear. Talla.",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TALLA and GILLY stand and begin to follow MELESSA out of the hall."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’ve lost my appetite.",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He dishonors us.",
+                    "spoken_by": "RANDYLL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You dishonor yourself.",
+                    "spoken_by": "MELESSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your mother’s a fine woman. You’re not worthy of her. To please her, I’ll take the wildling in. She can work in the kitchens. The bastard will be raised here. But this will be the last night you ever spend at Horn Hill.",
+                    "spoken_by": "RANDYLL (to SAM)"
+                }
+            ],
+            "location": "HORN HILL - DINING HALL"
+        },
+        {
+            "description": "GILLY is sitting at the foot of the bed. LITTLE SAM is in a crib beside her. SAM stands before them both. He hangs his head.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m sorry I let him treat you that way. I was afraid he’d turn you and Little Sam away.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m not angry at you. I’m angry that horrible people can treat good people that way and get away with it. When do you have to go?",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "First light.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LITTLE SAM fusses and reaches for SAM. SAM takes his hand."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Say good-bye to him for me.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM starts off but GILLY stands and gets in his way. She places her hands on his chest and kisses him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re not what he thinks you are, Sam. He doesn’t know what you are.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good-bye, Gilly.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM walks to the door. He turns back and stares at GILLY before closing the doors. GILLY looks around the guest chamber and then goes to LITTLE SAM. She pulls his blanket up higher and comforts him. SAM bursts back into the room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sam?",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We’re leaving.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Get your things.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t have any things.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM picks up LITTLE SAM."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We belong together. All of us.",
+                    "spoken_by": "SAM"
+                }
+            ],
+            "location": "HORN HILL - GILLY’S GUEST CHAMBER"
+        },
+        {
+            "description": "SAM and GILLY walk briskly through the hall. GILLY is carrying LITTLE SAM.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What about your mother and sister?",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, they’ll understand.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your sister’s dress.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM grabs a stool and carries it in front of the mantle hosting Heartsbane."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She won’t mind. Looks better on you anyway.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM climbs on top of the stool."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sam. That’s your father’s sword.",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM lifts Heartsbane off the mantle. He groans and slides it into its scabbard."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s my family’s sword.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sam. Won’t he come for it?",
+                    "spoken_by": "GILLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He can bloody well try.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "SAM hops down off the stool."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In PENTOS, ASHTER, ARTHUR and CASPER are standing in front of a seventy men army."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My father wanted this... and we will make sure those outlaws will pay for the fear and chaos that they have caused. Now, men, it is a bit of a walk... and it may be one hell of a battle. But we will survive. Now... let's go.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The sellswords cheer and the men get ready to march."
+                }
+            ],
+            "location": "HORN HILL - DINING CHAMBER"
+        },
+        {
+            "description": "The acting troupe is putting on a repeat performance of The Bloody Hand, their play about the happenings of Westerosi royalty. AYRA is standing in the crowd in the front row. On stage is CLORENZO portraying JOFFREY, an actress portraying MARGAERY, BIANCA portraying SANSA, BOBONO portraying TYRION, and LADY CRANE portraying CERSEI. CLORENZO is at center stage, brandishing a prop sword.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The lion and the rose are one. I thank the gods above.",
+                    "spoken_by": "CLARENZO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The actress portraying MARGAERY runs to CLARENZO."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And to you, my beauteous bridge, I pledge undying love.",
+                    "spoken_by": "CLARENZO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hail King Joffrey. Hail Queen Margaery.",
+                    "spoken_by": "ALL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’ll drink a toast to my new queen, for there is no one fairer. Dear Uncle, will you share my joy and be my royal cupbearer?",
+                    "spoken_by": "CLARENZO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BOBONO approaches CLARENZO and hands him a prop cup."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Drink long and deep, my noble king, from this cup of sweet wine.",
+                    "spoken_by": "BOBONO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CLARNEZO takes the prop cup and BOBONO walks to center stage, addressing the audience."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The last drink he shall ever take. And vengeance shall be mine.",
+                    "spoken_by": "BOBONO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BOBONO laughs and the audience boos. CLARENZO takes a sip from the prop cup, then gags and sputters. The audience gasps. He moves to center stage."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Poison! Murder! I gasp. I- - I die.",
+                    "spoken_by": "CLARENZO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA smiles and laughs in the crowd."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I limp. And it was he…",
+                    "spoken_by": "CLARENZO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CLARENZO points at BOBONO. BOBONO holds up a prop vial of poison. The audience gasps and boos."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "...that poisoned me. My evil Uncle Imp.",
+                    "spoken_by": "CLARENZO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BOBONO laughs and exits with BIANCA. The audience boos. CLARENZO collapses and LADY CRANE kneels down beside him. ARYA laughs. LADY CRANE cradles the head of the actor portraying JOFFREY."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My firstborn son. My golden lion foully, falsely slain. I pray you found a lasting peace free from strife and pain.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA’s smile fades."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hear my prayer, O cruel gods. Take my life instead. For I cannot face another day when my sweet boy is dead. Oh, woe. Oh grief.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA notices BIANCA standing offstage. BIANCA is watching LADY CRANE’s performance and mouths her lines as she utters them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, darkest day, my heart is full of sorrow. All hope is lost. All joy is gone. And there is no tomorrow.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LADY CRANE kisses CLARENZO’s cheek and lays his head down. The audience claps. The actors clear out the stage and the prop men change the scene. BOBONO enters carrying a prop crossbow. IZEMBARO, portraying TYWIN, is sitting on a prop toilet."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What is that I hear and smell? Someone I’ll soon send to hell.",
+                    "spoken_by": "BOBONO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA leaves the front row and moves through the crowd."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s time to see if truth they told who said Tywin Lannister shits gold.",
+                    "spoken_by": "BOBONO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BOBONO pretends to shoot IZEMBARO with the crossbow. IZEMBARO cries out."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You beast. You beast. You killed my wife and now you’ve taken your father’s life.",
+                    "spoken_by": "IZEMBARO"
+                }
+            ],
+            "location": "BRAAVOS - SHEELBA SQUARE"
+        },
+        {
+            "description": "ARYA enters and walks further inward. On her way through the entrance hall, she sees the prop head the performers use for NED’s execution scene.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No worse child ever stained this land.",
+                    "spoken_by": "IZEMBARO (O.S.)"
+                }
+            ],
+            "location": "SHEELBA SQUARE BACKSTAGE"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Curse the day I named you.",
+                    "spoken_by": "IZEMBARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "IZEMBARO groans as though dying and turns to the side. The sound guy makes a farting noise."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My greatest crime. Now I must flee.",
+                    "spoken_by": "BOBONO"
+                }
+            ],
+            "location": "SHEELBA SQUARE STAGE"
+        },
+        {
+            "description": "ARYA walks into the actor’s break room.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then sail across the Narrow Sea to do unto you more treachery.",
+                    "spoken_by": "BOBONO (O.S.)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA draws the curtain and stares at LADY CRANE’s bottle of rum."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don’t fear the winter.",
+                    "spoken_by": "BOBONO (O.S.)"
+                }
+            ],
+            "location": "SHEELBA SQUARE BACKSTAGE"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fear me!",
+                    "spoken_by": "BOBONO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BOBONO shoots a prop arrow into the audience and laughs. The audience gasps and boos him offstage."
+                }
+            ],
+            "location": "SHEELBA SQUARE STAGE"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you. Ladies and gentlemen, I give you Bianca, Clarenzo.",
+                    "spoken_by": "IZEMBARO (O.S.)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA retrieves a vial of from her satchel. She uncorks LADY CRANE’s bottle of rum."
+                }
+            ],
+            "location": "SHEELBA SQUARE BACKSTAGE"
+        },
+        {
+            "description": "IZEMBARO, BIANCA, and CLARENZO stand center stage.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I give you Bobono.",
+                    "spoken_by": "IZEMBARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BOBONO enters the stage and the audience boos."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I give you Camello.",
+                    "spoken_by": "IZEMBARO"
+                }
+            ],
+            "location": "SHEELBA SQUARE STAGE"
+        },
+        {
+            "description": "ARYA pours the contents of the vial into LADY CRANE’s rum bottle and corks it.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And last but not least, sweet Lady Crane.",
+                    "spoken_by": "IZEMBARO (O.S.)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "On stage, LADY CRANE enters and bows. The crowd cheers wildly. AYRA hears the cheering. She tucks the away the vial, draws back the curtain, and exits the break room. The actors are all piling into the area. CAMELLO approaches ARYA in the entrance hallway and hands her his costume cloak."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Give this a good beating. Shake those fleas out. That’s a dear.",
+                    "spoken_by": "CAMELLO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "IZEMBARO and BIANCA enter."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That crowd was shit.",
+                    "spoken_by": "IZEMBARO (to BIANCA)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA walks past them and puts down the cloak. She moves to leave. LADY CRANE enters and sees her."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Girl.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA stops on the steps and looks at LADY CRANE."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing back here?",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nothing.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I saw you the other day in the audience. How many times have you seen this stupid play?",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Three times.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did you pay?",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA smiles."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA walks off the steps to get out of the way of the prop men."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I remember when the players came to my village. I didn’t have any money, so I snuck in. Just like you. Saw the painted faces, the costumes, listened to the songs, cried when the young lovers died in each other’s arms. I ran off and joined them the next day, never looked back.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re very good.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My final speech is shit.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LADY CRANE takes ARYA by the waist and ushers her towards the break room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But to be fair to myself, which I always like to be, the writing’s no good.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They stop in a side corridor."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So change it. It would all just be farting, belching, and slapping without you.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How would you change it?",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The queen loves her son more than anything. And he was taken from her before she could say good-bye. She wouldn’t just cry. She would be angry. She would want to kill the person who did this to her.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What’s your name?",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mercy.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have very expressive eyes, Mercy.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA smiles."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wonderful eyebrows. Do you like pretending to be other people?",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to go. My father’s waiting for me.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA exits. LADY CRANE enter the break room. BIANCA takes off her wig and notices LADY CRANE."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lady Crane, they loved you.",
+                    "spoken_by": "BIANCA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LADY CRANE removes her wig."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They were sweet. Or drunk. Drunkenly sweet.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No laugh for Ned’s death. These people are worse than animals.",
+                    "spoken_by": "IZEMBARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "IZEMBARO sips from a mug and gestures to LADY CRANE."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But they loved her. They all love her.",
+                    "spoken_by": "IZEMBARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CAMELLO removes his wig and approaches LADY CRANE."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, you are adored by people and animals alike.",
+                    "spoken_by": "CAMELLO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do what I can with what I’m given.",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "With what you’re given?",
+                    "spoken_by": "IZEMBARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, I was thinking- -",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, we’re all thinkers now, are we?",
+                    "spoken_by": "IZEMBARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "IZEMBARO stands, slaps his chest, and walks closer to LADY CRANE."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Full to the tits with ideas.",
+                    "spoken_by": "IZEMBARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn’t mean- -",
+                    "spoken_by": "LADY CRANE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have ideas, I have ideas, he has ideas. Why should my ideas have any more value than yours simply because I’ve been doing this my whole life? Who is anyone to judge my work? This is my profession. I know what I’m doing.",
+                    "spoken_by": "IZEMBARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "IZEMBARO removes his wig."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have no right to an opinion.",
+                    "spoken_by": "IZEMBARO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "LADY CRANE brings a glass of rum to her lips. Just before she drinks, ARYA appears and slaps the glass out of her hands. Everyone in the room stares at ARYA. ARYA points at BIANCA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Careful of that one. She wants you dead.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ARYA exits. The WAIF is revealed to have been watching."
+                }
+            ],
+            "location": "SHEELBA SQUARE BACKSTAGE"
+        },
+        {
+            "description": "ARYA pulls the stones away from where she hid Needle. She pulls Needle from inside the rocks and stares at it.",
+            "events": [],
+            "location": "HOUSE OF BLACK AND WHITE - OUTSIDE"
+        },
+        {
+            "description": "JAQEN is cutting the face of a corpse. The WAIF enters.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And?",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As I expected.",
+                    "spoken_by": "WAIF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A shame. A girl had many gifts.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JAQEN begins lifting the face off of the corpse."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You promised me.",
+                    "spoken_by": "WAIF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don’t let her suffer.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The WAIF nods and exits. JAQEN pulls the face from the corpse."
+                }
+            ],
+            "location": "HOUSE OF BLACK AND WHITE - WASHING CHAMBER"
+        },
+        {
+            "description": "ARYA sets down a lit candle and brandishes Needle. She places Needle on the ground, sits down beside it, and blows out the candle.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In PENTOS, Ashter, Arthur and Casper sneak around their destination and see several outlaws."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "whispering",
+                    "line": "You two get those two, I got the two watching the wall over there. Good?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ASHTER nods. He then looks at CASPER, who nods. The two of them go forward and ASHTER grabs the outlaw by the neck, putting his hand on his mouth and then snapping his neck. CASPER only snaps his neck swiftly. ARTHUR puts his sword through one of the guy's neck, and then runs up and sticks a knife in the second guy's neck, then tosses his body off the wall. ARTHUR picks up the body of the other man he killed and tossed him off the wall. ARTHUR nods to ASHTER and CASPER who grab their victims and bring them to the wall, only to throw them off. After they're done, the three of them regroup and hide behind a wall. Inside are several outlaws."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alright... this must be all of 'em. There's no other entrance... so they're all in there.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alright, let's go then.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Let me grab the men. They're standin--",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A man yells, ASHTER, CASPER and ARTHUR are unable to understand what he yelled. The Outlaws are alerted and they all draw their swords."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fuck.",
+                    "spoken_by": "CASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They know we're here.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ASHTER draws his Valyrian Steel Sword, Ice, and ARTHUR notices the blade and he looks angry. CASPER and ASHTER do not notice and the three run away back to the seventy-men army to fight with them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They arrive back at the small army and see many men being killed, both outlaws and their own army. ASHTER, CASPER and ARTHUR take part in killing the outlaws. Even more outlaws come from where they ran from and the three commanders kill as many as they can, and the army does as well. It is turning into a win before another group of the Outlaws approaches, yelling and charging with shields and some have bows and arrows."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're doomed!",
+                    "spoken_by": "DUNCAN COMPANY SELLSWORD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Several of the sellswords are killed, and it begins to look like a complete slaughter. ASHTER, CASPER and ARTHUR desperately try to kill as many as they can, several sellswords hide behind cover to avoid being shot by an arrow, a few sellswords are climbing a wall to get to the archers, and a few succeed and kill some archers, but they are only shot by the archers who were not killed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's way too many of them!",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I thought you said there was only twenty of them!",
+                    "spoken_by": "CASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our scouts were wrong! Fuck! We need to take out those archers!",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We try and climb up there, we'll be shot. Did any of the sellswords have a bow and arrow, do you have one?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Throwing knives. I don't have any, but if we can--",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ask around? Not an option!",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fuck! Alright... we retreat then. We come back with a larger army. We killed nearly all of them, all that's left is the archers and some more of 'em.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do we retreat, genius!? We're stuck!",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He starts climbing up the wall.",
+                    "line": "Fuck this.",
+                    "spoken_by": "CASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Casper, what the fuck are you doing!? Get down here!",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Someone's gotta do something.",
+                    "spoken_by": "CASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He climbs up and runs as fast as he can towards the archer, grabbing one by the legs and lifting him up then tossing him off the wall. Only seven archers remain, one archer is shot in the neck by an unknown man. Three of the archers point at CASPER while two others kill the remaining sellswords and the last one looks around for whoever killed the first archer by an arrow. That archer is shot in the back of the head and he falls off the wall. CASPER uses his sword and slices through the stomach of an archer, he is then shot with an arrow in the right arm, CASPER yells in pain, then rips it out of his arm and is then shot again, but this time in the chest. ASHTER climbs up the wall only to witness CASPER falling off the wall, to his death. ASHTER angrily climbs up and stabs the last archer in the stomach with his Valyrian sword, while the other archer is shot in the side of the neck. ASHTER takes his sword out of the man and then swiftly decapitates the outlaw. He looks down and looks to see several sellswords standing there. ASHTER looks down to see CASPER's body laying on the ground, an arrow in his chest. ASHTER angrily stomps his feet then climbs down the wall to CASPER's body. His body is incredibly bruised due to the ten-or-so feet drop and the arrow in his chest. ASHTER feels a tear fall down his face, and then closes CASPER's eyes then stands up and looks at ARTHUR right behind him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He didn't make it?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sighs",
+                    "line": "Looks like my father saved us.",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ASHTER turns around and looks to see Duncan approaching the two of them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I heard the news.",
+                    "spoken_by": "DUNCAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lady Lorena had a vision in the flames. There was a traitor working with the outlaws. That let us know of our attack.",
+                    "spoken_by": "DUNCAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "WHAT!?!",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A traitor!? What!?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had to come here at once. Are you alright?",
+                    "spoken_by": "DUNCAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He demands, angrily.",
+                    "line": "Casper's dead. Who's the traitor!? WHO!?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've locked him up in a cell. You may kill him yourself or have a headsman do so. Let's head back.",
+                    "spoken_by": "DUNCAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How are you here, Father?",
+                    "spoken_by": "ARTHUR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sick, yes, but I can still walk. I'm doing better, my son. Let's not talk of this now, we must return.",
+                    "spoken_by": "DUNCAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In Saltcliffe, JASPER enters the council room and finds his council sitting, waiting for him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you all doing here? I didn't call for a meeting.",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need to talk, my Lord.",
+                    "spoken_by": "DARION GOODBROTHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I remember correctly, I am the one who calls a meeting of the council -- Not you or anyone else in this room.",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not about that, my Lord. Your brother Euron is King of the Iron Islands.",
+                    "spoken_by": "MALCOLM WARRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, thank the Gods I have an insightful little man like you with me, otherwise I would have never have known that!",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He angrily kicks his chair, knocking it off. ETHAN is startled."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My fucking brother. Kills my other brother and then takes his throne. Nobody bats an eye. Nobody cares. He wasn't wrong. Nobody loved Balon and nobody sure as shit wanted to follow him. Now, all of Pyke's best ships are gone due to my idiot nephew and my bitch niece.... now no doubt Euron will take my ships away.",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is why we need to talk.",
+                    "spoken_by": "MAESTER RYLAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He picks up his chair and then sits down, impatiently tapping his fingers on the table.",
+                    "line": "Very well, then. Talk.",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We do not trust your brother. We fear he is a means to an end, will you allow us to voice our opinions, my Lord?",
+                    "spoken_by": "MAESTER RYLAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's the point of a council without honest opinions? Go on, I don't mind if you insult my brother. At least with Balon ruling, the Iron Islands had time before it collapsed. Euron's gonna bring them down immediately.",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gerold.",
+                    "spoken_by": "MALCOM VARICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My Lord, I have recieved reports of the last living son of Eddard Stark has abandoned his Night's Watch vows--",
+                    "spoken_by": "GEROLD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Last living son? He has two living sons. Do you remember? There's the bastard and then there's Ashter Stark.",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ah, yes. Ashter. The one who is roaming around Essos last I heard. Well, the bastard -- Jon Snow has abandoned his Night's Watch vows... and may plan to march on Ramsay Bolton, the Lord of Winterfell.",
+                    "spoken_by": "GEROLD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay, and this matters why?",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ramsay married the bastard's half-sister, Sansa Stark in order to keep the Northern houses loyal to him. Sansa is no longer with Lord Ramsay, but with Jon instead. That makes Lady Sansa unmarried.",
+                    "spoken_by": "GEROLD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "laughs",
+                    "line": "So you're saying...",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We propose that you ask Jon Snow to allow you to marry Lady--",
+                    "spoken_by": "DARION GOODBROTHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What say does a bastard in her affairs? The North is hers. I will ask Lady Sansa herself.",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well, my Lord.",
+                    "spoken_by": "MAESTER RYLAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have heard that she is currently traveling to Bear Island, the home of the Mormonts.",
+                    "spoken_by": "GEROLD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I marry Lady Sansa, and I help her take back her home, is that what you were suggesting?",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This would make you the Lord of Winterfell and the North.",
+                    "spoken_by": "MALCOM WARRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He rolls his eyes.",
+                    "line": "Unless the bastard legitimizes himself and becomes the \"King in the North\"",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shall I write to Lady Sansa?",
+                    "spoken_by": "MAESTER RYLAND"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye. You will.",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My Lord, the Greyjoy name is not welcomed to Starks. Maybe first we shall offer a token of good faith, such as revealing that we know where Ashter Stark is.",
+                    "spoken_by": "DARION GOODBROTHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, you won't tell them where Ashter is. If you do that, they may go looking for him and then he will be the Lord of Winterfell. No. Send Zane to Meereen and kill Ashter Stark. Now, Maester Ryland... about that letter.",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My Lord, killing Ashter will anger Lady Sansa and Jon Snow if they find out.",
+                    "spoken_by": "DARION GOODBROTHER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I trust you will let nobody know about Ashter's murder. Am I wrong to trust all of you? Nobody speaks a word of this outside this room. Do you understand?",
+                    "spoken_by": "JASPER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They all nod in agreement."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now... leave me with the Maester.",
+                    "spoken_by": "JASPER"
+                }
+            ],
+            "location": "UNKNOWN ALLEY"
+        },
+        {
+            "description": "JAIME is wearing armor and sitting atop a horse. He watches as MACE TYRELL, also wearing armor, leads a force of many soldiers down the street. MACE stops in front of JAIME and the soldiers halt.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My lord.",
+                    "spoken_by": "MACE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My lord.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MACE turns his horse to face the soldiers."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "My friends, the hour has come. Madness has overtaken this city and grasped in its claws my children. But now we must drive it back under the rocks whence it came. Madness has had its day!",
+                    "spoken_by": "MACE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MACE turns his horse back the other way and nods at JAIME. JAIME nods back."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Forward, march!",
+                    "spoken_by": "CAPTAIN"
+                }
+            ],
+            "location": "KING’S LANDING"
+        },
+        {
+            "description": "The HIGH SPARROW is standing on the steps beside MARGAERY and SEPTA UNELLA.. They are surrounded by Faith Militant, including LANCEL. The HIGH SPARROW is addressing a large gathering of commoners who stand at the foot of the steps.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Rich or poor, noble or common, if we win, we must atone. Margaery of House Tyrell came to us a sinner. She stood before the gods in the holy sept and lied. She turned a blind eye to her brother’s sins. She disgraces her house, the king, and herself.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The crowd murmurs and parts. JAIME and MACE enter, leading the soldiers. MARGAERY gasps to herself. On the side, a smaller group of soldiers sets down a carriage. OLENNA steps out of the carriage."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Company, halt! Face front! Turn!",
+                    "spoken_by": "CAPTAIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The soldiers form up and turn to face the steps."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Tyrell.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "MACE nods at the HIGH SPARROW."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ser Jaime.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sorry to interrupt. We’re here for Queen Margaery and Ser Loras Tyrell. Give them to us and we’ll be on our way.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t have the authority to give them to you. And you don’t have the authority to take them.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The crowd murmurs. JAIME ushers his horse forward and rides it up the steps. He halts in front of the Faith Militant."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lock spears!",
+                    "spoken_by": "CAPTAIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The soldiers grunt and point their spears towards the Faith Militant."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I speak for King Tommen of House Baratheon, First of His Name.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The gods don’t recognize his authority in this matter.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You already insulted one great house. It won’t happen twice. Every last sparrow will die before Margaery walks down that street.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "To die in the service of the gods would please each and every one of us. We yearn for it. But there is no call for it today. There will be no walk of atonement.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The crowd murmurs. OLENNA motions to MACE with her fan. MACE motions to one of the high ranking soldiers, who nods to the Captain."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Order up!",
+                    "spoken_by": "CAPTAIN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The soldiers return to a relaxed position."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Queen Margaery has already atoned for her sins by bringing another into the true light of the Seven.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The doors to the Great Sept of Baelor open. TOMMEN emerges, accompanied by the Kingsguard. The crowd murmurs. JAIME looks back at OLENNA, who looks down. TOMMEN and the Kingsguard walk down the steps until TOMMEN stands beside MARGAERY. TOMMEN takes MARGAERY’s hand."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Together we announce a new age of harmony. A holy alliance between the Crown and the Faith.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The crowd cheers."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Long live King Tommen and bless you, Queen Margaery!",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TOMMEN looks at JAIME. JAIME shakes his head. TOMMEN looks at the crowd."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The crown and the faith are the twin pillars upon which the world rests. Together we will restore the Seven Kingdoms to glory.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The crowd cheers."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What’s happening?",
+                    "spoken_by": "MACE (to OLENNA)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He’s beaten us. That’s what’s happening.",
+                    "spoken_by": "OLENNA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The HIGH SPARROW smiles at JAIME."
+                }
+            ],
+            "location": "GREAT SEPT OF BAELOR - STEPS"
+        },
+        {
+            "description": "The room is lined with soldiers on either side. TOMMEN is sitting on the throne. KEVAN stands beside him. JAIME stands at the foot of the throne and removes his armor, letting it drop to the floor.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When you attack the Faith, you attack the Crown. Anyone who attacks the Crown is unfit to serve as Lord Commander of the Kingsguard.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’ve been a member of the Kingsguard since before you were born. You don’t have to do this. You don’t have to do anything.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to answer to the gods.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not when you’re sitting in that chair.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Crown’s decision on this matter is final.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will I be walking naked in the streets? Or will I spend a few months in the sept dungeons first to teach me about the gods’ mercy?",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "TOMMEN and KEVAN look at each other."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have served your house and your king faithfully for many years. And you will continue to do so. But not in this city.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "THE CROSSING - DINING HALL\nWALDER FREY is sitting in a high chair addressing two of his sons, BLACK WALDER and LOTHAR. One of his young daughter stands beside him. Many other family members sit at the tables, eating."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’ve lost it?",
+                    "spoken_by": "WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, father.",
+                    "spoken_by": "BLACK WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It’s a castle, not a bloody sheep. Presumably you still know where it is. You didn’t lose Riverrun. You let the Blackfish take it from you.",
+                    "spoken_by": "WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He surprised us. He knows the castle better than anyone.",
+                    "spoken_by": "LOTHAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You did lose the Blackfish after the Red Wedding. You had him right here in this hall and you let him leave. Then when I told you to hunt him down and kill him, you couldn’t find him. That’s what it means to lose something. Now he’s come back and taken Riverrun.",
+                    "spoken_by": "WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don’t think it’s fair to blame us- -",
+                    "spoken_by": "BLACK WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For 300 years we kissed Tully boots, swore oaths to them and their stinking fish banners. Not again. Riverrun is ours. Take it back.",
+                    "spoken_by": "WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don’t have the men.",
+                    "spoken_by": "BLACK WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We’ve got 10 times as many men as the damn Blackfish.",
+                    "spoken_by": "WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Mallisters have risen against us. And the Blackwoods.",
+                    "spoken_by": "BLACK WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Brotherhood Without Banners is rallying the commoners against us, raiding our supply trains and camps.",
+                    "spoken_by": "LOTHAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Riverrun can withstand a siege for a year.",
+                    "spoken_by": "BLACK WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "WALDER slaps his daughter on on the buttocks."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If I want excuses, I’ll put her in charge. They’re laughing at us. All across the Riverlands right down to King’s Landing, they’re laughing at us.",
+                    "spoken_by": "WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "WALDER stands. Many family members stare at him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hear it in my sleep! I’m not dead yet, unfortunately for you. And I’ll not leave this world until they all choke on that laughter. Take that castle back.",
+                    "spoken_by": "WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He’ll never yield, Father.",
+                    "spoken_by": "LOTHAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, he’ll yield.",
+                    "spoken_by": "WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "WALDER nods at some servants at the rear of the hall. LOTHAR looks back at the servants. The servants exit. WALDER points first at LOTHAR and then at BLACK WALDER."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’ll show him the knife you used to kill Robb Stark’s child in his whore mother’s belly, and you’ll show him the knife you used to open his niece’s throat. And you’ll remind him who it was that got married at the Red Wedding in the first place. His nephew.",
+                    "spoken_by": "WALDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "WALDER pulls his daughter into his lap. The servants return, ushering in a man bound in chains. They undo his chains. The man is EDMURE TULLY. EDMURE stares at WALDER."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Cheer up, Lord Edmure. You’re going home.",
+                    "spoken_by": "WALDER"
+                }
+            ],
+            "location": "RED KEEP - THRONE ROOM"
+        },
+        {
+            "description": "JAIME and CERSEI are sitting in chairs across the room from each other.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m being sent to deal with the Blackfish. Apparently Walder Frey can’t manage it on his own because he’s 400 years old. Sent me with an army to the Riverlands and a siege that could last months.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JAIME stands and paces."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "BEtter you’re elsewhere at the head of an army than in the sept dungeons.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m not going to the Riverlands.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JAIME pours himself a cup of wine."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What, then?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m going to give Bronn the largest bag of gold anyone’s ever seen and have him gather the best killers he knows. I’ll take them to the sept and I’ll remove the High Sparrow’s head and every other sparrow head I can find.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can’t.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He has our son! He stole our son! He’s torn our family apart. How should we treat people who tear us apart?",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We should treat them without mercy and we will. But if you kill the High Sparrow, you won’t leave the sept alive. And without you, this is all for nothing. Stand at the head of our army where you belong, where Father wanted you. Show our men where their loyalties belong. Show them what lannisters are, what we do to our enemies. And take that stupid little castle back because it’s ours and because you can.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’ll stand trial soon. I need to he here for you.",
+                    "spoken_by": "JAIME"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It will be a trial by combat. I have the Mountain. They’ve made us both stronger, all of them.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CERSEI stands and approaches JAIME."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They have no idea how strong we are. No idea what we’re going to do to them.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "JAIME and CERSEI embrace and kiss. CERSEI whispers into JAIME’s ear."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We’ve always been together. We’ll always be together. We’re the only two people in the world.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They resume kissing."
+                }
+            ],
+            "location": "RED KEEP - CERSEI’S CHAMBER"
+        },
+        {
+            "description": "MEERA, BRAN, and the rider are gathered around a campfire. The rider beheads a rabbit and begins draining its blood. MEERA watches him.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why did you help us?",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The rider looks at MEERA from behind his face mask."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Three-Eyed Raven sent for me.",
+                    "spoken_by": "RIDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Three-Eyed Raven’s dead.",
+                    "spoken_by": "MEERA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now he lives again.",
+                    "spoken_by": "RIDER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BRAN startles as he comes out of a vision. MEERA goes to him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "When I last saw you, you were a boy. A fearless boy. Loved to climb the castle walls, frighten his mother.",
+                    "spoken_by": "RIDER (to BRAN)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The rider removes his hood and face mask. He is BENJEN STARK. His skin is gray and he has blemishes on his face."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Uncle Benjen. The last letter Jon wrote me said you had been lost beyond the Wall.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I led a ranging party deep into the North to find White Walkers. They found us. A white walker stabbed me in the gut with a sword of ice. Left me there to die. To turn. The Children found me. Stopped the walker’s magic from taking hold.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How?",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The same way they made the Walkers in the first place. You saw it yourself.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dragonglass. A shard of dragonglass plunged into your heart.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are the Three-Eyed Raven now.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn’t have time to learn. I can’t control anything.",
+                    "spoken_by": "BRAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BENJEN stands and walks over to BRAN and MEERA."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You must learn to control it before the Night King comes.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BENJEN kneels beside BRAN and offers him a cup."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Drink.",
+                    "spoken_by": "BENJEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "BRAN takes the cup and drinks."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "One way or another, he will find his way to the world of men. When he does, you will be there waiting for him. And you will be ready.",
+                    "spoken_by": "BENJEN"
+                }
+            ],
+            "location": "BEYOND THE WALL"
+        },
+        {
+            "description": "DAENERYS and DAARIO are leading the Dothraki horde on horseback. DAARIO shouts in Dothraki and raises his hand, halting the horde. DAENERYS stares at the face of a mountain crag in the distance.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everything all right?",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many days’ ride to Meereen?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A week at best.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How many ships will I need to bring my khalasar to Westeros?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Dothraki and all their horses, the Unsullied, the Second Sons- - 1,000 ships easily. Probably more.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And who has that many?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nobody.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Nobody yet.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So we ride for Meereen and after that we sail for Westeros. What then?",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I take what is mine.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You weren’t made to sit on a chair in a palance.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What was I made for?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You’re a conqueror, Daenerys Stormborn.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The wind howls. DAENERYS stares beyond the mountain crag"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait here.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAENERYS rides away from the horde and around the bend. Time passes. The Dothraki are growing antsy."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’m going after her. Wait for me here.",
+                    "spoken_by": "DAARIO (speaking Dothraki)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAARIO starts off, but stops when a dragon’s roar erupts from the sky. The Dothraki look around. The shadow of a dragon appears on the mountainside. DROGON flies over the Dothraki horde with DAENERYS on its back. DROGON circles around and lands in front of the horde. He roars."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every khal who ever lived chose three blood riders to fight beside him and guard his way. But I am not a khal. I will not choose three blood riders. I choose you all.",
+                    "spoken_by": "DAENERYS (speaking Dothraki)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Dothraki cheer."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I will ask more of you than any khal has ever asked of his khalassar! Will you ride the wooden horses across the black salt sea?",
+                    "spoken_by": "DAENERYS (speaking Dothraki)"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Dothraki cheer."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you kill my enemies in their iron suits and tear down their stone houses?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Dothraki cheer."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Will you give me the Seven Kingdoms, the gift Khal Drogo promised me before the Mother of Mountains?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Dothraki cheer."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you with me?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Dothraki continue to cheer."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Now and always?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DROGON spreads his wings and roars."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "CREDITS"
+                }
+            ],
+            "location": "ESSOS ARID LANDS"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "GoT",
+    "title": "Blood_of_My_Blood_",
+    "transcript_url": "https://gameofthronesfanon.fandom.com//wiki/Blood_of_My_Blood_(Fanon)/Transcript"
+}

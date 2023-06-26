@@ -1,0 +1,3286 @@
+{
+    "air_date": null,
+    "duration": null,
+    "scenes": [
+        {
+            "description": "TITLE SEQUENCE",
+            "events": [],
+            "location": null
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "BRAAVOS"
+        },
+        {
+            "description": "Water drips down a statue of a woman with her eyes closed. Two more statues are shown, a lion sitting in a throne, and a rams head. Behind a large heart surrounded by gold flames, a glowing fire can be seen. A statue of a knight is shown, then a statue of a king’s face. A statue of a contorted tree is covered in a hair-like substance. There is a large pit filled with liquid in the center of the room. Arya can be heard, and then seen, sweeping. The waif carries a bucket past her. Sitting on the edge of the pit, Jaqen whisper to a man. Arya looks up and watches as Jaqen scoops up a cup of liquid from the pit, and hands it to the man. The man looks up at Jaqen, and hesitates before taking it.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Valar morghulis.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Valar dohaeris.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The man drinks the liquid, and watches as he approaches the statue of the woman with her eyes closed. He kneels down in front of it. Arya puts her broom down and approaches Jaqen."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been sweeping this floor for days.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I didn't come here to sweep floors.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No? Why come, then?",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You said that I could be your apprentice. You said you'd teach me how to a Faceless Man.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stands up. Walks away.",
+                    "line": "A man teaches a girl.  Valar dohaeris. All men must serve. Faceless men, most of all.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jaqen stops.",
+                    "line": "I want to serve.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A girl wants to serve herself. Here we serve the Many-Faced God, to serve well. A girl must become no-one.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which one is the Many-Faced God? I see the Stranger. I see the Drowned God. I see the Weirwood Face.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There is only one god. A girl knows his name. And all men know his gift.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jaqen leaves. Arya looks down at the man who had been kneeling. He is lying on his back, dead. Two men come into the room with a stretcher. They places the man’s body on it and begin walking to an open door at the end of the room. The waif walks past Arya."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where are they taking him?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The waif doesn’t respond, but continues walking. Arya turns to watch as the door closes behind the men carrying the stretcher."
+                }
+            ],
+            "location": "THE HOUSE OF BLACK AND WHITE"
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "KING’S LANDING"
+        },
+        {
+            "description": "Bells are ringing, and people are cheering and shouting. Many are on the sides of the road, waving as a number of carriages are carried past.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Queen Margaery! Queen Margaery! Queen Margaery!",
+                    "spoken_by": "BYSTANDERS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Inside her carriage, Cersei watches the people on the street, a sullen look on her face. She closes her curtains."
+                }
+            ],
+            "location": "STREET"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am his/hers, and she/he is mine. From this day, until the end of my days.",
+                    "spoken_by": "MARGAERY & TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tommen and Margaery share a kiss. Cersei watches them from the crowd, emotionless. The newlyweds turn to the crowd, holding hands. Everyone claps. They smile and laugh. Cersei claps as well, and forces herself to smile."
+                }
+            ],
+            "location": "GREAT SEPT"
+        },
+        {
+            "description": "Tommen breathes heavily as he and Margaery finish having sex. She turns onto her side and smiles.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Did I hurt you?",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. You were lovely.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It all happened so fast.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Chuckles.",
+                    "line": "Yes.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was scared maybe I hurt you, it sounded",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no, no. You're very sweet. The sweetest king who ever lived.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is what I want to do all day, every day for the rest of my life.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They laugh. Tommen leans in to kiss her.",
+                    "line": "Wouldn't that be glorious?  Shouldn't we rest a little while? Just to catch our breath, there's no rush, is there?",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course not. Are you hungry? Shall I have them bring you some cake or pomegranate juice?",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, I'm fine. I just want you all to myself. I want to know everything there is to know about King Tommen First of His Name.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "King Tommen. It still sounds strange to me. Does Queen Margaery sound strange to you?",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So strange… Husband.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They laugh. She chuckles",
+                    "line": "Wife.  Sometimes it feels odd. I'm the king, I've married the most beautiful woman in the world, , and it's all because my brother died.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I understand. But it's not your fault, you know that, don't you? You mustn't feel guilty.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't feel guilty. That's what's odd.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Margaery looks at him curiously. He suddenly sits up."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you like to sail?",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sits up.",
+                    "line": "I love to sail.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do, too.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I think we're going to be very happy, you and I.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do, too.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She kisses him and turns around. She gets up, wrapping a bedsheet around herself as a cover."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Living in a tower so high, it touches the clouds. Of course my grandmother couldn't wait to go home. The capital is not for everyone, I suppose. Does your mother like it here?",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think so. She told me never to trust anyone in King's Landing.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pours them some wine.",
+                    "line": "It's so wonderful to have her watching over you. A lioness guiding her cub.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, but I'm a man now.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Hands him win.",
+                    "line": "You are. And the king.  But you'll always be her baby-boy.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sits down and begins to comb her hair.",
+                    "line": "I adore how she has always been so generous with me, so kind. And the horror she's had to injure.  Losing her husband, her eldest child and her father. It's no wonder she's so protective of you. She'll never let you out of her sight.",
+                    "spoken_by": "MARGAERY"
+                }
+            ],
+            "location": "TOMMEN’S CHAMBERS - THAT NIGHT"
+        },
+        {
+            "description": "Cersei and Tommen walk together, her arm around his. A group of guards walk behind them.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You look very much in love. The first days of marriage are often so blissful. She's certainly very pretty, isn't she? Like a doll, she smiles quite a lot. Do you think she's intelligent? I can't quite tell. Not that it matters.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Do you ever miss Casterly Rock?",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's nothing for me in Casterly Rock.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They stop.",
+                    "line": "That's where you grew up.  You always told me that you liked the people there better. You said that King's Landing smelled of horse dung and sour milk.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Chuckles.",
+                    "line": "Why are we speaking of Casterly Rock?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The way that you talked about it, I always thought that you missed it. That you... That it was your real home.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "This is my real home now. Where my family lives.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I want you to be happy, mother.",
+                    "spoken_by": "TOMMEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know that. I know you do, my sweet boy.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But wouldn't you be happier in Casterly Rock?",
+                    "spoken_by": "TOMMEN"
+                }
+            ],
+            "location": "CASTLE WALL"
+        },
+        {
+            "description": "Cersei approaches a room with two guards. Inside, Margaery is having tea with some of her friends.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Laugher.",
+                    "line": "I said, \"Darling, surely 4 times is enough, are you trying to set a new record?\"  And he said, \"Well, what is the record? I'm sure we can break it.\"",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Margaery’s friends laugh. As Cersei walks in, they all get up and bow."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Gets up and hugs Cersei.",
+                    "line": "Mother!  Welcome.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Don't you look lovely. Marriage agrees with you.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can we bring you anything to eat or drink? I wish we had some wine for you. It's a bit early in the day for us.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, no. I, I can't stay. I just wanted to let you know if, there is ever anything I can do for you.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are very sweet.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Tommen seems quite taken with his new queen.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I absolutely adore him. You raised a gallant young man. I'm forever grateful.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Good. Good. I'm glad to hear you're happy.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Margaery’s friends laugh.",
+                    "line": "Ecstatic. I really am. Exhausted, to be honest, but what can I expect, he is half lion, half stag.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Turns to leave.",
+                    "line": "I'll leave you to it then.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, forgive me, I haven't been at Court for long, I get so confused. What's the proper way to address you now? Queen Mother or Dowager Queen?",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's no need for such formalities.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "In any event, judging from the King's enthusiasm, the Queen Mother will be a Queen Grandmother soon.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Won’t that be a lovely day.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Can you imagine the celebrations? They'll ring the bells all day and night.",
+                    "spoken_by": "MARGAERY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Remember. Anything you need.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Margaery smiles. Cersei leaves. Margaery’s smile fades. It returns when her friends begin laughing, and she turns back around. Cersei walks away with her two guards, still able to hear the laughter."
+                }
+            ],
+            "location": "ROOM"
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "WINTERFELL"
+        },
+        {
+            "description": "A horse whinnies. Bolton bannermen ride to the keep. In the keep, a number of workmen are busy building and repairing things. Some men carry some raven cages through the middle of the courtyard. Theon, carrying a dead bird, walks through for a moment. He then comes across some soldiers lifting up some flayed bodies with rope. He becomes very tense and forces himself to keep walking, head down. A raven picks at a body in a cart.",
+            "events": [],
+            "location": "COURTYARD"
+        },
+        {
+            "description": "Roose and Ramsay sit at a table as Theon cuts some food. Ramsay talks with his face stuffed.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We can't hold the North with terror alone.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can't hold the North if you let these lesser lords insult us.",
+                    "spoken_by": "RAMSAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I sent you there to collect taxes, not bodies.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Cerwyn refused to pay. Said the Warden of the North would always be a Stark, and he'd be damned if he kissed a traitor's boot.",
+                    "spoken_by": "RAMSAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Theon holds the food in front of Ramsay. He takes some of it and puts it on his plate."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He left you no choice.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I flayed him living, along with his wife and brother. Made his son watch.",
+                    "spoken_by": "RAMSAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And?",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The new Lord Cerwyn paid his taxes.",
+                    "spoken_by": "RAMSAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "After a moment.",
+                    "line": "I have something important to tell you. Stop eating and listen.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ramsay, who had been heavily engrossed in his eating, stops suddenly and looks up. Theon slowly puts down a plate nearby. Ramsay puts down his silverware and sits back, looking at his father."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We don't have enough men to hold the North if the other Houses rise up against us. Do you understand that?",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Our pact with the Lannisters protects -",
+                    "spoken_by": "RAMSAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stands up.",
+                    "line": "I had a pact with Tywin Lannister, and Tywin Lannister is dead. The remaining Lannisters are a thousand miles away dealing with that fact. They've never once in the history of the Seven Kingdoms sent their army this far north. If you think they will for us, you're a fool. We become a great house by entering in alliances with other houses, and parleying those alliances into greater power. The best way to forge a lasting alliance isn't by peeling a man's skin off. The best way is marriage.  Now that you're a Bolton by royal decree, it's time you married a suitable bride. And as it happens, I found the perfect girl to solidify our hold in the North.",
+                    "spoken_by": "ROOSE"
+                }
+            ],
+            "location": "DINING HALL"
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "MOAT CAILIN"
+        },
+        {
+            "description": "Sansa, Baelish, and a number of knights ride towards Moat Cailin. The party stops. Baelish leads Sansa on foot to a spot where they can easily overlook the keep. The keep is shown, surrounded by swampy riverlands.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That's Moat Cailin.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes. A bit shabby, isn't it? You've been here before.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "On our way down to King's Landing, with my father and Arya and… where are you taking me?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Home.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He nods.",
+                    "line": "The Boltons have Winterfell.  The marriage proposal, it wasn't for you?",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shakes his head.",
+                    "line": "No.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Roose Bolton murdered my brother. He betrayed my family!",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He did.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He serves the Lannisters.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For now.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I won't go.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Winterfell is your home.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not anymore.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Always. You're a Stark. Dyeing your hair doesn't change that. You're Sansa Stark. The eldest surviving child of Ned and Catelyn Stark. Your place is in the North.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't marry him. You can't make me. He's a traitor. A murderer.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're not marrying Roose Bolton. No, you'll be marrying his son and heir, Ramsay. One day he'll be Warden of the North and you will -",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No!",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sansa -",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No, you can't make me. I will starve myself. I will die before I have to go there.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Grabbing her. Quietly.",
+                    "line": "I won't force you to do anything. Don't you know by now how much I care for you? Say the word and we turn the horses round, but listen to me. Listen.  You've been running all your life. Terrible things happened to your family and you weep. You sit alone in a darkened room, mourning their fates. You've been a bystander to tragedy from the day they executed your father. Stop being a bystander, do you hear me? Stop running. There's no justice in the world. Not unless we make it. You loved your family. Avenge them.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He kisses her forehead. He walks back to their horses. After a few moments, she regains her composure and gets on her horse. The party starts moving again. On top of a large hill nearby, Brienne and Podrick watch as the party arrives at the keep."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How do we get through there?",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She turns her horse and begins leaving.",
+                    "line": "We don't. We go around.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It sets miles out of the way. We'll lose sight of them.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Doesn't matter. I know where they're going.",
+                    "spoken_by": "BRIENNE"
+                }
+            ],
+            "location": "NEARBY HILLS"
+        },
+        {
+            "description": "Podrick sits scrubbing a boot.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aren't you getting a bit old to be a squire? How did you end up squiring for the Imp?",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He hates that nickname.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well, he's not here to complain about it, is he?",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Podrick finishes scrubbing and hands the boot to Brienne. He puts the brush down. Brienne begins putting the boot on."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I squired for a knight name Ser Lorimer during the War of the Five Kings. One night, he had a bit too much to drink. And he was famished, so he borrowed a ham.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He borrowed it?",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He wasn't a thief. He was drunk and hungry and he wasn't thinking. I was drunk too. He gave me half the ham. Next morning, one of the guards saw him passed out, under a wagon, with the ham bone still in his hand. They hanged the man afternoon. They tied the noose for me too, but, Lord Tywin heard my family name was Payne. So he pardoned me, and sent me to King's Landing to squire for his son.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As punishment. For both of you.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It didn't seem that way. Lord Tyrion was always very good to me.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Walks away to get firewood.",
+                    "line": "Yes, all of your lords were very kind to you. All except me. Sorry you have to squire such a nasty person.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sorry. You're the best fighter I've ever seen. You beat The Hound. I'm proud to be your squire.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry I'm always snapping at you.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you wouldn't snap at me I wouldn't learn anything.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You want to be a knight, Pod?",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sits down.",
+                    "line": "Starting tomorrow, we'll train with the sword twice a day, before we ride in the morning and after we camp for the evening.  And I'm going to show you how to ride properly.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can't knight you, but I can teach you how to fight.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I suppose that's more important.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Podrick leans over the campfire with some rocks. He strikes them together until he gets a spark, and blows until the fire starts going. He wipes himself off and stands up, walking over to Brienne. He begins taking her armor off."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You weren't a knight, but you were a Kingsguard to Renly Baratheon, weren't you?",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Tyrion said he was a good man.",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He was.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But how did you end up serving Renly?",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "After a few moments. Pauses. Smiles. Her smile drops.",
+                    "line": "When I was a girl, my father held a ball. I'm his only living child, so he wants to make a good match for me. He invited dozens of young lords to Tarth. I didn't want to go, but he dragged me to the ballroom.  And it was wonderful. None of the boys noticed how mulish and tall I was. The shoved each other, and threatened to duel if they thought it was their turn to dance. And whispered in my ear how they wanted to marry me and take me back to their castles.  My father smiled at me and I smiled at him. I'd never been so happy.  Till I saw a few of the boys sniggering. And then they all started to laugh, they couldn't keep the game going any longer. They were toying with me. ‘Brienne the Beauty’, they called me. Great joke. And I realized I was the ugliest girl alive. A great lumbering beast. I tried to run away, but Renly Baratheon took me in his arms. “Don't let them see your tears,” he told me. “They’re nasty little shits. The nasty little shits aren't worth crying over.” He danced with me and none of the other boys could say a word. And he was the king's brother after all.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But wasn't he... Lord Tyrion said he was...",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, Pod, he liked men, I'm not an idiot. He didn't love me, he didn't want me, he danced with me because he was kind and he wouldn't see me hurt. He saved me from being a joke. From that day until his last day. And I couldn't save him in return. Nothing's more hateful than failing to protect the one you love. One day, I will avenge King Renly.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But you said a shadow murdered him. How do you fight a shadow?",
+                    "spoken_by": "PODRICK"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A shadow with the face of Stannis Baratheon. I know it was Stannis. I know it in my heart. Stannis is a man, not a shadow. And a man can be killed.",
+                    "spoken_by": "BRIENNE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In Meereen, ASHTER is walking down the streets with a soldier of the Second Sons."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain, sir, we've been training about sixty men every week, but they're not ready. Not my unit.",
+                    "spoken_by": "SECOND SON SOLDIER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The point of training is to make them be ready. Keep trying. They'll come around.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't believe they will, sir.",
+                    "spoken_by": "SECOND SON SOLDIER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's your name?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sila.",
+                    "spoken_by": "SILA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Okay, Sila... here's what you're gonna do... you're gonna go to your unit, you're gonna give them a reason to stop pulling their cocks out of their pants and start acting like real soldiers of the Second Sons. Daenerys Targaryen needs us, she needs me, she needs Daario, and she needs every single fucking one of you. Can you do your duty and provide for her?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course, sir, I am just informin--",
+                    "spoken_by": "SILA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yeah, I know you're just informing me.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Daario Naharis, he appointed you Captain when you joined, correct?",
+                    "spoken_by": "SILA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, why?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It is just odd, sir. You just join and somehow you are the Captain of the Second Sons.",
+                    "spoken_by": "SILA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The man killed his other captains, he needed more, badly. I just hope he doesn't do the same to me one day.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He called me an excellent fighter when I joined.",
+                    "spoken_by": "SILA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And he called me an exceptional fighter when I joined.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You... you are strange, Captain Stark.",
+                    "spoken_by": "SILA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How's that? Wait a minute... what did you just say?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are strange?",
+                    "spoken_by": "SILA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No... Y-You called me Stark.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That is who you are, no?",
+                    "spoken_by": "SILA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not a Stark.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Daario Naharis says so. You are Ashter Stark. Son of a lord from Westeros.",
+                    "spoken_by": "SILA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That fucker.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am sorry, it is just what he told us.",
+                    "spoken_by": "SILA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's not your fault. Excuse me.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "A small child, notices ASHTER running away then starts following him as he departs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In a different room, DAARIO is examining several Second Son soldiers. ASHTER interrupts."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We need to talk.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not now.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What the fuck are you even doing that is so important?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sighs",
+                    "line": "Fine. What?",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ASHTER and DAARIO move away out of sight and then ASHTER punches DAARIO in the face, DAARIO groans."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The fuck was that?",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For telling everyone that I'm a fucking Stark. The fuck is wrong with you?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What's wrong with that?",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "There's spies... fucking everywhere! In Essos, In Dorne, North of the bloody Wall, everywhere! What if someone you told was a bloody spy! That spy could send word that I'm here in Meereen, serving Daenerys Targaryen.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So what!?",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What if Queen fucking Cersei sends an assassin after me!?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She can't reach you. Not here.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've been told of how Daenerys almost drank poison one day. Ser Jorah saved her.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You are not a Targaryen. An enemy of the Iron Throne.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm a Stark. Tell me, have you even been in Westeros? Starks are in the same position as Targaryens were. Enemies of the crown. You better believe that I'm an enemy of the crown, due to the part that I was a major factor in the War of the Five Kings, leading an army of Northmen alongside my brother, the King in the North! What if I get ambushed in the streets? Assuming they are strong enough to even kill me...",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You worry too much.",
+                    "spoken_by": "DAARIO"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He storms off.",
+                    "line": "Fuck off.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Back in the pyramid, ASHTER is drinking wine with DAENERYS."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I never took you for someone who drank wine before, Your Grace.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't do it often.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I used to. Now I don't.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've never told me about you and your family.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I figure you didn't want to know. My father did help remove your family from power. Alongside the Usurper.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you will help me bring my family back into power. One way or another.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Well... alright, what do you wish to know?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You and your brother, you fought as Kings in the North?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "laughs",
+                    "line": "Kings? What?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "laughs",
+                    "line": "Correct me, then.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Only one King. And his name was Robb. I commanded many armies, we won every battle we fought. There wasn't an actual defeat. Not in the battlefield. We captured Ser Jaime Lannister, the Kingslayer one battle. We held him for a while until my mother let him go -- in the hope of getting my sisters back.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You won every battle you fought?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We did. I'm sure Robb could have done well without me. It's what he was born to be. A ruler. I'm just glad I wasn't born before Robb. I could never rule Winterfell. And I never will..",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why do you say that?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Winterfell is occupied by the Boltons. Lord Roose Bolton killed my brother, with help with the Freys and the Lannisters. The Fucking Lannisters. They've taken too much from me. And you.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The North wouldn't look favorably on the Boltons after their treachery, right?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know. Casper and I left after the Red Wedding. All I knew was that the Boltons have taken Winterfell and the North. I heard his bastard had Theon Greyjoy with him. Kept him locked up.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A Greyjoy.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, a Greyjoy. At the end of Theon's father's rebellion, Theon was taken as a ward for my father. Robb even thought of him as a brother... I never did. I saw through him. I saw what he really was. A scared boy who thought he was something he wasn't. And a boy who thinks he's something he is not is a dangerous thing. He took Winterfell, killed a loyal man -- Ser Rodrik Cassel. Then... eventually he killed my brothers. Bran and Rickon. He burned them alive... and for what? What was it?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm so sorry.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't know what happened. All of this could've been avoided... if Robb had just married the Frey girl instead of some other girl from Volantis.... or if I had volunteered to marry one of his daughters. The King's brother... that's a good deal, isn't it? Why he didn't ask me I did not know. Instead... Lord Edmure, my Uncle got married to one of Walder Frey's daughters. The Wedding day was the worst day of my life. My brother, my sister-in-law, my unborn nephew, my mother -- slaughtered. They cut off my brother's head, then cut off his direwolf's head, then mounted it onto his body, rode him around on a horse. I don't know what they did with my mother's body, but I imagine it was nothing better. The savages deserve to pay for what they've done. But maybe they never will. Maybe Walder Frey will die of old age, never getting the justice he deserves. The sword.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wish to kill him yourself?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course I do. I wish to kill several people. A man doesn't always get his wish.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am very sorry to hear of this, I had only heard little things of Robb Stark, but he seemed like he was a good man.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A good man, yes... I don't know how I was his brother. I was nothing like him. I was nothing like my father. I don't know where I came from.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The way I see it... once we sail for Westeros, and take back my throne... Winterfell will be yours. We will drive the turncloaks away from it and you will take out your sword and kill the Boltons, you'll kill the Freys, you'll kill whoever has wronged you and your family.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mean that? You'd help me take back my home? When the time comes?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I swear it. You've served me loyally. You are a true friend to me, Ashter.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Your Grace.... these talks we've had. Whether it be small talk or conversations like this.... I've enjoyed them. I haven't talked about the Red Wedding before like this. To someone. I've never talked to a Queen before like this. Well, actually, I did because of my brother's wife -- You get my point.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I do too...",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've... I'm ready to do something that I've been pondering on for a bit... I may even lose my head for it.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What? What are you talking about?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you would... allow me...",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He stands up and walks towards her. DAENERYS gets up as well."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to kiss you, Your Grace.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I.. Ashter...",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Laughs",
+                    "line": "You can say no. You're the Queen. I supposed that I may as well ask.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAENERYS doesn't say anything, ASHTER leans forward, grabbing her chin and then kissing her on the lips. DAENERYS doesn't pull back. The two of them kiss for a few more seconds and then she pulls away."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I....",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That wasn't so bad, was it?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "laughs",
+                    "line": "No... no it wasn't.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "ASHTER leans forward again and DAENERYS kisses him again. The two of them kiss very passionately and then end up moving towards the wall. They touch each other seductively, then the two of them pull themselves to the ground. They both take each other's clothes off and have sex."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Later, ASHTER and DAENERYS are laying naked on the floor, DAENERYS laying on ASHTER's shoulder."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How did this happen?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You wanted to kiss me.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Aye, kiss you. Not fuck you. I mean, I'm happy we did... it's just not what I was expecting.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you disappointed?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "coughs chuckles",
+                    "line": "Oh, no. No way. You're wild. Maybe the most wild girl I've ever been with.  That's a good thing. You're definitely a Targaryen.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You don't.... I've made a terrible mistake.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that what you say to every man you have sex with?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No... I'm sorry, it's just -- I've been with Daario.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "sighs",
+                    "line": "Shit. I didn't know.  Well... maybe we-- shouldn't tell him?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAENERYS gets up and bends over to reach for her gown, and ASHTER peeks at her butt."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "No. This will not continue.",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I mean, come on... what do you see in Daario? I mean, he's a prick. Telling people my last name. The fuck is wrong with him?",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She puts her gown on and ASHTER sighs.",
+                    "line": "You won't mention this to anyone, do you understand?",
+                    "spoken_by": "DAENERYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fine.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "DAENERYS departs and ASHTER sighs heavily."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Fuck.",
+                    "spoken_by": "ASHTER"
+                }
+            ],
+            "location": "CAMPSITE"
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "CASTLE BLACK"
+        },
+        {
+            "description": "Olly opens the door for Stannis and Davos. Jon sits at his desk.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Commander.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stands up.",
+                    "line": "Your Grace.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "To Olly as he closes the door.",
+                    "line": "I'd like to speak alone.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Olly is my steward now, as I was Lord Commander Mormont's. I want him to attend my meetings, to learn from men with experience. One day, he might command.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They all sit down.",
+                    "line": "Very well.  Have you considered my offer?",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have. And I thank you for it. You do me great honor. All my life I wanted to be Jon Stark.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Say the word and you will be.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "But I have to refuse you. I'm Lord Commander of the Night's Watch. My place is here.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm giving you a chance to avenge your family. To take back the castle where you grew up. To rule the North.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wish I could fight beside you. Believe me, I do. But I swore a sacred vow at the Godswood. I pledged my life to the Night's Watch.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're as stubborn as your father. And as honorable.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I can imagine no higher praise.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stands up.",
+                    "line": "I didn't mean it as praise. Honor got your father killed.  But if your mind’s made up, I won't try to persuade you.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "May I ask, Your Grace, how long you plan to stay at Castle Black?",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you bored of us already?",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You saved us from Mance Rayder's army. We will never forget that. But it's a question of survival. The Night's Watch can't continue to feed your men and the wildling prisoners indefinitely. Winter is coming.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I know it. We march on Winterfell within the fortnight. Before the snows trap us here.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the wildlings?",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "After a moment.",
+                    "line": "They'd rather burn than fight for me, so be it. I leave their fate to you. You could execute them, that's the safest course.  Or you could see if this Tormund fellow is more willing to compromise than Mance ever was. I assume the brothers of the Night's Watch would rather see the wildlings dead.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Olly stares at him.",
+                    "line": "Most of the brothers, yes. There's little love for the free folk here.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're the Lord Commander. Your decision.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stannis begins to leave. Olly opens the door."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have many enemies in Castle Black. Have you considered sending Alliser Thorne elsewhere? Give him command of Eastwatch-by-the-Sea.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I heard it was best to keep your enemies close.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whoever said that didn't have many enemies.",
+                    "spoken_by": "STANNIS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stannis leaves. Davos begins to leave, but turns to Jon as Jon begins to pace."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jon looks up.",
+                    "line": "He sees something in you.  Might not be apparent from his tone, but it's the truth. He believes in you.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sorry I disappointed him.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Davos walks forward and takes a seat. Olly closes the door again."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The king is a complicated man. But he wants what's right for the Seven Kingdoms.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As long as he's ruling them.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He's the one true king. He has the blood right to that throne.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I’ve sworn to stay clear of the politics of the Seven Kingdoms.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Turning to Olly.",
+                    "line": "Have you now?  How does the Night's Watch vow go again? I bet you've got it memorized since you got here.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Olly looks to Jon. Jon looks at him, crosses his arms, and nods."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Night gathers and now my watch begins -",
+                    "spoken_by": "OLLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not that bit, the bit at the end.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm the sword in the darkness, the watcher on the walls, the shield that guards the realm of men. I pledge my life -",
+                    "spoken_by": "OLLY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Wait, that's enough. “The shield that guards the realm of men.” That's what you swore to be. Now I'm not a learned man, but the best way of helping the most people might not be sitting in a frozen castle at the edge of the world. It just might mean wading in the muck, getting your boots dirty, and doing what needs to be doing.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And what needs to be done?",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stands up",
+                    "line": "As long as the Boltons rule the North, , the North will suffer. Just one man's opinion.",
+                    "spoken_by": "DAVOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Davos nods and turns to leave. Olly opens the door for him. Jon sits at his desk and sighs."
+                }
+            ],
+            "location": "LORD COMMANDER’S ROOM"
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "BRAAVOS"
+        },
+        {
+            "description": "Arya lays on her bed, playing with her coin in her hand. Suddenly, the door opens, and she sits up. The waif enters with a cane, and begins pacing.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you want?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "WAIF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stops and walks to Arya.",
+                    "line": "You, who walk in here with a coin you never earned, whose value you do not respect.  Who are you?",
+                    "spoken_by": "WAIF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "After a moment, perks up.",
+                    "line": "No one.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The waif quickly swings her cane at Arya, hitting her arm. Arya, now on her feet, turns to face the waif, holding her arm in pain."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ow! Cunt!",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A lie, a sad little lie. Who are you?",
+                    "spoken_by": "WAIF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Gets hit again.",
+                    "line": "I told you, I'm no -  Do that again and -",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The waif hits her a third time, sending her to the ground."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Who are you?",
+                    "spoken_by": "WAIF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're about to find out.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Arya reaches for her sword. Before she can pick it up, Jaqen appears."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing?",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We were only playing. The game of faces.",
+                    "spoken_by": "WAIF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A girl is not ready.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Clearly not.",
+                    "spoken_by": "WAIF"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stands up.",
+                    "line": "I am ready.",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "For what? For whatever you want. To be a Faceless Man. To be no one.",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The waif turns to her. Jaqen looks at the sword on Arya’s bed."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Whose sword is that? It belongs to Arya Stark. Arya Stark's sword, Arya Stark's clothes, Arya Stark's stolen silver. A man wonders how is it that no one came to be surrounded by Arya Stark's things?",
+                    "spoken_by": "JAQEN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The waif, looking smug, leaves."
+                }
+            ],
+            "location": "ARYA’S ROOM"
+        },
+        {
+            "description": "On a dock near the house of Black and White, Arya wraps a rock in her clothes. She is wearing new clothes, similar to the ones the waif wears. She ties them up and drops them into the water, the rock causing them to sink. She picks up her coin purse and throws it in the water. After a moment of examining her original coin in her hand, she throws it in the water as well. She looks at her sword Needle for a moment, and then picks it up. She prepares to throw it in the sea, but finds herself unable to, and begins to sob. She turns and walks over to some nearby rocks, and hides the sword under some of them.",
+            "events": [],
+            "location": "DOCK"
+        },
+        {
+            "description": "Arya is again sweeping the floor in the main room. She notices the men from the beginning of the episode carrying another dead body into the back room. However, after a moment, she realizes that she didn’t hear the door close, and she looks up to find it wide open. Jaqen surprises her by suddenly putting his hand on her shoulder. He nods towards the door, and begins walking over to it. Arya follows him, leaving the broom outside. They go down a fire-lit tunnel. Jaqen opens the door at the end of the tunnel to reveal a chamber. Inside, the waif stands motionless next to a large stone slab. On it is the dead man. Jaqen leaves through the back door. After Jaqen closes the door, the waif begins to remove the dead man’s clothes. She looks up at Arya, who walks over and begins to do so as well. The waif inspects his body. She wets a rag and begins cleaning off the man.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do we do with them after we wash them?",
+                    "spoken_by": "ARYA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The waif only looks up and smiles lightly, making no other response. She goes back to washing him, and Arya wets a rag of her own to help."
+                }
+            ],
+            "location": "THE HOUSE OF BLACK AND WHITE"
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "WINTERFELL"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Open gates!",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The gates are opened. Sansa, Baelish, and a number of knights on horseback gallop through. They stop. Theon watches from nearby through some metal bars, trembling. Baelish gets off of his horse. Roose, Ramsay, and Walda watch as Sansa gets off hers. Roose walks forward. Baelish leads Sansa towards him, rubbing her hands."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lady Sansa, welcome.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "After a tense moment, Sansa smiles and curtsies."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Smiles.",
+                    "line": "Lord Bolton.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stands aside",
+                    "line": "May I introduce my son, , Ramsay Bolton?",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Ramsay smiles and walks forwards, removing his gloves. Sansa smiles at him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's an honor to meet you, my Lady.",
+                    "spoken_by": "RAMSAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He takes her hand and kisses it. Nearby, Myranda and other women watch."
+                }
+            ],
+            "location": "COURTYARD"
+        },
+        {
+            "description": "An old servant woman leads Sansa down a hallway to her chambers. She opens the door.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll bring you a bowl of hot water. You must want to wash.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "SANSA"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Quieter",
+                    "line": "Welcome home, Lady Stark.  The North remembers.",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sansa watches as the woman leaves."
+                }
+            ],
+            "location": "HALLWAY"
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "CASTLE BLACK"
+        },
+        {
+            "description": "Jon sits at a table, tapping his fingers anxiously. The men in the room talk amongst themselves.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sam looks up. Jon looks at Maester Aemon’s chair.",
+                    "line": "Sam.  Maester Aemon?",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He apologizes for not being here. He's not feeling well.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "To the group. Laughter. Jon looks at Alliser. Laughter. After a moment, he continues.",
+                    "line": "Take good care of him.  Brothers. As you all know too well, it's long past time to dig a new latrine pit.  First Builder Yarwyck and I have decided to appoint a latrine captain to oversee this crucial task.  Brian. Seems like a good job for a ginger.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Everyone laughs. Some of the men jokingly pat Brian on his back, and Brian laughs as well."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Silence.",
+                    "line": "Ser Alliser.  You have more experience than any other soldier at Castle Black. You proved your valour many times over, while defending the Wall from the wildling attack. I name you First Ranger.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Some of the men shout in approval. Alliser looks up surprised. Edd and Sam look at each other. Janos pats him on the shoulder."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Lord Janos. I'm giving you command of Greyguard.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Scoffs.",
+                    "line": "Greyguard is a ruin.",
+                    "spoken_by": "JANOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, the fort is in a sorry state. Restore it as best you can. First Builder Yarwyck can spare ten of his -",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was charged with the defense of King's Landing when you were soiling your swaddling clothes. Keep your ruin.",
+                    "spoken_by": "JANOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Some of the men begin talking loudly. Olly shifts in his seat."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Alright, alright! Enough of that.",
+                    "spoken_by": "SAM"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You mistake me, my Lord. That was a command, not an offer. Pack your arms and armour, say your farewells, and ride for Greyguard.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Stands up, angrily shouts.",
+                    "line": "I will not go meekly off to freeze and die! Give it to one of the fools who cast a stone for you. I will not have it. Do you hear me, boy? I will not have it!",
+                    "spoken_by": "JANOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Are you refusing to obey my order?",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The men in the room all turn to look at Janos."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You can stick your order up your bastard arse.",
+                    "spoken_by": "JANOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Some of the men whisper in shock. Janos looks pleased with himself. Alliser turns to Jon smugly."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Take Lord Janos outside.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The men begin to stand up. Janos scoffs."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Olly, bring me my sword.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Olly turns quickly to Jon, then gets up. Janos looks more unsure of himself as more men get up. Alliser turns and looks at Janos disapprovingly. Edd walks over to get Janos. Alliser stands in his way for a moment. Jon looks at the confrontation, worried. Alliser raises his eyebrows for a moment and moves out of the way. Janos looks at him shocked. Edd grabs Janos, and some other men assist in dragging him outside."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Everyone moves outside.",
+                    "line": "You cannot do this! Get your hands off me!  Scum, all of you! If the boy thinks he can frighten me, he's mistaken, yes, very mistaken.",
+                    "spoken_by": "JANOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Someone puts a chopping block down. Janos is taken up to it."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A disgrace! I have friends, important friends in the capital! You'll see!",
+                    "spoken_by": "JANOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jon takes a final sip of his wine, gets up, and goes outside. The watchmen all gather in the courtyard. Olly hands Jon his sword. Jon walks up to where Janos is being held. Stannis watches from afar. Jon unsheathes his sword, and Janos looks up at it."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If you have any last words, my Lord, now is the time.",
+                    "spoken_by": "JON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Trembling. Jon brings his sword up.",
+                    "line": "I was wrong. You're the Lord Commander! We all serve you. I'm sorry. Not only for this, for all I've done and said. I was wrong!  My Lord, please, mercy! Mercy! I'll go! I will! Please. I'm afraid. I've always been afraid.",
+                    "spoken_by": "JANOS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Janos sobs for a few moments. Jon hesitates, and then brings his sword down, decapitating Janos. He hands his sword to a watchman standing nearby. He looks up and makes eye contact with Stannis."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In MEEREEN, ASHTER is walking to his chambers and he notices a little child standing in front of him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Oh, pardon me, little one.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello.",
+                    "spoken_by": "CHILD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello.",
+                    "spoken_by": "ASHTER"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Ashter Stark, you have an important part to play in the war to come. Come and see.",
+                    "spoken_by": "CHILD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The Child grabs ASHTER's hand and he groans and then drifts backwards against the wall. He catches himself and notices the child is gone. ASHTER rubs his head and stands there in confusion."
+                }
+            ],
+            "location": "DINING HALL"
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "KING’S LANDING"
+        },
+        {
+            "description": "The High Septon kneels in the center of a room. Seven prostitutes, dressed as each of the new gods, circle around him. Olyvar stands behind the High Septon, wearing a fake beard and holding a scale. The prostitutes giggle as the High Septon eyes them all.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have served us well, my son.",
+                    "spoken_by": "OLYVAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you, Father.",
+                    "spoken_by": "HIGH SEPTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Which of the Seven will you worship today?",
+                    "spoken_by": "OLYVAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Maiden.",
+                    "spoken_by": "HIGH SEPTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where is the Maiden?",
+                    "spoken_by": "OLYVAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And the Stranger.",
+                    "spoken_by": "HIGH SEPTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Leaning forward.",
+                    "line": "Two is extra, you realize?",
+                    "spoken_by": "OLYVAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Yes, yes.",
+                    "spoken_by": "HIGH SEPTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Olyvar snaps his fingers. He and five of the prostitutes step aside. The two dressed as the Maiden and the Stranger remain and approach the High Septon, who smiles. Suddenly, some men led by Lancel Lannister barge into the room. The High Septon gasps and turns around."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What are you doing? This establishment belong to Lord Petyr Baelish. You can't -",
+                    "spoken_by": "OLYVAR"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The men force the High Septon to his feet. One of the men rips off Olyvar’s fake beard, hits him to the ground, and begins kicking him. The prostitutes run out of the room."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You have profaned our faith. The faith of our fathers and forefathers.",
+                    "spoken_by": "LANCEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I am the High Septon of the -",
+                    "spoken_by": "HIGH SEPTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Grabs his neck.",
+                    "line": "You are a sinner. And you shall be punished.",
+                    "spoken_by": "LANCEL"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The men drag the High Septon out of the room. He is forced out into the street naked, and begin walking. He tries to cover his penis with his hands, but one of the men hits him with a stick. People gather on the sides of the street to watch, and begin chanting."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sinner! Sinner! Sinner!",
+                    "spoken_by": "CROWD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Repent!",
+                    "spoken_by": "MAN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sinner! Sinner! Sinner! Sinner! Sinner! Sinner!",
+                    "spoken_by": "CROWD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shame on you!",
+                    "spoken_by": "MAN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Sinner! Sinner!",
+                    "spoken_by": "CROWD"
+                }
+            ],
+            "location": "BROTHEL"
+        },
+        {
+            "description": "Mace opens the door for the High Septon. He approaches the table. In better light, it is clear that his face is heavily bruised. Mace closes the door and walks over. The High Septon addresses each of the member present.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "To Cersei To Pycelle To Mace To Qyburn",
+                    "line": "Your Grace, , Grandmaester,  Lord Tyrell, , uh…",
+                    "spoken_by": "HIGH SEPTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Mace sits down.",
+                    "line": "It doesn't matter.",
+                    "spoken_by": "QYBURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "As the High Septon of the Faith of the Seven I give voice to the will of the Gods and am their foremost servant in this world. An insult to me is an insult to the Gods. An assault on my person, is an assault on our very religion.",
+                    "spoken_by": "HIGH SEPTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You were assaulted?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I was, by those fanatics who call themselves ‘sparrows’. They humiliated me, they they beat me, they left me naked and bleeding on the cobblestones. I am lucky to be alive.",
+                    "spoken_by": "HIGH SEPTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I heard this all began in Littlefinger's brothel.",
+                    "spoken_by": "QYBURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "High Septon, this is a rather shocking thing to hear.",
+                    "spoken_by": "MACE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I tend to both the highest born, and the lowliest amongst us. Even prostitutes may earn the mercy of the Mother.",
+                    "spoken_by": "HIGH SEPTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "So you were administering to the needs of these devout prostitutes?",
+                    "spoken_by": "QYBURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A man's private affairs ought to stay private!",
+                    "spoken_by": "PYCELLE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What do you want from us, High Septon?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Justice! I ask that you protect our Faith by arresting these criminals and throwing them in the black cells. I ask that you execute their leader, this so-called High Sparrow. He's a threat to everything we hold sacred. If he goes unpunished -",
+                    "spoken_by": "HIGH SEPTON"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And where do I find this man? This High Sparrow?",
+                    "spoken_by": "CERSEI"
+                }
+            ],
+            "location": "SMALL COUNCIL CHAMBER"
+        },
+        {
+            "description": "A soldier helps Cersei out of her carriage. She begins walking forward. Ser Meryn stands ahead of her.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I don't think this is a good idea, Your Grace.",
+                    "spoken_by": "MERYN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "To a man at the bottom of some stairs.",
+                    "line": "Nonsense, Ser Meryn. These are deeply religious people.  Where can I find the High Sparrow?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The man points up the stairs. They are crowded with people. Cersei and Ser Meryn ascend them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Seven blessings.",
+                    "spoken_by": "MAN 1"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Cersei covers her nose. At the top of the stairs is a large room. She watches as many people eat at tables."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "MAN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Just a little more...",
+                    "spoken_by": "MAN 3"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you ever so for the soup!",
+                    "spoken_by": "WOMAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "In the center of the room, an old man is giving soup to people in line. Cersei approaches him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A young man said I would find the High Sparrow back here. Where is he?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Laughs. Prepares soup for the next person in line.",
+                    "line": "High Sparrow? Sounds ridiculous, doesn't it? Like Lord Duckling, or King Turtle.  So, it's meant to. We're often stuck with the names our enemies give to us.  The notion that we are all equal in the eyes of Seven doesn't sit well with some, so they belittle me.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Seven blessings to you.",
+                    "spoken_by": "WOMAN 2"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Prepares soup for the next person in line.",
+                    "line": "Seven blessings to you, my dear. It's only a name, quite an easy burden to wear. Far easier than hers.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why no shoes?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because I gave them away to someone who needed them more. We all do that. It stops us from forgetting what we really are.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Is that why you came to King's Landing? To remind everyone?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Everyone? I have a hard enough job reminding myself. Oh, I tell them no one's special. And they think I'm special for telling them so.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Smiles.",
+                    "line": "Perhaps they're right.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It would be comforting to believe that, wouldn't it? The Gods sent you here to tempt me? I hope not. I had assumed you'd only come here to arrest me. For that incident with the High Septon.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "An unacceptable way to treat the chosen representative of the Gods in this world, wouldn't you say?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hypocrisy is a boil. Lancing a is never pleasant. Although, they could have been more careful with the blade.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The High Septon came to speak to me today. He doesn't want me to arrest you, he wants me to execute you.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I wouldn't presume to know your thoughts on the matter.",
+                    "spoken_by": "HIGH SPARROW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "After a moment. The High Sparrow looks up at her surprised.",
+                    "line": "My thoughts on the matter align with your own. The High Septon's behaviour was corrosive, as was his attitude. Having a man like that reside in the Sept eats away the Faith from the inside. So now he resides in the Red Keep's dungeons instead.  The Faith and the Crown are the two pillars that hold up this world. If one collapses, so does the other. We must do everything necessary to protect one another.",
+                    "spoken_by": "CERSEI"
+                }
+            ],
+            "location": "STREET"
+        },
+        {
+            "description": "Qyburn pulls a rat out of a cage. He brings it over to a desk and holds a knife above it. The camera switches to his face, and blood splatters onto a protective lens. Cersei enters the room with a letter.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Your Grace.",
+                    "spoken_by": "QYBURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Hands him the letter.",
+                    "line": "Send a raven with this message to Littlefinger in the Eyrie, or wherever he's slithering about.",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Walks to his desk.",
+                    "line": "At once, Your Grace.",
+                    "spoken_by": "QYBURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "How's your work coming along?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very well.",
+                    "spoken_by": "QYBURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've made progress?",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "More than I've expected. Still a way to go, but…",
+                    "spoken_by": "QYBURN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Very good. I'll leave you to it then. Make sure Littlefinger is clear on the meaning of the word \"immediately\".",
+                    "spoken_by": "CERSEI"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Cersei leaves the room. Qyburn begins writing something down. Behind him on a table is a large object, covered by a sheet. After a few moments of writing, the object begins violently jerking around, and then stops."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shh. Easy, friend.",
+                    "spoken_by": "QYBURN"
+                }
+            ],
+            "location": "QYBURN’S LAB"
+        },
+        {
+            "description": "COURTYARD",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Sansa walks through the busy courtyard. Theon is shoveling dirt nearby. He looks up to see her walking in his direction, and looks away, tense. On a platform above, Ramsay and Baelish stand, watching her."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "She really is lovely. I hope I can make her happy.",
+                    "spoken_by": "RAMSAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I hope so too. I've become quite fond of Lady Sansa during our travels together. She’s suffered enough.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'll never hurt her. You have my word.",
+                    "spoken_by": "RAMSAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I've heard very little about you. Which makes you quite a rare thing, as lords go.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I haven't been a lord very long. I was a bastard.",
+                    "spoken_by": "RAMSAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Approaching.",
+                    "line": "And you're not anymore. Allow me a moment alone with Lord Baelish.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Bows.",
+                    "line": "Yes, father. And thank you, Lord Baelish. I'm forever in your debt.",
+                    "spoken_by": "RAMSAY"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "He seems pleased.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Shouldn't he be?",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They begin walking.",
+                    "line": "I assure you she's still a virgin. Tyrion never consummated the marriage. By the law of the land, she's no man's wife. Inspect her, if you must.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I leave that to the brothel keeper. It's her name I need, not her virtue.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Then I have delivered everything I've promised.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "And you prepared for the consequences. When the Lannisters hear I've wed Sansa Stark to Ramsay.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Lannister name doesn't mean what it once did. Tywin is dead. He kept his house in power through sheer will. Without him, Jaime has one hand and no allies, Tommen is a soft boy, not a king to fear.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Queen will be enraged.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Queen Margaery adores Sansa. Cersei is Queen Mother, a title whose importance wanes with each passing day.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They stop, and Roose holds up a letter.",
+                    "line": "And yet she still has friends. Men in important places, whom she can ask for favours.  A message for you, from Cersei Lannister. A rider arrived from Eyrie, shortly before dawn. Apparently, she thinks you're still in the Vale.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "A message for me, you say. Strange that the seal is broken.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm sure you understand my position, Lord Baelish. If you received word in the night from the Queen Mother, it does make me question our new alliance. The Lannisters made you one of the great lords of Westeros. Yet, here you are in the North, undermining them. Why gamble with your position?",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Every ambitious move is a gamble. You gambled when you drove a dagger into Robb Stark's heart. It appears that your gamble paid off. You're Warden of the North.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I had Tywin Lannister backing. Who supports me now? You?",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The Eyrie is mine. The last time the lords of the Eyrie formed an alliance with the lords of the North, they brought down the greatest dynasty this world has ever known. I'd like to borrow one of your birds. Cersei will expect a reply.",
+                    "spoken_by": "BAELISH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'd like to read the reply.",
+                    "spoken_by": "ROOSE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Roose walks away."
+                }
+            ],
+            "location": "WINTERFELL"
+        },
+        {
+            "description": null,
+            "events": [],
+            "location": "VOLANTIS"
+        },
+        {
+            "description": "Tyrion repeatedly opens and closes a window.",
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to get out of this wheelhouse.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Volantis is a large city.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I have to get out of this wheelhouse.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The likelihood of you being spotted here increases a hundredfold.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Mm, I have to get out of this wheelhouse.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not sure how many new ways I can find of saying this.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Walks over to him.",
+                    "line": "I will not be of any use to Daenerys Targaryen if I lose my mind. I can't remember the last face I saw that wasn't yours.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's a perfectly good face.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm losing my mind.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "If anyone recognizes you, you'll lose more than that.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Pulls his hood up. Varys shakes his head.",
+                    "line": "Look, we are thousands of miles from Westeros.  What am I?  One more drunk dwarf.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tyrion knocks on the front of the carriage. The camera then pans over part of the city. Varys and Tyrion walk through a busy marketplace."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Slaves.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Shot of a man with a fly tattooed onto his cheek. Shot of a man with a hammer tattooed onto his cheek. Shot of a man inspecting women with tears tattooed onto their cheeks.",
+                    "line": "Yes. The Volantene masters are very organized.  Flies for dung shovelers.  Hammers for builders.  Tears for whores. Lest they forget.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Varys and Tyrion arrive at a clearing in the market and stop. A woman speaks before a large crowd."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Valyrian",
+                    "line": "Lord cast your light upon us.",
+                    "spoken_by": "PRIESTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Valyrian, in unison",
+                    "line": "Lord cast your light upon us.",
+                    "spoken_by": "CROWD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Valyrian",
+                    "line": "For the night is dark and full of terrors.",
+                    "spoken_by": "PRIESTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Aside",
+                    "line": "We should keep moving.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Noticing Tyrion is no longer next to him, he frantically looks around."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Valyrian, in unison",
+                    "line": "For the night is dark and full of terrors.",
+                    "spoken_by": "CROWD"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Valyrian",
+                    "line": "I was once as you are now.",
+                    "spoken_by": "PRIESTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The woman points to her cheek. Tyrion watches from some nearby steps, and drinks some wine."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Valyrian Varys approaches Tyrion",
+                    "line": "Bought and sold, , scourged and branded...",
+                    "spoken_by": "PRIESTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "The only red priest we had in King's Landing was Thoros of Myr. This one's much better looking.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Valyrian",
+                    "line": "The Lord of Light hears your voice. He hears the king as he hears the slave; he hears the Stone Men in their misery...",
+                    "spoken_by": "PRIESTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Varys shushes him worriedly.",
+                    "line": "Stone men. Good luck stopping this spread of grayscale with prayer. You'd have better luck dancing away the plague.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Valyrian",
+                    "line": "He has sent you a saviour! From the fire she was reborn to remake the world! The Dragon Queen!",
+                    "spoken_by": "PRIESTESS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "We're going to meet the Saviour! You should have told me. Who doesn't want to meet the Saviour?",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The priestess slowly turns her head to lock eyes with Tyrion."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Covering his face.",
+                    "line": "Come on. Let's find a brothel.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They return to the marketplace and continue walking. They stop at a large door, which a man is guarding. He rubs Tyrion’s head."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Valyrian",
+                    "line": "It’s good luck to rub a dwarf’s head.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It's even better luck to suck a dwarf's cock.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Varys rolls his eyes, exasperated. The man stares at him unamused."
+                }
+            ],
+            "location": "VARYS AND TYRION’S CARRIAGE"
+        },
+        {
+            "description": null,
+            "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "See? We blend right in. Just two more travellers, mad with lust.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Elsewhere in the brothel, Jorah sets his cup down. Tyrion and Varys sit down at a table, and a woman comes to bring them wine."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Thank you.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tyrion clinks his glass against Varys’s. A prostitute dressed as Daenerys walks through the brothel. Tyrion looks at her."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She looks at him.",
+                    "line": "Curious... hair.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Across the room.",
+                    "line": "The mother of dragons!",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "He gestures for her to come over. She approaches their table."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "It appears you're not the only Targaryen supporter.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jorah watches the prostitute, and then looks away."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Someone who inspires priests and whores is worth taking seriously.",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "What makes you worth that much?",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "They laugh.",
+                    "line": "I’m magic.",
+                    "spoken_by": "BLONDE PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I bet you bloody are.",
+                    "spoken_by": "MAN"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jorah listens to this, appearing extremely uncomfortable."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Watches her kiss the man",
+                    "line": "Well, , she's taken.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tyrion spots another prostitute, with shorter dark hair. He gets up."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Where're you going?",
+                    "spoken_by": "VARYS"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I need to speak to someone with hair.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tyrion approaches the black haired prostitute."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello?",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Hello.",
+                    "spoken_by": "BLACK HAIRED PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've got no drink.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You've got no money.",
+                    "spoken_by": "BLACK HAIRED PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She looks at him incredulously. She laughs. Sits down.",
+                    "line": "Do I look like a man without money?  Never trust looks. Until quite recently, I was one of the richest men in the world.  But who needs wealth when you can make a woman laugh?  I always pay my debts, I'm well known for it.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "The blonde prostitute and the man giggle. Tyrion glances over at them."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You like her? They all like her. They all want to fuck a queen.",
+                    "spoken_by": "BLACK HAIRED PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "That’s because they’ve never met a queen.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You're just saying that.",
+                    "spoken_by": "BLACK HAIRED PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You know how to spot a liar. If I could pick any girl here, I would pick you.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Why?",
+                    "spoken_by": "BLACK HAIRED PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Because you have a skeptical mind.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Smiles.",
+                    "line": "Alright, then. I'm warning you. We’re gonna have to wash you first.",
+                    "spoken_by": "BLACK HAIRED PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She takes his hand, but Tyrion doesn’t get up."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Come on.",
+                    "spoken_by": "BLACK HAIRED PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "After a moment.",
+                    "line": "I'm, I'm sorry, I can't.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Of course you can. You're shy.",
+                    "spoken_by": "BLACK HAIRED PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm not.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Have another drink.",
+                    "spoken_by": "BLACK HAIRED PROSTITUTE"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Gladly, but this, I can't do. Believe me, no one is more shocked than I am. I hope it passes. What will I do in my spare time? I’ll go for a piss, that’s a start.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "She looks confused. Tyrion walks away. Varys, noticing that Tyrion is no longer in his view, gets up worriedly."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "INT./EXT. WINDOW"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tyrion pisses out of a window, and sips his wine. He throws the cup out into the water below. He notices that someone is behind him."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Turns to see it’s not Varys, but Jorah.",
+                    "line": "No need to worry, I was just -  Oh, I thought you were someone else. Shows almost over. I'm sure the girls inside will be happy to oblige.",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jorah looks behind him. As Tyrion pulls up his pants, Jorah puts a rope around him and begins tying it."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "You made some kind of mistake. Why don't you tell me what you think you are doing and -",
+                    "spoken_by": "TYRION"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Jorah puts a rag over Tyrion’s mouth."
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "I'm taking you to the Queen.",
+                    "spoken_by": "JORAH"
+                },
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Tyrion’s eyes widen. Jorah picks him up and leaves."
+                }
+            ],
+            "location": "BROTHEL"
+        }
+    ],
+    "season": null,
+    "sequence_in_season": null,
+    "show": "GoT",
+    "title": "High_Sparrow_",
+    "transcript_url": "https://gameofthronesfanon.fandom.com//wiki/High_Sparrow_(Fanon)/Transcript"
+}
