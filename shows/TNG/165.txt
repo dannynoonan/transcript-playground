@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Corridor"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 43685.2 As part of an exchange programme, we're taking aboard a Klingon officer to return the recent visit of Commander Riker to the cruiser Pagh.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2115,10 +2116,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Kurn turns his back, and Worf and Picard walk out of the hall"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Great Hall"

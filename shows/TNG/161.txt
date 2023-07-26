@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 43539.1. We have moved into orbit around Bre'el Four. With the assistance of the planet's emergency control centre, we're investigating a potentially catastrophic threat to the population from a descending asteroidal moon.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -805,7 +806,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "walks into the forcefield",
-                    "line": "Jean-Luc, wait!  This is getting on my nerves, now that I have them. You have a moon in a deteriorating orbit. I've known moons through the universe. Big ones, small ones. I'm an expert. I could help you with this one, if you let me out of here.",
+                    "line": "Jean-Luc, wait! This is getting on my nerves, now that I have them. You have a moon in a deteriorating orbit. I've known moons through the universe. Big ones, small ones. I'm an expert. I could help you with this one, if you let me out of here.",
                     "spoken_by": "Q"
                 },
                 {
@@ -2055,7 +2056,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "nudges Q",
-                    "line": "Engage field coils. Tractor beam to stand by. Field output?  Field output?",
+                    "line": "Engage field coils. Tractor beam to stand by. Field output? Field output?",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2205,7 +2206,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "big jolt",
-                    "line": "Calamarain attacking.  Shields holding. Tachyon field repelled.",
+                    "line": "Calamarain attacking. Shields holding. Tachyon field repelled.",
                     "spoken_by": "WORF"
                 },
                 {
@@ -3123,10 +3124,6 @@
                     "context_info": "OC",
                     "line": "Don't bet on it, Picard.",
                     "spoken_by": "Q"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

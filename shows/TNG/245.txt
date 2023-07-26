@@ -118,10 +118,6 @@
                     "context_info": null,
                     "line": "What could they possibly be doing down there?",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"
@@ -1270,7 +1266,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a crewman enters",
-                    "line": "I can assure you that I'm not given to casual relationships.  There is something that I want to tell you. But not here.",
+                    "line": "I can assure you that I'm not given to casual relationships. There is something that I want to tell you. But not here.",
                     "spoken_by": "PICARD"
                 }
             ],
@@ -1536,7 +1532,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard nods",
-                    "line": "About the personnel transfer? I thought he looked uncomfortable. He thought I was asking for special treatment.  I was just doing what I thought was best for my department.",
+                    "line": "About the personnel transfer? I thought he looked uncomfortable. He thought I was asking for special treatment. I was just doing what I thought was best for my department.",
                     "spoken_by": "NELLA"
                 },
                 {
@@ -1674,7 +1670,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "goes to the wall monitor",
-                    "line": "You know, it might.  The storm is approaching the outpost from this direction. If we were to set up a series of thermal deflector units along the northern perimeter, we could create a fire wall and deflect some of the heat. The insulation from the outpost should be able to handle the rest.",
+                    "line": "You know, it might. The storm is approaching the outpost from this direction. If we were to set up a series of thermal deflector units along the northern perimeter, we could create a fire wall and deflect some of the heat. The insulation from the outpost should be able to handle the rest.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2286,12 +2282,8 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a kiss",
-                    "line": "Of course.  Promise me something? Don't give up your music.",
+                    "line": "Of course. Promise me something? Don't give up your music.",
                     "spoken_by": "NELLA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Picard's quarters"

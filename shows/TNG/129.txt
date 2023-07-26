@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Engineering"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42286.3. We have arrived on station at coordinates three six two nine by five eight four, three days early for our rendezvous with the USS Victory. There is nothing to do now but hold this position and wait.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -203,7 +204,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a book",
-                    "line": "The emerald tie pin. Presented to Holmes by Queen Victoria after he solved the theft of the Bruce-Partington Plans.  A copy of Whitaker's Almanac, which provided Holmes the key to the secret code in The Valley of Fear. The snuff box of Wilhelm Gottsleig Siegesmann Van der Romstein.",
+                    "line": "The emerald tie pin. Presented to Holmes by Queen Victoria after he solved the theft of the Bruce-Partington Plans. A copy of Whitaker's Almanac, which provided Holmes the key to the secret code in The Valley of Fear. The snuff box of Wilhelm Gottsleig Siegesmann Van der Romstein.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1099,7 +1100,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a beaded shawl",
-                    "line": "Not with her hands, no. But with this.  When used as a garrote, these beads will leave marks quite similar to fingerprints. And, my dear Watson, you will note from the victim's throat, the marks are too evenly spaced to be have been made by human hands.",
+                    "line": "Not with her hands, no. But with this. When used as a garrote, these beads will leave marks quite similar to fingerprints. And, my dear Watson, you will note from the victim's throat, the marks are too evenly spaced to be have been made by human hands.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2191,7 +2192,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "big shake",
-                    "line": "It's gone beyond that little game, Mister Data. And you'll note I no longer call you Holmes. Whatever I was when this began, I have grown. I am understanding more and more. And I am able to use the power at my fingertips.  I can affect this vessel, and I can inflict bodily harm on you, and on your Doctor.",
+                    "line": "It's gone beyond that little game, Mister Data. And you'll note I no longer call you Holmes. Whatever I was when this began, I have grown. I am understanding more and more. And I am able to use the power at my fingertips. I can affect this vessel, and I can inflict bodily harm on you, and on your Doctor.",
                     "spoken_by": "MORIARTY"
                 },
                 {
@@ -2483,10 +2484,6 @@
                     "context_info": null,
                     "line": "On my way, Number One.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Engineering"

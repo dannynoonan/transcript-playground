@@ -1298,7 +1298,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to the wall",
-                    "line": "Nothing on my communicator, sir.  Computer on.",
+                    "line": "Nothing on my communicator, sir. Computer on.",
                     "spoken_by": "WORF"
                 },
                 {
@@ -1338,7 +1338,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "silence",
-                    "line": "Engineering section, report. What is our situation?  Engineering? Captain, request permission to leave the Bridge.",
+                    "line": "Engineering section, report. What is our situation? Engineering? Captain, request permission to leave the Bridge.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2682,10 +2682,6 @@
                     "context_info": null,
                     "line": "And Ensign, if you encounter any holes, steer clear.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

@@ -226,7 +226,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to woman",
-                    "line": "Do you think there's enough food here, Data?  Good evening.",
+                    "line": "Do you think there's enough food here, Data? Good evening.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -810,7 +810,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "sees a bowl by his elbow",
-                    "line": "Hello.  Smells good. Thank you. This is a Terellian cargo freighter, isn't it? Is this your ship? Are you one of the crew?",
+                    "line": "Hello. Smells good. Thank you. This is a Terellian cargo freighter, isn't it? Is this your ship? Are you one of the crew?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1288,7 +1288,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "thinks",
-                    "line": "You are  bluffing.",
+                    "line": "You are bluffing.",
                     "spoken_by": "BYLETH"
                 },
                 {
@@ -1576,7 +1576,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "picks up the pendant",
-                    "line": "Anna.  Anna! Anna, where are you going?",
+                    "line": "Anna. Anna! Anna, where are you going?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1604,7 +1604,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "bangs on the door",
-                    "line": "Inside the freighter! The door is on the opposite side!  Over here! The door's over here!",
+                    "line": "Inside the freighter! The door is on the opposite side! Over here! The door's over here!",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2002,10 +2002,6 @@
                     "context_info": null,
                     "line": "Ambassador.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Shuttlebay"

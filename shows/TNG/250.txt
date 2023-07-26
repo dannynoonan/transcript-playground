@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ten Forward"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46915.2. The Enterprise is orbiting Nervala Four, waiting for an opportunity to retrieve scientific data left there by Starfleet researchers when they were forced to evacuate eight years ago.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "it's jazz night, and the quartet are in full swing, with Riker on 'bone playing 'Tell them I remember you'"
@@ -2109,7 +2110,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "but Riker 2 can't get a foothold",
-                    "line": "Hang on! Come on, grab on. Come on! Come on, climb! Come on!  I'm being pulled in.",
+                    "line": "Hang on! Come on, grab on. Come on! Come on, climb! Come on! I'm being pulled in.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2275,16 +2276,12 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Riker",
-                    "line": "I waited a long time. I guess I can wait a little longer.  Take care of her.",
+                    "line": "I waited a long time. I guess I can wait a little longer. Take care of her.",
                     "spoken_by": "RIKER 2"
                 },
                 {
                     "characters_mentioned": [],
                     "context_info": "Riker 2 leaves. Riker holds out his hand to Deanna, and they leave arm in arm"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Lt. Riker's quarters"

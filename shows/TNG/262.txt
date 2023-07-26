@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Observation lounge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 47410.2. The Atrean government has requested assistance in averting a natural disaster. Two of their geologists have come aboard, one of whom is a human who has been living on Atrea Four.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -519,7 +520,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "reads door name plate",
-                    "line": "Noonian walked in with your head in his hand and, innocent as you please, said it was up to me. He knew perfectly well what he was doing. Once again he had made it in his own image. What could I possibly say?  Deanna Troi, is that who you're going to visit?",
+                    "line": "Noonian walked in with your head in his hand and, innocent as you please, said it was up to me. He knew perfectly well what he was doing. Once again he had made it in his own image. What could I possibly say? Deanna Troi, is that who you're going to visit?",
                     "spoken_by": "JULIANA"
                 },
                 {
@@ -2063,10 +2064,6 @@
                     "context_info": null,
                     "line": "Goodbye, Mother. Energise.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

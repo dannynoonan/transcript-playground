@@ -332,7 +332,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Wesley",
-                    "line": "Oliana.  T'Shanik of Vulcana Regar.",
+                    "line": "Oliana. T'Shanik of Vulcana Regar.",
                     "spoken_by": "T'SHANIK"
                 },
                 {
@@ -362,7 +362,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "goes over to the third newcomer",
-                    "line": "Excuse me.  I'm Wesley Crusher.",
+                    "line": "Excuse me. I'm Wesley Crusher.",
                     "spoken_by": "WESLEY"
                 },
                 {
@@ -574,7 +574,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "enters turbolift",
-                    "line": "Not now.  When it doesn't interfere with my duties, Remmick.",
+                    "line": "Not now. When it doesn't interfere with my duties, Remmick.",
                     "spoken_by": "RIKER"
                 }
             ],
@@ -712,7 +712,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Riker sits",
-                    "line": "If you prefer to stand, fine, Mister Riker. It won't have an effect on the length of my inquiry.  Now, there are several seeming discrepancies in the Captain's log. Let's go over them one by one, shall we?",
+                    "line": "If you prefer to stand, fine, Mister Riker. It won't have an effect on the length of my inquiry. Now, there are several seeming discrepancies in the Captain's log. Let's go over them one by one, shall we?",
                     "spoken_by": "REMMICK"
                 },
                 {
@@ -2222,7 +2222,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "nothing",
-                    "line": "I'm here. I'm ready.  Maybe they forgot. Breathe. Got to remember to breathe.",
+                    "line": "I'm here. I'm ready. Maybe they forgot. Breathe. Got to remember to breathe.",
                     "spoken_by": "WESLEY"
                 },
                 {
@@ -2810,10 +2810,6 @@
                     "context_info": null,
                     "line": "Excellent. Mister Crusher, engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

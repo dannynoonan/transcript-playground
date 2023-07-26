@@ -2590,7 +2590,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Worf climbs the ladder",
-                    "line": "Brother, I knew you would come.  Now I, we have a chance. I could not do it alone, but I would rather die here, than let the traitors of Kling pick the meat from my bones. With you it will work.",
+                    "line": "Brother, I knew you would come. Now I, we have a chance. I could not do it alone, but I would rather die here, than let the traitors of Kling pick the meat from my bones. With you it will work.",
                     "spoken_by": "KORRIS"
                 },
                 {
@@ -2844,10 +2844,6 @@
                     "context_info": null,
                     "line": "And Mister Worf, the Bridge wouldn't be the same without you. Engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

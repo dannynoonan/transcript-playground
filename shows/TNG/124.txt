@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Gymnasium"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41697.9. We're en route to Sarona Eight for much needed shore leave. The entire crew is looking forward to the diversion. On a personal note, I have allowed myself the luxury of a head start.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard and his opponent are fencing. His opponent gets a winning hit"
@@ -1533,7 +1534,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Jenice nods",
-                    "line": "The same one?  She has told me about you. Not all, but enough.",
+                    "line": "The same one? She has told me about you. Not all, but enough.",
                     "spoken_by": "MANHEIM"
                 },
                 {
@@ -2703,12 +2704,8 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Troi",
-                    "line": "It's called the Blue Parrot Cafe,  and you're buying.",
+                    "line": "It's called the Blue Parrot Cafe, and you're buying.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

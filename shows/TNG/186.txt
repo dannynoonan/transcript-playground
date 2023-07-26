@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44429.6. We are on a mapping survey near the Cardassian sector. It has been nearly a year since a peace treaty ended the long conflict between the Federation and Cardassia.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -823,7 +824,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "sings",
-                    "line": "Oh, it's about war and glory.  The minstrel boy to the war has gone. In the ranks of death you will find him. His father's sword he hath girded on. And his wild harp slung behind him. Captain Maxwell always liked that song. I guess it's all this business with him and the Cardassians brought it back to me. You know, sitting with the staff this morning, I could tell there were people in that room who still don't like the Cardassians.",
+                    "line": "Oh, it's about war and glory. The minstrel boy to the war has gone. In the ranks of death you will find him. His father's sword he hath girded on. And his wild harp slung behind him. Captain Maxwell always liked that song. I guess it's all this business with him and the Cardassians brought it back to me. You know, sitting with the staff this morning, I could tell there were people in that room who still don't like the Cardassians.",
                     "spoken_by": "O'BRIEN"
                 },
                 {
@@ -2295,10 +2296,6 @@
                     "context_info": null,
                     "line": "Take this message to your leaders, Gul Macet. We'll be watching.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"

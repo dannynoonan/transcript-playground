@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ready room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42494.8. The Enterprise is bound for Star Station India to rendezvous with a Starfleet medical courier. We've been told only that our presence is imperative. Hopefully the mission will give me further opportunities to assess the performance of our new Chief Medical Officer.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2687,10 +2688,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

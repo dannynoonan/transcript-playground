@@ -1058,7 +1058,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "looks at bottle sniffs contents",
-                    "line": "It is  It is",
+                    "line": "It is It is",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2414,10 +2414,6 @@
                     "context_info": null,
                     "line": "Aye.",
                     "spoken_by": "SCOTT"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Shuttlebay"

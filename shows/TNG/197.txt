@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Turbolift"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Doctor Beverly Crusher, personal log, stardate 44821.3. Began an analysis today of the respiratory problems being experienced on the beta moon of Peliar Zel. Finally got an actual letter from Wesley. Topped the class in exo-biology, but he's still struggling in Ancient Philosophies. And there's someone new in my life."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Beverly and her paramour are kissing in the turbolift before it stops to pick up another passenger"
@@ -2419,10 +2418,6 @@
                     "context_info": null,
                     "line": "I will never forget you.",
                     "spoken_by": "KAREEL"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Crusher's office"

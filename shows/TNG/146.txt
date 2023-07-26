@@ -546,10 +546,6 @@
                     "context_info": null,
                     "line": "Mister La Forge?",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -950,7 +946,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard's left eyebrow raises slightly",
-                    "line": "No.  I withdraw my request, Captain.",
+                    "line": "No. I withdraw my request, Captain.",
                     "spoken_by": "WORF"
                 },
                 {
@@ -2496,10 +2492,6 @@
                     "context_info": null,
                     "line": "K'Ehleyr. I will not be complete without you.",
                     "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

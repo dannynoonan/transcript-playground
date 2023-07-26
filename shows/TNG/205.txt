@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ten Forward"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45156.1. Our mission to Mudor Five has been completed and since our next assignment will not begin for several days, we are enjoying a welcome respite from our duties.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Keiko O'Brien is a good eight months pregnant"
@@ -117,7 +118,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "sings",
-                    "line": "All right.  I am the very model of a modern major general, I've information vegetable, animal and mineral. I can't do this.",
+                    "line": "All right. I am the very model of a modern major general, I've information vegetable, animal and mineral. I can't do this.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2019,7 +2020,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "pause",
-                    "line": "But why? Unless there's something they want us  something they need us to see. Wait a minute. Data, the containment field strength is down to eighteen percent. Can you stabilise it?",
+                    "line": "But why? Unless there's something they want us something they need us to see. Wait a minute. Data, the containment field strength is down to eighteen percent. Can you stabilise it?",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2309,10 +2310,6 @@
                     "context_info": null,
                     "line": "Aye, sir.",
                     "spoken_by": "RIKER + MARISSA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

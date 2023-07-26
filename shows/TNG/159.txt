@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Angosian Senate"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 43489.2. We have arrived at Angosia Three, a planet that has expressed a strong desire for membership in the Federation. Prime Minister Nayrok has taken Commander Riker and me on a tour of the capital city.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -59,7 +60,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "they move away",
-                    "line": "Excuse me, gentlemen.  Yes, what is it?",
+                    "line": "Excuse me, gentlemen. Yes, what is it?",
                     "spoken_by": "NAYROK"
                 },
                 {
@@ -2741,10 +2742,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

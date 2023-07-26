@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41601.3. We are crossing through the Zed Lapis sector, where we will rendezvous with shuttlecraft thirteen, carrying Deanna Troi, who is returning from a conference. Because Engineering is involved in preventive maintenance on our dilithium crystals, we are presently travelling on impulse power.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -195,10 +196,6 @@
                     "context_info": null,
                     "line": "How long before we can return to warp power?",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -745,10 +742,6 @@
                     "context_info": null,
                     "line": "Very good, tin man.",
                     "spoken_by": "ARMUS"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Planet surface"
@@ -807,10 +800,6 @@
                     "context_info": null,
                     "line": "Number One, I don't believe that the location of the crash and the proximity of the creature is a coincidence.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -1075,7 +1064,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Tasha jerks from the shock",
-                    "line": "Do it!  Increase to seventy microvolts.",
+                    "line": "Do it! Increase to seventy microvolts.",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -1085,7 +1074,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "nothing still nothing",
-                    "line": "Eighty five microvolts.  Again.  Ninety. Again. Again. She's gone.",
+                    "line": "Eighty five microvolts. Again. Ninety. Again. Again. She's gone.",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -2167,7 +2156,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard shakes his head",
-                    "line": "Entertain me.  Then I will do it myself. You, Tin Man.",
+                    "line": "Entertain me. Then I will do it myself. You, Tin Man.",
                     "spoken_by": "ARMUS"
                 },
                 {
@@ -2259,7 +2248,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the phaser drops",
-                    "line": "Curious.  You are capable of great sadism and cruelty. Interesting. No redeeming qualities.",
+                    "line": "Curious. You are capable of great sadism and cruelty. Interesting. No redeeming qualities.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2829,10 +2818,6 @@
                     "context_info": null,
                     "line": "No, you didn't, Data. You got it.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Holodeck - meadow"

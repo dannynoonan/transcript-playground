@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41153.7. Our destination is planet Deneb Four, beyond which lies the great unexplored mass of the galaxy. My orders are to examine Farpoint, a starbase built there by the inhabitants of that world. Meanwhile, I am becoming better acquainted with my new command, this Galaxy Class USS Enterprise. I am still somewhat in awe of its size and complexity. As for my crew, we are short in several key positions, most notably a first officer, but I am informed that a highly experienced man, one Commander William Riker, will be waiting to join our ship at our Deneb Four destination.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -171,7 +172,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Helmsman",
-                    "line": "I present myself to thee as a fellow ship captain, that thou mayst better understand me. Go back whence thou camest.  Stay where thou art!",
+                    "line": "I present myself to thee as a fellow ship captain, that thou mayst better understand me. Go back whence thou camest. Stay where thou art!",
                     "spoken_by": "Q"
                 },
                 {
@@ -367,7 +368,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Worf",
-                    "line": "From this point, no station aboard, repeat no station, for any reason will make use of transmitted signals or intercom. We'll try and take them by surprise. Let's see what this galaxy class starship can do.  Lieutenant, inform engine room to prepare for maximum acceleration.",
+                    "line": "From this point, no station aboard, repeat no station, for any reason will make use of transmitted signals or intercom. We'll try and take them by surprise. Let's see what this galaxy class starship can do. Lieutenant, inform engine room to prepare for maximum acceleration.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -869,7 +870,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to soldier another soldier kills him",
-                    "line": "You are out of order.  The prisoners will not be harmed until they are found guilty. Dispose of that.",
+                    "line": "You are out of order. The prisoners will not be harmed until they are found guilty. Dispose of that.",
                     "spoken_by": "Q"
                 },
                 {
@@ -993,7 +994,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Tasha is thawed",
-                    "line": "This is a merciful court.  Silence! Continuing these proceedings, I must caution you that legal trickery is not permitted. This is a court of",
+                    "line": "This is a merciful court. Silence! Continuing these proceedings, I must caution you that legal trickery is not permitted. This is a court of",
                     "spoken_by": "Q"
                 },
                 {
@@ -1231,7 +1232,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "gets muddled over a handshake",
-                    "line": "Good.  Good.",
+                    "line": "Good. Good.",
                     "spoken_by": "ZORN"
                 },
                 {
@@ -1285,7 +1286,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "suddenly there is a second bowl of apples",
-                    "line": "It doesn't matter. What I was saying was  I'll be damned.",
+                    "line": "It doesn't matter. What I was saying was I'll be damned.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -1733,7 +1734,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "answers comm.",
-                    "line": "It seems we're alive only because we have been placed on probation. A very serious kind of probation.  Go.",
+                    "line": "It seems we're alive only because we have been placed on probation. A very serious kind of probation. Go.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2233,7 +2234,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "OCappears on viewscreen",
-                    "line": "You're wasting time, Captain.  Or did you think I was gone?",
+                    "line": "You're wasting time, Captain. Or did you think I was gone?",
                     "spoken_by": "Q"
                 },
                 {
@@ -2407,10 +2408,6 @@
                     "context_info": "OC",
                     "line": "I, too, would never say goodbye, Imzadi.",
                     "spoken_by": "TROI"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -2557,7 +2554,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to wall",
-                    "line": "This way, sir. You must be new to these Galaxy class starships, sir.  Tell me the location of Commander Data.",
+                    "line": "This way, sir. You must be new to these Galaxy class starships, sir. Tell me the location of Commander Data.",
                     "spoken_by": "ENSIGN"
                 },
                 {
@@ -2935,7 +2932,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Data",
-                    "line": "Tasha, you and the Counsellor. And, Geordi, I want your eyes down there.  You and I will start with topside.",
+                    "line": "Tasha, you and the Counsellor. And, Geordi, I want your eyes down there. You and I will start with topside.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -3181,7 +3178,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the captain's chair",
-                    "line": "But don't touch anything! Try it out.  The panel on your right is for log entries, library computer access and retrieval, viewscreen control, intercoms, and so on. Here we have",
+                    "line": "But don't touch anything! Try it out. The panel on your right is for log entries, library computer access and retrieval, viewscreen control, intercoms, and so on. Here we have",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -3875,7 +3872,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "beep",
-                    "line": "Aye, sir. Impulse power to  We have no ship control, sir. It's gone!",
+                    "line": "Aye, sir. Impulse power to We have no ship control, sir. It's gone!",
                     "spoken_by": "WORF"
                 }
             ],
@@ -4841,10 +4838,6 @@
                     "context_info": null,
                     "line": "Oh no, Number One. I'm sure most will be much more interesting. Let's see what's out there. Engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

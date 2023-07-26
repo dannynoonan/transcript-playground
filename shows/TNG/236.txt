@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ready room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46357.4. We have rendezvoused with the starship Cairo near the Cardassian border for an urgent meeting with Vice Admiral Nechayev.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1093,7 +1094,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Worf sits him down again",
-                    "line": "Solok is a very busy, very important man. He isn't here.  But I could relay a message.",
+                    "line": "Solok is a very busy, very important man. He isn't here. But I could relay a message.",
                     "spoken_by": "SOLOK"
                 },
                 {
@@ -1147,7 +1148,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "stroking Solok's lob",
-                    "line": "That's why we came here, because only Solok could help us. I guess there's some things even Solok can't do. It's too bad.  Because if he could, I would be very, very",
+                    "line": "That's why we came here, because only Solok could help us. I guess there's some things even Solok can't do. It's too bad. Because if he could, I would be very, very",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -1965,7 +1966,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the guard leaves",
-                    "line": "A challenge.  You should prove to be an interesting challenge. Possibly the most interesting to come through that door in many years.",
+                    "line": "A challenge. You should prove to be an interesting challenge. Possibly the most interesting to come through that door in many years.",
                     "spoken_by": "MADRED"
                 },
                 {
@@ -1995,14 +1996,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "To Be Continued..."
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Interrogation room"

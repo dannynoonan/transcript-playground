@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Transporter room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Chief Medical Officer's log, Stardate 44161.2. We are docking at Starbase one three three for scheduled crew rotation. I look forward to welcoming aboard my mentor, and dear friend, Doctor Dalen Quaice, who will be travelling with us to his home planet, Kenda Two."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "An older man with a silver moustache beams aboard"
@@ -211,10 +210,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Beverly rings the doorbell twice, then taps in an override code"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Corridor"
@@ -1591,7 +1586,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she looks away for a moment",
-                    "line": "For quite some time I've been meaning to say something to you. I might not have another chance.  Jean Luc, you and I",
+                    "line": "For quite some time I've been meaning to say something to you. I might not have another chance. Jean Luc, you and I",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -1641,7 +1636,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the vortex dissipates",
-                    "line": "No. Look.  I've lost it.",
+                    "line": "No. Look. I've lost it.",
                     "spoken_by": "WESLEY"
                 },
                 {
@@ -1897,7 +1892,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "nothing happens",
-                    "line": "Engage.  Computer, did you change course?",
+                    "line": "Engage. Computer, did you change course?",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -2441,7 +2436,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "they embrace, then she sees the Traveller",
-                    "line": "Jean-Luc.  You. Do I have you to thank for getting me back?",
+                    "line": "Jean-Luc. You. Do I have you to thank for getting me back?",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -2477,10 +2472,6 @@
                     "context_info": null,
                     "line": "No. That's the exact number there should be.",
                     "spoken_by": "CRUSHER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Engineering"

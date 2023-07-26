@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41386.4. We are in pursuit of a starship of Ferengi design. Our mission is to intercept and recover a T9 energy converter which the Ferengi stole from an unmanned monitor post on Gamma Tauri Four. A theft which automatic scanners recorded, providing us with the long awaited opportunity to make close contact with a Ferengi vessel. If we succeed in this chase, it will be Starfleet's first look at a life form which, discounting rumour, we know almost nothing about.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -219,7 +220,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "puzzled",
-                    "line": "Open hailing freq.  Why are we gaining on them? Don't anticipate.",
+                    "line": "Open hailing freq. Why are we gaining on them? Don't anticipate.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -553,7 +554,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "realisation",
-                    "line": "That's point three-hundred milliseconds. There's  Ah, I see where you're going. We shift down and then kick hard into warp nine. Yeah! Come back fighting! whooey!",
+                    "line": "That's point three-hundred milliseconds. There's Ah, I see where you're going. We shift down and then kick hard into warp nine. Yeah! Come back fighting! whooey!",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -565,7 +566,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to engineer",
-                    "line": "Ask me after it's done, sir.  I want a slow reverse into drop off over five minutes. We'll show them what this baby can do, sir.",
+                    "line": "Ask me after it's done, sir. I want a slow reverse into drop off over five minutes. We'll show them what this baby can do, sir.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -997,7 +998,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Geordi",
-                    "line": "Something has seized their ship too. They're in the same predicament as us.  Launch a sensor probe. Set it to search for the source of whatever this something is that is holding both ships. Go back to hailing frequency, fast. And I regret, DaiMon Tarr, that I can no longer negotiate unless it is conducted visually.",
+                    "line": "Something has seized their ship too. They're in the same predicament as us. Launch a sensor probe. Set it to search for the source of whatever this something is that is holding both ships. Go back to hailing frequency, fast. And I regret, DaiMon Tarr, that I can no longer negotiate unless it is conducted visually.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1065,7 +1066,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "they scurry out as Picard enters",
-                    "line": "Matthew! Pola! You know this area is off limits. Come on, come on.  Boys will be boys, Captain.",
+                    "line": "Matthew! Pola! You know this area is off limits. Come on, come on. Boys will be boys, Captain.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -1127,7 +1128,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "his forefingers are stuck in the puzzle",
-                    "line": "Understandable. It has been extinct six hundred thousand of our  of our years. These planets were once outposts of that empire.",
+                    "line": "Understandable. It has been extinct six hundred thousand of our of our years. These planets were once outposts of that empire.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1805,7 +1806,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the comm. badge",
-                    "line": "We will accuse the humans of preparing to ambush us. It will be our word against theirs and who is more trustworthy, Mordoc?  It looks like gold. Tastes like gold.",
+                    "line": "We will accuse the humans of preparing to ambush us. It will be our word against theirs and who is more trustworthy, Mordoc? It looks like gold. Tastes like gold.",
                     "spoken_by": "LETEK"
                 },
                 {
@@ -1883,7 +1884,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "they stop",
-                    "line": "No!  Good, you've heard of phasers. Now, over there.",
+                    "line": "No! Good, you've heard of phasers. Now, over there.",
                     "spoken_by": "TASHA"
                 },
                 {
@@ -2571,10 +2572,6 @@
                     "context_info": null,
                     "line": "Make it so.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

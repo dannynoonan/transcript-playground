@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45397.3. Two days ago, Starbase five one four lost contact with the research vessel Vico, which was sent to explore the interior of a Black Cluster. We are en route to investigate.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -945,7 +946,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "nod",
-                    "line": "Do you wish a frank evaluation?  It lacks the harmony that characterised this particular temple and Dokkaran culture in general.",
+                    "line": "Do you wish a frank evaluation? It lacks the harmony that characterised this particular temple and Dokkaran culture in general.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1229,7 +1230,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "spots a dessert being carried by a waiter",
-                    "line": "Androids do not need to eat or drink.  However, sometimes we like to taste things. A Tamarin frost, please. Would you like anything, Counsellor?",
+                    "line": "Androids do not need to eat or drink. However, sometimes we like to taste things. A Tamarin frost, please. Would you like anything, Counsellor?",
                     "spoken_by": "TIMOTHY"
                 },
                 {
@@ -1533,7 +1534,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "re painting",
-                    "line": "Thank you.  It is very expressive.",
+                    "line": "Thank you. It is very expressive.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2283,7 +2284,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "go to science station",
-                    "line": "Timothy, accompany me, please.  I want you to recall everything you heard people say aboard the Vico before it was destroyed.",
+                    "line": "Timothy, accompany me, please. I want you to recall everything you heard people say aboard the Vico before it was destroyed.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2605,10 +2606,6 @@
                     "context_info": null,
                     "line": "That would be acceptable.",
                     "spoken_by": "TIMOTHY"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Classroom"

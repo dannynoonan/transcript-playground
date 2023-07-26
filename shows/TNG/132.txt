@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42477.2. The Enterprise has been diverted to the Ramatis star system. It seems that both sides of a bitter planetary conflict have petitioned Starfleet to transport to their world a mediator they have mutually selected. Our orders are transportation only, no interference.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -97,10 +98,6 @@
                     "context_info": null,
                     "line": "Oh well, time to leave.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"
@@ -1547,7 +1544,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Riva nods",
-                    "line": "We would like two torches. Head high?  And what else?",
+                    "line": "We would like two torches. Head high? And what else?",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -1773,7 +1770,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "grabs Riva's head",
-                    "line": "Counsellor, take him to Sickbay. Maybe Pulaski can help.  Listen to me. You are not alone. Do you understand? We are all in this together now.",
+                    "line": "Counsellor, take him to Sickbay. Maybe Pulaski can help. Listen to me. You are not alone. Do you understand? We are all in this together now.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1879,7 +1876,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "doorbell",
-                    "line": "You're right, of course.  Come.",
+                    "line": "You're right, of course. Come.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2175,7 +2172,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Troi",
-                    "line": "That is an interesting. It would give them something in common.  I do not understand, Counsellor. To what is he referring?",
+                    "line": "That is an interesting. It would give them something in common. I do not understand, Counsellor. To what is he referring?",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2321,7 +2318,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Troi",
-                    "line": "Thank you for your concern. I will be fine.  And thank you, for everything.",
+                    "line": "Thank you for your concern. I will be fine. And thank you, for everything.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2383,10 +2380,6 @@
                     "context_info": null,
                     "line": "Yes. You read me well enough to sense how I feel about you and what you do on this ship. But I just wanted to say the words. Thank you. Well done.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"

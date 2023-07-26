@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ready room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First Officer's log, stardate 41997.7 We are about to make a brief but necessary contact with the Jarada, a reclusive, insect-like race known for its idiosyncratic attitude towards protocol. The Jarada demand a precise greeting, in this case from Captain Picard. Their language is most unusual. The slightest mispronunciation is regarded as an insult."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -275,7 +274,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she kisses him",
-                    "line": "Oh, you'll say yes, Mister Hill.  If it is Redblock, he must think I've got what he's looking for. But believe me, I don't.",
+                    "line": "Oh, you'll say yes, Mister Hill. If it is Redblock, he must think I've got what he's looking for. But believe me, I don't.",
                     "spoken_by": "JESSICA"
                 },
                 {
@@ -287,7 +286,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she tucks it in his collar",
-                    "line": "Here's a C-note in advance. Consider it a retainer.  And next time, wear a suit. Au revoir.",
+                    "line": "Here's a C-note in advance. Consider it a retainer. And next time, wear a suit. Au revoir.",
                     "spoken_by": "JESSICA"
                 },
                 {
@@ -707,7 +706,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "reads",
-                    "line": "Thank you.  Hitler on the move. Roosevelt presses Congress for British aid. DiMaggio streak reaches thirty seven?",
+                    "line": "Thank you. Hitler on the move. Roosevelt presses Congress for British aid. DiMaggio streak reaches thirty seven?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1241,7 +1240,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "he offers her gum",
-                    "line": "Yeah, nut I'm not sure it can be repeated in mixed company.  You're a pretty hep lookin' broad.",
+                    "line": "Yeah, nut I'm not sure it can be repeated in mixed company. You're a pretty hep lookin' broad.",
                     "spoken_by": "SERGEANT"
                 },
                 {
@@ -1253,7 +1252,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she nods",
-                    "line": "It ain't bad. You like Tommy Dorsey?  I got two tickets for the dance tomorrow night.",
+                    "line": "It ain't bad. You like Tommy Dorsey? I got two tickets for the dance tomorrow night.",
                     "spoken_by": "SERGEANT"
                 },
                 {
@@ -1535,7 +1534,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "pulls a gun",
-                    "line": "But we have business!  Urgent business.",
+                    "line": "But we have business! Urgent business.",
                     "spoken_by": "LEECH"
                 }
             ],
@@ -1679,7 +1678,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "nothing",
-                    "line": "Exit! Computer, exit!  Data, try the other exit in the hall.",
+                    "line": "Exit! Computer, exit! Data, try the other exit in the hall.",
                     "spoken_by": "PICARD"
                 }
             ],
@@ -2217,7 +2216,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "ear splitting noise",
-                    "line": "This is Commander Riker, aboard the Enterprise. We demand that you  Cut that off! They're not going to be satisfied with anyone less than the Captain.",
+                    "line": "This is Commander Riker, aboard the Enterprise. We demand that you Cut that off! They're not going to be satisfied with anyone less than the Captain.",
                     "spoken_by": "RIKER"
                 }
             ],
@@ -2605,10 +2604,6 @@
                     "context_info": null,
                     "line": "Step on it.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

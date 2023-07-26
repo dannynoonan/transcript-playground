@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Torpedo bay"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44932.3 The Enterprise is preparing to enter the Mar Oscura, an unexplored dark matter nebula. Commander Data is modifying several new photon torpedoes for an experiment designed to elicit more information about this unusual phenomenon.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -787,7 +788,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "on the table",
-                    "line": "I know. I'm hopeless. There.  They're beautiful, Data. It's really sweet of you.",
+                    "line": "I know. I'm hopeless. There. They're beautiful, Data. It's really sweet of you.",
                     "spoken_by": "JENNA"
                 },
                 {
@@ -2539,10 +2540,6 @@
                     "context_info": null,
                     "line": "Hello, Spot.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Data's quarters"

@@ -891,10 +891,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": null,
                     "line": "Away team to Enterprise. Medical Emergency.",
                     "spoken_by": "RIKER"
@@ -2095,10 +2091,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": null,
                     "line": "But that photograph was taken over fifty years ago.",
                     "spoken_by": "CRUSHER"
@@ -2446,7 +2438,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to waiter",
-                    "line": "Oh, yes, thank you. New orders from Starfleet. The rendezvous.  Nothing, thank you. The rendezvous with the Goddard has been postponed.",
+                    "line": "Oh, yes, thank you. New orders from Starfleet. The rendezvous. Nothing, thank you. The rendezvous with the Goddard has been postponed.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2478,10 +2470,6 @@
                     "context_info": null,
                     "line": "I'll pass that along to the crew, Captain.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ten Forward"

@@ -4,11 +4,6 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Asylum cell"
-        },
-        {
-            "description": null,
             "events": [
                 {
                     "characters_mentioned": [],
@@ -113,7 +108,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "breaks into a grin",
-                    "line": "You bet I'm agitated. I may be surrounded by insanity, but I'm not insane. And there isn't any. There isn't. There's nothing.  'm sorry. Could we go back to 'you're becoming agitated'?",
+                    "line": "You bet I'm agitated. I may be surrounded by insanity, but I'm not insane. And there isn't any. There isn't. There's nothing. 'm sorry. Could we go back to 'you're becoming agitated'?",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -587,7 +582,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "quietly",
-                    "line": "No matter you can say will the fact that I'm innocent! I'm not crazy! I'm not crazy.  I'm not crazy.",
+                    "line": "No matter you can say will the fact that I'm innocent! I'm not crazy! I'm not crazy. I'm not crazy.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -851,7 +846,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "into spoon",
-                    "line": "Yes. There are three starships in orbit. They're going to beam us out of here any day now. I'll tell them to get you out, too.  Lieutenant Bloom to Yorktown. Come in, Yorktown. I've made contact with another officer.",
+                    "line": "Yes. There are three starships in orbit. They're going to beam us out of here any day now. I'll tell them to get you out, too. Lieutenant Bloom to Yorktown. Come in, Yorktown. I've made contact with another officer.",
                     "spoken_by": "JAYA"
                 },
                 {
@@ -1369,7 +1364,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "quiet",
-                    "line": "No! Let me out of here! Let me out of here! Help me!  Help me.",
+                    "line": "No! Let me out of here! Let me out of here! Help me! Help me.",
                     "spoken_by": "RIKER"
                 }
             ],
@@ -2315,14 +2310,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "and Riker starts ripping apart the cell set"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Theatre"

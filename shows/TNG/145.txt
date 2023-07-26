@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Transporter room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42859.2. We are in orbit around Antede Three, awaiting the arrival of two dignitaries. Our mission is to escort them to a conference on planet Pacifica, where they will be given the opportunity to join the Federation.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard is in dress uniform, showing off his calves"
@@ -367,7 +368,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "totally fail to lift the case",
-                    "line": "Mrs.Troi, since this obviously significant to you, I'll  I'll carry it.",
+                    "line": "Mrs.Troi, since this obviously significant to you, I'll I'll carry it.",
                     "spoken_by": "RIKER"
                 }
             ],
@@ -1361,7 +1362,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "turns off the radio",
-                    "line": "Excuse me.  What can I do for you, Mister Bender?",
+                    "line": "Excuse me. What can I do for you, Mister Bender?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1705,7 +1706,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "newspaper",
-                    "line": "Hey, Dix. What do you know and what do you say? See this?  Germany's getting ready to invade England.",
+                    "line": "Hey, Dix. What do you know and what do you say? See this? Germany's getting ready to invade England.",
                     "spoken_by": "REX"
                 },
                 {
@@ -2587,10 +2588,6 @@
                     "context_info": "in mid transport",
                     "line": "Jean-Luc. Shame on you for thinking such a thing.",
                     "spoken_by": "LWAXANA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

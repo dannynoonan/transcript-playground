@@ -1276,7 +1276,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Worf",
-                    "line": "Only my pride, Data.  Thanks.",
+                    "line": "Only my pride, Data. Thanks.",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -1688,7 +1688,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "it gets to work it stops and hesitates, then continues",
-                    "line": "Fifty seconds.  Thirty seconds.  Ten seconds. Five, four, three, two, one. That's it. If this had been for real, that conduit would've exploded with the exocomp inside. Go ahead, Doctor, bring it back in.",
+                    "line": "Fifty seconds. Thirty seconds. Ten seconds. Five, four, three, two, one. That's it. If this had been for real, that conduit would've exploded with the exocomp inside. Go ahead, Doctor, bring it back in.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2762,10 +2762,6 @@
                     "context_info": null,
                     "line": "Of course you couldn't. It was the most human decision you've ever made.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"

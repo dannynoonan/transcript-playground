@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Relay Station ops"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46461.3. We have arrived at a communication relay station near the Klingon border, where we are scheduled to deliver supplies. However, the station has not responded to repeated hails.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "an away team arrives to investigate"
@@ -219,7 +220,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a curved gold thing with blue stones a bone-shaped chew",
-                    "line": "What is it, pup? What's the matter? Something over here?  This doesn't look like it belongs to you. Ah, This what you want, huh?  There you go. Computer, run station logs in sequence.",
+                    "line": "What is it, pup? What's the matter? Something over here? This doesn't look like it belongs to you. Ah, This what you want, huh? There you go. Computer, run station logs in sequence.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -381,7 +382,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "on monitorsings next letter",
-                    "line": "Hello, Shiana. By the time you get this the Batarael will be over. This is the first time I haven't been there. I've been wondering, who's singing the Horath in my place.  Jomiael hahnalia ma marou nitalia. Rumael tavariel fatra di va Jomiael.  I had that dream again. The one where Mother is screaming. I climb the hill to our house but I can't get to her. Shiana, this time I ran away. I was so scared I ran back down the hill. I think I know why I've been having the dreams about danger. It's because of what's been happening with that Klingon. He's getting more aggressive all the time. Not just the usual threat.",
+                    "line": "Hello, Shiana. By the time you get this the Batarael will be over. This is the first time I haven't been there. I've been wondering, who's singing the Horath in my place. Jomiael hahnalia ma marou nitalia. Rumael tavariel fatra di va Jomiael. I had that dream again. The one where Mother is screaming. I climb the hill to our house but I can't get to her. Shiana, this time I ran away. I was so scared I ran back down the hill. I think I know why I've been having the dreams about danger. It's because of what's been happening with that Klingon. He's getting more aggressive all the time. Not just the usual threat.",
                     "spoken_by": "AQUIEL"
                 },
                 {
@@ -535,7 +536,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "on monitortaking the huge construction off noises off recording ends",
-                    "line": "Okay, maybe I'm getting a little crazy. You would too, if you were stuck on a relay station in the middle of nowhere with no one for company except an egomaniac like Keith Rocha. I took a big risk today. I countermanded an order he gave. I agreed to handle the comm. traffic for Relay Station one nine four while they shut down for maintenance. Rocha said we couldn't handle the additional signal load, but I think he's wrong. When he finds out he'll be furious. It's days like this I wish I was home. You know what I miss most? Muskan seed punch. Real Muskan seed punch. You can get it from the replicator, but it's not the same. I'd give anything for some of the punch Mother used to make with chunks of the seeds still in it.  Keith, is that you? Keith?",
+                    "line": "Okay, maybe I'm getting a little crazy. You would too, if you were stuck on a relay station in the middle of nowhere with no one for company except an egomaniac like Keith Rocha. I took a big risk today. I countermanded an order he gave. I agreed to handle the comm. traffic for Relay Station one nine four while they shut down for maintenance. Rocha said we couldn't handle the additional signal load, but I think he's wrong. When he finds out he'll be furious. It's days like this I wish I was home. You know what I miss most? Muskan seed punch. Real Muskan seed punch. You can get it from the replicator, but it's not the same. I'd give anything for some of the punch Mother used to make with chunks of the seeds still in it. Keith, is that you? Keith?",
                     "spoken_by": "AQUIEL"
                 }
             ],
@@ -1650,10 +1651,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": null,
                     "line": "I'm starting to get a stable DNA scan. This is odd. The nucleotide sequences are starting to fluctuate. The DNA is becoming mobile. Let's try another frequency burst, but increase the resonance level by twenty percent.",
                     "spoken_by": "CRUSHER"
@@ -2075,7 +2072,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "drinks arrive",
-                    "line": "Maybe the reason you don't remember anything that happened after Rocha attacked you is that the coalescing process had begun.  Thank you. Remember when you said you felt like the memories had been drained right out of you? That's probably exactly what was going on.",
+                    "line": "Maybe the reason you don't remember anything that happened after Rocha attacked you is that the coalescing process had begun. Thank you. Remember when you said you felt like the memories had been drained right out of you? That's probably exactly what was going on.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2131,10 +2128,6 @@
                     "context_info": null,
                     "line": "It's an appealing offer, but I think I'd rather get here on my own merits. Don't be surprised if you see my name on that list.",
                     "spoken_by": "AQUIEL"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ten Forward"

@@ -12,7 +12,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to a girl to a boy",
-                    "line": "That's very good.  Well, that's very nice.",
+                    "line": "That's very good. Well, that's very nice.",
                     "spoken_by": "TROI"
                 },
                 {
@@ -742,7 +742,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Data twitches",
-                    "line": "All right.  Data, what's wrong?",
+                    "line": "All right. Data, what's wrong?",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -814,7 +814,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "does so",
-                    "line": "Listen, I'm going to disconnect you.  What's going on?",
+                    "line": "Listen, I'm going to disconnect you. What's going on?",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2422,10 +2422,6 @@
                     "context_info": null,
                     "line": "Well, Data, you never may become fully human, but you've had an experience that transcends the human condition. You have been an entire civilisation.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"

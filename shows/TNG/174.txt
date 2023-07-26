@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Transporter room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 43989.1. The Enterprise has arrived at Jouret Four in response to a distress signal from one of the Federation's outermost colonies.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -39,10 +40,6 @@
                     "context_info": null,
                     "line": "The surface environment is safe for transport, Commander.",
                     "spoken_by": "O'BRIEN"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"
@@ -365,7 +362,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Shelby Riker",
-                    "line": "Three jacks looking back for the handsome young ensign.  Pair of deuces stands.  Flush, possible straight flush. Your bet, Mister Crusher.",
+                    "line": "Three jacks looking back for the handsome young ensign. Pair of deuces stands. Flush, possible straight flush. Your bet, Mister Crusher.",
                     "spoken_by": "TROI"
                 },
                 {
@@ -2675,10 +2672,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "To Be Continued"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

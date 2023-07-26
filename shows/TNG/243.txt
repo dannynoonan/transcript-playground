@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Meeting hall"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Not all the Klingons at Khitomer were killed during the massacre. Many were captured by the Romulans and placed in a prison camp on a remote planet. Your father was among them.  WORF: If my father were alive, it would his sons and their sons for three generations. Even Alexander would bear the burden of guilt.  TROI: So, you're willing to ignore the possibility because you're concerned about dishonour?  WORF: My father is dead. That Yridian is selling lies.  SHREK: This is a homing device. It will allow you to find my ship when I return.  BA'EL: You are Klingon. Where did you come from?  WORF: That does not matter. I have come to take you home.  GI'RAL: He must leave at once.  L'KOR: No, it's too late for that now. He would bring others. We are not leaving here and neither are you.  And now, the conclusion.",
+                    "spoken_by": "Last time on Star Trek, the Next Generation  SHREK"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -391,10 +392,6 @@
                     "context_info": null,
                     "line": "Stop!",
                     "spoken_by": "ROMULAN"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Compound"
@@ -461,7 +458,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "he injects Worf",
-                    "line": "We haven't had to use one of these for a long time. It implants a small boridium pellet under the skin.  We can use its energy signature to track you.",
+                    "line": "We haven't had to use one of these for a long time. It implants a small boridium pellet under the skin. We can use its energy signature to track you.",
                     "spoken_by": "TOKATH"
                 },
                 {
@@ -579,7 +576,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a knife",
-                    "line": "This is a warrior's armour. And this is a d'k tahg.  It should not be allowed to rust like this.",
+                    "line": "This is a warrior's armour. And this is a d'k tahg. It should not be allowed to rust like this.",
                     "spoken_by": "WORF"
                 },
                 {
@@ -1701,10 +1698,6 @@
                     "context_info": null,
                     "line": "I understand.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

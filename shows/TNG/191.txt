@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 44631.2. We are proceeding through the rim of an uncharted binary star system, where we may have located the USS Brittain. The missing science vessel failed to arrive at its destination and has not been heard from since a distress call twenty nine days ago.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "transcriber's note - the view of the ships hull after the credits, and the subtitles, clearly say Brittain, but some okudagrams say Brattain. Take your pick"
@@ -2223,10 +2224,6 @@
                     "context_info": null,
                     "line": "Pleasant dreams, sir.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

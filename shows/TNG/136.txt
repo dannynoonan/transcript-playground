@@ -758,7 +758,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "drops the equipment",
-                    "line": "What?  Sorry. I've got my mind on something.",
+                    "line": "What? Sorry. I've got my mind on something.",
                     "spoken_by": "WESLEY"
                 },
                 {
@@ -970,10 +970,6 @@
                     "context_info": null,
                     "line": "May I activate the viewer?",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -1100,7 +1096,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Wesley Riker sits opposite Guinan",
-                    "line": "Now, the first words out of your mouth are the most important. You may want to start with something like this.  You are the most beautiful woman in the galaxy. But that might not work.",
+                    "line": "Now, the first words out of your mouth are the most important. You may want to start with something like this. You are the most beautiful woman in the galaxy. But that might not work.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -3088,10 +3084,6 @@
                     "context_info": null,
                     "line": "Energise.",
                     "spoken_by": "WESLEY"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"
@@ -3150,10 +3142,6 @@
                     "context_info": null,
                     "line": "It's not supposed to.",
                     "spoken_by": "GUINAN"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ten forward"

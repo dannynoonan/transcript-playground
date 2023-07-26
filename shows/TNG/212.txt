@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ten Forward"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45429.3. While on a mapping survey, we are conveying a delegation of Ullians to Kaldra Four. These telepathic historians conduct their research by retrieving long-forgotten memories.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -143,7 +144,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Beverly",
-                    "line": "You're entirely welcome, young lady. Perhaps someone else would care to try?  You, madam. You're thinking of that first childhood kiss. Would you like to remember more about it?",
+                    "line": "You're entirely welcome, young lady. Perhaps someone else would care to try? You, madam. You're thinking of that first childhood kiss. Would you like to remember more about it?",
                     "spoken_by": "TARMIN"
                 },
                 {
@@ -659,10 +660,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "and the nightmare leaves Troi lying unconscious on the floor"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 },
                 {
                     "characters_mentioned": [],
@@ -2557,14 +2554,6 @@
                     "context_info": null,
                     "line": "Earth was once a violent planet, too. At times, the chaos threatened the very fabric of life, but, like you, we evolved. We found to find better ways to handle our conflicts. But I think no one can deny that the seed of violence remains within each of us. We must recognise that, because that violence is capable of consuming each of us. As it consumed your son.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"

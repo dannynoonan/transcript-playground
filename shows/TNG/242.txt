@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Promenade"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46578.4. The Enterprise has arrived at Station Deep Space Nine, to assist in the reconstruction of the Bajoran aqueduct systems damaged during the Cardassian occupation.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -37,7 +38,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "pushes plate away",
-                    "line": "It's pasta al fiorella. One of my favourites. Don't worry, you'll love it. You know, I really want to take a look at those Ktarian antiques. I understand they've got a twenty first century plasma coil in almost perfect condition.  I'll have to talk to Chief O'Brien about these replicators. Worf, I don't see how you can eat that stuff. It tastes like liquid polymer.",
+                    "line": "It's pasta al fiorella. One of my favourites. Don't worry, you'll love it. You know, I really want to take a look at those Ktarian antiques. I understand they've got a twenty first century plasma coil in almost perfect condition. I'll have to talk to Chief O'Brien about these replicators. Worf, I don't see how you can eat that stuff. It tastes like liquid polymer.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -1807,14 +1808,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "To Be Continued..."
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Meeting hall"

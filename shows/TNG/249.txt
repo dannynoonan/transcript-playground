@@ -1286,7 +1286,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Kahless",
-                    "line": "All right, but consider this. If you tell Gowron what we have told you, it will destroy him.  And with him, the last chance to restore hope to our people. It's your choice.",
+                    "line": "All right, but consider this. If you tell Gowron what we have told you, it will destroy him. And with him, the last chance to restore hope to our people. It's your choice.",
                     "spoken_by": "KOROTH"
                 }
             ],
@@ -1544,7 +1544,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "kneels",
-                    "line": "Vorcha doh bagh  Kahless.",
+                    "line": "Vorcha doh bagh Kahless.",
                     "spoken_by": "GOWRON"
                 }
             ],
@@ -1588,10 +1588,6 @@
                     "context_info": null,
                     "line": "Q'apla Kahless.",
                     "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

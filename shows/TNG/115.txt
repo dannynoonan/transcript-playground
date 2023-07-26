@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41636.9. As feared, our examination of the seven year overdue Federation freighter, Odin, disabled by an asteroid collision, revealed no survivors. However, three escape pods were missing, suggesting the possibility of survivors.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1273,10 +1274,6 @@
                     "context_info": null,
                     "line": "La Forge here.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -1333,7 +1330,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "sneeze",
-                    "line": "Engineering reports a computer malf  I'm sorry, I'm getting sick.",
+                    "line": "Engineering reports a computer malf I'm sorry, I'm getting sick.",
                     "spoken_by": "WORF"
                 },
                 {
@@ -2686,10 +2683,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

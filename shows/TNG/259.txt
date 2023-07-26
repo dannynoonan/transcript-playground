@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ten Forward"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 47254.1. A delegation of the Cairn have just come on board. This telepathic species has no concept of spoken language, and is being instructed in its use by an old friend.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "in brown, almost drab for her",
@@ -137,13 +138,13 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Riker",
-                    "line": "Don't worry. The Cairn couldn't read your thoughts even if they wanted to. Your brain isn't sophisticated enough.  Neither is yours, dear. They can only communicate with other telepaths. Have either of you seen Deanna?",
+                    "line": "Don't worry. The Cairn couldn't read your thoughts even if they wanted to. Your brain isn't sophisticated enough. Neither is yours, dear. They can only communicate with other telepaths. Have either of you seen Deanna?",
                     "spoken_by": "LWAXANA"
                 },
                 {
                     "characters_mentioned": [],
                     "context_info": "doors open",
-                    "line": "She was working, but she said she would be  Speak of the devil.",
+                    "line": "She was working, but she said she would be Speak of the devil.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -399,7 +400,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "they sit",
-                    "line": "It wasn't your fault. Please.  My mother misled you.",
+                    "line": "It wasn't your fault. Please. My mother misled you.",
                     "spoken_by": "TROI"
                 },
                 {
@@ -1455,7 +1456,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "sings",
-                    "line": "Yes.  Down in the valley, valley so low. Hang your head over, hear the wind blow.",
+                    "line": "Yes. Down in the valley, valley so low. Hang your head over, hear the wind blow.",
                     "spoken_by": "IAN"
                 },
                 {
@@ -2221,10 +2222,6 @@
                     "context_info": null,
                     "line": "Tell me about her. I want to know everything.",
                     "spoken_by": "TROI"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Troi's quarters"

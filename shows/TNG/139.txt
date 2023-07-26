@@ -2308,7 +2308,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "grabs a phaser",
-                    "line": "No.  Captain Picard. I can not allow you to leave. Before we can go forward, the cycle must end.",
+                    "line": "No. Captain Picard. I can not allow you to leave. Before we can go forward, the cycle must end.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2478,10 +2478,6 @@
                     "context_info": null,
                     "line": "I'll be on the Bridge, sir.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"

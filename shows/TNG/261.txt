@@ -460,7 +460,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "at a panel",
-                    "line": "I was kidding, Data.  Let's see what we've got. No, this isn't it, either.",
+                    "line": "I was kidding, Data. Let's see what we've got. No, this isn't it, either.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -908,7 +908,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "lifting the cat off the desk",
-                    "line": "Spot. Spot. Spot, down. Spot, down. Down. Spot.  Down. This is down. Down is good. This is up. Up is no.",
+                    "line": "Spot. Spot. Spot, down. Spot, down. Down. Spot. Down. This is down. Down is good. This is up. Up is no.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2252,7 +2252,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "rumble",
-                    "line": "Engines disengaged. We are now entering the rift.  Hull stress is increasing. Eighty three percent of maximum tolerance and rising.",
+                    "line": "Engines disengaged. We are now entering the rift. Hull stress is increasing. Eighty three percent of maximum tolerance and rising.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2850,10 +2850,6 @@
                     "context_info": null,
                     "line": "It's won't turn out that way, Captain. We still have time to make it better.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"

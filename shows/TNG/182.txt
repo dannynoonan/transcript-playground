@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ten Forward"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Captain's Log, Stardate 44286.5. The Enterprise is conducting a security survey of the Onias Sector near the Neutral Zone. Despite our proximity to Romulan territory, the mission has been quiet and uneventful."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Riker is trying to play Misty for his friends, and getting it wrong"
@@ -1027,7 +1026,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "spots the PADD",
-                    "line": "and then Mister Greenburg asked about the Fornax Disaster, and I knew the Enterprise saved all the colonists. But I didn't know.  Here it is. But I didn't know the exact stardate their sun went nova, so of you tell me, I'll write it down and that way I won't forget. You don't remember me, do you?",
+                    "line": "and then Mister Greenburg asked about the Fornax Disaster, and I knew the Enterprise saved all the colonists. But I didn't know. Here it is. But I didn't know the exact stardate their sun went nova, so of you tell me, I'll write it down and that way I won't forget. You don't remember me, do you?",
                     "spoken_by": "JEAN-LUC"
                 },
                 {
@@ -2017,7 +2016,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "pause",
-                    "line": "How about at warp seven?  At warp eight? At warp nine? What's the matter, Data? What happened to those millions of calculations per second?",
+                    "line": "How about at warp seven? At warp eight? At warp nine? What's the matter, Data? What happened to those millions of calculations per second?",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2807,10 +2806,6 @@
                     "context_info": null,
                     "line": "To me, you'll always be Jean-Luc. Two to transport.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Cavern"

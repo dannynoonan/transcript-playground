@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Engineering"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42686.4. We are en route to Starbase Montgomery for engineering consultations prompted by minor readout anomalies.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -85,7 +86,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Riker",
-                    "line": "Go to half impulse power.  Will you join me in the Observation lounge when you're done?",
+                    "line": "Go to half impulse power. Will you join me in the Observation lounge when you're done?",
                     "spoken_by": "PICARD"
                 }
             ],
@@ -2549,7 +2550,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Kyle backs away",
-                    "line": "Matta!  I had you.",
+                    "line": "Matta! I had you.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2779,10 +2780,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

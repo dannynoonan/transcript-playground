@@ -4,11 +4,6 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "English camp at Agincourt"
-        },
-        {
-            "description": null,
             "events": [
                 {
                     "characters_mentioned": [],
@@ -1143,10 +1138,6 @@
                     "context_info": null,
                     "line": "Now, if these men do not die well, it will be a black matter for the king that led them to it.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"
@@ -2381,10 +2372,6 @@
                     "context_info": null,
                     "line": "Today, perhaps. But if there are others with the courage of Admiral Jarok, we may hope to see a day of peace when we can take his letter home.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Guest quarters"

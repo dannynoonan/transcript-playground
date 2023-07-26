@@ -844,7 +844,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "big silence",
-                    "line": "Good. I look forward to your report, Mister Broccoli.  Barclay.",
+                    "line": "Good. I look forward to your report, Mister Broccoli. Barclay.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1880,10 +1880,6 @@
                     "context_info": null,
                     "line": "Commander, any explanation for this injector problem?",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -2806,12 +2802,8 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "turns to leave",
-                    "line": "Erase all programs filed under Reginald Barclay.  Except programme nine.",
+                    "line": "Erase all programs filed under Reginald Barclay. Except programme nine.",
                     "spoken_by": "BARCLAY"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

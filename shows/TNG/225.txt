@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45944.1. Following a magnetic wave survey of the Parvenium Sector, we've detected an object which we cannot immediately identify.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "the strange object is on the viewscreen"
@@ -1003,7 +1004,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "picks up his shoes",
-                    "line": "Don't forget these.  I won't put them away for you again.",
+                    "line": "Don't forget these. I won't put them away for you again.",
                     "spoken_by": "ELINE"
                 },
                 {
@@ -1835,7 +1836,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Doctor leaves",
-                    "line": "Doctor, thank you.  Batai, leave us alone for a moment. I need to talk to my husband.",
+                    "line": "Doctor, thank you. Batai, leave us alone for a moment. I need to talk to my husband.",
                     "spoken_by": "ELINE"
                 },
                 {
@@ -2195,10 +2196,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Riker hands him a box and leaves. Inside it is a penny whistle with a tassel. Picard clutches it to his chest for a moment, then plays his Skye Boat song variation on it"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Picard's quarters"

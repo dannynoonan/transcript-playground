@@ -1488,7 +1488,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to technician",
-                    "line": "Activating pattern enhancers. Energising. I am having difficulty establishing a pattern lock.  Boost the confinement beam, please. Pattern lock established.",
+                    "line": "Activating pattern enhancers. Energising. I am having difficulty establishing a pattern lock. Boost the confinement beam, please. Pattern lock established.",
                     "spoken_by": "DATA"
                 }
             ],
@@ -1518,10 +1518,6 @@
                     "context_info": null,
                     "line": "Do you have the chair, Commander?",
                     "spoken_by": "BARCLAY"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "221b Baker Street"
@@ -1562,7 +1558,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "no data available",
-                    "line": "Computer, display the transport logs for the sequence just completed.  Computer, what is being displayed here?",
+                    "line": "Computer, display the transport logs for the sequence just completed. Computer, what is being displayed here?",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2744,10 +2740,6 @@
                     "context_info": null,
                     "line": "Computer, end programme.",
                     "spoken_by": "BARCLAY"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"

@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Medical log, Stardate 42437.5. Ira Graves is arguably the greatest human mind in the universe. For years he's lived in near isolation on a remote planet, devoting full time to his research. Eight hours ago, we monitored a message from his assistant, urgently requesting medical aid. I only hope we can reach him in time."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -269,7 +268,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "OCstatic static",
-                    "line": "Mayday! Mayday! This is the USS  questing emergency assistance.  The outer hull is breached and environmental systems compromised. Need assistance.",
+                    "line": "Mayday! Mayday! This is the USS questing emergency assistance. The outer hull is breached and environmental systems compromised. Need assistance.",
                     "spoken_by": "MAN"
                 },
                 {
@@ -1079,7 +1078,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "steps up to the case",
-                    "line": "I believe I have a few words to say, sir.  Just look at that face. The face of a thinker. A warrior. A man for all seasons. Yes, Ira Graves was all that and more. But he was not perfect. Perhaps his greatest fault was that he was too selfless. He cared too much for his fellow man, with nary a thought for himself. A man of limitless accomplishments, and unbridled modesty. I can safely say that to know him was to love him. And to love him was to know him. Those who knew him, loved him, while those who did not know him, loved him from afar.",
+                    "line": "I believe I have a few words to say, sir. Just look at that face. The face of a thinker. A warrior. A man for all seasons. Yes, Ira Graves was all that and more. But he was not perfect. Perhaps his greatest fault was that he was too selfless. He cared too much for his fellow man, with nary a thought for himself. A man of limitless accomplishments, and unbridled modesty. I can safely say that to know him was to love him. And to love him was to know him. Those who knew him, loved him, while those who did not know him, loved him from afar.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1477,7 +1476,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Data leaves",
-                    "line": "You will wait for me in the corridor.  His insubordination is growing by leaps and bounds. I could use discipline, but I'd rather try and help him.",
+                    "line": "You will wait for me in the corridor. His insubordination is growing by leaps and bounds. I could use discipline, but I'd rather try and help him.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1872,10 +1871,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": "Shakespeare's Sonnet 18, Shall I Compare Thee"
                 },
                 {
@@ -2117,7 +2112,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to computer",
-                    "line": "I can't afford to take it easy, Doctor.  Tell me, where is Lieutenant Commander Data?",
+                    "line": "I can't afford to take it easy, Doctor. Tell me, where is Lieutenant Commander Data?",
                     "spoken_by": "PICARD"
                 }
             ],
@@ -2263,10 +2258,6 @@
                     "context_info": null,
                     "line": "Did I win?",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

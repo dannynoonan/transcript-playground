@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Borg hall"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Data strangles a Borg on monitor the Bridge is boarded Worf shoots a Borg",
+                    "line": "The Next Generation  DATA: Stop. Stop. Stop. DATA: It was just after I had killed the Borg, I felt something. I believe it was pleasure. RIKER: I don't believe they were part of the Borg collective. One of them referred to himself as I. TROI: The only Borg who had a name was Hugh. HUGH : We are Hugh. PICARD: He was here in this room. I could have rid the Federation of a mortal threat, and I let him go. LAFORGE: The Borg have established several transwarp conduits through subspace.  SECURITY: Get down!  CROSIS: I was like you once. Without feeling. But the One helped me. He can help you too. He can help you find emotion. You will not resist what you've wanted all your life. PICARD: If the Borg should attack, don't wait for me or anyone else to return to the ship, but take the Enterprise to the transwarp conduit. Return to Federation space. LORE: Stop! PICARD: Lore. DATA: The sons of Soong have joined together. And together, we will destroy the Federation. And now, the conclusion.",
+                    "spoken_by": "Last time on Star Trek"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2661,10 +2662,6 @@
                     "context_info": null,
                     "line": "Data, I wouldn't be very much of a friend if I let you give up on a life-long dream, would I? Maybe someday, when you're ready.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Data's quarters"

@@ -647,10 +647,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": null,
                     "line": "Captain's log, stardate 46984.6. No additional Borg attacks have been reported in the past two days. However, Starfleet has dispatched Admiral Nechayev to take command in this sector in preparation for a possible Borg invasion.",
                     "spoken_by": "PICARD"
@@ -2318,14 +2314,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "To Be Continued..."
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Borg hall"

@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Engineering"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45376.3. We are approaching the planet Bilana Three, where a new method of propulsion known as the Soliton Wave is being developed. The Enterprise has been asked to participate in one of the first tests of this new technology.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2499,10 +2500,6 @@
                     "context_info": null,
                     "line": "I believe your mother would be pleased.",
                     "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Sickbay"

@@ -4,6 +4,9 @@ import re
 from type_system import Episode, Scene, SceneEvent, SceneDialog
 
 
+CAPTAINS_LOG_PREFIX = "Captain's log"
+
+
 class TranscriptExtractor(object):
     def __init__(self, show_key: str, show_meta: dict, transcript_type: str, transcript_url: str):
         self.show_key = show_key
@@ -82,41 +85,50 @@ class TranscriptExtractor(object):
             episode.title = transcript_file.split('.')[0]
             episode.air_date = ''
 
-            transcript_raw = transcript_soup.find_all('table')[0]
-            first_scene_location = transcript_raw.find_all('b')[0].get_text()
+            transcript_raw = transcript_soup.find_all('td')[0]
             scene_locations_and_content = transcript_raw.find_all('p')
 
-            captains_log_prefix = "Captain's log"
+            # hack to handle initial text that isn't wrapped in p tags (this is f'n annoying)
+            first_scene_text_unprocessed = False
+            scene = None
+            pre_p = transcript_raw.find_all('font')[0]
+            locations = pre_p.find_all('b')
+            if locations and len(locations) > 0:
+                scene = Scene()
+                location = locations[0].get_text()
+                scene.location = location[1:-1]
+                episode.scenes.append(scene)
+            else:
+                first_scene_text = basic_trim_tng(pre_p.get_text())
+                if first_scene_text and len(first_scene_text) > 0:
+                    first_scene_text_unprocessed = True
 
-            scene = Scene()
-            scene.location = first_scene_location[1:-1]
-            episode.scenes.append(scene)
-
-            # is_location = False
+            # iterate thru scene locations and lines separated by p tags
             for slac in scene_locations_and_content:
                 locations = slac.find_all('b')
                 if locations and len(locations) > 0:
                     scene = Scene()
                     location = locations[0].get_text()
+                    # print(f'location={location}')
                     scene.location = location[1:-1]
                     episode.scenes.append(scene)
+                    if first_scene_text_unprocessed:
+                        add_dialog_or_event(first_scene_text, scene)
+                        first_scene_text_unprocessed = False
+
                 else:
                     lines = [line for line in slac.strings]
-                    # lines = slac.find_all('br')
                     for line in lines:
+                        # print(f'line={line}')
                         line = line.get_text()
-
-                        # preliminary trimming
-                        line = line.replace('\n', ' ')
-                        line = line.replace('\r', ' ')
-                        line = line.replace('  ', ' ')
-                        line = line.strip()
-
-                        # if line starts with captains_log_prefix, prepend line with Pickard's name and handle it as normal dialog
-                        if line.startswith(captains_log_prefix):
-                            line = f'PICARD: {line}'
-
-                        add_dialog_or_event(line, scene)
+                        line = basic_trim_tng(line)
+                        if line and len(line) > 0:
+                            if scene:
+                                add_dialog_or_event(line, scene)
+                            else:
+                                # another hack to handle initial text that IS wrapped in p tags but precedes scene creation
+                                first_scene_text_unprocessed = True
+                                first_scene_text = line
 
         print('----------------------------------------------------------------------------')
         print(f'len(episode.scenes)={len(episode.scenes)}')
@@ -155,6 +167,7 @@ def extract_context_info_from_dialog(raw_text: str, dialog: SceneDialog, field: 
     else:
         processed_text = re.sub("[\(\[].*?[\)\]]", "", raw_text)
         processed_text = processed_text.strip()
+        processed_text = processed_text.replace('  ', ' ')
         if not dialog.context_info:
             dialog.context_info = ''
         for ci in ctx_info:
@@ -165,3 +178,13 @@ def extract_context_info_from_dialog(raw_text: str, dialog: SceneDialog, field: 
         dialog.spoken_by = processed_text
     else:
         dialog.line = processed_text
+
+
+def basic_trim_tng(line: str) -> str:
+    line = line.replace('\n', ' ')
+    line = line.replace('\r', ' ')
+    line = line.replace('  ', ' ')
+    line = line.strip()
+    if line.startswith(CAPTAINS_LOG_PREFIX):
+        line = f'PICARD: {line}'
+    return line

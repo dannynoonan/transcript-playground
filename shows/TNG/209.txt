@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Engineering"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45349.1. The Enterprise is on its way to Penthara Four, where a type C asteroid has struck an unpopulated continent. The resulting dust cloud could very well create a phenomenon not unlike the nuclear winters of twenty first century Earth. Commander La Forge has begun work on a plan that would counteract the devastation.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -333,7 +334,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "points at painting",
-                    "line": "No less so than your legendary modesty, Captain. If I could describe to you what a thrill it is to be here.  This is the original.",
+                    "line": "No less so than your legendary modesty, Captain. If I could describe to you what a thrill it is to be here. This is the original.",
                     "spoken_by": "RASMUSSEN"
                 },
                 {
@@ -345,7 +346,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "paces out the room",
-                    "line": "I'd love to tell you, Picard. I really would, but try and imagine what a young Caesar might have done differently had someone had given him a hint of what lay ahead, or if Lincoln had been coerced into changing his theatre plans. I truly wish I could be more specific on why you were selected, but I'm afraid the exchange of information will have to flow in one direction only.  Five, six, seven metres. Ha! I was right.",
+                    "line": "I'd love to tell you, Picard. I really would, but try and imagine what a young Caesar might have done differently had someone had given him a hint of what lay ahead, or if Lincoln had been coerced into changing his theatre plans. I truly wish I could be more specific on why you were selected, but I'm afraid the exchange of information will have to flow in one direction only. Five, six, seven metres. Ha! I was right.",
                     "spoken_by": "RASMUSSEN"
                 }
             ],
@@ -1725,7 +1726,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "at science two",
-                    "line": "Captain, take a look at this.  These are the coordinates of the eruptions, and these are the coordinates of the phaser drilling sites.",
+                    "line": "Captain, take a look at this. These are the coordinates of the eruptions, and these are the coordinates of the phaser drilling sites.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -1807,7 +1808,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "glances at Rasmussen",
-                    "line": "Computer, eliminate programme one. Computer, eliminate programme two.  Computer, eliminate programme three. Computer, half volume.",
+                    "line": "Computer, eliminate programme one. Computer, eliminate programme two. Computer, eliminate programme three. Computer, half volume.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2693,10 +2694,6 @@
                     "context_info": null,
                     "line": "I'm sure there are more than a few legitimate historians at Starfleet who will be quite eager to meet a human from your era. Oh, Professor. Welcome to the twenty fourth century.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Shuttlebay"

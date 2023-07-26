@@ -7,90 +7,8 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "You are hereby requested and required to relinquish command of your vessel to Captain Edward Jellico, Commanding Officer USS Cairo, as of this date.",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "I want this ship ready for action, and I don't have time to give Will Riker or any one else a chance. And forgive me for being blunt, but the Enterprise is mine now.",
-                    "spoken_by": "JELLICO"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": "Shuttlecraft Feynman leaves the Enterprise"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Our orders are to penetrate the Celtris Three installation.",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": "in the chamber"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "It's a trap. Come on!",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Let's go.",
-                    "spoken_by": "CRUSHER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "The Captain!",
-                    "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "No! There are five more of them heading this way from another tunnel.",
-                    "spoken_by": "CRUSHER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "You should prove an interesting challenge. Possibly the most interesting to come through that door in many years.",
-                    "spoken_by": "MADRED"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "What do you want?",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Why, you, of course.",
-                    "spoken_by": "MADRED"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": "And now the conclusion"
                 },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                }
-            ],
-            "location": "Interrogation room"
-        },
-        {
-            "description": null,
-            "events": [
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard is being given a truth drug"
@@ -314,7 +232,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard holds up his hands.",
-                    "line": "We have already sent a message to Tohvun Three, the nearest neutral planet. They assure us they will dispatch someone immediately. Will you allow me to remove your restraints?  I understand that you are a student of archaeology. Did you know that Cardassia boasts some of the most ancient and splendid ruins in the entire galaxy?",
+                    "line": "We have already sent a message to Tohvun Three, the nearest neutral planet. They assure us they will dispatch someone immediately. Will you allow me to remove your restraints? I understand that you are a student of archaeology. Did you know that Cardassia boasts some of the most ancient and splendid ruins in the entire galaxy?",
                     "spoken_by": "MADRED"
                 },
                 {
@@ -418,16 +336,12 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the knife",
-                    "line": "Are you in good health? Do you have any physical ailments I should know about?  Beautiful, isn't it? The stone is jevonite. And now you know why it is so highly prized. From this point on, you will enjoy no privilege of rank, no privileges of person. From now on, I will refer to you only as human. You have no other identity.",
+                    "line": "Are you in good health? Do you have any physical ailments I should know about? Beautiful, isn't it? The stone is jevonite. And now you know why it is so highly prized. From this point on, you will enjoy no privilege of rank, no privileges of person. From now on, I will refer to you only as human. You have no other identity.",
                     "spoken_by": "MADRED"
                 },
                 {
                     "characters_mentioned": [],
                     "context_info": "Madred cuts Picard's clothes off and leaves them around his ankles. Naked, his hands are manacled and attacked to the metal piece above his head. Then the piece is raised so Picard is hanging just above the floor. In other words, a form of crucifixion."
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 },
                 {
                     "characters_mentioned": [],
@@ -540,7 +454,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "he turns on four spotlights behind his desk",
-                    "line": "Yes, I'm sure you have.  How many lights do you see there?",
+                    "line": "Yes, I'm sure you have. How many lights do you see there?",
                     "spoken_by": "MADRED"
                 },
                 {
@@ -858,10 +772,6 @@
                     "context_info": null,
                     "line": "Aye, sir.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"
@@ -1892,7 +1802,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to all",
-                    "line": "I stand relieved.  It's been an honour serving with you.",
+                    "line": "I stand relieved. It's been an honour serving with you.",
                     "spoken_by": "JELLICO"
                 },
                 {
@@ -1950,10 +1860,6 @@
                     "context_info": null,
                     "line": "No, no, but I was going to. I would have told him anything. Anything at all. But more than that, I believed that I could see five lights.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"

@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Shuttlecraft"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Personal log, Chief Engineer Geordi La Forge, stardate 44885.5. I am en route to the planet Risa to attend an artificial intelligence seminar. Captain Picard has ordered me to arrive a few days early to have some fun and relax. I intend to follow his orders to the very best of my ability."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Geordi has his feet up, sipping a long drink"
@@ -141,7 +140,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "sees the ship comm. failure buzz",
-                    "line": "Oh, there's the aft nacelle associative, the forward  Whoa! Computer, sequence zero one zero. Maximum power to the shields. Kill the music. Enterprise, this is shuttle seven. I've encountered a Romulan Warbird. Coordinates at three",
+                    "line": "Oh, there's the aft nacelle associative, the forward Whoa! Computer, sequence zero one zero. Maximum power to the shields. Kill the music. Enterprise, this is shuttle seven. I've encountered a Romulan Warbird. Coordinates at three",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -281,7 +280,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "his head is fastened",
-                    "line": "Hey! Hey! Hey! Hey, take it easy!  Hey.",
+                    "line": "Hey! Hey! Hey! Hey, take it easy! Hey.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -1147,7 +1146,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the drink is served",
-                    "line": "Red Torian, please.  Thank you.",
+                    "line": "Red Torian, please. Thank you.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2755,10 +2754,6 @@
                     "context_info": null,
                     "line": "Believe it or not, that's a good sign. A beginning. Now, let's go back to the shuttlecraft. There was a Romulan ship and the first thing you did was?",
                     "spoken_by": "TROI"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "La Forge's quarters"

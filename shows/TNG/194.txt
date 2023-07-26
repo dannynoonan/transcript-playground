@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ready room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44741.9. We have arrived at Tagus Three where the Enterprise is to serve for host of the Federation Archaeology Council's annual symposium. I look forward to giving tomorrow's keynote address with great anticipation.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1864,10 +1865,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": "the transcriber coughs and splutters at the idea of Sir Guy giving orders to the King's Sheriff!!!!"
                 },
                 {
@@ -2732,10 +2729,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": "Q vanishes, Picard and Vash kiss"
                 },
                 {
@@ -2743,10 +2736,6 @@
                     "context_info": null,
                     "line": "Goodbye, Jean-Luc.",
                     "spoken_by": "VASH"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"

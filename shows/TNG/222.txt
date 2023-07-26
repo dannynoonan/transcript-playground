@@ -566,7 +566,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "nearly steps on Clara",
-                    "line": "So did we hit something or not? Shields say yes, sensors say no. This is very strange. Ensign, give me a breakdown on shield energy conversion and then run a spectral.  Whoa. Where did you come from?",
+                    "line": "So did we hit something or not? Shields say yes, sensors say no. This is very strange. Ensign, give me a breakdown on shield energy conversion and then run a spectral. Whoa. Where did you come from?",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2118,7 +2118,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "shudder",
-                    "line": "Captain, forward velocity is down by point six percent.  Velocity down by two point four percent.",
+                    "line": "Captain, forward velocity is down by point six percent. Velocity down by two point four percent.",
                     "spoken_by": "WORF"
                 },
                 {
@@ -2594,7 +2594,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "shakes head",
-                    "line": "Did she say when the others were coming?  All right, thanks, sweetie. You go back to bed now. We'll handle this.",
+                    "line": "Did she say when the others were coming? All right, thanks, sweetie. You go back to bed now. We'll handle this.",
                     "spoken_by": "SUTTER"
                 },
                 {
@@ -2992,10 +2992,6 @@
                     "context_info": null,
                     "line": "So do I.",
                     "spoken_by": "ISABELLA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Clara's bedroom"

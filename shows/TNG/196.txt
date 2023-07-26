@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Corridor"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Counsellor Deanna Troi, personal log, stardate 44805.3. My mother is on board."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1379,7 +1378,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to the replicator",
-                    "line": "Well why the hell not?  Oskoids.",
+                    "line": "Well why the hell not? Oskoids.",
                     "spoken_by": "LWAXANA"
                 },
                 {
@@ -2229,10 +2228,6 @@
                     "context_info": null,
                     "line": "We're ready, Mister O'Brien.",
                     "spoken_by": "LWAXANA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Observation lounge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 44085.7. Due to a medical emergency, we have been forced to cut short a two day liberty on Ogus Two and set course for Starbase four one six. It seems a young man's practical joke has come dangerously close to a lethal conclusion.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Troi escorts a teenager into the room"
@@ -1147,7 +1148,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "enters turbolift",
-                    "line": "Computer, initiate cascade sequence, accepting instructions from Commander Data en route.  Now.",
+                    "line": "Computer, initiate cascade sequence, accepting instructions from Commander Data en route. Now.",
                     "spoken_by": "DATA"
                 }
             ],
@@ -1633,7 +1634,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "he inspects a plant",
-                    "line": "Oh, well. All right, that's enough. Sit down.  Beautiful, beautiful. You know, I've been able to keep track of you from time to time. You've become something of a celebrity in cybernetic circles. Data, why Starfleet?",
+                    "line": "Oh, well. All right, that's enough. Sit down. Beautiful, beautiful. You know, I've been able to keep track of you from time to time. You've become something of a celebrity in cybernetic circles. Data, why Starfleet?",
                     "spoken_by": "SOONG"
                 },
                 {
@@ -2305,7 +2306,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "winces and twitches",
-                    "line": "Nice try, Often Wrong. Nice try.  I don't know exactly what it's doing, but its doing something.",
+                    "line": "Nice try, Often Wrong. Nice try. I don't know exactly what it's doing, but its doing something.",
                     "spoken_by": "LORE"
                 },
                 {
@@ -2605,10 +2606,6 @@
                     "context_info": null,
                     "line": "They're brothers, Data. Brothers forgive.",
                     "spoken_by": "CRUSHER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Sickbay"

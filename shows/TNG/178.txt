@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Observation lounge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stardate 44012.3 The Enterprise remains docked at McKinley Station, undergoing a major overhaul and refit following the Borg incident. I am confident that the ship and her crew will soon be ready to return to service.",
+                    "spoken_by": "Captain's Log"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -97,10 +98,6 @@
                     "context_info": null,
                     "line": "Not at all. I have already informed them by correspondence of my discommendation. I do not believe any human can truly understand my dishonour.",
                     "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"
@@ -1915,7 +1912,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "pours himself the last dregs",
-                    "line": "This will.  Now there is something I'd like to see.",
+                    "line": "This will. Now there is something I'd like to see.",
                     "spoken_by": "ROBERT"
                 },
                 {
@@ -2380,10 +2377,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": null,
                     "line": "Delighted. Sir.",
                     "spoken_by": "PICARD"
@@ -2447,10 +2440,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Young Rene sits under a tree, below a star-studded sky, and doesn't spot the streak of light whizzing off in the general direction of Orion"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Chez Picard"

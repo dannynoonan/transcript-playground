@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 44143.7. We have moved into Sector two one nine four seven in response to a distress call from a Talarian observation craft. The alien vessel appears adrift, and our initial scans have detected a life-threatening radiation leak within its propulsion system.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -257,7 +258,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "silence",
-                    "line": "Please may I have your attention. Please may I have your attention! Stop that immediately!  Well, that's better. Now, what's your name, young man?",
+                    "line": "Please may I have your attention. Please may I have your attention! Stop that immediately! Well, that's better. Now, what's your name, young man?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -269,7 +270,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "stands up and bows",
-                    "line": "Captain>  I am Jono. Take me home to my Captain. Take me home to Endar!",
+                    "line": "Captain> I am Jono. Take me home to my Captain. Take me home to Endar!",
                     "spoken_by": "JONO"
                 }
             ],
@@ -2357,10 +2358,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Jono steps down from the pad, takes off his gloves, takes hold of Picard's head and touches foreheads with him"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

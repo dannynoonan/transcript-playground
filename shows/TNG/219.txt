@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45703.9. We are en route to Earth, where it will be my pleasant duty to deliver this year's commencement address at Starfleet Academy. I'm also looking forward to seeing Wesley Crusher again. His flight team will perform a demonstration near Saturn that will be transmitted to the graduation ceremonies.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1847,10 +1848,6 @@
                     "context_info": null,
                     "line": "Goodbye, Captain.",
                     "spoken_by": "WESLEY"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Academy gardens"

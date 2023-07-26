@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 43779.3. The Enterprise is preparing detailed exospheric charts of the Hayashi system. Although tedious, this endeavour is the first step toward planet colonisation.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -197,7 +198,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "tosses a data file to Picard",
-                    "line": "Captain Picard, right?. Here.  You want to know all about your mission. Everything's on there. Orders and briefings, destination and heading, all that. Dee, I sensed you were out here. How've you been?",
+                    "line": "Captain Picard, right?. Here. You want to know all about your mission. Everything's on there. Orders and briefings, destination and heading, all that. Dee, I sensed you were out here. How've you been?",
                     "spoken_by": "TAM"
                 },
                 {
@@ -1777,10 +1778,6 @@
                     "context_info": null,
                     "line": "But shields won't help if that star explodes.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Engineering"
@@ -2409,10 +2406,6 @@
                     "context_info": null,
                     "line": "Yes, Counsellor. When Tin Man returned me to the Enterprise, I realised this is where I belong.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"

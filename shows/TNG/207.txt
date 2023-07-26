@@ -7,114 +7,8 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": "Last time on Star Trek, the Next Generation"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Three weeks ago, one of our most celebrated Ambassadors, an advisor to Federation leaders for generations, disappeared.",
-                    "spoken_by": "BRACKETT"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "I gave Spock the benefit of experience, of logic. He never listened.",
-                    "spoken_by": "SAREK"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "It's been suggested that Spock might have defected.",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Why would anyone want a Vulcan shield array?",
-                    "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Beats me, Commander. Every question we answer here seems to bring up two more.",
-                    "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Be careful, android. Some Romulan beauty might take a liking to you. Lick that paint right off your ears. You. Do you know what the Romulans will do to you if they discover who you are?",
-                    "spoken_by": "K'VADA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "I have a good idea.",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Sir, the ship is locking phasers.",
-                    "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Shields up. Red alert.",
-                    "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "What do you know of this human? Jean-Luc Picard, a Starfleet Captain.",
-                    "spoken_by": "NERAL"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "You've made a mistake.",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Quiet. Come with us.",
-                    "spoken_by": "ROMULAN 1"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "I have come on an urgent mission from the Federation. I'm looking for Ambassador Spock.",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "You have found him, Captain Picard.",
-                    "spoken_by": "SPOCK"
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": "And now, the conclusion."
                 },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                }
-            ],
-            "location": "Romulan caves"
-        },
-        {
-            "description": null,
-            "events": [
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -836,7 +730,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she shudders",
-                    "line": "Sooner or later, a man named Omag will come by for a song. Always wants to hear the same thing, Melor Famagal.  He's an arms trader. A fat Ferengi.",
+                    "line": "Sooner or later, a man named Omag will come by for a song. Always wants to hear the same thing, Melor Famagal. He's an arms trader. A fat Ferengi.",
                     "spoken_by": "AMARIE"
                 }
             ],
@@ -1994,7 +1888,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she continues working on a PADD",
-                    "line": "Come in, gentlemen. Take a seat, please.  Excuse me, I'm just finishing up a speech. For you, Mister Spock. I rather enjoy writing. I don't get to do it often in this job.",
+                    "line": "Come in, gentlemen. Take a seat, please. Excuse me, I'm just finishing up a speech. For you, Mister Spock. I rather enjoy writing. I don't get to do it often in this job.",
                     "spoken_by": "SELA"
                 },
                 {
@@ -2630,10 +2524,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "and we close on Spock initiating a mind-meld with Picard"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Other Caves"

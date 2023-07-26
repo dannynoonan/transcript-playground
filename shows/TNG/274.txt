@@ -2308,7 +2308,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the Gorlan Prayer stick",
-                    "line": "I will. I put a little something into your bag while you were packing.  I know you'd probably have preferred a bottle of Saurian brandy, but that's all I could come up with.",
+                    "line": "I will. I put a little something into your bag while you were packing. I know you'd probably have preferred a bottle of Saurian brandy, but that's all I could come up with.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2332,10 +2332,6 @@
                     "context_info": null,
                     "line": "Energise.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

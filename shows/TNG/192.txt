@@ -206,7 +206,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "pause",
-                    "line": "Well, obviously you were a great advisor.  Well, Suz, what do you think?",
+                    "line": "Well, obviously you were a great advisor. Well, Suz, what do you think?",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -494,7 +494,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a uniform",
-                    "line": "Commander Riker. Found it in the shuttle.  Where's Commander Leijten?",
+                    "line": "Commander Riker. Found it in the shuttle. Where's Commander Leijten?",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -1360,7 +1360,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "there's the other shadow in the background",
-                    "line": "Come on, it's got to belong to somebody. Computer, replay a visual of the last time index. No audio, and slow to fifty percent. Okay, Brevelle's behind the camera ,Susanna and I head off in that direction. Mendez moves off that way. Freeze visual. Now, magnify four times, and spectrally enhance those shadows.  Computer, do you have sufficient data to compile a holographic simulation of this visual record?",
+                    "line": "Come on, it's got to belong to somebody. Computer, replay a visual of the last time index. No audio, and slow to fifty percent. Okay, Brevelle's behind the camera ,Susanna and I head off in that direction. Mendez moves off that way. Freeze visual. Now, magnify four times, and spectrally enhance those shadows. Computer, do you have sufficient data to compile a holographic simulation of this visual record?",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2162,10 +2162,6 @@
                     "context_info": null,
                     "line": "Thanks.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Sickbay"

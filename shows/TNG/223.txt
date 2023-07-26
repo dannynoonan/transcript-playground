@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45854.2. The Enterprise is charting six star systems that make up the Argolis cluster, an area being considered for colonisation.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "a large orange sun is on the viewscreen"
@@ -403,10 +404,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Kidnapped, assaulted, mutilated."
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 },
                 {
                     "characters_mentioned": [],
@@ -2551,10 +2548,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Geordi walks away from Hugh, and two Borg beam in. They walk over to Hugh, who holds up his arm and they plug into him briefly. Then the three collect devices from the four corpses, which dissolve into nothing. As they beam out, Hugh looks straight at Geordi"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Crash site"

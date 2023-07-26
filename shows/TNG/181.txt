@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Stardate 44246.3 We're investigating radiation anomalies reported in the Gamma Arigulon system by the starship LaSalle. Preliminary readings are inconclusive.",
+                    "spoken_by": "Captain's Log"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1657,7 +1658,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "into comm.",
-                    "line": "Now that's very surprising. Our analysis turned up some startling results.  Will you join us, Lieutenant?",
+                    "line": "Now that's very surprising. Our analysis turned up some startling results. Will you join us, Lieutenant?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2351,10 +2352,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "and they hug"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Worf's quarters"

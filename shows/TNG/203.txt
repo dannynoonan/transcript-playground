@@ -48,7 +48,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "trims a sideburn",
-                    "line": "Hold on  There. I must tell you, Captain, Will Riker was in for a trim yesterday and he agrees with me a hundred per cent.",
+                    "line": "Hold on There. I must tell you, Captain, Will Riker was in for a trim yesterday and he agrees with me a hundred per cent.",
                     "spoken_by": "MOT"
                 },
                 {
@@ -562,7 +562,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "doorbell",
-                    "line": "I would expect nothing less. It won't be for long, Will.  Come.",
+                    "line": "I would expect nothing less. It won't be for long, Will. Come.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2698,10 +2698,6 @@
                     "context_info": null,
                     "line": "Picard to Enterprise. Two to beam up.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bajoran camp"

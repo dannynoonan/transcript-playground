@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45571.2. We are going into orbit around an unexplored M-class moon of Mab-Bu Six. Though the moon was reported to be uninhabited, we have picked up a weak distress call.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -647,7 +648,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "metallic sound",
-                    "line": "We might be able to employ virtual imaging to interpolate  missing data.",
+                    "line": "We might be able to employ virtual imaging to interpolate missing data.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1357,7 +1358,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Data throws his phaser to Miles",
-                    "line": "What are you looking at? You, Klingon. Attack me.  Are you afraid?",
+                    "line": "What are you looking at? You, Klingon. Attack me. Are you afraid?",
                     "spoken_by": "DATA"
                 },
                 {
@@ -3271,10 +3272,6 @@
                     "context_info": null,
                     "line": "I know. We both know.",
                     "spoken_by": "KEIKO"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Sickbay"

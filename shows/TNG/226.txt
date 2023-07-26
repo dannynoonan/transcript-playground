@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Cavern"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45959.1. The Enterprise has been recalled to sector zero zero one on a priority mission. All we've been told is that evidence has been discovered indicating the presence of extraterrestrials on Earth five centuries ago.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1083,7 +1084,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "fades out",
-                    "line": "Adjusting the synchronic distortion. Point zero zero one. Point zero zero two.  Point zero zero three. Point zero zero four.",
+                    "line": "Adjusting the synchronic distortion. Point zero zero one. Point zero zero two. Point zero zero three. Point zero zero four.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1185,7 +1186,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "OCfritz",
-                    "line": "I am reading a temporal distortion of massive proportions. The ophidian is cap  time-space continuum.",
+                    "line": "I am reading a temporal distortion of massive proportions. The ophidian is cap time-space continuum.",
                     "spoken_by": "DATA"
                 }
             ],
@@ -1329,7 +1330,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "goes after another passer-by",
-                    "line": "No, no, no, it's too late for that.  Could you help out a Forty Niner?",
+                    "line": "No, no, no, it's too late for that. Could you help out a Forty Niner?",
                     "spoken_by": "BEGGAR"
                 },
                 {
@@ -1415,7 +1416,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a man comes out",
-                    "line": "Geez, I don't know. We're pretty happy with the maid we've got. Cook's decent. Dishwasher's drunk all day, but at least he gets here on time. And there's me. I do everything else. Sorry.  Lady Luck not with ya, tonight, Mister Lane? Poor fella. Hasn't filled a straight in five weeks.",
+                    "line": "Geez, I don't know. We're pretty happy with the maid we've got. Cook's decent. Dishwasher's drunk all day, but at least he gets here on time. And there's me. I do everything else. Sorry. Lady Luck not with ya, tonight, Mister Lane? Poor fella. Hasn't filled a straight in five weeks.",
                     "spoken_by": "BELLBOY"
                 },
                 {
@@ -1423,10 +1424,6 @@
                     "context_info": null,
                     "line": "Poker?",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Street"
@@ -1625,7 +1622,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "shakes his hand",
-                    "line": "Thank you.  It has been a pleasure.",
+                    "line": "Thank you. It has been a pleasure.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1983,7 +1980,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the aperitif evaporates",
-                    "line": "Don't be so sure. I just mean, if you don't go on this mission,  we'll never meet.",
+                    "line": "Don't be so sure. I just mean, if you don't go on this mission, we'll never meet.",
                     "spoken_by": "GUINAN"
                 }
             ],
@@ -2623,7 +2620,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "images of creatures start to appear",
-                    "line": "I've modified this tricorder to interface with the subspace generator. It should allow me to control the phase discrimination, assuming this is going to work at all. I need everyone within the field. Adjusting synchronic distortion. Point zero zero one. Point zero zero two.  Point zero zero three. Point zero zero four.",
+                    "line": "I've modified this tricorder to interface with the subspace generator. It should allow me to control the phase discrimination, assuming this is going to work at all. I need everyone within the field. Adjusting synchronic distortion. Point zero zero one. Point zero zero two. Point zero zero three. Point zero zero four.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2679,14 +2676,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "To Be Continued..."
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Devidia cavern"

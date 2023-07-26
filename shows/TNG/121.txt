@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41798.2. We have been ordered by Starfleet to proceed to the Lorenze Cluster and investigate the disappearance of a light cruiser, USS Drake, which was in that system trying to unravel a mystery of its own which began when recent long range probes indicated that all intelligent life on the planet Minos has disappeared.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -557,10 +558,6 @@
                     "context_info": null,
                     "line": "East of your position, ten metres. I will continue monitoring.",
                     "spoken_by": "T'SU"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -1269,7 +1266,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the communicator does not beep",
-                    "line": "Captain Picard?  I have a malfunction.",
+                    "line": "Captain Picard? I have a malfunction.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1691,7 +1688,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Three phasers and it takes some time for it to go boom",
-                    "line": "Now!  You're right, they keep getting better.",
+                    "line": "Now! You're right, they keep getting better.",
                     "spoken_by": "TASHA"
                 },
                 {
@@ -2991,10 +2988,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "The salesman disappears, and so does the 'projectile'"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Cavern"
@@ -3295,10 +3288,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Battle Bridge"

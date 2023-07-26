@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Riker's quarters"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46154.2. The Enterprise has entered the Amargosa Diaspora, an unusually dense globular cluster. We are faced with the daunting task of charting this vast region.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Riker walks from a very unrestful night's sleep. The clock says 10:37"
@@ -2379,10 +2380,6 @@
                     "context_info": null,
                     "line": "Ensign Rager and I were lucky to have escaped. Lieutenant Hagler's dead. Whoever it was sent that thing was more than simply curious.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"

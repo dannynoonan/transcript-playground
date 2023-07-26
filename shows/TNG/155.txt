@@ -1086,7 +1086,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "taps the Visor",
-                    "line": "Wrong. Your heart rate just shot way up.  It translates a wide range of radiation into neural impulses. Allows me to see.",
+                    "line": "Wrong. Your heart rate just shot way up. It translates a wide range of radiation into neural impulses. Allows me to see.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -1734,7 +1734,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "he hauls Bochra up",
-                    "line": "Let's find out. Come on.  Okay, let's go.",
+                    "line": "Let's find out. Come on. Okay, let's go.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2274,10 +2274,6 @@
                     "context_info": null,
                     "line": "Too close, Number One. Brinksmanship is a dangerous game.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

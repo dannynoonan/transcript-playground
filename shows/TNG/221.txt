@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ready room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45761.3. In an effort to bring an end to their centuries-long war, Krios and Valt Minor have agreed to a Ceremony of Reconciliation, to be held aboard the Enterprise at a point midway between their two systems.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -237,10 +238,6 @@
                     "context_info": null,
                     "line": "We look forward to enjoying the comforts of your fine ship.",
                     "spoken_by": "QOL"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Corridor"
@@ -2585,10 +2582,6 @@
                     "context_info": null,
                     "line": "Energise.",
                     "spoken_by": "BRIAM"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

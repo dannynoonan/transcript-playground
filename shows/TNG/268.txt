@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Bridge Officer's log, stardate 47611.2. Doctor Beverly Crusher reporting. We have rendezvoused with Counsellor Troi's shuttlecraft. She has just returned from a three day class reunion on Starbase two three one."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "nightshift, with 'Captain' Crusher in command"
@@ -1099,7 +1098,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Data raises his hand",
-                    "line": "Rock, fire, sky, and water are the basic elements of the universe. They can be found in every object, every person, every animal, everything. The rock in this wood can be felt by its weight and by its hardness. If we expose the wood to flame, we can encourage the fire within the wood to show itself. We can also see smoke, which is a part of the sky. The water in wood is difficult to see. Sometimes the elements are buried deep within the objects, but the four elements are always there.  Yes, Jayden?",
+                    "line": "Rock, fire, sky, and water are the basic elements of the universe. They can be found in every object, every person, every animal, everything. The rock in this wood can be felt by its weight and by its hardness. If we expose the wood to flame, we can encourage the fire within the wood to show itself. We can also see smoke, which is a part of the sky. The water in wood is difficult to see. Sometimes the elements are buried deep within the objects, but the four elements are always there. Yes, Jayden?",
                     "spoken_by": "TALUR"
                 },
                 {
@@ -1209,7 +1208,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "gets a handful of hair",
-                    "line": "I suspect he  I don't know. I've never encountered anything like this before. These lesions look like burn marks. The fluids of his body have overheated. That would explain the fever and the burning skin. Keep him cool, let plenty of fresh air into the house, and I want you to give him these herbs. That will bring his fluidic temperature down and allow this to pass.",
+                    "line": "I suspect he I don't know. I've never encountered anything like this before. These lesions look like burn marks. The fluids of his body have overheated. That would explain the fever and the burning skin. Keep him cool, let plenty of fresh air into the house, and I want you to give him these herbs. That will bring his fluidic temperature down and allow this to pass.",
                     "spoken_by": "TALUR"
                 },
                 {
@@ -2211,7 +2210,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "looks at his clothes",
-                    "line": "I had located the crashed Federation probe and collected the radioactive fragments. I was attempting to download the sensor logs from the probe's onboard computer. There was a power surge. I believe the surge overloaded my positronic matrix. After that, I have no memory until this moment.  It appears I had an interesting time.",
+                    "line": "I had located the crashed Federation probe and collected the radioactive fragments. I was attempting to download the sensor logs from the probe's onboard computer. There was a power surge. I believe the surge overloaded my positronic matrix. After that, I have no memory until this moment. It appears I had an interesting time.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2249,10 +2248,6 @@
                     "context_info": null,
                     "line": "Yes, sir.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Sickbay"

@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ready room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Captain's Log, Stardate 44614.6. We are approaching Starbase three one three, where we will pick up a shipment of scientific equipment for transport to a Federation outpost in the Guernica System. During the journey we will be hosting a special guest."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2653,10 +2652,6 @@
                     "context_info": null,
                     "line": "My husband.",
                     "spoken_by": "LEAH"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ten Forward"

@@ -1522,7 +1522,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "hands over the phaser",
-                    "line": "Of course.  May I ask a personal favour?",
+                    "line": "Of course. May I ask a personal favour?",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1558,7 +1558,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "hands him to Worf who holds him at arms length",
-                    "line": "Unlike a canine, Spot does not respond to verbal commands.  Goodbye, Spot. He will need to be fed once a day. He prefers feline supplement number twenty five.",
+                    "line": "Unlike a canine, Spot does not respond to verbal commands. Goodbye, Spot. He will need to be fed once a day. He prefers feline supplement number twenty five.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1624,7 +1624,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "there's one on Riker's temple Picard has one on his throat",
-                    "line": "I've tested all the medical staff and I've found them on almost everyone so far. The cellular decay is accelerating in all cases. I haven't found a way to stop it or even slow it down.  Looks like you're infected too. The organisms appear to be attached to our epidermal layers with osmotic tendrils. They're tapping directly into the bloodstream.  And from what I can tell, they're spreading.",
+                    "line": "I've tested all the medical staff and I've found them on almost everyone so far. The cellular decay is accelerating in all cases. I haven't found a way to stop it or even slow it down. Looks like you're infected too. The organisms appear to be attached to our epidermal layers with osmotic tendrils. They're tapping directly into the bloodstream. And from what I can tell, they're spreading.",
                     "spoken_by": "CRUSHER"
                 }
             ],
@@ -2320,10 +2320,6 @@
                     "context_info": null,
                     "line": "Data, sometimes a cake is just a cake.",
                     "spoken_by": "TROI"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Data's quarters"

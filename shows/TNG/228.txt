@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Captain's Log, Stardate 46041.1. We have located the USS Yosemite, a Starfleet science vessel sent to the Igo sector to observe a remote plasma streamer. The ship has not been heard from in several days."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1499,7 +1498,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "cacophony",
-                    "line": "Computer more birds.  End stress reduction programme. Water.",
+                    "line": "Computer more birds. End stress reduction programme. Water.",
                     "spoken_by": "BARCLAY"
                 },
                 {
@@ -1521,7 +1520,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "gets into bed",
-                    "line": "Calm, calm, stay calm.  All right, Computer, let's try some music. Something soothing.",
+                    "line": "Calm, calm, stay calm. All right, Computer, let's try some music. Something soothing.",
                     "spoken_by": "BARCLAY"
                 },
                 {
@@ -1865,7 +1864,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Barclay has a lot of purple skin now",
-                    "line": "Reg?  Reg.",
+                    "line": "Reg? Reg.",
                     "spoken_by": "LAFORGE"
                 }
             ],
@@ -2311,14 +2310,6 @@
                     "context_info": null,
                     "line": "Er, Chief?",
                     "spoken_by": "BARCLAY"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ten Forward"

@@ -622,7 +622,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she wobbles",
-                    "line": "Ensign Ro to the Bridge. This is Ensign Ro reporting in. I'm at section twenty three baker, near Sickbay.  Sickbay.",
+                    "line": "Ensign Ro to the Bridge. This is Ensign Ro reporting in. I'm at section twenty three baker, near Sickbay. Sickbay.",
                     "spoken_by": "RO"
                 }
             ],
@@ -844,7 +844,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "looks round",
-                    "line": "Commander, the  the Romulans want a computer. We cannot give them access to Federation technology. That is an unacceptable security risk.",
+                    "line": "Commander, the the Romulans want a computer. We cannot give them access to Federation technology. That is an unacceptable security risk.",
                     "spoken_by": "WORF"
                 },
                 {
@@ -2558,10 +2558,6 @@
                     "context_info": null,
                     "line": "Maybe we should develop our own interphase device. If it can teach Ro Laren humility, it can do anything.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ten Forward"

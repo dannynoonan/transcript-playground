@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ready room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46192.3. We have arrived at Starbase one one two and are loading relief supplies destined for Tagra Four, an ecologically devastated planet in the Argolis Cluster. We have also taken on a rather unusual passenger.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -229,7 +230,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "some vanish",
-                    "line": "You guys can't stay here.  Come on, all of you.",
+                    "line": "You guys can't stay here. Come on, all of you.",
                     "spoken_by": "AMANDA"
                 },
                 {
@@ -1803,10 +1804,6 @@
                     "context_info": null,
                     "line": "Aye, sir.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -2313,7 +2310,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "coughs",
-                    "line": "Quite ingenious. Quite ingenious, indeed.  I'm amazed at the way it can be incorporated with the existing system.",
+                    "line": "Quite ingenious. Quite ingenious, indeed. I'm amazed at the way it can be incorporated with the existing system.",
                     "spoken_by": "LOTE"
                 },
                 {
@@ -2653,10 +2650,6 @@
                     "context_info": null,
                     "line": "You're a Q. You can do anything you want.",
                     "spoken_by": "CRUSHER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Data's quarters"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 42523.7. We are en route to newly established Starbase one seven three for port call. Crew rotation is scheduled, and we will be off-loading experiment modules.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Pulaski, La Forge, Data (wearing a dealer's shade) O'Brien and Riker are sitting down for an evening's entertainment"
@@ -267,7 +268,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "He walks over to her",
-                    "line": "My God.  Phillipa Louvois. And back in uniform. It's been ten years, but seeing you again like this makes it seem like fifty. If we weren't around all these people, do you know what I would like to do?",
+                    "line": "My God. Phillipa Louvois. And back in uniform. It's been ten years, but seeing you again like this makes it seem like fifty. If we weren't around all these people, do you know what I would like to do?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -635,10 +636,6 @@
                     "context_info": null,
                     "line": "I was afraid this might be your attitude, Captain. Here are Starfleet's transfer orders separating Commander Data from the Enterprise, and reassigning it to Starbase one seventy three under my command. Data, I will see you in my office tomorrow at zero nine hundred hours.",
                     "spoken_by": "MADDOX"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"
@@ -695,7 +692,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard looks away",
-                    "line": "Sir, Lieutenant La Forge's eyes are far superior to human biological eyes. True? Then why are not all human officers required to have their eyes replaced with cybernetic implants?  I see. It is precisely because I am not human.",
+                    "line": "Sir, Lieutenant La Forge's eyes are far superior to human biological eyes. True? Then why are not all human officers required to have their eyes replaced with cybernetic implants? I see. It is precisely because I am not human.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -852,15 +849,7 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": "Shakespeare's sonnet 29"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 },
                 {
                     "characters_mentioned": [],
@@ -1521,7 +1510,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "changes his mind",
-                    "line": "Objection!  It doesn't matter. Objection withdrawn.",
+                    "line": "Objection! It doesn't matter. Objection withdrawn.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2069,7 +2058,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Riker to Phillipa",
-                    "line": "You see, he's met two of your three criteria for sentience, so what if he meets the third. Consciousness in even the smallest degree. What is he then? I don't know. Do you?  Do you?  Do you? Well, that's the question you have to answer. Your Honour, the courtroom is a crucible. In it we burn away irrelevancies until we are left with a pure product, the truth for all time. Now, sooner or later, this man or others like him will succeed in replicating Commander Data. And the decision you reach here today will determine how we will regard this creation of our genius. It will reveal the kind of a people we are, what he is destined to be. It will reach far beyond this courtroom and this one android. It could significantly redefine the boundaries of personal liberty and freedom, expanding them for some, savagely curtailing them for others. Are you prepared to condemn him and all who come after him to servitude and slavery? Your Honour, Starfleet was founded to seek out new life. Well, there it sits. Waiting. You wanted a chance to make law. Well, here it is. Make a good one.",
+                    "line": "You see, he's met two of your three criteria for sentience, so what if he meets the third. Consciousness in even the smallest degree. What is he then? I don't know. Do you? Do you? Do you? Well, that's the question you have to answer. Your Honour, the courtroom is a crucible. In it we burn away irrelevancies until we are left with a pure product, the truth for all time. Now, sooner or later, this man or others like him will succeed in replicating Commander Data. And the decision you reach here today will determine how we will regard this creation of our genius. It will reveal the kind of a people we are, what he is destined to be. It will reach far beyond this courtroom and this one android. It could significantly redefine the boundaries of personal liberty and freedom, expanding them for some, savagely curtailing them for others. Are you prepared to condemn him and all who come after him to servitude and slavery? Your Honour, Starfleet was founded to seek out new life. Well, there it sits. Waiting. You wanted a chance to make law. Well, here it is. Make a good one.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2209,10 +2198,6 @@
                     "context_info": null,
                     "line": "Not yet, sir. But with your help, I am learning.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"

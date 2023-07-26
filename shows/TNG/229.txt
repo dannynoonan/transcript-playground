@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46071.6. We have been called to the aid of a transport ship, which has been attacked near Rekag-Seronia. Hostilities between the two factions on that planet have intensified recently, threatening an important Federation shipping route.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1543,7 +1544,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she follows him into the corridor",
-                    "line": "I won't let her have you! I'll stop her!  I will go with you. Take me with you. Please, Alkar. Don't leave me. Don't do this! No!",
+                    "line": "I won't let her have you! I'll stop her! I will go with you. Take me with you. Please, Alkar. Don't leave me. Don't do this! No!",
                     "spoken_by": "TROI"
                 }
             ],
@@ -2475,7 +2476,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "twitch",
-                    "line": "An end  An end to pain.",
+                    "line": "An end An end to pain.",
                     "spoken_by": "ALKAR"
                 },
                 {
@@ -2693,10 +2694,6 @@
                     "context_info": null,
                     "line": "I always will. Even when you're old and grey.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Troi's quarters"

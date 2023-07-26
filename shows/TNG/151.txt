@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 43152.4. We are cautiously entering the Delta Rana star system three days after receiving a distress call from the Federation colony on its fourth planet. The garbled transmission reported the colony under attack from an unidentified spacecraft. Our mission is one of rescue and, if necessary, confrontation with a hostile force.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -577,7 +578,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "takes off his comm. badge",
-                    "line": "All right. I can't make you come with us.  Are you familiar with one of these? We'll be in the system for the next several days at least. If you reconsider, please contact us.",
+                    "line": "All right. I can't make you come with us. Are you familiar with one of these? We'll be in the system for the next several days at least. If you reconsider, please contact us.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -927,7 +928,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Boom, boom",
-                    "line": "The vessel is firing jacketed streams of positrons and antiprotons. Equivalent firepower, forty megawatts. Shields are holding.  Again, forty megawatts. No damage.",
+                    "line": "The vessel is firing jacketed streams of positrons and antiprotons. Equivalent firepower, forty megawatts. Shields are holding. Again, forty megawatts. No damage.",
                     "spoken_by": "WORF"
                 },
                 {
@@ -1419,7 +1420,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "another hit",
-                    "line": "Superficial, but I'm having trouble reassembling the shields.  Shields down. There is thermal damage to the hull.",
+                    "line": "Superficial, but I'm having trouble reassembling the shields. Shields down. There is thermal damage to the hull.",
                     "spoken_by": "WORF"
                 },
                 {
@@ -2401,10 +2402,6 @@
                     "context_info": null,
                     "line": "Captain's log, Stardate 43153.7. We are departing the Rana system for Starbase One Three Three. We leave behind a being of extraordinary power and conscience. I am not certain if he should be praised or condemned. Only that he should be left alone.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

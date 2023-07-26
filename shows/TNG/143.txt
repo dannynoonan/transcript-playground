@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42779.1. We're en route to the Epsilon Nine Sector for astronomical survey of a new pulsar cluster. In the meantime, Ensign Crusher will be diverting to Starbase Five One Five for Starfleet exams.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -143,7 +144,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "deep breath",
-                    "line": "That's not the point. It would be  It would be inappropriate for you to carry out the procedure.",
+                    "line": "That's not the point. It would be It would be inappropriate for you to carry out the procedure.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1159,7 +1160,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Geordi puts the circuit boards back",
-                    "line": "You see? Like that.  There. Your guidance is now up and running.",
+                    "line": "You see? Like that. There. Your guidance is now up and running.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -3487,10 +3488,6 @@
                     "context_info": null,
                     "line": "Then, Ensign Crusher, set course for the Epsilon Sector, warp five. Engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

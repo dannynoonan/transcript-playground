@@ -1310,7 +1310,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "pause",
-                    "line": "I hope  so.",
+                    "line": "I hope so.",
                     "spoken_by": "WORF"
                 },
                 {
@@ -2900,10 +2900,6 @@
                     "context_info": null,
                     "line": "Perhaps you should beam aboard our ship. There's something we need to discuss.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

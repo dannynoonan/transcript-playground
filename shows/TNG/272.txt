@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Wesley's quarters"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 47751.2. The Enterprise has arrived at Starbase three one zero for a meeting with Fleet Admiral Necheyev. This visit will also give us the opportunity to pick up a member of the family.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -253,7 +254,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "double-take",
-                    "line": "I'll come right to the point, Captain. There is a situation that's developed on the Cardassian border that.  Are those Bularian canapés?",
+                    "line": "I'll come right to the point, Captain. There is a situation that's developed on the Cardassian border that. Are those Bularian canapés?",
                     "spoken_by": "NECHEYEV"
                 },
                 {
@@ -1779,7 +1780,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Lakanta transforms",
-                    "line": "Who are you?  The Traveller.",
+                    "line": "Who are you? The Traveller.",
                     "spoken_by": "WESLEY"
                 },
                 {
@@ -2021,10 +2022,6 @@
                     "context_info": null,
                     "line": "Energise.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

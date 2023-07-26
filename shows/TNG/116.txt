@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41365.9. The Enterprise has been ordered to Starbase 74, in orbit around Tarsas Three. A routine maintenance check of all systems will be made, and certain upgrades completed, including the holodeck, with which we've had problems. I anticipate a glowing report. The ship has performed magnificently, beyond anyone's expectations.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Enterprise glides serenely through the big space doors, into Spacedock"
@@ -41,7 +42,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "clunk",
-                    "line": "Aye sir.  And docking complete.",
+                    "line": "Aye sir. And docking complete.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -139,7 +140,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "device on left of head device on the right",
-                    "line": "They're not gentlemen, or ladies, Commander. They are a unified pair. They're always together. This is One Zero.  And this is Zero One.  They just finished upgrading the computers on the Wellington. Did a great job.",
+                    "line": "They're not gentlemen, or ladies, Commander. They are a unified pair. They're always together. This is One Zero. And this is Zero One. They just finished upgrading the computers on the Wellington. Did a great job.",
                     "spoken_by": "QUINTEROS"
                 },
                 {
@@ -779,7 +780,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a red-head",
-                    "line": "Great job, boys. But, computer, blondes and jazz seldom go together.  Now that is truly exceptional. But more sultry.",
+                    "line": "Great job, boys. But, computer, blondes and jazz seldom go together. Now that is truly exceptional. But more sultry.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -1097,7 +1098,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "She snuggles in close",
-                    "line": "Sure, why not.  How did you learn to dance so well?",
+                    "line": "Sure, why not. How did you learn to dance so well?",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -1459,7 +1460,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "no reply",
-                    "line": "Engineering to Captain.  If the antimatter is released, the ship will be destroyed.",
+                    "line": "Engineering to Captain. If the antimatter is released, the ship will be destroyed.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1537,7 +1538,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "around the ship",
-                    "line": "Based on all information presently available, the decision is correct. This is Lieutenant Commander Data speaking for the Captain. Abandon ship. This is not a drill. All personnel. This is not a drill.  I say again, abandon ship. All personnel, this is not a drill.",
+                    "line": "Based on all information presently available, the decision is correct. This is Lieutenant Commander Data speaking for the Captain. Abandon ship. This is not a drill. All personnel. This is not a drill. I say again, abandon ship. All personnel, this is not a drill.",
                     "spoken_by": "DATA"
                 }
             ],
@@ -3153,10 +3154,6 @@
                     "context_info": null,
                     "line": "Yes, probably true. She'll be difficult to forget.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

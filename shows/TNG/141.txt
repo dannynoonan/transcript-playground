@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42695.3. We are the first manned vessel to enter the Selcundi Drema sector. Unmanned probes have recorded unusual levels of geological activity in all five planetary systems. I am hoping the Enterprise will find the answer to this enigma.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1149,7 +1150,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "goes to the bar",
-                    "line": "Seeing the look on his face. I'll get you another drink.  Two more.",
+                    "line": "Seeing the look on his face. I'll get you another drink. Two more.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -1169,7 +1170,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "goes to Wesley's table",
-                    "line": "Family emergency.  You don't look like a person who came here to relax.",
+                    "line": "Family emergency. You don't look like a person who came here to relax.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -1307,7 +1308,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "in his date's ear",
-                    "line": "You're welcome.  I'll see you later)",
+                    "line": "You're welcome. I'll see you later)",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2041,7 +2042,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Data points upwards",
-                    "line": "Where are we going?  To the stars?",
+                    "line": "Where are we going? To the stars?",
                     "spoken_by": "SARJENKA"
                 }
             ],
@@ -2669,10 +2670,6 @@
                     "context_info": null,
                     "line": "And understanding that has brought you a step closer to understanding humanity.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"

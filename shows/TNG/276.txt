@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ten Forward"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 47941.7. The Enterprise is en route to a briefing on the situation in the Demilitarised Zone along the Cardassian border. Meanwhile, we're celebrating the return of an old friend.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1515,7 +1516,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "between the nacelles",
-                    "line": "The Enterprise shields have a weak point. When the ship is at impulse, the thrust destabilises the shield configuration right at this point.  I'm going to try to punch through there.",
+                    "line": "The Enterprise shields have a weak point. When the ship is at impulse, the thrust destabilises the shield configuration right at this point. I'm going to try to punch through there.",
                     "spoken_by": "RO"
                 },
                 {
@@ -2023,7 +2024,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Picard",
-                    "line": "Not tonight.  Hello. Are you alone?",
+                    "line": "Not tonight. Hello. Are you alone?",
                     "spoken_by": "RO"
                 },
                 {
@@ -2499,10 +2500,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard doesn't move to take the PADD, so Riker puts it on the desk and leaves"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"

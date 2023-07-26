@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Second Officer's personal Log, Stardate 44390.1. Record entry for transmission to Commander Bruce Maddox, Cybernetics Division, Daystrom Institute. Dear Commander Maddox,"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "OC",
@@ -1345,7 +1344,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "out of breath",
-                    "line": "Stop, Data. Not bad.  Yeah, not bad.",
+                    "line": "Stop, Data. Not bad. Yeah, not bad.",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -2465,10 +2464,6 @@
                     "context_info": "OC",
                     "line": "Until then Commander Maddox, I will continue learning, changing, growing, and trying to become more than what I am.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 41209.2. We are running at warp seven to rendezvous with the science vessel SS Tsiolkovsky, which has been routinely monitoring the collapse of a red super giant star into a white dwarf. What has brought us here is a series of strange messages indicating something has gone wrong aboard the research vessel.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "There is the sound of laughter coming over the comm. system"
@@ -71,10 +72,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "The Enterprise comes up to the ship in orbit"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -153,10 +150,6 @@
                     "context_info": "OC",
                     "line": "It looks like someone has been playing with the environmental controls, sir. Just let all the heat bleed away into space.",
                     "spoken_by": "TASHA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Tsiolkovsky"
@@ -177,10 +170,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "He finds a door which is trying to close. He opens it and a corpse falls out into his arms"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Tsiolkovsky Crew Quarters"
@@ -971,7 +960,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "their hands touch",
-                    "line": "It's not for you. Tasha, I feel you're very uncertain. Yhat you're fighting something.  What is it?",
+                    "line": "It's not for you. Tasha, I feel you're very uncertain. Yhat you're fighting something. What is it?",
                     "spoken_by": "TROI"
                 },
                 {
@@ -1921,7 +1910,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "No, it doesn't",
-                    "line": "It's over there. Okay, let's see if this cuts out his tractor beam power.  Oh, come on.",
+                    "line": "It's over there. Okay, let's see if this cuts out his tractor beam power. Oh, come on.",
                     "spoken_by": "MACDOUGAL"
                 }
             ],
@@ -2011,10 +2000,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Data makes as if to lean on a chair, but there is nothing there and he falls"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -2277,10 +2262,6 @@
                     "context_info": null,
                     "line": "The star is still collapsing. We're directly in the path of",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -2539,10 +2520,6 @@
                     "context_info": null,
                     "line": "Why not just see it in your head? Come off the main lead, split off at the force activator, then, then. If I could just think straight about this,",
                     "spoken_by": "WESLEY"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Engineering"
@@ -2577,7 +2554,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "injects Picard, then herself",
-                    "line": "Come here.  Here, take this to Engineering. I'll make up more hypos for the others.",
+                    "line": "Come here. Here, take this to Engineering. I'll make up more hypos for the others.",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -2745,10 +2722,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

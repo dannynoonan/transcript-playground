@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First officer's log, stardate 41775.5. We are en route to the ocean world of Pacifica. While our mission is scientific in nature, we look forward to the warm blue waters and fine beaches that make Pacifica a jewel of the galaxy."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1525,7 +1524,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Riker",
-                    "line": "I insist.  When you've finished showing the Admiral anything that he needs, you can join me down on Earth.",
+                    "line": "I insist. When you've finished showing the Admiral anything that he needs, you can join me down on Earth.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1537,7 +1536,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Quinn goes on",
-                    "line": "Of course. Stay as long as you wish.  No.",
+                    "line": "Of course. Stay as long as you wish. No.",
                     "spoken_by": "PICARD"
                 }
             ],
@@ -2521,10 +2520,6 @@
                     "context_info": null,
                     "line": "Yes, sir. A homing beacon, sent from Earth.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Corridor"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46682.4. The Enterprise is docked at the Remmler Array, where it will undergo a routine procedure to eliminate accumulated baryon particles. In preparation for the sweep, we are evacuating the ship.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "OC",
@@ -67,7 +68,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "comes out of turbolift",
-                    "line": "Captain.  I was just heading for deck seven. I've put the auto-shutdown sequence on hold until we get back on schedule.",
+                    "line": "Captain. I was just heading for deck seven. I've put the auto-shutdown sequence on hold until we get back on schedule.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2495,10 +2496,6 @@
                     "context_info": null,
                     "line": "Of course.",
                     "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Sickbay"

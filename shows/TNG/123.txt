@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Enterprise is near a star which is giving off flares, as Picard makes a ship-wide announcement OC",
+                    "line": "All hands, this is the Captain. As you may know, the sun in the Delos system is undergoing large-scale magnetic field changes, producing violent, gigantic flares. Now, we shall be studying this star at close range. Even though we shall be running with full deflectors, the closeness of this event and its severity are going to create problems.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2395,7 +2396,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "end transmission",
-                    "line": "Yes. Lieutenant Yar, have the Ornarans brought in. No, wait, I don't want them to have access to the Bridge. We will contact you in a few minutes.  I will continue this in the guest quarters. Commander, Doctor.",
+                    "line": "Yes. Lieutenant Yar, have the Ornarans brought in. No, wait, I don't want them to have access to the Bridge. We will contact you in a few minutes. I will continue this in the guest quarters. Commander, Doctor.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -3155,10 +3156,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

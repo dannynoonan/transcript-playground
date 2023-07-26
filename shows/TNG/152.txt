@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 43173.5. We are en route to Mintaka Three, where a three man Federation anthropological field team has been studying the inhabitants. Our mission is to resupply the outpost and repair their malfunctioning reactor.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -331,7 +332,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to nurse re Barron",
-                    "line": "You increased the levels of tricordrazine?  Let me see his chart, please.",
+                    "line": "You increased the levels of tricordrazine? Let me see his chart, please.",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -2453,10 +2454,6 @@
                     "context_info": null,
                     "line": "Always.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Hillside"

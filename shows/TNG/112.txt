@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41309.5. We are in orbit around Persephone Five, where I have been sent to confer with Admiral Mark Jameson in regard to an extraordinary situation.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "A very old man is on the viewscreen"
@@ -399,7 +400,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "he's in pain",
-                    "line": "This ship is magnificent. It even has family quarters. Pity we didn't have them twenty, thirty years ago. We could have been together almost all of your career. Mark!  Mark? I'll get Sickbay.",
+                    "line": "This ship is magnificent. It even has family quarters. Pity we didn't have them twenty, thirty years ago. We could have been together almost all of your career. Mark! Mark? I'll get Sickbay.",
                     "spoken_by": "ANNE"
                 },
                 {
@@ -595,7 +596,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Jameson stands up",
-                    "line": "I don't know how much more information you think you can get from that tape.  Mark! My God, what's happened?",
+                    "line": "I don't know how much more information you think you can get from that tape. Mark! My God, what's happened?",
                     "spoken_by": "ANNE"
                 },
                 {
@@ -2117,7 +2118,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "takes a gun from the wall",
-                    "line": "It is you. Somehow it is you.  Then die by your own weapon! No. No, my revenge will be in seeing you live like this. Such pain.",
+                    "line": "It is you. Somehow it is you. Then die by your own weapon! No. No, my revenge will be in seeing you live like this. Such pain.",
                     "spoken_by": "KARNAS"
                 },
                 {
@@ -2211,10 +2212,6 @@
                     "context_info": null,
                     "line": "Aye, sir. Leaving orbit.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

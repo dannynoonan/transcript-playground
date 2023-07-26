@@ -4,11 +4,6 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Observation lounge"
-        },
-        {
-            "description": null,
             "events": [
                 {
                     "characters_mentioned": [],
@@ -708,10 +703,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": "for those who care about these things, the travesty that was th"
                 },
                 {
@@ -721,10 +712,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "takes place at some point from here on in...)"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ten Forward"
@@ -1339,7 +1326,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "reading",
-                    "line": "Yes, there is.  Judge Advocate General's Report. Stardate 36764. Subject, inquiry into mutiny aboard USS Pegasus. Based on testimony from Captain Pressman and other surviving officers, the Judge Advocate believes there is sufficient evidence to conclude that certain members of the crew did mutiny against the captain just prior to the destruction of the Pegasus. Mutiny on a Federation starship? That's shocking. It's unthinkable. And yet you've never mentioned it.",
+                    "line": "Yes, there is. Judge Advocate General's Report. Stardate 36764. Subject, inquiry into mutiny aboard USS Pegasus. Based on testimony from Captain Pressman and other surviving officers, the Judge Advocate believes there is sufficient evidence to conclude that certain members of the crew did mutiny against the captain just prior to the destruction of the Pegasus. Mutiny on a Federation starship? That's shocking. It's unthinkable. And yet you've never mentioned it.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -1755,7 +1742,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "he opens a panel",
-                    "line": "We're not here for a memorial service.  It's still intact. What's the matter, Will? Don't you understand? We've found it.",
+                    "line": "We're not here for a memorial service. It's still intact. What's the matter, Will? Don't you understand? We've found it.",
                     "spoken_by": "PRESSMAN"
                 },
                 {
@@ -2299,7 +2286,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard nods",
-                    "line": "Captain, I'll have to be placed under arrest as well.  Admiral.",
+                    "line": "Captain, I'll have to be placed under arrest as well. Admiral.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2361,10 +2348,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard and Riker walk out of the brig together"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Brig"

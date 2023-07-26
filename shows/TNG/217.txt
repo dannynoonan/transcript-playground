@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45614.6. We have been contacted by an androgynous race called the J'naii to investigate the mysterious disappearance of one of their shuttlecraft.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "the J'naii are wearing loose-fitting one-piece suits and all have short hair"
@@ -1467,7 +1468,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the other shuttle",
-                    "line": "Look.  Try hailing them.",
+                    "line": "Look. Try hailing them.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -1757,7 +1758,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a cuddly toy",
-                    "line": "This one looks like you.  Deanna, I have something on my mind. I had to see you.",
+                    "line": "This one looks like you. Deanna, I have something on my mind. I had to see you.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2219,7 +2220,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "he steps out",
-                    "line": "Okay.  Excuse me. I need to speak to her alone for a moment.",
+                    "line": "Okay. Excuse me. I need to speak to her alone for a moment.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2403,10 +2404,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ten Forward"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 43930.7. The Enterprise has been in attendance at the biennial Trade Agreements Conference on Betazed. For the first time, the Ferengi are present, and I have reluctantly consented to their boarding the Enterprise for the closing reception.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "The place is thronging, and Riker is playing 3D chess against a Ferengi"
@@ -727,7 +728,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "taps his comm. badge",
-                    "line": "Tog must have missed that chapter in the Ferengi book of Etiquette.  Enterprise? Must be too far out of range.",
+                    "line": "Tog must have missed that chapter in the Ferengi book of Etiquette. Enterprise? Must be too far out of range.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -991,7 +992,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to the chess players",
-                    "line": "Well, she's bought us some time. Let's make the most of it.  I wouldn't do that.",
+                    "line": "Well, she's bought us some time. Let's make the most of it. I wouldn't do that.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -1043,7 +1044,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "sets up new game",
-                    "line": "Then prove it.  Pawn to queen four, King's level.",
+                    "line": "Then prove it. Pawn to queen four, King's level.",
                     "spoken_by": "NIBOR"
                 },
                 {
@@ -1231,7 +1232,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "puts the forcefield back up",
-                    "line": "Come out here.  Now save your rook, if you can.",
+                    "line": "Come out here. Now save your rook, if you can.",
                     "spoken_by": "NIBOR"
                 }
             ],
@@ -1313,7 +1314,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "telepath aloud",
-                    "line": "Good work, Mother.  According to Mother, DaiMon Tog is extremely relaxed at the moment.",
+                    "line": "Good work, Mother. According to Mother, DaiMon Tog is extremely relaxed at the moment.",
                     "spoken_by": "TROI"
                 },
                 {
@@ -1635,7 +1636,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Tog's bouquet",
-                    "line": "Lieutenant Foley discovered this in the pond.  The species is Zan Periculi. It is not indigenous to Betazed, but to Lappa Four. A Ferengi world.",
+                    "line": "Lieutenant Foley discovered this in the pond. The species is Zan Periculi. It is not indigenous to Betazed, but to Lappa Four. A Ferengi world.",
                     "spoken_by": "DATA"
                 }
             ],
@@ -2251,10 +2252,6 @@
                     "context_info": null,
                     "line": "In faith, I do not love thee with mine eyes, for they in thee a thousand errors see. But 'tis my heart that loves what they despise, who in despite of view are please'd to dote. Shall I compare the to a summer's day? Thou art more lovely and more temperate.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -2397,19 +2394,7 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": "blast! nearly got rid of him too...."
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

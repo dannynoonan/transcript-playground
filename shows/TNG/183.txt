@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44307.3. I am preparing to leave by shuttlecraft for Pentarus Five, where I have been asked to mediate a dispute among the salenite miners, a contentious group unfortunately prone to violence. But first I must deal with a situation of a far more personal nature.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Wesley hurries in, breathless"
@@ -1207,7 +1208,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "scans Picard",
-                    "line": "Apply pressure to that wound.  This is the worst break.",
+                    "line": "Apply pressure to that wound. This is the worst break.",
                     "spoken_by": "WESLEY"
                 },
                 {
@@ -2093,10 +2094,6 @@
                     "context_info": null,
                     "line": "Wesley, you will be missed.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Cave"

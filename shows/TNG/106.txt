@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 41263.1. We have rendezvoused with the USS Fearless, from which a Starfleet propulsion expert and his assistant are beaming over to conduct tests on the Enterprise's warp drive engines. They have completed similar adjustments on two other Starfleet vessels.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -639,10 +640,6 @@
                     "context_info": null,
                     "line": "And I calculate that at maximum warp, sir it would take over three hundred years to get home.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 },
                 {
                     "characters_mentioned": [],
@@ -1351,7 +1348,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "goes to comm. panel",
-                    "line": "No. No, let's help all of us.  General quarters. Red Alert.",
+                    "line": "No. No, let's help all of us. General quarters. Red Alert.",
                     "spoken_by": "PICARD"
                 }
             ],
@@ -1963,7 +1960,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to the Traveller",
-                    "line": "And we report our observations how? To whom?  Can you get us back?",
+                    "line": "And we report our observations how? To whom? Can you get us back?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2047,10 +2044,6 @@
                     "context_info": null,
                     "line": "Such musical genius I saw in one of your ship's libraries. One called Mozart, who as a small child wrote astonishing symphonies. A genius who made music not only to be heard, but seen and felt beyond the understanding, the ability of others. Wesley is such a person. Not with music, but with the equally lovely intricacies of time, energy, propulsion. and the instruments of this vessel which allow all that to be played. You're right, I must hurry now. But you're right in something else. He is just a boy for now. He should be encouraged, but told none of this.",
                     "spoken_by": "TRAVELLER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Sickbay"
@@ -2495,14 +2488,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Sorry folks, but Eugene Wesley Roddenberry has dumped his Mary-Sue character on us for the duration...."
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

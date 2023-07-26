@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Corridor"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 43917.4 The Enterprise has been given the singular honour of hosting the first meeting between the Federation and a mysterious race known as the Legarans. We are in orbit around Vulcan, preparing to welcome aboard Federation Ambassador Sarek and his wife Perrin, who like his first wife, is from Earth.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2431,10 +2432,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "And, holding Perrin's hand, Sarek and his party are beamed away"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

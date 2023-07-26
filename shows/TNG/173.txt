@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ten Forward"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Captain's Log, Stardate 43957.2. We are charting an unexplored star system within the Zeta Gelis cluster. This routine assignment has made for a refreshingly quiet time aboard the Enterprise."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2335,10 +2334,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "He strokes her cheek, turns into a ball of energy and flies out through the ceiling into space"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

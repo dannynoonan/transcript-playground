@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "on monitor The Borg kidnap Picard on viewscreen",
+                    "line": "The Next Generation. PICARD: Mister Worf, dispatch a subspace message to Admiral Hanson. We have engaged the Borg. SHELBY: Data, fluctuate phaser resonance frequencies. Random settings. Keep them changing. Don't give them time to adapt. HANSON : We're coming with every available starship to assist, Captain, but the closest help is six days away. SHELBY: All you know how to do is play it safe. If you can't make the big decisions, Commander, I suggest you make room for someone who can.  LAFORGE: If we can generate a concentrated burst of power at that same frequency distribution. RIKER: How do we do that? WESLEY: The main deflector dish. SHELBY: Shelby to Enterprise. We've found the Captain's uniform and his communicator. CRUSHER: Jean-Luc! DATA: We were unable to retrieve him, sir. Sir, The Captain has been altered by the Borg. CRUSHER: Will, he's alive. If we could get him back to the ship, I might be able to restore RIKER: This is our only chance to destroy them. If they get back into warp, our weapon is useless. PICARD : I am Locutus of Borg. From this time forward, you will service us. RIKER: Mister Worf? Fire. And now, the conclusion.",
+                    "spoken_by": "Last time on Star Trek"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -649,10 +650,6 @@
                     "context_info": null,
                     "line": "On my way.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"
@@ -2597,10 +2594,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard picks up his tea, then stiffens and puts the cup down again. He goes to the window and stands looking out at ?"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"

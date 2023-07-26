@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "the kidnap of Riker from the ruins",
+                    "line": "The Next Generation RIKER: My friend tells me you might know about the man we're looking for. YRANEC: There was a group of aliens sitting at this table. He was asking them questions. One of them took out a weapon and fired. He was vapourised. RIKER: This is about justice. The Captain died in a bar fight for nothing.  BARAN: Those ruins have been studied for centuries. There's nothing new to learn from them. RIKER: Then what were you doing there? PICARD: Baran wouldn't last five minutes as captain if he didn't have that control device. TALLERA: That almost sounds like a prelude to mutiny. PICARD: They captured me to find out how much I knew about their operation. RIKER: Then you became a member of their crew? PICARD: I convinced them I was a smuggler. Will, these are not common thieves. They are stealing Romulan artefacts from archeological sites throughout this sector. DATA: Mister Worf, prepare to drop shields. WORF: Sir, we would be totally defenceless. DATA: I am aware of that. BARAN: Fire. And now, the conclusion.",
+                    "spoken_by": "Last time on Star Trek"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "the weapons fire definitely hits the starboard nacelle"
@@ -1425,7 +1426,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard scans Koral",
-                    "line": "Quiet!  Does he have it?",
+                    "line": "Quiet! Does he have it?",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2089,7 +2090,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "yawns",
-                    "line": "Oh, they will be detained by the Vulcan authorities for the moment. But they're also facing charges from the Klingons, the Cardassians,  the Ferengi, and at least seven other worlds. I don't think we'll be hearing from them for a while. Number One, will you set course for Starbase two twenty seven. I'll join you on the Bridge shortly.",
+                    "line": "Oh, they will be detained by the Vulcan authorities for the moment. But they're also facing charges from the Klingons, the Cardassians, the Ferengi, and at least seven other worlds. I don't think we'll be hearing from them for a while. Number One, will you set course for Starbase two twenty seven. I'll join you on the Bridge shortly.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2131,10 +2132,6 @@
                     "context_info": null,
                     "line": "Data, he was joking. You know that, right? Data?",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Corridor"

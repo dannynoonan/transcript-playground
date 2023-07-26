@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Picard's quarters"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 47304.2. The Enterprise has arrived at Kesprytt Three in order to evaluate an unusual request on the part of the Kes for associate membership in the Federation.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "breakfast"
@@ -727,7 +728,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "checks the scan results",
-                    "line": "I'm sure you're right.  Yes, this will do very nicely.",
+                    "line": "I'm sure you're right. Yes, this will do very nicely.",
                     "spoken_by": "MAURIC"
                 },
                 {
@@ -2375,10 +2376,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "in the corridor, Beverly waits for a few moments before walking off. Picard also waits for a few moments before blowing out the candles"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Picard's quarters"

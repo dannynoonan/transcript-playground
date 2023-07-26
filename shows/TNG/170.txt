@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Jovis Cargo bay"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 43872.2. In order to neutralise a sudden contamination of the water supply at the Federation colony on Beta Agni Two, we are procuring one hundred and eight kilos of hytritium from the Zibalian trader, Kivas Fajo. Because pure hytritium is too unstable for our transporters, Lieutenant Commander Data has been shuttling the material to the Enterprise.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -493,7 +494,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a sort of avant-guard sculpture Fajo moves so Data can see it",
-                    "line": "Well, just look around the room. There are items her gathered from half the galaxy. Right here. This is the very first Basotile ever created.  Sorry.  It's very, very ancient. Hundreds of years old. It's priceless.",
+                    "line": "Well, just look around the room. There are items her gathered from half the galaxy. Right here. This is the very first Basotile ever created. Sorry. It's very, very ancient. Hundreds of years old. It's priceless.",
                     "spoken_by": "FAJO"
                 },
                 {
@@ -503,7 +504,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "painting",
-                    "line": "Come. This vase is made by Mark, the late Mark Off-Zel from Sirrie Four.  Dali. This is the only known Roger Maris trading card from Earth circa 1962. The smell? Bubblegum. I've preserved the scent. What? A Lapling.",
+                    "line": "Come. This vase is made by Mark, the late Mark Off-Zel from Sirrie Four. Dali. This is the only known Roger Maris trading card from Earth circa 1962. The smell? Bubblegum. I've preserved the scent. What? A Lapling.",
                     "spoken_by": "FAJO"
                 },
                 {
@@ -519,7 +520,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a chair to Varria",
-                    "line": "Extinct? Good. That is what is generally believed. She is the last surviving member of her species. They're very defenseless creatures, really. Everything that you see in the room here, everything. One of its kind. Unique. All original. Just as you are. There.  That is your place of honour. Sit, sit. Sit! You think perhaps it might be uncomfortable? But then again, you don't give a thought to comfort, do you.  When Palor Toff learns of that, he'll swallow his tongue with envy. I can't wait to see his face. You are the crown jewel of my collection. You're a treasure beyond comparison.",
+                    "line": "Extinct? Good. That is what is generally believed. She is the last surviving member of her species. They're very defenseless creatures, really. Everything that you see in the room here, everything. One of its kind. Unique. All original. Just as you are. There. That is your place of honour. Sit, sit. Sit! You think perhaps it might be uncomfortable? But then again, you don't give a thought to comfort, do you. When Palor Toff learns of that, he'll swallow his tongue with envy. I can't wait to see his face. You are the crown jewel of my collection. You're a treasure beyond comparison.",
                     "spoken_by": "FAJO"
                 },
                 {
@@ -899,10 +900,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "He was a man, taken for all in all. I shall not look upon his like again."
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"
@@ -1025,7 +1022,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "goes to replicator A vial of liquid appears",
-                    "line": "You are going to be much more of a challenge than I had first thought.  Finoplak, one hundred denkirs.  Now, Data, in the meantime, here is something for your logic circuits to analyse.",
+                    "line": "You are going to be much more of a challenge than I had first thought. Finoplak, one hundred denkirs. Now, Data, in the meantime, here is something for your logic circuits to analyse.",
                     "spoken_by": "FAJO"
                 },
                 {
@@ -1073,7 +1070,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to woman to Worf",
-                    "line": "See you later.  Your first watch at Ops?",
+                    "line": "See you later. Your first watch at Ops?",
                     "spoken_by": "TROI"
                 },
                 {
@@ -2137,10 +2134,6 @@
                     "context_info": null,
                     "line": "No, sir, it does not. I do not feel pleasure. I am only an android.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Brig"

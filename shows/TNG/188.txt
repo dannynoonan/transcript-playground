@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Hill's outer office"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 44502.7. Early completion of our mission at Harrakis Five has allowed me to grant extra personal time for many of the crew. This has come as something of a relief, since our recent tight scheduling has prevented pursuit of the leisure activities that are a normal part of life aboard the Enterprise. I expect our journey past the Ngame Nebula to be uneventful, and am personally using the time to fulfill a promise to a colleague.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1691,7 +1692,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she scans it",
-                    "line": "Are you in pain?  How did this happen?",
+                    "line": "Are you in pain? How did this happen?",
                     "spoken_by": "CRUSHER"
                 }
             ],
@@ -2101,7 +2102,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "it's green",
-                    "line": "On screen.  Hold position. Let's see what it does.",
+                    "line": "On screen. Hold position. Let's see what it does.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2919,10 +2920,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

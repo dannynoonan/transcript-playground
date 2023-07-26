@@ -90,7 +90,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to the Benzite",
-                    "line": "Welcome aboard the Enterprise. I'm Commander William Riker, your First Officer. Those of you who are here as replacements will step outside follow Lieutenant Lewis. He will assign you to your crew quarters.  Ensign, you're here on the exchange programme. If you'll just follow Mister Crusher.",
+                    "line": "Welcome aboard the Enterprise. I'm Commander William Riker, your First Officer. Those of you who are here as replacements will step outside follow Lieutenant Lewis. He will assign you to your crew quarters. Ensign, you're here on the exchange programme. If you'll just follow Mister Crusher.",
                     "spoken_by": "RIKER"
                 },
                 {
@@ -2806,10 +2806,6 @@
                     "context_info": null,
                     "line": "Thank you, Commander, and welcome home.",
                     "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Corridor"

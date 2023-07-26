@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45470.1. The Enterprise has been diverted to the Moab sector to track a stellar core fragment of a disintegrated neutron star. Our science teams have been asked to monitor the planetary disruptions it may cause.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -1757,10 +1758,6 @@
                     "context_info": null,
                     "line": "Shipwide life support failure in fifteen seconds, sir.",
                     "spoken_by": "DATA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -2685,14 +2682,6 @@
                     "context_info": null,
                     "line": "Of course we did. But in the end we may have proved just as dangerous to that colony as any core fragment could ever have been.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"

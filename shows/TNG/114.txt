@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41242.4. Our last assignment has taken us into the remote Omicron Theta star system, home of our android crewmember Lieutenant Commander Data. Although we are due at our next assignment, I have decided to visit Data's home planet for a few hours in the hopes of unravelling some of the mystery of his beginnings.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -729,7 +730,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the small of his back",
-                    "line": "Press your fingers there, Doctor.  There. It operates almost as a switch.",
+                    "line": "Press your fingers there, Doctor. There. It operates almost as a switch.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -827,7 +828,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "he twitches",
-                    "line": "He was. But they found him imperfect and I was made to replace him.  You may call me Lore.",
+                    "line": "He was. But they found him imperfect and I was made to replace him. You may call me Lore.",
                     "spoken_by": "LORE"
                 }
             ],
@@ -1147,7 +1148,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "sings laughs",
-                    "line": "Until they petitioned Soong to make a more comfortable, less perfect android. In other words, you, brother. Haven't you noticed how easily I handle human speech? I use their contractions. For example, I say can't or isn't, and you say cannot or is not.  I say tomato, you say tomahto. I say potato, you say potahto.  A very old joke. But then you also have trouble with their humour. Am I right?",
+                    "line": "Until they petitioned Soong to make a more comfortable, less perfect android. In other words, you, brother. Haven't you noticed how easily I handle human speech? I use their contractions. For example, I say can't or isn't, and you say cannot or is not. I say tomato, you say tomahto. I say potato, you say potahto. A very old joke. But then you also have trouble with their humour. Am I right?",
                     "spoken_by": "LORE"
                 },
                 {
@@ -1349,7 +1350,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "feels an effect",
-                    "line": "I have some doubts about the value of human customs  in this. My brother!",
+                    "line": "I have some doubts about the value of human customs in this. My brother!",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1405,7 +1406,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "door bell",
-                    "line": "Crystal Entity. Upon arriving here you can identify me as the machine named Data.  End of message. Come in, please.",
+                    "line": "Crystal Entity. Upon arriving here you can identify me as the machine named Data. End of message. Come in, please.",
                     "spoken_by": "LORE"
                 },
                 {
@@ -1427,7 +1428,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "twitch",
-                    "line": "He discovered we have been using sensors to follow what he does.  I practiced his facial tic. Do I have it right?",
+                    "line": "He discovered we have been using sensors to follow what he does. I practiced his facial tic. Do I have it right?",
                     "spoken_by": "LORE"
                 },
                 {
@@ -1621,7 +1622,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "flicks Data's switch on and off",
-                    "line": "Be careful of Lore. Good. He is still unconscious. Notice the same twitch, even though he is unconscious? Stay back. We may have problems if he senses someone else is near.  Lore, I have a few questions to ask you.",
+                    "line": "Be careful of Lore. Good. He is still unconscious. Notice the same twitch, even though he is unconscious? Stay back. We may have problems if he senses someone else is near. Lore, I have a few questions to ask you.",
                     "spoken_by": "LORE"
                 },
                 {
@@ -1721,7 +1722,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the ship shakes",
-                    "line": "You didn't say you could do that.  Affirmative. Talk to it.",
+                    "line": "You didn't say you could do that. Affirmative. Talk to it.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2157,10 +2158,6 @@
                     "context_info": null,
                     "line": "Agreed!",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Cargo bay"

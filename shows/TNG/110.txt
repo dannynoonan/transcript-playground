@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Picard's quarters"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41723.9. In response to a Starfleet order we are in the Xendi Sabu star system, having rendezvoused with a Ferengi vessel which has requested a meeting. Although we arrived here and made appropriate signals to the Ferengi three days ago, they have so far responded only with the message, stand by Enterprise.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard is reading, when the door bell chimes, and Beverly enters with her medical bag"
@@ -287,7 +288,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she puts something against his temple",
-                    "line": "I haven't the slightest idea.  Feel better.",
+                    "line": "I haven't the slightest idea. Feel better.",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -385,7 +386,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "catches Picard's eye",
-                    "line": "Boosting it? How?  We will discuss this later.",
+                    "line": "Boosting it? How? We will discuss this later.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1015,7 +1016,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "reading screen",
-                    "line": "The last entry dated nine years ago, sir. By you.  We are forced to abandon our starship. May she find her way without us. Apparently she did, sir.",
+                    "line": "The last entry dated nine years ago, sir. By you. We are forced to abandon our starship. May she find her way without us. Apparently she did, sir.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2715,10 +2716,6 @@
                     "context_info": null,
                     "line": "In revenge, there never is. Let the dead rest. And the past remain the past. Enterprise, lock on. Beam me home, Riker.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Stargazer Bridge"

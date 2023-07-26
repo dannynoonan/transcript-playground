@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Transporter room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41249.3. We have orbited the two major planets of the Beta Renner system taking aboard delegates from those two worlds. Since achieving space flight, their major life forms, the Anticans and the Selay have become deadly enemies. But both have also applied for admission into our Federation. We are to deliver these delegates to this sector's neutral conference planet, called Parliament, in the hope their dispute can be resolved.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard, Riker and Yar are in dress uniform, a knee-length coat, to greet the delegates as they are beamed aboard. The Selay are snake-like bipeds, wearing long robes, and a tail just visible behind"
@@ -903,10 +904,6 @@
                     "context_info": null,
                     "line": "Picard to Engineering.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -2347,7 +2344,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "blue energy",
-                    "line": "Something crazy on my panel. Commander Riker.  Static?",
+                    "line": "Something crazy on my panel. Commander Riker. Static?",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2501,10 +2498,6 @@
                     "context_info": null,
                     "line": "Riker, with the peace delegates and all, I think I do need a rest. Take charge, Number One.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Transporter room"

@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Ten Forward"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 45494.2. We're investigating a series of subspace signals that may indicate intelligent life in the Epsilon Silar System. We are within sensor range.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "a 3D chess game is in progress"
@@ -1377,7 +1378,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "goes to wall screen",
-                    "line": "Yes, sir.  We're approximately here. We've been ordered to cross into Lysian territory and destroy their Central Command. This is it. The nerve centre for the entire Lysian military operation.",
+                    "line": "Yes, sir. We're approximately here. We've been ordered to cross into Lysian territory and destroy their Central Command. This is it. The nerve centre for the entire Lysian military operation.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2847,10 +2848,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Deanna leaves Will to worry over exactly what the women were talking about"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ten Forward"

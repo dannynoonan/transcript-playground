@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Interrogation room"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "Captain's Log, Stardate 44769.2. For some weeks we have had a Klingon exobiologist on board as part of a scientific exchange programme. Unfortunately, we suspect that he was involved in a security breach and in the possible sabotage of our warp drive."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "also the ship's theatre and meeting room"
@@ -1291,7 +1290,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "sotto",
-                    "line": "Thank you, Doctor.  If you have a case to make against Tarses, you had better make it, otherwise I'm stopping this here and now.",
+                    "line": "Thank you, Doctor. If you have a case to make against Tarses, you had better make it, otherwise I'm stopping this here and now.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2157,10 +2156,6 @@
                     "context_info": null,
                     "line": "Maybe. But she, or someone like her, will always be with us, waiting for the right climate in which to flourish, spreading fear in the name of righteousness. Vigilance, Mister Worf, that is the price we have to continually pay.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Observation lounge"

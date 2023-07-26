@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 41294.5. Our destination, the class M Beta Cassius planet known simply as Haven. It is a world so renowned for its peaceful beauty that some believe it to have mystical healing powers. We will rest and relax, all too briefly, I fear",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2009,7 +2010,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Deanna",
-                    "line": "Please take care of each other.  You are beautiful. But you looked best of all in the desert on the holodeck when we did this.",
+                    "line": "Please take care of each other. You are beautiful. But you looked best of all in the desert on the holodeck when we did this.",
                     "spoken_by": "WYATT"
                 }
             ],
@@ -2251,7 +2252,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "OCout loud",
-                    "line": "Try and remember your heritage, little one.  Captain! Even Xelo never had such thoughts about me. You may energise.",
+                    "line": "Try and remember your heritage, little one. Captain! Even Xelo never had such thoughts about me. You may energise.",
                     "spoken_by": "LWAXANA"
                 },
                 {
@@ -2305,10 +2306,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

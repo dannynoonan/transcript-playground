@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41463.9. While mapping the Pleiades Cluster, we've been asked by the Federation to visit a group terraforming Velara Three. Communications have been erratic and there is some concern about their welfare.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -213,7 +214,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "channel open",
-                    "line": "Well, whether he wants us or not.  Director Mandl, unless you're absolutely refusing permission for us to land at your station, prepare to receive our away team.",
+                    "line": "Well, whether he wants us or not. Director Mandl, unless you're absolutely refusing permission for us to land at your station, prepare to receive our away team.",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -265,7 +266,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "bald, middle-aged younger, blond",
-                    "line": "Arthur Malencon, hydraulics specialist,  and Bjorn Benson, Chief Engineer.",
+                    "line": "Arthur Malencon, hydraulics specialist, and Bjorn Benson, Chief Engineer.",
                     "spoken_by": "LUISA"
                 },
                 {
@@ -1737,7 +1738,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "but something is pushing against it",
-                    "line": "Activate quarantine field.  Quarantine field full. Full shield backup!",
+                    "line": "Activate quarantine field. Quarantine field full. Full shield backup!",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -1839,10 +1840,6 @@
                     "context_info": null,
                     "line": "How do you know, sir?",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -2451,7 +2448,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the ship shakes",
-                    "line": "Can you hear us now?  Mister La Forge?",
+                    "line": "Can you hear us now? Mister La Forge?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2853,7 +2850,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "he does",
-                    "line": "Agreed. We will send you home to your wet sand. Picard to Riker. Bring up the lights in the lab, just a bit.  Are you better?",
+                    "line": "Agreed. We will send you home to your wet sand. Picard to Riker. Bring up the lights in the lab, just a bit. Are you better?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2969,10 +2966,6 @@
                     "context_info": null,
                     "line": "Captain's log, stardate 41464.8. I have declared an indefinite quarantine for Velara Three, and we are now returning to Starbase with the three surviving terraformers. Perhaps the lesson we have learned from this near tragedy will prevent it from happening elsewhere.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 42402.7. We are travelling in the Omega Sagitta system traversing between twin planets that form the Coalition of Madena. Both worlds is populated by a humanoid race which colonised the planets two centuries ago, and which now co-exist under a precarious but successful treaty.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -351,7 +352,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Robinson",
-                    "line": "Nice to meet you Acting Ensign Wesley Wesley Crusher.  And thank you for beaming me here and enabling me to see a truly beautiful woman. You have the majestic carriage and loveliness that could surely be traced back to the noblest of families.",
+                    "line": "Nice to meet you Acting Ensign Wesley Wesley Crusher. And thank you for beaming me here and enabling me to see a truly beautiful woman. You have the majestic carriage and loveliness that could surely be traced back to the noblest of families.",
                     "spoken_by": "OKONA"
                 },
                 {
@@ -571,7 +572,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "blank",
-                    "line": "That's the dictionary meaning. I'm talking about humour, fun. Do you know what funny is?  Where is eight oh six?",
+                    "line": "That's the dictionary meaning. I'm talking about humour, fun. Do you know what funny is? Where is eight oh six?",
                     "spoken_by": "OKONA"
                 },
                 {
@@ -1091,7 +1092,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Guinan giggles",
-                    "line": "My timing is digital.  What?",
+                    "line": "My timing is digital. What?",
                     "spoken_by": "DATA"
                 },
                 {
@@ -1533,7 +1534,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to the woman",
-                    "line": "Some other time.  Remember what it took to drag me from your arms.",
+                    "line": "Some other time. Remember what it took to drag me from your arms.",
                     "spoken_by": "OKONA"
                 }
             ],
@@ -2587,7 +2588,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "laughter - mimes a golf swing with his cigar - laughter laughter",
-                    "line": "Good evening ladies and germs.  I come from a town so small, we had a fraction for a zip code.",
+                    "line": "Good evening ladies and germs. I come from a town so small, we had a fraction for a zip code.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2709,10 +2710,6 @@
                     "context_info": null,
                     "line": "Please.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

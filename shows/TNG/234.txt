@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Picard's quarters"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46271.5. The Enterprise has entered orbit of Deinonychus Seven, but our scheduled rendezvous with the supply ship Biko has been delayed for another forty eight hours. In the meantime, many members of the crew are taking advantage of the delay to pursue their own projects, myself included.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard has dug out his Ressikan flute"
@@ -477,10 +478,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the sound of a gunshot"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Deadwood, main street"
@@ -675,7 +672,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "his gun is drawn",
-                    "line": "Don't twitch a whisker, Sheriff, unless you want a shave.  Okay, boys. Saddle up. But first, get their money and jewellry.",
+                    "line": "Don't twitch a whisker, Sheriff, unless you want a shave. Okay, boys. Saddle up. But first, get their money and jewellry.",
                     "spoken_by": "ELI"
                 },
                 {
@@ -1739,7 +1736,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "normally",
-                    "line": "Well, we figure part of my memory structure  was replaced with information from the computer's recreational data base.",
+                    "line": "Well, we figure part of my memory structure was replaced with information from the computer's recreational data base.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2045,10 +2042,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Worf goes into the main room, puts on his stetson and tries a quick draw in front of the mirror. He smiles, and the Enterprise flies off into the sunset"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Alexander's bedroom"

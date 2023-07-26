@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Shuttlecraft"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 46235.7 Ensign Ro, Keiko O'Brien, Guinan and I are returning to the Enterprise after a fascinating visit to the planet Marlonia.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2547,10 +2548,6 @@
                     "context_info": null,
                     "line": "All of them?",
                     "spoken_by": "GUINAN"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "School room"

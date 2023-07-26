@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 47423.9. We have arrived at Boraal Two in response to an emergency distress call from Lieutenant Worf's foster brother, Nikolai Rozhenko. He has been stationed on the planet as a cultural observer.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2271,10 +2272,6 @@
                     "context_info": null,
                     "line": "They may. I will tell them that you are happy.",
                     "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Planet surface"

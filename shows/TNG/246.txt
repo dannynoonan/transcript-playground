@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, Stardate 46731.5. We are in the midst of the Volterra nebula, a stellar nursery. Our three week mission is a routine analysis of several dozen protostars in various stages of development.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -2399,10 +2400,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Picard picks up one of the little Kurlan figures"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Picard's quarters"

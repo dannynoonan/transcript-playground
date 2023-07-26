@@ -4,12 +4,11 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": "First officer's log, stardate 41986.0. We are awaiting the return of Captain Picard who was summoned to Starbase 718 for an emergency conference. Meanwhile, our sensors are monitoring an ancient capsule floating in our vicinity which appears to be from Earth."
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -493,10 +492,6 @@
                     "context_info": "OC",
                     "line": "Immediately.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
@@ -1083,7 +1078,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Data",
-                    "line": "Duty calls. Hey, I understand.  Why don't you come back later on. You and me'll find us a couple of low mileage pit woofies, and help'em build a memory.",
+                    "line": "Duty calls. Hey, I understand. Why don't you come back later on. You and me'll find us a couple of low mileage pit woofies, and help'em build a memory.",
                     "spoken_by": "SONNY"
                 }
             ],
@@ -2653,10 +2648,6 @@
                     "context_info": null,
                     "line": "There's still much to do. Still so much to learn. Mister La Forge, engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

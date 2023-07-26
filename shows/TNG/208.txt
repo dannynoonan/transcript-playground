@@ -10,13 +10,7 @@
                     "context_info": null,
                     "line": "Captain's log, stardate 45233.1. Our terraforming mission to Doraf One has been cancelled and the Enterprise recalled to Starbase two thirty four. Fleet Admiral Brackett would not discuss the matter on subspace for reasons she said would soon be clear.",
                     "spoken_by": "PICARD"
-                }
-            ],
-            "location": "Ready room"
-        },
-        {
-            "description": null,
-            "events": [
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -590,7 +584,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "lies down again",
-                    "line": "No. I never knew what Spock was doing. When he was a boy, he would disappear for days into the mountains. I asked him where he had gone, what he had done, he refused to tell me. I insisted that he tell me. He would not. I forbade him to go. He ignored me. I punished him. He endured it, silently. But always he returned to the mountains. One might as well ask the river not to run.  But secretly I admired him, the proud core of him that would not yield.",
+                    "line": "No. I never knew what Spock was doing. When he was a boy, he would disappear for days into the mountains. I asked him where he had gone, what he had done, he refused to tell me. I insisted that he tell me. He would not. I forbade him to go. He ignored me. I punished him. He endured it, silently. But always he returned to the mountains. One might as well ask the river not to run. But secretly I admired him, the proud core of him that would not yield.",
                     "spoken_by": "SAREK"
                 },
                 {
@@ -1434,7 +1428,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "goes to science station",
-                    "line": "He probably figures that we don't get to see a lot of handsome women out this way and someone like you might get a little more cooperation from me. He's probably right. What was the name of that ship? The T'Pau?  The T'Pau. Vulcan registry. There. Logged in stardate 41334.",
+                    "line": "He probably figures that we don't get to see a lot of handsome women out this way and someone like you might get a little more cooperation from me. He's probably right. What was the name of that ship? The T'Pau? The T'Pau. Vulcan registry. There. Logged in stardate 41334.",
                     "spoken_by": "DOKACHIN"
                 },
                 {
@@ -2428,14 +2422,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "To Be Continued..."
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Romulan caves"

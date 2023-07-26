@@ -10,13 +10,7 @@
                     "context_info": null,
                     "line": "Captain's log, Stardate 43510.7. The Enterprise has put in at Rutia Four to deliver medical supplies following an outbreak of violent protests. Although non-aligned, the planet has enjoyed a long trading relationship with the Federation. Now, a generation of peace has ended with terrorist attacks by Ansata separatists, who are demanding autonomy and self-determination for their homeland on the western continent. Recreational shore leave has been prohibited and all away teams have been beam down armed.",
                     "spoken_by": "PICARD"
-                }
-            ],
-            "location": "Plaza Cafe"
-        },
-        {
-            "description": null,
-            "events": [
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "The situation isn't stopping Beverly and Worf from drinking beverages in pleasant cafes in shopping areas"
@@ -58,7 +52,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to an injured woman",
-                    "line": "Put that away. I'm a doctor.  Just lie still. Try not to move.",
+                    "line": "Put that away. I'm a doctor. Just lie still. Try not to move.",
                     "spoken_by": "CRUSHER"
                 },
                 {
@@ -85,10 +79,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": null,
                     "line": "Don't be afraid. There's a lot of bleeding, but it's not as bad as it looks.",
                     "spoken_by": "CRUSHER"
@@ -96,7 +86,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to bystanders",
-                    "line": "The Klingon's right. These Ansata, they're madmen. There could be another bomb.  Clear this area. Everyone out of the plaza.",
+                    "line": "The Klingon's right. These Ansata, they're madmen. There could be another bomb. Clear this area. Everyone out of the plaza.",
                     "spoken_by": "POLICEMAN"
                 },
                 {
@@ -2536,10 +2526,6 @@
                     "context_info": null,
                     "line": "Take us out of orbit, Mister Crusher. At your convenience.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

@@ -7,112 +7,8 @@
             "events": [
                 {
                     "characters_mentioned": [],
-                    "context_info": "on viewscreen",
-                    "line": "We will have to move quickly if we are to be successful.",
-                    "spoken_by": "GOWRON"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Successful?",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": "on viewscreen",
-                    "line": "Yes. In preventing a Klingon civil war.",
-                    "spoken_by": "GOWRON"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "I would speak with you.",
-                    "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "I do not hear the words of traitors.",
-                    "spoken_by": "GOWRON"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "It was Duras' father who betrayed our people to the Romulans at Khitomer, not mine.",
-                    "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "We have discovered that our brother did indeed have a son and heir.",
-                    "spoken_by": "LURSA"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Follow me, and I will show you honour.",
-                    "spoken_by": "TORAL"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Your blood will paint the way to the future.",
-                    "spoken_by": "GOWRON"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "If we go to the aid of the Bortas, we'll be dragging the Federation into a Klingon civil war.",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "You both fought as warriors. I return your family honour.",
-                    "spoken_by": "GOWRON"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Mister Worf, your responsibilities as a Starfleet officer are incompatible with remaining on board a Klingon ship during a time of war.",
-                    "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Then I resign my commission as a Starfleet officer.",
-                    "spoken_by": "WORF"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "Picard has rejected Gowron's plea for help. The Enterprise has left orbit.",
-                    "spoken_by": "MOVAR"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": null,
-                    "line": "We should not discount Jean Luc Picard yet. He is human, and humans have a way of showing up when you least expect them.",
-                    "spoken_by": "WOMAN"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": "And now, the conclusion."
                 },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                }
-            ],
-            "location": "Kurn's Bridge"
-        },
-        {
-            "description": null,
-            "events": [
                 {
                     "characters_mentioned": [],
                     "context_info": "they are under attack from two Klingon ships"
@@ -2252,10 +2148,6 @@
                     "context_info": null,
                     "line": "Granted.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Great Hall"

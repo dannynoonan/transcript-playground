@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Street"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "They found Data's head a mile beneath San Francisco. Been down there about five centuries.  DATA: At some future date I will be transported back to nineteenth century Earth, where I will die. It has occurred. It will occur.  GUINAN: Do I know you, Mister?  DATA: Data. Yes. We were on a ship together. The Enterprise.  GUINAN: Is that a clipper ship?  DATA: It is a starship.  CLEMENS: Starship?  RIKER: My God. They're delivering more of them for the others to ingest.  GUINAN: Did my father send you here? Because if he did, you must go back and tell him I'm not done listening to  DATA: I was not sent by your father. Our ship encountered a species who appears to be threatening nineteenth century Earth.  RIKER: I'm not willing to accept that he's dead and just leave it at that.  PICARD: We cannot make Mister Data our priority.  RIKER: What is more important than Data?  GUINAN: Do you remember the first time we met?  PICARD: Of course.  GUINAN: Don't be so sure. If you don't go on this mission, we'll never meet. And now, the conclusion.",
+                    "spoken_by": "Last time on Star Trek, the Next Generation. LAFORGE"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -573,7 +574,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Crusher hides her tricorder",
-                    "line": "Earthquakes. Nurse.  If you can handle things here, I've got a meeting with the Board of Patrons.",
+                    "line": "Earthquakes. Nurse. If you can handle things here, I've got a meeting with the Board of Patrons.",
                     "spoken_by": "DOCTOR"
                 },
                 {
@@ -2361,10 +2362,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "as young Guinan is stretchered away, Clemens picks up his broken watch then puts it down again to be found with the other artefacts in 500 years time"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Cavern"

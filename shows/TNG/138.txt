@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 42625.4, We're entering orbit around the eighth planet in this previously unmapped Theta One Sixteen solar system. We diverted from our scheduled course when a passing Klingon cruiser reported discovering pieces of a strange vessel in the upper atmosphere of this planet. We have come to investigate.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -903,7 +904,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a king",
-                    "line": "Hit me.  Damn!",
+                    "line": "Hit me. Damn!",
                     "spoken_by": "VANESSA"
                 },
                 {
@@ -1505,10 +1506,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Riker knocks, then Worf opens the door and they enter"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Hotel corridor"
@@ -2077,10 +2074,6 @@
                     "context_info": null,
                     "line": "We're going to explore the rest of the hotel. We'll keep a comm. line open. You two go down to the lobby and see if there's anything that we've missed. You talk to the guests and try to find out who or what they are. I'll check out the rest of the floors.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Hotel room"
@@ -2103,7 +2096,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "reading",
-                    "line": "If the cause of the difficulties is in the novel, we may find the solution within its pages. Ah.  '",
+                    "line": "If the cause of the difficulties is in the novel, we may find the solution within its pages. Ah. '",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2265,7 +2258,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a Jack",
-                    "line": "Hit me.  Too many. I've almost lost it all. What am I going to do?",
+                    "line": "Hit me. Too many. I've almost lost it all. What am I going to do?",
                     "spoken_by": "VANESSA"
                 },
                 {
@@ -3187,10 +3180,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": ")"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready room"

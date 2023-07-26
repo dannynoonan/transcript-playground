@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41235.25. Our location, planet Ligon Two, source of a rare vaccine needed on Federation planet Styris Four. Starfleet has instructed me to engage in a friendly visit and open treaty negotiations to acquire this medicinal substance.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -317,7 +318,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "a mat and a white clothed figure appear",
-                    "line": "Aikido one.  It won't move until my actions activate it.",
+                    "line": "Aikido one. It won't move until my actions activate it.",
                     "spoken_by": "TASHA"
                 },
                 {
@@ -495,7 +496,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "turns",
-                    "line": "It reads similar to early Starfleet efforts but uses the Heglenian shift to convert matter and energy in different.  Which is actually not important at this time.",
+                    "line": "It reads similar to early Starfleet efforts but uses the Heglenian shift to convert matter and energy in different. Which is actually not important at this time.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -639,10 +640,6 @@
                     "context_info": null,
                     "line": "He's on the turbolift. You'll remember you ordered him to stay off of the Bridge.",
                     "spoken_by": "CRUSHER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Ready Room"
@@ -2353,14 +2350,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

@@ -4,11 +4,6 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Beach"
-        },
-        {
-            "description": null,
             "events": [
                 {
                     "characters_mentioned": [],
@@ -81,7 +76,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to the gypsy",
-                    "line": "Yeah.  Knock it off.",
+                    "line": "Yeah. Knock it off.",
                     "spoken_by": "LAFORGE"
                 }
             ],
@@ -924,10 +919,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": null,
                     "line": "Is there anything in the history books, Data, that could give us a clue?",
                     "spoken_by": "RIKER"
@@ -1545,7 +1536,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Leah takes a breath, then smiles",
-                    "line": "I can live with that. Do it.  Doctor Brahms?",
+                    "line": "I can live with that. Do it. Doctor Brahms?",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -1675,7 +1666,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "whee boom",
-                    "line": "I don't care if you built it with your bare hands out of an old Ferengi cargo ship, it's going to go  and we're going with it.",
+                    "line": "I don't care if you built it with your bare hands out of an old Ferengi cargo ship, it's going to go and we're going with it.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2117,7 +2108,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "working at a console",
-                    "line": "Yeah. Yes!  Leah, you like Italian food?",
+                    "line": "Yeah. Yes! Leah, you like Italian food?",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -2711,10 +2702,6 @@
                     "context_info": null,
                     "line": "Computer, exit holodeck. End programme.",
                     "spoken_by": "LAFORGE"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Utopia Planitia Drafting room"

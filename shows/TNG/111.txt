@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Corridor"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41590.5. Having dropped off Counsellor Troi at Starbase G6 for a shuttle to visit home, we were fortunately close to the Sigma Three solar system when its Federation colony transmitted an urgent call for medical help. An accidental explosion has devastated a mining operation there.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": null,
@@ -27,10 +28,6 @@
                     "context_info": null,
                     "line": "Doctor Crusher here.",
                     "spoken_by": "CRUSHER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Corridor"
@@ -81,10 +78,6 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "Encounter At Farpoint.)"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 },
                 {
                     "characters_mentioned": [],
@@ -1362,10 +1355,6 @@
                 },
                 {
                     "characters_mentioned": [],
-                    "context_info": ""
-                },
-                {
-                    "characters_mentioned": [],
                     "context_info": null,
                     "line": "Captain's log, stardate 41591.4. Twelve minutes out from Quadra Sigma Three where the survivors of an underground disaster desperately need our help. Aboard the Enterprise, First Officer William T. Riker needs help nearly as badly. But this is a subject far out of my experience. Out of any human's experience.",
                     "spoken_by": "PICARD"
@@ -1479,7 +1468,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "by a rock fall",
-                    "line": "Commander.  There's someone under here.",
+                    "line": "Commander. There's someone under here.",
                     "spoken_by": "LAFORGE"
                 },
                 {
@@ -1743,7 +1732,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Riker",
-                    "line": "The truly evil part of this, Captain, is your jealousy.  You love each one of your people. Demonstrate it. You have the power to leave each of them with a gift proving your affection.",
+                    "line": "The truly evil part of this, Captain, is your jealousy. You love each one of your people. Demonstrate it. You have the power to leave each of them with a gift proving your affection.",
                     "spoken_by": "Q"
                 },
                 {
@@ -2029,10 +2018,6 @@
                     "context_info": null,
                     "line": "Engage.",
                     "spoken_by": "PICARD"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"

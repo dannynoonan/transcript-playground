@@ -4,12 +4,13 @@
     "scenes": [
         {
             "description": null,
-            "events": [],
-            "location": "Bridge"
-        },
-        {
-            "description": null,
             "events": [
+                {
+                    "characters_mentioned": [],
+                    "context_info": null,
+                    "line": "Captain's log, stardate 41255.6. After delivering a party of Earth colonists to the Strnad solar system, we have discovered another Class M planet in the adjoining Rubicun star system. We are now in orbit there, having determined it to be inhabited as well as unusually lovely. My first officer has taken an away team down to make contact and they are in the process of returning to the ship.",
+                    "spoken_by": "PICARD"
+                },
                 {
                     "characters_mentioned": [],
                     "context_info": "Wesley is sitting next to Troi"
@@ -259,7 +260,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "looking at Tasha",
-                    "line": "Healthy sensuality, sir. I feel mainly friendship, and  happiness.",
+                    "line": "Healthy sensuality, sir. I feel mainly friendship, and happiness.",
                     "spoken_by": "TROI"
                 },
                 {
@@ -323,13 +324,13 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to Worf",
-                    "line": "At love. Unless you don't enjoy that.  Perhaps you do?",
+                    "line": "At love. Unless you don't enjoy that. Perhaps you do?",
                     "spoken_by": "RIVAN"
                 },
                 {
                     "characters_mentioned": [],
                     "context_info": "Troi blushes",
-                    "line": "And you?  Yes, I can see that you do.",
+                    "line": "And you? Yes, I can see that you do.",
                     "spoken_by": "LIATOR"
                 },
                 {
@@ -695,7 +696,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "it tones down",
-                    "line": "State the purpose.  State the purpose of what you have done.",
+                    "line": "State the purpose. State the purpose of what you have done.",
                     "spoken_by": "EDO"
                 },
                 {
@@ -1821,7 +1822,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "she nods",
-                    "line": "Is it God?  Now, it's very important you answer something. How do you recognise what it is?",
+                    "line": "Is it God? Now, it's very important you answer something. How do you recognise what it is?",
                     "spoken_by": "PICARD"
                 },
                 {
@@ -2215,7 +2216,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "the Edo vessel",
-                    "line": "The problem, sir, is there.  Although they've learned of the Prime Directive from my mind, how will they evaluate it? How do they reason? What are their values? Remember their warning to us, sir.",
+                    "line": "The problem, sir, is there. Although they've learned of the Prime Directive from my mind, how will they evaluate it? How do they reason? What are their values? Remember their warning to us, sir.",
                     "spoken_by": "DATA"
                 },
                 {
@@ -2609,10 +2610,6 @@
                     "context_info": null,
                     "line": "Gladly, sir.",
                     "spoken_by": "RIKER"
-                },
-                {
-                    "characters_mentioned": [],
-                    "context_info": ""
                 }
             ],
             "location": "Bridge"
