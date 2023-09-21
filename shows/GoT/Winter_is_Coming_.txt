@@ -1,6 +1,7 @@
 {
     "air_date": null,
     "duration": null,
+    "external_id": "Winter_is_Coming_",
     "scenes": [
         {
             "description": "[Prologue: Episode begins at Castle Black, the primary redoubt of the Night's Watch. Three rangers, SER WAYMAR ROYCE, GARED, and WILL, are preparing to embark on a ranging. They enter the tunnel leading to beyond the Wall, eventually emerging on the other side, where they continue on into the Haunted Forest, all of them branching off in different directions. We follow WILL, who has arrived at a clearing in the forest, His horse nickers nervously.]",
@@ -856,7 +857,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "imitating his father",
-                    "line": "There was nothing to be afraid of until you told Father.  \"We’re Lannisters. Lannisters don’t act like fools.\"",
+                    "line": "There was nothing to be afraid of until you told Father. \"We’re Lannisters. Lannisters don’t act like fools.\"",
                     "spoken_by": "JAIME"
                 },
                 {
@@ -1224,7 +1225,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to SANSA",
-                    "line": "Where’s Arya?  Sansa, where’s your sister?",
+                    "line": "Where’s Arya? Sansa, where’s your sister?",
                     "spoken_by": "CATELYN"
                 },
                 {
@@ -1234,7 +1235,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to ROBB",
-                    "line": "By the Gods, where is Ashter?  Robb?",
+                    "line": "By the Gods, where is Ashter? Robb?",
                     "spoken_by": "CATELYN"
                 },
                 {
@@ -1406,7 +1407,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to SANSA to ARYA",
-                    "line": "My, you're a pretty one.  Your name is...?",
+                    "line": "My, you're a pretty one. Your name is...?",
                     "spoken_by": "ROBERT"
                 },
                 {
@@ -1538,7 +1539,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to RICKON",
-                    "line": "Yes, Mother.  Come on, Rickon.",
+                    "line": "Yes, Mother. Come on, Rickon.",
                     "spoken_by": "ROBB"
                 },
                 {
@@ -1580,7 +1581,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "obviously brief pause",
-                    "line": "Yes, he's here already.  Does Rodrik know about this?",
+                    "line": "Yes, he's here already. Does Rodrik know about this?",
                     "spoken_by": "ROBB"
                 },
                 {
@@ -1860,7 +1861,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to NED",
-                    "line": "Thank you, Your Grace.  May I go, Father?",
+                    "line": "Thank you, Your Grace. May I go, Father?",
                     "spoken_by": "ASHTER"
                 },
                 {
@@ -2272,7 +2273,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "in Dothraki in Common",
-                    "line": "Respect to one that is respectful, Great Khal!  May I present my honored guests: Viserys of House Targaryen, the Third of His Name, the rightful King of the Andals and the First Men, and his sister, Daenerys, of the House Targaryen.",
+                    "line": "Respect to one that is respectful, Great Khal! May I present my honored guests: Viserys of House Targaryen, the Third of His Name, the rightful King of the Andals and the First Men, and his sister, Daenerys, of the House Targaryen.",
                     "spoken_by": "ILLYRIO"
                 },
                 {
@@ -3020,7 +3021,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to NED",
-                    "line": "Good to hear.  How's your sons doing? Your daughters?",
+                    "line": "Good to hear. How's your sons doing? Your daughters?",
                     "spoken_by": "RUTHERFORD"
                 },
                 {
@@ -4032,7 +4033,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to CATELYN",
-                    "line": "Pardon, my lord, my lady. A rider in the night.  From your sister.",
+                    "line": "Pardon, my lord, my lady. A rider in the night. From your sister.",
                     "spoken_by": "LUWIN"
                 },
                 {
@@ -4122,13 +4123,13 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to NED",
-                    "line": "The King rode for a month to ask Lord Stark’s help. He’s the only one he trusts.  You swore the king an oath, my lord.",
+                    "line": "The King rode for a month to ask Lord Stark’s help. He’s the only one he trusts. You swore the king an oath, my lord.",
                     "spoken_by": "LUWIN"
                 },
                 {
                     "characters_mentioned": [],
                     "context_info": "to NED",
-                    "line": "He spent half his life fighting Robert’s wars. He owes him nothing.  Your father and brother rode south once on a king’s demand.",
+                    "line": "He spent half his life fighting Robert’s wars. He owes him nothing. Your father and brother rode south once on a king’s demand.",
                     "spoken_by": "CATELYN"
                 },
                 {
@@ -4218,7 +4219,7 @@
                 {
                     "characters_mentioned": [],
                     "context_info": "to VISERYS",
-                    "line": "Ser Jorah Mormont of Bear Island. I served your father for many years.  Gods be good, I hope to always serve the rightful king.",
+                    "line": "Ser Jorah Mormont of Bear Island. I served your father for many years. Gods be good, I hope to always serve the rightful king.",
                     "spoken_by": "JORAH"
                 },
                 {

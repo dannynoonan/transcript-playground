@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-import argparse
 from bs4 import BeautifulSoup
+import json
 import requests
 from urllib.request import urlopen
 
@@ -9,86 +9,50 @@ from link_extractors import LinkExtractor
 from transcript_extractors import TranscriptExtractor
 
 
-def parse_args():
-    # init parser and recognized args
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--show", "-s", help="Full name or shorthand name of show to be loaded", required=True)
-    parser.add_argument("--transcript_type", "-t", help="Specific transcript format type to be loaded, or ALL transcript format types (default)")
-    parser.add_argument("--episode", "-e", help="A specific episode_id / episode_title, or ALL episodes (default)")
-    # read cmd-line args
-    return parser.parse_args()
-
-
-def parse_show(show_arg: str):
-    show_key = None
+def get_show_meta(show_key: str):
     show_meta = None
-    if not show_arg:
-        raise Exception("Transcript import request error: 'show' arg is required")
-    if show_arg in show_metadata.shows.keys():
-        show_key = show_arg
+    if show_key in show_metadata.shows.keys():
         show_meta = show_metadata.shows[show_key]
     else:
-        for s_key, s_meta in show_metadata.shows.items():
-            if show_arg == s_meta['full_name']:
-                show_key = s_key
-                show_meta = s_meta
-                break
-    if not show_key:
-        raise Exception(f"Transcript import request error: no match for show={show_arg}")
-    return show_key, show_meta
+        raise Exception(f"No show_metadata match for show_key={show_key}")
+    return show_meta
 
-
-def parse_transcript_type(transcript_type_arg: str|None, show_key: str, show_meta: dict):
-    transcript_types = []
-    if not transcript_type_arg or transcript_type_arg == 'ALL':
-        transcript_types = show_meta['transcript_types'].keys()
-        print(f"--> Transcript import request will cover all transcript_types for show_key={show_key}")
-    elif transcript_type_arg in show_meta['transcript_types'].keys():
-        transcript_types = [transcript_type_arg]
-        print(f"--> Transcript import request will be limited to transcript_type={transcript_types[0]} for show_key={show_key}")
-
-    else:
-        raise Exception(f"Transcript import request error: no match for transcript_type={transcript_type_arg} for show_key={show_key}")
-    return transcript_types
-
-
-def parse_episode(episode_arg: str|None, show_key: str, transcript_types: list):
-    episode = None
-    if not episode_arg or episode_arg == 'ALL':
-        # no-op
-        print(f"--> Transcript import request will cover all episodes for show_key={show_key} and transcript_types={', '.join(transcript_types)}")
-    else:
-        episode = episode_arg
-        print(f"--> Transcript import request will only operate on episode={episode} for show_key={show_key}")
-    return episode
-
-
-def main():
-    args = parse_args()
-
-    print(f"Received request for: show={args.show}, transcript_type={args.transcript_type}, episode={args.episode}\n")
-
-    # show
-    show_key, show_meta = parse_show(args.show)
-
-    # transcript_type
-    transcript_types = parse_transcript_type(args.transcript_type, show_key, show_meta)
-    
-    # episode
-    episode = parse_episode(args.episode, show_key, transcript_types)
-
-    print('----------------------------------------------------------------------------')
-    print(f'show_key={show_key}, transcript_types={", ".join(transcript_types)}, episode={episode}')
-
+def get_show_listing_soup(show_key: str):
     # soupify page with links to transcripts 
     show_transcripts_domain = show_metadata.shows[show_key]['show_transcripts_domain']
     listing_url = show_metadata.shows[show_key]['listing_url']
     listing_html = requests.get(show_transcripts_domain + listing_url)
     listing_soup = BeautifulSoup(listing_html.text, 'html.parser')
+    return listing_soup
+
+
+def import_transcript_by_episode_key(show_key: str, episode_key: str):
+    print(f'import_transcript: show_key={show_key}, episode_key={episode_key}')
+    show_meta = get_show_meta(show_key)
+    listing_soup = get_show_listing_soup(show_key)
 
     # extract transcript links from soupified html
-    link_extractor = LinkExtractor(show_key, show_meta, transcript_types)
-    transcript_types_to_urls = link_extractor.extract_links(listing_soup, episode)
+    link_extractor = LinkExtractor(show_key, show_meta, None)
+    transcript_types_to_urls = link_extractor.extract_links(listing_soup, episode_key)
+
+    return import_transcripts(show_key, show_meta, transcript_types_to_urls)
+
+
+def import_transcripts_by_type(show_key: str, transcript_type: str):
+    print(f'import_transcript: show_key={show_key}, transcript_type={transcript_type}')
+    show_meta = get_show_meta(show_key)
+    listing_soup = get_show_listing_soup(show_key)
+
+    # extract transcript links from soupified html
+    link_extractor = LinkExtractor(show_key, show_meta, [transcript_type])
+    transcript_types_to_urls = link_extractor.extract_links(listing_soup, None)
+    print(f'transcript_types_to_urls={transcript_types_to_urls}')
+
+    return import_transcripts(show_key, show_meta, transcript_types_to_urls)
+
+
+def import_transcripts(show_key: str, show_meta: dict, transcript_types_to_urls: dict):
+    json_episodes = {}
 
     # extract each transcript
     for transcript_type, transcript_urls in transcript_types_to_urls.items():
@@ -101,8 +65,12 @@ def main():
             transcript_soup = BeautifulSoup(transcript_response.content.decode('utf-8'), 'html.parser')
             episode = transcript_extractor.extract_transcript(transcript_soup)
 
-            # json_episode = json.dumps(episode.toJSON())
-            # print(episode.toJSON())
+            # json_episodes.append(json.dumps(episode.toJSON()))
+            # json_episodes.append(episode)
+            # json_episodes.append(episode.toJSON())
+            json_episodes[episode.external_id] = episode.toJSON()
+
+            print(episode.toJSON())
 
             file_path = f'shows/{show_key}/{episode.title}.txt'
 
@@ -115,6 +83,4 @@ def main():
     print('Transcript import complete.')
     print('----------------------------------------------------------------------------')
 
-
-if __name__ == '__main__':
-    main()
+    return json_episodes

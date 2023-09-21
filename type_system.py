@@ -1,4 +1,5 @@
 import json
+from pydantic import BaseModel
 
 
 class Jsonable(object):
@@ -35,6 +36,7 @@ class Episode(Jsonable):
         self.show = None  # Show
         self.season = None  # int
         self.sequence_in_season = None  # int
+        self.external_id = None  # str
         self.title = None  # str
         self.transcript_url = None  # str
         self.air_date = None  # date

@@ -6,7 +6,7 @@ shows = {
         'episode_subdir': '/wiki/',
         'transcript_types': {
             'Fanon': '(Fanon)/Transcript',
-            'toc': 'Transcript'
+            'TOC': 'Transcript'
         }
     },
     'TNG': {
@@ -15,7 +15,7 @@ shows = {
         'listing_url': 'episodes.htm',
         'episode_subdir': '',
         'transcript_types': {
-            'default': 'default'
+            'Default': 'Default'
         }
     }
 }

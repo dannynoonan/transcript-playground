@@ -133,6 +133,8 @@ class TranscriptExtractor(object):
         print('----------------------------------------------------------------------------')
         print(f'len(episode.scenes)={len(episode.scenes)}')
 
+        episode.external_id = episode.title # TODO hmmm
+
         return episode
     
 

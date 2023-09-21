@@ -4,10 +4,13 @@ import show_metadata
 
 
 class LinkExtractor(object):
-    def __init__(self, show_key: str, show_meta: dict, transcript_types: list):
+    def __init__(self, show_key: str, show_meta: dict, transcript_types: list|None):
         self.show_key = show_key
         self.show_meta = show_meta
-        self.transcript_types = transcript_types
+        if transcript_types:
+            self.transcript_types = transcript_types
+        else:
+            self.transcript_types = list(show_meta['transcript_types'].keys())
 
     def extract_links(self, listing_soup: BeautifulSoup, episode: str|None):
         transcript_types_to_urls = {}
@@ -28,6 +31,9 @@ class LinkExtractor(object):
                         raise Exception(f'Multiple episodes of show_key={self.show_key} and transcript_type=Fanon matched episode={episode}. Retry request with narrower name that matches only one episode.')
                 if transcript_urls:
                     transcript_types_to_urls['Fanon'] = transcript_urls
+
+            if 'TOC' in self.transcript_types:
+                print('GoT TOC transcripts are still a TODO')
 
         elif self.show_key == 'TNG':
             a_tags = [a_tag for a_tag in listing_soup.find_all('a')]
