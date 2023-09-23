@@ -1,6 +1,46 @@
 from bs4 import BeautifulSoup
 
-import show_metadata
+from app.models import RawEpisodeMap
+from show_metadata import Show, show_metadata
+
+
+def parse_episode_listing(show_key: Show, listing_soup: BeautifulSoup) -> list[RawEpisodeMap]:
+    raw_episodes = []
+
+    a_tags = [a_tag for a_tag in listing_soup.find_all('a')]
+    all_urls = [a_tag.get('href') for a_tag in a_tags if a_tag.get('href')]
+
+    for tx_type, tx_string in show_metadata[show_key]['transcript_types'].items():
+        epidose_keys_to_transcript_urls = extract_episode_keys_and_transcript_urls(show_key, all_urls, tx_string)
+        for external_key, tx_url in epidose_keys_to_transcript_urls.items():
+            raw_episodes.append(RawEpisodeMap(show_key=show_key.value, external_key=external_key, transcript_type=tx_type, transcript_url=tx_url))
+    
+    print('----------------------------------------------------------------------------')
+    print(f'len(raw_episodes)={len(raw_episodes)}')
+    print(f'raw_episodes={raw_episodes}')
+    print('----------------------------------------------------------------------------')
+    return raw_episodes
+
+
+def extract_episode_keys_and_transcript_urls(show_key: Show, all_urls: list, transcript_type_string_match: str) -> dict:
+    show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
+    epidose_keys_to_transcript_urls = {}
+    if show_key == "GoT":
+        transcript_urls = [show_transcripts_domain + url for url in all_urls if transcript_type_string_match in url]
+        for tx_url in transcript_urls:
+            episode_key = tx_url.removeprefix(show_metadata[show_key]['show_transcripts_domain'])
+            episode_key = episode_key.removeprefix(show_metadata[show_key]['episode_subdir'])
+            episode_key = episode_key.replace(transcript_type_string_match, '')
+            epidose_keys_to_transcript_urls[episode_key] = tx_url
+
+    elif show_key == 'TNG':
+        transcript_urls = [show_transcripts_domain + url for url in all_urls if url.split('.')[0].isdigit()]
+        for tx_url in transcript_urls:
+            transcript_file = tx_url.split('/')[-1]
+            episode_key = transcript_file.split('.')[0]
+            epidose_keys_to_transcript_urls[episode_key] = tx_url
+
+    return epidose_keys_to_transcript_urls
 
 
 class LinkExtractor(object):
@@ -20,8 +60,8 @@ class LinkExtractor(object):
             if 'Fanon' in self.transcript_types:
                 a_tags = [a_tag for a_tag in listing_soup.find_all('a')]
                 all_urls = [a_tag.get('href') for a_tag in a_tags if a_tag.get('href')]
-                show_transcripts_domain = show_metadata.shows[self.show_key]['show_transcripts_domain']
-                transcript_type_match_string = show_metadata.shows[self.show_key]['transcript_types']['Fanon']
+                show_transcripts_domain = show_metadata[self.show_key]['show_transcripts_domain']
+                transcript_type_match_string = show_metadata[self.show_key]['transcript_types']['Fanon']
                 transcript_urls = [show_transcripts_domain + url for url in all_urls if transcript_type_match_string in url]
                 
                 # fuzzy match on episode (for now), verify only one match returned
@@ -38,7 +78,7 @@ class LinkExtractor(object):
         elif self.show_key == 'TNG':
             a_tags = [a_tag for a_tag in listing_soup.find_all('a')]
             all_urls = [a_tag.get('href') for a_tag in a_tags if a_tag.get('href')]
-            show_transcripts_domain = show_metadata.shows[self.show_key]['show_transcripts_domain']
+            show_transcripts_domain = show_metadata[self.show_key]['show_transcripts_domain']
             transcript_urls = [show_transcripts_domain + url for url in all_urls if url.split('.')[0].isdigit()]
 
             # fuzzy match on episode (for now), verify only one match returned

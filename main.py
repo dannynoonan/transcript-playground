@@ -1,68 +1,86 @@
 from enum import Enum
 from fastapi import FastAPI, Response
-import json
-
-from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
+from fastapi.exceptions import HTTPException
+from fastapi.responses import JSONResponse
+import json
+# from tortoise import HTTPException
+from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
+from tortoise.contrib.pydantic import pydantic_model_creator
 
-from transcript_importer import import_transcript_by_episode_key, import_transcripts_by_type
+from app.models import Job, RawEpisodeMap
+import dao
+from database.connect import connect_to_database
+from link_extractors import LinkExtractor, parse_episode_listing
+from show_metadata import Show, TranscriptType, Status, show_metadata
+from transcript_importer import get_show_listing_soup, import_transcript_by_episode_key, import_transcripts_by_type
+
+# https://levelup.gitconnected.com/handle-registration-in-fastapi-and-tortoise-orm-2dafc9325b7a
+
+
+# DATABASE_URL=f"postgres://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}?sslmode=disable"
+# DATABASE_URL="postgres://postgres@localhost:5432/transcript_db?sslmode=disable"
+# DATABASE_URL="postgres://andyshirey@localhost:5432/transcript_db?sslmode=disable"
+DATABASE_URL="postgres://andyshirey@localhost:5432/transcript_db"
 
 
 transcript_playground_app = FastAPI()
 
+job_pydantic = pydantic_model_creator(Job)
+job_pydantic_no_ids = pydantic_model_creator(Job, exclude_readonly=True)
+
+register_tortoise(
+    transcript_playground_app,
+    # db_url="sqlite://db.sqlite3",
+    db_url=DATABASE_URL,
+    modules={"models": ["app.models"]},
+    generate_schemas=True,
+    add_exception_handlers=True,
+)
+
+# await connectToDatabase()
 
 @transcript_playground_app.get("/")
 def root():
     return {"message": "Hi there World"}
 
-@transcript_playground_app.get("/foo")
-async def root():
-    return {"message": "Hola World"}
 
-@transcript_playground_app.get("/item/{item_id}")
-async def read_item(item_id: int):
-    return {"item_id": item_id}
-
-
-class Show(str, Enum):
-    TNG = "TNG"
-    GoT = "GoT"
-    Succession = "Succession"
-
-class TranscriptType(str, Enum):
-    Fanon = "Fanon"
-    TOC = "TOC"
-    Default = "Default"
-    ALL = "ALL"
+@transcript_playground_app.get("/db_connect")
+async def db_connect():
+    await connect_to_database()
+    return {"DB connection": "Indeed"}
 
 
 @transcript_playground_app.get("/show_meta/{show_key}")
 async def fetch_show_meta(show_key: Show):
-    if show_key is Show.TNG:
-        return {"show_key": show_key, "message": "Trekkies!"}
-
-    if show_key.value == "GoT":
-        return {"show_key": show_key, "message": "Westeros is calling!"}
-
-    return {"show_key": show_key, "message": "Wambsgans for the triple-play!"}
-
-fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"}]
+    show_meta = show_metadata[show_key]
+    return {show_key: show_meta}
 
 
-@transcript_playground_app.get("/episode/{show_key}/{episode}")
-async def fetch_episode(show_key: Show, episode: int):
-    return {"show_key": show_key, "episode": episode}
+@transcript_playground_app.get("/load_transcript_listing/{show_key}")
+async def load_transcript_listing(show_key: Show, write_to_db: bool = False):
+    listing_soup = get_show_listing_soup(show_key)
+    raw_episodes = parse_episode_listing(show_key, listing_soup)
+    if write_to_db:
+        for re in raw_episodes:
+            await dao.upsert_raw_episode(re)
+            # try:
+            #     # fetched_re = await RawEpisodeMap.filter(show_key=show_key.value, external_key=re.external_key).first()
+            #     fetched_re = await RawEpisodeMap.get(show_key=show_key.value, external_key=re.external_key)
+            #     print(f'Previous RawEpisodeMap matching show_key={show_key} external_key={re.external_key} found, upserting')
+            #     fetched_re.transcript_type = re.transcript_type
+            #     fetched_re.transcript_url = re.transcript_url
+            #     await fetched_re.save()
+            # except Exception:
+            #     print(f'No previous stored RawEpisodeMap matching show_key={show_key} external_key={re.external_key} found, inserting')
+            #     await re.save()
+    return {"raw_episodes": raw_episodes}
 
-
-@transcript_playground_app.get("/load_transcripts/{show_key}/{transcript_type}")
-async def load_transcripts(show_key: Show, transcript_type: TranscriptType|None = None):
-    json_episodes = import_transcripts_by_type(show_key, transcript_type) 
-    print(f'loaded transcript count={len(json_episodes)}, transcript episodes={json_episodes.keys()}')
-    return {"loaded transcript count": len(json_episodes), "loaded transcript episodes": list(json_episodes.keys())}
 
 @transcript_playground_app.get("/load_transcript/{show_key}/{episode_key}")
 async def load_transcript(show_key: Show, episode_key: str):
     json_episodes = import_transcript_by_episode_key(show_key, episode_key) 
+    
     # json_episodes = json.dumps(json_episodes, indent=4, default=str)
     # return JSONResponse(content=jsonable_encoder(json_episodes))
     # return {"loaded transcripts": JSONResponse(content=jsonable_encoder(json_episodes))}
@@ -72,4 +90,64 @@ async def load_transcript(show_key: Show, episode_key: str):
 
     # json_str = json.dumps(json_episodes, indent=4, default=str)
     # return Response(content=json_str, media_type='application/json')
+
+
+@transcript_playground_app.get("/episode/{show_key}/{episode_key}")
+async def fetch_episode(show_key: Show, episode_key: str):
+    return {"show_key": show_key, "episode": episode_key}
+
+
+# @transcript_playground_app.get("/load_transcripts/{show_key}/{transcript_type}")
+# async def load_transcripts(show_key: Show, transcript_type: TranscriptType|None = None):
+#     json_episodes = import_transcripts_by_type(show_key, transcript_type) 
+#     print(f'loaded transcript count={len(json_episodes)}, transcript episodes={json_episodes.keys()}')
+#     return {"loaded transcript count": len(json_episodes), "loaded transcript episodes": list(json_episodes.keys())}
+
+
+
+
+
+
+########### BEGIN EXAMPLES #############
+# https://medium.com/@talhakhalid101/python-tortoise-orm-integration-with-fastapi-c3751d248ce1
+
+@transcript_playground_app.post("/job/create/", status_code=201)
+# async def create_job(name=Form(...), description=Form(...)):
+async def create_job(name, description):
+    job = await Job.create(name=name, description=description)
+    return await job_pydantic.from_tortoise_orm(job)
+
+@transcript_playground_app.get("/job/{job_id}", response_model=job_pydantic, responses={404: {"model": HTTPNotFoundError}})
+async def get_job(job_id: int):
+    return await job_pydantic_no_ids.from_queryset_single(Job.get(id=job_id))
+
+@transcript_playground_app.get("/jobs/")
+async def get_jobs():
+    return await job_pydantic.from_queryset(Job.all())
+
+# TODO this doesn't work
+@transcript_playground_app.put("/job/{job_id}", response_model=job_pydantic, responses={404: {"model": HTTPNotFoundError}})
+async def update_job(job_id: int, job: job_pydantic_no_ids):
+    res = Job.filter(id=job_id)
+    print(f'fetched job={job}')
+    await res.update(**job.dict())
+    # await Job.filter(id=job_id).update(**job.dict())
+    return await job_pydantic_no_ids.from_queryset_single(Job.get(id=job_id))
+
+@transcript_playground_app.delete("/job/{job_id}", response_model=Status, responses={404: {"model": HTTPNotFoundError}})
+async def delete_job(job_id: int):
+    deleted_job = await Job.filter(id=job_id).delete()
+    if not deleted_job:
+        raise HTTPException(status_code=404, detail=f"Job {job_id} not found")
+    return Status(message=f"Deleted job {job_id}")
+
+
+########### OLDER EXAMPLES #############
+
+# @transcript_playground_app.get("/item/{item_id}")
+# async def read_item(item_id: int):
+#     return {"item_id": item_id}
+
+
+########### END EXAMPLES #############
 

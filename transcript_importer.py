@@ -4,23 +4,24 @@ import json
 import requests
 from urllib.request import urlopen
 
-import show_metadata
+from show_metadata import Show, show_metadata
 from link_extractors import LinkExtractor
 from transcript_extractors import TranscriptExtractor
 
 
 def get_show_meta(show_key: str):
     show_meta = None
-    if show_key in show_metadata.shows.keys():
-        show_meta = show_metadata.shows[show_key]
+    if show_key in show_metadata.keys():
+        show_meta = show_metadata[show_key]
     else:
         raise Exception(f"No show_metadata match for show_key={show_key}")
     return show_meta
 
+
 def get_show_listing_soup(show_key: str):
     # soupify page with links to transcripts 
-    show_transcripts_domain = show_metadata.shows[show_key]['show_transcripts_domain']
-    listing_url = show_metadata.shows[show_key]['listing_url']
+    show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
+    listing_url = show_metadata[show_key]['listing_url']
     listing_html = requests.get(show_transcripts_domain + listing_url)
     listing_soup = BeautifulSoup(listing_html.text, 'html.parser')
     return listing_soup

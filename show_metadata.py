@@ -1,4 +1,25 @@
-shows = {
+from enum import Enum
+from pydantic import BaseModel
+
+
+class Show(str, Enum):
+    TNG = "TNG"
+    GoT = "GoT"
+    Succession = "Succession"
+
+
+class TranscriptType(str, Enum):
+    Fanon = "Fanon"
+    TOC = "TOC"
+    Default = "Default"
+    ALL = "ALL"
+
+
+class Status(BaseModel):
+    message: str
+
+
+show_metadata = {
     'GoT': {
         'full_name': 'Game of Thrones',
         'show_transcripts_domain': 'https://gameofthronesfanon.fandom.com/',

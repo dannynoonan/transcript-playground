@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 from urllib.request import urlopen
 
-import show_metadata
+from show_metadata import show_metadata
 from link_extractors import LinkExtractor
 from transcript_importer import import_transcript_by_episode_key, import_transcripts_by_type, get_show_meta
 from transcript_extractors import TranscriptExtractor
@@ -25,11 +25,11 @@ def parse_args():
 #     show_meta = None
 #     if not show_arg:
 #         raise Exception("Transcript import request error: 'show' arg is required")
-#     if show_arg in show_metadata.shows.keys():
+#     if show_arg in show_metadata.keys():
 #         show_key = show_arg
-#         show_meta = show_metadata.shows[show_key]
+#         show_meta = show_metadata[show_key]
 #     else:
-#         for s_key, s_meta in show_metadata.shows.items():
+#         for s_key, s_meta in show_metadata.items():
 #             if show_arg == s_meta['full_name']:
 #                 show_key = s_key
 #                 show_meta = s_meta
@@ -68,14 +68,14 @@ def main():
     args = parse_args()
     print(f"Received request for: show={args.show}, transcript_type={args.transcript_type}, episode={args.episode}\n")
 
-    if args.show not in show_metadata.shows.keys():
+    if args.show not in show_metadata.keys():
         raise Exception(f"Transcript import request error: no match for show={args.show}")
 
     if args.episode:
         import_transcript_by_episode_key(args.show, args.episode)
 
     else:
-        if args.transcript_type not in show_metadata.shows[args.show]['transcript_types'].keys():
+        if args.transcript_type not in show_metadata[args.show]['transcript_types'].keys():
             raise Exception(f"Transcript import request error: no match for show={args.show}")
         import_transcripts_by_type(args.show, args.transcript_type)
 

@@ -1,5 +1,13 @@
+asyncpg==0.28.0
 bs4==0.0.1
 fastapi==0.103.1 
+http-exceptions==0.2.10
+pydantic==2.3.0
+pydantic_core==2.6.3
+pydantic-extra-types==2.1.0
+pydantic-settings==2.0.3
+python-multipart==0.0.6
 requests==2.30.0
+tortoise-orm==0.20.0
 uvicorn==0.23.2 
 urllib3==1.26.15
