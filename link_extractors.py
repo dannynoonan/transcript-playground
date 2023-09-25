@@ -1,10 +1,10 @@
 from bs4 import BeautifulSoup
 
-from app.models import RawEpisodeMap
-from show_metadata import Show, show_metadata
+from app.models import RawEpisode
+from show_metadata import ShowKey, show_metadata
 
 
-def parse_episode_listing(show_key: Show, listing_soup: BeautifulSoup) -> list[RawEpisodeMap]:
+def parse_episode_listing(show_key: ShowKey, listing_soup: BeautifulSoup) -> list[RawEpisode]:
     raw_episodes = []
 
     a_tags = [a_tag for a_tag in listing_soup.find_all('a')]
@@ -13,7 +13,7 @@ def parse_episode_listing(show_key: Show, listing_soup: BeautifulSoup) -> list[R
     for tx_type, tx_string in show_metadata[show_key]['transcript_types'].items():
         epidose_keys_to_transcript_urls = extract_episode_keys_and_transcript_urls(show_key, all_urls, tx_string)
         for external_key, tx_url in epidose_keys_to_transcript_urls.items():
-            raw_episodes.append(RawEpisodeMap(show_key=show_key.value, external_key=external_key, transcript_type=tx_type, transcript_url=tx_url))
+            raw_episodes.append(RawEpisode(show_key=show_key.value, external_key=external_key, transcript_type=tx_type, transcript_url=tx_url))
     
     print('----------------------------------------------------------------------------')
     print(f'len(raw_episodes)={len(raw_episodes)}')
@@ -22,7 +22,7 @@ def parse_episode_listing(show_key: Show, listing_soup: BeautifulSoup) -> list[R
     return raw_episodes
 
 
-def extract_episode_keys_and_transcript_urls(show_key: Show, all_urls: list, transcript_type_string_match: str) -> dict:
+def extract_episode_keys_and_transcript_urls(show_key: ShowKey, all_urls: list, transcript_type_string_match: str) -> dict:
     show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
     epidose_keys_to_transcript_urls = {}
     if show_key == "GoT":

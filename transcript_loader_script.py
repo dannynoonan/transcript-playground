@@ -6,7 +6,7 @@ from urllib.request import urlopen
 
 from show_metadata import show_metadata
 from link_extractors import LinkExtractor
-from transcript_importer import import_transcript_by_episode_key, import_transcripts_by_type, get_show_meta
+from transcript_importer import scrape_transcript
 from transcript_extractors import TranscriptExtractor
 
 
@@ -14,8 +14,8 @@ def parse_args():
     # init parser and recognized args
     parser = argparse.ArgumentParser()
     parser.add_argument("--show", "-s", help="Shorthand name of show to be loaded", required=True)
-    parser.add_argument("--transcript_type", "-t", help="Specific transcript format type to be loaded, or ALL transcript format types (default)")
-    parser.add_argument("--episode", "-e", help="A specific episode_id / episode_title, or ALL episodes (default)")
+    # parser.add_argument("--transcript_type", "-t", help="Specific transcript format type to be loaded, or ALL transcript format types (default)")
+    parser.add_argument("--episode", "-e", help="A specific episode_id / episode_title, or ALL episodes (default)", required=True)
     # read cmd-line args
     return parser.parse_args()
 
@@ -66,18 +66,16 @@ def parse_args():
 
 def main():
     args = parse_args()
-    print(f"Received request for: show={args.show}, transcript_type={args.transcript_type}, episode={args.episode}\n")
+    print(f"Received request for: show={args.show}, episode={args.episode}")
 
     if args.show not in show_metadata.keys():
         raise Exception(f"Transcript import request error: no match for show={args.show}")
+        
+    episode, scenes, scenes_to_events = scrape_transcript(args.show, args.episode)
 
-    if args.episode:
-        import_transcript_by_episode_key(args.show, args.episode)
-
-    else:
-        if args.transcript_type not in show_metadata[args.show]['transcript_types'].keys():
-            raise Exception(f"Transcript import request error: no match for show={args.show}")
-        import_transcripts_by_type(args.show, args.transcript_type)
+    print(f'episode={episode}')
+    print(f'scenes={scenes}')
+    print(f'scenes_to_events={scenes_to_events}')
 
 
 if __name__ == '__main__':

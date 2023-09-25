@@ -7,13 +7,14 @@ import json
 # from tortoise import HTTPException
 from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from tortoise.contrib.pydantic import pydantic_model_creator
+from tortoise import Tortoise
 
-from app.models import Job, RawEpisodeMap
+from app.models import Job, Show, RawEpisode, Episode, Scene, SceneEvent
 import dao
 from database.connect import connect_to_database
 from link_extractors import LinkExtractor, parse_episode_listing
-from show_metadata import Show, TranscriptType, Status, show_metadata
-from transcript_importer import get_show_listing_soup, import_transcript_by_episode_key, import_transcripts_by_type
+from show_metadata import ShowKey, TranscriptType, Status, show_metadata
+from transcript_importer import get_episode_listing_soup, scrape_transcript
 
 # https://levelup.gitconnected.com/handle-registration-in-fastapi-and-tortoise-orm-2dafc9325b7a
 
@@ -26,8 +27,18 @@ DATABASE_URL="postgres://andyshirey@localhost:5432/transcript_db"
 
 transcript_playground_app = FastAPI()
 
-job_pydantic = pydantic_model_creator(Job)
-job_pydantic_no_ids = pydantic_model_creator(Job, exclude_readonly=True)
+
+##### BEGIN THESE DO THE SAME THING ######
+async def init():
+    # Here we create a SQLite DB using file "db.sqlite3"
+    #  also specify the app name of "models"
+    #  which contain models from "app.models"
+    await Tortoise.init(
+        db_url=DATABASE_URL,
+        modules={'models': ['app.models']}
+    )
+    # Generate the schema
+    await Tortoise.generate_schemas()
 
 register_tortoise(
     transcript_playground_app,
@@ -37,6 +48,23 @@ register_tortoise(
     generate_schemas=True,
     add_exception_handlers=True,
 )
+##### END THESE DO THE SAME THING ######
+
+Tortoise.init_models(["app.models"], "models")
+
+
+job_pydantic = pydantic_model_creator(Job)
+job_pydantic_no_ids = pydantic_model_creator(Job, exclude_readonly=True)
+
+# show_pedantic = pydantic_model_creator(Show)
+# episode_pydantic = pydantic_model_creator(Episode)
+# scene_pydantic = pydantic_model_creator(Scene)
+Show_Pedantic = pydantic_model_creator(Show)
+Episode_Pydantic = pydantic_model_creator(Episode)
+Scene_Pydantic = pydantic_model_creator(Scene)
+
+print(f'Episode_Pydantic.model_json_schema()={Episode_Pydantic.model_json_schema()}')
+
 
 # await connectToDatabase()
 
@@ -52,49 +80,38 @@ async def db_connect():
 
 
 @transcript_playground_app.get("/show_meta/{show_key}")
-async def fetch_show_meta(show_key: Show):
+async def fetch_show_meta(show_key: ShowKey):
     show_meta = show_metadata[show_key]
     return {show_key: show_meta}
 
 
 @transcript_playground_app.get("/load_transcript_listing/{show_key}")
-async def load_transcript_listing(show_key: Show, write_to_db: bool = False):
-    listing_soup = get_show_listing_soup(show_key)
+async def load_transcript_listing(show_key: ShowKey, write_to_db: bool = False):
+    listing_soup = get_episode_listing_soup(show_key)
     raw_episodes = parse_episode_listing(show_key, listing_soup)
     if write_to_db:
         for re in raw_episodes:
             await dao.upsert_raw_episode(re)
-            # try:
-            #     # fetched_re = await RawEpisodeMap.filter(show_key=show_key.value, external_key=re.external_key).first()
-            #     fetched_re = await RawEpisodeMap.get(show_key=show_key.value, external_key=re.external_key)
-            #     print(f'Previous RawEpisodeMap matching show_key={show_key} external_key={re.external_key} found, upserting')
-            #     fetched_re.transcript_type = re.transcript_type
-            #     fetched_re.transcript_url = re.transcript_url
-            #     await fetched_re.save()
-            # except Exception:
-            #     print(f'No previous stored RawEpisodeMap matching show_key={show_key} external_key={re.external_key} found, inserting')
-            #     await re.save()
     return {"raw_episodes": raw_episodes}
 
 
 @transcript_playground_app.get("/load_transcript/{show_key}/{episode_key}")
-async def load_transcript(show_key: Show, episode_key: str):
-    json_episodes = import_transcript_by_episode_key(show_key, episode_key) 
-    
-    # json_episodes = json.dumps(json_episodes, indent=4, default=str)
-    # return JSONResponse(content=jsonable_encoder(json_episodes))
-    # return {"loaded transcripts": JSONResponse(content=jsonable_encoder(json_episodes))}
+async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool = False):
+    try:
+        raw_episode = await dao.fetch_raw_episode(show_key.value, episode_key)
+    except Exception as e:
+        return {"Error": f"Failure to fetch RawEpisode having show_key={show_key} external_key={episode_key}: {e}"}
+    episode, scenes, scenes_to_events = await scrape_transcript(raw_episode)
 
-    # return {"loaded transcripts": JSONResponse(content=json_episodes)}
-    return {"loaded transcript count": len(json_episodes), "loaded transcript episodes": episode_key}
+    print('@@@@@@@ REACHED MIDDLE OF main.py:load_transcript')
 
-    # json_str = json.dumps(json_episodes, indent=4, default=str)
-    # return Response(content=json_str, media_type='application/json')
+    if write_to_db:
+        await dao.upsert_episode(episode, scenes, scenes_to_events)
+        return await Episode_Pydantic.from_tortoise_orm(episode)
 
-
-@transcript_playground_app.get("/episode/{show_key}/{episode_key}")
-async def fetch_episode(show_key: Show, episode_key: str):
-    return {"show_key": show_key, "episode": episode_key}
+    else:
+        # TODO this response should be identical to the persisted version above
+        return {'episode': episode, 'scenes': scenes, 'scenes_to_events': scenes_to_events}
 
 
 # @transcript_playground_app.get("/load_transcripts/{show_key}/{transcript_type}")
@@ -103,6 +120,14 @@ async def fetch_episode(show_key: Show, episode_key: str):
 #     print(f'loaded transcript count={len(json_episodes)}, transcript episodes={json_episodes.keys()}')
 #     return {"loaded transcript count": len(json_episodes), "loaded transcript episodes": list(json_episodes.keys())}
 
+
+@transcript_playground_app.get("/episode/{show_key}/{episode_key}")
+async def fetch_episode(show_key: ShowKey, episode_key: str):
+    try:
+        episode = await dao.fetch_episode(show_key.value, episode_key)
+    except Exception as e:
+        return {"Error": f"Failure to fetch Episode having show_key={show_key} episode_key={episode_key}: {e}"}
+    return await Episode_Pydantic.from_tortoise_orm(episode)
 
 
 

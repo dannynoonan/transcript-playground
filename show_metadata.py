@@ -2,7 +2,7 @@ from enum import Enum
 from pydantic import BaseModel
 
 
-class Show(str, Enum):
+class ShowKey(str, Enum):
     TNG = "TNG"
     GoT = "GoT"
     Succession = "Succession"
