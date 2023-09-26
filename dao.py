@@ -1,5 +1,5 @@
-from app.models import Show, RawEpisode, Episode, Scene, SceneEvent
-
+from app.models import RawEpisode, Episode, Scene, SceneEvent
+from show_metadata import show_metadata
 
 async def upsert_raw_episode(raw_episode: RawEpisode) -> None:
     try:
@@ -33,9 +33,9 @@ async def fetch_raw_episode(show_key: str, episode_key: str) -> RawEpisode|Excep
 
 async def fetch_episode(show_key: str, episode_key: str) -> Episode|Exception:
     try:
-        fetched_show = await fetch_show(show_key)
-        print(f'Looking up Episode matching show={fetched_show} external_key={episode_key}')
-        fetched_episode = await Episode.get(show=fetched_show, external_key=episode_key)
+        # fetched_show = await fetch_show(show_key)
+        print(f'Looking up Episode matching show={show_key} external_key={episode_key}')
+        fetched_episode = await Episode.get(show_key=show_key, external_key=episode_key)
         return fetched_episode
     except Exception as e:
         print(f'No Episode found matching show_key={show_key} external_key={episode_key}:', e)
@@ -94,7 +94,7 @@ async def upsert_episode(episode: Episode, scenes: list[Scene], scenes_to_events
     print(f'Begin upsert_episode episode={episode} len(scenes)={len(scenes)} len(scenes_to_events)={len(scenes_to_events)}')
 
     try:
-        fetched_episode = await fetch_episode(episode.show.key, episode.external_key)
+        fetched_episode = await fetch_episode(episode.show_key, episode.external_key)
         if fetched_episode:
             try:
                 # await delete_episode(episode.show.key, episode.external_key)
@@ -110,16 +110,16 @@ async def upsert_episode(episode: Episode, scenes: list[Scene], scenes_to_events
     try:
         await insert_episode(episode, scenes, scenes_to_events)
     except Exception as e:
-        print(f'Failure during upsert_episode to insert episode={fetched_episode}:', e)
+        print(f'Failure during upsert_episode to insert episode={episode}:', e)
         raise e
 
 
-async def fetch_show(show_key: str) -> Show|Exception:
-    print(f'Begin fetch_show for show_key={show_key}')
-    try:
-        # fetched_show = await Show.filter(show_key=show_key).first()
-        fetched_show = await Show.get(key=show_key)
-        return fetched_show
-    except Exception as e:
-        print(f'No Show found matching show_key={show_key}:', e)
-        raise e
+# async def fetch_show(show_key: str) -> Show|Exception:
+#     print(f'Begin fetch_show for show_key={show_key}')
+#     try:
+#         # fetched_show = await Show.filter(show_key=show_key).first()
+#         fetched_show = await Show.get(key=show_key)
+#         return fetched_show
+#     except Exception as e:
+#         print(f'No Show found matching show_key={show_key}:', e)
+#         raise e

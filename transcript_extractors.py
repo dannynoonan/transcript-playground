@@ -27,12 +27,12 @@ async def extract_episode_transcript(show_key: str, episode_key: str, transcript
     scenes_to_events = {}
 
 
-    show = None
-    try:
-        show = await dao.fetch_show(show_key)
-    except Exception as e:
-         raise Exception(f'Failed to fetch Show having show_key={show_key}: ', e)
-    episode.show = show
+    # show = None
+    # try:
+    #     show = await dao.fetch_show(show_key)
+    # except Exception as e:
+    #      raise Exception(f'Failed to fetch Show having show_key={show_key}: ', e)
+    episode.show_key = show_key
 
     # extraction biz logic by show / transcript_type 
     if show_key == 'GoT':
@@ -64,6 +64,7 @@ async def extract_episode_transcript(show_key: str, episode_key: str, transcript
                     scenes_to_events[scene_i] = scene_events
                     scene_i += 1
                     scene.description = line
+                    scene.location = 'TODO'  # TODO data model compliance, not sure what the missing logic is
                     scenes.append(scene)
 
                 # if line starts with a scene_change_prefix -> initialize new scene
@@ -88,7 +89,7 @@ async def extract_episode_transcript(show_key: str, episode_key: str, transcript
 
                 # otherwise line is either dialog or context_info within a scene
                 else:
-                    add_scene_event(line, scene_events)
+                    add_scene_event(line, scene_events, scene)
 
             # clean up: if first event in scene is nothing but context_info, move it to the scene.description field and delete the event
             # TODO refactor
@@ -140,7 +141,7 @@ async def extract_episode_transcript(show_key: str, episode_key: str, transcript
                 print(f'2 adding scene={scene} to scenes for episode={episode}')
                 scenes.append(scene)
                 if first_scene_text_unprocessed:
-                    add_scene_event(first_scene_text, scene_events)
+                    add_scene_event(first_scene_text, scene_events, scene)
                     first_scene_text_unprocessed = False
 
             else:
@@ -151,7 +152,7 @@ async def extract_episode_transcript(show_key: str, episode_key: str, transcript
                     line = basic_trim_tng(line)
                     if line and len(line) > 0:
                         if scene:
-                            add_scene_event(line, scene_events)
+                            add_scene_event(line, scene_events, scene)
                         else:
                             # another hack to handle initial text that IS wrapped in p tags but precedes scene creation
                             first_scene_text_unprocessed = True
@@ -167,8 +168,9 @@ async def extract_episode_transcript(show_key: str, episode_key: str, transcript
 '''
 Parse line text to extract sceneDialog and sceneEvent info to be added to scene
 '''
-def add_scene_event(line: str, scene_events: list[SceneEvent]):
+def add_scene_event(line: str, scene_events: list[SceneEvent], scene: Scene):
     event = SceneEvent()
+    event.scene = scene
     line_bits = line.split(': ', 1)
     # if line contains a colon, we assume it splits a character name and their dialog
     if len(line_bits) > 1:

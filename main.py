@@ -9,7 +9,7 @@ from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise import Tortoise
 
-from app.models import Job, Show, RawEpisode, Episode, Scene, SceneEvent
+from app.models import Job, RawEpisode, Episode, Scene, SceneEvent
 import dao
 from database.connect import connect_to_database
 from link_extractors import LinkExtractor, parse_episode_listing
@@ -56,14 +56,17 @@ Tortoise.init_models(["app.models"], "models")
 job_pydantic = pydantic_model_creator(Job)
 job_pydantic_no_ids = pydantic_model_creator(Job, exclude_readonly=True)
 
-# show_pedantic = pydantic_model_creator(Show)
-# episode_pydantic = pydantic_model_creator(Episode)
-# scene_pydantic = pydantic_model_creator(Scene)
-Show_Pedantic = pydantic_model_creator(Show)
+# Show_Pedantic = pydantic_model_creator(Show)
 Episode_Pydantic = pydantic_model_creator(Episode)
 Scene_Pydantic = pydantic_model_creator(Scene)
+Scene_Event_Pydantic = pydantic_model_creator(SceneEvent)
 
-print(f'Episode_Pydantic.model_json_schema()={Episode_Pydantic.model_json_schema()}')
+# Show_Pydantic_Excluding = pydantic_model_creator(Show)
+Episode_Pydantic_Excluding = pydantic_model_creator(Episode, exclude=("id", "loaded_ts",))
+Scene_Pydantic_Excluding = pydantic_model_creator(Scene, exclude=("id", "episode", "episode_id"))
+Scene_Event_Pydantic_Excluding = pydantic_model_creator(SceneEvent, exclude=("id", "scene", "scene_id"))
+
+# print(f'Episode_Pydantic.model_json_schema()={Episode_Pydantic.model_json_schema()}')
 
 
 # await connectToDatabase()
@@ -103,15 +106,36 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
         return {"Error": f"Failure to fetch RawEpisode having show_key={show_key} external_key={episode_key}: {e}"}
     episode, scenes, scenes_to_events = await scrape_transcript(raw_episode)
 
-    print('@@@@@@@ REACHED MIDDLE OF main.py:load_transcript')
-
     if write_to_db:
         await dao.upsert_episode(episode, scenes, scenes_to_events)
-        return await Episode_Pydantic.from_tortoise_orm(episode)
+        episode_pyd = await Episode_Pydantic.from_tortoise_orm(episode)
+        return {'show': show_metadata[show_key], 'episode': episode_pyd}
 
     else:
-        # TODO this response should be identical to the persisted version above
-        return {'episode': episode, 'scenes': scenes, 'scenes_to_events': scenes_to_events}
+        # this response should be identical to the persisted version above
+        # show_excluding = await Show_Pydantic_Excluding.from_tortoise_orm(episode.show)
+        print(f'^^^^^^^^ episode={episode}')
+        print(f'^^^^^^^^ vars(episode)={vars(episode)}')
+        episode_excl = await Episode_Pydantic_Excluding.from_tortoise_orm(episode)
+        # scenes_excluding = []
+        for scene in scenes:
+            print(f'++++++++ scene={scene}')
+            print(f'++++++++ vars(scene)={vars(scene)}')
+            # scene.episode = episode_excl
+            scene_excl = await Scene_Pydantic_Excluding.from_tortoise_orm(scene)
+            episode_excl.scenes.append(scene_excl)
+            if scene_excl.sequence_in_episode in scenes_to_events:
+                for i in range(len(scenes_to_events[scene_excl.sequence_in_episode])):
+                    scene_event = scenes_to_events[scene_excl.sequence_in_episode][i]
+                    scene_event.sequence_in_scene = i+1
+                    # TODO I am STUMPED as to why scene_event.id must be set while scene.id and episode.id do not
+                    scene_event.id = i+1
+                    print(f'@@@@@@@@ scene_event={scene_event}')
+                    print(f'@@@@@@@@ vars(scene_event)={vars(scene_event)}')                    
+                    # scene_event.scene = scene_excl
+                    scene_event_excl = await Scene_Event_Pydantic_Excluding.from_tortoise_orm(scene_event)
+                    scene_excl.events.append(scene_event_excl)
+        return {'show': show_metadata[show_key], 'episode': episode_excl}
 
 
 # @transcript_playground_app.get("/load_transcripts/{show_key}/{transcript_type}")

@@ -16,16 +16,16 @@ class Job(Model):
         return self.name
     
 
-class Show(Model):
-    key = fields.CharField(max_length=255, unique=True)
-    title = fields.TextField()
+# class Show(Model):
+#     key = fields.CharField(max_length=255, unique=True)
+#     title = fields.TextField()
 
-    episodes: fields.ReverseRelation["Episode"]
-    # locations: fields.ReverseRelation["Location"]
-    # characters: fields.ReverseRelation["Character"]
+#     # episodes: fields.ReverseRelation["Episode"]
+#     # locations: fields.ReverseRelation["Location"]
+#     # characters: fields.ReverseRelation["Character"]
     
-    def __str__(self):
-        return self.key
+#     def __str__(self):
+#         return self.key
 
 
 class RawEpisode(Model):
@@ -75,7 +75,8 @@ class RawEpisode(Model):
     
     
 class Episode(Model):
-    show: fields.ForeignKeyRelation[Show] = fields.ForeignKeyField('models.Show', related_name='episodes')
+    show_key = fields.CharField(max_length=255)
+    # show: fields.ForeignKeyRelation[Show] = fields.ForeignKeyField('models.Show', related_name='episodes')
     # show = fields.ForeignKeyField('models.Show', related_name='episodes')
     season = fields.IntField()
     sequence_in_season = fields.IntField()
@@ -89,10 +90,10 @@ class Episode(Model):
     scenes: fields.ReverseRelation["Scene"]
 
     class Meta:
-        unique_together=(("show", "season", "sequence_in_season"))
+        unique_together=(("show_key", "season", "sequence_in_season"))
 
     def __str__(self):
-        return str(f'{self.show}:{self.external_key}')
+        return str(f'{self.show_key}:{self.external_key}')
     
     def __repr__(self):
         return str(self)
@@ -131,12 +132,13 @@ class SceneEvent(Model):
         table=("scene_event")
 
     def __str__(self):
-        event_meta = ''
-        if self.context_info:
-            event_meta = f'{self.context_info}:'
-        if self.dialogue_spoken_by:
-            event_meta += f'{self.dialogue_spoken_by}:{self.dialogue_text}'
-        return str(f'{self.scene}:{self.sequence_in_scene}:{event_meta}')
+        # event_meta = ''
+        # if self.context_info:
+        #     event_meta = f'{self.context_info}:'
+        # if self.dialogue_spoken_by:
+        #     event_meta += f'{self.dialogue_spoken_by}:{self.dialogue_text}'
+        # return str(f'{self.scene}:{self.sequence_in_scene}:{event_meta}')
+        return str(f'{self.scene}:{self.sequence_in_scene}')
     
     def __repr__(self):
         return str(self)
