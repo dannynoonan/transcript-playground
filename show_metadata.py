@@ -47,3 +47,7 @@ show_metadata = {
         # }
     }
 }
+
+
+GOT_SCENE_CHANGE_PREFIXES = ['CUT TO: ', 'EXT. ', 'INT. ']
+TNG_CAPTAINS_LOG_PREFIX = "Captain's log"

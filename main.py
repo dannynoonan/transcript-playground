@@ -122,7 +122,7 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
     if write_to_db:
         await dao.upsert_episode(episode, scenes, scenes_to_events)
         episode_pyd = await Episode_Pydantic.from_tortoise_orm(episode)
-        return {'show': show_metadata[show_key], 'episode': episode_pyd}
+        return {'show': show_metadata[show_key], 'raw_episode': raw_episode, 'episode': episode_pyd}
 
     else:
         # this response should be identical to the persisted version above
@@ -148,7 +148,7 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
                     # scene_event.scene = scene_excl
                     scene_event_excl = await Scene_Event_Pydantic_Excluding.from_tortoise_orm(scene_event)
                     scene_excl.events.append(scene_event_excl)
-        return {'show': show_metadata[show_key], 'episode': episode_excl}
+        return {'show': show_metadata[show_key], 'raw_episode': raw_episode, 'episode': episode_excl}
 
 
 # @transcript_playground_app.get("/load_transcripts/{show_key}/{transcript_type}")

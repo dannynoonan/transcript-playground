@@ -4,7 +4,6 @@ from app.models import RawEpisode, Episode, Scene, SceneEvent
 async def upsert_raw_episode(raw_episode: RawEpisode) -> RawEpisode:
     try:
         print(f'Looking up RawEpisode matching show_key={raw_episode.show_key} external_key={raw_episode.external_key}')
-        # fetched_re = await RawEpisode.filter(show_key=raw_episode.show_key, external_key=raw_episode.external_key).first()
         fetched_re = await RawEpisode.get(show_key=raw_episode.show_key, external_key=raw_episode.external_key)
         print(f'Previous RawEpisode matching show_key={raw_episode.show_key} external_key={raw_episode.external_key} found, upserting')
         fetched_re.transcript_type = raw_episode.transcript_type
@@ -14,7 +13,6 @@ async def upsert_raw_episode(raw_episode: RawEpisode) -> RawEpisode:
         
     except Exception as e:
         print(f'No previous stored RawEpisode matching show_key={raw_episode.show_key} external_key={raw_episode.external_key} found, inserting:', e)
-        # print(f'raw_episode={raw_episode}')
         await raw_episode.save()
         return raw_episode
 
@@ -22,7 +20,6 @@ async def upsert_raw_episode(raw_episode: RawEpisode) -> RawEpisode:
 async def fetch_raw_episode(show_key: str, episode_key: str) -> RawEpisode|Exception:
     try:
         print(f'Looking up RawEpisode matching show_key={show_key} external_key={episode_key}')
-        # fetched_re = await RawEpisode.filter(show_key=show_key, external_key=episode_key).first()
         fetched_re = await RawEpisode.get(show_key=show_key, external_key=episode_key)
         return fetched_re
     except Exception as e:
@@ -32,7 +29,6 @@ async def fetch_raw_episode(show_key: str, episode_key: str) -> RawEpisode|Excep
 
 async def fetch_episode(show_key: str, episode_key: str) -> Episode|Exception:
     try:
-        # fetched_show = await fetch_show(show_key)
         print(f'Looking up Episode matching show={show_key} external_key={episode_key}')
         fetched_episode = await Episode.get(show_key=show_key, external_key=episode_key)
         return fetched_episode
@@ -41,7 +37,7 @@ async def fetch_episode(show_key: str, episode_key: str) -> Episode|Exception:
         raise e
     
 
-async def delete_episode(episode: Episode):
+async def delete_episode(episode: Episode) -> None|Exception:
 # async def delete_episode(show_key: str, episode_key: str):
     print(f'Begin delete_episode={episode}')
     # print(f'Begin delete_episode show_key={show_key} episode_key={episode_key}')
@@ -56,7 +52,7 @@ async def delete_episode(episode: Episode):
     #     raise(f'Failure 3 to delete episode={episode}')
 
 
-async def insert_episode(episode: Episode, scenes: list[Scene], scenes_to_events: dict[int, SceneEvent]):
+async def insert_episode(episode: Episode, scenes: list[Scene], scenes_to_events: dict[int, SceneEvent]) -> None|Exception:
     print(f'Begin insert_episode episode={episode} len(scenes)={len(scenes)} len(scenes_to_events)={len(scenes_to_events)}')
     try:
         await Episode.save(episode)
@@ -65,13 +61,11 @@ async def insert_episode(episode: Episode, scenes: list[Scene], scenes_to_events
         raise e
     for scene in scenes:
         scene.episode = episode
-        # print(f'++++++++ Begin insert for scene={scene} of type={type(scene)}')
         try:
             await Scene.save(scene)
         except Exception as e:
             print(f'Failure during insert_episode to insert scene={scene} for episode={episode}:', e)
             # raise e
-        # print(f'++++++++ Finish inserting scene={scene} which now has id={scene.id}')
         if scene.sequence_in_episode not in scenes_to_events:
             print(f'Failure during insert_episode to insert events for scene={scene} episode={episode}: no events matching scene.sequence_in_episode={scene.sequence_in_episode} in scenes_to_events')
             continue
@@ -89,6 +83,7 @@ async def insert_episode(episode: Episode, scenes: list[Scene], scenes_to_events
     print(f'Completed insert_episode episode={episode}')
 
 
+# TODO I don't think this works, getting duplicate key errors
 async def upsert_episode(episode: Episode, scenes: list[Scene], scenes_to_events: dict):
     print(f'Begin upsert_episode episode={episode} len(scenes)={len(scenes)} len(scenes_to_events)={len(scenes_to_events)}')
 
