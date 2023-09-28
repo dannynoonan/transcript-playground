@@ -8,11 +8,11 @@ class ShowKey(str, Enum):
     Succession = "Succession"
 
 
-class TranscriptType(str, Enum):
-    Fanon = "Fanon"
-    TOC = "TOC"
-    Default = "Default"
-    ALL = "ALL"
+# class TranscriptType(str, Enum):
+#     Fanon = "Fanon"
+#     TOC = "TOC"
+#     Default = "Default"
+#     ALL = "ALL"
 
 
 class Status(BaseModel):
@@ -25,18 +25,25 @@ show_metadata = {
         'show_transcripts_domain': 'https://gameofthronesfanon.fandom.com/',
         'listing_url': 'wiki/Category:Transcripts',
         'episode_subdir': '/wiki/',
-        'transcript_types': {
-            'Fanon': '(Fanon)/Transcript',
-            'TOC': 'Transcript'
-        }
+        'transcript_type_match_strings': [
+            '_(Fanon)/Transcript',
+            '/Transcript'
+        ],
+        # 'transcript_types': {
+        #     'TOC': '/Transcript',
+        #     'Fanon': '_(Fanon)/Transcript',
+        # }
     },
     'TNG': {
         'full_name': 'Star Trek: The Next Generation',
         'show_transcripts_domain': 'http://www.chakoteya.net/NextGen/',
         'listing_url': 'episodes.htm',
         'episode_subdir': '',
-        'transcript_types': {
-            'Default': 'Default'
-        }
+        'transcript_type_match_strings': [
+            'Default'
+        ],
+        # 'transcript_types': {
+        #     'Default': 'Default'
+        # }
     }
 }

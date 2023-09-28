@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 from bs4 import BeautifulSoup
-import json
+# import json
 import requests
-from urllib.request import urlopen
+# from urllib.request import urlopen
 
-import dao
-from app.models import RawEpisode, Episode
+# import dao
+from app.models import RawEpisode
 from show_metadata import ShowKey, show_metadata
-from link_extractors import LinkExtractor
-from transcript_extractors import extract_episode_transcript
+# from transcript_listing_extractor import LinkExtractor
+# from transcript_extractor import extract_episode_transcript
 
 
-def get_episode_listing_soup(show_key: str):
+async def get_episode_listing_soup(show_key: str):
     # soupify page with links to transcripts 
     show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
     listing_url = show_metadata[show_key]['listing_url']
@@ -20,18 +20,20 @@ def get_episode_listing_soup(show_key: str):
     return listing_soup
 
 
-async def scrape_transcript(raw_episode: RawEpisode) -> Episode:
+async def get_transcript_soup(raw_episode: RawEpisode) -> BeautifulSoup:
     print(f'Begin importing raw_episode={raw_episode} with transcript_url={raw_episode.transcript_url}')
-
-    # transcript_extractor = TranscriptExtractor(raw_episode.show_key, raw_episode.transcript_type, raw_episode.transcript_url)
     transcript_response = requests.get(raw_episode.transcript_url)
     transcript_soup = BeautifulSoup(transcript_response.content.decode('utf-8'), 'html.parser')
-    episode, scenes, scenes_to_events = await extract_episode_transcript(raw_episode.show_key, raw_episode.external_key, raw_episode.transcript_type, transcript_soup)
+    return transcript_soup
 
-    print(f'Finished importing raw_episode={raw_episode} with transcript_url={raw_episode.transcript_url}')
 
-    return episode, scenes, scenes_to_events
+# async def scrape_transcript(transcript_soup: BeautifulSoup, raw_episode: RawEpisode) -> Episode:
+#     print(f'Begin scrape_transcript for raw_episode={raw_episode}')
+#     episode, scenes, scenes_to_events = await extract_episode_transcript(raw_episode.show_key, raw_episode.external_key, raw_episode.transcript_type, transcript_soup)
 
+#     print(f'Finished importing raw_episode={raw_episode}')
+
+#     return episode, scenes, scenes_to_events
 
 # def get_show_meta(show_key: str):
 #     show_meta = None

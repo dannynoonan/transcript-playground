@@ -1,20 +1,18 @@
 from bs4 import BeautifulSoup
 import re
 
-from app.models import Episode, Scene, SceneEvent
+from app.models import RawEpisode, Episode, Scene, SceneEvent
 import dao
 from show_metadata import show_metadata
-# from type_system import Episode, Scene, SceneEvent, SceneDialog
-from type_system import SceneDialog
-
 
 
 CAPTAINS_LOG_PREFIX = "Captain's log"
 
 
-async def extract_episode_transcript(show_key: str, episode_key: str, transcript_type: str, transcript_soup: BeautifulSoup) -> Episode|Exception:
+async def parse_episode_transcript_soup(show_key: str, episode_key: str, transcript_type: str, transcript_soup: BeautifulSoup):
     print(f'In extract_episode_transcript show_key={show_key} episode_key={episode_key} transcript_type={transcript_type}')
     episode = Episode()
+    episode.show_key = show_key
     episode.external_key = episode_key
     # set title to episode_key (temporary hack)
     episode.title = episode_key
@@ -25,14 +23,6 @@ async def extract_episode_transcript(show_key: str, episode_key: str, transcript
     scenes = []
     # scenes_to_events = dict[int, list[SceneEvent]]
     scenes_to_events = {}
-
-
-    # show = None
-    # try:
-    #     show = await dao.fetch_show(show_key)
-    # except Exception as e:
-    #      raise Exception(f'Failed to fetch Show having show_key={show_key}: ', e)
-    episode.show_key = show_key
 
     # extraction biz logic by show / transcript_type 
     if show_key == 'GoT':

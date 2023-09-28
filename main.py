@@ -1,9 +1,8 @@
-from enum import Enum
 from fastapi import FastAPI, Response
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import HTTPException
-from fastapi.responses import JSONResponse
-import json
+# from fastapi.responses import JSONResponse
+# import json
 # from tortoise import HTTPException
 from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from tortoise.contrib.pydantic import pydantic_model_creator
@@ -12,9 +11,10 @@ from tortoise import Tortoise
 from app.models import Job, RawEpisode, Episode, Scene, SceneEvent
 import dao
 from database.connect import connect_to_database
-from link_extractors import LinkExtractor, parse_episode_listing
-from show_metadata import ShowKey, TranscriptType, Status, show_metadata
-from transcript_importer import get_episode_listing_soup, scrape_transcript
+from show_metadata import ShowKey, Status, show_metadata
+from soup_brewer import get_episode_listing_soup, get_transcript_soup
+from transcript_extractor import parse_episode_transcript_soup
+from transcript_listing_extractor import parse_episode_listing_soup
 
 # https://levelup.gitconnected.com/handle-registration-in-fastapi-and-tortoise-orm-2dafc9325b7a
 
@@ -56,20 +56,18 @@ Tortoise.init_models(["app.models"], "models")
 job_pydantic = pydantic_model_creator(Job)
 job_pydantic_no_ids = pydantic_model_creator(Job, exclude_readonly=True)
 
-# Show_Pedantic = pydantic_model_creator(Show)
+Raw_Episode_Pydantic = pydantic_model_creator(RawEpisode)
 Episode_Pydantic = pydantic_model_creator(Episode)
 Scene_Pydantic = pydantic_model_creator(Scene)
 Scene_Event_Pydantic = pydantic_model_creator(SceneEvent)
 
-# Show_Pydantic_Excluding = pydantic_model_creator(Show)
-Episode_Pydantic_Excluding = pydantic_model_creator(Episode, exclude=("id", "loaded_ts",))
+Raw_Episode_Pydantic_Excluding = pydantic_model_creator(RawEpisode, exclude=("id", "loaded_ts"))
+Episode_Pydantic_Excluding = pydantic_model_creator(Episode, exclude=("id", "loaded_ts"))
 Scene_Pydantic_Excluding = pydantic_model_creator(Scene, exclude=("id", "episode", "episode_id"))
 Scene_Event_Pydantic_Excluding = pydantic_model_creator(SceneEvent, exclude=("id", "scene", "scene_id"))
 
 # print(f'Episode_Pydantic.model_json_schema()={Episode_Pydantic.model_json_schema()}')
 
-
-# await connectToDatabase()
 
 @transcript_playground_app.get("/")
 def root():
@@ -90,12 +88,26 @@ async def fetch_show_meta(show_key: ShowKey):
 
 @transcript_playground_app.get("/load_transcript_listing/{show_key}")
 async def load_transcript_listing(show_key: ShowKey, write_to_db: bool = False):
-    listing_soup = get_episode_listing_soup(show_key)
-    raw_episodes = parse_episode_listing(show_key, listing_soup)
+    listing_soup = await get_episode_listing_soup(show_key)
+    raw_episodes = await parse_episode_listing_soup(show_key, listing_soup)
     if write_to_db:
+        # stored_raw_episodes_pyd = []
+        stored_raw_episodes = []
         for re in raw_episodes:
-            await dao.upsert_raw_episode(re)
-    return {"raw_episodes": raw_episodes}
+            print(f'##### pre-upsert vars(re)={vars(re)}')
+            stored_episode = await dao.upsert_raw_episode(re)
+            print(f'+++++ post-upsert vars(stored_episode)={vars(stored_episode)}')
+            # re_pyd = await Raw_Episode_Pydantic.from_tortoise_orm(stored_episode)
+            # raw_episodes_pyd.append(re_pyd)
+            stored_raw_episodes.append(stored_episode)
+        return {"raw_episode_count": len(stored_raw_episodes), "raw_episodes": stored_raw_episodes}
+    else:
+        # raw_episodes_excl = []
+        # for re in raw_episodes:
+        #     re_excl = await Raw_Episode_Pydantic_Excluding.from_tortoise_orm(re)
+        #     raw_episodes_excl.append(re_excl)
+        # return {"raw_episodes": raw_episodes_excl}
+        return {'raw_episode_count': len(raw_episodes), "raw_episodes": raw_episodes}
 
 
 @transcript_playground_app.get("/load_transcript/{show_key}/{episode_key}")
@@ -104,7 +116,8 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
         raw_episode = await dao.fetch_raw_episode(show_key.value, episode_key)
     except Exception as e:
         return {"Error": f"Failure to fetch RawEpisode having show_key={show_key} external_key={episode_key}: {e}"}
-    episode, scenes, scenes_to_events = await scrape_transcript(raw_episode)
+    episode_soup = await get_transcript_soup(raw_episode)
+    episode, scenes, scenes_to_events = await parse_episode_transcript_soup(show_key, episode_key, raw_episode.transcript_type, episode_soup)
 
     if write_to_db:
         await dao.upsert_episode(episode, scenes, scenes_to_events)
@@ -114,13 +127,13 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
     else:
         # this response should be identical to the persisted version above
         # show_excluding = await Show_Pydantic_Excluding.from_tortoise_orm(episode.show)
-        print(f'^^^^^^^^ episode={episode}')
-        print(f'^^^^^^^^ vars(episode)={vars(episode)}')
+        # print(f'^^^^^^^^ episode={episode}')
+        # print(f'^^^^^^^^ vars(episode)={vars(episode)}')
         episode_excl = await Episode_Pydantic_Excluding.from_tortoise_orm(episode)
         # scenes_excluding = []
         for scene in scenes:
-            print(f'++++++++ scene={scene}')
-            print(f'++++++++ vars(scene)={vars(scene)}')
+            # print(f'++++++++ scene={scene}')
+            # print(f'++++++++ vars(scene)={vars(scene)}')
             # scene.episode = episode_excl
             scene_excl = await Scene_Pydantic_Excluding.from_tortoise_orm(scene)
             episode_excl.scenes.append(scene_excl)
@@ -130,8 +143,8 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
                     scene_event.sequence_in_scene = i+1
                     # TODO I am STUMPED as to why scene_event.id must be set while scene.id and episode.id do not
                     scene_event.id = i+1
-                    print(f'@@@@@@@@ scene_event={scene_event}')
-                    print(f'@@@@@@@@ vars(scene_event)={vars(scene_event)}')                    
+                    # print(f'@@@@@@@@ scene_event={scene_event}')
+                    # print(f'@@@@@@@@ vars(scene_event)={vars(scene_event)}')                    
                     # scene_event.scene = scene_excl
                     scene_event_excl = await Scene_Event_Pydantic_Excluding.from_tortoise_orm(scene_event)
                     scene_excl.events.append(scene_event_excl)

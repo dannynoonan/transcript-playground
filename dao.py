@@ -1,7 +1,7 @@
 from app.models import RawEpisode, Episode, Scene, SceneEvent
-from show_metadata import show_metadata
 
-async def upsert_raw_episode(raw_episode: RawEpisode) -> None:
+
+async def upsert_raw_episode(raw_episode: RawEpisode) -> RawEpisode:
     try:
         print(f'Looking up RawEpisode matching show_key={raw_episode.show_key} external_key={raw_episode.external_key}')
         # fetched_re = await RawEpisode.filter(show_key=raw_episode.show_key, external_key=raw_episode.external_key).first()
@@ -10,14 +10,13 @@ async def upsert_raw_episode(raw_episode: RawEpisode) -> None:
         fetched_re.transcript_type = raw_episode.transcript_type
         fetched_re.transcript_url = raw_episode.transcript_url
         await fetched_re.save()
-        # raw_episode = fetched_re
+        return fetched_re
         
     except Exception as e:
         print(f'No previous stored RawEpisode matching show_key={raw_episode.show_key} external_key={raw_episode.external_key} found, inserting:', e)
-        print(f'raw_episode={raw_episode}')
+        # print(f'raw_episode={raw_episode}')
         await raw_episode.save()
-    
-    # await raw_episode.save() 
+        return raw_episode
 
 
 async def fetch_raw_episode(show_key: str, episode_key: str) -> RawEpisode|Exception:
@@ -105,21 +104,8 @@ async def upsert_episode(episode: Episode, scenes: list[Scene], scenes_to_events
     except Exception:
         pass
 
-    # print(f'@@@@@@ Midway thru upsert_episode')
-
     try:
         await insert_episode(episode, scenes, scenes_to_events)
     except Exception as e:
         print(f'Failure during upsert_episode to insert episode={episode}:', e)
         raise e
-
-
-# async def fetch_show(show_key: str) -> Show|Exception:
-#     print(f'Begin fetch_show for show_key={show_key}')
-#     try:
-#         # fetched_show = await Show.filter(show_key=show_key).first()
-#         fetched_show = await Show.get(key=show_key)
-#         return fetched_show
-#     except Exception as e:
-#         print(f'No Show found matching show_key={show_key}:', e)
-#         raise e

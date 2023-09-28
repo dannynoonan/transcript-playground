@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 import argparse
-from bs4 import BeautifulSoup
-import requests
+# from bs4 import BeautifulSoup
+# import requests
 from urllib.request import urlopen
 
+from app.models import RawEpisode
 from show_metadata import show_metadata
-from link_extractors import LinkExtractor
-from transcript_importer import scrape_transcript
-from transcript_extractors import TranscriptExtractor
+from soup_brewer import get_transcript_soup
+from transcript_extractor import parse_episode_transcript_soup
 
 
 def parse_args():
@@ -71,7 +71,9 @@ def main():
     if args.show not in show_metadata.keys():
         raise Exception(f"Transcript import request error: no match for show={args.show}")
         
-    episode, scenes, scenes_to_events = scrape_transcript(args.show, args.episode)
+    episode_soup = get_transcript_soup(RawEpisode(show_key=args.show, external_key=args.episode))
+    # TODO this doesn't work because we no longer have transcript_type
+    episode, scenes, scenes_to_events = parse_episode_transcript_soup(args.show, args.episode, None, episode_soup)
 
     print(f'episode={episode}')
     print(f'scenes={scenes}')
