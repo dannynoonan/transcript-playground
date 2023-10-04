@@ -3,20 +3,25 @@ from bs4 import BeautifulSoup
 import requests
 
 from app.models import RawEpisode
-from show_metadata import show_metadata
+from show_metadata import show_metadata, WIKIPEDIA_DOMAIN
 
 
-async def get_episode_listing_soup(show_key: str):
+async def get_episode_detail_listing_soup(show_key: str) -> BeautifulSoup:
+    # soupify wikipedia episode listing 
+    episode_listing_detail_html = requests.get(WIKIPEDIA_DOMAIN + show_metadata[show_key]['wikipedia_label'])
+    return BeautifulSoup(episode_listing_detail_html.text, 'html.parser')
+
+
+async def get_transcript_url_listing_soup(show_key: str) -> BeautifulSoup:
     # soupify page with links to transcripts 
     show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
     listing_url = show_metadata[show_key]['listing_url']
     listing_html = requests.get(show_transcripts_domain + listing_url)
-    listing_soup = BeautifulSoup(listing_html.text, 'html.parser')
-    return listing_soup
+    return BeautifulSoup(listing_html.text, 'html.parser')
 
 
 async def get_transcript_soup(raw_episode: RawEpisode) -> BeautifulSoup:
+    # soupify transcipt page
     print(f'Begin importing raw_episode={raw_episode} with transcript_url={raw_episode.transcript_url}')
     transcript_response = requests.get(raw_episode.transcript_url)
-    transcript_soup = BeautifulSoup(transcript_response.content.decode('utf-8'), 'html.parser')
-    return transcript_soup
+    return BeautifulSoup(transcript_response.content.decode('utf-8'), 'html.parser')

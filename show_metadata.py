@@ -22,6 +22,7 @@ class Status(BaseModel):
 show_metadata = {
     'GoT': {
         'full_name': 'Game of Thrones',
+        'wikipedia_label': 'List_of_Game_of_Thrones_episodes',
         'show_transcripts_domain': 'https://gameofthronesfanon.fandom.com/',
         'listing_url': 'wiki/Category:Transcripts',
         'episode_subdir': '/wiki/',
@@ -36,6 +37,7 @@ show_metadata = {
     },
     'TNG': {
         'full_name': 'Star Trek: The Next Generation',
+        'wikipedia_label': 'List_of_Star_Trek:_The_Next_Generation_episodes',
         'show_transcripts_domain': 'http://www.chakoteya.net/NextGen/',
         'listing_url': 'episodes.htm',
         'episode_subdir': '',
@@ -48,6 +50,8 @@ show_metadata = {
     }
 }
 
+
+WIKIPEDIA_DOMAIN = 'https://en.wikipedia.org/wiki/'
 
 GOT_SCENE_CHANGE_PREFIXES = ['CUT TO: ', 'EXT. ', 'INT. ']
 TNG_CAPTAINS_LOG_PREFIX = "Captain's log"

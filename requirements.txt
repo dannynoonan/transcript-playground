@@ -2,6 +2,8 @@ asyncpg==0.28.0
 bs4==0.0.1
 fastapi==0.103.1 
 http-exceptions==0.2.10
+lxml==4.9.3
+pandas==1.4.3
 pydantic==2.3.0
 pydantic_core==2.6.3
 pydantic-extra-types==2.1.0

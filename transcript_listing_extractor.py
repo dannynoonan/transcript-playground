@@ -1,10 +1,46 @@
 from bs4 import BeautifulSoup
+import pandas as pd
 
-from app.models import RawEpisode
+from app.models import RawEpisode, Episode
 from show_metadata import ShowKey, show_metadata
 
 
-async def parse_episode_listing_soup(show_key: ShowKey, listing_soup: BeautifulSoup) -> list[RawEpisode]:
+async def parse_episode_listing_soup(show_key: ShowKey, episode_listing_soup: BeautifulSoup):
+    episodes = []
+    season_tables = episode_listing_soup.findAll("table", {"class": "wikitable plainrowheaders wikiepisodetable"})
+    season = 1
+    for season_table in season_tables:
+        season_df = pd.read_html(str(season_table))[0]
+        # print(f'for season={season} season_df.columns={season_df.columns}')
+        for index, episode_df_row in season_df.iterrows():
+            # skip non-season specials
+            if 'No. inseason' not in season_df.columns:
+                continue
+            episode = await init_episode_from_wiki_df(show_key, episode_df_row, season)
+            episodes.append(episode)
+        season += 1
+    return episodes
+
+
+async def init_episode_from_wiki_df(show_key: ShowKey, episode_df_row: pd.Series, season: int) -> Episode:
+    episode = Episode()
+    episode.show_key = show_key.value
+    episode.season = season
+    episode.title = episode_df_row['Title'].strip('\"')
+    episode.sequence_in_season = int(episode_df_row['No. inseason'])
+    # episode.air_date = episode_df_row['Original air date']
+    if show_key == ShowKey.GoT:
+        episode.external_key = episode.title.replace(' ', '_')
+    elif show_key == ShowKey.TNG:
+        if 'Prod. code' in episode_df_row:
+            episode.external_key = episode_df_row['Prod. code']
+        else:
+            episode.external_key = 'TODO'
+
+    return episode
+
+
+async def parse_transcript_url_listing_soup(show_key: ShowKey, listing_soup: BeautifulSoup) -> list[RawEpisode]:
     raw_episodes = []
 
     a_tags = [a_tag for a_tag in listing_soup.find_all('a')]
@@ -43,4 +79,5 @@ async def extract_episode_keys_and_transcript_urls(show_key: ShowKey, all_urls: 
             epidose_keys_to_transcript_urls[episode_key] = tx_url
 
     return epidose_keys_to_transcript_urls
+
     

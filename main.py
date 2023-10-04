@@ -12,9 +12,9 @@ from app.models import Job, RawEpisode, Episode, Scene, SceneEvent
 import dao
 from database.connect import connect_to_database
 from show_metadata import ShowKey, Status, show_metadata
-from soup_brewer import get_episode_listing_soup, get_transcript_soup
+from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup
 from transcript_extractor import parse_episode_transcript_soup
-from transcript_listing_extractor import parse_episode_listing_soup
+from transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup
 
 # https://levelup.gitconnected.com/handle-registration-in-fastapi-and-tortoise-orm-2dafc9325b7a
 
@@ -86,9 +86,24 @@ async def fetch_show_meta(show_key: ShowKey):
     return {show_key: show_meta}
 
 
+@transcript_playground_app.get("/load_episode_listing/{show_key}")
+async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
+    episode_detail_listing_soup = await get_episode_detail_listing_soup(show_key)
+    episodes = await parse_episode_listing_soup(show_key, episode_detail_listing_soup)
+    if write_to_db:
+        return {"TODO": "TODO"}
+    else:
+        episodes_excl = []
+        for episode in episodes:
+            episode_excl = await Episode_Pydantic_Excluding.from_tortoise_orm(episode)
+            episodes_excl.append(episode_excl)
+        return {"episodes": episodes_excl}
+    
+
+# TODO replace functionality with /load_episode_listing
 @transcript_playground_app.get("/load_transcript_listing/{show_key}")
 async def load_transcript_listing(show_key: ShowKey, write_to_db: bool = False):
-    listing_soup = await get_episode_listing_soup(show_key)
+    listing_soup = await get_transcript_url_listing_soup(show_key)
     raw_episodes = await parse_episode_listing_soup(show_key, listing_soup)
     if write_to_db:
         # stored_raw_episodes_pyd = []
