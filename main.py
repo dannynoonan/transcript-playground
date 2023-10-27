@@ -8,7 +8,7 @@ from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise import Tortoise
 
-from app.models import Job, RawEpisode, Episode, Scene, SceneEvent
+from app.models import Job, TranscriptSource, Episode, Scene, SceneEvent
 import dao
 from database.connect import connect_to_database
 from show_metadata import ShowKey, Status, show_metadata
@@ -56,12 +56,12 @@ Tortoise.init_models(["app.models"], "models")
 job_pydantic = pydantic_model_creator(Job)
 job_pydantic_no_ids = pydantic_model_creator(Job, exclude_readonly=True)
 
-Raw_Episode_Pydantic = pydantic_model_creator(RawEpisode)
+Raw_Episode_Pydantic = pydantic_model_creator(TranscriptSource)
 Episode_Pydantic = pydantic_model_creator(Episode)
 Scene_Pydantic = pydantic_model_creator(Scene)
 Scene_Event_Pydantic = pydantic_model_creator(SceneEvent)
 
-Raw_Episode_Pydantic_Excluding = pydantic_model_creator(RawEpisode, exclude=("id", "loaded_ts"))
+Raw_Episode_Pydantic_Excluding = pydantic_model_creator(TranscriptSource, exclude=("id", "loaded_ts"))
 Episode_Pydantic_Excluding = pydantic_model_creator(Episode, exclude=("id", "loaded_ts"))
 Scene_Pydantic_Excluding = pydantic_model_creator(Scene, exclude=("id", "episode", "episode_id"))
 Scene_Event_Pydantic_Excluding = pydantic_model_creator(SceneEvent, exclude=("id", "scene", "scene_id"))
@@ -91,13 +91,17 @@ async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
     episode_detail_listing_soup = await get_episode_detail_listing_soup(show_key)
     episodes = await parse_episode_listing_soup(show_key, episode_detail_listing_soup)
     if write_to_db:
-        return {"TODO": "TODO"}
+        stored_episodes = []
+        for episode in episodes:
+            stored_episode = await dao.upsert_episode(episode)
+            stored_episodes.append(stored_episode)
+        return {'episode_count': len(stored_episodes), 'episode_listing': stored_episodes}
     else:
         episodes_excl = []
         for episode in episodes:
             episode_excl = await Episode_Pydantic_Excluding.from_tortoise_orm(episode)
             episodes_excl.append(episode_excl)
-        return {"episodes": episodes_excl}
+        return {'episode_count': len(episodes_excl), 'episodes': episodes_excl}
     
 
 # TODO replace functionality with /load_episode_listing
@@ -135,7 +139,7 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
     episode, scenes, scenes_to_events = await parse_episode_transcript_soup(show_key, episode_key, raw_episode.transcript_type, episode_soup)
 
     if write_to_db:
-        await dao.upsert_episode(episode, scenes, scenes_to_events)
+        await dao.upsert_episode(episode, scenes=scenes, scenes_to_events=scenes_to_events)
         episode_pyd = await Episode_Pydantic.from_tortoise_orm(episode)
         return {'show': show_metadata[show_key], 'raw_episode': raw_episode, 'episode': episode_pyd}
 

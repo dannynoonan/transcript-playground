@@ -14,40 +14,24 @@ class Job(Model):
 
     def __str__(self):
         return self.name
-
-
-class RawEpisode(Model):
-    show_key = fields.CharField(max_length=255)
-    transcript_type = fields.CharField(max_length=255)
-    transcript_url = fields.CharField(max_length=1024, unique=True)
-    external_key = fields.CharField(max_length=255)
-    loaded_ts = fields.DatetimeField(auto_now=True)
-
-    class Meta:
-        unique_together=(("show_key", "external_key"))
-        table=("raw_episode")
-
-    def __str__(self):
-        return str(f'{self.show_key}:{self.external_key}')
-
-    def __repr__(self):
-        return str(self)
     
-    
+
 class Episode(Model):
     show_key = fields.CharField(max_length=255)
     season = fields.IntField()
     sequence_in_season = fields.IntField()
-    external_key = fields.CharField(max_length=255, unique=True)
+    external_key = fields.CharField(max_length=255)
     title = fields.TextField()
     air_date = fields.DateField(null=True)
     duration = fields.FloatField(null=True)
     loaded_ts = fields.DatetimeField(auto_now=True)
 
     scenes: fields.ReverseRelation["Scene"]
+    transcript_source: fields.ReverseRelation["TranscriptSource"]
 
     class Meta:
         unique_together=(("show_key", "season", "sequence_in_season"))
+        unique_together=(("show_key", "external_key"))
 
     def __str__(self):
         return str(f'{self.show_key}:{self.external_key}')
@@ -55,6 +39,23 @@ class Episode(Model):
     def __repr__(self):
         return str(self)
 
+
+class TranscriptSource(Model):
+    episode: fields.ForeignKeyRelation[Episode] = fields.ForeignKeyField('models.Episode', related_name='transcript_source')
+    transcript_type = fields.CharField(max_length=255)
+    transcript_url = fields.CharField(max_length=1024, unique=True)
+    loaded_ts = fields.DatetimeField(auto_now=True)
+
+    class Meta:
+        unique_together=(("episode", "transcript_type"))
+        table=("transcript_source")
+
+    def __str__(self):
+        return str(f'{self.episode.show_key}:{self.episode.external_key}:{self.transcript_type}')
+
+    def __repr__(self):
+        return str(self)
+    
 
 class Scene(Model):
     episode: fields.ForeignKeyRelation[Episode] = fields.ForeignKeyField('models.Episode', related_name='scenes')

@@ -4,7 +4,7 @@ import argparse
 # import requests
 from urllib.request import urlopen
 
-from app.models import RawEpisode
+from app.models import TranscriptSource
 from show_metadata import show_metadata
 from soup_brewer import get_transcript_soup
 from transcript_extractor import parse_episode_transcript_soup
@@ -27,7 +27,7 @@ def main():
     if args.show not in show_metadata.keys():
         raise Exception(f"Transcript import request error: no match for show={args.show}")
         
-    episode_soup = get_transcript_soup(RawEpisode(show_key=args.show, external_key=args.episode))
+    episode_soup = get_transcript_soup(TranscriptSource(show_key=args.show, external_key=args.episode))
     # TODO this doesn't work because we no longer have transcript_type
     episode, scenes, scenes_to_events = parse_episode_transcript_soup(args.show, args.episode, None, episode_soup)
 

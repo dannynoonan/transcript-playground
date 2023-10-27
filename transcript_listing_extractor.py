@@ -1,7 +1,9 @@
 from bs4 import BeautifulSoup
+from datetime import datetime
 import pandas as pd
+import re
 
-from app.models import RawEpisode, Episode
+from app.models import TranscriptSource, Episode
 from show_metadata import ShowKey, show_metadata
 
 
@@ -11,36 +13,55 @@ async def parse_episode_listing_soup(show_key: ShowKey, episode_listing_soup: Be
     season = 1
     for season_table in season_tables:
         season_df = pd.read_html(str(season_table))[0]
-        # print(f'for season={season} season_df.columns={season_df.columns}')
-        for index, episode_df_row in season_df.iterrows():
-            # skip non-season specials
-            if 'No. inseason' not in season_df.columns:
-                continue
-            episode = await init_episode_from_wiki_df(show_key, episode_df_row, season)
-            episodes.append(episode)
+        # print(f'********************* SEASON {season} *************************')
+        await normalize_column_names(season_df)
+        for row_i, episode_df_row in season_df.iterrows():
+            episode = await init_episode_from_wiki_df(show_key, episode_df_row, season, row_i+1)
+            # TODO do try/except instead?
+            if episode:
+                episodes.append(episode)
         season += 1
     return episodes
 
 
-async def init_episode_from_wiki_df(show_key: ShowKey, episode_df_row: pd.Series, season: int) -> Episode:
+async def normalize_column_names(season_df: pd.DataFrame) -> None:
+    # print(f'@@@@@@ season_df.columns={season_df.columns}')
+    col_updates = {}
+    for col in season_df.columns:
+        # strip wikipedia annotations (text enclosed in square brackets)
+        new_col = re.sub(r'\[.*\]', '', col).strip()
+        if new_col != col:
+            # print(f'col={col} new_col={new_col}')
+            col_updates[col] = new_col
+    if col_updates:
+        season_df.rename(columns={k:v for k,v in col_updates.items()}, inplace=True)
+    # print(f'+++++++ AFTER UPDATE season_df.columns={season_df.columns}')
+
+
+async def init_episode_from_wiki_df(show_key: ShowKey, episode_df_row: pd.Series, season: int, row_i: int) -> Episode:
+    # skip non-season specials
+    if 'No. inseason' not in episode_df_row:
+        return None
     episode = Episode()
     episode.show_key = show_key.value
     episode.season = season
     episode.title = episode_df_row['Title'].strip('\"')
-    episode.sequence_in_season = int(episode_df_row['No. inseason'])
-    # episode.air_date = episode_df_row['Original air date']
+    fmt = '%B %d, %Y'
+    episode.air_date = datetime.strptime(episode_df_row['Original air date'], fmt)
     if show_key == ShowKey.GoT:
+        episode.sequence_in_season = int(episode_df_row['No. inseason'])
         episode.external_key = episode.title.replace(' ', '_')
     elif show_key == ShowKey.TNG:
-        if 'Prod. code' in episode_df_row:
-            episode.external_key = episode_df_row['Prod. code']
+        episode.sequence_in_season = row_i
+        if 'Prod.code' in episode_df_row:
+            episode.external_key = str(episode_df_row['Prod.code'])[:3]
         else:
-            episode.external_key = 'TODO'
+            episode.external_key = episode.title.replace(' ', '_')
 
     return episode
 
 
-async def parse_transcript_url_listing_soup(show_key: ShowKey, listing_soup: BeautifulSoup) -> list[RawEpisode]:
+async def parse_transcript_url_listing_soup(show_key: ShowKey, listing_soup: BeautifulSoup) -> list[TranscriptSource]:
     raw_episodes = []
 
     a_tags = [a_tag for a_tag in listing_soup.find_all('a')]
@@ -53,7 +74,7 @@ async def parse_transcript_url_listing_soup(show_key: ShowKey, listing_soup: Bea
         for external_key, tx_url in epidose_keys_to_transcript_urls.items():
             if tx_url not in urls_already_added:
                 urls_already_added.append(tx_url)
-                raw_episodes.append(RawEpisode(show_key=show_key.value, external_key=external_key, transcript_type=tx_string, transcript_url=tx_url))
+                raw_episodes.append(TranscriptSource(show_key=show_key.value, external_key=external_key, transcript_type=tx_string, transcript_url=tx_url))
     
     print(f'len(raw_episodes)={len(raw_episodes)}')
     print(f'raw_episodes={raw_episodes}')
