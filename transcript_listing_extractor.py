@@ -4,6 +4,7 @@ import pandas as pd
 import re
 
 from app.models import TranscriptSource, Episode
+import dao
 from show_metadata import ShowKey, show_metadata
 
 
@@ -61,24 +62,26 @@ async def init_episode_from_wiki_df(show_key: ShowKey, episode_df_row: pd.Series
     return episode
 
 
-async def parse_transcript_url_listing_soup(show_key: ShowKey, listing_soup: BeautifulSoup) -> list[TranscriptSource]:
-    raw_episodes = []
+async def parse_transcript_url_listing_soup(show_key: ShowKey, listing_soup: BeautifulSoup) -> dict:
+    episode_transcripts_by_type = {}
 
     a_tags = [a_tag for a_tag in listing_soup.find_all('a')]
     all_urls = [a_tag.get('href') for a_tag in a_tags if a_tag.get('href')]
 
     # for tx_type, tx_string in show_metadata[show_key]['transcript_types'].items():
-    urls_already_added = []
+    # urls_already_added = []
     for tx_string in show_metadata[show_key]['transcript_type_match_strings']:
         epidose_keys_to_transcript_urls = await extract_episode_keys_and_transcript_urls(show_key, all_urls, tx_string)
-        for external_key, tx_url in epidose_keys_to_transcript_urls.items():
-            if tx_url not in urls_already_added:
-                urls_already_added.append(tx_url)
-                raw_episodes.append(TranscriptSource(show_key=show_key.value, external_key=external_key, transcript_type=tx_string, transcript_url=tx_url))
+        print(f'for tx_string={tx_string} initial len(epidose_keys_to_transcript_urls)={len(epidose_keys_to_transcript_urls)}')
+        # for external_key, tx_url in epidose_keys_to_transcript_urls.items():
+        #     if tx_url in urls_already_added:
+        #         del epidose_keys_to_transcript_urls[external_key]
+        #     else:
+        #         urls_already_added.append(tx_url)
+        # print(f'for tx_string={tx_string} final len(epidose_keys_to_transcript_urls)={len(epidose_keys_to_transcript_urls)}')
+        episode_transcripts_by_type[tx_string] = epidose_keys_to_transcript_urls
     
-    print(f'len(raw_episodes)={len(raw_episodes)}')
-    print(f'raw_episodes={raw_episodes}')
-    return raw_episodes
+    return episode_transcripts_by_type
 
 
 async def extract_episode_keys_and_transcript_urls(show_key: ShowKey, all_urls: list, transcript_type_string_match: str) -> dict:
@@ -101,4 +104,24 @@ async def extract_episode_keys_and_transcript_urls(show_key: ShowKey, all_urls: 
 
     return epidose_keys_to_transcript_urls
 
+
+async def match_episodes_to_transcript_urls(show_key: ShowKey, episode_transcripts_by_type: dict) -> list[TranscriptSource]:
+    all_episodes = await dao.fetch_episodes(show_key.value)
+    print(f'for show_key={show_key} len(all_episodes)={len(all_episodes)}')
+
+    transcript_sources = []
+    for episode in all_episodes:
+        for tx_string, episode_keys_to_tx_urls in episode_transcripts_by_type.items():
+            if episode.external_key in episode_keys_to_tx_urls:
+                tx_source = TranscriptSource(episode=episode, transcript_type=tx_string, transcript_url=episode_keys_to_tx_urls[episode.external_key])
+                # tx_source = TranscriptSource()
+                # tx_source.episode = episode
+                # tx_source.transcript_type=tx_string
+                # tx_source.transcript_url=episode_keys_to_tx_urls[episode.external_key]
+                # print(f'show_key.value={show_key.value}, episode.external_key={episode.external_key}, tx_string={tx_string}, episode_keys_to_tx_urls[episode.external_key]={episode_keys_to_tx_urls[episode.external_key]}')
+                print(f'tx_source={tx_source}')
+                transcript_sources.append(tx_source)
+
+    print(f'transcript_sources={transcript_sources}')
+    return transcript_sources
     

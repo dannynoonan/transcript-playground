@@ -14,7 +14,7 @@ from database.connect import connect_to_database
 from show_metadata import ShowKey, Status, show_metadata
 from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup
 from transcript_extractor import parse_episode_transcript_soup
-from transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup
+from transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup, match_episodes_to_transcript_urls
 
 # https://levelup.gitconnected.com/handle-registration-in-fastapi-and-tortoise-orm-2dafc9325b7a
 
@@ -102,31 +102,21 @@ async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
             episode_excl = await Episode_Pydantic_Excluding.from_tortoise_orm(episode)
             episodes_excl.append(episode_excl)
         return {'episode_count': len(episodes_excl), 'episodes': episodes_excl}
-    
 
-# TODO replace functionality with /load_episode_listing
-@transcript_playground_app.get("/load_transcript_listing/{show_key}")
-async def load_transcript_listing(show_key: ShowKey, write_to_db: bool = False):
+
+@transcript_playground_app.get("/load_transcript_sources/{show_key}")
+async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
     listing_soup = await get_transcript_url_listing_soup(show_key)
-    raw_episodes = await parse_episode_listing_soup(show_key, listing_soup)
+    episode_transcripts_by_type = await parse_transcript_url_listing_soup(show_key, listing_soup)
+    transcript_sources = await match_episodes_to_transcript_urls(show_key, episode_transcripts_by_type)
     if write_to_db:
-        # stored_raw_episodes_pyd = []
-        stored_raw_episodes = []
-        for re in raw_episodes:
-            print(f'##### pre-upsert vars(re)={vars(re)}')
-            stored_episode = await dao.upsert_raw_episode(re)
-            print(f'+++++ post-upsert vars(stored_episode)={vars(stored_episode)}')
-            # re_pyd = await Raw_Episode_Pydantic.from_tortoise_orm(stored_episode)
-            # raw_episodes_pyd.append(re_pyd)
-            stored_raw_episodes.append(stored_episode)
-        return {"raw_episode_count": len(stored_raw_episodes), "raw_episodes": stored_raw_episodes}
+        stored_tx_sources = []
+        for tx_source in transcript_sources:
+            stored_tx_source = await dao.upsert_transcript_source(tx_source)
+            stored_tx_sources.append(stored_tx_source)
+        return {'transcript_sources_count': len(stored_tx_sources), 'transcript_sources_listing': stored_tx_sources}
     else:
-        # raw_episodes_excl = []
-        # for re in raw_episodes:
-        #     re_excl = await Raw_Episode_Pydantic_Excluding.from_tortoise_orm(re)
-        #     raw_episodes_excl.append(re_excl)
-        # return {"raw_episodes": raw_episodes_excl}
-        return {'raw_episode_count': len(raw_episodes), "raw_episodes": raw_episodes}
+        return {'transcript_sources_count': len(transcript_sources), 'transcript_sources': transcript_sources}
 
 
 @transcript_playground_app.get("/load_transcript/{show_key}/{episode_key}")

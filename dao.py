@@ -1,31 +1,15 @@
 from app.models import TranscriptSource, Episode, Scene, SceneEvent
 
 
-async def upsert_raw_episode(raw_episode: TranscriptSource) -> TranscriptSource:
+async def fetch_episodes(show_key: str) -> list[Episode]|Exception:
     try:
-        print(f'Looking up RawEpisode matching show_key={raw_episode.show_key} external_key={raw_episode.external_key}')
-        fetched_re = await TranscriptSource.get(show_key=raw_episode.show_key, external_key=raw_episode.external_key)
-        print(f'Previous RawEpisode matching show_key={raw_episode.show_key} external_key={raw_episode.external_key} found, upserting')
-        fetched_re.transcript_type = raw_episode.transcript_type
-        fetched_re.transcript_url = raw_episode.transcript_url
-        await fetched_re.save()
-        return fetched_re
-        
+        print(f'Fetching all episodes matching show={show_key}')
+        fetched_episodes = await Episode.filter(show_key=show_key)
+        return fetched_episodes
     except Exception as e:
-        print(f'No previous stored RawEpisode matching show_key={raw_episode.show_key} external_key={raw_episode.external_key} found, inserting:', e)
-        await raw_episode.save()
-        return raw_episode
-
-
-async def fetch_raw_episode(show_key: str, episode_key: str) -> TranscriptSource|Exception:
-    try:
-        print(f'Looking up RawEpisode matching show_key={show_key} external_key={episode_key}')
-        fetched_re = await TranscriptSource.get(show_key=show_key, external_key=episode_key)
-        return fetched_re
-    except Exception as e:
-        print(f'No RawEpisode found matching show_key={show_key} external_key={episode_key}:', e)
+        print(f'Failure to fetch episodes matching show_key={show_key}:', e)
         raise e
-
+    
 
 async def fetch_episode(show_key: str, episode_key: str) -> Episode|Exception:
     try:
@@ -35,21 +19,6 @@ async def fetch_episode(show_key: str, episode_key: str) -> Episode|Exception:
     except Exception as e:
         print(f'No Episode found matching show_key={show_key} external_key={episode_key}:', e)
         raise e
-    
-
-async def delete_episode(episode: Episode) -> None|Exception:
-# async def delete_episode(show_key: str, episode_key: str):
-    print(f'Begin delete_episode={episode}')
-    # print(f'Begin delete_episode show_key={show_key} episode_key={episode_key}')
-    try:
-        # deleted_episode = await episode.delete()
-        await episode.delete()
-    except Exception as e:
-        print(f'Failure 1 to delete episode={episode}:', e)
-        raise e
-    # if not deleted_episode:
-    #     print(f'Failure 2 to delete episode={episode}')
-    #     raise(f'Failure 3 to delete episode={episode}')
 
 
 async def insert_episode(episode: Episode) -> None|Exception:
@@ -61,32 +30,6 @@ async def insert_episode(episode: Episode) -> None|Exception:
         raise e
     print(f'Completed insert_episode episode={episode}')
     # return episode
-
-
-async def insert_transcript(episode: Episode, scenes: list[Scene], scenes_to_events: dict[int, SceneEvent]) -> None|Exception:
-    print(f'Begin insert_episode episode={episode} len(scenes)={len(scenes)} len(scenes_to_events)={len(scenes_to_events)}')
-    for scene in scenes:
-        scene.episode = episode
-        try:
-            await Scene.save(scene)
-        except Exception as e:
-            print(f'Failure during insert_transcript to insert scene={scene} for episode={episode}:', e)
-            # raise e
-        if scene.sequence_in_episode not in scenes_to_events:
-            print(f'Failure during insert_transcript to insert events for scene={scene} episode={episode}: no events matching scene.sequence_in_episode={scene.sequence_in_episode} in scenes_to_events')
-            continue
-        scene_events = scenes_to_events[scene.sequence_in_episode]
-        event_i = 1
-        for event in scene_events:
-            try:
-                event.scene = scene
-                event.sequence_in_scene = event_i
-                await SceneEvent.save(event)
-                event_i += 1
-            except Exception as e:
-                print(f'Failure during insert_transcript to insert scene_event={event} in scene={scene} for episode={episode}:', e)
-                # raise e
-    print(f'Completed insert_transcript episode={episode}')
 
 
 async def upsert_episode(episode: Episode) -> Episode:
@@ -123,5 +66,85 @@ async def upsert_episode(episode: Episode) -> Episode:
         except Exception as e:
             print(f'Failure during upsert_episode to insert episode={episode}:', e)
             raise e
-        
-    # return fetched_episode
+
+
+async def delete_episode(episode: Episode) -> None|Exception:
+    print(f'Begin delete_episode={episode}')
+    try:
+        await episode.delete()
+    except Exception as e:
+        print(f'Failure 1 to delete episode={episode}:', e)
+        raise e
+
+
+async def fetch_transcript_source(show_key: str, episode_key: str, transcript_type: str) -> TranscriptSource|Exception:
+    try:
+        print(f'Looking up TranscriptSource matching show={show_key} episode_key={episode_key} transcript_type={transcript_type}')
+        fetched_transcript_source = await TranscriptSource.get(episode__show_key=show_key, episode__external_key=episode_key, transcript_type=transcript_type)
+        return fetched_transcript_source
+    except Exception as e:
+        print(f'No TranscriptSource found matching show_key={show_key} external_key={episode_key} transcript_type={transcript_type}:', e)
+        raise e
+
+
+async def insert_transcript_source(transcript_source: TranscriptSource) -> None|Exception:
+    print(f'Begin insert transcript_source={transcript_source}')
+    try:
+        await TranscriptSource.save(transcript_source)
+    except Exception as e:
+        print(f'Failure during insert_transcript_source to insert transcript_source={transcript_source}:', e)
+        raise e
+    print(f'Completed insert transcript_source={transcript_source}')
+
+
+async def upsert_transcript_source(transcript_source: TranscriptSource) -> TranscriptSource:
+    print(f'Begin upsert transcript_source={transcript_source}')
+
+    fetched_tx_source = None
+    try:
+        fetched_tx_source = await fetch_transcript_source(transcript_source.episode.show_key, transcript_source.episode.external_key, transcript_source.transcript_type)
+    except Exception:
+        pass
+
+    if fetched_tx_source:
+        fields = ['transcript_url']
+        for field in fields:
+            setattr(fetched_tx_source, field, getattr(transcript_source, field))
+        await fetched_tx_source.save()
+        return fetched_tx_source
+    else:
+        try:
+            await insert_transcript_source(transcript_source)
+            return transcript_source
+        except Exception as e:
+            print(f'Failure during upsert_transcript_source to insert transcript_source={transcript_source}:', e)
+            raise e
+
+
+
+
+
+async def insert_transcript(episode: Episode, scenes: list[Scene], scenes_to_events: dict[int, SceneEvent]) -> None|Exception:
+    print(f'Begin insert_episode episode={episode} len(scenes)={len(scenes)} len(scenes_to_events)={len(scenes_to_events)}')
+    for scene in scenes:
+        scene.episode = episode
+        try:
+            await Scene.save(scene)
+        except Exception as e:
+            print(f'Failure during insert_transcript to insert scene={scene} for episode={episode}:', e)
+            # raise e
+        if scene.sequence_in_episode not in scenes_to_events:
+            print(f'Failure during insert_transcript to insert events for scene={scene} episode={episode}: no events matching scene.sequence_in_episode={scene.sequence_in_episode} in scenes_to_events')
+            continue
+        scene_events = scenes_to_events[scene.sequence_in_episode]
+        event_i = 1
+        for event in scene_events:
+            try:
+                event.scene = scene
+                event.sequence_in_scene = event_i
+                await SceneEvent.save(event)
+                event_i += 1
+            except Exception as e:
+                print(f'Failure during insert_transcript to insert scene_event={event} in scene={scene} for episode={episode}:', e)
+                # raise e
+    print(f'Completed insert_transcript episode={episode}')
