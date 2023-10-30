@@ -121,11 +121,17 @@ async def upsert_transcript_source(transcript_source: TranscriptSource) -> Trans
             raise e
 
 
-
-
-
 async def insert_transcript(episode: Episode, scenes: list[Scene], scenes_to_events: dict[int, SceneEvent]) -> None|Exception:
-    print(f'Begin insert_episode episode={episode} len(scenes)={len(scenes)} len(scenes_to_events)={len(scenes_to_events)}')
+    print(f'Begin insert_episode for episode={episode} len(scenes)={len(scenes)}')
+
+    # delete any scene data previously mapped to episode
+    await episode.fetch_related('scenes')
+    if episode.scenes:
+        print(f'Previously mapped scene data found for episode={episode}, deleting before inserting new scene data...')
+        for old_scene in episode.scenes:
+            await old_scene.delete()
+
+    # insert scene data for episode
     for scene in scenes:
         scene.episode = episode
         try:
@@ -147,4 +153,4 @@ async def insert_transcript(episode: Episode, scenes: list[Scene], scenes_to_eve
             except Exception as e:
                 print(f'Failure during insert_transcript to insert scene_event={event} in scene={scene} for episode={episode}:', e)
                 # raise e
-    print(f'Completed insert_transcript episode={episode}')
+    print(f'Completed insert_transcript for episode={episode}')

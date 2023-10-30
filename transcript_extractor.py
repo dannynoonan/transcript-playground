@@ -5,23 +5,15 @@ from app.models import Episode, Scene, SceneEvent
 from show_metadata import GOT_SCENE_CHANGE_PREFIXES, TNG_CAPTAINS_LOG_PREFIX
 
 
-async def parse_episode_transcript_soup(show_key: str, episode_key: str, transcript_type: str, transcript_soup: BeautifulSoup):
-    print(f'In extract_episode_transcript show_key={show_key} episode_key={episode_key} transcript_type={transcript_type}')
-    episode = Episode()
-    episode.show_key = show_key
-    episode.external_key = episode_key
-    # set title to episode_key (temporary hack)
-    episode.title = episode_key
-    # TODO extract season and sequence_in_season info
-    episode.season = 1
-    episode.sequence_in_season = 1
+async def parse_episode_transcript_soup(episode: Episode, transcript_type: str, transcript_soup: BeautifulSoup):
+    print(f'In extract_episode_transcript show_key={episode.show_key} episode_key={episode.external_key} transcript_type={transcript_type}')
 
     scenes = []
     # scenes_to_events = dict[int, list[SceneEvent]]
     scenes_to_events = {}
 
     # extraction biz logic by show / transcript_type 
-    if show_key == 'GoT':
+    if episode.show_key == 'GoT':
         scene_i = 1
 
         # TODO make constants or enums
@@ -82,7 +74,7 @@ async def parse_episode_transcript_soup(show_key: str, episode_key: str, transcr
             #         scene.description = scene.events[0].context_info
             #         scene.events = scene.events[1:]
 
-    elif show_key == 'TNG':
+    elif episode.show_key == 'TNG':
         transcript_raw = transcript_soup.find_all('td')[0]
         scene_locations_and_content = transcript_raw.find_all('p')
 
@@ -138,11 +130,7 @@ async def parse_episode_transcript_soup(show_key: str, episode_key: str, transcr
                             first_scene_text_unprocessed = True
                             first_scene_text = line
 
-    # print(f'After assembling episode={episode}:')
-    # for scene in scenes:
-    #     print(f'>> scene={scene} of type={scene}')
-
-    return episode, scenes, scenes_to_events
+    return scenes, scenes_to_events
 
 
 '''

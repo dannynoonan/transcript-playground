@@ -27,7 +27,7 @@ class Episode(Model):
     loaded_ts = fields.DatetimeField(auto_now=True)
 
     scenes: fields.ReverseRelation["Scene"]
-    transcript_source: fields.ReverseRelation["TranscriptSource"]
+    transcript_sources: fields.ReverseRelation["TranscriptSource"]
 
     class Meta:
         unique_together=(("show_key", "season", "sequence_in_season"))
@@ -41,7 +41,7 @@ class Episode(Model):
 
 
 class TranscriptSource(Model):
-    episode: fields.ForeignKeyRelation[Episode] = fields.ForeignKeyField('models.Episode', related_name='transcript_source')
+    episode: fields.ForeignKeyRelation[Episode] = fields.ForeignKeyField('models.Episode', related_name='transcript_sources')
     transcript_type = fields.CharField(max_length=255)
     transcript_url = fields.CharField(max_length=1024, unique=True)
     loaded_ts = fields.DatetimeField(auto_now=True)
@@ -51,7 +51,7 @@ class TranscriptSource(Model):
         table=("transcript_source")
 
     def __str__(self):
-        return str(f'{self.episode.show_key}:{self.episode.external_key}:{self.transcript_type}')
+        return str(f'{self.episode}:{self.transcript_type}')
 
     def __repr__(self):
         return str(self)
