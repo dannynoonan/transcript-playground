@@ -70,7 +70,7 @@ SceneEventPydanticExcluding = pydantic_model_creator(SceneEvent, exclude=("id", 
 
 @transcript_playground_app.get("/")
 def root():
-    return {"message": "Hi there World"}
+    return {"message": "Welcome to transcript playground"}
 
 
 @transcript_playground_app.get("/db_connect")
@@ -125,7 +125,7 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
     try:
         episode = await dao.fetch_episode(show_key.value, episode_key)
     except Exception as e:
-        return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key}: {e}"}
+        return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have run /load_episode_listing?): {e}"}
     if not episode:
         return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
     await episode.fetch_related('transcript_sources')
@@ -159,21 +159,64 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
         return {'show': show_metadata[show_key], 'episode': episode_excl}
 
 
-# @transcript_playground_app.get("/load_transcripts/{show_key}/{transcript_type}")
-# async def load_transcripts(show_key: Show, transcript_type: TranscriptType|None = None):
-#     json_episodes = import_transcripts_by_type(show_key, transcript_type) 
-#     print(f'loaded transcript count={len(json_episodes)}, transcript episodes={json_episodes.keys()}')
-#     return {"loaded transcript count": len(json_episodes), "loaded transcript episodes": list(json_episodes.keys())}
+@transcript_playground_app.get("/load_transcripts/{show_key}")
+async def load_transcripts(show_key: ShowKey, overwrite_all: bool = False):
+    episodes = []
+    try:
+        episodes = await dao.fetch_episodes(show_key.value)
+    except Exception as e:
+        return {"Error": f"Failure to fetch Episodes having show_key={show_key}: {e}"}
+    if not episodes:
+        return {"Error": f"No Episodes found having show_key={show_key}. You may need to run /load_episode_listing first."}
+    if not overwrite_all:
+        return {"No-op": f"/load_transcripts was invoked on {len(episodes)} episodes, but `overwrite_all` flag was not set to True so no action was taken"}
+
+    # fetch and insert transcripts for all episodes
+    attempts = 0
+    successful_episode_keys = []
+    failed_episode_keys = []
+    for episode in episodes:
+        await episode.fetch_related('transcript_sources')
+        if not episode.transcript_sources:
+            print(f"No Transcript found for episode having show_key={show_key} external_key={episode.external_key}. You may need to run /load_transcript_sources first.")
+            failed_episode_keys.append(episode.external_key)
+            continue
+        # fetch and transform raw transcript into persistable scene and scene_event data
+        # TODO data model permits multiple transcript_sources per episode, for now just choose first one
+        transcript_source = episode.transcript_sources[0]
+        transcript_soup = await get_transcript_soup(episode.transcript_sources[0])
+        scenes, scenes_to_events = await parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
+        attempts += 1
+        try:
+            await dao.insert_transcript(episode, scenes=scenes, scenes_to_events=scenes_to_events)
+            successful_episode_keys.append(episode.external_key)
+        except Exception as e:
+            failed_episode_keys.append(episode.external_key)
+            print(f"Failure to insert Episode having show_key={show_key} external_key={episode.external_key}: {e}")
+    return {
+        "attempts": attempts, 
+        "successful": len(successful_episode_keys),
+        "successful episode keys": successful_episode_keys, 
+        "failed": len(failed_episode_keys),
+        "failed episode keys": failed_episode_keys, 
+        }
 
 
 @transcript_playground_app.get("/episode/{show_key}/{episode_key}")
-async def fetch_episode(show_key: ShowKey, episode_key: str):
+async def fetch_transcript(show_key: ShowKey, episode_key: str):
+    episode = None
+    # fetch episode, throw errors if not found
     try:
         episode = await dao.fetch_episode(show_key.value, episode_key)
     except Exception as e:
-        return {"Error": f"Failure to fetch Episode having show_key={show_key} episode_key={episode_key}: {e}"}
-    return await EpisodePydantic.from_tortoise_orm(episode)
-
+        return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have run /load_episode_listing?): {e}"}
+    if not episode:
+        return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
+    await episode.fetch_related('scenes')
+    for scene in episode.scenes:
+        await scene.fetch_related('events')
+    episode_pyd = await EpisodePydantic.from_tortoise_orm(episode)
+    return {'show': show_metadata[show_key], 'episode': episode_pyd}
 
 
 
