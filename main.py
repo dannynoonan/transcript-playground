@@ -9,8 +9,11 @@ from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise import Tortoise
 
 from app.models import Job, TranscriptSource, Episode, Scene, SceneEvent
+from config import settings
 import dao
 from database.connect import connect_to_database
+from es_transformer import to_es_episode
+from es_writer import save_es_episode
 from show_metadata import ShowKey, Status, show_metadata
 from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup
 from transcript_extractor import parse_episode_transcript_soup
@@ -18,14 +21,14 @@ from transcript_listing_extractor import parse_episode_listing_soup, parse_trans
 
 # https://levelup.gitconnected.com/handle-registration-in-fastapi-and-tortoise-orm-2dafc9325b7a
 
-
-# DATABASE_URL=f"postgres://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}?sslmode=disable"
-# DATABASE_URL="postgres://postgres@localhost:5432/transcript_db?sslmode=disable"
-# DATABASE_URL="postgres://andyshirey@localhost:5432/transcript_db?sslmode=disable"
-DATABASE_URL="postgres://andyshirey@localhost:5432/transcript_db"
-
+DATABASE_URL = f"postgres://{settings.psql_user}@{settings.psql_host}:{settings.psql_port}/{settings.psql_db_name}"
 
 transcript_playground_app = FastAPI()
+
+# https://fastapi.tiangolo.com/advanced/settings/#__tabbed_2_1
+# @lru_cache
+# def get_settings():
+#     return Settings()
 
 
 ##### BEGIN THESE DO THE SAME THING ######
@@ -199,25 +202,53 @@ async def load_transcripts(show_key: ShowKey, overwrite_all: bool = False):
         "successful episode keys": successful_episode_keys, 
         "failed": len(failed_episode_keys),
         "failed episode keys": failed_episode_keys, 
-        }
+    }
 
 
 @transcript_playground_app.get("/episode/{show_key}/{episode_key}")
 async def fetch_transcript(show_key: ShowKey, episode_key: str):
-    episode = None
     # fetch episode, throw errors if not found
+    episode = None
     try:
         episode = await dao.fetch_episode(show_key.value, episode_key)
     except Exception as e:
         return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have run /load_episode_listing?): {e}"}
     if not episode:
         return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
+    
+    # fetch nested scene and scene_event data
     await episode.fetch_related('scenes')
     for scene in episode.scenes:
         await scene.fetch_related('events')
+    
     episode_pyd = await EpisodePydantic.from_tortoise_orm(episode)
-    return {'show': show_metadata[show_key], 'episode': episode_pyd}
+    return {"show_meta": show_metadata[show_key], "episode": episode_pyd}
 
+
+@transcript_playground_app.get("/index_episode/{show_key}/{episode_key}")
+async def index_transcript(show_key: ShowKey, episode_key: str):
+    # fetch episode, throw errors if not found
+    episode = None
+    try:
+        episode = await dao.fetch_episode(show_key.value, episode_key)
+    except Exception as e:
+        return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have run /load_episode_listing?): {e}"}
+    if not episode:
+        return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
+    
+    # fetch nested scene and scene_event data
+    await episode.fetch_related('scenes')
+    for scene in episode.scenes:
+        await scene.fetch_related('events')
+    
+    # transform to es-writable object and write to es
+    try:
+        es_episode = await to_es_episode(episode)
+        await save_es_episode(es_episode)
+    except Exception as e:
+        return {"Error": f"Failure to transform Episode {show_key}:{episode_key} to es-writable version: {e}"}
+
+    return {"Success": f"Episode {show_key}:{episode_key} written to es index"}
 
 
 

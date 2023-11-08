@@ -1,5 +1,7 @@
 asyncpg==0.28.0
 bs4==0.0.1
+elasticsearch==8.8.0
+elasticsearch-dsl==8.9.0
 fastapi==0.103.1 
 http-exceptions==0.2.10
 lxml==4.9.3
