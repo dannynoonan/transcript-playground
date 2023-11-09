@@ -1,7 +1,8 @@
 # from datetime import datetime
 from elasticsearch import Elasticsearch
 # from elasticsearch import RequestsHttpConnection
-# from elasticsearch_dsl import connections
+# from elasticsearch_dsl import Search, connections
+from elasticsearch_dsl import Search
 
 from config import settings
 from es_model import EsEpisodeTranscript, EsScene, EsSceneEvent
@@ -13,6 +14,8 @@ es = Elasticsearch(
     verify_certs=False
     # connection_class=RequestsHttpConnection
 )
+
+# s = Search(using=es)
 
 # connections.create_connection(hosts=['http://localhost:9200'], timeout=20)
 
@@ -33,6 +36,11 @@ def init_mappings():
 
 async def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     es_episode.save(using=es)
+    # persisted_es_episode = EsEpisodeTranscript.get(id=es_episode.meta.id, ignore=404)
+    # if persisted_es_episode:
+    #     es_episode.update(using=es, doc_as_upsert=True)
+    # else:
+    #     es_episode.save(using=es)
 
 
 # doc = {

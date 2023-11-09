@@ -9,7 +9,7 @@ from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise import Tortoise
 
 from app.models import Job, TranscriptSource, Episode, Scene, SceneEvent
-from config import settings
+from config import settings, DATABASE_URL
 import dao
 from database.connect import connect_to_database
 from es_transformer import to_es_episode
@@ -19,11 +19,9 @@ from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_list
 from transcript_extractor import parse_episode_transcript_soup
 from transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup, match_episodes_to_transcript_urls
 
-# https://levelup.gitconnected.com/handle-registration-in-fastapi-and-tortoise-orm-2dafc9325b7a
-
-DATABASE_URL = f"postgres://{settings.psql_user}@{settings.psql_host}:{settings.psql_port}/{settings.psql_db_name}"
 
 transcript_playground_app = FastAPI()
+
 
 # https://fastapi.tiangolo.com/advanced/settings/#__tabbed_2_1
 # @lru_cache

@@ -30,5 +30,6 @@ class EsEpisodeTranscript(Document):
         name = 'transcripts'
 
     def save(self, **kwargs):
+        # self.meta.id = f'{self.show_key}_{self.episode_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)

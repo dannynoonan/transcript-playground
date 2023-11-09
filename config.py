@@ -12,9 +12,19 @@ class Settings(BaseSettings):
     psql_db_name: str
     model_config = SettingsConfigDict(env_file=".env")
 
-
+# TODO use lru_cache with fastapi Depends
+# per https://fastapi.tiangolo.com/advanced/settings/#__tabbed_2_1
 settings = Settings()
 
+# https://levelup.gitconnected.com/handle-registration-in-fastapi-and-tortoise-orm-2dafc9325b7a
+DATABASE_URL = f"postgres://{settings.psql_user}@{settings.psql_host}:{settings.psql_port}/{settings.psql_db_name}"
 
-# TODO remove this and use lru_cache with fastapi Depends
-# per https://fastapi.tiangolo.com/advanced/settings/#__tabbed_2_1
+# TORTOISE_ORM = {
+#     "connections": {"default": DATABASE_URL},
+#     "apps": {
+#         "models": {
+#             "models": ["app.models"],
+#             "default_connection": "default",
+#         },
+#     },
+# }
