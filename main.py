@@ -160,8 +160,8 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
         return {'show': show_metadata[show_key], 'episode': episode_excl}
 
 
-@transcript_playground_app.get("/load_transcripts/{show_key}")
-async def load_transcripts(show_key: ShowKey, overwrite_all: bool = False):
+@transcript_playground_app.get("/load_all_transcripts/{show_key}")
+async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     episodes = []
     try:
         episodes = await dao.fetch_episodes(show_key.value)
@@ -174,13 +174,14 @@ async def load_transcripts(show_key: ShowKey, overwrite_all: bool = False):
 
     # fetch and insert transcripts for all episodes
     attempts = 0
+    no_transcript_episode_keys = []
     successful_episode_keys = []
     failed_episode_keys = []
     for episode in episodes:
         await episode.fetch_related('transcript_sources')
         if not episode.transcript_sources:
             print(f"No Transcript found for episode having show_key={show_key} external_key={episode.external_key}. You may need to run /load_transcript_sources first.")
-            failed_episode_keys.append(episode.external_key)
+            no_transcript_episode_keys.append(episode.external_key)
             continue
         # fetch and transform raw transcript into persistable scene and scene_event data
         # TODO data model permits multiple transcript_sources per episode, for now just choose first one
@@ -194,8 +195,11 @@ async def load_transcripts(show_key: ShowKey, overwrite_all: bool = False):
         except Exception as e:
             failed_episode_keys.append(episode.external_key)
             print(f"Failure to insert Episode having show_key={show_key} external_key={episode.external_key}: {e}")
+            
     return {
-        "attempts": attempts, 
+        "no transcripts": len(no_transcript_episode_keys),
+        "no transcripts episode keys": no_transcript_episode_keys,
+        "transcript load attempts": attempts, 
         "successful": len(successful_episode_keys),
         "successful episode keys": successful_episode_keys, 
         "failed": len(failed_episode_keys),
@@ -247,6 +251,52 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
         return {"Error": f"Failure to transform Episode {show_key}:{episode_key} to es-writable version: {e}"}
 
     return {"Success": f"Episode {show_key}:{episode_key} written to es index"}
+
+
+@transcript_playground_app.get("/index_all_episodes/{show_key}")
+async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
+    episodes = []
+    try:
+        episodes = await dao.fetch_episodes(show_key.value)
+    except Exception as e:
+        return {"Error": f"Failure to fetch Episodes having show_key={show_key}: {e}"}
+    if not episodes:
+        return {"Error": f"No Episodes found having show_key={show_key}. You may need to run /load_episode_listing first."}
+    if not overwrite_all:
+        return {"No-op": f"/index_transcripts was invoked on {len(episodes)} episodes, but `overwrite_all` flag was not set to True so no action was taken"}
+    
+    # fetch and insert transcripts for all episodes
+    attempts = 0
+    successful_episode_keys = []
+    failed_episode_keys = []
+    for episode in episodes:
+        attempts += 1
+
+        # fetch nested scene and scene_event data
+        await episode.fetch_related('scenes')
+        # if not episode.scenes:
+        #     print(f"No Scene data found for episode {show_key}_{episode.external_key}. You may need to run /load_transcript first.")
+        #     failed_episode_keys.append(episode.external_key)
+        #     continue
+        for scene in episode.scenes:
+            await scene.fetch_related('events')
+
+        # transform to es-writable object and write to es
+        try:
+            es_episode = await to_es_episode(episode)
+            await save_es_episode(es_episode)
+            successful_episode_keys.append(episode.external_key)
+        except Exception as e:
+            failed_episode_keys.append(episode.external_key)
+            print(f"Failure to transform Episode {show_key}_{episode.external_key} to es-writable version or write it to es: {e}")
+
+    return {
+        "index loading attempts": attempts, 
+        "successful": len(successful_episode_keys),
+        "successful episode keys": successful_episode_keys, 
+        "failed": len(failed_episode_keys),
+        "failed episode keys": failed_episode_keys, 
+    }
 
 
 
