@@ -8,7 +8,7 @@ from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise import Tortoise
 
-from app.models import Job, TranscriptSource, Episode, Scene, SceneEvent
+from app.models import TranscriptSource, Episode, Scene, SceneEvent
 from config import settings, DATABASE_URL
 import dao
 from database.connect import connect_to_database
@@ -53,8 +53,8 @@ register_tortoise(
 
 Tortoise.init_models(["app.models"], "models")
 
-JobPydantic = pydantic_model_creator(Job)
-JobPydanticNoIds = pydantic_model_creator(Job, exclude_readonly=True)
+# JobPydantic = pydantic_model_creator(Job)
+# JobPydanticNoIds = pydantic_model_creator(Job, exclude_readonly=True)
 
 TranscriptSourcePydantic = pydantic_model_creator(TranscriptSource)
 EpisodePydantic = pydantic_model_creator(Episode)
@@ -62,7 +62,7 @@ ScenePydantic = pydantic_model_creator(Scene)
 SceneEventPydantic = pydantic_model_creator(SceneEvent)
 
 TranscriptSourcePydanticExcluding = pydantic_model_creator(TranscriptSource, exclude=("id", "episode", "loaded_ts"))
-EpisodePydanticExcluding = pydantic_model_creator(Episode, exclude=("id", "loaded_ts"))
+EpisodePydanticExcluding = pydantic_model_creator(Episode, exclude=("id", "loaded_ts", "transcript_loaded_ts"))
 ScenePydanticExcluding = pydantic_model_creator(Scene, exclude=("id", "episode", "episode_id"))
 SceneEventPydanticExcluding = pydantic_model_creator(SceneEvent, exclude=("id", "scene", "scene_id"))
 
@@ -253,35 +253,35 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
 ########### BEGIN EXAMPLES #############
 # https://medium.com/@talhakhalid101/python-tortoise-orm-integration-with-fastapi-c3751d248ce1
 
-@transcript_playground_app.post("/job/create/", status_code=201)
-# async def create_job(name=Form(...), description=Form(...)):
-async def create_job(name, description):
-    job = await Job.create(name=name, description=description)
-    return await JobPydantic.from_tortoise_orm(job)
+# @transcript_playground_app.post("/job/create/", status_code=201)
+# # async def create_job(name=Form(...), description=Form(...)):
+# async def create_job(name, description):
+#     job = await Job.create(name=name, description=description)
+#     return await JobPydantic.from_tortoise_orm(job)
 
-@transcript_playground_app.get("/job/{job_id}", response_model=JobPydantic, responses={404: {"model": HTTPNotFoundError}})
-async def get_job(job_id: int):
-    return await JobPydanticNoIds.from_queryset_single(Job.get(id=job_id))
+# @transcript_playground_app.get("/job/{job_id}", response_model=JobPydantic, responses={404: {"model": HTTPNotFoundError}})
+# async def get_job(job_id: int):
+#     return await JobPydanticNoIds.from_queryset_single(Job.get(id=job_id))
 
-@transcript_playground_app.get("/jobs/")
-async def get_jobs():
-    return await JobPydantic.from_queryset(Job.all())
+# @transcript_playground_app.get("/jobs/")
+# async def get_jobs():
+#     return await JobPydantic.from_queryset(Job.all())
 
-# TODO this doesn't work
-@transcript_playground_app.put("/job/{job_id}", response_model=JobPydantic, responses={404: {"model": HTTPNotFoundError}})
-async def update_job(job_id: int, job: JobPydanticNoIds):
-    res = Job.filter(id=job_id)
-    print(f'fetched job={job}')
-    await res.update(**job.dict())
-    # await Job.filter(id=job_id).update(**job.dict())
-    return await JobPydanticNoIds.from_queryset_single(Job.get(id=job_id))
+# # TODO this doesn't work
+# @transcript_playground_app.put("/job/{job_id}", response_model=JobPydantic, responses={404: {"model": HTTPNotFoundError}})
+# async def update_job(job_id: int, job: JobPydanticNoIds):
+#     res = Job.filter(id=job_id)
+#     print(f'fetched job={job}')
+#     await res.update(**job.dict())
+#     # await Job.filter(id=job_id).update(**job.dict())
+#     return await JobPydanticNoIds.from_queryset_single(Job.get(id=job_id))
 
-@transcript_playground_app.delete("/job/{job_id}", response_model=Status, responses={404: {"model": HTTPNotFoundError}})
-async def delete_job(job_id: int):
-    deleted_job = await Job.filter(id=job_id).delete()
-    if not deleted_job:
-        raise HTTPException(status_code=404, detail=f"Job {job_id} not found")
-    return Status(message=f"Deleted job {job_id}")
+# @transcript_playground_app.delete("/job/{job_id}", response_model=Status, responses={404: {"model": HTTPNotFoundError}})
+# async def delete_job(job_id: int):
+#     deleted_job = await Job.filter(id=job_id).delete()
+#     if not deleted_job:
+#         raise HTTPException(status_code=404, detail=f"Job {job_id} not found")
+#     return Status(message=f"Deleted job {job_id}")
 
 
 ########### OLDER EXAMPLES #############

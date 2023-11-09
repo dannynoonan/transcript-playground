@@ -19,12 +19,12 @@ settings = Settings()
 # https://levelup.gitconnected.com/handle-registration-in-fastapi-and-tortoise-orm-2dafc9325b7a
 DATABASE_URL = f"postgres://{settings.psql_user}@{settings.psql_host}:{settings.psql_port}/{settings.psql_db_name}"
 
-# TORTOISE_ORM = {
-#     "connections": {"default": DATABASE_URL},
-#     "apps": {
-#         "models": {
-#             "models": ["app.models"],
-#             "default_connection": "default",
-#         },
-#     },
-# }
+TORTOISE_ORM = {
+    "connections": {"default": DATABASE_URL},
+    "apps": {
+        "models": {
+            "models": ["app.models", "aerich.models"],
+            "default_connection": "default",
+        },
+    },
+}

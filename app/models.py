@@ -4,17 +4,7 @@ from tortoise import fields
 '''
 https://medium.com/@talhakhalid101/python-tortoise-orm-integration-with-fastapi-c3751d248ce1
 https://tortoise.github.io/contrib/fastapi.html#tortoise.contrib.fastapi.register_tortoise.app
-'''
-
-class Job(Model):
-    # Primary key field is created automatically
-    # id = fields.IntField(pk=True) 
-    name = fields.CharField(max_length=255)
-    description = fields.TextField()
-
-    def __str__(self):
-        return self.name
-    
+''' 
 
 class Episode(Model):
     show_key = fields.CharField(max_length=255)
@@ -24,7 +14,8 @@ class Episode(Model):
     title = fields.TextField()
     air_date = fields.DateField(null=True)
     duration = fields.FloatField(null=True)
-    loaded_ts = fields.DatetimeField(auto_now=True)
+    loaded_ts = fields.DatetimeField(null=True)
+    transcript_loaded_ts = fields.DatetimeField(null=True)
 
     scenes: fields.ReverseRelation["Scene"]
     transcript_sources: fields.ReverseRelation["TranscriptSource"]

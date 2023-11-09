@@ -1,1 +1,25 @@
 # transcript-playground
+
+## Initialize Postgres / Toroise ORM / Aerich migrations
+
+* Create `/migrations` dir and `pyproject.toml` file from settings in TORTOISE_ORM dict:
+    ```
+    aerich init -t config.TORTOISE_ORM
+    ```
+
+* Create app migration destination `/migrations/models` and generate baseline schema from `models.py`:
+    ```
+    aerich init-db
+    ```
+
+* Generate schema migration file from altered `models.py`:
+    ```
+    aerich migrate --name <migration_name>
+    ```
+
+* Execute migration file:
+    ```
+    aerich upgrade
+    ```
+
+Reference: https://tortoise.github.io/migration.html

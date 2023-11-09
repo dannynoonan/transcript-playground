@@ -1,3 +1,5 @@
+from datetime import datetime, timezone
+
 from app.models import TranscriptSource, Episode, Scene, SceneEvent
 
 
@@ -24,6 +26,8 @@ async def fetch_episode(show_key: str, episode_key: str) -> Episode|Exception:
 async def insert_episode(episode: Episode) -> None|Exception:
     print(f'Begin insert_episode episode={episode}')
     try:
+        # set loaded_ts
+        episode.loaded_ts = datetime.now(timezone.utc)
         await Episode.save(episode)
     except Exception as e:
         print(f'Failure during insert_episode to insert episode={episode}:', e)
@@ -54,6 +58,8 @@ async def upsert_episode(episode: Episode) -> Episode:
         # for field in episode.__class__._meta.fields:
         for field in fields:
             setattr(fetched_episode, field, getattr(episode, field))
+        # set loaded_ts
+        episode.loaded_ts = datetime.now(timezone.utc)
         await fetched_episode.save()
         # await fetched_episode.save(update_fields=fields)
         # await fetched_episode.update(**episode.dict(), update_fields=cleaned)
@@ -153,4 +159,9 @@ async def insert_transcript(episode: Episode, scenes: list[Scene], scenes_to_eve
             except Exception as e:
                 print(f'Failure during insert_transcript to insert scene_event={event} in scene={scene} for episode={episode}:', e)
                 # raise e
+    
+    # set transcript_loaded_ts
+    episode.transcript_loaded_ts = datetime.now(timezone.utc)
+    await episode.save()
+
     print(f'Completed insert_transcript for episode={episode}')
