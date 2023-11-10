@@ -44,15 +44,23 @@ async def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     #     es_episode.save(using=es)
 
 
-async def search_es_episodes(show_key: str, query_term: str) -> list:
+async def search_es_episodes(show_key: str, qt: str, fields: list = None) -> list:
+    if not fields:
+        fields = ['title', 'episode_key']
+
     s = Search(using=es_client, index='transcripts')
+    s = s.extra(size=1000)
+
     results = []
 
     # MultiMatch(query=query_term, fields=['title', 'episode_key'])
 
     # q = Q("multi_match", query=query_term, fields=['title', 'episode_key'])
-    q = Q('bool', must=[Q('match', show_key=show_key), Q('multi_match', query=query_term, fields=['title', 'episode_key'])])
+    q = Q('bool', must=[Q('match', show_key=show_key), Q('multi_match', query=qt, fields=fields)])
     # s.query(q)
+    # s.extra(track_total_hits=True, size=0)
+    # s = s.extra(track_total_hits=True)
+    s = s.source(excludes=['scenes'])
     s = s.query(q)
     # s = s.query("multi_match", query=query_term, fields=['title', 'episode_key'])
     print('*************************************************')
@@ -68,6 +76,47 @@ async def search_es_episodes(show_key: str, query_term: str) -> list:
     for hit in response.hits:
         results.append(hit)
     return results
+
+
+async def search_es_scenes(show_key: str, qt: str, fields: list = None) -> list:
+    if not fields:
+        fields = ['scenes.location', 'scenes.description']
+
+    s = Search(using=es_client, index='transcripts')
+    s = s.extra(size=1000)
+
+    results = []
+
+    q = Q('bool', must=[Q('match', show_key=show_key), Q('multi_match', query=qt, fields=fields)])
+    s = s.source(excludes=['scenes.scene_events'])
+    s = s.query(q)
+
+    response = s.execute()
+
+    for hit in response.hits:
+        results.append(hit)
+    return results
+
+
+async def search_es_scene_events(show_key: str, qt: str, fields: list = None) -> list:
+    if not fields:
+        fields = ['scenes.scene_events.dialogue_spoken_by', 'scenes.scene_events.context_info']
+
+    s = Search(using=es_client, index='transcripts')
+    s = s.extra(size=1000)
+
+    results = []
+
+    q = Q('bool', must=[Q('match', show_key=show_key), Q('multi_match', query=qt, fields=fields)])
+    s = s.source(excludes=['scenes'])
+    s = s.query(q)
+
+    response = s.execute()
+
+    for hit in response.hits:
+        results.append(hit)
+    return results
+
 
 
 # doc = {

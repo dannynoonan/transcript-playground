@@ -13,7 +13,7 @@ from config import settings, DATABASE_URL
 import dao
 from database.connect import connect_to_database
 from es_transformer import to_es_episode
-from es_dao import save_es_episode, search_es_episodes
+from es_dao import save_es_episode, search_es_episodes, search_es_scenes, search_es_scene_events
 from show_metadata import ShowKey, Status, show_metadata
 from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup
 from transcript_extractor import parse_episode_transcript_soup
@@ -300,8 +300,20 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
 
 
 @transcript_playground_app.get("/search_episodes/{show_key}")
-async def index_all_transcripts(show_key: ShowKey, qt: str = None):
+async def search_episodes(show_key: ShowKey, qt: str = None):
     matches = await search_es_episodes(show_key.value, qt)
+    return {"match_count": len(matches), "matches": matches}
+
+
+@transcript_playground_app.get("/search_episode_scenes/{show_key}")
+async def search_episode_scenes(show_key: ShowKey, qt: str = None):
+    matches = await search_es_scenes(show_key.value, qt)
+    return {"match_count": len(matches), "matches": matches}
+
+
+@transcript_playground_app.get("/search_episode_scene_events/{show_key}")
+async def search_episode_scenes(show_key: ShowKey, qt: str = None):
+    matches = await search_es_scene_events(show_key.value, qt)
     return {"match_count": len(matches), "matches": matches}
 
 
