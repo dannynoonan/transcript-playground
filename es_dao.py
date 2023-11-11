@@ -67,13 +67,13 @@ async def search_es_episodes(show_key: str, qt: str, fields: list = None) -> lis
     print(f's.to_dict()={s.to_dict()}')
     print('*************************************************')
 
-    response = s.execute()
+    s = s.execute()
 
     print('*************************************************')
-    print(f'response.to_dict()={response.to_dict()}')
+    print(f'response.to_dict()={s.to_dict()}')
     print('*************************************************')
 
-    for hit in response.hits:
+    for hit in s.hits:
         results.append(hit)
     return results
 
@@ -91,10 +91,36 @@ async def search_es_scenes(show_key: str, qt: str, fields: list = None) -> list:
     s = s.source(excludes=['scenes.scene_events'])
     s = s.query(q)
 
-    response = s.execute()
+    s = s.execute()
 
-    for hit in response.hits:
+    for hit in s.hits:
         results.append(hit)
+    return results
+
+
+async def agg_scenes_by_location(show_key: str) -> list:
+    s = Search(using=es_client, index='transcripts')
+    s = s.extra(size=1000)
+
+    results = {}
+
+    q = Q('bool', must=[Q('match', show_key=show_key)])
+    s = s.query(q)
+    s.aggs.bucket(f'by_location', 'terms', field='scenes.location.keyword', size=1000)
+
+    s = s.execute()
+
+    # print('*************************************************')
+    # print(f's.aggregations.by_location={s.aggregations.by_location}')
+    # print('*************************************************')
+    # print(f's.hits.total={s.hits.total}')
+    # print('*************************************************')
+    # print(f's.aggregations.by_location.buckets={s.aggregations.by_location.buckets}')
+    # print('*************************************************')
+
+    for item in s.aggregations.by_location.buckets:
+        results[item.key] = item.doc_count
+
     return results
 
 
@@ -111,12 +137,37 @@ async def search_es_scene_events(show_key: str, qt: str, fields: list = None) ->
     s = s.source(excludes=['scenes'])
     s = s.query(q)
 
-    response = s.execute()
+    s = s.execute()
 
-    for hit in response.hits:
+    for hit in s.hits:
         results.append(hit)
     return results
 
+
+async def agg_scene_events_by_speaker(show_key: str) -> list:
+    s = Search(using=es_client, index='transcripts')
+    s = s.extra(size=1000)
+
+    results = {}
+
+    q = Q('bool', must=[Q('match', show_key=show_key)])
+    s = s.query(q)
+    s.aggs.bucket(f'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000)
+
+    s = s.execute()
+
+    # print('*************************************************')
+    # print(f's.aggregations.by_speaker={s.aggregations.by_speaker}')
+    # print('*************************************************')
+    # print(f's.hits.total={s.hits.total}')
+    # print('*************************************************')
+    # print(f's.aggregations.by_speaker.buckets={s.aggregations.by_speaker.buckets}')
+    # print('*************************************************')
+
+    for item in s.aggregations.by_speaker.buckets:
+        results[item.key] = item.doc_count
+
+    return results
 
 
 # doc = {
