@@ -44,7 +44,7 @@ async def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     #     es_episode.save(using=es)
 
 
-async def search_es_episodes(show_key: str, qt: str, fields: list = None) -> list:
+async def search_episodes_by_qt(show_key: str, qt: str, fields: list = None) -> list:
     if not fields:
         fields = ['title', 'episode_key']
 
@@ -78,7 +78,7 @@ async def search_es_episodes(show_key: str, qt: str, fields: list = None) -> lis
     return results
 
 
-async def search_es_scenes(show_key: str, qt: str, fields: list = None) -> list:
+async def search_scenes_by_qt(show_key: str, qt: str, fields: list = None) -> list:
     if not fields:
         fields = ['scenes.location', 'scenes.description']
 
@@ -98,7 +98,50 @@ async def search_es_scenes(show_key: str, qt: str, fields: list = None) -> list:
     return results
 
 
-async def agg_scenes_by_location(show_key: str) -> list:
+async def search_scenes_by_location(show_key: str, location: str) -> list:
+    s = Search(using=es_client, index='transcripts')
+    s = s.extra(size=1000)
+
+    results = []
+
+    # q = Q('nested', path='scenes', query=Q('match', **{'scenes.location': location}))
+    # q = Q('bool', must=[Q('match', show_key=show_key), Q('multi_match', query=qt, fields=fields)])
+    # s = s.query('nested', path='scenes', query=Q('match', **{'scenes.location': location}))
+    # s = s.query('nested', path='scenes', query=Q('match', scenes__location={'term': location}))
+    # s = s.query('nested', path='scenes', query=Q('term', scenes__location=location))
+
+    q = Q("match", scenes__location=location)
+    s = s.source(excludes=['scenes.scene_events'])
+    s = s.query(q)
+
+    s = s.execute()
+
+    for hit in s.hits:
+        results.append(hit)
+    return results
+
+
+async def search_scene_events_by_qt(show_key: str, qt: str, fields: list = None) -> list:
+    if not fields:
+        fields = ['scenes.scene_events.dialogue_spoken_by', 'scenes.scene_events.context_info']
+
+    s = Search(using=es_client, index='transcripts')
+    s = s.extra(size=1000)
+
+    results = []
+
+    q = Q('bool', must=[Q('match', show_key=show_key), Q('multi_match', query=qt, fields=fields)])
+    s = s.source(excludes=['scenes'])
+    s = s.query(q)
+
+    s = s.execute()
+
+    for hit in s.hits:
+        results.append(hit)
+    return results
+
+
+async def agg_episodes_by_location(show_key: str) -> list:
     s = Search(using=es_client, index='transcripts')
     s = s.extra(size=1000)
 
@@ -124,27 +167,7 @@ async def agg_scenes_by_location(show_key: str) -> list:
     return results
 
 
-async def search_es_scene_events(show_key: str, qt: str, fields: list = None) -> list:
-    if not fields:
-        fields = ['scenes.scene_events.dialogue_spoken_by', 'scenes.scene_events.context_info']
-
-    s = Search(using=es_client, index='transcripts')
-    s = s.extra(size=1000)
-
-    results = []
-
-    q = Q('bool', must=[Q('match', show_key=show_key), Q('multi_match', query=qt, fields=fields)])
-    s = s.source(excludes=['scenes'])
-    s = s.query(q)
-
-    s = s.execute()
-
-    for hit in s.hits:
-        results.append(hit)
-    return results
-
-
-async def agg_scene_events_by_speaker(show_key: str) -> list:
+async def agg_episodes_by_character(show_key: str) -> list:
     s = Search(using=es_client, index='transcripts')
     s = s.extra(size=1000)
 
