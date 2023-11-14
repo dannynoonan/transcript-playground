@@ -329,15 +329,15 @@ async def search_scene_events_by_speaker(show_key: ShowKey, qt: str = None):
     return {"match_count": len(matches), "matches": matches}
 
 
-@transcript_playground_app.get("/agg_episode_scenes/{show_key}")
-async def agg_episode_scenes(show_key: ShowKey):
-    matches = await es_dao.agg_episodes_by_location(show_key.value)
+@transcript_playground_app.get("/agg_scenes_by_location/{show_key}")
+async def agg_scenes_by_location(show_key: ShowKey, episode_key: str = None, season: str = None):
+    matches = await es_dao.agg_scenes_by_location(show_key.value, episode_key, season)
     return {"match_count": len(matches), "matches": matches}
 
 
-@transcript_playground_app.get("/agg_episode_scene_events/{show_key}")
-async def agg_episode_scene_events(show_key: ShowKey):
-    matches = await es_dao.agg_episodes_by_character(show_key.value)
+@transcript_playground_app.get("/agg_scene_events_by_speaker/{show_key}")
+async def agg_scene_events_by_speaker(show_key: ShowKey, episode_key: str = None, season: str = None):
+    matches = await es_dao.agg_scene_events_by_speaker(show_key.value, episode_key, season)
     return {"match_count": len(matches), "matches": matches}
 
 

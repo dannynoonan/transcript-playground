@@ -2,7 +2,7 @@
 from elasticsearch import Elasticsearch
 # from elasticsearch import RequestsHttpConnection
 # from elasticsearch_dsl import Search, connections
-from elasticsearch_dsl import Search, Q
+from elasticsearch_dsl import Search, Q, A
 from elasticsearch_dsl.query import MultiMatch
 
 from config import settings
@@ -98,8 +98,8 @@ async def search_scenes_by_location(show_key: str, qt: str) -> list:
     # q = Q("match", scenes__location=qt)
 
     s = s.query('nested', path='scenes', 
-         query=Q('match', **{'scenes.location': qt}),
-         inner_hits={'size': 100},
+            query=Q('match', **{'scenes.location': qt}),
+            inner_hits={'size': 100},
     )
     s = s.filter('term', show_key=show_key)
 
@@ -137,8 +137,8 @@ async def search_scene_events_by_speaker(show_key: str, qt: str, fields: list = 
     results = []
 
     s = s.query('nested', path='scenes.scene_events', 
-         query=Q('match', **{'scenes.scene_events.spoken_by': qt}),
-         inner_hits={'size': 100},
+            query=Q('match', **{'scenes.scene_events.spoken_by': qt}),
+            inner_hits={'size': 100},
     )
     s = s.filter('term', show_key=show_key)
 
@@ -164,17 +164,21 @@ async def search_scene_events_by_speaker(show_key: str, qt: str, fields: list = 
     return results
 
 
-async def agg_episodes_by_location(show_key: str) -> list:
-    print(f'begin agg_episodes_by_location for show_key={show_key}')
+async def agg_scenes_by_location(show_key: str, episode_key: str = None, season: str = None) -> list:
+    print(f'begin agg_scenes_by_location for show_key={show_key}')
 
     s = Search(using=es_client, index='transcripts')
-    s = s.extra(size=1000)
+    s = s.extra(size=0)
 
     results = {}
 
-    q = Q('bool', must=[Q('match', show_key=show_key)])
-    s = s.query(q)
-    s.aggs.bucket(f'by_location', 'terms', field='scenes.location', size=1000)
+    s = s.filter('term', show_key=show_key)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    if season:
+        s = s.filter('term', season=season)
+
+    s.aggs.bucket('location_aggs', 'nested', path='scenes').bucket('by_location', 'terms', field='scenes.location', size=100)
 
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
@@ -182,48 +186,48 @@ async def agg_episodes_by_location(show_key: str) -> list:
 
     s = s.execute()
 
-    print('*************************************************')
-    print(f'response.to_dict()={s.to_dict()}')
-    print('*************************************************')
+    # print('*************************************************')
+    # print(f's.aggregations.location_aggs={s.aggregations.location_aggs}')
+    # print('*************************************************')
+    # print(f's.aggregations.location_aggs.by_location={s.aggregations.location_aggs.by_location}')
+    # print('*************************************************')
+    # print(f's.hits.total={s.hits.total}')
+    # print('*************************************************')
+    # print(f's.aggregations.location_aggs.by_location.buckets={s.aggregations.location_aggs.by_location.buckets}')
+    # print('*************************************************')
 
-
-    print('*************************************************')
-    print(f's.aggregations.by_location={s.aggregations.by_location}')
-    print('*************************************************')
-    print(f's.hits.total={s.hits.total}')
-    print('*************************************************')
-    print(f's.aggregations.by_location.buckets={s.aggregations.by_location.buckets}')
-    print('*************************************************')
-
-    for item in s.aggregations.by_location.buckets:
+    for item in s.aggregations.location_aggs.by_location.buckets:
         results[item.key] = item.doc_count
 
     return results
 
 
-async def agg_episodes_by_character(show_key: str) -> list:
-    print(f'begin agg_episodes_by_character for show_key={show_key}')
+async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, season: str = None) -> list:
+    print(f'begin agg_scene_events_by_speaker for show_key={show_key}')
 
     s = Search(using=es_client, index='transcripts')
-    s = s.extra(size=1000)
+    s = s.extra(size=0)
 
     results = {}
 
-    q = Q('bool', must=[Q('match', show_key=show_key)])
-    s = s.query(q)
-    s.aggs.bucket(f'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000)
+    # q = Q('bool', must=[Q('match', show_key=show_key)])
+    # s = s.query(q)
+    s = s.filter('term', show_key=show_key)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    if season:
+        s = s.filter('term', season=season)
+
+    # s.aggs.bucket(f'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000)
+    s.aggs.bucket('speaker_aggs', 'nested', path='scenes.scene_events').bucket('by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100)
+
+    print('*************************************************')
+    print(f's.to_dict()={s.to_dict()}')
+    print('*************************************************')
 
     s = s.execute()
 
-    # print('*************************************************')
-    # print(f's.aggregations.by_speaker={s.aggregations.by_speaker}')
-    # print('*************************************************')
-    # print(f's.hits.total={s.hits.total}')
-    # print('*************************************************')
-    # print(f's.aggregations.by_speaker.buckets={s.aggregations.by_speaker.buckets}')
-    # print('*************************************************')
-
-    for item in s.aggregations.by_speaker.buckets:
+    for item in s.aggregations.speaker_aggs.by_speaker.buckets:
         results[item.key] = item.doc_count
 
     return results
