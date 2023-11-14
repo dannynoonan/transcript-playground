@@ -10,6 +10,7 @@ async def to_es_episode(episode: Episode) -> EsEpisodeTranscript:
     es_episode.meta.id = f'{episode.show_key}_{episode.external_key}'
     es_episode.scenes = []
     for scene in episode.scenes:
+        # es_episode.add_scene(scene.location, scene.description)
         es_scene = EsScene(location=scene.location, description=scene.description)
         es_scene.scene_events = []
         for scene_event in scene.events:

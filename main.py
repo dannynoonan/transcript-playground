@@ -299,27 +299,33 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     }
 
 
-@transcript_playground_app.get("/search_episodes/{show_key}")
-async def search_episodes(show_key: ShowKey, qt: str = None):
-    matches = await es_dao.search_episodes_by_qt(show_key.value, qt)
+@transcript_playground_app.get("/init_es")
+async def init_es():
+    await es_dao.init_mappings()
+    return {"success": "success"}
+
+
+@transcript_playground_app.get("/fetch_es_episode/{show_key}/{episode_key}")
+async def fetch_es_episode(show_key: ShowKey, episode_key: str):
+    es_episode = await es_dao.fetch_episode_by_key(show_key.value, episode_key)
+    return {"es_episode": es_episode}
+
+
+@transcript_playground_app.get("/search_episodes_by_title/{show_key}")
+async def search_episodes_by_title(show_key: ShowKey, qt: str = None):
+    matches = await es_dao.search_episodes_by_title(show_key.value, qt)
     return {"match_count": len(matches), "matches": matches}
 
 
-@transcript_playground_app.get("/search_episode_scenes/{show_key}")
-async def search_episode_scenes(show_key: ShowKey, qt: str = None):
-    matches = await es_dao.search_scenes_by_qt(show_key.value, qt)
+@transcript_playground_app.get("/search_scenes_by_location/{show_key}")
+async def search_scenes_by_location(show_key: ShowKey, qt: str = None):
+    matches = await es_dao.search_scenes_by_location(show_key.value, qt)
     return {"match_count": len(matches), "matches": matches}
 
 
-@transcript_playground_app.get("/search_scene_locations/{show_key}")
-async def search_scene_locations(show_key: ShowKey, location: str = None):
-    matches = await es_dao.search_scenes_by_location(show_key.value, location)
-    return {"match_count": len(matches), "matches": matches}
-
-
-@transcript_playground_app.get("/search_episode_scene_events/{show_key}")
-async def search_episode_scene_events(show_key: ShowKey, qt: str = None):
-    matches = await es_dao.search_scene_events_by_qt(show_key.value, qt)
+@transcript_playground_app.get("/search_scene_events_by_speaker/{show_key}")
+async def search_scene_events_by_speaker(show_key: ShowKey, qt: str = None):
+    matches = await es_dao.search_scene_events_by_speaker(show_key.value, qt)
     return {"match_count": len(matches), "matches": matches}
 
 
