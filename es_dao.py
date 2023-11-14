@@ -87,21 +87,82 @@ async def search_episodes_by_title(show_key: str, qt: str) -> list:
     return results
 
 
-async def search_scenes_by_location(show_key: str, qt: str) -> list:
-    print(f'begin search_scenes_by_location for show_key={show_key} qt={qt}')
+# async def search_scenes_by_location(show_key: str, qt: str, episode_key: str = None, season: str = None) -> list:
+#     print(f'begin search_scenes_by_location for show_key={show_key} qt={qt}')
 
+#     s = Search(using=es_client, index='transcripts')
+#     s = s.extra(size=1000)
+
+#     results = []
+
+#     # q = Q("match", scenes__location=qt)
+
+#     s = s.query('nested', path='scenes', 
+#             query=Q('match', **{'scenes.location': qt}),
+#             inner_hits={'size': 100},
+#     )
+#     s = s.filter('term', show_key=show_key)
+#     if episode_key:
+#         s = s.filter('term', episode_key=episode_key)
+#     if season:
+#         s = s.filter('term', season=season)
+
+#     print('*************************************************')
+#     print(f's.to_dict()={s.to_dict()}')
+#     print('*************************************************')
+
+#     s = s.execute()
+
+#     # print('*************************************************')
+#     # print(f'response.to_dict()={s.to_dict()}')
+#     # print('*************************************************')
+
+#     if s.hits and s.hits.hits:
+#         for hit in s.hits.hits:
+#             # print('*************************************************')
+#             # print(f'hit.to_dict()={hit.to_dict()}')
+#             # print('*************************************************')
+#             if hit.inner_hits and hit.inner_hits.scenes and hit.inner_hits.scenes.hits and hit.inner_hits.scenes.hits.hits:
+#                 for scene_hit in hit.inner_hits.scenes.hits.hits:
+#                     results.append(scene_hit)
+
+#     return results
+
+
+async def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> list:
+    print(f'begin search_scenes for show_key={show_key} season={season} episode_key={episode_key} location={location} description={description}')
+
+    if not (location or location):
+        print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (location or location)')
+        return []
+    
     s = Search(using=es_client, index='transcripts')
     s = s.extra(size=1000)
 
     results = []
 
     # q = Q("match", scenes__location=qt)
+    location_q = Q('match', **{'scenes.location': location})
+    description_q = Q('match', **{'scenes.description': description})
+
+    q = None
+    if location:
+        q = location_q
+        if description:
+            q = q & description_q
+    else:
+        q = description_q
 
     s = s.query('nested', path='scenes', 
-            query=Q('match', **{'scenes.location': qt}),
+            query=q,
             inner_hits={'size': 100},
     )
+
     s = s.filter('term', show_key=show_key)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    if season:
+        s = s.filter('term', season=season)
 
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
@@ -109,15 +170,15 @@ async def search_scenes_by_location(show_key: str, qt: str) -> list:
 
     s = s.execute()
 
-    print('*************************************************')
-    print(f'response.to_dict()={s.to_dict()}')
-    print('*************************************************')
+    # print('*************************************************')
+    # print(f'response.to_dict()={s.to_dict()}')
+    # print('*************************************************')
 
     if s.hits and s.hits.hits:
         for hit in s.hits.hits:
-            print('*************************************************')
-            print(f'hit.to_dict()={hit.to_dict()}')
-            print('*************************************************')
+            # print('*************************************************')
+            # print(f'hit.to_dict()={hit.to_dict()}')
+            # print('*************************************************')
             if hit.inner_hits and hit.inner_hits.scenes and hit.inner_hits.scenes.hits and hit.inner_hits.scenes.hits.hits:
                 for scene_hit in hit.inner_hits.scenes.hits.hits:
                     results.append(scene_hit)
@@ -125,22 +186,81 @@ async def search_scenes_by_location(show_key: str, qt: str) -> list:
     return results
 
 
-async def search_scene_events_by_speaker(show_key: str, qt: str, fields: list = None) -> list:
-    print(f'begin search_scene_events_by_speaker for show_key={show_key} qt={qt}')
+# async def search_scene_events_by_speaker(show_key: str, qt: str, episode_key: str = None, season: str = None) -> list:
+#     print(f'begin search_scene_events_by_speaker for show_key={show_key} qt={qt}')
 
-    # if not fields:
-    #     fields = ['scenes.scene_events.dialogue_spoken_by', 'scenes.scene_events.context_info']
+#     # if not fields:
+#     #     fields = ['scenes.scene_events.dialogue_spoken_by', 'scenes.scene_events.context_info']
+
+#     s = Search(using=es_client, index='transcripts')
+#     s = s.extra(size=1000)
+
+#     results = []
+
+#     s = s.query('nested', path='scenes.scene_events', 
+#             query=Q('match', **{'scenes.scene_events.spoken_by': qt}),
+#             inner_hits={'size': 100},
+#     )
+#     s = s.filter('term', show_key=show_key)
+#     if episode_key:
+#         s = s.filter('term', episode_key=episode_key)
+#     if season:
+#         s = s.filter('term', season=season)
+
+#     print('*************************************************')
+#     print(f's.to_dict()={s.to_dict()}')
+#     print('*************************************************')
+
+#     s = s.execute()
+
+#     # print('*************************************************')
+#     # print(f'response.to_dict()={s.to_dict()}')
+#     # print('*************************************************')
+
+#     if s.hits and s.hits.hits:
+#         for hit in s.hits.hits:
+#             # print('*************************************************')
+#             # print(f'hit.to_dict()={hit.to_dict()}')
+#             # print('*************************************************')
+#             if hit.inner_hits and hit.inner_hits['scenes.scene_events'] and hit.inner_hits['scenes.scene_events'].hits and hit.inner_hits['scenes.scene_events'].hits.hits:
+#                 for scene_event_hit in hit.inner_hits['scenes.scene_events'].hits.hits:
+#                     results.append(scene_event_hit)
+
+#     return results
+
+
+async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> list:
+    print(f'begin search_scene_events for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker} dialog={dialog}')
+    if not (speaker or dialog):
+        print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (speaker or dialog)')
+        return []
 
     s = Search(using=es_client, index='transcripts')
     s = s.extra(size=1000)
 
     results = []
 
+    speaker_q = Q('match', **{'scenes.scene_events.spoken_by': speaker})
+    dialog_q = Q('match', **{'scenes.scene_events.dialog': dialog})
+
+    q = None
+    if speaker:
+        q = speaker_q
+        if dialog:
+            q = q & dialog_q
+    else:
+        q = dialog_q
+
     s = s.query('nested', path='scenes.scene_events', 
-            query=Q('match', **{'scenes.scene_events.spoken_by': qt}),
+            query=q,
             inner_hits={'size': 100},
     )
+
     s = s.filter('term', show_key=show_key)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    if season:
+        s = s.filter('term', season=season)
 
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
@@ -148,15 +268,12 @@ async def search_scene_events_by_speaker(show_key: str, qt: str, fields: list = 
 
     s = s.execute()
 
-    print('*************************************************')
-    print(f'response.to_dict()={s.to_dict()}')
-    print('*************************************************')
+    # print('*************************************************')
+    # print(f'response.to_dict()={s.to_dict()}')
+    # print('*************************************************')
 
     if s.hits and s.hits.hits:
         for hit in s.hits.hits:
-            print('*************************************************')
-            print(f'hit.to_dict()={hit.to_dict()}')
-            print('*************************************************')
             if hit.inner_hits and hit.inner_hits['scenes.scene_events'] and hit.inner_hits['scenes.scene_events'].hits and hit.inner_hits['scenes.scene_events'].hits.hits:
                 for scene_event_hit in hit.inner_hits['scenes.scene_events'].hits.hits:
                     results.append(scene_event_hit)
@@ -218,7 +335,6 @@ async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, se
     if season:
         s = s.filter('term', season=season)
 
-    # s.aggs.bucket(f'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000)
     s.aggs.bucket('speaker_aggs', 'nested', path='scenes.scene_events').bucket('by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100)
 
     print('*************************************************')
@@ -231,23 +347,3 @@ async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, se
         results[item.key] = item.doc_count
 
     return results
-
-
-# doc = {
-#     'author': 'kimchy',
-#     'text': 'Elasticsearch: cool. bonsai cool.',
-#     'timestamp': datetime.now(),
-# }
-
-# resp = es.index(index="test-index", id=1, document=doc)
-# print(resp['result'])
-
-# resp = es.get(index="test-index", id=1)
-# print(resp['_source'])
-
-# es.indices.refresh(index="test-index")
-
-# resp = es.search(index="test-index", query={"match_all": {}})
-# print("Got %d Hits:" % resp['hits']['total']['value'])
-# for hit in resp['hits']['hits']:
-#     print("%(timestamp)s %(author)s: %(text)s" % hit["_source"])

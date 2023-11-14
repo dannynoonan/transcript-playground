@@ -317,15 +317,27 @@ async def search_episodes_by_title(show_key: ShowKey, qt: str = None):
     return {"match_count": len(matches), "matches": matches}
 
 
-@transcript_playground_app.get("/search_scenes_by_location/{show_key}")
-async def search_scenes_by_location(show_key: ShowKey, qt: str = None):
-    matches = await es_dao.search_scenes_by_location(show_key.value, qt)
+# @transcript_playground_app.get("/search_scenes_by_location/{show_key}")
+# async def search_scenes_by_location(show_key: ShowKey, qt: str = None, episode_key: str = None, season: str = None):
+#     matches = await es_dao.search_scenes_by_location(show_key.value, qt, episode_key, season)
+#     return {"match_count": len(matches), "matches": matches}
+
+
+@transcript_playground_app.get("/search_scenes/{show_key}")
+async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, description: str = None):
+    matches = await es_dao.search_scenes(show_key.value, season, episode_key, location, description)
     return {"match_count": len(matches), "matches": matches}
 
 
-@transcript_playground_app.get("/search_scene_events_by_speaker/{show_key}")
-async def search_scene_events_by_speaker(show_key: ShowKey, qt: str = None):
-    matches = await es_dao.search_scene_events_by_speaker(show_key.value, qt)
+# @transcript_playground_app.get("/search_scene_events_by_speaker/{show_key}")
+# async def search_scene_events_by_speaker(show_key: ShowKey, qt: str = None, episode_key: str = None, season: str = None):
+#     matches = await es_dao.search_scene_events_by_speaker(show_key.value, qt, episode_key, season)
+#     return {"match_count": len(matches), "matches": matches}
+
+
+@transcript_playground_app.get("/search_scene_events/{show_key}")
+async def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None):
+    matches = await es_dao.search_scene_events(show_key.value, season, episode_key, speaker, dialog)
     return {"match_count": len(matches), "matches": matches}
 
 
