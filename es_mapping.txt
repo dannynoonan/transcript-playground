@@ -1,0 +1,60 @@
+{
+  "transcripts": {
+    "mappings": {
+      "properties": {
+        "air_date": {
+          "type": "date"
+        },
+        "duration": {
+          "type": "integer"
+        },
+        "episode_key": {
+          "type": "keyword"
+        },
+        "indexed_ts": {
+          "type": "date"
+        },
+        "loaded_ts": {
+          "type": "date"
+        },
+        "scenes": {
+          "type": "nested",
+          "properties": {
+            "description": {
+              "type": "text"
+            },
+            "location": {
+              "type": "keyword"
+            },
+            "scene_events": {
+              "type": "nested",
+              "properties": {
+                "context_info": {
+                  "type": "text"
+                },
+                "dialog": {
+                  "type": "text"
+                },
+                "spoken_by": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "season": {
+          "type": "integer"
+        },
+        "sequence_in_season": {
+          "type": "integer"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "title": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
