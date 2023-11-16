@@ -53,6 +53,9 @@ register_tortoise(
 
 Tortoise.init_models(["app.models"], "models")
 
+# https://docs.pydantic.dev/latest/api/config/
+# https://tortoise.github.io/contrib/pydantic.html
+
 # JobPydantic = pydantic_model_creator(Job)
 # JobPydanticNoIds = pydantic_model_creator(Job, exclude_readonly=True)
 
@@ -68,6 +71,9 @@ SceneEventPydanticExcluding = pydantic_model_creator(SceneEvent, exclude=("id", 
 
 # print(f'Episode_Pydantic.model_json_schema()={Episode_Pydantic.model_json_schema()}')
 
+
+
+# https://fastapi.tiangolo.com/tutorial/query-params-str-validations/
 
 @transcript_playground_app.get("/")
 def root():
@@ -208,8 +214,16 @@ async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
 
 
 @transcript_playground_app.get("/episode/{show_key}/{episode_key}")
-async def fetch_transcript(show_key: ShowKey, episode_key: str):
-    # fetch episode, throw errors if not found
+async def fetch_episode(show_key: ShowKey, episode_key: str, data_source: str = None):
+    if not data_source:
+        data_source = 'db'
+
+    # fetch episode from es
+    if data_source == 'es':
+        es_episode = await es_dao.fetch_episode_by_key(show_key.value, episode_key)
+        return {"es_episode": es_episode}
+    
+    # fetch episode from db
     episode = None
     try:
         episode = await dao.fetch_episode(show_key.value, episode_key)
@@ -225,6 +239,12 @@ async def fetch_transcript(show_key: ShowKey, episode_key: str):
     
     episode_pyd = await EpisodePydantic.from_tortoise_orm(episode)
     return {"show_meta": show_metadata[show_key], "episode": episode_pyd}
+
+
+@transcript_playground_app.get("/init_es")
+async def init_es():
+    await es_dao.init_mappings()
+    return {"success": "success"}
 
 
 @transcript_playground_app.get("/index_episode/{show_key}/{episode_key}")
@@ -299,18 +319,6 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     }
 
 
-@transcript_playground_app.get("/init_es")
-async def init_es():
-    await es_dao.init_mappings()
-    return {"success": "success"}
-
-
-@transcript_playground_app.get("/fetch_es_episode/{show_key}/{episode_key}")
-async def fetch_es_episode(show_key: ShowKey, episode_key: str):
-    es_episode = await es_dao.fetch_episode_by_key(show_key.value, episode_key)
-    return {"es_episode": es_episode}
-
-
 @transcript_playground_app.get("/search_episodes_by_title/{show_key}")
 async def search_episodes_by_title(show_key: ShowKey, qt: str = None):
     matches = await es_dao.search_episodes_by_title(show_key.value, qt)
@@ -325,8 +333,8 @@ async def search_episodes_by_title(show_key: ShowKey, qt: str = None):
 
 @transcript_playground_app.get("/search_scenes/{show_key}")
 async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, description: str = None):
-    matches = await es_dao.search_scenes(show_key.value, season, episode_key, location, description)
-    return {"match_count": len(matches), "matches": matches}
+    matches, scene_count = await es_dao.search_scenes(show_key.value, season, episode_key, location, description)
+    return {"scene_count": scene_count, "episode_count": len(matches), "matches": matches}
 
 
 # @transcript_playground_app.get("/search_scene_events_by_speaker/{show_key}")
@@ -337,8 +345,8 @@ async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str 
 
 @transcript_playground_app.get("/search_scene_events/{show_key}")
 async def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None):
-    matches = await es_dao.search_scene_events(show_key.value, season, episode_key, speaker, dialog)
-    return {"match_count": len(matches), "matches": matches}
+    matches, scene_event_count = await es_dao.search_scene_events(show_key.value, season, episode_key, speaker, dialog)
+    return {"scene_event_count": scene_event_count, "episode_count": len(matches), "matches": matches}
 
 
 @transcript_playground_app.get("/agg_scenes_by_location/{show_key}")

@@ -129,11 +129,11 @@ async def search_episodes_by_title(show_key: str, qt: str) -> list:
 #     return results
 
 
-async def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> list:
+async def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> (list, int):
     print(f'begin search_scenes for show_key={show_key} season={season} episode_key={episode_key} location={location} description={description}')
 
     if not (location or location):
-        print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (location or location)')
+        print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (location or description)')
         return []
     
     s = Search(using=es_client, index='transcripts')
@@ -164,6 +164,8 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     if season:
         s = s.filter('term', season=season)
 
+    s = s.source(excludes=['scenes'])
+
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
     print('*************************************************')
@@ -174,16 +176,21 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     # print(f'response.to_dict()={s.to_dict()}')
     # print('*************************************************')
 
+    # hits and inner_hits come back fragmented, reassemble them and track inner_hit count
+    scene_count = 0
     if s.hits and s.hits.hits:
         for hit in s.hits.hits:
-            # print('*************************************************')
-            # print(f'hit.to_dict()={hit.to_dict()}')
-            # print('*************************************************')
+            scene_hits = []
+            # episode_ids_to_scene_hits[hit._id] = scene_hits
             if hit.inner_hits and hit.inner_hits.scenes and hit.inner_hits.scenes.hits and hit.inner_hits.scenes.hits.hits:
                 for scene_hit in hit.inner_hits.scenes.hits.hits:
-                    results.append(scene_hit)
+                    # inner_hits.append(scene_hit._source)
+                    scene_hits.append(scene_hit._source._d_)
+                    scene_count += 1
+            hit.inner_hits = scene_hits
+            results.append(hit._d_)
 
-    return results
+    return results, scene_count
 
 
 # async def search_scene_events_by_speaker(show_key: str, qt: str, episode_key: str = None, season: str = None) -> list:
@@ -229,7 +236,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
 #     return results
 
 
-async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> list:
+async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> (list, int):
     print(f'begin search_scene_events for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker} dialog={dialog}')
     if not (speaker or dialog):
         print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (speaker or dialog)')
@@ -262,6 +269,8 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
     if season:
         s = s.filter('term', season=season)
 
+    s = s.source(excludes=['scenes.scene_events'])
+
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
     print('*************************************************')
@@ -272,13 +281,38 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
     # print(f'response.to_dict()={s.to_dict()}')
     # print('*************************************************')
 
+    # hits and inner_hits come back fragmented, reassemble them and track inner_hit count
+    scene_count = 0
+    scene_event_count = 0
     if s.hits and s.hits.hits:
         for hit in s.hits.hits:
+            scenes = hit._source.scenes
+            scene_offsets_to_scene_event_lists = {}
+            # map scene offsets to scene_events
             if hit.inner_hits and hit.inner_hits['scenes.scene_events'] and hit.inner_hits['scenes.scene_events'].hits and hit.inner_hits['scenes.scene_events'].hits.hits:
                 for scene_event_hit in hit.inner_hits['scenes.scene_events'].hits.hits:
-                    results.append(scene_event_hit)
+                    scene_offset = scene_event_hit._nested.offset
+                    scene_event = scene_event_hit._d_['_source']
+                    scene_event['_score'] = scene_event_hit._d_['_score']
+                    if scene_offset in scene_offsets_to_scene_event_lists:
+                        scene_offsets_to_scene_event_lists[scene_offset].append(scene_event)
+                    else:
+                        scene_offsets_to_scene_event_lists[scene_offset] = [scene_event]
+                        scene_count += 1
+                    scene_event_count += 1
+            # re-assemble scenes with scene_events by mapping parent scene offset to scene list index position
+            scene_inner_hits = []
+            for scene_offset, scene_events in scene_offsets_to_scene_event_lists.items():
+                scene_to_scene_events = scenes[scene_offset]
+                scene_to_scene_events['sequence'] = scene_offset
+                scene_to_scene_events['scene_events'] = scene_events
+                scene_inner_hits.append(scene_to_scene_events._d_)
+            # re-assemble episodes with scenes 
+            hit.inner_hits = scene_inner_hits
+            del(hit._source['scenes'])
+            results.append(hit._d_)
 
-    return results
+    return results, scene_event_count
 
 
 async def agg_scenes_by_location(show_key: str, episode_key: str = None, season: str = None) -> list:
