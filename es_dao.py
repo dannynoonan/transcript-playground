@@ -71,62 +71,26 @@ async def search_episodes_by_title(show_key: str, qt: str) -> list:
 
     s = s.filter('term', show_key=show_key)
     s = s.query(q)
+    s = s.highlight('title')
 
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
     print('*************************************************')
 
+    raw_query = s.to_dict()
+
     s = s.execute()
 
-    print('*************************************************')
-    print(f'response.to_dict()={s.to_dict()}')
-    print('*************************************************')
+    # print('*************************************************')
+    # print(f'response.to_dict()={s.to_dict()}')
+    # print('*************************************************')
 
     for hit in s.hits:
-        results.append(hit)
-    return results
-
-
-# async def search_scenes_by_location(show_key: str, qt: str, episode_key: str = None, season: str = None) -> list:
-#     print(f'begin search_scenes_by_location for show_key={show_key} qt={qt}')
-
-#     s = Search(using=es_client, index='transcripts')
-#     s = s.extra(size=1000)
-
-#     results = []
-
-#     # q = Q("match", scenes__location=qt)
-
-#     s = s.query('nested', path='scenes', 
-#             query=Q('match', **{'scenes.location': qt}),
-#             inner_hits={'size': 100},
-#     )
-#     s = s.filter('term', show_key=show_key)
-#     if episode_key:
-#         s = s.filter('term', episode_key=episode_key)
-#     if season:
-#         s = s.filter('term', season=season)
-
-#     print('*************************************************')
-#     print(f's.to_dict()={s.to_dict()}')
-#     print('*************************************************')
-
-#     s = s.execute()
-
-#     # print('*************************************************')
-#     # print(f'response.to_dict()={s.to_dict()}')
-#     # print('*************************************************')
-
-#     if s.hits and s.hits.hits:
-#         for hit in s.hits.hits:
-#             # print('*************************************************')
-#             # print(f'hit.to_dict()={hit.to_dict()}')
-#             # print('*************************************************')
-#             if hit.inner_hits and hit.inner_hits.scenes and hit.inner_hits.scenes.hits and hit.inner_hits.scenes.hits.hits:
-#                 for scene_hit in hit.inner_hits.scenes.hits.hits:
-#                     results.append(scene_hit)
-
-#     return results
+        episode_hit = hit._d_
+        if 'highlight' in hit.meta._d_ and 'title' in hit.meta._d_['highlight']:
+            episode_hit['title'] = hit.meta._d_['highlight']['title'][0]
+        results.append(episode_hit)
+    return results, raw_query
 
 
 async def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> (list, int):
@@ -170,6 +134,8 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     print(f's.to_dict()={s.to_dict()}')
     print('*************************************************')
 
+    raw_query = s.to_dict()
+
     s = s.execute()
 
     # print('*************************************************')
@@ -191,50 +157,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
             hit.inner_hits = scene_hits
             results.append(hit._d_)
 
-    return results, scene_count
-
-
-# async def search_scene_events_by_speaker(show_key: str, qt: str, episode_key: str = None, season: str = None) -> list:
-#     print(f'begin search_scene_events_by_speaker for show_key={show_key} qt={qt}')
-
-#     # if not fields:
-#     #     fields = ['scenes.scene_events.dialogue_spoken_by', 'scenes.scene_events.context_info']
-
-#     s = Search(using=es_client, index='transcripts')
-#     s = s.extra(size=1000)
-
-#     results = []
-
-#     s = s.query('nested', path='scenes.scene_events', 
-#             query=Q('match', **{'scenes.scene_events.spoken_by': qt}),
-#             inner_hits={'size': 100},
-#     )
-#     s = s.filter('term', show_key=show_key)
-#     if episode_key:
-#         s = s.filter('term', episode_key=episode_key)
-#     if season:
-#         s = s.filter('term', season=season)
-
-#     print('*************************************************')
-#     print(f's.to_dict()={s.to_dict()}')
-#     print('*************************************************')
-
-#     s = s.execute()
-
-#     # print('*************************************************')
-#     # print(f'response.to_dict()={s.to_dict()}')
-#     # print('*************************************************')
-
-#     if s.hits and s.hits.hits:
-#         for hit in s.hits.hits:
-#             # print('*************************************************')
-#             # print(f'hit.to_dict()={hit.to_dict()}')
-#             # print('*************************************************')
-#             if hit.inner_hits and hit.inner_hits['scenes.scene_events'] and hit.inner_hits['scenes.scene_events'].hits and hit.inner_hits['scenes.scene_events'].hits.hits:
-#                 for scene_event_hit in hit.inner_hits['scenes.scene_events'].hits.hits:
-#                     results.append(scene_event_hit)
-
-#     return results
+    return results, scene_count, raw_query
 
 
 async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> (list, int):
@@ -259,10 +182,12 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
     else:
         q = dialog_q
 
-    s = s.query('nested', path='scenes.scene_events', 
+    nested_q = Q('nested', path='scenes.scene_events', 
             query=q,
             inner_hits={'size': 100, 'highlight': {'fields': {'scenes.scene_events.spoken_by': {}, 'scenes.scene_events.dialog': {}}}},
     )
+
+    s = s.query(nested_q)
 
     s = s.filter('term', show_key=show_key)
     if episode_key:
@@ -275,6 +200,8 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
     print('*************************************************')
+
+    raw_query = s.to_dict()
 
     s = s.execute()
 
@@ -317,22 +244,139 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
             del(hit._source['scenes'])
             results.append(hit._d_)
 
-    return results, scene_event_count
+    return results, scene_event_count, raw_query
 
 
 async def search(show_key: str, season: str = None, episode_key: str = None, qt: str = None):
+    print(f'begin search for show_key={show_key} season={season} episode_key={episode_key} qt={qt}')
+
     '''
     qt can be: 
-        episode.title
-        episode.scene.location
-        episode.scene.description
-        episode.scene.scene_event.context_info
-        episode.scene.scene_event.spoken_by
-        episode.scene.scene_event.dialog
+        title
+        scenes.location
+        scenes.description
+        scenes.scene_events.context_info
+        scenes.scene_events.spoken_by
+        scenes.scene_events.dialog
     '''
 
+    s = Search(using=es_client, index='transcripts')
+    s = s.extra(size=1000)
+
     results = []
-    return results
+
+    episode_q = Q('match', title=qt)
+    
+    scene_fields_q = Q('bool', minimum_should_match=1, should=[
+            Q('match', **{'scenes.location': qt}),
+            Q('match', **{'scenes.description': qt})])
+    
+    scenes_q = Q('nested', path='scenes', 
+            query=scene_fields_q,
+            inner_hits={
+                'size': 100, 
+                'highlight': {
+                    'fields': {'scenes.location': {}, 'scenes.description': {}}
+                }
+            })
+    
+    scene_event_fields_q = Q('bool', minimum_should_match=1, should=[
+            Q('match', **{'scenes.scene_events.context_info': qt}),
+            Q('match', **{'scenes.scene_events.spoken_by': qt}),
+            Q('match', **{'scenes.scene_events.dialog': qt})])
+    
+    scene_events_q = Q('nested', path='scenes.scene_events', 
+            query=scene_event_fields_q,
+            inner_hits={
+                'size': 100, 
+                'highlight': {
+                    'fields': {'scenes.scene_events.spoken_by': {}, 'scenes.scene_events.dialog': {}, 'scenes.scene_events.context_info': {}}
+                }
+            })
+
+    s = s.query(episode_q | scenes_q | scene_events_q)
+
+    s = s.filter('term', show_key=show_key)
+    s = s.highlight('title')
+
+    print('*************************************************')
+    print(f's.to_dict()={s.to_dict()}')
+    print('*************************************************')
+
+    raw_query = s.to_dict()
+
+    s = s.execute()
+
+    # print('*************************************************')
+    # print(f'response.to_dict()={s.to_dict()}')
+    # print('*************************************************')
+
+    scene_count = 0
+    scene_event_count = 0
+    for hit in s.hits.hits:
+        episode = hit._source
+        episode['score'] = hit._score
+        episode['agg_score'] = hit._score
+        episode['high_agg_scene_score'] = 0
+        if 'highlight' in hit:
+            episode['title'] = hit['highlight']['title'][0]
+        orig_scenes = episode.scenes
+
+        # initialize and highlight inner_hit scenes using scene_offset as keys
+        scene_offset_to_scene = {}
+        for scene_hit in hit.inner_hits['scenes'].hits.hits:
+            scene_offset = scene_hit._nested.offset
+            scene = scene_hit._source
+            scene['sequence'] = scene_offset
+            scene['score'] = scene_hit._score
+            scene['agg_score'] = scene_hit._score
+            scene['high_event_score'] = 0
+            scene['scene_events'] = []
+            if 'highlight' in scene_hit and 'scenes.location' in scene_hit.highlight:
+                scene.location = scene_hit.highlight['scenes.location'][0]
+            if 'highlight' in scene_hit and 'scenes.description' in scene_hit.highlight:
+                scene.description = scene_hit.highlight['scenes.description'][0]
+            # del(scene.scene_events)  # TODO handle this in query?
+            scene_offset_to_scene[scene_offset] = scene
+
+        # highlight and map inner_hit scene_events to scenes using scene_offset
+        for scene_event_hit in hit.inner_hits['scenes.scene_events'].hits.hits:
+            scene_offset = scene_event_hit._nested.offset
+            scene_event = scene_event_hit._source
+            scene_event['score'] = scene_event_hit._score
+            if 'highlight' in scene_event_hit and 'scenes.scene_events.spoken_by' in scene_event_hit.highlight:
+                scene_event_hit._source.spoken_by = scene_event_hit.highlight['scenes.scene_events.spoken_by'][0]
+            if 'highlight' in scene_event_hit and 'scenes.scene_events.dialog' in scene_event_hit.highlight:
+                scene_event_hit._source.dialog = scene_event_hit.highlight['scenes.scene_events.dialog'][0]
+            if 'highlight' in scene_event_hit and 'scenes.scene_events.context_info' in scene_event_hit.highlight:
+                scene_event_hit._source.context_info = scene_event_hit.highlight['scenes.scene_events.context_info'][0]
+
+            # if scene at scene_offset wasn't part of inner_hits, grab from top-level _source and initialize it
+            if scene_offset not in scene_offset_to_scene:
+                scene = orig_scenes[scene_offset]
+                scene['sequence'] = scene_offset
+                scene['score'] = 0
+                scene['agg_score'] = 0
+                scene['high_event_score'] = 0
+                scene['scene_events'] = []
+                scene_offset_to_scene[scene_offset] = scene
+            scene = scene_offset_to_scene[scene_offset]
+
+            scene['scene_events'].append(scene_event._d_)
+            scene['high_event_score'] = max(scene_event['score'], scene['high_event_score'])
+            scene['agg_score'] += scene_event['score']
+            scene_event_count += 1
+
+        # assemble and score episodes from inner_hit scenes / scene_events stitched together above
+        episode.scenes = []
+        for scene_offset, scene in scene_offset_to_scene.items():
+            episode.scenes.append(scene._d_)
+            episode['agg_score'] += scene['agg_score']
+            episode['high_agg_scene_score'] = max(scene['agg_score'], episode['high_agg_scene_score'])
+            scene_count += 1
+        results.append(episode._d_)
+
+    return results, scene_count, scene_event_count, raw_query
 
 
 async def agg_scenes_by_location(show_key: str, episode_key: str = None, season: str = None) -> list:
@@ -355,6 +399,8 @@ async def agg_scenes_by_location(show_key: str, episode_key: str = None, season:
     print(f's.to_dict()={s.to_dict()}')
     print('*************************************************')
 
+    raw_query = s.to_dict()
+    
     s = s.execute()
 
     # print('*************************************************')
@@ -370,7 +416,7 @@ async def agg_scenes_by_location(show_key: str, episode_key: str = None, season:
     for item in s.aggregations.location_aggs.by_location.buckets:
         results[item.key] = item.doc_count
 
-    return results
+    return results, raw_query
 
 
 async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, season: str = None) -> list:
@@ -395,9 +441,11 @@ async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, se
     print(f's.to_dict()={s.to_dict()}')
     print('*************************************************')
 
+    raw_query = s.to_dict()
+
     s = s.execute()
 
     for item in s.aggregations.speaker_aggs.by_speaker.buckets:
         results[item.key] = item.doc_count
 
-    return results
+    return results, raw_query
