@@ -52,3 +52,12 @@ class ScoreMeta(object):
         self.score = score
         self.agg_score = agg_score
         self.high_child_score = high_child_score
+
+class SortableDict(object):
+    def __init__(self, obj: dict):
+        self.obj = obj
+
+    def __gt__(self, other):
+        if self.obj['score_meta'].agg_score > other.obj['score_meta'].agg_score:
+            return True
+        return False

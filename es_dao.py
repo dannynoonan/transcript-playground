@@ -6,7 +6,7 @@ from elasticsearch_dsl import Search, Q, A
 from elasticsearch_dsl.query import MultiMatch
 
 from config import settings
-from es_model import EsEpisodeTranscript, ScoreMeta
+from es_model import EsEpisodeTranscript, ScoreMeta, SortableDict
 
 
 es_client = Elasticsearch(
@@ -87,7 +87,8 @@ async def search_episodes_by_title(show_key: str, qt: str) -> (list, dict):
 
     for hit in s.hits.hits:
         episode = hit._source
-        episode['score_meta'] = ScoreMeta(score=hit._score, agg_score=hit._score, high_child_score=0)
+        episode['score'] = hit._score
+        # episode['score_meta'] = ScoreMeta(score=hit._score, agg_score=hit._score, high_child_score=0)
         if 'highlight' in hit:
             episode['title'] = hit['highlight']['title'][0]
         results.append(episode._d_)
@@ -179,9 +180,13 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
             episode['score_meta'].agg_score += scene['score_meta'].agg_score
             episode['score_meta'].high_child_score = max(scene['score_meta'].agg_score, episode['score_meta'].high_child_score)
             scene_count += 1
-        results.append(episode._d_)
 
+        # wrap episode in SortableDict before adding to results
+        sortable_episode = SortableDict(episode._d_)
+        results.append(sortable_episode)
 
+    # sort results before returning
+    results = sorted(results, reverse=True)
     return results, scene_count, raw_query
 
 
@@ -255,6 +260,7 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
         for scene_event_hit in hit.inner_hits['scenes.scene_events'].hits.hits:
             scene_offset = scene_event_hit._nested.offset
             scene_event = scene_event_hit._source
+            scene_event['sequence'] = scene_event_hit._nested._nested.offset
             scene_event['score'] = scene_event_hit._score
             if 'highlight' in scene_event_hit:
                 if 'scenes.scene_events.spoken_by' in scene_event_hit.highlight:
@@ -285,8 +291,12 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
             episode['score_meta'].agg_score += scene['score_meta'].agg_score
             episode['score_meta'].high_child_score = max(scene['score_meta'].agg_score, episode['score_meta'].high_child_score)
             scene_count += 1
-        results.append(episode._d_)
+        # wrap episode in SortableDict before adding to results
+        sortable_episode = SortableDict(episode._d_)
+        results.append(sortable_episode)
 
+    # sort results before returning
+    results = sorted(results, reverse=True)
     return results, scene_count, scene_event_count, raw_query
 
 
@@ -397,6 +407,7 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
         for scene_event_hit in hit.inner_hits['scenes.scene_events'].hits.hits:
             scene_offset = scene_event_hit._nested.offset
             scene_event = scene_event_hit._source
+            scene_event['sequence'] = scene_event_hit._nested._nested.offset
             scene_event['score'] = scene_event_hit._score
             if 'highlight' in scene_event_hit:
                 if 'scenes.scene_events.spoken_by' in scene_event_hit.highlight:
@@ -427,8 +438,13 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
             episode['score_meta'].agg_score += scene['score_meta'].agg_score
             episode['score_meta'].high_child_score = max(scene['score_meta'].agg_score, episode['score_meta'].high_child_score)
             scene_count += 1
-        results.append(episode._d_)
 
+        # wrap episode in SortableDict before adding to results
+        sortable_episode = SortableDict(episode._d_)
+        results.append(sortable_episode)
+
+    # sort results before returning
+    results = sorted(results, reverse=True)
     return results, scene_count, scene_event_count, raw_query
 
 
