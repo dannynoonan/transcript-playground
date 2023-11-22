@@ -1,5 +1,5 @@
 from datetime import datetime
-from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer
+from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, Long
 
 
 class EsSceneEvent(InnerDoc):
@@ -41,3 +41,14 @@ class EsEpisodeTranscript(Document):
         # self.meta.id = f'{self.show_key}_{self.episode_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
+
+
+class ScoreMeta(object):
+    # score = Long()
+    # agg_score = Long()
+    # high_child_score = Long()
+
+    def __init__(self, score: Long = 0, agg_score: Long = 0, high_child_score: Long = 0):
+        self.score = score
+        self.agg_score = agg_score
+        self.high_child_score = high_child_score

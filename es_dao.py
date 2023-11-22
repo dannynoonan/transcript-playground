@@ -6,7 +6,7 @@ from elasticsearch_dsl import Search, Q, A
 from elasticsearch_dsl.query import MultiMatch
 
 from config import settings
-from es_model import EsEpisodeTranscript, EsScene, EsSceneEvent
+from es_model import EsEpisodeTranscript, ScoreMeta
 
 
 es_client = Elasticsearch(
@@ -59,7 +59,7 @@ async def fetch_episode_by_key(show_key: str, episode_key: str) -> EsEpisodeTran
     return results
 
 
-async def search_episodes_by_title(show_key: str, qt: str) -> list:
+async def search_episodes_by_title(show_key: str, qt: str) -> (list, dict):
     print(f'begin search_episodes_by_title for show_key={show_key} qt={qt}')
 
     s = Search(using=es_client, index='transcripts')
@@ -85,15 +85,17 @@ async def search_episodes_by_title(show_key: str, qt: str) -> list:
     # print(f'response.to_dict()={s.to_dict()}')
     # print('*************************************************')
 
-    for hit in s.hits:
-        episode_hit = hit._d_
-        if 'highlight' in hit.meta._d_ and 'title' in hit.meta._d_['highlight']:
-            episode_hit['title'] = hit.meta._d_['highlight']['title'][0]
-        results.append(episode_hit)
+    for hit in s.hits.hits:
+        episode = hit._source
+        episode['score_meta'] = ScoreMeta(score=hit._score, agg_score=hit._score, high_child_score=0)
+        if 'highlight' in hit:
+            episode['title'] = hit['highlight']['title'][0]
+        results.append(episode._d_)
+
     return results, raw_query
 
 
-async def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> (list, int):
+async def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> (list, int, dict):
     print(f'begin search_scenes for show_key={show_key} season={season} episode_key={episode_key} location={location} description={description}')
 
     if not (location or description):
@@ -119,8 +121,15 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
 
     s = s.query('nested', path='scenes', 
             query=q,
-            inner_hits={'size': 100, 'highlight': {'fields': {'scenes.location': {}, 'scenes.description': {}}}},
-    )
+            inner_hits={
+                'size': 100, 
+                'highlight': {
+                    'fields': {
+                        'scenes.location': {}, 
+                        'scenes.description': {}
+                    }
+                }
+            })
 
     s = s.filter('term', show_key=show_key)
     if episode_key:
@@ -142,26 +151,43 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     # print(f'response.to_dict()={s.to_dict()}')
     # print('*************************************************')
 
-    # hits and inner_hits come back fragmented, reassemble them and track inner_hit count
     scene_count = 0
-    if s.hits and s.hits.hits:
-        for hit in s.hits.hits:
-            scene_hits = []
-            for scene_hit in hit.inner_hits.scenes.hits.hits:
-                if 'highlight' in scene_hit and 'scenes.location' in scene_hit.highlight:
-                    scene_hit._source.location = scene_hit.highlight["scenes.location"]._l_[0]
-                if 'highlight' in scene_hit and 'scenes.description' in scene_hit.highlight:
-                    scene_hit._source.description = scene_hit.highlight["scenes.description"]._l_[0]
-                scene_hits.append(scene_hit._source._d_)
-                scene_count += 1
-            hit.inner_hits = scene_hits
-            results.append(hit._d_)
+    for hit in s.hits.hits:
+        episode = hit._source
+        episode['score_meta'] = ScoreMeta(score=hit._score, agg_score=hit._score, high_child_score=0)
+        if 'highlight' in hit:
+            episode['title'] = hit['highlight']['title'][0]
+
+        # initialize and highlight inner_hit scenes using scene_offset as keys
+        scene_offset_to_scene = {}
+        for scene_hit in hit.inner_hits['scenes'].hits.hits:
+            scene_offset = scene_hit._nested.offset
+            scene = scene_hit._source
+            scene['sequence'] = scene_offset
+            scene['score_meta'] = ScoreMeta(score=scene_hit._score, agg_score=scene_hit._score, high_child_score=0)
+            if 'highlight' in scene_hit:
+                if 'scenes.location' in scene_hit.highlight:
+                    scene.location = scene_hit.highlight['scenes.location'][0]
+                if 'scenes.description' in scene_hit.highlight:
+                    scene.description = scene_hit.highlight['scenes.description'][0]
+            scene_offset_to_scene[scene_offset] = scene
+
+        # assemble and score episodes from inner_hit scenes / scene_events stitched together above
+        episode.scenes = []
+        for scene_offset, scene in scene_offset_to_scene.items():
+            episode.scenes.append(scene._d_)
+            episode['score_meta'].agg_score += scene['score_meta'].agg_score
+            episode['score_meta'].high_child_score = max(scene['score_meta'].agg_score, episode['score_meta'].high_child_score)
+            scene_count += 1
+        results.append(episode._d_)
+
 
     return results, scene_count, raw_query
 
 
-async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> (list, int):
+async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> (list, int, int, dict):
     print(f'begin search_scene_events for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker} dialog={dialog}')
+    
     if not (speaker or dialog):
         print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (speaker or dialog)')
         return []
@@ -184,8 +210,15 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
 
     nested_q = Q('nested', path='scenes.scene_events', 
             query=q,
-            inner_hits={'size': 100, 'highlight': {'fields': {'scenes.scene_events.spoken_by': {}, 'scenes.scene_events.dialog': {}}}},
-    )
+            inner_hits={
+                'size': 100, 
+                'highlight': {
+                    'fields': {
+                        'scenes.scene_events.spoken_by': {}, 
+                        'scenes.scene_events.dialog': {}
+                    }
+                }
+            })
 
     s = s.query(nested_q)
 
@@ -209,45 +242,55 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
     # print(f'response.to_dict()={s.to_dict()}')
     # print('*************************************************')
 
-    # hits and inner_hits come back fragmented, reassemble them and track inner_hit count
     scene_count = 0
     scene_event_count = 0
-    if s.hits and s.hits.hits:
-        for hit in s.hits.hits:
-            scenes = hit._source.scenes
-            scene_offsets_to_scene_event_lists = {}
-            # map scene offsets to scene_events
-            for scene_event_hit in hit.inner_hits['scenes.scene_events'].hits.hits:
-                scene_offset = scene_event_hit._nested.offset
-                scene_event = scene_event_hit._d_['_source']
-                scene_event['_score'] = scene_event_hit._d_['_score']
-                if 'highlight' in scene_event_hit and 'scenes.scene_events.spoken_by' in scene_event_hit.highlight:
-                    scene_event_hit._source.spoken_by = scene_event_hit.highlight["scenes.scene_events.spoken_by"]._l_[0]
-                if 'highlight' in scene_event_hit and 'scenes.scene_events.dialog' in scene_event_hit.highlight:
-                    scene_event_hit._source.dialog = scene_event_hit.highlight["scenes.scene_events.dialog"]._l_[0]
-                if scene_offset in scene_offsets_to_scene_event_lists:
-                    scene_offsets_to_scene_event_lists[scene_offset].append(scene_event)
-                else:
-                    scene_offsets_to_scene_event_lists[scene_offset] = [scene_event]
-                    scene_count += 1
-                scene_event_count += 1
-                
+    for hit in s.hits.hits:
+        episode = hit._source
+        episode['score_meta'] = ScoreMeta(score=hit._score, agg_score=hit._score, high_child_score=0)
+        orig_scenes = episode.scenes
+
+        scene_offset_to_scene = {}
+
+        # highlight and map inner_hit scene_events to scenes using scene_offset
+        for scene_event_hit in hit.inner_hits['scenes.scene_events'].hits.hits:
+            scene_offset = scene_event_hit._nested.offset
+            scene_event = scene_event_hit._source
+            scene_event['score'] = scene_event_hit._score
+            if 'highlight' in scene_event_hit:
+                if 'scenes.scene_events.spoken_by' in scene_event_hit.highlight:
+                    scene_event_hit._source.spoken_by = scene_event_hit.highlight['scenes.scene_events.spoken_by'][0]
+                if 'scenes.scene_events.dialog' in scene_event_hit.highlight:
+                    scene_event_hit._source.dialog = scene_event_hit.highlight['scenes.scene_events.dialog'][0]
+                # if 'scenes.scene_events.context_info' in scene_event_hit.highlight:
+                #     scene_event_hit._source.context_info = scene_event_hit.highlight['scenes.scene_events.context_info'][0]
+
             # re-assemble scenes with scene_events by mapping parent scene offset to scene list index position
-            scene_inner_hits = []
-            for scene_offset, scene_events in scene_offsets_to_scene_event_lists.items():
-                scene_to_scene_events = scenes[scene_offset]
-                scene_to_scene_events['sequence'] = scene_offset
-                scene_to_scene_events['scene_events'] = scene_events
-                scene_inner_hits.append(scene_to_scene_events._d_)
-            # re-assemble episodes with scenes 
-            hit.inner_hits = scene_inner_hits
-            del(hit._source['scenes'])
-            results.append(hit._d_)
+            if scene_offset not in scene_offset_to_scene:
+                scene = orig_scenes[scene_offset]
+                scene.scene_events = []
+                scene['sequence'] = scene_offset
+                scene['score_meta'] = ScoreMeta(score=0, agg_score=0, high_child_score=0)
+                scene_offset_to_scene[scene_offset] = scene
+            scene = scene_offset_to_scene[scene_offset]
 
-    return results, scene_event_count, raw_query
+            scene['scene_events'].append(scene_event._d_)
+            scene['score_meta'].high_child_score = max(scene_event['score'], scene['score_meta'].high_child_score)
+            scene['score_meta'].agg_score += scene_event['score']
+            scene_event_count += 1
+
+        # assemble and score episodes from inner_hit scenes / scene_events stitched together above
+        episode.scenes = []
+        for scene_offset, scene in scene_offset_to_scene.items():
+            episode.scenes.append(scene._d_)
+            episode['score_meta'].agg_score += scene['score_meta'].agg_score
+            episode['score_meta'].high_child_score = max(scene['score_meta'].agg_score, episode['score_meta'].high_child_score)
+            scene_count += 1
+        results.append(episode._d_)
+
+    return results, scene_count, scene_event_count, raw_query
 
 
-async def search(show_key: str, season: str = None, episode_key: str = None, qt: str = None):
+async def search(show_key: str, season: str = None, episode_key: str = None, qt: str = None) -> (list, int, int, dict):
     print(f'begin search for show_key={show_key} season={season} episode_key={episode_key} qt={qt}')
 
     '''
@@ -276,7 +319,10 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
             inner_hits={
                 'size': 100, 
                 'highlight': {
-                    'fields': {'scenes.location': {}, 'scenes.description': {}}
+                    'fields': {
+                        'scenes.location': {}, 
+                        'scenes.description': {}
+                    }
                 }
             })
     
@@ -290,14 +336,25 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
             inner_hits={
                 'size': 100, 
                 'highlight': {
-                    'fields': {'scenes.scene_events.spoken_by': {}, 'scenes.scene_events.dialog': {}, 'scenes.scene_events.context_info': {}}
+                    'fields': {
+                        'scenes.scene_events.spoken_by': {}, 
+                        'scenes.scene_events.dialog': {}, 
+                        'scenes.scene_events.context_info': {}
+                    }
                 }
             })
 
     s = s.query(episode_q | scenes_q | scene_events_q)
 
     s = s.filter('term', show_key=show_key)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    if season:
+        s = s.filter('term', season=season)
+
     s = s.highlight('title')
+
+    s = s.source(excludes=['scenes.scene_events'])
 
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
@@ -315,9 +372,7 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
     scene_event_count = 0
     for hit in s.hits.hits:
         episode = hit._source
-        episode['score'] = hit._score
-        episode['agg_score'] = hit._score
-        episode['high_agg_scene_score'] = 0
+        episode['score_meta'] = ScoreMeta(score=hit._score, agg_score=hit._score, high_child_score=0)
         if 'highlight' in hit:
             episode['title'] = hit['highlight']['title'][0]
         orig_scenes = episode.scenes
@@ -327,15 +382,14 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
         for scene_hit in hit.inner_hits['scenes'].hits.hits:
             scene_offset = scene_hit._nested.offset
             scene = scene_hit._source
+            scene.scene_events = []
             scene['sequence'] = scene_offset
-            scene['score'] = scene_hit._score
-            scene['agg_score'] = scene_hit._score
-            scene['high_event_score'] = 0
-            scene['scene_events'] = []
-            if 'highlight' in scene_hit and 'scenes.location' in scene_hit.highlight:
-                scene.location = scene_hit.highlight['scenes.location'][0]
-            if 'highlight' in scene_hit and 'scenes.description' in scene_hit.highlight:
-                scene.description = scene_hit.highlight['scenes.description'][0]
+            scene['score_meta'] = ScoreMeta(score=scene_hit._score, agg_score=scene_hit._score, high_child_score=0)
+            if 'highlight' in scene_hit:
+                if 'scenes.location' in scene_hit.highlight:
+                    scene.location = scene_hit.highlight['scenes.location'][0]
+                if 'scenes.description' in scene_hit.highlight:
+                    scene.description = scene_hit.highlight['scenes.description'][0]
             # del(scene.scene_events)  # TODO handle this in query?
             scene_offset_to_scene[scene_offset] = scene
 
@@ -344,42 +398,41 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
             scene_offset = scene_event_hit._nested.offset
             scene_event = scene_event_hit._source
             scene_event['score'] = scene_event_hit._score
-            if 'highlight' in scene_event_hit and 'scenes.scene_events.spoken_by' in scene_event_hit.highlight:
-                scene_event_hit._source.spoken_by = scene_event_hit.highlight['scenes.scene_events.spoken_by'][0]
-            if 'highlight' in scene_event_hit and 'scenes.scene_events.dialog' in scene_event_hit.highlight:
-                scene_event_hit._source.dialog = scene_event_hit.highlight['scenes.scene_events.dialog'][0]
-            if 'highlight' in scene_event_hit and 'scenes.scene_events.context_info' in scene_event_hit.highlight:
-                scene_event_hit._source.context_info = scene_event_hit.highlight['scenes.scene_events.context_info'][0]
+            if 'highlight' in scene_event_hit:
+                if 'scenes.scene_events.spoken_by' in scene_event_hit.highlight:
+                    scene_event_hit._source.spoken_by = scene_event_hit.highlight['scenes.scene_events.spoken_by'][0]
+                if 'scenes.scene_events.dialog' in scene_event_hit.highlight:
+                    scene_event_hit._source.dialog = scene_event_hit.highlight['scenes.scene_events.dialog'][0]
+                if 'scenes.scene_events.context_info' in scene_event_hit.highlight:
+                    scene_event_hit._source.context_info = scene_event_hit.highlight['scenes.scene_events.context_info'][0]
 
             # if scene at scene_offset wasn't part of inner_hits, grab from top-level _source and initialize it
             if scene_offset not in scene_offset_to_scene:
                 scene = orig_scenes[scene_offset]
+                scene.scene_events = []
                 scene['sequence'] = scene_offset
-                scene['score'] = 0
-                scene['agg_score'] = 0
-                scene['high_event_score'] = 0
-                scene['scene_events'] = []
+                scene['score_meta'] = ScoreMeta(score=0, agg_score=0, high_child_score=0)
                 scene_offset_to_scene[scene_offset] = scene
             scene = scene_offset_to_scene[scene_offset]
 
             scene['scene_events'].append(scene_event._d_)
-            scene['high_event_score'] = max(scene_event['score'], scene['high_event_score'])
-            scene['agg_score'] += scene_event['score']
+            scene['score_meta'].high_child_score = max(scene_event['score'], scene['score_meta'].high_child_score)
+            scene['score_meta'].agg_score += scene_event['score']
             scene_event_count += 1
 
         # assemble and score episodes from inner_hit scenes / scene_events stitched together above
         episode.scenes = []
         for scene_offset, scene in scene_offset_to_scene.items():
             episode.scenes.append(scene._d_)
-            episode['agg_score'] += scene['agg_score']
-            episode['high_agg_scene_score'] = max(scene['agg_score'], episode['high_agg_scene_score'])
+            episode['score_meta'].agg_score += scene['score_meta'].agg_score
+            episode['score_meta'].high_child_score = max(scene['score_meta'].agg_score, episode['score_meta'].high_child_score)
             scene_count += 1
         results.append(episode._d_)
 
     return results, scene_count, scene_event_count, raw_query
 
 
-async def agg_scenes_by_location(show_key: str, episode_key: str = None, season: str = None) -> list:
+async def agg_scenes_by_location(show_key: str, episode_key: str = None, season: str = None) -> (list, dict):
     print(f'begin agg_scenes_by_location for show_key={show_key}')
 
     s = Search(using=es_client, index='transcripts')
@@ -419,7 +472,7 @@ async def agg_scenes_by_location(show_key: str, episode_key: str = None, season:
     return results, raw_query
 
 
-async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, season: str = None) -> list:
+async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, season: str = None) -> (list, dict):
     print(f'begin agg_scene_events_by_speaker for show_key={show_key}')
 
     s = Search(using=es_client, index='transcripts')
