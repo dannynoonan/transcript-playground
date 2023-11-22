@@ -497,23 +497,56 @@ async def agg_scenes_by_location(show_key: str, episode_key: str = None, season:
     return results, raw_query
 
 
-async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, season: str = None) -> (list, dict):
-    print(f'begin agg_scene_events_by_speaker for show_key={show_key}')
+async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, season: str = None, dialog: str = None) -> (list, dict):
+    print(f'begin agg_scene_events_by_speaker for show_key={show_key} season={season} episode_key={episode_key} dialog={dialog}')
 
     s = Search(using=es_client, index='transcripts')
     s = s.extra(size=0)
 
     results = {}
 
-    # q = Q('bool', must=[Q('match', show_key=show_key)])
-    # s = s.query(q)
+    # if dialog:
+    #     nested_q = Q('nested', path='scenes.scene_events', 
+    #             query=Q('match', **{'scenes.scene_events.dialog': dialog}),
+    #             inner_hits={'size': 100})
+
+    #     s = s.query(nested_q)
+
     s = s.filter('term', show_key=show_key)
     if episode_key:
         s = s.filter('term', episode_key=episode_key)
     if season:
         s = s.filter('term', season=season)
 
-    s.aggs.bucket('speaker_aggs', 'nested', path='scenes.scene_events').bucket('by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100)
+    '''
+    IMPORTANT NOTE on what the `dialog_match` filter bucket is NOT:
+    "dialog_match": {
+        "filter": {
+            "nested": {
+                "path": "scenes.scene_events",
+                "query": {
+                    "match": {
+                        "scenes.scene_events.dialog": "face"
+                    }
+                }
+            }
+        }
+    }
+    Applying that filter led to off-by-one mappings between scene_event speakers and dialog. F'ing bananas.
+    '''
+
+    if dialog:
+        s.aggs.bucket(
+            'scene_event_nesting', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'dialog_match', 'filter', filter={"term": {"scenes.scene_events.dialog": dialog}}
+        ).bucket(
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100)
+    else:
+        s.aggs.bucket(
+            'scene_event_nesting', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100)
 
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
@@ -523,7 +556,11 @@ async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, se
 
     s = s.execute()
 
-    for item in s.aggregations.speaker_aggs.by_speaker.buckets:
-        results[item.key] = item.doc_count
+    if dialog:
+        for item in s.aggregations.scene_event_nesting.dialog_match.by_speaker.buckets:
+            results[item.key] = item.doc_count
+    else:
+        for item in s.aggregations.scene_event_nesting.by_speaker.buckets:
+            results[item.key] = item.doc_count
 
     return results, raw_query

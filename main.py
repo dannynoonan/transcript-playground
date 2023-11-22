@@ -322,37 +322,37 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
 @transcript_playground_app.get("/search_episodes_by_title/{show_key}")
 async def search_episodes_by_title(show_key: ShowKey, title: str = None):
     matches, es_query = await es_dao.search_episodes_by_title(show_key.value, title)
-    return {"episode_count": len(matches), "matches": matches, "es_query": es_query}
+    return {"episodes": len(matches), "matches": matches, "es_query": es_query}
 
 
 @transcript_playground_app.get("/search_scenes/{show_key}")
 async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, description: str = None):
     matches, scene_count, es_query = await es_dao.search_scenes(show_key.value, season, episode_key, location, description)
-    return {"scene_count": scene_count, "episode_count": len(matches), "matches": matches, "es_query": es_query}
+    return {"episodes": len(matches), "scenes": scene_count, "matches": matches, "es_query": es_query}
 
 
 @transcript_playground_app.get("/search_scene_events/{show_key}")
 async def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None):
     matches, scene_count, scene_event_count, es_query = await es_dao.search_scene_events(show_key.value, season, episode_key, speaker, dialog)
-    return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
+    return {"episodes": len(matches), "scenes": scene_count, "scene_events": scene_event_count, "matches": matches, "es_query": es_query}
 
 
 @transcript_playground_app.get("/search/{show_key}")
 async def search(show_key: ShowKey, season: str = None, episode_key: str = None, qt: str = None):
     matches, scene_count, scene_event_count, es_query = await es_dao.search(show_key.value, season, episode_key, qt)
-    return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
+    return {"episodes": len(matches), "scenes": scene_count, "scene_events": scene_event_count, "matches": matches, "es_query": es_query}
 
 
 @transcript_playground_app.get("/agg_scenes_by_location/{show_key}")
 async def agg_scenes_by_location(show_key: ShowKey, episode_key: str = None, season: str = None):
     matches, es_query = await es_dao.agg_scenes_by_location(show_key.value, episode_key, season)
-    return {"match_count": len(matches), "matches": matches, "es_query": es_query}
+    return {"locations": len(matches), "matches": matches, "es_query": es_query}
 
 
 @transcript_playground_app.get("/agg_scene_events_by_speaker/{show_key}")
-async def agg_scene_events_by_speaker(show_key: ShowKey, episode_key: str = None, season: str = None):
-    matches, es_query = await es_dao.agg_scene_events_by_speaker(show_key.value, episode_key, season)
-    return {"match_count": len(matches), "matches": matches, "es_query": es_query}
+async def agg_scene_events_by_speaker(show_key: ShowKey, episode_key: str = None, season: str = None, dialog: str = None):
+    matches, es_query = await es_dao.agg_scene_events_by_speaker(show_key.value, episode_key, season, dialog)
+    return {"speakers": len(matches), "scene_events_by_speaker": matches, "es_query": es_query}
 
 
 
