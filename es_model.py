@@ -41,23 +41,3 @@ class EsEpisodeTranscript(Document):
         # self.meta.id = f'{self.show_key}_{self.episode_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
-
-
-class ScoreMeta(object):
-    # score = Long()
-    # agg_score = Long()
-    # high_child_score = Long()
-
-    def __init__(self, score: Long = 0, agg_score: Long = 0, high_child_score: Long = 0):
-        self.score = score
-        self.agg_score = agg_score
-        self.high_child_score = high_child_score
-
-class SortableDict(object):
-    def __init__(self, obj: dict):
-        self.obj = obj
-
-    def __gt__(self, other):
-        if self.obj['score_meta'].agg_score > other.obj['score_meta'].agg_score:
-            return True
-        return False
