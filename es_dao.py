@@ -193,7 +193,8 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     return results, scene_count, raw_query
 
 
-async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> (list, int, int, dict):
+async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, 
+                              dialog: str = None, location: str = None) -> (list, int, int, dict):
     print(f'begin search_scene_events for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker} dialog={dialog}')
     
     if not (speaker or dialog):
@@ -227,6 +228,10 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
                     }
                 }
             })
+    # if location:
+    #     nested_q = nested_q & Q('nested', path='scenes', 
+    #         query=Q('match', **{'scenes.location': location}),
+    #         inner_hits={'size': 100})
 
     s = s.query(nested_q)
 
@@ -235,6 +240,8 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
         s = s.filter('term', episode_key=episode_key)
     if season:
         s = s.filter('term', season=season)
+    # if location:
+    #     s = s.filter('nested', path='scenes', query=Q('match', **{'scenes.location': location}))
 
     s = s.source(excludes=['scenes.scene_events'])
 
@@ -264,6 +271,11 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
         # highlight and map inner_hit scene_events to scenes using scene_offset
         for scene_event_hit in hit.inner_hits['scenes.scene_events'].hits.hits:
             scene_offset = scene_event_hit._nested.offset
+            # NOTE hack to filter on location after es payload returned, until I find a way to cross-reference nested documents
+            # or punt and enable `include_in_root`
+            if location and orig_scenes[scene_offset]['location'] != location:
+                # print(f'location={location} != orig_scenes[scene_offset]={orig_scenes[scene_offset]}')
+                continue
             scene_event = scene_event_hit._source
             scene_event['sequence'] = scene_event_hit._nested._nested.offset
             scene_event['score'] = scene_event_hit._score
@@ -290,6 +302,11 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
             scene['high_child_score'] = max(scene_event['score'], scene['high_child_score'])
             scene['agg_score'] += scene_event['score']
             scene_event_count += 1
+
+        # NOTE follow-up to location-filter hack above, if all scenes have been filtered then skip episode 
+        if len(scene_offset_to_scene) == 0:
+            # print(f'dropping episode_key={episode["episode_key"]}, no scenes remain after location filtering')
+            continue
 
         # assemble and score episodes from inner_hit scenes / scene_events stitched together above
         episode.scenes = []

@@ -332,8 +332,8 @@ async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str 
 
 
 @transcript_playground_app.get("/search_scene_events/{show_key}")
-async def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None):
-    matches, scene_count, scene_event_count, es_query = await es_dao.search_scene_events(show_key.value, season, episode_key, speaker, dialog)
+async def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None, location: str = None):
+    matches, scene_count, scene_event_count, es_query = await es_dao.search_scene_events(show_key.value, season, episode_key, speaker, dialog, location)
     return {"episodes": len(matches), "scenes": scene_count, "scene_events": scene_event_count, "matches": matches, "es_query": es_query}
 
 
