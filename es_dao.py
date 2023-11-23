@@ -43,7 +43,7 @@ async def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     #     es_episode.save(using=es)
 
 
-async def fetch_episode_by_key(show_key: str, episode_key: str) -> EsEpisodeTranscript:
+async def fetch_episode_by_key(show_key: str, episode_key: str) -> dict:
     print(f'begin fetch_episode_by_key for show_key={show_key} episode_key={episode_key}')
 
     s = Search(using=es_client, index='transcripts')
@@ -56,8 +56,9 @@ async def fetch_episode_by_key(show_key: str, episode_key: str) -> EsEpisodeTran
     s = s.execute()
 
     for hit in s.hits:
-        results.append(hit)
-    return results
+        results.append(hit._d_)
+    
+    return results[0]
 
 
 async def search_episodes_by_title(show_key: str, qt: str) -> (list, dict):
@@ -186,7 +187,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
             scene_count += 1
         results.append(episode._d_)
 
-        # sort results before returning
+    # sort results before returning
     results = sorted(results, key=itemgetter('agg_score'), reverse=True)
 
     return results, scene_count, raw_query
@@ -352,9 +353,9 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
                 'size': 100, 
                 'highlight': {
                     'fields': {
+                        'scenes.scene_events.context_info': {},
                         'scenes.scene_events.spoken_by': {}, 
-                        'scenes.scene_events.dialog': {}, 
-                        'scenes.scene_events.context_info': {}
+                        'scenes.scene_events.dialog': {}
                     }
                 }
             })
@@ -457,13 +458,13 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
     return results, scene_count, scene_event_count, raw_query
 
 
-async def agg_scenes_by_location(show_key: str, episode_key: str = None, season: str = None, speaker: str = None) -> (list, dict):
-    print(f'begin agg_scenes_by_location for show_key={show_key}')
+async def agg_scenes_by_location(show_key: str, season: str = None, episode_key: str = None, speaker: str = None) -> (list, dict):
+    print(f'begin agg_scenes_by_location for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker}')
+
+    results = {}
 
     s = Search(using=es_client, index='transcripts')
     s = s.extra(size=0)
-
-    results = {}
 
     s = s.filter('term', show_key=show_key)
     if episode_key:
@@ -494,16 +495,6 @@ async def agg_scenes_by_location(show_key: str, episode_key: str = None, season:
     
     s = s.execute()
 
-    # print('*************************************************')
-    # print(f's.aggregations.location_aggs={s.aggregations.location_aggs}')
-    # print('*************************************************')
-    # print(f's.aggregations.location_aggs.by_location={s.aggregations.location_aggs.by_location}')
-    # print('*************************************************')
-    # print(f's.hits.total={s.hits.total}')
-    # print('*************************************************')
-    # print(f's.aggregations.location_aggs.by_location.buckets={s.aggregations.location_aggs.by_location.buckets}')
-    # print('*************************************************')
-
     if speaker:
         for item in s.aggregations.scene_event_nesting.speaker_match.nest_exit.by_location.buckets:
             results[item.key] = item.doc_count
@@ -514,13 +505,60 @@ async def agg_scenes_by_location(show_key: str, episode_key: str = None, season:
     return results, raw_query
 
 
-async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, season: str = None, dialog: str = None) -> (list, dict):
-    print(f'begin agg_scene_events_by_speaker for show_key={show_key} season={season} episode_key={episode_key} dialog={dialog}')
+async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: str = None, location: str = None) -> (list, dict):
+    print(f'begin agg_scenes_by_speaker for show_key={show_key} season={season} episode_key={episode_key} location={location}')
+
+    results = {}
 
     s = Search(using=es_client, index='transcripts')
     s = s.extra(size=0)
 
+    s = s.filter('term', show_key=show_key)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    if season:
+        s = s.filter('term', season=season)
+
+    if location:
+        pass
+    else:
+        s.aggs.bucket(
+            'scene_events', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100
+        ).bucket(
+            'by_scene', 'reverse_nested', path='scenes')
+    
+    print('*************************************************')
+    print(f's.to_dict()={s.to_dict()}')
+    print('*************************************************')
+
+    raw_query = s.to_dict()
+
+    s = s.execute()
+
+    if location:
+        pass
+    else:
+        for item in s.aggregations.scene_events.by_speaker.buckets:
+            results[item.key] = item.by_scene.doc_count
+
+    # reverse nesting throws off sorting, so sort results by value
+    sorted_results_list = sorted(results.items(), key=lambda x:x[1], reverse=True)
     results = {}
+    for speaker, count in sorted_results_list:
+        results[speaker] = count
+
+    return results, raw_query
+
+
+async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode_key: str = None, dialog: str = None) -> (list, dict):
+    print(f'begin agg_scene_events_by_speaker for show_key={show_key} season={season} episode_key={episode_key} dialog={dialog}')
+
+    results = {}
+
+    s = Search(using=es_client, index='transcripts')
+    s = s.extra(size=0)
 
     # if dialog:
     #     nested_q = Q('nested', path='scenes.scene_events', 
