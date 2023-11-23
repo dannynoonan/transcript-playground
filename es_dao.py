@@ -522,8 +522,9 @@ async def agg_scenes_by_location(show_key: str, season: str = None, episode_key:
     return results, raw_query
 
 
-async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: str = None, location: str = None) -> (list, dict):
-    print(f'begin agg_scenes_by_speaker for show_key={show_key} season={season} episode_key={episode_key} location={location}')
+async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: str = None, 
+                                location: str = None, other_speaker: str = None) -> (list, dict):
+    print(f'begin agg_scenes_by_speaker for show_key={show_key} season={season} episode_key={episode_key} location={location} other_speaker={other_speaker}')
 
     results = {}
 
@@ -546,14 +547,30 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
         ).bucket(
             'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100
         ).bucket(
-            'for_scene', 'reverse_nested', path='scenes')
+            'for_scene', 'reverse_nested', path='scenes'
+        )
+    elif other_speaker:  # TODO location and other_speaker aren't exclusive of each other, this is just a WIP
+        s.aggs.bucket(
+            'scene_events', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'speaker_match', 'filter', filter={"term": {"scenes.scene_events.spoken_by": other_speaker}}
+        ).bucket(
+            'for_scene', 'reverse_nested', path='scenes'
+        ).bucket(
+            'scene_events_2', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100
+        ).bucket(
+            'for_scene_2', 'reverse_nested', path='scenes'
+        )
     else:
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
             'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100
         ).bucket(
-            'for_scene', 'reverse_nested', path='scenes')
+            'for_scene', 'reverse_nested', path='scenes'
+        )
     
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
@@ -566,6 +583,9 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
     if location:
         for item in s.aggregations.scenes.location_match.scene_events.by_speaker.buckets:
             results[item.key] = item.for_scene.doc_count
+    elif other_speaker:
+        for item in s.aggregations.scene_events.speaker_match.for_scene.scene_events_2.by_speaker.buckets:
+            results[item.key] = item.for_scene_2.doc_count
     else:
         for item in s.aggregations.scene_events.by_speaker.buckets:
             results[item.key] = item.for_scene.doc_count

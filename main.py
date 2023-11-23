@@ -350,8 +350,8 @@ async def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_
 
 
 @transcript_playground_app.get("/agg_scenes_by_speaker/{show_key}")
-async def agg_scenes_by_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None):
-    matches, es_query = await es_dao.agg_scenes_by_speaker(show_key.value, season, episode_key, location)
+async def agg_scenes_by_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, other_speaker: str = None):
+    matches, es_query = await es_dao.agg_scenes_by_speaker(show_key.value, season, episode_key, location, other_speaker)
     return {"speakers": len(matches), "scenes_by_speaker": matches, "es_query": es_query}
 
 
