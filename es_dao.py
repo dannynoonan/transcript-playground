@@ -474,16 +474,16 @@ async def agg_scenes_by_location(show_key: str, season: str = None, episode_key:
 
     if speaker:
         s.aggs.bucket(
-            'scene_event_nesting', 'nested', path='scenes.scene_events'
+            'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
             'speaker_match', 'filter', filter={"term": {"scenes.scene_events.spoken_by": speaker}}
         ).bucket(
-            'nest_exit', 'reverse_nested', path='scenes'
+            'scenes', 'reverse_nested', path='scenes'
         ).bucket(
             'by_location', 'terms', field='scenes.location', size=100)
     else:
         s.aggs.bucket(
-            'scene_nesting', 'nested', path='scenes'
+            'scenes', 'nested', path='scenes'
         ).bucket(
             'by_location', 'terms', field='scenes.location', size=100)
 
@@ -496,10 +496,10 @@ async def agg_scenes_by_location(show_key: str, season: str = None, episode_key:
     s = s.execute()
 
     if speaker:
-        for item in s.aggregations.scene_event_nesting.speaker_match.nest_exit.by_location.buckets:
+        for item in s.aggregations.scene_events.speaker_match.scenes.by_location.buckets:
             results[item.key] = item.doc_count
     else:
-        for item in s.aggregations.scene_nesting.by_location.buckets:
+        for item in s.aggregations.scenes.by_location.buckets:
             results[item.key] = item.doc_count
 
     return results, raw_query
@@ -520,14 +520,23 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
         s = s.filter('term', season=season)
 
     if location:
-        pass
+        s.aggs.bucket(
+            'scenes', 'nested', path='scenes'
+        ).bucket(
+            'location_match', 'filter', filter={"term": {"scenes.location": location}}
+        ).bucket(
+            'scene_events', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100
+        ).bucket(
+            'for_scene', 'reverse_nested', path='scenes')
     else:
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
             'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100
         ).bucket(
-            'by_scene', 'reverse_nested', path='scenes')
+            'for_scene', 'reverse_nested', path='scenes')
     
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
@@ -538,10 +547,11 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
     s = s.execute()
 
     if location:
-        pass
+        for item in s.aggregations.scenes.location_match.scene_events.by_speaker.buckets:
+            results[item.key] = item.for_scene.doc_count
     else:
         for item in s.aggregations.scene_events.by_speaker.buckets:
-            results[item.key] = item.by_scene.doc_count
+            results[item.key] = item.for_scene.doc_count
 
     # reverse nesting throws off sorting, so sort results by value
     sorted_results_list = sorted(results.items(), key=lambda x:x[1], reverse=True)
@@ -592,14 +602,14 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
 
     if dialog:
         s.aggs.bucket(
-            'scene_event_nesting', 'nested', path='scenes.scene_events'
+            'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
             'dialog_match', 'filter', filter={"term": {"scenes.scene_events.dialog": dialog}}
         ).bucket(
             'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100)
     else:
         s.aggs.bucket(
-            'scene_event_nesting', 'nested', path='scenes.scene_events'
+            'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
             'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100)
 
@@ -612,10 +622,10 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
     s = s.execute()
 
     if dialog:
-        for item in s.aggregations.scene_event_nesting.dialog_match.by_speaker.buckets:
+        for item in s.aggregations.scene_events.dialog_match.by_speaker.buckets:
             results[item.key] = item.doc_count
     else:
-        for item in s.aggregations.scene_event_nesting.by_speaker.buckets:
+        for item in s.aggregations.scene_events.by_speaker.buckets:
             results[item.key] = item.doc_count
 
     return results, raw_query
