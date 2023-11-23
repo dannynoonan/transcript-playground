@@ -457,7 +457,7 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
     return results, scene_count, scene_event_count, raw_query
 
 
-async def agg_scenes_by_location(show_key: str, episode_key: str = None, season: str = None) -> (list, dict):
+async def agg_scenes_by_location(show_key: str, episode_key: str = None, season: str = None, speaker: str = None) -> (list, dict):
     print(f'begin agg_scenes_by_location for show_key={show_key}')
 
     s = Search(using=es_client, index='transcripts')
@@ -471,7 +471,20 @@ async def agg_scenes_by_location(show_key: str, episode_key: str = None, season:
     if season:
         s = s.filter('term', season=season)
 
-    s.aggs.bucket('location_aggs', 'nested', path='scenes').bucket('by_location', 'terms', field='scenes.location', size=100)
+    if speaker:
+        s.aggs.bucket(
+            'scene_event_nesting', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'speaker_match', 'filter', filter={"term": {"scenes.scene_events.spoken_by": speaker}}
+        ).bucket(
+            'nest_exit', 'reverse_nested', path='scenes'
+        ).bucket(
+            'by_location', 'terms', field='scenes.location', size=100)
+    else:
+        s.aggs.bucket(
+            'scene_nesting', 'nested', path='scenes'
+        ).bucket(
+            'by_location', 'terms', field='scenes.location', size=100)
 
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
@@ -491,8 +504,12 @@ async def agg_scenes_by_location(show_key: str, episode_key: str = None, season:
     # print(f's.aggregations.location_aggs.by_location.buckets={s.aggregations.location_aggs.by_location.buckets}')
     # print('*************************************************')
 
-    for item in s.aggregations.location_aggs.by_location.buckets:
-        results[item.key] = item.doc_count
+    if speaker:
+        for item in s.aggregations.scene_event_nesting.speaker_match.nest_exit.by_location.buckets:
+            results[item.key] = item.doc_count
+    else:
+        for item in s.aggregations.scene_nesting.by_location.buckets:
+            results[item.key] = item.doc_count
 
     return results, raw_query
 
@@ -526,7 +543,7 @@ async def agg_scene_events_by_speaker(show_key: str, episode_key: str = None, se
                 "path": "scenes.scene_events",
                 "query": {
                     "match": {
-                        "scenes.scene_events.dialog": "face"
+                        "scenes.scene_events.dialog": dialog
                     }
                 }
             }

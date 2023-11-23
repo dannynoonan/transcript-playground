@@ -344,8 +344,8 @@ async def search(show_key: ShowKey, season: str = None, episode_key: str = None,
 
 
 @transcript_playground_app.get("/agg_scenes_by_location/{show_key}")
-async def agg_scenes_by_location(show_key: ShowKey, episode_key: str = None, season: str = None):
-    matches, es_query = await es_dao.agg_scenes_by_location(show_key.value, episode_key, season)
+async def agg_scenes_by_location(show_key: ShowKey, episode_key: str = None, season: str = None, speaker: str = None):
+    matches, es_query = await es_dao.agg_scenes_by_location(show_key.value, episode_key, season, speaker)
     return {"locations": len(matches), "matches": matches, "es_query": es_query}
 
 
