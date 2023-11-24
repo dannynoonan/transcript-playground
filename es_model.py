@@ -1,17 +1,17 @@
 from datetime import datetime
-from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, Long
+from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer
 
 
 class EsSceneEvent(InnerDoc):
     context_info = Text()
-    spoken_by = Keyword()
-    # spoken_by = Text(fields={'keyword': Keyword()})
+    # spoken_by = Keyword()
+    spoken_by = Text(analyzer='standard', fields={'keyword': Keyword()})
     dialog = Text()
 
 
 class EsScene(InnerDoc):
-    location = Keyword()
-    # location = Text(fields={'keyword': Keyword()})
+    # location = Keyword()
+    location = Text(analyzer='standard', fields={'keyword': Keyword()})
     description = Text()
     scene_events = Nested(EsSceneEvent)
 

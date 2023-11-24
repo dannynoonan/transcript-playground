@@ -102,7 +102,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
 
     if not (location or description):
         print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (location or description)')
-        return [], 0
+        return [], 0, {}
     
     s = Search(using=es_client, index='transcripts')
     s = s.extra(size=1000)
@@ -493,16 +493,16 @@ async def agg_scenes_by_location(show_key: str, season: str = None, episode_key:
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'speaker_match', 'filter', filter={"term": {"scenes.scene_events.spoken_by": speaker}}
+            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by": speaker}}
         ).bucket(
             'scenes', 'reverse_nested', path='scenes'
         ).bucket(
-            'by_location', 'terms', field='scenes.location', size=100)
+            'by_location', 'terms', field='scenes.location.keyword', size=100)
     else:
         s.aggs.bucket(
             'scenes', 'nested', path='scenes'
         ).bucket(
-            'by_location', 'terms', field='scenes.location', size=100)
+            'by_location', 'terms', field='scenes.location.keyword', size=100)
 
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
@@ -541,11 +541,11 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
         s.aggs.bucket(
             'scenes', 'nested', path='scenes'
         ).bucket(
-            'location_match', 'filter', filter={"term": {"scenes.location": location}}
+            'location_match', 'filter', filter={"match": {"scenes.location": location}}
         ).bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
         ).bucket(
             'for_scene', 'reverse_nested', path='scenes'
         )
@@ -553,13 +553,13 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'speaker_match', 'filter', filter={"term": {"scenes.scene_events.spoken_by": other_speaker}}
+            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by": other_speaker}}
         ).bucket(
             'for_scene', 'reverse_nested', path='scenes'
         ).bucket(
             'scene_events_2', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
         ).bucket(
             'for_scene_2', 'reverse_nested', path='scenes'
         )
@@ -567,7 +567,7 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
         ).bucket(
             'for_scene', 'reverse_nested', path='scenes'
         )
@@ -641,14 +641,14 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'dialog_match', 'filter', filter={"term": {"scenes.scene_events.dialog": dialog}}
+            'dialog_match', 'filter', filter={"match": {"scenes.scene_events.dialog": dialog}}
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100)
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100)
     else:
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by', size=100)
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100)
 
     print('*************************************************')
     print(f's.to_dict()={s.to_dict()}')
