@@ -1,8 +1,7 @@
 # from datetime import datetime
 from elasticsearch import Elasticsearch
 # from elasticsearch import RequestsHttpConnection
-# from elasticsearch_dsl import Search, connections
-from elasticsearch_dsl import Search, Q, A
+from elasticsearch_dsl import Search, connections, Q, A
 from elasticsearch_dsl.query import MultiMatch
 from operator import itemgetter
 
@@ -10,16 +9,20 @@ from config import settings
 from es_model import EsEpisodeTranscript
 
 
-es_client = Elasticsearch(
-    hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': 'https'}],    
-    basic_auth=(settings.es_user, settings.es_pass),
-    verify_certs=False
-    # connection_class=RequestsHttpConnection
-)
-
-# s = Search(using=es_client, index='transcripts')
+# es_client = Elasticsearch(
+#     hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': 'https'}],    
+#     basic_auth=(settings.es_user, settings.es_pass),
+#     verify_certs=False
+#     # connection_class=RequestsHttpConnection
+# )
 
 # connections.create_connection(hosts=['http://localhost:9200'], timeout=20)
+
+connections.create_connection(
+    hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': 'https'}],    
+    basic_auth=(settings.es_user, settings.es_pass),
+    verify_certs=False,
+    timeout=20)
 
 # connections.configure(
 #     default={'hosts': 'http://localhost:9200'},
@@ -31,11 +34,13 @@ es_client = Elasticsearch(
 
 
 async def init_mappings():
-    EsEpisodeTranscript.init(using=es_client)
+    # EsEpisodeTranscript.init(using=es_client)
+    EsEpisodeTranscript.init()
 
 
 async def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
-    es_episode.save(using=es_client)
+    # es_episode.save(using=es_client)
+    es_episode.save()
     # persisted_es_episode = EsEpisodeTranscript.get(id=es_episode.meta.id, ignore=404)
     # if persisted_es_episode:
     #     es_episode.update(using=es, doc_as_upsert=True)
@@ -46,7 +51,8 @@ async def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
 async def fetch_episode_by_key(show_key: str, episode_key: str) -> dict:
     print(f'begin fetch_episode_by_key for show_key={show_key} episode_key={episode_key}')
 
-    s = Search(using=es_client, index='transcripts')
+    # s = Search(using=es_client, index='transcripts')
+    s = Search(index='transcripts')
     s = s.extra(size=1000)
 
     results = []
@@ -64,7 +70,8 @@ async def fetch_episode_by_key(show_key: str, episode_key: str) -> dict:
 async def search_episodes_by_title(show_key: str, qt: str) -> (list, dict):
     print(f'begin search_episodes_by_title for show_key={show_key} qt={qt}')
 
-    s = Search(using=es_client, index='transcripts')
+    # s = Search(using=es_client, index='transcripts')
+    s = Search(index='transcripts')
     s = s.extra(size=1000)
 
     results = []
@@ -104,7 +111,8 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
         print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (location or description)')
         return [], 0, {}
     
-    s = Search(using=es_client, index='transcripts')
+    # s = Search(using=es_client, index='transcripts')
+    s = Search(index='transcripts')
     s = s.extra(size=1000)
 
     results = []
@@ -201,7 +209,8 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
         print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (speaker or dialog)')
         return []
 
-    s = Search(using=es_client, index='transcripts')
+    # s = Search(using=es_client, index='transcripts')
+    s = Search(index='transcripts')
     s = s.extra(size=1000)
 
     results = []
@@ -336,7 +345,8 @@ async def search(show_key: str, season: str = None, episode_key: str = None, qt:
         scenes.scene_events.dialog
     '''
 
-    s = Search(using=es_client, index='transcripts')
+    # s = Search(using=es_client, index='transcripts')
+    s = Search(index='transcripts')
     s = s.extra(size=1000)
 
     results = []
@@ -480,7 +490,8 @@ async def agg_scenes_by_location(show_key: str, season: str = None, episode_key:
 
     results = {}
 
-    s = Search(using=es_client, index='transcripts')
+    # s = Search(using=es_client, index='transcripts')
+    s = Search(index='transcripts')
     s = s.extra(size=0)
 
     s = s.filter('term', show_key=show_key)
@@ -528,7 +539,8 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
 
     results = {}
 
-    s = Search(using=es_client, index='transcripts')
+    # s = Search(using=es_client, index='transcripts')
+    s = Search(index='transcripts')
     s = s.extra(size=0)
 
     s = s.filter('term', show_key=show_key)
@@ -604,7 +616,8 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
 
     results = {}
 
-    s = Search(using=es_client, index='transcripts')
+    # s = Search(using=es_client, index='transcripts')
+    s = Search(index='transcripts')
     s = s.extra(size=0)
 
     # if dialog:

@@ -1,29 +1,30 @@
 from datetime import datetime
-from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer
+from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter
+
+
+
+freetext_analyzer = analyzer('freetext_analyzer', tokenizer='standard', type='custom',
+                             filter=['lowercase', 'stop', 'apostrophe', 'porter_stem'])
 
 
 class EsSceneEvent(InnerDoc):
-    context_info = Text()
-    # spoken_by = Keyword()
+    context_info = Text(analyzer=freetext_analyzer)
     spoken_by = Text(analyzer='standard', fields={'keyword': Keyword()})
-    dialog = Text()
+    dialog = Text(analyzer=freetext_analyzer)
 
 
 class EsScene(InnerDoc):
-    # location = Keyword()
     location = Text(analyzer='standard', fields={'keyword': Keyword()})
-    description = Text()
+    description = Text(analyzer=freetext_analyzer)
     scene_events = Nested(EsSceneEvent)
 
 
 class EsEpisodeTranscript(Document):
     show_key = Keyword()
-    # show_key = Text(fields={'keyword': Keyword()})
     episode_key = Keyword()
-    # episode_key = Text(fields={'keyword': Keyword()})
     season = Integer()
     sequence_in_season = Integer()
-    title = Text()
+    title = Text(analyzer=freetext_analyzer)
     air_date = Date()
     duration = Integer()
     scenes = Nested(EsScene)
