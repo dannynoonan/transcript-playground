@@ -278,3 +278,22 @@ async def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
             results[item.key] = item.doc_count
 
     return results
+
+
+async def return_word_counts_by_episode(query_response: dict) -> list:
+    print(f'begin return_word_counts_by_episode')
+
+    results = []
+
+    for term, data in query_response['term_vectors']['scenes.scene_events.dialog']['terms'].items():
+        term_dict = {}
+        term_dict['term'] = term
+        term_dict['term_freq'] = data['term_freq']
+        term_dict['doc_freq'] = data['doc_freq']
+        term_dict['ttf'] = data['ttf']
+        results.append(term_dict)
+
+    # sort results before returning
+    results = sorted(results, key=itemgetter('term_freq'), reverse=True)
+
+    return results

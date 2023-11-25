@@ -17,11 +17,8 @@ from es_model import EsEpisodeTranscript
 
 # connections.create_connection(hosts=['http://localhost:9200'], timeout=20)
 
-connections.create_connection(
-    hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': 'https'}],    
-    basic_auth=(settings.es_user, settings.es_pass),
-    verify_certs=False,
-    timeout=20)
+es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': 'https'}],
+                                        basic_auth=(settings.es_user, settings.es_pass), verify_certs=False, timeout=20)
 
 # connections.configure(
 #     default={'hosts': 'http://localhost:9200'},
@@ -129,7 +126,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
 
 
 async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, 
-                              dialog: str = None, location: str = None) -> (list, int, int, dict):
+                              dialog: str = None, location: str = None) -> Search:
     print(f'begin search_scene_events for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker} dialog={dialog}')
     
     if not (speaker or dialog):
@@ -282,7 +279,7 @@ async def agg_scenes_by_location(show_key: str, season: str = None, episode_key:
 
 
 async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: str = None, 
-                                location: str = None, other_speaker: str = None) -> (list, dict):
+                                location: str = None, other_speaker: str = None) -> Search:
     print(f'begin agg_scenes_by_speaker for show_key={show_key} season={season} episode_key={episode_key} location={location} other_speaker={other_speaker}')
 
     # s = Search(using=es_client, index='transcripts')
@@ -333,7 +330,7 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
     return s
 
 
-async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode_key: str = None, dialog: str = None) -> (list, dict):
+async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode_key: str = None, dialog: str = None) -> Search:
     print(f'begin agg_scene_events_by_speaker for show_key={show_key} season={season} episode_key={episode_key} dialog={dialog}')
 
     # s = Search(using=es_client, index='transcripts')
@@ -384,3 +381,12 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
             'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100)
 
     return s
+
+
+async def calc_word_counts_by_episode(show_key: str, episode_key: str):
+    print(f'begin calc_word_counts_by_episode for show_key={show_key} episode_key={episode_key}')
+
+    response = es_conn.termvectors(index='transcripts', id=f'{show_key}_{episode_key}', term_statistics='true', field_statistics='true',
+                                   fields=['scenes.scene_events.dialog'])
+
+    return response

@@ -380,6 +380,13 @@ async def agg_scene_events_by_speaker(show_key: ShowKey, season: str = None, epi
     return {"speakers": len(matches), "scene_events_by_speaker": matches, "es_query": es_query}
 
 
+@app.get("/word_counts_by_episode/{show_key}/{episode_key}")
+async def word_counts_by_episode(show_key: ShowKey, episode_key: str):
+    response = await esqb.calc_word_counts_by_episode(show_key.value, episode_key)
+    matches = await esrt.return_word_counts_by_episode(response)
+    return {"term_count": len(matches), "terms": matches}
+
+
 
 ########### BEGIN EXAMPLES #############
 # https://medium.com/@talhakhalid101/python-tortoise-orm-integration-with-fastapi-c3751d248ce1
