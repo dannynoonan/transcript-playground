@@ -12,15 +12,16 @@ from app.models import TranscriptSource, Episode, Scene, SceneEvent
 from config import settings, DATABASE_URL
 import dao
 from database.connect import connect_to_database
-from es_transformer import to_es_episode
-import es_dao 
+from es_ingest_transformer import to_es_episode
+import es_query_builder as esqb
+import es_response_transformer as esrt
 from show_metadata import ShowKey, Status, show_metadata
 from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup
 from transcript_extractor import parse_episode_transcript_soup
 from transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup, match_episodes_to_transcript_urls
 
 
-transcript_playground_app = FastAPI()
+app = FastAPI()
 
 
 # https://fastapi.tiangolo.com/advanced/settings/#__tabbed_2_1
@@ -42,7 +43,7 @@ async def init():
     await Tortoise.generate_schemas()
 
 register_tortoise(
-    transcript_playground_app,
+    app,
     # db_url="sqlite://db.sqlite3",
     db_url=DATABASE_URL,
     modules={"models": ["app.models"]},
@@ -75,24 +76,24 @@ SceneEventPydanticExcluding = pydantic_model_creator(SceneEvent, exclude=("id", 
 
 # https://fastapi.tiangolo.com/tutorial/query-params-str-validations/
 
-@transcript_playground_app.get("/")
+@app.get("/")
 def root():
     return {"message": "Welcome to transcript playground"}
 
 
-@transcript_playground_app.get("/db_connect")
+@app.get("/db_connect")
 async def db_connect():
     await connect_to_database()
     return {"DB connection": "Indeed"}
 
 
-@transcript_playground_app.get("/show_meta/{show_key}")
+@app.get("/show_meta/{show_key}")
 async def fetch_show_meta(show_key: ShowKey):
     show_meta = show_metadata[show_key]
     return {show_key: show_meta}
 
 
-@transcript_playground_app.get("/load_episode_listing/{show_key}")
+@app.get("/load_episode_listing/{show_key}")
 async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
     episode_detail_listing_soup = await get_episode_detail_listing_soup(show_key)
     episodes = await parse_episode_listing_soup(show_key, episode_detail_listing_soup)
@@ -110,7 +111,7 @@ async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
         return {'episode_count': len(episodes_excl), 'episodes': episodes_excl}
 
 
-@transcript_playground_app.get("/load_transcript_sources/{show_key}")
+@app.get("/load_transcript_sources/{show_key}")
 async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
     listing_soup = await get_transcript_url_listing_soup(show_key)
     episode_transcripts_by_type = await parse_transcript_url_listing_soup(show_key, listing_soup)
@@ -125,7 +126,7 @@ async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
         return {'transcript_sources_count': len(transcript_sources), 'transcript_sources': transcript_sources}
     
 
-@transcript_playground_app.get("/load_transcript/{show_key}/{episode_key}")
+@app.get("/load_transcript/{show_key}/{episode_key}")
 async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool = False):
     episode = None
     # fetch episode and transcript_source(s), throw errors if not found
@@ -166,7 +167,7 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
         return {'show': show_metadata[show_key], 'episode': episode_excl}
 
 
-@transcript_playground_app.get("/load_all_transcripts/{show_key}")
+@app.get("/load_all_transcripts/{show_key}")
 async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     episodes = []
     try:
@@ -213,14 +214,14 @@ async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     }
 
 
-@transcript_playground_app.get("/episode/{show_key}/{episode_key}")
+@app.get("/episode/{show_key}/{episode_key}")
 async def fetch_episode(show_key: ShowKey, episode_key: str, data_source: str = None):
     if not data_source:
         data_source = 'db'
 
     # fetch episode from es
     if data_source == 'es':
-        es_episode = await es_dao.fetch_episode_by_key(show_key.value, episode_key)
+        es_episode = await esqb.fetch_episode_by_key(show_key.value, episode_key)
         return {"es_episode": es_episode}
     
     # fetch episode from db
@@ -241,13 +242,13 @@ async def fetch_episode(show_key: ShowKey, episode_key: str, data_source: str = 
     return {"show_meta": show_metadata[show_key], "episode": episode_pyd}
 
 
-@transcript_playground_app.get("/init_es")
+@app.get("/init_es")
 async def init_es():
-    await es_dao.init_mappings()
+    await esqb.init_mappings()
     return {"success": "success"}
 
 
-@transcript_playground_app.get("/index_episode/{show_key}/{episode_key}")
+@app.get("/index_episode/{show_key}/{episode_key}")
 async def index_transcript(show_key: ShowKey, episode_key: str):
     # fetch episode, throw errors if not found
     episode = None
@@ -266,14 +267,14 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
     # transform to es-writable object and write to es
     try:
         es_episode = await to_es_episode(episode)
-        await es_dao.save_es_episode(es_episode)
+        await esqb.save_es_episode(es_episode)
     except Exception as e:
         return {"Error": f"Failure to transform Episode {show_key}:{episode_key} to es-writable version: {e}"}
 
     return {"Success": f"Episode {show_key}:{episode_key} written to es index"}
 
 
-@transcript_playground_app.get("/index_all_episodes/{show_key}")
+@app.get("/index_all_episodes/{show_key}")
 async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     episodes = []
     try:
@@ -304,7 +305,7 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
         # transform to es-writable object and write to es
         try:
             es_episode = await to_es_episode(episode)
-            await es_dao.save_es_episode(es_episode)
+            await esqb.save_es_episode(es_episode)
             successful_episode_keys.append(episode.external_key)
         except Exception as e:
             failed_episode_keys.append(episode.external_key)
@@ -319,45 +320,63 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     }
 
 
-@transcript_playground_app.get("/search_episodes_by_title/{show_key}")
+@app.get("/search_episodes_by_title/{show_key}")
 async def search_episodes_by_title(show_key: ShowKey, title: str = None):
-    matches, es_query = await es_dao.search_episodes_by_title(show_key.value, title)
+    s = await esqb.search_episodes_by_title(show_key.value, title)
+    es_query = s.to_dict()
+    matches = await esrt.return_episodes_by_title(s)
     return {"episodes": len(matches), "matches": matches, "es_query": es_query}
 
 
-@transcript_playground_app.get("/search_scenes/{show_key}")
+@app.get("/search_scenes/{show_key}")
 async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, description: str = None):
-    matches, scene_count, es_query = await es_dao.search_scenes(show_key.value, season, episode_key, location, description)
+    if not (location or description):
+        error = 'Unable to execute search_scenes without at least one scene property set (location or description)'
+        print(error)
+        return {"error": error}
+    s = await esqb.search_scenes(show_key.value, season, episode_key, location=location, description=description)
+    es_query = s.to_dict()
+    matches, scene_count = await esrt.return_scenes(s)
     return {"episodes": len(matches), "scenes": scene_count, "matches": matches, "es_query": es_query}
 
 
-@transcript_playground_app.get("/search_scene_events/{show_key}")
+@app.get("/search_scene_events/{show_key}")
 async def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None, location: str = None):
-    matches, scene_count, scene_event_count, es_query = await es_dao.search_scene_events(show_key.value, season, episode_key, speaker, dialog, location)
+    s = await esqb.search_scene_events(show_key.value, season, episode_key, speaker=speaker, dialog=dialog, location=location)
+    es_query = s.to_dict()
+    matches, scene_count, scene_event_count = await esrt.return_scene_events(s, location=location)
     return {"episodes": len(matches), "scenes": scene_count, "scene_events": scene_event_count, "matches": matches, "es_query": es_query}
 
 
-@transcript_playground_app.get("/search/{show_key}")
+@app.get("/search/{show_key}")
 async def search(show_key: ShowKey, season: str = None, episode_key: str = None, qt: str = None):
-    matches, scene_count, scene_event_count, es_query = await es_dao.search(show_key.value, season, episode_key, qt)
+    s = await esqb.search_episodes(show_key.value, season, episode_key, qt)
+    es_query = s.to_dict()
+    matches, scene_count, scene_event_count = await esrt.return_episodes(s)
     return {"episodes": len(matches), "scenes": scene_count, "scene_events": scene_event_count, "matches": matches, "es_query": es_query}
 
 
-@transcript_playground_app.get("/agg_scenes_by_location/{show_key}")
+@app.get("/agg_scenes_by_location/{show_key}")
 async def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None):
-    matches, es_query = await es_dao.agg_scenes_by_location(show_key.value, season, episode_key, speaker)
+    s = await esqb.agg_scenes_by_location(show_key.value, season, episode_key, speaker)
+    es_query = s.to_dict()
+    matches = await esrt.return_scenes_by_location(s, speaker=speaker)
     return {"locations": len(matches), "scenes_by_location": matches, "es_query": es_query}
 
 
-@transcript_playground_app.get("/agg_scenes_by_speaker/{show_key}")
+@app.get("/agg_scenes_by_speaker/{show_key}")
 async def agg_scenes_by_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, other_speaker: str = None):
-    matches, es_query = await es_dao.agg_scenes_by_speaker(show_key.value, season, episode_key, location, other_speaker)
+    s = await esqb.agg_scenes_by_speaker(show_key.value, season, episode_key, location, other_speaker)
+    es_query = s.to_dict()
+    matches = await esrt.return_scenes_by_speaker(s, location=location, other_speaker=other_speaker)
     return {"speakers": len(matches), "scenes_by_speaker": matches, "es_query": es_query}
 
 
-@transcript_playground_app.get("/agg_scene_events_by_speaker/{show_key}")
+@app.get("/agg_scene_events_by_speaker/{show_key}")
 async def agg_scene_events_by_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, dialog: str = None):
-    matches, es_query = await es_dao.agg_scene_events_by_speaker(show_key.value, season, episode_key, dialog)
+    s = await esqb.agg_scene_events_by_speaker(show_key.value, season, episode_key, dialog)
+    es_query = s.to_dict()
+    matches = await esrt.return_scene_events_by_speaker(s, dialog=dialog)
     return {"speakers": len(matches), "scene_events_by_speaker": matches, "es_query": es_query}
 
 
