@@ -2,7 +2,7 @@
 # from elasticsearch import Elasticsearch
 # from elasticsearch import RequestsHttpConnection
 from elasticsearch_dsl import Search, connections, Q, A
-# from elasticsearch_dsl.query import MultiMatch
+from elasticsearch_dsl.query import MoreLikeThis
 
 from config import settings
 from es_model import EsEpisodeTranscript
@@ -49,18 +49,13 @@ async def fetch_episode_by_key(show_key: str, episode_key: str) -> dict:
 
     # s = Search(using=es_client, index='transcripts')
     s = Search(index='transcripts')
-    s = s.extra(size=1000)
-
-    results = []
+    s = s.extra(size=1)
 
     s = s.filter('term', show_key=show_key)
     s = s.filter('term', episode_key=episode_key)
-    s = s.execute()
+    s = s.source(excludes=['flattened_text'])
 
-    for hit in s.hits:
-        results.append(hit._d_)
-    
-    return results[0]
+    return s
 
 
 async def search_episodes_by_title(show_key: str, qt: str) -> Search:
@@ -120,7 +115,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     if season:
         s = s.filter('term', season=season)
 
-    s = s.source(excludes=['scenes'])
+    s = s.source(excludes=['flattened_text', 'scenes'])
 
     return s
 
@@ -174,7 +169,7 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
     # if location:
     #     s = s.filter('nested', path='scenes', query=Q('match', **{'scenes.location': location}))
 
-    s = s.source(excludes=['scenes.scene_events'])
+    s = s.source(excludes=['flattened_text', 'scenes.scene_events'])
 
     return s
 
@@ -242,7 +237,7 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
 
     s = s.highlight('title')
 
-    s = s.source(excludes=['scenes.scene_events'])
+    s = s.source(excludes=['flattened_text', 'scenes.scene_events'])
 
     return s
 
@@ -383,10 +378,33 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
     return s
 
 
-async def calc_word_counts_by_episode(show_key: str, episode_key: str):
+async def calc_word_counts_by_episode(show_key: str, episode_key: str) -> dict:
     print(f'begin calc_word_counts_by_episode for show_key={show_key} episode_key={episode_key}')
 
     response = es_conn.termvectors(index='transcripts', id=f'{show_key}_{episode_key}', term_statistics='true', field_statistics='true',
                                    fields=['scenes.scene_events.dialog'])
 
     return response
+
+
+async def search_more_like_this(show_key: str, episode_key: str) -> Search:
+    print(f'begin search_more_like_this for show_key={show_key} episode_key={episode_key}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=30)
+
+    STOPWORDS = ["a", "able", "about", "across", "after", "all", "almost", "also", "am", "among", "an", "and", "any", "are", "as", "at", 
+                 "be", "because", "been", "but", "by", "can", "cannot", "could", "dear", "did", "do", "does", "either", "else", "ever", 
+                 "every", "for", "from", "get", "got", "had", "has", "have", "he", "her", "hers", "him", "his", "how", "however", "i", "if", 
+                 "in", "into", "is", "it", "its", "just", "least", "let", "like", "likely", "may", "me", "might", "most", "must", "my", 
+                 "neither", "no", "nor", "not", "of", "off", "often", "on", "only", "or", "other", "our", "own", "rather", "said", "say", 
+                 "says", "she", "should", "since", "so", "some", "than", "that", "the", "their", "them", "then", "there", "these", "they", 
+                 "this", "tis", "to", "too", "twas", "us", "wants", "was", "we", "were", "what", "when", "where", "which", "while", "who", 
+                 "whom", "why", "will", "with", "would", "yet", "you", "your"]
+
+    s = s.query(MoreLikeThis(like=[{'_index': 'transcripts', '_id': f'{show_key}_{episode_key}'}], fields=['flattened_text'],
+                             max_query_terms=75, minimum_should_match='75%', min_term_freq=1, stop_words=STOPWORDS))
+    
+    s = s.source(excludes=['flattened_text', 'scenes'])
+    
+    return s

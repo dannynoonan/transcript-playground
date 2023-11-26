@@ -2,6 +2,15 @@ from elasticsearch_dsl import Search
 from operator import itemgetter
 
 
+async def return_episode_by_key(s: Search) -> dict:
+    print(f'begin return_episode_by_key for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    for hit in s.hits:
+        return hit._d_
+    
+
 async def return_episodes_by_title(s: Search) -> list:
     print(f'begin return_episodes_by_title for s.to_dict()={s.to_dict()}')
 
@@ -295,5 +304,20 @@ async def return_word_counts_by_episode(query_response: dict) -> list:
 
     # sort results before returning
     results = sorted(results, key=itemgetter('term_freq'), reverse=True)
+
+    return results
+
+
+async def return_more_like_this(s: Search) -> list:
+    print(f'begin return_more_like_this for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = []
+
+    for hit in s.hits.hits:
+        episode = hit._source
+        episode['score'] = hit._score
+        results.append(episode)
 
     return results

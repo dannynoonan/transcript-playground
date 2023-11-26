@@ -8,14 +8,14 @@ freetext_analyzer = analyzer('freetext_analyzer', tokenizer='standard', type='cu
 
 
 class EsSceneEvent(InnerDoc):
-    context_info = Text(analyzer=freetext_analyzer)
+    context_info = Text(analyzer=freetext_analyzer, term_vector='yes')
     spoken_by = Text(analyzer='standard', fields={'keyword': Keyword()})
-    dialog = Text(analyzer=freetext_analyzer)
+    dialog = Text(analyzer=freetext_analyzer, term_vector='yes')
 
 
 class EsScene(InnerDoc):
     location = Text(analyzer='standard', fields={'keyword': Keyword()})
-    description = Text(analyzer=freetext_analyzer)
+    description = Text(analyzer=freetext_analyzer, term_vector='yes')
     scene_events = Nested(EsSceneEvent)
 
 
@@ -24,12 +24,13 @@ class EsEpisodeTranscript(Document):
     episode_key = Keyword()
     season = Integer()
     sequence_in_season = Integer()
-    title = Text(analyzer=freetext_analyzer)
+    title = Text(analyzer=freetext_analyzer, term_vector='yes')
     air_date = Date()
     duration = Integer()
     scenes = Nested(EsScene)
     loaded_ts = Date()
     indexed_ts = Date()
+    flattened_text = Text(analyzer=freetext_analyzer, term_vector='yes')
 
     class Index:
         name = 'transcripts'

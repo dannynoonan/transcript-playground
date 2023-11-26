@@ -221,8 +221,10 @@ async def fetch_episode(show_key: ShowKey, episode_key: str, data_source: str = 
 
     # fetch episode from es
     if data_source == 'es':
-        es_episode = await esqb.fetch_episode_by_key(show_key.value, episode_key)
-        return {"es_episode": es_episode}
+        s = await esqb.fetch_episode_by_key(show_key.value, episode_key)
+        es_query = s.to_dict()
+        match = await esrt.return_episode_by_key(s)
+        return {"es_episode": match, 'es_query': es_query}
     
     # fetch episode from db
     episode = None
@@ -386,6 +388,13 @@ async def word_counts_by_episode(show_key: ShowKey, episode_key: str):
     matches = await esrt.return_word_counts_by_episode(response)
     return {"term_count": len(matches), "terms": matches}
 
+
+@app.get("/search_more_like_this/{show_key}/{episode_key}")
+async def search_more_like_this(show_key: ShowKey, episode_key: str):
+    s = await esqb.search_more_like_this(show_key.value, episode_key)
+    es_query = s.to_dict()
+    matches = await esrt.return_more_like_this(s)
+    return {"episodes": len(matches), "similar_episodes": matches, "es_query": es_query}
 
 
 ########### BEGIN EXAMPLES #############
