@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %} 
+  <title>Shows</title>
+{% endblock %} 
+
+{% block content %} 
+	<div class="margin">
+		<!-- <h2>{{ tdata['show_key'] }}:{{ tdata['episode_key'] }}</h2> -->
+		<h3><strong>"{{ tdata['episode']['title'] }}"</strong>, Season <strong>{{ tdata['episode']['season'] }}</strong>, Episode <strong>{{ tdata['episode']['sequence_in_season'] }}</strong></h3>
+		<h3>Locations</h3>
+		{% for location, count in tdata['locations_by_scene'].items() %}
+		<li>{{ location }} ({{ count }})</li>
+		{% endfor %}
+		<p>&nbsp;</p>
+		<h3>Speakers</h3>
+		<h4>Scene appearances</h4>
+		{% for speaker, count in tdata['speakers_by_scene'].items() %}
+		<li>{{ speaker }} ({{ count }})</li>
+		{% endfor %}
+		<h4>Line counts</h4>
+		{% for speaker, count in tdata['speaker_line_counts'].items() %}
+		<li>{{ speaker }} ({{ count }})</li>
+		{% endfor %}
+		<p>&nbsp;</p>
+		<h3>Keywords</h3>
+		{% for keyword in tdata['keywords'] %}
+		<li>{{ keyword['term'] }} ({{ keyword['score'] }})</li>
+		{% endfor %}
+		<p>&nbsp;</p>
+		<h3>Similar episodes</h3>
+		{% for sim_ep in tdata['similar_episodes'] %}
+		<li>{{ sim_ep['title'] }} (Season {{ sim_ep['season'] }}, Episode {{sim_ep['sequence_in_season']}})</li>
+		{% endfor %}
+	</div>
+{% endblock %} 

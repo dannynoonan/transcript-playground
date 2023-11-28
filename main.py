@@ -1,6 +1,9 @@
-from fastapi import FastAPI, Response
+from fastapi import FastAPI, Request, Response
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import HTTPException
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 # from fastapi.responses import JSONResponse
 # import json
 # from tortoise import HTTPException
@@ -19,9 +22,23 @@ from show_metadata import ShowKey, Status, show_metadata
 from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup
 from transcript_extractor import parse_episode_transcript_soup
 from transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup, match_episodes_to_transcript_urls
+from web.web_router import web_app
 
 
 app = FastAPI()
+app.include_router(web_app)
+app.mount('/static', StaticFiles(directory='static', html=True), name='static')
+
+
+# templates = Jinja2Templates(directory="templates")
+
+# @app.get("/web2")
+# async def home(request: Request):
+# 	return templates.TemplateResponse("index.html", {"request": request})
+
+# @app.get("/web2/episode/{show_key}/{episode_key}", response_class=HTMLResponse)
+# async def fetch_episode(request: Request, show_key: str, episode_key: str):
+#     return templates.TemplateResponse('episode.html', {'request': request, 'show_key': show_key, 'episode_key': episode_key})
 
 
 # https://fastapi.tiangolo.com/advanced/settings/#__tabbed_2_1
@@ -327,7 +344,7 @@ async def search_episodes_by_title(show_key: ShowKey, title: str = None):
     s = await esqb.search_episodes_by_title(show_key.value, title)
     es_query = s.to_dict()
     matches = await esrt.return_episodes_by_title(s)
-    return {"episodes": len(matches), "matches": matches, "es_query": es_query}
+    return {"episode_count": len(matches), "episodes": matches, "es_query": es_query}
 
 
 @app.get("/search_scenes/{show_key}")
@@ -339,7 +356,7 @@ async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str 
     s = await esqb.search_scenes(show_key.value, season, episode_key, location=location, description=description)
     es_query = s.to_dict()
     matches, scene_count = await esrt.return_scenes(s)
-    return {"episodes": len(matches), "scenes": scene_count, "matches": matches, "es_query": es_query}
+    return {"episode_count": len(matches), "scene_count": scene_count, "matches": matches, "es_query": es_query}
 
 
 @app.get("/search_scene_events/{show_key}")
@@ -347,7 +364,7 @@ async def search_scene_events(show_key: ShowKey, season: str = None, episode_key
     s = await esqb.search_scene_events(show_key.value, season, episode_key, speaker=speaker, dialog=dialog, location=location)
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = await esrt.return_scene_events(s, location=location)
-    return {"episodes": len(matches), "scenes": scene_count, "scene_events": scene_event_count, "matches": matches, "es_query": es_query}
+    return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
 @app.get("/search/{show_key}")
@@ -355,7 +372,7 @@ async def search(show_key: ShowKey, season: str = None, episode_key: str = None,
     s = await esqb.search_episodes(show_key.value, season, episode_key, qt)
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = await esrt.return_episodes(s)
-    return {"episodes": len(matches), "scenes": scene_count, "scene_events": scene_event_count, "matches": matches, "es_query": es_query}
+    return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
 @app.get("/agg_scenes_by_location/{show_key}")
@@ -363,7 +380,7 @@ async def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_
     s = await esqb.agg_scenes_by_location(show_key.value, season, episode_key, speaker)
     es_query = s.to_dict()
     matches = await esrt.return_scenes_by_location(s, speaker=speaker)
-    return {"locations": len(matches), "scenes_by_location": matches, "es_query": es_query}
+    return {"location_count": len(matches), "scenes_by_location": matches, "es_query": es_query}
 
 
 @app.get("/agg_scenes_by_speaker/{show_key}")
@@ -371,7 +388,7 @@ async def agg_scenes_by_speaker(show_key: ShowKey, season: str = None, episode_k
     s = await esqb.agg_scenes_by_speaker(show_key.value, season, episode_key, location, other_speaker)
     es_query = s.to_dict()
     matches = await esrt.return_scenes_by_speaker(s, location=location, other_speaker=other_speaker)
-    return {"speakers": len(matches), "scenes_by_speaker": matches, "es_query": es_query}
+    return {"speaker_count": len(matches), "scenes_by_speaker": matches, "es_query": es_query}
 
 
 @app.get("/agg_scene_events_by_speaker/{show_key}")
@@ -379,14 +396,14 @@ async def agg_scene_events_by_speaker(show_key: ShowKey, season: str = None, epi
     s = await esqb.agg_scene_events_by_speaker(show_key.value, season, episode_key, dialog)
     es_query = s.to_dict()
     matches = await esrt.return_scene_events_by_speaker(s, dialog=dialog)
-    return {"speakers": len(matches), "scene_events_by_speaker": matches, "es_query": es_query}
+    return {"speaker_count": len(matches), "scene_events_by_speaker": matches, "es_query": es_query}
 
 
-@app.get("/word_counts_by_episode/{show_key}/{episode_key}")
-async def word_counts_by_episode(show_key: ShowKey, episode_key: str):
-    response = await esqb.calc_word_counts_by_episode(show_key.value, episode_key)
-    matches = await esrt.return_word_counts_by_episode(response)
-    return {"term_count": len(matches), "terms": matches}
+@app.get("/keywords_by_episode/{show_key}/{episode_key}")
+async def keywords_by_episode(show_key: ShowKey, episode_key: str):
+    response = await esqb.search_keywords_by_episode(show_key.value, episode_key)
+    matches = await esrt.return_keywords_by_episode(response)
+    return {"keyword_count": len(matches), "keywords": matches}
 
 
 @app.get("/search_more_like_this/{show_key}/{episode_key}")
@@ -394,7 +411,7 @@ async def search_more_like_this(show_key: ShowKey, episode_key: str):
     s = await esqb.search_more_like_this(show_key.value, episode_key)
     es_query = s.to_dict()
     matches = await esrt.return_more_like_this(s)
-    return {"episodes": len(matches), "similar_episodes": matches, "es_query": es_query}
+    return {"similar_episode_count": len(matches), "similar_episodes": matches, "es_query": es_query}
 
 
 ########### BEGIN EXAMPLES #############

@@ -1,6 +1,8 @@
 from elasticsearch_dsl import Search
 from operator import itemgetter
 
+from es_metadata import STOPWORDS
+
 
 async def return_episode_by_key(s: Search) -> dict:
     print(f'begin return_episode_by_key for s.to_dict()={s.to_dict()}')
@@ -289,21 +291,28 @@ async def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
     return results
 
 
-async def return_word_counts_by_episode(query_response: dict) -> list:
-    print(f'begin return_word_counts_by_episode')
+async def return_keywords_by_episode(query_response: dict) -> list:
+    print(f'begin return_keywords_by_episode on query_response["term_vectors"]={query_response["term_vectors"]}')
 
     results = []
 
-    for term, data in query_response['term_vectors']['scenes.scene_events.dialog']['terms'].items():
+    if not query_response["term_vectors"]:
+        return results
+
+    # for term, data in query_response['term_vectors']['scenes.scene_events.dialog']['terms'].items():
+    for term, data in query_response['term_vectors']['flattened_text']['terms'].items():
+        if term in STOPWORDS:
+            continue
         term_dict = {}
         term_dict['term'] = term
         term_dict['term_freq'] = data['term_freq']
         term_dict['doc_freq'] = data['doc_freq']
         term_dict['ttf'] = data['ttf']
+        term_dict['score'] = data['score']
         results.append(term_dict)
 
     # sort results before returning
-    results = sorted(results, key=itemgetter('term_freq'), reverse=True)
+    results = sorted(results, key=itemgetter('score'), reverse=True)
 
     return results
 

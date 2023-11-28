@@ -5,6 +5,7 @@ from elasticsearch_dsl import Search, connections, Q, A
 from elasticsearch_dsl.query import MoreLikeThis
 
 from config import settings
+from es_metadata import STOPWORDS
 from es_model import EsEpisodeTranscript
 
 
@@ -378,11 +379,12 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
     return s
 
 
-async def calc_word_counts_by_episode(show_key: str, episode_key: str) -> dict:
+async def search_keywords_by_episode(show_key: str, episode_key: str) -> dict:
     print(f'begin calc_word_counts_by_episode for show_key={show_key} episode_key={episode_key}')
 
     response = es_conn.termvectors(index='transcripts', id=f'{show_key}_{episode_key}', term_statistics='true', field_statistics='true',
-                                   fields=['scenes.scene_events.dialog'])
+                                   fields=['flattened_text'], filter={"max_num_terms": 100, "min_term_freq": 1, "min_doc_freq": 1})
+                                #    fields=['scenes.scene_events.dialog'])
 
     return response
 
@@ -393,14 +395,14 @@ async def search_more_like_this(show_key: str, episode_key: str) -> Search:
     s = Search(index='transcripts')
     s = s.extra(size=30)
 
-    STOPWORDS = ["a", "able", "about", "across", "after", "all", "almost", "also", "am", "among", "an", "and", "any", "are", "as", "at", 
-                 "be", "because", "been", "but", "by", "can", "cannot", "could", "dear", "did", "do", "does", "either", "else", "ever", 
-                 "every", "for", "from", "get", "got", "had", "has", "have", "he", "her", "hers", "him", "his", "how", "however", "i", "if", 
-                 "in", "into", "is", "it", "its", "just", "least", "let", "like", "likely", "may", "me", "might", "most", "must", "my", 
-                 "neither", "no", "nor", "not", "of", "off", "often", "on", "only", "or", "other", "our", "own", "rather", "said", "say", 
-                 "says", "she", "should", "since", "so", "some", "than", "that", "the", "their", "them", "then", "there", "these", "they", 
-                 "this", "tis", "to", "too", "twas", "us", "wants", "was", "we", "were", "what", "when", "where", "which", "while", "who", 
-                 "whom", "why", "will", "with", "would", "yet", "you", "your"]
+    # STOPWORDS = ["a", "able", "about", "across", "after", "all", "almost", "also", "am", "among", "an", "and", "any", "are", "as", "at", 
+    #              "be", "because", "been", "but", "by", "can", "cannot", "could", "dear", "did", "do", "does", "either", "else", "ever", 
+    #              "every", "for", "from", "get", "got", "had", "has", "have", "he", "her", "hers", "him", "his", "how", "however", "i", "if", 
+    #              "in", "into", "is", "it", "its", "just", "least", "let", "like", "likely", "may", "me", "might", "most", "must", "my", 
+    #              "neither", "no", "nor", "not", "of", "off", "often", "on", "only", "or", "other", "our", "own", "rather", "said", "say", 
+    #              "says", "she", "should", "since", "so", "some", "than", "that", "the", "their", "them", "then", "there", "these", "they", 
+    #              "this", "tis", "to", "too", "twas", "us", "wants", "was", "we", "were", "what", "when", "where", "which", "while", "who", 
+    #              "whom", "why", "will", "with", "would", "yet", "you", "your"]
 
     s = s.query(MoreLikeThis(like=[{'_index': 'transcripts', '_id': f'{show_key}_{episode_key}'}], fields=['flattened_text'],
                              max_query_terms=75, minimum_should_match='75%', min_term_freq=1, stop_words=STOPWORDS))
