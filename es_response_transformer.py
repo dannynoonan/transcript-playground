@@ -291,17 +291,17 @@ async def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
     return results
 
 
-async def return_keywords_by_episode(query_response: dict) -> list:
-    print(f'begin return_keywords_by_episode on query_response["term_vectors"]={query_response["term_vectors"]}')
+async def return_keywords_by_episode(query_response: dict, exclude_terms: bool = False) -> list:
+    print(f'begin return_keywords_by_episode for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
 
     results = []
 
     if not query_response["term_vectors"]:
-        return results
+        return results    
 
     # for term, data in query_response['term_vectors']['scenes.scene_events.dialog']['terms'].items():
     for term, data in query_response['term_vectors']['flattened_text']['terms'].items():
-        if term in STOPWORDS:
+        if term in STOPWORDS or term.upper() in exclude_terms:
             continue
         term_dict = {}
         term_dict['term'] = term

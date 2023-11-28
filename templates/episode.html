@@ -30,7 +30,7 @@
 		<p>&nbsp;</p>
 		<h3>Similar episodes</h3>
 		{% for sim_ep in tdata['similar_episodes'] %}
-		<li>{{ sim_ep['title'] }} (Season {{ sim_ep['season'] }}, Episode {{sim_ep['sequence_in_season']}})</li>
+		<li><a href="/web/episode/{{ sim_ep['show_key'] }}/{{ sim_ep['episode_key'] }}">{{ sim_ep['title'] }}</a> (Season {{ sim_ep['season'] }}, Episode {{sim_ep['sequence_in_season']}})</li>
 		{% endfor %}
 	</div>
 {% endblock %} 

@@ -38,7 +38,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str):
     speaker_line_counts = await main.agg_scene_events_by_speaker(show_key, episode_key=episode_key)
     tdata['speaker_line_counts'] = speaker_line_counts['scene_events_by_speaker']
     
-    keywords = await main.keywords_by_episode(show_key, episode_key)
+    keywords = await main.keywords_by_episode(show_key, episode_key, exclude_speakers=True)
     tdata['keywords'] = keywords['keywords']
     
     mlt = await main.search_more_like_this(show_key, episode_key)
