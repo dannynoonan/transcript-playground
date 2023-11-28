@@ -399,6 +399,14 @@ async def agg_scene_events_by_speaker(show_key: ShowKey, season: str = None, epi
     return {"speaker_count": len(matches), "scene_events_by_speaker": matches, "es_query": es_query}
 
 
+@app.get("/agg_dialog_word_counts/{show_key}")
+async def agg_dialog_word_counts(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None):
+    s = await esqb.agg_dialog_word_counts(show_key.value, season=season, episode_key=episode_key, speaker=speaker)
+    es_query = s.to_dict()
+    matches = await esrt.return_dialog_word_counts(s, speaker=speaker)
+    return {"dialog_word_counts": matches, "es_query": es_query}
+
+
 @app.get("/keywords_by_episode/{show_key}/{episode_key}")
 async def keywords_by_episode(show_key: ShowKey, episode_key: str, exclude_speakers: bool = False):
     response = await esqb.search_keywords_by_episode(show_key.value, episode_key)

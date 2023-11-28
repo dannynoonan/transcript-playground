@@ -1,16 +1,18 @@
 from datetime import datetime
-from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter
-
+from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter, TokenCount
 
 
 freetext_analyzer = analyzer('freetext_analyzer', tokenizer='standard', type='custom',
                              filter=['lowercase', 'stop', 'apostrophe', 'porter_stem'])
 
 
+token_count_analyzer = analyzer('token_count_analyzer', tokenizer='standard', type='custom')
+
+
 class EsSceneEvent(InnerDoc):
     context_info = Text(analyzer=freetext_analyzer, term_vector='yes')
     spoken_by = Text(analyzer='standard', fields={'keyword': Keyword()})
-    dialog = Text(analyzer=freetext_analyzer, term_vector='yes')
+    dialog = Text(analyzer=freetext_analyzer, term_vector='yes', fields={'word_count': TokenCount(analyzer=token_count_analyzer, store='true')})
 
 
 class EsScene(InnerDoc):
@@ -24,13 +26,13 @@ class EsEpisodeTranscript(Document):
     episode_key = Keyword()
     season = Integer()
     sequence_in_season = Integer()
-    title = Text(analyzer=freetext_analyzer, term_vector='yes')
+    title = Text(analyzer=freetext_analyzer, term_vector='yes', fields={'word_count': TokenCount(analyzer=token_count_analyzer, store='true')})
     air_date = Date()
     duration = Integer()
     scenes = Nested(EsScene)
     loaded_ts = Date()
     indexed_ts = Date()
-    flattened_text = Text(analyzer=freetext_analyzer, term_vector='yes')
+    flattened_text = Text(analyzer=freetext_analyzer, term_vector='yes', fields={'word_count': TokenCount(analyzer=token_count_analyzer, store='true')})
 
     class Index:
         name = 'transcripts'

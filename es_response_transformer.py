@@ -291,6 +291,28 @@ async def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
     return results
 
 
+async def return_dialog_word_counts(s: Search, speaker: str = None) -> list:
+    print(f'begin return_dialog_word_counts s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = {}
+
+    if speaker:
+        results = {speaker: s.aggregations.scene_events.speaker_match.word_count._d_['value']}
+    else:
+        for item in s.aggregations.scene_events.by_speaker.buckets:
+            results[item.key] = item.word_count.value
+
+        # default sorting is by doc_count, we want to sort by word_count
+        sorted_results_list = sorted(results.items(), key=lambda x:x[1], reverse=True)
+        results = {}
+        for speaker, word_count in sorted_results_list:
+            results[speaker] = word_count
+
+    return results
+
+
 async def return_keywords_by_episode(query_response: dict, exclude_terms: bool = False) -> list:
     print(f'begin return_keywords_by_episode for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
 

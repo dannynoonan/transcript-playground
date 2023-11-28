@@ -379,6 +379,36 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
     return s
 
 
+async def agg_dialog_word_counts(show_key: str, season: str = None, episode_key: str = None, speaker: str = None) -> Search:
+    print(f'begin agg_dialog_word_counts for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    if season:
+        s = s.filter('term', season=season)
+
+    if speaker:
+        s.aggs.bucket(
+            'scene_events', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'speaker_match', 'filter', filter={'match': {'scenes.scene_events.spoken_by': speaker}}
+        ).bucket(
+            'word_count', 'sum', field='scenes.scene_events.dialog.word_count')
+    else:
+        s.aggs.bucket(
+            'scene_events', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+        ).bucket(
+            'word_count', 'sum', field='scenes.scene_events.dialog.word_count')
+        
+    return s
+
+
 async def search_keywords_by_episode(show_key: str, episode_key: str) -> dict:
     print(f'begin calc_word_counts_by_episode for show_key={show_key} episode_key={episode_key}')
 
