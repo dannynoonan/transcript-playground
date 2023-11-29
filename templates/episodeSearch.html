@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %} 
+    <title>{{ tdata['show_key'] }} episode search</title>
+{% endblock %} 
+
+{% block content %} 
+	<div class="container">
+        <p>
+            <form action="/web/episode_search/TNG" method="GET">
+                <div class="row">
+                    <!-- <div class="col-4">
+                        <label class="col-4 col-form-label">Search episodes:</label>
+                    </div> -->
+                    <div class="col-9">
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">Search episodes:</label>
+                            </div>
+                            <div class="col-5"> 
+                                <input type="text" class="form-control" name="qt" value="{{ tdata['qt'] }}" id="searchInput">
+                            </div>
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </p><br/>
+        {% if tdata['qt'] %}
+		<h3><strong>{{ tdata['episode_match_count'] }}</strong> matches for query: <strong>"{{ tdata['qt'] }}"</strong>
+            {% if tdata['season'] %}, Season <strong>{{ tdata['season'] }}</strong>{% endif %}
+        </h3>
+        {% endif %}
+		<p>&nbsp;</p>
+
+        {% for episode in tdata['episode_matches'] %}
+        <div class="card text-white bg-success mb-3 w-75">
+            <div class="card-header">Season {{ episode['season'] }}, Episode {{ episode['sequence_in_season'] }} ({{ episode['air_date'] }})</div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <button type="button" class="btn btn-primary">{{ '%0.2f'|format(episode['agg_score']|float) }}</button>&nbsp;&nbsp;
+                    <a class="alert-link" href="/web/episode/{{ episode['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title']|safe }}</a> 
+                </h5>
+                {% for scene in episode['scenes'] %}
+                <hr>
+                <p>[scene {{ scene['sequence'] }}] <strong>{{ scene['location']|safe }}</strong></p>
+                <p><small>
+                {% for scene_event in scene['scene_events'] %}
+                    [line {{ scene_event['sequence'] }}] 
+                    {% if scene_event['context_info'] %}
+                        [{{ scene_event['context_info']|safe }}] 
+                    {% endif %}
+                    {% if scene_event['spoken_by'] %}
+                        <strong>{{ scene_event['spoken_by']|safe }}</strong>: {{ scene_event['dialog']|safe }}
+                    {% endif %}
+                    <br/>
+                {% endfor %}
+                </small></p>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+	</div>
+{% endblock %} 

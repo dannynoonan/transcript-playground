@@ -24,6 +24,7 @@ async def home(request: Request):
 async def episode_page(request: Request, show_key: ShowKey, episode_key: str):
 	tdata = {}
 	
+	tdata['page'] = 'episode'
 	tdata['show_key'] = show_key.value
 	tdata['episode_key'] = episode_key
 	
@@ -65,16 +66,21 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str):
 	return templates.TemplateResponse('episode.html', {'request': request, 'tdata': tdata})
 
 
-@web_app.get("/web/episode_listing/{show_key}", response_class=HTMLResponse)
-async def episode_page(request: Request, show_key: ShowKey, season: str = None, qt: str = None):
+@web_app.get("/web/episode_search/{show_key}", response_class=HTMLResponse)
+async def episode_search(request: Request, show_key: ShowKey, season: str = None, qt: str = None):
 	tdata = {}
 
+	tdata['page'] = 'episode_search'
 	tdata['show_key'] = show_key.value
 	tdata['season'] = season
-	tdata['qt'] = qt
 
-	episode_matches = await main.search(show_key, season=season, qt=qt)
-	tdata['episode_matches'] = episode_matches['matches']
-	tdata['episode_match_count'] = episode_matches['episode_count']
+	if not qt:
+		tdata['qt'] = ''
 
-	return templates.TemplateResponse('episodeListing.html', {'request': request, 'tdata': tdata})
+	else:
+		tdata['qt'] = qt
+		episode_matches = await main.search(show_key, season=season, qt=qt)
+		tdata['episode_matches'] = episode_matches['matches']
+		tdata['episode_match_count'] = episode_matches['episode_count']
+
+	return templates.TemplateResponse('episodeSearch.html', {'request': request, 'tdata': tdata})

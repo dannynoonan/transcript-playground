@@ -27,13 +27,13 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Search/Analyze</a>
+                        <a class="nav-link {% if tdata and tdata['page'] == 'episode_search' %}active{% endif %}" href="/web/episode_search/TNG">Episode search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Episode listing</a>
+                        <a class="nav-link {% if tdata and tdata['page'] == 'episode_listing' %}active{% endif %}" href="#">Episode listing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Episode</a>
+                        <a class="nav-link {% if tdata and tdata['page'] == 'episode' %}active{% endif %}" href="#">Episode detail</a>
                     </li>
                 </ul>
                 <!-- <form class="d-flex">
