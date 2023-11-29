@@ -63,3 +63,18 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str):
 	tdata['similar_episodes'] = mlt['similar_episodes']
 	
 	return templates.TemplateResponse('episode.html', {'request': request, 'tdata': tdata})
+
+
+@web_app.get("/web/episode_listing/{show_key}", response_class=HTMLResponse)
+async def episode_page(request: Request, show_key: ShowKey, season: str = None, qt: str = None):
+	tdata = {}
+
+	tdata['show_key'] = show_key.value
+	tdata['season'] = season
+	tdata['qt'] = qt
+
+	episode_matches = await main.search(show_key, season=season, qt=qt)
+	tdata['episode_matches'] = episode_matches['matches']
+	tdata['episode_match_count'] = episode_matches['episode_count']
+
+	return templates.TemplateResponse('episodeListing.html', {'request': request, 'tdata': tdata})

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %} 
-  <title>Shows</title>
+	<title>{{ tdata['show_key'] }}: {{ tdata['episode']['title'] }}</title>
 {% endblock %} 
 
 {% block content %} 
@@ -17,7 +17,7 @@
 		<p>&nbsp;</p>
 
 		<h3>Speaker chatter</h3>
-		<table class="table table-hover table-striped table-fit" width="800%">
+		<table class="table table-hover table-striped table-fit">
 			<thead>
 				<tr class="table-success">
 					<th scope="col">Speaker</th>
@@ -40,12 +40,13 @@
 		<p>&nbsp;</p>
 
 		<h3>Similar episodes</h3>
-		<table class="table table-hover table-striped table-fit" width="800%">
+		<table class="table table-hover table-striped table-fit">
 			<thead>
 				<tr class="table-success">
 					<th scope="col">Title</th>
 					<th scope="col">Season</th>
 					<th scope="col">Episode</th>
+					<th scope="col">Air date</th>
 					<th scope="col">Score</th>
 			  	</tr>
 			</thead>
@@ -55,6 +56,7 @@
 					<th scope="row"><a href="/web/episode/{{ sim_ep['show_key'] }}/{{ sim_ep['episode_key'] }}">{{ sim_ep['title'] }}</a></th>
 					<td>{{ sim_ep['season'] }}</td>
 					<td>{{ sim_ep['sequence_in_season'] }}</td>
+					<td>{{ sim_ep['air_date'] }}</td>
 					<td>{{ sim_ep['score'] }}</td>
 				</tr>
 				{% endfor %}

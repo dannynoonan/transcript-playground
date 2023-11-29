@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %} 
+    <title>{{ tdata['show_key'] }} episode search</title>
+{% endblock %} 
+
+{% block content %} 
+	<div class="margin">
+		<h3><strong>{{ tdata['episode_match_count'] }}</strong> matches for query: <strong>"{{ tdata['qt'] }}"</strong>
+            {% if tdata['season'] %}, Season <strong>{{ tdata['season'] }}</strong>{% endif %}
+        </h3>
+		<p>&nbsp;</p>
+
+        {% for episode in tdata['episode_matches'] %}
+        <div class="card text-white bg-success mb-3 w-75">
+            <div class="card-header">Season {{ episode['season'] }}, Episode {{ episode['sequence_in_season'] }} ({{ episode['air_date'] }})</div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <button type="button" class="btn btn-primary">{{ '%0.2f'| format(episode['agg_score']|float)}}</button>&nbsp;
+                    <a class="alert-link" href="/web/episode/{{ episode['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title'] }}</a> 
+                </h5>
+                <p class="card-text">
+                    <p class="d-inline-flex gap-1">
+                        <a class="alert-link" data-bs-toggle="collapse" href="#collapseEpisode{{ episode['episode_key'] }}" role="button" 
+                                aria-expanded="false" aria-controls="collapseExample">Expand scenes</a>
+                        <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Button with data-bs-target
+                        </button> -->
+                    </p>
+                    <div class="collapse" id="collapseEpisode{{ episode['episode_key'] }}">
+                        <div class="card card-body">
+                            {% for scene in episode['scenes'] %}
+                            <div class="card text-white bg-secondary mb-3 w-65">
+                                <div class="card-header">{{ scene['location'] }}</div>
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title">{{ scene['location'] }}</a></h5> -->
+                                    <p class="card-text">
+                                    {% for scene_event in scene['scene_events'] %}
+                                        [{{ scene_event['sequence'] }}] <strong>{{ scene_event['spoken_by'] }}</strong>: {{ scene_event['dialog'] }}<br/>
+                                    {% endfor %}
+                                    </p>
+                                </div>
+                            </div>
+                            {% endfor %}                        
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+
+	</div>
+{% endblock %} 
