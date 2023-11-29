@@ -349,6 +349,6 @@ async def return_more_like_this(s: Search) -> list:
     for hit in s.hits.hits:
         episode = hit._source
         episode['score'] = hit._score
-        results.append(episode)
+        results.append(episode._d_)
 
     return results
