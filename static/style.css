@@ -15,3 +15,12 @@ table.table-fit tfoot th,
 table.table-fit tfoot td {
     width: auto !important;
 }
+
+em { 
+    font-style: normal; 
+    background: #b58900;
+}
+
+.gold { 
+    color: #b58900;
+}

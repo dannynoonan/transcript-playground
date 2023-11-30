@@ -29,7 +29,7 @@
             </form>
         </p><br/>
         {% if tdata['qt'] %}
-		<h3><strong>{{ tdata['episode_match_count'] }}</strong> matches for query: <strong>"{{ tdata['qt'] }}"</strong>
+		<h3><strong>{{ tdata['episode_match_count'] }}</strong> matches for query: <strong class="gold">"{{ tdata['qt'] }}"</strong>
             {% if tdata['season'] %}, Season <strong>{{ tdata['season'] }}</strong>{% endif %}
         </h3>
         {% endif %}
@@ -43,22 +43,24 @@
                     <button type="button" class="btn btn-primary">{{ '%0.2f'|format(episode['agg_score']|float) }}</button>&nbsp;&nbsp;
                     <a class="alert-link" href="/web/episode/{{ episode['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title']|safe }}</a> 
                 </h5>
+                <div class="overflow-scroll" style="max-height: 250px;">
                 {% for scene in episode['scenes'] %}
-                <hr>
-                <p>[scene {{ scene['sequence'] }}] <strong>{{ scene['location']|safe }}</strong></p>
-                <p><small>
-                {% for scene_event in scene['scene_events'] %}
-                    [line {{ scene_event['sequence'] }}] 
-                    {% if scene_event['context_info'] %}
-                        [{{ scene_event['context_info']|safe }}] 
-                    {% endif %}
-                    {% if scene_event['spoken_by'] %}
-                        <strong>{{ scene_event['spoken_by']|safe }}</strong>: {{ scene_event['dialog']|safe }}
-                    {% endif %}
-                    <br/>
-                {% endfor %}
-                </small></p>
-                {% endfor %}
+                    <hr>
+                    <p>[scene {{ scene['sequence'] }}] <strong>{{ scene['location']|safe }}</strong></p>
+                    <p><small>
+                    {% for scene_event in scene['scene_events'] %}
+                        [line {{ scene_event['sequence'] }}] 
+                        {% if scene_event['context_info'] %}
+                            [{{ scene_event['context_info']|safe }}] 
+                        {% endif %}
+                        {% if scene_event['spoken_by'] %}
+                            <strong>{{ scene_event['spoken_by']|safe }}</strong>: {{ scene_event['dialog']|safe }}
+                        {% endif %}
+                        <br/>
+                    {% endfor %}
+                    </small></p>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         {% endfor %}
