@@ -13,6 +13,19 @@ async def return_episode_by_key(s: Search) -> dict:
         return hit._d_
     
 
+async def return_doc_ids(s: Search) -> list:
+    print(f'begin return_episode_by_key for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = []
+
+    for hit in s.hits.hits:
+        results.append(hit['_id'])
+    
+    return results
+    
+
 async def return_episodes_by_title(s: Search) -> list:
     print(f'begin return_episodes_by_title for s.to_dict()={s.to_dict()}')
 
@@ -231,6 +244,32 @@ async def return_episodes(s: Search) -> (list, int, int):
     return results, scene_count, scene_event_count
 
 
+async def return_episodes_by_speaker(s: Search, location: str = None, other_speaker: str = None) -> list:
+    print(f'begin return_episodes_by_speaker for location={location} other_speaker={other_speaker} s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = {}
+
+    if location:
+        for item in s.aggregations.scenes.location_match.scene_events.by_speaker.buckets:
+            results[item.key] = item.for_episode.doc_count
+    elif other_speaker:
+        for item in s.aggregations.scene_events.speaker_match.for_scene.scene_events_2.by_speaker.buckets:
+            results[item.key] = item.for_episode.doc_count
+    else:
+        for item in s.aggregations.scene_events.by_speaker.buckets:
+            results[item.key] = item.for_episode.doc_count
+
+    # reverse nesting throws off sorting, so sort results by value
+    sorted_results_list = sorted(results.items(), key=lambda x:x[1], reverse=True)
+    results = {}
+    for speaker, count in sorted_results_list:
+        results[speaker] = count
+
+    return results
+
+
 async def return_scenes_by_location(s: Search, speaker: str = None) -> list:
     print(f'begin return_scenes_by_location for s.to_dict()={s.to_dict()}')
 
@@ -335,6 +374,31 @@ async def return_keywords_by_episode(query_response: dict, exclude_terms: bool =
 
     # sort results before returning
     results = sorted(results, key=itemgetter('score'), reverse=True)
+
+    return results
+
+
+async def return_keywords_by_corpus(query_response: dict, exclude_terms: bool = False) -> list:
+    print(f'begin return_keywords_by_corpus for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
+
+    results = []
+
+    if not query_response["docs"]:
+        return results
+        
+    all_term_dicts = {}
+    for doc in query_response["docs"]:
+        for term, data in doc['term_vectors']['flattened_text']['terms'].items():
+            if term in all_term_dicts or term in STOPWORDS or term.upper() in exclude_terms:
+                continue
+            term_dict = {}
+            term_dict['term'] = term
+            term_dict['doc_freq'] = data['doc_freq']
+            term_dict['ttf'] = data['ttf']
+            all_term_dicts[term] = term_dict
+
+    # sort results before returning
+    results = sorted(all_term_dicts.values(), key=itemgetter('ttf'), reverse=True)
 
     return results
 

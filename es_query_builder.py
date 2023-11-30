@@ -7,6 +7,8 @@ from elasticsearch_dsl.query import MoreLikeThis
 from config import settings
 from es_metadata import STOPWORDS
 from es_model import EsEpisodeTranscript
+import main
+from show_metadata import ShowKey
 
 
 # es_client = Elasticsearch(
@@ -59,10 +61,23 @@ async def fetch_episode_by_key(show_key: str, episode_key: str) -> dict:
     return s
 
 
+async def search_doc_ids(show_key: str, season: str = None) -> Search:
+    print(f'begin search_doc_ids for show_key={show_key} season={season}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=1000)
+    s = s.extra(stored_fields=['_id'])
+
+    s = s.filter('term', show_key=show_key)
+    if season:
+        s = s.filter('term', season=season)
+    
+    return s
+
+
 async def search_episodes_by_title(show_key: str, qt: str) -> Search:
     print(f'begin search_episodes_by_title for show_key={show_key} qt={qt}')
 
-    # s = Search(using=es_client, index='transcripts')
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
@@ -82,7 +97,6 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
         print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (location or description)')
         return None
     
-    # s = Search(using=es_client, index='transcripts')
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
@@ -129,7 +143,6 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
         print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (speaker or dialog)')
         return []
 
-    # s = Search(using=es_client, index='transcripts')
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
@@ -188,7 +201,6 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
         scenes.scene_events.dialog
     '''
 
-    # s = Search(using=es_client, index='transcripts')
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
@@ -243,10 +255,59 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
     return s
 
 
+async def agg_episodes_by_speaker(show_key: str, season: str = None, location: str = None, other_speaker: str = None) -> Search:
+    print(f'begin agg_episodes_by_speaker for show_key={show_key} season={season} location={location} other_speaker={other_speaker}')
+
+    # TODO this is nearly identical to agg_scenes_by_speaker, refactor?
+
+    s = Search(index='transcripts')
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+    if season:
+        s = s.filter('term', season=season)
+
+    if location:
+        s.aggs.bucket(
+            'scenes', 'nested', path='scenes'
+        ).bucket(
+            'location_match', 'filter', filter={"match": {"scenes.location": location}}
+        ).bucket(
+            'scene_events', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+        ).bucket(
+            'for_episode', 'reverse_nested' # TODO differs from agg_scenes_by_speaker
+        )
+    elif other_speaker:  # TODO location and other_speaker aren't exclusive of each other, this is just a WIP
+        s.aggs.bucket(
+            'scene_events', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by": other_speaker}}
+        ).bucket(
+            'for_scene', 'reverse_nested', path='scenes'
+        ).bucket(
+            'scene_events_2', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+        ).bucket(
+            'for_episode', 'reverse_nested' # TODO differs from agg_scenes_by_speaker
+        )
+    else:
+        s.aggs.bucket(
+            'scene_events', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+        ).bucket(
+            'for_episode', 'reverse_nested' # TODO differs from agg_scenes_by_speaker
+        )
+    
+    return s
+
+
 async def agg_scenes_by_location(show_key: str, season: str = None, episode_key: str = None, speaker: str = None) -> Search:
     print(f'begin agg_scenes_by_location for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker}')
 
-    # s = Search(using=es_client, index='transcripts')
     s = Search(index='transcripts')
     s = s.extra(size=0)
 
@@ -278,7 +339,6 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
                                 location: str = None, other_speaker: str = None) -> Search:
     print(f'begin agg_scenes_by_speaker for show_key={show_key} season={season} episode_key={episode_key} location={location} other_speaker={other_speaker}')
 
-    # s = Search(using=es_client, index='transcripts')
     s = Search(index='transcripts')
     s = s.extra(size=0)
 
@@ -329,7 +389,6 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
 async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode_key: str = None, dialog: str = None) -> Search:
     print(f'begin agg_scene_events_by_speaker for show_key={show_key} season={season} episode_key={episode_key} dialog={dialog}')
 
-    # s = Search(using=es_client, index='transcripts')
     s = Search(index='transcripts')
     s = s.extra(size=0)
 
@@ -409,17 +468,29 @@ async def agg_dialog_word_counts(show_key: str, season: str = None, episode_key:
     return s
 
 
-async def search_keywords_by_episode(show_key: str, episode_key: str) -> dict:
+async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
     print(f'begin calc_word_counts_by_episode for show_key={show_key} episode_key={episode_key}')
 
     response = es_conn.termvectors(index='transcripts', id=f'{show_key}_{episode_key}', term_statistics='true', field_statistics='true',
                                    fields=['flattened_text'], filter={"max_num_terms": 100, "min_term_freq": 1, "min_doc_freq": 1})
-                                #    fields=['scenes.scene_events.dialog'])
 
     return response
 
 
-async def search_more_like_this(show_key: str, episode_key: str) -> Search:
+async def keywords_by_corpus(show_key: str, season: str = None) -> dict:
+    print(f'begin calc_word_counts_by_episode for show_key={show_key} season={season}')
+
+    keys = await main.search_doc_ids(ShowKey(show_key), season=season)
+
+    if not keys:
+        return {}
+    
+    response = es_conn.mtermvectors(index='transcripts', ids=keys['doc_ids'], term_statistics='true', field_statistics='true', fields=['flattened_text'])
+    
+    return response
+
+
+async def more_like_this(show_key: str, episode_key: str) -> Search:
     print(f'begin search_more_like_this for show_key={show_key} episode_key={episode_key}')
 
     s = Search(index='transcripts')

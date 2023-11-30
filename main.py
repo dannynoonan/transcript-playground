@@ -339,6 +339,14 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     }
 
 
+@app.get("/search_doc_ids/{show_key}")
+async def search_doc_ids(show_key: ShowKey, season: str = None):
+    s = await esqb.search_doc_ids(show_key.value, season=season)
+    es_query = s.to_dict()
+    matches = await esrt.return_doc_ids(s)
+    return {"doc_count": len(matches), "doc_ids": matches, "es_query": es_query}
+
+
 @app.get("/search_episodes_by_title/{show_key}")
 async def search_episodes_by_title(show_key: ShowKey, title: str = None):
     s = await esqb.search_episodes_by_title(show_key.value, title)
@@ -375,6 +383,14 @@ async def search(show_key: ShowKey, season: str = None, episode_key: str = None,
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
+@app.get("/agg_episodes_by_speaker/{show_key}")
+async def agg_episodes_by_speaker(show_key: ShowKey, season: str = None, location: str = None, other_speaker: str = None):
+    s = await esqb.agg_episodes_by_speaker(show_key.value, season=season, location=location, other_speaker=other_speaker)
+    es_query = s.to_dict()
+    matches = await esrt.return_episodes_by_speaker(s, location=location, other_speaker=other_speaker)
+    return {"speaker_count": len(matches), "episodes_by_speaker": matches, "es_query": es_query}
+
+
 @app.get("/agg_scenes_by_location/{show_key}")
 async def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None):
     s = await esqb.agg_scenes_by_location(show_key.value, season=season, episode_key=episode_key, speaker=speaker)
@@ -409,18 +425,29 @@ async def agg_dialog_word_counts(show_key: ShowKey, season: str = None, episode_
 
 @app.get("/keywords_by_episode/{show_key}/{episode_key}")
 async def keywords_by_episode(show_key: ShowKey, episode_key: str, exclude_speakers: bool = False):
-    response = await esqb.search_keywords_by_episode(show_key.value, episode_key)
+    response = await esqb.keywords_by_episode(show_key.value, episode_key)
     all_speakers = []
     if exclude_speakers:
-        res = await agg_scenes_by_speaker(show_key, episode_key=episode_key)
+        res = await agg_scenes_by_speaker(show_key, episode_key=episode_key) # TODO should this use agg_episodes_by_speaker now?
         all_speakers = res['scenes_by_speaker'].keys()
     matches = await esrt.return_keywords_by_episode(response, exclude_terms=all_speakers)
     return {"keyword_count": len(matches), "keywords": matches}
 
 
-@app.get("/search_more_like_this/{show_key}/{episode_key}")
-async def search_more_like_this(show_key: ShowKey, episode_key: str):
-    s = await esqb.search_more_like_this(show_key.value, episode_key)
+@app.get("/keywords_by_corpus/{show_key}")
+async def keywords_by_corpus(show_key: ShowKey, season: str = None, exclude_speakers: bool = False):
+    response = await esqb.keywords_by_corpus(show_key.value, season=season)
+    all_speakers = []
+    if exclude_speakers:
+        res = await agg_episodes_by_speaker(show_key, season=season)
+        all_speakers = res['episodes_by_speaker'].keys()
+    matches = await esrt.return_keywords_by_corpus(response, exclude_terms=all_speakers)
+    return {"keyword_count": len(matches), "keywords": matches}
+
+
+@app.get("/more_like_this/{show_key}/{episode_key}")
+async def more_like_this(show_key: ShowKey, episode_key: str):
+    s = await esqb.more_like_this(show_key.value, episode_key)
     es_query = s.to_dict()
     matches = await esrt.return_more_like_this(s)
     return {"similar_episode_count": len(matches), "similar_episodes": matches, "es_query": es_query}
