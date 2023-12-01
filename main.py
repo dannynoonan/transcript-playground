@@ -3,10 +3,7 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
-# from fastapi.responses import JSONResponse
-# import json
-# from tortoise import HTTPException
+from operator import itemgetter
 from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise import Tortoise
@@ -421,6 +418,48 @@ async def agg_dialog_word_counts(show_key: ShowKey, season: str = None, episode_
     es_query = s.to_dict()
     matches = await esrt.return_dialog_word_counts(s, speaker=speaker)
     return {"dialog_word_counts": matches, "es_query": es_query}
+
+
+@app.get("/composite_speaker_aggs/{show_key}")
+async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_key: str = None):
+    if not episode_key:
+        speaker_episode_counts = await agg_episodes_by_speaker(show_key, season=season)
+    speaker_scene_counts = await agg_scenes_by_speaker(show_key, season=season, episode_key=episode_key)
+    speaker_line_counts = await agg_scene_events_by_speaker(show_key, season=season, episode_key=episode_key)
+    speaker_word_counts = await agg_dialog_word_counts(show_key, season=season, episode_key=episode_key)
+
+    # TODO refactor this to generically handle dicts threading together
+    speakers = {}
+    if not episode_key:
+        for speaker, episode_count in speaker_episode_counts['episodes_by_speaker'].items():
+            if speaker not in speakers:
+                speakers[speaker] = {}
+                speakers[speaker]['speaker'] = speaker
+            speakers[speaker]['episode_count'] = episode_count
+    for speaker, scene_count in speaker_scene_counts['scenes_by_speaker'].items():
+        if speaker not in speakers:
+            speakers[speaker] = {}
+            speakers[speaker]['speaker'] = speaker
+        speakers[speaker]['scene_count'] = scene_count
+    for speaker, line_count in speaker_line_counts['scene_events_by_speaker'].items():
+        if speaker not in speakers:
+            speakers[speaker] = {}
+            speakers[speaker]['speaker'] = speaker
+        speakers[speaker]['line_count'] = line_count
+    for speaker, word_count in speaker_word_counts['dialog_word_counts'].items():
+        if speaker not in speakers:
+            speakers[speaker] = {}
+            speakers[speaker]['speaker'] = speaker
+        speakers[speaker]['word_count'] = int(word_count)  # NOTE not sure why casting is needed here
+
+    # TODO shouldn't I be able to sort on a key for a dict within a dict
+    speaker_dicts = speakers.values()
+    sort_field = 'scene_count'
+    if not episode_key:
+        sort_field = 'episode_count'
+    speaker_agg_composite = sorted(speaker_dicts, key=itemgetter(sort_field), reverse=True)
+
+    return {"speaker_count": len(speaker_agg_composite), "speaker_agg_composite": speaker_agg_composite} 
 
 
 @app.get("/keywords_by_episode/{show_key}/{episode_key}")

@@ -381,6 +381,7 @@ async def return_keywords_by_episode(query_response: dict, exclude_terms: bool =
 async def return_keywords_by_corpus(query_response: dict, exclude_terms: bool = False) -> list:
     print(f'begin return_keywords_by_corpus for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
 
+    # TODO if this is a partial corpus (e.g. single season) then need to aggregate term-freq-for-corpus ad hoc rather than use the 'ttf' value 
     results = []
 
     if not query_response["docs"]:

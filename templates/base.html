@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Transcript Playground</a>
+            <a class="navbar-brand" href="">Transcript Playground</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,13 +27,13 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if tdata and tdata['page'] == 'episode_search' %}active{% endif %}" href="/web/episode_search/TNG">Episode search</a>
+                        <a class="nav-link {% if tdata['header'] == 'show' %}active{% endif %}" href="/web/show/{{ tdata['show_key'] }}">Show</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if tdata and tdata['page'] == 'episode_listing' %}active{% endif %}" href="#">Episode listing</a>
+                        <a class="nav-link {% if tdata['header'] == 'episode' %}active{% endif %}" href="/web/episode_search/{{ tdata['show_key'] }}">Episode</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if tdata and tdata['page'] == 'episode' %}active{% endif %}" href="#">Episode detail</a>
+                        <a class="nav-link {% if tdata['header'] == 'character' %}active{% endif %}" href="/web/speaker_search/{{ tdata['show_key'] }}">Character</a>
                     </li>
                 </ul>
                 <!-- <form class="d-flex">
