@@ -83,7 +83,10 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 
 	tdata['header'] = 'episode'
 	tdata['show_key'] = show_key.value
-	tdata['search_type'] = search_type
+	if not search_type:
+		tdata['search_type'] = 'general'
+	else:
+		tdata['search_type'] = search_type
 	tdata['season'] = season
 
 	tdata['qt'] = ''
