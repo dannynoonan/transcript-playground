@@ -30,6 +30,7 @@ class EsEpisodeTranscript(Document):
     air_date = Date()
     duration = Integer()
     scenes = Nested(EsScene)
+    scene_count = Integer()
     loaded_ts = Date()
     indexed_ts = Date()
     flattened_text = Text(analyzer=freetext_analyzer, term_vector='yes', fields={'word_count': TokenCount(analyzer=token_count_analyzer, store='true')})

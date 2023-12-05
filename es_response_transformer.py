@@ -343,15 +343,19 @@ async def return_episodes_by_speaker(s: Search, location: str = None, other_spea
     s = s.execute()
 
     results = {}
+    results['_ALL_'] = 0
 
     if location:
         for item in s.aggregations.scenes.location_match.scene_events.by_speaker.buckets:
+            results['_ALL_'] += item.for_episode.doc_count
             results[item.key] = item.for_episode.doc_count
     elif other_speaker:
         for item in s.aggregations.scene_events.speaker_match.for_scene.scene_events_2.by_speaker.buckets:
+            results['_ALL_'] += item.for_episode.doc_count
             results[item.key] = item.for_episode.doc_count
     else:
         for item in s.aggregations.scene_events.by_speaker.buckets:
+            results['_ALL_'] += item.for_episode.doc_count
             results[item.key] = item.for_episode.doc_count
 
     # reverse nesting throws off sorting, so sort results by value
@@ -363,29 +367,41 @@ async def return_episodes_by_speaker(s: Search, location: str = None, other_spea
     return results
 
 
+async def return_scene_count(s: Search) -> int:
+    print(f'begin return_scene_count for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    return int(s.aggregations.scene_count.value)
+
+
 async def return_scenes_by_location(s: Search, speaker: str = None) -> list:
-    print(f'begin return_scenes_by_location for s.to_dict()={s.to_dict()}')
+    print(f'begin return_scenes_by_location for speaker={speaker} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
     results = {}
+    results['TOTAL'] = 0
 
     if speaker:
         for item in s.aggregations.scene_events.speaker_match.scenes.by_location.buckets:
+            results['TOTAL'] += item.doc_count
             results[item.key] = item.doc_count
     else:
         for item in s.aggregations.scenes.by_location.buckets:
+            results['TOTAL'] += item.doc_count
             results[item.key] = item.doc_count
 
     return results
 
 
-async def return_scenes_by_speaker(s: Search, location: str = None, other_speaker: str = None) -> list:
+async def return_scenes_by_speaker(s: Search, agg_scene_count: str, location: str = None, other_speaker: str = None) -> list:
     print(f'begin return_scenes_by_speaker for location={location} other_speaker={other_speaker} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
     results = {}
+    results['_ALL_'] = agg_scene_count
 
     if location:
         for item in s.aggregations.scenes.location_match.scene_events.by_speaker.buckets:
@@ -412,12 +428,15 @@ async def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
     s = s.execute()
 
     results = {}
+    results['_ALL_'] = 0
 
     if dialog:
         for item in s.aggregations.scene_events.dialog_match.by_speaker.buckets:
+            results['_ALL_'] += item.doc_count
             results[item.key] = item.doc_count
     else:
         for item in s.aggregations.scene_events.by_speaker.buckets:
+            results['_ALL_'] += item.doc_count
             results[item.key] = item.doc_count
 
     return results
@@ -429,11 +448,13 @@ async def return_dialog_word_counts(s: Search, speaker: str = None) -> list:
     s = s.execute()
 
     results = {}
+    results['_ALL_'] = 0
 
     if speaker:
         results = {speaker: s.aggregations.scene_events.speaker_match.word_count._d_['value']}
     else:
         for item in s.aggregations.scene_events.by_speaker.buckets:
+            results['_ALL_'] += item.word_count.value
             results[item.key] = item.word_count.value
 
         # default sorting is by doc_count, we want to sort by word_count

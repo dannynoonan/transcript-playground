@@ -408,8 +408,17 @@ async def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_
 async def agg_scenes_by_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, other_speaker: str = None):
     s = await esqb.agg_scenes_by_speaker(show_key.value, season=season, episode_key=episode_key, location=location, other_speaker=other_speaker)
     es_query = s.to_dict()
-    matches = await esrt.return_scenes_by_speaker(s, location=location, other_speaker=other_speaker)
+    scene_count = await agg_scenes(show_key, season=season, episode_key=episode_key, location=location)
+    matches = await esrt.return_scenes_by_speaker(s, scene_count['scene_count'], location=location, other_speaker=other_speaker)
     return {"speaker_count": len(matches), "scenes_by_speaker": matches, "es_query": es_query}
+
+
+@app.get("/agg_scenes/{show_key}")
+async def agg_scenes(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None):
+    s = await esqb.agg_scenes(show_key.value, season=season, episode_key=episode_key, location=location)
+    es_query = s.to_dict()
+    scene_count = await esrt.return_scene_count(s)
+    return {"scene_count": scene_count, "es_query": es_query}
 
 
 @app.get("/agg_scene_events_by_speaker/{show_key}")

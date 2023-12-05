@@ -11,32 +11,72 @@
         "episode_key": {
           "type": "keyword"
         },
+        "flattened_text": {
+          "type": "text",
+          "fields": {
+            "word_count": {
+              "type": "token_count",
+              "store": true,
+              "analyzer": "token_count_analyzer"
+            }
+          },
+          "term_vector": "yes",
+          "analyzer": "freetext_analyzer"
+        },
         "indexed_ts": {
           "type": "date"
         },
         "loaded_ts": {
           "type": "date"
         },
+        "scene_count": {
+          "type": "integer"
+        },
         "scenes": {
           "type": "nested",
           "properties": {
             "description": {
-              "type": "text"
+              "type": "text",
+              "term_vector": "yes",
+              "analyzer": "freetext_analyzer"
             },
             "location": {
-              "type": "keyword"
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              },
+              "analyzer": "standard"
             },
             "scene_events": {
               "type": "nested",
               "properties": {
                 "context_info": {
-                  "type": "text"
+                  "type": "text",
+                  "term_vector": "yes",
+                  "analyzer": "freetext_analyzer"
                 },
                 "dialog": {
-                  "type": "text"
+                  "type": "text",
+                  "fields": {
+                    "word_count": {
+                      "type": "token_count",
+                      "store": true,
+                      "analyzer": "token_count_analyzer"
+                    }
+                  },
+                  "term_vector": "yes",
+                  "analyzer": "freetext_analyzer"
                 },
                 "spoken_by": {
-                  "type": "keyword"
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword"
+                    }
+                  },
+                  "analyzer": "standard"
                 }
               }
             }
@@ -52,7 +92,16 @@
           "type": "keyword"
         },
         "title": {
-          "type": "text"
+          "type": "text",
+          "fields": {
+            "word_count": {
+              "type": "token_count",
+              "store": true,
+              "analyzer": "token_count_analyzer"
+            }
+          },
+          "term_vector": "yes",
+          "analyzer": "freetext_analyzer"
         }
       }
     }

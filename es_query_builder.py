@@ -347,6 +347,25 @@ async def agg_episodes_by_speaker(show_key: str, season: str = None, location: s
     return s
 
 
+async def agg_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None) -> Search:
+    print(f'begin agg_scenes for show_key={show_key} season={season} episode_key={episode_key} location={location}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    if season:
+        s = s.filter('term', season=season)
+
+    # TODO location
+
+    s.aggs.bucket('scene_count', 'sum', field='scene_count')
+
+    return s
+
+
 async def agg_scenes_by_location(show_key: str, season: str = None, episode_key: str = None, speaker: str = None) -> Search:
     print(f'begin agg_scenes_by_location for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker}')
 

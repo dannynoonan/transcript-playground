@@ -9,6 +9,7 @@ async def to_es_episode(episode: Episode) -> EsEpisodeTranscript:
         sequence_in_season=episode.sequence_in_season, air_date=episode.air_date)
     flattened_text = f'{episode.title}\n\n'
     es_episode.meta.id = f'{episode.show_key}_{episode.external_key}'
+    es_episode.scene_count = len(episode.scenes)
     es_episode.scenes = []
     for scene in episode.scenes:
         # es_episode.add_scene(scene.location, scene.description)
