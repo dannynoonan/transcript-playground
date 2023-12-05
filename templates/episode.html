@@ -8,15 +8,29 @@
 	<div class="margin">
 		<!-- <h2>{{ tdata['show_key'] }}:{{ tdata['episode_key'] }}</h2> -->
 		<h3><strong>"{{ tdata['episode']['title'] }}"</strong>, Season <strong>{{ tdata['episode']['season'] }}</strong>, Episode <strong>{{ tdata['episode']['sequence_in_season'] }}</strong></h3>
+		<p>&lt;&lt; Previous episode | Next episode &gt;&gt;</p>
 		<p>&nbsp;</p>
 
 		<h3>Scene locations</h3>
-		{% for location, count in tdata['locations_by_scene'].items() %}
-		<li>{{ location }} ({{ count }})</li>
-		{% endfor %}
+		<table class="table table-hover table-striped table-fit">
+			<thead>
+				<tr class="table-primary">
+					<th scope="col">Location</th>
+                    <th scope="col">Scenes</th>
+			  	</tr>
+			</thead>
+			<tbody>
+				{% for location, count in tdata['locations_by_scene'].items() %}
+				<tr class="table-secondary">
+					<th scope="row">{{ location }}</th>
+					<td>{{ count }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 		<p>&nbsp;</p>
 
-		<h3>Speaker chatter</h3>
+		<h3>Character chatter</h3>
 		<table class="table table-hover table-striped table-fit">
 			<thead>
 				<tr class="table-success">
@@ -65,9 +79,22 @@
 		<p>&nbsp;</p>
 
 		<h3>Keywords</h3>
-		{% for keyword in tdata['keywords'] %}
-		<li>{{ keyword['term'] }} ({{ keyword['score'] }})</li>
-		{% endfor %}
+		<table class="table table-hover table-striped table-fit">
+			<thead>
+				<tr class="table-primary">
+					<th scope="col">Term</th>
+					<th scope="col">Score</th>
+			  	</tr>
+			</thead>
+			<tbody>
+				{% for keyword in tdata['keywords'] %}
+				<tr class="table-secondary">
+					<th scope="row">{{  keyword['term'] }}</th>
+					<td>{{ keyword['score'] }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 		<p>&nbsp;</p>
 
 	</div>

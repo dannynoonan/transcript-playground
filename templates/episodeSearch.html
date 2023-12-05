@@ -9,20 +9,104 @@
         <p>
             <form action="/web/episode_search/TNG" method="GET">
                 <input type="hidden" class="form-control" name="show_key" value="{{ tdata['show_key'] }}" id="searchInput">
-                <div class="row">
-                    <!-- <div class="col-4">
-                        <label class="col-4 col-form-label">Search episodes:</label>
-                    </div> -->
-                    <div class="col-9">
-                        <div class="row input-group">
-                            <div class="col-2">
-                                <label class="col-form-label">Search episodes:</label>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                General episode search
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="col-10">
+                                    <div class="row input-group">
+                                        <div class="col-3">
+                                            <label class="col-form-label">Find episodes containing:</label>
+                                        </div>
+                                        <div class="col-5"> 
+                                            <input type="text" class="form-control" name="qt" value="{{ tdata['qt'] }}" id="qtInput">
+                                        </div>
+                                        <div class="col-2">
+                                            <button type="submit" class="btn btn-primary" name="search_type" value="general">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-5"> 
-                                <input type="text" class="form-control" name="qt" value="{{ tdata['qt'] }}" id="searchInput">
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                Advanced episode search
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="col-8">
+                                    <div class="row input-group">
+                                        <div class="col-2">
+                                            <label class="col-form-label">By character:</label>
+                                        </div>
+                                        <div class="col-6"> 
+                                            <input type="text" class="form-control" name="speaker" value="{{ tdata['speaker'] }}" id="speakerInput">
+                                        </div>
+                                    </div>                              
+                                    <div class="row input-group">
+                                        <div class="col-2">
+                                            <label class="col-form-label">By location:</label>
+                                        </div>
+                                        <div class="col-6"> 
+                                            <input type="text" class="form-control" name="location" value="{{ tdata['location'] }}" id="locationInput">
+                                        </div>
+                                    </div>
+                                    <div class="row input-group">
+                                        <div class="col-2">
+                                            <label class="col-form-label">By dialogue:</label>
+                                        </div>
+                                        <div class="col-6"> 
+                                            <input type="text" class="form-control" name="dialog" value="{{ tdata['dialog'] }}" id="dialogInput">
+                                        </div>
+                                    </div>
+                                    <div class="row input-group">
+                                        <div class="col-8">
+                                            <button type="submit" class="btn btn-primary" name="search_type" value="advanced">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-2">
-                                <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                Multi-speaker search
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="col-8">
+                                    <div class="row input-group">
+                                        <div class="col-2">
+                                            <label class="col-form-label">By characters:</label>
+                                        </div>
+                                        <div class="col-6"> 
+                                            <input type="text" class="form-control" name="speakers" value="{{ tdata['speakers'] }}" id="speakersInput">
+                                        </div>
+                                    </div>                              
+                                    <div class="row input-group">
+                                        <div class="col-2">
+                                            <label class="col-form-label">By location:</label>
+                                        </div>
+                                        <div class="col-6"> 
+                                            <input type="text" class="form-control" name="locationAMS" value="{{ tdata['locationAMS'] }}" id="locationInputAMS">
+                                        </div>
+                                    </div>
+                                    <div class="row input-group">
+                                        <div class="col-8">
+                                            <button type="submit" class="btn btn-primary" name="search_type" value="advanced_multi_speaker">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

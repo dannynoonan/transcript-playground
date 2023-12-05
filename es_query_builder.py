@@ -94,7 +94,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     print(f'begin search_scenes for show_key={show_key} season={season} episode_key={episode_key} location={location} description={description}')
 
     if not (location or description):
-        print(f'Warning: unable to execute search_scene_events without at least one scene_event property set (location or description)')
+        print(f'Warning: unable to execute search_scenes without at least one scene_event property set (location or description)')
         return None
     
     s = Search(index='transcripts')
@@ -135,8 +135,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     return s
 
 
-async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, 
-                              dialog: str = None, location: str = None) -> Search:
+async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> Search:
     print(f'begin search_scene_events for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker} dialog={dialog}')
     
     if not (speaker or dialog):
@@ -182,6 +181,49 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
         s = s.filter('term', season=season)
     # if location:
     #     s = s.filter('nested', path='scenes', query=Q('match', **{'scenes.location': location}))
+
+    s = s.source(excludes=['flattened_text', 'scenes.scene_events'])
+
+    return s
+
+
+async def search_scene_events_multi_speaker(show_key: str, speakers: str, season: str = None, episode_key: str = None) -> Search:
+    print(f'begin search_scene_events_multi_speaker for show_key={show_key} season={season} episode_key={episode_key} speakers={speakers}')
+
+    speakers = speakers.split(',')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=1000)
+
+    must_nested_qs = None
+
+    for speaker in speakers: 
+        speaker_q = Q('bool', must=[Q('match', **{'scenes.scene_events.spoken_by': speaker})])
+
+        nested_q = Q('nested', path='scenes.scene_events', 
+                query=speaker_q,
+                inner_hits={
+                    'name': speaker,
+                    'size': 100, 
+                    'highlight': {
+                        'fields': {
+                            'scenes.scene_events.spoken_by': {}, 
+                            'scenes.scene_events.dialog': {}
+                        }
+                    }
+                })
+        if not must_nested_qs:
+            must_nested_qs = nested_q
+        else:
+            must_nested_qs = must_nested_qs & nested_q
+
+    s = s.query(must_nested_qs)
+
+    s = s.filter('term', show_key=show_key)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    if season:
+        s = s.filter('term', season=season)
 
     s = s.source(excludes=['flattened_text', 'scenes.scene_events'])
 

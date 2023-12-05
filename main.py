@@ -366,9 +366,17 @@ async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str 
 
 @app.get("/search_scene_events/{show_key}")
 async def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None, location: str = None):
-    s = await esqb.search_scene_events(show_key.value, season=season, episode_key=episode_key, speaker=speaker, dialog=dialog, location=location)
+    s = await esqb.search_scene_events(show_key.value, season=season, episode_key=episode_key, speaker=speaker, dialog=dialog)
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = await esrt.return_scene_events(s, location=location)
+    return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
+
+
+@app.get("/search_scene_events_multi_speaker/{show_key}")
+async def search_scene_events_multi_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, speakers: str = None, location: str = None):
+    s = await esqb.search_scene_events_multi_speaker(show_key.value, speakers, season=season, episode_key=episode_key)
+    es_query = s.to_dict()
+    matches, scene_count, scene_event_count = await esrt.return_scene_events_multi_speaker(s, speakers, location=location)
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 

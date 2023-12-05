@@ -16,7 +16,7 @@ web_app = APIRouter()
 
 
 @web_app.get("/web/show/{show_key}")
-async def home(request: Request, show_key: ShowKey):
+async def show_page(request: Request, show_key: ShowKey):
 	tdata = {}
 
 	tdata['header'] = 'show'
@@ -66,29 +66,6 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str):
 
 	speaker_counts = await main.composite_speaker_aggs(show_key, episode_key=episode_key)
 	tdata['speaker_counts'] = speaker_counts['speaker_agg_composite']
-
-	# speaker_scene_counts = await main.agg_scenes_by_speaker(show_key, episode_key=episode_key)
-	# speaker_line_counts = await main.agg_scene_events_by_speaker(show_key, episode_key=episode_key)
-	# speaker_word_counts = await main.agg_dialog_word_counts(show_key, episode_key=episode_key) 
-	#
-	# speakers = {}
-	# for speaker, scene_count in speaker_scene_counts['scenes_by_speaker'].items():
-	# 	speakers[speaker] = {} 
-	# 	speakers[speaker]['speaker'] = speaker
-	# 	speakers[speaker]['scene_count'] = scene_count
-	# for speaker, line_count in speaker_line_counts['scene_events_by_speaker'].items():
-	# 	if speaker not in speakers:
-	# 		speakers[speaker] = {}
-	# 		speakers[speaker]['speaker'] = speaker
-	# 	speakers[speaker]['line_count'] = line_count
-	# for speaker, word_count in speaker_word_counts['dialog_word_counts'].items():
-	# 	if speaker not in speakers:
-	# 		speakers[speaker] = {}
-	# 		speakers[speaker]['speaker'] = speaker
-	# 	speakers[speaker]['word_count'] = int(word_count)  # NOTE not sure why casting is needed here
-	#
-	# speaker_dicts = speakers.values()
-	# tdata['speaker_counts'] = sorted(speaker_dicts, key=itemgetter('scene_count'), reverse=True)
 	
 	keywords = await main.keywords_by_episode(show_key, episode_key, exclude_speakers=True)
 	tdata['keywords'] = keywords['keywords']
@@ -100,20 +77,125 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str):
 
 
 @web_app.get("/web/episode_search/{show_key}", response_class=HTMLResponse)
-async def episode_search(request: Request, show_key: ShowKey, season: str = None, qt: str = None):
+async def episode_search_page(request: Request, show_key: ShowKey, search_type: str = None, season: str = None, qt: str = None, 
+							  dialog: str = None, speaker: str = None, location: str = None, speakers: str = None, locationAMS: str = None):
 	tdata = {}
 
 	tdata['header'] = 'episode'
 	tdata['show_key'] = show_key.value
+	tdata['search_type'] = search_type
 	tdata['season'] = season
 
-	if not qt:
-		tdata['qt'] = ''
+	tdata['qt'] = ''
 
-	else:
+	tdata['dialog'] = ''
+	tdata['speaker'] = ''
+	tdata['location'] = ''
+
+	tdata['speakers'] = ''
+	tdata['locationAMS'] = ''
+
+	if not search_type:
+		return templates.TemplateResponse('episodeSearch.html', {'request': request, 'tdata': tdata})
+
+	if search_type == 'general':
 		tdata['qt'] = qt
 		episode_matches = await main.search(show_key, season=season, qt=qt)
 		tdata['episode_matches'] = episode_matches['matches']
 		tdata['episode_match_count'] = episode_matches['episode_count']
 
+	elif search_type == 'advanced':
+		if dialog:
+			tdata['dialog'] = dialog
+		if speaker:
+			tdata['speaker'] = speaker
+		if location:
+			tdata['location'] = location
+		episode_matches = await main.search_scene_events(show_key, season=season, speaker=speaker, dialog=dialog, location=location)
+		tdata['episode_matches'] = episode_matches['matches']
+		tdata['episode_match_count'] = episode_matches['episode_count']
+		tdata['scene_match_count'] = episode_matches['scene_count']
+		tdata['scene_event_match_count'] = episode_matches['scene_event_count']
+		
+	elif search_type == 'advanced_multi_speaker':
+		if speakers:
+			tdata['speakers'] = speakers
+		if locationAMS:
+			tdata['locationAMS'] = locationAMS
+		episode_matches = await main.search_scene_events_multi_speaker(show_key, season=season, speakers=speakers, location=locationAMS)
+		tdata['episode_matches'] = episode_matches['matches']
+		tdata['episode_match_count'] = episode_matches['episode_count']
+		tdata['scene_match_count'] = episode_matches['scene_count']
+		tdata['scene_event_match_count'] = episode_matches['scene_event_count']
+
+	else:
+		print(f'unsupported search_type={search_type}')
+
 	return templates.TemplateResponse('episodeSearch.html', {'request': request, 'tdata': tdata})
+
+
+@web_app.get("/web/character/{show_key}/{speaker}", response_class=HTMLResponse)
+async def character_page(request: Request, show_key: ShowKey, speaker: str):
+	tdata = {}
+
+	tdata['header'] = 'character'
+	tdata['show_key'] = show_key.value
+	tdata['speaker'] = speaker
+	
+	locations_counts = await main.agg_scenes_by_location(show_key, speaker=speaker)
+	tdata['location_counts'] = locations_counts['scenes_by_location']
+
+	co_occ_speakers_by_episode = await main.agg_episodes_by_speaker(show_key, other_speaker=speaker)
+	# tdata['co_occ_speakers_by_episode'] = co_occ_speakers_by_episode['episodes_by_speaker']
+
+	co_occ_speakers_by_scene = await main.agg_scenes_by_speaker(show_key, other_speaker=speaker)
+	# tdata['co_occ_speakers_by_scene'] = co_occ_speakers_by_scene['scenes_by_speaker']
+
+	# TODO refactor this to generically handle dicts threading together
+	other_speakers = {}
+	for other_speaker, episode_count in co_occ_speakers_by_episode['episodes_by_speaker'].items():
+		if other_speaker not in other_speakers:
+			other_speakers[other_speaker] = {}
+			other_speakers[other_speaker]['other_speaker'] = other_speaker
+		other_speakers[other_speaker]['episode_count'] = episode_count
+	for other_speaker, scene_count in co_occ_speakers_by_scene['scenes_by_speaker'].items():
+		if other_speaker not in other_speakers:
+			other_speakers[other_speaker] = {}
+			other_speakers[other_speaker]['other_speaker'] = other_speaker
+		other_speakers[other_speaker]['scene_count'] = scene_count
+	del(other_speakers[speaker])
+
+	# TODO shouldn't I be able to sort on a key for a dict within a dict
+	speaker_dicts = other_speakers.values()
+	tdata['other_speaker_agg_composite'] = sorted(speaker_dicts, key=itemgetter('episode_count'), reverse=True)
+
+	return templates.TemplateResponse('character.html', {'request': request, 'tdata': tdata})
+
+
+# @web_app.get("/web/character_search/{show_key}/", response_class=HTMLResponse)
+# async def character_search_page(request: Request, show_key: ShowKey, qt: str = None):
+# 	tdata = {}
+
+# 	tdata['header'] = 'character'
+# 	tdata['show_key'] = show_key.value
+# 	if not qt:
+# 		tdata['qt'] = ''
+
+# 	else:
+# 		tdata['qt'] = qt
+# 		# TODO
+	
+# 	return templates.TemplateResponse('characterSearch.html', {'request': request, 'tdata': tdata})
+
+
+@web_app.get("/web/character_listing/{show_key}/", response_class=HTMLResponse)
+async def character_listing_page(request: Request, show_key: ShowKey):
+	tdata = {}
+
+	tdata['header'] = 'character'
+	tdata['show_key'] = show_key.value
+	
+	speaker_counts = await main.composite_speaker_aggs(show_key)
+	tdata['speaker_counts'] = speaker_counts['speaker_agg_composite']
+	
+	return templates.TemplateResponse('characterListing.html', {'request': request, 'tdata': tdata})

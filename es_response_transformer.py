@@ -113,7 +113,7 @@ async def return_scene_events(s: Search, location: str = None) -> (list, int, in
             scene_offset = scene_event_hit._nested.offset
             # NOTE hack to filter on location after es payload returned, until I find a way to cross-reference nested documents
             # or punt and enable `include_in_root`
-            if location and orig_scenes[scene_offset]['location'] != location:
+            if location and location not in orig_scenes[scene_offset]['location']:
                 # print(f'location={location} != orig_scenes[scene_offset]={orig_scenes[scene_offset]}')
                 continue
             scene_event = scene_event_hit._source
@@ -150,7 +150,95 @@ async def return_scene_events(s: Search, location: str = None) -> (list, int, in
 
         # assemble and score episodes from inner_hit scenes / scene_events stitched together above
         episode.scenes = []
+        # sort scenes by sequence
+        scene_offset_to_scene = dict(sorted(scene_offset_to_scene.items()))
         for scene_offset, scene in scene_offset_to_scene.items():
+            # sort scene_events by sequence
+            sorted_scene_events = sorted(scene._d_['scene_events'], key=itemgetter('sequence'))
+            scene._d_['scene_events'] = sorted_scene_events
+            # highlight scene.location match here for now (a little ugly)
+            if location:
+                scene._d_['location'] = scene._d_['location'].replace(location, f'<em>{location}</em>')
+            episode.scenes.append(scene._d_)
+            episode['agg_score'] += scene['agg_score']
+            episode['high_child_score'] = max(scene['agg_score'], episode['high_child_score'])
+            scene_count += 1
+        results.append(episode._d_)
+
+    # sort results before returning
+    results = sorted(results, key=itemgetter('agg_score'), reverse=True)
+
+    return results, scene_count, scene_event_count
+
+
+async def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = None) -> (list, int, int):
+    print(f'begin return_scene_events_multi_speaker for speakers={speakers} location={location} s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    # NOTE `speakers` are actually `inner_hit_names`, if I end up making this more generic
+    speakers = speakers.split(',')
+
+    results = []
+
+    scene_count = 0
+    scene_event_count = 0
+    for hit in s.hits.hits:
+        episode = hit._source
+        episode['score'] = hit._score
+        episode['agg_score'] = hit._score
+        episode['high_child_score'] = 0
+        orig_scenes = episode.scenes
+
+        scene_offset_to_scene = {}
+
+        for speaker in speakers:
+            # highlight and map inner_hit scene_events to scenes using scene_offset
+            for scene_event_hit in hit.inner_hits[speaker].hits.hits:
+                scene_offset = scene_event_hit._nested.offset
+                # NOTE hack to filter on location after es payload returned, until I find a way to cross-reference nested documents
+                # or punt and enable `include_in_root`
+                if location and orig_scenes[scene_offset]['location'] != location:
+                    # print(f'location={location} != orig_scenes[scene_offset]={orig_scenes[scene_offset]}')
+                    continue
+                scene_event = scene_event_hit._source
+                scene_event['sequence'] = scene_event_hit._nested._nested.offset
+                scene_event['score'] = scene_event_hit._score
+                if 'highlight' in scene_event_hit and 'scenes.scene_events.spoken_by' in scene_event_hit.highlight:
+                    scene_event_hit._source.spoken_by = scene_event_hit.highlight['scenes.scene_events.spoken_by'][0]
+
+                # re-assemble scenes with scene_events by mapping parent scene offset to scene list index position
+                if scene_offset not in scene_offset_to_scene:
+                    scene = orig_scenes[scene_offset]
+                    scene.scene_events = []
+                    scene['sequence'] = scene_offset
+                    scene['score'] = 0
+                    scene['agg_score'] = 0
+                    scene['high_child_score'] = 0
+                    scene_offset_to_scene[scene_offset] = scene
+                scene = scene_offset_to_scene[scene_offset]
+
+                scene['scene_events'].append(scene_event._d_)
+                scene['high_child_score'] = max(scene_event['score'], scene['high_child_score'])
+                scene['agg_score'] += scene_event['score']
+                scene_event_count += 1
+
+        # NOTE follow-up to location-filter hack above, if all scenes have been filtered then skip episode 
+        if len(scene_offset_to_scene) == 0:
+            # print(f'dropping episode_key={episode["episode_key"]}, no scenes remain after location filtering')
+            continue
+
+        # assemble and score episodes from inner_hit scenes / scene_events stitched together above
+        episode.scenes = []
+        # sort scenes by sequence
+        scene_offset_to_scene = dict(sorted(scene_offset_to_scene.items()))
+        for scene_offset, scene in scene_offset_to_scene.items():
+            # sort scene_events by sequence
+            sorted_scene_events = sorted(scene._d_['scene_events'], key=itemgetter('sequence'))
+            scene._d_['scene_events'] = sorted_scene_events
+            # highlight scene.location match here for now (a little ugly)
+            if location:
+                scene._d_['location'] = scene._d_['location'].replace(location, f'<em>{location}</em>')
             episode.scenes.append(scene._d_)
             episode['agg_score'] += scene['agg_score']
             episode['high_child_score'] = max(scene['agg_score'], episode['high_child_score'])
@@ -231,7 +319,12 @@ async def return_episodes(s: Search) -> (list, int, int):
 
         # assemble and score episodes from inner_hit scenes / scene_events stitched together above
         episode.scenes = []
+        # sort scenes by sequence
+        scene_offset_to_scene = dict(sorted(scene_offset_to_scene.items()))
         for scene_offset, scene in scene_offset_to_scene.items():
+            # sort scene_events by sequence
+            sorted_scene_events = sorted(scene._d_['scene_events'], key=itemgetter('sequence'))
+            scene._d_['scene_events'] = sorted_scene_events
             episode.scenes.append(scene._d_)
             episode['agg_score'] += scene['agg_score']
             episode['high_child_score'] = max(scene['agg_score'], episode['high_child_score'])
