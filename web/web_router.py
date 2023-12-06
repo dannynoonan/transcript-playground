@@ -48,7 +48,8 @@ async def show_page(request: Request, show_key: ShowKey):
 
 
 @web_app.get("/web/episode/{show_key}/{episode_key}", response_class=HTMLResponse)
-async def episode_page(request: Request, show_key: ShowKey, episode_key: str):
+async def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_type: str = None, qt: str = None,
+					   dialog: str = None, speaker: str = None, location: str = None, speakers: str = None, locationAMS: str = None):
 	tdata = {}
 
 	tdata['header'] = 'episode'
@@ -72,6 +73,58 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str):
 	
 	mlt = await main.more_like_this(show_key, episode_key)
 	tdata['similar_episodes'] = mlt['similar_episodes']
+
+	###### IN-EPISODE SEARCH ######
+
+	tdata['header'] = 'episode'
+	tdata['show_key'] = show_key.value
+	if not search_type:
+		tdata['search_type'] = 'general'
+	else:
+		tdata['search_type'] = search_type
+
+	tdata['qt'] = ''
+
+	tdata['dialog'] = ''
+	tdata['speaker'] = ''
+	tdata['location'] = ''
+
+	tdata['speakers'] = ''
+	tdata['locationAMS'] = ''
+
+	if search_type == 'general':
+		tdata['qt'] = qt
+		matches = await main.search(show_key, episode_key=episode_key, qt=qt)
+		tdata['episode_matches'] = matches['matches']
+		tdata['scene_match_count'] = matches['scene_count']
+		tdata['scene_event_match_count'] = matches['scene_event_count']
+
+	elif search_type == 'advanced':
+		if dialog:
+			tdata['dialog'] = dialog
+		if speaker:
+			tdata['speaker'] = speaker
+		if location:
+			tdata['location'] = location
+		# location on its own won't fetch scene_events, if only location is set then invoke /search_scenes
+		if location and not (dialog or speaker):
+			matches = await main.search_scenes(show_key, episode_key=episode_key, location=location)
+		else:
+			matches = await main.search_scene_events(show_key, episode_key=episode_key, speaker=speaker, dialog=dialog, location=location)
+			tdata['scene_event_match_count'] = matches['scene_event_count']
+		tdata['episode_matches'] = matches['matches']
+		tdata['scene_match_count'] = matches['scene_count']
+		
+	elif search_type == 'advanced_multi_speaker':
+		if speakers:
+			tdata['speakers'] = speakers
+		if locationAMS:
+			tdata['locationAMS'] = locationAMS
+		matches = await main.search_scene_events_multi_speaker(show_key, episode_key=episode_key, speakers=speakers, location=locationAMS)
+		tdata['episode_matches'] = matches['matches']
+		tdata['scene_match_count'] = matches['scene_count']
+		tdata['scene_event_match_count'] = matches['scene_event_count']
+
 	
 	return templates.TemplateResponse('episode.html', {'request': request, 'tdata': tdata})
 
@@ -103,9 +156,11 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 
 	if search_type == 'general':
 		tdata['qt'] = qt
-		episode_matches = await main.search(show_key, season=season, qt=qt)
-		tdata['episode_matches'] = episode_matches['matches']
-		tdata['episode_match_count'] = episode_matches['episode_count']
+		matches = await main.search(show_key, season=season, qt=qt)
+		tdata['episode_matches'] = matches['matches']
+		tdata['episode_match_count'] = matches['episode_count']
+		tdata['scene_match_count'] = matches['scene_count']
+		tdata['scene_event_match_count'] = matches['scene_event_count']
 
 	elif search_type == 'advanced':
 		if dialog:
@@ -114,22 +169,26 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 			tdata['speaker'] = speaker
 		if location:
 			tdata['location'] = location
-		episode_matches = await main.search_scene_events(show_key, season=season, speaker=speaker, dialog=dialog, location=location)
-		tdata['episode_matches'] = episode_matches['matches']
-		tdata['episode_match_count'] = episode_matches['episode_count']
-		tdata['scene_match_count'] = episode_matches['scene_count']
-		tdata['scene_event_match_count'] = episode_matches['scene_event_count']
+		# location on its own won't fetch scene_events, if only location is set then invoke /search_scenes
+		if location and not (dialog or speaker):
+			matches = await main.search_scenes(show_key, season=season, location=location)
+		else:
+			matches = await main.search_scene_events(show_key, season=season, speaker=speaker, dialog=dialog, location=location)
+			tdata['scene_event_match_count'] = matches['scene_event_count']
+		tdata['episode_matches'] = matches['matches']
+		tdata['episode_match_count'] = matches['episode_count']
+		tdata['scene_match_count'] = matches['scene_count']
 		
 	elif search_type == 'advanced_multi_speaker':
 		if speakers:
 			tdata['speakers'] = speakers
 		if locationAMS:
 			tdata['locationAMS'] = locationAMS
-		episode_matches = await main.search_scene_events_multi_speaker(show_key, season=season, speakers=speakers, location=locationAMS)
-		tdata['episode_matches'] = episode_matches['matches']
-		tdata['episode_match_count'] = episode_matches['episode_count']
-		tdata['scene_match_count'] = episode_matches['scene_count']
-		tdata['scene_event_match_count'] = episode_matches['scene_event_count']
+		matches = await main.search_scene_events_multi_speaker(show_key, season=season, speakers=speakers, location=locationAMS)
+		tdata['episode_matches'] = matches['matches']
+		tdata['episode_match_count'] = matches['episode_count']
+		tdata['scene_match_count'] = matches['scene_count']
+		tdata['scene_event_match_count'] = matches['scene_event_count']
 
 	else:
 		print(f'unsupported search_type={search_type}')
