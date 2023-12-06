@@ -7,8 +7,7 @@
 {% block content %} 
 	<div class="container">
         <br/>
-        <form action="/web/episode_search/TNG" method="GET">
-            <input type="hidden" class="form-control" name="show_key" value="{{ tdata['show_key'] }}" id="showKeyInput">
+        <form action="/web/episode_search/{{ tdata['show_key'] }}" method="GET">
             <!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/#javascript-behavior -->
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -49,21 +48,21 @@
                             <div class="col-6"> 
                                 <input type="text" class="form-control" name="speaker" value="{{ tdata['speaker'] }}" id="speakerInput">
                             </div>
-                        </div>                              
-                        <div class="row input-group">
-                            <div class="col-2">
-                                <label class="col-form-label">By location:</label>
-                            </div>
-                            <div class="col-6"> 
-                                <input type="text" class="form-control" name="location" value="{{ tdata['location'] }}" id="locationInput">
-                            </div>
-                        </div>
+                        </div>     
                         <div class="row input-group">
                             <div class="col-2">
                                 <label class="col-form-label">By dialogue:</label>
                             </div>
                             <div class="col-6"> 
                                 <input type="text" class="form-control" name="dialog" value="{{ tdata['dialog'] }}" id="dialogInput">
+                            </div>
+                        </div>                         
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">By location:</label>
+                            </div>
+                            <div class="col-6"> 
+                                <input type="text" class="form-control" name="location" value="{{ tdata['location'] }}" id="locationInput">
                             </div>
                         </div>
                         <br/>

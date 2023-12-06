@@ -55,7 +55,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 	tdata['header'] = 'episode'
 	tdata['show_key'] = show_key.value
 	tdata['episode_key'] = episode_key
-	
+
 	episode = await main.fetch_episode(show_key, episode_key, data_source='es')
 	tdata['episode'] = episode['es_episode']
 	
@@ -76,10 +76,8 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 
 	###### IN-EPISODE SEARCH ######
 
-	tdata['header'] = 'episode'
-	tdata['show_key'] = show_key.value
 	if not search_type:
-		tdata['search_type'] = 'general'
+		tdata['search_type'] = ''
 	else:
 		tdata['search_type'] = search_type
 
@@ -95,7 +93,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 	if search_type == 'general':
 		tdata['qt'] = qt
 		matches = await main.search(show_key, episode_key=episode_key, qt=qt)
-		tdata['episode_matches'] = matches['matches']
+		tdata['episode_match'] = matches['matches'][0]
 		tdata['scene_match_count'] = matches['scene_count']
 		tdata['scene_event_match_count'] = matches['scene_event_count']
 
@@ -112,7 +110,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 		else:
 			matches = await main.search_scene_events(show_key, episode_key=episode_key, speaker=speaker, dialog=dialog, location=location)
 			tdata['scene_event_match_count'] = matches['scene_event_count']
-		tdata['episode_matches'] = matches['matches']
+		tdata['episode_match'] = matches['matches'][0]
 		tdata['scene_match_count'] = matches['scene_count']
 		
 	elif search_type == 'advanced_multi_speaker':
@@ -121,11 +119,10 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 		if locationAMS:
 			tdata['locationAMS'] = locationAMS
 		matches = await main.search_scene_events_multi_speaker(show_key, episode_key=episode_key, speakers=speakers, location=locationAMS)
-		tdata['episode_matches'] = matches['matches']
+		tdata['episode_match'] = matches['matches'][0]
 		tdata['scene_match_count'] = matches['scene_count']
 		tdata['scene_event_match_count'] = matches['scene_event_count']
 
-	
 	return templates.TemplateResponse('episode.html', {'request': request, 'tdata': tdata})
 
 
