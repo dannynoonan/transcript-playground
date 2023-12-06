@@ -200,16 +200,18 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str):
 	tdata['header'] = 'character'
 	tdata['show_key'] = show_key.value
 	tdata['speaker'] = speaker
+
+	episode_matches = await main.search_scene_events(show_key, speaker=speaker)
+	tdata['episodes'] = episode_matches['matches']
+	tdata['episode_count'] = episode_matches['episode_count']
+	tdata['scene_count'] = episode_matches['scene_count']
+	tdata['scene_event_count'] = episode_matches['scene_event_count']
 	
 	locations_counts = await main.agg_scenes_by_location(show_key, speaker=speaker)
 	tdata['location_counts'] = locations_counts['scenes_by_location']
 
 	co_occ_speakers_by_episode = await main.agg_episodes_by_speaker(show_key, other_speaker=speaker)
-	# tdata['co_occ_speakers_by_episode'] = co_occ_speakers_by_episode['episodes_by_speaker']
-
 	co_occ_speakers_by_scene = await main.agg_scenes_by_speaker(show_key, other_speaker=speaker)
-	# tdata['co_occ_speakers_by_scene'] = co_occ_speakers_by_scene['scenes_by_speaker']
-
 	# TODO refactor this to generically handle dicts threading together
 	other_speakers = {}
 	for other_speaker, episode_count in co_occ_speakers_by_episode['episodes_by_speaker'].items():
