@@ -388,11 +388,21 @@ async def search(show_key: ShowKey, season: str = None, episode_key: str = None,
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
+@app.get("/agg_episodes/{show_key}")
+async def agg_episodes(show_key: ShowKey, season: str = None, location: str = None):
+    s = await esqb.agg_episodes(show_key.value, season=season, location=location)
+    es_query = s.to_dict()
+    episode_count = await esrt.return_episode_count(s)
+    return {"episode_count": episode_count, "es_query": es_query}
+
+
 @app.get("/agg_episodes_by_speaker/{show_key}")
 async def agg_episodes_by_speaker(show_key: ShowKey, season: str = None, location: str = None, other_speaker: str = None):
     s = await esqb.agg_episodes_by_speaker(show_key.value, season=season, location=location, other_speaker=other_speaker)
     es_query = s.to_dict()
-    matches = await esrt.return_episodes_by_speaker(s, location=location, other_speaker=other_speaker)
+    # separate call to get episode_count without double-counting per speaker
+    episode_count = await agg_episodes(show_key, season=season, location=location)
+    matches = await esrt.return_episodes_by_speaker(s, episode_count['episode_count'], location=location, other_speaker=other_speaker)
     return {"speaker_count": len(matches), "episodes_by_speaker": matches, "es_query": es_query}
 
 
@@ -408,6 +418,7 @@ async def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_
 async def agg_scenes_by_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, other_speaker: str = None):
     s = await esqb.agg_scenes_by_speaker(show_key.value, season=season, episode_key=episode_key, location=location, other_speaker=other_speaker)
     es_query = s.to_dict()
+    # separate call to get scene_count without double-counting per speaker
     scene_count = await agg_scenes(show_key, season=season, episode_key=episode_key, location=location)
     matches = await esrt.return_scenes_by_speaker(s, scene_count['scene_count'], location=location, other_speaker=other_speaker)
     return {"speaker_count": len(matches), "scenes_by_speaker": matches, "es_query": es_query}

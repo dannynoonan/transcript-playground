@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from fastapi import Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from operator import itemgetter
@@ -167,6 +167,7 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str):
 			other_speakers[other_speaker]['other_speaker'] = other_speaker
 		other_speakers[other_speaker]['scene_count'] = scene_count
 	del(other_speakers[speaker])
+	del(other_speakers['_ALL_'])
 
 	# TODO shouldn't I be able to sort on a key for a dict within a dict
 	speaker_dicts = other_speakers.values()

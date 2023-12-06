@@ -337,25 +337,30 @@ async def return_episodes(s: Search) -> (list, int, int):
     return results, scene_count, scene_event_count
 
 
-async def return_episodes_by_speaker(s: Search, location: str = None, other_speaker: str = None) -> list:
+async def return_episode_count(s: Search) -> int:
+    print(f'begin return_episode_count for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    return int(s.hits.total.value)
+
+
+async def return_episodes_by_speaker(s: Search, agg_episode_count: str, location: str = None, other_speaker: str = None) -> list:
     print(f'begin return_episodes_by_speaker for location={location} other_speaker={other_speaker} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
     results = {}
-    results['_ALL_'] = 0
+    results['_ALL_'] = agg_episode_count
 
     if location:
         for item in s.aggregations.scenes.location_match.scene_events.by_speaker.buckets:
-            results['_ALL_'] += item.for_episode.doc_count
             results[item.key] = item.for_episode.doc_count
     elif other_speaker:
         for item in s.aggregations.scene_events.speaker_match.for_scene.scene_events_2.by_speaker.buckets:
-            results['_ALL_'] += item.for_episode.doc_count
             results[item.key] = item.for_episode.doc_count
     else:
         for item in s.aggregations.scene_events.by_speaker.buckets:
-            results['_ALL_'] += item.for_episode.doc_count
             results[item.key] = item.for_episode.doc_count
 
     # reverse nesting throws off sorting, so sort results by value

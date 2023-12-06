@@ -21,8 +21,14 @@
 				{% for location, count in tdata['location_counts'].items() %}
 				<tr class="table-secondary">
 					<th scope="row">{{ location }}</th>
-					<td><a href="/web/episode_search/{{ tdata['show_key'] }}?speaker={{ tdata['speaker'] }}&location={{ location }}&search_type=advanced" 
-                        class="alert-link" >{{ count }}</a></td>
+					<td><a href="
+                        {% if location == 'TOTAL' %}
+                            /web/episode_search/{{ tdata['show_key'] }}?speaker={{ tdata['speaker'] }}&search_type=advanced
+                        {% else %}
+                            /web/episode_search/{{ tdata['show_key'] }}?speaker={{ tdata['speaker'] }}&location={{ location }}&search_type=advanced
+                        {% endif %}
+                            " class="alert-link" >{{ count }}</a>
+                    </td>
 				</tr>
 				{% endfor %}
 			</tbody>
@@ -51,7 +57,5 @@
 		</table>
 		<p>&nbsp;</p>
 		
-
-
     </div>
 {% endblock %} 

@@ -297,6 +297,21 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
     return s
 
 
+async def agg_episodes(show_key: str, season: str = None, location: str = None) -> Search:
+    print(f'begin agg_episodes for show_key={show_key} season={season} location={location}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+    if season:
+        s = s.filter('term', season=season)
+
+    # TODO location
+
+    return s
+
+
 async def agg_episodes_by_speaker(show_key: str, season: str = None, location: str = None, other_speaker: str = None) -> Search:
     print(f'begin agg_episodes_by_speaker for show_key={show_key} season={season} location={location} other_speaker={other_speaker}')
 
