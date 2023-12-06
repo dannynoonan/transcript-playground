@@ -9,6 +9,7 @@
         <br/>
         <form action="/web/episode_search/TNG" method="GET">
             <input type="hidden" class="form-control" name="show_key" value="{{ tdata['show_key'] }}" id="searchInput">
+            <!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/#javascript-behavior -->
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link{% if tdata['search_type']=='general' %} active{% endif %}" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
@@ -118,7 +119,7 @@
                     <button type="button" class="btn btn-primary">{{ '%0.2f'|format(episode['agg_score']|float) }}</button>&nbsp;&nbsp;
                     <a class="alert-link" href="/web/episode/{{ episode['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title']|safe }}</a> 
                 </h5>
-                <div class="overflow-scroll" style="max-height: 250px;">
+                <div class="overflow-scroll" style="max-height: 300px;">
                 {% for scene in episode['scenes'] %}
                     <hr>
                     <p>[scene {{ scene['sequence'] }}] <strong>{{ scene['location']|safe }}</strong></p>
