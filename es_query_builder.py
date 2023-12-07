@@ -32,9 +32,10 @@ es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port'
 # )
 
 
-async def init_mappings():
+async def init_transcripts_index():
     # EsEpisodeTranscript.init(using=es_client)
     EsEpisodeTranscript.init()
+    es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
 
 
 async def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
@@ -115,7 +116,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     s = s.query('nested', path='scenes', 
             query=q,
             inner_hits={
-                'size': 100, 
+                'size': 1000, 
                 'highlight': {
                     'fields': {
                         'scenes.location': {}, 
@@ -159,7 +160,7 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
     nested_q = Q('nested', path='scenes.scene_events', 
             query=q,
             inner_hits={
-                'size': 100, 
+                'size': 1000, 
                 'highlight': {
                     'fields': {
                         'scenes.scene_events.spoken_by': {}, 
@@ -170,7 +171,7 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
     # if location:
     #     nested_q = nested_q & Q('nested', path='scenes', 
     #         query=Q('match', **{'scenes.location': location}),
-    #         inner_hits={'size': 100})
+    #         inner_hits={'size': 1000})
 
     s = s.query(nested_q)
 
@@ -204,7 +205,7 @@ async def search_scene_events_multi_speaker(show_key: str, speakers: str, season
                 query=speaker_q,
                 inner_hits={
                     'name': speaker,
-                    'size': 100, 
+                    'size': 1000, 
                     'highlight': {
                         'fields': {
                             'scenes.scene_events.spoken_by': {}, 
@@ -255,7 +256,7 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
     scenes_q = Q('nested', path='scenes', 
             query=scene_fields_q,
             inner_hits={
-                'size': 100, 
+                'size': 1000, 
                 'highlight': {
                     'fields': {
                         'scenes.location': {}, 
@@ -272,7 +273,7 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
     scene_events_q = Q('nested', path='scenes.scene_events', 
             query=scene_event_fields_q,
             inner_hits={
-                'size': 100, 
+                'size': 1000, 
                 'highlight': {
                     'fields': {
                         'scenes.scene_events.context_info': {},
@@ -332,7 +333,7 @@ async def agg_episodes_by_speaker(show_key: str, season: str = None, location: s
         ).bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
         ).bucket(
             'for_episode', 'reverse_nested' # TODO differs from agg_scenes_by_speaker
         )
@@ -346,7 +347,7 @@ async def agg_episodes_by_speaker(show_key: str, season: str = None, location: s
         ).bucket(
             'scene_events_2', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
         ).bucket(
             'for_episode', 'reverse_nested' # TODO differs from agg_scenes_by_speaker
         )
@@ -354,7 +355,7 @@ async def agg_episodes_by_speaker(show_key: str, season: str = None, location: s
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
         ).bucket(
             'for_episode', 'reverse_nested' # TODO differs from agg_scenes_by_speaker
         )
@@ -401,12 +402,12 @@ async def agg_scenes_by_location(show_key: str, season: str = None, episode_key:
         ).bucket(
             'scenes', 'reverse_nested', path='scenes'
         ).bucket(
-            'by_location', 'terms', field='scenes.location.keyword', size=100)
+            'by_location', 'terms', field='scenes.location.keyword', size=1000)
     else:
         s.aggs.bucket(
             'scenes', 'nested', path='scenes'
         ).bucket(
-            'by_location', 'terms', field='scenes.location.keyword', size=100)
+            'by_location', 'terms', field='scenes.location.keyword', size=1000)
 
     return s
 
@@ -432,7 +433,7 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
         ).bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
         ).bucket(
             'for_scene', 'reverse_nested', path='scenes'
         )
@@ -446,7 +447,7 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
         ).bucket(
             'scene_events_2', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
         ).bucket(
             'for_scene_2', 'reverse_nested', path='scenes'
         )
@@ -454,7 +455,7 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
         ).bucket(
             'for_scene', 'reverse_nested', path='scenes'
         )
@@ -471,7 +472,7 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
     # if dialog:
     #     nested_q = Q('nested', path='scenes.scene_events', 
     #             query=Q('match', **{'scenes.scene_events.dialog': dialog}),
-    #             inner_hits={'size': 100})
+    #             inner_hits={'size': 1000})
 
     #     s = s.query(nested_q)
 
@@ -504,12 +505,12 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
         ).bucket(
             'dialog_match', 'filter', filter={"match": {"scenes.scene_events.dialog": dialog}}
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100)
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000)
     else:
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100)
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000)
 
     return s
 
@@ -537,7 +538,7 @@ async def agg_dialog_word_counts(show_key: str, season: str = None, episode_key:
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=100
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
         ).bucket(
             'word_count', 'sum', field='scenes.scene_events.dialog.word_count')
         
@@ -548,7 +549,7 @@ async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
     print(f'begin calc_word_counts_by_episode for show_key={show_key} episode_key={episode_key}')
 
     response = es_conn.termvectors(index='transcripts', id=f'{show_key}_{episode_key}', term_statistics='true', field_statistics='true',
-                                   fields=['flattened_text'], filter={"max_num_terms": 100, "min_term_freq": 1, "min_doc_freq": 1})
+                                   fields=['flattened_text'], filter={"max_num_terms": 1000, "min_term_freq": 1, "min_doc_freq": 1})
 
     return response
 

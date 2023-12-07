@@ -260,7 +260,7 @@ async def fetch_episode(show_key: ShowKey, episode_key: str, data_source: str = 
 
 @app.get("/init_es")
 async def init_es():
-    await esqb.init_mappings()
+    await esqb.init_transcripts_index()
     return {"success": "success"}
 
 
