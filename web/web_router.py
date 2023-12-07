@@ -194,7 +194,8 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 
 
 @web_app.get("/web/character/{show_key}/{speaker}", response_class=HTMLResponse)
-async def character_page(request: Request, show_key: ShowKey, speaker: str):
+async def character_page(request: Request, show_key: ShowKey, speaker: str, search_type: str = None, season: str = None, 
+							  dialog: str = None, location: str = None, speakers: str = None, locationAMS: str = None):
 	tdata = {}
 
 	tdata['header'] = 'character'
@@ -230,6 +231,43 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str):
 	# TODO shouldn't I be able to sort on a key for a dict within a dict
 	speaker_dicts = other_speakers.values()
 	tdata['other_speaker_agg_composite'] = sorted(speaker_dicts, key=itemgetter('episode_count'), reverse=True)
+
+	###### CHARACTER-CENTRIC SEARCH ######
+
+	if not search_type:
+		tdata['search_type'] = ''
+	else:
+		tdata['search_type'] = search_type
+
+	tdata['dialog'] = ''
+	tdata['location'] = ''
+
+	tdata['other_speakers'] = ''
+	tdata['locationAMS'] = ''
+
+	if search_type == 'advanced':
+		if dialog:
+			tdata['dialog'] = dialog
+		if location:
+			tdata['location'] = location
+		matches = await main.search_scene_events(show_key, speaker=speaker, dialog=dialog, location=location)
+		tdata['episode_matches'] = matches['matches']
+		tdata['episode_match_count'] = matches['episode_count']
+		tdata['scene_match_count'] = matches['scene_count']
+		tdata['scene_event_match_count'] = matches['scene_event_count']
+		
+	elif search_type == 'advanced_multi_speaker':
+		all_speakers = speaker
+		if speakers:
+			tdata['speakers'] = speakers
+			all_speakers = f'{speaker},{speakers}'
+		if locationAMS:
+			tdata['locationAMS'] = locationAMS
+		matches = await main.search_scene_events_multi_speaker(show_key, speakers=all_speakers, location=locationAMS)
+		tdata['episode_matches'] = matches['matches']
+		tdata['episode_match_count'] = matches['episode_count']
+		tdata['scene_match_count'] = matches['scene_count']
+		tdata['scene_event_match_count'] = matches['scene_event_count']
 
 	return templates.TemplateResponse('character.html', {'request': request, 'tdata': tdata})
 
