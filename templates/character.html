@@ -12,7 +12,7 @@
 
         <div class="row">
             <div class="col-5">
-                <h3>Episodes</h3></h3>
+                <h3>{{ tdata['episode_count'] }} episodes with {{ tdata['speaker'] }}</h3></h3>
                 <div class="overflow-scroll" style="max-height: 1000px;">
 					<table class="table table-hover table-striped table-fit">
 						<thead>
@@ -80,9 +80,9 @@
                         <tbody>
                             {% for other_speaker_aggs in tdata['other_speaker_agg_composite'] %}
                             <tr class="table-secondary">
-                                <th scope="row">{{ other_speaker_aggs['other_speaker'] }}</th>
+                                <th scope="row"><a class="alert-link" href="/web/character/{{ tdata['show_key'] }}/{{ other_speaker_aggs['other_speaker'] }}">{{ other_speaker_aggs['other_speaker'] }}</a></th>
                                 <td><a href="/web/episode_search/{{ tdata['show_key'] }}?speakers={{ tdata['speaker'] }},{{ other_speaker_aggs['other_speaker'] }}&search_type=advanced_multi_speaker" 
-                                    class="alert-link" >{{ other_speaker_aggs['episode_count'] }}</a></td>
+                                        class="alert-link" >{{ other_speaker_aggs['episode_count'] }}</a></td>
                                 <td>{{ other_speaker_aggs['scene_count'] }}</td>
                             </tr>
                             {% endfor %}

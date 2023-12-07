@@ -134,7 +134,7 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 	tdata['header'] = 'episode'
 	tdata['show_key'] = show_key.value
 	if not search_type:
-		tdata['search_type'] = 'general'
+		tdata['search_type'] = ''
 	else:
 		tdata['search_type'] = search_type
 	tdata['season'] = season
@@ -251,7 +251,7 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str):
 
 
 @web_app.get("/web/character_listing/{show_key}/", response_class=HTMLResponse)
-async def character_listing_page(request: Request, show_key: ShowKey):
+async def character_listing_page(request: Request, show_key: ShowKey, qt: str = None):
 	tdata = {}
 
 	tdata['header'] = 'character'
@@ -259,5 +259,14 @@ async def character_listing_page(request: Request, show_key: ShowKey):
 	
 	speaker_counts = await main.composite_speaker_aggs(show_key)
 	tdata['speaker_counts'] = speaker_counts['speaker_agg_composite']
+
+	tdata['speaker_matches'] = []
+	if qt:
+		tdata['qt'] = qt
+		qt = qt.lower()
+		# TODO I wish speaker_agg_composite were a dict instead of a list
+		for sc in tdata['speaker_counts']:
+			if qt in sc['speaker'].lower():
+				tdata['speaker_matches'].append(sc)
 	
 	return templates.TemplateResponse('characterListing.html', {'request': request, 'tdata': tdata})
