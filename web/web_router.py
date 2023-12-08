@@ -207,6 +207,8 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str, sear
 	tdata['episode_count'] = episode_matches['episode_count']
 	tdata['scene_count'] = episode_matches['scene_count']
 	tdata['scene_event_count'] = episode_matches['scene_event_count']
+	word_count = await main.agg_dialog_word_counts(show_key, speaker=speaker)
+	tdata['word_count'] = int(word_count['dialog_word_counts'][speaker])
 	
 	locations_counts = await main.agg_scenes_by_location(show_key, speaker=speaker)
 	tdata['location_counts'] = locations_counts['scenes_by_location']
@@ -296,7 +298,7 @@ async def character_listing_page(request: Request, show_key: ShowKey, qt: str = 
 	tdata['show_key'] = show_key.value
 	
 	speaker_counts = await main.composite_speaker_aggs(show_key)
-	tdata['speaker_counts'] = speaker_counts['speaker_agg_composite']
+	tdata['speaker_stats'] = speaker_counts['speaker_agg_composite']
 
 	tdata['speaker_matches'] = []
 	if qt:

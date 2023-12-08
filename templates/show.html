@@ -36,12 +36,12 @@
                 </div>
             </div>
             <div class="col-4">
-                <h3>Chatter</h3>
+                <h3>Characters</h3>
                 <div class="overflow-scroll" style="max-height: 1000px;">
                     <table class="table table-hover table-striped table-fit">
                         <thead>
                             <tr class="table-success">
-                                <th scope="col">Speaker</th>
+                                <th scope="col">Character</th>
                                 <th scope="col">Seasons</th>
                                 <th scope="col">Episodes</th>
                                 <th scope="col">Scenes</th>
@@ -52,9 +52,22 @@
                         <tbody>
                             {% for speaker in tdata['speaker_counts'] %}
                             <tr class="table-secondary">
-                                <th scope="row">{{ speaker['speaker'] }}</th>
+                                <th scope="row">
+                                    {% if speaker['speaker'] == '_ALL_' %}
+                                        [COMBINED]
+                                    {% else %}
+                                        <a class="alert-link" href="/web/character/{{ tdata['show_key'] }}/{{ speaker['speaker'] }}">{{ speaker['speaker'] }}</a>
+                                    {% endif %}
+                                </th>
                                 <td>...</td>
-                                <td>{{ speaker['episode_count'] }}</td>
+                                <td>
+                                    {% if speaker['speaker'] == '_ALL_' %}
+                                        {{ speaker['episode_count'] }}
+                                    {% else %}
+                                        <a href="/web/episode_search/{{ tdata['show_key'] }}?speaker={{ speaker['speaker'] }}&search_type=advanced" 
+                                            class="alert-link" >{{ speaker['episode_count'] }}</a>
+                                    {% endif %}
+                                </td>
                                 <td>{{ speaker['scene_count'] }}</td>
                                 <td>{{ speaker['line_count'] }}</td>
                                 <td>{{ speaker['word_count'] }}</td>
