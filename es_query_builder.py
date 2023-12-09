@@ -298,6 +298,21 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
     return s
 
 
+async def list_episodes_by_season(show_key: str) -> Search:
+    print(f'begin list_episodes_by_season for show_key={show_key}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+
+    s = s.sort('season', 'sequence_in_season')
+
+    s = s.source(excludes=['flattened_text', 'scenes'])
+
+    return s
+
+
 async def agg_episodes(show_key: str, season: str = None, location: str = None) -> Search:
     print(f'begin agg_episodes for show_key={show_key} season={season} location={location}')
 
@@ -579,3 +594,53 @@ async def more_like_this(show_key: str, episode_key: str) -> Search:
     s = s.source(excludes=['flattened_text', 'scenes'])
     
     return s
+
+
+async def populate_focal_speakers(show_key: str, episode_key: str = None):
+    print(f'begin populate_focal_speakers for show_key={show_key} episode_key={episode_key}')
+
+    if episode_key:
+        episode_doc_ids = [f'{show_key}_{episode_key}']
+    else:
+        doc_ids = await main.search_doc_ids(ShowKey(show_key))
+        episode_doc_ids = doc_ids['doc_ids']
+    
+    episodes_to_focal_speakers = {}
+    for doc_id in episode_doc_ids:
+        episode_key = doc_id.split('_')[-1]
+        episode_speakers = await main.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
+        episode_focal_speakers = list(episode_speakers['scene_events_by_speaker'].keys())
+        focal_speaker_count = min(len(episode_focal_speakers), 4)
+        focal_speakers = episode_focal_speakers[1:focal_speaker_count]
+        episodes_to_focal_speakers[episode_key] = focal_speakers
+
+        es_episode = EsEpisodeTranscript.get(id=doc_id)
+        es_episode.focal_speakers = focal_speakers
+        await save_es_episode(es_episode)
+
+    return episodes_to_focal_speakers
+
+
+async def populate_focal_locations(show_key: str, episode_key: str = None):
+    print(f'begin populate_focal_locations for show_key={show_key} episode_key={episode_key}')
+
+    if episode_key:
+        episode_doc_ids = [f'{show_key}_{episode_key}']
+    else:
+        doc_ids = await main.search_doc_ids(ShowKey(show_key))
+        episode_doc_ids = doc_ids['doc_ids']
+    
+    episodes_to_focal_locations = {}
+    for doc_id in episode_doc_ids:
+        episode_key = doc_id.split('_')[-1]
+        episode_locations = await main.agg_scenes_by_location(ShowKey(show_key), episode_key=episode_key)
+        episode_focal_locations = list(episode_locations['scenes_by_location'].keys())
+        focal_location_count = min(len(episode_focal_locations), 4)
+        focal_locations = episode_focal_locations[1:focal_location_count]
+        episodes_to_focal_locations[episode_key] = focal_locations
+
+        es_episode = EsEpisodeTranscript.get(id=doc_id)
+        es_episode.focal_locations = focal_locations
+        await save_es_episode(es_episode)
+
+    return episodes_to_focal_locations

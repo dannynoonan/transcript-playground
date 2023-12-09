@@ -388,6 +388,14 @@ async def search(show_key: ShowKey, season: str = None, episode_key: str = None,
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
+@app.get("/list_episodes_by_season/{show_key}")
+async def list_episodes_by_season(show_key: ShowKey):
+    s = await esqb.list_episodes_by_season(show_key.value)
+    es_query = s.to_dict()
+    episodes_by_season = await esrt.return_episodes_by_season(s)
+    return {"episodes_by_season": episodes_by_season, "es_query": es_query}
+
+
 @app.get("/agg_episodes/{show_key}")
 async def agg_episodes(show_key: ShowKey, season: str = None, location: str = None):
     s = await esqb.agg_episodes(show_key.value, season=season, location=location)
@@ -518,6 +526,18 @@ async def more_like_this(show_key: ShowKey, episode_key: str):
     es_query = s.to_dict()
     matches = await esrt.return_more_like_this(s)
     return {"similar_episode_count": len(matches), "similar_episodes": matches, "es_query": es_query}
+
+
+@app.get("/populate_focal_speakers/{show_key}")
+async def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
+    episodes_to_focal_speakers = await esqb.populate_focal_speakers(show_key.value, episode_key)
+    return {"episodes_to_focal_speakers": episodes_to_focal_speakers}
+
+
+@app.get("/populate_focal_locations/{show_key}")
+async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
+    episodes_to_focal_locations = await esqb.populate_focal_locations(show_key.value, episode_key)
+    return {"episodes_to_focal_locations": episodes_to_focal_locations}
 
 
 ########### BEGIN EXAMPLES #############

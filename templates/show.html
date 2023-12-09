@@ -2,6 +2,7 @@
 
 {% block title %} 
 	<title>{{ tdata['show_key'] }}: {{ tdata['episode']['title'] }}</title>
+    
 {% endblock %} 
 
 {% block content %} 
@@ -10,31 +11,78 @@
 		<p>&nbsp;</p>
 
         <div class="row">
-			<div class="col-4">
-                <h3>Locations</h3>
-                <div class="overflow-scroll" style="max-height: 1000px;">
-                    <table class="table table-hover table-striped table-fit">
+            <div class="col-12">
+                <h3>Seasons</h3>
+
+                <!-- <div class="container shadow min-vh-100 py-2"> -->
+                <div class="table-responsive"> 
+                    <table class="table accordion">
                         <thead>
                             <tr class="table-primary">
-                                <th scope="col">Location</th>
-                                <th scope="col">Seasons</th>
+                                <th scope="col">Season</th>
                                 <th scope="col">Episodes</th>
+                                <th scope="col">Dates</th>
+                                <th scope="col">Locations</th>
+                                <th scope="col">Characters</th>
                                 <th scope="col">Scenes</th>
+                                <th scope="col">Lines</th>
+                                <th scope="col">Words</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for location, count in tdata['locations_by_scene'].items() %}
-                            <tr class="table-secondary">
-                                <th scope="row">{{ location }}</th>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>{{ count }}</td>
+                            {% for season, season_stats in tdata['stats_by_season'].items() %}
+                            <tr class="table-secondary" data-bs-toggle="collapse" data-bs-target="#expandSeason{{ season }}">
+                                <th scope="row">{{ season }}<i class="bi bi-chevron-down"></i></th>
+                                <td>{{ tdata['episodes_by_season'][season]|length }}</td>
+                                <td>{{ season_stats['air_date_range'] }}</td>
+                                <td>{{ season_stats['location_count'] }}</td>
+                                <td>{{ season_stats['speaker_count'] }}</td>
+                                <td>{{ season_stats['scene_count'] }}</td>
+                                <td>{{ season_stats['line_count'] }}</td>
+                                <td>{{ season_stats['word_count'] }}</td>
+                            </tr>
+                            <tr class="collapse accordion-collapse" id="expandSeason{{ season }}" data-bs-parent=".table">
+                                <td colspan="8">
+                                    <div class="overflow-scroll" style="max-height: 500px;">
+                                        <table class="table table-hover table-striped">
+                                            <thead>
+                                                <tr class="table-success">
+                                                    <th scope="col">Sequence</th>
+                                                    <th scope="col">Title</th>
+                                                    <th scope="col">Air date</th>
+                                                    <th scope="col">Focal characters</th>
+                                                    <th scope="col">Focal locations</th>
+                                                    <th scope="col">Scenes</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for episode in tdata['episodes_by_season'][season] %}
+                                                <tr class="table-secondary">
+                                                    <th scope="row">{{ episode['sequence_in_season'] }}</th>
+                                                    <td>
+                                                        <a class="alert-link" href="/web/episode/{{ tdata['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title'] }}</a>
+                                                    </td>
+                                                    <td>{{ episode['air_date']|truncate(10,true,'') }}</td>
+                                                    <td>{{ episode['focal_speakers']|join(', ') }}</td>
+                                                    <td>{{ episode['focal_locations']|join(', ')|truncate(50,true) }}</td>
+                                                    <td>{{ episode['scene_count'] }}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
                 </div>
+                <!-- </div> -->
             </div>
+        </div>
+        <br/>
+
+        <div class="row">
             <div class="col-4">
                 <h3>Characters</h3>
                 <div class="overflow-scroll" style="max-height: 1000px;">
@@ -77,12 +125,37 @@
                     </table>
                 </div>
             </div>
+			<div class="col-4">
+                <h3>Locations</h3>
+                <div class="overflow-scroll" style="max-height: 1000px;">
+                    <table class="table table-hover table-striped table-fit">
+                        <thead>
+                            <tr class="table-primary">
+                                <th scope="col">Location</th>
+                                <th scope="col">Seasons</th>
+                                <th scope="col">Episodes</th>
+                                <th scope="col">Scenes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for location, count in tdata['locations_by_scene'].items() %}
+                            <tr class="table-secondary">
+                                <th scope="row">{{ location }}</th>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>{{ count }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="col-4">
                 <h3>Keywords</h3>
                 <div class="overflow-scroll" style="max-height: 1000px;">
                     <table class="table table-hover table-striped table-fit">
                         <thead>
-                            <tr class="table-primary">
+                            <tr class="table-success">
                                 <th scope="col">Term</th>
                                 <th scope="col">Total freq</th>
                                 <th scope="col">Episodes</th>

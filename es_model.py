@@ -34,6 +34,9 @@ class EsEpisodeTranscript(Document):
     loaded_ts = Date()
     indexed_ts = Date()
     flattened_text = Text(analyzer=freetext_analyzer, term_vector='yes', fields={'word_count': TokenCount(analyzer=token_count_analyzer, store='true')})
+    # generated 
+    focal_speakers = Keyword(multi=True)
+    focal_locations = Keyword(multi=True)
 
     class Index:
         name = 'transcripts'

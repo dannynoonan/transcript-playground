@@ -31,18 +31,28 @@ async def show_page(request: Request, show_key: ShowKey):
 	keywords = await main.keywords_by_corpus(show_key, exclude_speakers=True)
 	tdata['keywords'] = keywords['keywords']
 
-	# season_count = 7
-	# for i in range(season_count):
-	# 	s = i+1
-	# 	season_word_counts = await main.agg_dialog_word_counts(show_key, season=s)
-	# 	season_location_counts = await main.agg_scenes_by_location(show_key, season=s)
+	episodes_by_season = await main.list_episodes_by_season(show_key)
+	tdata['episodes_by_season'] = episodes_by_season['episodes_by_season']
 
-	# 	season_speaker_episode_counts = await main.agg_episodes_by_speaker(show_key, season=s)
-	# 	season_speaker_scene_counts = await main.agg_scenes_by_speaker(show_key, season=s)
-	# 	season_speaker_line_counts = await main.agg_scene_events_by_speaker(show_key, season=2)
-	# 	season_speaker_word_counts = await main.agg_dialog_word_counts(show_key, season=s)
-
-	# 	season_keywords = await main.keywords_by_corpus(show_key, exclude_speakers=True)
+	stats_by_season = {}
+	for season in tdata['episodes_by_season'].keys():
+		stats = {}
+		season_location_counts = await main.agg_scenes_by_location(show_key, season=season)
+		stats['location_count'] = season_location_counts['location_count']
+		season_speaker_episode_counts = await main.agg_episodes_by_speaker(show_key, season=season)
+		stats['speaker_count'] = season_speaker_episode_counts['speaker_count']
+		season_speaker_scene_counts = await main.agg_scenes_by_speaker(show_key, season=season)
+		stats['scene_count'] = season_speaker_scene_counts['scenes_by_speaker']['_ALL_']
+		season_speaker_line_counts = await main.agg_scene_events_by_speaker(show_key, season=season)
+		stats['line_count'] = season_speaker_line_counts['scene_events_by_speaker']['_ALL_']
+		season_speaker_word_counts = await main.agg_dialog_word_counts(show_key, season=season)
+		stats['word_count'] = int(season_speaker_word_counts['dialog_word_counts']['_ALL_'])	
+		stats_by_season[season] = stats
+		# generate air_date_range
+		first_episode_in_season = tdata['episodes_by_season'][season][0]
+		last_episode_in_season = tdata['episodes_by_season'][season][-1]
+		stats['air_date_range'] = f"{first_episode_in_season['air_date'][:10]} - {last_episode_in_season['air_date'][:10]}"
+	tdata['stats_by_season'] = stats_by_season
 
 	return templates.TemplateResponse("show.html", {"request": request, 'tdata': tdata})
 
@@ -207,6 +217,7 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str, sear
 	tdata['episode_count'] = episode_matches['episode_count']
 	tdata['scene_count'] = episode_matches['scene_count']
 	tdata['scene_event_count'] = episode_matches['scene_event_count']
+
 	word_count = await main.agg_dialog_word_counts(show_key, speaker=speaker)
 	tdata['word_count'] = int(word_count['dialog_word_counts'][speaker])
 	

@@ -337,6 +337,28 @@ async def return_episodes(s: Search) -> (list, int, int):
     return results, scene_count, scene_event_count
 
 
+async def return_episodes_by_season(s: Search) -> dict:
+    print(f'begin return_episodes_by_season for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    seasons_to_episodes = {}
+    
+    for hit in s.hits.hits:
+        episode = hit._source
+        if episode['season'] in seasons_to_episodes:
+            seasons_to_episodes[episode['season']].append(episode._d_)
+        else:
+            seasons_to_episodes[episode['season']] = [episode._d_]
+
+    # sort results by season and sequence_in_season
+    # sorted_seasons_to_episodes = dict(sorted(seasons_to_episodes.items()))
+    # for season, episodes in sorted_seasons_to_episodes.items():
+    #     episodes = sorted(episodes, itemgetter='sequence_in_season')
+
+    return seasons_to_episodes
+
+
 async def return_episode_count(s: Search) -> int:
     print(f'begin return_episode_count for s.to_dict()={s.to_dict()}')
 
