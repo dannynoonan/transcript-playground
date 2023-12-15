@@ -23,6 +23,12 @@
           "term_vector": "yes",
           "analyzer": "freetext_analyzer"
         },
+        "focal_locations": {
+          "type": "keyword"
+        },
+        "focal_speakers": {
+          "type": "keyword"
+        },
         "indexed_ts": {
           "type": "date"
         },
@@ -102,6 +108,18 @@
           },
           "term_vector": "yes",
           "analyzer": "freetext_analyzer"
+        },
+        "webvectors_gigaword_29": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "webvectors_wikipedia_223": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
         }
       }
     }

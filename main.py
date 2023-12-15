@@ -289,7 +289,7 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
     except Exception as e:
         return {"Error": f"Failure to transform Episode {show_key}:{episode_key} to es-writable version: {e}"}
 
-    return {"Success": f"Episode {show_key}:{episode_key} written to es index"}
+    return {"Success": f"Episode {show_key}_{episode_key} written to es index"}
 
 
 @app.get("/index_all_episodes/{show_key}")

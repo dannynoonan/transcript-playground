@@ -1,8 +1,9 @@
 import gensim
-from gensim.models import Word2Vec
+from gensim.models import Word2Vec, KeyedVectors
 from gensim.test.utils import common_texts
 import nltk
 from nltk.corpus import stopwords
+from nltk.tag import pos_tag
 from nltk.tokenize import sent_tokenize, word_tokenize
 import os
 import re
@@ -21,21 +22,100 @@ nltk.download('stopwords') # run this command to download the stopwords in the p
 nltk.download('punkt') # essential for tokenization
 
 
-def preprocess_text(text: str) -> str:
-    # remove numbers and special characters
-    text = re.sub("[^A-Za-z]+", " ", text)
-    # create tokens
-    tokens = nltk.word_tokenize(text)
-    # check if it's a stopword
-    tokens = [w.lower().strip() for w in tokens if not w.lower() in stopwords.words("english")]
-    # return a list of cleaned tokens
-    return tokens
+loaded_models = {}
 
 
 async def load_model(show_key: str, model_type: str) -> Word2Vec:
     model_file_name = f'w2v_{model_type}_{show_key}.model'
     model = Word2Vec.load(model_file_name)
     return model
+
+
+'''
+https://stackoverflow.com/questions/45310409/using-a-word2vec-model-pre-trained-on-wikipedia
+http://vectors.nlpl.eu/explore/embeddings/en/models/
+https://fasttext.cc/docs/en/english-vectors.html
+https://code.google.com/archive/p/word2vec/
+https://nlp.stanford.edu/projects/glove/
+'''
+async def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
+    model_path = f'./{vendor}/{version}/model.txt'
+    if model_path in loaded_models:
+        word_vectors = loaded_models[model_path]
+    else:
+        print(f'loading word_vectors at model_path={model_path}')
+        word_vectors = KeyedVectors.load_word2vec_format(model_path, binary=False)
+        print(f'model_path={model_path} len(word_vectors)={len(word_vectors)} type(word_vectors)={type(word_vectors)}')
+    # print(word_vectors.most_similar("vacation_NOUN"))
+    # print(word_vectors.most_similar(positive=['woman_NOUN', 'king_NOUN'], negative=['man_NOUN']))
+
+    return word_vectors
+
+
+def preprocess_text(text: str, tag_pos: bool = False) -> str:
+    # remove numbers and special characters
+    text = re.sub("[^A-Za-z]+", " ", text)
+    # tokenize
+    tokens = word_tokenize(text)
+    # remove stopwords
+    tokens = [w.lower().strip() for w in tokens if not w.lower() in stopwords.words("english")]
+    # pos tag
+    if tag_pos:
+        pos_tokens = pos_tag(tokens, tagset='universal')
+        for i in range(len(pos_tokens)):
+            tokens[i] = f'{pos_tokens[i][0]}_{pos_tokens[i][1]}'
+
+    print(f'tokens={tokens}')
+    return tokens
+
+
+async def calculate_embedding(token_arr: list, keyed_vectors: KeyedVectors) -> list:
+    print(f'begin calculate_embedding for token_arr={token_arr} model={keyed_vectors}')
+    embedding_sum = [0.0] * 300
+    tokens_processed = 0
+    for token in token_arr:
+        if token not in keyed_vectors.key_to_index:
+            print(f'did not find token={token}, skipping')
+        else:
+            embedding_sum += keyed_vectors.get_vector(token)
+            tokens_processed += 1
+    embedding_avg = embedding_sum / tokens_processed
+    print(f'tokens_processed={tokens_processed} out of len(token_arr)={len(token_arr)} embedding_avg={embedding_avg} ')
+    return embedding_avg.tolist()
+
+
+async def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript) -> None:
+    print(f'begin generate_embeddings for show_key={show_key} episode_key={es_episode.episode_key}')
+
+    # cbow_model = await load_model(show_key, 'cbow')
+    # sg_model = await load_model(show_key, 'sg')
+
+    webvec_gigwd_29_wvs = await load_keyed_vectors('web_vectors', '29')
+    # webvec_wiki_223_wvs = await load_keyed_vectors('web_vectors', '223')
+
+    doc_tokens = []
+    doc_tokens.extend(preprocess_text(es_episode.title, tag_pos=True))
+    for scene in es_episode.scenes:
+        scene_tokens = []
+        # scene_tokens.extend(preprocess_text(scene.location, tag_pos=True))
+        if scene.description:
+            scene_tokens.extend(preprocess_text(scene.description, tag_pos=True))
+        for scene_event in scene.scene_events:
+            if scene_event.context_info:
+                scene_tokens.extend(preprocess_text(scene_event.context_info, tag_pos=True))
+            # if scene_event.spoken_by:
+            #     scene_tokens.extend(preprocess_text(scene_event.spoken_by, tag_pos=True))
+            if scene_event.dialog:
+                scene_tokens.extend(preprocess_text(scene_event.dialog, tag_pos=True))
+            
+        if len(scene_tokens) > 0:
+            doc_tokens.extend(scene_tokens)
+
+    if len(doc_tokens) > 0:
+        # es_episode.cbow_doc_embedding = await calculate_embedding(doc_tokens, cbow_model)
+        # es_episode.skipgram_doc_embedding = await calculate_embedding(doc_tokens, sg_model)
+        es_episode.webvectors_gigaword_29 = await calculate_embedding(doc_tokens, webvec_gigwd_29_wvs)
+        # es_episode.webvectors_wikipedia_223 = await calculate_embedding(doc_tokens, webvec_wiki_223_wvs)
 
 
 async def build_embeddings_model(show_key: str) -> dict:
@@ -81,49 +161,6 @@ async def build_embeddings_model(show_key: str) -> dict:
     response['sg_wv_count'] = len(sg_model.wv)
 
     return response
-
-
-async def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript) -> None:
-    print(f'begin generate_embeddings for show_key={show_key} episode_key={es_episode.episode_key}')
-
-    cbow_model = await load_model(show_key, 'cbow')
-    sg_model = await load_model(show_key, 'sg')
-
-    doc_tokens = []
-    doc_tokens.extend(preprocess_text(es_episode.title))
-    for scene in es_episode.scenes:
-        scene_tokens = []
-        # scene_tokens.extend(preprocess_text(scene.location))
-        if scene.description:
-            scene_tokens.extend(preprocess_text(scene.description))
-        for scene_event in scene.scene_events:
-            if scene_event.context_info:
-                scene_tokens.extend(preprocess_text(scene_event.context_info))
-            # if scene_event.spoken_by:
-            #     scene_tokens.extend(preprocess_text(scene_event.spoken_by))
-            if scene_event.dialog:
-                scene_tokens.extend(preprocess_text(scene_event.dialog))
-            
-        if len(scene_tokens) > 0:
-            doc_tokens.extend(scene_tokens)
-
-    if len(doc_tokens) > 0:
-        es_episode.cbow_doc_embedding = await calculate_embedding(doc_tokens, cbow_model)
-        es_episode.skipgram_doc_embedding = await calculate_embedding(doc_tokens, sg_model)
-
-    # return es_episode
-
-
-async def calculate_embedding(token_arr: list, model: Word2Vec) -> list:
-    print(f'begin calculate_embedding for token_arr={token_arr} model={model}')
-    embedding_sum = 0.0
-    for token in token_arr:
-        if token not in model.wv:
-            print(f'while processing token_arr={token_arr} did not find token={token} in model={model}')
-            continue
-        embedding_sum += model.wv[token]
-    embedding_avg = embedding_sum / len(token_arr)
-    return embedding_avg.tolist()
 
 
 

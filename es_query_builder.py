@@ -676,8 +676,8 @@ async def vector_search(show_key: str, qt: str, model_type: str = None, season: 
     knn_query = {
         "field": vector_field,
         "query_vector": vectorized_qt,
-        "k": 100,
-        "num_candidates": 100
+        "k": 176,
+        "num_candidates": 176
     }
 
     filter_query = {

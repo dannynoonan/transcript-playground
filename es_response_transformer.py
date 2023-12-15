@@ -567,7 +567,7 @@ async def return_vector_search(es_response: dict) -> list:
     
     for hit in es_response['hits']['hits']:
         episode = hit['_source']
-        episode['agg_score'] = hit['_score']
+        episode['agg_score'] = hit['_score'] * 100
         matches.append(episode)
 
     return matches

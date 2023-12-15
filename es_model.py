@@ -43,8 +43,10 @@ class EsEpisodeTranscript(Document):
     # generated 
     focal_speakers = Keyword(multi=True)
     focal_locations = Keyword(multi=True)
-    cbow_doc_embedding = DenseVector(dims=100, index='true', similarity='cosine')
-    skipgram_doc_embedding = DenseVector(dims=100, index='true', similarity='cosine')
+    # cbow_doc_embedding = DenseVector(dims=100, index='true', similarity='cosine')
+    # skipgram_doc_embedding = DenseVector(dims=100, index='true', similarity='cosine')
+    webvectors_wikipedia_223 = DenseVector(dims=300, index='true', similarity='cosine')
+    webvectors_gigaword_29 = DenseVector(dims=300, index='true', similarity='cosine')
 
     class Index:
         name = 'transcripts'

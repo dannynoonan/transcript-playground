@@ -79,15 +79,26 @@
                     </div>
                 </div>
                 <div class="tab-pane fade{% if tdata['search_type']=='semantic' %} show active{% endif %}" id="nav-semantic" role="tabpanel" aria-labelledby="nav-semantic-tab">
-                    <div class="col-9">
+                    <div class="col-12">
                         <div class="row input-group">
-                            <div class="col-2">
+                            <div class="col-1">
                                 <label class="col-form-label">Query:</label>
                             </div>
-                            <div class="col-5"> 
+                            <div class="col-11"> 
                                 <input type="text" class="form-control" name="qtSemantic" value="{{ tdata['qtSemantic'] }}" id="qtSemanticInput">
                             </div>
-                            <div class="col-2">
+                        </div>                              
+                        <div class="row input-group">
+                            <div class="col-1">
+                                <label class="col-form-label">Model type:</label>
+                            </div>
+                            <div class="col-2"> 
+                                <input type="text" class="form-control" name="model_type" value="{{ tdata['model_type'] }}" id="modelTypeInput">
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row input-group">
+                            <div class="col-1">
                                 <button type="submit" class="btn btn-primary" name="search_type" value="semantic">Search</button>
                             </div>
                         </div>
@@ -127,9 +138,12 @@
 
         <!-- begin search result count summary -->
         {% if tdata['search_type'] != '' %}
-		<h3><strong>{{ tdata['episode_match_count'] }}</strong> episodes / 
-            <strong>{{ tdata['scene_match_count'] }}</strong> scenes / 
-            <strong>{{ tdata['scene_event_match_count'] }}</strong> lines matching 
+		<h3>
+            {% if tdata['search_type'] != 'semantic' %}
+                <strong>{{ tdata['episode_match_count'] }}</strong> episodes / 
+                <strong>{{ tdata['scene_match_count'] }}</strong> scenes / 
+                <strong>{{ tdata['scene_event_match_count'] }}</strong> lines matching 
+            {% endif %}
             {% if tdata['search_type'] == 'general' %}
                 query: <strong class="gold">"{{ tdata['qt'] }}"</strong>
             {% endif %}
@@ -139,7 +153,8 @@
                 {% if tdata['location'] %} location: <strong class="gold">"{{ tdata['location'] }}"</strong>{% endif %}
             {% endif %}
             {% if tdata['search_type'] == 'semantic' %}
-                query: <strong class="gold">"{{ tdata['qtSemantic'] }}"</strong>
+                query: <strong class="gold">"{{ tdata['qtSemantic'] }}"</strong><br/>
+                model_type: <strong class="gold">"{{ tdata['model_type'] }}"</strong>
             {% endif %}
             {% if tdata['search_type'] == 'advanced_multi_speaker' %}
                 {% if tdata['speakers'] %} characters: <strong class="gold">"{{ tdata['speakers'] }}"</strong>{% endif %}
@@ -172,7 +187,7 @@
                         {% for episode in tdata['episode_matches'] %}
                         <tr class="table-secondary">
                             <th scope="row">
-                                <button type="button" class="btn btn-primary">{{ '%0.3f'|format(episode['agg_score']|float) }}</button>
+                                <button type="button" class="btn btn-primary">{{ '%0.2f'|format(episode['agg_score']|float) }}</button>
                             </th>
                             <td>{{ episode['season'] }}</td>
                             <td>{{ episode['sequence_in_season'] }}</td>
