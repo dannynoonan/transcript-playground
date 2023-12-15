@@ -343,7 +343,7 @@ async def return_episodes_by_season(s: Search) -> dict:
     s = s.execute()
 
     seasons_to_episodes = {}
-    
+
     for hit in s.hits.hits:
         episode = hit._source
         if episode['season'] in seasons_to_episodes:
@@ -558,3 +558,16 @@ async def return_more_like_this(s: Search) -> list:
         results.append(episode._d_)
 
     return results
+
+
+async def return_vector_search(es_response: dict) -> list:
+    print(f'begin return_vector_search')
+
+    matches = []
+    
+    for hit in es_response['hits']['hits']:
+        episode = hit['_source']
+        episode['agg_score'] = hit['_score']
+        matches.append(episode)
+
+    return matches

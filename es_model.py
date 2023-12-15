@@ -1,5 +1,5 @@
 from datetime import datetime
-from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter, TokenCount
+from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter, TokenCount, DenseVector
 
 
 freetext_analyzer = analyzer('freetext_analyzer', tokenizer='standard', type='custom',
@@ -13,12 +13,18 @@ class EsSceneEvent(InnerDoc):
     context_info = Text(analyzer=freetext_analyzer, term_vector='yes')
     spoken_by = Text(analyzer='standard', fields={'keyword': Keyword()})
     dialog = Text(analyzer=freetext_analyzer, term_vector='yes', fields={'word_count': TokenCount(analyzer=token_count_analyzer, store='true')})
+    # generated
+    # cbow_embedding = DenseVector(dims=100, index='true', similarity='cosine')
+    # skipgram_embedding = DenseVector(dims=100, index='true', similarity='cosine')
 
 
 class EsScene(InnerDoc):
     location = Text(analyzer='standard', fields={'keyword': Keyword()})
     description = Text(analyzer=freetext_analyzer, term_vector='yes')
     scene_events = Nested(EsSceneEvent)
+    # generated
+    # cbow_embedding = DenseVector(dims=100, index='true', similarity='cosine')
+    # skipgram_embedding = DenseVector(dims=100, index='true', similarity='cosine')
 
 
 class EsEpisodeTranscript(Document):
@@ -37,6 +43,8 @@ class EsEpisodeTranscript(Document):
     # generated 
     focal_speakers = Keyword(multi=True)
     focal_locations = Keyword(multi=True)
+    cbow_doc_embedding = DenseVector(dims=100, index='true', similarity='cosine')
+    skipgram_doc_embedding = DenseVector(dims=100, index='true', similarity='cosine')
 
     class Index:
         name = 'transcripts'

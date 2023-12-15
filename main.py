@@ -12,7 +12,9 @@ from app.models import TranscriptSource, Episode, Scene, SceneEvent
 from config import settings, DATABASE_URL
 import dao
 from database.connect import connect_to_database
+import embeddings_factory as ef
 from es_ingest_transformer import to_es_episode
+from es_model import EsEpisodeTranscript
 import es_query_builder as esqb
 import es_response_transformer as esrt
 from show_metadata import ShowKey, Status, show_metadata
@@ -538,6 +540,39 @@ async def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
 async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
     episodes_to_focal_locations = await esqb.populate_focal_locations(show_key.value, episode_key)
     return {"episodes_to_focal_locations": episodes_to_focal_locations}
+
+
+@app.get("/build_embeddings_model/{show_key}")
+async def build_embeddings_model(show_key: ShowKey):
+    model_info = await ef.build_embeddings_model(show_key.value)
+    return {"model_info": model_info}
+
+
+@app.get("/populate_embeddings/{show_key}/{episode_key}")
+async def populate_embeddings(show_key: ShowKey, episode_key: str):
+    es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
+    await ef.generate_episode_embeddings(show_key.value, es_episode)
+    await esqb.save_es_episode(es_episode)
+    return {"es_episode": es_episode}
+
+
+@app.get("/populate_all_embeddings/{show_key}")
+async def populate_all_embeddings(show_key: ShowKey):
+    doc_ids = await search_doc_ids(ShowKey(show_key))
+    episode_doc_ids = doc_ids['doc_ids']
+    processed_episode_keys = []
+    for doc_id in episode_doc_ids:
+        episode_key = doc_id.split('_')[-1]
+        await populate_embeddings(ShowKey(show_key), episode_key)
+        processed_episode_keys.append(episode_key)
+    return {"processed_episode_keys": processed_episode_keys}
+
+
+@app.get("/vector_search/{show_key}")
+async def vector_search(show_key: ShowKey, qt: str, model_type: str = None, season: str = None, episode_key: str = None):
+    es_response = await esqb.vector_search(show_key.value, qt, model_type=model_type, season=season, episode_key=episode_key)
+    matches = await esrt.return_vector_search(es_response)
+    return {"match_count": len(matches), "matches": matches}
 
 
 ########### BEGIN EXAMPLES #############

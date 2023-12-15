@@ -6,6 +6,7 @@ from fastapi.templating import Jinja2Templates
 from operator import itemgetter
 import requests
 
+from es_metadata import MODEL_TYPES
 import main
 from show_metadata import ShowKey
 from utils import truncate_dict
@@ -142,7 +143,8 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 
 @web_app.get("/web/episode_search/{show_key}", response_class=HTMLResponse)
 async def episode_search_page(request: Request, show_key: ShowKey, search_type: str = None, season: str = None, qt: str = None, 
-							  dialog: str = None, speaker: str = None, location: str = None, speakers: str = None, locationAMS: str = None):
+							  dialog: str = None, speaker: str = None, location: str = None, qtSemantic: str = None, model_type: str = None, 
+							  speakers: str = None, locationAMS: str = None):
 	tdata = {}
 
 	tdata['header'] = 'episode'
@@ -158,6 +160,11 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 	tdata['dialog'] = ''
 	tdata['speaker'] = ''
 	tdata['location'] = ''
+
+	tdata['qtSemantic'] = ''
+	if not model_type or model_type not in MODEL_TYPES:
+		model_type = 'cbow'
+	tdata['model_type'] = model_type
 
 	tdata['speakers'] = ''
 	tdata['locationAMS'] = ''
@@ -189,6 +196,12 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = matches['episode_count']
 		tdata['scene_match_count'] = matches['scene_count']
+
+	elif search_type == 'semantic':
+		tdata['qtSemantic'] = qtSemantic
+		matches = await main.vector_search(show_key, qt=qtSemantic, model_type=model_type)
+		tdata['episode_matches'] = matches['matches']
+		tdata['episode_match_count'] = len(matches['matches'])
 		
 	elif search_type == 'advanced_multi_speaker':
 		if speakers:

@@ -5,6 +5,7 @@ from elasticsearch_dsl import Search, connections, Q, A
 from elasticsearch_dsl.query import MoreLikeThis
 
 from config import settings
+import embeddings_factory as ef
 from es_metadata import STOPWORDS
 from es_model import EsEpisodeTranscript
 import main
@@ -644,3 +645,59 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
         await save_es_episode(es_episode)
 
     return episodes_to_focal_locations
+
+
+async def vector_search(show_key: str, qt: str, model_type: str = None, season: str = None, episode_key: str = None) -> Search:
+    print(f'begin vector_search for show_key={show_key} qt={qt} season={season} episode_key={episode_key}')
+
+    # s = Search(index='transcripts')
+    # s = s.extra(size=1000)
+
+    # s = s.filter('term', show_key=show_key)
+    # if episode_key:
+    #     s = s.filter('term', episode_key=episode_key)
+    # if season:
+    #     s = s.filter('term', season=season)
+
+    if not model_type:
+        model_type = 'cbow'
+    if model_type == 'cbow':
+        vector_field = 'cbow_doc_embedding'
+    elif model_type == 'sg':
+        vector_field = 'skipgram_doc_embedding'
+    else:
+        return {"Unsupported model_type": model_type}
+    
+    tokenized_qt = ef.preprocess_text(qt)
+    model = await ef.load_model(show_key, model_type)
+    vectorized_qt = await ef.calculate_embedding(tokenized_qt, model)
+    print(f'tokenized_qt={tokenized_qt} model={model} vectorized_qt={vectorized_qt}')
+
+    knn_query = {
+        "field": vector_field,
+        "query_vector": vectorized_qt,
+        "k": 100,
+        "num_candidates": 100
+    }
+
+    filter_query = {
+        "bool": {
+            "filter": [
+                {
+                    "term": {
+                        "show_key": show_key
+                    }
+                }
+            ]
+        }
+    }
+
+    source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations']
+    
+    response = es_conn.knn_search(index="transcripts", knn=knn_query, filter=filter_query, source=source)
+
+    # s = s.query(index="transcripts", knn=knn_query, source=source)
+    # print(f's.to_dict()={s.to_dict()}')
+    # return s
+
+    return response

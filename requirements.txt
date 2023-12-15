@@ -4,8 +4,11 @@ bs4==0.0.1
 elasticsearch==8.8.0
 elasticsearch-dsl==8.9.0
 fastapi==0.103.1 
+gensim==4.3.2
 http-exceptions==0.2.10
 lxml==4.9.3
+nltk==3.8.1
+numpy==1.26.2
 pandas==1.4.3
 pydantic==2.3.0
 pydantic_core==2.6.3

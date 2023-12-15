@@ -2,7 +2,7 @@
 STOPWORDS = ["a", "able", "about", "across", "after", "again", "all", "almost", "also", "am", "among", "an", "and", "ani", "anoth", "any", "anyth", 
                 "are", "as", "at", 
             "back", "be", "because", "been", "but", "by", 
-            "can", "cannot", "could", 
+            "c", "can", "cannot", "could", 
             "dear", "did", "didn", "do", "does", "don",
             "either", "else", "ever", "every", 
             "for", "from", 
@@ -26,3 +26,6 @@ STOPWORDS = ["a", "able", "about", "across", "after", "again", "all", "almost", 
             "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth",
             
             "barclai", "la", "forg", "geordi", "laforg", "weslei"]
+
+
+MODEL_TYPES = ['cbow', 'sg']
