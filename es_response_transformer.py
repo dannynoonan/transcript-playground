@@ -13,7 +13,7 @@ async def return_episode_by_key(s: Search) -> dict:
         return hit._d_
     
 
-async def return_doc_ids(s: Search) -> list:
+def return_doc_ids(s: Search) -> list:
     print(f'begin return_episode_by_key for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -560,7 +560,7 @@ async def return_more_like_this(s: Search) -> list:
     return results
 
 
-async def return_vector_search(es_response: dict) -> list:
+def return_vector_search(es_response: dict) -> list:
     print(f'begin return_vector_search')
 
     matches = []

@@ -231,13 +231,13 @@ async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
 
 
 @app.get("/episode/{show_key}/{episode_key}")
-async def fetch_episode(show_key: ShowKey, episode_key: str, data_source: str = None):
+async def fetch_episode(show_key: ShowKey, episode_key: str, data_source: str = None, all_es_fields: bool = False):
     if not data_source:
         data_source = 'db'
 
     # fetch episode from es
     if data_source == 'es':
-        s = await esqb.fetch_episode_by_key(show_key.value, episode_key)
+        s = await esqb.fetch_episode_by_key(show_key.value, episode_key, all_fields=all_es_fields)
         es_query = s.to_dict()
         match = await esrt.return_episode_by_key(s)
         return {"es_episode": match, 'es_query': es_query}
@@ -285,7 +285,7 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
     # transform to es-writable object and write to es
     try:
         es_episode = await to_es_episode(episode)
-        await esqb.save_es_episode(es_episode)
+        esqb.save_es_episode(es_episode)
     except Exception as e:
         return {"Error": f"Failure to transform Episode {show_key}:{episode_key} to es-writable version: {e}"}
 
@@ -339,10 +339,10 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
 
 
 @app.get("/search_doc_ids/{show_key}")
-async def search_doc_ids(show_key: ShowKey, season: str = None):
-    s = await esqb.search_doc_ids(show_key.value, season=season)
+def search_doc_ids(show_key: ShowKey, season: str = None):
+    s = esqb.search_doc_ids(show_key.value, season=season)
     es_query = s.to_dict()
-    matches = await esrt.return_doc_ids(s)
+    matches = esrt.return_doc_ids(s)
     return {"doc_count": len(matches), "doc_ids": matches, "es_query": es_query}
 
 
@@ -549,29 +549,36 @@ async def build_embeddings_model(show_key: ShowKey):
 
 
 @app.get("/populate_embeddings/{show_key}/{episode_key}")
-async def populate_embeddings(show_key: ShowKey, episode_key: str):
+def populate_embeddings(show_key: ShowKey, episode_key: str):
     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
-    await ef.generate_episode_embeddings(show_key.value, es_episode)
-    await esqb.save_es_episode(es_episode)
-    return {"es_episode": es_episode}
+    try:
+        ef.generate_episode_embeddings(show_key.value, es_episode)
+        esqb.save_es_episode(es_episode)
+        return {"es_episode": es_episode}
+    except Exception as e:
+        return {f"Failed to populate embeddings for episode {show_key.value}_{episode_key}": e}
 
 
 @app.get("/populate_all_embeddings/{show_key}")
-async def populate_all_embeddings(show_key: ShowKey):
-    doc_ids = await search_doc_ids(ShowKey(show_key))
+def populate_all_embeddings(show_key: ShowKey):
+    doc_ids = search_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']
     processed_episode_keys = []
+    failed_episode_keys = []
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
-        await populate_embeddings(ShowKey(show_key), episode_key)
-        processed_episode_keys.append(episode_key)
-    return {"processed_episode_keys": processed_episode_keys}
+        try:
+            populate_embeddings(ShowKey(show_key), episode_key)
+            processed_episode_keys.append(episode_key)
+        except Exception:
+            failed_episode_keys.append(episode_key)
+    return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
 
 
 @app.get("/vector_search/{show_key}")
-async def vector_search(show_key: ShowKey, qt: str, model_type: str = None, season: str = None, episode_key: str = None):
-    es_response = await esqb.vector_search(show_key.value, qt, model_type=model_type, season=season, episode_key=episode_key)
-    matches = await esrt.return_vector_search(es_response)
+def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None, episode_key: str = None):
+    es_response = esqb.vector_search(show_key.value, qt, model_vendor=model_vendor, model_version=model_version, season=season, episode_key=episode_key)
+    matches = esrt.return_vector_search(es_response)
     return {"match_count": len(matches), "matches": matches}
 
 

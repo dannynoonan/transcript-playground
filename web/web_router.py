@@ -143,8 +143,8 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 
 @web_app.get("/web/episode_search/{show_key}", response_class=HTMLResponse)
 async def episode_search_page(request: Request, show_key: ShowKey, search_type: str = None, season: str = None, qt: str = None, 
-							  dialog: str = None, speaker: str = None, location: str = None, qtSemantic: str = None, model_type: str = None, 
-							  speakers: str = None, locationAMS: str = None):
+							  dialog: str = None, speaker: str = None, location: str = None, qtSemantic: str = None, model_vendor: str = None, 
+							  model_version: str = None, speakers: str = None, locationAMS: str = None):
 	tdata = {}
 
 	tdata['header'] = 'episode'
@@ -162,9 +162,8 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 	tdata['location'] = ''
 
 	tdata['qtSemantic'] = ''
-	if not model_type or model_type not in MODEL_TYPES:
-		model_type = 'cbow'
-	tdata['model_type'] = model_type
+	tdata['model_vendor'] = ''
+	tdata['model_version'] = ''
 
 	tdata['speakers'] = ''
 	tdata['locationAMS'] = ''
@@ -198,8 +197,14 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 		tdata['scene_match_count'] = matches['scene_count']
 
 	elif search_type == 'semantic':
+		if not model_vendor:
+			model_vendor = 'webvectors'
+		if not model_version:
+			model_version = '29'
+		tdata['model_vendor'] = model_vendor
+		tdata['model_version'] = model_version
 		tdata['qtSemantic'] = qtSemantic
-		matches = await main.vector_search(show_key, qt=qtSemantic, model_type=model_type)
+		matches = main.vector_search(show_key, qt=qtSemantic, model_vendor=model_vendor, model_version=model_version)
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = len(matches['matches'])
 		

@@ -81,24 +81,32 @@
                 <div class="tab-pane fade{% if tdata['search_type']=='semantic' %} show active{% endif %}" id="nav-semantic" role="tabpanel" aria-labelledby="nav-semantic-tab">
                     <div class="col-12">
                         <div class="row input-group">
-                            <div class="col-1">
+                            <div class="col-2">
                                 <label class="col-form-label">Query:</label>
                             </div>
-                            <div class="col-11"> 
+                            <div class="col-10"> 
                                 <input type="text" class="form-control" name="qtSemantic" value="{{ tdata['qtSemantic'] }}" id="qtSemanticInput">
                             </div>
                         </div>                              
                         <div class="row input-group">
-                            <div class="col-1">
-                                <label class="col-form-label">Model type:</label>
+                            <div class="col-2">
+                                <label class="col-form-label">Model vendor:</label>
                             </div>
                             <div class="col-2"> 
-                                <input type="text" class="form-control" name="model_type" value="{{ tdata['model_type'] }}" id="modelTypeInput">
+                                <input type="text" class="form-control" name="model_vendor" value="{{ tdata['model_vendor'] }}" id="modelVendorInput">
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">Model version:</label>
+                            </div>
+                            <div class="col-2"> 
+                                <input type="text" class="form-control" name="model_version" value="{{ tdata['model_version'] }}" id="modelVersionInput">
                             </div>
                         </div>
                         <br/>
                         <div class="row input-group">
-                            <div class="col-1">
+                            <div class="col-2">
                                 <button type="submit" class="btn btn-primary" name="search_type" value="semantic">Search</button>
                             </div>
                         </div>
@@ -154,7 +162,7 @@
             {% endif %}
             {% if tdata['search_type'] == 'semantic' %}
                 query: <strong class="gold">"{{ tdata['qtSemantic'] }}"</strong><br/>
-                model_type: <strong class="gold">"{{ tdata['model_type'] }}"</strong>
+                model_vendor: <strong class="gold">"{{ tdata['model_vendor'] }}"</strong> model_version: <strong class="gold">"{{ tdata['model_version'] }}"</strong>
             {% endif %}
             {% if tdata['search_type'] == 'advanced_multi_speaker' %}
                 {% if tdata['speakers'] %} characters: <strong class="gold">"{{ tdata['speakers'] }}"</strong>{% endif %}

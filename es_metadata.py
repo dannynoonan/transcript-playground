@@ -29,3 +29,6 @@ STOPWORDS = ["a", "able", "about", "across", "after", "again", "all", "almost", 
 
 
 MODEL_TYPES = ['cbow', 'sg']
+
+VECTOR_FIELDS = ['webvectors_29_embeddings', 'webvectors_223_embeddings', 'webvectors_223_tokens', 'webvectors_29_tokens', 
+                 'webvectors_223_no_match_tokens', 'webvectors_29_no_match_tokens']

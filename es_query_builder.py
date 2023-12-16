@@ -6,7 +6,7 @@ from elasticsearch_dsl.query import MoreLikeThis
 
 from config import settings
 import embeddings_factory as ef
-from es_metadata import STOPWORDS
+from es_metadata import STOPWORDS, VECTOR_FIELDS
 from es_model import EsEpisodeTranscript
 import main
 from show_metadata import ShowKey
@@ -39,7 +39,7 @@ async def init_transcripts_index():
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
 
 
-async def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
+def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     # es_episode.save(using=es_client)
     es_episode.save()
     # persisted_es_episode = EsEpisodeTranscript.get(id=es_episode.meta.id, ignore=404)
@@ -49,7 +49,7 @@ async def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     #     es_episode.save(using=es)
 
 
-async def fetch_episode_by_key(show_key: str, episode_key: str) -> dict:
+async def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = False) -> dict:
     print(f'begin fetch_episode_by_key for show_key={show_key} episode_key={episode_key}')
 
     # s = Search(using=es_client, index='transcripts')
@@ -58,12 +58,13 @@ async def fetch_episode_by_key(show_key: str, episode_key: str) -> dict:
 
     s = s.filter('term', show_key=show_key)
     s = s.filter('term', episode_key=episode_key)
-    s = s.source(excludes=['flattened_text'])
+    if not all_fields:
+        s = s.source(excludes=['flattened_text'] + VECTOR_FIELDS)
 
     return s
 
 
-async def search_doc_ids(show_key: str, season: str = None) -> Search:
+def search_doc_ids(show_key: str, season: str = None) -> Search:
     print(f'begin search_doc_ids for show_key={show_key} season={season}')
 
     s = Search(index='transcripts')
@@ -132,7 +133,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     if season:
         s = s.filter('term', season=season)
 
-    s = s.source(excludes=['flattened_text', 'scenes'])
+    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS)
 
     return s
 
@@ -184,7 +185,7 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
     # if location:
     #     s = s.filter('nested', path='scenes', query=Q('match', **{'scenes.location': location}))
 
-    s = s.source(excludes=['flattened_text', 'scenes.scene_events'])
+    s = s.source(excludes=['flattened_text', 'scenes.scene_events'] + VECTOR_FIELDS)
 
     return s
 
@@ -227,7 +228,7 @@ async def search_scene_events_multi_speaker(show_key: str, speakers: str, season
     if season:
         s = s.filter('term', season=season)
 
-    s = s.source(excludes=['flattened_text', 'scenes.scene_events'])
+    s = s.source(excludes=['flattened_text', 'scenes.scene_events'] + VECTOR_FIELDS)
 
     return s
 
@@ -294,7 +295,7 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
 
     s = s.highlight('title')
 
-    s = s.source(excludes=['flattened_text', 'scenes.scene_events'])
+    s = s.source(excludes=['flattened_text', 'scenes.scene_events'] + VECTOR_FIELDS)
 
     return s
 
@@ -309,7 +310,7 @@ async def list_episodes_by_season(show_key: str) -> Search:
 
     s = s.sort('season', 'sequence_in_season')
 
-    s = s.source(excludes=['flattened_text', 'scenes'])
+    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS)
 
     return s
 
@@ -592,7 +593,7 @@ async def more_like_this(show_key: str, episode_key: str) -> Search:
     s = s.query(MoreLikeThis(like=[{'_index': 'transcripts', '_id': f'{show_key}_{episode_key}'}], fields=['flattened_text'],
                              max_query_terms=75, minimum_should_match='75%', min_term_freq=1, stop_words=STOPWORDS))
     
-    s = s.source(excludes=['flattened_text', 'scenes'])
+    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS)
     
     return s
 
@@ -603,7 +604,7 @@ async def populate_focal_speakers(show_key: str, episode_key: str = None):
     if episode_key:
         episode_doc_ids = [f'{show_key}_{episode_key}']
     else:
-        doc_ids = await main.search_doc_ids(ShowKey(show_key))
+        doc_ids = main.search_doc_ids(ShowKey(show_key))
         episode_doc_ids = doc_ids['doc_ids']
     
     episodes_to_focal_speakers = {}
@@ -617,7 +618,7 @@ async def populate_focal_speakers(show_key: str, episode_key: str = None):
 
         es_episode = EsEpisodeTranscript.get(id=doc_id)
         es_episode.focal_speakers = focal_speakers
-        await save_es_episode(es_episode)
+        save_es_episode(es_episode)
 
     return episodes_to_focal_speakers
 
@@ -628,7 +629,7 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
     if episode_key:
         episode_doc_ids = [f'{show_key}_{episode_key}']
     else:
-        doc_ids = await main.search_doc_ids(ShowKey(show_key))
+        doc_ids = main.search_doc_ids(ShowKey(show_key))
         episode_doc_ids = doc_ids['doc_ids']
     
     episodes_to_focal_locations = {}
@@ -642,12 +643,12 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
 
         es_episode = EsEpisodeTranscript.get(id=doc_id)
         es_episode.focal_locations = focal_locations
-        await save_es_episode(es_episode)
+        save_es_episode(es_episode)
 
     return episodes_to_focal_locations
 
 
-async def vector_search(show_key: str, qt: str, model_type: str = None, season: str = None, episode_key: str = None) -> Search:
+def vector_search(show_key: str, qt: str, model_vendor: str = None, model_version: str = None, season: str = None, episode_key: str = None) -> Search:
     print(f'begin vector_search for show_key={show_key} qt={qt} season={season} episode_key={episode_key}')
 
     # s = Search(index='transcripts')
@@ -659,19 +660,30 @@ async def vector_search(show_key: str, qt: str, model_type: str = None, season: 
     # if season:
     #     s = s.filter('term', season=season)
 
-    if not model_type:
-        model_type = 'cbow'
-    if model_type == 'cbow':
-        vector_field = 'cbow_doc_embedding'
-    elif model_type == 'sg':
-        vector_field = 'skipgram_doc_embedding'
-    else:
-        return {"Unsupported model_type": model_type}
+    # if not model_type:
+    #     model_type = 'cbow'
+    # if model_type == 'cbow':
+    #     vector_field = 'cbow_doc_embedding'
+    # elif model_type == 'sg':
+    #     vector_field = 'skipgram_doc_embedding'
+    # else:
+    #     return {"Unsupported model_type": model_type}
+    # model = await ef.load_model(show_key, model_type)
+
+    if not model_vendor:
+        model_vendor = 'webvectors'
+    if not model_version:
+        model_version = '29'
+    # TODO I guess vector_field names can't contain additional info
+    vector_field = f'{model_vendor}_{model_version}_embeddings'
     
-    tokenized_qt = ef.preprocess_text(qt)
-    model = await ef.load_model(show_key, model_type)
-    vectorized_qt = await ef.calculate_embedding(tokenized_qt, model)
-    print(f'tokenized_qt={tokenized_qt} model={model} vectorized_qt={vectorized_qt}')
+    model = ef.load_keyed_vectors(model_vendor, model_version)
+    tokenized_qt = ef.preprocess_text(qt, tag_pos=True)
+    vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embedding(tokenized_qt, model)
+    print('************************************************************************************')
+    print(f'tokenized_qt={tokenized_qt} model={model} tokens_processed={tokens_processed} tokens_failed={tokens_failed}')
+    print('************************************************************************************')
+    print(f'vectorized_qt={vectorized_qt}')
 
     knn_query = {
         "field": vector_field,

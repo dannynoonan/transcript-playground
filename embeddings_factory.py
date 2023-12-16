@@ -25,10 +25,11 @@ nltk.download('punkt') # essential for tokenization
 loaded_models = {}
 
 
-async def load_model(show_key: str, model_type: str) -> Word2Vec:
-    model_file_name = f'w2v_{model_type}_{show_key}.model'
-    model = Word2Vec.load(model_file_name)
-    return model
+# async def load_model(vendor: str, version: str) -> Word2Vec:
+#     model_path = f'./{vendor}/{version}/model.txt'
+#     model = Word2Vec.load(model_path)
+#     print(f'loaded model={model} model_path={model_path} type(model)={type(model)}')
+#     return model
 
 
 '''
@@ -38,13 +39,14 @@ https://fasttext.cc/docs/en/english-vectors.html
 https://code.google.com/archive/p/word2vec/
 https://nlp.stanford.edu/projects/glove/
 '''
-async def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
+def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
     model_path = f'./{vendor}/{version}/model.txt'
     if model_path in loaded_models:
         word_vectors = loaded_models[model_path]
     else:
         print(f'loading word_vectors at model_path={model_path}')
         word_vectors = KeyedVectors.load_word2vec_format(model_path, binary=False)
+        loaded_models[model_path] = word_vectors
         print(f'model_path={model_path} len(word_vectors)={len(word_vectors)} type(word_vectors)={type(word_vectors)}')
     # print(word_vectors.most_similar("vacation_NOUN"))
     # print(word_vectors.most_similar(positive=['woman_NOUN', 'king_NOUN'], negative=['man_NOUN']))
@@ -69,29 +71,36 @@ def preprocess_text(text: str, tag_pos: bool = False) -> str:
     return tokens
 
 
-async def calculate_embedding(token_arr: list, keyed_vectors: KeyedVectors) -> list:
+def calculate_embedding(token_arr: list, keyed_vectors: KeyedVectors) -> (list, list, list):
     print(f'begin calculate_embedding for token_arr={token_arr} model={keyed_vectors}')
+
     embedding_sum = [0.0] * 300
-    tokens_processed = 0
+    tokens_processed = []
+    tokens_failed = []
     for token in token_arr:
         if token not in keyed_vectors.key_to_index:
             print(f'did not find token={token}, skipping')
+            tokens_failed.append(token)
         else:
             embedding_sum += keyed_vectors.get_vector(token)
-            tokens_processed += 1
-    embedding_avg = embedding_sum / tokens_processed
-    print(f'tokens_processed={tokens_processed} out of len(token_arr)={len(token_arr)} embedding_avg={embedding_avg} ')
-    return embedding_avg.tolist()
+            tokens_processed.append(token)
+    
+    if len(tokens_processed) == 0:
+        raise Exception('No tokens processed, cannot calculate embedding avg')
+    
+    embedding_avg = embedding_sum / len(tokens_processed)
+    print(f'out of len(token_arr)={len(token_arr)} len(tokens_processed)={len(tokens_processed)} len(tokens_failed)={len(tokens_failed)} embedding_avg={embedding_avg} ')
+    return embedding_avg.tolist(), tokens_processed, tokens_failed
 
 
-async def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript) -> None:
+def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript) -> None|Exception:
     print(f'begin generate_embeddings for show_key={show_key} episode_key={es_episode.episode_key}')
 
     # cbow_model = await load_model(show_key, 'cbow')
     # sg_model = await load_model(show_key, 'sg')
 
-    webvec_gigwd_29_wvs = await load_keyed_vectors('web_vectors', '29')
-    # webvec_wiki_223_wvs = await load_keyed_vectors('web_vectors', '223')
+    webvec_gigwd_29_wvs = load_keyed_vectors('webvectors', '29')
+    webvec_wiki_223_wvs = load_keyed_vectors('webvectors', '223')
 
     doc_tokens = []
     doc_tokens.extend(preprocess_text(es_episode.title, tag_pos=True))
@@ -114,10 +123,22 @@ async def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTransc
     if len(doc_tokens) > 0:
         # es_episode.cbow_doc_embedding = await calculate_embedding(doc_tokens, cbow_model)
         # es_episode.skipgram_doc_embedding = await calculate_embedding(doc_tokens, sg_model)
-        es_episode.webvectors_gigaword_29 = await calculate_embedding(doc_tokens, webvec_gigwd_29_wvs)
-        # es_episode.webvectors_wikipedia_223 = await calculate_embedding(doc_tokens, webvec_wiki_223_wvs)
+        try:
+            webvec_29_embeddings, webvec_29_tokens, webvec_29_no_match_tokens = calculate_embedding(doc_tokens, webvec_gigwd_29_wvs)
+            webvec_223_embeddings, webvec_223_tokens, webvec_223_no_match_tokens = calculate_embedding(doc_tokens, webvec_wiki_223_wvs)
+        except Exception as e:
+            raise Exception(f'Failed to generate vector embeddings for show_key={show_key} episode_key={es_episode.episode_key}: {e}')
+        es_episode.webvectors_29_embeddings = webvec_29_embeddings
+        es_episode.webvectors_223_embeddings = webvec_223_embeddings
+        es_episode.webvectors_29_tokens = webvec_29_tokens
+        es_episode.webvectors_223_tokens = webvec_223_tokens
+        es_episode.webvectors_29_no_match_tokens = webvec_29_no_match_tokens
+        es_episode.webvectors_223_no_match_tokens = webvec_223_no_match_tokens
 
 
+'''
+Not being used so dependencies are out of date
+'''
 async def build_embeddings_model(show_key: str) -> dict:
     print(f'begin build_embeddings_model for show_key={show_key}')
     
