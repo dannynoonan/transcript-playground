@@ -42,9 +42,10 @@ https://nlp.stanford.edu/projects/glove/
 def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
     model_path = f'./{vendor}/{version}/model.txt'
     if model_path in loaded_models:
+        print(f'found model_path={model_path} in previously loaded models')
         word_vectors = loaded_models[model_path]
     else:
-        print(f'loading word_vectors at model_path={model_path}')
+        print(f'did not find model_path={model_path} in previously loaded models, loading now...')
         word_vectors = KeyedVectors.load_word2vec_format(model_path, binary=False)
         loaded_models[model_path] = word_vectors
         print(f'model_path={model_path} len(word_vectors)={len(word_vectors)} type(word_vectors)={type(word_vectors)}')
@@ -71,8 +72,10 @@ def preprocess_text(text: str, tag_pos: bool = False) -> str:
     return tokens
 
 
-def calculate_embedding(token_arr: list, keyed_vectors: KeyedVectors) -> (list, list, list):
-    print(f'begin calculate_embedding for token_arr={token_arr} model={keyed_vectors}')
+def calculate_embedding(token_arr: list, model_vendor: str, model_version: str) -> (list, list, list):
+    print(f'begin calculate_embedding for token_arr={token_arr} model_vendor={model_vendor} model_version={model_version}')
+
+    keyed_vectors = load_keyed_vectors(model_vendor, model_version)
 
     embedding_sum = [0.0] * 300
     tokens_processed = []
@@ -99,9 +102,6 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript) 
     # cbow_model = await load_model(show_key, 'cbow')
     # sg_model = await load_model(show_key, 'sg')
 
-    webvec_gigwd_29_wvs = load_keyed_vectors('webvectors', '29')
-    webvec_wiki_223_wvs = load_keyed_vectors('webvectors', '223')
-
     doc_tokens = []
     doc_tokens.extend(preprocess_text(es_episode.title, tag_pos=True))
     for scene in es_episode.scenes:
@@ -124,8 +124,8 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript) 
         # es_episode.cbow_doc_embedding = await calculate_embedding(doc_tokens, cbow_model)
         # es_episode.skipgram_doc_embedding = await calculate_embedding(doc_tokens, sg_model)
         try:
-            webvec_29_embeddings, webvec_29_tokens, webvec_29_no_match_tokens = calculate_embedding(doc_tokens, webvec_gigwd_29_wvs)
-            webvec_223_embeddings, webvec_223_tokens, webvec_223_no_match_tokens = calculate_embedding(doc_tokens, webvec_wiki_223_wvs)
+            webvec_29_embeddings, webvec_29_tokens, webvec_29_no_match_tokens = calculate_embedding(doc_tokens, 'webvectors', '29')
+            webvec_223_embeddings, webvec_223_tokens, webvec_223_no_match_tokens = calculate_embedding(doc_tokens, 'webvectors', '223')
         except Exception as e:
             raise Exception(f'Failed to generate vector embeddings for show_key={show_key} episode_key={es_episode.episode_key}: {e}')
         es_episode.webvectors_29_embeddings = webvec_29_embeddings

@@ -565,9 +565,12 @@ def return_vector_search(es_response: dict) -> list:
 
     matches = []
     
+    rank = 1
     for hit in es_response['hits']['hits']:
         episode = hit['_source']
         episode['agg_score'] = hit['_score'] * 100
+        episode['rank'] = rank
+        rank += 1
         matches.append(episode)
 
     return matches

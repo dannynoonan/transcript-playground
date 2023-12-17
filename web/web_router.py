@@ -197,16 +197,20 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 		tdata['scene_match_count'] = matches['scene_count']
 
 	elif search_type == 'semantic':
+		tdata['qtSemantic'] = qtSemantic
 		if not model_vendor:
 			model_vendor = 'webvectors'
 		if not model_version:
 			model_version = '29'
 		tdata['model_vendor'] = model_vendor
 		tdata['model_version'] = model_version
-		tdata['qtSemantic'] = qtSemantic
 		matches = main.vector_search(show_key, qt=qtSemantic, model_vendor=model_vendor, model_version=model_version)
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = len(matches['matches'])
+		tdata['tokens_processed'] = matches['tokens_processed']
+		tdata['tokens_processed_count'] = len(matches['tokens_processed'])
+		tdata['tokens_failed'] = matches['tokens_failed']
+		tdata['tokens_failed_count'] = len(matches['tokens_failed'])
 		
 	elif search_type == 'advanced_multi_speaker':
 		if speakers:

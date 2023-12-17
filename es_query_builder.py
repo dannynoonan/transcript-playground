@@ -648,8 +648,8 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
     return episodes_to_focal_locations
 
 
-def vector_search(show_key: str, qt: str, model_vendor: str = None, model_version: str = None, season: str = None, episode_key: str = None) -> Search:
-    print(f'begin vector_search for show_key={show_key} qt={qt} season={season} episode_key={episode_key}')
+def vector_search(show_key: str, vector_field: str, vectorized_qt: list, season: str = None) -> Search:
+    print(f'begin vector_search for show_key={show_key} vector_field={vector_field}')
 
     # s = Search(index='transcripts')
     # s = s.extra(size=1000)
@@ -659,31 +659,6 @@ def vector_search(show_key: str, qt: str, model_vendor: str = None, model_versio
     #     s = s.filter('term', episode_key=episode_key)
     # if season:
     #     s = s.filter('term', season=season)
-
-    # if not model_type:
-    #     model_type = 'cbow'
-    # if model_type == 'cbow':
-    #     vector_field = 'cbow_doc_embedding'
-    # elif model_type == 'sg':
-    #     vector_field = 'skipgram_doc_embedding'
-    # else:
-    #     return {"Unsupported model_type": model_type}
-    # model = await ef.load_model(show_key, model_type)
-
-    if not model_vendor:
-        model_vendor = 'webvectors'
-    if not model_version:
-        model_version = '29'
-    # TODO I guess vector_field names can't contain additional info
-    vector_field = f'{model_vendor}_{model_version}_embeddings'
-    
-    model = ef.load_keyed_vectors(model_vendor, model_version)
-    tokenized_qt = ef.preprocess_text(qt, tag_pos=True)
-    vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embedding(tokenized_qt, model)
-    print('************************************************************************************')
-    print(f'tokenized_qt={tokenized_qt} model={model} tokens_processed={tokens_processed} tokens_failed={tokens_failed}')
-    print('************************************************************************************')
-    print(f'vectorized_qt={vectorized_qt}')
 
     knn_query = {
         "field": vector_field,
