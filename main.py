@@ -543,8 +543,8 @@ async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
 
 
 @app.get("/build_embeddings_model/{show_key}")
-async def build_embeddings_model(show_key: ShowKey):
-    model_info = await ef.build_embeddings_model(show_key.value)
+def build_embeddings_model(show_key: ShowKey):
+    model_info = ef.build_embeddings_model(show_key.value)
     return {"model_info": model_info}
 
 

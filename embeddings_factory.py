@@ -1,6 +1,7 @@
 import gensim
 from gensim.models import Word2Vec, KeyedVectors
 from gensim.test.utils import common_texts
+import io
 import nltk
 from nltk.corpus import stopwords
 from nltk.tag import pos_tag
@@ -22,7 +23,7 @@ nltk.download('stopwords') # run this command to download the stopwords in the p
 nltk.download('punkt') # essential for tokenization
 
 
-loaded_models = {}
+cached_models = {}
 
 
 # async def load_model(vendor: str, version: str) -> Word2Vec:
@@ -40,19 +41,29 @@ https://code.google.com/archive/p/word2vec/
 https://nlp.stanford.edu/projects/glove/
 '''
 def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
-    model_path = f'./{vendor}/{version}/model.txt'
-    if model_path in loaded_models:
+    model_path = f'./w2v_models/{vendor}/{version}/model.txt'
+    if model_path in cached_models:
         print(f'found model_path={model_path} in previously loaded models')
-        word_vectors = loaded_models[model_path]
+        word_vectors = cached_models[model_path]
     else:
         print(f'did not find model_path={model_path} in previously loaded models, loading now...')
         word_vectors = KeyedVectors.load_word2vec_format(model_path, binary=False)
-        loaded_models[model_path] = word_vectors
+        cached_models[model_path] = word_vectors
         print(f'model_path={model_path} len(word_vectors)={len(word_vectors)} type(word_vectors)={type(word_vectors)}')
     # print(word_vectors.most_similar("vacation_NOUN"))
     # print(word_vectors.most_similar(positive=['woman_NOUN', 'king_NOUN'], negative=['man_NOUN']))
 
     return word_vectors
+
+
+def load_vectors(fname):
+    fin = io.open(fname, 'r', encoding='utf-8', newline='\n', errors='ignore')
+    n, d = map(int, fin.readline().split())
+    data = {}
+    for line in fin:
+        tokens = line.rstrip().split(' ')
+        data[tokens[0]] = map(float, tokens[1:])
+    return data
 
 
 def preprocess_text(text: str, tag_pos: bool = False) -> str:
@@ -99,9 +110,6 @@ def calculate_embedding(token_arr: list, model_vendor: str, model_version: str) 
 def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript) -> None|Exception:
     print(f'begin generate_embeddings for show_key={show_key} episode_key={es_episode.episode_key}')
 
-    # cbow_model = await load_model(show_key, 'cbow')
-    # sg_model = await load_model(show_key, 'sg')
-
     doc_tokens = []
     doc_tokens.extend(preprocess_text(es_episode.title, tag_pos=True))
     for scene in es_episode.scenes:
@@ -121,8 +129,6 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript) 
             doc_tokens.extend(scene_tokens)
 
     if len(doc_tokens) > 0:
-        # es_episode.cbow_doc_embedding = await calculate_embedding(doc_tokens, cbow_model)
-        # es_episode.skipgram_doc_embedding = await calculate_embedding(doc_tokens, sg_model)
         try:
             webvec_29_embeddings, webvec_29_tokens, webvec_29_no_match_tokens = calculate_embedding(doc_tokens, 'webvectors', '29')
             webvec_223_embeddings, webvec_223_tokens, webvec_223_no_match_tokens = calculate_embedding(doc_tokens, 'webvectors', '223')
@@ -136,49 +142,43 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript) 
         es_episode.webvectors_223_no_match_tokens = webvec_223_no_match_tokens
 
 
-'''
-Not being used so dependencies are out of date
-'''
-async def build_embeddings_model(show_key: str) -> dict:
+def build_embeddings_model(show_key: str) -> dict:
     print(f'begin build_embeddings_model for show_key={show_key}')
     
-    entries = []
+    training_fragments = []
 
     # fetch all episodes for show_key
-    doc_ids_response = await main.search_doc_ids(ShowKey(show_key))
+    doc_ids_response = main.search_doc_ids(ShowKey(show_key))
     for doc_id in doc_ids_response['doc_ids']:
         episode_key = doc_id.split('_')[1]
-        print(f'begin compiling entries for episode_key={episode_key}')
-        es_episode_response = await main.fetch_episode(ShowKey(show_key), episode_key, data_source='es')
-        es_episode = es_episode_response['es_episode']
-        entries.append(preprocess_text(es_episode['title']))
-        if 'scenes' not in es_episode:
-            continue
-        for scene in es_episode['scenes']:
-            # entries.append(preprocess_text(scene['location']))
-            if 'scene_events' not in scene:
-                continue
-            for scene_event in scene['scene_events']:
-                if 'context_info' in scene_event:
-                    entries.append(preprocess_text(scene_event['context_info']))
-                # if 'spoken_by' in scene_event:
-                #     entries.append(preprocess_text(scene_event['spoken_by']))
-                if 'dialog' in scene_event:
-                    entries.append(preprocess_text(scene_event['dialog']))
-        print(f'len(entries)={len(entries)}')
+        print(f'begin compiling training_fragments for episode_key={episode_key}')
+        es_episode = EsEpisodeTranscript.get(id=f'{show_key}_{episode_key}')
+        training_fragments.append(preprocess_text(es_episode.title))
+        for scene in es_episode.scenes:
+            # entries.append(preprocess_text(scene.location))
+            for scene_event in scene.scene_events:
+                if scene_event.context_info:
+                    training_fragments.append(preprocess_text(scene_event.context_info))
+                # if scene_event.spoken_by:
+                #     entries.append(preprocess_text(scene_event.spoken_by))
+                if scene_event.dialog:
+                    training_fragments.append(preprocess_text(scene_event.dialog))
+        print(f'len(training_fragments)={len(training_fragments)}')
 
-    cbow_model = Word2Vec(sentences=entries, min_count = 1, vector_size = 100, window = 5)
-    cbow_model_file_name = f'w2v_cbow_{show_key}.model'
-    cbow_model.save(cbow_model_file_name)
+    cbow_model = Word2Vec(sentences=training_fragments, min_count=1, vector_size=100, window=5)
+    cbow_model_file_path = f'./w2v_models/homegrown/cbow_{show_key}.model'
+    cbow_model.save(cbow_model_file_path)
 
-    sg_model = Word2Vec(sentences=entries, min_count = 1, vector_size = 100, window = 5, sg = 1)
-    sg_model_file_name = f'w2v_sg_{show_key}.model'
-    sg_model.save(sg_model_file_name)
+    sg_model = Word2Vec(sentences=training_fragments, min_count=1, vector_size=100, window=5, sg=1)
+    sg_model_file_path = f'./w2v_models/homegrown/sg_{show_key}.model'
+    sg_model.save(sg_model_file_path)
 
     response = {}
-    response['cbow_file_size'] = os.path.getsize(cbow_model_file_name)
+    response['cbow_file_path'] = cbow_model_file_path
+    response['cbow_file_size'] = os.path.getsize(cbow_model_file_path)
     response['cbow_wv_count'] = len(cbow_model.wv)
-    response['sg_file_size'] = os.path.getsize(sg_model_file_name)
+    response['sg_file_path'] = sg_model_file_path
+    response['sg_file_size'] = os.path.getsize(sg_model_file_path)
     response['sg_wv_count'] = len(sg_model.wv)
 
     return response
