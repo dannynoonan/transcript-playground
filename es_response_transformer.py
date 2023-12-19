@@ -337,7 +337,7 @@ async def return_episodes(s: Search) -> (list, int, int):
     return results, scene_count, scene_event_count
 
 
-async def return_episodes_by_season(s: Search) -> dict:
+def return_episodes_by_season(s: Search) -> dict:
     print(f'begin return_episodes_by_season for s.to_dict()={s.to_dict()}')
 
     s = s.execute()

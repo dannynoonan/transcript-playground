@@ -300,7 +300,7 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
     return s
 
 
-async def list_episodes_by_season(show_key: str) -> Search:
+def list_episodes_by_season(show_key: str) -> Search:
     print(f'begin list_episodes_by_season for show_key={show_key}')
 
     s = Search(index='transcripts')

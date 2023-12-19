@@ -25,3 +25,8 @@ async def get_transcript_soup(transcript_source: TranscriptSource) -> BeautifulS
     print(f'Begin importing transcript for transcript_source={transcript_source} with transcript_url={transcript_source.transcript_url}')
     transcript_response = requests.get(transcript_source.transcript_url)
     return BeautifulSoup(transcript_response.content.decode('utf-8'), 'html.parser')
+
+
+def get_episode_description_soup(url) -> BeautifulSoup:
+    episode_descriptions_response = requests.get(url)
+    return BeautifulSoup(episode_descriptions_response.content.decode('utf-8'), 'html5lib')

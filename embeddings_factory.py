@@ -79,12 +79,13 @@ def preprocess_text(text: str, tag_pos: bool = False) -> str:
         for i in range(len(pos_tokens)):
             tokens[i] = f'{pos_tokens[i][0]}_{pos_tokens[i][1]}'
 
-    print(f'tokens={tokens}')
+    # print(f'tokens={tokens}')
     return tokens
 
 
 def calculate_embedding(token_arr: list, model_vendor: str, model_version: str) -> (list, list, list):
-    print(f'begin calculate_embedding for token_arr={token_arr} model_vendor={model_vendor} model_version={model_version}')
+    print('------------------------------------------------------------------------------------')
+    print(f'begin calculate_embedding for model_vendor={model_vendor} model_version={model_version} token_arr={token_arr}')
 
     keyed_vectors = load_keyed_vectors(model_vendor, model_version)
 
@@ -93,7 +94,7 @@ def calculate_embedding(token_arr: list, model_vendor: str, model_version: str) 
     tokens_failed = []
     for token in token_arr:
         if token not in keyed_vectors.key_to_index:
-            print(f'did not find token={token}, skipping')
+            # print(f'did not find token={token}, skipping')
             tokens_failed.append(token)
         else:
             embedding_sum += keyed_vectors.get_vector(token)
@@ -103,7 +104,7 @@ def calculate_embedding(token_arr: list, model_vendor: str, model_version: str) 
         raise Exception('No tokens processed, cannot calculate embedding avg')
     
     embedding_avg = embedding_sum / len(tokens_processed)
-    print(f'out of len(token_arr)={len(token_arr)} len(tokens_processed)={len(tokens_processed)} len(tokens_failed)={len(tokens_failed)} embedding_avg={embedding_avg} ')
+    print(f'out of len(token_arr)={len(token_arr)} len(tokens_processed)={len(tokens_processed)} len(tokens_failed)={len(tokens_failed)}')
     return embedding_avg.tolist(), tokens_processed, tokens_failed
 
 

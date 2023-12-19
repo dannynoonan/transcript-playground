@@ -391,10 +391,10 @@ async def search(show_key: ShowKey, season: str = None, episode_key: str = None,
 
 
 @app.get("/list_episodes_by_season/{show_key}")
-async def list_episodes_by_season(show_key: ShowKey):
-    s = await esqb.list_episodes_by_season(show_key.value)
+def list_episodes_by_season(show_key: ShowKey):
+    s = esqb.list_episodes_by_season(show_key.value)
     es_query = s.to_dict()
-    episodes_by_season = await esrt.return_episodes_by_season(s)
+    episodes_by_season = esrt.return_episodes_by_season(s)
     return {"episodes_by_season": episodes_by_season, "es_query": es_query}
 
 
@@ -583,7 +583,10 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
     if not model_version:
         model_version = '29'
     vector_field = f'{model_vendor}_{model_version}_embeddings'
-    vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embedding(tokenized_qt, model_vendor, model_version)
+    try:
+        vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embedding(tokenized_qt, model_vendor, model_version)
+    except Exception as e:
+        return {"error": e}
     es_response = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
     matches = esrt.return_vector_search(es_response)
     return {"match_count": len(matches), "vector_field": vector_field, "tokens_processed": tokens_processed, "tokens_failed": tokens_failed, "matches": matches}
