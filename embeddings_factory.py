@@ -1,18 +1,21 @@
-import gensim
+# import gensim
 from gensim.models import Word2Vec, KeyedVectors
+# from gensim.scripts.glove2word2vec import glove2word2vec
 from gensim.test.utils import common_texts
 import io
 import nltk
 from nltk.corpus import stopwords
 from nltk.tag import pos_tag
-from nltk.tokenize import sent_tokenize, word_tokenize
+# from nltk.tokenize import sent_tokenize
+from nltk.tokenize import word_tokenize
 import os
 import re
-import string
+# import string
 import warnings
 
-from es_model import EsEpisodeTranscript, EsScene, EsSceneEvent
+from es_model import EsEpisodeTranscript
 import main
+from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS
 from show_metadata import ShowKey
 
 
@@ -41,13 +44,28 @@ https://code.google.com/archive/p/word2vec/
 https://nlp.stanford.edu/projects/glove/
 '''
 def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
-    model_path = f'./w2v_models/{vendor}/{version}/model.txt'
+    vendor_meta = W2V_MODELS[vendor]
+    no_header = vendor_meta['no_header']
+    file_suffix = vendor_meta['file_suffix']
+    model_path = f'./w2v_models/{vendor}/{version}{file_suffix}'
+    # TODO refactor into model metadata
+    # if vendor == 'glove':
+    #     no_header = True
+    # else:
+    #     no_header = False
+    # if vendor == 'fasttext':
+    #     model_path = f'./w2v_models/{vendor}/{version}.vec'
+    # else:
+    #     model_path = f'./w2v_models/{vendor}/{version}_model.txt'
+    
     if model_path in cached_models:
         print(f'found model_path={model_path} in previously loaded models')
         word_vectors = cached_models[model_path]
     else:
         print(f'did not find model_path={model_path} in previously loaded models, loading now...')
-        word_vectors = KeyedVectors.load_word2vec_format(model_path, binary=False)
+        # if vendor == 'glove':
+        #     glove2word2vec(glove_file, tmp_file) 
+        word_vectors = KeyedVectors.load_word2vec_format(model_path, binary=False, no_header=no_header)
         cached_models[model_path] = word_vectors
         print(f'model_path={model_path} len(word_vectors)={len(word_vectors)} type(word_vectors)={type(word_vectors)}')
     # print(word_vectors.most_similar("vacation_NOUN"))
@@ -56,14 +74,17 @@ def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
     return word_vectors
 
 
-def load_vectors(fname):
-    fin = io.open(fname, 'r', encoding='utf-8', newline='\n', errors='ignore')
-    n, d = map(int, fin.readline().split())
-    data = {}
-    for line in fin:
-        tokens = line.rstrip().split(' ')
-        data[tokens[0]] = map(float, tokens[1:])
-    return data
+# '''
+# from fasttext site
+# '''
+# def load_vectors(fname):
+#     fin = io.open(fname, 'r', encoding='utf-8', newline='\n', errors='ignore')
+#     n, d = map(int, fin.readline().split())
+#     data = {}
+#     for line in fin:
+#         tokens = line.rstrip().split(' ')
+#         data[tokens[0]] = map(float, tokens[1:])
+#     return data
 
 
 def preprocess_text(text: str, tag_pos: bool = False) -> str:
@@ -87,9 +108,11 @@ def calculate_embedding(token_arr: list, model_vendor: str, model_version: str) 
     print('------------------------------------------------------------------------------------')
     print(f'begin calculate_embedding for model_vendor={model_vendor} model_version={model_version} token_arr={token_arr}')
 
+    vendor_meta = W2V_MODELS[model_vendor]
+    embedding_sum = [0.0] * vendor_meta['versions'][model_version]['dims']
+
     keyed_vectors = load_keyed_vectors(model_vendor, model_version)
 
-    embedding_sum = [0.0] * 300
     tokens_processed = []
     tokens_failed = []
     for token in token_arr:
@@ -108,39 +131,40 @@ def calculate_embedding(token_arr: list, model_vendor: str, model_version: str) 
     return embedding_avg.tolist(), tokens_processed, tokens_failed
 
 
-def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript) -> None|Exception:
-    print(f'begin generate_embeddings for show_key={show_key} episode_key={es_episode.episode_key}')
+def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, model_vendor: str, model_version: str) -> None|Exception:
+    print(f'begin generate_embeddings for show_key={show_key} episode_key={es_episode.episode_key} model_vendor={model_vendor} model_version={model_version}')
+
+    vendor_meta = W2V_MODELS[model_vendor]
+    tag_pos = vendor_meta['pos_tag']
 
     doc_tokens = []
-    doc_tokens.extend(preprocess_text(es_episode.title, tag_pos=True))
+    doc_tokens.extend(preprocess_text(es_episode.title, tag_pos=tag_pos))
     for scene in es_episode.scenes:
         scene_tokens = []
-        # scene_tokens.extend(preprocess_text(scene.location, tag_pos=True))
+        # scene_tokens.extend(preprocess_text(scene.location, tag_pos=tag_pos))
         if scene.description:
-            scene_tokens.extend(preprocess_text(scene.description, tag_pos=True))
+            scene_tokens.extend(preprocess_text(scene.description, tag_pos=tag_pos))
         for scene_event in scene.scene_events:
             if scene_event.context_info:
-                scene_tokens.extend(preprocess_text(scene_event.context_info, tag_pos=True))
+                scene_tokens.extend(preprocess_text(scene_event.context_info, tag_pos=tag_pos))
             # if scene_event.spoken_by:
-            #     scene_tokens.extend(preprocess_text(scene_event.spoken_by, tag_pos=True))
+            #     scene_tokens.extend(preprocess_text(scene_event.spoken_by, tag_pos=tag_pos))
             if scene_event.dialog:
-                scene_tokens.extend(preprocess_text(scene_event.dialog, tag_pos=True))
-            
+                scene_tokens.extend(preprocess_text(scene_event.dialog, tag_pos=tag_pos))
+
         if len(scene_tokens) > 0:
             doc_tokens.extend(scene_tokens)
 
+    print(f'+++++++++++ len(doc_tokens)={len(doc_tokens)}')
+
     if len(doc_tokens) > 0:
         try:
-            webvec_29_embeddings, webvec_29_tokens, webvec_29_no_match_tokens = calculate_embedding(doc_tokens, 'webvectors', '29')
-            webvec_223_embeddings, webvec_223_tokens, webvec_223_no_match_tokens = calculate_embedding(doc_tokens, 'webvectors', '223')
+            embeddings, tokens, no_match_tokens = calculate_embedding(doc_tokens, model_vendor, model_version)
         except Exception as e:
-            raise Exception(f'Failed to generate vector embeddings for show_key={show_key} episode_key={es_episode.episode_key}: {e}')
-        es_episode.webvectors_29_embeddings = webvec_29_embeddings
-        es_episode.webvectors_223_embeddings = webvec_223_embeddings
-        es_episode.webvectors_29_tokens = webvec_29_tokens
-        es_episode.webvectors_223_tokens = webvec_223_tokens
-        es_episode.webvectors_29_no_match_tokens = webvec_29_no_match_tokens
-        es_episode.webvectors_223_no_match_tokens = webvec_223_no_match_tokens
+            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for show_key={show_key} episode_key={es_episode.episode_key}: {e}')
+        es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+        es_episode[f'{model_vendor}_{model_version}_tokens'] = tokens
+        es_episode[f'{model_vendor}_{model_version}_no_match_tokens'] = no_match_tokens
 
 
 def build_embeddings_model(show_key: str) -> dict:

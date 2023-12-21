@@ -3,7 +3,7 @@ from app.models import Episode, Scene, SceneEvent
 from es_model import EsEpisodeTranscript, EsScene, EsSceneEvent
 
 
-async def to_es_episode(episode: Episode) -> EsEpisodeTranscript:
+def to_es_episode(episode: Episode) -> EsEpisodeTranscript:
     es_episode = EsEpisodeTranscript(
         show_key=episode.show_key, episode_key=episode.external_key, title=episode.title, season=episode.season, 
         sequence_in_season=episode.sequence_in_season, air_date=episode.air_date)

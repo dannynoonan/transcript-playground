@@ -6,7 +6,7 @@ from fastapi.templating import Jinja2Templates
 from operator import itemgetter
 import requests
 
-from es_metadata import MODEL_TYPES
+# from es_metadata import MODEL_TYPES
 import main
 from show_metadata import ShowKey
 from utils import truncate_dict

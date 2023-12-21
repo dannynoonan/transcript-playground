@@ -43,14 +43,28 @@ class EsEpisodeTranscript(Document):
     # generated 
     focal_speakers = Keyword(multi=True)
     focal_locations = Keyword(multi=True)
-    # cbow_doc_embedding = DenseVector(dims=100, index='true', similarity='cosine')
-    # skipgram_doc_embedding = DenseVector(dims=100, index='true', similarity='cosine')
-    webvectors_223_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
-    webvectors_29_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
-    webvectors_223_tokens = Text()
-    webvectors_29_tokens = Text()
-    webvectors_223_no_match_tokens = Text()
-    webvectors_29_no_match_tokens = Text()
+    # embeddings per model
+    webvectors_gigaword29_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
+    webvectors_enwiki223_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
+    glove_6B300d_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
+    glove_twitter27B200d_embeddings = DenseVector(dims=200, index='true', similarity='cosine')
+    glove_twitter27B100d_embeddings = DenseVector(dims=100, index='true', similarity='cosine')
+    fasttext_wikinews300d1M_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
+    # matched tokens per model
+    webvectors_gigaword29_tokens = Text()
+    webvectors_enwiki223_tokens = Text()
+    glove_6B300d_tokens = Text()
+    glove_twitter27B200d_tokens = Text()
+    glove_twitter27B100d_tokens = Text()
+    fasttext_wikinews300d1M_tokens = Text()
+    # unmatched tokens per model
+    webvectors_gigaword29_no_match_tokens = Text()
+    webvectors_enwiki223_no_match_tokens = Text()
+    glove_6B300d_no_match_tokens = Text()
+    glove_twitter27B200d_no_match_tokens = Text()
+    glove_twitter27B100d_no_match_tokens = Text()
+    fasttext_wikinews300d1M_no_match_tokens = Text()
+
 
     class Index:
         name = 'transcripts'

@@ -18,8 +18,12 @@ from soup_brewer import get_episode_description_soup
 def main():
     episodes_df = init_episode_df()
     scrape_episode_descriptions(episodes_df)
-    generate_vector_search_rankings(episodes_df, 'webvectors', '29')
-    generate_vector_search_rankings(episodes_df, 'webvectors', '223')
+    generate_vector_search_rankings(episodes_df, 'webvectors', 'gigaword29')
+    generate_vector_search_rankings(episodes_df, 'webvectors', 'enwiki223')
+    generate_vector_search_rankings(episodes_df, 'glove', '6B300d')
+    generate_vector_search_rankings(episodes_df, 'glove', 'twitter27B200d')
+    generate_vector_search_rankings(episodes_df, 'glove', 'twitter27B100d')
+    generate_vector_search_rankings(episodes_df, 'fasttext', 'wikinews300d1M')
     episodes_df.to_csv('./analytics/description_embeddings_rankings.csv', sep='\t')
 
 
@@ -98,18 +102,12 @@ def generate_vector_search_rankings(episodes_df: pd.DataFrame, model_vendor: str
             rank += 1
         if not found:
             print(f"no match found for episode_key={row['episode_key']}, setting rank to max and score to 0")
-            episodes_df.loc[episodes_df['episode_key'] == episode_key, rank_col] = 999999
-            episodes_df.loc[episodes_df['episode_key'] == episode_key, score_col] = 0
-            # row[rank_col] = 999999
-            # row[score_col] = 0
+            # episodes_df.loc[episodes_df['episode_key'] == episode_key, rank_col] = 999999
+            # episodes_df.loc[episodes_df['episode_key'] == episode_key, score_col] = 0
         episodes_df.loc[episodes_df['episode_key'] == episode_key, matched_tokens_col] = ', '.join(vector_search_response['tokens_processed'])
         episodes_df.loc[episodes_df['episode_key'] == episode_key, matched_tokens_count_col] = len(vector_search_response['tokens_processed'])
         episodes_df.loc[episodes_df['episode_key'] == episode_key, unmatched_tokens_col] = ', '.join(vector_search_response['tokens_failed'])
         episodes_df.loc[episodes_df['episode_key'] == episode_key, unmatched_tokens_count_col] = len(vector_search_response['tokens_failed'])
-        # row[matched_tokens_col] = ', '.join(vector_search_response['tokens_processed'])
-        # row[matched_tokens_count_col] = len(vector_search_response['tokens_processed'])
-        # row[unmatched_tokens_col] = ', '.join(vector_search_response['tokens_failed'])
-        # row[unmatched_tokens_count_col] = len(vector_search_response['tokens_failed'])
         success_count += 1
     
     print(f'completed generate_vector_search_rankings for {success_count} episodes')

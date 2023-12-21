@@ -1,3 +1,4 @@
+from nlp_metadata import ACTIVE_VENDOR_VERSIONS
 
 STOPWORDS = ["a", "able", "about", "across", "after", "again", "all", "almost", "also", "am", "among", "an", "and", "ani", "anoth", "any", "anyth", 
                 "are", "as", "at", 
@@ -28,7 +29,27 @@ STOPWORDS = ["a", "able", "about", "across", "after", "again", "all", "almost", 
             "barclai", "la", "forg", "geordi", "laforg", "weslei"]
 
 
-MODEL_TYPES = ['cbow', 'sg']
+# HOMEGROWN_MODEL_TYPES = ['cbow', 'sg']
 
-VECTOR_FIELDS = ['webvectors_29_embeddings', 'webvectors_223_embeddings', 'webvectors_223_tokens', 'webvectors_29_tokens', 
-                 'webvectors_223_no_match_tokens', 'webvectors_29_no_match_tokens']
+
+# ACTIVE_VENDOR_MODELS = {
+#     'webvectors': ['gigaword29', 'enwiki223'],
+#     'glove': ['6B300d', 'twitter27B200d', 'twitter27B100d'],
+#     'fasttext': ['wikinews300d1M']
+# }
+
+
+def concat_vector_fields() -> list:
+    vector_fields = []
+    for vendor, models in ACTIVE_VENDOR_VERSIONS.items():
+        for model in models:
+            vector_fields.append(f'{vendor}_{model}_embeddings')
+            vector_fields.append(f'{vendor}_{model}_tokens')
+            vector_fields.append(f'{vendor}_{model}_no_match_tokens')
+    return vector_fields
+
+
+VECTOR_FIELDS = concat_vector_fields()
+# VECTOR_FIELDS = ['webvectors_29_embeddings', 'webvectors_223_embeddings', 'glove_6B300d_embeddings', 
+#                  'webvectors_223_tokens', 'webvectors_29_tokens', 'glove_6B300d_tokens',
+#                  'webvectors_223_no_match_tokens', 'webvectors_29_no_match_tokens', 'glove_6B300d_no_match_tokens'

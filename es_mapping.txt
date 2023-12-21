@@ -11,6 +11,18 @@
         "episode_key": {
           "type": "keyword"
         },
+        "fasttext_wikinews300d1M_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "fasttext_wikinews300d1M_no_match_tokens": {
+          "type": "text"
+        },
+        "fasttext_wikinews300d1M_tokens": {
+          "type": "text"
+        },
         "flattened_text": {
           "type": "text",
           "fields": {
@@ -28,6 +40,42 @@
         },
         "focal_speakers": {
           "type": "keyword"
+        },
+        "glove_6B300d_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "glove_6B300d_no_match_tokens": {
+          "type": "text"
+        },
+        "glove_6B300d_tokens": {
+          "type": "text"
+        },
+        "glove_twitter27B100d_embeddings": {
+          "type": "dense_vector",
+          "dims": 100,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "glove_twitter27B100d_no_match_tokens": {
+          "type": "text"
+        },
+        "glove_twitter27B100d_tokens": {
+          "type": "text"
+        },
+        "glove_twitter27B200d_embeddings": {
+          "type": "dense_vector",
+          "dims": 200,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "glove_twitter27B200d_no_match_tokens": {
+          "type": "text"
+        },
+        "glove_twitter27B200d_tokens": {
+          "type": "text"
         },
         "indexed_ts": {
           "type": "date"
@@ -109,17 +157,29 @@
           "term_vector": "yes",
           "analyzer": "freetext_analyzer"
         },
-        "webvectors_gigaword_29": {
+        "webvectors_enwiki223_embeddings": {
           "type": "dense_vector",
           "dims": 300,
           "index": true,
           "similarity": "cosine"
         },
-        "webvectors_wikipedia_223": {
+        "webvectors_enwiki223_no_match_tokens": {
+          "type": "text"
+        },
+        "webvectors_enwiki223_tokens": {
+          "type": "text"
+        },
+        "webvectors_gigaword29_embeddings": {
           "type": "dense_vector",
           "dims": 300,
           "index": true,
           "similarity": "cosine"
+        },
+        "webvectors_gigaword29_no_match_tokens": {
+          "type": "text"
+        },
+        "webvectors_gigaword29_tokens": {
+          "type": "text"
         }
       }
     }

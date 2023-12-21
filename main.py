@@ -17,6 +17,7 @@ from es_ingest_transformer import to_es_episode
 from es_model import EsEpisodeTranscript
 import es_query_builder as esqb
 import es_response_transformer as esrt
+from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS
 from show_metadata import ShowKey, Status, show_metadata
 from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup
 from transcript_extractor import parse_episode_transcript_soup
@@ -284,7 +285,7 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
     
     # transform to es-writable object and write to es
     try:
-        es_episode = await to_es_episode(episode)
+        es_episode = to_es_episode(episode)
         esqb.save_es_episode(es_episode)
     except Exception as e:
         return {"Error": f"Failure to transform Episode {show_key}:{episode_key} to es-writable version: {e}"}
@@ -322,8 +323,8 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
 
         # transform to es-writable object and write to es
         try:
-            es_episode = await to_es_episode(episode)
-            await esqb.save_es_episode(es_episode)
+            es_episode = to_es_episode(episode)
+            esqb.save_es_episode(es_episode)
             successful_episode_keys.append(episode.external_key)
         except Exception as e:
             failed_episode_keys.append(episode.external_key)
@@ -548,19 +549,19 @@ def build_embeddings_model(show_key: ShowKey):
     return {"model_info": model_info}
 
 
-@app.get("/populate_embeddings/{show_key}/{episode_key}")
-def populate_embeddings(show_key: ShowKey, episode_key: str):
+@app.get("/populate_embeddings/{show_key}/{episode_key}/{model_version}/{model_vendor}")
+def populate_embeddings(show_key: ShowKey, episode_key: str, model_version: str, model_vendor: str):
     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
-        ef.generate_episode_embeddings(show_key.value, es_episode)
+        ef.generate_episode_embeddings(show_key.value, es_episode, model_version, model_vendor)
         esqb.save_es_episode(es_episode)
         return {"es_episode": es_episode}
     except Exception as e:
-        return {f"Failed to populate embeddings for episode {show_key.value}_{episode_key}": e}
+        return {f"Failed to populate {model_version}:{model_vendor} embeddings for episode {show_key.value}_{episode_key}": e}
 
 
-@app.get("/populate_all_embeddings/{show_key}")
-def populate_all_embeddings(show_key: ShowKey):
+@app.get("/populate_all_embeddings/{show_key}/{model_version}/{model_vendor}")
+def populate_all_embeddings(show_key: ShowKey, model_version: str, model_vendor: str):
     doc_ids = search_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']
     processed_episode_keys = []
@@ -568,7 +569,7 @@ def populate_all_embeddings(show_key: ShowKey):
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
         try:
-            populate_embeddings(ShowKey(show_key), episode_key)
+            populate_embeddings(ShowKey(show_key), episode_key, model_version, model_vendor)
             processed_episode_keys.append(episode_key)
         except Exception:
             failed_episode_keys.append(episode_key)
@@ -577,11 +578,20 @@ def populate_all_embeddings(show_key: ShowKey):
 
 @app.get("/vector_search/{show_key}")
 def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
-    tokenized_qt = ef.preprocess_text(qt, tag_pos=True)
     if not model_vendor:
         model_vendor = 'webvectors'
     if not model_version:
-        model_version = '29'
+        model_version = '223'
+    # # TODO refactor tag_pos into model metadata
+    # if model_vendor == 'webvectors':
+    #     tag_pos = True
+    # else:
+    #     tag_pos = False
+
+    vendor_meta = W2V_MODELS[model_vendor]
+    tag_pos = vendor_meta['pos_tag']
+
+    tokenized_qt = ef.preprocess_text(qt, tag_pos=tag_pos)
     vector_field = f'{model_vendor}_{model_version}_embeddings'
     try:
         vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embedding(tokenized_qt, model_vendor, model_version)
