@@ -30,11 +30,11 @@ WORD2VEC_VENDOR_VERSIONS = {
             },
             '42B300d': {
                 'dims': 300,  # 5.03G
-                'status': 'INACTIVE'
+                'status': 'ACTIVE'
             },
             '840B300d': {
                 'dims': 300,  # 5.65G
-                'status': 'INACTIVE'
+                'status': 'ACTIVE'
             }
         },
         'file_suffix': '_model.txt',
@@ -49,7 +49,7 @@ WORD2VEC_VENDOR_VERSIONS = {
             },
             'crawl300d2M': {
                 'dims': 300,  # 4.51G
-                'status': 'INACTIVE'
+                'status': 'ACTIVE'
             }
         },
         'file_suffix': '.vec',

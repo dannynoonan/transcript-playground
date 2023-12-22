@@ -49,21 +49,30 @@ class EsEpisodeTranscript(Document):
     glove_6B300d_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     glove_twitter27B200d_embeddings = DenseVector(dims=200, index='true', similarity='cosine')
     glove_twitter27B100d_embeddings = DenseVector(dims=100, index='true', similarity='cosine')
+    glove_42B300d_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
+    glove_840B300d_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     fasttext_wikinews300d1M_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
+    fasttext_crawl300d2M_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     # matched tokens per model
     webvectors_gigaword29_tokens = Text()
     webvectors_enwiki223_tokens = Text()
     glove_6B300d_tokens = Text()
     glove_twitter27B200d_tokens = Text()
     glove_twitter27B100d_tokens = Text()
+    glove_42B300d_tokens = Text()
+    glove_840B300d_tokens = Text()
     fasttext_wikinews300d1M_tokens = Text()
+    fasttext_crawl300d2M_tokens = Text()
     # unmatched tokens per model
     webvectors_gigaword29_no_match_tokens = Text()
     webvectors_enwiki223_no_match_tokens = Text()
     glove_6B300d_no_match_tokens = Text()
     glove_twitter27B200d_no_match_tokens = Text()
     glove_twitter27B100d_no_match_tokens = Text()
+    glove_42B300d_no_match_tokens = Text()
+    glove_840B300d_no_match_tokens = Text()
     fasttext_wikinews300d1M_no_match_tokens = Text()
+    fasttext_crawl300d2M_no_match_tokens = Text()
 
 
     class Index:

@@ -3,6 +3,7 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
+import numpy as np
 from operator import itemgetter
 from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from tortoise.contrib.pydantic import pydantic_model_creator
@@ -578,22 +579,20 @@ def populate_all_embeddings(show_key: ShowKey, model_version: str, model_vendor:
 
 @app.get("/vector_search/{show_key}")
 def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
+    # if not qt or qt == np.nan:
+    #     return {"error": "Cannot execute vector search on empty query term"}
+    
     if not model_vendor:
         model_vendor = 'webvectors'
     if not model_version:
         model_version = '223'
-    # # TODO refactor tag_pos into model metadata
-    # if model_vendor == 'webvectors':
-    #     tag_pos = True
-    # else:
-    #     tag_pos = False
 
     vendor_meta = W2V_MODELS[model_vendor]
     tag_pos = vendor_meta['pos_tag']
 
-    tokenized_qt = ef.preprocess_text(qt, tag_pos=tag_pos)
-    vector_field = f'{model_vendor}_{model_version}_embeddings'
     try:
+        tokenized_qt = ef.preprocess_text(qt, tag_pos=tag_pos)
+        vector_field = f'{model_vendor}_{model_version}_embeddings'
         vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embedding(tokenized_qt, model_vendor, model_version)
     except Exception as e:
         return {"error": e}
