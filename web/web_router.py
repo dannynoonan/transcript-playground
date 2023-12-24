@@ -33,7 +33,7 @@ async def show_page(request: Request, show_key: ShowKey):
 	keywords = await main.keywords_by_corpus(show_key, exclude_speakers=True)
 	tdata['keywords'] = keywords['keywords']
 
-	episodes_by_season = await main.list_episodes_by_season(show_key)
+	episodes_by_season = main.list_episodes_by_season(show_key)
 	tdata['episodes_by_season'] = episodes_by_season['episodes_by_season']
 
 	stats_by_season = {}
@@ -134,9 +134,10 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 		if locationAMS:
 			tdata['locationAMS'] = locationAMS
 		matches = await main.search_scene_events_multi_speaker(show_key, episode_key=episode_key, speakers=speakers, location=locationAMS)
-		tdata['episode_match'] = matches['matches'][0]
-		tdata['scene_match_count'] = matches['scene_count']
-		tdata['scene_event_match_count'] = matches['scene_event_count']
+		if matches and matches['matches']:
+			tdata['episode_match'] = matches['matches'][0]
+			tdata['scene_match_count'] = matches['scene_count']
+			tdata['scene_event_match_count'] = matches['scene_event_count']
 
 	return templates.TemplateResponse('episode.html', {'request': request, 'tdata': tdata})
 

@@ -262,7 +262,7 @@
 
 		<!-- begin subset of transcript matching search query -->
 		{% if tdata['search_type'] != '' %}
-			{% if tdata['episode_match']['scenes'] %}
+			{% if tdata['episode_match'] and tdata['episode_match']['scenes'] %}
 			<div class="card text-white bg-success mb-3 w-75">
 				<div class="card-body">
 				{% for scene in tdata['episode_match']['scenes'] %}

@@ -574,7 +574,7 @@ async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
 async def keywords_by_corpus(show_key: str, season: str = None) -> dict:
     print(f'begin calc_word_counts_by_episode for show_key={show_key} season={season}')
 
-    keys = await main.search_doc_ids(ShowKey(show_key), season=season)
+    keys = main.search_doc_ids(ShowKey(show_key), season=season)
 
     if not keys:
         return {}
