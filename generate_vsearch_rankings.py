@@ -31,7 +31,7 @@ def main():
     model_version = args.model_version
     print(f'begin eval_vector_search script for show_key={show_key} desc_source={desc_source} model_vendor={model_vendor} model_version={model_version}')
 
-    episode_desc_file_path = f'./analytics/desc_src_{show_key}.csv'
+    episode_desc_file_path = f'./analytics/desc_sources_{show_key}.csv'
     if not os.path.isfile(episode_desc_file_path):
         print(f'no file found at episode_desc_file_path={episode_desc_file_path}, please run `load_description_sources` first')
         exit()
@@ -89,7 +89,7 @@ def generate_vector_search_rankings(episode_rank_df: pd.DataFrame, desc_source: 
         found = False
         for match in vector_search_response['matches']:
             if match['episode_key'] == str(episode_key):
-                episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, rank_col] = rank
+                episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, rank_col] = int(rank)
                 episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, score_col] = match['agg_score']
                 found = True
                 break
