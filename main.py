@@ -20,7 +20,7 @@ import es_query_builder as esqb
 import es_response_transformer as esrt
 from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS
 from show_metadata import ShowKey, Status, show_metadata
-from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup
+from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup, get_transcript_file_soup
 from transcript_extractor import parse_episode_transcript_soup
 from transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup, match_episodes_to_transcript_urls
 from web.web_router import web_app
@@ -145,7 +145,7 @@ async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
     
 
 @app.get("/load_transcript/{show_key}/{episode_key}")
-async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool = False):
+async def load_transcript(show_key: ShowKey, episode_key: str, from_file: bool = False, write_to_db: bool = False):
     episode = None
     # fetch episode and transcript_source(s), throw errors if not found
     try:
@@ -161,8 +161,12 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
     # fetch and transform raw transcript into persistable scene and scene_event data
     # TODO data model permits multiple transcript_sources per episode, for now just choose first one
     transcript_source = episode.transcript_sources[0]
-    transcript_soup = await get_transcript_soup(episode.transcript_sources[0])
-    scenes, scenes_to_events = await parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
+    if from_file:
+        transcript_soup = get_transcript_file_soup(f'source/episodes/{show_key.value}/{episode_key}.html')
+    else:
+        transcript_soup = get_transcript_soup(transcript_source.transcript_url)
+    scenes, scenes_to_events = parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
+    print(f'len(scenes)={len(scenes)}')
     
     if write_to_db:
         await dao.insert_transcript(episode, scenes=scenes, scenes_to_events=scenes_to_events)
@@ -171,6 +175,7 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
     else:
         # this response should be identical to the persisted version above
         episode_excl = await EpisodePydanticExcluding.from_tortoise_orm(episode)
+        episode_excl.scenes = []  # we don't want to include any scenes fetched from previously persisted episode
         for scene in scenes:
             scene_excl = await ScenePydanticExcluding.from_tortoise_orm(scene)
             episode_excl.scenes.append(scene_excl)
@@ -211,8 +216,8 @@ async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
         # fetch and transform raw transcript into persistable scene and scene_event data
         # TODO data model permits multiple transcript_sources per episode, for now just choose first one
         transcript_source = episode.transcript_sources[0]
-        transcript_soup = await get_transcript_soup(episode.transcript_sources[0])
-        scenes, scenes_to_events = await parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
+        transcript_soup = get_transcript_soup(episode.transcript_sources[0])
+        scenes, scenes_to_events = parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
         attempts += 1
         try:
             await dao.insert_transcript(episode, scenes=scenes, scenes_to_events=scenes_to_events)
@@ -577,6 +582,7 @@ def populate_all_embeddings(show_key: ShowKey, model_version: str, model_vendor:
     return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
 
 
+# TODO needs to be a POST for long requests
 @app.get("/vector_search/{show_key}")
 def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
     # if not qt or qt == np.nan:

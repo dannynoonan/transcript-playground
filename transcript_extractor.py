@@ -5,7 +5,7 @@ from app.models import Episode, Scene, SceneEvent
 from show_metadata import GOT_SCENE_CHANGE_PREFIXES, TNG_CAPTAINS_LOG_PREFIX
 
 
-async def parse_episode_transcript_soup(episode: Episode, transcript_type: str, transcript_soup: BeautifulSoup):
+def parse_episode_transcript_soup(episode: Episode, transcript_type: str, transcript_soup: BeautifulSoup):
     print(f'In extract_episode_transcript show_key={episode.show_key} episode_key={episode.external_key} transcript_type={transcript_type}')
 
     scenes = []
@@ -130,6 +130,7 @@ async def parse_episode_transcript_soup(episode: Episode, transcript_type: str, 
                             first_scene_text_unprocessed = True
                             first_scene_text = line
 
+    print(f'len(scenes)={len(scenes)}')
     return scenes, scenes_to_events
 
 
