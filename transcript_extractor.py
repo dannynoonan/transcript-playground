@@ -93,6 +93,7 @@ def parse_episode_transcript_soup(episode: Episode, transcript_type: str, transc
             scenes_to_events[scene_i] = scene_events
             scene_i += 1
             location = locations[0].get_text()
+            location = basic_trim_tng(location)
             scene.location = location[1:-1]
             scenes.append(scene)
         else:
@@ -111,6 +112,7 @@ def parse_episode_transcript_soup(episode: Episode, transcript_type: str, transc
                 scenes_to_events[scene_i] = scene_events
                 scene_i += 1
                 location = locations[0].get_text()
+                location = basic_trim_tng(location)
                 scene.location = location[1:-1]
                 scenes.append(scene)
                 if first_scene_text_unprocessed:
@@ -182,7 +184,11 @@ def basic_trim_tng(line: str) -> str:
     line = line.replace('\n', ' ')
     line = line.replace('\r', ' ')
     line = line.replace('  ', ' ')
+    line = line.replace('::', ':')
+    line = line.replace(': :', ':')
     line = line.strip()
-    if line.startswith(TNG_CAPTAINS_LOG_PREFIX):
+    if line.startswith('Last time on Star Trek'):
+        return ''
+    if line.lower().startswith(TNG_CAPTAINS_LOG_PREFIX):
         line = f'PICARD: {line}'
     return line

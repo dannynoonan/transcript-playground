@@ -582,7 +582,7 @@ def populate_all_embeddings(show_key: ShowKey, model_version: str, model_vendor:
     return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
 
 
-# TODO needs to be a POST for long requests
+# TODO support POST for long requests?
 @app.get("/vector_search/{show_key}")
 def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
     # if not qt or qt == np.nan:
@@ -597,7 +597,8 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
     tag_pos = vendor_meta['pos_tag']
 
     try:
-        tokenized_qt = ef.preprocess_text(qt, tag_pos=tag_pos)
+        qt = ef.normalize_and_expand_query(qt, show_key)
+        tokenized_qt = ef.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
         vector_field = f'{model_vendor}_{model_version}_embeddings'
         vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embedding(tokenized_qt, model_vendor, model_version)
     except Exception as e:
@@ -605,6 +606,24 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
     es_response = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
     matches = esrt.return_vector_search(es_response)
     return {"match_count": len(matches), "vector_field": vector_field, "tokens_processed": tokens_processed, "tokens_failed": tokens_failed, "matches": matches}
+
+
+@app.get("/test_vector_search/{show_key}")
+def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
+    if not model_vendor:
+        model_vendor = 'webvectors'
+    if not model_version:
+        model_version = '223'
+
+    vendor_meta = W2V_MODELS[model_vendor]
+    tag_pos = vendor_meta['pos_tag']
+
+    try:
+        qt = ef.normalize_and_expand_query(qt, show_key)
+        tokenized_qt = ef.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
+    except Exception as e:
+        return {"error": e}
+    return {"normd_expanded_qt": qt, "tokenized_qt": tokenized_qt}
 
 
 ########### BEGIN EXAMPLES #############

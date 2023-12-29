@@ -3,6 +3,16 @@ from datetime import datetime, timezone
 from app.models import TranscriptSource, Episode, Scene, SceneEvent
 
 
+'''
+basic scene/scene_event lookup query:
+
+select s.location, e.dialogue_spoken_by, e.dialogue_text
+from scene s join scene_event e on e.scene_id=s.id
+where s.episode_id=1110
+order by s.sequence_in_episode, e.sequence_in_scene;
+'''
+
+
 async def fetch_episodes(show_key: str) -> list[Episode]|Exception:
     try:
         print(f'Fetching all episodes matching show={show_key}')

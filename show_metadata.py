@@ -54,4 +54,194 @@ show_metadata = {
 WIKIPEDIA_DOMAIN = 'https://en.wikipedia.org/wiki/'
 
 GOT_SCENE_CHANGE_PREFIXES = ['CUT TO: ', 'EXT. ', 'INT. ']
-TNG_CAPTAINS_LOG_PREFIX = "Captain's log"
+TNG_CAPTAINS_LOG_PREFIX = "captain's log"
+
+
+show_ontology = {
+    'TNG': {
+        'characters': {
+            'PICARD': {
+                'source_alts': ['JEAN-LUC'],
+                'actor_names': ['Patrick Stewart', 'Patrick Stuart'],
+                'external_errs': ['Jean Luc', 'Jeanluc', 'John luke', 'Pickard'],
+                'external_alts': ['Captain'],
+                'internal_alts': ['Captain']
+            },
+            'RIKER': {
+                'source_alts': [],
+                'actor_names': ['Jonathan Frakes', 'Johnathan Frakes'],
+                'external_errs': ['Ryker'],
+                'external_alts': ['number one'],
+                'internal_alts': ['Commander', 'number one']
+            },
+            'CRUSHER': {
+                'source_alts': ['BEVERLY'],
+                'actor_names': ['Gates McFadden'],
+                'external_errs': [],
+                'external_alts': ['Doctor', 'Medical Officer'],
+                'internal_alts': ['Doctor', 'Chief Medical Officer']
+            },
+            'DATA': {
+                'source_alts': [],
+                'actor_names': ['Brent Spiner'],
+                'external_errs': [],
+                'external_alts': ['android'],
+                'internal_alts': ['Lieutenant Commander', 'android']
+            },
+            'LAFORGE': {
+                'source_alts': ['GEORDI'], 
+                'actor_names': ['LeVar Burton', 'Lavar Burton'], 
+                'external_errs': ['Jordy', 'Giordi'],
+                'external_alts': ['Chief Engineer', 'La Forge'],
+                'internal_alts': ['Chief Engineer', 'La Forge']
+            },
+            'WORF': {
+                'source_alts': [],
+                'actor_names': ['Michael Dorn', 'Michael Dorne'],
+                'external_errs': ['clingon', 'cling-on', 'cling on'],
+                'external_alts': ['klingon', 'Security Officer'],
+                'internal_alts': ['Chief Security Officer']
+            },
+            'TROI': {
+                'source_alts': [],
+                'actor_names': ['Marina Sirtis'], 
+                'external_errs': ['Troy', 'Deana', 'Dianna'],
+                'external_alts': ['Counselor', 'Deanna'],
+                'internal_alts': ['Counselor', 'Deanna']
+            },
+            'WESLEY': {
+                'source_alts': [],
+                'actor_names': ['Wil Wheaton', 'Will Wheaton'],
+                'external_errs': [],
+                'external_alts': ['Ensign Crusher', 'Wes'],
+                'internal_alts': ['Ensign Crusher', 'Wes']
+            },
+            'PULASKI': {
+                'source_alts': [],
+                'actor_names': ['Diana Muldaur'],
+                'external_errs': ['Catherine', ],
+                'external_alts': ['Doctor', 'Medical Officer', 'Katherine'],
+                'internal_alts': ['Doctor', 'Chief Medical Officer', 'Katherine']
+            },
+            "O'BRIEN": {
+                'source_alts': ['MILES'], 
+                'actor_names': ['Colm Meaney', 'Colm Meany'],
+                'external_errs': ['Obrien'],
+                'external_alts': ['Chief Engineer'],
+                'internal_alts': ['Chief Engineer']
+            },
+            'TASHA': {
+                'source_alts': [],
+                'actor_names': ['Denise Crosby'],
+                'external_errs': [],
+                'external_alts': ['Natasha', 'Yar'],
+                'internal_alts': ['Security Officer', 'Natasha', 'Yar']
+            },
+            'GUINAN': {
+                'source_alts': [],
+                'actor_names': ['Whoopi Goldberg', 'Whoopie Goldberg'],
+                'external_errs': ['Guynan'],
+                'external_alts': [],
+                'internal_alts': ['bartender']
+            },
+            'OGAWA': {
+                'source_alts': [],
+                'actor_names': ['Patti Yasutake', 'Patty Yasutake', 'Pattie Yasutake'],
+                'external_errs': [],
+                'external_alts': ['nurse'],
+                'internal_alts': ['Nurse', 'Alyssa']
+            },
+            'Q': {
+                'source_alts': [],
+                'actor_names': ['John de Lancie', 'John Delancey', 'John Delancy', 'Jon de Lancie', 'Jon Delancey', 'Jon Delancy'],
+                'external_errs': [],
+                'external_alts': ['omnipotent', 'god-like'],
+                'internal_alts': ['omnipotent', 'consortium']
+            }
+        },
+        'things_repl': {
+            'Forengi': 'Ferengi',
+        },
+        'things_supp': {
+            'Enterprise': 'Starship',
+            'Vulcan': 'alien logic species',
+            'Klingon': 'alien warrior species',
+            'Ferengi': 'alien species',
+            'Romulan': 'alien species',
+            'Cardassian': 'alien species',
+            'Bajoran': 'alien species',
+        }
+    },
+    'GoT': {
+        'characters': {},
+        'things_repl': {},
+        'things_supp': {}
+    }
+}
+
+
+def build_query_supplement_map(show_key: str) -> dict:
+    qsm = {}
+    show_char_meta = show_ontology[show_key]['characters']
+    for char, meta in show_char_meta.items():
+        char = char.lower()
+        for w in meta['source_alts']:
+            w = w.lower()
+            if w in qsm:
+                qsm[w].append(char)
+            else:
+                qsm[w] = [char]
+        for w in meta['external_alts']:
+            w = w.lower()
+            if w in qsm:
+                qsm[w].append(char)
+            else:
+                qsm[w] = [char]
+    # TODO should this, or even the whole function, just fold into query_expansion_map?
+    show_thing_meta = show_ontology[show_key]['things_supp']
+    for w, supp in show_thing_meta.items():
+        w = w.lower()
+        supp = supp.lower()
+        if w in qsm:
+            qsm[w].append(supp)
+        else:
+            qsm[w] = [supp]
+    return qsm
+
+
+def build_query_replacement_map(show_key: str) -> dict:
+    qrm = {}
+    show_char_meta = show_ontology[show_key]['characters']
+    for char, meta in show_char_meta.items():
+        char = char.lower()
+        for w in meta['actor_names']:
+            w = w.lower()
+            if w in qrm:
+                qrm[w].append(char)
+            else:
+                qrm[w] = [char]
+        for w in meta['external_errs']:
+            w = w.lower()
+            if w in qrm:
+                qrm[w].append(char)
+            else:
+                qrm[w] = [char]
+    show_thing_meta = show_ontology[show_key]['things_repl']
+    for w, repl in show_thing_meta.items():
+        w = w.lower()
+        repl = repl.lower()
+        if w in qrm:
+            qrm[w].append(repl)
+        else:
+            qrm[w] = [repl]
+    return qrm
+            
+    
+def build_query_expansion_map(show_key: str) -> dict:
+    qem = {}
+    show_char_meta = show_ontology[show_key]['characters']
+    for char, meta in show_char_meta.items():
+        qem[char.lower()] = [int_alt.lower() for int_alt in meta['source_alts']]
+    for char, meta in show_char_meta.items():
+        qem[char.lower()].extend([int_alt.lower() for int_alt in meta['internal_alts']])
+    return qem

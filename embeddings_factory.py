@@ -16,7 +16,7 @@ import warnings
 from es_model import EsEpisodeTranscript
 import main
 from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS
-from show_metadata import ShowKey
+from show_metadata import ShowKey, build_query_replacement_map, build_query_supplement_map, build_query_expansion_map
 
 
 warnings.filterwarnings(action = 'ignore')
@@ -27,6 +27,9 @@ nltk.download('punkt') # essential for tokenization
 
 
 cached_models = {}
+query_replacement_map = {}
+query_supplement_map = {}
+query_expansion_map = {}
 
 
 # async def load_model(vendor: str, version: str) -> Word2Vec:
@@ -87,9 +90,7 @@ def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
 #     return data
 
 
-def preprocess_text(text: str, tag_pos: bool = False) -> str:
-    # remove numbers and special characters
-    text = re.sub("[^A-Za-z]+", " ", text)
+def standardize_and_tokenize_query(text: str, tag_pos: bool = False) -> str:
     # tokenize
     tokens = word_tokenize(text)
     # remove stopwords
@@ -102,6 +103,55 @@ def preprocess_text(text: str, tag_pos: bool = False) -> str:
 
     # print(f'tokens={tokens}')
     return tokens
+
+
+def normalize_and_expand_query(qt: str, show_key: str) -> str:
+    # print(f'qt before normalize_query and expand_query={qt}')
+    qt = qt.lower()
+    # remove numbers and special characters
+    qt = re.sub("[^A-Za-z]+", " ", qt)
+    # bookend qt with spaces so we can scan each term flanked by spaces without missing first and last
+    qt = f' {qt} '  
+    # normalize query using ontological metadata
+    qt = normalize_query(qt, show_key)
+    # expand query using ontological metadata
+    qt = expand_query(qt, show_key)
+    return qt
+
+
+def normalize_query(qt: str, show_key: str) -> str:
+    # replace common mis-spellings and other invalid terms with proper replacements
+    if show_key not in query_replacement_map:
+        query_replacement_map[show_key] = build_query_replacement_map(show_key)
+    for term, repl_terms in query_replacement_map[show_key].items():
+        if f' {term} ' in qt:
+            qt = qt.replace(term, " ".join(repl_terms))
+    # supplement terms with alternative variants that increase query match potential
+    if show_key not in query_supplement_map:
+        query_supplement_map[show_key] = build_query_supplement_map(show_key)
+    for term, supp_terms in query_supplement_map[show_key].items():
+        if f' {term} ' in qt:
+            refined_supp_terms = []
+            for supp_term in supp_terms:
+                if f' {supp_term} ' not in qt:
+                    refined_supp_terms.append(supp_term)
+            if refined_supp_terms:
+                qt = qt.replace(term, f'{" ".join(refined_supp_terms)} {term}')
+    return qt
+
+
+def expand_query(qt: str, show_key: str) -> str:
+    # supplement terms with alternative variants that increase query match potential
+    if show_key not in query_expansion_map:
+        query_expansion_map[show_key] = build_query_expansion_map(show_key)
+    for term, exp_terms in query_expansion_map[show_key].items():
+        if f' {term} ' in qt:
+            refined_exp_terms = []
+            for exp_term in exp_terms:
+                if f' {exp_term} ' not in qt:
+                    refined_exp_terms.append(exp_term)
+            qt = qt.replace(term, f'{" ".join(refined_exp_terms)} {term}')
+    return qt
 
 
 def calculate_embedding(token_arr: list, model_vendor: str, model_version: str) -> (list, list, list):
@@ -138,19 +188,19 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, 
     tag_pos = vendor_meta['pos_tag']
 
     doc_tokens = []
-    doc_tokens.extend(preprocess_text(es_episode.title, tag_pos=tag_pos))
+    doc_tokens.extend(standardize_and_tokenize_query(es_episode.title, tag_pos=tag_pos))
     for scene in es_episode.scenes:
         scene_tokens = []
         # scene_tokens.extend(preprocess_text(scene.location, tag_pos=tag_pos))
         if scene.description:
-            scene_tokens.extend(preprocess_text(scene.description, tag_pos=tag_pos))
+            scene_tokens.extend(standardize_and_tokenize_query(scene.description, tag_pos=tag_pos))
         for scene_event in scene.scene_events:
             if scene_event.context_info:
-                scene_tokens.extend(preprocess_text(scene_event.context_info, tag_pos=tag_pos))
+                scene_tokens.extend(standardize_and_tokenize_query(scene_event.context_info, tag_pos=tag_pos))
             # if scene_event.spoken_by:
             #     scene_tokens.extend(preprocess_text(scene_event.spoken_by, tag_pos=tag_pos))
             if scene_event.dialog:
-                scene_tokens.extend(preprocess_text(scene_event.dialog, tag_pos=tag_pos))
+                scene_tokens.extend(standardize_and_tokenize_query(scene_event.dialog, tag_pos=tag_pos))
 
         if len(scene_tokens) > 0:
             doc_tokens.extend(scene_tokens)
@@ -178,16 +228,16 @@ def build_embeddings_model(show_key: str) -> dict:
         episode_key = doc_id.split('_')[1]
         print(f'begin compiling training_fragments for episode_key={episode_key}')
         es_episode = EsEpisodeTranscript.get(id=f'{show_key}_{episode_key}')
-        training_fragments.append(preprocess_text(es_episode.title))
+        training_fragments.append(standardize_and_tokenize_query(es_episode.title))
         for scene in es_episode.scenes:
             # entries.append(preprocess_text(scene.location))
             for scene_event in scene.scene_events:
                 if scene_event.context_info:
-                    training_fragments.append(preprocess_text(scene_event.context_info))
+                    training_fragments.append(standardize_and_tokenize_query(scene_event.context_info))
                 # if scene_event.spoken_by:
                 #     entries.append(preprocess_text(scene_event.spoken_by))
                 if scene_event.dialog:
-                    training_fragments.append(preprocess_text(scene_event.dialog))
+                    training_fragments.append(standardize_and_tokenize_query(scene_event.dialog))
         print(f'len(training_fragments)={len(training_fragments)}')
 
     cbow_model = Word2Vec(sentences=training_fragments, min_count=1, vector_size=100, window=5)
