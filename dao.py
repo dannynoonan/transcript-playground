@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+import subprocess
 
 from app.models import TranscriptSource, Episode, Scene, SceneEvent
 
@@ -11,6 +12,12 @@ from scene s join scene_event e on e.scene_id=s.id
 where s.episode_id=1110
 order by s.sequence_in_episode, e.sequence_in_scene;
 '''
+
+
+async def backup_db() -> tuple[bytes, bytes]:
+    bashCommand = "bash backup_db.sh"
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    return process.communicate()
 
 
 async def fetch_episodes(show_key: str) -> list[Episode]|Exception:

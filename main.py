@@ -5,6 +5,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 import numpy as np
 from operator import itemgetter
+import os
 from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise import Tortoise
@@ -19,6 +20,7 @@ from es_model import EsEpisodeTranscript
 import es_query_builder as esqb
 import es_response_transformer as esrt
 from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS
+import query_preprocessor as qp
 from show_metadata import ShowKey, Status, show_metadata
 from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup, get_transcript_file_soup
 from transcript_extractor import parse_episode_transcript_soup
@@ -105,6 +107,13 @@ async def db_connect():
     return {"DB connection": "Indeed"}
 
 
+@app.get("/backup_db")
+async def backup_db():
+    await connect_to_database()
+    output, error = await dao.backup_db()
+    return {"Output": str(output), "Error": str(error)}
+
+
 @app.get("/show_meta/{show_key}")
 async def fetch_show_meta(show_key: ShowKey):
     show_meta = show_metadata[show_key]
@@ -162,7 +171,11 @@ async def load_transcript(show_key: ShowKey, episode_key: str, from_file: bool =
     # TODO data model permits multiple transcript_sources per episode, for now just choose first one
     transcript_source = episode.transcript_sources[0]
     if from_file:
-        transcript_soup = get_transcript_file_soup(f'source/episodes/{show_key.value}/{episode_key}.html')
+        file_path = f'source_override/episodes/{show_key.value}/{episode_key}.html'
+        if os.path.isfile(file_path):
+            transcript_soup = get_transcript_file_soup(file_path)
+        else:
+            return {'Error': f'Unable to load transcript for {show_key}:{episode_key} from file, no source html at file_path={file_path}'}
     else:
         transcript_soup = get_transcript_soup(transcript_source.transcript_url)
     scenes, scenes_to_events = parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
@@ -597,8 +610,8 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
     tag_pos = vendor_meta['pos_tag']
 
     try:
-        qt = ef.normalize_and_expand_query(qt, show_key)
-        tokenized_qt = ef.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
+        qt = qp.normalize_and_expand_query(qt, show_key)
+        tokenized_qt = qp.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
         vector_field = f'{model_vendor}_{model_version}_embeddings'
         vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embedding(tokenized_qt, model_vendor, model_version)
     except Exception as e:
@@ -619,8 +632,8 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
     tag_pos = vendor_meta['pos_tag']
 
     try:
-        qt = ef.normalize_and_expand_query(qt, show_key)
-        tokenized_qt = ef.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
+        qt = qp.normalize_and_expand_query(qt, show_key)
+        tokenized_qt = qp.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
     except Exception as e:
         return {"error": e}
     return {"normd_expanded_qt": qt, "tokenized_qt": tokenized_qt}
