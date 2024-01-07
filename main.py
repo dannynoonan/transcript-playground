@@ -20,7 +20,7 @@ from es_ingest_transformer import to_es_episode
 from es_model import EsEpisodeTranscript
 import es_query_builder as esqb
 import es_response_transformer as esrt
-from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS
+from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 import query_preprocessor as qp
 from show_metadata import ShowKey, Status, show_metadata
 from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup, get_transcript_file_soup
@@ -700,16 +700,26 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
     if not model_version:
         model_version = '223'
 
-    vendor_meta = W2V_MODELS[model_vendor]
-    tag_pos = vendor_meta['pos_tag']
+    if model_vendor == 'openai':
+        vendor_meta = TRF_MODELS[model_vendor]
+        true_model_version = vendor_meta['versions'][model_version]['true_name']
+        try:
+            vector_field = f'{model_vendor}_{model_version}_embeddings'
+            vectorized_qt, tokens_processed, tokens_failed = ef.generate_openai_embeddings(qt, true_model_version)
+        except Exception as e:
+            return {"error": e}
 
-    try:
-        qt = qp.normalize_and_expand_query(qt, show_key)
-        tokenized_qt = qp.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
-        vector_field = f'{model_vendor}_{model_version}_embeddings'
-        vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embedding(tokenized_qt, model_vendor, model_version)
-    except Exception as e:
-        return {"error": e}
+    else:
+        vendor_meta = W2V_MODELS[model_vendor]
+        tag_pos = vendor_meta['pos_tag']
+        try:
+            qt = qp.normalize_and_expand_query(qt, show_key)
+            tokenized_qt = qp.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
+            vector_field = f'{model_vendor}_{model_version}_embeddings'
+            vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embeddings(tokenized_qt, model_vendor, model_version)
+        except Exception as e:
+            return {"error": e}
+        
     es_response = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
     matches = esrt.return_vector_search(es_response)
     return {"match_count": len(matches), "vector_field": vector_field, "tokens_processed": tokens_processed, "tokens_failed": tokens_failed, "matches": matches}

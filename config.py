@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     psql_host: str
     psql_port: int
     psql_db_name: str
+    openai_api_key: str
     model_config = SettingsConfigDict(env_file=".env")
 
 # TODO use lru_cache with fastapi Depends

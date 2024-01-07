@@ -53,6 +53,7 @@ class EsEpisodeTranscript(Document):
     glove_840B300d_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     fasttext_wikinews300d1M_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     fasttext_crawl300d2M_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
+    openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     # matched tokens per model
     webvectors_gigaword29_tokens = Text()
     webvectors_enwiki223_tokens = Text()

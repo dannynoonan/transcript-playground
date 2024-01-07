@@ -58,6 +58,19 @@ WORD2VEC_VENDOR_VERSIONS = {
     }
 }
 
+
+TRANSFORMER_VENDOR_VERSIONS = {
+    'openai': {
+        'versions': {
+            'ada002': {
+                'dims': 1536,
+                'status': 'ACTIVE',
+                'true_name': 'text-embedding-ada-002'
+            }
+        }
+    }
+}
+
  
 def get_active_models() -> dict:
     active_models = {}

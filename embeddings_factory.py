@@ -2,12 +2,14 @@
 from gensim.models import Word2Vec, KeyedVectors
 # from gensim.scripts.glove2word2vec import glove2word2vec
 from gensim.test.utils import common_texts
+from openai import OpenAI
 import os
 import warnings
 
+from config import settings
 from es_model import EsEpisodeTranscript
 import main
-from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS
+from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from query_preprocessor import standardize_and_tokenize_query
 from show_metadata import ShowKey
 
@@ -76,9 +78,9 @@ def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
 #     return data
 
 
-def calculate_embedding(token_arr: list, model_vendor: str, model_version: str) -> (list, list, list):
+def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str) -> (list, list, list):
     print('------------------------------------------------------------------------------------')
-    print(f'begin calculate_embedding for model_vendor={model_vendor} model_version={model_version} token_arr={token_arr}')
+    print(f'begin calculate_embeddings for model_vendor={model_vendor} model_version={model_version} token_arr={token_arr}')
 
     vendor_meta = W2V_MODELS[model_vendor]
     embedding_sum = [0.0] * vendor_meta['versions'][model_version]['dims']
@@ -103,40 +105,80 @@ def calculate_embedding(token_arr: list, model_vendor: str, model_version: str) 
     return embedding_avg.tolist(), tokens_processed, tokens_failed
 
 
+def generate_openai_embeddings(input_text: str, model_version: str) -> (list, list, list):
+    print('------------------------------------------------------------------------------------')
+    print(f'begin generate_openai_embeddings for model_version={model_version} input_text={input_text}')
+
+    openai = OpenAI(api_key=settings.openai_api_key)
+    embeddings = []
+    try:
+        embeddings_response = openai.embeddings.create(
+            model=model_version,
+            input=input_text,
+            encoding_format="float"
+        )
+        print(f'embeddings_response={embeddings_response}')
+        if embeddings_response and embeddings_response.data and len(embeddings_response.data) > 0 and embeddings_response.data[0].embedding:
+            embeddings = embeddings_response.data[0].embedding
+            prompt_tokens = embeddings_response.usage.prompt_tokens
+            total_tokens = embeddings_response.usage.total_tokens
+            # TODO I'm not sure I understand what these fields and counts represent
+            failed_tokens = total_tokens - prompt_tokens
+            print(f'total_tokens={total_tokens} failed_tokens={failed_tokens}')
+            return embeddings, total_tokens, failed_tokens
+        else:
+            print(f'Failed to generate openai:{model_version} vector embeddings: embeddings_response lacked data: {embeddings_response}')
+            raise Exception(f'Failed to generate openai:{model_version} vector embeddings')
+    except Exception as e:
+        print(f'Failed to generate openai:{model_version} vector embeddings: {e}')
+        raise Exception(f'Failed to generate openai:{model_version} vector embeddings: {e}', e)
+
+
 def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, model_vendor: str, model_version: str) -> None|Exception:
-    print(f'begin generate_embeddings for show_key={show_key} episode_key={es_episode.episode_key} model_vendor={model_vendor} model_version={model_version}')
+    print(f'begin generate_embeddings for {show_key}:{es_episode.episode_key} model_vendor={model_vendor} model_version={model_version}')
 
-    vendor_meta = W2V_MODELS[model_vendor]
-    tag_pos = vendor_meta['pos_tag']
-
-    doc_tokens = []
-    doc_tokens.extend(standardize_and_tokenize_query(es_episode.title, tag_pos=tag_pos))
-    for scene in es_episode.scenes:
-        scene_tokens = []
-        # scene_tokens.extend(preprocess_text(scene.location, tag_pos=tag_pos))
-        if scene.description:
-            scene_tokens.extend(standardize_and_tokenize_query(scene.description, tag_pos=tag_pos))
-        for scene_event in scene.scene_events:
-            if scene_event.context_info:
-                scene_tokens.extend(standardize_and_tokenize_query(scene_event.context_info, tag_pos=tag_pos))
-            # if scene_event.spoken_by:
-            #     scene_tokens.extend(preprocess_text(scene_event.spoken_by, tag_pos=tag_pos))
-            if scene_event.dialog:
-                scene_tokens.extend(standardize_and_tokenize_query(scene_event.dialog, tag_pos=tag_pos))
-
-        if len(scene_tokens) > 0:
-            doc_tokens.extend(scene_tokens)
-
-    print(f'+++++++++++ len(doc_tokens)={len(doc_tokens)}')
-
-    if len(doc_tokens) > 0:
+    if model_vendor == 'openai':
+        vendor_meta = TRF_MODELS[model_vendor]
+        true_model_version = vendor_meta['versions'][model_version]['true_name']
         try:
-            embeddings, tokens, no_match_tokens = calculate_embedding(doc_tokens, model_vendor, model_version)
+            embeddings, tokens, no_match_tokens = generate_openai_embeddings(es_episode.flattened_text, true_model_version)
+            es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
         except Exception as e:
-            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for show_key={show_key} episode_key={es_episode.episode_key}: {e}')
-        es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
-        es_episode[f'{model_vendor}_{model_version}_tokens'] = tokens
-        es_episode[f'{model_vendor}_{model_version}_no_match_tokens'] = no_match_tokens
+            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
+            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
+
+    else:
+        vendor_meta = W2V_MODELS[model_vendor]
+        tag_pos = vendor_meta['pos_tag']
+
+        doc_tokens = []
+        doc_tokens.extend(standardize_and_tokenize_query(es_episode.title, tag_pos=tag_pos))
+        for scene in es_episode.scenes:
+            scene_tokens = []
+            # scene_tokens.extend(standardize_and_tokenize(scene.location, tag_pos=tag_pos))
+            if scene.description:
+                scene_tokens.extend(standardize_and_tokenize_query(scene.description, tag_pos=tag_pos))
+            for scene_event in scene.scene_events:
+                if scene_event.context_info:
+                    scene_tokens.extend(standardize_and_tokenize_query(scene_event.context_info, tag_pos=tag_pos))
+                # if scene_event.spoken_by:
+                #     scene_tokens.extend(standardize_and_tokenize(scene_event.spoken_by, tag_pos=tag_pos))
+                if scene_event.dialog:
+                    scene_tokens.extend(standardize_and_tokenize_query(scene_event.dialog, tag_pos=tag_pos))
+
+            if len(scene_tokens) > 0:
+                doc_tokens.extend(scene_tokens)
+
+        print(f'+++++++++++ len(doc_tokens)={len(doc_tokens)}')
+
+        if len(doc_tokens) > 0:
+            try:
+                embeddings, tokens, no_match_tokens = calculate_embeddings(doc_tokens, model_vendor, model_version)
+            except Exception as e:
+                raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
+            es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+            es_episode[f'{model_vendor}_{model_version}_tokens'] = tokens
+            es_episode[f'{model_vendor}_{model_version}_no_match_tokens'] = no_match_tokens
 
 
 def build_embeddings_model(show_key: str) -> dict:

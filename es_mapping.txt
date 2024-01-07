@@ -11,6 +11,18 @@
         "episode_key": {
           "type": "keyword"
         },
+        "fasttext_crawl300d2M_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "fasttext_crawl300d2M_no_match_tokens": {
+          "type": "text"
+        },
+        "fasttext_crawl300d2M_tokens": {
+          "type": "text"
+        },
         "fasttext_wikinews300d1M_embeddings": {
           "type": "dense_vector",
           "dims": 300,
@@ -41,6 +53,18 @@
         "focal_speakers": {
           "type": "keyword"
         },
+        "glove_42B300d_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "glove_42B300d_no_match_tokens": {
+          "type": "text"
+        },
+        "glove_42B300d_tokens": {
+          "type": "text"
+        },
         "glove_6B300d_embeddings": {
           "type": "dense_vector",
           "dims": 300,
@@ -51,6 +75,18 @@
           "type": "text"
         },
         "glove_6B300d_tokens": {
+          "type": "text"
+        },
+        "glove_840B300d_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "glove_840B300d_no_match_tokens": {
+          "type": "text"
+        },
+        "glove_840B300d_tokens": {
           "type": "text"
         },
         "glove_twitter27B100d_embeddings": {
@@ -82,6 +118,12 @@
         },
         "loaded_ts": {
           "type": "date"
+        },
+        "openai_ada002_embeddings": {
+          "type": "dense_vector",
+          "dims": 1536,
+          "index": true,
+          "similarity": "cosine"
         },
         "scene_count": {
           "type": "integer"

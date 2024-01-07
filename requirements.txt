@@ -9,6 +9,7 @@ http-exceptions==0.2.10
 lxml==4.9.3
 nltk==3.8.1
 numpy==1.26.2
+openai==1.6.1
 pandas==1.4.3
 pydantic==2.3.0
 pydantic_core==2.6.3
