@@ -96,10 +96,12 @@ def generate_vector_search_rankings(episode_rank_df: pd.DataFrame, desc_source: 
             rank += 1
         if not found:
             print(f"no match found for episode_key={row['episode_key']}, setting rank to max and score to 0")
-        episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, matched_tokens_col] = ', '.join(vector_search_response['tokens_processed'])
-        episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, matched_tokens_count_col] = len(vector_search_response['tokens_processed'])
-        episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, unmatched_tokens_col] = ', '.join(vector_search_response['tokens_failed'])
-        episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, unmatched_tokens_count_col] = len(vector_search_response['tokens_failed'])
+        episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, matched_tokens_count_col] = vector_search_response['tokens_processed_count']
+        episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, unmatched_tokens_count_col] = vector_search_response['tokens_failed_count']
+        if 'tokens_processed' in vector_search_response:
+            episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, matched_tokens_col] = ', '.join(vector_search_response['tokens_processed'])
+        if 'tokens_failed' in vector_search_response:
+            episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, unmatched_tokens_col] = ', '.join(vector_search_response['tokens_failed'])
         success_count += 1
     
     print(f'completed generate_vector_search_rankings for {success_count} episodes')

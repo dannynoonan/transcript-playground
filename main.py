@@ -705,7 +705,9 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
         true_model_version = vendor_meta['versions'][model_version]['true_name']
         try:
             vector_field = f'{model_vendor}_{model_version}_embeddings'
-            vectorized_qt, tokens_processed, tokens_failed = ef.generate_openai_embeddings(qt, true_model_version)
+            vectorized_qt, tokens_processed_count, tokens_failed_count = ef.generate_openai_embeddings(qt, true_model_version)
+            tokens_processed = []
+            tokens_failed = []
         except Exception as e:
             return {"error": e}
 
@@ -717,16 +719,26 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
             tokenized_qt = qp.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
             vector_field = f'{model_vendor}_{model_version}_embeddings'
             vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embeddings(tokenized_qt, model_vendor, model_version)
+            tokens_processed_count = len(tokens_processed)
+            tokens_failed_count = len(tokens_failed)
         except Exception as e:
             return {"error": e}
         
     es_response = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
     matches = esrt.return_vector_search(es_response)
-    return {"match_count": len(matches), "vector_field": vector_field, "tokens_processed": tokens_processed, "tokens_failed": tokens_failed, "matches": matches}
+    return {
+        "match_count": len(matches), 
+        "vector_field": vector_field, 
+        "tokens_processed": tokens_processed, 
+        "tokens_processed_count": tokens_processed_count, 
+        "tokens_failed": tokens_failed, 
+        "tokens_failed_count": tokens_failed_count, 
+        "matches": matches
+    }
 
 
 @app.get("/test_vector_search/{show_key}")
-def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
+def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
     if not model_vendor:
         model_vendor = 'webvectors'
     if not model_version:

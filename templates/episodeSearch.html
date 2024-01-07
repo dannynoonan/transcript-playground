@@ -162,8 +162,10 @@
             {% endif %}
             {% if tdata['search_type'] == 'semantic' %}
                 query: <strong class="gold">"{{ tdata['qtSemantic'] }}"</strong><br/>
-                tokens processed: (<strong class="gold">{{ tdata['tokens_processed_count'] }}</strong>) <strong class="gold">{{ tdata['tokens_processed'] }}</strong><br/>
-                tokens failed: (<strong class="gold">{{ tdata['tokens_failed_count'] }}</strong>) <strong class="gold">{{ tdata['tokens_failed'] }}</strong><br/>
+                tokens processed: <strong class="gold">{{ tdata['tokens_processed_count'] }}</strong> 
+                    {% if tdata['tokens_processed'] %}<strong class="gold">{{ tdata['tokens_processed'] }}</strong>{% endif %}<br/>
+                tokens failed: <strong class="gold">{{ tdata['tokens_failed_count'] }}</strong>
+                    {% if tdata['tokens_failed'] %}<strong class="gold">{{ tdata['tokens_failed'] }}</strong>{% endif %}<br/>
                 model_vendor: <strong class="gold">{{ tdata['model_vendor'] }}</strong> model_version: <strong class="gold">{{ tdata['model_version'] }}</strong>
             {% endif %}
             {% if tdata['search_type'] == 'advanced_multi_speaker' %}
