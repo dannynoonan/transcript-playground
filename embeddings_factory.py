@@ -105,27 +105,23 @@ def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str)
     return embedding_avg.tolist(), tokens_processed, tokens_failed
 
 
-def generate_openai_embeddings(input_text: str, model_version: str) -> (list, list, list):
+def generate_openai_embeddings(input_text: str, model_version: str) -> (list, int, int):
     print('------------------------------------------------------------------------------------')
     print(f'begin generate_openai_embeddings for model_version={model_version} input_text={input_text}')
 
     openai = OpenAI(api_key=settings.openai_api_key)
     embeddings = []
     try:
-        embeddings_response = openai.embeddings.create(
-            model=model_version,
-            input=input_text,
-            encoding_format="float"
-        )
+        embeddings_response = openai.embeddings.create(model=model_version, input=input_text, encoding_format="float")
         print(f'embeddings_response={embeddings_response}')
         if embeddings_response and embeddings_response.data and len(embeddings_response.data) > 0 and embeddings_response.data[0].embedding:
             embeddings = embeddings_response.data[0].embedding
-            prompt_tokens = embeddings_response.usage.prompt_tokens
-            total_tokens = embeddings_response.usage.total_tokens
+            prompt_tokens_count = embeddings_response.usage.prompt_tokens
+            total_tokens_count = embeddings_response.usage.total_tokens
             # TODO I'm not sure I understand what these fields and counts represent
-            failed_tokens = total_tokens - prompt_tokens
-            print(f'total_tokens={total_tokens} failed_tokens={failed_tokens}')
-            return embeddings, total_tokens, failed_tokens
+            failed_tokens_count = total_tokens_count - prompt_tokens_count
+            print(f'total_tokens_count={total_tokens_count} failed_tokens_count={failed_tokens_count}')
+            return embeddings, total_tokens_count, failed_tokens_count
         else:
             print(f'Failed to generate openai:{model_version} vector embeddings: embeddings_response lacked data: {embeddings_response}')
             raise Exception(f'Failed to generate openai:{model_version} vector embeddings')
