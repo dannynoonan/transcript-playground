@@ -13,19 +13,19 @@ from tortoise import Tortoise
 
 from app.models import TranscriptSource, Episode, Scene, SceneEvent
 from config import settings, DATABASE_URL
-import dao
+import database.dao as dao
 from database.connect import connect_to_database
-import embeddings_factory as ef
-from es_ingest_transformer import to_es_episode
-from es_model import EsEpisodeTranscript
-import es_query_builder as esqb
-import es_response_transformer as esrt
-from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
-import query_preprocessor as qp
+import nlp.embeddings_factory as ef
+from es.es_ingest_transformer import to_es_episode
+from es.es_model import EsEpisodeTranscript
+import es.es_query_builder as esqb
+import es.es_response_transformer as esrt
+from nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
+import nlp.query_preprocessor as qp
 from show_metadata import ShowKey, Status, show_metadata
-from soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_soup, get_transcript_file_soup
-from transcript_extractor import parse_episode_transcript_soup
-from transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup, match_episodes_to_transcript_urls
+from source_etl.soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_file_soup
+from source_etl.transcript_extractor import parse_episode_transcript_soup
+from source_etl.transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup, match_episodes_to_transcript_urls
 from web.web_router import web_app
 
 

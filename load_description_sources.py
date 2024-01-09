@@ -4,7 +4,7 @@ import pandas as pd
 
 import main as m
 import show_metadata as sm
-import soup_brewer as sb
+import source_etl.soup_brewer as sb
 
 
 def main():

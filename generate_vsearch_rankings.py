@@ -15,7 +15,7 @@ import time
 
 from load_description_sources import DESCRIPTION_SOURCES
 import main as m
-from nlp_metadata import WORD2VEC_VENDOR_VERSIONS, ACTIVE_VENDOR_VERSIONS
+from nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS, ACTIVE_VENDOR_VERSIONS
 from show_metadata import ShowKey
 
 

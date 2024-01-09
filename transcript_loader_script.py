@@ -6,8 +6,8 @@ from urllib.request import urlopen
 
 from app.models import TranscriptSource
 from show_metadata import show_metadata
-from soup_brewer import get_transcript_soup
-from transcript_extractor import parse_episode_transcript_soup
+from source_etl.soup_brewer import get_transcript_soup
+from source_etl.transcript_extractor import parse_episode_transcript_soup
 
 
 def parse_args():
