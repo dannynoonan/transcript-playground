@@ -15,6 +15,7 @@ import time
 
 from load_description_sources import DESCRIPTION_SOURCES
 import main as m
+from nlp_metadata import WORD2VEC_VENDOR_VERSIONS, ACTIVE_VENDOR_VERSIONS
 from show_metadata import ShowKey
 
 
@@ -53,8 +54,19 @@ def main():
     else:
         episode_rank_df = pd.read_csv(episode_rank_file_path, '\t')
 
-    generate_vector_search_rankings(episode_rank_df, desc_source, show_key, model_vendor, model_version)
+    if model_vendor == 'ALL':
+        for vendor_version in ACTIVE_VENDOR_VERSIONS:
+            generate_vector_search_rankings(episode_rank_df, desc_source, show_key, vendor_version[0], vendor_version[1])
+    elif model_version == 'ALL':
+        for vendor_version in ACTIVE_VENDOR_VERSIONS:
+            if vendor_version[0] == model_vendor:
+                generate_vector_search_rankings(episode_rank_df, desc_source, show_key, vendor_version[0], vendor_version[1])
+    else:
+        generate_vector_search_rankings(episode_rank_df, desc_source, show_key, model_vendor, model_version)
 
+    for col in episode_rank_df.columns:
+        if 'Unnamed' in col:
+            episode_rank_df.drop(col, axis=1, inplace=True)
     print(f'episode_rank_df={episode_rank_df}')
 
     episode_rank_df.to_csv(episode_rank_file_path, sep='\t')
@@ -65,18 +77,19 @@ def generate_vector_search_rankings(episode_rank_df: pd.DataFrame, desc_source: 
 
     rank_col = f'rank_{model_vendor}_{model_version}'
     score_col = f'score_{model_vendor}_{model_version}'
-    matched_tokens_col = f'matched_tokens_{model_vendor}_{model_version}'
     matched_tokens_count_col = f'matched_tokens_count_{model_vendor}_{model_version}'
-    unmatched_tokens_col = f'unmatched_tokens_{model_vendor}_{model_version}'
     unmatched_tokens_count_col = f'unmatched_tokens_count_{model_vendor}_{model_version}'
     episode_rank_df[rank_col] = ''
-    episode_rank_df[matched_tokens_col] = ''
     episode_rank_df[matched_tokens_count_col] = ''
-    episode_rank_df[unmatched_tokens_col] = ''
     episode_rank_df[unmatched_tokens_count_col] = ''
+    if model_vendor in WORD2VEC_VENDOR_VERSIONS:
+        matched_tokens_col = f'matched_tokens_{model_vendor}_{model_version}'
+        unmatched_tokens_col = f'unmatched_tokens_{model_vendor}_{model_version}'
+        episode_rank_df[matched_tokens_col] = ''
+        episode_rank_df[unmatched_tokens_col] = ''
 
     success_count = 0
-    for index, row in episode_rank_df.iterrows():
+    for _, row in episode_rank_df.iterrows():
         if not row[desc_source]:
             print(f"description field `{desc_source}` is empty for episode_key={row['episode_key']}, skipping")
             continue
@@ -95,12 +108,11 @@ def generate_vector_search_rankings(episode_rank_df: pd.DataFrame, desc_source: 
                 break
             rank += 1
         if not found:
-            print(f"no match found for episode_key={row['episode_key']}, setting rank to max and score to 0")
+            print(f"no match found for episode_key={episode_key}, leaving rank and score fields empty")
         episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, matched_tokens_count_col] = vector_search_response['tokens_processed_count']
         episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, unmatched_tokens_count_col] = vector_search_response['tokens_failed_count']
-        if 'tokens_processed' in vector_search_response:
+        if model_vendor in WORD2VEC_VENDOR_VERSIONS:
             episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, matched_tokens_col] = ', '.join(vector_search_response['tokens_processed'])
-        if 'tokens_failed' in vector_search_response:
             episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, unmatched_tokens_col] = ', '.join(vector_search_response['tokens_failed'])
         success_count += 1
     

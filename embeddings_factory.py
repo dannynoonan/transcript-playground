@@ -2,6 +2,7 @@
 from gensim.models import Word2Vec, KeyedVectors
 # from gensim.scripts.glove2word2vec import glove2word2vec
 from gensim.test.utils import common_texts
+import openai
 from openai import OpenAI
 import os
 import warnings
@@ -10,7 +11,7 @@ from config import settings
 from es_model import EsEpisodeTranscript
 import main
 from nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
-from query_preprocessor import standardize_and_tokenize_query
+from query_preprocessor import tokenize_and_remove_stopwords
 from show_metadata import ShowKey
 
 
@@ -107,13 +108,13 @@ def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str)
 
 def generate_openai_embeddings(input_text: str, model_version: str) -> (list, int, int):
     print('------------------------------------------------------------------------------------')
-    print(f'begin generate_openai_embeddings for model_version={model_version} input_text={input_text}')
+    print(f'begin generate_openai_embeddings for model_version={model_version}')
 
-    openai = OpenAI(api_key=settings.openai_api_key)
+    openai_client = OpenAI(api_key=settings.openai_api_key)
     embeddings = []
     try:
-        embeddings_response = openai.embeddings.create(model=model_version, input=input_text, encoding_format="float")
-        print(f'embeddings_response={embeddings_response}')
+        embeddings_response = openai_client.embeddings.create(model=model_version, input=input_text, encoding_format="float")
+        # print(f'embeddings_response={embeddings_response}')
         if embeddings_response and embeddings_response.data and len(embeddings_response.data) > 0 and embeddings_response.data[0].embedding:
             embeddings = embeddings_response.data[0].embedding
             prompt_tokens_count = embeddings_response.usage.prompt_tokens
@@ -125,6 +126,9 @@ def generate_openai_embeddings(input_text: str, model_version: str) -> (list, in
         else:
             print(f'Failed to generate openai:{model_version} vector embeddings: embeddings_response lacked data: {embeddings_response}')
             raise Exception(f'Failed to generate openai:{model_version} vector embeddings')
+    except openai.BadRequestError as bre:
+        print(f'Failed to generate openai:{model_version} vector embeddings: {bre}')
+        raise bre
     except Exception as e:
         print(f'Failed to generate openai:{model_version} vector embeddings: {e}')
         raise Exception(f'Failed to generate openai:{model_version} vector embeddings: {e}', e)
@@ -139,6 +143,22 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, 
         try:
             embeddings, tokens, no_match_tokens = generate_openai_embeddings(es_episode.flattened_text, true_model_version)
             es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+        except openai.BadRequestError as bre:
+            print(f'Failed to generate openai:{model_version} vector embeddings: {bre}')
+            # If BadRequestError is about token count, iteratively retry request with slightly smaller variation of content until request goes thru 
+            if "This model's maximum context length is 8192 tokens" in bre.message:
+                skip_increment = 8
+                success = False
+                while not success and skip_increment > 1:
+                    try:
+                        embeddings, tokens, no_match_tokens = generate_openai_embeddings(shorten_flattened_text(es_episode, skip_increment=skip_increment), true_model_version)
+                        es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+                        success = True
+                    except Exception as e:
+                        print(f'On retry using shorterned content, still failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
+                        skip_increment -= 1
+                if not success:
+                    raise Exception(f'On multiple retries using incrementally shorterned content, still failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
         except Exception as e:
             print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
             raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
@@ -148,19 +168,19 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, 
         tag_pos = vendor_meta['pos_tag']
 
         doc_tokens = []
-        doc_tokens.extend(standardize_and_tokenize_query(es_episode.title, tag_pos=tag_pos))
+        doc_tokens.extend(tokenize_and_remove_stopwords(es_episode.title, tag_pos=tag_pos))
         for scene in es_episode.scenes:
             scene_tokens = []
             # scene_tokens.extend(standardize_and_tokenize(scene.location, tag_pos=tag_pos))
             if scene.description:
-                scene_tokens.extend(standardize_and_tokenize_query(scene.description, tag_pos=tag_pos))
+                scene_tokens.extend(tokenize_and_remove_stopwords(scene.description, tag_pos=tag_pos))
             for scene_event in scene.scene_events:
                 if scene_event.context_info:
-                    scene_tokens.extend(standardize_and_tokenize_query(scene_event.context_info, tag_pos=tag_pos))
+                    scene_tokens.extend(tokenize_and_remove_stopwords(scene_event.context_info, tag_pos=tag_pos))
                 # if scene_event.spoken_by:
                 #     scene_tokens.extend(standardize_and_tokenize(scene_event.spoken_by, tag_pos=tag_pos))
                 if scene_event.dialog:
-                    scene_tokens.extend(standardize_and_tokenize_query(scene_event.dialog, tag_pos=tag_pos))
+                    scene_tokens.extend(tokenize_and_remove_stopwords(scene_event.dialog, tag_pos=tag_pos))
 
             if len(scene_tokens) > 0:
                 doc_tokens.extend(scene_tokens)
@@ -188,16 +208,16 @@ def build_embeddings_model(show_key: str) -> dict:
         episode_key = doc_id.split('_')[1]
         print(f'begin compiling training_fragments for episode_key={episode_key}')
         es_episode = EsEpisodeTranscript.get(id=f'{show_key}_{episode_key}')
-        training_fragments.append(standardize_and_tokenize_query(es_episode.title))
+        training_fragments.append(tokenize_and_remove_stopwords(es_episode.title))
         for scene in es_episode.scenes:
             # entries.append(preprocess_text(scene.location))
             for scene_event in scene.scene_events:
                 if scene_event.context_info:
-                    training_fragments.append(standardize_and_tokenize_query(scene_event.context_info))
+                    training_fragments.append(tokenize_and_remove_stopwords(scene_event.context_info))
                 # if scene_event.spoken_by:
                 #     entries.append(preprocess_text(scene_event.spoken_by))
                 if scene_event.dialog:
-                    training_fragments.append(standardize_and_tokenize_query(scene_event.dialog))
+                    training_fragments.append(tokenize_and_remove_stopwords(scene_event.dialog))
         print(f'len(training_fragments)={len(training_fragments)}')
 
     cbow_model = Word2Vec(sentences=training_fragments, min_count=1, vector_size=100, window=5)
@@ -217,6 +237,32 @@ def build_embeddings_model(show_key: str) -> dict:
     response['sg_wv_count'] = len(sg_model.wv)
 
     return response
+
+
+'''
+TODO This obviously needs to live elsewhere
+'''
+def shorten_flattened_text(es_episode: EsEpisodeTranscript, skip_increment: int = None) -> str:
+    flattened_text = f'{es_episode.title} '
+    scene_i = 0
+    for scene in es_episode.scenes:
+        scene_i += 1
+        # if divisor is set, skip scenes at that skip_increment
+        if skip_increment and scene_i % skip_increment == 0:
+            continue
+        # flattened_text += f'{scene.location} '
+        # if scene.description:
+        #     flattened_text += f'{scene.description} '
+        for scene_event in scene.scene_events:
+            # if scene_event.context_info:
+            #     flattened_text += f'{scene_event.context_info} '
+            # if scene_event.spoken_by:
+            #     flattened_text += f'{scene_event.spoken_by}: '
+            if scene_event.dialog:
+                flattened_text += f'{scene_event.dialog} '
+        
+
+    return flattened_text
 
 
 

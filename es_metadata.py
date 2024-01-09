@@ -41,15 +41,11 @@ STOPWORDS = ["a", "able", "about", "across", "after", "again", "all", "almost", 
 
 def concat_vector_fields() -> list:
     vector_fields = []
-    for vendor, models in ACTIVE_VENDOR_VERSIONS.items():
-        for model in models:
-            vector_fields.append(f'{vendor}_{model}_embeddings')
-            vector_fields.append(f'{vendor}_{model}_tokens')
-            vector_fields.append(f'{vendor}_{model}_no_match_tokens')
+    for vendor_version in ACTIVE_VENDOR_VERSIONS:
+        vector_fields.append(f'{vendor_version[0]}_{vendor_version[1]}_embeddings')
+        vector_fields.append(f'{vendor_version[0]}_{vendor_version[1]}_tokens')
+        vector_fields.append(f'{vendor_version[0]}_{vendor_version[1]}_no_match_tokens')
     return vector_fields
 
 
 VECTOR_FIELDS = concat_vector_fields()
-# VECTOR_FIELDS = ['webvectors_29_embeddings', 'webvectors_223_embeddings', 'glove_6B300d_embeddings', 
-#                  'webvectors_223_tokens', 'webvectors_29_tokens', 'glove_6B300d_tokens',
-#                  'webvectors_223_no_match_tokens', 'webvectors_29_no_match_tokens', 'glove_6B300d_no_match_tokens'

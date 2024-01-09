@@ -1,18 +1,6 @@
 import argparse
 import os
 import pandas as pd
-# import sys
-
-# from .. import main as m
-# from .. import show_metadata as sm
-# from .. import soup_brewer as sb 
-# import main as m
-# import show_metadata as sm
-# import soup_brewer as sb
-
-# sys.path.append(os.getcwd())
-# sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/relative/path/to/your/lib/folder")
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
 
 import main as m
 import show_metadata as sm
@@ -38,6 +26,9 @@ def main():
         
     scrape_episode_descriptions(episodes_df, desc_source)
 
+    for col in episodes_df.columns:
+        if 'Unnamed' in col:
+            episodes_df.drop(col, axis=1, inplace=True)
     print(f'episodes_df={episodes_df}')
 
     episodes_df.to_csv(file_path, sep='\t')
@@ -48,7 +39,7 @@ def init_episode_df(show_key: str) -> pd.DataFrame:
     episodes_by_season = episodes_by_season_resp['episodes_by_season']
     
     episodes_list = []
-    for season, episodes in episodes_by_season.items():
+    for _, episodes in episodes_by_season.items():
         for e in episodes:
             e['title_upper'] = e['title'].upper()
             title_camel = e['title'].title()
@@ -90,14 +81,14 @@ def scrape_episode_descriptions(episodes_df: pd.DataFrame, description_source: s
     elif description_source == 'memory_alpha':
         successful = 0
         failed = []
-        for index, row in episodes_df.iterrows():
+        for _, row in episodes_df.iterrows():
+            request_urls = []
             if row['title'] in MEMORY_ALPHA_TITLE_VARIATIONS:
                 title_undscr = MEMORY_ALPHA_TITLE_VARIATIONS[row['title']].replace(' ', '_')
                 request_urls.append(f'{ds_url}{title_undscr}_(episode)')
             else:
                 title_undscr = row['title'].replace(' ', '_')
                 title_camel_undscr = row['title_camel'].replace(' ', '_')
-                request_urls = []
                 request_urls.append(f'{ds_url}{title_undscr}_(episode)')
                 request_urls.append(f'{ds_url}{title_camel_undscr}_(episode)')
                 if ', Part' in row['title']:

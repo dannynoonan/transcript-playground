@@ -72,14 +72,17 @@ TRANSFORMER_VENDOR_VERSIONS = {
 }
 
  
-def get_active_models() -> dict:
-    active_models = {}
+def get_active_models() -> list:
+    active_models = []
     for vendor, vendor_meta in WORD2VEC_VENDOR_VERSIONS.items():
-        active_versions = []
         for version, version_meta in vendor_meta['versions'].items():
             if version_meta['status'] == 'ACTIVE':
-                active_versions.append(version)
-        active_models[vendor] = active_versions
+                active_models.append((vendor, version))
+    for vendor, vendor_meta in TRANSFORMER_VENDOR_VERSIONS.items():
+        for version, version_meta in vendor_meta['versions'].items():
+            if version_meta['status'] == 'ACTIVE':
+                # active_models.append((vendor, version_meta['true_name']))
+                active_models.append((vendor, version))
     return active_models
 
 

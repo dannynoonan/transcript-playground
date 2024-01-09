@@ -16,7 +16,11 @@ query_supplement_map = {}
 query_expansion_map = {}
 
 
-def standardize_and_tokenize_query(text: str, tag_pos: bool = False) -> str:
+def tokenize_and_remove_stopwords(text: str, tag_pos: bool = False) -> str:
+    # print(f'text before tokenize_and_remove_stopwords={text}')
+    text = text.lower()
+    # remove numbers and special characters
+    text = re.sub("[^A-Za-z]+", " ", text)
     # tokenize
     tokens = word_tokenize(text)
     # remove stopwords
@@ -27,25 +31,28 @@ def standardize_and_tokenize_query(text: str, tag_pos: bool = False) -> str:
         for i in range(len(pos_tokens)):
             tokens[i] = f'{pos_tokens[i][0]}_{pos_tokens[i][1]}'
 
-    # print(f'tokens={tokens}')
+    # print(f'tokens after tokenize_and_remove_stopwords={tokens}')
     return tokens
 
 
-def normalize_and_expand_query(qt: str, show_key: str) -> str:
-    # print(f'qt before normalize_query and expand_query={qt}')
+# TODO normalize_and_expand_query_vocab reduced performance noticeably, only using in test_vector_search endpoint for now
+def normalize_and_expand_query_vocab(qt: str, show_key: str) -> str:
+    print(f'qt before normalize_and_expand_query_vocab={qt}')
     qt = qt.lower()
     # remove numbers and special characters
     qt = re.sub("[^A-Za-z]+", " ", qt)
     # bookend qt with spaces so we can scan each term flanked by spaces without missing first and last
     qt = f' {qt} '  
     # normalize query using ontological metadata
-    qt = normalize_query(qt, show_key)
+    qt = normalize_query_vocab(qt, show_key)
     # expand query using ontological metadata
-    qt = expand_query(qt, show_key)
+    qt = expand_query_vocab(qt, show_key)
+    print(f'qt after normalize_and_expand_query_vocab={qt}')
     return qt
 
 
-def normalize_query(qt: str, show_key: str) -> str:
+# TODO normalize_and_expand_query_vocab reduced performance noticeably, only using in test_vector_search endpoint for now
+def normalize_query_vocab(qt: str, show_key: str) -> str:
     # replace common mis-spellings and other invalid terms with proper replacements
     if show_key not in query_replacement_map:
         query_replacement_map[show_key] = build_query_replacement_map(show_key)
@@ -66,7 +73,8 @@ def normalize_query(qt: str, show_key: str) -> str:
     return qt
 
 
-def expand_query(qt: str, show_key: str) -> str:
+# TODO normalize_and_expand_query_vocab reduced performance noticeably, only using in test_vector_search endpoint for now
+def expand_query_vocab(qt: str, show_key: str) -> str:
     # supplement terms with alternative variants that increase query match potential
     if show_key not in query_expansion_map:
         query_expansion_map[show_key] = build_query_expansion_map(show_key)

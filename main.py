@@ -715,8 +715,9 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
         vendor_meta = W2V_MODELS[model_vendor]
         tag_pos = vendor_meta['pos_tag']
         try:
-            qt = qp.normalize_and_expand_query(qt, show_key)
-            tokenized_qt = qp.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
+            # TODO normalize_and_expand_query_vocab reduced performance noticeably, disabling for now
+            # qt = qp.normalize_and_expand_query_vocab(qt, show_key)
+            tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
             vector_field = f'{model_vendor}_{model_version}_embeddings'
             vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embeddings(tokenized_qt, model_vendor, model_version)
             tokens_processed_count = len(tokens_processed)
@@ -738,18 +739,21 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
 
 
 @app.get("/test_vector_search/{show_key}")
-def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
+def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, normalize_and_expand: bool = False):
     if not model_vendor:
         model_vendor = 'webvectors'
     if not model_version:
         model_version = '223'
 
+    # NOTE currently only set up for word2vec, not for openai embeddings
+
     vendor_meta = W2V_MODELS[model_vendor]
     tag_pos = vendor_meta['pos_tag']
 
     try:
-        qt = qp.normalize_and_expand_query(qt, show_key)
-        tokenized_qt = qp.standardize_and_tokenize_query(qt, tag_pos=tag_pos)
+        if normalize_and_expand:
+            qt = qp.normalize_and_expand_query_vocab(qt, show_key)
+        tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
     except Exception as e:
         return {"error": e}
     return {"normd_expanded_qt": qt, "tokenized_qt": tokenized_qt}
