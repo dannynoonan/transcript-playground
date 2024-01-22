@@ -759,6 +759,38 @@ def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, mod
     return {"normd_expanded_qt": qt, "tokenized_qt": tokenized_qt}
 
 
+@app.get("/cluster_content/{show_key}/{num_clusters}")
+def cluster_content(show_key: ShowKey, num_clusters: int, model_vendor: str = None, model_version: str = None):
+    if not model_vendor:
+        model_vendor = 'openai'
+    if not model_version:
+        model_version = 'ada002'
+
+    true_model_version = None
+
+    if model_vendor == 'openai':
+        vendor_meta = TRF_MODELS[model_vendor]
+        true_model_version = vendor_meta['versions'][model_version]['true_name']
+    else:
+        pass # TODO
+
+    vector_field = f'{model_vendor}_{model_version}_embeddings'
+    # fetch all model/vendor embeddings for show 
+    s = esqb.fetch_all_embeddings(show_key.value, vector_field)
+    es_query = s.to_dict()
+    doc_embeddings = esrt.return_all_embeddings(s, vector_field)
+    
+    # cluster content
+    if num_clusters > len(doc_embeddings):
+        err = f'Unable to cluster {show_key} content: num_clusters={num_clusters} exceeds number of documents in corpus={len(doc_embeddings)}'
+        return {"error": err, "es_query": es_query}
+    doc_clusters, doc_clusters_df, embeddings_matrix = ef.cluster_docs(doc_embeddings, num_clusters)
+    # doc_clusters_df.set_index('doc_id').T.to_dict('list')
+    doc_clusters_df.to_dict('dict')
+
+    return {"doc_clusters": doc_clusters, "es_query": es_query}
+
+
 ########### BEGIN EXAMPLES #############
 # https://medium.com/@talhakhalid101/python-tortoise-orm-integration-with-fastapi-c3751d248ce1
 

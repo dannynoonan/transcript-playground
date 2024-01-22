@@ -1,13 +1,16 @@
-from fastapi import APIRouter
-from fastapi import Request
+from fastapi import APIRouter, Request, Response, BackgroundTasks
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from operator import itemgetter
 import requests
 
+import data_viz as dz
+import es.es_query_builder as esqb
+import es.es_response_transformer as esrt
 # from es_metadata import MODEL_TYPES
 import main
+import nlp.embeddings_factory as ef
 from show_metadata import ShowKey
 from utils import truncate_dict
 
@@ -350,3 +353,25 @@ async def character_listing_page(request: Request, show_key: ShowKey, qt: str = 
 				tdata['speaker_matches'].append(sc)
 	
 	return templates.TemplateResponse('characterListing.html', {'request': request, 'tdata': tdata})
+
+
+@web_app.get("/web/graph/{show_key}")
+async def show_page(request: Request, show_key: ShowKey, background_tasks: BackgroundTasks, num_clusters: int = 0):
+	if not num_clusters:
+		num_clusters = 4
+
+	vector_field = 'openai_ada002_embeddings'
+    # fetch all model/vendor embeddings for show 
+	s = esqb.fetch_all_embeddings(show_key.value, vector_field)
+	doc_embeddings = esrt.return_all_embeddings(s, vector_field)
+    
+    # cluster content
+	doc_clusters, doc_clusters_df, embeddings_matrix = ef.cluster_docs(doc_embeddings, num_clusters)
+    # doc_clusters_df.set_index('doc_id').T.to_dict('list')
+	# doc_clusters_df.to_dict('dict')
+	
+	# clusters = main.cluster_content(show_key, num_clusters)
+	img_buf = dz.generate_graph(doc_clusters_df, embeddings_matrix)
+	background_tasks.add_task(img_buf.close)
+	headers = {'Content-Disposition': 'inline; filename="out.png"'}
+	return Response(img_buf.getvalue(), headers=headers, media_type='image/png')

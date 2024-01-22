@@ -688,3 +688,15 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, season:
     # return s
 
     return response
+
+
+def fetch_all_embeddings(show_key: str, vector_field: str) -> Search:
+    print(f'begin fetch_all_embeddings for show_key={show_key} vector_field={vector_field}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+    s = s.source(includes=[vector_field])
+
+    return s

@@ -574,3 +574,17 @@ def return_vector_search(es_response: dict) -> list:
         matches.append(episode)
 
     return matches
+
+
+def return_all_embeddings(s: Search, vector_field: str) -> dict:
+    print(f'begin return_all_embeddings for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = {}
+
+    for hit in s.hits.hits:
+        if vector_field in hit._source:
+            results[hit._id] = hit._source[vector_field]._l_
+
+    return results

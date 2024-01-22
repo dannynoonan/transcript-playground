@@ -2,9 +2,14 @@
 from gensim.models import Word2Vec, KeyedVectors
 # from gensim.scripts.glove2word2vec import glove2word2vec
 from gensim.test.utils import common_texts
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
 import openai
 from openai import OpenAI
 import os
+import pandas as pd
+from sklearn.cluster import KMeans
 import warnings
 
 from config import settings
@@ -237,6 +242,34 @@ def build_embeddings_model(show_key: str) -> dict:
     response['sg_wv_count'] = len(sg_model.wv)
 
     return response
+
+
+def cluster_docs(doc_embeddings: dict, num_clusters: int):
+    print(f'begin cluster_content for doc_embeddings')
+
+    df = pd.DataFrame(doc_embeddings)
+    df = df.transpose()
+    df.index.name = 'doc_id' # TODO is this needed or do I create a separate column and have index be an incrementing int 0-n
+
+    doc_clusters = {}
+    doc_ids = list(doc_embeddings.keys())
+    embeddings = list(doc_embeddings.values())
+
+    embeddings_matrix = np.vstack(embeddings)
+    print(f'matrix.shape={embeddings_matrix.shape}')
+    kmeans = KMeans(n_clusters=num_clusters, init='k-means++', random_state=42)
+    kmeans.fit(embeddings_matrix)
+
+    print(f'kmeans.labels_={kmeans.labels_} len(kmeans.labels_)={len(kmeans.labels_)} type(kmeans.labels_)={type(kmeans.labels_)}')
+
+    labels = kmeans.labels_.tolist()
+    df['Cluster'] = kmeans.labels_
+    df['doc_id'] = doc_ids # TODO redundancy here with index name
+
+    for i in range(len(doc_ids)):
+        doc_clusters[doc_ids[i]] = labels[i]
+
+    return doc_clusters, df, embeddings_matrix
 
 
 '''
