@@ -5,7 +5,7 @@ from fastapi.templating import Jinja2Templates
 from operator import itemgetter
 import requests
 
-import data_viz as dz
+import web.data_viz as dz
 import es.es_query_builder as esqb
 import es.es_response_transformer as esrt
 # from es_metadata import MODEL_TYPES
@@ -371,7 +371,7 @@ async def show_page(request: Request, show_key: ShowKey, background_tasks: Backg
 	# doc_clusters_df.to_dict('dict')
 	
 	# clusters = main.cluster_content(show_key, num_clusters)
-	img_buf = dz.generate_graph(doc_clusters_df, embeddings_matrix)
+	img_buf = dz.generate_graph(doc_clusters_df, embeddings_matrix, num_clusters)
 	background_tasks.add_task(img_buf.close)
 	headers = {'Content-Disposition': 'inline; filename="out.png"'}
 	return Response(img_buf.getvalue(), headers=headers, media_type='image/png')

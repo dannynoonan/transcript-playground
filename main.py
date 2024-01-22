@@ -22,7 +22,7 @@ import es.es_query_builder as esqb
 import es.es_response_transformer as esrt
 from nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 import nlp.query_preprocessor as qp
-from show_metadata import ShowKey, Status, show_metadata
+from show_metadata import ShowKey, show_metadata
 from source_etl.soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_file_soup
 from source_etl.transcript_extractor import parse_episode_transcript_soup
 from source_etl.transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup, match_episodes_to_transcript_urls

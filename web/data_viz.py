@@ -11,8 +11,10 @@ from starlette.responses import StreamingResponse
 matplotlib.use('AGG')
 
 
+colors = ["red", "green", "blue", "orange", "purple", "brown", "yellow", "pink", "black", "tomato"]
 
-def generate_graph(df: pd.DataFrame, matrix):
+
+def generate_graph(df: pd.DataFrame, matrix, num_clusters: int):
     # init figure
     plt.rcParams['figure.figsize'] = [14.0, 8.0]
     plt.rcParams['figure.autolayout'] = True
@@ -32,7 +34,7 @@ def generate_graph(df: pd.DataFrame, matrix):
 
     print(f'df.columns={df.columns}')
 
-    for category, color in enumerate(["purple", "green", "red", "blue"]):
+    for category, color in enumerate(colors[:num_clusters]):
         xs = np.array(x)[df.Cluster == category]
         ys = np.array(y)[df.Cluster == category]
         plt.scatter(xs, ys, color=color, alpha=0.3)
