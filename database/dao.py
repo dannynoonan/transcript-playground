@@ -11,8 +11,8 @@ async def backup_db() -> tuple[bytes, bytes]:
 
 
 async def fetch_episodes(show_key: str) -> list[Episode]|Exception:
+    print(f'Fetching all episodes matching show={show_key}')
     try:
-        print(f'Fetching all episodes matching show={show_key}')
         fetched_episodes = await Episode.filter(show_key=show_key)
         return fetched_episodes
     except Exception as e:
@@ -20,10 +20,16 @@ async def fetch_episodes(show_key: str) -> list[Episode]|Exception:
         raise e
     
 
-async def fetch_episode(show_key: str, episode_key: str) -> Episode|Exception:
+async def fetch_episode(show_key: str, episode_key: str, fetch_related: list = []) -> Episode|Exception:
+    print(f'Looking up Episode matching show={show_key} external_key={episode_key}')
     try:
-        print(f'Looking up Episode matching show={show_key} external_key={episode_key}')
         fetched_episode = await Episode.get(show_key=show_key, external_key=episode_key)
+        for rel in fetch_related:
+            if rel == 'events':
+                for scene in fetched_episode.scenes:
+                    await scene.fetch_related('events')
+            else:
+                await fetched_episode.fetch_related(rel)
         return fetched_episode
     except Exception as e:
         print(f'No Episode found matching show_key={show_key} external_key={episode_key}:', e)
@@ -66,7 +72,7 @@ async def upsert_episode(episode: Episode) -> Episode:
         for field in fields:
             setattr(fetched_episode, field, getattr(episode, field))
         # set loaded_ts
-        episode.loaded_ts = datetime.now(timezone.utc)
+        fetched_episode.loaded_ts = datetime.now(timezone.utc)
         await fetched_episode.save()
         # await fetched_episode.save(update_fields=fields)
         # await fetched_episode.update(**episode.dict(), update_fields=cleaned)
@@ -91,8 +97,8 @@ async def delete_episode(episode: Episode) -> None|Exception:
 
 
 async def fetch_transcript_source(show_key: str, episode_key: str, transcript_type: str) -> TranscriptSource|Exception:
+    print(f'Looking up TranscriptSource matching show={show_key} episode_key={episode_key} transcript_type={transcript_type}')
     try:
-        print(f'Looking up TranscriptSource matching show={show_key} episode_key={episode_key} transcript_type={transcript_type}')
         fetched_transcript_source = await TranscriptSource.get(episode__show_key=show_key, episode__external_key=episode_key, transcript_type=transcript_type)
         return fetched_transcript_source
     except Exception as e:

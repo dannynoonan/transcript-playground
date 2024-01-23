@@ -8,16 +8,16 @@ import database.dao as dao
 from show_metadata import ShowKey, show_metadata
 
 
-async def parse_episode_listing_soup(show_key: ShowKey, episode_listing_soup: BeautifulSoup):
+def parse_episode_listing_soup(show_key: ShowKey, episode_listing_soup: BeautifulSoup) -> list:
     episodes = []
     season_tables = episode_listing_soup.findAll("table", {"class": "wikitable plainrowheaders wikiepisodetable"})
     season = 1
     for season_table in season_tables:
         season_df = pd.read_html(str(season_table))[0]
         # print(f'********************* SEASON {season} *************************')
-        await normalize_column_names(season_df)
+        normalize_column_names(season_df)
         for row_i, episode_df_row in season_df.iterrows():
-            episode = await init_episode_from_wiki_df(show_key, episode_df_row, season, row_i+1)
+            episode = init_episode_from_wiki_df(show_key, episode_df_row, season, row_i+1)
             # TODO do try/except instead?
             if episode:
                 episodes.append(episode)
@@ -25,7 +25,7 @@ async def parse_episode_listing_soup(show_key: ShowKey, episode_listing_soup: Be
     return episodes
 
 
-async def normalize_column_names(season_df: pd.DataFrame) -> None:
+def normalize_column_names(season_df: pd.DataFrame) -> None:
     # print(f'@@@@@@ season_df.columns={season_df.columns}')
     col_updates = {}
     for col in season_df.columns:
@@ -39,9 +39,9 @@ async def normalize_column_names(season_df: pd.DataFrame) -> None:
     # print(f'+++++++ AFTER UPDATE season_df.columns={season_df.columns}')
 
 
-async def init_episode_from_wiki_df(show_key: ShowKey, episode_df_row: pd.Series, season: int, row_i: int) -> Episode:
+def init_episode_from_wiki_df(show_key: ShowKey, episode_df_row: pd.Series, season: int, row_i: int) -> Episode:
     # skip non-season specials
-    if 'No. inseason' not in episode_df_row:
+    if 'No. in season' not in episode_df_row:
         return None
     episode = Episode()
     episode.show_key = show_key.value
@@ -50,7 +50,7 @@ async def init_episode_from_wiki_df(show_key: ShowKey, episode_df_row: pd.Series
     fmt = '%B %d, %Y'
     episode.air_date = datetime.strptime(episode_df_row['Original air date'], fmt)
     if show_key == ShowKey.GoT:
-        episode.sequence_in_season = int(episode_df_row['No. inseason'])
+        episode.sequence_in_season = int(episode_df_row['No. in season'])
         episode.external_key = episode.title.replace(' ', '_')
     elif show_key == ShowKey.TNG:
         episode.sequence_in_season = row_i
@@ -62,7 +62,7 @@ async def init_episode_from_wiki_df(show_key: ShowKey, episode_df_row: pd.Series
     return episode
 
 
-async def parse_transcript_url_listing_soup(show_key: ShowKey, listing_soup: BeautifulSoup) -> dict:
+def parse_transcript_url_listing_soup(show_key: ShowKey, listing_soup: BeautifulSoup) -> dict:
     episode_transcripts_by_type = {}
 
     a_tags = [a_tag for a_tag in listing_soup.find_all('a')]
@@ -71,7 +71,7 @@ async def parse_transcript_url_listing_soup(show_key: ShowKey, listing_soup: Bea
     # for tx_type, tx_string in show_metadata[show_key]['transcript_types'].items():
     # urls_already_added = []
     for tx_string in show_metadata[show_key]['transcript_type_match_strings']:
-        epidose_keys_to_transcript_urls = await extract_episode_keys_and_transcript_urls(show_key, all_urls, tx_string)
+        epidose_keys_to_transcript_urls = extract_episode_keys_and_transcript_urls(show_key, all_urls, tx_string)
         print(f'for tx_string={tx_string} initial len(epidose_keys_to_transcript_urls)={len(epidose_keys_to_transcript_urls)}')
         # for external_key, tx_url in epidose_keys_to_transcript_urls.items():
         #     if tx_url in urls_already_added:
@@ -84,7 +84,7 @@ async def parse_transcript_url_listing_soup(show_key: ShowKey, listing_soup: Bea
     return episode_transcripts_by_type
 
 
-async def extract_episode_keys_and_transcript_urls(show_key: ShowKey, all_urls: list, transcript_type_string_match: str) -> dict:
+def extract_episode_keys_and_transcript_urls(show_key: ShowKey, all_urls: list, transcript_type_string_match: str) -> dict:
     show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
     epidose_keys_to_transcript_urls = {}
     if show_key == "GoT":
@@ -114,14 +114,7 @@ async def match_episodes_to_transcript_urls(show_key: ShowKey, episode_transcrip
         for tx_string, episode_keys_to_tx_urls in episode_transcripts_by_type.items():
             if episode.external_key in episode_keys_to_tx_urls:
                 tx_source = TranscriptSource(episode=episode, transcript_type=tx_string, transcript_url=episode_keys_to_tx_urls[episode.external_key])
-                # tx_source = TranscriptSource()
-                # tx_source.episode = episode
-                # tx_source.transcript_type=tx_string
-                # tx_source.transcript_url=episode_keys_to_tx_urls[episode.external_key]
-                # print(f'show_key.value={show_key.value}, episode.external_key={episode.external_key}, tx_string={tx_string}, episode_keys_to_tx_urls[episode.external_key]={episode_keys_to_tx_urls[episode.external_key]}')
-                print(f'tx_source={tx_source}')
                 transcript_sources.append(tx_source)
 
-    print(f'transcript_sources={transcript_sources}')
     return transcript_sources
     

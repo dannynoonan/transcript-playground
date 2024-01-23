@@ -1,9 +1,9 @@
+from bs4 import BeautifulSoup
 from fastapi import FastAPI, Request, Response
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-import numpy as np
 from operator import itemgetter
 import os
 import requests
@@ -22,11 +22,16 @@ import es.es_query_builder as esqb
 import es.es_response_transformer as esrt
 from nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 import nlp.query_preprocessor as qp
-from show_metadata import ShowKey, show_metadata
-from source_etl.soup_brewer import get_episode_detail_listing_soup, get_transcript_url_listing_soup, get_transcript_file_soup
-from source_etl.transcript_extractor import parse_episode_transcript_soup
-from source_etl.transcript_listing_extractor import parse_episode_listing_soup, parse_transcript_url_listing_soup, match_episodes_to_transcript_urls
+from show_metadata import ShowKey, show_metadata, WIKIPEDIA_DOMAIN
+# import source_etl.soup_brewer as sb
+import source_etl.transcript_extractor as te
+import source_etl.transcript_listing_extractor as tle
 from web.web_router import web_app
+
+
+import json
+from typing import Dict
+from pydantic import BaseModel
 
 
 app = FastAPI()
@@ -51,18 +56,6 @@ app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 #     return Settings()
 
 
-##### BEGIN THESE DO THE SAME THING ######
-async def init():
-    # Here we create a SQLite DB using file "db.sqlite3"
-    #  also specify the app name of "models"
-    #  which contain models from "app.models"
-    await Tortoise.init(
-        db_url=DATABASE_URL,
-        modules={'models': ['app.models']}
-    )
-    # Generate the schema
-    await Tortoise.generate_schemas()
-
 register_tortoise(
     app,
     # db_url="sqlite://db.sqlite3",
@@ -71,7 +64,19 @@ register_tortoise(
     generate_schemas=True,
     add_exception_handlers=True,
 )
-##### END THESE DO THE SAME THING ######
+
+# I used to think this duplicated the `register_tortoise` functionality and have never understood how/why
+# async def init():
+#     # Here we create a SQLite DB using file "db.sqlite3"
+#     #  also specify the app name of "models"
+#     #  which contain models from "app.models"
+#     await Tortoise.init(
+#         db_url=DATABASE_URL,
+#         modules={'models': ['app.models']}
+#     )
+#     # Generate the schema
+#     await Tortoise.generate_schemas()
+
 
 Tortoise.init_models(["app.models"], "models")
 
@@ -102,6 +107,8 @@ def root():
     return {"message": "Welcome to transcript playground"}
 
 
+
+### DB ###
 @app.get("/db_connect")
 async def db_connect():
     await connect_to_database()
@@ -115,43 +122,40 @@ async def backup_db():
     return {"Output": str(output), "Error": str(error)}
 
 
+
+### METADATA ###
 @app.get("/show_meta/{show_key}")
 async def fetch_show_meta(show_key: ShowKey):
     show_meta = show_metadata[show_key]
     return {show_key: show_meta}
 
 
-@app.get("/load_episode_listing/{show_key}")
-async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
-    episode_detail_listing_soup = await get_episode_detail_listing_soup(show_key)
-    episodes = await parse_episode_listing_soup(show_key, episode_detail_listing_soup)
-    if write_to_db:
-        stored_episodes = []
-        for episode in episodes:
-            stored_episode = await dao.upsert_episode(episode)
-            stored_episodes.append(stored_episode)
-        return {'episode_count': len(stored_episodes), 'episode_listing': stored_episodes}
-    else:
-        episodes_excl = []
-        for episode in episodes:
-            episode_excl = await EpisodePydanticExcluding.from_tortoise_orm(episode)
-            episodes_excl.append(episode_excl)
-        return {'episode_count': len(episodes_excl), 'episodes': episodes_excl}
+
+### EXTERNAL CONTENT SOURCING ###
+'''
+Copy raw episode listing html source to local file
+'''
+@app.get("/copy_episode_meta/{show_key}")
+async def copy_episode_meta(show_key: ShowKey):
+    episode_listing_html = requests.get(WIKIPEDIA_DOMAIN + show_metadata[show_key]['wikipedia_label'])
+    file_path = f'source/episode_meta/{show_key.value}.html'
+    with open(file_path, "w") as f:
+        f.write(episode_listing_html.text)
+    return {'show_key': show_key.value, 'file_path': file_path, 'episode_listing_html': episode_listing_html.text}
 
 
-@app.get("/load_transcript_sources/{show_key}")
-async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
-    listing_soup = await get_transcript_url_listing_soup(show_key)
-    episode_transcripts_by_type = await parse_transcript_url_listing_soup(show_key, listing_soup)
-    transcript_sources = await match_episodes_to_transcript_urls(show_key, episode_transcripts_by_type)
-    if write_to_db:
-        stored_tx_sources = []
-        for tx_source in transcript_sources:
-            stored_tx_source = await dao.upsert_transcript_source(tx_source)
-            stored_tx_sources.append(stored_tx_source)
-        return {'transcript_sources_count': len(stored_tx_sources), 'transcript_sources': stored_tx_sources}
-    else:
-        return {'transcript_sources_count': len(transcript_sources), 'transcript_sources': transcript_sources}
+'''
+Copy raw transcript source html source to local file
+'''
+@app.get("/copy_transcript_sources/{show_key}")
+async def copy_transcript_sources(show_key: ShowKey):
+    show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
+    listing_url = show_metadata[show_key]['listing_url']
+    transcript_source_html = requests.get(show_transcripts_domain + listing_url)
+    file_path = f'source/transcript_sources/{show_key.value}.html'
+    with open(file_path, "w") as f:
+        f.write(transcript_source_html.text)
+    return {'show_key': show_key.value, 'file_path': file_path, 'transcript_source_html': transcript_source_html.text}
     
 
 '''
@@ -162,14 +166,16 @@ async def copy_transcript_from_source(show_key: ShowKey, episode_key: str):
     episode = None
     # fetch episode and transcript_source(s), throw errors if not found
     try:
-        episode = await dao.fetch_episode(show_key.value, episode_key)
+        episode = await dao.fetch_episode(show_key.value, episode_key, fetch_related=['transcript_sources'])
+        if not episode.transcript_sources:
+            return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
     except Exception as e:
         return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have you run /load_episode_listing?): {e}"}
     if not episode:
         return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
-    await episode.fetch_related('transcript_sources')
-    if not episode.transcript_sources:
-        return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
+    # await episode.fetch_related('transcript_sources')
+    # if not episode.transcript_sources:
+    #     return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
     
     # TODO data model permits multiple transcript_sources per episode, for now just choose first one
     # TODO ultimately the /source/episodes file structure will need to reflect the transcript_source layer
@@ -232,6 +238,55 @@ async def copy_all_transcripts_from_source(show_key: ShowKey):
     }
    
 
+
+### WRITE EXTERNALLY SOURCED CONTENT AND METADATA TO DB ###
+'''
+Load raw episode listing html from local file into db
+'''
+@app.get("/load_episode_meta/{show_key}")
+async def load_episode_meta(show_key: ShowKey, write_to_db: bool = False):
+    file_path = f'source/episode_meta/{show_key.value}.html'
+    if not os.path.isfile(file_path):
+        return {'Error': f'Unable to load episode metadata for {show_key.value}, no source html at file_path={file_path} (have you run /copy_episode_meta?)'}
+    
+    episode_listing_soup = BeautifulSoup(open(file_path).read())
+    episodes = tle.parse_episode_listing_soup(show_key, episode_listing_soup)
+    if write_to_db:
+        stored_episodes = []
+        for episode in episodes:
+            stored_episode = await dao.upsert_episode(episode)
+            stored_episodes.append(stored_episode)
+        return {'episode_count': len(stored_episodes), 'write_to_db': write_to_db, 'episode_listing': stored_episodes}
+    else:
+        episodes_excl = []
+        for episode in episodes:
+            episode_excl = await EpisodePydanticExcluding.from_tortoise_orm(episode)
+            episodes_excl.append(episode_excl)
+        return {'episode_count': len(episodes_excl), 'write_to_db': write_to_db, 'episodes': episodes_excl}
+
+
+'''
+Load raw transcript source html from local file into db
+'''
+@app.get("/load_transcript_sources/{show_key}")
+async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
+    file_path = f'source/transcript_sources/{show_key.value}.html'
+    if not os.path.isfile(file_path):
+        return {'Error': f'Unable to load transcript sources for {show_key.value}, no source html at file_path={file_path} (have you run /copy_transcript_sources?)'}
+
+    transcript_sources_soup = BeautifulSoup(open(file_path).read())
+    episode_transcripts_by_type = tle.parse_transcript_url_listing_soup(show_key, transcript_sources_soup)
+    transcript_sources = await tle.match_episodes_to_transcript_urls(show_key, episode_transcripts_by_type)
+    if write_to_db:
+        stored_tx_sources = []
+        for tx_source in transcript_sources:
+            stored_tx_source = await dao.upsert_transcript_source(tx_source)
+            stored_tx_sources.append(stored_tx_source)
+        return {'transcript_sources_count': len(stored_tx_sources), 'transcript_sources': stored_tx_sources}
+    else:
+        return {'transcript_sources_count': len(transcript_sources), 'transcript_sources': transcript_sources}
+
+
 '''
 Parse and load transcript html from local source file to transcript_db
 '''
@@ -240,14 +295,16 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
     episode = None
     # fetch episode and transcript_source(s), throw errors if not found
     try:
-        episode = await dao.fetch_episode(show_key.value, episode_key)
+        episode = await dao.fetch_episode(show_key.value, episode_key, fetch_related=['transcript_sources'])
+        if not episode.transcript_sources:
+            return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
     except Exception as e:
         return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have you run /load_episode_listing?): {e}"}
     if not episode:
         return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
-    await episode.fetch_related('transcript_sources')
-    if not episode.transcript_sources:
-        return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
+    # await episode.fetch_related('transcript_sources')
+    # if not episode.transcript_sources:
+    #     return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
     
     # TODO data model permits multiple transcript_sources per episode, for now just choose first one
     # TODO ultimately the /source/episodes file structure will need to reflect the transcript_source layer
@@ -257,10 +314,11 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
         file_path = f'source/episodes/{show_key.value}/{episode_key}.html'
         if not os.path.isfile(file_path):
             return {'Error': f'Unable to load transcript for {show_key}:{episode_key}, no source html at file_path={file_path} (have you run /copy_transcript_from_source?)'}
-    transcript_soup = get_transcript_file_soup(file_path)
+    # transcript_soup = sb.get_transcript_file_soup(file_path)
+    transcript_soup = BeautifulSoup(open(file_path).read())
     
     # transform raw transcript into persistable scene and scene_event data
-    scenes, scenes_to_events = parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
+    scenes, scenes_to_events = te.parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
     print(f'len(scenes)={len(scenes)}')
     
     if write_to_db:
@@ -323,8 +381,9 @@ async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
                 continue
         
         # fetch and transform raw transcript into persistable scene and scene_event data
-        transcript_soup = get_transcript_file_soup(file_path)
-        scenes, scenes_to_events = parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
+        # transcript_soup = sb.get_transcript_file_soup(file_path)
+        transcript_soup = BeautifulSoup(open(file_path).read())
+        scenes, scenes_to_events = te.parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
         attempts += 1
         try:
             await dao.insert_transcript(episode, scenes=scenes, scenes_to_events=scenes_to_events)
@@ -344,36 +403,36 @@ async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     }
 
 
-@app.get("/episode/{show_key}/{episode_key}")
-async def fetch_episode(show_key: ShowKey, episode_key: str, data_source: str = None, all_es_fields: bool = False):
-    if not data_source:
-        data_source = 'db'
 
-    # fetch episode from es
-    if data_source == 'es':
-        s = await esqb.fetch_episode_by_key(show_key.value, episode_key, all_fields=all_es_fields)
-        es_query = s.to_dict()
-        match = await esrt.return_episode_by_key(s)
-        return {"es_episode": match, 'es_query': es_query}
-    
+### DB READ / ID-BASED LOOKUP ### 
+@app.get("/db_episode/{show_key}/{episode_key}")
+async def fetch_db_episode(show_key: ShowKey, episode_key: str):
     # fetch episode from db
     episode = None
     try:
-        episode = await dao.fetch_episode(show_key.value, episode_key)
+        episode = await dao.fetch_episode(show_key.value, episode_key, fetch_related=['scenes', 'events'])
     except Exception as e:
         return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have run /load_episode_listing?): {e}"}
     if not episode:
         return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
     
     # fetch nested scene and scene_event data
-    await episode.fetch_related('scenes')
-    for scene in episode.scenes:
-        await scene.fetch_related('events')
+    # await episode.fetch_related('scenes')
+    # for scene in episode.scenes:
+    #     await scene.fetch_related('events')
     
     episode_pyd = await EpisodePydantic.from_tortoise_orm(episode)
+
+    episode_json = episode_pyd.model_dump_json()
+    print(f'episode_json={episode_json}')
+    with open(f"episode_{show_key}_{episode_key}.json", "w") as file:
+        json.dump(episode_json, file, indent=4)
+
     return {"show_meta": show_metadata[show_key], "episode": episode_pyd}
 
 
+
+### ES BUILD ###
 @app.get("/init_es")
 async def init_es():
     await esqb.init_transcripts_index()
@@ -385,16 +444,16 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
     # fetch episode, throw errors if not found
     episode = None
     try:
-        episode = await dao.fetch_episode(show_key.value, episode_key)
+        episode = await dao.fetch_episode(show_key.value, episode_key, fetch_related=['scenes', 'events'])
     except Exception as e:
         return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have run /load_episode_listing?): {e}"}
     if not episode:
         return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
     
     # fetch nested scene and scene_event data
-    await episode.fetch_related('scenes')
-    for scene in episode.scenes:
-        await scene.fetch_related('events')
+    # await episode.fetch_related('scenes')
+    # for scene in episode.scenes:
+    #     await scene.fetch_related('events')
     
     # transform to es-writable object and write to es
     try:
@@ -452,6 +511,61 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     }
 
 
+@app.get("/populate_focal_speakers/{show_key}")
+async def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
+    episodes_to_focal_speakers = await esqb.populate_focal_speakers(show_key.value, episode_key)
+    return {"episodes_to_focal_speakers": episodes_to_focal_speakers}
+
+
+@app.get("/populate_focal_locations/{show_key}")
+async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
+    episodes_to_focal_locations = await esqb.populate_focal_locations(show_key.value, episode_key)
+    return {"episodes_to_focal_locations": episodes_to_focal_locations}
+
+
+@app.get("/build_embeddings_model/{show_key}")
+def build_embeddings_model(show_key: ShowKey):
+    model_info = ef.build_embeddings_model(show_key.value)
+    return {"model_info": model_info}
+
+
+@app.get("/populate_embeddings/{show_key}/{episode_key}/{model_version}/{model_vendor}")
+def populate_embeddings(show_key: ShowKey, episode_key: str, model_version: str, model_vendor: str):
+    es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
+    try:
+        ef.generate_episode_embeddings(show_key.value, es_episode, model_version, model_vendor)
+        esqb.save_es_episode(es_episode)
+        return {"es_episode": es_episode}
+    except Exception as e:
+        return {f"Failed to populate {model_version}:{model_vendor} embeddings for episode {show_key.value}_{episode_key}": e}
+
+
+@app.get("/populate_all_embeddings/{show_key}/{model_version}/{model_vendor}")
+def populate_all_embeddings(show_key: ShowKey, model_version: str, model_vendor: str):
+    doc_ids = search_doc_ids(ShowKey(show_key))
+    episode_doc_ids = doc_ids['doc_ids']
+    processed_episode_keys = []
+    failed_episode_keys = []
+    for doc_id in episode_doc_ids:
+        episode_key = doc_id.split('_')[-1]
+        try:
+            populate_embeddings(ShowKey(show_key), episode_key, model_version, model_vendor)
+            processed_episode_keys.append(episode_key)
+        except Exception:
+            failed_episode_keys.append(episode_key)
+    return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
+
+
+
+### ES FETCH ###
+@app.get("/episode/{show_key}/{episode_key}")
+async def fetch_episode(show_key: ShowKey, episode_key: str, all_fields: bool = False):
+    s = await esqb.fetch_episode_by_key(show_key.value, episode_key, all_fields=all_fields)
+    es_query = s.to_dict()
+    match = await esrt.return_episode_by_key(s)
+    return {"es_episode": match, 'es_query': es_query}
+
+
 @app.get("/search_doc_ids/{show_key}")
 def search_doc_ids(show_key: ShowKey, season: str = None):
     s = esqb.search_doc_ids(show_key.value, season=season)
@@ -460,6 +574,16 @@ def search_doc_ids(show_key: ShowKey, season: str = None):
     return {"doc_count": len(matches), "doc_ids": matches, "es_query": es_query}
 
 
+@app.get("/list_episodes_by_season/{show_key}")
+def list_episodes_by_season(show_key: ShowKey):
+    s = esqb.list_episodes_by_season(show_key.value)
+    es_query = s.to_dict()
+    episodes_by_season = esrt.return_episodes_by_season(s)
+    return {"episodes_by_season": episodes_by_season, "es_query": es_query}
+
+
+
+### ES SEARCH ###
 @app.get("/search_episodes_by_title/{show_key}")
 async def search_episodes_by_title(show_key: ShowKey, title: str = None):
     s = await esqb.search_episodes_by_title(show_key.value, title)
@@ -504,14 +628,78 @@ async def search(show_key: ShowKey, season: str = None, episode_key: str = None,
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
-@app.get("/list_episodes_by_season/{show_key}")
-def list_episodes_by_season(show_key: ShowKey):
-    s = esqb.list_episodes_by_season(show_key.value)
-    es_query = s.to_dict()
-    episodes_by_season = esrt.return_episodes_by_season(s)
-    return {"episodes_by_season": episodes_by_season, "es_query": es_query}
+# TODO support POST for long requests?
+@app.get("/vector_search/{show_key}")
+def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
+    # if not qt or qt == np.nan:
+    #     return {"error": "Cannot execute vector search on empty query term"}
+    
+    if not model_vendor:
+        model_vendor = 'webvectors'
+    if not model_version:
+        model_version = '223'
+
+    if model_vendor == 'openai':
+        vendor_meta = TRF_MODELS[model_vendor]
+        true_model_version = vendor_meta['versions'][model_version]['true_name']
+        try:
+            vector_field = f'{model_vendor}_{model_version}_embeddings'
+            vectorized_qt, tokens_processed_count, tokens_failed_count = ef.generate_openai_embeddings(qt, true_model_version)
+            tokens_processed = []
+            tokens_failed = []
+        except Exception as e:
+            return {"error": e}
+
+    else:
+        vendor_meta = W2V_MODELS[model_vendor]
+        tag_pos = vendor_meta['pos_tag']
+        try:
+            # TODO normalize_and_expand_query_vocab reduced performance noticeably, disabling for now
+            # qt = qp.normalize_and_expand_query_vocab(qt, show_key)
+            tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
+            vector_field = f'{model_vendor}_{model_version}_embeddings'
+            vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embeddings(tokenized_qt, model_vendor, model_version)
+            tokens_processed_count = len(tokens_processed)
+            tokens_failed_count = len(tokens_failed)
+        except Exception as e:
+            return {"error": e}
+        
+    es_response = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
+    matches = esrt.return_vector_search(es_response)
+    return {
+        "match_count": len(matches), 
+        "vector_field": vector_field, 
+        "tokens_processed": tokens_processed, 
+        "tokens_processed_count": tokens_processed_count, 
+        "tokens_failed": tokens_failed, 
+        "tokens_failed_count": tokens_failed_count, 
+        "matches": matches
+    }
 
 
+@app.get("/test_vector_search/{show_key}")
+def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, normalize_and_expand: bool = False):
+    if not model_vendor:
+        model_vendor = 'webvectors'
+    if not model_version:
+        model_version = '223'
+
+    # NOTE currently only set up for word2vec, not for openai embeddings
+
+    vendor_meta = W2V_MODELS[model_vendor]
+    tag_pos = vendor_meta['pos_tag']
+
+    try:
+        if normalize_and_expand:
+            qt = qp.normalize_and_expand_query_vocab(qt, show_key)
+        tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
+    except Exception as e:
+        return {"error": e}
+    return {"normd_expanded_qt": qt, "tokenized_qt": tokenized_qt}
+
+
+
+### ES AGG ###
 @app.get("/agg_episodes/{show_key}")
 async def agg_episodes(show_key: ShowKey, season: str = None, location: str = None):
     s = await esqb.agg_episodes(show_key.value, season=season, location=location)
@@ -614,6 +802,8 @@ async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_
     return {"speaker_count": len(speaker_agg_composite), "speaker_agg_composite": speaker_agg_composite} 
 
 
+
+### ES OTHER ###
 @app.get("/keywords_by_episode/{show_key}/{episode_key}")
 async def keywords_by_episode(show_key: ShowKey, episode_key: str, exclude_speakers: bool = False):
     response = await esqb.keywords_by_episode(show_key.value, episode_key)
@@ -642,121 +832,6 @@ async def more_like_this(show_key: ShowKey, episode_key: str):
     es_query = s.to_dict()
     matches = await esrt.return_more_like_this(s)
     return {"similar_episode_count": len(matches), "similar_episodes": matches, "es_query": es_query}
-
-
-@app.get("/populate_focal_speakers/{show_key}")
-async def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
-    episodes_to_focal_speakers = await esqb.populate_focal_speakers(show_key.value, episode_key)
-    return {"episodes_to_focal_speakers": episodes_to_focal_speakers}
-
-
-@app.get("/populate_focal_locations/{show_key}")
-async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
-    episodes_to_focal_locations = await esqb.populate_focal_locations(show_key.value, episode_key)
-    return {"episodes_to_focal_locations": episodes_to_focal_locations}
-
-
-@app.get("/build_embeddings_model/{show_key}")
-def build_embeddings_model(show_key: ShowKey):
-    model_info = ef.build_embeddings_model(show_key.value)
-    return {"model_info": model_info}
-
-
-@app.get("/populate_embeddings/{show_key}/{episode_key}/{model_version}/{model_vendor}")
-def populate_embeddings(show_key: ShowKey, episode_key: str, model_version: str, model_vendor: str):
-    es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
-    try:
-        ef.generate_episode_embeddings(show_key.value, es_episode, model_version, model_vendor)
-        esqb.save_es_episode(es_episode)
-        return {"es_episode": es_episode}
-    except Exception as e:
-        return {f"Failed to populate {model_version}:{model_vendor} embeddings for episode {show_key.value}_{episode_key}": e}
-
-
-@app.get("/populate_all_embeddings/{show_key}/{model_version}/{model_vendor}")
-def populate_all_embeddings(show_key: ShowKey, model_version: str, model_vendor: str):
-    doc_ids = search_doc_ids(ShowKey(show_key))
-    episode_doc_ids = doc_ids['doc_ids']
-    processed_episode_keys = []
-    failed_episode_keys = []
-    for doc_id in episode_doc_ids:
-        episode_key = doc_id.split('_')[-1]
-        try:
-            populate_embeddings(ShowKey(show_key), episode_key, model_version, model_vendor)
-            processed_episode_keys.append(episode_key)
-        except Exception:
-            failed_episode_keys.append(episode_key)
-    return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
-
-
-# TODO support POST for long requests?
-@app.get("/vector_search/{show_key}")
-def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
-    # if not qt or qt == np.nan:
-    #     return {"error": "Cannot execute vector search on empty query term"}
-    
-    if not model_vendor:
-        model_vendor = 'webvectors'
-    if not model_version:
-        model_version = '223'
-
-    if model_vendor == 'openai':
-        vendor_meta = TRF_MODELS[model_vendor]
-        true_model_version = vendor_meta['versions'][model_version]['true_name']
-        try:
-            vector_field = f'{model_vendor}_{model_version}_embeddings'
-            vectorized_qt, tokens_processed_count, tokens_failed_count = ef.generate_openai_embeddings(qt, true_model_version)
-            tokens_processed = []
-            tokens_failed = []
-        except Exception as e:
-            return {"error": e}
-
-    else:
-        vendor_meta = W2V_MODELS[model_vendor]
-        tag_pos = vendor_meta['pos_tag']
-        try:
-            # TODO normalize_and_expand_query_vocab reduced performance noticeably, disabling for now
-            # qt = qp.normalize_and_expand_query_vocab(qt, show_key)
-            tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
-            vector_field = f'{model_vendor}_{model_version}_embeddings'
-            vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embeddings(tokenized_qt, model_vendor, model_version)
-            tokens_processed_count = len(tokens_processed)
-            tokens_failed_count = len(tokens_failed)
-        except Exception as e:
-            return {"error": e}
-        
-    es_response = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
-    matches = esrt.return_vector_search(es_response)
-    return {
-        "match_count": len(matches), 
-        "vector_field": vector_field, 
-        "tokens_processed": tokens_processed, 
-        "tokens_processed_count": tokens_processed_count, 
-        "tokens_failed": tokens_failed, 
-        "tokens_failed_count": tokens_failed_count, 
-        "matches": matches
-    }
-
-
-@app.get("/test_vector_search/{show_key}")
-def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, normalize_and_expand: bool = False):
-    if not model_vendor:
-        model_vendor = 'webvectors'
-    if not model_version:
-        model_version = '223'
-
-    # NOTE currently only set up for word2vec, not for openai embeddings
-
-    vendor_meta = W2V_MODELS[model_vendor]
-    tag_pos = vendor_meta['pos_tag']
-
-    try:
-        if normalize_and_expand:
-            qt = qp.normalize_and_expand_query_vocab(qt, show_key)
-        tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
-    except Exception as e:
-        return {"error": e}
-    return {"normd_expanded_qt": qt, "tokenized_qt": tokenized_qt}
 
 
 @app.get("/cluster_content/{show_key}/{num_clusters}")
