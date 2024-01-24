@@ -1,0 +1,136 @@
+from fastapi import APIRouter
+
+import database.dao as dao
+from es.es_model import EsEpisodeTranscript
+import main
+import nlp.embeddings_factory as ef
+import es.es_ingest_transformer as esit
+import es.es_query_builder as esqb
+from show_metadata import ShowKey
+
+
+esw_app = APIRouter()
+
+
+
+@esw_app.get("/esw/init_es")
+async def init_es():
+    await esqb.init_transcripts_index()
+    return {"success": "success"}
+
+
+@esw_app.get("/esw/index_episode/{show_key}/{episode_key}")
+async def index_transcript(show_key: ShowKey, episode_key: str):
+    # fetch episode, throw errors if not found
+    episode = None
+    try:
+        episode = await dao.fetch_episode(show_key.value, episode_key, fetch_related=['scenes', 'events'])
+    except Exception as e:
+        return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have run /load_episode_listing?): {e}"}
+    if not episode:
+        return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
+    
+    # fetch nested scene and scene_event data
+    # await episode.fetch_related('scenes')
+    # for scene in episode.scenes:
+    #     await scene.fetch_related('events')
+    
+    # transform to es-writable object and write to es
+    try:
+        es_episode = esit.to_es_episode(episode)
+        esqb.save_es_episode(es_episode)
+    except Exception as e:
+        return {"Error": f"Failure to transform Episode {show_key}:{episode_key} to es-writable version: {e}"}
+
+    return {"Success": f"Episode {show_key}_{episode_key} written to es index"}
+
+
+@esw_app.get("/esw/index_all_episodes/{show_key}")
+async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
+    episodes = []
+    try:
+        episodes = await dao.fetch_episodes(show_key.value)
+    except Exception as e:
+        return {"Error": f"Failure to fetch Episodes having show_key={show_key}: {e}"}
+    if not episodes:
+        return {"Error": f"No Episodes found having show_key={show_key}. You may need to run /load_episode_listing first."}
+    if not overwrite_all:
+        return {"No-op": f"/index_transcripts was invoked on {len(episodes)} episodes, but `overwrite_all` flag was not set to True so no action was taken"}
+    
+    # fetch and insert transcripts for all episodes
+    attempts = 0
+    successful_episode_keys = []
+    failed_episode_keys = []
+    for episode in episodes:
+        attempts += 1
+
+        # fetch nested scene and scene_event data
+        await episode.fetch_related('scenes')
+        # if not episode.scenes:
+        #     print(f"No Scene data found for episode {show_key}_{episode.external_key}. You may need to run /load_transcript first.")
+        #     failed_episode_keys.append(episode.external_key)
+        #     continue
+        for scene in episode.scenes:
+            await scene.fetch_related('events')
+
+        # transform to es-writable object and write to es
+        try:
+            es_episode = esit.to_es_episode(episode)
+            esqb.save_es_episode(es_episode)
+            successful_episode_keys.append(episode.external_key)
+        except Exception as e:
+            failed_episode_keys.append(episode.external_key)
+            print(f"Failure to transform Episode {show_key}_{episode.external_key} to es-writable version or write it to es: {e}")
+
+    return {
+        "index loading attempts": attempts, 
+        "successful": len(successful_episode_keys),
+        "successful episode keys": successful_episode_keys, 
+        "failed": len(failed_episode_keys),
+        "failed episode keys": failed_episode_keys, 
+    }
+
+
+@esw_app.get("/esw/populate_focal_speakers/{show_key}")
+async def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
+    episodes_to_focal_speakers = await esqb.populate_focal_speakers(show_key.value, episode_key)
+    return {"episodes_to_focal_speakers": episodes_to_focal_speakers}
+
+
+@esw_app.get("/esw/populate_focal_locations/{show_key}")
+async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
+    episodes_to_focal_locations = await esqb.populate_focal_locations(show_key.value, episode_key)
+    return {"episodes_to_focal_locations": episodes_to_focal_locations}
+
+
+@esw_app.get("/esw/build_embeddings_model/{show_key}")
+def build_embeddings_model(show_key: ShowKey):
+    model_info = ef.build_embeddings_model(show_key.value)
+    return {"model_info": model_info}
+
+
+@esw_app.get("/esw/populate_embeddings/{show_key}/{episode_key}/{model_version}/{model_vendor}")
+def populate_embeddings(show_key: ShowKey, episode_key: str, model_version: str, model_vendor: str):
+    es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
+    try:
+        ef.generate_episode_embeddings(show_key.value, es_episode, model_version, model_vendor)
+        esqb.save_es_episode(es_episode)
+        return {"es_episode": es_episode}
+    except Exception as e:
+        return {f"Failed to populate {model_version}:{model_vendor} embeddings for episode {show_key.value}_{episode_key}": e}
+
+
+@esw_app.get("/esw/populate_all_embeddings/{show_key}/{model_version}/{model_vendor}")
+def populate_all_embeddings(show_key: ShowKey, model_version: str, model_vendor: str):
+    doc_ids = main.search_doc_ids(ShowKey(show_key))
+    episode_doc_ids = doc_ids['doc_ids']
+    processed_episode_keys = []
+    failed_episode_keys = []
+    for doc_id in episode_doc_ids:
+        episode_key = doc_id.split('_')[-1]
+        try:
+            populate_embeddings(ShowKey(show_key), episode_key, model_version, model_vendor)
+            processed_episode_keys.append(episode_key)
+        except Exception:
+            failed_episode_keys.append(episode_key)
+    return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}

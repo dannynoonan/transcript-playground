@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.manifold import TSNE
-from starlette.responses import StreamingResponse
+# from starlette.responses import StreamingResponse
 
 
 matplotlib.use('AGG')

@@ -1,5 +1,6 @@
 from nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS
 
+
 STOPWORDS = ["a", "able", "about", "across", "after", "again", "all", "almost", "also", "am", "among", "an", "and", "ani", "anoth", "any", "anyth", 
                 "are", "as", "at", 
             "back", "be", "because", "been", "but", "by", 

@@ -5,10 +5,11 @@ from elasticsearch_dsl import Search, connections, Q, A
 from elasticsearch_dsl.query import MoreLikeThis
 
 from config import settings
-import nlp.embeddings_factory as ef
+# import nlp.embeddings_factory as ef
 from es.es_metadata import STOPWORDS, VECTOR_FIELDS
 from es.es_model import EsEpisodeTranscript
-import main
+import es.es_read_router as esr
+# import main
 from show_metadata import ShowKey
 
 
@@ -574,7 +575,7 @@ async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
 async def keywords_by_corpus(show_key: str, season: str = None) -> dict:
     print(f'begin calc_word_counts_by_episode for show_key={show_key} season={season}')
 
-    keys = main.search_doc_ids(ShowKey(show_key), season=season)
+    keys = esr.search_doc_ids(ShowKey(show_key), season=season)
 
     if not keys:
         return {}
@@ -604,13 +605,13 @@ async def populate_focal_speakers(show_key: str, episode_key: str = None):
     if episode_key:
         episode_doc_ids = [f'{show_key}_{episode_key}']
     else:
-        doc_ids = main.search_doc_ids(ShowKey(show_key))
+        doc_ids = esr.search_doc_ids(ShowKey(show_key))
         episode_doc_ids = doc_ids['doc_ids']
     
     episodes_to_focal_speakers = {}
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
-        episode_speakers = await main.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
+        episode_speakers = await esr.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
         episode_focal_speakers = list(episode_speakers['scene_events_by_speaker'].keys())
         focal_speaker_count = min(len(episode_focal_speakers), 4)
         focal_speakers = episode_focal_speakers[1:focal_speaker_count]
@@ -629,13 +630,13 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
     if episode_key:
         episode_doc_ids = [f'{show_key}_{episode_key}']
     else:
-        doc_ids = main.search_doc_ids(ShowKey(show_key))
+        doc_ids = esr.search_doc_ids(ShowKey(show_key))
         episode_doc_ids = doc_ids['doc_ids']
     
     episodes_to_focal_locations = {}
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
-        episode_locations = await main.agg_scenes_by_location(ShowKey(show_key), episode_key=episode_key)
+        episode_locations = await esr.agg_scenes_by_location(ShowKey(show_key), episode_key=episode_key)
         episode_focal_locations = list(episode_locations['scenes_by_location'].keys())
         focal_location_count = min(len(episode_focal_locations), 4)
         focal_locations = episode_focal_locations[1:focal_location_count]
