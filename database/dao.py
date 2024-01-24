@@ -32,7 +32,7 @@ async def fetch_episode(show_key: str, episode_key: str, fetch_related: list = [
                 await fetched_episode.fetch_related(rel)
         return fetched_episode
     except Exception as e:
-        print(f'No Episode found matching show_key={show_key} external_key={episode_key}:', e)
+        print(f'No Episode found for {show_key}:{episode_key}, or problem processing fetch_related={fetch_related}:', e)
         raise e
 
 

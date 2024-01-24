@@ -1,14 +1,12 @@
 from fastapi import APIRouter, Request, Response, BackgroundTasks
 from fastapi.responses import HTMLResponse, RedirectResponse
-from fastapi.staticfiles import StaticFiles
+# from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from operator import itemgetter
-import requests
 
 import web.data_viz as dz
 import es.es_query_builder as esqb
 import es.es_response_transformer as esrt
-# from es_metadata import MODEL_TYPES
 import main
 import nlp.embeddings_factory as ef
 from show_metadata import ShowKey

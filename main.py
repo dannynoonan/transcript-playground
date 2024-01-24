@@ -1,20 +1,24 @@
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 from fastapi import FastAPI, Request, Response
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from operator import itemgetter
-import os
-import requests
+# import os
+# import requests
 from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
-from tortoise.contrib.pydantic import pydantic_model_creator
+# from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise import Tortoise
 
-from app.models import TranscriptSource, Episode, Scene, SceneEvent
+# from app.models import TranscriptSource, Episode, Scene, SceneEvent
+import app.pydantic_models as pymod
 from config import settings, DATABASE_URL
 import database.dao as dao
 from database.connect import connect_to_database
+from etl.etl_router import etl_app
+# import etl.transcript_extractor as te
+# import etl.transcript_listing_extractor as tle
 import nlp.embeddings_factory as ef
 from es.es_ingest_transformer import to_es_episode
 from es.es_model import EsEpisodeTranscript
@@ -22,20 +26,16 @@ import es.es_query_builder as esqb
 import es.es_response_transformer as esrt
 from nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 import nlp.query_preprocessor as qp
-from show_metadata import ShowKey, show_metadata, WIKIPEDIA_DOMAIN
-# import source_etl.soup_brewer as sb
-import source_etl.transcript_extractor as te
-import source_etl.transcript_listing_extractor as tle
+from show_metadata import ShowKey, show_metadata
 from web.web_router import web_app
 
 
 import json
-from typing import Dict
-from pydantic import BaseModel
 
 
 app = FastAPI()
 app.include_router(web_app)
+app.include_router(etl_app)
 app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 
 
@@ -86,15 +86,15 @@ Tortoise.init_models(["app.models"], "models")
 # JobPydantic = pydantic_model_creator(Job)
 # JobPydanticNoIds = pydantic_model_creator(Job, exclude_readonly=True)
 
-TranscriptSourcePydantic = pydantic_model_creator(TranscriptSource)
-EpisodePydantic = pydantic_model_creator(Episode)
-ScenePydantic = pydantic_model_creator(Scene)
-SceneEventPydantic = pydantic_model_creator(SceneEvent)
+# TranscriptSourcePydantic = pydantic_model_creator(TranscriptSource)
+# EpisodePydantic = pydantic_model_creator(Episode)
+# ScenePydantic = pydantic_model_creator(Scene)
+# SceneEventPydantic = pydantic_model_creator(SceneEvent)
 
-TranscriptSourcePydanticExcluding = pydantic_model_creator(TranscriptSource, exclude=("id", "episode", "loaded_ts"))
-EpisodePydanticExcluding = pydantic_model_creator(Episode, exclude=("id", "loaded_ts", "transcript_loaded_ts"))
-ScenePydanticExcluding = pydantic_model_creator(Scene, exclude=("id", "episode", "episode_id"))
-SceneEventPydanticExcluding = pydantic_model_creator(SceneEvent, exclude=("id", "scene", "scene_id"))
+# TranscriptSourcePydanticExcluding = pydantic_model_creator(TranscriptSource, exclude=("id", "episode", "loaded_ts"))
+# EpisodePydanticExcluding = pydantic_model_creator(Episode, exclude=("id", "loaded_ts", "transcript_loaded_ts"))
+# ScenePydanticExcluding = pydantic_model_creator(Scene, exclude=("id", "episode", "episode_id"))
+# SceneEventPydanticExcluding = pydantic_model_creator(SceneEvent, exclude=("id", "scene", "scene_id"))
 
 # print(f'Episode_Pydantic.model_json_schema()={Episode_Pydantic.model_json_schema()}')
 
@@ -131,279 +131,6 @@ async def fetch_show_meta(show_key: ShowKey):
 
 
 
-### EXTERNAL CONTENT SOURCING ###
-'''
-Copy raw episode listing html source to local file
-'''
-@app.get("/copy_episode_meta/{show_key}")
-async def copy_episode_meta(show_key: ShowKey):
-    episode_listing_html = requests.get(WIKIPEDIA_DOMAIN + show_metadata[show_key]['wikipedia_label'])
-    file_path = f'source/episode_meta/{show_key.value}.html'
-    with open(file_path, "w") as f:
-        f.write(episode_listing_html.text)
-    return {'show_key': show_key.value, 'file_path': file_path, 'episode_listing_html': episode_listing_html.text}
-
-
-'''
-Copy raw transcript source html source to local file
-'''
-@app.get("/copy_transcript_sources/{show_key}")
-async def copy_transcript_sources(show_key: ShowKey):
-    show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
-    listing_url = show_metadata[show_key]['listing_url']
-    transcript_source_html = requests.get(show_transcripts_domain + listing_url)
-    file_path = f'source/transcript_sources/{show_key.value}.html'
-    with open(file_path, "w") as f:
-        f.write(transcript_source_html.text)
-    return {'show_key': show_key.value, 'file_path': file_path, 'transcript_source_html': transcript_source_html.text}
-    
-
-'''
-Copy raw transcript from transcript html source to local file
-'''
-@app.get("/copy_transcript_from_source/{show_key}/{episode_key}")
-async def copy_transcript_from_source(show_key: ShowKey, episode_key: str):
-    episode = None
-    # fetch episode and transcript_source(s), throw errors if not found
-    try:
-        episode = await dao.fetch_episode(show_key.value, episode_key, fetch_related=['transcript_sources'])
-        if not episode.transcript_sources:
-            return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
-    except Exception as e:
-        return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have you run /load_episode_listing?): {e}"}
-    if not episode:
-        return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
-    # await episode.fetch_related('transcript_sources')
-    # if not episode.transcript_sources:
-    #     return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
-    
-    # TODO data model permits multiple transcript_sources per episode, for now just choose first one
-    # TODO ultimately the /source/episodes file structure will need to reflect the transcript_source layer
-    transcript_source = episode.transcript_sources[0]
-    transcript_html = requests.get(transcript_source.transcript_url)
-    file_path = f'source/episodes/{show_key.value}/{episode_key}.html'
-    with open(file_path, "w") as f:
-        f.write(transcript_html.text)
-    
-    return {'show_key': show_key.value, 'episode_key': episode_key, 'file_path': file_path, 'transcript_html': transcript_html.text}
-
-
-'''
-Batch copy raw transcripts from transcript html sources to local files
-'''
-@app.get("/copy_all_transcripts_from_source/{show_key}")
-async def copy_all_transcripts_from_source(show_key: ShowKey):
-    episodes = []
-    try:
-        episodes = await dao.fetch_episodes(show_key.value)
-    except Exception as e:
-        return {"Error": f"Failure to fetch Episodes having show_key={show_key}: {e}"}
-    if not episodes:
-        return {"Error": f"No Episodes found having show_key={show_key}. You may need to run /load_episode_listing first."}
-
-    # fetch and insert transcripts for all episodes
-    attempts = 0
-    no_transcript_episode_keys = []
-    successful_episode_keys = []
-    failed_episode_keys = []
-    for episode in episodes:
-        await episode.fetch_related('transcript_sources')
-        if not episode.transcript_sources:
-            print(f"No Transcript found for episode having show_key={show_key.value} external_key={episode.external_key}. You may need to run /load_transcript_sources first.")
-            no_transcript_episode_keys.append(episode.external_key)
-            continue
-
-        # TODO data model permits multiple transcript_sources per episode, for now just choose first one
-        # TODO ultimately the /source/episodes file structure will need to reflect the transcript_source layer
-        transcript_source = episode.transcript_sources[0]
-        attempts += 1
-        try:
-            transcript_html = requests.get(transcript_source.transcript_url)
-            file_path = f'source/episodes/{show_key.value}/{episode.external_key}.html'
-            with open(file_path, "w") as f:
-                f.write(transcript_html.text)
-                successful_episode_keys.append(episode.external_key)
-        except Exception as e:
-            failed_episode_keys.append(episode.external_key)
-            print(f"Failure to copy episode {show_key}:{episode.external_key} from url={transcript_source.transcript_url}: {e}")
-
-    return {
-        "no transcripts": len(no_transcript_episode_keys),
-        "no transcripts episode keys": no_transcript_episode_keys,
-        "transcript copy attempts": attempts, 
-        "successful": len(successful_episode_keys),
-        "successful episode keys": successful_episode_keys, 
-        "failed": len(failed_episode_keys),
-        "failed episode keys": failed_episode_keys, 
-    }
-   
-
-
-### WRITE EXTERNALLY SOURCED CONTENT AND METADATA TO DB ###
-'''
-Load raw episode listing html from local file into db
-'''
-@app.get("/load_episode_meta/{show_key}")
-async def load_episode_meta(show_key: ShowKey, write_to_db: bool = False):
-    file_path = f'source/episode_meta/{show_key.value}.html'
-    if not os.path.isfile(file_path):
-        return {'Error': f'Unable to load episode metadata for {show_key.value}, no source html at file_path={file_path} (have you run /copy_episode_meta?)'}
-    
-    episode_listing_soup = BeautifulSoup(open(file_path).read())
-    episodes = tle.parse_episode_listing_soup(show_key, episode_listing_soup)
-    if write_to_db:
-        stored_episodes = []
-        for episode in episodes:
-            stored_episode = await dao.upsert_episode(episode)
-            stored_episodes.append(stored_episode)
-        return {'episode_count': len(stored_episodes), 'write_to_db': write_to_db, 'episode_listing': stored_episodes}
-    else:
-        episodes_excl = []
-        for episode in episodes:
-            episode_excl = await EpisodePydanticExcluding.from_tortoise_orm(episode)
-            episodes_excl.append(episode_excl)
-        return {'episode_count': len(episodes_excl), 'write_to_db': write_to_db, 'episodes': episodes_excl}
-
-
-'''
-Load raw transcript source html from local file into db
-'''
-@app.get("/load_transcript_sources/{show_key}")
-async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
-    file_path = f'source/transcript_sources/{show_key.value}.html'
-    if not os.path.isfile(file_path):
-        return {'Error': f'Unable to load transcript sources for {show_key.value}, no source html at file_path={file_path} (have you run /copy_transcript_sources?)'}
-
-    transcript_sources_soup = BeautifulSoup(open(file_path).read())
-    episode_transcripts_by_type = tle.parse_transcript_url_listing_soup(show_key, transcript_sources_soup)
-    transcript_sources = await tle.match_episodes_to_transcript_urls(show_key, episode_transcripts_by_type)
-    if write_to_db:
-        stored_tx_sources = []
-        for tx_source in transcript_sources:
-            stored_tx_source = await dao.upsert_transcript_source(tx_source)
-            stored_tx_sources.append(stored_tx_source)
-        return {'transcript_sources_count': len(stored_tx_sources), 'transcript_sources': stored_tx_sources}
-    else:
-        return {'transcript_sources_count': len(transcript_sources), 'transcript_sources': transcript_sources}
-
-
-'''
-Parse and load transcript html from local source file to transcript_db
-'''
-@app.get("/load_transcript/{show_key}/{episode_key}")
-async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool = False):
-    episode = None
-    # fetch episode and transcript_source(s), throw errors if not found
-    try:
-        episode = await dao.fetch_episode(show_key.value, episode_key, fetch_related=['transcript_sources'])
-        if not episode.transcript_sources:
-            return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
-    except Exception as e:
-        return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have you run /load_episode_listing?): {e}"}
-    if not episode:
-        return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
-    # await episode.fetch_related('transcript_sources')
-    # if not episode.transcript_sources:
-    #     return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
-    
-    # TODO data model permits multiple transcript_sources per episode, for now just choose first one
-    # TODO ultimately the /source/episodes file structure will need to reflect the transcript_source layer
-    transcript_source = episode.transcript_sources[0]
-    file_path = f'source_override/episodes/{show_key.value}/{episode_key}.html'
-    if not os.path.isfile(file_path):
-        file_path = f'source/episodes/{show_key.value}/{episode_key}.html'
-        if not os.path.isfile(file_path):
-            return {'Error': f'Unable to load transcript for {show_key}:{episode_key}, no source html at file_path={file_path} (have you run /copy_transcript_from_source?)'}
-    # transcript_soup = sb.get_transcript_file_soup(file_path)
-    transcript_soup = BeautifulSoup(open(file_path).read())
-    
-    # transform raw transcript into persistable scene and scene_event data
-    scenes, scenes_to_events = te.parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
-    print(f'len(scenes)={len(scenes)}')
-    
-    if write_to_db:
-        await dao.insert_transcript(episode, scenes=scenes, scenes_to_events=scenes_to_events)
-        episode_pyd = await EpisodePydantic.from_tortoise_orm(episode)
-        return {'show': show_metadata[show_key], 'episode': episode_pyd}
-    else:
-        # this response should be identical to the persisted version above
-        episode_excl = await EpisodePydanticExcluding.from_tortoise_orm(episode)
-        episode_excl.scenes = []  # we don't want to include any scenes fetched from previously persisted episode
-        for scene in scenes:
-            scene_excl = await ScenePydanticExcluding.from_tortoise_orm(scene)
-            episode_excl.scenes.append(scene_excl)
-            if scene_excl.sequence_in_episode in scenes_to_events:
-                for i in range(len(scenes_to_events[scene_excl.sequence_in_episode])):
-                    scene_event = scenes_to_events[scene_excl.sequence_in_episode][i]
-                    scene_event.sequence_in_scene = i+1
-                    # TODO I am STUMPED as to why scene_event.id must be set while scene.id and episode.id do not
-                    scene_event.id = i+1
-                    scene_event_excl = await SceneEventPydanticExcluding.from_tortoise_orm(scene_event)
-                    scene_excl.events.append(scene_event_excl)
-        return {'show': show_metadata[show_key], 'episode': episode_excl}
-
-
-'''
-Batch parse and load transcript html from local source files to transcript_db
-'''
-@app.get("/load_all_transcripts/{show_key}")
-async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
-    episodes = []
-    try:
-        episodes = await dao.fetch_episodes(show_key.value)
-    except Exception as e:
-        return {"Error": f"Failure to fetch Episodes having show_key={show_key}: {e}"}
-    if not episodes:
-        return {"Error": f"No Episodes found having show_key={show_key}. You may need to run /load_episode_listing first."}
-    if not overwrite_all:
-        return {"No-op": f"/load_transcripts was invoked on {len(episodes)} episodes, but `overwrite_all` flag was not set to True so no action was taken"}
-
-    # fetch and insert transcripts for all episodes
-    attempts = 0
-    no_transcript_episode_keys = []
-    successful_episode_keys = []
-    failed_episode_keys = []
-    for episode in episodes:
-        await episode.fetch_related('transcript_sources')
-        if not episode.transcript_sources:
-            print(f"No Transcript found for episode having show_key={show_key.value} external_key={episode.external_key}. You may need to run /load_transcript_sources first.")
-            no_transcript_episode_keys.append(episode.external_key)
-            continue
-
-        # TODO data model permits multiple transcript_sources per episode, for now just choose first one
-        # TODO ultimately the /source/episodes file structure will need to reflect the transcript_source layer
-        transcript_source = episode.transcript_sources[0]
-        file_path = f'source_override/episodes/{show_key.value}/{episode.external_key}.html'
-        if not os.path.isfile(file_path):
-            file_path = f'source/episodes/{show_key.value}/{episode.external_key}.html'
-            if not os.path.isfile(file_path):
-                failed_episode_keys.append(episode.external_key)
-                continue
-        
-        # fetch and transform raw transcript into persistable scene and scene_event data
-        # transcript_soup = sb.get_transcript_file_soup(file_path)
-        transcript_soup = BeautifulSoup(open(file_path).read())
-        scenes, scenes_to_events = te.parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
-        attempts += 1
-        try:
-            await dao.insert_transcript(episode, scenes=scenes, scenes_to_events=scenes_to_events)
-            successful_episode_keys.append(episode.external_key)
-        except Exception as e:
-            failed_episode_keys.append(episode.external_key)
-            print(f"Failure to insert Episode having show_key={show_key} external_key={episode.external_key}: {e}")
-            
-    return {
-        "no transcripts": len(no_transcript_episode_keys),
-        "no transcripts episode keys": no_transcript_episode_keys,
-        "transcript load attempts": attempts, 
-        "successful": len(successful_episode_keys),
-        "successful episode keys": successful_episode_keys, 
-        "failed": len(failed_episode_keys),
-        "failed episode keys": failed_episode_keys, 
-    }
-
-
-
 ### DB READ / ID-BASED LOOKUP ### 
 @app.get("/db_episode/{show_key}/{episode_key}")
 async def fetch_db_episode(show_key: ShowKey, episode_key: str):
@@ -421,7 +148,7 @@ async def fetch_db_episode(show_key: ShowKey, episode_key: str):
     # for scene in episode.scenes:
     #     await scene.fetch_related('events')
     
-    episode_pyd = await EpisodePydantic.from_tortoise_orm(episode)
+    episode_pyd = await pymod.EpisodePydantic.from_tortoise_orm(episode)
 
     episode_json = episode_pyd.model_dump_json()
     print(f'episode_json={episode_json}')
