@@ -10,6 +10,7 @@ import app.pydantic_models as pymod
 from config import settings, DATABASE_URL
 import database.dao as dao
 from database.connect import connect_to_database
+from es.es_read_router import esr_app
 from es.es_write_router import esw_app
 from etl.etl_router import etl_app
 from show_metadata import ShowKey, show_metadata
@@ -23,6 +24,7 @@ app = FastAPI()
 app.include_router(web_app)
 app.include_router(etl_app)
 app.include_router(esw_app)
+app.include_router(esr_app)
 app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 
 
