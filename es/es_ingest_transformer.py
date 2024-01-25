@@ -1,4 +1,3 @@
-
 from app.models import Episode, Scene, SceneEvent
 from es.es_model import EsEpisodeTranscript, EsScene, EsSceneEvent
 

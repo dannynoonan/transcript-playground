@@ -30,14 +30,18 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
     if not episode:
         return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
     
-    # fetch nested scene and scene_event data
-    # await episode.fetch_related('scenes')
-    # for scene in episode.scenes:
-    #     await scene.fetch_related('events')
-    
     # transform to es-writable object and write to es
     try:
         es_episode = esit.to_es_episode(episode)
+
+        # NOTE this is how I generated test data, and it was enough of a pain I don't want to delete it
+        # import json
+        # es_episode_dict = es_episode.to_dict()
+        # es_episode_json = json.dumps(es_episode_dict, default=str, indent=4)
+        # f = open(f"test_data/es/es_episode_{show_key}_{episode_key}.json", "w")
+        # f.write(es_episode_json)
+        # f.close()
+            
         esqb.save_es_episode(es_episode)
     except Exception as e:
         return {"Error": f"Failure to transform Episode {show_key}:{episode_key} to es-writable version: {e}"}

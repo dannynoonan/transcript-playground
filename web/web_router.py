@@ -10,7 +10,7 @@ import es.es_response_transformer as esrt
 import es.es_read_router as esr
 import nlp.embeddings_factory as ef
 from show_metadata import ShowKey
-from utils import truncate_dict
+from web.utils import truncate_dict
 
 
 templates = Jinja2Templates(directory="templates")

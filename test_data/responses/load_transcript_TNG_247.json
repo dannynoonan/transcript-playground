@@ -1,0 +1,2873 @@
+{
+    "show": {
+      "full_name": "Star Trek: The Next Generation",
+      "wikipedia_label": "List_of_Star_Trek:_The_Next_Generation_episodes",
+      "show_transcripts_domain": "http://www.chakoteya.net/NextGen/",
+      "listing_url": "episodes.htm",
+      "episode_subdir": "",
+      "transcript_type_match_strings": [
+        "Default"
+      ]
+    },
+    "episode": {
+      "show_key": "TNG",
+      "season": 6,
+      "sequence_in_season": 21,
+      "external_key": "247",
+      "title": "Frame of Mind",
+      "air_date": "1993-05-01",
+      "duration": null,
+      "scenes": [
+        {
+          "sequence_in_episode": 1,
+          "location": "Asylum cell",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "Riker is very twitchy, and the Doctor sounds like Brent Spiner",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You're absolutely right, Doctor. Right now, I can't imagine ever hurting anybody."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "OC",
+              "dialogue_spoken_by": "DOCTOR",
+              "dialogue_text": "How do you feel about that person you used to be?"
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I feel terrible. But thanks to you, I'm doing much better now. And I'm confident that when I leave, I will be ready to take my place in society again."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": "OC",
+              "dialogue_spoken_by": "DOCTOR",
+              "dialogue_text": "When do you think that will be?"
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Well, now. Right away."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": "OC",
+              "dialogue_spoken_by": "DOCTOR",
+              "dialogue_text": "Why do you say that?"
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You said that when I was able to accept what I'd done and I understood the consequences of my actions, that I would be free to go."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": "OC",
+              "dialogue_spoken_by": "DOCTOR",
+              "dialogue_text": "Free to go? You mean you don't think you should stand trial for what you've did?"
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No, I'm looking forward to proving my innocence."
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": "OC",
+              "dialogue_spoken_by": "DOCTOR",
+              "dialogue_text": "I thought you said you accepted what you'd done."
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "That's, that's not what I meant. I was sick when it happened. I wasn't responsible for what I did."
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": "OC",
+              "dialogue_spoken_by": "DOCTOR",
+              "dialogue_text": "How do I know you're not just telling me what I want to hear? Perhaps we should continue this discussion next week."
+            },
+            {
+              "id": 14,
+              "sequence_in_scene": 14,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No. I want to talk about this now."
+            },
+            {
+              "id": 15,
+              "sequence_in_scene": 15,
+              "context_info": "OC",
+              "dialogue_spoken_by": "DOCTOR",
+              "dialogue_text": "You're starting to sound angry again. Maybe you need another treatment."
+            },
+            {
+              "id": 16,
+              "sequence_in_scene": 16,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "What I need is to get out of this cell. I've been locked in here for days. You've controlled my every move. You've told me what to eat, and what to think, and what to say, and when I show a glimmer of independent thought you strap me down, you inject me with drugs. You call it a treatment."
+            },
+            {
+              "id": 17,
+              "sequence_in_scene": 17,
+              "context_info": "OC",
+              "dialogue_spoken_by": "DOCTOR",
+              "dialogue_text": "You're becoming agitated."
+            },
+            {
+              "id": 18,
+              "sequence_in_scene": 18,
+              "context_info": "breaks into a grin",
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You bet I'm agitated. I may be surrounded by insanity, but I'm not insane. And there isn't any. There isn't. There's nothing. 'm sorry. Could we go back to 'you're becoming agitated'?"
+            },
+            {
+              "id": 19,
+              "sequence_in_scene": 19,
+              "context_info": "and now we discover that they're rehearsing a play, and the Doctor is really Data",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 20,
+              "sequence_in_scene": 20,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "No. Why don't we take a break for tonight? I think we've made a lot of progress."
+            },
+            {
+              "id": 21,
+              "sequence_in_scene": 21,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I'm still not comfortable with that final speech."
+            },
+            {
+              "id": 22,
+              "sequence_in_scene": 22,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "There's such a thing as over-rehearsing, Will. You're going to be fine."
+            },
+            {
+              "id": 23,
+              "sequence_in_scene": 23,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Maybe I'm just not right for this part."
+            },
+            {
+              "id": 24,
+              "sequence_in_scene": 24,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "Most humanoids have the potential to be irrational. Perhaps you should attempt to access that part of your psyche."
+            },
+            {
+              "id": 25,
+              "sequence_in_scene": 25,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Thank you, Data. Your character feels at odds with everyone, as if the world's against him."
+            },
+            {
+              "id": 26,
+              "sequence_in_scene": 26,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Like my first year at the Academy."
+            },
+            {
+              "id": 27,
+              "sequence_in_scene": 27,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Yes, that's what your character is going through. But I want you, Will Riker, to relax."
+            },
+            {
+              "id": 28,
+              "sequence_in_scene": 28,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I'll do my best."
+            },
+            {
+              "id": 29,
+              "sequence_in_scene": 29,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "It'll be wonderful. You're going to knock 'em dead."
+            },
+            {
+              "id": 30,
+              "sequence_in_scene": 30,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Right."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 2,
+          "location": "Corridor",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You control my every move, tell me what to say, what to think. What to eat, what to say. What to think, what to eat. Then when I show a glimmer of independent thought, you strap me down, inject me with drugs, call it a treatment. I may be surrounded by insanity, but I am not insane."
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": "he bumps into an alien crewman coming out of the turbolift",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Excuse me."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 3,
+          "location": "Ready room",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Tilonus Four? Didn't their government just collapse?"
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "It's in a state of total anarchy. When the Prime Minister was assassinated, a Federation research team was on the planet. It's believed that they were forced into hiding. Your mission will be to locate and to evacuate them."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Can't they go to local authorities?"
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "There are no local authorities. The government is splintered. It seems that there are various factions vying for power. They're desperate for weapons or technology of any kind. Apparently, some of the factions have resorted to torture to gather their information. Well, a Starfleet research team would be a prime target."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Then I'll have to go down there alone, undercover."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "Agreed. Mister Worf is ready to give you a detailed briefing on Tilonian culture."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Well, I guess I'll have to back out of Beverly's play after all."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "Oh no, no, there'll be plenty of time for that. We don't arriving at Tilonus for another five days. And besides, if you back out, she'll come after me to play the part."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 4,
+          "location": "Observation lounge",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "a map is on the wall monitor",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "This is the last known location of the research team. They had occupied a small building in the south-west quarter of the city. You will begin your search there."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "The south-west quarter covers over two hundred square kilometres. That's a lot of land for one man to cover. I guess I'd better pack an extra pair of boots."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "This apparel will allow you to pass as a common merchant. This Tilonian pendant is equipped with a communicator circuit."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "It doesn't really match the outfit."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "I suggest you pay closer attention, Commander. Your life will be at stake. Do you understand what I am saying?"
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Of course I do."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "Because you will be posing as a merchant, you will need to know how to use the nisroh for the traditional bartering ceremony."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": "it is, of course, a dagger",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "You will be judged on your prowess with the blade."
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": "Worf demonstrates, cutting Riker on the right temple",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "I am sorry, Commander! I did not intend"
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "It's okay. I guess I really wasn't paying attention. I'd better go to Sickbay. We'll continue this later."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 5,
+          "location": "Sickbay",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Boy, you will do anything to get out of doing this play, but you're going to have to do something better than this."
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "The play's not till tomorrow night. I've still got twenty four hours."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "she removes the cut",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Don't get any ideas. I will see you on stage at eighteen hundred hours."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Right. That still hurts."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "There was no damage to the nerves so you shouldn't be feeling any pain."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Probably just a symptom of stage fright."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": "La Forge and a college bring in a badly burned engineer",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": null,
+              "dialogue_spoken_by": "CREWMAN",
+              "dialogue_text": "It hurts!"
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "LAFORGE",
+              "dialogue_text": "He was working on a conduit on deck thirty nine. A plasma torch blew up in his hands."
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": null,
+              "dialogue_spoken_by": "CREWMAN",
+              "dialogue_text": "It hurts! Please!"
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Hypospray."
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": null,
+              "dialogue_spoken_by": "MEDIC",
+              "dialogue_text": "Yes, Doctor."
+            },
+            {
+              "id": 14,
+              "sequence_in_scene": 14,
+              "context_info": "this dialogue gets very faint as we concentrate on Riker and the eyes of the injured man",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 15,
+              "sequence_in_scene": 15,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Get me twenty cc's of opporozine. Treat the surface burns with the anabolic stabiliser."
+            },
+            {
+              "id": 16,
+              "sequence_in_scene": 16,
+              "context_info": null,
+              "dialogue_spoken_by": "MEDIC",
+              "dialogue_text": "Yes, Doctor."
+            },
+            {
+              "id": 17,
+              "sequence_in_scene": 17,
+              "context_info": null,
+              "dialogue_spoken_by": "NURSE",
+              "dialogue_text": "Should we get a stasis unit?"
+            },
+            {
+              "id": 18,
+              "sequence_in_scene": 18,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Have one standing by just in case. Get me an epidermal sample. Begin dermal regeneration. Have tissue regrowth standing by. I want him sedated."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 6,
+          "location": "Ten Forward",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I've been on a lot of missions, seen a lot of people injured, but I've never been affected by anything like this. He was looking right at me."
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "And that was disturbing to you."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "It was as if he was blaming me for something. This wasn't the only incident. The last several days, I've felt like everybody's staring at me or talking about me. It's as if I was in Frame of Mind."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "Frame of Mind?"
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Beverly's play. Ever since I began rehearsing for the role, I've been uneasy and restless."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "You're probably drawing on feelings that you're not used to expressing."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Right. The play is full of disturbing images. People losing their minds, being tortured by doctors. I can't get it out of my mind."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "Sometimes it's healthy to explore the darker sides of the psyche. Jung called it owning your own shadow. This could be a sign that you're a real actor. This is becoming more than just a role to you."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Maybe you're right."
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "Don't be afraid of your darker side. Have fun with it."
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": "Riker rubs his sore temple and sees the crewman he bumped into at the turbolift",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Who was that? You just missed him. Is there a new Lieutenant on board?"
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "I'm not sure. Do you want me to check the personnel logs?"
+            },
+            {
+              "id": 14,
+              "sequence_in_scene": 14,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No, I'll check them tomorrow. I'm going to bed early. The performance is tomorrow night. I want to be up for it."
+            },
+            {
+              "id": 15,
+              "sequence_in_scene": 15,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "I'm looking forward to it. Break a leg."
+            },
+            {
+              "id": 16,
+              "sequence_in_scene": 16,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I'll try not to take you literally."
+            },
+            {
+              "id": 17,
+              "sequence_in_scene": 17,
+              "context_info": "and they kiss goodnight",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 7,
+          "location": "Stage - Asylum cell",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "the performance",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "You're becoming agitated."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You bet I'm agitated! I may be surrounded by insanity, but I am not insane. And nothing you or anyone else can say will change that. And I won't let you or anyone else tell me that I am. You may be able to destroy my mind, but you can't change the fact that I'm innocent. I didn't kill that man! And that's what's driving you crazy."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "I can see we have a lot of work to do."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": "Data leaves stage left",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": "quietly",
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No matter you can say will the fact that I'm innocent! I'm not crazy! I'm not crazy. I'm not crazy."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": "lights down and up again, and standing ovation for Riker",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "CROWD",
+              "dialogue_text": "Bravo, bravo! Well done. Bravo."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": "and suddenly the alien is standing between Picard and Worf, then the stage becomes - ",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 8,
+          "location": "Asylum cell",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Where am I? How did you get me off the ship?"
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "The ship again?"
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "he's the same race as our spooky alien",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "What's going on?"
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "I understand this must be disturbing for you, but try to relax. Tell me, where were you a moment ago?"
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I was on the Enterprise in the middle of a play. But it was here. It was not real, it was on a stage."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "I can assure you this is not a stage. Do you remember your name?"
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I'm Commander. Commander. A second ago I knew who I was. I was on the ship. I was in a play. And now I'm having trouble remembering anything."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "That's good. You're starting to come out of your delusional state."
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Delusional? It was not a delusion. I was there."
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "We discussed this. Do you remember, we contacted Starfleet and asked them about you?"
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No."
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "We spoke with Admiral Budrow."
+            },
+            {
+              "id": 14,
+              "sequence_in_scene": 14,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Starbase twenty nine. He had never heard of me, and they had no officer that fit my description."
+            },
+            {
+              "id": 15,
+              "sequence_in_scene": 15,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "That's right. Now, I want you to focus on who I am. Do you remember me?"
+            },
+            {
+              "id": 16,
+              "sequence_in_scene": 16,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I don't know."
+            },
+            {
+              "id": 17,
+              "sequence_in_scene": 17,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "I'm Doctor Syrus. Do you remember anything about where you are now?"
+            },
+            {
+              "id": 18,
+              "sequence_in_scene": 18,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "My head hurts. Somebody hit me."
+            },
+            {
+              "id": 19,
+              "sequence_in_scene": 19,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "You tried to escape. You struggled with one of the attendants and hit your head on a door. Do you remember that?"
+            },
+            {
+              "id": 20,
+              "sequence_in_scene": 20,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Yes. I remember that now. But I thought it was a Klingon who had cut me with a knife."
+            },
+            {
+              "id": 21,
+              "sequence_in_scene": 21,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "That's called transposition. You're projecting elements from your delusions onto events that really happened. But that's good. There was a time when you couldn't break away from your starship fantasy at all."
+            },
+            {
+              "id": 22,
+              "sequence_in_scene": 22,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Now, if what you say is true, where am I?"
+            },
+            {
+              "id": 23,
+              "sequence_in_scene": 23,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "You're in Ward forty seven of the Tilonus Institute for Mental Disorders."
+            },
+            {
+              "id": 24,
+              "sequence_in_scene": 24,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Why am I here?"
+            },
+            {
+              "id": 25,
+              "sequence_in_scene": 25,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "We'll talk more later. You don't have to remember everything today. You're making excellent progress."
+            },
+            {
+              "id": 26,
+              "sequence_in_scene": 26,
+              "context_info": "Syrus leaves",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 27,
+              "sequence_in_scene": 27,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Wait."
+            },
+            {
+              "id": 28,
+              "sequence_in_scene": 28,
+              "context_info": "Riker explores his surprisingly spacious cell, with a mirror on the wall",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 29,
+              "sequence_in_scene": 29,
+              "context_info": "OC",
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "Good afternoon. I've got some good news for you. Doctor Syrus suggested that you might enjoy a couple of hours in the common area today. Well?"
+            },
+            {
+              "id": 30,
+              "sequence_in_scene": 30,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I guess so."
+            },
+            {
+              "id": 31,
+              "sequence_in_scene": 31,
+              "context_info": "the attendant and an armed guard enter",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 32,
+              "sequence_in_scene": 32,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "I hope you're hungry. They're serving spiny lobe-fish today."
+            },
+            {
+              "id": 33,
+              "sequence_in_scene": 33,
+              "context_info": "re weapon",
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You won't need that."
+            },
+            {
+              "id": 34,
+              "sequence_in_scene": 34,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "That's what you said the last time."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 9,
+          "location": "Asylum Corridor",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "they walk slowly down the corridor. there is distant screaming, and the Enterprise alien walks past too",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 10,
+          "location": "Asylum common area",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "the inmates are doing things that the mentally disturbed are assumed to do - clay modelling, painting etc.",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "I'll be back with your lunch."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "a female inmate sits opposite Riker",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "JAYA",
+              "dialogue_text": "I hear you're a Starfleet officer. I'm Commander Bloom from the Yorktown. There are at least a dozen of us here, maybe more. We were kidnapped, brought here against our will. Sanders was on the Yosemite. They did something to his mind. I think they're trying to get neurochemicals from our brains. Stafko was with me on the Yorktown. I don't know what they did to him. We're going to get out of here. I've made a communicator."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You have?"
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": "into spoon",
+              "dialogue_spoken_by": "JAYA",
+              "dialogue_text": "Yes. There are three starships in orbit. They're going to beam us out of here any day now. I'll tell them to get you out, too. Lieutenant Bloom to Yorktown. Come in, Yorktown. I've made contact with another officer."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "Talking to your Starship again, Jaya?"
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "JAYA",
+              "dialogue_text": "No. Don't let them tell you you're crazy."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": "she leaves the table",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "You know you're not supposed to take utensils from the common area."
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": "Jaya gives him the spoon",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "You're welcome to try."
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I'm not that far gone, am I?"
+            },
+            {
+              "id": 14,
+              "sequence_in_scene": 14,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "Of course you are."
+            },
+            {
+              "id": 15,
+              "sequence_in_scene": 15,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Your name is Mavek."
+            },
+            {
+              "id": 16,
+              "sequence_in_scene": 16,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "That's right. Not bad for a crazy man."
+            },
+            {
+              "id": 17,
+              "sequence_in_scene": 17,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I am beginning to remember certain things. Why am I here?"
+            },
+            {
+              "id": 18,
+              "sequence_in_scene": 18,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "I remember when they brought you in. You were struggling, screaming. We could barely hold you down. In fact, just getting the blood off your hands took over an hour."
+            },
+            {
+              "id": 19,
+              "sequence_in_scene": 19,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Blood?"
+            },
+            {
+              "id": 20,
+              "sequence_in_scene": 20,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "On your hands, clothes. You didn't just kill that man, you mutilated him."
+            },
+            {
+              "id": 21,
+              "sequence_in_scene": 21,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "What are you talking about? I didn't kill anybody."
+            },
+            {
+              "id": 22,
+              "sequence_in_scene": 22,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "I'm afraid you did. You stabbed him. They found you near the body, the knife in your hand."
+            },
+            {
+              "id": 23,
+              "sequence_in_scene": 23,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No. It's not true."
+            },
+            {
+              "id": 24,
+              "sequence_in_scene": 24,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "Yes it is. And if you get out of here, you're going to stand trial."
+            },
+            {
+              "id": 25,
+              "sequence_in_scene": 25,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You're lying!"
+            },
+            {
+              "id": 26,
+              "sequence_in_scene": 26,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "I imagine the punishment will be quite severe, considering you stabbed him nine times."
+            },
+            {
+              "id": 27,
+              "sequence_in_scene": 27,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No!"
+            },
+            {
+              "id": 28,
+              "sequence_in_scene": 28,
+              "context_info": "and he tries to strangle the attendant, but is dragged off and injected with something",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 11,
+          "location": "Riker's quarters",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "and wakes up with a start in his own bed",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": "Later, Riker is getting made up for the play",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I was there, in Ward forty seven, just like in the play. Everyone thought that I was insane, that I'd actually killed someone. But it was all real."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Deanna mentioned that you went to bed early because you were feeling a little anxious about the play, but I had no idea. You said that in your dream, we performed the play. How'd it go?"
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "It was a smash. We got a standing ovation."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Let's hope it goes that well tonight. Well, we have got one hour before curtain. How are you feeling?"
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I feel like an actor."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Well, you're certainly beginning to look the part."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 12,
+          "location": "Theatre - Asylum cell",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "Perhaps we should continue this discussion next week"
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No. I want to talk about this now."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "You're starting to sound angry again. Maybe you need another treatment."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "What I need is to get out of this cell. I'm locked up in here for days. You've controlled my every move. You've told me what to eat, what to think, what to say."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": "Riker sees the attendant looking through the cell door. He checks that there is an audience watching and the face is gone.",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": "prompt",
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "And when I show a glimmer of independent thought"
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "And when I show a glimmer of independent thought, you strap me down, inject me with drugs and call it a treatment."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "You're becoming agitated."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You bet I'm agitated! I may be surrounded by insanity, but I am not insane. And there is nothing you"
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": "he's detracted by the sound of a door, and for a moment the audience is gone",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "What's happening?"
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "I can see we have a lot of work to do."
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": "Data exits",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 14,
+              "sequence_in_scene": 14,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Nothing you can do will change the fact that I'm innocent. I'm not crazy. I'm not"
+            },
+            {
+              "id": 15,
+              "sequence_in_scene": 15,
+              "context_info": "the alien officer is back between Picard and Riker",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 16,
+              "sequence_in_scene": 16,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You're the key to all this, aren't you? Who are you? Who are you?"
+            },
+            {
+              "id": 17,
+              "sequence_in_scene": 17,
+              "context_info": null,
+              "dialogue_spoken_by": "LIEUTENANT",
+              "dialogue_text": "Lieutenant Suna, sir."
+            },
+            {
+              "id": 18,
+              "sequence_in_scene": 18,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Will, are you all right?"
+            },
+            {
+              "id": 19,
+              "sequence_in_scene": 19,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I. Yes. I don't know"
+            },
+            {
+              "id": 20,
+              "sequence_in_scene": 20,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Why don't we get him to Sickbay."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 13,
+          "location": "Sickbay",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "There's nothing wrong with you neurologically, and I can't find anything that could cause the hallucinations. But your heart rate is way up and your blood pressure's way above normal. And you're physically exhausted."
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "This is not a case of simple fatigue."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Will, you know that when you're under conditions of extreme stress the mind can manufacture all kinds of things."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Drugs. They injected me with me drugs. See if the drug's in my system."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Nothing."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "In that dream they gave me drugs. Didn't anybody at the theatre see anything strange happen during the performance?"
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "No, nobody. Get some rest, Will. The play is over. Don't give it another thought."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Right."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 14,
+          "location": "Corridor",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "How's Lieutenant Suna?"
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "A little shaken but all right."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I feel like such an idiot."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "It's nothing to be embarrassed about. We're your friends. We all know the stress you've been under. I'm sure everyone understands perfectly."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "Commander, I must compliment you on your performance this evening."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Oh?"
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "Your unexpected choice to improvise was an effective method of drawing the audience into the plight of your character. You gave a truly realistic interpretation of multi-infarct dementia."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Thank you."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "Well, maybe not everyone understands."
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I think I'd better get a little rest. Clear my mind a little."
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "I want you to try a few relaxation techniques as well. Remember the ones I showed you a few months ago?"
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "They never seem to work for me."
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": "OC",
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "Maybe you need another treatment."
+            },
+            {
+              "id": 14,
+              "sequence_in_scene": 14,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "What's wrong?"
+            },
+            {
+              "id": 15,
+              "sequence_in_scene": 15,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Nothing. Nothing."
+            },
+            {
+              "id": 16,
+              "sequence_in_scene": 16,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "Will, I want you to get some sleep. I'll see you tomorrow."
+            },
+            {
+              "id": 17,
+              "sequence_in_scene": 17,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Okay."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 15,
+          "location": "Turbolift",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "the doors open onto the asylum corridor",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "It's not real. It's not real."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "he closes his eyes and when he opens them again",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 16,
+          "location": "Corridor",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "he walks round a corner and meets",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "JAYA",
+              "dialogue_text": "Don't let them tell you you're crazy."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "Riker runs the other way and dashes into ",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 17,
+          "location": "Riker's quarters",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "the door that shuts behind him is the asylum cell door",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 18,
+          "location": "Asylum cell",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "quiet",
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No! Let me out of here! Let me out of here! Help me! Help me."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 19,
+          "location": "Asylum common area",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I need help. I don't want to be at the mercy of these hallucinations any more."
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "So you've accepted you're not from a starship? That it's all a delusion?"
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "All I know is when I go back to the ship, reality breaks apart. Nothing makes sense. And then when it's over, it fades away like a dream. But when I'm in the hospital, everything here seems real and I remember everything that happens here."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "And what about how you got here?"
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Maybe I did kill someone. I don't know. But I want to know how."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "I'm glad to hear you say that, because I just had a long talk with the hospital Administrator. He told me there are certain legal questions that have to be resolved relatively soon."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Meaning?"
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "Meaning we can't keep you here much longer. We're the only mental health facility on Tilonus Four. We have many people who need our help. I don't want to put any undue stress on you but we have to settle this case one way or another within the next few days."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "What does that mean?"
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "You're facing a choice. We can try to help you remember what happened using Reflection therapy. If it's successful, you would be fit to stand trial."
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Reflection therapy?"
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "It's a way for you to interact with the various facets of your personality. We scan the regions of your brain that control emotions and memory, and then project them holographically."
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "And what is the second option?"
+            },
+            {
+              "id": 14,
+              "sequence_in_scene": 14,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "A complete synaptic reconstruction of your cerebral cortex."
+            },
+            {
+              "id": 15,
+              "sequence_in_scene": 15,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Surgery."
+            },
+            {
+              "id": 16,
+              "sequence_in_scene": 16,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "We would neutralise the synaptic pathways responsible for your mental instability."
+            },
+            {
+              "id": 17,
+              "sequence_in_scene": 17,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "It doesn't sound like you care for that option."
+            },
+            {
+              "id": 18,
+              "sequence_in_scene": 18,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "I don't. The procedure is irreversible. You'd be left with a completely altered personality. The person you are now would cease to exist."
+            },
+            {
+              "id": 19,
+              "sequence_in_scene": 19,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Option one is beginning to sound better."
+            },
+            {
+              "id": 20,
+              "sequence_in_scene": 20,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "I agree."
+            },
+            {
+              "id": 21,
+              "sequence_in_scene": 21,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Reflection therapy, then. When do we begin?"
+            },
+            {
+              "id": 22,
+              "sequence_in_scene": 22,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "This afternoon, if you're ready. I want you to understand that this isn't going to be easy. You'll be interacting with aspects of your psyche you've never dealt with before, and you may be disturbed by what they have to say."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 20,
+          "location": "Asylum cell",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "a columnar device has been brought into the cell",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "Close your eyes. Try to relax. Clear your mind."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "the device sends out a beam which scans Riker's face",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "Now, think back to before you came to the hospital. But don't try to remember specific incidents. Concentrate on how you felt."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I was afraid."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": "a second beam projects an image",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "Terrified."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "She was on the ship with me."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "That's because she represents an aspect of your personality, and there are many parts of you that still believe you're on that starship."
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Why her?"
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "I asked you to get in touch with your feelings, and this is the part of you that responded. Talk to her about how you felt before you came here."
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You said I was terrified. Of what?"
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "I was in a dark place. Cold. Frightened. Someone was there."
+            },
+            {
+              "id": 14,
+              "sequence_in_scene": 14,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Who?"
+            },
+            {
+              "id": 15,
+              "sequence_in_scene": 15,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "I felt threatened by them. Trapped"
+            },
+            {
+              "id": 16,
+              "sequence_in_scene": 16,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "You're doing very well. Now let's try to find out how you responded to these feelings. Try to focus on your actions. You felt trapped. What did you do?"
+            },
+            {
+              "id": 17,
+              "sequence_in_scene": 17,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "I was angry. They were attacking me. I fought back."
+            },
+            {
+              "id": 18,
+              "sequence_in_scene": 18,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "I felt pain."
+            },
+            {
+              "id": 19,
+              "sequence_in_scene": 19,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "I was injured."
+            },
+            {
+              "id": 20,
+              "sequence_in_scene": 20,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "I began to panic."
+            },
+            {
+              "id": 21,
+              "sequence_in_scene": 21,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "There was a struggle and I"
+            },
+            {
+              "id": 22,
+              "sequence_in_scene": 22,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You what? What happened?"
+            },
+            {
+              "id": 23,
+              "sequence_in_scene": 23,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "Try to associate your actions and emotions with logical thoughts. What do you think caused you to act and feel this way?"
+            },
+            {
+              "id": 24,
+              "sequence_in_scene": 24,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "It was cold and dark because I was outdoors at night. I was in a narrow place. I was walking through an alley."
+            },
+            {
+              "id": 25,
+              "sequence_in_scene": 25,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "I felt threatened."
+            },
+            {
+              "id": 26,
+              "sequence_in_scene": 26,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "I was being watched."
+            },
+            {
+              "id": 27,
+              "sequence_in_scene": 27,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "Someone must have followed me into the alley. That's why I started to walk faster. Someone grabbed me from behind."
+            },
+            {
+              "id": 28,
+              "sequence_in_scene": 28,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "I panicked."
+            },
+            {
+              "id": 29,
+              "sequence_in_scene": 29,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "I tried to fight them off."
+            },
+            {
+              "id": 30,
+              "sequence_in_scene": 30,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "How many of them were there?"
+            },
+            {
+              "id": 31,
+              "sequence_in_scene": 31,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "Three. Humanoid. I only saw the face of one of them."
+            },
+            {
+              "id": 32,
+              "sequence_in_scene": 32,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "What did he look like?"
+            },
+            {
+              "id": 33,
+              "sequence_in_scene": 33,
+              "context_info": "and the spooky alien is sitting next to Riker",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 34,
+              "sequence_in_scene": 34,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I saw him on the ship too. I also saw him here in the hospital, but I don't know who he is."
+            },
+            {
+              "id": 35,
+              "sequence_in_scene": 35,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "That's Mister Suna, the hospital Administrator. You met him when you first arrived here."
+            },
+            {
+              "id": 36,
+              "sequence_in_scene": 36,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "What part of me does he represent?"
+            },
+            {
+              "id": 37,
+              "sequence_in_scene": 37,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "I don't know."
+            },
+            {
+              "id": 38,
+              "sequence_in_scene": 38,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "Don't believe this, Will. None of it's real. You're still with us on the Enterprise."
+            },
+            {
+              "id": 39,
+              "sequence_in_scene": 39,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Doctor?"
+            },
+            {
+              "id": 40,
+              "sequence_in_scene": 40,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "We're your colleagues. You can trust us. Everything will be all right"
+            },
+            {
+              "id": 41,
+              "sequence_in_scene": 41,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "Do you have anything to say to them?"
+            },
+            {
+              "id": 42,
+              "sequence_in_scene": 42,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You're all delusions."
+            },
+            {
+              "id": 43,
+              "sequence_in_scene": 43,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "Do not listen to him, Commander. He is trying to trick you. You are in danger here. Let us help you."
+            },
+            {
+              "id": 44,
+              "sequence_in_scene": 44,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "Listen to me, Will. In all the years we've known each other, have I ever lied to you?"
+            },
+            {
+              "id": 45,
+              "sequence_in_scene": 45,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No, please. Leave me alone!"
+            },
+            {
+              "id": 46,
+              "sequence_in_scene": 46,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "Will, please."
+            },
+            {
+              "id": 47,
+              "sequence_in_scene": 47,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No!"
+            },
+            {
+              "id": 48,
+              "sequence_in_scene": 48,
+              "context_info": "the device removes the images",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 49,
+              "sequence_in_scene": 49,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "You've taken a big step today. You've finally turned your back on those delusions and all that they represent to you. We'll continue later."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 21,
+          "location": "Asylum common area",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "Riker is slowly eating a plate of mush when Beverly enters in civilian clothes",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "It's not real."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "she sits down opposite him",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Commander, do you know who I am? Do you know where you are? If you can't answer, just listen. You were on an undercover mission to Tilonus Four. Something happened. We were told that you killed somebody, but we do not believe it's true. We're being blocked at every turn. The hospital Administrator denies you're here at all. We're beginning to think that there's some kind of a conspiracy going on. I had to come in here posing as a health official. Sit tight, Commander. We're going to get you out of here."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": "she leaves",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Not real."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 22,
+          "location": "Asylum cell",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "Riker wakes to see someone forcing open his cell door. Worf and Data enter",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "Commander."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Get away from me!"
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "Commander, you must come with us. You are in danger here."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No!"
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "Silence."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 23,
+          "location": "Asylum Corridor",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "Data hauls Riker out into the corridor, where he collapses",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "DATA",
+              "dialogue_text": "Commander, are you all right?"
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "Riker breaks away and runs",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Help me! Help me!"
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": "the attendant and guard come round the corner. Riker grabs Worf's phaser and runs behind them",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "Who are you? Take them to Security Ward."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": "Data deals with the guard, and Worf takes out the attendant. Data grabs Riker and drags him to -",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 24,
+          "location": "Asylum common area",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "Worf to Enterprise. The pattern enhancer has been activated. Three to beam up."
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": "OC",
+              "dialogue_spoken_by": "CREWMAN",
+              "dialogue_text": "Acknowledged."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 25,
+          "location": "Sickbay",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "There's damage to the parietal lobe. It's as if someone's trying to access his long-term memory. He's in a severe state of neural shock. It's going to take him a while to recover."
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "Number One, do you remember what happened? You were abducted during the mission to Tilonus Four. You were put into a psychiatric hospital."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "It's still bleeding."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "It's minor. Don't worry about it."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "We have been checking on the hospital Administrator."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Mister Suna."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "It appears that he's involved with one of the rival factions. We believe that he is responsible for what happened to you."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "It still hurts. It's bleeding again. Why? You just healed it."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Will, try to calm down."
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "This isn't real."
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": "Riker knocks Worf down and takes his phaser",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "What are you doing, Will?"
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "If I'm right, you're not really here. This isn't a real phaser. It's all a fantasy, and I'm going to end it, no matter what it takes."
+            },
+            {
+              "id": 14,
+              "sequence_in_scene": 14,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "But what if it isn't a fantasy? Are you willing to take that chance?"
+            },
+            {
+              "id": 15,
+              "sequence_in_scene": 15,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You're right, I won't. But I'm going to find out what's real and what's not."
+            },
+            {
+              "id": 16,
+              "sequence_in_scene": 16,
+              "context_info": "and he points the phaser at his own chest",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 17,
+              "sequence_in_scene": 17,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Will, don't do it!"
+            },
+            {
+              "id": 18,
+              "sequence_in_scene": 18,
+              "context_info": "Riker fires, and the Sickbay shatters. Picard, Worf and Crusher are replaced by",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 26,
+          "location": "Asylum cell",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "SUNA",
+              "dialogue_text": "How's he progressing?"
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "SYRUS",
+              "dialogue_text": "He's not responding to the Reflection therapy. His delusions are growing more elaborate."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "MAVEK",
+              "dialogue_text": "He broke out of his cell last night. We found him running down a corridor claiming people had come to take him back to his starship."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "SUNA",
+              "dialogue_text": "Then I see no other choice. We'll have to perform the synaptic reconstruction."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I still have a phaser. Why do I still have a phaser?"
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "SUNA",
+              "dialogue_text": "It's not a phaser, it's a knife. You stole it from one of the food trays. Give it to me. We don't want you to hurt yourself."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": "Riker's temple starts bleeding again.",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I don't believe you."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": "Mavek steps forward, Riker fires the phaser and he shatters like a broken mirror",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "If this is a knife, what happened to Mavek?"
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": null,
+              "dialogue_spoken_by": "SUNA",
+              "dialogue_text": "It's very complicated. I'll answer all of your questions, but first I want you to put that down."
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No. If this is a real phaser, then I was on the Enterprise. But I fired it on myself, so I should be dead. None of this is real. I'm setting this to level sixteen, wide field. That should destroy half of this building. Unless, of course, this isn't a real phaser."
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": "Riker fires at the wall, which shatters to show the audience watching the play.",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 27,
+          "location": "Theatre Asylum cell",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "Cyrus has disappeared",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "It's all about you, isn't it? You're the only constant, the only person in both places."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "SUNA",
+              "dialogue_text": "There's a lot more going on here than you realise."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "This isn't real, either. What's happening to me?"
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "SUNA",
+              "dialogue_text": "Listen to me. We can still save you, but you must stop fighting us."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": "Riker's head hurts",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "You're lying."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "SUNA",
+              "dialogue_text": "Let me help you."
+            },
+            {
+              "id": 9,
+              "sequence_in_scene": 9,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No!"
+            },
+            {
+              "id": 10,
+              "sequence_in_scene": 10,
+              "context_info": "the audience applaud",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 11,
+              "sequence_in_scene": 11,
+              "context_info": null,
+              "dialogue_spoken_by": "SUNA",
+              "dialogue_text": "I'm warning you."
+            },
+            {
+              "id": 12,
+              "sequence_in_scene": 12,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "No!"
+            },
+            {
+              "id": 13,
+              "sequence_in_scene": 13,
+              "context_info": "Riker pushes Suna, and the audience get to their feet, shouting Bravo. Then Riker shatters, the scene shatters and ",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 28,
+          "location": "Alien lab",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": "Riker is lying on a table, with something attached to his temple at the point where he kept bleeding",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "SUNA",
+              "dialogue_text": "He's conscious! I haven't finished the neurodrain. Get him sedated."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "Riker hits the assistant, rips the thing out of his head and leaps for a table where he grabs the nisroh and pendant",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Riker to Enterprise!"
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": "OC",
+              "dialogue_spoken_by": "WORF",
+              "dialogue_text": "Enterprise here. Are you all right, sir?"
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "Emergency transport. Get me out of here."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "Captain's log, stardate 46778.1. Commander Riker has returned safely from his mission to Tilonus Four. Doctor Crusher has repaired the damage to his long-term memory."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 29,
+          "location": "Ready room",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "Evidently, you were abducted two days after beaming to the surface."
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I remember now. I was in an alley. They attacked me from behind. I tried to fight them off with the nisroh Worf gave me. I managed to get off one of them off me but I think they injected me with some sort of drug."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "We believe that they were trying to extract strategic information from your memory using a neurosomatic technique."
+            },
+            {
+              "id": 4,
+              "sequence_in_scene": 4,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I was in a hospital, then I was back on the Enterprise. I was back at the hospital. I kept shifting from place to place. I couldn't tell what was real."
+            },
+            {
+              "id": 5,
+              "sequence_in_scene": 5,
+              "context_info": null,
+              "dialogue_spoken_by": "TROI",
+              "dialogue_text": "Your mind must have created a defence mechanism that helped you resist the neurosomatic process. Your unconscious fastened on to elements of your real life in an attempt to keep you grounded, to keep you sane."
+            },
+            {
+              "id": 6,
+              "sequence_in_scene": 6,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "The preparation for the mission, the play, those were recent experiences, fresh in my mind."
+            },
+            {
+              "id": 7,
+              "sequence_in_scene": 7,
+              "context_info": null,
+              "dialogue_spoken_by": "PICARD",
+              "dialogue_text": "You should get some rest. We can talk some more tomorrow."
+            },
+            {
+              "id": 8,
+              "sequence_in_scene": 8,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "There is one thing I'd like to do first."
+            }
+          ]
+        },
+        {
+          "sequence_in_episode": 30,
+          "location": "Theatre",
+          "description": null,
+          "events": [
+            {
+              "id": 1,
+              "sequence_in_scene": 1,
+              "context_info": null,
+              "dialogue_spoken_by": "CRUSHER",
+              "dialogue_text": "Are you sure you want to do this by yourself? The stage crew and I were going to do it tomorrow morning."
+            },
+            {
+              "id": 2,
+              "sequence_in_scene": 2,
+              "context_info": null,
+              "dialogue_spoken_by": "RIKER",
+              "dialogue_text": "I'm positive. After everything that I've experienced, I don't think I could sleep knowing it was still up."
+            },
+            {
+              "id": 3,
+              "sequence_in_scene": 3,
+              "context_info": "and Riker starts ripping apart the cell set",
+              "dialogue_spoken_by": null,
+              "dialogue_text": null
+            }
+          ]
+        }
+      ],
+      "transcript_sources": [
+        {
+          "id": 146,
+          "transcript_type": "Default",
+          "transcript_url": "http://www.chakoteya.net/NextGen/247.htm",
+          "loaded_ts": "2023-10-28T23:00:47.513346Z"
+        }
+      ]
+    }
+  }

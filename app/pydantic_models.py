@@ -6,6 +6,8 @@ from app.models import Episode, TranscriptSource, Scene, SceneEvent
 
 Tortoise.init_models(["app.models"], "models")
 
+# https://docs.pydantic.dev/latest/api/config/
+# https://tortoise.github.io/contrib/pydantic.html
 
 TranscriptSourcePydantic = pydantic_model_creator(TranscriptSource)
 EpisodePydantic = pydantic_model_creator(Episode)
@@ -16,3 +18,5 @@ TranscriptSourcePydanticExcluding = pydantic_model_creator(TranscriptSource, exc
 EpisodePydanticExcluding = pydantic_model_creator(Episode, exclude=("id", "loaded_ts", "transcript_loaded_ts"))
 ScenePydanticExcluding = pydantic_model_creator(Scene, exclude=("id", "episode", "episode_id"))
 SceneEventPydanticExcluding = pydantic_model_creator(SceneEvent, exclude=("id", "scene", "scene_id"))
+
+# EpisodePydanticExcludingMore = pydantic_model_creator(Episode, exclude=("id", "loaded_ts", "transcript_loaded_ts", "scenes", "transcript_sources"))

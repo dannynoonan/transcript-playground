@@ -1,32 +1,17 @@
-# from bs4 import BeautifulSoup
 from fastapi import FastAPI, Request, Response
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-# from operator import itemgetter
-# import os
-# import requests
 from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
-# from tortoise.contrib.pydantic import pydantic_model_creator
 from tortoise import Tortoise
 
-# from app.models import TranscriptSource, Episode, Scene, SceneEvent
 import app.pydantic_models as pymod
 from config import settings, DATABASE_URL
 import database.dao as dao
 from database.connect import connect_to_database
 from es.es_write_router import esw_app
 from etl.etl_router import etl_app
-# import etl.transcript_extractor as te
-# import etl.transcript_listing_extractor as tle
-# import nlp.embeddings_factory as ef
-# from es.es_ingest_transformer import to_es_episode
-# from es.es_model import EsEpisodeTranscript
-# import es.es_query_builder as esqb
-# import es.es_response_transformer as esrt
-# from nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
-# import nlp.query_preprocessor as qp
 from show_metadata import ShowKey, show_metadata
 from web.web_router import web_app
 
@@ -88,17 +73,6 @@ Tortoise.init_models(["app.models"], "models")
 # JobPydantic = pydantic_model_creator(Job)
 # JobPydanticNoIds = pydantic_model_creator(Job, exclude_readonly=True)
 
-# TranscriptSourcePydantic = pydantic_model_creator(TranscriptSource)
-# EpisodePydantic = pydantic_model_creator(Episode)
-# ScenePydantic = pydantic_model_creator(Scene)
-# SceneEventPydantic = pydantic_model_creator(SceneEvent)
-
-# TranscriptSourcePydanticExcluding = pydantic_model_creator(TranscriptSource, exclude=("id", "episode", "loaded_ts"))
-# EpisodePydanticExcluding = pydantic_model_creator(Episode, exclude=("id", "loaded_ts", "transcript_loaded_ts"))
-# ScenePydanticExcluding = pydantic_model_creator(Scene, exclude=("id", "episode", "episode_id"))
-# SceneEventPydanticExcluding = pydantic_model_creator(SceneEvent, exclude=("id", "scene", "scene_id"))
-
-# print(f'Episode_Pydantic.model_json_schema()={Episode_Pydantic.model_json_schema()}')
 
 
 

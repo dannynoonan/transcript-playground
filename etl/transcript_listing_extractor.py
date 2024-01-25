@@ -14,7 +14,6 @@ def parse_episode_listing_soup(show_key: ShowKey, episode_listing_soup: Beautifu
     season = 1
     for season_table in season_tables:
         season_df = pd.read_html(str(season_table))[0]
-        # print(f'********************* SEASON {season} *************************')
         normalize_column_names(season_df)
         for row_i, episode_df_row in season_df.iterrows():
             episode = init_episode_from_wiki_df(show_key, episode_df_row, season, row_i+1)
@@ -26,17 +25,14 @@ def parse_episode_listing_soup(show_key: ShowKey, episode_listing_soup: Beautifu
 
 
 def normalize_column_names(season_df: pd.DataFrame) -> None:
-    # print(f'@@@@@@ season_df.columns={season_df.columns}')
     col_updates = {}
     for col in season_df.columns:
         # strip wikipedia annotations (text enclosed in square brackets)
         new_col = re.sub(r'\[.*\]', '', col).strip()
         if new_col != col:
-            # print(f'col={col} new_col={new_col}')
             col_updates[col] = new_col
     if col_updates:
         season_df.rename(columns={k:v for k,v in col_updates.items()}, inplace=True)
-    # print(f'+++++++ AFTER UPDATE season_df.columns={season_df.columns}')
 
 
 def init_episode_from_wiki_df(show_key: ShowKey, episode_df_row: pd.Series, season: int, row_i: int) -> Episode:
@@ -54,8 +50,8 @@ def init_episode_from_wiki_df(show_key: ShowKey, episode_df_row: pd.Series, seas
         episode.external_key = episode.title.replace(' ', '_')
     elif show_key == ShowKey.TNG:
         episode.sequence_in_season = row_i
-        if 'Prod.code' in episode_df_row:
-            episode.external_key = str(episode_df_row['Prod.code'])[:3]
+        if 'Prod. code' in episode_df_row:
+            episode.external_key = str(episode_df_row['Prod. code'])[:3]
         else:
             episode.external_key = episode.title.replace(' ', '_')
 

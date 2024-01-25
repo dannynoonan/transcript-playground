@@ -16,10 +16,10 @@ etl_app = APIRouter()
 '''
 Copy raw episode listing html source to local file
 '''
-@etl_app.get("/etl/copy_episode_meta/{show_key}")
-async def copy_episode_meta(show_key: ShowKey):
+@etl_app.get("/etl/copy_episode_listing/{show_key}")
+async def copy_episode_listing(show_key: ShowKey):
     episode_listing_html = requests.get(WIKIPEDIA_DOMAIN + show_metadata[show_key]['wikipedia_label'])
-    file_path = f'source/episode_meta/{show_key.value}.html'
+    file_path = f'source/episode_listings/{show_key.value}.html'
     with open(file_path, "w") as f:
         f.write(episode_listing_html.text)
     return {'show_key': show_key.value, 'file_path': file_path, 'episode_listing_html': episode_listing_html.text}
@@ -54,9 +54,6 @@ async def copy_transcript_from_source(show_key: ShowKey, episode_key: str):
         return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have you run /load_episode_listing?): {e}"}
     if not episode:
         return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
-    # await episode.fetch_related('transcript_sources')
-    # if not episode.transcript_sources:
-    #     return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
     
     # TODO data model permits multiple transcript_sources per episode, for now just choose first one
     # TODO ultimately the /source/episodes file structure will need to reflect the transcript_source layer
@@ -119,20 +116,30 @@ async def copy_all_transcripts_from_source(show_key: ShowKey):
     }
    
 
-
-### WRITE EXTERNALLY SOURCED CONTENT AND METADATA TO DB ###
+### WRITE EXTERNALLY SOURCED EPISODE LISTING METADATA TO DB ###
 '''
 Load raw episode listing html from local file into db
 '''
-@etl_app.get("/etl/load_episode_meta/{show_key}")
-async def load_episode_meta(show_key: ShowKey, write_to_db: bool = False):
-    file_path = f'source/episode_meta/{show_key.value}.html'
+@etl_app.get("/etl/load_episode_listing/{show_key}")
+async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
+    file_path = f'source/episode_listings/{show_key.value}.html'
     if not os.path.isfile(file_path):
-        return {'Error': f'Unable to load episode metadata for {show_key.value}, no source html at file_path={file_path} (have you run /copy_episode_meta?)'}
-    
-    episode_listing_soup = BeautifulSoup(open(file_path).read())
+        return {'Error': f'Unable to load episode metadata for {show_key.value}, no source html at file_path={file_path} (have you run /copy_episode_listing?)'}
+
+    episode_listing_soup = BeautifulSoup(open(file_path).read(), 'html5lib')
     episodes = tle.parse_episode_listing_soup(show_key, episode_listing_soup)
-    print(f'len(episodes)={len(episodes)}')
+
+    # NOTE used to create test data, haven't decided how to retain these steps
+    # import json
+    # json_episodes = []
+    # for episode in episodes:
+    #     episode_pyd = await pymod.EpisodePydanticExcluding.from_tortoise_orm(episode)
+    #     episode_json = episode_pyd.model_dump_json()
+    #     json_episodes.append(episode_json)
+
+    # with open(f"test_data/responses/parse_episode_listing_soup_{show_key}.json", "w") as file:
+    #     json.dump(json_episodes, file, indent=4)
+
     if write_to_db:
         stored_episodes = []
         for episode in episodes:
@@ -142,7 +149,6 @@ async def load_episode_meta(show_key: ShowKey, write_to_db: bool = False):
     else:
         episodes_excl = []
         for episode in episodes:
-            print(f'episode.id={episode.id} episode.season={episode.season} episode.show_key={episode.show_key} episode.title={episode.title}')
             episode_excl = await pymod.EpisodePydanticExcluding.from_tortoise_orm(episode)
             episodes_excl.append(episode_excl)
         return {'episode_count': len(episodes_excl), 'write_to_db': write_to_db, 'episodes': episodes_excl}
@@ -157,7 +163,7 @@ async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
     if not os.path.isfile(file_path):
         return {'Error': f'Unable to load transcript sources for {show_key.value}, no source html at file_path={file_path} (have you run /copy_transcript_sources?)'}
 
-    transcript_sources_soup = BeautifulSoup(open(file_path).read())
+    transcript_sources_soup = BeautifulSoup(open(file_path).read(), 'html5lib')
     episode_transcripts_by_type = tle.parse_transcript_url_listing_soup(show_key, transcript_sources_soup)
     transcript_sources = await tle.match_episodes_to_transcript_urls(show_key, episode_transcripts_by_type)
     if write_to_db:
@@ -185,9 +191,6 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
         return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have you run /load_episode_listing?): {e}"}
     if not episode:
         return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
-    # await episode.fetch_related('transcript_sources')
-    # if not episode.transcript_sources:
-    #     return {"Error": f"No Transcript found for episode having show_key={show_key} external_key={episode_key}. You may need to run /load_transcript_sources first."}
     
     # TODO data model permits multiple transcript_sources per episode, for now just choose first one
     # TODO ultimately the /source/episodes file structure will need to reflect the transcript_source layer
@@ -197,8 +200,7 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
         file_path = f'source/episodes/{show_key.value}/{episode_key}.html'
         if not os.path.isfile(file_path):
             return {'Error': f'Unable to load transcript for {show_key}:{episode_key}, no source html at file_path={file_path} (have you run /copy_transcript_from_source?)'}
-    # transcript_soup = sb.get_transcript_file_soup(file_path)
-    transcript_soup = BeautifulSoup(open(file_path).read())
+    transcript_soup = BeautifulSoup(open(file_path).read(), 'html5lib')
     
     # transform raw transcript into persistable scene and scene_event data
     scenes, scenes_to_events = te.parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
@@ -264,8 +266,7 @@ async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
                 continue
         
         # fetch and transform raw transcript into persistable scene and scene_event data
-        # transcript_soup = sb.get_transcript_file_soup(file_path)
-        transcript_soup = BeautifulSoup(open(file_path).read())
+        transcript_soup = BeautifulSoup(open(file_path).read(), 'html5lib')
         scenes, scenes_to_events = te.parse_episode_transcript_soup(episode, transcript_source.transcript_type, transcript_soup)
         attempts += 1
         try:
