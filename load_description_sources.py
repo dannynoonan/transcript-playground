@@ -1,10 +1,12 @@
+from bs4 import BeautifulSoup
 import argparse
 import os
+import requests
 import pandas as pd
 
 import main as m
 import show_metadata as sm
-import soup_brewer as sb
+# import source_etl.soup_brewer as sb
 
 
 def main():
@@ -60,7 +62,9 @@ def scrape_episode_descriptions(episodes_df: pd.DataFrame, description_source: s
     ds_url = DESCRIPTION_SOURCES[description_source]
 
     if description_source == 'johanw':
-        episode_desc_soup = sb.get_episode_description_soup(ds_url)
+        # episode_desc_soup = sb.get_episode_description_soup(ds_url)
+        episode_descriptions_html = requests.get(ds_url)
+        episode_desc_soup = BeautifulSoup(episode_descriptions_html.content.decode('utf-8'), 'html5lib')
         episodes = [h3_tag for h3_tag in episode_desc_soup.find_all('h3')]
         for e in episodes:
             desc_p = e.find_next('p')
@@ -107,7 +111,9 @@ def scrape_episode_descriptions(episodes_df: pd.DataFrame, description_source: s
             while not found and i < len(request_urls):
                 request_url = request_urls[i]
                 try:
-                    episode_desc_soup = sb.get_episode_description_soup(request_url)
+                    # episode_desc_soup = sb.get_episode_description_soup(request_url)
+                    episode_descriptions_html = requests.get(request_url)
+                    episode_desc_soup = BeautifulSoup(episode_descriptions_html.content.decode('utf-8'), 'html5lib')
                 except Exception:
                     print(f'unable to find description for episode_key={row["episode_key"]} at request_url={request_url}: url was invalid.')
                 h2_tags = episode_desc_soup.find_all('h2')
