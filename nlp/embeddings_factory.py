@@ -14,7 +14,7 @@ import warnings
 
 from config import settings
 from es.es_model import EsEpisodeTranscript
-import main
+import es.es_read_router as esr
 from nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from nlp.query_preprocessor import tokenize_and_remove_stopwords
 from show_metadata import ShowKey
@@ -208,7 +208,7 @@ def build_embeddings_model(show_key: str) -> dict:
     training_fragments = []
 
     # fetch all episodes for show_key
-    doc_ids_response = main.search_doc_ids(ShowKey(show_key))
+    doc_ids_response = esr.search_doc_ids(ShowKey(show_key))
     for doc_id in doc_ids_response['doc_ids']:
         episode_key = doc_id.split('_')[1]
         print(f'begin compiling training_fragments for episode_key={episode_key}')

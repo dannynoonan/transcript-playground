@@ -6,6 +6,7 @@ import main
 import nlp.embeddings_factory as ef
 import es.es_ingest_transformer as esit
 import es.es_query_builder as esqb
+import es.es_read_router as esr
 from show_metadata import ShowKey
 
 
@@ -113,27 +114,27 @@ def build_embeddings_model(show_key: ShowKey):
     return {"model_info": model_info}
 
 
-@esw_app.get("/esw/populate_embeddings/{show_key}/{episode_key}/{model_version}/{model_vendor}", tags=['ES Writer'])
-def populate_embeddings(show_key: ShowKey, episode_key: str, model_version: str, model_vendor: str):
+@esw_app.get("/esw/populate_embeddings/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_embeddings(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str):
     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
-        ef.generate_episode_embeddings(show_key.value, es_episode, model_version, model_vendor)
+        ef.generate_episode_embeddings(show_key.value, es_episode, model_vendor, model_version)
         esqb.save_es_episode(es_episode)
         return {"es_episode": es_episode}
     except Exception as e:
-        return {f"Failed to populate {model_version}:{model_vendor} embeddings for episode {show_key.value}_{episode_key}": e}
+        return {f"Failed to populate {model_vendor}:{model_version} embeddings for episode {show_key.value}_{episode_key}": e}
 
 
-@esw_app.get("/esw/populate_all_embeddings/{show_key}/{model_version}/{model_vendor}", tags=['ES Writer'])
-def populate_all_embeddings(show_key: ShowKey, model_version: str, model_vendor: str):
-    doc_ids = main.search_doc_ids(ShowKey(show_key))
+@esw_app.get("/esw/populate_all_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
+    doc_ids = esr.search_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']
     processed_episode_keys = []
     failed_episode_keys = []
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
         try:
-            populate_embeddings(ShowKey(show_key), episode_key, model_version, model_vendor)
+            populate_embeddings(ShowKey(show_key), episode_key, model_vendor, model_version)
             processed_episode_keys.append(episode_key)
         except Exception:
             failed_episode_keys.append(episode_key)
