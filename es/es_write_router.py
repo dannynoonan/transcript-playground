@@ -13,13 +13,13 @@ esw_app = APIRouter()
 
 
 
-@esw_app.get("/esw/init_es")
+@esw_app.get("/esw/init_es", tags=['ES Writer'])
 async def init_es():
     await esqb.init_transcripts_index()
     return {"success": "success"}
 
 
-@esw_app.get("/esw/index_episode/{show_key}/{episode_key}")
+@esw_app.get("/esw/index_episode/{show_key}/{episode_key}", tags=['ES Writer'])
 async def index_transcript(show_key: ShowKey, episode_key: str):
     # fetch episode, throw errors if not found
     episode = None
@@ -49,7 +49,7 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
     return {"Success": f"Episode {show_key}_{episode_key} written to es index"}
 
 
-@esw_app.get("/esw/index_all_episodes/{show_key}")
+@esw_app.get("/esw/index_all_episodes/{show_key}", tags=['ES Writer'])
 async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     episodes = []
     try:
@@ -95,25 +95,25 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     }
 
 
-@esw_app.get("/esw/populate_focal_speakers/{show_key}")
+@esw_app.get("/esw/populate_focal_speakers/{show_key}", tags=['ES Writer'])
 async def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
     episodes_to_focal_speakers = await esqb.populate_focal_speakers(show_key.value, episode_key)
     return {"episodes_to_focal_speakers": episodes_to_focal_speakers}
 
 
-@esw_app.get("/esw/populate_focal_locations/{show_key}")
+@esw_app.get("/esw/populate_focal_locations/{show_key}", tags=['ES Writer'])
 async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
     episodes_to_focal_locations = await esqb.populate_focal_locations(show_key.value, episode_key)
     return {"episodes_to_focal_locations": episodes_to_focal_locations}
 
 
-@esw_app.get("/esw/build_embeddings_model/{show_key}")
+@esw_app.get("/esw/build_embeddings_model/{show_key}", tags=['ES Writer'])
 def build_embeddings_model(show_key: ShowKey):
     model_info = ef.build_embeddings_model(show_key.value)
     return {"model_info": model_info}
 
 
-@esw_app.get("/esw/populate_embeddings/{show_key}/{episode_key}/{model_version}/{model_vendor}")
+@esw_app.get("/esw/populate_embeddings/{show_key}/{episode_key}/{model_version}/{model_vendor}", tags=['ES Writer'])
 def populate_embeddings(show_key: ShowKey, episode_key: str, model_version: str, model_vendor: str):
     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
@@ -124,7 +124,7 @@ def populate_embeddings(show_key: ShowKey, episode_key: str, model_version: str,
         return {f"Failed to populate {model_version}:{model_vendor} embeddings for episode {show_key.value}_{episode_key}": e}
 
 
-@esw_app.get("/esw/populate_all_embeddings/{show_key}/{model_version}/{model_vendor}")
+@esw_app.get("/esw/populate_all_embeddings/{show_key}/{model_version}/{model_vendor}", tags=['ES Writer'])
 def populate_all_embeddings(show_key: ShowKey, model_version: str, model_vendor: str):
     doc_ids = main.search_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']

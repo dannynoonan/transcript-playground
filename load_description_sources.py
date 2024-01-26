@@ -6,7 +6,6 @@ import pandas as pd
 
 import main as m
 import show_metadata as sm
-# import source_etl.soup_brewer as sb
 
 
 def main():
@@ -62,7 +61,6 @@ def scrape_episode_descriptions(episodes_df: pd.DataFrame, description_source: s
     ds_url = DESCRIPTION_SOURCES[description_source]
 
     if description_source == 'johanw':
-        # episode_desc_soup = sb.get_episode_description_soup(ds_url)
         episode_descriptions_html = requests.get(ds_url)
         episode_desc_soup = BeautifulSoup(episode_descriptions_html.content.decode('utf-8'), 'html5lib')
         episodes = [h3_tag for h3_tag in episode_desc_soup.find_all('h3')]
@@ -111,7 +109,6 @@ def scrape_episode_descriptions(episodes_df: pd.DataFrame, description_source: s
             while not found and i < len(request_urls):
                 request_url = request_urls[i]
                 try:
-                    # episode_desc_soup = sb.get_episode_description_soup(request_url)
                     episode_descriptions_html = requests.get(request_url)
                     episode_desc_soup = BeautifulSoup(episode_descriptions_html.content.decode('utf-8'), 'html5lib')
                 except Exception:

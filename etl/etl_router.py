@@ -16,7 +16,7 @@ etl_app = APIRouter()
 '''
 Copy raw episode listing html source to local file
 '''
-@etl_app.get("/etl/copy_episode_listing/{show_key}")
+@etl_app.get("/etl/copy_episode_listing/{show_key}", tags=['ETL'])
 async def copy_episode_listing(show_key: ShowKey):
     episode_listing_html = requests.get(WIKIPEDIA_DOMAIN + show_metadata[show_key]['wikipedia_label'])
     file_path = f'source/episode_listings/{show_key.value}.html'
@@ -28,7 +28,7 @@ async def copy_episode_listing(show_key: ShowKey):
 '''
 Copy raw transcript source html source to local file
 '''
-@etl_app.get("/etl/copy_transcript_sources/{show_key}")
+@etl_app.get("/etl/copy_transcript_sources/{show_key}", tags=['ETL'])
 async def copy_transcript_sources(show_key: ShowKey):
     show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
     listing_url = show_metadata[show_key]['listing_url']
@@ -42,7 +42,7 @@ async def copy_transcript_sources(show_key: ShowKey):
 '''
 Copy raw transcript from transcript html source to local file
 '''
-@etl_app.get("/etl/copy_transcript_from_source/{show_key}/{episode_key}")
+@etl_app.get("/etl/copy_transcript_from_source/{show_key}/{episode_key}", tags=['ETL'])
 async def copy_transcript_from_source(show_key: ShowKey, episode_key: str):
     episode = None
     # fetch episode and transcript_source(s), throw errors if not found
@@ -69,7 +69,7 @@ async def copy_transcript_from_source(show_key: ShowKey, episode_key: str):
 '''
 Batch copy raw transcripts from transcript html sources to local files
 '''
-@etl_app.get("/etl/copy_all_transcripts_from_source/{show_key}")
+@etl_app.get("/etl/copy_all_transcripts_from_source/{show_key}", tags=['ETL'])
 async def copy_all_transcripts_from_source(show_key: ShowKey):
     episodes = []
     try:
@@ -120,7 +120,7 @@ async def copy_all_transcripts_from_source(show_key: ShowKey):
 '''
 Load raw episode listing html from local file into db
 '''
-@etl_app.get("/etl/load_episode_listing/{show_key}")
+@etl_app.get("/etl/load_episode_listing/{show_key}", tags=['ETL'])
 async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
     file_path = f'source/episode_listings/{show_key.value}.html'
     if not os.path.isfile(file_path):
@@ -157,7 +157,7 @@ async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
 '''
 Load raw transcript source html from local file into db
 '''
-@etl_app.get("/etl/load_transcript_sources/{show_key}")
+@etl_app.get("/etl/load_transcript_sources/{show_key}", tags=['ETL'])
 async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
     file_path = f'source/transcript_sources/{show_key.value}.html'
     if not os.path.isfile(file_path):
@@ -179,7 +179,7 @@ async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
 '''
 Parse and load transcript html from local source file to transcript_db
 '''
-@etl_app.get("/etl/load_transcript/{show_key}/{episode_key}")
+@etl_app.get("/etl/load_transcript/{show_key}/{episode_key}", tags=['ETL'])
 async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool = False):
     episode = None
     # fetch episode and transcript_source(s), throw errors if not found
@@ -231,7 +231,7 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
 '''
 Batch parse and load transcript html from local source files to transcript_db
 '''
-@etl_app.get("/etl/load_all_transcripts/{show_key}")
+@etl_app.get("/etl/load_all_transcripts/{show_key}", tags=['ETL'])
 async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     episodes = []
     try:
