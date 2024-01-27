@@ -17,18 +17,14 @@ from show_metadata import ShowKey, show_metadata
 from web.web_router import web_app
 
 
-import json
-
-
 app = FastAPI()
 app.include_router(web_app)
 app.include_router(etl_app)
 app.include_router(esw_app)
 app.include_router(esr_app)
 app.mount('/static', StaticFiles(directory='static', html=True), name='static')
-
-
 # templates = Jinja2Templates(directory="templates")
+
 
 # @app.get("/web2")
 # async def home(request: Request):
@@ -37,12 +33,6 @@ app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 # @app.get("/web2/episode/{show_key}/{episode_key}", response_class=HTMLResponse)
 # async def fetch_episode(request: Request, show_key: str, episode_key: str):
 #     return templates.TemplateResponse('episode.html', {'request': request, 'show_key': show_key, 'episode_key': episode_key})
-
-
-# https://fastapi.tiangolo.com/advanced/settings/#__tabbed_2_1
-# @lru_cache
-# def get_settings():
-#     return Settings()
 
 
 register_tortoise(
@@ -67,39 +57,34 @@ register_tortoise(
 #     await Tortoise.generate_schemas()
 
 
+# TODO pretty sure this can be removed
 Tortoise.init_models(["app.models"], "models")
 
-# https://docs.pydantic.dev/latest/api/config/
-# https://tortoise.github.io/contrib/pydantic.html
 
-# JobPydantic = pydantic_model_creator(Job)
-# JobPydanticNoIds = pydantic_model_creator(Job, exclude_readonly=True)
-
-
-
-
-# https://fastapi.tiangolo.com/tutorial/query-params-str-validations/
-
-@app.get("/")
+@app.get("/", tags=['Admin'])
 def root():
     return {"message": "Welcome to transcript playground"}
 
 
-### METADATA ###
-@app.get("/show_meta/{show_key}")
+
+###################### METADATA ###########################
+
+@app.get("/show_meta/{show_key}", tags=['Metadata'])
 async def fetch_show_meta(show_key: ShowKey):
     show_meta = show_metadata[show_key]
     return {show_key: show_meta}
 
 
-### DB ###
-@app.get("/db_connect")
+
+###################### DB ADMIN ###########################
+
+@app.get("/db_connect", tags=['Admin'])
 async def db_connect():
     await connect_to_database()
     return {"DB connection": "Indeed"}
 
 
-@app.get("/backup_db")
+@app.get("/backup_db", tags=['Admin'])
 async def backup_db():
     await connect_to_database()
     output, error = await dao.backup_db()
@@ -107,8 +92,9 @@ async def backup_db():
 
 
 
-### DB READ / ID-BASED LOOKUP ### 
-@app.get("/db_episode/{show_key}/{episode_key}")
+###################### DB READ / ID-BASED LOOKUP ###########################
+
+@app.get("/db_episode/{show_key}/{episode_key}", tags=['DB Reader'])
 async def fetch_db_episode(show_key: ShowKey, episode_key: str):
     # fetch episode from db
     episode = None
@@ -119,17 +105,13 @@ async def fetch_db_episode(show_key: ShowKey, episode_key: str):
     if not episode:
         return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
     
-    # fetch nested scene and scene_event data
-    # await episode.fetch_related('scenes')
-    # for scene in episode.scenes:
-    #     await scene.fetch_related('events')
-    
     episode_pyd = await pymod.EpisodePydantic.from_tortoise_orm(episode)
 
-    episode_json = episode_pyd.model_dump_json()
-    print(f'episode_json={episode_json}')
-    with open(f"episode_{show_key}_{episode_key}.json", "w") as file:
-        json.dump(episode_json, file, indent=4)
+    # NOTE this generates json versions of pydantic model, not sure where to put this code 
+    # episode_json = episode_pyd.model_dump_json()
+    # print(f'episode_json={episode_json}')
+    # with open(f"episode_{show_key}_{episode_key}.json", "w") as file:
+    #     json.dump(episode_json, file, indent=4)
 
     return {"show_meta": show_metadata[show_key], "episode": episode_pyd}
 
@@ -168,13 +150,4 @@ async def fetch_db_episode(show_key: ShowKey, episode_key: str):
 #         raise HTTPException(status_code=404, detail=f"Job {job_id} not found")
 #     return Status(message=f"Deleted job {job_id}")
 
-
-########### OLDER EXAMPLES #############
-
-# @transcript_playground_app.get("/item/{item_id}")
-# async def read_item(item_id: int):
-#     return {"item_id": item_id}
-
-
 ########### END EXAMPLES #############
-

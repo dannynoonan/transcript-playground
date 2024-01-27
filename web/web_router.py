@@ -18,7 +18,7 @@ web_app = APIRouter()
 # web_app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 
 
-@web_app.get("/web/show/{show_key}")
+@web_app.get("/web/show/{show_key}", response_class=HTMLResponse, tags=['Web'])
 async def show_page(request: Request, show_key: ShowKey):
 	tdata = {}
 
@@ -63,7 +63,7 @@ async def show_page(request: Request, show_key: ShowKey):
 	return templates.TemplateResponse("show.html", {"request": request, 'tdata': tdata})
 
 
-@web_app.get("/web/episode/{show_key}/{episode_key}", response_class=HTMLResponse)
+@web_app.get("/web/episode/{show_key}/{episode_key}", response_class=HTMLResponse, tags=['Web'])
 async def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_type: str = None, qt: str = None,
 					   dialog: str = None, speaker: str = None, location: str = None, speakers: str = None, locationAMS: str = None):
 	tdata = {}
@@ -143,7 +143,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 	return templates.TemplateResponse('episode.html', {'request': request, 'tdata': tdata})
 
 
-@web_app.get("/web/episode_search/{show_key}", response_class=HTMLResponse)
+@web_app.get("/web/episode_search/{show_key}", response_class=HTMLResponse, tags=['Web'])
 async def episode_search_page(request: Request, show_key: ShowKey, search_type: str = None, season: str = None, qt: str = None, 
 							  dialog: str = None, speaker: str = None, location: str = None, qtSemantic: str = None, model_vendor: str = None, 
 							  model_version: str = None, speakers: str = None, locationAMS: str = None):
@@ -233,7 +233,7 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 	return templates.TemplateResponse('episodeSearch.html', {'request': request, 'tdata': tdata})
 
 
-@web_app.get("/web/character/{show_key}/{speaker}", response_class=HTMLResponse)
+@web_app.get("/web/character/{show_key}/{speaker}", response_class=HTMLResponse, tags=['Web'])
 async def character_page(request: Request, show_key: ShowKey, speaker: str, search_type: str = None, season: str = None, 
 							  dialog: str = None, location: str = None, speakers: str = None, locationAMS: str = None):
 	tdata = {}
@@ -315,7 +315,7 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str, sear
 	return templates.TemplateResponse('character.html', {'request': request, 'tdata': tdata})
 
 
-# @web_app.get("/web/character_search/{show_key}/", response_class=HTMLResponse)
+# @web_app.get("/web/character_search/{show_key}/", response_class=HTMLResponse, tags=['Web'])
 # async def character_search_page(request: Request, show_key: ShowKey, qt: str = None):
 # 	tdata = {}
 
@@ -331,7 +331,7 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str, sear
 # 	return templates.TemplateResponse('characterSearch.html', {'request': request, 'tdata': tdata})
 
 
-@web_app.get("/web/character_listing/{show_key}/", response_class=HTMLResponse)
+@web_app.get("/web/character_listing/{show_key}/", response_class=HTMLResponse, tags=['Web'])
 async def character_listing_page(request: Request, show_key: ShowKey, qt: str = None):
 	tdata = {}
 
@@ -353,7 +353,7 @@ async def character_listing_page(request: Request, show_key: ShowKey, qt: str = 
 	return templates.TemplateResponse('characterListing.html', {'request': request, 'tdata': tdata})
 
 
-@web_app.get("/web/graph/{show_key}")
+@web_app.get("/web/graph/{show_key}", response_class=HTMLResponse, tags=['Web'])
 async def show_page(request: Request, show_key: ShowKey, background_tasks: BackgroundTasks, num_clusters: int = 0):
 	if not num_clusters:
 		num_clusters = 4

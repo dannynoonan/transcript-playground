@@ -13,11 +13,11 @@ from show_metadata import ShowKey, show_metadata, WIKIPEDIA_DOMAIN
 etl_app = APIRouter()
 
 
-'''
-Copy raw episode listing html source to local file
-'''
-@etl_app.get("/etl/copy_episode_listing/{show_key}")
+@etl_app.get("/etl/copy_episode_listing/{show_key}", tags=['ETL'])
 async def copy_episode_listing(show_key: ShowKey):
+    '''
+    Copies html of external episode listing page (as configured in `show_metadata`) to `source/episode_listings/` 
+    '''
     episode_listing_html = requests.get(WIKIPEDIA_DOMAIN + show_metadata[show_key]['wikipedia_label'])
     file_path = f'source/episode_listings/{show_key.value}.html'
     with open(file_path, "w") as f:
@@ -25,11 +25,11 @@ async def copy_episode_listing(show_key: ShowKey):
     return {'show_key': show_key.value, 'file_path': file_path, 'episode_listing_html': episode_listing_html.text}
 
 
-'''
-Copy raw transcript source html source to local file
-'''
-@etl_app.get("/etl/copy_transcript_sources/{show_key}")
+@etl_app.get("/etl/copy_transcript_sources/{show_key}", tags=['ETL'])
 async def copy_transcript_sources(show_key: ShowKey):
+    '''
+    Copies html of external transcript url listing page (as configured in `show_metadata`) to `source/transcript_sources/`
+    '''
     show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
     listing_url = show_metadata[show_key]['listing_url']
     transcript_source_html = requests.get(show_transcripts_domain + listing_url)
@@ -39,11 +39,11 @@ async def copy_transcript_sources(show_key: ShowKey):
     return {'show_key': show_key.value, 'file_path': file_path, 'transcript_source_html': transcript_source_html.text}
     
 
-'''
-Copy raw transcript from transcript html source to local file
-'''
-@etl_app.get("/etl/copy_transcript_from_source/{show_key}/{episode_key}")
+@etl_app.get("/etl/copy_transcript_from_source/{show_key}/{episode_key}", tags=['ETL'])
 async def copy_transcript_from_source(show_key: ShowKey, episode_key: str):
+    '''
+    Copies html of external episode page (fetched from `TranscriptSource`) to `source/episodes/`
+    '''
     episode = None
     # fetch episode and transcript_source(s), throw errors if not found
     try:
@@ -66,11 +66,11 @@ async def copy_transcript_from_source(show_key: ShowKey, episode_key: str):
     return {'show_key': show_key.value, 'episode_key': episode_key, 'file_path': file_path, 'transcript_html': transcript_html.text}
 
 
-'''
-Batch copy raw transcripts from transcript html sources to local files
-'''
-@etl_app.get("/etl/copy_all_transcripts_from_source/{show_key}")
+@etl_app.get("/etl/copy_all_transcripts_from_source/{show_key}", tags=['ETL'])
 async def copy_all_transcripts_from_source(show_key: ShowKey):
+    '''
+    Bulk copies html of external episode pages (fetched from `TranscriptSource` entities) to `source/episodes/`. Bulk equivalent of `/etl/copy_transcript_from_source`.
+    '''
     episodes = []
     try:
         episodes = await dao.fetch_episodes(show_key.value)
@@ -116,12 +116,13 @@ async def copy_all_transcripts_from_source(show_key: ShowKey):
     }
    
 
-### WRITE EXTERNALLY SOURCED EPISODE LISTING METADATA TO DB ###
-'''
-Load raw episode listing html from local file into db
-'''
-@etl_app.get("/etl/load_episode_listing/{show_key}")
+################### WRITE EXTERNALLY SOURCED EPISODE LISTING METADATA TO DB ###################
+
+@etl_app.get("/etl/load_episode_listing/{show_key}", tags=['ETL'])
 async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
+    '''
+    Load raw episode listing html from `source/episode_listings/` into transcript_db. Initializes `Episode` db entities in Postgres.
+    '''
     file_path = f'source/episode_listings/{show_key.value}.html'
     if not os.path.isfile(file_path):
         return {'Error': f'Unable to load episode metadata for {show_key.value}, no source html at file_path={file_path} (have you run /copy_episode_listing?)'}
@@ -154,11 +155,11 @@ async def load_episode_listing(show_key: ShowKey, write_to_db: bool = False):
         return {'episode_count': len(episodes_excl), 'write_to_db': write_to_db, 'episodes': episodes_excl}
 
 
-'''
-Load raw transcript source html from local file into db
-'''
-@etl_app.get("/etl/load_transcript_sources/{show_key}")
+@etl_app.get("/etl/load_transcript_sources/{show_key}", tags=['ETL'])
 async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
+    '''
+    Load raw transcript source html from `source/transcript_sources/` into transcript_db. Initializes `TranscriptSource` db entities.
+    '''
     file_path = f'source/transcript_sources/{show_key.value}.html'
     if not os.path.isfile(file_path):
         return {'Error': f'Unable to load transcript sources for {show_key.value}, no source html at file_path={file_path} (have you run /copy_transcript_sources?)'}
@@ -176,11 +177,11 @@ async def load_transcript_sources(show_key: ShowKey, write_to_db: bool = False):
         return {'transcript_sources_count': len(transcript_sources), 'transcript_sources': transcript_sources}
 
 
-'''
-Parse and load transcript html from local source file to transcript_db
-'''
-@etl_app.get("/etl/load_transcript/{show_key}/{episode_key}")
+@etl_app.get("/etl/load_transcript/{show_key}/{episode_key}", tags=['ETL'])
 async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool = False):
+    '''
+    Parse and load transcript html from `source/episodes/` to transcript_db. Generates `Scene` and `SceneEvent` db entities.
+    '''
     episode = None
     # fetch episode and transcript_source(s), throw errors if not found
     try:
@@ -228,11 +229,11 @@ async def load_transcript(show_key: ShowKey, episode_key: str, write_to_db: bool
         return {'show': show_metadata[show_key], 'episode': episode_excl}
 
 
-'''
-Batch parse and load transcript html from local source files to transcript_db
-'''
-@etl_app.get("/etl/load_all_transcripts/{show_key}")
+@etl_app.get("/etl/load_all_transcripts/{show_key}", tags=['ETL'])
 async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
+    '''
+    Parse and load transcript html from `source/episodes/` to transcript_db. Bulk equivalent of `/etl/load_transcript/`.
+    '''
     episodes = []
     try:
         episodes = await dao.fetch_episodes(show_key.value)
