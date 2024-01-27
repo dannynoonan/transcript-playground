@@ -1,4 +1,5 @@
 WORD2VEC_VENDOR_VERSIONS = {
+    # Download webvectors models: http://vectors.nlpl.eu/explore/embeddings/en/models/
     'webvectors': {
         'versions': {
             'gigaword29': {
@@ -14,6 +15,7 @@ WORD2VEC_VENDOR_VERSIONS = {
         'no_header': False,
         'pos_tag': True
     },
+    # Download GloVe models: https://nlp.stanford.edu/projects/glove/
     'glove': {
         'versions': {
             '6B300d': {
@@ -41,6 +43,7 @@ WORD2VEC_VENDOR_VERSIONS = {
         'no_header': True,
         'pos_tag': False
     },
+    # Download fasttext models: https://fasttext.cc/docs/en/english-vectors.html
     'fasttext': {
         'versions': {
             'wikinews300d1M': {

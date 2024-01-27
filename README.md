@@ -1,28 +1,37 @@
 # Project overview
 
-This project defines a simple, standardized data model into which any dialogue-driven television series can be transformed, persisted, and indexed, then builds features against that normalized/indexed transcript data.
+This project defines a simple, standardized data model into which any dialogue-driven television series can be transformed, persisted, and indexed, then builds text analytics / AI / ML features against that normalized/indexed transcript data.
 
-The idea is that, for any show having a reasonably well-formatted public transcript source, it shouldn't be much trouble to write ingest parsers/transformers mapping that public transcript data and episode listing metadata to the `transcript-playground` data model, and that any properly-loaded show can leverage the same text analytics feature suite.
+As of this writing, properly ingested/normalized show transcripts can leverage character- and location-based faceting, aggregation, and free text search against the show's transcript corpus. Search and recommendation features combine bag-of-words search native to ElasticSearch with embeddings from pretrained Word2Vec and OpenAI transformer models. OpenAI embeddings are also leveraged for basic classification and clustering operations.
 
-Currently, although the standardized data model feels relatively solid, the design of the transcript ingest code requires some restructuring to make it more extensible and less ad hoc.
+## Next phases
 
-The feature set awaiting any properly-ingested transcript content is very much under development, but as of this writing incorporates character- and location-based faceting, aggregation, and free text dialogue search using standard bag-of-words indexing, embedding-driven search using trained Word2Vec and OpenAI transformer models, and basic classification and clustering operations using OpenAI embeddings (but it feels like the sky is the limit now that the basic building blocks are wired up). 
+### Lateral growth: adding new shows / ingestion transformers
+Ideally, the transcript ingest and normalization code should be easily extensible, allowing for new ETL parsers to be easily added for new shows. Some restructuring of the ETL code is needed for the onboarding of new shows / new transcript parsers to be smoother / less ad hoc.
+
+### Vertical growth: expanding text analytics feature set
+On deck: AI/ML models trained using embedding data generated via OpenAI. Interactive data visualization by integrating Plotly/Dash into FastAPI/Flask.
 
 
 # Tech stack overview
-* **FastAPI:** lightweight async python API framework
-* **Postgres/Toroise/Pydantic:** RDBMS and ORM framework 
-* **ElasticSearch/elasticsearch-dsl:** lucene-based index and ORM-style utilities
-* **BeautifulSoup:** text parser for transforming raw HTML to normalized objects 
-* **Pandas/NumPy/Scikit-learn/NLTK:** data / text analytics / ML tool kits
-* **Word2Vec/OpenAI:** pre-trained language / embedding models 
+* `FastAPI`: lightweight async python API framework
+* `Postgres`/`Toroise`/`Pydantic`: RDBMS and ORM framework 
+* `ElasticSearch`/`elasticsearch-dsl`: lucene-based index and ORM-style utilities
+* `BeautifulSoup`: text parser for transforming raw HTML to normalized objects 
+* `Pandas`/`NumPy`/`Scikit-learn`/`NLTK`: data / text analytics / ML tool kits
+* `Word2Vec`/`OpenAI`: pre-trained language / embedding models 
 
 
 # Setup
 
+## Install dependencies
+```
+pip install -r /path/to/requirements.txt
+```
+
 ## Run elasticsearch
 
-Huh, just realized I don't have a `Dockerfile` defined yet, but [Install Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html) has carried me so far. Big `#TODO` here.
+`#TODO` set up `Dockerfile` ([Install Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html) has carried me so far)
 
 ## Initialize Postgres / Toroise ORM / Aerich migrations
 
@@ -76,12 +85,12 @@ Verify app is up by hitting http://127.0.0.1:8000/docs#/.
 
 A mapping of predefined `model_vendor` and `model_version` values and associated metadata are managed in the `WORD2VEC_VENDOR_VERSIONS` and `TRANSFORMER_VENDOR_VERSIONS` variables in `nlp/nlp_metadata.py`.
 
-**Note:** Word2Vec models are massive and are not stored in the project github repo. If you decide to leverage any of the Word2Vec embedding functionality, you will need to download those files from host sites where they are maintained, then using the labeling scheme in the `WORD2VEC_VENDOR_VERSIONS` variable in `nlp/nlp_metadata.py` you will need to manually rename and map them to the following directories:
+**Note:** Word2Vec models are massive and are not stored in the project github repo. If you decide to leverage any of the Word2Vec embedding functionality, the `nlp/nlp_metadata.py` will guide you to external resources where you can download pretrained Word2Vec model files. Once downloaded, rename a given model file to match the `versions` keys in the `WORD2VEC_VENDOR_VERSIONS` variable (again using `nlp/nlp_metadata.py` as a guide), then store the renamed model file(s) to one of the following directories:
 * `w2v_models/fasttext`
 * `w2v_models/glove`
 * `w2v_models/webvectors`
 
-You only need to download and configure any Word2Vec language models that you intend to use, so for example you may get up and running with `model_vendor:'glove'` and `model_version:'6B300d'` and never download or run other `glove` model versions, or models from any other vendors. 
+You only need to download and configure Word2Vec language models that you intend to use, and you can ignore those you don't intend to use. Getting up and running with `model_vendor:'glove'` / `model_version:'6B300d'` does not require you to download or rename any other `glove` model versions, or models from any other vendor.
 
 If you decide to experiment with the `/esw/build_embeddings_model` endpoint (described below) you will also need to create:
 * `w2v_models/homegrown`
@@ -104,7 +113,7 @@ API endpoints currently do most of the work in the app. Endpoints live within 4 
 A few endpoints that don't fall cleanly into those four buckets still live in `main.py` for the time being.
 
 
-## ETL endpoints" to source and load data into Postgres  
+## 'ETL' endpoints" to source and load data into Postgres  
 
 ETL endpoints fall into two buckets: `/copy_X` and `/load_X`
 * `/etl/copy_X` endpoints: fetch html content from external sources (defined in `show_metadata.py`) and store as raw text files to local `source/` directory.
@@ -114,19 +123,19 @@ ETL endpoints fall into two buckets: `/copy_X` and `/load_X`
         * `source/episode_listings/`
         * `source/transcript_sources/`
     * `/etl/copy_X` endpoints can be run in any order, but logically they proceed in this sequence:
-        * `/etl/copy_episode_listing/{show_key}`
-        * `/etl/copy_transcript_sources/{show_key}`
-        * Individual episodes can be copied using `/etl/copy_transcript_from_source/{show_key}/{episode_key}` (it makes sense to spot-check that this works on a couple of episodes before running the bulk `copy_all_transcripts` operation)
-        * `/etl/copy_all_transcripts_from_source/{show_key}`
+        * `/etl/copy_episode_listing/{show_key}`: copies html of external episode listing page to `source/episode_listings/` 
+        * `/etl/copy_transcript_sources/{show_key}`: copies html of external transcript url listing page to `source/transcript_sources/`
+        * `/etl/copy_transcript_from_source/{show_key}/{episode_key}` copies html of external episode page to `source/episodes/` (it makes sense to spot-check that this works on a couple of episodes before running the bulk `/etl/copy_all_transcripts_from_source/` operation)
+        * `/etl/copy_all_transcripts_from_source/{show_key}`: bulk run of `/etl/copy_transcript_from_source` for all episodes of a given show
 * `/etl/load_X` endpoints: extract raw html written to `source/` directory during `/etl/copy_X` actions, transform these into Tortoise-ORM mapped objects, and write them to Postgres `transcript_db`.
     * `/etl/load_X` endpoints should be run in this order:
         * `/etl/load_episode_listing/{show_key}`: initializes `Episode` db entities 
         * `/etl/load_transcript_sources/{show_key}`: initializes `TranscriptSource` db entities, has dependencies on `Episode` db entities
-        * `/etl/load_transcript/{show_key}/{episode_key}`: transform and load `Scene` and `SceneEvent` db entites as children of `Episode` db entities (it makes sense to spot-check that this works on a couple of episodes before running the bulk `load_all_transcripts` operation)
-        * `/etl/load_all_transcripts/{show_key}`: transforms and loads all transcripts for a given show
+        * `/etl/load_transcript/{show_key}/{episode_key}`: transform and load `Scene` and `SceneEvent` db entites as children of `Episode` db entities, has dependencies on `Episode` db entities and `TranscriptSource` db entities (it makes sense to spot-check that this works on a couple of episodes before running the bulk `/etl/load_all_transcripts` operation)
+        * `/etl/load_all_transcripts/{show_key}`: bulk run of `/etl/load_transcript` for all episodes of a given show
         
 
-## ES Writer endpoints: to populate ElasticSearch 
+## 'ES Writer' endpoints: to populate ElasticSearch 
 
 **Important:** First run the `/esw/init_es` endpoint to generate mappings for the "transcripts" index. If you do not do this, index writes may proceed without issuing warnings, but certain index read operations will fail where data has been mapped to default field types.
 
@@ -144,10 +153,10 @@ Endpoints for writing vector embeddings to es index:
 * `/esw/populate_all_embeddings/{show_key}/{model_vendor}/{model_version}`: bulk run of `/esw/populate_embeddings` for all episodes of a given show
 
 
-## ES Reader endpoints: to query ElasticSearch  
+## 'ES Reader' endpoints: to query ElasticSearch  
 
 ES Reader `/esw` endpoints provide most of the core functionality of the project, since ElasticSearch houses free text, facet-oriented, and vectorized representations of transcript data that span the gamut of search, recommendation, classification, clustering, and other AI/ML-oriented features. I won't continually track the feature set in the README, but at the time of this writing the endpoints generally broke down into these buckets:
-* show listing and metadata lookups (key- or id-based fetches that might have just as easily hit the Postgres RDBMS)
+* show listing and metadata lookups (key- or id-based fetches)
 * free text search (primarily of dialogue, but also of title and description fields)
 * faceted search in combination with free text search (keying off of selected characters, locations, or seasons)  
 * aggregations (effectively your "count(*) / group by" type queries keying off facets like characters, locations, or seasons)
@@ -155,6 +164,6 @@ ES Reader `/esw` endpoints provide most of the core functionality of the project
 * AI/ML functionality like MoreLikeThis and termvectors (native to ElasticSearch) or clustering and classification (leveraging embeddings data as inputs to ML model training)
 
 
-## Web endpoints: render web pages 
+## 'Web' endpoints: render web pages 
 
 Webpage-rendering endpoints are 'front-end' consumers of the other 'back-end' endpoints, specifically of the 'ES Reader' endpoints. These 'Web' endpoints generate combinations of `/esr` requests, package up the results, and feed them into HTML templates that offer some bare-bones UI functionality.

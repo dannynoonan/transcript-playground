@@ -16,12 +16,19 @@ esw_app = APIRouter()
 
 @esw_app.get("/esw/init_es", tags=['ES Writer'])
 async def init_es():
+    '''
+    Run this to explicitly define the mapping anytime the `transcripts` index is blown away and re-created. Not doing so will result in the wrong
+    data types being auto-assigned to several fields in the schema mapping, and will break query (read) functionality down the line.
+    '''
     await esqb.init_transcripts_index()
     return {"success": "success"}
 
 
 @esw_app.get("/esw/index_episode/{show_key}/{episode_key}", tags=['ES Writer'])
 async def index_transcript(show_key: ShowKey, episode_key: str):
+    '''
+    Fetch `Episode` entity from Postgres `transcript_db`, transform Tortoise object to ElasticSearch object, and write it to ElasticSearch index.
+    '''
     # fetch episode, throw errors if not found
     episode = None
     try:
@@ -52,6 +59,9 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
 
 @esw_app.get("/esw/index_all_episodes/{show_key}", tags=['ES Writer'])
 async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
+    '''
+    Bulk run of `/esw/index_episode` for all episodes of a given show
+    '''
     episodes = []
     try:
         episodes = await dao.fetch_episodes(show_key.value)
@@ -98,24 +108,36 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
 
 @esw_app.get("/esw/populate_focal_speakers/{show_key}", tags=['ES Writer'])
 async def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
+    '''
+    For each episode, query ElasticSearch to count the number of lines spoken per character, then write the top 3 characters back to their own ElasticSearch field
+    '''
     episodes_to_focal_speakers = await esqb.populate_focal_speakers(show_key.value, episode_key)
     return {"episodes_to_focal_speakers": episodes_to_focal_speakers}
 
 
 @esw_app.get("/esw/populate_focal_locations/{show_key}", tags=['ES Writer'])
 async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
+    '''
+    For each episode, query ElasticSearch to count the number of scenes per location, then write the top 3 locations back to their own ElasticSearch field
+    '''
     episodes_to_focal_locations = await esqb.populate_focal_locations(show_key.value, episode_key)
     return {"episodes_to_focal_locations": episodes_to_focal_locations}
 
 
 @esw_app.get("/esw/build_embeddings_model/{show_key}", tags=['ES Writer'])
 def build_embeddings_model(show_key: ShowKey):
+    '''
+    Experimental endpoint: goes thru the motions of building a language model using Word2Vec, but limits training data to a single show's text corpus, resulting in a (uselessly) tiny model
+    '''
     model_info = ef.build_embeddings_model(show_key.value)
     return {"model_info": model_info}
 
 
 @esw_app.get("/esw/populate_embeddings/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
 def populate_embeddings(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str):
+    '''
+    Generate vector embedding for episode using pre-trained Word2Vec and Transformer models (enumerated in `nlp/nlp_metadata.py`)
+    '''
     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
         ef.generate_episode_embeddings(show_key.value, es_episode, model_vendor, model_version)
@@ -127,6 +149,9 @@ def populate_embeddings(show_key: ShowKey, episode_key: str, model_vendor: str, 
 
 @esw_app.get("/esw/populate_all_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
 def populate_all_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
+    '''
+    Bulk run of `/esw/populate_embeddings` for all episodes of a given show
+    '''
     doc_ids = esr.search_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']
     processed_episode_keys = []
