@@ -66,14 +66,18 @@ def root():
     return {"message": "Welcome to transcript playground"}
 
 
-### METADATA ###
+
+###################### METADATA ###########################
+
 @app.get("/show_meta/{show_key}", tags=['Metadata'])
 async def fetch_show_meta(show_key: ShowKey):
     show_meta = show_metadata[show_key]
     return {show_key: show_meta}
 
 
-### DB ###
+
+###################### DB ADMIN ###########################
+
 @app.get("/db_connect", tags=['Admin'])
 async def db_connect():
     await connect_to_database()
@@ -88,7 +92,8 @@ async def backup_db():
 
 
 
-### DB READ / ID-BASED LOOKUP ### 
+###################### DB READ / ID-BASED LOOKUP ###########################
+
 @app.get("/db_episode/{show_key}/{episode_key}", tags=['DB Reader'])
 async def fetch_db_episode(show_key: ShowKey, episode_key: str):
     # fetch episode from db

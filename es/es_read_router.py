@@ -13,9 +13,13 @@ esr_app = APIRouter()
 
 
 
-### ES FETCH ###
+###################### ES FETCH ###########################
+
 @esr_app.get("/esr/episode/{show_key}/{episode_key}", tags=['ES Reader'])
 async def fetch_episode(show_key: ShowKey, episode_key: str, all_fields: bool = False):
+    '''
+    Fetch individual episode 
+    '''
     s = await esqb.fetch_episode_by_key(show_key.value, episode_key, all_fields=all_fields)
     es_query = s.to_dict()
     match = await esrt.return_episode_by_key(s)
@@ -24,6 +28,9 @@ async def fetch_episode(show_key: ShowKey, episode_key: str, all_fields: bool = 
 
 @esr_app.get("/esr/search_doc_ids/{show_key}", tags=['ES Reader'])
 def search_doc_ids(show_key: ShowKey, season: str = None):
+    '''
+    Get all es source _ids for show 
+    '''
     s = esqb.search_doc_ids(show_key.value, season=season)
     es_query = s.to_dict()
     matches = esrt.return_doc_ids(s)
@@ -32,6 +39,9 @@ def search_doc_ids(show_key: ShowKey, season: str = None):
 
 @esr_app.get("/esr/list_episodes_by_season/{show_key}", tags=['ES Reader'])
 def list_episodes_by_season(show_key: ShowKey):
+    '''
+    Fetch simple (sceneless) episodes sequenced and grouped by season
+    '''
     s = esqb.list_episodes_by_season(show_key.value)
     es_query = s.to_dict()
     episodes_by_season = esrt.return_episodes_by_season(s)
@@ -39,9 +49,13 @@ def list_episodes_by_season(show_key: ShowKey):
 
 
 
-### ES SEARCH ###
+###################### ES SEARCH ###########################
+
 @esr_app.get("/esr/search_episodes_by_title/{show_key}", tags=['ES Reader'])
 async def search_episodes_by_title(show_key: ShowKey, title: str = None):
+    '''
+    Free text episode search by title
+    '''
     s = await esqb.search_episodes_by_title(show_key.value, title)
     es_query = s.to_dict()
     matches = await esrt.return_episodes_by_title(s)
@@ -50,6 +64,9 @@ async def search_episodes_by_title(show_key: ShowKey, title: str = None):
 
 @esr_app.get("/esr/search_scenes/{show_key}", tags=['ES Reader'])
 async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, description: str = None):
+    '''
+    Facet query of nested Scene fields 
+    '''
     if not (location or description):
         error = 'Unable to execute search_scenes without at least one scene property set (location or description)'
         print(error)
@@ -62,6 +79,9 @@ async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str 
 
 @esr_app.get("/esr/search_scene_events/{show_key}", tags=['ES Reader'])
 async def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None, location: str = None):
+    '''
+    Facet query of nested Scene and SceneEvent fields 
+    '''
     s = await esqb.search_scene_events(show_key.value, season=season, episode_key=episode_key, speaker=speaker, dialog=dialog)
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = await esrt.return_scene_events(s, location=location)
@@ -70,6 +90,9 @@ async def search_scene_events(show_key: ShowKey, season: str = None, episode_key
 
 @esr_app.get("/esr/search_scene_events_multi_speaker/{show_key}", tags=['ES Reader'])
 async def search_scene_events_multi_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, speakers: str = None, location: str = None):
+    '''
+    Facet query of Scenes comprised of SceneEvents matching 1-n speakers
+    '''
     s = await esqb.search_scene_events_multi_speaker(show_key.value, speakers, season=season, episode_key=episode_key)
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = await esrt.return_scene_events_multi_speaker(s, speakers, location=location)
@@ -78,6 +101,9 @@ async def search_scene_events_multi_speaker(show_key: ShowKey, season: str = Non
 
 @esr_app.get("/esr/search/{show_key}", tags=['ES Reader'])
 async def search(show_key: ShowKey, season: str = None, episode_key: str = None, qt: str = None):
+    '''
+    Generic free text search of Episodes and nested Scenes and SceneEvents
+    '''
     s = await esqb.search_episodes(show_key.value, season=season, episode_key=episode_key, qt=qt)
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = await esrt.return_episodes(s)
@@ -87,9 +113,9 @@ async def search(show_key: ShowKey, season: str = None, episode_key: str = None,
 # TODO support POST for long requests?
 @esr_app.get("/esr/vector_search/{show_key}", tags=['ES Reader'])
 def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
-    # if not qt or qt == np.nan:
-    #     return {"error": "Cannot execute vector search on empty query term"}
-    
+    '''
+    Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
+    '''
     if not model_vendor:
         model_vendor = 'webvectors'
     if not model_version:
@@ -135,6 +161,9 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
 
 @esr_app.get("/esr/test_vector_search/{show_key}", tags=['ES Reader'])
 def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, normalize_and_expand: bool = False):
+    '''
+    Experimental endpoint for troubleshooting ontology overrides and other qt alterations preceding vectorization
+    '''
     if not model_vendor:
         model_vendor = 'webvectors'
     if not model_version:
@@ -155,7 +184,8 @@ def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, mod
 
 
 
-### ES AGG ###
+###################### ES AGGREGATIONS ###########################
+
 @esr_app.get("/esr/agg_episodes/{show_key}", tags=['ES Reader'])
 async def agg_episodes(show_key: ShowKey, season: str = None, location: str = None):
     s = await esqb.agg_episodes(show_key.value, season=season, location=location)
@@ -259,7 +289,8 @@ async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_
 
 
 
-### ES OTHER ###
+###################### OTHER ES READS ###########################
+
 @esr_app.get("/esr/keywords_by_episode/{show_key}/{episode_key}", tags=['ES Reader'])
 async def keywords_by_episode(show_key: ShowKey, episode_key: str, exclude_speakers: bool = False):
     response = await esqb.keywords_by_episode(show_key.value, episode_key)

@@ -155,7 +155,7 @@ Endpoints for writing vector embeddings to es index:
 
 ## 'ES Reader' endpoints: to query ElasticSearch  
 
-ES Reader `/esw` endpoints provide most of the core functionality of the project, since ElasticSearch houses free text, facet-oriented, and vectorized representations of transcript data that span the gamut of search, recommendation, classification, clustering, and other AI/ML-oriented features. I won't continually track the feature set in the README, but at the time of this writing the endpoints generally broke down into these buckets:
+ES Reader `/esr` endpoints provide most of the core functionality of the project, since ElasticSearch houses free text, facet-oriented, and vectorized representations of transcript data that span the gamut of search, recommendation, classification, clustering, and other AI/ML-oriented features. I won't continually track the feature set in the README, but at the time of this writing the endpoints generally broke down into these buckets:
 * show listing and metadata lookups (key- or id-based fetches)
 * free text search (primarily of dialogue, but also of title and description fields)
 * faceted search in combination with free text search (keying off of selected characters, locations, or seasons)  
@@ -167,3 +167,14 @@ ES Reader `/esw` endpoints provide most of the core functionality of the project
 ## 'Web' endpoints: render web pages 
 
 Webpage-rendering endpoints are 'front-end' consumers of the other 'back-end' endpoints, specifically of the 'ES Reader' endpoints. These 'Web' endpoints generate combinations of `/esr` requests, package up the results, and feed them into HTML templates that offer some bare-bones UI functionality.
+
+
+# Analytics
+
+I've set up a rudimentary query input -> response ranking pipeline to evaluate the performance of various Word2Vec and Transformer language models. The 'test data' are short summaries of episodes pulled from various data sources (fan sites, reviews portals, etc), and 'success' is measured by how well an episode description does at matching the episode being described in search results.
+
+The current ad hoc setup is built around `show_key:'TNG'`, but the overarching workflow is generic and--with some whittling--could be expanded to cover other shows.
+
+Analytics processes are triggered as scripts rather than via API endpoints:
+* `load_description_sources.py`: fetches episode descriptions from external data sources, maps them to episode keys, and writes them to a freeze-dried pandas dataframe stored as csv
+* `generate_vsearch_rankings.py`: invokes the `/esr/vector_search` endpoint for each externally-sourced episode description, determines how well the described episode ranks in search results, and writes that ranking/performance output to a freeze-dried pandas dataframe stored as csv
