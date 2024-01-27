@@ -4,14 +4,6 @@ This project defines a simple, standardized data model into which any dialogue-d
 
 As of this writing, properly ingested/normalized show transcripts can leverage character- and location-based faceting, aggregation, and free text search against the show's transcript corpus. Search and recommendation features combine bag-of-words search native to ElasticSearch with embeddings from pretrained Word2Vec and OpenAI transformer models. OpenAI embeddings are also leveraged for basic classification and clustering operations.
 
-## Next phases
-
-### Lateral growth: adding new shows / ingestion transformers
-Ideally, the transcript ingest and normalization code should be easily extensible, allowing for new ETL parsers to be easily added for new shows. Some restructuring of the ETL code is needed for the onboarding of new shows / new transcript parsers to be smoother / less ad hoc.
-
-### Vertical growth: expanding text analytics feature set
-On deck: AI/ML models trained using embedding data generated via OpenAI. Interactive data visualization by integrating Plotly/Dash into FastAPI/Flask.
-
 
 # Tech stack overview
 * `FastAPI`: lightweight async python API framework
@@ -178,3 +170,12 @@ The current ad hoc setup is built around `show_key:'TNG'`, but the overarching w
 Analytics processes are triggered as scripts rather than via API endpoints:
 * `load_description_sources.py`: fetches episode descriptions from external data sources, maps them to episode keys, and writes them to a freeze-dried pandas dataframe stored as csv
 * `generate_vsearch_rankings.py`: invokes the `/esr/vector_search` endpoint for each externally-sourced episode description, determines how well the described episode ranks in search results, and writes that ranking/performance output to a freeze-dried pandas dataframe stored as csv
+
+
+# Next phases
+
+## Lateral growth: adding new shows / ingestion transformers
+Ideally, the transcript ingest and normalization code should be easily extensible, allowing for new ETL parsers to be easily added for new shows. Some restructuring of the ETL code is needed for the onboarding of new shows / new transcript parsers to be smoother / less ad hoc.
+
+## Vertical growth: expanding text analytics feature set
+On deck: AI/ML models trained using embedding data generated via OpenAI. Interactive data visualization by integrating Plotly/Dash into FastAPI/Flask.
