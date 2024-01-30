@@ -1,17 +1,20 @@
 # Project overview
 
-This project defines a simple, standardized data model into which any dialogue-driven television series can be transformed, persisted, and indexed, then builds text analytics / AI / ML features against that normalized/indexed transcript data.
+This project defines a simple, standardized data model into which any dialogue-driven television series can be transformed, persisted, and indexed, then builds text analytics / AI / ML features against that normalized/indexed transcript corpus.
 
-As of this writing, properly ingested/normalized show transcripts can leverage character- and location-based faceting, aggregation, and free text search against the show's transcript corpus. Search and recommendation features combine bag-of-words search native to ElasticSearch with embeddings from pretrained Word2Vec and OpenAI transformer models. OpenAI embeddings are also leveraged for basic classification and clustering operations.
+As of this writing, properly ingested/normalized show transcripts can:
+* combine character- and location-based faceting with free text "bag of words" search against scene dialogue and descriptions
+* combine bag-of-words search (native to ElasticSearch) with embeddings from pretrained Word2Vec and OpenAI transformer models to expand search and recommendation features 
+* OpenAI embeddings are also leveraged for basic classification and clustering operations.
 
 
 # Tech stack overview
 * `FastAPI`: lightweight async python API framework
-* `Postgres`/`Toroise`/`Pydantic`: RDBMS and ORM framework 
-* `ElasticSearch`/`elasticsearch-dsl`: lucene-based index and ORM-style utilities
+* `Postgres` / `Toroise` / `Pydantic`: RDBMS and ORM framework 
+* `ElasticSearch` / `elasticsearch-dsl`: lucene-based index and ORM-style utilities
 * `BeautifulSoup`: text parser for transforming raw HTML to normalized objects 
-* `Pandas`/`NumPy`/`Scikit-learn`/`NLTK`: data / text analytics / ML tool kits
-* `Word2Vec`/`OpenAI`: pre-trained language / embedding models 
+* `Pandas` / `NumPy` / `Scikit-learn` / `NLTK`: data / text analytics / ML tool kits
+* `Word2Vec` / `OpenAI`: pre-trained language / embedding models 
 
 
 # Setup
@@ -88,6 +91,17 @@ If you decide to experiment with the `/esw/build_embeddings_model` endpoint (des
 * `w2v_models/homegrown`
 
 OpenAI has nice clean APIs for generating Transformer embeddings, so rather than downloading language models locally you will need to add your own `OPENAI_API_KEY` param value to `.env`.
+
+
+# ETL source/ directories
+
+Before episode listing and transcript data are loaded into `transcript_db` (Postgres), it is first copied from external html files and staged in local `source/` subdirectories. This protects your db data from being paved over if you refresh/reload episode data following an unexpected change in an external content source (reformatting of a Wikipedia page, a fan site changing its url structure, etc).
+
+Staging files and directories are not tracked in `git`, but as you tick through the `/etl/copy_X` endpoints (outlined below) you will begin to see raw html files populating local `source/` subdirectories. Re-running the same `/etl/copy_X` endpoint more than once will bump any file into an adjacent `backup/` directory before overwriting it.
+
+Note that re-running the same `/etl/copy_X` endpoint twice will effectively overwrite the overwrite, so this "fall back to previous version" scheme is primitive. At some point I hope to highlight any differences as backups are made, maybe a simple report illustrating the diff between `source/` files and their corresponding `backup/` files.
+
+(There is also a `/backup_db` endpoint with a similar aim of protecting local data from being wiped out by upstream data source changes or outages.)
 
 
 # API overview

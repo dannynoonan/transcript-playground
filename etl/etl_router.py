@@ -2,10 +2,12 @@ from bs4 import BeautifulSoup
 from fastapi import APIRouter
 import os
 import requests
+import shutil
 
 import app.pydantic_models as pymod
 import etl.transcript_extractor as te
 import etl.transcript_listing_extractor as tle
+import etl.etl_utils as utils
 import database.dao as dao
 from show_metadata import ShowKey, show_metadata, WIKIPEDIA_DOMAIN
 
@@ -18,11 +20,19 @@ async def copy_episode_listing(show_key: ShowKey):
     '''
     Copies html of external episode listing page (as configured in `show_metadata`) to `source/episode_listings/` 
     '''
+    dir_path, backup_dir_path = utils.get_or_make_source_dirs('episode_listings')
+    # copy html from source file as configured in show metadata
     episode_listing_html = requests.get(WIKIPEDIA_DOMAIN + show_metadata[show_key]['wikipedia_label'])
-    file_path = f'source/episode_listings/{show_key.value}.html'
+    file_path = f'{dir_path}/{show_key.value}.html'
+    # back up file if it already exists
+    backup_file_path = None
+    if os.path.isfile(file_path):
+        backup_file_path = f'{backup_dir_path}/{show_key.value}.html'
+        shutil.copyfile(file_path, backup_file_path)
+    # write to file
     with open(file_path, "w") as f:
         f.write(episode_listing_html.text)
-    return {'show_key': show_key.value, 'file_path': file_path, 'episode_listing_html': episode_listing_html.text}
+    return {'show_key': show_key.value, 'file_path': file_path, 'backup_file_path': backup_file_path, 'episode_listing_html': episode_listing_html.text}
 
 
 @etl_app.get("/etl/copy_transcript_sources/{show_key}", tags=['ETL'])
@@ -30,13 +40,21 @@ async def copy_transcript_sources(show_key: ShowKey):
     '''
     Copies html of external transcript url listing page (as configured in `show_metadata`) to `source/transcript_sources/`
     '''
+    dir_path, backup_dir_path = utils.get_or_make_source_dirs('transcript_sources')
+    # copy html from source file as configured in show metadata
     show_transcripts_domain = show_metadata[show_key]['show_transcripts_domain']
     listing_url = show_metadata[show_key]['listing_url']
     transcript_source_html = requests.get(show_transcripts_domain + listing_url)
-    file_path = f'source/transcript_sources/{show_key.value}.html'
+    file_path = f'{dir_path}/{show_key.value}.html'
+    # back up file if it already exists
+    backup_file_path = None
+    if os.path.isfile(file_path):
+        backup_file_path = f'{backup_dir_path}/{show_key.value}.html'
+        shutil.copyfile(file_path, backup_file_path)
+    # write to file
     with open(file_path, "w") as f:
         f.write(transcript_source_html.text)
-    return {'show_key': show_key.value, 'file_path': file_path, 'transcript_source_html': transcript_source_html.text}
+    return {'show_key': show_key.value, 'file_path': file_path, 'backup_file_path': backup_file_path, 'transcript_source_html': transcript_source_html.text}
     
 
 @etl_app.get("/etl/copy_transcript_from_source/{show_key}/{episode_key}", tags=['ETL'])
@@ -44,8 +62,9 @@ async def copy_transcript_from_source(show_key: ShowKey, episode_key: str):
     '''
     Copies html of external episode page (fetched from `TranscriptSource`) to `source/episodes/`
     '''
-    episode = None
+    dir_path, backup_dir_path = utils.get_or_make_source_dirs('episodes', show_key.value)
     # fetch episode and transcript_source(s), throw errors if not found
+    episode = None
     try:
         episode = await dao.fetch_episode(show_key.value, episode_key, fetch_related=['transcript_sources'])
         if not episode.transcript_sources:
@@ -59,11 +78,18 @@ async def copy_transcript_from_source(show_key: ShowKey, episode_key: str):
     # TODO ultimately the /source/episodes file structure will need to reflect the transcript_source layer
     transcript_source = episode.transcript_sources[0]
     transcript_html = requests.get(transcript_source.transcript_url)
-    file_path = f'source/episodes/{show_key.value}/{episode_key}.html'
+
+    file_path = f'{dir_path}/{episode_key}.html'
+    # back up file if it already exists
+    backup_file_path = None
+    if os.path.isfile(file_path):
+        backup_file_path = f'{backup_dir_path}/{episode_key}.html'
+        shutil.copyfile(file_path, backup_file_path)
+    # write to file
     with open(file_path, "w") as f:
         f.write(transcript_html.text)
     
-    return {'show_key': show_key.value, 'episode_key': episode_key, 'file_path': file_path, 'transcript_html': transcript_html.text}
+    return {'show_key': show_key.value, 'episode_key': episode_key, 'file_path': file_path, 'backup_file_path': backup_file_path, 'transcript_html': transcript_html.text}
 
 
 @etl_app.get("/etl/copy_all_transcripts_from_source/{show_key}", tags=['ETL'])
@@ -71,6 +97,8 @@ async def copy_all_transcripts_from_source(show_key: ShowKey):
     '''
     Bulk copies html of external episode pages (fetched from `TranscriptSource` entities) to `source/episodes/`. Bulk equivalent of `/etl/copy_transcript_from_source`.
     '''
+    dir_path, backup_dir_path = utils.get_or_make_source_dirs('episodes', show_key.value)
+    # fetch episodes from db
     episodes = []
     try:
         episodes = await dao.fetch_episodes(show_key.value)
@@ -79,7 +107,7 @@ async def copy_all_transcripts_from_source(show_key: ShowKey):
     if not episodes:
         return {"Error": f"No Episodes found having show_key={show_key}. You may need to run /load_episode_listing first."}
 
-    # fetch and insert transcripts for all episodes
+    # load transcripts for all episodes into db
     attempts = 0
     no_transcript_episode_keys = []
     successful_episode_keys = []
@@ -90,14 +118,18 @@ async def copy_all_transcripts_from_source(show_key: ShowKey):
             print(f"No Transcript found for episode having show_key={show_key.value} external_key={episode.external_key}. You may need to run /load_transcript_sources first.")
             no_transcript_episode_keys.append(episode.external_key)
             continue
-
         # TODO data model permits multiple transcript_sources per episode, for now just choose first one
         # TODO ultimately the /source/episodes file structure will need to reflect the transcript_source layer
         transcript_source = episode.transcript_sources[0]
         attempts += 1
         try:
             transcript_html = requests.get(transcript_source.transcript_url)
-            file_path = f'source/episodes/{show_key.value}/{episode.external_key}.html'
+            file_path = f'{dir_path}/{episode.external_key}.html'
+            # back up file if it already exists
+            if os.path.isfile(file_path):
+                backup_file_path = f'{backup_dir_path}/{episode.external_key}.html'
+                shutil.copyfile(file_path, backup_file_path)
+            # write to file
             with open(file_path, "w") as f:
                 f.write(transcript_html.text)
                 successful_episode_keys.append(episode.external_key)
