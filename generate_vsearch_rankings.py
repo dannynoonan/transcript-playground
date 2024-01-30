@@ -11,12 +11,12 @@
 import argparse
 import os
 import pandas as pd
-import time
+# import time
 
+import app.main as m
+from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS, ACTIVE_VENDOR_VERSIONS
+from app.show_metadata import ShowKey
 from load_description_sources import DESCRIPTION_SOURCES
-import main as m
-from nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS, ACTIVE_VENDOR_VERSIONS
-from show_metadata import ShowKey
 
 
 def main():
