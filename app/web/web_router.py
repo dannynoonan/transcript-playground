@@ -13,7 +13,7 @@ import app.utils as utils
 import app.web.data_viz as dz
 
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="app/templates")
 web_app = APIRouter()
 # web_app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 
