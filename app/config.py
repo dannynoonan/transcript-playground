@@ -6,10 +6,27 @@ class Settings(BaseSettings):
     es_pass: str
     es_host: str
     es_port: int
+
     psql_user: str
+    psql_password: str
     psql_host: str
     psql_port: int
     psql_db_name: str
+
+    pg_user: str
+    pg_password: str
+    pg_host: str
+    pg_port: int
+    pg_db_name: str
+
+    elastic_password: str
+    kibana_password: str
+    stack_version: str
+    cluster_name: str
+    license: str
+    kibana_port: int
+    mem_limit: int
+
     openai_api_key: str
     model_config = SettingsConfigDict(env_file=".env")
 
@@ -18,7 +35,8 @@ class Settings(BaseSettings):
 settings = Settings()
 
 # https://levelup.gitconnected.com/handle-registration-in-fastapi-and-tortoise-orm-2dafc9325b7a
-DATABASE_URL = f"postgres://{settings.psql_user}@{settings.psql_host}:{settings.psql_port}/{settings.psql_db_name}"
+DATABASE_URL = f"postgres://{settings.psql_user}:{settings.psql_password}@{settings.psql_host}:{settings.psql_port}/{settings.psql_db_name}"
+# DATABASE_URL = f"postgres://{settings.psql_user}@{settings.psql_host}:{settings.psql_port}/{settings.psql_db_name}"
 
 TORTOISE_ORM = {
     "connections": {"default": DATABASE_URL},
