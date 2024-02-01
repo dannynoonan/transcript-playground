@@ -77,7 +77,7 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:${ES_STACK_VERSION}
     volumes:
       - certs:/usr/share/elasticsearch/config/certs
-      # - esdata02:/usr/share/elasticsearch/data
+      - esdata02:/usr/share/elasticsearch/data
       # - ./es_data_volume:/usr/share/elasticsearch/data
       # - ./elasticsearch.yml:/etc/elasticsearch/elasticsearch.yml
     ports:
@@ -154,7 +154,6 @@ services:
       - .:/app
     ports:
       - 8000:8000
-      # - 8008:8000
     environment:
       DATABASE_URL: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/transcript_db
     depends_on:
