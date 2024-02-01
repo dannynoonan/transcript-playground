@@ -25,9 +25,9 @@ services:
           echo "Creating certs";
           echo -ne \
           "instances:\n"\
-          "  - name: es03\n"\
+          "  - name: ${ES_HOST}\n"\
           "    dns:\n"\
-          "      - es03\n"\
+          "      - ${ES_HOST}\n"\
           "      - localhost\n"\
           "    ip:\n"\
           "      - 127.0.0.1\n"\
@@ -40,18 +40,18 @@ services:
         find . -type d -exec chmod 750 \{\} \;;
         find . -type f -exec chmod 640 \{\} \;;
         echo "Waiting for Elasticsearch availability";
-        until curl -s --cacert config/certs/ca/ca.crt https://es03:${ES_PORT} | grep -q "missing authentication credentials"; do sleep 30; done;
+        until curl -s --cacert config/certs/ca/ca.crt https://${ES_HOST}:${ES_PORT} | grep -q "missing authentication credentials"; do sleep 30; done;
         echo "Setting kibana_system password";
-        until curl -s -X POST --cacert config/certs/ca/ca.crt -u "elastic:${ES_PASSWORD}" -H "Content-Type: application/json" https://es03:${ES_PORT}/_security/user/kibana_system/_password -d "{\"password\":\"${KB_PASSWORD}\"}" | grep -q "^{}"; do sleep 10; done;
+        until curl -s -X POST --cacert config/certs/ca/ca.crt -u "elastic:${ES_PASSWORD}" -H "Content-Type: application/json" https://${ES_HOST}:${ES_PORT}/_security/user/kibana_system/_password -d "{\"password\":\"${KB_PASSWORD}\"}" | grep -q "^{}"; do sleep 10; done;
         echo "All done!";
       '
     healthcheck:
-      test: ["CMD-SHELL", "[ -f config/certs/es03/es03.crt ]"]
+      test: ["CMD-SHELL", "[ -f config/certs/${ES_HOST}/${ES_HOST}.crt ]"]
       interval: 1s
       timeout: 5s
       retries: 120
   pg03:
-    container_name: pg10
+    container_name: ${PG_HOST}
     image: postgres:15-alpine
     restart: always
     ports:
@@ -62,9 +62,6 @@ services:
       - ${PG_PORT}
     command: postgres -c port=${PG_PORT}
     environment:
-      PG_USER: ${PG_USER}
-      PG_PASSWORD: ${PG_PASSWORD}
-      PG_DB: transcript_db
       POSTGRES_USER: ${PG_USER}
       POSTGRES_PASSWORD: ${PG_PASSWORD}
       POSTGRES_DB: transcript_db
@@ -73,7 +70,7 @@ services:
     #   - "-c"
     #   - "listen_addresses=*"
   es03:
-    container_name: es03
+    container_name: ${ES_HOST}
     depends_on:
       setup:
         condition: service_healthy
@@ -88,7 +85,7 @@ services:
     environment:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - MAX_LOCKED_MEMORY=unlimited
-      - node.name=es03
+      - node.name=${ES_HOST}
       - cluster.name=${ES_CLUSTER_NAME}
       # - cluster.initial_master_nodes=es03
       # - discovery.seed_hosts=es01,es02,es03
@@ -97,12 +94,12 @@ services:
       - bootstrap.memory_lock=true
       - xpack.security.enabled=true
       - xpack.security.http.ssl.enabled=true
-      - xpack.security.http.ssl.key=certs/es03/es03.key
-      - xpack.security.http.ssl.certificate=certs/es03/es03.crt
+      - xpack.security.http.ssl.key=certs/${ES_HOST}/${ES_HOST}.key
+      - xpack.security.http.ssl.certificate=certs/${ES_HOST}/${ES_HOST}.crt
       - xpack.security.http.ssl.certificate_authorities=certs/ca/ca.crt
       - xpack.security.transport.ssl.enabled=true
-      - xpack.security.transport.ssl.key=certs/es03/es03.key
-      - xpack.security.transport.ssl.certificate=certs/es03/es03.crt
+      - xpack.security.transport.ssl.key=certs/${ES_HOST}/${ES_HOST}.key
+      - xpack.security.transport.ssl.certificate=certs/${ES_HOST}/${ES_HOST}.crt
       - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
       - xpack.security.transport.ssl.verification_mode=certificate
       - xpack.license.self_generated.type=${ES_LICENSE}
@@ -133,7 +130,7 @@ services:
       - ${KB_PORT}:5601
     environment:
       - SERVERNAME=kibana
-      - ELASTICSEARCH_HOSTS=https://es03:${ES_PORT}
+      - ELASTICSEARCH_HOSTS=https://${ES_HOST}:${ES_PORT}
       - ELASTICSEARCH_USERNAME=kibana_system
       - ELASTICSEARCH_PASSWORD=${KB_PASSWORD}
       - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=config/certs/ca/ca.crt
@@ -157,7 +154,7 @@ services:
       - .:/app
     ports:
       - 8000:8000
-      - 8008:8000
+      # - 8008:8000
     environment:
       DATABASE_URL: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/transcript_db
     depends_on:
