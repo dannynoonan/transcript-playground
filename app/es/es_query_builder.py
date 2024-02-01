@@ -13,7 +13,7 @@ from app.show_metadata import ShowKey
 
 # es_client = Elasticsearch(
 #     hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': 'https'}],    
-#     basic_auth=(settings.es_user, settings.es_pass),
+#     basic_auth=(settings.es_user, settings.es_password),
 #     verify_certs=False
 #     # connection_class=RequestsHttpConnection
 # )
@@ -21,7 +21,7 @@ from app.show_metadata import ShowKey
 # connections.create_connection(hosts=['http://localhost:9200'], timeout=20)
 
 es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': 'https'}],
-                                        basic_auth=(settings.es_user, settings.es_pass), verify_certs=False, timeout=20)
+                                        basic_auth=(settings.es_user, settings.es_password), verify_certs=False, timeout=20)
 
 # connections.configure(
 #     default={'hosts': 'http://localhost:9200'},
