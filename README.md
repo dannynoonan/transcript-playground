@@ -4,9 +4,8 @@ This project defines a simple, standardized data model into which any dialogue-d
 
 As of this writing, properly ingested/normalized show transcripts can:
 * combine character- and location-based faceting with free text "bag of words" search against scene dialogue and descriptions
-* combine bag-of-words search (native to ElasticSearch) with embeddings from pretrained Word2Vec and OpenAI transformer models to expand search and recommendation features 
-* OpenAI embeddings are also leveraged for basic classification and clustering operations.
-
+* combine ElasticSearch-native bag-of-words search with embeddings from pretrained Word2Vec and OpenAI transformer models to expand search and recommendation features 
+* leverage OpenAI embeddings for basic classification and clustering operations
 
 # Tech stack overview
 * `FastAPI`: lightweight async python API framework
@@ -16,19 +15,117 @@ As of this writing, properly ingested/normalized show transcripts can:
 * `Pandas` / `NumPy` / `Scikit-learn` / `NLTK`: data / text analytics / ML tool kits
 * `Word2Vec` / `OpenAI`: pre-trained language / embedding models 
 
-
 # Setup
 
-## Install dependencies
+Basic workflow for getting app up and running after cloning the repo locally.
+
+## Set properties in .env
+```
+cp .env.example .env
+```
+
+Assign values to all vars in newly created `.env` file. These will be exposed within project modules as `settings` props defined in `app/config.py`. If you build and run with `docker` (as opposed to running locally via `uvicorn`) then these props will also be substituted into your `docker-compose.yml` file.
+
+## Data source configuration
+
+Both Elasticsearch and Postgres require either local installation and setup or docker installation and setup. Both approaches will generate user credentials that can be assigned to corresponding `.env` vars.
+
+### Elasticsearch
+
+[Installing Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html) gives a fantastic overview of how to get Elasticsearch and Kibana up and running in docker, with proper keys and credentials. Those credentials can be used for running Elasticsearch from `docker-compose.yml` as well. 
+
+### Postgres
+
+This [FastAPI-RDBMS integration](https://fastapi.tiangolo.com/tutorial/sql-databases/) walk-thru covers Postgres as a general example of RDBMS, and this [Tortoise quickstart](https://tortoise.github.io/getting_started.html) and [FastAPI-TortoiseORM integration tutorial](https://medium.com/@talhakhalid101/python-tortoise-orm-integration-with-fastapi-c3751d248ce1) will get you up to speed on how Postgres and Tortoise ORM are set up and used in the project. Similar to the Elasticsearch setup, user/password credentials need to be added to `.env`.
+
+
+## Run app piece-meal via command-line docker and/or local installs
+
+If you've got Elasticsearch and Postgres running independently and configured via `.env`, then run `transcript-playground` locally starting with basic `venv` setup:
+```
+python -m venv venv
+source venv/bin/activate
+```
+
+Install dependencies using `pip`:
 ```
 pip install -r /path/to/requirements.txt
 ```
 
-## Run elasticsearch
+Run the app using `uvicorn`:
+```
+uvicorn main:app --reload
+```
 
-`#TODO` set up `Dockerfile` ([Install Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html) has carried me so far)
+Now skip ahead past "Using docker compose" to "Verify app is running" to continue.
 
-## Initialize Postgres / Toroise ORM / Aerich migrations
+
+## Using docker compose
+
+### A note on versions
+
+Docker versioning is confusing. A command-line version check on my Mac (OS 12.6.2) gets back this:
+```
+$ docker --version
+Docker version 24.0.7, build afdd53b
+```
+
+I'm running Docker Desktop, and behind the "Settings" button and under "Softare Updates" I see:
+
+```
+You're currently on version 4.26.1 (131620). The latest version is 4.27.1 (136059)
+```
+
+And all the `docker-compose.yml` examples I've come across specify `version: '3.8'` or thereabouts at the top.
+
+Suffice to say: Results may vary, depending on what versions and combinations of versions you are running.
+
+
+### Building and starting
+
+After checking out the repo locally, see what happens if you just run:
+```
+docker compose up --build
+```
+
+With any luck this will:
+* fetch dependencies, build, and start up the project's postgres `pg`, elasticsearch `es`, kibana `kib`, and webapp `web` services
+* expose, authenticate, and configure all port interdependencies between services
+* spin up data volumes that live on after a container is stopped / can be accessed again when container is restarted
+
+More than likely you'll run into a snag, perhaps even with the `docker compose up` syntax instead of `docker-compose up` syntax (which relates to a recent-ish version change). I'd love to hear feedback on what works and doesn't work.
+
+
+### Shutting down, restarting, rebuilding
+
+Shutting down and restarting: 
+```
+docker compose down
+docker compose up
+```
+
+Depending on the nature of your code changes, you may need to:
+* tack `-v` to the end of `docker compose down` to remove volumes
+* tack `--build` to the end on `docker compose up` to reflect dependency changes in `requirements.txt` or renaming/remapping of services in `docker-compose.yml` or properties set in `.env`
+
+
+## Verify app is running
+
+Verify app is up by hitting http://127.0.0.1:8000/ and seeing "Welcome to transcript playground" or hitting http://127.0.0.1:8000/docs#/ for the OpenAPI/Swagger listing of available endpoints.
+
+
+### Verify basic ETL -> ES Writer workflow
+
+#TODO walk thru example
+
+### Tests
+```
+pytest -v tests.py
+```
+
+## Migrations
+
+`transcript-playground` is configured for Postgres migrations using Toroise ORM and Aerich. These steps describe the process for re-initializing migrations and for executing them going forward.
 
 * Create `migrations/` dir and `pyproject.toml` file from settings in TORTOISE_ORM dict:
     ```
@@ -51,22 +148,6 @@ pip install -r /path/to/requirements.txt
     ```
 
 Reference: https://tortoise.github.io/migration.html
-
-## Config
-
-Copy the contents of `.env.example` to a root-level `.env` file, then set valid values for each parameter based on your own local configuration.
-
-## Tests
-```
-pytest -v tests.py
-```
-
-## Run app 
-```
-uvicorn main:app --reload
-```
-
-Verify app is up by hitting http://127.0.0.1:8000/docs#/.
 
 
 # Metadata overview

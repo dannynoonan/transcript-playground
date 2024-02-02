@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   setup:
-    container_name: setup03
+    container_name: setupTrp
     image: docker.elastic.co/elasticsearch/elasticsearch:${ES_STACK_VERSION}
     volumes:
       - certs:/usr/share/elasticsearch/config/certs
@@ -50,7 +50,7 @@ services:
       interval: 1s
       timeout: 5s
       retries: 120
-  pg03:
+  pg:
     container_name: ${PG_HOST}
     image: postgres:15-alpine
     restart: always
@@ -64,12 +64,12 @@ services:
     environment:
       POSTGRES_USER: ${PG_USER}
       POSTGRES_PASSWORD: ${PG_PASSWORD}
-      POSTGRES_DB: transcript_db
+      POSTGRES_DB: ${PG_DB_NAME}
     # command:
     #   - "postgres"
     #   - "-c"
     #   - "listen_addresses=*"
-  es03:
+  es:
     container_name: ${ES_HOST}
     depends_on:
       setup:
@@ -78,7 +78,6 @@ services:
     volumes:
       - certs:/usr/share/elasticsearch/config/certs
       - esdata02:/usr/share/elasticsearch/data
-      # - ./es_data_volume:/usr/share/elasticsearch/data
       # - ./elasticsearch.yml:/etc/elasticsearch/elasticsearch.yml
     ports:
       - ${ES_PORT}:${ES_PORT}
@@ -117,10 +116,10 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-  kib03:
-    container_name: kib03
+  kib:
+    container_name: kibTrp
     depends_on:
-      es03:
+      es:
         condition: service_healthy
     image: docker.elastic.co/kibana/kibana:${ES_STACK_VERSION}
     volumes:
@@ -144,8 +143,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-  web03:
-    container_name: web03
+  web:
+    container_name: webTrp
     build:
         context: .
         dockerfile: Dockerfile
@@ -155,10 +154,10 @@ services:
     ports:
       - 8000:8000
     environment:
-      DATABASE_URL: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/transcript_db
+      DATABASE_URL: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DB_NAME}
     depends_on:
-      - pg03
-      - es03
+      - pg
+      - es
 
 volumes:
   postgres_data:
@@ -172,5 +171,5 @@ volumes:
 
 networks:
  default:
-   name: esnet02
+   name: esnet
    external: false
