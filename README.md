@@ -1,10 +1,10 @@
 # Project overview
 
-This project defines a simple, standardized data model into which any dialogue-driven television series can be transformed, persisted, and indexed, then builds text analytics / AI / ML features against that normalized/indexed transcript corpus.
+`transcript-playground` defines a simple, standardized data model into which any dialogue-driven television series can be transformed, persisted, and indexed, then builds text analytics / AI / ML features against that normalized/indexed transcript corpus.
 
 As of this writing, properly ingested/normalized show transcripts can:
-* combine character- and location-based faceting with free text "bag of words" search against scene dialogue and descriptions
-* combine ElasticSearch-native bag-of-words search with embeddings from pretrained Word2Vec and OpenAI transformer models to expand search and recommendation features 
+* combine character- and location-based faceting with free text bag-of-words search against scene dialogue and descriptions
+* combine ES-native BOW-search with embeddings from pretrained Word2Vec and OpenAI transformer models to expand search and recommendation features 
 * leverage OpenAI embeddings for basic classification and clustering operations
 
 # Tech stack overview
@@ -24,11 +24,15 @@ Basic workflow for getting app up and running after cloning the repo locally.
 cp .env.example .env
 ```
 
-Assign values to all vars in newly created `.env` file. These will be exposed within project modules as `settings` props defined in `app/config.py`. If you build and run with `docker` (as opposed to running locally via `uvicorn`) then these props will also be substituted into your `docker-compose.yml` file.
+Assign values to all vars in newly created `.env` file. These vars will be exposed within project modules as `settings` props defined in `app/config.py`. If you build and run with `docker` (as opposed to running locally via `uvicorn`) then these props will also be substituted into your `docker-compose.yml` file.
+
+Defaults are suggested for several properties, but you will need to assign your own Elasticsearch and Postgres credentials. 
+
+Also note that when using the `docker-compose.yml` setup that `HOST`-type properties should be assigned to docker container names, rather than being set to `localhost`.
 
 ## Data source configuration
 
-Both Elasticsearch and Postgres require either local installation and setup or docker installation and setup. Both approaches will generate user credentials that can be assigned to corresponding `.env` vars.
+Elasticsearch and Postgres require either local installation and setup or docker installation and setup. Both approaches will generate user credentials that can be assigned to corresponding `.env` vars.
 
 ### Elasticsearch
 
@@ -39,9 +43,9 @@ Both Elasticsearch and Postgres require either local installation and setup or d
 This [FastAPI-RDBMS integration](https://fastapi.tiangolo.com/tutorial/sql-databases/) walk-thru covers Postgres as a general example of RDBMS, and this [Tortoise quickstart](https://tortoise.github.io/getting_started.html) and [FastAPI-TortoiseORM integration tutorial](https://medium.com/@talhakhalid101/python-tortoise-orm-integration-with-fastapi-c3751d248ce1) will get you up to speed on how Postgres and Tortoise ORM are set up and used in the project. Similar to the Elasticsearch setup, user/password credentials need to be added to `.env`.
 
 
-## Run app piece-meal via command-line docker and/or local installs
+## Option 1: Run app piece-meal via command-line docker and/or local installs
 
-If you've got Elasticsearch and Postgres running independently and configured via `.env`, then run `transcript-playground` locally starting with basic `venv` setup:
+If you've got Elasticsearch and Postgres running independently and configured in `.env`, then run `transcript-playground` can be started locally using `venv` and `uvicorn`:
 ```
 python -m venv venv
 source venv/bin/activate
@@ -52,17 +56,17 @@ Install dependencies using `pip`:
 pip install -r /path/to/requirements.txt
 ```
 
-Run the app using `uvicorn`:
+Run/restart the app using `uvicorn`:
 ```
 uvicorn main:app --reload
 ```
 
-Now skip ahead past "Using docker compose" to "Verify app is running" to continue.
+(If you're content running within `venv` and `uvicorn` you can skip past the "Run app using docker compose" section to "Verify app is running.")
 
 
-## Using docker compose
+## Option 2: Run app using docker compose
 
-### A note on versions
+### A note on docker versions
 
 Docker versioning is confusing. A command-line version check on my Mac (OS 12.6.2) gets back this:
 ```
@@ -83,7 +87,7 @@ Suffice to say: Results may vary, depending on what versions and combinations of
 
 ### Building and starting
 
-After checking out the repo locally, see what happens if you just run:
+After setting `.env` properties mapping data sources to docker containers, try running:
 ```
 docker compose up --build
 ```
@@ -116,39 +120,22 @@ Verify app is up by hitting http://127.0.0.1:8000/ and seeing "Welcome to transc
 
 ### Verify basic ETL -> ES Writer workflow
 
-#TODO walk thru example
+Before launching into API endpoint detail below, verify end-to-end connectivity and functionality by hitting these endpoints in sequence:
+
+1. `/esw/init_es` -> initializes `transcript` index mappings, verifiable at Kibana http://0.0.0.0:5601/app/dev_tools#/console with `GET /transcripts/_mapping`
+1. `/etl/copy_episode_listing/TNG` -> copies episode listing HTML for `show_key=TNG` to local `source/` dir
+1. `/etl/load_episode_listing/TNG?write_to_db=True` -> loads copied transcript sources HTML for `show_key=TNG` from `source/` into Postgres (if `write_to_db=True` flag is left off, code will run without writing to db)
+1. `/etl/copy_transcript_sources/TNG` -> copies transcript sources HTML for `show_key=TNG` to local `source/` dir
+1. `/etl/load_transcript_sources/TNG?write_to_db=True` -> loads copied transcript sources HTML for `show_key=TNG` from `source/` into Postgres (if `write_to_db=True` flag is left off, code will run without writing to db)
+1. `/etl/copy_transcript_from_source/TNG/150` -> copies episode transcript HTML for `show_key=TNG` and `episode_key=150` to local `source/` dir
+1. `/tl/load_transcript/TNG/150?write_to_db=True` -> loads copied episode transcript HTML for `show_key=TNG` and `episode_key=150` from `source/` into Postgres (if `write_to_db=True` flag is left off, code will run without writing to db)
+1. `/esw/index_episode/TNG/150` -> fetches episode transcript data for `show_key=TNG` and `episode_key=150` from Postgres and writes it to `transcripts` index
+1. `/web/episode/TNG/150` -> leverages various `/esr` endpoints to fetche episode transcript data for `show_key=TNG` and `episode_key=150` from `transcripts` index and render to web page via `jinja` HTML template
 
 ### Tests
 ```
 pytest -v tests.py
 ```
-
-## Migrations
-
-`transcript-playground` is configured for Postgres migrations using Toroise ORM and Aerich. These steps describe the process for re-initializing migrations and for executing them going forward.
-
-* Create `migrations/` dir and `pyproject.toml` file from settings in TORTOISE_ORM dict:
-    ```
-    aerich init -t config.TORTOISE_ORM
-    ```
-
-* Create app migration destination `migrations/models/` and generate baseline schema from `models.py`:
-    ```
-    aerich init-db
-    ```
-
-* Generate schema migration file from altered `models.py`:
-    ```
-    aerich migrate --name <migration_name>
-    ```
-
-* Execute migration file:
-    ```
-    aerich upgrade
-    ```
-
-Reference: https://tortoise.github.io/migration.html
-
 
 # Metadata overview
 
@@ -274,3 +261,32 @@ Ideally, the transcript ingest and normalization code should be easily extensibl
 
 ## Vertical growth: expanding text analytics feature set
 On deck: AI/ML models trained using embedding data generated via OpenAI. Interactive data visualization by integrating Plotly/Dash into FastAPI/Flask.
+
+
+# Ongoing development
+
+## Migrations
+
+`transcript-playground` is configured for Postgres migrations using Toroise ORM and Aerich. These steps describe the process for re-initializing migrations and for executing them going forward.
+
+* Create `migrations/` dir and `pyproject.toml` file from settings in TORTOISE_ORM dict:
+    ```
+    aerich init -t config.TORTOISE_ORM
+    ```
+
+* Create app migration destination `migrations/models/` and generate baseline schema from `models.py`:
+    ```
+    aerich init-db
+    ```
+
+* Generate schema migration file from altered `models.py`:
+    ```
+    aerich migrate --name <migration_name>
+    ```
+
+* Execute migration file:
+    ```
+    aerich upgrade
+    ```
+
+Reference: https://tortoise.github.io/migration.html
