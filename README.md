@@ -135,7 +135,7 @@ Before launching into API endpoint detail below, verify end-to-end connectivity 
 | `/esw/index_episode/TNG/150` | fetches episode transcript data for `show_key=TNG` and `episode_key=150` from Postgres and writes it to `transcripts` index | episode transcript data normalized for es write |
 | `/web/episode/TNG/150` | leverages various `/esr` endpoints to fetche episode transcript data for `show_key=TNG` and `episode_key=150` from `transcripts` index and render to web page via `jinja` HTML template | web page displaying episode data |
 
-All endpoints follow http://127.0.0.1:8000/ (e.g. http://127.0.0.1:8000/etl/copy_episode_listing/TNG) assuming you're running the app on port 8000.
+All endpoints follow `http://127.0.0.1:8000` (e.g. http://127.0.0.1:8000/etl/copy_episode_listing/TNG) assuming you're running the app on port 8000.
 
 ### Tests
 
@@ -196,7 +196,7 @@ API endpoints currently do most of the work in the app. Endpoints live within 4 
 A few endpoints that don't fall cleanly into those four buckets still live in `main.py` for the time being.
 
 
-### 'ETL' endpoints" to source and load data into Postgres  
+### 'ETL' endpoints: source and load data into Postgres  
 
 ETL endpoints fall into two buckets: `/copy_X` and `/load_X`
 * `/etl/copy_X` endpoints: fetch html content from external sources (defined in `show_metadata.py`) and store as raw text files to local `source/` directory.
@@ -218,7 +218,7 @@ ETL endpoints fall into two buckets: `/copy_X` and `/load_X`
         * `/etl/load_all_transcripts/{show_key}`: bulk run of `/etl/load_transcript` for all episodes of a given show
         
 
-### 'ES Writer' endpoints: to populate ElasticSearch 
+### 'ES Writer' endpoints: populate ElasticSearch 
 
 **Important:** First run the `/esw/init_es` endpoint to generate mappings for the "transcripts" index. If you do not do this, index writes may proceed without issuing warnings, but certain index read operations will fail where data has been mapped to default field types.
 
@@ -236,7 +236,7 @@ Endpoints for writing vector embeddings to es index:
 * `/esw/populate_all_embeddings/{show_key}/{model_vendor}/{model_version}`: bulk run of `/esw/populate_embeddings` for all episodes of a given show
 
 
-### 'ES Reader' endpoints: to query ElasticSearch  
+### 'ES Reader' endpoints: query ElasticSearch  
 
 ES Reader `/esr` endpoints provide most of the core functionality of the project, since ElasticSearch houses free text, facet-oriented, and vectorized representations of transcript data that span the gamut of search, recommendation, classification, clustering, and other AI/ML-oriented features. I won't continually track the feature set in the README, but at the time of this writing the endpoints generally broke down into these buckets:
 * show listing and metadata lookups (key- or id-based fetches)
