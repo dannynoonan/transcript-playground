@@ -121,17 +121,21 @@ Verify app is up by hitting http://127.0.0.1:8000/ and seeing "Welcome to transc
 
 ### Verify basic ETL -> ES Writer workflow
 
-Before launching into API endpoint detail below, verify end-to-end connectivity and functionality by hitting these endpoints in sequence:
+Before launching into API endpoint detail below, verify end-to-end connectivity and functionality by hitting these endpoints in the following sequence. 
 
-1. `/esw/init_es` -> initializes `transcript` index mappings, verifiable at Kibana http://0.0.0.0:5601/app/dev_tools#/console with `GET /transcripts/_mapping`
-1. `/etl/copy_episode_listing/TNG` -> copies episode listing HTML for `show_key=TNG` to local `source/` dir
-1. `/etl/load_episode_listing/TNG?write_to_db=True` -> loads copied transcript sources HTML for `show_key=TNG` from `source/` into Postgres (if `write_to_db=True` flag is left off, code will run without writing to db)
-1. `/etl/copy_transcript_sources/TNG` -> copies transcript sources HTML for `show_key=TNG` to local `source/` dir
-1. `/etl/load_transcript_sources/TNG?write_to_db=True` -> loads copied transcript sources HTML for `show_key=TNG` from `source/` into Postgres (if `write_to_db=True` flag is left off, code will run without writing to db)
-1. `/etl/copy_transcript_from_source/TNG/150` -> copies episode transcript HTML for `show_key=TNG` and `episode_key=150` to local `source/` dir
-1. `/tl/load_transcript/TNG/150?write_to_db=True` -> loads copied episode transcript HTML for `show_key=TNG` and `episode_key=150` from `source/` into Postgres (if `write_to_db=True` flag is left off, code will run without writing to db)
-1. `/esw/index_episode/TNG/150` -> fetches episode transcript data for `show_key=TNG` and `episode_key=150` from Postgres and writes it to `transcripts` index
-1. `/web/episode/TNG/150` -> leverages various `/esr` endpoints to fetche episode transcript data for `show_key=TNG` and `episode_key=150` from `transcripts` index and render to web page via `jinja` HTML template
+| Endpoint        | Action           | Response  |
+| ------------- |-------------| -----|
+| `/esw/init_es` | initializes `transcript` index mappings (verifiable in Kibana DevTools at http://0.0.0.0:5601/app/dev_tools#/console with `GET /transcripts/_mapping`) | "success" |
+| `/etl/copy_episode_listing/TNG` | copies episode listing HTML for `show_key=TNG` to local `source/` dir | file paths, raw html for episode listing |
+| `/etl/load_episode_listing/TNG?write_to_db=True` | loads copied transcript sources HTML for `show_key=TNG` from `source/` into Postgres (if `write_to_db=True` flag is left off, code will run without writing to db) | episode listing counts and contents |
+| `/etl/copy_transcript_sources/TNG` | copies transcript sources HTML for `show_key=TNG` to local `source/` dir | file paths, raw html for transcript sources |
+| `/etl/load_transcript_sources/TNG?write_to_db=True` | loads copied transcript sources HTML for `show_key=TNG` from `source/` into Postgres (if `write_to_db=True` flag is left off, code will run without writing to db) | transcript sources counts and contents |
+| `/etl/copy_transcript_from_source/TNG/150` | copies episode transcript HTML for `show_key=TNG` and `episode_key=150` to local `source/` dir | file paths, raw html for episode |
+| `/etl/load_transcript/TNG/150?write_to_db=True` | loads copied episode transcript HTML for `show_key=TNG` and `episode_key=150` from `source/` into Postgres (if `write_to_db=True` flag is left off, code will run without writing to db) | episode transcript data normalized for db write |
+| `/esw/index_episode/TNG/150` | fetches episode transcript data for `show_key=TNG` and `episode_key=150` from Postgres and writes it to `transcripts` index | episode transcript data normalized for es write |
+| `/web/episode/TNG/150` | leverages various `/esr` endpoints to fetche episode transcript data for `show_key=TNG` and `episode_key=150` from `transcripts` index and render to web page via `jinja` HTML template | web page displaying episode data |
+
+All endpoints follow http://127.0.0.1:8000/ (e.g. http://127.0.0.1:8000/etl/copy_episode_listing/TNG) assuming you're running the app on port 8000.
 
 ### Tests
 
