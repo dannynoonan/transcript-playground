@@ -4,8 +4,8 @@ import os
 import requests
 import pandas as pd
 
-import main as m
-import show_metadata as sm
+import app.main as m
+import app.show_metadata as sm
 
 
 def main():

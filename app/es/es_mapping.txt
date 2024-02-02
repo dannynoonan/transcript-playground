@@ -1,0 +1,229 @@
+{
+  "transcripts": {
+    "mappings": {
+      "properties": {
+        "air_date": {
+          "type": "date"
+        },
+        "duration": {
+          "type": "integer"
+        },
+        "episode_key": {
+          "type": "keyword"
+        },
+        "fasttext_crawl300d2M_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "fasttext_crawl300d2M_no_match_tokens": {
+          "type": "text"
+        },
+        "fasttext_crawl300d2M_tokens": {
+          "type": "text"
+        },
+        "fasttext_wikinews300d1M_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "fasttext_wikinews300d1M_no_match_tokens": {
+          "type": "text"
+        },
+        "fasttext_wikinews300d1M_tokens": {
+          "type": "text"
+        },
+        "flattened_text": {
+          "type": "text",
+          "fields": {
+            "word_count": {
+              "type": "token_count",
+              "store": true,
+              "analyzer": "token_count_analyzer"
+            }
+          },
+          "term_vector": "yes",
+          "analyzer": "freetext_analyzer"
+        },
+        "focal_locations": {
+          "type": "keyword"
+        },
+        "focal_speakers": {
+          "type": "keyword"
+        },
+        "glove_42B300d_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "glove_42B300d_no_match_tokens": {
+          "type": "text"
+        },
+        "glove_42B300d_tokens": {
+          "type": "text"
+        },
+        "glove_6B300d_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "glove_6B300d_no_match_tokens": {
+          "type": "text"
+        },
+        "glove_6B300d_tokens": {
+          "type": "text"
+        },
+        "glove_840B300d_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "glove_840B300d_no_match_tokens": {
+          "type": "text"
+        },
+        "glove_840B300d_tokens": {
+          "type": "text"
+        },
+        "glove_twitter27B100d_embeddings": {
+          "type": "dense_vector",
+          "dims": 100,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "glove_twitter27B100d_no_match_tokens": {
+          "type": "text"
+        },
+        "glove_twitter27B100d_tokens": {
+          "type": "text"
+        },
+        "glove_twitter27B200d_embeddings": {
+          "type": "dense_vector",
+          "dims": 200,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "glove_twitter27B200d_no_match_tokens": {
+          "type": "text"
+        },
+        "glove_twitter27B200d_tokens": {
+          "type": "text"
+        },
+        "indexed_ts": {
+          "type": "date"
+        },
+        "loaded_ts": {
+          "type": "date"
+        },
+        "openai_ada002_embeddings": {
+          "type": "dense_vector",
+          "dims": 1536,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "scene_count": {
+          "type": "integer"
+        },
+        "scenes": {
+          "type": "nested",
+          "properties": {
+            "description": {
+              "type": "text",
+              "term_vector": "yes",
+              "analyzer": "freetext_analyzer"
+            },
+            "location": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword"
+                }
+              },
+              "analyzer": "standard"
+            },
+            "scene_events": {
+              "type": "nested",
+              "properties": {
+                "context_info": {
+                  "type": "text",
+                  "term_vector": "yes",
+                  "analyzer": "freetext_analyzer"
+                },
+                "dialog": {
+                  "type": "text",
+                  "fields": {
+                    "word_count": {
+                      "type": "token_count",
+                      "store": true,
+                      "analyzer": "token_count_analyzer"
+                    }
+                  },
+                  "term_vector": "yes",
+                  "analyzer": "freetext_analyzer"
+                },
+                "spoken_by": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword"
+                    }
+                  },
+                  "analyzer": "standard"
+                }
+              }
+            }
+          }
+        },
+        "season": {
+          "type": "integer"
+        },
+        "sequence_in_season": {
+          "type": "integer"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "title": {
+          "type": "text",
+          "fields": {
+            "word_count": {
+              "type": "token_count",
+              "store": true,
+              "analyzer": "token_count_analyzer"
+            }
+          },
+          "term_vector": "yes",
+          "analyzer": "freetext_analyzer"
+        },
+        "webvectors_enwiki223_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "webvectors_enwiki223_no_match_tokens": {
+          "type": "text"
+        },
+        "webvectors_enwiki223_tokens": {
+          "type": "text"
+        },
+        "webvectors_gigaword29_embeddings": {
+          "type": "dense_vector",
+          "dims": 300,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "webvectors_gigaword29_no_match_tokens": {
+          "type": "text"
+        },
+        "webvectors_gigaword29_tokens": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}

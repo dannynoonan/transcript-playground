@@ -9,13 +9,13 @@ import pytest
 # from starlette.testclient import TestClient
 from tortoise import Tortoise
 
-from app.models import Episode
+import app.database.dao as dao
+import app.es.es_ingest_transformer as esit
+import app.etl.transcript_listing_extractor as tle
+from app.main import app
+# from app.models import Episode
 import app.pydantic_models as pymod
-import database.dao as dao
-import es.es_ingest_transformer as esit
-import etl.transcript_listing_extractor as tle
-from main import app
-from show_metadata import ShowKey
+from app.show_metadata import ShowKey
 
 
 pytest_plugins = ('pytest_asyncio',)

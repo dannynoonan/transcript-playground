@@ -1,8 +1,11 @@
 __pycache__/
 .env
+.env.bk
 .DS_Store
 .vscode/
 *_notes.txt
 /database/backups
 /source
+/venv
 /w2v_models
+cleanup_csv.py

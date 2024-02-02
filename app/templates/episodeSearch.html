@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+
+{% block title %} 
+    <title>{{ tdata['show_key'] }} episode search</title>
+{% endblock %} 
+
+{% block content %} 
+	<div class="container">
+        <br/>
+
+        <!-- begin episode search form -->
+        <form action="/web/episode_search/{{ tdata['show_key'] }}" method="GET">
+            <!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/#javascript-behavior -->
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link{% if tdata['search_type']=='' or tdata['search_type']=='general' %} active{% endif %}" id="nav-general-tab" data-bs-toggle="tab" data-bs-target="#nav-general" type="button" role="tab" aria-controls="nav-general" aria-selected="true">
+                        Keyword search
+                    </button>
+                    <button class="nav-link{% if tdata['search_type']=='advanced' %} active{% endif %}" id="nav-advanced-tab" data-bs-toggle="tab" data-bs-target="#nav-advanced" type="button" role="tab" aria-controls="nav-advanced" aria-selected="false">
+                        Filter search
+                    </button>
+                    <button class="nav-link{% if tdata['search_type']=='semantic' %} active{% endif %}" id="nav-semantic-tab" data-bs-toggle="tab" data-bs-target="#nav-semantic" type="button" role="tab" aria-controls="nav-semantic" aria-selected="false">
+                        Semantic search
+                    </button>
+                    <button class="nav-link{% if tdata['search_type']=='advanced_multi_speaker' %} active{% endif %}" id="nav-advanced-multi-character-tab" data-bs-toggle="tab" data-bs-target="#nav-advanced-multi-character" type="button" role="tab" aria-controls="nav-advanced-multi-character" aria-selected="false">
+                        Multi-character search
+                    </button>
+                </div>
+            </nav>
+            <br/>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade{% if tdata['search_type']=='' or tdata['search_type']=='general' %} show active{% endif %}" id="nav-general" role="tabpanel" aria-labelledby="nav-general-tab">
+                    <div class="col-10">
+                        <div class="row input-group">
+                            <div class="col-3">
+                                <label class="col-form-label">Find episodes containing:</label>
+                            </div>
+                            <div class="col-5"> 
+                                <input type="text" class="form-control" name="qt" value="{{ tdata['qt'] }}" id="qtInput">
+                            </div>
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-primary" name="search_type" value="general">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade{% if tdata['search_type']=='advanced' %} show active{% endif %}" id="nav-advanced" role="tabpanel" aria-labelledby="nav-advanced-tab">
+                    <div class="col-8">
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">By character:</label>
+                            </div>
+                            <div class="col-6"> 
+                                <input type="text" class="form-control" name="speaker" value="{{ tdata['speaker'] }}" id="speakerInput">
+                            </div>
+                        </div>     
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">By dialogue:</label>
+                            </div>
+                            <div class="col-6"> 
+                                <input type="text" class="form-control" name="dialog" value="{{ tdata['dialog'] }}" id="dialogInput">
+                            </div>
+                        </div>                         
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">By location:</label>
+                            </div>
+                            <div class="col-6"> 
+                                <input type="text" class="form-control" name="location" value="{{ tdata['location'] }}" id="locationInput">
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row input-group">
+                            <div class="col-8">
+                                <button type="submit" class="btn btn-primary" name="search_type" value="advanced">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade{% if tdata['search_type']=='semantic' %} show active{% endif %}" id="nav-semantic" role="tabpanel" aria-labelledby="nav-semantic-tab">
+                    <div class="col-12">
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">Query:</label>
+                            </div>
+                            <div class="col-10"> 
+                                <input type="text" class="form-control" name="qtSemantic" value="{{ tdata['qtSemantic'] }}" id="qtSemanticInput">
+                            </div>
+                        </div>                              
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">Model vendor:</label>
+                            </div>
+                            <div class="col-2"> 
+                                <input type="text" class="form-control" name="model_vendor" value="{{ tdata['model_vendor'] }}" id="modelVendorInput">
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">Model version:</label>
+                            </div>
+                            <div class="col-2"> 
+                                <input type="text" class="form-control" name="model_version" value="{{ tdata['model_version'] }}" id="modelVersionInput">
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-primary" name="search_type" value="semantic">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade{% if tdata['search_type']=='advanced_multi_speaker' %} show active{% endif %}" id="nav-advanced-multi-character" role="tabpanel" aria-labelledby="nav-advanced-multi-character-tab">
+                    <div class="col-8">
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">By characters:</label>
+                            </div>
+                            <div class="col-6"> 
+                                <input type="text" class="form-control" name="speakers" value="{{ tdata['speakers'] }}" id="speakersInput">
+                            </div>
+                        </div>                              
+                        <div class="row input-group">
+                            <div class="col-2">
+                                <label class="col-form-label">By location:</label>
+                            </div>
+                            <div class="col-6"> 
+                                <input type="text" class="form-control" name="locationAMS" value="{{ tdata['locationAMS'] }}" id="locationInputAMS">
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row input-group">
+                            <div class="col-8">
+                                <button type="submit" class="btn btn-primary" name="search_type" value="advanced_multi_speaker">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </form>
+        <br/>
+        <!-- end episode search form -->
+
+        <!-- begin search result count summary -->
+        {% if tdata['search_type'] != '' %}
+		<h3>
+            {% if tdata['search_type'] != 'semantic' %}
+                <strong>{{ tdata['episode_match_count'] }}</strong> episodes / 
+                <strong>{{ tdata['scene_match_count'] }}</strong> scenes / 
+                <strong>{{ tdata['scene_event_match_count'] }}</strong> lines matching 
+            {% endif %}
+            {% if tdata['search_type'] == 'general' %}
+                query: <strong class="gold">"{{ tdata['qt'] }}"</strong>
+            {% endif %}
+            {% if tdata['search_type'] == 'advanced' %}
+		        {% if tdata['speaker'] %} character: <strong class="gold">"{{ tdata['speaker'] }}"</strong>{% endif %}
+                {% if tdata['dialog'] %} dialogue: <strong class="gold">"{{ tdata['dialog'] }}"</strong>{% endif %}
+                {% if tdata['location'] %} location: <strong class="gold">"{{ tdata['location'] }}"</strong>{% endif %}
+            {% endif %}
+            {% if tdata['search_type'] == 'semantic' %}
+                query: <strong class="gold">"{{ tdata['qtSemantic'] }}"</strong><br/>
+                tokens processed: <strong class="gold">{{ tdata['tokens_processed_count'] }}</strong> 
+                    {% if tdata['tokens_processed'] %}<strong class="gold">{{ tdata['tokens_processed'] }}</strong>{% endif %}<br/>
+                tokens failed: <strong class="gold">{{ tdata['tokens_failed_count'] }}</strong>
+                    {% if tdata['tokens_failed'] %}<strong class="gold">{{ tdata['tokens_failed'] }}</strong>{% endif %}<br/>
+                model_vendor: <strong class="gold">{{ tdata['model_vendor'] }}</strong> model_version: <strong class="gold">{{ tdata['model_version'] }}</strong>
+            {% endif %}
+            {% if tdata['search_type'] == 'advanced_multi_speaker' %}
+                {% if tdata['speakers'] %} characters: <strong class="gold">"{{ tdata['speakers'] }}"</strong>{% endif %}
+                {% if tdata['locationAMS'] %} location: <strong class="gold">"{{ tdata['locationAMS'] }}"</strong>{% endif %}
+            {% endif %}
+            {% if tdata['season'] %}, Season <strong>{{ tdata['season'] }}</strong>{% endif %}
+        </h3>
+        {% endif %}
+		<p>&nbsp;</p>
+        <!-- end search result count summary -->
+
+        <!-- begin display search results -->
+        {% if tdata['search_type'] == 'semantic' %}
+            <!-- semantic search_type -->
+            <div class="col-12">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr class="table-success">
+                            <th scope="col">Score</th>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Season</th>
+                            <th scope="col">Episode</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Air date</th>
+                            <th scope="col">Focal characters</th>
+                            <th scope="col">Focal locations</th>
+                            <th scope="col">Scenes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for episode in tdata['episode_matches'] %}
+                        <tr class="table-secondary">
+                            <th scope="row">
+                                <button type="button" class="btn btn-primary">{{ '%0.2f'|format(episode['agg_score']|float) }}</button>
+                            </th>
+                            <td>{{ episode['rank'] }}</td>
+                            <td>{{ episode['season'] }}</td>
+                            <td>{{ episode['sequence_in_season'] }}</td>
+                            <td>
+                                <a class="alert-link" href="/web/episode/{{ tdata['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title'] }}</a>
+                            </td>
+                            <td>{{ episode['air_date']|truncate(10,true,'') }}</td>
+                            <td>{{ episode['focal_speakers']|join(', ') }}</td>
+                            <td>{{ episode['focal_locations']|join(', ')|truncate(50,true) }}</td>
+                            <td>{{ episode['scene_count'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>                                          
+            </div>
+        {% else %}
+            <!-- other search_types -->
+            {% for episode in tdata['episode_matches'] %}
+            <div class="card text-white bg-success mb-3 w-75">
+                <div class="card-header">Season {{ episode['season'] }}, Episode {{ episode['sequence_in_season'] }} ({{ episode['air_date'] }})</div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <button type="button" class="btn btn-primary">{{ '%0.2f'|format(episode['agg_score']|float) }}</button>&nbsp;&nbsp;
+                        <a class="alert-link" href="/web/episode/{{ episode['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title']|safe }}</a> 
+                    </h5>
+                    <div class="overflow-scroll" style="max-height: 300px;">
+                    {% for scene in episode['scenes'] %}
+                        <hr>
+                        <p>[scene {{ scene['sequence'] }}] <strong>{{ scene['location']|safe }}</strong></p>
+                        <p><small>
+                        {% for scene_event in scene['scene_events'] %}
+                            [line {{ scene_event['sequence'] }}] 
+                            {% if scene_event['context_info'] %}
+                                [{{ scene_event['context_info']|safe }}] 
+                            {% endif %}
+                            {% if scene_event['spoken_by'] %}
+                                <strong>{{ scene_event['spoken_by']|safe }}</strong>: {{ scene_event['dialog']|safe }}
+                            {% endif %}
+                            <br/>
+                        {% endfor %}
+                        </small></p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+
+        {% endif %}
+        <!-- end display search results -->
+
+	</div>
+{% endblock %} 
