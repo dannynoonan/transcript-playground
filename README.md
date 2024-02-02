@@ -15,9 +15,9 @@ As of this writing, properly ingested/normalized show transcripts can:
 * `Pandas` / `NumPy` / `Scikit-learn` / `NLTK`: data / text analytics / ML tool kits
 * `Word2Vec` / `OpenAI`: pre-trained language / embedding models 
 
-# Setup
+# Setup and run 
 
-Basic workflow for getting app up and running after cloning the repo locally.
+Basic workflow for getting the app up and running after cloning the repo locally.
 
 ## Set properties in .env
 ```
@@ -28,11 +28,13 @@ Assign values to all vars in newly created `.env` file. These vars will be expos
 
 Defaults are suggested for several properties, but you will need to assign your own Elasticsearch and Postgres credentials. 
 
-Also note that when using the `docker-compose.yml` setup that `HOST`-type properties should be assigned to docker container names, rather than being set to `localhost`.
+Also note that, when using the `docker-compose.yml` setup, `HOST` properties should be assigned to docker container names, rather than being set to `localhost`.
 
 ## Data source configuration
 
-Elasticsearch and Postgres require either local installation and setup or docker installation and setup. Both approaches will generate user credentials that can be assigned to corresponding `.env` vars.
+Elasticsearch and Postgres require either local setup or docker setup. Both approaches will generate user credentials that can be assigned to corresponding `.env` vars.
+
+This README does not explain how to get Elasticsearch or Postgres running, but these quick overviews and links might be helpful. 
 
 ### Elasticsearch
 
@@ -43,9 +45,9 @@ Elasticsearch and Postgres require either local installation and setup or docker
 This [FastAPI-RDBMS integration](https://fastapi.tiangolo.com/tutorial/sql-databases/) walk-thru covers Postgres as a general example of RDBMS, and this [Tortoise quickstart](https://tortoise.github.io/getting_started.html) and [FastAPI-TortoiseORM integration tutorial](https://medium.com/@talhakhalid101/python-tortoise-orm-integration-with-fastapi-c3751d248ce1) will get you up to speed on how Postgres and Tortoise ORM are set up and used in the project. Similar to the Elasticsearch setup, user/password credentials need to be added to `.env`.
 
 
-## Option 1: Run app piece-meal via command-line docker and/or local installs
+## Option 1: Run app piece-meal via command-line docker and/or local install
 
-If you've got Elasticsearch and Postgres running independently and configured in `.env`, then run `transcript-playground` can be started locally using `venv` and `uvicorn`:
+If you've got Elasticsearch and Postgres running independently and configured in `.env`, then `transcript-playground` can be started locally using `venv` and `uvicorn`:
 ```
 python -m venv venv
 source venv/bin/activate
@@ -75,19 +77,18 @@ Docker version 24.0.7, build afdd53b
 ```
 
 I'm running Docker Desktop, and behind the "Settings" button and under "Softare Updates" I see:
-
 ```
 You're currently on version 4.26.1 (131620). The latest version is 4.27.1 (136059)
 ```
 
 And all the `docker-compose.yml` examples I've come across specify `version: '3.8'` or thereabouts at the top.
 
-Suffice to say: Results may vary, depending on what versions and combinations of versions you are running.
+Suffice to say: Results may vary depending on what versions and combinations of versions you are running.
 
 
 ### Building and starting
 
-After setting `.env` properties mapping data sources to docker containers, try running:
+After setting user credentials and mapping data sources to docker containers in `.env`, try running:
 ```
 docker compose up --build
 ```
@@ -97,7 +98,7 @@ With any luck this will:
 * expose, authenticate, and configure all port interdependencies between services
 * spin up data volumes that live on after a container is stopped / can be accessed again when container is restarted
 
-More than likely you'll run into a snag, perhaps even with the `docker compose up` syntax instead of `docker-compose up` syntax (which relates to a recent-ish version change). I'd love to hear feedback on what works and doesn't work.
+More than likely you'll run into a snag, perhaps even with the `docker compose up` syntax instead of `docker-compose up` syntax (which relates to a recent-ish version change). I can't anticipate all the variations for reasons noted above, but I'd love to hear feedback on what works and doesn't work.
 
 
 ### Shutting down, restarting, rebuilding
@@ -109,8 +110,8 @@ docker compose up
 ```
 
 Depending on the nature of your code changes, you may need to:
-* tack `-v` to the end of `docker compose down` to remove volumes
-* tack `--build` to the end on `docker compose up` to reflect dependency changes in `requirements.txt` or renaming/remapping of services in `docker-compose.yml` or properties set in `.env`
+* tack `-v` to the end of `docker compose down -v` to remove volumes
+* tack `--build` to the end on `docker compose up --build` to reflect dependency changes in `requirements.txt` or renaming/remapping of services in `docker-compose.yml` or properties set in `.env`
 
 
 ## Verify app is running
@@ -133,18 +134,22 @@ Before launching into API endpoint detail below, verify end-to-end connectivity 
 1. `/web/episode/TNG/150` -> leverages various `/esr` endpoints to fetche episode transcript data for `show_key=TNG` and `episode_key=150` from `transcripts` index and render to web page via `jinja` HTML template
 
 ### Tests
+
+Tests currently cover a subset of core data transformations in the ETL pipeline. More to be done here.
 ```
 pytest -v tests.py
 ```
 
-# Metadata overview
+# App details 
 
-## Show metadata
+## Metadata overview
+
+### Show metadata
 
 * `show_key`: unique identifier that is shorthand for a distinct show, even if that show is part of a broader franchies (e.g. "Star Trek: The Original Series" has `show_key='TOS'`, while "Star Trek: The Next Generation" has `show_key='TNG'`)
 * `external_key` or `episode_key`: unique identifier for a specific episode of a given `show_key`, ideally derived from an agreed-upon external data source or else generated from episode titles
 
-## NLP metadata
+### NLP metadata
 
 A mapping of predefined `model_vendor` and `model_version` values and associated metadata are managed in the `WORD2VEC_VENDOR_VERSIONS` and `TRANSFORMER_VENDOR_VERSIONS` variables in `nlp/nlp_metadata.py`.
 
@@ -161,7 +166,7 @@ If you decide to experiment with the `/esw/build_embeddings_model` endpoint (des
 OpenAI has nice clean APIs for generating Transformer embeddings, so rather than downloading language models locally you will need to add your own `OPENAI_API_KEY` param value to `.env`.
 
 
-# ETL source/ directories
+## ETL source/ directories
 
 Before episode listing and transcript data are loaded into `transcript_db` (Postgres), it is first copied from external html files and staged in local `source/` subdirectories. This protects your db data from being paved over if you refresh/reload episode data following an unexpected change in an external content source (reformatting of a Wikipedia page, a fan site changing its url structure, etc).
 
@@ -172,7 +177,7 @@ Note that re-running the same `/etl/copy_X` endpoint twice will effectively over
 (There is also a `/backup_db` endpoint with a similar aim of protecting local data from being wiped out by upstream data source changes or outages.)
 
 
-# API overview
+## API overview
 
 * OpenAPI: http://127.0.0.1:8000/docs#/
 * Redoc: http://127.0.0.1:8000/redoc
@@ -187,7 +192,7 @@ API endpoints currently do most of the work in the app. Endpoints live within 4 
 A few endpoints that don't fall cleanly into those four buckets still live in `main.py` for the time being.
 
 
-## 'ETL' endpoints" to source and load data into Postgres  
+### 'ETL' endpoints" to source and load data into Postgres  
 
 ETL endpoints fall into two buckets: `/copy_X` and `/load_X`
 * `/etl/copy_X` endpoints: fetch html content from external sources (defined in `show_metadata.py`) and store as raw text files to local `source/` directory.
@@ -209,7 +214,7 @@ ETL endpoints fall into two buckets: `/copy_X` and `/load_X`
         * `/etl/load_all_transcripts/{show_key}`: bulk run of `/etl/load_transcript` for all episodes of a given show
         
 
-## 'ES Writer' endpoints: to populate ElasticSearch 
+### 'ES Writer' endpoints: to populate ElasticSearch 
 
 **Important:** First run the `/esw/init_es` endpoint to generate mappings for the "transcripts" index. If you do not do this, index writes may proceed without issuing warnings, but certain index read operations will fail where data has been mapped to default field types.
 
@@ -227,7 +232,7 @@ Endpoints for writing vector embeddings to es index:
 * `/esw/populate_all_embeddings/{show_key}/{model_vendor}/{model_version}`: bulk run of `/esw/populate_embeddings` for all episodes of a given show
 
 
-## 'ES Reader' endpoints: to query ElasticSearch  
+### 'ES Reader' endpoints: to query ElasticSearch  
 
 ES Reader `/esr` endpoints provide most of the core functionality of the project, since ElasticSearch houses free text, facet-oriented, and vectorized representations of transcript data that span the gamut of search, recommendation, classification, clustering, and other AI/ML-oriented features. I won't continually track the feature set in the README, but at the time of this writing the endpoints generally broke down into these buckets:
 * show listing and metadata lookups (key- or id-based fetches)
@@ -238,12 +243,12 @@ ES Reader `/esr` endpoints provide most of the core functionality of the project
 * AI/ML functionality like MoreLikeThis and termvectors (native to ElasticSearch) or clustering and classification (leveraging embeddings data as inputs to ML model training)
 
 
-## 'Web' endpoints: render web pages 
+### 'Web' endpoints: render web pages 
 
 Webpage-rendering endpoints are 'front-end' consumers of the other 'back-end' endpoints, specifically of the 'ES Reader' endpoints. These 'Web' endpoints generate combinations of `/esr` requests, package up the results, and feed them into HTML templates that offer some bare-bones UI functionality.
 
 
-# Analytics
+## Analytics
 
 I've set up a rudimentary query input -> response ranking pipeline to evaluate the performance of various Word2Vec and Transformer language models. The 'test data' are short summaries of episodes pulled from various data sources (fan sites, reviews portals, etc), and 'success' is measured by how well an episode description does at matching the episode being described in search results.
 
@@ -254,18 +259,7 @@ Analytics processes are triggered as scripts rather than via API endpoints:
 * `generate_vsearch_rankings.py`: invokes the `/esr/vector_search` endpoint for each externally-sourced episode description, determines how well the described episode ranks in search results, and writes that ranking/performance output to a freeze-dried pandas dataframe stored as csv
 
 
-# Next phases
-
-## Lateral growth: adding new shows / ingestion transformers
-Ideally, the transcript ingest and normalization code should be easily extensible, allowing for new ETL parsers to be easily added for new shows. Some restructuring of the ETL code is needed for the onboarding of new shows / new transcript parsers to be smoother / less ad hoc.
-
-## Vertical growth: expanding text analytics feature set
-On deck: AI/ML models trained using embedding data generated via OpenAI. Interactive data visualization by integrating Plotly/Dash into FastAPI/Flask.
-
-
-# Ongoing development
-
-## Migrations
+## Db migrations
 
 `transcript-playground` is configured for Postgres migrations using Toroise ORM and Aerich. These steps describe the process for re-initializing migrations and for executing them going forward.
 
@@ -290,3 +284,16 @@ On deck: AI/ML models trained using embedding data generated via OpenAI. Interac
     ```
 
 Reference: https://tortoise.github.io/migration.html
+
+
+# Next phases
+
+## Lateral growth: adding new shows / ingestion transformers
+Ideally, the transcript ingest and normalization code should be easily extensible, allowing for new ETL parsers to be easily added for new shows. Some restructuring of the ETL code is needed for the onboarding of new shows / new transcript parsers to be smoother / less ad hoc.
+
+## Vertical growth: expanding text analytics feature set
+On deck: AI/ML models trained using embedding data generated via OpenAI. Interactive data visualization by integrating Plotly/Dash into FastAPI/Flask.
+
+
+# Ongoing development
+
