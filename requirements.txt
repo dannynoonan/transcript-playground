@@ -1,6 +1,11 @@
 aerich==0.7.2
 asyncpg==0.28.0
 bs4==0.0.1
+dash==2.15.0
+dash-bootstrap-components==1.5.0
+dash-core-components==2.0.0
+dash-html-components==2.0.0
+dash-table==5.0.0
 elasticsearch==8.8.0
 elasticsearch-dsl==8.9.0
 fastapi==0.109.0

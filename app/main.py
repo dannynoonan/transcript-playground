@@ -1,12 +1,14 @@
 from fastapi import FastAPI, Request, Response
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import HTTPException
+from fastapi.middleware.wsgi import WSGIMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from tortoise import Tortoise
 
 from app.config import settings, DATABASE_URL
+from app.dash_app import dapp
 from app.database.connect import connect_to_database
 import app.database.dao as dao
 from app.es.es_read_router import esr_app
@@ -23,6 +25,7 @@ app.include_router(etl_app)
 app.include_router(esw_app)
 app.include_router(esr_app)
 app.mount('/static', StaticFiles(directory='static', html=True), name='static')
+app.mount('/tsp_dash', WSGIMiddleware(dapp.server))
 # templates = Jinja2Templates(directory="templates")
 
 
