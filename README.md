@@ -76,7 +76,7 @@ $ docker --version
 Docker version 24.0.7, build afdd53b
 ```
 
-I'm running Docker Desktop, and behind the "Settings" button and under "Softare Updates" I see:
+I'm running Docker Desktop, and behind the "Settings" button and under "Software Updates" I see:
 ```
 You're currently on version 4.26.1 (131620). The latest version is 4.27.1 (136059)
 ```
@@ -265,7 +265,7 @@ Analytics processes are triggered as scripts rather than via API endpoints:
 
 ## Db migrations
 
-`transcript-playground` is configured for Postgres migrations using Toroise ORM and Aerich. These steps describe the process for re-initializing migrations and for executing them going forward.
+`transcript-playground` is configured for Postgres migrations using Toroise ORM and Aerich. Migrations are executed at app startup. The following steps describe the process for re-initializing migrations and for executing them going forward.
 
 * Create `migrations/` dir and `pyproject.toml` file from settings in TORTOISE_ORM dict:
     ```
