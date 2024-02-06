@@ -8,7 +8,7 @@ dash-html-components==2.0.0
 dash-table==5.0.0
 elasticsearch==8.8.0
 elasticsearch-dsl==8.9.0
-fastapi==0.109.0
+fastapi==0.109.2
 gensim==4.3.2
 html5lib==1.1
 http-exceptions==0.2.10
