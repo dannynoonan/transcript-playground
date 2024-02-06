@@ -2,11 +2,12 @@
 import dash_bootstrap_components as dbc
 from dash import dcc, html, Dash
 from dash.dependencies import Input, Output, State
+import pandas as pd
 
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
-import app.web.data_viz as viz
+import app.web.fig_builder as fb
 
 
 dapp = Dash(__name__,
@@ -88,14 +89,21 @@ dapp.layout = html.Div([
 def render_show_cluster_scatter(show_key: str, num_clusters: int):
     print(f'in render_show_cluster_scatter, show_key={show_key} num_clusters={num_clusters}')
     num_clusters = int(num_clusters)
-    # if not num_clusters:
-    #     num_clusters = 4
     vector_field = 'openai_ada002_embeddings'
     # fetch all model/vendor embeddings for show 
     s = esqb.fetch_all_embeddings(show_key, vector_field)
     doc_embeddings = esrt.return_all_embeddings(s, vector_field)
     doc_clusters_df = ef.cluster_docs(doc_embeddings, num_clusters)
-    fig_scatter = viz.generate_graph_plotly(doc_clusters_df, show_key, num_clusters)
+    # fetch all episode metadata for show 
+    s = esqb.list_episodes_by_season(show_key)
+    episodes_by_season = esrt.return_episodes_by_season(s)
+    all_episodes = []
+    for _, episodes in episodes_by_season.items():
+        all_episodes.extend(episodes)
+    episodes_df = pd.DataFrame(all_episodes)
+    episodes_df['doc_id'] = episodes_df['episode_key'].apply(lambda x: f'{show_key}_{x}')
+    # generate scatterplot
+    fig_scatter = fb.generate_graph_plotly(doc_clusters_df, episodes_df, show_key, num_clusters)
     return fig_scatter, show_key
 
 

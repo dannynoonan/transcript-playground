@@ -10,7 +10,7 @@ import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 from app.show_metadata import ShowKey
 import app.utils as utils
-import app.web.data_viz as dz
+import app.web.fig_builder as fb
 
 
 templates = Jinja2Templates(directory="app/templates")
@@ -370,7 +370,7 @@ async def show_page(request: Request, show_key: ShowKey, background_tasks: Backg
 	
 	# clusters = esr.cluster_content(show_key, num_clusters)
 	# img_buf = dz.generate_graph_matplotlib(doc_clusters_df, show_key.value, num_clusters, matrix=embeddings_matrix)
-	img_buf = dz.generate_graph_matplotlib(doc_clusters_df, show_key.value, num_clusters)
+	img_buf = fb.generate_graph_matplotlib(doc_clusters_df, show_key.value, num_clusters)
 	background_tasks.add_task(img_buf.close)
 	headers = {'Content-Disposition': 'inline; filename="out.png"'}
 	return Response(img_buf.getvalue(), headers=headers, media_type='image/png')
