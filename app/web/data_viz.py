@@ -21,11 +21,16 @@ class FigDimensions():
         self.MD6 = 788
         self.MD7 = 924
         self.MD8 = 1080
+        self.MD10 = 1320
+        self.MD11 = 1450
         self.MD12 = 1610
 
     def square(self, width):
         return width
 
+    def hdef(self, width):
+        return width * .562
+    
     def crt(self, width):
         return width * .75
 
@@ -97,8 +102,8 @@ def generate_graph_matplotlib(df: pd.DataFrame, show_key: str, num_clusters: int
 
 
 def generate_graph_plotly(df: pd.DataFrame, show_key: str, num_clusters: int) -> go.Figure:
-    fig_width = fig_dims.MD12
-    fig_height = fig_dims.crt(fig_width)
+    fig_width = fig_dims.MD11
+    fig_height = fig_dims.hdef(fig_width)
     base_fig_title = f'{num_clusters} clusters for {show_key} visualized in 2D using t-SNE'
 
     tsne = TSNE(n_components=2, perplexity=15, random_state=42, init="random", learning_rate=200)
