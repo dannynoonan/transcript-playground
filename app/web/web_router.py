@@ -364,12 +364,13 @@ async def show_page(request: Request, show_key: ShowKey, background_tasks: Backg
 	doc_embeddings = esrt.return_all_embeddings(s, vector_field)
     
     # cluster content
-	doc_clusters, doc_clusters_df, embeddings_matrix = ef.cluster_docs(doc_embeddings, num_clusters)
+	doc_clusters_df = ef.cluster_docs(doc_embeddings, num_clusters)
     # doc_clusters_df.set_index('doc_id').T.to_dict('list')
 	# doc_clusters_df.to_dict('dict')
 	
 	# clusters = esr.cluster_content(show_key, num_clusters)
-	img_buf = dz.generate_graph_matplotlib(doc_clusters_df, embeddings_matrix, num_clusters)
+	# img_buf = dz.generate_graph_matplotlib(doc_clusters_df, show_key.value, num_clusters, matrix=embeddings_matrix)
+	img_buf = dz.generate_graph_matplotlib(doc_clusters_df, show_key.value, num_clusters)
 	background_tasks.add_task(img_buf.close)
 	headers = {'Content-Disposition': 'inline; filename="out.png"'}
 	return Response(img_buf.getvalue(), headers=headers, media_type='image/png')

@@ -245,11 +245,11 @@ def build_embeddings_model(show_key: str) -> dict:
 
 
 def cluster_docs(doc_embeddings: dict, num_clusters: int):
-    print(f'begin cluster_content for doc_embeddings')
+    print(f'begin cluster_docs for doc_embeddings num_clusters={num_clusters}')
 
-    df = pd.DataFrame(doc_embeddings)
-    df = df.transpose()
-    df.index.name = 'doc_id' # TODO is this needed or do I create a separate column and have index be an incrementing int 0-n
+    doc_clusters_df = pd.DataFrame(doc_embeddings)
+    doc_clusters_df = doc_clusters_df.transpose()
+    doc_clusters_df.index.name = 'doc_id' # TODO is this needed or do I create a separate column and have index be an incrementing int 0-n
 
     doc_clusters = {}
     doc_ids = list(doc_embeddings.keys())
@@ -263,13 +263,14 @@ def cluster_docs(doc_embeddings: dict, num_clusters: int):
     print(f'kmeans.labels_={kmeans.labels_} len(kmeans.labels_)={len(kmeans.labels_)} type(kmeans.labels_)={type(kmeans.labels_)}')
 
     labels = kmeans.labels_.tolist()
-    df['Cluster'] = kmeans.labels_
-    df['doc_id'] = doc_ids # TODO redundancy here with index name
+    doc_clusters_df['Cluster'] = kmeans.labels_
+    doc_clusters_df['doc_id'] = doc_ids # TODO redundancy here with index name
 
     for i in range(len(doc_ids)):
         doc_clusters[doc_ids[i]] = labels[i]
 
-    return doc_clusters, df, embeddings_matrix
+    # return doc_clusters, doc_clusters_df, embeddings_matrix
+    return doc_clusters_df
 
 
 '''
