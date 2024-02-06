@@ -1,6 +1,6 @@
 # import dash
 import dash_bootstrap_components as dbc
-from dash import dcc, html, Dash
+from dash import dcc, html, Dash, dash_table
 from dash.dependencies import Input, Output, State
 import pandas as pd
 
@@ -8,7 +8,17 @@ import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
 import app.web.fig_builder as fb
+import app.web.fig_metadata as fm
 
+
+# class DataObj(object):
+#     def __init__(self):
+#         self.display_df = pd.read_csv('clusters_simple_TNG_6.csv')
+
+# data_obj = DataObj()
+
+# def update_data_obj(df: pd.DataFrame) -> None:
+#     data_obj.display_df = df
 
 dapp = Dash(__name__,
             external_stylesheets=[dbc.themes.SOLAR],
@@ -75,6 +85,9 @@ dapp.layout = html.Div([
             dbc.Row(justify="evenly", children=[
                 dcc.Graph(id="show-cluster-scatter"),
             ]),
+            html.Br(),
+            html.Div(id="episodes-df-table"),
+            # dash_table.DataTable(data_obj.display_df.to_dict('records'), [{"name": i, "id": i} for i in data_obj.display_df.columns])
         ]),
     ])
 ])
@@ -84,29 +97,157 @@ dapp.layout = html.Div([
 @dapp.callback(
     Output('show-cluster-scatter', 'figure'),
     Output('show-key-display', 'children'),
+    Output('episodes-df-table', 'children'),
     Input('show-key', 'value'),
     Input('num-clusters', 'value'))    
 def render_show_cluster_scatter(show_key: str, num_clusters: int):
     print(f'in render_show_cluster_scatter, show_key={show_key} num_clusters={num_clusters}')
     num_clusters = int(num_clusters)
     vector_field = 'openai_ada002_embeddings'
-    # fetch all model/vendor embeddings for show 
+
+    # fetch embeddings for all show episodes 
     s = esqb.fetch_all_embeddings(show_key, vector_field)
     doc_embeddings = esrt.return_all_embeddings(s, vector_field)
+
+    # generate and color-stamp clusters for all show episodes 
     doc_clusters_df = ef.cluster_docs(doc_embeddings, num_clusters)
-    # fetch all episode metadata for show 
+    doc_clusters_df['cluster_color'] = doc_clusters_df['Cluster'].apply(lambda x: fm.colors[x])
+
+    # fetch basic title/season data for all show episodes 
     s = esqb.list_episodes_by_season(show_key)
     episodes_by_season = esrt.return_episodes_by_season(s)
     all_episodes = []
     for _, episodes in episodes_by_season.items():
         all_episodes.extend(episodes)
     episodes_df = pd.DataFrame(all_episodes)
+
+    # merge basic episode data into cluster data
     episodes_df['doc_id'] = episodes_df['episode_key'].apply(lambda x: f'{show_key}_{x}')
+    clusters_only_df = doc_clusters_df[['doc_id', 'Cluster', 'cluster_color']].copy()
+
+    # generate dash_table div as part of callback output
+    table_div = merge_and_simplify_df(clusters_only_df, episodes_df, 'doc_id')
+
+    # TODO this wraps embeddings vectors df with episode data for use in plotly hover display, but seems redundant
+    merged_df = pd.merge(doc_clusters_df, episodes_df, on='doc_id', how='outer')
+
     # generate scatterplot
-    fig_scatter = fb.generate_graph_plotly(doc_clusters_df, episodes_df, show_key, num_clusters)
-    return fig_scatter, show_key
+    fig_scatter = fb.generate_graph_plotly(doc_clusters_df, merged_df, show_key, num_clusters)
+
+    return fig_scatter, show_key, table_div
+
+
+# TODO where should this live? Can/will it be more generic, or limited to this use case?
+def merge_and_simplify_df(df1: pd.DataFrame, df2: pd.DataFrame, field: str) -> html.Div:
+    # merge data
+    merged_simple_df = pd.merge(df1, df2, on=field, how='outer')
+    # remove/reformat columns, sort table
+    merged_simple_df.drop(['doc_id', 'show_key', 'indexed_ts'], axis=1, inplace=True)
+    merged_simple_df['air_date'] = merged_simple_df['air_date'].apply(lambda x: x[:10])
+    merged_simple_df['focal_speakers'] = merged_simple_df['focal_speakers'].apply(lambda x: ", ".join(x))
+    merged_simple_df['focal_locations'] = merged_simple_df['focal_locations'].apply(lambda x: ", ".join(x))
+    merged_simple_df.sort_values(['Cluster', 'season', 'sequence_in_season'], inplace=True)
+    # generate table div that can function as an identifiable dash object
+    table_div = html.Div([
+        dash_table.DataTable(
+            data=merged_simple_df.to_dict("records"),
+            columns=[{"id": x, "name": x} for x in merged_simple_df.columns],
+            style_cell={'textAlign': 'left'},
+            style_data={
+                'color': 'black',
+                'backgroundColor': 'white'
+            },
+            style_data_conditional=[
+                {
+                    'if': {
+                        'filter_query': "{Cluster} = 0",
+                        'column_id': 'cluster_color'
+                    },
+                    'backgroundColor': fm.colors[0],
+                    'color': 'white'
+                },
+                {
+                    'if': {
+                        'filter_query': "{Cluster} = 1",
+                        'column_id': 'cluster_color'
+                    },
+                    'backgroundColor': fm.colors[1],
+                    'color': 'white'
+                },
+                {
+                    'if': {
+                        'filter_query': "{Cluster} = 2",
+                        'column_id': 'cluster_color'
+                    },
+                    'backgroundColor': fm.colors[2],
+                    'color': 'white'
+                },
+                {
+                    'if': {
+                        'filter_query': "{Cluster} = 3",
+                        'column_id': 'cluster_color'
+                    },
+                    'backgroundColor': fm.colors[3],
+                    'color': 'white'
+                },
+                {
+                    'if': {
+                        'filter_query': "{Cluster} = 4",
+                        'column_id': 'cluster_color'
+                    },
+                    'backgroundColor': fm.colors[4],
+                    'color': 'white'
+                },
+                {
+                    'if': {
+                        'filter_query': "{Cluster} = 5",
+                        'column_id': 'cluster_color'
+                    },
+                    'backgroundColor': fm.colors[5],
+                    'color': 'white'
+                },
+                {
+                    'if': {
+                        'filter_query': "{Cluster} = 6",
+                        'column_id': 'cluster_color'
+                    },
+                    'backgroundColor': fm.colors[6],
+                    'color': 'white'
+                },
+                {
+                    'if': {
+                        'filter_query': "{Cluster} = 7",
+                        'column_id': 'cluster_color'
+                    },
+                    'backgroundColor': fm.colors[7],
+                    'color': 'white'
+                },
+                {
+                    'if': {
+                        'filter_query': "{Cluster} = 8",
+                        'column_id': 'cluster_color'
+                    },
+                    'backgroundColor': fm.colors[8],
+                    'color': 'white'
+                },
+                {
+                    'if': {
+                        'filter_query': "{Cluster} = 9",
+                        'column_id': 'cluster_color'
+                    },
+                    'backgroundColor': fm.colors[9],
+                    'color': 'white'
+                },
+            ],
+            # style_header={
+            #     'backgroundColor': 'rgb(210, 210, 210)',
+            #     'color': 'black',
+            #     'fontWeight': 'bold'
+            # }
+        )
+    ])
+    return table_div
 
 
 if __name__ == "__main__":
-    # dapp.run(debug=True)
     dapp.run_server(debug=True)

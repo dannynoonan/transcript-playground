@@ -8,40 +8,11 @@ import plotly.graph_objects as go
 from sklearn.manifold import TSNE
 # from starlette.responses import StreamingResponse
 
+import app.web.fig_metadata as fm
+
 
 matplotlib.use('AGG')
 
-
-colors = ["red", "green", "blue", "orange", "purple", "brown", "yellow", "pink", "black", "tomato"]
-
-
-class FigDimensions():
-    def __init__(self):
-        self.MD5 = 650
-        self.MD6 = 788
-        self.MD7 = 924
-        self.MD8 = 1080
-        self.MD10 = 1320
-        self.MD11 = 1450
-        self.MD12 = 1610
-
-    def square(self, width):
-        return width
-
-    def hdef(self, width):
-        return width * .562
-    
-    def crt(self, width):
-        return width * .75
-
-    def wide_door(self, width):
-        return width * 1.25
-
-    def narrow_door(self, width):
-        return width * 1.5
-    
-
-fig_dims = FigDimensions()
 
 
 def generate_graph_matplotlib(df: pd.DataFrame, show_key: str, num_clusters: int, matrix = None):
@@ -71,7 +42,7 @@ def generate_graph_matplotlib(df: pd.DataFrame, show_key: str, num_clusters: int
     # fp = f'clusters_{show_key}_{num_clusters}.csv'
     # df.to_csv(fp)
 
-    for category, color in enumerate(colors[:num_clusters]):
+    for category, color in enumerate(fm.colors[:num_clusters]):
         xs = np.array(x)[df.Cluster == category]
         ys = np.array(y)[df.Cluster == category]
         plt.scatter(xs, ys, color=color, alpha=0.3)
@@ -100,21 +71,20 @@ def generate_graph_matplotlib(df: pd.DataFrame, show_key: str, num_clusters: int
     return img_buf
 
 
-
-def generate_graph_plotly(doc_clusters_df: pd.DataFrame, episodes_df: pd.DataFrame, show_key: str, num_clusters: int) -> go.Figure:
-    fig_width = fig_dims.MD11
-    fig_height = fig_dims.hdef(fig_width)
+def generate_graph_plotly(doc_clusters_df: pd.DataFrame, merged_df: pd.DataFrame, show_key: str, num_clusters: int) -> go.Figure:
+    fig_width = fm.fig_dims.MD11
+    fig_height = fm.fig_dims.hdef(fig_width)
     base_fig_title = f'{num_clusters} clusters for {show_key} visualized in 2D using t-SNE'
 
     tsne = TSNE(n_components=2, perplexity=15, random_state=42, init="random", learning_rate=200)
     new_df = doc_clusters_df.copy()
-    new_df = new_df.drop(['doc_id', 'Cluster'], axis=1)
+    new_df = new_df.drop(['doc_id', 'Cluster', 'cluster_color'], axis=1)
     new_df.columns = new_df.columns.astype(str)
     vis_dims2 = tsne.fit_transform(new_df)
 
-    doc_clusters_df['cluster_color'] = doc_clusters_df['Cluster'].apply(lambda x: colors[x])
+    # doc_clusters_df['cluster_color'] = doc_clusters_df['Cluster'].apply(lambda x: fm.colors[x])
 
-    merged_df = pd.merge(doc_clusters_df, episodes_df, on='doc_id', how='outer')
+    # merged_df = pd.merge(doc_clusters_df, episodes_df, on='doc_id', how='outer')
     # doc_clusters_df.join(episodes_df, on='doc_id', how='left')
 
     # print(f'merged_df={merged_df}')
