@@ -11,15 +11,6 @@ import app.web.fig_builder as fb
 import app.web.fig_metadata as fm
 
 
-# class DataObj(object):
-#     def __init__(self):
-#         self.display_df = pd.read_csv('clusters_simple_TNG_6.csv')
-
-# data_obj = DataObj()
-
-# def update_data_obj(df: pd.DataFrame) -> None:
-#     data_obj.display_df = df
-
 dapp = Dash(__name__,
             external_stylesheets=[dbc.themes.SOLAR],
             requests_pathname_prefix='/tsp_dash/')
@@ -76,7 +67,7 @@ dapp.layout = html.Div([
                                 {'label': '9', 'value': '9'},
                                 {'label': '10', 'value': '10'},
                             ], 
-                            value='2',
+                            value='5',
                         )
                     ]),
                 ]),
@@ -87,7 +78,6 @@ dapp.layout = html.Div([
             ]),
             html.Br(),
             html.Div(id="episodes-df-table"),
-            # dash_table.DataTable(data_obj.display_df.to_dict('records'), [{"name": i, "id": i} for i in data_obj.display_df.columns])
         ]),
     ])
 ])
@@ -111,7 +101,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
 
     # generate and color-stamp clusters for all show episodes 
     doc_embeddings_clusters_df = ef.cluster_docs(doc_embeddings, num_clusters)
-    doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['Cluster'].apply(lambda x: fm.colors[x])
+    doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: fm.colors[x])
 
     # fetch basic title/season data for all show episodes 
     s = esqb.list_episodes_by_season(show_key)
@@ -141,104 +131,81 @@ def merge_and_simplify_df(episode_clusters_df: pd.DataFrame) -> html.Div:
     episode_clusters_df['air_date'] = episode_clusters_df['air_date'].apply(lambda x: x[:10])
     episode_clusters_df['focal_speakers'] = episode_clusters_df['focal_speakers'].apply(lambda x: ", ".join(x))
     episode_clusters_df['focal_locations'] = episode_clusters_df['focal_locations'].apply(lambda x: ", ".join(x))
-    episode_clusters_df.sort_values(['Cluster', 'season', 'sequence_in_season'], inplace=True)
+    episode_clusters_df.sort_values(['cluster', 'season', 'sequence_in_season'], inplace=True)
+    # rename columns for display
+    episode_clusters_df.rename(columns={'sequence_in_season': 'episode', 'scene_count': 'scenes'}, inplace=True)
+    # TODO remove this altogether
+    episode_clusters_df.drop('cluster_color', axis=1, inplace=True) 
     # generate table div that can function as an identifiable dash object
     table_div = html.Div([
         dash_table.DataTable(
             data=episode_clusters_df.to_dict("records"),
             columns=[{"id": x, "name": x} for x in episode_clusters_df.columns],
-            style_cell={'textAlign': 'left'},
-            style_data={
+            style_header={
+                'backgroundColor': 'white',
+                'fontWeight': 'bold',
                 'color': 'black',
-                'backgroundColor': 'white'
             },
+            style_cell={
+                'textAlign': 'left',
+                'font-size': '10pt',
+            },
+            # style_data={
+            #     'backgroundColor': 'black',
+            #     'color': 'white',
+            # },
             style_data_conditional=[
                 {
-                    'if': {
-                        'filter_query': "{Cluster} = 0",
-                        'column_id': 'cluster_color'
-                    },
+                    'if': {'filter_query': "{cluster} = 0"},
                     'backgroundColor': fm.colors[0],
-                    'color': 'white'
+                    'color': fm.text_colors[0]
                 },
                 {
-                    'if': {
-                        'filter_query': "{Cluster} = 1",
-                        'column_id': 'cluster_color'
-                    },
+                    'if': {'filter_query': "{cluster} = 1"},
                     'backgroundColor': fm.colors[1],
-                    'color': 'white'
+                    'color': fm.text_colors[1]
                 },
                 {
-                    'if': {
-                        'filter_query': "{Cluster} = 2",
-                        'column_id': 'cluster_color'
-                    },
+                    'if': {'filter_query': "{cluster} = 2"},
                     'backgroundColor': fm.colors[2],
-                    'color': 'white'
+                    'color': fm.text_colors[2]
                 },
                 {
-                    'if': {
-                        'filter_query': "{Cluster} = 3",
-                        'column_id': 'cluster_color'
-                    },
+                    'if': {'filter_query': "{cluster} = 3"},
                     'backgroundColor': fm.colors[3],
-                    'color': 'white'
+                    'color': fm.text_colors[3]
                 },
                 {
-                    'if': {
-                        'filter_query': "{Cluster} = 4",
-                        'column_id': 'cluster_color'
-                    },
+                    'if': {'filter_query': "{cluster} = 4"},
                     'backgroundColor': fm.colors[4],
-                    'color': 'white'
+                    'color': fm.text_colors[4]
                 },
                 {
-                    'if': {
-                        'filter_query': "{Cluster} = 5",
-                        'column_id': 'cluster_color'
-                    },
+                    'if': {'filter_query': "{cluster} = 5"},
                     'backgroundColor': fm.colors[5],
-                    'color': 'white'
+                    'color': fm.text_colors[5]
                 },
                 {
-                    'if': {
-                        'filter_query': "{Cluster} = 6",
-                        'column_id': 'cluster_color'
-                    },
+                    'if': {'filter_query': "{cluster} = 6"},
                     'backgroundColor': fm.colors[6],
-                    'color': 'white'
+                    'color': fm.text_colors[6]
                 },
                 {
-                    'if': {
-                        'filter_query': "{Cluster} = 7",
-                        'column_id': 'cluster_color'
-                    },
+                    'if': {'filter_query': "{cluster} = 7"},
                     'backgroundColor': fm.colors[7],
-                    'color': 'white'
+                    'color': fm.text_colors[7]
                 },
                 {
-                    'if': {
-                        'filter_query': "{Cluster} = 8",
-                        'column_id': 'cluster_color'
-                    },
+                    'if': {'filter_query': "{cluster} = 8"},
                     'backgroundColor': fm.colors[8],
-                    'color': 'white'
+                    'color': fm.text_colors[8]
                 },
                 {
-                    'if': {
-                        'filter_query': "{Cluster} = 9",
-                        'column_id': 'cluster_color'
-                    },
+                    'if': {'filter_query': "{cluster} = 9"},
                     'backgroundColor': fm.colors[9],
-                    'color': 'white'
+                    'color': fm.text_colors[9]
                 },
             ],
-            # style_header={
-            #     'backgroundColor': 'rgb(210, 210, 210)',
-            #     'color': 'black',
-            #     'fontWeight': 'bold'
-            # }
         )
     ])
     return table_div
