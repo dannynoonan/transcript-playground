@@ -266,6 +266,8 @@ def cluster_docs(doc_embeddings: dict, num_clusters: int):
     doc_clusters_df['Cluster'] = kmeans.labels_
     doc_clusters_df['doc_id'] = doc_ids # TODO redundancy here with index name
 
+    doc_clusters_df.columns = doc_clusters_df.columns.astype(str)
+
     # for i in range(len(doc_ids)):
     #     doc_clusters[doc_ids[i]] = labels[i]
 

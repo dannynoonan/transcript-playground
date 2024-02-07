@@ -74,60 +74,42 @@ def generate_graph_matplotlib(df: pd.DataFrame, show_key: str, num_clusters: int
     return img_buf
 
 
-def generate_graph_plotly(doc_clusters_df: pd.DataFrame, merged_df: pd.DataFrame, show_key: str, num_clusters: int) -> go.Figure:
+def generate_graph_plotly(episode_embeddings_clusters_df: pd.DataFrame, show_key: str, num_clusters: int) -> go.Figure:
     fig_width = fm.fig_dims.MD11
     fig_height = fm.fig_dims.hdef(fig_width)
     base_fig_title = f'{num_clusters} clusters for {show_key} visualized in 2D using t-SNE'
-
-    # fp = f'clusters_plotly_{show_key}_{num_clusters}.csv'
-    # doc_clusters_df.to_csv(fp)
-
-    tsne = TSNE(n_components=2, perplexity=15, random_state=42, init="random", learning_rate=200)
-    new_df = doc_clusters_df.copy()
-    new_df = new_df.drop(['doc_id', 'Cluster', 'cluster_color'], axis=1)
-    new_df.columns = new_df.columns.astype(str)
-    print(f'*** generate_graph_plotly new_df.columns={new_df.columns}')
-    vis_dims2 = tsne.fit_transform(new_df)
-
-    # doc_clusters_df['cluster_color'] = doc_clusters_df['Cluster'].apply(lambda x: fm.colors[x])
-
-    # merged_df = pd.merge(doc_clusters_df, episodes_df, on='doc_id', how='outer')
-    # doc_clusters_df.join(episodes_df, on='doc_id', how='left')
-
-    # print(f'merged_df={merged_df}')
-
-    # TODO need to verify that embeddings exist for all documents or remove those lacking embeddings, otherwise array lengths done line up
-
     custom_data = ['title', 'season', 'sequence_in_season', 'air_date', 'episode_key']
-    hover_data = {'title': True, 'season': True, 'sequence_in_season': True, 'air_date': True, 'episode_key': True}
+    # hover_data = {'title': True, 'season': True, 'sequence_in_season': True, 'air_date': True, 'episode_key': True}
 
-    # print(f'len(vis_dims2)={len(vis_dims2)} vis_dims2={vis_dims2}')
+    # generate dimensional reduction of embeddings
+    tsne = TSNE(n_components=2, perplexity=15, random_state=42, init="random", learning_rate=200)
+    doc_embeddings_df = episode_embeddings_clusters_df.drop(fm.episode_drop_cols + fm.episode_keep_cols + fm.cluster_cols, axis=1)
+    # doc_embeddings_df.columns = doc_embeddings_df.columns.astype(str)
+    vis_dims2 = tsne.fit_transform(doc_embeddings_df)
+    x = [x for x, _ in vis_dims2]
+    y = [y for _, y in vis_dims2]
 
-    x = [x for x, y in vis_dims2]
-    y = [y for x, y in vis_dims2]
-
-    # print(f'len(x)={len(x)} x={x}')
-    # print(f'len(y)={len(y)} y={y}')
+    # copy df subset needed for display
+    # episode_clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()
 
     # init figure with core properties
-    fig = px.scatter(doc_clusters_df, x=x, y=y, color=doc_clusters_df.cluster_color,
-                title=base_fig_title, 
-                # custom_data=custom_data,
-                hover_name=doc_clusters_df.doc_id, 
-                # hover_data=hover_data,
+    fig = px.scatter(episode_embeddings_clusters_df, x=x, y=y, color=episode_embeddings_clusters_df.cluster_color,
+                title=base_fig_title, custom_data=custom_data,
+                # hover_name=episode_clusters_df.episode_key, hover_data=hover_data,
                 height=fig_height, width=fig_width, opacity=0.7)
     # axis metadata
     fig.update_xaxes(title_text='x axis of t-SNE')
     fig.update_yaxes(title_text='y axis of t-SNE')
 
-    # fig.update_traces(
-    #     hovertemplate = "<br>".join([
-    #         "<b>%{customdata[0]}</b><br>",
-    #         "Season: <b>%{customdata[1]}</b>",
-    #         "Sequence: <b>%{customdata[2]}</b>",
-    #         "Air date: <b>%{customdata[3]}</b>",
-    #         "Episode key: <b>%{customdata[4]}</b>"
-    #     ])
-    # )
+    # rollover display data metadata
+    fig.update_traces(
+        hovertemplate = "<br>".join([
+            "<b>%{customdata[0]}</b><br>",
+            "Season: <b>%{customdata[1]}</b>",
+            "Sequence: <b>%{customdata[2]}</b>",
+            "Air date: <b>%{customdata[3]}</b>",
+            "Episode key: <b>%{customdata[4]}</b>"
+        ])
+    )
 
     return fig

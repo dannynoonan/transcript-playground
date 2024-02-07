@@ -28,3 +28,8 @@ fig_dims = FigDimensions()
 
 
 colors = ["cornflowerblue", "burlywood", "crimson", "cadetblue", "coral", "chartreuse", "cornsilk", "cyan", "darkgoldenrod", "darkcyan"]
+
+
+episode_keep_cols = ['title', 'season', 'sequence_in_season', 'air_date', 'focal_speakers', 'focal_locations', 'scene_count', 'episode_key']
+episode_drop_cols = ['doc_id', 'show_key', 'indexed_ts']
+cluster_cols = ['Cluster', 'cluster_color']
