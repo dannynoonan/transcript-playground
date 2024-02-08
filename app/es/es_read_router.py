@@ -117,9 +117,9 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
     Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
     '''
     if not model_vendor:
-        model_vendor = 'webvectors'
+        model_vendor = 'openai'
     if not model_version:
-        model_version = '223'
+        model_version = 'ada002'
 
     if model_vendor == 'openai':
         vendor_meta = TRF_MODELS[model_vendor]
@@ -155,6 +155,31 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
         "tokens_processed_count": tokens_processed_count, 
         "tokens_failed": tokens_failed, 
         "tokens_failed_count": tokens_failed_count, 
+        "matches": matches
+    }
+
+
+@esr_app.get("/esr/mlt_vector_search/{show_key}/{episode_key}", tags=['ES Reader'])
+def mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor: str = None, model_version: str = None):
+    '''
+    Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
+    '''
+    if not model_vendor:
+        model_vendor = 'openai'
+    if not model_version:
+        model_version = 'ada002'
+
+    vector_field = f'{model_vendor}_{model_version}_embeddings'
+        
+    s = esqb.fetch_episode_embedding(show_key.value, episode_key, vector_field)
+    episode_embedding = esrt.return_embedding(s, vector_field)
+        
+    es_response = esqb.vector_search(show_key.value, vector_field, episode_embedding)
+    matches = esrt.return_vector_search(es_response)
+    matches = matches[1:] # remove episode itself from results
+    return {
+        "match_count": len(matches), 
+        "vector_field": vector_field, 
         "matches": matches
     }
 

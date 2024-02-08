@@ -689,8 +689,21 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, season:
     return response
 
 
-def fetch_all_embeddings(show_key: str, vector_field: str) -> Search:
-    print(f'begin fetch_all_embeddings for show_key={show_key} vector_field={vector_field}')
+def fetch_episode_embedding(show_key: str, episode_key: str, vector_field: str) -> Search:
+    print(f'begin fetch_episode_embedding for show_key={show_key} episode_key={episode_key} vector_field={vector_field}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=1)
+
+    s = s.filter('term', show_key=show_key)
+    s = s.filter('term', episode_key=episode_key)
+    s = s.source(includes=[vector_field])
+
+    return s
+
+
+def fetch_show_embeddings(show_key: str, vector_field: str) -> Search:
+    print(f'begin fetch_show_embeddings for show_key={show_key} vector_field={vector_field}')
 
     s = Search(index='transcripts')
     s = s.extra(size=1000)

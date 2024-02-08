@@ -576,6 +576,16 @@ def return_vector_search(es_response: dict) -> list:
     return matches
 
 
+def return_embedding(s: Search, vector_field: str) -> dict:
+    print(f'begin return_embedding for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    for hit in s.hits.hits:
+        if vector_field in hit._source:
+            return hit._source[vector_field]._l_
+
+
 def return_all_embeddings(s: Search, vector_field: str) -> dict:
     print(f'begin return_all_embeddings for s.to_dict()={s.to_dict()}')
 

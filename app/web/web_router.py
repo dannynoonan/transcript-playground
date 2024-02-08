@@ -360,7 +360,7 @@ async def show_page(request: Request, show_key: ShowKey, background_tasks: Backg
 
 	vector_field = 'openai_ada002_embeddings'
     # fetch all model/vendor embeddings for show 
-	s = esqb.fetch_all_embeddings(show_key.value, vector_field)
+	s = esqb.fetch_show_embeddings(show_key.value, vector_field)
 	doc_embeddings = esrt.return_all_embeddings(s, vector_field)
     
     # cluster content
