@@ -87,8 +87,11 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 	keywords = await esr.keywords_by_episode(show_key, episode_key, exclude_speakers=True)
 	tdata['keywords'] = keywords['keywords']
 	
-	mlt = await esr.more_like_this(show_key, episode_key)
-	tdata['similar_episodes'] = mlt['similar_episodes']
+	mlt_tfidf = await esr.more_like_this(show_key, episode_key)
+	tdata['mlt_tfidf'] = mlt_tfidf['similar_episodes']
+
+	mlt_embeddings = esr.mlt_vector_search(show_key, episode_key)
+	tdata['mlt_embeddings'] = mlt_embeddings['matches'][:30]
 
 	###### IN-EPISODE SEARCH ######
 
@@ -126,8 +129,12 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 		else:
 			matches = await esr.search_scene_events(show_key, episode_key=episode_key, speaker=speaker, dialog=dialog, location=location)
 			tdata['scene_event_match_count'] = matches['scene_event_count']
-		tdata['episode_match'] = matches['matches'][0]
-		tdata['scene_match_count'] = matches['scene_count']
+		if matches['matches']:
+			tdata['episode_match'] = matches['matches'][0]
+			tdata['scene_match_count'] = matches['scene_count']
+		else:
+			tdata['episode_match'] = ''
+			tdata['scene_match_count'] = 0
 		
 	elif search_type == 'advanced_multi_speaker':
 		if speakers:
