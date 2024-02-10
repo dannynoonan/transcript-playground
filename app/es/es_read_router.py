@@ -211,12 +211,29 @@ def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, mod
 
 ###################### ES AGGREGATIONS ###########################
 
+@esr_app.get("/esr/agg_seasons/{show_key}", tags=['ES Reader'])
+async def agg_seasons(show_key: ShowKey, location: str = None):
+    s = await esqb.agg_seasons(show_key.value, location=location)
+    es_query = s.to_dict()
+    season_count = await esrt.return_season_count(s)
+    return {"season_count": season_count, "es_query": es_query}
+
+
 @esr_app.get("/esr/agg_episodes/{show_key}", tags=['ES Reader'])
 async def agg_episodes(show_key: ShowKey, season: str = None, location: str = None):
     s = await esqb.agg_episodes(show_key.value, season=season, location=location)
     es_query = s.to_dict()
     episode_count = await esrt.return_episode_count(s)
     return {"episode_count": episode_count, "es_query": es_query}
+
+
+@esr_app.get("/esr/agg_seasons_by_speaker/{show_key}", tags=['ES Reader'])
+async def agg_seasons_by_speaker(show_key: ShowKey, location: str = None):
+    s = await esqb.agg_seasons_by_speaker(show_key.value, location=location)
+    es_query = s.to_dict()
+    season_count = await agg_seasons(show_key, location=location)
+    matches = await esrt.return_seasons_by_speaker(s, season_count['season_count'], location=location)
+    return {"speaker_count": len(matches), "seasons_by_speaker": matches, "es_query": es_query}
 
 
 @esr_app.get("/esr/agg_episodes_by_speaker/{show_key}", tags=['ES Reader'])
@@ -273,6 +290,8 @@ async def agg_dialog_word_counts(show_key: ShowKey, season: str = None, episode_
 
 @esr_app.get("/esr/composite_speaker_aggs/{show_key}", tags=['ES Reader'])
 async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_key: str = None):
+    if not season:
+        speaker_season_counts = await agg_seasons_by_speaker(show_key)
     if not episode_key:
         speaker_episode_counts = await agg_episodes_by_speaker(show_key, season=season)
     speaker_scene_counts = await agg_scenes_by_speaker(show_key, season=season, episode_key=episode_key)
@@ -281,6 +300,12 @@ async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_
 
     # TODO refactor this to generically handle dicts threading together
     speakers = {}
+    if not season:
+        for speaker, season_count in speaker_season_counts['seasons_by_speaker'].items():
+            if speaker not in speakers:
+                speakers[speaker] = {}
+                speakers[speaker]['speaker'] = speaker
+            speakers[speaker]['season_count'] = season_count
     if not episode_key:
         for speaker, episode_count in speaker_episode_counts['episodes_by_speaker'].items():
             if speaker not in speakers:
