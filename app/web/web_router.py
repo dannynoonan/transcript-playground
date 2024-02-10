@@ -25,8 +25,11 @@ async def show_page(request: Request, show_key: ShowKey):
 	tdata['header'] = 'show'
 	tdata['show_key'] = show_key.value
 
-	locations_by_scene = await esr.agg_scenes_by_location(show_key)
-	tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
+	# locations_by_scene = await esr.agg_scenes_by_location(show_key)
+	# tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
+
+	location_counts = await esr.composite_location_aggs(show_key)
+	tdata['location_counts'] = location_counts['location_agg_composite']
 
 	speaker_counts = await esr.composite_speaker_aggs(show_key)
 	tdata['speaker_counts'] = speaker_counts['speaker_agg_composite']

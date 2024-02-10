@@ -34,7 +34,7 @@
                         <tbody>
                             {% for season, season_stats in tdata['stats_by_season'].items() %}
                             <tr class="table-secondary" data-bs-toggle="collapse" data-bs-target="#expandSeason{{ season }}">
-                                <th scope="row" class="bi bi-chevron-down">[+]</th>
+                                <td>[+]</td>
                                 <td>{{ season }}</td>
                                 <td>{{ tdata['episodes_by_season'][season]|length }}</td>
                                 <td>{{ season_stats['air_date_range'] }}</td>
@@ -45,7 +45,7 @@
                                 <td>{{ season_stats['location_count'] }}</td>
                             </tr>
                             <tr class="collapse accordion-collapse" id="expandSeason{{ season }}" data-bs-parent=".table">
-                                <td colspan="8">
+                                <td colspan="9">
                                     <div class="overflow-scroll" style="max-height: 500px;">
                                         <div class="row">                                     
                                             <div class="col-8">
@@ -193,12 +193,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for location, count in tdata['locations_by_scene'].items() %}
+                            {% for location in tdata['location_counts'] %}
                             <tr class="table-secondary">
-                                <th scope="row">{{ location }}</th>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>{{ count }}</td>
+                                <th scope="row">{{ location['location'] }}</th>
+                                <td>{{ location['season_count'] }}</td>
+                                <td>{{ location['episode_count'] }}</td>
+                                <td>{{ location['scene_count'] }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>

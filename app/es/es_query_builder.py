@@ -380,6 +380,27 @@ async def agg_seasons_by_speaker(show_key: str, location: str = None) -> Search:
     return s
 
 
+async def agg_seasons_by_location(show_key: str) -> Search:
+    print(f'begin agg_episodes_by_speaker for show_key={show_key}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+
+    s.aggs.bucket(
+        'scenes', 'nested', path='scenes'
+    ).bucket(
+        'by_location', 'terms', field='scenes.location.keyword', size=1000
+    ).bucket(
+        'by_season', 'reverse_nested'
+    ).bucket(
+        'season', 'terms', field='season'
+    )
+    
+    return s
+
+
 async def agg_episodes_by_speaker(show_key: str, season: str = None, location: str = None, other_speaker: str = None) -> Search:
     print(f'begin agg_episodes_by_speaker for show_key={show_key} season={season} location={location} other_speaker={other_speaker}')
 
@@ -426,6 +447,27 @@ async def agg_episodes_by_speaker(show_key: str, season: str = None, location: s
         ).bucket(
             'for_episode', 'reverse_nested' # TODO differs from agg_scenes_by_speaker
         )
+    
+    return s
+
+
+async def agg_episodes_by_location(show_key: str, season: str = None) -> Search:
+    print(f'begin agg_episodes_by_speaker for show_key={show_key} season={season}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+    if season:
+        s = s.filter('term', season=season)
+
+    s.aggs.bucket(
+        'scenes', 'nested', path='scenes'
+    ).bucket(
+        'by_location', 'terms', field='scenes.location.keyword', size=1000
+    ).bucket(
+        'by_episode', 'reverse_nested'
+    )
     
     return s
 
