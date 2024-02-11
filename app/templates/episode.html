@@ -212,13 +212,15 @@
 								<tbody>
 									{% for location, count in tdata['locations_by_scene'].items() %}
 									<tr class="table-secondary">
+										{% if location == '_ALL_' %}
+										<th scope="row">[ALL]</th>
+										<td><strong>{{ count }}</strong></td>
+										{% else %}
 										<th scope="row">{{ location }}</th>
 										<td>
-										{% if location == 'TOTAL' %}
-											<strong>{{ count }}</strong>
-										{% else %}
 											<a href="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?location={{ location }}&search_type=advanced" 
 												class="alert-link" >{{ count }}</a>
+										</td>
 										{% endif %}
 										</td>
 									</tr>

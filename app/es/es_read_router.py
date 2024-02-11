@@ -309,7 +309,7 @@ async def agg_dialog_word_counts(show_key: ShowKey, season: str = None, episode_
 
 @esr_app.get("/esr/composite_speaker_aggs/{show_key}", tags=['ES Reader'])
 async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_key: str = None):
-    if not season:
+    if not season and not episode_key:
         speaker_season_counts = await agg_seasons_by_speaker(show_key)
     if not episode_key:
         speaker_episode_counts = await agg_episodes_by_speaker(show_key, season=season)
@@ -319,7 +319,7 @@ async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_
 
     # TODO refactor this to generically handle dicts threading together
     speakers = {}
-    if not season:
+    if not season and not episode_key:
         for speaker, season_count in speaker_season_counts['seasons_by_speaker'].items():
             if speaker not in speakers:
                 speakers[speaker] = {}
@@ -359,7 +359,7 @@ async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_
 
 @esr_app.get("/esr/composite_location_aggs/{show_key}", tags=['ES Reader'])
 async def composite_location_aggs(show_key: ShowKey, season: str = None, episode_key: str = None):
-    if not season:
+    if not season and not episode_key:
         location_season_counts = await agg_seasons_by_location(show_key)
     if not episode_key:
         location_episode_counts = await agg_episodes_by_location(show_key, season=season)
@@ -367,7 +367,7 @@ async def composite_location_aggs(show_key: ShowKey, season: str = None, episode
 
     # TODO refactor this to generically handle dicts threading together
     locations = {}
-    if not season:
+    if not season and not episode_key:
         for location, season_count in location_season_counts['seasons_by_location'].items():
             if location not in locations:
                 locations[location] = {}
@@ -384,8 +384,6 @@ async def composite_location_aggs(show_key: ShowKey, season: str = None, episode
             locations[location] = {}
             locations[location]['location'] = location
         locations[location]['scene_count'] = scene_count
-
-    # print(f'locations={locations}')
 
     # TODO shouldn't I be able to sort on a key for a dict within a dict
     location_dicts = locations.values()
