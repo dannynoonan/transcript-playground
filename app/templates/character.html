@@ -168,12 +168,9 @@
                                         <td>{{ episode['season'] }}</td>
                                         <td>{{ episode['sequence_in_season'] }}</td>
                                         <td>{{ episode['air_date']|truncate(10,true,'') }}</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                        <td>...</td>
-                                        <!-- <td>{{ episode['scenes'] }}</td>
-                                        <td>{{ episode['lines'] }}</td>
-                                        <td>{{ episode['words'] }}</td> -->
+                                        <td>{{ episode['scene_count'] }}</td>
+                                        <td>{{ episode['scene_event_count'] }}</td>
+                                        <td>{{ episode['word_count'] }}</td>
                                         <td>{{ '%0.2f'|format(episode['agg_score']|float) }}</td>
                                     </tr>
                                     {% endfor %}

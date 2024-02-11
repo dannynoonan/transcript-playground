@@ -655,7 +655,7 @@ async def agg_dialog_word_counts(show_key: str, season: str = None, episode_key:
 
 
 async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
-    print(f'begin calc_word_counts_by_episode for show_key={show_key} episode_key={episode_key}')
+    print(f'begin keywords_by_episode for show_key={show_key} episode_key={episode_key}')
 
     response = es_conn.termvectors(index='transcripts', id=f'{show_key}_{episode_key}', term_statistics='true', field_statistics='true',
                                    fields=['flattened_text'], filter={"max_num_terms": 1000, "min_term_freq": 1, "min_doc_freq": 1})
@@ -664,7 +664,7 @@ async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
 
 
 async def keywords_by_corpus(show_key: str, season: str = None) -> dict:
-    print(f'begin calc_word_counts_by_episode for show_key={show_key} season={season}')
+    print(f'begin keywords_by_corpus for show_key={show_key} season={season}')
 
     keys = esr.search_doc_ids(ShowKey(show_key), season=season)
 

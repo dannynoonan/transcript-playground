@@ -82,6 +82,8 @@ async def search_scene_events(show_key: ShowKey, season: str = None, episode_key
     '''
     Facet query of nested Scene and SceneEvent fields 
     '''
+    if not speaker and not dialog:
+        return {"error": "Unable to execute search_scene_events without at least one scene_event property set: speaker or dialog"}
     s = await esqb.search_scene_events(show_key.value, season=season, episode_key=episode_key, speaker=speaker, dialog=dialog)
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = await esrt.return_scene_events(s, location=location)

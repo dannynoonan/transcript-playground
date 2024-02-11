@@ -104,6 +104,8 @@ async def return_scene_events(s: Search, location: str = None) -> (list, int, in
         episode['score'] = hit._score
         episode['agg_score'] = hit._score
         episode['high_child_score'] = 0
+        episode['scene_event_count'] = 0
+        episode['word_count'] = 0
         orig_scenes = episode.scenes
 
         scene_offset_to_scene = {}
@@ -141,6 +143,10 @@ async def return_scene_events(s: Search, location: str = None) -> (list, int, in
             scene['scene_events'].append(scene_event._d_)
             scene['high_child_score'] = max(scene_event['score'], scene['high_child_score'])
             scene['agg_score'] += scene_event['score']
+            episode['scene_event_count'] += 1
+            # NOTE to be consistent, word_count would match the output of agg_dialog_word_counts (if that endpoint had a 'group by episode' option, which it doesn't)
+            if 'dialog' in scene_event._d_:
+                episode['word_count'] += len(scene_event._d_['dialog'].split(' '))
             scene_event_count += 1
 
         # NOTE follow-up to location-filter hack above, if all scenes have been filtered then skip episode 
