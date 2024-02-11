@@ -82,6 +82,8 @@ async def search_scene_events(show_key: ShowKey, season: str = None, episode_key
     '''
     Facet query of nested Scene and SceneEvent fields 
     '''
+    if not speaker and not dialog:
+        return {"error": "Unable to execute search_scene_events without at least one scene_event property set: speaker or dialog"}
     s = await esqb.search_scene_events(show_key.value, season=season, episode_key=episode_key, speaker=speaker, dialog=dialog)
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = await esrt.return_scene_events(s, location=location)
@@ -211,6 +213,32 @@ def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, mod
 
 ###################### ES AGGREGATIONS ###########################
 
+@esr_app.get("/esr/agg_seasons/{show_key}", tags=['ES Reader'])
+async def agg_seasons(show_key: ShowKey, location: str = None):
+    s = await esqb.agg_seasons(show_key.value, location=location)
+    es_query = s.to_dict()
+    season_count = await esrt.return_season_count(s)
+    return {"season_count": season_count, "es_query": es_query}
+
+
+@esr_app.get("/esr/agg_seasons_by_speaker/{show_key}", tags=['ES Reader'])
+async def agg_seasons_by_speaker(show_key: ShowKey, location: str = None):
+    s = await esqb.agg_seasons_by_speaker(show_key.value, location=location)
+    es_query = s.to_dict()
+    season_count = await agg_seasons(show_key, location=location)
+    matches = await esrt.return_seasons_by_speaker(s, season_count['season_count'], location=location)
+    return {"speaker_count": len(matches), "seasons_by_speaker": matches, "es_query": es_query}
+
+
+@esr_app.get("/esr/agg_seasons_by_location/{show_key}", tags=['ES Reader'])
+async def agg_seasons_by_location(show_key: ShowKey):
+    s = await esqb.agg_seasons_by_location(show_key.value)
+    es_query = s.to_dict()
+    season_count = await agg_seasons(show_key)
+    matches = await esrt.return_seasons_by_location(s, season_count['season_count'])
+    return {"location_count": len(matches), "seasons_by_location": matches, "es_query": es_query}
+
+
 @esr_app.get("/esr/agg_episodes/{show_key}", tags=['ES Reader'])
 async def agg_episodes(show_key: ShowKey, season: str = None, location: str = None):
     s = await esqb.agg_episodes(show_key.value, season=season, location=location)
@@ -229,12 +257,22 @@ async def agg_episodes_by_speaker(show_key: ShowKey, season: str = None, locatio
     return {"speaker_count": len(matches), "episodes_by_speaker": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_scenes_by_location/{show_key}", tags=['ES Reader'])
-async def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None):
-    s = await esqb.agg_scenes_by_location(show_key.value, season=season, episode_key=episode_key, speaker=speaker)
+@esr_app.get("/esr/agg_episodes_by_location/{show_key}", tags=['ES Reader'])
+async def agg_episodes_by_location(show_key: ShowKey, season: str = None):
+    s = await esqb.agg_episodes_by_location(show_key.value, season=season)
     es_query = s.to_dict()
-    matches = await esrt.return_scenes_by_location(s, speaker=speaker)
-    return {"location_count": len(matches), "scenes_by_location": matches, "es_query": es_query}
+    # separate call to get episode_count without double-counting per speaker
+    episode_count = await agg_episodes(show_key, season=season)
+    matches = await esrt.return_episodes_by_location(s, episode_count['episode_count'])
+    return {"location_count": len(matches), "episodes_by_location": matches, "es_query": es_query}
+
+
+@esr_app.get("/esr/agg_scenes/{show_key}", tags=['ES Reader'])
+async def agg_scenes(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None):
+    s = await esqb.agg_scenes(show_key.value, season=season, episode_key=episode_key, location=location)
+    es_query = s.to_dict()
+    scene_count = await esrt.return_scene_count(s)
+    return {"scene_count": scene_count, "es_query": es_query}
 
 
 @esr_app.get("/esr/agg_scenes_by_speaker/{show_key}", tags=['ES Reader'])
@@ -247,12 +285,12 @@ async def agg_scenes_by_speaker(show_key: ShowKey, season: str = None, episode_k
     return {"speaker_count": len(matches), "scenes_by_speaker": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_scenes/{show_key}", tags=['ES Reader'])
-async def agg_scenes(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None):
-    s = await esqb.agg_scenes(show_key.value, season=season, episode_key=episode_key, location=location)
+@esr_app.get("/esr/agg_scenes_by_location/{show_key}", tags=['ES Reader'])
+async def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None):
+    s = await esqb.agg_scenes_by_location(show_key.value, season=season, episode_key=episode_key, speaker=speaker)
     es_query = s.to_dict()
-    scene_count = await esrt.return_scene_count(s)
-    return {"scene_count": scene_count, "es_query": es_query}
+    matches = await esrt.return_scenes_by_location(s, speaker=speaker)
+    return {"location_count": len(matches), "scenes_by_location": matches, "es_query": es_query}
 
 
 @esr_app.get("/esr/agg_scene_events_by_speaker/{show_key}", tags=['ES Reader'])
@@ -273,6 +311,8 @@ async def agg_dialog_word_counts(show_key: ShowKey, season: str = None, episode_
 
 @esr_app.get("/esr/composite_speaker_aggs/{show_key}", tags=['ES Reader'])
 async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_key: str = None):
+    if not season and not episode_key:
+        speaker_season_counts = await agg_seasons_by_speaker(show_key)
     if not episode_key:
         speaker_episode_counts = await agg_episodes_by_speaker(show_key, season=season)
     speaker_scene_counts = await agg_scenes_by_speaker(show_key, season=season, episode_key=episode_key)
@@ -281,6 +321,12 @@ async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_
 
     # TODO refactor this to generically handle dicts threading together
     speakers = {}
+    if not season and not episode_key:
+        for speaker, season_count in speaker_season_counts['seasons_by_speaker'].items():
+            if speaker not in speakers:
+                speakers[speaker] = {}
+                speakers[speaker]['speaker'] = speaker
+            speakers[speaker]['season_count'] = season_count
     if not episode_key:
         for speaker, episode_count in speaker_episode_counts['episodes_by_speaker'].items():
             if speaker not in speakers:
@@ -311,6 +357,44 @@ async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_
     speaker_agg_composite = sorted(speaker_dicts, key=itemgetter(sort_field), reverse=True)
 
     return {"speaker_count": len(speaker_agg_composite), "speaker_agg_composite": speaker_agg_composite} 
+
+
+@esr_app.get("/esr/composite_location_aggs/{show_key}", tags=['ES Reader'])
+async def composite_location_aggs(show_key: ShowKey, season: str = None, episode_key: str = None):
+    if not season and not episode_key:
+        location_season_counts = await agg_seasons_by_location(show_key)
+    if not episode_key:
+        location_episode_counts = await agg_episodes_by_location(show_key, season=season)
+    location_scene_counts = await agg_scenes_by_location(show_key, season=season, episode_key=episode_key)
+
+    # TODO refactor this to generically handle dicts threading together
+    locations = {}
+    if not season and not episode_key:
+        for location, season_count in location_season_counts['seasons_by_location'].items():
+            if location not in locations:
+                locations[location] = {}
+                locations[location]['location'] = location
+            locations[location]['season_count'] = season_count
+    if not episode_key:
+        for location, episode_count in location_episode_counts['episodes_by_location'].items():
+            if location not in locations:
+                locations[location] = {}
+                locations[location]['location'] = location
+            locations[location]['episode_count'] = episode_count
+    for location, scene_count in location_scene_counts['scenes_by_location'].items():
+        if location not in locations:
+            locations[location] = {}
+            locations[location]['location'] = location
+        locations[location]['scene_count'] = scene_count
+
+    # TODO shouldn't I be able to sort on a key for a dict within a dict
+    location_dicts = locations.values()
+    sort_field = 'scene_count'
+    if not episode_key:
+        sort_field = 'episode_count'
+    location_agg_composite = sorted(location_dicts, key=itemgetter(sort_field), reverse=True)
+
+    return {"location_count": len(location_agg_composite), "location_agg_composite": location_agg_composite} 
 
 
 

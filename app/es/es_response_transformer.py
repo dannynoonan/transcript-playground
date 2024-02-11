@@ -104,6 +104,8 @@ async def return_scene_events(s: Search, location: str = None) -> (list, int, in
         episode['score'] = hit._score
         episode['agg_score'] = hit._score
         episode['high_child_score'] = 0
+        episode['scene_event_count'] = 0
+        episode['word_count'] = 0
         orig_scenes = episode.scenes
 
         scene_offset_to_scene = {}
@@ -141,6 +143,10 @@ async def return_scene_events(s: Search, location: str = None) -> (list, int, in
             scene['scene_events'].append(scene_event._d_)
             scene['high_child_score'] = max(scene_event['score'], scene['high_child_score'])
             scene['agg_score'] += scene_event['score']
+            episode['scene_event_count'] += 1
+            # NOTE to be consistent, word_count would match the output of agg_dialog_word_counts (if that endpoint had a 'group by episode' option, which it doesn't)
+            if 'dialog' in scene_event._d_:
+                episode['word_count'] += len(scene_event._d_['dialog'].split(' '))
             scene_event_count += 1
 
         # NOTE follow-up to location-filter hack above, if all scenes have been filtered then skip episode 
@@ -249,6 +255,59 @@ async def return_scene_events_multi_speaker(s: Search, speakers: str, location: 
     results = sorted(results, key=itemgetter('agg_score'), reverse=True)
 
     return results, scene_count, scene_event_count
+
+
+async def return_seasons_by_speaker(s: Search, agg_season_count: str, location: str = None) -> list:
+    print(f'begin return_seasons_by_speaker for location={location} s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = {}
+    results['_ALL_'] = agg_season_count
+
+    if location:
+        pass  # TODO copied from return_episodes_by_speaker
+        # for item in s.aggregations.scenes.location_match.scene_events.by_speaker.buckets:
+        #     results[item.key] = item.for_episode.doc_count
+    else:
+        for item in s.aggregations.scene_events.by_speaker.buckets:
+            results[item.key] = len(item.by_season.season.buckets)
+
+    # reverse nesting throws off sorting, so sort results by value
+    sorted_results_list = sorted(results.items(), key=lambda x:x[1], reverse=True)
+    results = {}
+    for speaker, count in sorted_results_list:
+        results[speaker] = count
+
+    return results
+
+
+async def return_seasons_by_location(s: Search, agg_season_count: str) -> list:
+    print(f'begin return_seasons_by_speaker s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = {}
+    results['_ALL_'] = agg_season_count
+
+    for item in s.aggregations.scenes.by_location.buckets:
+        results[item.key] = len(item.by_season.season.buckets)
+
+    # reverse nesting throws off sorting, so sort results by value
+    sorted_results_list = sorted(results.items(), key=lambda x:x[1], reverse=True)
+    results = {}
+    for speaker, count in sorted_results_list:
+        results[speaker] = count
+
+    return results
+
+
+async def return_season_count(s: Search) -> int:
+    print(f'begin return_episode_count for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    return len(s.aggregations.by_season.buckets)
 
 
 async def return_episodes(s: Search) -> (list, int, int):
@@ -394,6 +453,26 @@ async def return_episodes_by_speaker(s: Search, agg_episode_count: str, location
     return results
 
 
+async def return_episodes_by_location(s: Search, agg_episode_count: str) -> list:
+    print(f'begin return_episodes_by_speaker s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = {}
+    results['_ALL_'] = agg_episode_count
+
+    for item in s.aggregations.scenes.by_location.buckets:
+        results[item.key] = item.by_episode.doc_count
+
+    # reverse nesting throws off sorting, so sort results by value
+    sorted_results_list = sorted(results.items(), key=lambda x:x[1], reverse=True)
+    results = {}
+    for speaker, count in sorted_results_list:
+        results[speaker] = count
+
+    return results
+
+
 async def return_scene_count(s: Search) -> int:
     print(f'begin return_scene_count for s.to_dict()={s.to_dict()}')
 
@@ -408,15 +487,15 @@ async def return_scenes_by_location(s: Search, speaker: str = None) -> list:
     s = s.execute()
 
     results = {}
-    results['TOTAL'] = 0
+    results['_ALL_'] = 0
 
     if speaker:
         for item in s.aggregations.scene_events.speaker_match.scenes.by_location.buckets:
-            results['TOTAL'] += item.doc_count
+            results['_ALL_'] += item.doc_count
             results[item.key] = item.doc_count
     else:
         for item in s.aggregations.scenes.by_location.buckets:
-            results['TOTAL'] += item.doc_count
+            results['_ALL_'] += item.doc_count
             results[item.key] = item.doc_count
 
     return results

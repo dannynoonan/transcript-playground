@@ -314,6 +314,22 @@ def list_episodes_by_season(show_key: str) -> Search:
     return s
 
 
+
+async def agg_seasons(show_key: str, location: str = None) -> Search:
+    print(f'begin agg_episodes for show_key={show_key} location={location}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+
+    s.aggs.bucket('by_season', 'terms', field='season', size=1000)
+
+    # TODO location
+
+    return s
+
+
 async def agg_episodes(show_key: str, season: str = None, location: str = None) -> Search:
     print(f'begin agg_episodes for show_key={show_key} season={season} location={location}')
 
@@ -326,6 +342,62 @@ async def agg_episodes(show_key: str, season: str = None, location: str = None) 
 
     # TODO location
 
+    return s
+
+
+async def agg_seasons_by_speaker(show_key: str, location: str = None) -> Search:
+    print(f'begin agg_episodes_by_speaker for show_key={show_key} location={location}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+
+    if location:
+        pass  # TODO copied from agg_episodes_by_speaker
+        # s.aggs.bucket(
+        #     'scenes', 'nested', path='scenes'
+        # ).bucket(
+        #     'location_match', 'filter', filter={"match": {"scenes.location": location}}
+        # ).bucket(
+        #     'scene_events', 'nested', path='scenes.scene_events'
+        # ).bucket(
+        #     'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
+        # ).bucket(
+        #     'for_episode', 'reverse_nested'
+        # )
+    else:
+        s.aggs.bucket(
+            'scene_events', 'nested', path='scenes.scene_events'
+        ).bucket(
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
+        ).bucket(
+            'by_season', 'reverse_nested'
+        ).bucket(
+            'season', 'terms', field='season'
+        )
+    
+    return s
+
+
+async def agg_seasons_by_location(show_key: str) -> Search:
+    print(f'begin agg_episodes_by_speaker for show_key={show_key}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+
+    s.aggs.bucket(
+        'scenes', 'nested', path='scenes'
+    ).bucket(
+        'by_location', 'terms', field='scenes.location.keyword', size=1000
+    ).bucket(
+        'by_season', 'reverse_nested'
+    ).bucket(
+        'season', 'terms', field='season'
+    )
+    
     return s
 
 
@@ -375,6 +447,27 @@ async def agg_episodes_by_speaker(show_key: str, season: str = None, location: s
         ).bucket(
             'for_episode', 'reverse_nested' # TODO differs from agg_scenes_by_speaker
         )
+    
+    return s
+
+
+async def agg_episodes_by_location(show_key: str, season: str = None) -> Search:
+    print(f'begin agg_episodes_by_speaker for show_key={show_key} season={season}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+    if season:
+        s = s.filter('term', season=season)
+
+    s.aggs.bucket(
+        'scenes', 'nested', path='scenes'
+    ).bucket(
+        'by_location', 'terms', field='scenes.location.keyword', size=1000
+    ).bucket(
+        'by_episode', 'reverse_nested'
+    )
     
     return s
 
@@ -562,7 +655,7 @@ async def agg_dialog_word_counts(show_key: str, season: str = None, episode_key:
 
 
 async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
-    print(f'begin calc_word_counts_by_episode for show_key={show_key} episode_key={episode_key}')
+    print(f'begin keywords_by_episode for show_key={show_key} episode_key={episode_key}')
 
     response = es_conn.termvectors(index='transcripts', id=f'{show_key}_{episode_key}', term_statistics='true', field_statistics='true',
                                    fields=['flattened_text'], filter={"max_num_terms": 1000, "min_term_freq": 1, "min_doc_freq": 1})
@@ -571,7 +664,7 @@ async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
 
 
 async def keywords_by_corpus(show_key: str, season: str = None) -> dict:
-    print(f'begin calc_word_counts_by_episode for show_key={show_key} season={season}')
+    print(f'begin keywords_by_corpus for show_key={show_key} season={season}')
 
     keys = esr.search_doc_ids(ShowKey(show_key), season=season)
 
