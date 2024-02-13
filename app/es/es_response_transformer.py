@@ -642,17 +642,17 @@ async def return_more_like_this(s: Search) -> list:
 def return_vector_search(es_response: dict) -> list:
     print(f'begin return_vector_search')
 
-    matches = []
+    results = []
     
     rank = 1
     for hit in es_response['hits']['hits']:
         episode = hit['_source']
-        episode['agg_score'] = hit['_score'] * 100
+        episode['score'] = hit['_score'] * 100
         episode['rank'] = rank
         rank += 1
-        matches.append(episode)
+        results.append(episode)
 
-    return matches
+    return results
 
 
 def return_embedding(s: Search, vector_field: str) -> dict:

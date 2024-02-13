@@ -200,7 +200,7 @@
                         {% for episode in tdata['episode_matches'] %}
                         <tr class="table-secondary">
                             <th scope="row">
-                                <button type="button" class="btn btn-primary">{{ '%0.2f'|format(episode['agg_score']|float) }}</button>
+                                <button type="button" class="btn btn-primary">{{ '%0.2f'|format(episode['score']|float) }}</button>
                             </th>
                             <td>{{ episode['rank'] }}</td>
                             <td>{{ episode['season'] }}</td>

@@ -91,7 +91,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 	tdata['keywords'] = keywords['keywords']
 	
 	mlt_tfidf = await esr.more_like_this(show_key, episode_key)
-	tdata['mlt_tfidf'] = mlt_tfidf['similar_episodes']
+	tdata['mlt_tfidf'] = mlt_tfidf['matches']
 
 	mlt_embeddings = esr.mlt_vector_search(show_key, episode_key)
 	tdata['mlt_embeddings'] = mlt_embeddings['matches'][:30]

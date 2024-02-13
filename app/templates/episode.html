@@ -348,7 +348,7 @@
 										<td>{{ sim_ep['focal_speakers']|join(', ') }}</td>
 										<td>{{ sim_ep['focal_locations']|join(', ') }}</td>
 										<td>{{ sim_ep['air_date']|truncate(10,true,'') }}</td>
-										<td>{{ '%0.2f'|format(sim_ep['agg_score']|float) }}</td>
+										<td>{{ '%0.2f'|format(sim_ep['score']|float) }}</td>
 									</tr>
 									{% endfor %}
 								</tbody>

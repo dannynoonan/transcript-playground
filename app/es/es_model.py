@@ -1,5 +1,5 @@
 from datetime import datetime
-from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter, TokenCount, DenseVector
+from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter, TokenCount, DenseVector, Object
 
 
 freetext_analyzer = analyzer('freetext_analyzer', tokenizer='standard', type='custom',
@@ -43,6 +43,17 @@ class EsEpisodeTranscript(Document):
     # generated 
     focal_speakers = Keyword(multi=True)
     focal_locations = Keyword(multi=True)
+    es_mlt_relations = Text(multi=True)
+    openai_ada002_relations = Text(multi=True)
+    webvectors_gigaword29_relations = Text(multi=True)
+    webvectors_enwiki223_relations = Text(multi=True)
+    glove_6B300d_relations = Text(multi=True)
+    glove_twitter27B200d_relations = Text(multi=True)
+    glove_twitter27B100d_relations = Text(multi=True)
+    glove_42B300d_relations = Text(multi=True)
+    glove_840B300d_relations = Text(multi=True)
+    fasttext_wikinews300d1M_relations = Text(multi=True)
+    fasttext_crawl300d2M_relations = Text(multi=True)
     # embeddings per model
     webvectors_gigaword29_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     webvectors_enwiki223_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
@@ -87,3 +98,18 @@ class EsEpisodeTranscript(Document):
         # self.meta.id = f'{self.show_key}_{self.episode_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
+    
+
+class Character(Document):
+    show_key = Keyword()
+    alt_names = Keyword(multi=True)
+    actor_names = Keyword(multi=True)
+    season_count = Integer()
+    scene_count = Integer()
+    scene_event_count = Integer()
+    word_count = Integer()
+    most_frequent_companions = Keyword(multi=True)
+    episode_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    # episode_classifications 
+    # season_classifications
+    # show_classification

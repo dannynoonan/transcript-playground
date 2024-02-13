@@ -112,6 +112,14 @@ async def search(show_key: ShowKey, season: str = None, episode_key: str = None,
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
+@esr_app.get("/esr/more_like_this/{show_key}/{episode_key}", tags=['ES Reader'])
+async def more_like_this(show_key: ShowKey, episode_key: str):
+    s = await esqb.more_like_this(show_key.value, episode_key)
+    es_query = s.to_dict()
+    matches = await esrt.return_more_like_this(s)
+    return {"similar_episode_count": len(matches), "matches": matches, "es_query": es_query}
+
+
 # TODO support POST for long requests?
 @esr_app.get("/esr/vector_search/{show_key}", tags=['ES Reader'])
 def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
@@ -179,11 +187,7 @@ def mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor: str = N
     es_response = esqb.vector_search(show_key.value, vector_field, episode_embedding)
     matches = esrt.return_vector_search(es_response)
     matches = matches[1:] # remove episode itself from results
-    return {
-        "match_count": len(matches), 
-        "vector_field": vector_field, 
-        "matches": matches
-    }
+    return {"match_count": len(matches), "vector_field": vector_field, "matches": matches}
 
 
 @esr_app.get("/esr/test_vector_search/{show_key}", tags=['ES Reader'])
@@ -420,14 +424,6 @@ async def keywords_by_corpus(show_key: ShowKey, season: str = None, exclude_spea
         all_speakers = res['episodes_by_speaker'].keys()
     matches = await esrt.return_keywords_by_corpus(response, exclude_terms=all_speakers)
     return {"keyword_count": len(matches), "keywords": matches}
-
-
-@esr_app.get("/esr/more_like_this/{show_key}/{episode_key}", tags=['ES Reader'])
-async def more_like_this(show_key: ShowKey, episode_key: str):
-    s = await esqb.more_like_this(show_key.value, episode_key)
-    es_query = s.to_dict()
-    matches = await esrt.return_more_like_this(s)
-    return {"similar_episode_count": len(matches), "similar_episodes": matches, "es_query": es_query}
 
 
 # @esr_app.get("/esr/cluster_content/{show_key}/{num_clusters}", tags=['ES Reader'])

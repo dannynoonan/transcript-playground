@@ -5,7 +5,7 @@ from elasticsearch_dsl import Search, connections, Q, A
 from elasticsearch_dsl.query import MoreLikeThis
 
 from app.config import settings
-from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS
+from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, ACTIVE_VENDOR_VERSIONS
 from app.es.es_model import EsEpisodeTranscript
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
@@ -738,6 +738,23 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
         save_es_episode(es_episode)
 
     return episodes_to_focal_locations
+
+
+async def populate_relations(show_key: str, model_vendor: str, model_version: str, episodes_to_relations: dict, limit: int = None):
+    print(f'begin populate_relations for show_key={show_key} model vendor:version={model_vendor}:{model_version} len(episodes_to_relations)={len(episodes_to_relations)} limit={limit}')
+
+    for doc_id, sim_eps in episodes_to_relations.items():
+        # truncate response to limit (a more efficient way would be to limit the preceding query)
+        if limit and limit < len(sim_eps):
+            sim_eps = sim_eps[:limit]
+            episodes_to_relations[doc_id] = sim_eps
+        # write result to an `X_relations` field
+        relations_field = f'{model_vendor}_{model_version}_relations'
+        es_episode = EsEpisodeTranscript.get(id=doc_id)
+        es_episode[relations_field] = sim_eps
+        save_es_episode(es_episode)
+
+    return episodes_to_relations
 
 
 def vector_search(show_key: str, vector_field: str, vectorized_qt: list, season: str = None) -> Search:
