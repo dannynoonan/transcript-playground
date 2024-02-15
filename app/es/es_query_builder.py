@@ -5,7 +5,7 @@ from elasticsearch_dsl import Search, connections, Q, A
 from elasticsearch_dsl.query import MoreLikeThis
 
 from app.config import settings
-from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, ACTIVE_VENDOR_VERSIONS
+from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
 from app.es.es_model import EsEpisodeTranscript
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
@@ -58,7 +58,7 @@ async def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool
     s = s.filter('term', show_key=show_key)
     s = s.filter('term', episode_key=episode_key)
     if not all_fields:
-        s = s.source(excludes=['flattened_text'] + VECTOR_FIELDS)
+        s = s.source(excludes=['flattened_text'] + VECTOR_FIELDS + RELATIONS_FIELDS)
 
     return s
 
@@ -132,7 +132,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     if season:
         s = s.filter('term', season=season)
 
-    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS)
+    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
 
     return s
 
@@ -184,7 +184,7 @@ async def search_scene_events(show_key: str, season: str = None, episode_key: st
     # if location:
     #     s = s.filter('nested', path='scenes', query=Q('match', **{'scenes.location': location}))
 
-    s = s.source(excludes=['flattened_text', 'scenes.scene_events'] + VECTOR_FIELDS)
+    s = s.source(excludes=['flattened_text', 'scenes.scene_events'] + VECTOR_FIELDS + RELATIONS_FIELDS)
 
     return s
 
@@ -227,7 +227,7 @@ async def search_scene_events_multi_speaker(show_key: str, speakers: str, season
     if season:
         s = s.filter('term', season=season)
 
-    s = s.source(excludes=['flattened_text', 'scenes.scene_events'] + VECTOR_FIELDS)
+    s = s.source(excludes=['flattened_text', 'scenes.scene_events'] + VECTOR_FIELDS + RELATIONS_FIELDS)
 
     return s
 
@@ -294,7 +294,7 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
 
     s = s.highlight('title')
 
-    s = s.source(excludes=['flattened_text', 'scenes.scene_events'] + VECTOR_FIELDS)
+    s = s.source(excludes=['flattened_text', 'scenes.scene_events'] + VECTOR_FIELDS + RELATIONS_FIELDS)
 
     return s
 
@@ -309,7 +309,7 @@ def list_episodes_by_season(show_key: str) -> Search:
 
     s = s.sort('season', 'sequence_in_season')
 
-    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS)
+    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
 
     return s
 
@@ -685,7 +685,7 @@ async def more_like_this(show_key: str, episode_key: str) -> Search:
     s = s.query(MoreLikeThis(like=[{'_index': 'transcripts', '_id': f'{show_key}_{episode_key}'}], fields=['flattened_text'],
                              max_query_terms=75, minimum_should_match='75%', min_term_freq=1, stop_words=STOPWORDS))
     
-    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS)
+    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
     
     return s
 
@@ -743,13 +743,18 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
 async def populate_relations(show_key: str, model_vendor: str, model_version: str, episodes_to_relations: dict, limit: int = None):
     print(f'begin populate_relations for show_key={show_key} model vendor:version={model_vendor}:{model_version} len(episodes_to_relations)={len(episodes_to_relations)} limit={limit}')
 
-    for doc_id, sim_eps in episodes_to_relations.items():
+    for doc_id, similar_episodes in episodes_to_relations.items():
+        # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
+        # sim_eps = [(sim_ep['episode_key'], sim_ep['score']) for sim_ep in similar_episodes['matches']]
+        sim_eps = {sim_ep['episode_key']:sim_ep['score'] for sim_ep in similar_episodes['matches']}
+
         # truncate response to limit (a more efficient way would be to limit the preceding query)
         if limit and limit < len(sim_eps):
             sim_eps = sim_eps[:limit]
-            episodes_to_relations[doc_id] = sim_eps
+        episodes_to_relations[doc_id] = sim_eps
+
         # write result to an `X_relations` field
-        relations_field = f'{model_vendor}_{model_version}_relations'
+        relations_field = f'{model_vendor}_{model_version}_relations_dict'
         es_episode = EsEpisodeTranscript.get(id=doc_id)
         es_episode[relations_field] = sim_eps
         save_es_episode(es_episode)

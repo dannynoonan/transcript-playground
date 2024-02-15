@@ -137,11 +137,13 @@ async def populate_relations(show_key: ShowKey, episode_key: str, model_vendor: 
     else:
         similar_episodes = esr.mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
     # only keep the episode keys and corresponding scores 
-    sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
-        
+    # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
+    # sim_eps = [(sim_ep['episode_key'], sim_ep['score']) for sim_ep in similar_episodes['matches']]
+    # sim_eps = {sim_ep['episode_key']:sim_ep['score'] for sim_ep in similar_episodes['matches']}
+
     episode_relations = {}
     doc_id = f'{show_key}_{episode_key}'
-    episode_relations[doc_id] = sim_eps
+    episode_relations[doc_id] = similar_episodes
     
     episode_relations = await esqb.populate_relations(show_key.value, model_vendor, model_version, episode_relations, limit=limit)
 
@@ -167,8 +169,8 @@ async def populate_relations(show_key: ShowKey, model_vendor: str, model_version
         else:
             similar_episodes = esr.mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
         # only keep the episode keys and corresponding scores 
-        sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
-        episodes_to_relations[doc_id] = sim_eps
+        # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
+        episodes_to_relations[doc_id] = similar_episodes
     
     episodes_to_relations = await esqb.populate_relations(show_key.value, model_vendor, model_version, episodes_to_relations, limit=limit)
 

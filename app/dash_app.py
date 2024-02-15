@@ -4,6 +4,9 @@ from dash import dcc, html, Dash, dash_table
 from dash.dependencies import Input, Output, State
 import pandas as pd
 
+import app.dash.components as cmp
+from app.dash import show_cluster_scatter
+from app.dash import show_network_graph
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
@@ -15,75 +18,24 @@ dapp = Dash(__name__,
             external_stylesheets=[dbc.themes.SOLAR],
             requests_pathname_prefix='/tsp_dash/')
 
-
-navbar = dbc.Card(className="text-white bg-primary", style={"z-index":"2000"}, children=[
-    dbc.CardBody([
-        dbc.Nav(className="nav nav-pills", children=[
-            dbc.NavItem(dbc.NavLink("Transcript Playground", style={"color": "#FFFFFF", "font-size": "16pt"}, href="/tsp_dash")),
-            # dbc.DropdownMenu(label="Shows", menu_variant="dark", nav=True, children=[
-            #     dbc.DropdownMenuItem("TNG", style={"color": "#CCCCCC"}, href='/web/show/TNG', target="_blank"), 
-            #     dbc.DropdownMenuItem("GoT", style={"color": "#CCCCCC"}, href='/web/show/GoT', target="_blank"), 
-            # ]),
-            dbc.NavItem(dbc.NavLink("TNG", style={"color": "#FFFFFF"}, href='/web/show/TNG', external_link=True)),
-            dbc.NavItem(dbc.NavLink("Episodes", style={"color": "#CCCCCC"}, href='/web/episode_search/TNG', external_link=True)),
-            dbc.NavItem(dbc.NavLink("Character", style={"color": "#CCCCCC"}, href='/web/character_listing/TNG', external_link=True)),
-        ])
-    ])
+# app layout
+dapp.layout = dbc.Container(fluid=True, children=[
+    cmp.url_bar_and_content_div,
 ])
 
 
-dapp.layout = html.Div([
-    navbar,
-    dbc.Card(className="bg-dark", children=[
-        dbc.CardBody([
-            dbc.Row([
-                html.H3(children=["Cluster groupings for ", html.Span(id='show-key-display')]),
-                dbc.Col(md=2, children=[
-                    html.Div([
-                        "Show: ",
-                        dcc.Dropdown(
-                            id="show-key",
-                            options=[
-                                {'label': 'TNG', 'value': 'TNG'},
-                                {'label': 'GoT', 'value': 'GoT'},
-                            ], 
-                            value='TNG',
-                        )
-                    ]),
-                ]),
-                dbc.Col(md=2, children=[
-                    html.Div([
-                        "Number of clusters: ",
-                        dcc.Dropdown(
-                            id="num-clusters",
-                            options=[
-                                {'label': '2', 'value': '2'},
-                                {'label': '3', 'value': '3'},
-                                {'label': '4', 'value': '4'},
-                                {'label': '5', 'value': '5'},
-                                {'label': '6', 'value': '6'},
-                                {'label': '7', 'value': '7'},
-                                {'label': '8', 'value': '8'},
-                                {'label': '9', 'value': '9'},
-                                {'label': '10', 'value': '10'},
-                            ], 
-                            value='5',
-                        )
-                    ]),
-                ]),
-            ]),
-            html.Br(),
-            dbc.Row(justify="evenly", children=[
-                dcc.Graph(id="show-cluster-scatter"),
-            ]),
-            html.Br(),
-            html.Div(id="episodes-df-table"),
-        ]),
-    ])
-])
+# Index callbacks
+@dapp.callback(
+    Output('page-content', 'children'),
+    Input('url', 'pathname'))
+def display_page(pathname):
+    if pathname == "/tsp_dash/show-cluster-scatter":
+        return show_cluster_scatter.content
+    elif pathname == "/tsp_dash/show-network-graph":
+        return show_network_graph.content
 
 
-############ voter-weight-electoral-college-bias-page4 callbacks
+############ show-cluster-scatter callbacks
 @dapp.callback(
     Output('show-cluster-scatter', 'figure'),
     Output('show-key-display', 'children'),
@@ -117,98 +69,26 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
 
     # generate dash_table div as part of callback output
     episode_clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()
-    table_div = merge_and_simplify_df(episode_clusters_df)
+    table_div = cmp.merge_and_simplify_df(episode_clusters_df)
 
     # generate scatterplot
-    fig_scatter = fb.generate_graph_plotly(episode_embeddings_clusters_df, show_key, num_clusters)
+    fig_scatter = fb.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
 
     return fig_scatter, show_key, table_div
 
 
-# TODO where should this live? Can/will it be more generic, or limited to this use case?
-def merge_and_simplify_df(episode_clusters_df: pd.DataFrame) -> html.Div:
-    # reformat columns, sort table
-    episode_clusters_df['air_date'] = episode_clusters_df['air_date'].apply(lambda x: x[:10])
-    episode_clusters_df['focal_speakers'] = episode_clusters_df['focal_speakers'].apply(lambda x: ", ".join(x))
-    episode_clusters_df['focal_locations'] = episode_clusters_df['focal_locations'].apply(lambda x: ", ".join(x))
-    episode_clusters_df.sort_values(['cluster', 'season', 'sequence_in_season'], inplace=True)
-    # rename columns for display
-    episode_clusters_df.rename(columns={'sequence_in_season': 'episode', 'scene_count': 'scenes'}, inplace=True)
-    # TODO remove this altogether
-    episode_clusters_df.drop('cluster_color', axis=1, inplace=True) 
-    # generate table div that can function as an identifiable dash object
-    table_div = html.Div([
-        dash_table.DataTable(
-            data=episode_clusters_df.to_dict("records"),
-            columns=[{"id": x, "name": x} for x in episode_clusters_df.columns],
-            style_header={
-                'backgroundColor': 'white',
-                'fontWeight': 'bold',
-                'color': 'black',
-            },
-            style_cell={
-                'textAlign': 'left',
-                'font-size': '10pt',
-            },
-            # style_data={
-            #     'backgroundColor': 'black',
-            #     'color': 'white',
-            # },
-            style_data_conditional=[
-                {
-                    'if': {'filter_query': "{cluster} = 0"},
-                    'backgroundColor': fm.colors[0],
-                    'color': fm.text_colors[0]
-                },
-                {
-                    'if': {'filter_query': "{cluster} = 1"},
-                    'backgroundColor': fm.colors[1],
-                    'color': fm.text_colors[1]
-                },
-                {
-                    'if': {'filter_query': "{cluster} = 2"},
-                    'backgroundColor': fm.colors[2],
-                    'color': fm.text_colors[2]
-                },
-                {
-                    'if': {'filter_query': "{cluster} = 3"},
-                    'backgroundColor': fm.colors[3],
-                    'color': fm.text_colors[3]
-                },
-                {
-                    'if': {'filter_query': "{cluster} = 4"},
-                    'backgroundColor': fm.colors[4],
-                    'color': fm.text_colors[4]
-                },
-                {
-                    'if': {'filter_query': "{cluster} = 5"},
-                    'backgroundColor': fm.colors[5],
-                    'color': fm.text_colors[5]
-                },
-                {
-                    'if': {'filter_query': "{cluster} = 6"},
-                    'backgroundColor': fm.colors[6],
-                    'color': fm.text_colors[6]
-                },
-                {
-                    'if': {'filter_query': "{cluster} = 7"},
-                    'backgroundColor': fm.colors[7],
-                    'color': fm.text_colors[7]
-                },
-                {
-                    'if': {'filter_query': "{cluster} = 8"},
-                    'backgroundColor': fm.colors[8],
-                    'color': fm.text_colors[8]
-                },
-                {
-                    'if': {'filter_query': "{cluster} = 9"},
-                    'backgroundColor': fm.colors[9],
-                    'color': fm.text_colors[9]
-                },
-            ],
-        )
-    ])
-    return table_div
+############ show-network-graph callbacks
+@dapp.callback(
+    Output('show-network-graph', 'figure'),
+    Output('show-key-display2', 'children'),
+    Input('show-key', 'value'))    
+def render_show_network_graph(show_key: str):
+    print(f'in render_show_network_graph, show_key={show_key}')
+
+    # generate scatterplot
+    fig_scatter = fb.build_network_graph()
+
+    return fig_scatter, show_key
 
 
 if __name__ == "__main__":
