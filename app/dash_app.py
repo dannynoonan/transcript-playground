@@ -5,8 +5,7 @@ from dash.dependencies import Input, Output, State
 import pandas as pd
 
 import app.dash.components as cmp
-from app.dash import show_cluster_scatter
-from app.dash import show_network_graph
+from app.dash import show_cluster_scatter, show_network_graph, show_3d_network_graph
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
@@ -33,6 +32,8 @@ def display_page(pathname):
         return show_cluster_scatter.content
     elif pathname == "/tsp_dash/show-network-graph":
         return show_network_graph.content
+    elif pathname == "/tsp_dash/show-3d-network-graph":
+        return show_3d_network_graph.content
 
 
 ############ show-cluster-scatter callbacks
@@ -87,6 +88,20 @@ def render_show_network_graph(show_key: str):
 
     # generate scatterplot
     fig_scatter = fb.build_network_graph()
+
+    return fig_scatter, show_key
+
+
+############ show-3d-network-graph callbacks
+@dapp.callback(
+    Output('show-3d-network-graph', 'figure'),
+    Output('show-key-display3', 'children'),
+    Input('show-key', 'value'))    
+def render_show_3d_network_graph(show_key: str):
+    print(f'in render_show_3d_network_graph, show_key={show_key}')
+
+    # generate scatterplot
+    fig_scatter = fb.build_3d_network_graph(show_key)
 
     return fig_scatter, show_key
 

@@ -13,7 +13,7 @@ esr_app = APIRouter()
 
 
 
-###################### ES FETCH ###########################
+###################### SIMPLE FETCH ###########################
 
 @esr_app.get("/esr/episode/{show_key}/{episode_key}", tags=['ES Reader'])
 async def fetch_episode(show_key: ShowKey, episode_key: str, all_fields: bool = False):
@@ -48,8 +48,19 @@ def list_episodes_by_season(show_key: ShowKey):
     return {"episodes_by_season": episodes_by_season, "es_query": es_query}
 
 
+@esr_app.get("/esr/fetch_all_episode_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Reader'])
+def fetch_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str):
+    '''
+    Fetch all (sceneless) episodes and their relations data for a given model vendor/version
+    '''
+    s = esqb.fetch_all_episode_relations(show_key.value, model_vendor, model_version)
+    es_query = s.to_dict()
+    episode_relations = esrt.return_all_episode_relations(s)
+    return {"episode_relations": episode_relations, "es_query": es_query}
 
-###################### ES SEARCH ###########################
+
+
+###################### SEARCH ###########################
 
 @esr_app.get("/esr/search_episodes_by_title/{show_key}", tags=['ES Reader'])
 async def search_episodes_by_title(show_key: ShowKey, title: str = None):
@@ -215,7 +226,7 @@ def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, mod
 
 
 
-###################### ES AGGREGATIONS ###########################
+###################### AGGREGATIONS ###########################
 
 @esr_app.get("/esr/agg_seasons/{show_key}", tags=['ES Reader'])
 async def agg_seasons(show_key: ShowKey, location: str = None):
@@ -402,7 +413,44 @@ async def composite_location_aggs(show_key: ShowKey, season: str = None, episode
 
 
 
-###################### OTHER ES READS ###########################
+###################### RELATIONS ###########################
+
+@esr_app.get("/esr/episode_relations_graph/{show_key}/{model_vendor}/{model_version}", tags=['ES Reader'])
+def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version: str, season: str = None):
+    # nodes 
+    episodes_and_relations = fetch_all_episode_relations(show_key, model_vendor, model_version)
+    nodes = []
+    links = []
+    episode_keys_to_indexes = {}
+    relations_field = f'{model_vendor}_{model_version}_relations_text'
+    i = 0
+    for episode in episodes_and_relations['episode_relations']:
+        node = {}
+        node['title'] = episode['title']
+        node['episode_key'] = episode['episode_key']
+        node['season'] = episode['season']
+        nodes.append(node)
+        episode_keys_to_indexes[episode['episode_key']] = i
+        i += 1
+    
+    # second loop is needed since we don't know the index positions of every episode during the first loop
+    for episode in episodes_and_relations['episode_relations']:
+        if relations_field not in episode:
+            continue
+        relations_count = min(len(episode[relations_field]), 5)
+        for i in range(relations_count):
+            link = {}
+            target_episode_key =  episode[relations_field][i].split('|')[0]
+            link['source'] = episode_keys_to_indexes[episode['episode_key']]
+            link['target'] = episode_keys_to_indexes[target_episode_key]
+            link['value'] = 5 - i
+            links.append(link)
+    
+    return {"nodes": nodes, "links": links}
+
+
+
+###################### OTHER ###########################
 
 @esr_app.get("/esr/keywords_by_episode/{show_key}/{episode_key}", tags=['ES Reader'])
 async def keywords_by_episode(show_key: ShowKey, episode_key: str, exclude_speakers: bool = False):

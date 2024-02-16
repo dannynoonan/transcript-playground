@@ -418,6 +418,19 @@ def return_episodes_by_season(s: Search) -> dict:
     return seasons_to_episodes
 
 
+def return_all_episode_relations(s: Search) -> dict:
+    print(f'begin return_all_episode_relations for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = []
+
+    for hit in s.hits.hits:
+        results.append(hit._source._d_)
+
+    return results
+
+
 async def return_episode_count(s: Search) -> int:
     print(f'begin return_episode_count for s.to_dict()={s.to_dict()}')
 

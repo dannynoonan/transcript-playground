@@ -314,6 +314,23 @@ def list_episodes_by_season(show_key: str) -> Search:
     return s
 
 
+def fetch_all_episode_relations(show_key: str, model_vendor: str, model_version: str) -> Search:
+    print(f'begin fetch_all_episode_relations for show_key={show_key} model_vendor={model_vendor} model_version={model_version}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+
+    s = s.sort('season', 'sequence_in_season')
+
+    relations_field = f'{model_vendor}_{model_version}_relations_text'
+
+    # s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS)
+    s = s.source(includes=['episode_key', 'title', 'season', relations_field])
+
+    return s
+
 
 async def agg_seasons(show_key: str, location: str = None) -> Search:
     print(f'begin agg_episodes for show_key={show_key} location={location}')
@@ -740,7 +757,7 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
     return episodes_to_focal_locations
 
 
-async def populate_relations(show_key: str, model_vendor: str, model_version: str, episodes_to_relations: dict, limit: int = None):
+async def populate_relations(show_key: str, model_vendor: str, model_version: str, episodes_to_relations: dict, limit: int = None) -> dict:
     print(f'begin populate_relations for show_key={show_key} model vendor:version={model_vendor}:{model_version} len(episodes_to_relations)={len(episodes_to_relations)} limit={limit}')
 
     for doc_id, similar_episodes in episodes_to_relations.items():

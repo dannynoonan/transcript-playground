@@ -1,3 +1,4 @@
+import igraph as ig
 import io
 import matplotlib
 import matplotlib.pyplot as plt
@@ -6,8 +7,11 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+# import plotly.plotly as py
 from sklearn.manifold import TSNE
 
+import app.es.es_read_router as esr
+from app.show_metadata import ShowKey
 import app.web.fig_metadata as fm
 
 
@@ -99,8 +103,115 @@ def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key
     return fig
 
 
+def build_3d_network_graph(show_key: str):
+    # import json
+    # import requests
+    
+    # data = []
+    # req = requests.get("https://raw.githubusercontent.com/plotly/datasets/master/miserables.json")
+    # data = json.loads(req.text)
+
+    model_vendor = 'es'
+    model_version = 'mlt'
+    data = esr.episode_relations_graph(ShowKey(show_key), model_vendor, model_version)
+
+    N=len(data['nodes'])
+
+    L=len(data['links'])
+    Edges=[(data['links'][k]['source'], data['links'][k]['target']) for k in range(L)]
+
+    G=ig.Graph(Edges, directed=False)
+
+    labels=[]
+    group=[]
+    for node in data['nodes']:
+        # labels.append(node['name'])
+        labels.append(node['title'])
+        # group.append(node['group'])
+        group.append(node['season'])
+
+    layt=G.layout('kk', dim=3)
+
+    Xn=[layt[k][0] for k in range(N)]# x-coordinates of nodes
+    Yn=[layt[k][1] for k in range(N)]# y-coordinates
+    Zn=[layt[k][2] for k in range(N)]# z-coordinates
+    Xe=[]
+    Ye=[]
+    Ze=[]
+    for e in Edges:
+        Xe+=[layt[e[0]][0],layt[e[1]][0], None]# x-coordinates of edge ends
+        Ye+=[layt[e[0]][1],layt[e[1]][1], None]
+        Ze+=[layt[e[0]][2],layt[e[1]][2], None]
+
+    trace1=go.Scatter3d(x=Xe,
+               y=Ye,
+               z=Ze,
+               mode='lines',
+               line=dict(color='rgb(125,125,125)', width=1),
+               hoverinfo='none'
+               )
+
+    trace2=go.Scatter3d(x=Xn,
+                y=Yn,
+                z=Zn,
+                mode='markers',
+                name='actors',
+                marker=dict(symbol='circle',
+                                size=6,
+                                color=group,
+                                colorscale='Viridis',
+                                line=dict(color='rgb(50,50,50)', width=0.5)
+                                ),
+                text=labels,
+                hoverinfo='text'
+                )
+
+    axis=dict(showbackground=False,
+            showline=False,
+            zeroline=False,
+            showgrid=False,
+            showticklabels=False,
+            title=''
+            )
+
+    layout = go.Layout(
+            title="placeholder title",
+            width=1000,
+            height=1000,
+            showlegend=False,
+            scene=dict(
+                xaxis=dict(axis),
+                yaxis=dict(axis),
+                zaxis=dict(axis),
+            ),
+        margin=dict(
+            t=100
+        ),
+        hovermode='closest',
+        annotations=[
+            dict(
+            showarrow=False,
+                text="placeholder text",
+                xref='paper',
+                yref='paper',
+                x=0,
+                y=0.1,
+                xanchor='left',
+                yanchor='bottom',
+                font=dict(
+                size=14
+                )
+                )
+            ],    )
+    data=[trace1, trace2]
+    fig=go.Figure(data=data, layout=layout)
+
+    # py.iplot(fig, filename='Les-Miserables')
+
+    return fig    
+
+
 def build_network_graph() -> go.Figure:
-    print(f'############ made it here')
     G = nx.random_geometric_graph(200, 0.125)
 
     edge_x = []
@@ -167,7 +278,7 @@ def build_network_graph() -> go.Figure:
             hovermode='closest',
             margin=dict(b=20,l=5,r=5,t=40),
             annotations=[ dict(
-                text="Python code: <a href='https://plotly.com/ipython-notebooks/network-graphs/'> https://plotly.com/ipython-notebooks/network-graphs/</a>",
+                text="annotation text",
                 showarrow=False,
                 xref="paper", yref="paper",
                 x=0.005, y=-0.002 ) ],
