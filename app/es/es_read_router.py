@@ -26,15 +26,26 @@ def fetch_episode(show_key: ShowKey, episode_key: str, all_fields: bool = False)
     return {"es_episode": match, 'es_query': es_query}
 
 
-@esr_app.get("/esr/search_doc_ids/{show_key}", tags=['ES Reader'])
-def search_doc_ids(show_key: ShowKey, season: str = None):
+@esr_app.get("/esr/fetch_doc_ids/{show_key}", tags=['ES Reader'])
+def fetch_doc_ids(show_key: ShowKey, season: str = None):
     '''
     Get all es source _ids for show 
     '''
-    s = esqb.search_doc_ids(show_key.value, season=season)
+    s = esqb.fetch_doc_ids(show_key.value, season=season)
     es_query = s.to_dict()
     matches = esrt.return_doc_ids(s)
     return {"doc_count": len(matches), "doc_ids": matches, "es_query": es_query}
+
+
+@esr_app.get("/esr/fetch_all_simple_episodes/{show_key}", tags=['ES Reader'])
+def fetch_all_simple_episodes(show_key: ShowKey):
+    '''
+    Fetch all simple (sceneless) episodes 
+    '''
+    s = esqb.fetch_all_simple_episodes(show_key.value)
+    es_query = s.to_dict()
+    episodes = esrt.return_simple_episodes(s)
+    return {"episodes": episodes, "es_query": es_query}
 
 
 @esr_app.get("/esr/list_episodes_by_season/{show_key}", tags=['ES Reader'])
@@ -42,7 +53,7 @@ def list_episodes_by_season(show_key: ShowKey):
     '''
     Fetch simple (sceneless) episodes sequenced and grouped by season
     '''
-    s = esqb.list_episodes_by_season(show_key.value)
+    s = esqb.fetch_all_simple_episodes(show_key.value)
     es_query = s.to_dict()
     episodes_by_season = esrt.return_episodes_by_season(s)
     return {"episodes_by_season": episodes_by_season, "es_query": es_query}

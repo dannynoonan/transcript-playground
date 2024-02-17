@@ -208,7 +208,7 @@ def build_embeddings_model(show_key: str) -> dict:
     training_fragments = []
 
     # fetch all episodes for show_key
-    doc_ids_response = esr.search_doc_ids(ShowKey(show_key))
+    doc_ids_response = esr.fetch_doc_ids(ShowKey(show_key))
     for doc_id in doc_ids_response['doc_ids']:
         episode_key = doc_id.split('_')[1]
         print(f'begin compiling training_fragments for episode_key={episode_key}')

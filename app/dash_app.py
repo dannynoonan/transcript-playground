@@ -90,7 +90,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
 def render_show_network_graph(show_key: str):
     print(f'in render_show_network_graph, show_key={show_key}')
 
-    # generate scatterplot
+    # generate network graph
     fig_scatter = fb.build_network_graph()
 
     return fig_scatter, show_key
@@ -107,9 +107,8 @@ def render_show_3d_network_graph(show_key: str):
     model_vendor = 'es'
     model_version = 'mlt'
     max_edges = 3
+    # generate data and build 3d network graph
     data = esr.episode_relations_graph(ShowKey(show_key), model_vendor, model_version, max_edges=max_edges)
-
-    # generate scatterplot
     fig_scatter = fb.build_3d_network_graph(show_key, data)
 
     return fig_scatter, show_key
@@ -118,14 +117,17 @@ def render_show_3d_network_graph(show_key: str):
 ############ speaker-3d-network-graph callbacks
 @dapp.callback(
     Output('speaker-3d-network-graph', 'figure'),
+    # Output('episode-list', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'))    
 def render_speaker_3d_network_graph(show_key: str, episode_key: str):
     print(f'in render_speaker_3d_network_graph, show_key={show_key} episode_key={episode_key}')
 
-    data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
+    # form-backing data
+    episodes = esr.fetch_all_simple_episodes(ShowKey(show_key))
 
-    # generate scatterplot
+    # generate data and build generate 3d network graph
+    data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
     fig_scatter = fb.build_3d_network_graph(show_key, data)
 
     return fig_scatter

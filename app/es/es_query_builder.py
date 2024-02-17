@@ -63,8 +63,8 @@ def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = Fal
     return s
 
 
-def search_doc_ids(show_key: str, season: str = None) -> Search:
-    print(f'begin search_doc_ids for show_key={show_key} season={season}')
+def fetch_doc_ids(show_key: str, season: str = None) -> Search:
+    print(f'begin fetch_doc_ids for show_key={show_key} season={season}')
 
     s = Search(index='transcripts')
     s = s.extra(size=1000)
@@ -299,8 +299,8 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
     return s
 
 
-def list_episodes_by_season(show_key: str) -> Search:
-    print(f'begin list_episodes_by_season for show_key={show_key}')
+def fetch_all_simple_episodes(show_key: str) -> Search:
+    print(f'begin fetch_all_simple_episodes for show_key={show_key}')
 
     s = Search(index='transcripts')
     s = s.extra(size=1000)
@@ -312,6 +312,21 @@ def list_episodes_by_season(show_key: str) -> Search:
     s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
 
     return s
+
+
+# def list_episodes_by_season(show_key: str) -> Search:
+#     print(f'begin list_episodes_by_season for show_key={show_key}')
+
+#     s = Search(index='transcripts')
+#     s = s.extra(size=1000)
+
+#     s = s.filter('term', show_key=show_key)
+
+#     s = s.sort('season', 'sequence_in_season')
+
+#     s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
+
+#     return s
 
 
 def fetch_all_episode_relations(show_key: str, model_vendor: str, model_version: str) -> Search:
@@ -683,7 +698,7 @@ async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
 async def keywords_by_corpus(show_key: str, season: str = None) -> dict:
     print(f'begin keywords_by_corpus for show_key={show_key} season={season}')
 
-    keys = esr.search_doc_ids(ShowKey(show_key), season=season)
+    keys = esr.fetch_doc_ids(ShowKey(show_key), season=season)
 
     if not keys:
         return {}
@@ -713,7 +728,7 @@ async def populate_focal_speakers(show_key: str, episode_key: str = None):
     if episode_key:
         episode_doc_ids = [f'{show_key}_{episode_key}']
     else:
-        doc_ids = esr.search_doc_ids(ShowKey(show_key))
+        doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
         episode_doc_ids = doc_ids['doc_ids']
     
     episodes_to_focal_speakers = {}
@@ -738,7 +753,7 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
     if episode_key:
         episode_doc_ids = [f'{show_key}_{episode_key}']
     else:
-        doc_ids = esr.search_doc_ids(ShowKey(show_key))
+        doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
         episode_doc_ids = doc_ids['doc_ids']
     
     episodes_to_focal_locations = {}

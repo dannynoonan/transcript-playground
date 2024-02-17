@@ -14,7 +14,7 @@ def return_episode_by_key(s: Search) -> dict:
     
 
 def return_doc_ids(s: Search) -> list:
-    print(f'begin return_episode_by_key for s.to_dict()={s.to_dict()}')
+    print(f'begin return_doc_ids for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -394,6 +394,19 @@ async def return_episodes(s: Search) -> (list, int, int):
     results = sorted(results, key=itemgetter('agg_score'), reverse=True)
 
     return results, scene_count, scene_event_count
+
+
+def return_simple_episodes(s: Search) -> list:
+    print(f'begin return_simple_episodes for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    episodes = []
+
+    for hit in s.hits.hits:
+        episodes.append(hit._source._d_)
+
+    return episodes
 
 
 def return_episodes_by_season(s: Search) -> dict:

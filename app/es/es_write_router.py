@@ -158,7 +158,7 @@ async def populate_relations(show_key: ShowKey, model_vendor: str, model_version
     if (model_vendor, model_version) not in ACTIVE_VENDOR_VERSIONS and (model_vendor, model_version) != ('es','mlt'):
         return {"error": f'invalid model_vendor:model_version combo {model_vendor}:{model_version}'}
     
-    doc_ids = esr.search_doc_ids(ShowKey(show_key))
+    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']
     
     episodes_to_relations = {}
@@ -205,7 +205,7 @@ def populate_all_embeddings(show_key: ShowKey, model_vendor: str, model_version:
     '''
     Bulk run of `/esw/populate_embeddings` for all episodes of a given show
     '''
-    doc_ids = esr.search_doc_ids(ShowKey(show_key))
+    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']
     processed_episode_keys = []
     failed_episode_keys = []
