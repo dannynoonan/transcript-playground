@@ -4,7 +4,7 @@ from operator import itemgetter
 from app.es.es_metadata import STOPWORDS
 
 
-async def return_episode_by_key(s: Search) -> dict:
+def return_episode_by_key(s: Search) -> dict:
     print(f'begin return_episode_by_key for s.to_dict()={s.to_dict()}')
 
     s = s.execute()

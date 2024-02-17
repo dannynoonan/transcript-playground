@@ -75,7 +75,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 	tdata['show_key'] = show_key.value
 	tdata['episode_key'] = episode_key
 
-	episode = await esr.fetch_episode(show_key, episode_key)
+	episode = esr.fetch_episode(show_key, episode_key)
 	tdata['episode'] = episode['es_episode']
 	
 	locations_by_scene = await esr.agg_scenes_by_location(show_key, episode_key=episode_key)

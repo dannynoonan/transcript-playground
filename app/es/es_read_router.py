@@ -16,13 +16,13 @@ esr_app = APIRouter()
 ###################### SIMPLE FETCH ###########################
 
 @esr_app.get("/esr/episode/{show_key}/{episode_key}", tags=['ES Reader'])
-async def fetch_episode(show_key: ShowKey, episode_key: str, all_fields: bool = False):
+def fetch_episode(show_key: ShowKey, episode_key: str, all_fields: bool = False):
     '''
     Fetch individual episode 
     '''
-    s = await esqb.fetch_episode_by_key(show_key.value, episode_key, all_fields=all_fields)
+    s = esqb.fetch_episode_by_key(show_key.value, episode_key, all_fields=all_fields)
     es_query = s.to_dict()
-    match = await esrt.return_episode_by_key(s)
+    match = esrt.return_episode_by_key(s)
     return {"es_episode": match, 'es_query': es_query}
 
 
@@ -416,7 +416,9 @@ async def composite_location_aggs(show_key: ShowKey, season: str = None, episode
 ###################### RELATIONS ###########################
 
 @esr_app.get("/esr/episode_relations_graph/{show_key}/{model_vendor}/{model_version}", tags=['ES Reader'])
-def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version: str, season: str = None):
+def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version: str, max_edges: int = None, season: str = None):
+    if not max_edges:
+        max_edges = 5
     # nodes 
     episodes_and_relations = fetch_all_episode_relations(show_key, model_vendor, model_version)
     nodes = []
@@ -437,14 +439,48 @@ def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version:
     for episode in episodes_and_relations['episode_relations']:
         if relations_field not in episode:
             continue
-        relations_count = min(len(episode[relations_field]), 5)
+        relations_count = min(len(episode[relations_field]), max_edges)
         for i in range(relations_count):
             link = {}
             target_episode_key =  episode[relations_field][i].split('|')[0]
             link['source'] = episode_keys_to_indexes[episode['episode_key']]
             link['target'] = episode_keys_to_indexes[target_episode_key]
-            link['value'] = 5 - i
+            link['value'] = max_edges - i
             links.append(link)
+    
+    return {"nodes": nodes, "links": links}
+
+
+@esr_app.get("/esr/speaker_relations_graph/{show_key}/{episode_key}", tags=['ES Reader'])
+def speaker_relations_graph(show_key: ShowKey, episode_key: str):
+    nodes = []
+    links = []
+    speakers_to_node_i = {}
+    source_targets_to_link_i = {}
+    episode = fetch_episode(show_key, episode_key)
+    es_episode = episode['es_episode']
+    for scene in es_episode['scenes']:
+        speakers_in_scene = set()
+        speaker_node_ids_in_scene = set()
+        for scene_event in scene['scene_events']:
+            if 'spoken_by' in scene_event:
+                speakers_in_scene.add(scene_event['spoken_by'])
+        for speaker in speakers_in_scene:
+            if speaker not in speakers_to_node_i:
+                nodes.append({'title': speaker, 'season': 1})
+                speakers_to_node_i[speaker] = len(nodes)-1
+            speaker_node_ids_in_scene.add(speakers_to_node_i[speaker])
+        for source_speaker_node_i in speaker_node_ids_in_scene:
+            for target_speaker_node_i in speaker_node_ids_in_scene:
+                if source_speaker_node_i == target_speaker_node_i:
+                    continue
+                source_target = f'{source_speaker_node_i}_{target_speaker_node_i}'
+                if source_target not in source_targets_to_link_i:
+                    links.append({'source': source_speaker_node_i, 'target': target_speaker_node_i, 'value': 1})
+                    source_targets_to_link_i[source_target] = len(links)-1
+                else:
+                    link_i = source_targets_to_link_i[source_target]
+                    links[link_i]['value'] += 1
     
     return {"nodes": nodes, "links": links}
 

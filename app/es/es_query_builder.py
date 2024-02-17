@@ -48,7 +48,7 @@ def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     #     es_episode.save(using=es)
 
 
-async def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = False) -> dict:
+def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = False) -> dict:
     print(f'begin fetch_episode_by_key for show_key={show_key} episode_key={episode_key}')
 
     # s = Search(using=es_client, index='transcripts')

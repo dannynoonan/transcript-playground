@@ -5,10 +5,12 @@ from dash.dependencies import Input, Output, State
 import pandas as pd
 
 import app.dash.components as cmp
-from app.dash import show_cluster_scatter, show_network_graph, show_3d_network_graph
+from app.dash import show_cluster_scatter, show_network_graph, show_3d_network_graph, speaker_3d_network_graph
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
+import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
+from app.show_metadata import ShowKey
 import app.web.fig_builder as fb
 import app.web.fig_metadata as fm
 
@@ -34,6 +36,8 @@ def display_page(pathname):
         return show_network_graph.content
     elif pathname == "/tsp_dash/show-3d-network-graph":
         return show_3d_network_graph.content
+    elif pathname == "/tsp_dash/speaker-3d-network-graph":
+        return speaker_3d_network_graph.content
 
 
 ############ show-cluster-scatter callbacks
@@ -100,10 +104,31 @@ def render_show_network_graph(show_key: str):
 def render_show_3d_network_graph(show_key: str):
     print(f'in render_show_3d_network_graph, show_key={show_key}')
 
+    model_vendor = 'es'
+    model_version = 'mlt'
+    max_edges = 3
+    data = esr.episode_relations_graph(ShowKey(show_key), model_vendor, model_version, max_edges=max_edges)
+
     # generate scatterplot
-    fig_scatter = fb.build_3d_network_graph(show_key)
+    fig_scatter = fb.build_3d_network_graph(show_key, data)
 
     return fig_scatter, show_key
+
+
+############ speaker-3d-network-graph callbacks
+@dapp.callback(
+    Output('speaker-3d-network-graph', 'figure'),
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'))    
+def render_speaker_3d_network_graph(show_key: str, episode_key: str):
+    print(f'in render_speaker_3d_network_graph, show_key={show_key} episode_key={episode_key}')
+
+    data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
+
+    # generate scatterplot
+    fig_scatter = fb.build_3d_network_graph(show_key, data)
+
+    return fig_scatter
 
 
 if __name__ == "__main__":

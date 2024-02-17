@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-# import plotly.plotly as py
 from sklearn.manifold import TSNE
 
 import app.es.es_read_router as esr
@@ -103,17 +102,12 @@ def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key
     return fig
 
 
-def build_3d_network_graph(show_key: str):
-    # import json
-    # import requests
-    
-    # data = []
-    # req = requests.get("https://raw.githubusercontent.com/plotly/datasets/master/miserables.json")
-    # data = json.loads(req.text)
+def build_3d_network_graph(show_key: str, data: dict):
+    print(f'in build_3d_network_graph show_key={show_key}')
 
-    model_vendor = 'es'
-    model_version = 'mlt'
-    data = esr.episode_relations_graph(ShowKey(show_key), model_vendor, model_version)
+    # reference: https://plotly.com/python/v3/3d-network-graph/
+    
+    # data = esr.episode_relations_graph(ShowKey(show_key), model_vendor, model_version, max_edges=max_edges)
 
     N=len(data['nodes'])
 
@@ -125,9 +119,7 @@ def build_3d_network_graph(show_key: str):
     labels=[]
     group=[]
     for node in data['nodes']:
-        # labels.append(node['name'])
         labels.append(node['title'])
-        # group.append(node['group'])
         group.append(node['season'])
 
     layt=G.layout('kk', dim=3)
@@ -143,54 +135,61 @@ def build_3d_network_graph(show_key: str):
         Ye+=[layt[e[0]][1],layt[e[1]][1], None]
         Ze+=[layt[e[0]][2],layt[e[1]][2], None]
 
-    trace1=go.Scatter3d(x=Xe,
-               y=Ye,
-               z=Ze,
-               mode='lines',
-               line=dict(color='rgb(125,125,125)', width=1),
-               hoverinfo='none'
-               )
+    trace1=go.Scatter3d(
+        x=Xe,
+        y=Ye,
+        z=Ze,
+        mode='lines',
+        line=dict(
+            color='rgb(125,125,125)', 
+            width=1
+        ),
+        hoverinfo='none'
+    )
 
-    trace2=go.Scatter3d(x=Xn,
-                y=Yn,
-                z=Zn,
-                mode='markers',
-                name='actors',
-                marker=dict(symbol='circle',
-                                size=6,
-                                color=group,
-                                colorscale='Viridis',
-                                line=dict(color='rgb(50,50,50)', width=0.5)
-                                ),
-                text=labels,
-                hoverinfo='text'
-                )
+    trace2=go.Scatter3d(
+        x=Xn,
+        y=Yn,
+        z=Zn,
+        mode='markers',
+        name='actors',
+        marker=dict(
+            symbol='circle',
+            size=6,
+            color=group,
+            colorscale='Viridis',
+            line=dict(
+                color='rgb(50,50,50)', 
+                width=0.5
+            )
+        ),
+        text=labels,
+        hoverinfo='text'
+    )
 
     axis=dict(showbackground=False,
-            showline=False,
-            zeroline=False,
-            showgrid=False,
-            showticklabels=False,
-            title=''
-            )
+        showline=False,
+        zeroline=False,
+        showgrid=False,
+        showticklabels=False,
+        title=''
+    )
 
     layout = go.Layout(
-            title="placeholder title",
-            width=1000,
-            height=1000,
-            showlegend=False,
-            scene=dict(
-                xaxis=dict(axis),
-                yaxis=dict(axis),
-                zaxis=dict(axis),
-            ),
-        margin=dict(
-            t=100
+        title="placeholder title",
+        width=1000,
+        height=1000,
+        showlegend=False,
+        scene=dict(
+            xaxis=dict(axis),
+            yaxis=dict(axis),
+            zaxis=dict(axis),
         ),
+        margin=dict(t=100),
         hovermode='closest',
         annotations=[
             dict(
-            showarrow=False,
+                showarrow=False,
                 text="placeholder text",
                 xref='paper',
                 yref='paper',
@@ -198,20 +197,21 @@ def build_3d_network_graph(show_key: str):
                 y=0.1,
                 xanchor='left',
                 yanchor='bottom',
-                font=dict(
-                size=14
-                )
-                )
-            ],    )
+                font=dict(size=14)
+            )
+        ],    
+    )
     data=[trace1, trace2]
     fig=go.Figure(data=data, layout=layout)
-
-    # py.iplot(fig, filename='Les-Miserables')
 
     return fig    
 
 
 def build_network_graph() -> go.Figure:
+    print(f'in build_network_graph')
+
+    # reference https://plotly.com/python/network-graphs/
+
     G = nx.random_geometric_graph(200, 0.125)
 
     edge_x = []
