@@ -124,7 +124,7 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str):
     print(f'in render_speaker_3d_network_graph, show_key={show_key} episode_key={episode_key}')
 
     # form-backing data
-    episodes = esr.fetch_all_simple_episodes(ShowKey(show_key))
+    # episodes = esr.fetch_all_simple_episodes(ShowKey(show_key))
 
     # generate data and build generate 3d network graph
     data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)

@@ -6,7 +6,7 @@ import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 import app.nlp.query_preprocessor as qp
-from app.show_metadata import ShowKey
+from app.show_metadata import ShowKey, show_metadata
 
 
 esr_app = APIRouter()
@@ -439,9 +439,9 @@ def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version:
     i = 0
     for episode in episodes_and_relations['episode_relations']:
         node = {}
-        node['title'] = episode['title']
+        node['name'] = episode['title']
         node['episode_key'] = episode['episode_key']
-        node['season'] = episode['season']
+        node['group'] = episode['season']
         nodes.append(node)
         episode_keys_to_indexes[episode['episode_key']] = i
         i += 1
@@ -478,7 +478,11 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
                 speakers_in_scene.add(scene_event['spoken_by'])
         for speaker in speakers_in_scene:
             if speaker not in speakers_to_node_i:
-                nodes.append({'title': speaker, 'season': 1})
+                if speaker in show_metadata[show_key.value]['regular_cast']:
+                    group = 1
+                else:
+                    group = 2
+                nodes.append({'name': speaker, 'group': group})
                 speakers_to_node_i[speaker] = len(nodes)-1
             speaker_node_ids_in_scene.add(speakers_to_node_i[speaker])
         for source_speaker_node_i in speaker_node_ids_in_scene:

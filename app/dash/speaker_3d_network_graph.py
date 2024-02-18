@@ -2,6 +2,14 @@ import dash_bootstrap_components as dbc
 from dash import dcc, html
 
 from app.dash.components import navbar
+import app.es.es_read_router as esr
+from app.show_metadata import ShowKey
+
+
+all_simple_episodes = esr.fetch_all_simple_episodes(ShowKey('TNG'))
+episode_dropdown_options = []
+for episode in all_simple_episodes['episodes']:
+    episode_dropdown_options.append({'label': f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})" , 'value': episode['episode_key']})
 
 
 content = html.Div([
@@ -28,11 +36,7 @@ content = html.Div([
                         "Episode key: ",
                         dcc.Dropdown(
                             id="episode-key",
-                            options=[
-                                {'label': 'Cause and Effect', 'value': '218'},
-                                {'label': 'Ship in a Bottle', 'value': '238'},
-                                {'label': 'Frame of Mind', 'value': '247'},
-                            ], 
+                            options=episode_dropdown_options,
                             value='218',
                         )
                     ]),

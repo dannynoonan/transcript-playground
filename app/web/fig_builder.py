@@ -119,8 +119,8 @@ def build_3d_network_graph(show_key: str, data: dict):
     labels=[]
     group=[]
     for node in data['nodes']:
-        labels.append(node['title'])
-        group.append(node['season'])
+        labels.append(node['name'])
+        group.append(node['group'])
 
     layt=G.layout('kk', dim=3)
 
@@ -175,10 +175,13 @@ def build_3d_network_graph(show_key: str, data: dict):
         title=''
     )
 
+    fig_width = fm.fig_dims.MD10
+    fig_height = fm.fig_dims.hdef(fig_width)
+
     layout = go.Layout(
         title="placeholder title",
-        width=1000,
-        height=1000,
+        width=fig_width,
+        height=fig_height,
         showlegend=False,
         scene=dict(
             xaxis=dict(axis),
