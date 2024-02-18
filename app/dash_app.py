@@ -3,6 +3,7 @@ import dash_bootstrap_components as dbc
 from dash import dcc, html, Dash, dash_table
 from dash.dependencies import Input, Output, State
 import pandas as pd
+import urllib.parse
 
 import app.dash.components as cmp
 from app.dash import show_cluster_scatter, show_network_graph, show_3d_network_graph, speaker_3d_network_graph
@@ -28,16 +29,36 @@ dapp.layout = dbc.Container(fluid=True, children=[
 # Index callbacks
 @dapp.callback(
     Output('page-content', 'children'),
-    Input('url', 'pathname'))
-def display_page(pathname):
+    Input('url', 'pathname'),
+    Input('url', 'search'))
+def display_page(pathname, search):
+    # parse params
+    parsed = urllib.parse.urlparse(search)
+    parsed_dict = urllib.parse.parse_qs(parsed.query)
+    print(f'parsed_dict={parsed_dict}')
+
     if pathname == "/tsp_dash/show-cluster-scatter":
         return show_cluster_scatter.content
+    
     elif pathname == "/tsp_dash/show-network-graph":
         return show_network_graph.content
+    
     elif pathname == "/tsp_dash/show-3d-network-graph":
         return show_3d_network_graph.content
+    
     elif pathname == "/tsp_dash/speaker-3d-network-graph":
-        return speaker_3d_network_graph.content
+        # generate form-backing data
+        all_simple_episodes = esr.fetch_all_simple_episodes(ShowKey('TNG'))
+        episode_dropdown_options = []
+        for episode in all_simple_episodes['episodes']:
+            label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
+            episode_dropdown_options.append({'label': label, 'value': episode['episode_key']})
+        # parse episode_key from params
+        if 'episode_key' in parsed_dict:
+            episode_key = parsed_dict['episode_key']
+            if isinstance(episode_key, list):
+                episode_key = episode_key[0]
+        return speaker_3d_network_graph.generate_content(episode_dropdown_options, episode_key=episode_key)
 
 
 ############ show-cluster-scatter callbacks
@@ -61,12 +82,8 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
     doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: fm.colors[x])
 
     # fetch basic title/season data for all show episodes 
-    s = esqb.list_episodes_by_season(show_key)
-    episodes_by_season = esrt.return_episodes_by_season(s)
-    all_episodes = []
-    for _, episodes in episodes_by_season.items():
-        all_episodes.extend(episodes)
-    episodes_df = pd.DataFrame(all_episodes)
+    all_episodes = esr.fetch_all_simple_episodes(ShowKey(show_key))
+    episodes_df = pd.DataFrame(all_episodes['episodes'])
 
     # merge basic episode data into cluster data
     episodes_df['doc_id'] = episodes_df['episode_key'].apply(lambda x: f'{show_key}_{x}')
