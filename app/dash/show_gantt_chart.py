@@ -2,10 +2,9 @@ import dash_bootstrap_components as dbc
 from dash import dcc, html
 
 from app.dash.components import navbar
-import app.es.es_read_router as esr
-from app.show_metadata import ShowKey
 
 
+# TODO this is almost identical to `speaker_3d_network_graph` and should probably be templatized
 def generate_content(episode_dropdown_options: list, episode_key: str = None) -> html.Div:
     if not episode_key:
         episode_key = '218'
@@ -15,7 +14,7 @@ def generate_content(episode_dropdown_options: list, episode_key: str = None) ->
         dbc.Card(className="bg-dark", children=[
             dbc.CardBody([
                 dbc.Row([
-                    html.H3(children=["3D network graph for ", html.Span(id='show-key-display4')]),
+                    html.H3(children=["Character dialog gantt chart for ", html.Span(id='show-key-display5')]),
                     dbc.Col(md=2, children=[
                         html.Div([
                             "Show: ",
@@ -42,7 +41,7 @@ def generate_content(episode_dropdown_options: list, episode_key: str = None) ->
                 ]),
                 html.Br(),
                 dbc.Row(justify="evenly", children=[
-                    dcc.Graph(id="speaker-3d-network-graph"),
+                    dcc.Graph(id="show-gantt-chart"),
                 ]),
                 html.Br(),
             ]),

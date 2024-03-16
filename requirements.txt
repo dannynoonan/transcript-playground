@@ -21,6 +21,7 @@ nltk==3.8.1
 numpy==1.26.3
 openai==1.6.1
 pandas==2.2.0
+plotly==5.18.0
 pydantic==2.3.0
 pydantic_core==2.6.3
 pydantic-extra-types==2.1.0

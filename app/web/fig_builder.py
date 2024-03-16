@@ -6,7 +6,9 @@ import networkx as nx
 import numpy as np
 import pandas as pd
 import plotly.express as px
+import plotly.figure_factory as ff
 import plotly.graph_objects as go
+import random
 from sklearn.manifold import TSNE
 
 import app.es.es_read_router as esr
@@ -208,6 +210,29 @@ def build_3d_network_graph(show_key: str, data: dict):
     fig=go.Figure(data=data, layout=layout)
 
     return fig    
+
+
+def build_show_speaker_timeline(show_key: str, data: list):
+    print(f'in build_show_speaker_timeline show_key={show_key}')
+
+    # reference: https://plotly.com/python/gantt/
+    # https://stackoverflow.com/questions/73247210/how-to-plot-a-gantt-chart-using-timesteps-and-not-dates-using-plotly
+
+    df = pd.DataFrame(data)
+
+    episode_speakers = df.Task.unique()
+    colors = {}
+    for s in episode_speakers:
+        r = random.randrange(255)
+        g = random.randrange(255)
+        b = random.randrange(255)
+        colors[s] = f'rgb({r},{g},{b})'
+
+    # fig = px.timeline(df, x_start="Start", x_end="Finish", y="Resource", color="Resource")
+    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=colors, show_colorbar=True, group_tasks=True)
+    fig.update_layout(xaxis_type='linear', autosize=False)
+    
+    return fig
 
 
 def build_network_graph() -> go.Figure:

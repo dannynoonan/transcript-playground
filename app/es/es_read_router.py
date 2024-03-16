@@ -500,6 +500,28 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
     return {"nodes": nodes, "links": links}
 
 
+@esr_app.get("/esr/speaker_scene_timeline/{show_key}/{episode_key}", tags=['ES Reader'])
+def speaker_scene_timeline(show_key: ShowKey, episode_key: str):
+    tasks = []
+    word_i = 0
+    episode = fetch_episode(show_key, episode_key)
+    es_episode = episode['es_episode']
+    if 'scenes' not in es_episode:
+        return {"tasks": tasks}
+    for s in es_episode['scenes']:
+        if 'scene_events' not in s:
+            continue
+        for se in s['scene_events']:
+            if 'spoken_by' and 'dialog' in se:
+                line_len = len(se['dialog'].split())
+                # task = dict(Task=f'Job {len(tasks)+1}', Start=word_i, Finish=(word_i+line_len-1), Resource=se['spoken_by'])
+                task = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_len-1))
+                tasks.append(task)
+                word_i += line_len
+
+    return {"tasks": tasks}
+
+
 
 ###################### OTHER ###########################
 
