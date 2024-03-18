@@ -4,7 +4,7 @@ from operator import itemgetter
 from app.es.es_metadata import STOPWORDS
 
 
-async def return_episode_by_key(s: Search) -> dict:
+def return_episode_by_key(s: Search) -> dict:
     print(f'begin return_episode_by_key for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -14,7 +14,7 @@ async def return_episode_by_key(s: Search) -> dict:
     
 
 def return_doc_ids(s: Search) -> list:
-    print(f'begin return_episode_by_key for s.to_dict()={s.to_dict()}')
+    print(f'begin return_doc_ids for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -396,6 +396,19 @@ async def return_episodes(s: Search) -> (list, int, int):
     return results, scene_count, scene_event_count
 
 
+def return_simple_episodes(s: Search) -> list:
+    print(f'begin return_simple_episodes for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    episodes = []
+
+    for hit in s.hits.hits:
+        episodes.append(hit._source._d_)
+
+    return episodes
+
+
 def return_episodes_by_season(s: Search) -> dict:
     print(f'begin return_episodes_by_season for s.to_dict()={s.to_dict()}')
 
@@ -416,6 +429,19 @@ def return_episodes_by_season(s: Search) -> dict:
     #     episodes = sorted(episodes, itemgetter='sequence_in_season')
 
     return seasons_to_episodes
+
+
+def return_all_episode_relations(s: Search) -> dict:
+    print(f'begin return_all_episode_relations for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = []
+
+    for hit in s.hits.hits:
+        results.append(hit._source._d_)
+
+    return results
 
 
 async def return_episode_count(s: Search) -> int:
@@ -642,17 +668,17 @@ async def return_more_like_this(s: Search) -> list:
 def return_vector_search(es_response: dict) -> list:
     print(f'begin return_vector_search')
 
-    matches = []
+    results = []
     
     rank = 1
     for hit in es_response['hits']['hits']:
         episode = hit['_source']
-        episode['agg_score'] = hit['_score'] * 100
+        episode['score'] = hit['_score'] * 100
         episode['rank'] = rank
         rank += 1
-        matches.append(episode)
+        results.append(episode)
 
-    return matches
+    return results
 
 
 def return_embedding(s: Search, vector_field: str) -> dict:

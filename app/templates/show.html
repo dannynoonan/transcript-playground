@@ -127,15 +127,16 @@
 
         <div class="row">
             <div class="col-4">
-                <h3>ML playground: KMeans</h3>
+                <h3>ML playground</h3>
                 <ul>
-                    <li><a href="/tsp_dash">Plotly</a> - interactive</li>
-                    <li>Matplotlib - select # clusters: <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=2">2</a> <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=3">3</a> 
+                    <li><a href="/tsp_dash/show-cluster-scatter">KMeans clustering</a></li>
+                    <li><a href="/tsp_dash/show-3d-network-graph">Episode relations</a></li>
+                    <!-- <li>Matplotlib - select # clusters: <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=2">2</a> <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=3">3</a> 
                         <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=4">4</a> <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=5">5</a> 
                         <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=6">6</a> <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=7">7</a> 
                         <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=8">8</a> <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=9">9</a> 
                         <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=10">10</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -161,7 +162,7 @@
                             <tr class="table-secondary">
                                 <th scope="row">
                                     {% if speaker['speaker'] == '_ALL_' %}
-                                        [COMBINED]
+                                        [ALL]
                                     {% else %}
                                         <a class="alert-link" href="/web/character/{{ tdata['show_key'] }}/{{ speaker['speaker'] }}">{{ speaker['speaker'] }}</a>
                                     {% endif %}
@@ -199,7 +200,13 @@
                         <tbody>
                             {% for location in tdata['location_counts'] %}
                             <tr class="table-secondary">
-                                <th scope="row">{{ location['location'] }}</th>
+                                <th scope="row">
+                                    {% if location['location'] == '_ALL_' %}
+                                        [ALL]
+                                    {% else %}
+                                        {{ location['location'] }}
+                                    {% endif %}
+                                </th>
                                 <td>{{ location['season_count'] }}</td>
                                 <td>{{ location['episode_count'] }}</td>
                                 <td>{{ location['scene_count'] }}</td>

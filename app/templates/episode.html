@@ -8,6 +8,7 @@
 	<div class="margin">
 		<h3>Season {{ tdata['episode']['season'] }}, Episode {{ tdata['episode']['sequence_in_season'] }}: 
 			<strong>"{{ tdata['episode']['title'] }}"</strong> <small>({{ tdata['episode']['air_date']|truncate(10,true,'') }})</small>
+			<small>[<a href="/tsp_dash/show-gantt-chart?show_key={{ tdata['show_key'] }}&episode_key={{ tdata['episode_key'] }}">Dialog gantt chart</a>]</small>
 		</h3>
 		<p>&lt;&lt;&nbsp; Previous episode &nbsp;|&nbsp; Next episode &nbsp;&gt;&gt;</p>
 		<p>&nbsp;</p>
@@ -230,7 +231,7 @@
 						</div>
 					</div>
 					<div class="col-5">
-						<h3>Characters</h3>
+						<h3>Characters (<a href="/tsp_dash/speaker-3d-network-graph?show_key={{ tdata['show_key'] }}&episode_key={{ tdata['episode_key'] }}">3d graph</a>)</h3>
 						<div class="overflow-scroll" style="max-height: 500px;">
 							<table class="table table-hover table-striped table-fit">
 								<thead>
@@ -348,7 +349,7 @@
 										<td>{{ sim_ep['focal_speakers']|join(', ') }}</td>
 										<td>{{ sim_ep['focal_locations']|join(', ') }}</td>
 										<td>{{ sim_ep['air_date']|truncate(10,true,'') }}</td>
-										<td>{{ '%0.2f'|format(sim_ep['agg_score']|float) }}</td>
+										<td>{{ '%0.2f'|format(sim_ep['score']|float) }}</td>
 									</tr>
 									{% endfor %}
 								</tbody>

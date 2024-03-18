@@ -75,7 +75,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 	tdata['show_key'] = show_key.value
 	tdata['episode_key'] = episode_key
 
-	episode = await esr.fetch_episode(show_key, episode_key)
+	episode = esr.fetch_episode(show_key, episode_key)
 	tdata['episode'] = episode['es_episode']
 	
 	locations_by_scene = await esr.agg_scenes_by_location(show_key, episode_key=episode_key)
@@ -91,7 +91,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 	tdata['keywords'] = keywords['keywords']
 	
 	mlt_tfidf = await esr.more_like_this(show_key, episode_key)
-	tdata['mlt_tfidf'] = mlt_tfidf['similar_episodes']
+	tdata['mlt_tfidf'] = mlt_tfidf['matches']
 
 	mlt_embeddings = esr.mlt_vector_search(show_key, episode_key)
 	tdata['mlt_embeddings'] = mlt_embeddings['matches'][:30]
@@ -380,7 +380,7 @@ async def show_page(request: Request, show_key: ShowKey, background_tasks: Backg
 	
 	# clusters = esr.cluster_content(show_key, num_clusters)
 	# img_buf = dz.generate_graph_matplotlib(doc_clusters_df, show_key.value, num_clusters, matrix=embeddings_matrix)
-	img_buf = fb.generate_graph_matplotlib(doc_clusters_df, show_key.value, num_clusters)
+	img_buf = fb.build_cluster_scatter_matplotlib(doc_clusters_df, show_key.value, num_clusters)
 	background_tasks.add_task(img_buf.close)
 	headers = {'Content-Disposition': 'inline; filename="out.png"'}
 	return Response(img_buf.getvalue(), headers=headers, media_type='image/png')

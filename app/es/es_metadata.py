@@ -53,3 +53,6 @@ def concat_vector_fields() -> list:
 
 
 VECTOR_FIELDS = concat_vector_fields()
+
+
+RELATIONS_FIELDS = ['es_mlt_relations_text', 'es_mlt_relations_dict', 'openai_ada002_relations_text', 'openai_ada002_relations_dict']

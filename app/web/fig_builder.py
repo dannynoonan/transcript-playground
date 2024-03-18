@@ -1,12 +1,19 @@
+from collections import OrderedDict
+import igraph as ig
 import io
 import matplotlib
 import matplotlib.pyplot as plt
+import networkx as nx
 import numpy as np
 import pandas as pd
 import plotly.express as px
+import plotly.figure_factory as ff
 import plotly.graph_objects as go
+import random
 from sklearn.manifold import TSNE
 
+import app.es.es_read_router as esr
+from app.show_metadata import ShowKey
 import app.web.fig_metadata as fm
 
 
@@ -14,7 +21,7 @@ matplotlib.use('AGG')
 
 
 
-def generate_graph_matplotlib(df: pd.DataFrame, show_key: str, num_clusters: int, matrix = None):
+def build_cluster_scatter_matplotlib(df: pd.DataFrame, show_key: str, num_clusters: int, matrix = None):
     # shows how little I understand: sorting here completely alters the plot, but in a way that's deterministic (and consistent with the plotly version)
     df.sort_values(['doc_id'], inplace=True)
 
@@ -55,7 +62,7 @@ def generate_graph_matplotlib(df: pd.DataFrame, show_key: str, num_clusters: int
     return img_buf
 
 
-def generate_graph_plotly(episode_embeddings_clusters_df: pd.DataFrame, show_key: str, num_clusters: int) -> go.Figure:
+def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key: str, num_clusters: int) -> go.Figure:
     fig_width = fm.fig_dims.MD11
     fig_height = fm.fig_dims.hdef(fig_width)
     base_fig_title = f'{num_clusters} clusters for {show_key} visualized in 2D using t-SNE'
@@ -95,4 +102,245 @@ def generate_graph_plotly(episode_embeddings_clusters_df: pd.DataFrame, show_key
         ])
     )
 
+    return fig
+
+
+def build_3d_network_graph(show_key: str, data: dict):
+    print(f'in build_3d_network_graph show_key={show_key}')
+
+    # reference: https://plotly.com/python/v3/3d-network-graph/
+    
+    # data = esr.episode_relations_graph(ShowKey(show_key), model_vendor, model_version, max_edges=max_edges)
+
+    N=len(data['nodes'])
+
+    L=len(data['links'])
+    Edges=[(data['links'][k]['source'], data['links'][k]['target']) for k in range(L)]
+
+    G=ig.Graph(Edges, directed=False)
+
+    labels=[]
+    group=[]
+    for node in data['nodes']:
+        labels.append(node['name'])
+        group.append(node['group'])
+
+    layt=G.layout('kk', dim=3)
+
+    Xn=[layt[k][0] for k in range(N)]# x-coordinates of nodes
+    Yn=[layt[k][1] for k in range(N)]# y-coordinates
+    Zn=[layt[k][2] for k in range(N)]# z-coordinates
+    Xe=[]
+    Ye=[]
+    Ze=[]
+    for e in Edges:
+        Xe+=[layt[e[0]][0],layt[e[1]][0], None]# x-coordinates of edge ends
+        Ye+=[layt[e[0]][1],layt[e[1]][1], None]
+        Ze+=[layt[e[0]][2],layt[e[1]][2], None]
+
+    trace1=go.Scatter3d(
+        x=Xe,
+        y=Ye,
+        z=Ze,
+        mode='lines',
+        line=dict(
+            color='rgb(125,125,125)', 
+            width=1
+        ),
+        hoverinfo='none'
+    )
+
+    trace2=go.Scatter3d(
+        x=Xn,
+        y=Yn,
+        z=Zn,
+        mode='markers',
+        name='actors',
+        marker=dict(
+            symbol='circle',
+            size=6,
+            color=group,
+            colorscale='Viridis',
+            line=dict(
+                color='rgb(50,50,50)', 
+                width=0.5
+            )
+        ),
+        text=labels,
+        hoverinfo='text'
+    )
+
+    axis=dict(showbackground=False,
+        showline=False,
+        zeroline=False,
+        showgrid=False,
+        showticklabels=False,
+        title=''
+    )
+
+    fig_width = fm.fig_dims.MD10
+    fig_height = fm.fig_dims.hdef(fig_width)
+
+    layout = go.Layout(
+        title="placeholder title",
+        width=fig_width,
+        height=fig_height,
+        showlegend=False,
+        scene=dict(
+            xaxis=dict(axis),
+            yaxis=dict(axis),
+            zaxis=dict(axis),
+        ),
+        margin=dict(t=100),
+        hovermode='closest',
+        annotations=[
+            dict(
+                showarrow=False,
+                text="placeholder text",
+                xref='paper',
+                yref='paper',
+                x=0,
+                y=0.1,
+                xanchor='left',
+                yanchor='bottom',
+                font=dict(size=14)
+            )
+        ],    
+    )
+    data=[trace1, trace2]
+    fig=go.Figure(data=data, layout=layout)
+
+    return fig    
+
+
+def build_show_timeline(show_key: str, data: list):
+    print(f'in build_show_timeline show_key={show_key}')
+
+    '''
+    reference:
+    https://plotly.com/python/gantt/
+    https://stackoverflow.com/questions/73247210/how-to-plot-a-gantt-chart-using-timesteps-and-not-dates-using-plotly
+    https://community.plotly.com/t/gantt-chart-issue-legend-and-hover/8011
+    '''
+
+    df = pd.DataFrame(data)
+
+    span_keys = df.Task.unique()
+    keys_to_colors = {}
+    colors_to_keys = {}
+    for sk in span_keys:
+        r = random.randrange(255)
+        g = random.randrange(255)
+        b = random.randrange(255)
+        rgb = f'rgb({r},{g},{b})'
+        keys_to_colors[sk] = rgb
+        colors_to_keys[rgb] = sk
+
+    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True)
+    fig.update_layout(xaxis_type='linear', autosize=False)
+
+    # inject dialog into hover 'text' property
+    for gantt_row in fig['data']:
+        if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0:
+            # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
+            # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced, hence the colors_to_keys map.
+            rgb_val = gantt_row['legendgroup'].replace(' ', '')
+            gantt_row_key = colors_to_keys[rgb_val]
+            # the 'text' of a gantt row is stored in an unnamed 'data' element (associated to a gantt row via its 'legendgroup' rgb color) as a tuple, making it immutable.
+            # rather than updating it index-by-index, it must be copied, cast as a list, mutated iteratively, and updated in one swoop via gantt_row.update at the end.
+            gantt_row_text = list(gantt_row['text'])
+            for i in range(len(gantt_row['x'])):
+                word_i = gantt_row['x'][i]
+                start_row = df.loc[(df['Task'] == gantt_row_key) & (df['Start'] == word_i)]
+                if len(start_row) > 0 and 'Line' in start_row.iloc[0]:
+                    gantt_row_text[i] = start_row.iloc[0]['Line']
+                    continue
+                finish_row = df.loc[(df['Task'] == gantt_row_key) & (df['Finish'] == word_i)]
+                if len(finish_row) > 0 and 'Line' in finish_row.iloc[0]:
+                    gantt_row_text[i] = finish_row.iloc[0]['Line']
+
+            gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
+    
+    return fig
+
+
+def build_network_graph() -> go.Figure:
+    print(f'in build_network_graph')
+
+    # reference https://plotly.com/python/network-graphs/
+
+    G = nx.random_geometric_graph(200, 0.125)
+
+    edge_x = []
+    edge_y = []
+    for edge in G.edges():
+        x0, y0 = G.nodes[edge[0]]['pos']
+        x1, y1 = G.nodes[edge[1]]['pos']
+        edge_x.append(x0)
+        edge_x.append(x1)
+        edge_x.append(None)
+        edge_y.append(y0)
+        edge_y.append(y1)
+        edge_y.append(None)
+
+    edge_trace = go.Scatter(
+        x=edge_x, y=edge_y,
+        line=dict(width=0.5, color='#888'),
+        hoverinfo='none',
+        mode='lines')
+
+    node_x = []
+    node_y = []
+    for node in G.nodes():
+        x, y = G.nodes[node]['pos']
+        node_x.append(x)
+        node_y.append(y)
+
+    node_trace = go.Scatter(
+        x=node_x, y=node_y,
+        mode='markers',
+        hoverinfo='text',
+        marker=dict(
+            showscale=True,
+            # colorscale options
+            #'Greys' | 'YlGnBu' | 'Greens' | 'YlOrRd' | 'Bluered' | 'RdBu' |
+            #'Reds' | 'Blues' | 'Picnic' | 'Rainbow' | 'Portland' | 'Jet' |
+            #'Hot' | 'Blackbody' | 'Earth' | 'Electric' | 'Viridis' |
+            colorscale='YlGnBu',
+            reversescale=True,
+            color=[],
+            size=10,
+            colorbar=dict(
+                thickness=15,
+                title='Node Connections',
+                xanchor='left',
+                titleside='right'
+            ),
+            line_width=2))
+    
+    node_adjacencies = []
+    node_text = []
+    for node, adjacencies in enumerate(G.adjacency()):
+        node_adjacencies.append(len(adjacencies[1]))
+        node_text.append('# of connections: '+str(len(adjacencies[1])))
+
+    node_trace.marker.color = node_adjacencies
+    node_trace.text = node_text
+
+    fig = go.Figure(data=[edge_trace, node_trace],
+        layout=go.Layout(
+            title='<br>Network graph made with Python',
+            titlefont_size=16,
+            showlegend=False,
+            hovermode='closest',
+            margin=dict(b=20,l=5,r=5,t=40),
+            annotations=[ dict(
+                text="annotation text",
+                showarrow=False,
+                xref="paper", yref="paper",
+                x=0.005, y=-0.002 ) ],
+            xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+            yaxis=dict(showgrid=False, zeroline=False, showticklabels=False)
+        )
+    )
     return fig

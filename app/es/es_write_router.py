@@ -2,6 +2,7 @@ from fastapi import APIRouter
 
 import app.database.dao as dao
 import app.es.es_ingest_transformer as esit
+from app.es.es_metadata import ACTIVE_VENDOR_VERSIONS
 from app.es.es_model import EsEpisodeTranscript
 import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
@@ -123,6 +124,59 @@ async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
     return {"episodes_to_focal_locations": episodes_to_focal_locations}
 
 
+@esw_app.get("/esw/populate_relations/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+async def populate_relations(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str, limit: int = 30):
+    '''
+    Query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
+    '''
+    if (model_vendor, model_version) not in ACTIVE_VENDOR_VERSIONS and (model_vendor, model_version) != ('es','mlt'):
+        return {"error": f'invalid model_vendor:model_version combo {model_vendor}:{model_version}'}
+ 
+    if (model_vendor, model_version) == ('es','mlt'):
+        similar_episodes = await esr.more_like_this(ShowKey(show_key), episode_key)
+    else:
+        similar_episodes = esr.mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
+    # only keep the episode keys and corresponding scores 
+    # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
+    # sim_eps = [(sim_ep['episode_key'], sim_ep['score']) for sim_ep in similar_episodes['matches']]
+    # sim_eps = {sim_ep['episode_key']:sim_ep['score'] for sim_ep in similar_episodes['matches']}
+
+    episode_relations = {}
+    doc_id = f'{show_key}_{episode_key}'
+    episode_relations[doc_id] = similar_episodes
+    
+    episode_relations = await esqb.populate_relations(show_key.value, model_vendor, model_version, episode_relations, limit=limit)
+
+    return {"episode_relations": episode_relations}
+
+
+@esw_app.get("/esw/populate_all_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+async def populate_relations(show_key: ShowKey, model_vendor: str, model_version: str, limit: int = 30, episode_key: str = None):
+    '''
+    For each episode, query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
+    '''
+    if (model_vendor, model_version) not in ACTIVE_VENDOR_VERSIONS and (model_vendor, model_version) != ('es','mlt'):
+        return {"error": f'invalid model_vendor:model_version combo {model_vendor}:{model_version}'}
+    
+    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
+    episode_doc_ids = doc_ids['doc_ids']
+    
+    episodes_to_relations = {}
+    for doc_id in episode_doc_ids:
+        episode_key = doc_id.split('_')[-1]
+        if (model_vendor, model_version) == ('es','mlt'):
+            similar_episodes = await esr.more_like_this(ShowKey(show_key), episode_key)
+        else:
+            similar_episodes = esr.mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
+        # only keep the episode keys and corresponding scores 
+        # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
+        episodes_to_relations[doc_id] = similar_episodes
+    
+    episodes_to_relations = await esqb.populate_relations(show_key.value, model_vendor, model_version, episodes_to_relations, limit=limit)
+
+    return {"episodes_to_relations": episodes_to_relations}
+
+
 @esw_app.get("/esw/build_embeddings_model/{show_key}", tags=['ES Writer'])
 def build_embeddings_model(show_key: ShowKey):
     '''
@@ -151,7 +205,7 @@ def populate_all_embeddings(show_key: ShowKey, model_vendor: str, model_version:
     '''
     Bulk run of `/esw/populate_embeddings` for all episodes of a given show
     '''
-    doc_ids = esr.search_doc_ids(ShowKey(show_key))
+    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']
     processed_episode_keys = []
     failed_episode_keys = []

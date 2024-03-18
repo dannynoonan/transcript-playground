@@ -6,35 +6,46 @@ import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 import app.nlp.query_preprocessor as qp
-from app.show_metadata import ShowKey
+from app.show_metadata import ShowKey, show_metadata
 
 
 esr_app = APIRouter()
 
 
 
-###################### ES FETCH ###########################
+###################### SIMPLE FETCH ###########################
 
 @esr_app.get("/esr/episode/{show_key}/{episode_key}", tags=['ES Reader'])
-async def fetch_episode(show_key: ShowKey, episode_key: str, all_fields: bool = False):
+def fetch_episode(show_key: ShowKey, episode_key: str, all_fields: bool = False):
     '''
     Fetch individual episode 
     '''
-    s = await esqb.fetch_episode_by_key(show_key.value, episode_key, all_fields=all_fields)
+    s = esqb.fetch_episode_by_key(show_key.value, episode_key, all_fields=all_fields)
     es_query = s.to_dict()
-    match = await esrt.return_episode_by_key(s)
+    match = esrt.return_episode_by_key(s)
     return {"es_episode": match, 'es_query': es_query}
 
 
-@esr_app.get("/esr/search_doc_ids/{show_key}", tags=['ES Reader'])
-def search_doc_ids(show_key: ShowKey, season: str = None):
+@esr_app.get("/esr/fetch_doc_ids/{show_key}", tags=['ES Reader'])
+def fetch_doc_ids(show_key: ShowKey, season: str = None):
     '''
     Get all es source _ids for show 
     '''
-    s = esqb.search_doc_ids(show_key.value, season=season)
+    s = esqb.fetch_doc_ids(show_key.value, season=season)
     es_query = s.to_dict()
     matches = esrt.return_doc_ids(s)
     return {"doc_count": len(matches), "doc_ids": matches, "es_query": es_query}
+
+
+@esr_app.get("/esr/fetch_all_simple_episodes/{show_key}", tags=['ES Reader'])
+def fetch_all_simple_episodes(show_key: ShowKey):
+    '''
+    Fetch all simple (sceneless) episodes 
+    '''
+    s = esqb.fetch_all_simple_episodes(show_key.value)
+    es_query = s.to_dict()
+    episodes = esrt.return_simple_episodes(s)
+    return {"episodes": episodes, "es_query": es_query}
 
 
 @esr_app.get("/esr/list_episodes_by_season/{show_key}", tags=['ES Reader'])
@@ -42,14 +53,25 @@ def list_episodes_by_season(show_key: ShowKey):
     '''
     Fetch simple (sceneless) episodes sequenced and grouped by season
     '''
-    s = esqb.list_episodes_by_season(show_key.value)
+    s = esqb.fetch_all_simple_episodes(show_key.value)
     es_query = s.to_dict()
     episodes_by_season = esrt.return_episodes_by_season(s)
     return {"episodes_by_season": episodes_by_season, "es_query": es_query}
 
 
+@esr_app.get("/esr/fetch_all_episode_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Reader'])
+def fetch_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str):
+    '''
+    Fetch all (sceneless) episodes and their relations data for a given model vendor/version
+    '''
+    s = esqb.fetch_all_episode_relations(show_key.value, model_vendor, model_version)
+    es_query = s.to_dict()
+    episode_relations = esrt.return_all_episode_relations(s)
+    return {"episode_relations": episode_relations, "es_query": es_query}
 
-###################### ES SEARCH ###########################
+
+
+###################### SEARCH ###########################
 
 @esr_app.get("/esr/search_episodes_by_title/{show_key}", tags=['ES Reader'])
 async def search_episodes_by_title(show_key: ShowKey, title: str = None):
@@ -110,6 +132,14 @@ async def search(show_key: ShowKey, season: str = None, episode_key: str = None,
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = await esrt.return_episodes(s)
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
+
+
+@esr_app.get("/esr/more_like_this/{show_key}/{episode_key}", tags=['ES Reader'])
+async def more_like_this(show_key: ShowKey, episode_key: str):
+    s = await esqb.more_like_this(show_key.value, episode_key)
+    es_query = s.to_dict()
+    matches = await esrt.return_more_like_this(s)
+    return {"similar_episode_count": len(matches), "matches": matches, "es_query": es_query}
 
 
 # TODO support POST for long requests?
@@ -179,11 +209,7 @@ def mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor: str = N
     es_response = esqb.vector_search(show_key.value, vector_field, episode_embedding)
     matches = esrt.return_vector_search(es_response)
     matches = matches[1:] # remove episode itself from results
-    return {
-        "match_count": len(matches), 
-        "vector_field": vector_field, 
-        "matches": matches
-    }
+    return {"match_count": len(matches), "vector_field": vector_field, "matches": matches}
 
 
 @esr_app.get("/esr/test_vector_search/{show_key}", tags=['ES Reader'])
@@ -211,7 +237,7 @@ def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, mod
 
 
 
-###################### ES AGGREGATIONS ###########################
+###################### AGGREGATIONS ###########################
 
 @esr_app.get("/esr/agg_seasons/{show_key}", tags=['ES Reader'])
 async def agg_seasons(show_key: ShowKey, location: str = None):
@@ -398,7 +424,114 @@ async def composite_location_aggs(show_key: ShowKey, season: str = None, episode
 
 
 
-###################### OTHER ES READS ###########################
+###################### RELATIONS ###########################
+
+@esr_app.get("/esr/episode_relations_graph/{show_key}/{model_vendor}/{model_version}", tags=['ES Reader'])
+def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version: str, max_edges: int = None, season: str = None):
+    if not max_edges:
+        max_edges = 5
+    # nodes 
+    episodes_and_relations = fetch_all_episode_relations(show_key, model_vendor, model_version)
+    nodes = []
+    links = []
+    episode_keys_to_indexes = {}
+    relations_field = f'{model_vendor}_{model_version}_relations_text'
+    i = 0
+    for episode in episodes_and_relations['episode_relations']:
+        node = {}
+        node['name'] = episode['title']
+        node['episode_key'] = episode['episode_key']
+        node['group'] = episode['season']
+        nodes.append(node)
+        episode_keys_to_indexes[episode['episode_key']] = i
+        i += 1
+    
+    # second loop is needed since we don't know the index positions of every episode during the first loop
+    for episode in episodes_and_relations['episode_relations']:
+        if relations_field not in episode:
+            continue
+        relations_count = min(len(episode[relations_field]), max_edges)
+        for i in range(relations_count):
+            link = {}
+            target_episode_key =  episode[relations_field][i].split('|')[0]
+            link['source'] = episode_keys_to_indexes[episode['episode_key']]
+            link['target'] = episode_keys_to_indexes[target_episode_key]
+            link['value'] = max_edges - i
+            links.append(link)
+    
+    return {"nodes": nodes, "links": links}
+
+
+@esr_app.get("/esr/speaker_relations_graph/{show_key}/{episode_key}", tags=['ES Reader'])
+def speaker_relations_graph(show_key: ShowKey, episode_key: str):
+    nodes = []
+    links = []
+    speakers_to_node_i = {}
+    source_targets_to_link_i = {}
+    episode = fetch_episode(show_key, episode_key)
+    es_episode = episode['es_episode']
+    for scene in es_episode['scenes']:
+        speakers_in_scene = set()
+        speaker_node_ids_in_scene = set()
+        for scene_event in scene['scene_events']:
+            if 'spoken_by' in scene_event:
+                speakers_in_scene.add(scene_event['spoken_by'])
+        for speaker in speakers_in_scene:
+            if speaker not in speakers_to_node_i:
+                if speaker in show_metadata[show_key.value]['regular_cast']:
+                    group = 1
+                else:
+                    group = 2
+                nodes.append({'name': speaker, 'group': group})
+                speakers_to_node_i[speaker] = len(nodes)-1
+            speaker_node_ids_in_scene.add(speakers_to_node_i[speaker])
+        for source_speaker_node_i in speaker_node_ids_in_scene:
+            for target_speaker_node_i in speaker_node_ids_in_scene:
+                if source_speaker_node_i == target_speaker_node_i:
+                    continue
+                source_target = f'{source_speaker_node_i}_{target_speaker_node_i}'
+                if source_target not in source_targets_to_link_i:
+                    links.append({'source': source_speaker_node_i, 'target': target_speaker_node_i, 'value': 1})
+                    source_targets_to_link_i[source_target] = len(links)-1
+                else:
+                    link_i = source_targets_to_link_i[source_target]
+                    links[link_i]['value'] += 1
+    
+    return {"nodes": nodes, "links": links}
+
+
+@esr_app.get("/esr/scene_timeline/{show_key}/{episode_key}", tags=['ES Reader'])
+def scene_timeline(show_key: ShowKey, episode_key: str):
+    dialog_timeline = []
+    location_timeline = []
+    word_i = 0
+    scene_start_i = 0
+    # fetch episode data
+    episode = fetch_episode(show_key, episode_key)
+    es_episode = episode['es_episode']
+    if 'scenes' not in es_episode:
+        return {"dialog_timeline": [], "location_timeline": []}
+    # for each scene containing dialog:
+    #   - for each dialog scene_event, add a dialog_span specifying speaker and start/end word index of dialog
+    #   - add a location_span specifying location and start/end word index of scene
+    for s in es_episode['scenes']:
+        if 'scene_events' not in s:
+            continue
+        for se in s['scene_events']:
+            if 'spoken_by' and 'dialog' in se:
+                line_len = len(se['dialog'].split())
+                dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_len-1), Line=se['dialog'])
+                dialog_timeline.append(dialog_span)
+                word_i += line_len
+        location_span = dict(Task=s['location'], Start=scene_start_i, Finish=(word_i-1))
+        location_timeline.append(location_span)
+        scene_start_i = word_i
+
+    return {"dialog_timeline": dialog_timeline, "location_timeline": location_timeline}
+
+
+
+###################### OTHER ###########################
 
 @esr_app.get("/esr/keywords_by_episode/{show_key}/{episode_key}", tags=['ES Reader'])
 async def keywords_by_episode(show_key: ShowKey, episode_key: str, exclude_speakers: bool = False):
@@ -420,14 +553,6 @@ async def keywords_by_corpus(show_key: ShowKey, season: str = None, exclude_spea
         all_speakers = res['episodes_by_speaker'].keys()
     matches = await esrt.return_keywords_by_corpus(response, exclude_terms=all_speakers)
     return {"keyword_count": len(matches), "keywords": matches}
-
-
-@esr_app.get("/esr/more_like_this/{show_key}/{episode_key}", tags=['ES Reader'])
-async def more_like_this(show_key: ShowKey, episode_key: str):
-    s = await esqb.more_like_this(show_key.value, episode_key)
-    es_query = s.to_dict()
-    matches = await esrt.return_more_like_this(s)
-    return {"similar_episode_count": len(matches), "similar_episodes": matches, "es_query": es_query}
 
 
 # @esr_app.get("/esr/cluster_content/{show_key}/{num_clusters}", tags=['ES Reader'])

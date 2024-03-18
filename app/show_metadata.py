@@ -47,6 +47,7 @@ show_metadata = {
         # 'transcript_types': {
         #     'Default': 'Default'
         # }
+        'regular_cast': ['PICARD', 'RIKER', 'DATA', 'LAFORGE', 'CRUSHER', 'WORF', 'TROI', 'TASHA', 'WESLEY', 'GUINAN']
     }
 }
 
