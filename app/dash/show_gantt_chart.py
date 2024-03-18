@@ -41,7 +41,11 @@ def generate_content(episode_dropdown_options: list, episode_key: str = None) ->
                 ]),
                 html.Br(),
                 dbc.Row(justify="evenly", children=[
-                    dcc.Graph(id="show-gantt-chart"),
+                    dcc.Graph(id="show-dialog-timeline"),
+                ]),
+                html.Br(),
+                dbc.Row(justify="evenly", children=[
+                    dcc.Graph(id="show-location-timeline"),
                 ]),
                 html.Br(),
             ]),

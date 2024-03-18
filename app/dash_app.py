@@ -167,7 +167,8 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str):
 
 ############ speaker-3d-network-graph callbacks
 @dapp.callback(
-    Output('show-gantt-chart', 'figure'),
+    Output('show-dialog-timeline', 'figure'),
+    Output('show-location-timeline', 'figure'),
     Output('show-key-display5', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'))    
@@ -175,10 +176,11 @@ def render_show_gantt_chart(show_key: str, episode_key: str):
     print(f'in render_show_gantt_chart, show_key={show_key} episode_key={episode_key}')
 
     # generate data and build generate 3d network graph
-    response = esr.speaker_scene_timeline(ShowKey(show_key), episode_key)
-    fig_timeline = fb.build_show_speaker_timeline(show_key, response['tasks'])
+    response = esr.scene_timeline(ShowKey(show_key), episode_key)
+    show_dialog_timeline = fb.build_show_timeline(show_key, response['dialog_timeline'])
+    show_location_timeline = fb.build_show_timeline(show_key, response['location_timeline'])
 
-    return fig_timeline, show_key
+    return show_dialog_timeline, show_location_timeline, show_key
 
 
 if __name__ == "__main__":

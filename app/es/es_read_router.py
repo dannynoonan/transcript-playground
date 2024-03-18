@@ -500,26 +500,34 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
     return {"nodes": nodes, "links": links}
 
 
-@esr_app.get("/esr/speaker_scene_timeline/{show_key}/{episode_key}", tags=['ES Reader'])
-def speaker_scene_timeline(show_key: ShowKey, episode_key: str):
-    tasks = []
+@esr_app.get("/esr/scene_timeline/{show_key}/{episode_key}", tags=['ES Reader'])
+def scene_timeline(show_key: ShowKey, episode_key: str):
+    dialog_timeline = []
+    location_timeline = []
     word_i = 0
+    scene_start_i = 0
+    # fetch episode data
     episode = fetch_episode(show_key, episode_key)
     es_episode = episode['es_episode']
     if 'scenes' not in es_episode:
-        return {"tasks": tasks}
+        return {"dialog_timeline": [], "location_timeline": []}
+    # for each scene containing dialog:
+    #   - for each dialog scene_event, add a dialog_span specifying speaker and start/end word index of dialog
+    #   - add a location_span specifying location and start/end word index of scene
     for s in es_episode['scenes']:
         if 'scene_events' not in s:
             continue
         for se in s['scene_events']:
             if 'spoken_by' and 'dialog' in se:
                 line_len = len(se['dialog'].split())
-                # task = dict(Task=f'Job {len(tasks)+1}', Start=word_i, Finish=(word_i+line_len-1), Resource=se['spoken_by'])
-                task = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_len-1))
-                tasks.append(task)
+                dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_len-1), Line=se['dialog'])
+                dialog_timeline.append(dialog_span)
                 word_i += line_len
+        location_span = dict(Task=s['location'], Start=scene_start_i, Finish=(word_i-1))
+        location_timeline.append(location_span)
+        scene_start_i = word_i
 
-    return {"tasks": tasks}
+    return {"dialog_timeline": dialog_timeline, "location_timeline": location_timeline}
 
 
 

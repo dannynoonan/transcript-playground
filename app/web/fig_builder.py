@@ -1,3 +1,4 @@
+from collections import OrderedDict
 import igraph as ig
 import io
 import matplotlib
@@ -212,25 +213,53 @@ def build_3d_network_graph(show_key: str, data: dict):
     return fig    
 
 
-def build_show_speaker_timeline(show_key: str, data: list):
-    print(f'in build_show_speaker_timeline show_key={show_key}')
+def build_show_timeline(show_key: str, data: list):
+    print(f'in build_show_timeline show_key={show_key}')
 
-    # reference: https://plotly.com/python/gantt/
-    # https://stackoverflow.com/questions/73247210/how-to-plot-a-gantt-chart-using-timesteps-and-not-dates-using-plotly
+    '''
+    reference:
+    https://plotly.com/python/gantt/
+    https://stackoverflow.com/questions/73247210/how-to-plot-a-gantt-chart-using-timesteps-and-not-dates-using-plotly
+    https://community.plotly.com/t/gantt-chart-issue-legend-and-hover/8011
+    '''
 
     df = pd.DataFrame(data)
 
-    episode_speakers = df.Task.unique()
-    colors = {}
-    for s in episode_speakers:
+    span_keys = df.Task.unique()
+    keys_to_colors = {}
+    colors_to_keys = {}
+    for sk in span_keys:
         r = random.randrange(255)
         g = random.randrange(255)
         b = random.randrange(255)
-        colors[s] = f'rgb({r},{g},{b})'
+        rgb = f'rgb({r},{g},{b})'
+        keys_to_colors[sk] = rgb
+        colors_to_keys[rgb] = sk
 
-    # fig = px.timeline(df, x_start="Start", x_end="Finish", y="Resource", color="Resource")
-    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=colors, show_colorbar=True, group_tasks=True)
+    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True)
     fig.update_layout(xaxis_type='linear', autosize=False)
+
+    # inject dialog into hover 'text' property
+    for gantt_row in fig['data']:
+        if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0:
+            # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
+            # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced, hence the colors_to_keys map.
+            rgb_val = gantt_row['legendgroup'].replace(' ', '')
+            gantt_row_key = colors_to_keys[rgb_val]
+            # the 'text' of a gantt row is stored in an unnamed 'data' element (associated to a gantt row via its 'legendgroup' rgb color) as a tuple, making it immutable.
+            # rather than updating it index-by-index, it must be copied, cast as a list, mutated iteratively, and updated in one swoop via gantt_row.update at the end.
+            gantt_row_text = list(gantt_row['text'])
+            for i in range(len(gantt_row['x'])):
+                word_i = gantt_row['x'][i]
+                start_row = df.loc[(df['Task'] == gantt_row_key) & (df['Start'] == word_i)]
+                if len(start_row) > 0 and 'Line' in start_row.iloc[0]:
+                    gantt_row_text[i] = start_row.iloc[0]['Line']
+                    continue
+                finish_row = df.loc[(df['Task'] == gantt_row_key) & (df['Finish'] == word_i)]
+                if len(finish_row) > 0 and 'Line' in finish_row.iloc[0]:
+                    gantt_row_text[i] = finish_row.iloc[0]['Line']
+
+            gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
     
     return fig
 
