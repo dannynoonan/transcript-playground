@@ -6,7 +6,7 @@ from elasticsearch_dsl.query import MoreLikeThis
 
 from app.config import settings
 from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
-from app.es.es_model import EsEpisodeTranscript
+from app.es.es_model import EsEpisodeTranscript, EsCharacter
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
 
@@ -32,10 +32,15 @@ es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port'
 # )
 
 
-async def init_transcripts_index():
+def init_transcripts_index():
     # EsEpisodeTranscript.init(using=es_client)
     EsEpisodeTranscript.init()
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_character_index():
+    EsCharacter.init()
+    es_conn.indices.put_settings(index="characters", body={"index": {"max_inner_result_window": 1000}})
 
 
 def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
@@ -604,7 +609,7 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
     return s
 
 
-async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode_key: str = None, dialog: str = None) -> Search:
+def agg_scene_events_by_speaker(show_key: str, season: str = None, episode_key: str = None, dialog: str = None) -> Search:
     print(f'begin agg_scene_events_by_speaker for show_key={show_key} season={season} episode_key={episode_key} dialog={dialog}')
 
     s = Search(index='transcripts')

@@ -6,7 +6,7 @@ import pandas as pd
 import urllib.parse
 
 import app.dash.components as cmp
-from app.dash import show_cluster_scatter, show_network_graph, show_3d_network_graph, speaker_3d_network_graph, show_gantt_chart
+from app.dash import episode_gantt_chart, show_cluster_scatter, show_gantt_chart, show_network_graph, show_3d_network_graph, speaker_3d_network_graph
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
@@ -60,7 +60,7 @@ def display_page(pathname, search):
                 episode_key = episode_key[0]
         return speaker_3d_network_graph.generate_content(episode_dropdown_options, episode_key=episode_key)
     
-    elif pathname == "/tsp_dash/show-gantt-chart":
+    elif pathname == "/tsp_dash/episode-gantt-chart":
         # TODO this duplicates speaker-3d-network-graph
         # generate form-backing data 
         all_simple_episodes = esr.fetch_all_simple_episodes(ShowKey('TNG'))
@@ -73,7 +73,10 @@ def display_page(pathname, search):
             episode_key = parsed_dict['episode_key']
             if isinstance(episode_key, list):
                 episode_key = episode_key[0]
-        return show_gantt_chart.generate_content(episode_dropdown_options, episode_key=episode_key)
+        return episode_gantt_chart.generate_content(episode_dropdown_options, episode_key=episode_key)
+    
+    elif pathname == "/tsp_dash/show-gantt-chart":
+        return show_gantt_chart.content
 
 
 ############ show-cluster-scatter callbacks
@@ -165,22 +168,38 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str):
     return fig_scatter, show_key
 
 
-############ speaker-3d-network-graph callbacks
+############ episode-gantt-chart callbacks
 @dapp.callback(
-    Output('show-dialog-timeline', 'figure'),
-    Output('show-location-timeline', 'figure'),
+    Output('episode-dialog-timeline', 'figure'),
+    Output('episode-location-timeline', 'figure'),
     Output('show-key-display5', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'))    
-def render_show_gantt_chart(show_key: str, episode_key: str):
-    print(f'in render_show_gantt_chart, show_key={show_key} episode_key={episode_key}')
+def render_episode_gantt_chart(show_key: str, episode_key: str):
+    print(f'in render_episode_gantt_chart, show_key={show_key} episode_key={episode_key}')
 
     # generate data and build generate 3d network graph
-    response = esr.scene_timeline(ShowKey(show_key), episode_key)
-    show_dialog_timeline = fb.build_show_timeline(show_key, response['dialog_timeline'])
-    show_location_timeline = fb.build_show_timeline(show_key, response['location_timeline'])
+    response = esr.episode_gantt_sequence(ShowKey(show_key), episode_key)
+    episode_dialog_timeline = fb.build_episode_gantt(show_key, response['dialog_timeline'])
+    episode_location_timeline = fb.build_episode_gantt(show_key, response['location_timeline'])
 
-    return show_dialog_timeline, show_location_timeline, show_key
+    return episode_dialog_timeline, episode_location_timeline, show_key
+
+
+############ show-gantt-chart callbacks
+@dapp.callback(
+    Output('show-speaker-gantt', 'figure'),
+    # Output('show-location-gantt', 'figure'),
+    Output('show-key-display6', 'children'),
+    Input('show-key', 'value'))    
+def render_show_gantt_chart(show_key: str):
+    print(f'in render_show_gantt_chart, show_key={show_key}')
+
+    # generate data and build generate 3d network graph
+    response = esr.show_gantt_sequence(ShowKey(show_key))
+    show_speaker_gantt = fb.build_show_gantt(show_key, response['episodes_to_speakers_sequence'])
+
+    return show_speaker_gantt, show_key
 
 
 if __name__ == "__main__":

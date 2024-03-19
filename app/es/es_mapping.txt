@@ -225,5 +225,56 @@
         }
       }
     }
+  },
+  "characters": {
+    "mappings": {
+      "properties": {
+        "actor_names": {
+          "type": "keyword"
+        },
+        "alt_names": {
+          "type": "keyword"
+        },
+        "episode_count": {
+          "type": "integer"
+        },
+        "episode_embeddings": {
+          "type": "dense_vector",
+          "dims": 1536,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "episodes": {
+          "type": "object"
+        },
+        "indexed_ts": {
+          "type": "date"
+        },
+        "loaded_ts": {
+          "type": "date"
+        },
+        "most_frequent_companions": {
+          "type": "object"
+        },
+        "name": {
+          "type": "keyword"
+        },
+        "scene_count": {
+          "type": "integer"
+        },
+        "scene_event_count": {
+          "type": "integer"
+        },
+        "season_count": {
+          "type": "integer"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "word_count": {
+          "type": "integer"
+        }
+      }
+    }
   }
 }

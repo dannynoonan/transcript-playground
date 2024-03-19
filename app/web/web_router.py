@@ -47,7 +47,7 @@ async def show_page(request: Request, show_key: ShowKey):
 		season_locations = await esr.agg_scenes_by_location(show_key, season=season)
 		stats['location_count'] = season_locations['location_count']
 		stats['location_counts'] = utils.truncate_dict(season_locations['scenes_by_location'], season_episode_count, 1)
-		season_speakers = await esr.agg_scene_events_by_speaker(show_key, season=season)
+		season_speakers = esr.agg_scene_events_by_speaker(show_key, season=season)
 		stats['line_count'] = season_speakers['scene_events_by_speaker']['_ALL_']
 		stats['speaker_line_counts'] = utils.truncate_dict(season_speakers['scene_events_by_speaker'], season_episode_count, 1)
 		season_speaker_scene_counts = await esr.agg_scenes_by_speaker(show_key, season=season)

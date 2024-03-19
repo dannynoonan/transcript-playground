@@ -8,7 +8,7 @@
 	<div class="margin">
 		<h3>Season {{ tdata['episode']['season'] }}, Episode {{ tdata['episode']['sequence_in_season'] }}: 
 			<strong>"{{ tdata['episode']['title'] }}"</strong> <small>({{ tdata['episode']['air_date']|truncate(10,true,'') }})</small>
-			<small>[<a href="/tsp_dash/show-gantt-chart?show_key={{ tdata['show_key'] }}&episode_key={{ tdata['episode_key'] }}">Dialog gantt chart</a>]</small>
+			<small>[<a href="/tsp_dash/episode-gantt-chart?show_key={{ tdata['show_key'] }}&episode_key={{ tdata['episode_key'] }}">Dialog & location gantt charts</a>]</small>
 		</h3>
 		<p>&lt;&lt;&nbsp; Previous episode &nbsp;|&nbsp; Next episode &nbsp;&gt;&gt;</p>
 		<p>&nbsp;</p>

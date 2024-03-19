@@ -554,7 +554,7 @@ async def return_scenes_by_speaker(s: Search, agg_scene_count: str, location: st
     return results
 
 
-async def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
+def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
     print(f'begin return_scene_events_by_speaker for dialog={dialog} s.to_dict()={s.to_dict()}')
 
     s = s.execute()

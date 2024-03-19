@@ -320,10 +320,10 @@ async def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_
 
 
 @esr_app.get("/esr/agg_scene_events_by_speaker/{show_key}", tags=['ES Reader'])
-async def agg_scene_events_by_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, dialog: str = None):
-    s = await esqb.agg_scene_events_by_speaker(show_key.value, season=season, episode_key=episode_key, dialog=dialog)
+def agg_scene_events_by_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, dialog: str = None):
+    s = esqb.agg_scene_events_by_speaker(show_key.value, season=season, episode_key=episode_key, dialog=dialog)
     es_query = s.to_dict()
-    matches = await esrt.return_scene_events_by_speaker(s, dialog=dialog)
+    matches = esrt.return_scene_events_by_speaker(s, dialog=dialog)
     return {"speaker_count": len(matches), "scene_events_by_speaker": matches, "es_query": es_query}
 
 
@@ -342,7 +342,7 @@ async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_
     if not episode_key:
         speaker_episode_counts = await agg_episodes_by_speaker(show_key, season=season)
     speaker_scene_counts = await agg_scenes_by_speaker(show_key, season=season, episode_key=episode_key)
-    speaker_line_counts = await agg_scene_events_by_speaker(show_key, season=season, episode_key=episode_key)
+    speaker_line_counts = agg_scene_events_by_speaker(show_key, season=season, episode_key=episode_key)
     speaker_word_counts = await agg_dialog_word_counts(show_key, season=season, episode_key=episode_key)
 
     # TODO refactor this to generically handle dicts threading together
@@ -500,8 +500,36 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
     return {"nodes": nodes, "links": links}
 
 
-@esr_app.get("/esr/scene_timeline/{show_key}/{episode_key}", tags=['ES Reader'])
-def scene_timeline(show_key: ShowKey, episode_key: str):
+
+###################### OTHER ###########################
+
+@esr_app.get("/esr/keywords_by_episode/{show_key}/{episode_key}", tags=['ES Reader'])
+async def keywords_by_episode(show_key: ShowKey, episode_key: str, exclude_speakers: bool = False):
+    response = await esqb.keywords_by_episode(show_key.value, episode_key)
+    all_speakers = []
+    if exclude_speakers:
+        res = await agg_scenes_by_speaker(show_key, episode_key=episode_key) # TODO should this use agg_episodes_by_speaker now?
+        all_speakers = res['scenes_by_speaker'].keys()
+    matches = await esrt.return_keywords_by_episode(response, exclude_terms=all_speakers)
+    return {"keyword_count": len(matches), "keywords": matches}
+
+
+@esr_app.get("/esr/keywords_by_corpus/{show_key}", tags=['ES Reader'])
+async def keywords_by_corpus(show_key: ShowKey, season: str = None, exclude_speakers: bool = False):
+    response = await esqb.keywords_by_corpus(show_key.value, season=season)
+    all_speakers = []
+    if exclude_speakers:
+        res = await agg_episodes_by_speaker(show_key, season=season)
+        all_speakers = res['episodes_by_speaker'].keys()
+    matches = await esrt.return_keywords_by_corpus(response, exclude_terms=all_speakers)
+    return {"keyword_count": len(matches), "keywords": matches}
+
+
+@esr_app.get("/esr/episode_gantt_sequence/{show_key}/{episode_key}", tags=['ES Reader'])
+def episode_gantt_sequence(show_key: ShowKey, episode_key: str):
+    '''
+    TODO
+    '''
     dialog_timeline = []
     location_timeline = []
     word_i = 0
@@ -530,29 +558,31 @@ def scene_timeline(show_key: ShowKey, episode_key: str):
     return {"dialog_timeline": dialog_timeline, "location_timeline": location_timeline}
 
 
+@esr_app.get("/esr/show_gantt_sequence/{show_key}/", tags=['ES Reader'])
+def show_gantt_sequence(show_key: ShowKey, season: str = None):
+    '''
+    TODO Generate composite of all scene_event aggs per speaker for each individual episode
+    '''
+    episodes_to_speaker_line_counts = {}
+    episodes_to_speakers_sequence = []
+    # get ordered list of all episodes
+    response = fetch_all_simple_episodes(show_key)
+    episodes = response['episodes']
+    # for each episode, fetch all speakers ordered by scene_event count (how many lines they have)
+    episode_i = 0
+    for episode in episodes:
+        episode_key = episode['episode_key']
+        episode_title = episode['title']
+        response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
+        speakers_to_line_counts = response['scene_events_by_speaker']
+        del speakers_to_line_counts['_ALL_']
+        for speaker, line_count in speakers_to_line_counts.items():
+            speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({line_count} lines)')
+            episodes_to_speakers_sequence.append(speaker_span)
+        episodes_to_speaker_line_counts[episode_key] = speakers_to_line_counts
+        episode_i += 1
 
-###################### OTHER ###########################
-
-@esr_app.get("/esr/keywords_by_episode/{show_key}/{episode_key}", tags=['ES Reader'])
-async def keywords_by_episode(show_key: ShowKey, episode_key: str, exclude_speakers: bool = False):
-    response = await esqb.keywords_by_episode(show_key.value, episode_key)
-    all_speakers = []
-    if exclude_speakers:
-        res = await agg_scenes_by_speaker(show_key, episode_key=episode_key) # TODO should this use agg_episodes_by_speaker now?
-        all_speakers = res['scenes_by_speaker'].keys()
-    matches = await esrt.return_keywords_by_episode(response, exclude_terms=all_speakers)
-    return {"keyword_count": len(matches), "keywords": matches}
-
-
-@esr_app.get("/esr/keywords_by_corpus/{show_key}", tags=['ES Reader'])
-async def keywords_by_corpus(show_key: ShowKey, season: str = None, exclude_speakers: bool = False):
-    response = await esqb.keywords_by_corpus(show_key.value, season=season)
-    all_speakers = []
-    if exclude_speakers:
-        res = await agg_episodes_by_speaker(show_key, season=season)
-        all_speakers = res['episodes_by_speaker'].keys()
-    matches = await esrt.return_keywords_by_corpus(response, exclude_terms=all_speakers)
-    return {"keyword_count": len(matches), "keywords": matches}
+    return {"episodes_to_speaker_line_counts": episodes_to_speaker_line_counts, "episodes_to_speakers_sequence": episodes_to_speakers_sequence}
 
 
 # @esr_app.get("/esr/cluster_content/{show_key}/{num_clusters}", tags=['ES Reader'])
