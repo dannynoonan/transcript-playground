@@ -367,7 +367,7 @@ async def agg_seasons(show_key: str, location: str = None) -> Search:
     return s
 
 
-async def agg_episodes(show_key: str, season: str = None, location: str = None) -> Search:
+def agg_episodes(show_key: str, season: str = None, location: str = None) -> Search:
     print(f'begin agg_episodes for show_key={show_key} season={season} location={location}')
 
     s = Search(index='transcripts')
@@ -488,7 +488,7 @@ async def agg_episodes_by_speaker(show_key: str, season: str = None, location: s
     return s
 
 
-async def agg_episodes_by_location(show_key: str, season: str = None) -> Search:
+def agg_episodes_by_location(show_key: str, season: str = None) -> Search:
     print(f'begin agg_episodes_by_speaker for show_key={show_key} season={season}')
 
     s = Search(index='transcripts')
@@ -528,7 +528,7 @@ async def agg_scenes(show_key: str, season: str = None, episode_key: str = None,
     return s
 
 
-async def agg_scenes_by_location(show_key: str, season: str = None, episode_key: str = None, speaker: str = None) -> Search:
+def agg_scenes_by_location(show_key: str, season: str = None, episode_key: str = None, speaker: str = None) -> Search:
     print(f'begin agg_scenes_by_location for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker}')
 
     s = Search(index='transcripts')

@@ -264,16 +264,21 @@ def build_episode_gantt(show_key: str, data: list):
     return fig
 
 
-def build_show_gantt(show_key: str, data: list):
-    print(f'in build_show_gantt show_key={show_key}')
+def build_show_gantt(show_key: str, data: list, type: str):
+    print(f'in build_show_gantt show_key={show_key} type={type}')
 
-    # TODO last minute hack to reduce size, should probably be configurable and/or limited upstream
-    trimmed_data = []
-    for d in data:
-        if d['Task'] in show_metadata[show_key]['regular_cast']:
-            trimmed_data.append(d)
+    # TODO where/how should this truncation happen?
+    if type == 'speakers':
+        title='Character continuity over duration of series'
+        trimmed_data = []
+        for d in data:
+            if d['Task'] in show_metadata[show_key]['regular_cast']:
+                trimmed_data.append(d)
+        data = trimmed_data
+    elif type == 'locations':
+        title='Scene location continuity over course of series'
 
-    df = pd.DataFrame(trimmed_data)
+    df = pd.DataFrame(data)
 
     span_keys = df.Task.unique()
     keys_to_colors = {}
@@ -286,7 +291,7 @@ def build_show_gantt(show_key: str, data: list):
         keys_to_colors[sk] = rgb
         colors_to_keys[rgb] = sk
 
-    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True, title='Character continuity over duration of series')
+    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True, title=title, height=1000) # TODO scale height to number of rows
     fig.update_layout(xaxis_type='linear', autosize=False)
 
     # inject dialog into hover 'text' property

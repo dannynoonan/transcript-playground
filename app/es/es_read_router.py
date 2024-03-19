@@ -145,6 +145,7 @@ async def more_like_this(show_key: ShowKey, episode_key: str):
 # TODO support POST for long requests?
 @esr_app.get("/esr/vector_search/{show_key}", tags=['ES Reader'])
 def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
+    print(f'**************** in vector_search show_key={show_key} qt={qt}')
     '''
     Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
     '''
@@ -266,10 +267,10 @@ async def agg_seasons_by_location(show_key: ShowKey):
 
 
 @esr_app.get("/esr/agg_episodes/{show_key}", tags=['ES Reader'])
-async def agg_episodes(show_key: ShowKey, season: str = None, location: str = None):
-    s = await esqb.agg_episodes(show_key.value, season=season, location=location)
+def agg_episodes(show_key: ShowKey, season: str = None, location: str = None):
+    s = esqb.agg_episodes(show_key.value, season=season, location=location)
     es_query = s.to_dict()
-    episode_count = await esrt.return_episode_count(s)
+    episode_count = esrt.return_episode_count(s)
     return {"episode_count": episode_count, "es_query": es_query}
 
 
@@ -278,18 +279,18 @@ async def agg_episodes_by_speaker(show_key: ShowKey, season: str = None, locatio
     s = await esqb.agg_episodes_by_speaker(show_key.value, season=season, location=location, other_speaker=other_speaker)
     es_query = s.to_dict()
     # separate call to get episode_count without double-counting per speaker
-    episode_count = await agg_episodes(show_key, season=season, location=location)
+    episode_count = agg_episodes(show_key, season=season, location=location)
     matches = await esrt.return_episodes_by_speaker(s, episode_count['episode_count'], location=location, other_speaker=other_speaker)
     return {"speaker_count": len(matches), "episodes_by_speaker": matches, "es_query": es_query}
 
 
 @esr_app.get("/esr/agg_episodes_by_location/{show_key}", tags=['ES Reader'])
-async def agg_episodes_by_location(show_key: ShowKey, season: str = None):
-    s = await esqb.agg_episodes_by_location(show_key.value, season=season)
+def agg_episodes_by_location(show_key: ShowKey, season: str = None):
+    s = esqb.agg_episodes_by_location(show_key.value, season=season)
     es_query = s.to_dict()
     # separate call to get episode_count without double-counting per speaker
-    episode_count = await agg_episodes(show_key, season=season)
-    matches = await esrt.return_episodes_by_location(s, episode_count['episode_count'])
+    episode_count = agg_episodes(show_key, season=season)
+    matches = esrt.return_episodes_by_location(s, episode_count['episode_count'])
     return {"location_count": len(matches), "episodes_by_location": matches, "es_query": es_query}
 
 
@@ -312,10 +313,10 @@ async def agg_scenes_by_speaker(show_key: ShowKey, season: str = None, episode_k
 
 
 @esr_app.get("/esr/agg_scenes_by_location/{show_key}", tags=['ES Reader'])
-async def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None):
-    s = await esqb.agg_scenes_by_location(show_key.value, season=season, episode_key=episode_key, speaker=speaker)
+def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None):
+    s = esqb.agg_scenes_by_location(show_key.value, season=season, episode_key=episode_key, speaker=speaker)
     es_query = s.to_dict()
-    matches = await esrt.return_scenes_by_location(s, speaker=speaker)
+    matches = esrt.return_scenes_by_location(s, speaker=speaker)
     return {"location_count": len(matches), "scenes_by_location": matches, "es_query": es_query}
 
 
@@ -390,8 +391,8 @@ async def composite_location_aggs(show_key: ShowKey, season: str = None, episode
     if not season and not episode_key:
         location_season_counts = await agg_seasons_by_location(show_key)
     if not episode_key:
-        location_episode_counts = await agg_episodes_by_location(show_key, season=season)
-    location_scene_counts = await agg_scenes_by_location(show_key, season=season, episode_key=episode_key)
+        location_episode_counts = agg_episodes_by_location(show_key, season=season)
+    location_scene_counts = agg_scenes_by_location(show_key, season=season, episode_key=episode_key)
 
     # TODO refactor this to generically handle dicts threading together
     locations = {}
@@ -564,25 +565,54 @@ def show_gantt_sequence(show_key: ShowKey, season: str = None):
     TODO Generate composite of all scene_event aggs per speaker for each individual episode
     '''
     episodes_to_speaker_line_counts = {}
-    episodes_to_speakers_sequence = []
+    episode_speakers_sequence = []
+    episodes_to_location_counts = {}
+    episode_locations_sequence = []
+
+    # limit the superset of locations to those occurring in at least 3 episodes
+    response = agg_episodes_by_location(show_key, season=season)
+    location_episode_counts = response['episodes_by_location']
+    del location_episode_counts['_ALL_']
+    recurring_locations = [location for location, episode_count in location_episode_counts.items() if episode_count > 2]
+    
     # get ordered list of all episodes
     response = fetch_all_simple_episodes(show_key)
     episodes = response['episodes']
-    # for each episode, fetch all speakers ordered by scene_event count (how many lines they have)
+
+    # for each episode:
+    # - fetch all speakers ordered by scene_event count (how many lines they have)
+    # - fetch all locations ordered by scene count
+    # - transform results of both into lists of span dicts for creating plotly gantt charts
     episode_i = 0
     for episode in episodes:
         episode_key = episode['episode_key']
         episode_title = episode['title']
+        # fetch speakers and line counts
         response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
-        speakers_to_line_counts = response['scene_events_by_speaker']
-        del speakers_to_line_counts['_ALL_']
-        for speaker, line_count in speakers_to_line_counts.items():
+        speaker_line_counts = response['scene_events_by_speaker']
+        del speaker_line_counts['_ALL_']
+        episodes_to_speaker_line_counts[episode_key] = speaker_line_counts
+        # transform speakers/line counts to plotly-gantt-friendly span dicts
+        for speaker, line_count in speaker_line_counts.items():
             speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({line_count} lines)')
-            episodes_to_speakers_sequence.append(speaker_span)
-        episodes_to_speaker_line_counts[episode_key] = speakers_to_line_counts
+            episode_speakers_sequence.append(speaker_span)
+        # fetch locations and scene counts
+        response = agg_scenes_by_location(show_key, episode_key=episode_key)
+        location_counts = response['scenes_by_location']
+        del location_counts['_ALL_']
+        episodes_to_location_counts[episode_key] = location_counts
+        # transform locations/counts to plotly-gantt-friendly span dicts
+        for location, count in location_counts.items():
+            if location in recurring_locations:
+                location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({count} scenes)')
+                episode_locations_sequence.append(location_span)
+
         episode_i += 1
 
-    return {"episodes_to_speaker_line_counts": episodes_to_speaker_line_counts, "episodes_to_speakers_sequence": episodes_to_speakers_sequence}
+    return {"episodes_to_speaker_line_counts": episodes_to_speaker_line_counts, 
+            "episode_speakers_sequence": episode_speakers_sequence,
+            "episodes_to_location_counts": episodes_to_location_counts,
+            "episode_locations_sequence": episode_locations_sequence}
 
 
 # @esr_app.get("/esr/cluster_content/{show_key}/{num_clusters}", tags=['ES Reader'])

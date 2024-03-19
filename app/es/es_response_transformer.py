@@ -444,7 +444,7 @@ def return_all_episode_relations(s: Search) -> dict:
     return results
 
 
-async def return_episode_count(s: Search) -> int:
+def return_episode_count(s: Search) -> int:
     print(f'begin return_episode_count for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -479,7 +479,7 @@ async def return_episodes_by_speaker(s: Search, agg_episode_count: str, location
     return results
 
 
-async def return_episodes_by_location(s: Search, agg_episode_count: str) -> list:
+def return_episodes_by_location(s: Search, agg_episode_count: str) -> list:
     print(f'begin return_episodes_by_speaker s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -507,7 +507,7 @@ async def return_scene_count(s: Search) -> int:
     return int(s.aggregations.scene_count.value)
 
 
-async def return_scenes_by_location(s: Search, speaker: str = None) -> list:
+def return_scenes_by_location(s: Search, speaker: str = None) -> list:
     print(f'begin return_scenes_by_location for speaker={speaker} s.to_dict()={s.to_dict()}')
 
     s = s.execute()

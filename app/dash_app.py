@@ -189,7 +189,7 @@ def render_episode_gantt_chart(show_key: str, episode_key: str):
 ############ show-gantt-chart callbacks
 @dapp.callback(
     Output('show-speaker-gantt', 'figure'),
-    # Output('show-location-gantt', 'figure'),
+    Output('show-location-gantt', 'figure'),
     Output('show-key-display6', 'children'),
     Input('show-key', 'value'))    
 def render_show_gantt_chart(show_key: str):
@@ -197,9 +197,10 @@ def render_show_gantt_chart(show_key: str):
 
     # generate data and build generate 3d network graph
     response = esr.show_gantt_sequence(ShowKey(show_key))
-    show_speaker_gantt = fb.build_show_gantt(show_key, response['episodes_to_speakers_sequence'])
+    show_speaker_gantt = fb.build_show_gantt(show_key, response['episode_speakers_sequence'], 'speakers')
+    show_location_gantt = fb.build_show_gantt(show_key, response['episode_locations_sequence'], 'locations')
 
-    return show_speaker_gantt, show_key
+    return show_speaker_gantt, show_location_gantt, show_key
 
 
 if __name__ == "__main__":

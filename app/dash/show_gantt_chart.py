@@ -29,6 +29,10 @@ content = html.Div([
                 dcc.Graph(id="show-speaker-gantt"),
             ]),
             html.Br(),
+            dbc.Row(justify="evenly", children=[
+                dcc.Graph(id="show-location-gantt"),
+            ]),
+            html.Br(),
         ]),
     ])
 ])
