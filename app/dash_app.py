@@ -6,7 +6,7 @@ import pandas as pd
 import urllib.parse
 
 import app.dash.components as cmp
-from app.dash import episode_gantt_chart, show_cluster_scatter, show_gantt_chart, show_network_graph, show_3d_network_graph, speaker_3d_network_graph
+from app.dash import episode_gantt_chart, show_cluster_scatter, show_gantt_chart, show_network_graph, show_3d_network_graph, speaker_3d_network_graph, speaker_line_chart
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
@@ -48,7 +48,7 @@ def display_page(pathname, search):
     
     elif pathname == "/tsp_dash/speaker-3d-network-graph":
         # generate form-backing data
-        all_simple_episodes = esr.fetch_all_simple_episodes(ShowKey('TNG'))
+        all_simple_episodes = esr.fetch_simple_episodes(ShowKey('TNG'))
         episode_dropdown_options = []
         for episode in all_simple_episodes['episodes']:
             label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
@@ -63,7 +63,7 @@ def display_page(pathname, search):
     elif pathname == "/tsp_dash/episode-gantt-chart":
         # TODO this duplicates speaker-3d-network-graph
         # generate form-backing data 
-        all_simple_episodes = esr.fetch_all_simple_episodes(ShowKey('TNG'))
+        all_simple_episodes = esr.fetch_simple_episodes(ShowKey('TNG'))
         episode_dropdown_options = []
         for episode in all_simple_episodes['episodes']:
             label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
@@ -77,6 +77,9 @@ def display_page(pathname, search):
     
     elif pathname == "/tsp_dash/show-gantt-chart":
         return show_gantt_chart.content
+    
+    elif pathname == "/tsp_dash/speaker-line-chart":
+        return speaker_line_chart.content
 
 
 ############ show-cluster-scatter callbacks
@@ -100,7 +103,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
     doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: fm.colors[x])
 
     # fetch basic title/season data for all show episodes 
-    all_episodes = esr.fetch_all_simple_episodes(ShowKey(show_key))
+    all_episodes = esr.fetch_simple_episodes(ShowKey(show_key))
     episodes_df = pd.DataFrame(all_episodes['episodes'])
 
     # merge basic episode data into cluster data
@@ -159,7 +162,7 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str):
     print(f'in render_speaker_3d_network_graph, show_key={show_key} episode_key={episode_key}')
 
     # form-backing data
-    # episodes = esr.fetch_all_simple_episodes(ShowKey(show_key))
+    # episodes = esr.fetch_simple_episodes(ShowKey(show_key))
 
     # generate data and build generate 3d network graph
     data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
@@ -178,8 +181,8 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str):
 def render_episode_gantt_chart(show_key: str, episode_key: str):
     print(f'in render_episode_gantt_chart, show_key={show_key} episode_key={episode_key}')
 
-    # generate data and build generate 3d network graph
-    response = esr.episode_gantt_sequence(ShowKey(show_key), episode_key)
+    # generate data and build episode gantt charts
+    response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
     episode_dialog_timeline = fb.build_episode_gantt(show_key, response['dialog_timeline'])
     episode_location_timeline = fb.build_episode_gantt(show_key, response['location_timeline'])
 
@@ -192,15 +195,42 @@ def render_episode_gantt_chart(show_key: str, episode_key: str):
     Output('show-location-gantt', 'figure'),
     Output('show-key-display6', 'children'),
     Input('show-key', 'value'))    
-def render_show_gantt_chart(show_key: str):
-    print(f'in render_show_gantt_chart, show_key={show_key}')
+def render_series_gantt_chart(show_key: str):
+    print(f'in render_series_gantt_chart, show_key={show_key}')
 
-    # generate data and build generate 3d network graph
-    response = esr.show_gantt_sequence(ShowKey(show_key))
-    show_speaker_gantt = fb.build_show_gantt(show_key, response['episode_speakers_sequence'], 'speakers')
-    show_location_gantt = fb.build_show_gantt(show_key, response['episode_locations_sequence'], 'locations')
+    # generate data and build series gantt charts
+    response = esr.generate_series_gantt_sequence(ShowKey(show_key))
+    series_speaker_gantt = fb.build_series_gantt(show_key, response['episode_speakers_sequence'], 'speakers')
+    series_location_gantt = fb.build_series_gantt(show_key, response['episode_locations_sequence'], 'locations')
 
-    return show_speaker_gantt, show_location_gantt, show_key
+    return series_speaker_gantt, series_location_gantt, show_key
+
+
+############ speaker-line-chart callbacks
+@dapp.callback(
+    Output('speaker-line-chart', 'figure'),
+    Output('show-key-display7', 'children'),
+    Input('show-key', 'value'),
+    Input('span-granularity', 'value'),
+    Input('aggregate-ratio', 'value'),
+    Input('season', 'value'))    
+def render_series_speaker_line_chart(show_key: str, span_granularity: str, aggregate_ratio: str, season: str):
+    print(f'************ in render_series_speaker_line_chart, show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
+
+    if aggregate_ratio == 'True':
+        aggregate_ratio = True
+    else:
+        aggregate_ratio = False
+    if season == 'All':
+        season = None
+    else:
+        season = int(season)
+
+    # generate data and build speaker line chart
+    response = esr.generate_speaker_line_chart_sequence(ShowKey(show_key), span_granularity=span_granularity, aggregate_ratio=aggregate_ratio, season=season)
+    speaker_line_chart = fb.build_speaker_line_chart(show_key, response['speaker_spans'], aggregate_ratio=aggregate_ratio)
+
+    return speaker_line_chart, show_key
 
 
 if __name__ == "__main__":

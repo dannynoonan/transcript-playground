@@ -54,7 +54,7 @@ async def show_page(request: Request, show_key: ShowKey):
 		stats['scene_count'] = season_speaker_scene_counts['scenes_by_speaker']['_ALL_']
 		season_speaker_episode_counts = await esr.agg_episodes_by_speaker(show_key, season=season)
 		stats['speaker_count'] = season_speaker_episode_counts['speaker_count']	
-		season_speaker_word_counts = await esr.agg_dialog_word_counts(show_key, season=season)
+		season_speaker_word_counts = esr.agg_dialog_word_counts(show_key, season=season)
 		stats['word_count'] = int(season_speaker_word_counts['dialog_word_counts']['_ALL_'])
 		# generate air_date_range
 		first_episode_in_season = tdata['episodes_by_season'][season][0]
@@ -81,7 +81,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 	locations_by_scene = esr.agg_scenes_by_location(show_key, episode_key=episode_key)
 	tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
 
-	episode_word_counts = await esr.agg_dialog_word_counts(show_key, episode_key=episode_key)
+	episode_word_counts = esr.agg_dialog_word_counts(show_key, episode_key=episode_key)
 	tdata['episode_word_counts'] = episode_word_counts['dialog_word_counts']
 
 	speaker_counts = await esr.composite_speaker_aggs(show_key, episode_key=episode_key)
@@ -259,7 +259,7 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str, sear
 	tdata['scene_count'] = episode_matches['scene_count']
 	tdata['scene_event_count'] = episode_matches['scene_event_count']
 
-	word_count = await esr.agg_dialog_word_counts(show_key, speaker=speaker)
+	word_count = esr.agg_dialog_word_counts(show_key, speaker=speaker)
 	tdata['word_count'] = int(word_count['dialog_word_counts'][speaker])
 	
 	locations_counts = esr.agg_scenes_by_location(show_key, speaker=speaker)

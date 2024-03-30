@@ -264,7 +264,7 @@ def build_episode_gantt(show_key: str, data: list):
     return fig
 
 
-def build_show_gantt(show_key: str, data: list, type: str):
+def build_series_gantt(show_key: str, data: list, type: str):
     print(f'in build_show_gantt show_key={show_key} type={type}')
 
     # TODO where/how should this truncation happen?
@@ -316,6 +316,39 @@ def build_show_gantt(show_key: str, data: list, type: str):
 
             gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
     
+    return fig
+
+
+def build_speaker_line_chart(show_key: str, data: list, aggregate_ratio: bool = False):
+    print(f'in build_speaker_line_chart show_key={show_key}')
+
+    df = pd.DataFrame(data)
+
+    y='Span'
+
+    if aggregate_ratio:
+        df['Span_Ratio'] = df['Span'] / df['Denominator']
+        y='Span_Ratio'
+
+    # drop any speaker having no span data during the episode range
+    speaker_span_aggs = df.groupby('Speaker')['Span'].sum()
+    for key, value in speaker_span_aggs.to_dict().items():
+        if value == 0:
+            df = df[df['Speaker'] != key]
+
+    # span_keys = df.Task.unique()
+    # keys_to_colors = {}
+    # colors_to_keys = {}
+    # for sk in span_keys:
+    #     r = random.randrange(255)
+    #     g = random.randrange(255)
+    #     b = random.randrange(255)
+    #     rgb = f'rgb({r},{g},{b})'
+    #     keys_to_colors[sk] = rgb
+    #     colors_to_keys[rgb] = sk
+
+    fig = px.line(df, x='Episode_i', y=y, color='Speaker', height=800, render_mode='svg', line_shape='spline')
+
     return fig
 
 
