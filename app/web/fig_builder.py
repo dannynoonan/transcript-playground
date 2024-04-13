@@ -4,6 +4,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
+import os
 import pandas as pd
 import plotly.express as px
 import plotly.figure_factory as ff
@@ -319,37 +320,72 @@ def build_series_gantt(show_key: str, data: list, type: str):
     return fig
 
 
-def build_speaker_line_chart(show_key: str, data: list, aggregate_ratio: bool = False):
-    print(f'in build_speaker_line_chart show_key={show_key}')
+def build_speaker_line_chart(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool = False, season: str = None):
+    print(f'in build_speaker_line_chart show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
 
-    df = pd.DataFrame(data)
+    y = f'{span_granularity}_count'
+    if aggregate_ratio or span_granularity == 'episode':
+        if season:
+            y = f'{y}_pct_of_season'
+        else:
+            y = f'{y}_pct_of_series'
 
-    y='Span'
-
-    if aggregate_ratio:
-        df['Span_Ratio'] = df['Span'] / df['Denominator']
-        y='Span_Ratio'
+    if season:
+        df = df.loc[df['season'] == season]
 
     # drop any speaker having no span data during the episode range
-    speaker_span_aggs = df.groupby('Speaker')['Span'].sum()
+    speaker_span_aggs = df.groupby('speaker')[y].sum()
     for key, value in speaker_span_aggs.to_dict().items():
         if value == 0:
-            df = df[df['Speaker'] != key]
+            df = df[df['speaker'] != key]
 
-    # span_keys = df.Task.unique()
-    # keys_to_colors = {}
-    # colors_to_keys = {}
-    # for sk in span_keys:
-    #     r = random.randrange(255)
-    #     g = random.randrange(255)
-    #     b = random.randrange(255)
-    #     rgb = f'rgb({r},{g},{b})'
-    #     keys_to_colors[sk] = rgb
-    #     colors_to_keys[rgb] = sk
+    custom_data = ['speaker', 'episode_title', 'season', 'sequence_in_season']
 
-    fig = px.line(df, x='Episode_i', y=y, color='Speaker', height=800, render_mode='svg', line_shape='spline')
+    fig = px.line(df, x='episode_i', y=y, color='speaker', height=800, render_mode='svg', line_shape='spline',
+                  custom_data=custom_data)
+
+    fig.update_traces(
+        hovertemplate="<br>".join([
+            "<b>%{customdata[0]}: %{y:.2f}</b>",
+            "Season %{customdata[2]}, Episode %{customdata[3]}:",
+            "\"%{customdata[1]}\"",
+        ])
+    )
 
     return fig
+
+
+# def build_speaker_line_chart(show_key: str, data: list, aggregate_ratio: bool = False):
+#     print(f'in build_speaker_line_chart show_key={show_key}')
+
+#     df = pd.DataFrame(data)
+
+#     y='Span'
+
+#     if aggregate_ratio:
+#         df['Span_Ratio'] = df['Span'] / df['Denominator']
+#         y='Span_Ratio'
+
+#     # drop any speaker having no span data during the episode range
+#     speaker_span_aggs = df.groupby('Speaker')['Span'].sum()
+#     for key, value in speaker_span_aggs.to_dict().items():
+#         if value == 0:
+#             df = df[df['Speaker'] != key]
+
+#     # span_keys = df.Task.unique()
+#     # keys_to_colors = {}
+#     # colors_to_keys = {}
+#     # for sk in span_keys:
+#     #     r = random.randrange(255)
+#     #     g = random.randrange(255)
+#     #     b = random.randrange(255)
+#     #     rgb = f'rgb({r},{g},{b})'
+#     #     keys_to_colors[sk] = rgb
+#     #     colors_to_keys[rgb] = sk
+
+#     fig = px.line(df, x='Episode_i', y=y, color='Speaker', height=800, render_mode='svg', line_shape='spline')
+
+#     return fig
 
 
 def build_network_graph() -> go.Figure:

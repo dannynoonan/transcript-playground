@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from operator import itemgetter
+import pandas as pd
 
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
@@ -48,8 +49,8 @@ def fetch_simple_episodes(show_key: ShowKey, season: str = None):
     return {"episodes": episodes, "es_query": es_query}
 
 
-@esr_app.get("/esr/list_episodes_by_season/{show_key}", tags=['ES Reader'])
-def list_episodes_by_season(show_key: ShowKey):
+@esr_app.get("/esr/list_simple_episodes_by_season/{show_key}", tags=['ES Reader'])
+def list_simple_episodes_by_season(show_key: ShowKey):
     '''
     Fetch simple (sceneless) episodes sequenced and grouped by season
     '''
@@ -341,7 +342,7 @@ async def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_
         speaker_season_counts = await agg_seasons_by_speaker(show_key)
     if not episode_key:
         speaker_episode_counts = await agg_episodes_by_speaker(show_key, season=season)
-    speaker_scene_counts = await agg_scenes_by_speaker(show_key, season=season, episode_key=episode_key)
+    speaker_scene_counts = agg_scenes_by_speaker(show_key, season=season, episode_key=episode_key)
     speaker_line_counts = agg_scene_events_by_speaker(show_key, season=season, episode_key=episode_key)
     speaker_word_counts = agg_dialog_word_counts(show_key, season=season, episode_key=episode_key)
 
@@ -508,7 +509,7 @@ async def keywords_by_episode(show_key: ShowKey, episode_key: str, exclude_speak
     response = await esqb.keywords_by_episode(show_key.value, episode_key)
     all_speakers = []
     if exclude_speakers:
-        res = await agg_scenes_by_speaker(show_key, episode_key=episode_key) # TODO should this use agg_episodes_by_speaker now?
+        res = agg_scenes_by_speaker(show_key, episode_key=episode_key) # TODO should this use agg_episodes_by_speaker now?
         all_speakers = res['scenes_by_speaker'].keys()
     matches = await esrt.return_keywords_by_episode(response, exclude_terms=all_speakers)
     return {"keyword_count": len(matches), "keywords": matches}
@@ -614,96 +615,217 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None):
             "episode_locations_sequence": episode_locations_sequence}
 
 
-@esr_app.get("/esr/generate_speaker_line_chart_sequence/{show_key}", tags=['ES Reader'])
-def generate_speaker_line_chart_sequence(show_key: ShowKey, span_granularity: str = None, aggregate_ratio: bool = False, season: str = None):
+@esr_app.get("/esr/generate_speaker_line_chart_sequences/{show_key}", tags=['ES Reader'])
+def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: bool = False):
     '''
     TODO 
     '''
-    if not span_granularity:
-        span_granularity = 'line'
-    if span_granularity not in ['word', 'line', 'scene', 'episode']:
-        return {'error': f"Invalid span_granularity={span_granularity}, span_granularity must be in ['word', 'line', 'scene', 'episode']"}
-    
-    # NOTE the naming in this function is rough AF
-    episodes_to_speaker_span_counts = {}
-    speaker_agg_span_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
-    speaker_spans = []
-    # only needed if accumulate is True
-    denominator = 0
-    agg_span_counts = 0
+    speaker_series_agg_word_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+    speaker_series_agg_line_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+    speaker_series_agg_scene_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+    speaker_series_agg_episode_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+
+    series_agg_word_count = 0
+    series_agg_line_count = 0
+    series_agg_scene_count = 0
+    series_agg_episode_count = 0
 
     # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key, season=season)
+    response = fetch_simple_episodes(show_key)
     episodes = response['episodes']
     
-    # for each episode:
-    # - fetch all speakers ordered by span_granularity count 
-    # - transform results into lists of span dicts for creating plotly gantt charts
+    speaker_episode_rows = []
     episode_i = 0
+    curr_season = None
     for episode in episodes:
         episode_key = episode['episode_key']
         episode_title = episode['title']
-        episode_span_counts = 0
-        if span_granularity == 'word':
-            # fetch speakers and word counts
-            response = agg_dialog_word_counts(show_key, episode_key=episode_key)
-            speaker_span_counts = response['dialog_word_counts']
-            episode_span_counts = speaker_span_counts['_ALL_']
-            del speaker_span_counts['_ALL_']
-            episodes_to_speaker_span_counts[episode_key] = speaker_span_counts
-        elif span_granularity == 'line':
-            # fetch speakers and line counts
-            response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
-            speaker_span_counts = response['scene_events_by_speaker']
-            episode_span_counts = speaker_span_counts['_ALL_']
-            del speaker_span_counts['_ALL_']
-            episodes_to_speaker_span_counts[episode_key] = speaker_span_counts
-        elif span_granularity == 'scene':
-            # fetch speakers and scene counts
-            response = agg_scenes_by_speaker(show_key, episode_key=episode_key)
-            speaker_span_counts = response['scenes_by_speaker']
-            episode_span_counts = speaker_span_counts['_ALL_']
-            del speaker_span_counts['_ALL_']
-            episodes_to_speaker_span_counts[episode_key] = speaker_span_counts
-        elif span_granularity == 'episode':
-            # fetch speakers per episode
-            response = agg_scenes_by_speaker(show_key, episode_key=episode_key)
-            speaker_span_counts = response['scenes_by_speaker']
-            episode_span_counts = speaker_span_counts['_ALL_']
-            del speaker_span_counts['_ALL_']
-            episodes_to_speaker_span_counts[episode_key] = speaker_span_counts.keys()
-        
-        if aggregate_ratio:
-            agg_span_counts += episode_span_counts
+        season = episode['season']
+        sequence_in_season = episode['sequence_in_season']
 
-        # for speaker, _ in speaker_episode_span_counts.items():
+        if not curr_season or season != curr_season:
+            curr_season = season
+            season_agg_word_count = 0
+            season_agg_line_count = 0
+            season_agg_scene_count = 0
+            season_agg_episode_count = 0
+            speaker_season_agg_word_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+            speaker_season_agg_line_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+            speaker_season_agg_scene_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+            speaker_season_agg_episode_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+
+        season_agg_episode_count += 1
+        series_agg_episode_count += 1
+
+        # fetch speakers and word counts
+        word_count_agg_response = agg_dialog_word_counts(show_key, episode_key=episode_key)
+        speaker_word_counts = word_count_agg_response['dialog_word_counts']
+        episode_word_count = speaker_word_counts['_ALL_']
+        season_agg_word_count += episode_word_count
+        series_agg_word_count += episode_word_count
+        # fetch speakers and line counts
+        scene_event_agg_response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
+        speaker_line_counts = scene_event_agg_response['scene_events_by_speaker']
+        episode_line_count = speaker_line_counts['_ALL_']
+        season_agg_line_count += episode_line_count
+        series_agg_line_count += episode_line_count
+        # fetch speakers and scene/episode counts
+        scene_agg_response = agg_scenes_by_speaker(show_key, episode_key=episode_key)
+        speaker_scene_counts = scene_agg_response['scenes_by_speaker']
+        episode_scene_count = speaker_scene_counts['_ALL_']
+        season_agg_scene_count += episode_scene_count
+        series_agg_scene_count += episode_scene_count
+        # episodes_to_speaker_counts[episode_key] = speaker_scene_counts.keys()
+
         for speaker in show_metadata[show_key.value]['regular_cast']:
-            if speaker in speaker_span_counts:
-                span_val = speaker_span_counts[speaker]
-                denominator = episode_span_counts
-                if aggregate_ratio:
-                    if span_granularity == 'episode':
-                        speaker_agg_span_counts[speaker] += 1
-                        denominator = episode_i + 1
-                    else:
-                        speaker_agg_span_counts[speaker] += speaker_span_counts[speaker]
-                        denominator = agg_span_counts
-                    span_val = speaker_agg_span_counts[speaker]
-                info = f'{episode_title}: {speaker} {span_val} {span_granularity}s'
-                speaker_span = dict(Speaker=speaker, Episode_i=episode_i, Span=span_val, Info=info, Denominator=denominator)
-                speaker_spans.append(speaker_span)
+            if speaker in speaker_word_counts:
+                speaker_episode_row = {}
+                word_count = speaker_word_counts[speaker] 
+                line_count = speaker_line_counts[speaker]
+                scene_count = speaker_scene_counts[speaker]
+                # increment agg speaker counts
+                speaker_season_agg_word_counts[speaker] += word_count
+                speaker_series_agg_word_counts[speaker] += word_count
+                speaker_season_agg_line_counts[speaker] += line_count
+                speaker_series_agg_line_counts[speaker] += line_count
+                speaker_season_agg_scene_counts[speaker] += scene_count
+                speaker_series_agg_scene_counts[speaker] += scene_count
+                speaker_season_agg_episode_counts[speaker] += 1
+                speaker_series_agg_episode_counts[speaker] += 1
             else:
-                span_val = 0
-                denominator = episode_span_counts
-                if aggregate_ratio:
-                    span_val = speaker_agg_span_counts[speaker]
-                    denominator = agg_span_counts
-                speaker_span = dict(Speaker=speaker, Episode_i=episode_i, Span=span_val, Info='', Denominator=denominator)
-                speaker_spans.append(speaker_span)
+                word_count = 0 
+                line_count = 0
+                scene_count = 0
+
+            # init speaker_episode_row
+            speaker_episode_row = dict(
+                speaker=speaker,
+                episode_i=episode_i, 
+                episode_title=episode_title,
+                season=season,
+                sequence_in_season=sequence_in_season,
+                word_count=word_count, 
+                line_count=line_count, 
+                scene_count=scene_count)
+            # speaker X counts as a % of episode X count
+            speaker_episode_row['word_count_pct_of_episode'] = word_count / episode_word_count
+            speaker_episode_row['line_count_pct_of_episode'] = line_count / episode_line_count
+            speaker_episode_row['scene_count_pct_of_episode'] = scene_count / episode_scene_count
+            # season agg speaker X counts as a % of season agg X count
+            speaker_episode_row['word_count_pct_of_season'] = speaker_season_agg_word_counts[speaker] / season_agg_word_count
+            speaker_episode_row['line_count_pct_of_season'] = speaker_season_agg_line_counts[speaker] / season_agg_line_count
+            speaker_episode_row['scene_count_pct_of_season'] = speaker_season_agg_scene_counts[speaker] / season_agg_scene_count
+            speaker_episode_row['episode_count_pct_of_season'] = speaker_season_agg_episode_counts[speaker] / season_agg_episode_count
+            # overall agg speaker X counts as a % of overall agg X count
+            speaker_episode_row['word_count_pct_of_series'] = speaker_series_agg_word_counts[speaker] / series_agg_word_count
+            speaker_episode_row['line_count_pct_of_series'] = speaker_series_agg_line_counts[speaker] / series_agg_line_count
+            speaker_episode_row['scene_count_pct_of_series'] = speaker_series_agg_scene_counts[speaker] / series_agg_scene_count
+            speaker_episode_row['episode_count_pct_of_series'] = speaker_series_agg_episode_counts[speaker] / series_agg_episode_count
+            
+            speaker_episode_row['info'] = f'{speaker} in {episode_title}: {scene_count} scenes, {line_count} lines, {word_count} words'
+            speaker_episode_rows.append(speaker_episode_row)
 
         episode_i += 1
 
-    return {"episodes_to_speaker_span_counts": episodes_to_speaker_span_counts, "speaker_spans": speaker_spans}
+    if overwrite_file:
+        file_path = f'./app/data/speaker_episode_aggs_{show_key}.csv'
+        print(f'writing word/line/scene/episode counts and aggs dataframe to file_path={file_path}')
+        df = pd.DataFrame(speaker_episode_rows)
+        df.to_csv(file_path)
+
+    return {"speaker_episode_rows": speaker_episode_rows}
+
+
+# @esr_app.get("/esr/generate_speaker_line_chart_sequence/{show_key}", tags=['ES Reader'])
+# def generate_speaker_line_chart_sequence(show_key: ShowKey, span_granularity: str = None, aggregate_ratio: bool = False, season: str = None):
+#     '''
+#     TODO 
+#     '''
+#     if not span_granularity:
+#         span_granularity = 'line'
+#     if span_granularity not in ['word', 'line', 'scene', 'episode']:
+#         return {'error': f"Invalid span_granularity={span_granularity}, span_granularity must be in ['word', 'line', 'scene', 'episode']"}
+    
+#     # NOTE the naming in this function is rough AF
+#     episodes_to_speaker_span_counts = {}
+#     speaker_agg_span_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+#     speaker_spans = []
+#     # only needed if accumulate is True
+#     denominator = 0
+#     agg_span_counts = 0
+
+#     # get ordered list of all episodes
+#     response = fetch_simple_episodes(show_key, season=season)
+#     episodes = response['episodes']
+    
+#     # for each episode:
+#     # - fetch all speakers ordered by span_granularity count 
+#     # - transform results into lists of span dicts for creating plotly gantt charts
+#     episode_i = 0
+#     for episode in episodes:
+#         episode_key = episode['episode_key']
+#         episode_title = episode['title']
+#         episode_span_counts = 0
+#         if span_granularity == 'word':
+#             # fetch speakers and word counts
+#             response = agg_dialog_word_counts(show_key, episode_key=episode_key)
+#             speaker_span_counts = response['dialog_word_counts']
+#             episode_span_counts = speaker_span_counts['_ALL_']
+#             del speaker_span_counts['_ALL_']
+#             episodes_to_speaker_span_counts[episode_key] = speaker_span_counts
+#         elif span_granularity == 'line':
+#             # fetch speakers and line counts
+#             response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
+#             speaker_span_counts = response['scene_events_by_speaker']
+#             episode_span_counts = speaker_span_counts['_ALL_']
+#             del speaker_span_counts['_ALL_']
+#             episodes_to_speaker_span_counts[episode_key] = speaker_span_counts
+#         elif span_granularity == 'scene':
+#             # fetch speakers and scene counts
+#             response = agg_scenes_by_speaker(show_key, episode_key=episode_key)
+#             speaker_span_counts = response['scenes_by_speaker']
+#             episode_span_counts = speaker_span_counts['_ALL_']
+#             del speaker_span_counts['_ALL_']
+#             episodes_to_speaker_span_counts[episode_key] = speaker_span_counts
+#         elif span_granularity == 'episode':
+#             # fetch speakers per episode
+#             response = agg_scenes_by_speaker(show_key, episode_key=episode_key)
+#             speaker_span_counts = response['scenes_by_speaker']
+#             episode_span_counts = speaker_span_counts['_ALL_']
+#             del speaker_span_counts['_ALL_']
+#             episodes_to_speaker_span_counts[episode_key] = speaker_span_counts.keys()
+        
+#         if aggregate_ratio:
+#             agg_span_counts += episode_span_counts
+
+#         # for speaker, _ in speaker_episode_span_counts.items():
+#         for speaker in show_metadata[show_key.value]['regular_cast']:
+#             if speaker in speaker_span_counts:
+#                 span_val = speaker_span_counts[speaker]
+#                 denominator = episode_span_counts
+#                 if aggregate_ratio:
+#                     if span_granularity == 'episode':
+#                         speaker_agg_span_counts[speaker] += 1
+#                         denominator = episode_i + 1
+#                     else:
+#                         speaker_agg_span_counts[speaker] += speaker_span_counts[speaker]
+#                         denominator = agg_span_counts
+#                     span_val = speaker_agg_span_counts[speaker]
+#                 info = f'{episode_title}: {speaker} {span_val} {span_granularity}s'
+#                 speaker_span = dict(Speaker=speaker, Episode_i=episode_i, Span=span_val, Info=info, Denominator=denominator)
+#                 speaker_spans.append(speaker_span)
+#             else:
+#                 span_val = 0
+#                 denominator = episode_span_counts
+#                 if aggregate_ratio:
+#                     span_val = speaker_agg_span_counts[speaker]
+#                     denominator = agg_span_counts
+#                 speaker_span = dict(Speaker=speaker, Episode_i=episode_i, Span=span_val, Info='', Denominator=denominator)
+#                 speaker_spans.append(speaker_span)
+
+#         episode_i += 1
+
+#     return {"episodes_to_speaker_span_counts": episodes_to_speaker_span_counts, "speaker_spans": speaker_spans}
 
 
 

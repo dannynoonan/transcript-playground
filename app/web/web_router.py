@@ -37,7 +37,7 @@ async def show_page(request: Request, show_key: ShowKey):
 	keywords = await esr.keywords_by_corpus(show_key, exclude_speakers=True)
 	tdata['keywords'] = keywords['keywords']
 
-	episodes_by_season = esr.list_episodes_by_season(show_key)
+	episodes_by_season = esr.list_simple_episodes_by_season(show_key)
 	tdata['episodes_by_season'] = episodes_by_season['episodes_by_season']
 
 	stats_by_season = {}
@@ -50,7 +50,7 @@ async def show_page(request: Request, show_key: ShowKey):
 		season_speakers = esr.agg_scene_events_by_speaker(show_key, season=season)
 		stats['line_count'] = season_speakers['scene_events_by_speaker']['_ALL_']
 		stats['speaker_line_counts'] = utils.truncate_dict(season_speakers['scene_events_by_speaker'], season_episode_count, 1)
-		season_speaker_scene_counts = await esr.agg_scenes_by_speaker(show_key, season=season)
+		season_speaker_scene_counts = esr.agg_scenes_by_speaker(show_key, season=season)
 		stats['scene_count'] = season_speaker_scene_counts['scenes_by_speaker']['_ALL_']
 		season_speaker_episode_counts = await esr.agg_episodes_by_speaker(show_key, season=season)
 		stats['speaker_count'] = season_speaker_episode_counts['speaker_count']	
@@ -266,7 +266,7 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str, sear
 	tdata['location_counts'] = locations_counts['scenes_by_location']
 
 	co_occ_speakers_by_episode = await esr.agg_episodes_by_speaker(show_key, other_speaker=speaker)
-	co_occ_speakers_by_scene = await esr.agg_scenes_by_speaker(show_key, other_speaker=speaker)
+	co_occ_speakers_by_scene = esr.agg_scenes_by_speaker(show_key, other_speaker=speaker)
 	# TODO refactor this to generically handle dicts threading together
 	other_speakers = {}
 	for other_speaker, episode_count in co_occ_speakers_by_episode['episodes_by_speaker'].items():

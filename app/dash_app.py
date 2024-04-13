@@ -2,6 +2,7 @@
 import dash_bootstrap_components as dbc
 from dash import dcc, html, Dash, dash_table
 from dash.dependencies import Input, Output, State
+import os
 import pandas as pd
 import urllib.parse
 
@@ -215,7 +216,7 @@ def render_series_gantt_chart(show_key: str):
     Input('aggregate-ratio', 'value'),
     Input('season', 'value'))    
 def render_series_speaker_line_chart(show_key: str, span_granularity: str, aggregate_ratio: str, season: str):
-    print(f'************ in render_series_speaker_line_chart, show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
+    print(f'in render_series_speaker_line_chart, show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
 
     if aggregate_ratio == 'True':
         aggregate_ratio = True
@@ -227,8 +228,21 @@ def render_series_speaker_line_chart(show_key: str, span_granularity: str, aggre
         season = int(season)
 
     # generate data and build speaker line chart
-    response = esr.generate_speaker_line_chart_sequence(ShowKey(show_key), span_granularity=span_granularity, aggregate_ratio=aggregate_ratio, season=season)
-    speaker_line_chart = fb.build_speaker_line_chart(show_key, response['speaker_spans'], aggregate_ratio=aggregate_ratio)
+    # response = esr.generate_speaker_line_chart_sequence(ShowKey(show_key), span_granularity=span_granularity, aggregate_ratio=aggregate_ratio, season=season)
+    file_path = f'./app/data/speaker_episode_aggs_{show_key}.csv'
+    if os.path.isfile(file_path):
+        df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        print(f'no file found at file_path={file_path}, running `/esr/generate_speaker_line_chart_sequences/{show_key}?overwrite_file=True` to generate')
+        esr.generate_speaker_line_chart_sequences(ShowKey(show_key), overwrite_file=True)
+        if os.path.isfile(file_path):
+            df = pd.read_csv(file_path)
+            print(f'loading dataframe at file_path={file_path}')
+        else:
+            raise Exception('Failure to render_series_speaker_line_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    
+    speaker_line_chart = fb.build_speaker_line_chart(show_key, df, span_granularity, aggregate_ratio=aggregate_ratio, season=season)
 
     return speaker_line_chart, show_key
 
