@@ -7,7 +7,10 @@ import pandas as pd
 import urllib.parse
 
 import app.dash.components as cmp
-from app.dash import episode_gantt_chart, show_cluster_scatter, show_gantt_chart, show_network_graph, show_3d_network_graph, speaker_3d_network_graph, speaker_line_chart
+from app.dash import (
+    episode_gantt_chart, location_line_chart, show_3d_network_graph, speaker_3d_network_graph, show_cluster_scatter, 
+    show_gantt_chart, show_network_graph, speaker_line_chart
+)
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
@@ -81,6 +84,9 @@ def display_page(pathname, search):
     
     elif pathname == "/tsp_dash/speaker-line-chart":
         return speaker_line_chart.content
+    
+    elif pathname == "/tsp_dash/location-line-chart":
+        return location_line_chart.content
 
 
 ############ show-cluster-scatter callbacks
@@ -227,7 +233,7 @@ def render_series_speaker_line_chart(show_key: str, span_granularity: str, aggre
     else:
         season = int(season)
 
-    # generate data and build speaker line chart
+    # fetch or generate aggregate speaker data and build speaker line chart
     # response = esr.generate_speaker_line_chart_sequence(ShowKey(show_key), span_granularity=span_granularity, aggregate_ratio=aggregate_ratio, season=season)
     file_path = f'./app/data/speaker_episode_aggs_{show_key}.csv'
     if os.path.isfile(file_path):
@@ -245,6 +251,45 @@ def render_series_speaker_line_chart(show_key: str, span_granularity: str, aggre
     speaker_line_chart = fb.build_speaker_line_chart(show_key, df, span_granularity, aggregate_ratio=aggregate_ratio, season=season)
 
     return speaker_line_chart, show_key
+
+
+############ location-line-chart callbacks
+@dapp.callback(
+    Output('location-line-chart', 'figure'),
+    Output('show-key-display8', 'children'),
+    Input('show-key', 'value'),
+    Input('span-granularity', 'value'),
+    Input('aggregate-ratio', 'value'),
+    Input('season', 'value'))    
+def render_series_location_line_chart(show_key: str, span_granularity: str, aggregate_ratio: str, season: str):
+    print(f'in render_series_speaker_line_chart, show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
+
+    if aggregate_ratio == 'True':
+        aggregate_ratio = True
+    else:
+        aggregate_ratio = False
+    if season == 'All':
+        season = None
+    else:
+        season = int(season)
+
+    # fetch or generate aggregate location data and build location line chart
+    file_path = f'./app/data/location_episode_aggs_{show_key}.csv'
+    if os.path.isfile(file_path):
+        df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        print(f'no file found at file_path={file_path}, running `/esr/generate_location_line_chart_sequences/{show_key}?overwrite_file=True` to generate')
+        esr.generate_location_line_chart_sequences(ShowKey(show_key), overwrite_file=True)
+        if os.path.isfile(file_path):
+            df = pd.read_csv(file_path)
+            print(f'loading dataframe at file_path={file_path}')
+        else:
+            raise Exception('Failure to render_series_location_line_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    
+    location_line_chart = fb.build_location_line_chart(show_key, df, span_granularity, aggregate_ratio=aggregate_ratio, season=season)
+
+    return location_line_chart, show_key
 
 
 if __name__ == "__main__":

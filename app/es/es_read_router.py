@@ -620,10 +620,10 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
     '''
     TODO 
     '''
-    speaker_series_agg_word_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
-    speaker_series_agg_line_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
-    speaker_series_agg_scene_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
-    speaker_series_agg_episode_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+    speaker_series_agg_word_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
+    speaker_series_agg_line_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
+    speaker_series_agg_scene_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
+    speaker_series_agg_episode_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
 
     series_agg_word_count = 0
     series_agg_line_count = 0
@@ -649,10 +649,10 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
             season_agg_line_count = 0
             season_agg_scene_count = 0
             season_agg_episode_count = 0
-            speaker_season_agg_word_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
-            speaker_season_agg_line_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
-            speaker_season_agg_scene_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
-            speaker_season_agg_episode_counts = {s:0 for s in show_metadata[show_key.value]['regular_cast']}
+            speaker_season_agg_word_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
+            speaker_season_agg_line_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
+            speaker_season_agg_scene_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
+            speaker_season_agg_episode_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
 
         season_agg_episode_count += 1
         series_agg_episode_count += 1
@@ -679,7 +679,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
 
         for speaker in show_metadata[show_key.value]['regular_cast']:
             if speaker in speaker_word_counts:
-                speaker_episode_row = {}
+                # speaker_episode_row = {}
                 word_count = speaker_word_counts[speaker] 
                 line_count = speaker_line_counts[speaker]
                 scene_count = speaker_scene_counts[speaker]
@@ -729,11 +729,101 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
 
     if overwrite_file:
         file_path = f'./app/data/speaker_episode_aggs_{show_key}.csv'
-        print(f'writing word/line/scene/episode counts and aggs dataframe to file_path={file_path}')
+        print(f'writing speaker word/line/scene/episode counts and aggs dataframe to file_path={file_path}')
         df = pd.DataFrame(speaker_episode_rows)
         df.to_csv(file_path)
 
     return {"speaker_episode_rows": speaker_episode_rows}
+
+
+@esr_app.get("/esr/generate_location_line_chart_sequences/{show_key}", tags=['ES Reader'])
+def generate_location_line_chart_sequences(show_key: ShowKey, overwrite_file: bool = False):
+    '''
+    TODO 
+    '''
+    response = agg_scenes_by_location(show_key)
+    locations = response['scenes_by_location']
+    top_locations = [location for location, count in locations.items() if count > 10]
+    location_series_agg_scene_counts = {location:0 for location in top_locations}
+    location_series_agg_episode_counts = {location:0 for location in top_locations}
+
+    series_agg_scene_count = 0
+    series_agg_episode_count = 0
+
+    # get ordered list of all episodes
+    response = fetch_simple_episodes(show_key)
+    episodes = response['episodes']
+    
+    location_episode_rows = []
+    episode_i = 0
+    curr_season = None
+    for episode in episodes:
+        episode_key = episode['episode_key']
+        episode_title = episode['title']
+        season = episode['season']
+        sequence_in_season = episode['sequence_in_season']
+
+        if not curr_season or season != curr_season:
+            curr_season = season
+            season_agg_scene_count = 0
+            season_agg_episode_count = 0
+            location_season_agg_scene_counts = {location:0 for location in top_locations}
+            location_season_agg_episode_counts = {location:0 for location in top_locations}
+
+        season_agg_episode_count += 1
+        series_agg_episode_count += 1
+
+        # fetch locations and scene/episode counts
+        scene_agg_response = agg_scenes_by_location(show_key, episode_key=episode_key)
+        location_scene_counts = scene_agg_response['scenes_by_location']
+        episode_scene_count = location_scene_counts['_ALL_']
+        del location_scene_counts['_ALL_']
+        season_agg_scene_count += episode_scene_count
+        series_agg_scene_count += episode_scene_count
+        # episodes_to_speaker_counts[episode_key] = speaker_scene_counts.keys()
+
+        for location in top_locations:
+            if location in location_scene_counts:
+                # location_episode_row = {}
+
+                scene_count = location_scene_counts[location]
+                # increment agg location counts
+                location_season_agg_scene_counts[location] += scene_count
+                location_series_agg_scene_counts[location] += scene_count
+                location_season_agg_episode_counts[location] += 1
+                location_series_agg_episode_counts[location] += 1
+            else:
+                scene_count = 0
+
+            # init location_episode_row
+            location_episode_row = dict(
+                location=location,
+                episode_i=episode_i, 
+                episode_title=episode_title,
+                season=season,
+                sequence_in_season=sequence_in_season,
+                scene_count=scene_count)
+            # location scene counts as a % of episode scene count
+            location_episode_row['scene_count_pct_of_episode'] = scene_count / episode_scene_count
+            # season agg speaker scene/episode counts as a % of season agg scene/episode count
+            location_episode_row['scene_count_pct_of_season'] = location_season_agg_scene_counts[location] / season_agg_scene_count
+            location_episode_row['episode_count_pct_of_season'] = location_season_agg_episode_counts[location] / season_agg_episode_count
+            # overall agg speaker scene/episode counts as a % of overall agg scene/episode count
+            location_episode_row['scene_count_pct_of_series'] = location_series_agg_scene_counts[location] / series_agg_scene_count
+            location_episode_row['episode_count_pct_of_series'] = location_series_agg_episode_counts[location] / series_agg_episode_count
+            
+            location_episode_row['info'] = f'{location} in {episode_title}: {scene_count} scenes'
+            location_episode_rows.append(location_episode_row)
+
+        episode_i += 1
+
+    if overwrite_file:
+        file_path = f'./app/data/location_episode_aggs_{show_key}.csv'
+        print(f'writing location scene/episode counts and aggs dataframe to file_path={file_path}')
+        df = pd.DataFrame(location_episode_rows)
+        df.to_csv(file_path)
+
+    return {"location_episode_rows": location_episode_rows}
 
 
 # @esr_app.get("/esr/generate_speaker_line_chart_sequence/{show_key}", tags=['ES Reader'])

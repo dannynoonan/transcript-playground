@@ -355,6 +355,41 @@ def build_speaker_line_chart(show_key: str, df: pd.DataFrame, span_granularity: 
     return fig
 
 
+def build_location_line_chart(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool = False, season: str = None):
+    print(f'in build_location_line_chart show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
+
+    y = f'{span_granularity}_count'
+    if aggregate_ratio or span_granularity == 'episode':
+        if season:
+            y = f'{y}_pct_of_season'
+        else:
+            y = f'{y}_pct_of_series'
+
+    if season:
+        df = df.loc[df['season'] == season]
+
+    # drop any location having no span data during the episode range
+    location_span_aggs = df.groupby('location')[y].sum()
+    for key, value in location_span_aggs.to_dict().items():
+        if value == 0:
+            df = df[df['location'] != key]
+
+    custom_data = ['location', 'episode_title', 'season', 'sequence_in_season']
+
+    fig = px.line(df, x='episode_i', y=y, color='location', height=800, render_mode='svg', line_shape='spline',
+                  custom_data=custom_data)
+
+    fig.update_traces(
+        hovertemplate="<br>".join([
+            "<b>%{customdata[0]}: %{y:.2f}</b>",
+            "Season %{customdata[2]}, Episode %{customdata[3]}:",
+            "\"%{customdata[1]}\"",
+        ])
+    )
+
+    return fig
+
+
 # def build_speaker_line_chart(show_key: str, data: list, aggregate_ratio: bool = False):
 #     print(f'in build_speaker_line_chart show_key={show_key}')
 
