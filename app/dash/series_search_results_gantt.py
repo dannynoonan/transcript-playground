@@ -26,14 +26,28 @@ content = html.Div([
                 dbc.Col(md=2, children=[
                     html.Div([
                         "Query term: ",
+                        html.Br(),
                         dcc.Input(
                             id="qt",
                             type="text",
                             placeholder="enter text to search",
+                            size=30,
+                            autoFocus=True,
+                            debounce=True,
+                            # required=True,
                         )
                     ]),
                 ]),
-                # html.Button('Search', id='qt-submit'),
+                # NOTE: I believe this button is a placebo: it's a call to action, but simply exiting the qt field invokes the callback 
+                dbc.Col(md=2, children=[
+                    html.Div([
+                        html.Br(),
+                        html.Button(
+                            'Search', 
+                            id='qt-submit',
+                        ),
+                    ]),
+                ]),
             ]),
             html.Br(),
             dbc.Row(justify="evenly", children=[

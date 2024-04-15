@@ -322,10 +322,8 @@ def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
     return fig
 
 
-def series_search_results_gantt(show_key: str, qt: str, matching_episodes: list, episode_speakers_sequence: list) -> go.Figure:
-    print(f'in series_search_results_gantt show_key={show_key} qt={qt} len(matching_episodes)={len(matching_episodes)}, len(episode_speakers_sequence)={len(episode_speakers_sequence)}')
-
-    # TODO 
+def build_series_search_results_gantt(show_key: str, qt: str, matching_episodes: list, episode_speakers_sequence: list) -> go.Figure:
+    print(f'in build_series_search_results_gantt show_key={show_key} qt={qt} len(matching_episodes)={len(matching_episodes)}, len(episode_speakers_sequence)={len(episode_speakers_sequence)}')
 
     # load full time-series sequence of speakers by episode into a dataframe
     df = pd.DataFrame(episode_speakers_sequence)
@@ -344,46 +342,33 @@ def series_search_results_gantt(show_key: str, qt: str, matching_episodes: list,
                     speakers_to_line_counts[speaker] = 0
                     if speaker not in speakers_to_keep:
                         speakers_to_keep.append(speaker)
-                # speakers_to_lines[speaker].append(f"S{scene['sequence']+1}: {scene_event['dialog']}\n")
-                speakers_to_lines[speaker].append(f"{scene_event['dialog']}\n")
+                speakers_to_lines[speaker].append(f"[S{scene['sequence']+1}] {scene_event['dialog']}\n\n")  # TODO newlines not working
+                # speakers_to_lines[speaker].append(f"{scene_event['dialog']}\n\n")
                 speakers_to_line_counts[speaker] += 1
         for speaker, _ in speakers_to_line_counts.items():
-            print(f'speakers_to_line_counts[{speaker}]={speakers_to_line_counts[speaker]}')
             df.loc[(df['Task'] == speaker) & (df['episode_key'] == episode['episode_key']), 'matching_line_count'] = speakers_to_line_counts[speaker]
             df.loc[(df['Task'] == speaker) & (df['episode_key'] == episode['episode_key']), 'matching_lines'] = ''.join(speakers_to_lines[speaker])
     
     speakers_to_keep = list(dict.fromkeys(speakers_to_keep))
     # only keep rows for speakers that have at least 1 match
     df = df.loc[df['Task'].isin(speakers_to_keep)]
-    # ordered_unique_speakers = list(df['Task'].unique())
-    # print(f'ordered_unique_speakers={ordered_unique_speakers}')
-    # df['speaker_episode_key'] = df['Task'] + df['episode_key']
+    # if `matching_line_count` > 0:
+    #   - mark `highlight` column yes/no: tells ff.create_gantt which color to use (gray or highlighted) via `index_col` 
+    #   - set `hover_text` column with episode and matching_line data for hover display 
     df['highlight'] = df['matching_line_count'].apply(lambda x: 'yes' if x > 0 else 'no')
     matching_lines_df = df[df['highlight'] == 'yes']
-    matching_lines_df['hover_text'] = matching_lines_df['episode_title'] + ':\n' + matching_lines_df['matching_lines']
+    matching_lines_df['hover_text'] = matching_lines_df['episode_title'] + ':\n\n' + matching_lines_df['matching_lines']  # TODO newlines not working
+    # (*) this feels a little fragile, but the sequence and index positions of the `hover_text` list map precisely 1:2 to the sequence and index positions 
+    # of the gantt data rows in fig['data'] below, because each speaker-episode element maps to two gantt row entries (a Start entry and a Finish entry)
     hover_text = list(matching_lines_df['hover_text'])
 
-    df.sort_values(['season', 'sequence_in_season'], ascending=[True, True], inplace=True)
+    # file_path = f'./app/data/test_series_search_results_gantt_{show_key}.csv'
+    # df.to_csv(file_path)
 
-    file_path = f'./app/data/test_series_search_results_gantt_{show_key}.csv'
-    df.to_csv(file_path)
-
-    # speaker_dfs = []
-    # for speaker in ordered_unique_speakers:
-    #     speaker_dfs.append(df.loc[df['Task'] == speaker])
-    # df = pd.concat(speaker_dfs)
-
-    # indexes_to_colors = list(df['gantt_color'])
-    # print(f'len(df)={len(df)} len(indexes_to_colors)={len(indexes_to_colors)}')
-    # for idx, row in df.iterrows():
-    #     if row['matching_line_count'] > 0:
-    #         print(f"matching_line_count=1 at idx={idx} row['Task']={row['Task']} row['gantt_color']={row['gantt_color']} row['speaker_episode_key']={row['speaker_episode_key']} indexes_to_colors[{idx}]={indexes_to_colors[idx]}")
-
-    # fig = ff.create_gantt(df, index_col='speaker_episode_key', bar_width=0.1, colors=indexes_to_colors, group_tasks=True, height=1000) # TODO scale height to number of rows
     fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=1000) # TODO scale height to number of rows
     fig.update_layout(xaxis_type='linear', autosize=False)
 
-    # inject dialog into hover 'text' property
+    # inject dialog stored in `hover_text` list into fig['data'] `text` property
     for gantt_row in fig['data']:
         print(gantt_row)
         if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0 and gantt_row['legendgroup'] == 'rgb(255, 0, 0)':
@@ -392,12 +377,11 @@ def series_search_results_gantt(show_key: str, qt: str, matching_episodes: list,
             # the 'text' of a gantt row is stored in an unnamed 'data' element (associated to a gantt row via its 'legendgroup' rgb color) as a tuple, making it immutable.
             # rather than updating it index-by-index, it must be copied, cast as a list, mutated iteratively, and updated in one swoop via gantt_row.update at the end.
             gantt_row_text = list(gantt_row['text'])
-            print(f"len(gantt_row['x'])={len(gantt_row['x'])} len(hover_text)={len(hover_text)}")
             for i in range(len(gantt_row['x'])):
-                print(f'i={i} round({i}/2)={math.floor(i/2)}')
+                # (*) mentioned above: the sequence and index positions of `hover_text` list map 1:2 to sequence and index positions of gantt rows in fig['data']
                 gantt_row_text[i] = hover_text[math.floor(i/2)]
 
-            gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
+            gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove episode index
     
     return fig
 

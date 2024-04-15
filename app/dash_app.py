@@ -301,15 +301,16 @@ def render_series_location_line_chart(show_key: str, span_granularity: str, aggr
     Output('show-key-display9', 'children'),
     Output('qt-display', 'children'),
     Input('show-key', 'value'),
-    Input('qt', 'value'))
-    # Input('qt-submit', 'value'))    
-def render_series_search_results_gantt(show_key: str, qt: str):
-    print(f'in render_series_gantt_chart, show_key={show_key} qt={qt}')
+    Input('qt', 'value'),
+    # NOTE: I believe `qt-submit`` is a placebo: it's a call to action, but simply exiting the qt field invokes the callback
+    Input('qt-submit', 'value'))    
+def render_series_search_results_gantt(show_key: str, qt: str, qt_submit: bool = False):
+    print(f'in render_series_gantt_chart, show_key={show_key} qt={qt} qt_submit={qt_submit}')
 
     # execute search query and filter response into series gantt charts
     series_gantt_response = esr.generate_series_gantt_sequence(ShowKey(show_key))
     search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
-    series_search_results_gantt = fb.series_search_results_gantt(show_key, qt, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
+    series_search_results_gantt = fb.build_series_search_results_gantt(show_key, qt, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
 
     return series_search_results_gantt, show_key, qt
 
