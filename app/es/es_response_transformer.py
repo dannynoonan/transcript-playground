@@ -90,7 +90,7 @@ async def return_scenes(s: Search) -> tuple[list, int]:
     return results, scene_count
 
 
-async def return_scene_events(s: Search, location: str = None) -> tuple[list, int, int]:
+def return_scene_events(s: Search, location: str = None) -> tuple[list, int, int]:
     print(f'begin return_scene_events for location={location} s.to_dict()={s.to_dict()}')
 
     s = s.execute()

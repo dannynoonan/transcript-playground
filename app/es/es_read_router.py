@@ -101,15 +101,15 @@ async def search_scenes(show_key: ShowKey, season: str = None, episode_key: str 
 
 
 @esr_app.get("/esr/search_scene_events/{show_key}", tags=['ES Reader'])
-async def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None, location: str = None):
+def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None, location: str = None):
     '''
     Facet query of nested Scene and SceneEvent fields 
     '''
     if not speaker and not dialog:
         return {"error": "Unable to execute search_scene_events without at least one scene_event property set: speaker or dialog"}
-    s = await esqb.search_scene_events(show_key.value, season=season, episode_key=episode_key, speaker=speaker, dialog=dialog)
+    s = esqb.search_scene_events(show_key.value, season=season, episode_key=episode_key, speaker=speaker, dialog=dialog)
     es_query = s.to_dict()
-    matches, scene_count, scene_event_count = await esrt.return_scene_events(s, location=location)
+    matches, scene_count, scene_event_count = esrt.return_scene_events(s, location=location)
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
@@ -587,6 +587,8 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None):
     for episode in episodes:
         episode_key = episode['episode_key']
         episode_title = episode['title']
+        episode_season = episode['season']
+        sequence_in_season = episode['sequence_in_season']
         # fetch speakers and line counts
         response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
         speaker_line_counts = response['scene_events_by_speaker']
@@ -594,7 +596,10 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None):
         episodes_to_speaker_line_counts[episode_key] = speaker_line_counts
         # transform speakers/line counts to plotly-gantt-friendly span dicts
         for speaker, line_count in speaker_line_counts.items():
-            speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({line_count} lines)')
+            # speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({line_count} lines)')
+            speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
+                                count=line_count, season=episode_season, sequence_in_season=sequence_in_season,
+                                info=f'{episode_title} ({line_count} lines)')
             episode_speakers_sequence.append(speaker_span)
         # fetch locations and scene counts
         response = agg_scenes_by_location(show_key, episode_key=episode_key)
@@ -602,9 +607,10 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None):
         del location_counts['_ALL_']
         episodes_to_location_counts[episode_key] = location_counts
         # transform locations/counts to plotly-gantt-friendly span dicts
-        for location, count in location_counts.items():
+        for location, scene_count in location_counts.items():
             if location in recurring_locations:
-                location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({count} scenes)')
+                # location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({scene_count} scenes)')
+                location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, count=scene_count, info=f'{episode_title} ({scene_count} scenes)')
                 episode_locations_sequence.append(location_span)
 
         episode_i += 1

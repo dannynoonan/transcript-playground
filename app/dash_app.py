@@ -8,8 +8,8 @@ import urllib.parse
 
 import app.dash.components as cmp
 from app.dash import (
-    episode_gantt_chart, location_line_chart, show_3d_network_graph, speaker_3d_network_graph, show_cluster_scatter, 
-    show_gantt_chart, show_network_graph, speaker_line_chart
+    episode_gantt_chart, location_line_chart, series_search_results_gantt, show_3d_network_graph, speaker_3d_network_graph, 
+    show_cluster_scatter, show_gantt_chart, show_network_graph, speaker_line_chart
 )
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
@@ -87,6 +87,9 @@ def display_page(pathname, search):
     
     elif pathname == "/tsp_dash/location-line-chart":
         return location_line_chart.content
+    
+    elif pathname == "/tsp_dash/series-search-results-gantt":
+        return series_search_results_gantt.content
 
 
 ############ show-cluster-scatter callbacks
@@ -290,6 +293,25 @@ def render_series_location_line_chart(show_key: str, span_granularity: str, aggr
     location_line_chart = fb.build_location_line_chart(show_key, df, span_granularity, aggregate_ratio=aggregate_ratio, season=season)
 
     return location_line_chart, show_key
+
+
+############ series-search-results-gantt callbacks
+@dapp.callback(
+    Output('series-search-results-gantt', 'figure'),
+    Output('show-key-display9', 'children'),
+    Output('qt-display', 'children'),
+    Input('show-key', 'value'),
+    Input('qt', 'value'))
+    # Input('qt-submit', 'value'))    
+def render_series_search_results_gantt(show_key: str, qt: str):
+    print(f'in render_series_gantt_chart, show_key={show_key} qt={qt}')
+
+    # execute search query and filter response into series gantt charts
+    series_gantt_response = esr.generate_series_gantt_sequence(ShowKey(show_key))
+    search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
+    series_search_results_gantt = fb.series_search_results_gantt(show_key, qt, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
+
+    return series_search_results_gantt, show_key, qt
 
 
 if __name__ == "__main__":

@@ -1,5 +1,7 @@
+import copy
 import igraph as ig
 import io
+import math
 import matplotlib
 import matplotlib.pyplot as plt
 import networkx as nx
@@ -105,7 +107,7 @@ def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key
     return fig
 
 
-def build_3d_network_graph(show_key: str, data: dict):
+def build_3d_network_graph(show_key: str, data: dict) -> go.Figure:
     print(f'in build_3d_network_graph show_key={show_key}')
 
     # reference: https://plotly.com/python/v3/3d-network-graph/
@@ -213,7 +215,7 @@ def build_3d_network_graph(show_key: str, data: dict):
     return fig    
 
 
-def build_episode_gantt(show_key: str, data: list):
+def build_episode_gantt(show_key: str, data: list) -> go.Figure:
     print(f'in build_episode_gantt show_key={show_key}')
 
     '''
@@ -265,7 +267,7 @@ def build_episode_gantt(show_key: str, data: list):
     return fig
 
 
-def build_series_gantt(show_key: str, data: list, type: str):
+def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
     print(f'in build_show_gantt show_key={show_key} type={type}')
 
     # TODO where/how should this truncation happen?
@@ -308,8 +310,8 @@ def build_series_gantt(show_key: str, data: list, type: str):
             for i in range(len(gantt_row['x'])):
                 episode_i = gantt_row['x'][i]
                 start_row = df.loc[(df['Task'] == gantt_row_key) & (df['Start'] == episode_i)]
-                if len(start_row) > 0 and 'Info' in start_row.iloc[0]:
-                    gantt_row_text[i] = start_row.iloc[0]['Info']
+                if len(start_row) > 0 and 'info' in start_row.iloc[0]:
+                    gantt_row_text[i] = start_row.iloc[0]['info']
                     continue
                 # finish_row = df.loc[(df['Info'] == gantt_row_key) & (df['Finish'] == episode_i)]
                 # if len(finish_row) > 0 and 'Info' in finish_row.iloc[0]:
@@ -320,7 +322,87 @@ def build_series_gantt(show_key: str, data: list, type: str):
     return fig
 
 
-def build_speaker_line_chart(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool = False, season: str = None):
+def series_search_results_gantt(show_key: str, qt: str, matching_episodes: list, episode_speakers_sequence: list) -> go.Figure:
+    print(f'in series_search_results_gantt show_key={show_key} qt={qt} len(matching_episodes)={len(matching_episodes)}, len(episode_speakers_sequence)={len(episode_speakers_sequence)}')
+
+    # TODO 
+
+    # load full time-series sequence of speakers by episode into a dataframe
+    df = pd.DataFrame(episode_speakers_sequence)
+    df['matching_line_count'] = 0
+    df['matching_lines'] = np.NaN
+    speakers_to_keep = []
+    # for each matching episode, concat lines and tally line_count per speaker, then insert into corresponding row in df 
+    for episode in matching_episodes:
+        speakers_to_lines = {}
+        speakers_to_line_counts = {}
+        for scene in episode['scenes']:
+            for scene_event in scene['scene_events']:
+                speaker = scene_event['spoken_by']
+                if speaker not in speakers_to_lines:
+                    speakers_to_lines[speaker] = []
+                    speakers_to_line_counts[speaker] = 0
+                    if speaker not in speakers_to_keep:
+                        speakers_to_keep.append(speaker)
+                # speakers_to_lines[speaker].append(f"S{scene['sequence']+1}: {scene_event['dialog']}\n")
+                speakers_to_lines[speaker].append(f"{scene_event['dialog']}\n")
+                speakers_to_line_counts[speaker] += 1
+        for speaker, _ in speakers_to_line_counts.items():
+            print(f'speakers_to_line_counts[{speaker}]={speakers_to_line_counts[speaker]}')
+            df.loc[(df['Task'] == speaker) & (df['episode_key'] == episode['episode_key']), 'matching_line_count'] = speakers_to_line_counts[speaker]
+            df.loc[(df['Task'] == speaker) & (df['episode_key'] == episode['episode_key']), 'matching_lines'] = ''.join(speakers_to_lines[speaker])
+    
+    speakers_to_keep = list(dict.fromkeys(speakers_to_keep))
+    # only keep rows for speakers that have at least 1 match
+    df = df.loc[df['Task'].isin(speakers_to_keep)]
+    # ordered_unique_speakers = list(df['Task'].unique())
+    # print(f'ordered_unique_speakers={ordered_unique_speakers}')
+    # df['speaker_episode_key'] = df['Task'] + df['episode_key']
+    df['highlight'] = df['matching_line_count'].apply(lambda x: 'yes' if x > 0 else 'no')
+    matching_lines_df = df[df['highlight'] == 'yes']
+    matching_lines_df['hover_text'] = matching_lines_df['episode_title'] + ':\n' + matching_lines_df['matching_lines']
+    hover_text = list(matching_lines_df['hover_text'])
+
+    df.sort_values(['season', 'sequence_in_season'], ascending=[True, True], inplace=True)
+
+    file_path = f'./app/data/test_series_search_results_gantt_{show_key}.csv'
+    df.to_csv(file_path)
+
+    # speaker_dfs = []
+    # for speaker in ordered_unique_speakers:
+    #     speaker_dfs.append(df.loc[df['Task'] == speaker])
+    # df = pd.concat(speaker_dfs)
+
+    # indexes_to_colors = list(df['gantt_color'])
+    # print(f'len(df)={len(df)} len(indexes_to_colors)={len(indexes_to_colors)}')
+    # for idx, row in df.iterrows():
+    #     if row['matching_line_count'] > 0:
+    #         print(f"matching_line_count=1 at idx={idx} row['Task']={row['Task']} row['gantt_color']={row['gantt_color']} row['speaker_episode_key']={row['speaker_episode_key']} indexes_to_colors[{idx}]={indexes_to_colors[idx]}")
+
+    # fig = ff.create_gantt(df, index_col='speaker_episode_key', bar_width=0.1, colors=indexes_to_colors, group_tasks=True, height=1000) # TODO scale height to number of rows
+    fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=1000) # TODO scale height to number of rows
+    fig.update_layout(xaxis_type='linear', autosize=False)
+
+    # inject dialog into hover 'text' property
+    for gantt_row in fig['data']:
+        print(gantt_row)
+        if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0 and gantt_row['legendgroup'] == 'rgb(255, 0, 0)':
+            # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
+            # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced.
+            # the 'text' of a gantt row is stored in an unnamed 'data' element (associated to a gantt row via its 'legendgroup' rgb color) as a tuple, making it immutable.
+            # rather than updating it index-by-index, it must be copied, cast as a list, mutated iteratively, and updated in one swoop via gantt_row.update at the end.
+            gantt_row_text = list(gantt_row['text'])
+            print(f"len(gantt_row['x'])={len(gantt_row['x'])} len(hover_text)={len(hover_text)}")
+            for i in range(len(gantt_row['x'])):
+                print(f'i={i} round({i}/2)={math.floor(i/2)}')
+                gantt_row_text[i] = hover_text[math.floor(i/2)]
+
+            gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
+    
+    return fig
+
+
+def build_speaker_line_chart(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool = False, season: str = None) -> go.Figure:
     print(f'in build_speaker_line_chart show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
 
     y = f'{span_granularity}_count'
@@ -355,7 +437,7 @@ def build_speaker_line_chart(show_key: str, df: pd.DataFrame, span_granularity: 
     return fig
 
 
-def build_location_line_chart(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool = False, season: str = None):
+def build_location_line_chart(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool = False, season: str = None) -> go.Figure:
     print(f'in build_location_line_chart show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
 
     y = f'{span_granularity}_count'
@@ -390,7 +472,7 @@ def build_location_line_chart(show_key: str, df: pd.DataFrame, span_granularity:
     return fig
 
 
-# def build_speaker_line_chart(show_key: str, data: list, aggregate_ratio: bool = False):
+# def build_speaker_line_chart(show_key: str, data: list, aggregate_ratio: bool = False) -> go.Figure:
 #     print(f'in build_speaker_line_chart show_key={show_key}')
 
 #     df = pd.DataFrame(data)

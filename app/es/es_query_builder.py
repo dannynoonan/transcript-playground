@@ -159,7 +159,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     return s
 
 
-async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> Search:
+def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> Search:
     print(f'begin search_scene_events for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker} dialog={dialog}')
     
     if not (speaker or dialog):
