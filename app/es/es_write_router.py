@@ -15,12 +15,13 @@ esw_app = APIRouter()
 
 
 @esw_app.get("/esw/init_es", tags=['ES Writer'])
-async def init_es():
+def init_es():
     '''
     Run this to explicitly define the mapping anytime the `transcripts` index is blown away and re-created. Not doing so will result in the wrong
     data types being auto-assigned to several fields in the schema mapping, and will break query (read) functionality down the line.
     '''
-    await esqb.init_transcripts_index()
+    esqb.init_transcripts_index()
+    esqb.init_character_index()
     return {"success": "success"}
 
 

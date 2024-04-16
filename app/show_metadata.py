@@ -47,7 +47,8 @@ show_metadata = {
         # 'transcript_types': {
         #     'Default': 'Default'
         # }
-        'regular_cast': ['PICARD', 'RIKER', 'DATA', 'LAFORGE', 'CRUSHER', 'WORF', 'TROI', 'TASHA', 'WESLEY', 'GUINAN']
+        'regular_cast': ['PICARD', 'RIKER', 'WORF', 'DATA', 'LAFORGE', 'TROI', 'CRUSHER', 'COMPUTER', 'WESLEY', "O'BRIEN", 'GUINAN', 'TASHA', 'PULASKI'],
+        'recurring_cast': ['OGAWA', 'Q', 'ALEXANDER', 'RO', 'KEIKO', 'LWAXANA', 'BARCLAY', 'LORE', 'GOWRON', 'RAGER', 'FELTON', 'GATES']
     }
 }
 

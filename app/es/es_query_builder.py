@@ -6,7 +6,7 @@ from elasticsearch_dsl.query import MoreLikeThis
 
 from app.config import settings
 from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
-from app.es.es_model import EsEpisodeTranscript
+from app.es.es_model import EsEpisodeTranscript, EsCharacter
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
 
@@ -32,10 +32,15 @@ es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port'
 # )
 
 
-async def init_transcripts_index():
+def init_transcripts_index():
     # EsEpisodeTranscript.init(using=es_client)
     EsEpisodeTranscript.init()
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_character_index():
+    EsCharacter.init()
+    es_conn.indices.put_settings(index="characters", body={"index": {"max_inner_result_window": 1000}})
 
 
 def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
@@ -74,6 +79,23 @@ def fetch_doc_ids(show_key: str, season: str = None) -> Search:
     if season:
         s = s.filter('term', season=season)
     
+    return s
+
+
+def fetch_simple_episodes(show_key: str, season: str = None) -> Search:
+    print(f'begin fetch_simple_episodes for show_key={show_key} season={season}')
+
+    s = Search(index='transcripts')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+    if season:
+        s = s.filter('term', season=season)
+
+    s = s.sort('season', 'sequence_in_season')
+
+    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
+
     return s
 
 
@@ -137,7 +159,7 @@ async def search_scenes(show_key: str, season: str = None, episode_key: str = No
     return s
 
 
-async def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> Search:
+def search_scene_events(show_key: str, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None) -> Search:
     print(f'begin search_scene_events for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker} dialog={dialog}')
     
     if not (speaker or dialog):
@@ -299,36 +321,6 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
     return s
 
 
-def fetch_all_simple_episodes(show_key: str) -> Search:
-    print(f'begin fetch_all_simple_episodes for show_key={show_key}')
-
-    s = Search(index='transcripts')
-    s = s.extra(size=1000)
-
-    s = s.filter('term', show_key=show_key)
-
-    s = s.sort('season', 'sequence_in_season')
-
-    s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
-
-    return s
-
-
-# def list_episodes_by_season(show_key: str) -> Search:
-#     print(f'begin list_episodes_by_season for show_key={show_key}')
-
-#     s = Search(index='transcripts')
-#     s = s.extra(size=1000)
-
-#     s = s.filter('term', show_key=show_key)
-
-#     s = s.sort('season', 'sequence_in_season')
-
-#     s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
-
-#     return s
-
-
 def fetch_all_episode_relations(show_key: str, model_vendor: str, model_version: str) -> Search:
     print(f'begin fetch_all_episode_relations for show_key={show_key} model_vendor={model_vendor} model_version={model_version}')
 
@@ -362,7 +354,7 @@ async def agg_seasons(show_key: str, location: str = None) -> Search:
     return s
 
 
-async def agg_episodes(show_key: str, season: str = None, location: str = None) -> Search:
+def agg_episodes(show_key: str, season: str = None, location: str = None) -> Search:
     print(f'begin agg_episodes for show_key={show_key} season={season} location={location}')
 
     s = Search(index='transcripts')
@@ -483,7 +475,7 @@ async def agg_episodes_by_speaker(show_key: str, season: str = None, location: s
     return s
 
 
-async def agg_episodes_by_location(show_key: str, season: str = None) -> Search:
+def agg_episodes_by_location(show_key: str, season: str = None) -> Search:
     print(f'begin agg_episodes_by_speaker for show_key={show_key} season={season}')
 
     s = Search(index='transcripts')
@@ -504,7 +496,7 @@ async def agg_episodes_by_location(show_key: str, season: str = None) -> Search:
     return s
 
 
-async def agg_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None) -> Search:
+def agg_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None) -> Search:
     print(f'begin agg_scenes for show_key={show_key} season={season} episode_key={episode_key} location={location}')
 
     s = Search(index='transcripts')
@@ -523,7 +515,7 @@ async def agg_scenes(show_key: str, season: str = None, episode_key: str = None,
     return s
 
 
-async def agg_scenes_by_location(show_key: str, season: str = None, episode_key: str = None, speaker: str = None) -> Search:
+def agg_scenes_by_location(show_key: str, season: str = None, episode_key: str = None, speaker: str = None) -> Search:
     print(f'begin agg_scenes_by_location for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker}')
 
     s = Search(index='transcripts')
@@ -553,7 +545,7 @@ async def agg_scenes_by_location(show_key: str, season: str = None, episode_key:
     return s
 
 
-async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: str = None, 
+def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: str = None, 
                                 location: str = None, other_speaker: str = None) -> Search:
     print(f'begin agg_scenes_by_speaker for show_key={show_key} season={season} episode_key={episode_key} location={location} other_speaker={other_speaker}')
 
@@ -604,7 +596,7 @@ async def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: 
     return s
 
 
-async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode_key: str = None, dialog: str = None) -> Search:
+def agg_scene_events_by_speaker(show_key: str, season: str = None, episode_key: str = None, dialog: str = None) -> Search:
     print(f'begin agg_scene_events_by_speaker for show_key={show_key} season={season} episode_key={episode_key} dialog={dialog}')
 
     s = Search(index='transcripts')
@@ -656,7 +648,7 @@ async def agg_scene_events_by_speaker(show_key: str, season: str = None, episode
     return s
 
 
-async def agg_dialog_word_counts(show_key: str, season: str = None, episode_key: str = None, speaker: str = None) -> Search:
+def agg_dialog_word_counts(show_key: str, season: str = None, episode_key: str = None, speaker: str = None) -> Search:
     print(f'begin agg_dialog_word_counts for show_key={show_key} season={season} episode_key={episode_key} speaker={speaker}')
 
     s = Search(index='transcripts')

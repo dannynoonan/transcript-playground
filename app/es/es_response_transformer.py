@@ -43,7 +43,7 @@ async def return_episodes_by_title(s: Search) -> list:
     return results
 
 
-async def return_scenes(s: Search) -> (list, int):
+async def return_scenes(s: Search) -> tuple[list, int]:
     print(f'begin return_scenes for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -90,7 +90,7 @@ async def return_scenes(s: Search) -> (list, int):
     return results, scene_count
 
 
-async def return_scene_events(s: Search, location: str = None) -> (list, int, int):
+def return_scene_events(s: Search, location: str = None) -> tuple[list, int, int]:
     print(f'begin return_scene_events for location={location} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -177,7 +177,7 @@ async def return_scene_events(s: Search, location: str = None) -> (list, int, in
     return results, scene_count, scene_event_count
 
 
-async def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = None) -> (list, int, int):
+async def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = None) -> tuple[list, int, int]:
     print(f'begin return_scene_events_multi_speaker for speakers={speakers} location={location} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -310,7 +310,7 @@ async def return_season_count(s: Search) -> int:
     return len(s.aggregations.by_season.buckets)
 
 
-async def return_episodes(s: Search) -> (list, int, int):
+async def return_episodes(s: Search) -> tuple[list, int, int]:
     print(f'begin return_episodes for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -444,7 +444,7 @@ def return_all_episode_relations(s: Search) -> dict:
     return results
 
 
-async def return_episode_count(s: Search) -> int:
+def return_episode_count(s: Search) -> int:
     print(f'begin return_episode_count for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -479,7 +479,7 @@ async def return_episodes_by_speaker(s: Search, agg_episode_count: str, location
     return results
 
 
-async def return_episodes_by_location(s: Search, agg_episode_count: str) -> list:
+def return_episodes_by_location(s: Search, agg_episode_count: str) -> list:
     print(f'begin return_episodes_by_speaker s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -499,7 +499,7 @@ async def return_episodes_by_location(s: Search, agg_episode_count: str) -> list
     return results
 
 
-async def return_scene_count(s: Search) -> int:
+def return_scene_count(s: Search) -> int:
     print(f'begin return_scene_count for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -507,7 +507,7 @@ async def return_scene_count(s: Search) -> int:
     return int(s.aggregations.scene_count.value)
 
 
-async def return_scenes_by_location(s: Search, speaker: str = None) -> list:
+def return_scenes_by_location(s: Search, speaker: str = None) -> list:
     print(f'begin return_scenes_by_location for speaker={speaker} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -527,7 +527,7 @@ async def return_scenes_by_location(s: Search, speaker: str = None) -> list:
     return results
 
 
-async def return_scenes_by_speaker(s: Search, agg_scene_count: str, location: str = None, other_speaker: str = None) -> list:
+def return_scenes_by_speaker(s: Search, agg_scene_count: str, location: str = None, other_speaker: str = None) -> list:
     print(f'begin return_scenes_by_speaker for location={location} other_speaker={other_speaker} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -554,7 +554,7 @@ async def return_scenes_by_speaker(s: Search, agg_scene_count: str, location: st
     return results
 
 
-async def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
+def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
     print(f'begin return_scene_events_by_speaker for dialog={dialog} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -574,7 +574,7 @@ async def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
     return results
 
 
-async def return_dialog_word_counts(s: Search, speaker: str = None) -> list:
+def return_dialog_word_counts(s: Search, speaker: str = None) -> list:
     print(f'begin return_dialog_word_counts s.to_dict()={s.to_dict()}')
 
     s = s.execute()

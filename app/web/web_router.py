@@ -37,24 +37,24 @@ async def show_page(request: Request, show_key: ShowKey):
 	keywords = await esr.keywords_by_corpus(show_key, exclude_speakers=True)
 	tdata['keywords'] = keywords['keywords']
 
-	episodes_by_season = esr.list_episodes_by_season(show_key)
+	episodes_by_season = esr.list_simple_episodes_by_season(show_key)
 	tdata['episodes_by_season'] = episodes_by_season['episodes_by_season']
 
 	stats_by_season = {}
 	for season in tdata['episodes_by_season'].keys():
 		season_episode_count = len(tdata['episodes_by_season'][season])
 		stats = {}
-		season_locations = await esr.agg_scenes_by_location(show_key, season=season)
+		season_locations = esr.agg_scenes_by_location(show_key, season=season)
 		stats['location_count'] = season_locations['location_count']
 		stats['location_counts'] = utils.truncate_dict(season_locations['scenes_by_location'], season_episode_count, 1)
-		season_speakers = await esr.agg_scene_events_by_speaker(show_key, season=season)
+		season_speakers = esr.agg_scene_events_by_speaker(show_key, season=season)
 		stats['line_count'] = season_speakers['scene_events_by_speaker']['_ALL_']
 		stats['speaker_line_counts'] = utils.truncate_dict(season_speakers['scene_events_by_speaker'], season_episode_count, 1)
-		season_speaker_scene_counts = await esr.agg_scenes_by_speaker(show_key, season=season)
+		season_speaker_scene_counts = esr.agg_scenes_by_speaker(show_key, season=season)
 		stats['scene_count'] = season_speaker_scene_counts['scenes_by_speaker']['_ALL_']
 		season_speaker_episode_counts = await esr.agg_episodes_by_speaker(show_key, season=season)
 		stats['speaker_count'] = season_speaker_episode_counts['speaker_count']	
-		season_speaker_word_counts = await esr.agg_dialog_word_counts(show_key, season=season)
+		season_speaker_word_counts = esr.agg_dialog_word_counts(show_key, season=season)
 		stats['word_count'] = int(season_speaker_word_counts['dialog_word_counts']['_ALL_'])
 		# generate air_date_range
 		first_episode_in_season = tdata['episodes_by_season'][season][0]
@@ -78,10 +78,10 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 	episode = esr.fetch_episode(show_key, episode_key)
 	tdata['episode'] = episode['es_episode']
 	
-	locations_by_scene = await esr.agg_scenes_by_location(show_key, episode_key=episode_key)
+	locations_by_scene = esr.agg_scenes_by_location(show_key, episode_key=episode_key)
 	tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
 
-	episode_word_counts = await esr.agg_dialog_word_counts(show_key, episode_key=episode_key)
+	episode_word_counts = esr.agg_dialog_word_counts(show_key, episode_key=episode_key)
 	tdata['episode_word_counts'] = episode_word_counts['dialog_word_counts']
 
 	speaker_counts = await esr.composite_speaker_aggs(show_key, episode_key=episode_key)
@@ -130,7 +130,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 		if location and not (dialog or speaker):
 			matches = await esr.search_scenes(show_key, episode_key=episode_key, location=location)
 		else:
-			matches = await esr.search_scene_events(show_key, episode_key=episode_key, speaker=speaker, dialog=dialog, location=location)
+			matches = esr.search_scene_events(show_key, episode_key=episode_key, speaker=speaker, dialog=dialog, location=location)
 			tdata['scene_event_match_count'] = matches['scene_event_count']
 		if matches['matches']:
 			tdata['episode_match'] = matches['matches'][0]
@@ -159,7 +159,7 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 							  model_version: str = None, speakers: str = None, locationAMS: str = None):
 	tdata = {}
 
-	tdata['header'] = 'episode'
+	tdata['header'] = 'search'
 	tdata['show_key'] = show_key.value
 	if not search_type:
 		tdata['search_type'] = ''
@@ -202,7 +202,7 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 		if location and not (dialog or speaker):
 			matches = await esr.search_scenes(show_key, season=season, location=location)
 		else:
-			matches = await esr.search_scene_events(show_key, season=season, speaker=speaker, dialog=dialog, location=location)
+			matches = esr.search_scene_events(show_key, season=season, speaker=speaker, dialog=dialog, location=location)
 			tdata['scene_event_match_count'] = matches['scene_event_count']
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = matches['episode_count']
@@ -211,12 +211,13 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 	elif search_type == 'semantic':
 		tdata['qtSemantic'] = qtSemantic
 		if not model_vendor:
-			model_vendor = 'webvectors'
+			model_vendor = 'openai'
 		if not model_version:
-			model_version = '29'
+			model_version = 'ada002'
 		tdata['model_vendor'] = model_vendor
 		tdata['model_version'] = model_version
 		matches = esr.vector_search(show_key, qt=qtSemantic, model_vendor=model_vendor, model_version=model_version)
+		print(f'############ matches={matches}')
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = len(matches['matches'])
 		tdata['tokens_processed_count'] = matches['tokens_processed_count']
@@ -252,20 +253,20 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str, sear
 	tdata['show_key'] = show_key.value
 	tdata['speaker'] = speaker
 
-	episode_matches = await esr.search_scene_events(show_key, speaker=speaker)
+	episode_matches = esr.search_scene_events(show_key, speaker=speaker)
 	tdata['episodes'] = episode_matches['matches']
 	tdata['episode_count'] = episode_matches['episode_count']
 	tdata['scene_count'] = episode_matches['scene_count']
 	tdata['scene_event_count'] = episode_matches['scene_event_count']
 
-	word_count = await esr.agg_dialog_word_counts(show_key, speaker=speaker)
+	word_count = esr.agg_dialog_word_counts(show_key, speaker=speaker)
 	tdata['word_count'] = int(word_count['dialog_word_counts'][speaker])
 	
-	locations_counts = await esr.agg_scenes_by_location(show_key, speaker=speaker)
+	locations_counts = esr.agg_scenes_by_location(show_key, speaker=speaker)
 	tdata['location_counts'] = locations_counts['scenes_by_location']
 
 	co_occ_speakers_by_episode = await esr.agg_episodes_by_speaker(show_key, other_speaker=speaker)
-	co_occ_speakers_by_scene = await esr.agg_scenes_by_speaker(show_key, other_speaker=speaker)
+	co_occ_speakers_by_scene = esr.agg_scenes_by_speaker(show_key, other_speaker=speaker)
 	# TODO refactor this to generically handle dicts threading together
 	other_speakers = {}
 	for other_speaker, episode_count in co_occ_speakers_by_episode['episodes_by_speaker'].items():
@@ -303,7 +304,7 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str, sear
 			tdata['dialog'] = dialog
 		if location:
 			tdata['location'] = location
-		matches = await esr.search_scene_events(show_key, speaker=speaker, dialog=dialog, location=location)
+		matches = esr.search_scene_events(show_key, speaker=speaker, dialog=dialog, location=location)
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = matches['episode_count']
 		tdata['scene_match_count'] = matches['scene_count']

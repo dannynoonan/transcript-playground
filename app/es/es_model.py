@@ -104,16 +104,28 @@ class EsEpisodeTranscript(Document):
         return super().save(**kwargs)
     
 
-class Character(Document):
+class EsCharacter(Document):
     show_key = Keyword()
+    name = Keyword()
     alt_names = Keyword(multi=True)
     actor_names = Keyword(multi=True)
+    episodes = Object(multi=True)
     season_count = Integer()
+    episode_count = Integer()
     scene_count = Integer()
     scene_event_count = Integer()
     word_count = Integer()
-    most_frequent_companions = Keyword(multi=True)
+    most_frequent_companions = Object(multi=True)
     episode_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     # episode_classifications 
     # season_classifications
     # show_classification
+    loaded_ts = Date()
+    indexed_ts = Date()
+
+    class Index:
+        name = 'characters'
+
+    def save(self, **kwargs):
+        self.indexed_ts = datetime.now()
+        return super().save(**kwargs)

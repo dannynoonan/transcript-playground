@@ -2,11 +2,15 @@
 import dash_bootstrap_components as dbc
 from dash import dcc, html, Dash, dash_table
 from dash.dependencies import Input, Output, State
+import os
 import pandas as pd
 import urllib.parse
 
 import app.dash.components as cmp
-from app.dash import show_cluster_scatter, show_network_graph, show_3d_network_graph, speaker_3d_network_graph, show_gantt_chart
+from app.dash import (
+    episode_gantt_chart, location_line_chart, series_search_results_gantt, show_3d_network_graph, speaker_3d_network_graph, 
+    show_cluster_scatter, show_gantt_chart, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
+)
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
@@ -48,7 +52,7 @@ def display_page(pathname, search):
     
     elif pathname == "/tsp_dash/speaker-3d-network-graph":
         # generate form-backing data
-        all_simple_episodes = esr.fetch_all_simple_episodes(ShowKey('TNG'))
+        all_simple_episodes = esr.fetch_simple_episodes(ShowKey('TNG'))
         episode_dropdown_options = []
         for episode in all_simple_episodes['episodes']:
             label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
@@ -60,10 +64,10 @@ def display_page(pathname, search):
                 episode_key = episode_key[0]
         return speaker_3d_network_graph.generate_content(episode_dropdown_options, episode_key=episode_key)
     
-    elif pathname == "/tsp_dash/show-gantt-chart":
+    elif pathname == "/tsp_dash/episode-gantt-chart":
         # TODO this duplicates speaker-3d-network-graph
         # generate form-backing data 
-        all_simple_episodes = esr.fetch_all_simple_episodes(ShowKey('TNG'))
+        all_simple_episodes = esr.fetch_simple_episodes(ShowKey('TNG'))
         episode_dropdown_options = []
         for episode in all_simple_episodes['episodes']:
             label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
@@ -73,7 +77,22 @@ def display_page(pathname, search):
             episode_key = parsed_dict['episode_key']
             if isinstance(episode_key, list):
                 episode_key = episode_key[0]
-        return show_gantt_chart.generate_content(episode_dropdown_options, episode_key=episode_key)
+        return episode_gantt_chart.generate_content(episode_dropdown_options, episode_key=episode_key)
+    
+    elif pathname == "/tsp_dash/show-gantt-chart":
+        return show_gantt_chart.content
+    
+    elif pathname == "/tsp_dash/speaker-line-chart":
+        return speaker_line_chart.content
+    
+    elif pathname == "/tsp_dash/location-line-chart":
+        return location_line_chart.content
+    
+    elif pathname == "/tsp_dash/series-search-results-gantt":
+        return series_search_results_gantt.content
+    
+    elif pathname == "/tsp_dash/speaker-frequency-bar-chart":
+        return speaker_frequency_bar_chart.content
 
 
 ############ show-cluster-scatter callbacks
@@ -97,7 +116,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
     doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: fm.colors[x])
 
     # fetch basic title/season data for all show episodes 
-    all_episodes = esr.fetch_all_simple_episodes(ShowKey(show_key))
+    all_episodes = esr.fetch_simple_episodes(ShowKey(show_key))
     episodes_df = pd.DataFrame(all_episodes['episodes'])
 
     # merge basic episode data into cluster data
@@ -156,7 +175,7 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str):
     print(f'in render_speaker_3d_network_graph, show_key={show_key} episode_key={episode_key}')
 
     # form-backing data
-    # episodes = esr.fetch_all_simple_episodes(ShowKey(show_key))
+    # episodes = esr.fetch_simple_episodes(ShowKey(show_key))
 
     # generate data and build generate 3d network graph
     data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
@@ -165,22 +184,175 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str):
     return fig_scatter, show_key
 
 
-############ speaker-3d-network-graph callbacks
+############ episode-gantt-chart callbacks
 @dapp.callback(
-    Output('show-dialog-timeline', 'figure'),
-    Output('show-location-timeline', 'figure'),
+    Output('episode-dialog-timeline', 'figure'),
+    Output('episode-location-timeline', 'figure'),
     Output('show-key-display5', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'))    
-def render_show_gantt_chart(show_key: str, episode_key: str):
-    print(f'in render_show_gantt_chart, show_key={show_key} episode_key={episode_key}')
+def render_episode_gantt_chart(show_key: str, episode_key: str):
+    print(f'in render_episode_gantt_chart, show_key={show_key} episode_key={episode_key}')
 
-    # generate data and build generate 3d network graph
-    response = esr.scene_timeline(ShowKey(show_key), episode_key)
-    show_dialog_timeline = fb.build_show_timeline(show_key, response['dialog_timeline'])
-    show_location_timeline = fb.build_show_timeline(show_key, response['location_timeline'])
+    # generate data and build episode gantt charts
+    response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
+    episode_dialog_timeline = fb.build_episode_gantt(show_key, response['dialog_timeline'])
+    episode_location_timeline = fb.build_episode_gantt(show_key, response['location_timeline'])
 
-    return show_dialog_timeline, show_location_timeline, show_key
+    return episode_dialog_timeline, episode_location_timeline, show_key
+
+
+############ show-gantt-chart callbacks
+@dapp.callback(
+    Output('show-speaker-gantt', 'figure'),
+    Output('show-location-gantt', 'figure'),
+    Output('show-key-display6', 'children'),
+    Input('show-key', 'value'))    
+def render_series_gantt_chart(show_key: str):
+    print(f'in render_series_gantt_chart, show_key={show_key}')
+
+    # generate data and build series gantt charts
+    response = esr.generate_series_gantt_sequence(ShowKey(show_key))
+    series_speaker_gantt = fb.build_series_gantt(show_key, response['episode_speakers_sequence'], 'speakers')
+    series_location_gantt = fb.build_series_gantt(show_key, response['episode_locations_sequence'], 'locations')
+
+    return series_speaker_gantt, series_location_gantt, show_key
+
+
+############ speaker-line-chart callbacks
+@dapp.callback(
+    Output('speaker-line-chart', 'figure'),
+    Output('show-key-display7', 'children'),
+    Input('show-key', 'value'),
+    Input('span-granularity', 'value'),
+    Input('aggregate-ratio', 'value'),
+    Input('season', 'value'))    
+def render_series_speaker_line_chart(show_key: str, span_granularity: str, aggregate_ratio: str, season: str):
+    print(f'in render_series_speaker_line_chart, show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
+
+    if aggregate_ratio == 'True':
+        aggregate_ratio = True
+    else:
+        aggregate_ratio = False
+    if season == 'All':
+        season = None
+    else:
+        season = int(season)
+
+    # fetch or generate aggregate speaker data and build speaker line chart
+    # response = esr.generate_speaker_line_chart_sequence(ShowKey(show_key), span_granularity=span_granularity, aggregate_ratio=aggregate_ratio, season=season)
+    file_path = f'./app/data/speaker_episode_aggs_{show_key}.csv'
+    if os.path.isfile(file_path):
+        df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        print(f'no file found at file_path={file_path}, running `/esr/generate_speaker_line_chart_sequences/{show_key}?overwrite_file=True` to generate')
+        esr.generate_speaker_line_chart_sequences(ShowKey(show_key), overwrite_file=True)
+        if os.path.isfile(file_path):
+            df = pd.read_csv(file_path)
+            print(f'loading dataframe at file_path={file_path}')
+        else:
+            raise Exception('Failure to render_series_speaker_line_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    
+    speaker_line_chart = fb.build_speaker_line_chart(show_key, df, span_granularity, aggregate_ratio=aggregate_ratio, season=season)
+
+    return speaker_line_chart, show_key
+
+
+############ location-line-chart callbacks
+@dapp.callback(
+    Output('location-line-chart', 'figure'),
+    Output('show-key-display8', 'children'),
+    Input('show-key', 'value'),
+    Input('span-granularity', 'value'),
+    Input('aggregate-ratio', 'value'),
+    Input('season', 'value'))    
+def render_series_location_line_chart(show_key: str, span_granularity: str, aggregate_ratio: str, season: str):
+    print(f'in render_series_speaker_line_chart, show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
+
+    if aggregate_ratio == 'True':
+        aggregate_ratio = True
+    else:
+        aggregate_ratio = False
+    if season == 'All':
+        season = None
+    else:
+        season = int(season)
+
+    # fetch or generate aggregate location data and build location line chart
+    file_path = f'./app/data/location_episode_aggs_{show_key}.csv'
+    if os.path.isfile(file_path):
+        df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        print(f'no file found at file_path={file_path}, running `/esr/generate_location_line_chart_sequences/{show_key}?overwrite_file=True` to generate')
+        esr.generate_location_line_chart_sequences(ShowKey(show_key), overwrite_file=True)
+        if os.path.isfile(file_path):
+            df = pd.read_csv(file_path)
+            print(f'loading dataframe at file_path={file_path}')
+        else:
+            raise Exception('Failure to render_series_location_line_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    
+    location_line_chart = fb.build_location_line_chart(show_key, df, span_granularity, aggregate_ratio=aggregate_ratio, season=season)
+
+    return location_line_chart, show_key
+
+
+############ series-search-results-gantt callbacks
+@dapp.callback(
+    Output('series-search-results-gantt', 'figure'),
+    Output('show-key-display9', 'children'),
+    Output('qt-display', 'children'),
+    Input('show-key', 'value'),
+    Input('qt', 'value'),
+    # NOTE: I believe `qt-submit`` is a placebo: it's a call to action, but simply exiting the qt field invokes the callback
+    Input('qt-submit', 'value'))    
+def render_series_search_results_gantt(show_key: str, qt: str, qt_submit: bool = False):
+    print(f'in render_series_gantt_chart, show_key={show_key} qt={qt} qt_submit={qt_submit}')
+
+    # execute search query and filter response into series gantt charts
+    series_gantt_response = esr.generate_series_gantt_sequence(ShowKey(show_key))
+    search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
+    series_search_results_gantt = fb.build_series_search_results_gantt(show_key, qt, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
+
+    return series_search_results_gantt, show_key, qt
+
+
+############ speaker-frequency-bar-chart callbacks
+@dapp.callback(
+    Output('speaker-season-frequency-bar-chart', 'figure'),
+    Output('speaker-episode-frequency-bar-chart', 'figure'),
+    Output('show-key-display10', 'children'),
+    Input('show-key', 'value'),
+    Input('span-granularity', 'value'),
+    Input('season', 'value'),
+    Input('sequence-in-season', 'value'))    
+def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, season: str, sequence_in_season: str = None):
+    print(f'in render_speaker_frequency_bar_chart, show_key={show_key} span_granularity={span_granularity} season={season} sequence_in_season={sequence_in_season}')
+
+    if season in ['0', 0, 'All']:
+        season = None
+    else:
+        season = int(season)
+
+    # fetch or generate aggregate speaker data and build speaker frequency bar chart
+    file_path = f'./app/data/speaker_episode_aggs_{show_key}.csv'
+    if os.path.isfile(file_path):
+        df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        print(f'no file found at file_path={file_path}, running `/esr/generate_speaker_line_chart_sequences/{show_key}?overwrite_file=True` to generate')
+        esr.generate_speaker_line_chart_sequences(ShowKey(show_key), overwrite_file=True)
+        if os.path.isfile(file_path):
+            df = pd.read_csv(file_path)
+            print(f'loading dataframe at file_path={file_path}')
+        else:
+            raise Exception('Failure to render_speaker_frequency_bar_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    
+    speaker_season_frequency_bar_chart = fb.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=False, season=season)
+    speaker_episode_frequency_bar_chart = fb.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=True, season=season, sequence_in_season=sequence_in_season)
+
+    return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart, show_key
 
 
 if __name__ == "__main__":
