@@ -9,7 +9,7 @@ import urllib.parse
 import app.dash.components as cmp
 from app.dash import (
     episode_gantt_chart, location_line_chart, series_search_results_gantt, show_3d_network_graph, speaker_3d_network_graph, 
-    show_cluster_scatter, show_gantt_chart, show_network_graph, speaker_line_chart
+    show_cluster_scatter, show_gantt_chart, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
 )
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
@@ -90,6 +90,9 @@ def display_page(pathname, search):
     
     elif pathname == "/tsp_dash/series-search-results-gantt":
         return series_search_results_gantt.content
+    
+    elif pathname == "/tsp_dash/speaker-frequency-bar-chart":
+        return speaker_frequency_bar_chart.content
 
 
 ############ show-cluster-scatter callbacks
@@ -313,6 +316,41 @@ def render_series_search_results_gantt(show_key: str, qt: str, qt_submit: bool =
     series_search_results_gantt = fb.build_series_search_results_gantt(show_key, qt, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
 
     return series_search_results_gantt, show_key, qt
+
+
+############ speaker-frequency-bar-chart callbacks
+@dapp.callback(
+    Output('speaker-frequency-bar-chart', 'figure'),
+    Output('show-key-display10', 'children'),
+    Input('show-key', 'value'),
+    Input('span-granularity', 'value'),
+    # Input('aggregate-ratio', 'value'),
+    Input('season', 'value'))    
+def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, season: str):
+    print(f'in render_speaker_frequency_bar_chart, show_key={show_key} span_granularity={span_granularity} season={season}')
+
+    if season in ['0', 0, 'All']:
+        season = None
+    else:
+        season = int(season)
+
+    # fetch or generate aggregate speaker data and build speaker frequency bar chart
+    file_path = f'./app/data/speaker_episode_aggs_{show_key}.csv'
+    if os.path.isfile(file_path):
+        df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        print(f'no file found at file_path={file_path}, running `/esr/generate_speaker_line_chart_sequences/{show_key}?overwrite_file=True` to generate')
+        esr.generate_speaker_line_chart_sequences(ShowKey(show_key), overwrite_file=True)
+        if os.path.isfile(file_path):
+            df = pd.read_csv(file_path)
+            print(f'loading dataframe at file_path={file_path}')
+        else:
+            raise Exception('Failure to render_speaker_frequency_bar_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    
+    speaker_frequency_bar_chart = fb.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=False, season=season)
+
+    return speaker_frequency_bar_chart, show_key
 
 
 if __name__ == "__main__":
