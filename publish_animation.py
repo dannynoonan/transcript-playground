@@ -9,10 +9,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--show_key", "-s", help="Show key", required=True)
     parser.add_argument("--fig_type", "-f", help="Figure type", required=True)
+    parser.add_argument("--season", "-e", help="Season", required=False)
     parser.add_argument("--span_granularity", "-g", help="Span granularity", required=False)
     args = parser.parse_args()
     show_key = args.show_key
     fig_type = args.fig_type
+    season = args.season
     span_granularity = args.span_granularity
 
     valid_fig_types_to_df_sources = {'speaker_frequency_bar': 'speaker_episode_aggs'}
@@ -36,11 +38,18 @@ def main():
             raise Exception(f'Failed to publish animation: `span_granularity` is required for fig_type={fig_type}')
         if span_granularity not in valid_span_granularities:
             raise Exception(f'Failed to publish animation: span_granularity={span_granularity} must be in {valid_span_granularities}')
+        
+        if season:
+            fig = fb.build_speaker_frequency_bar(show_key, df, span_granularity, True, int(season), animate=True)
+            output_path = f'app/animations/{fig_type}_{show_key}_S{season}_{span_granularity}.html'
+            fig.write_html(output_path, auto_play=False)
+            print(f'Successfully generated and saved animation html file to output_path={output_path}')
 
-        fig = fb.build_speaker_frequency_bar(show_key, df, span_granularity, False, None, animate=True)
-        output_path = f'app/animations/{fig_type}_{show_key}_{span_granularity}.html'
-        fig.write_html(output_path, auto_play=False)
-        print(f'Successfully generated and saved animation html file to output_path={output_path}')
+        else:
+            fig = fb.build_speaker_frequency_bar(show_key, df, span_granularity, False, None, animate=True)
+            output_path = f'app/animations/{fig_type}_{show_key}_{span_granularity}.html'
+            fig.write_html(output_path, auto_play=False)
+            print(f'Successfully generated and saved animation html file to output_path={output_path}')
 
 
 if __name__ == '__main__':
