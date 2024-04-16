@@ -14,6 +14,7 @@ As of this writing, properly ingested/normalized show transcripts can:
 * `BeautifulSoup`: text parser for transforming raw HTML to normalized objects 
 * `Pandas` / `NumPy` / `Scikit-learn` / `NLTK`: data / text analytics / ML tool kits
 * `Word2Vec` / `OpenAI`: pre-trained language / embedding models 
+* `Plotly` / `Dash` : data visualization and associated web delivery frameworks
 
 # Setup and run 
 
@@ -250,6 +251,15 @@ ES Reader `/esr` endpoints provide most of the core functionality of the project
 ### 'Web' endpoints: render web pages 
 
 Webpage-rendering endpoints are 'front-end' consumers of the other 'back-end' endpoints, specifically of the 'ES Reader' endpoints. These 'Web' endpoints generate combinations of `/esr` requests, package up the results, and feed them into HTML templates that offer some bare-bones UI functionality.
+
+
+## Plotly figures
+
+TODO
+
+### Publishing animations
+
+The `Dash` web framework does not support animation rendering, so animations must be generated and served independently as fully-baked html pages. To generate an animation html page, run `python publish_animation.py` script from project root, incorporating parameters as defined in script. The generated animation html file will be saved to the output_path noted in the logs.
 
 
 ## Analytics
