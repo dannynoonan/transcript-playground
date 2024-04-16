@@ -320,14 +320,15 @@ def render_series_search_results_gantt(show_key: str, qt: str, qt_submit: bool =
 
 ############ speaker-frequency-bar-chart callbacks
 @dapp.callback(
-    Output('speaker-frequency-bar-chart', 'figure'),
+    Output('speaker-season-frequency-bar-chart', 'figure'),
+    Output('speaker-episode-frequency-bar-chart', 'figure'),
     Output('show-key-display10', 'children'),
     Input('show-key', 'value'),
     Input('span-granularity', 'value'),
-    # Input('aggregate-ratio', 'value'),
-    Input('season', 'value'))    
-def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, season: str):
-    print(f'in render_speaker_frequency_bar_chart, show_key={show_key} span_granularity={span_granularity} season={season}')
+    Input('season', 'value'),
+    Input('sequence-in-season', 'value'))    
+def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, season: str, sequence_in_season: str = None):
+    print(f'in render_speaker_frequency_bar_chart, show_key={show_key} span_granularity={span_granularity} season={season} sequence_in_season={sequence_in_season}')
 
     if season in ['0', 0, 'All']:
         season = None
@@ -348,9 +349,10 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
         else:
             raise Exception('Failure to render_speaker_frequency_bar_chart: unable to fetch or generate dataframe at file_path={file_path}')
     
-    speaker_frequency_bar_chart = fb.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=False, season=season)
+    speaker_season_frequency_bar_chart = fb.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=False, season=season)
+    speaker_episode_frequency_bar_chart = fb.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=True, season=season, sequence_in_season=sequence_in_season)
 
-    return speaker_frequency_bar_chart, show_key
+    return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart, show_key
 
 
 if __name__ == "__main__":

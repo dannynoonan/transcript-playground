@@ -129,11 +129,13 @@
             <div class="col-4">
                 <h3>ML & data viz playground</h3>
                 <ul>
-                    <li><a href="/tsp_dash/show-cluster-scatter">KMeans clustering</a></li>
-                    <li><a href="/tsp_dash/show-3d-network-graph">Episode relations</a></li>
                     <li><a href="/tsp_dash/show-gantt-chart?show_key={{ tdata['show_key'] }}">Character and location continuity gantt charts</a></li>
+                    <li><a href="/tsp_dash/series-search-results-gantt?show_key={{ tdata['show_key'] }}">Keyword search / matching character+episode gantt charts</a></li>
+                    <li><a href="/tsp_dash/speaker-frequency-bar-chart?show_key={{ tdata['show_key'] }}">Character appearance and dialog bar charts</a></li>
                     <li><a href="/tsp_dash/speaker-line-chart?show_key={{ tdata['show_key'] }}">Character appearance and dialog line graphs</a></li>
                     <li><a href="/tsp_dash/location-line-chart?show_key={{ tdata['show_key'] }}">Location occurrence line graphs</a></li>
+                    <li><a href="/tsp_dash/show-cluster-scatter">KMeans clustering of episodes</a></li>
+                    <li><a href="/tsp_dash/show-3d-network-graph">3d network graph of episode relations</a></li>
                     <!-- <li>Matplotlib - select # clusters: <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=2">2</a> <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=3">3</a> 
                         <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=4">4</a> <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=5">5</a> 
                         <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=6">6</a> <a href="/web/graph/{{ tdata['show_key'] }}?num_clusters=7">7</a> 

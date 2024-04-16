@@ -62,12 +62,26 @@ content = html.Div([
                             value=1,
                         ),
                         html.Br(),
-                        dcc.Graph(id="speaker-frequency-bar-chart"),
+                        dcc.Graph(id="speaker-season-frequency-bar-chart"),
                     ]),
                 ]),
                 dbc.Col(md=6, children=[
                     html.Div([
+                        "Episode ",
                         html.Br(),
+                        dcc.Slider(
+                            id="sequence-in-season",
+                            min=1,
+                            max=25,
+                            step=None,
+                            marks={
+                                int(y): {'label': str(y), 'style': {'transform': 'rotate(45deg)', 'color': 'white'}}
+                                for y in range(1,26)
+                            },
+                            value=1,
+                        ),
+                        html.Br(),
+                        dcc.Graph(id="speaker-episode-frequency-bar-chart"),
                     ]),
                 ]),
             ]),

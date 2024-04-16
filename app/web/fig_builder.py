@@ -457,29 +457,42 @@ def build_location_line_chart(show_key: str, df: pd.DataFrame, span_granularity:
 
 
 def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool, season: int, sequence_in_season: int = None) -> go.Figure:
+    print(f'in build_speaker_frequency_bar show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season} sequence_in_season={sequence_in_season}')
 
     # in this context:
     #   - `aggregate_ratio=True`: intra-season episode-by-episode tabulation using sum()
     #   - `aggregate_ratio=False`: inter-season comparison between totals using max() (and `sequence_in_season` is ignored)
     if aggregate_ratio:
-        # TODO this is a placeholder
-        sum_df = df
+        if not season:
+            season = 1
+        if not sequence_in_season:
+            sequence_in_season = 1
+        df = df.loc[df['season'] == season]
+        df = df.loc[df['sequence_in_season'] <= sequence_in_season]
+        # x = f'{span_granularity}_count'
+        # # if `span_granularity='episode'` dynamically populate `episode_count` column using `scene_count` column to enable episode tabulation
+        # if span_granularity == 'episode':
+        #     df['episode_count'] = df['scene_count'].apply(lambda x: 1 if x > 0 else 0)
+        # sum_df = df.groupby('speaker', as_index=False)[x].sum()
+        
     else:
         if season:
             df = df.loc[df['season'] == season]
-        x = f'{span_granularity}_count'
-        # if `span_granularity='episode'` dynamically populate `episode_count` column using `scene_count` column to enable episode tabulation
-        if span_granularity == 'episode':
-            df['episode_count'] = df['scene_count'].apply(lambda x: 1 if x > 0 else 0)
-        sum_df = df.groupby('speaker', as_index=False)[x].sum()
+        # x = f'{span_granularity}_count'
+        # # if `span_granularity='episode'` dynamically populate `episode_count` column using `scene_count` column to enable episode tabulation
+        # if span_granularity == 'episode':
+        #     df['episode_count'] = df['scene_count'].apply(lambda x: 1 if x > 0 else 0)
+        # sum_df = df.groupby('speaker', as_index=False)[x].sum()
 
-    # sum_df.reset_index()
-
-    # sum_df = df['speaker'].unique
+    x = f'{span_granularity}_count'
+    # if `span_granularity='episode'` dynamically populate `episode_count` column using `scene_count` column to enable episode tabulation
+    if span_granularity == 'episode':
+        df['episode_count'] = df['scene_count'].apply(lambda x: 1 if x > 0 else 0)
+    sum_df = df.groupby('speaker', as_index=False)[x].sum()
 
     sum_df.sort_values(x, ascending=False, inplace=True)
 
-    file_path = f'./app/data/test_speaker_frequency_bar_{show_key}_{season}.csv'
+    file_path = f'./app/data/test_speaker_frequency_bar_{show_key}_{season}_{sequence_in_season}.csv'
     sum_df.to_csv(file_path)
 
     # custom_data = []  # TODO
