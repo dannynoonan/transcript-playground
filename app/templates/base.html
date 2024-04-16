@@ -30,7 +30,10 @@
                         <a class="nav-link {% if tdata['header'] == 'show' %}active{% endif %}" href="/web/show/{{ tdata['show_key'] }}">{{ tdata['show_key'] }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if tdata['header'] == 'episode' %}active{% endif %}" href="/web/episode_search/{{ tdata['show_key'] }}">Episodes</a>
+                        <a class="nav-link {% if tdata['header'] == 'search' %}active{% endif %}" href="/web/episode_search/{{ tdata['show_key'] }}">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if tdata['header'] == 'episode' %}active{% endif %}">Episodes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if tdata['header'] == 'character' %}active{% endif %}" href="/web/character_listing/{{ tdata['show_key'] }}">Characters</a>

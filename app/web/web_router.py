@@ -130,7 +130,7 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 		if location and not (dialog or speaker):
 			matches = await esr.search_scenes(show_key, episode_key=episode_key, location=location)
 		else:
-			matches = await esr.search_scene_events(show_key, episode_key=episode_key, speaker=speaker, dialog=dialog, location=location)
+			matches = esr.search_scene_events(show_key, episode_key=episode_key, speaker=speaker, dialog=dialog, location=location)
 			tdata['scene_event_match_count'] = matches['scene_event_count']
 		if matches['matches']:
 			tdata['episode_match'] = matches['matches'][0]
@@ -159,7 +159,7 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 							  model_version: str = None, speakers: str = None, locationAMS: str = None):
 	tdata = {}
 
-	tdata['header'] = 'episode'
+	tdata['header'] = 'search'
 	tdata['show_key'] = show_key.value
 	if not search_type:
 		tdata['search_type'] = ''
@@ -202,7 +202,7 @@ async def episode_search_page(request: Request, show_key: ShowKey, search_type: 
 		if location and not (dialog or speaker):
 			matches = await esr.search_scenes(show_key, season=season, location=location)
 		else:
-			matches = await esr.search_scene_events(show_key, season=season, speaker=speaker, dialog=dialog, location=location)
+			matches = esr.search_scene_events(show_key, season=season, speaker=speaker, dialog=dialog, location=location)
 			tdata['scene_event_match_count'] = matches['scene_event_count']
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = matches['episode_count']
@@ -253,7 +253,7 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str, sear
 	tdata['show_key'] = show_key.value
 	tdata['speaker'] = speaker
 
-	episode_matches = await esr.search_scene_events(show_key, speaker=speaker)
+	episode_matches = esr.search_scene_events(show_key, speaker=speaker)
 	tdata['episodes'] = episode_matches['matches']
 	tdata['episode_count'] = episode_matches['episode_count']
 	tdata['scene_count'] = episode_matches['scene_count']
@@ -304,7 +304,7 @@ async def character_page(request: Request, show_key: ShowKey, speaker: str, sear
 			tdata['dialog'] = dialog
 		if location:
 			tdata['location'] = location
-		matches = await esr.search_scene_events(show_key, speaker=speaker, dialog=dialog, location=location)
+		matches = esr.search_scene_events(show_key, speaker=speaker, dialog=dialog, location=location)
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = matches['episode_count']
 		tdata['scene_match_count'] = matches['scene_count']
