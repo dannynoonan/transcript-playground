@@ -13,7 +13,7 @@ from sklearn.cluster import KMeans
 import warnings
 
 from app.config import settings
-from app.es.es_model import EsEpisodeTranscript
+from app.es.es_model import EsEpisodeTranscript, EsTopic
 import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 import app.nlp.query_preprocessor as qpp
@@ -140,7 +140,7 @@ def generate_openai_embeddings(input_text: str, model_version: str) -> (list, in
 
 
 def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, model_vendor: str, model_version: str) -> None|Exception:
-    print(f'begin generate_embeddings for {show_key}:{es_episode.episode_key} model_vendor={model_vendor} model_version={model_version}')
+    print(f'begin generate_episode_embeddings for {show_key}:{es_episode.episode_key} model_vendor={model_vendor} model_version={model_version}')
 
     if model_vendor == 'openai':
         vendor_meta = TRF_MODELS[model_vendor]
@@ -201,6 +201,22 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, 
             es_episode[f'{model_vendor}_{model_version}_tokens'] = tokens
             es_episode[f'{model_vendor}_{model_version}_no_match_tokens'] = no_match_tokens
 
+
+def generate_topic_embeddings(es_topic: EsTopic, model_vendor: str, model_version: str) -> None|Exception:
+    print(f'begin generate_topic_embeddings for es_topic={es_topic} model_vendor={model_vendor} model_version={model_version}')
+
+    if model_vendor == 'openai':
+        vendor_meta = TRF_MODELS[model_vendor]
+        true_model_version = vendor_meta['versions'][model_version]['true_name']
+        try:
+            embeddings, _, _ = generate_openai_embeddings(es_topic.description, true_model_version)
+            es_topic[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+        except openai.BadRequestError as bre:
+            print(f'Failed to generate openai:{model_version} vector embeddings: {bre}')
+        except Exception as e:
+            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for es_topic={es_topic}: {e}')
+            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for es_topic={es_topic}: {e}')
+        
 
 def build_embeddings_model(show_key: str) -> dict:
     print(f'begin build_embeddings_model for show_key={show_key}')

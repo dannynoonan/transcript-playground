@@ -129,3 +129,23 @@ class EsCharacter(Document):
     def save(self, **kwargs):
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
+    
+
+class EsTopic(Document):
+    topic_grouping = Keyword()
+    topic_key = Keyword()
+    category = Keyword()
+    subcategory = Keyword()
+    name = Keyword() # TODO redundant - is it necessary?
+    breadcrumb = Keyword() # TODO redundant - is it necessary?
+    description = Text()
+    openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    indexed_ts = Date()
+
+    class Index:
+        name = 'topics'
+
+    def save(self, **kwargs):
+        self.meta.id = f'{self.topic_grouping}_{self.topic_key}'
+        self.indexed_ts = datetime.now()
+        return super().save(**kwargs)

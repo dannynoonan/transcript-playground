@@ -6,7 +6,7 @@ from elasticsearch_dsl.query import MoreLikeThis
 
 from app.config import settings
 from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
-from app.es.es_model import EsEpisodeTranscript, EsCharacter
+from app.es.es_model import EsEpisodeTranscript, EsCharacter, EsTopic
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
 
@@ -38,9 +38,14 @@ def init_transcripts_index():
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
 
 
-def init_character_index():
+def init_characters_index():
     EsCharacter.init()
     es_conn.indices.put_settings(index="characters", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_topics_index():
+    EsTopic.init()
+    es_conn.indices.put_settings(index="topics", body={"index": {"max_inner_result_window": 1000}})
 
 
 def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
@@ -51,6 +56,10 @@ def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     #     es_episode.update(using=es, doc_as_upsert=True)
     # else:
     #     es_episode.save(using=es)
+
+
+def save_es_topic(es_topic: EsTopic) -> None:
+    es_topic.save()
 
 
 def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = False) -> dict:
@@ -82,6 +91,24 @@ def fetch_doc_ids(show_key: str, season: str = None) -> Search:
     return s
 
 
+# NOTE I'm not sure what this was for, probably created during BERTopic experimentation
+# def fetch_flattened_episodes(show_key: str, season: str = None) -> Search:
+#     print(f'begin fetch_flattened_episodes for show_key={show_key} season={season}')
+
+#     s = Search(index='transcripts')
+#     s = s.extra(size=1000)
+
+#     s = s.filter('term', show_key=show_key)
+#     if season:
+#         s = s.filter('term', season=season)
+
+#     s = s.sort('season', 'sequence_in_season')
+
+#     s = s.source(excludes=['scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
+
+#     return s
+
+
 def fetch_simple_episodes(show_key: str, season: str = None) -> Search:
     print(f'begin fetch_simple_episodes for show_key={show_key} season={season}')
 
@@ -110,6 +137,33 @@ async def search_episodes_by_title(show_key: str, qt: str) -> Search:
     s = s.filter('term', show_key=show_key)
     s = s.query(q)
     s = s.highlight('title')
+
+    return s
+
+
+def fetch_topic(topic_grouping: str, topic_key: str) -> Search:
+    print(f'begin fetch_topic for topic_key={topic_key}')
+
+    # s = Search(index='topics')
+    # s = s.extra(size=1)
+
+    doc_id = f'{topic_grouping}_{topic_key}'
+
+    # s = s.filter('term', topic_key=topic_key)
+    topic = EsEpisodeTranscript.get(id=doc_id, index='topics')
+
+    return topic
+
+
+def fetch_topic_grouping(topic_grouping: str) -> Search:
+    print(f'begin fetch_topics for topic_grouping={topic_grouping}')
+
+    s = Search(index='topics')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', topic_grouping=topic_grouping)
+
+    s = s.sort('category', 'subcategory')
 
     return s
 
@@ -828,6 +882,35 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, season:
     return response
 
 
+def topic_vector_search(topic_grouping: str, vector_field: str, vectorized_qt: list) -> Search:
+    print(f'begin topic_vector_search for topic_grouping={topic_grouping} vector_field={vector_field}')
+
+    knn_query = {
+        "field": vector_field,
+        "query_vector": vectorized_qt,
+        "k": 50,
+        "num_candidates": 50
+    }
+
+    filter_query = {
+        "bool": {
+            "filter": [
+                {
+                    "term": {
+                        "topic_grouping": topic_grouping
+                    }
+                }
+            ]
+        }
+    }
+
+    source = ['topic_key', 'category', 'subcategory', 'breadcrumb', 'name', 'description']
+    
+    response = es_conn.knn_search(index="topics", knn=knn_query, filter=filter_query, source=source)
+
+    return response
+
+
 def fetch_episode_embedding(show_key: str, episode_key: str, vector_field: str) -> Search:
     print(f'begin fetch_episode_embedding for show_key={show_key} episode_key={episode_key} vector_field={vector_field}')
 
@@ -848,6 +931,19 @@ def fetch_show_embeddings(show_key: str, vector_field: str) -> Search:
     s = s.extra(size=1000)
 
     s = s.filter('term', show_key=show_key)
+    s = s.source(includes=[vector_field])
+
+    return s
+
+
+def fetch_topic_embedding(topic_grouping: str, topic_key: str, vector_field: str) -> Search:
+    print(f'begin fetch_topic_embedding for topic_grouping={topic_grouping} topic_key={topic_key} vector_field={vector_field}')
+
+    s = Search(index='topics')
+    s = s.extra(size=1)
+
+    s = s.filter('term', topic_grouping=topic_grouping)
+    s = s.filter('term', topic_key=topic_key)
     s = s.source(includes=[vector_field])
 
     return s

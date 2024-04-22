@@ -24,6 +24,28 @@ def return_doc_ids(s: Search) -> list:
         results.append(hit['_id'])
     
     return results
+
+
+def return_topic(s: Search) -> dict:
+    print(f'begin return_topic for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    for hit in s.hits:
+        return hit._d_
+    
+
+def return_topics(s: Search) -> dict:
+    print(f'begin return_topics for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    topics = []
+
+    for hit in s.hits.hits:
+        topics.append(hit._source._d_)
+
+    return topics
     
 
 async def return_episodes_by_title(s: Search) -> list:
@@ -88,6 +110,38 @@ async def return_scenes(s: Search) -> tuple[list, int]:
     results = sorted(results, key=itemgetter('agg_score'), reverse=True)
 
     return results, scene_count
+
+
+# NOTE added during BERTopic `topic_modeling.py` tinkering, still not sure if that code will be committed
+def return_flattened_scenes(s: Search, include_speakers: bool = False, include_context: bool = False) -> dict:
+    print(f'begin return_flattened_scenes for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    flattened_scenes = []
+
+    for hit in s.hits:
+        episode = hit._d_
+        if 'scenes' not in episode:
+            continue
+        for scene in episode['scenes']:
+            if 'scene_events' not in scene:
+                continue
+            scene_event_dialog = []
+            for scene_event in scene['scene_events']:
+                scene_event_elements = []
+                if include_context and 'context_info' in scene_event and not scene_event['context_info'] == 'OC':
+                    scene_event_elements.append(f"{scene_event['context_info']}.")
+                if include_speakers and 'spoken_by' in scene_event:
+                    scene_event_elements.append(f"{scene_event['spoken_by']}:")
+                if 'dialog' in scene_event:
+                    scene_event_elements.append(scene_event['dialog'])
+                if scene_event_elements: 
+                    scene_event_dialog.append(' '.join(scene_event_elements))
+            if scene_event_dialog:
+                flattened_scenes.append(' '.join(scene_event_dialog))
+    
+    return flattened_scenes
 
 
 def return_scene_events(s: Search, location: str = None) -> tuple[list, int, int]:
@@ -677,6 +731,24 @@ def return_vector_search(es_response: dict) -> list:
         episode['rank'] = rank
         rank += 1
         results.append(episode)
+
+    return results
+
+
+def return_topic_vector_search(es_response: dict) -> list:
+    print(f'begin return_topic_vector_search')
+
+    # TODO currently exactly the same as `return_vector_search`, maybe we don't need both
+
+    results = []
+    
+    rank = 1
+    for hit in es_response['hits']['hits']:
+        topic = hit['_source']
+        topic['score'] = hit['_score'] * 100
+        topic['rank'] = rank
+        rank += 1
+        results.append(topic)
 
     return results
 

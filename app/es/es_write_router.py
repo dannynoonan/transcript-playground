@@ -1,9 +1,12 @@
 from fastapi import APIRouter
+import os
+import numpy as np
+import pandas as pd
 
 import app.database.dao as dao
 import app.es.es_ingest_transformer as esit
 from app.es.es_metadata import ACTIVE_VENDOR_VERSIONS
-from app.es.es_model import EsEpisodeTranscript
+from app.es.es_model import EsEpisodeTranscript, EsTopic
 import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
@@ -15,14 +18,29 @@ esw_app = APIRouter()
 
 
 @esw_app.get("/esw/init_es", tags=['ES Writer'])
-def init_es():
+def init_es(index_name: str = None):
     '''
     Run this to explicitly define the mapping anytime the `transcripts` index is blown away and re-created. Not doing so will result in the wrong
     data types being auto-assigned to several fields in the schema mapping, and will break query (read) functionality down the line.
     '''
-    esqb.init_transcripts_index()
-    esqb.init_character_index()
-    return {"success": "success"}
+    valid_indexes = ['transcripts', 'characters', 'topics']
+    if index_name:
+        if index_name not in valid_indexes:
+            return {"error": "Failed to initialize index_name={index_name}, valid_indexes={valid_indexes}"}
+        if index_name == 'transcripts':
+            esqb.init_transcripts_index()
+        elif index_name == 'characters':
+            esqb.init_characters_index()
+        elif index_name == 'topics':
+            esqb.init_topics_index()
+        initialized_indexes = [index_name]
+    else:
+        esqb.init_transcripts_index()
+        esqb.init_characters_index()
+        esqb.init_topics_index()
+        initialized_indexes = valid_indexes
+
+    return {"initialized_indexes": initialized_indexes}
 
 
 @esw_app.get("/esw/index_episode/{show_key}/{episode_key}", tags=['ES Writer'])
@@ -218,3 +236,90 @@ def populate_all_embeddings(show_key: ShowKey, model_vendor: str, model_version:
         except Exception:
             failed_episode_keys.append(episode_key)
     return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
+
+
+@esw_app.get("/esw/index_topic_grouping/{topic_grouping}", tags=['ES Writer'])
+async def index_topic_grouping(topic_grouping: str, concat_hierarchy_text: bool = False):
+    '''
+    Load set of Topics from csv file into es `topics` index.
+    '''
+    file_path = f'./source/topics/{topic_grouping}.csv'
+    if os.path.isfile(file_path):
+        print(f'Loading topic_grouping dataframe from file_path={file_path}')
+        topics_df = pd.read_csv(file_path)
+        topics_df = topics_df.fillna('')
+        # optionally prefix subcategory descriptions with their parent category descriptions before generating embeddings, for fuller description context
+        if concat_hierarchy_text:
+            distinct_cats = topics_df['category'].unique()
+            for dc in distinct_cats:
+                cat_desc_ser = topics_df[(topics_df['category'] == dc) & (topics_df['subcategory'] == '')]['description']
+                cat_desc = cat_desc_ser.values[0] # NOTE feels like there should be a cleaner way to extract the category description
+                topics_df.loc[(topics_df['category'] == dc) & (topics_df['subcategory'] != ''), 'description'] = cat_desc + '\n\n' + topics_df['description']
+            # new_file_path = f'./source/topics/{topic_grouping}_concat.csv'
+            # topics_df.to_csv(new_file_path, sep='\t')
+    else:
+        return {'Error': f'Unable to load topics for topic_grouping={topic_grouping}, no file found at file_path={file_path}'}
+    
+    es_topics = []
+    for _, row in topics_df.iterrows():
+        es_topic = EsTopic(topic_grouping=topic_grouping, topic_key=row['key'], category=row['category'], subcategory=row['subcategory'], description=row['description'])
+        es_topic.breadcrumb = es_topic.category
+        if es_topic.subcategory:
+            es_topic.breadcrumb = f'{es_topic.breadcrumb} > {es_topic.subcategory}'
+            es_topic.name = es_topic.subcategory
+        else:
+            es_topic.name = es_topic.category
+        es_topics.append(es_topic)
+    
+    # write to es
+    attempted_count = 0
+    successful_topics = []
+    failed_topics = []
+    for es_topic in es_topics:
+        attempted_count += 1
+        try:
+            esqb.save_es_topic(es_topic)
+            successful_topics.append(es_topic.topic_key)
+        except Exception as e:
+            failed_topics.append(es_topic.topic_key)
+
+    return {'attempted_count': attempted_count, 'successful_topics': successful_topics, 'failed_topics': failed_topics}
+
+
+@esw_app.get("/esw/populate_topic_embeddings/{topic_grouping}/{topic_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_topic_embeddings(topic_grouping: str, topic_key: str, model_vendor: str, model_version: str):
+    '''
+    Generate vector embedding for topic using pre-trained Word2Vec and Transformer models
+    '''
+    doc_id = f'{topic_grouping}_{topic_key}'
+    es_topic = EsTopic.get(id=doc_id)
+    try:
+        ef.generate_topic_embeddings(es_topic, model_vendor, model_version)
+        esqb.save_es_episode(es_topic)
+        return {"topic": es_topic._d_}
+    except Exception as e:
+        return {f"error": "Failed to populate {model_vendor}:{model_version} embeddings for topic {topic_grouping}:{topic_key}, {e}"}
+    
+
+@esw_app.get("/esw/populate_topic_grouping_embeddings/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, model_version: str):
+    '''
+    Generate vector embedding for all topics in topic_grouping using pre-trained Word2Vec and Transformer models
+    '''
+    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping)
+    topic_keys = [t['topic_key'] for t in topic_grouping_response['topics']]
+    attempted_count = 0
+    successful_topics = []
+    failed_topics = []
+    failure_messages = []
+    for topic_key in topic_keys:
+        attempted_count += 1
+        topic_embeddings_response = populate_topic_embeddings(topic_grouping, topic_key, model_vendor, model_version)
+        if 'topic' in topic_embeddings_response:
+            successful_topics.append(topic_key)
+        else:
+            failed_topics.append(topic_key)
+            if 'error' in topic_embeddings_response:
+                failure_messages.append(topic_embeddings_response['error'])
+        
+    return {'attempted_count': attempted_count, 'successful_topics': successful_topics, 'failed_topics': failed_topics, 'failure_messages': failure_messages}

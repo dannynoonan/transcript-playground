@@ -38,6 +38,18 @@ def fetch_doc_ids(show_key: ShowKey, season: str = None):
     return {"doc_count": len(matches), "doc_ids": matches, "es_query": es_query}
 
 
+# NOTE I'm not sure what this was for, probably created during BERTopic experimentation
+# @esr_app.get("/esr/fetch_flattened_episodes/{show_key}", tags=['ES Reader'])
+# def fetch_flattened_episodes(show_key: ShowKey, season: str = None):
+#     '''
+#     Fetch episodes with full flattened text, but lacking scene or scene_event structure
+#     '''
+#     s = esqb.fetch_flattened_episodes(show_key.value, season=season)
+#     es_query = s.to_dict()
+#     episodes = esrt.return_simple_episodes(s)
+#     return {"episodes": episodes, "es_query": es_query}
+
+
 @esr_app.get("/esr/fetch_simple_episodes/{show_key}", tags=['ES Reader'])
 def fetch_simple_episodes(show_key: ShowKey, season: str = None):
     '''
@@ -60,6 +72,18 @@ def list_simple_episodes_by_season(show_key: ShowKey):
     return {"episodes_by_season": episodes_by_season, "es_query": es_query}
 
 
+# NOTE added during BERTopic `topic_modeling.py` tinkering, still not sure if that code will be committed
+@esr_app.get("/esr/fetch_flattened_scenes/{show_key}/{episode_key}", tags=['ES Reader'])
+def fetch_flattened_scenes(show_key: ShowKey, episode_key: str, include_speakers: bool = False, include_context: bool = False):
+    '''
+    Fetch denormalized scene text for a given episode
+    '''
+    s = esqb.fetch_episode_by_key(show_key.value, episode_key)
+    es_query = s.to_dict()
+    flattened_scenes = esrt.return_flattened_scenes(s, include_speakers=include_speakers, include_context=include_context)
+    return {"flattened_scenes": flattened_scenes, "es_query": es_query}
+ 
+
 @esr_app.get("/esr/fetch_all_episode_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Reader'])
 def fetch_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str):
     '''
@@ -69,6 +93,29 @@ def fetch_all_episode_relations(show_key: ShowKey, model_vendor: str, model_vers
     es_query = s.to_dict()
     episode_relations = esrt.return_all_episode_relations(s)
     return {"episode_relations": episode_relations, "es_query": es_query}
+
+
+@esr_app.get("/esr/topic/{topic_grouping}/{topic_key}", tags=['ES Reader'])
+def fetch_topic(topic_grouping: str, topic_key: str):
+    '''
+    Fetch individual topic 
+    '''
+    topic = esqb.fetch_topic(topic_grouping, topic_key)
+    # es_query = s.to_dict()
+    # topic = esrt.return_topic(s)
+    # return {"topic": topic, 'es_query': es_query}
+    return {"topic": topic}
+
+
+@esr_app.get("/esr/fetch_topic_grouping/{topic_grouping}", tags=['ES Reader'])
+def fetch_topic_grouping(topic_grouping: str):
+    '''
+    Fetch all topics in a topic_grouping 
+    '''
+    s = esqb.fetch_topic_grouping(topic_grouping)
+    es_query = s.to_dict()
+    topics = esrt.return_topics(s)
+    return {"topics": topics, "es_query": es_query}
 
 
 
@@ -211,6 +258,46 @@ def mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor: str = N
     matches = esrt.return_vector_search(es_response)
     matches = matches[1:] # remove episode itself from results
     return {"match_count": len(matches), "vector_field": vector_field, "matches": matches}
+
+
+@esr_app.get("/esr/episode_topic_vector_search/{show_key}/{episode_key}/{topic_grouping}", tags=['ES Reader'])
+def episode_topic_vector_search(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str = None, model_version: str = None):
+    '''
+    Fetches vector embedding for episode, then determines vector cosine similarity to indexed topics using k-nearest neighbors search
+    '''
+    if not model_vendor:
+        model_vendor = 'openai'
+    if not model_version:
+        model_version = 'ada002'
+
+    vector_field = f'{model_vendor}_{model_version}_embeddings'
+        
+    s = esqb.fetch_episode_embedding(show_key.value, episode_key, vector_field)
+    episode_embedding = esrt.return_embedding(s, vector_field)
+        
+    es_response = esqb.topic_vector_search(topic_grouping, vector_field, episode_embedding)
+    topics = esrt.return_vector_search(es_response)
+    return {"topic_count": len(topics), "vector_field": vector_field, "topics": topics}
+
+
+@esr_app.get("/esr/topic_episode_vector_search/{topic_grouping}/{topic_key}/{show_key}", tags=['ES Reader'])
+def topic_episode_vector_search(topic_grouping: str, topic_key: str, show_key: ShowKey, model_vendor: str = None, model_version: str = None):
+    '''
+    Fetches vector embedding for topic, then determines vector cosine similarity to indexed episodes using k-nearest neighbors search
+    '''
+    if not model_vendor:
+        model_vendor = 'openai'
+    if not model_version:
+        model_version = 'ada002'
+
+    vector_field = f'{model_vendor}_{model_version}_embeddings'
+        
+    s = esqb.fetch_topic_embedding(topic_grouping, topic_key, vector_field)
+    topic_embedding = esrt.return_embedding(s, vector_field)
+        
+    es_response = esqb.vector_search(show_key, vector_field, topic_embedding)
+    episodes = esrt.return_vector_search(es_response)
+    return {"episodes_count": len(episodes), "vector_field": vector_field, "episodes": episodes}
 
 
 @esr_app.get("/esr/test_vector_search/{show_key}", tags=['ES Reader'])

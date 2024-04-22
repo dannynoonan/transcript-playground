@@ -277,4 +277,40 @@
       }
     }
   }
+  "topics": {
+    "mappings": {
+      "properties": {
+        "breadcrumb": {
+          "type": "keyword"
+        },
+        "category": {
+          "type": "keyword"
+        },
+        "description": {
+          "type": "text"
+        },
+        "indexed_ts": {
+          "type": "date"
+        },
+        "name": {
+          "type": "keyword"
+        },
+        "openai_ada002_embeddings": {
+          "type": "dense_vector",
+          "dims": 1536,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "subcategory": {
+          "type": "keyword"
+        },
+        "topic_grouping": {
+          "type": "keyword"
+        },
+        "topic_key": {
+          "type": "keyword"
+        }
+      }
+    }
+  }
 }
