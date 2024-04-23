@@ -357,6 +357,38 @@
 						</div>
 					</div>
 				</div>
+				{% for topic_grouping, topics in tdata['topic_embeddings'].items() %}
+				<p>&nbsp;</p>
+				<div class="row">
+					<div class="col-12">
+						<h3>Topics: {{ topic_grouping }} - OpenAI cosine similarity</h3>
+						<div class="overflow-scroll" style="max-height: 600px;">
+							<table class="table table-hover table-striped table-fit">
+								<thead>
+									<tr class="table-success">
+										<th scope="col">Score</th>
+										<th scope="col">Topic key</th>
+										<th scope="col">Name</th>
+										<!-- <th scope="col">Breadcrumb</th> -->
+										<th scope="col">Decription</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for topic in topics %}
+									<tr class="table-secondary">
+										<td>{{ '%0.2f'|format(topic['score']|float) }}</td>
+										<td>{{ topic['topic_key'] }}</td>
+										<td>{{ topic['name'] }}</td>
+										<!-- <td>{{ topic['breadcrumb'] }}</td> -->
+										<td>{{ topic['description']|truncate(180,true,'') }}...</td>
+									</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 		<p>&nbsp;</p>

@@ -8,7 +8,7 @@ import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
-from app.show_metadata import ShowKey
+from app.show_metadata import ShowKey, TOPIC_GROUPINGS
 import app.utils as utils
 import app.web.fig_builder as fb
 
@@ -95,6 +95,13 @@ async def episode_page(request: Request, show_key: ShowKey, episode_key: str, se
 
 	mlt_embeddings = esr.mlt_vector_search(show_key, episode_key)
 	tdata['mlt_embeddings'] = mlt_embeddings['matches'][:30]
+
+	tdata['topic_embeddings'] = {}
+	for tg in TOPIC_GROUPINGS:
+		if tg.startswith('focused'):
+			tg = f'{tg}_{show_key.value}'
+		topic_embeddings = esr.episode_topic_vector_search(show_key, episode_key, tg, 'openai', 'ada002')
+		tdata['topic_embeddings'][tg] = topic_embeddings['topics'][:30]
 
 	###### IN-EPISODE SEARCH ######
 
@@ -362,6 +369,27 @@ async def character_listing_page(request: Request, show_key: ShowKey, qt: str = 
 				tdata['speaker_matches'].append(sc)
 	
 	return templates.TemplateResponse('characterListing.html', {'request': request, 'tdata': tdata})
+
+
+@web_app.get("/web/topic_listing/{show_key}", response_class=HTMLResponse, tags=['Web'])
+async def topic_listing_page(request: Request, show_key: ShowKey, selected_topic_grouping: str = None):
+	tdata = {}
+
+	if not selected_topic_grouping:
+		selected_topic_grouping = TOPIC_GROUPINGS[0]
+
+	tdata['header'] = 'topic'
+	tdata['show_key'] = show_key.value
+	tdata['selected_topic_grouping'] = selected_topic_grouping
+	tdata['topic_groupings'] = {}
+
+	for tg in TOPIC_GROUPINGS:
+		if tg.startswith('focused'):
+			tg = f'{tg}_{show_key.value}'
+		response = esr.fetch_topic_grouping(tg)
+		tdata['topic_groupings'][tg] = response['topics']
+	
+	return templates.TemplateResponse('topicListing.html', {'request': request, 'tdata': tdata})
 
 
 @web_app.get("/web/graph/{show_key}", response_class=HTMLResponse, tags=['Web'])

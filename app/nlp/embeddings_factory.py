@@ -84,7 +84,7 @@ def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
 #     return data
 
 
-def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str) -> (list, list, list):
+def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str) -> tuple[list, list, list]:
     print('------------------------------------------------------------------------------------')
     print(f'begin calculate_embeddings for model_vendor={model_vendor} model_version={model_version} token_arr={token_arr}')
 
@@ -111,7 +111,7 @@ def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str)
     return embedding_avg.tolist(), tokens_processed, tokens_failed
 
 
-def generate_openai_embeddings(input_text: str, model_version: str) -> (list, int, int):
+def generate_openai_embeddings(input_text: str, model_version: str) -> tuple[list, int, int]:
     print('------------------------------------------------------------------------------------')
     print(f'begin generate_openai_embeddings for model_version={model_version}')
 
