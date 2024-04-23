@@ -292,9 +292,6 @@
         "indexed_ts": {
           "type": "date"
         },
-        "name": {
-          "type": "keyword"
-        },
         "openai_ada002_embeddings": {
           "type": "dense_vector",
           "dims": 1536,
@@ -303,6 +300,9 @@
         },
         "subcategory": {
           "type": "keyword"
+        },
+        "supercat_description": {
+          "type": "text"
         },
         "topic_grouping": {
           "type": "keyword"

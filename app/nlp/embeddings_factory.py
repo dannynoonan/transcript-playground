@@ -205,11 +205,18 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, 
 def generate_topic_embeddings(es_topic: EsTopic, model_vendor: str, model_version: str) -> None|Exception:
     print(f'begin generate_topic_embeddings for es_topic={es_topic} model_vendor={model_vendor} model_version={model_version}')
 
+    text_to_vectorize = es_topic.description
+    if es_topic.supercat_description:
+        text_to_vectorize = f'{es_topic.supercat_description} {text_to_vectorize}'
+    
+    text_to_vectorize = text_to_vectorize.replace('\n', ' ')
+    print(f'es_topic.topic_key={es_topic.topic_key} text_to_vectorize={text_to_vectorize}')
+
     if model_vendor == 'openai':
         vendor_meta = TRF_MODELS[model_vendor]
         true_model_version = vendor_meta['versions'][model_version]['true_name']
         try:
-            embeddings, _, _ = generate_openai_embeddings(es_topic.description, true_model_version)
+            embeddings, _, _ = generate_openai_embeddings(text_to_vectorize, true_model_version)
             es_topic[f'{model_vendor}_{model_version}_embeddings'] = embeddings
         except openai.BadRequestError as bre:
             print(f'Failed to generate openai:{model_version} vector embeddings: {bre}')

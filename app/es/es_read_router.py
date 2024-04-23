@@ -101,10 +101,9 @@ def fetch_topic(topic_grouping: str, topic_key: str):
     Fetch individual topic 
     '''
     topic = esqb.fetch_topic(topic_grouping, topic_key)
-    # es_query = s.to_dict()
-    # topic = esrt.return_topic(s)
-    # return {"topic": topic, 'es_query': es_query}
-    return {"topic": topic}
+    if not topic:
+        return {"Error": f"Failed to fetch topic for topic_grouping=`{topic_grouping}` topic_key=`{topic_key}`"}
+    return {"topic": topic._d_}
 
 
 @esr_app.get("/esr/fetch_topic_grouping/{topic_grouping}", tags=['ES Reader'])

@@ -239,7 +239,7 @@ def populate_all_embeddings(show_key: ShowKey, model_vendor: str, model_version:
 
 
 @esw_app.get("/esw/index_topic_grouping/{topic_grouping}", tags=['ES Writer'])
-async def index_topic_grouping(topic_grouping: str, concat_hierarchy_text: bool = False):
+async def index_topic_grouping(topic_grouping: str):
     '''
     Load set of Topics from csv file into es `topics` index.
     '''
@@ -248,27 +248,26 @@ async def index_topic_grouping(topic_grouping: str, concat_hierarchy_text: bool 
         print(f'Loading topic_grouping dataframe from file_path={file_path}')
         topics_df = pd.read_csv(file_path)
         topics_df = topics_df.fillna('')
-        # optionally prefix subcategory descriptions with their parent category descriptions before generating embeddings, for fuller description context
-        if concat_hierarchy_text:
-            distinct_cats = topics_df['category'].unique()
-            for dc in distinct_cats:
-                cat_desc_ser = topics_df[(topics_df['category'] == dc) & (topics_df['subcategory'] == '')]['description']
-                cat_desc = cat_desc_ser.values[0] # NOTE feels like there should be a cleaner way to extract the category description
-                topics_df.loc[(topics_df['category'] == dc) & (topics_df['subcategory'] != ''), 'description'] = cat_desc + '\n\n' + topics_df['description']
-            # new_file_path = f'./source/topics/{topic_grouping}_concat.csv'
-            # topics_df.to_csv(new_file_path, sep='\t')
+        # for subcategories, adopt parent category descriptions into supercat_description field, for use in generating embeddings with fuller context
+        distinct_cats = topics_df['category'].unique()
+        for dc in distinct_cats:
+            cat_desc_series = topics_df[(topics_df['category'] == dc) & (topics_df['subcategory'] == '')]['description']
+            cat_desc = cat_desc_series.values[0] # NOTE feels like there should be a cleaner way to extract the category description
+            topics_df.loc[(topics_df['category'] == dc) & (topics_df['subcategory'] != ''), 'supercat_description'] = cat_desc
+        topics_df = topics_df.fillna('') # NOTE feels weird to do this a second time, but mop-up seems necessary in both places
+        # new_file_path = f'./source/topics/{topic_grouping}_concat.csv'
+        # topics_df.to_csv(new_file_path, sep='\t')
     else:
         return {'Error': f'Unable to load topics for topic_grouping={topic_grouping}, no file found at file_path={file_path}'}
     
     es_topics = []
     for _, row in topics_df.iterrows():
         es_topic = EsTopic(topic_grouping=topic_grouping, topic_key=row['key'], category=row['category'], subcategory=row['subcategory'], description=row['description'])
+        if 'supercat_description' in row:
+            es_topic.supercat_description = row['supercat_description']
         es_topic.breadcrumb = es_topic.category
         if es_topic.subcategory:
             es_topic.breadcrumb = f'{es_topic.breadcrumb} > {es_topic.subcategory}'
-            es_topic.name = es_topic.subcategory
-        else:
-            es_topic.name = es_topic.category
         es_topics.append(es_topic)
     
     # write to es
@@ -282,6 +281,7 @@ async def index_topic_grouping(topic_grouping: str, concat_hierarchy_text: bool 
             successful_topics.append(es_topic.topic_key)
         except Exception as e:
             failed_topics.append(es_topic.topic_key)
+            print(f'Failed to index es_topic.topic_key={es_topic.topic_key}: {e}')
 
     return {'attempted_count': attempted_count, 'successful_topics': successful_topics, 'failed_topics': failed_topics}
 

@@ -136,9 +136,10 @@ class EsTopic(Document):
     topic_key = Keyword()
     category = Keyword()
     subcategory = Keyword()
-    name = Keyword() # TODO redundant - is it necessary?
+    # name = Keyword() # TODO redundant - is it necessary?
     breadcrumb = Keyword() # TODO redundant - is it necessary?
     description = Text()
+    supercat_description = Text()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     indexed_ts = Date()
 

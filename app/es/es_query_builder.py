@@ -141,16 +141,16 @@ async def search_episodes_by_title(show_key: str, qt: str) -> Search:
     return s
 
 
-def fetch_topic(topic_grouping: str, topic_key: str) -> Search:
-    print(f'begin fetch_topic for topic_key={topic_key}')
-
-    # s = Search(index='topics')
-    # s = s.extra(size=1)
+def fetch_topic(topic_grouping: str, topic_key: str) -> EsTopic|None:
+    print(f'begin fetch_topic for topic_grouping={topic_grouping} topic_key={topic_key}')
 
     doc_id = f'{topic_grouping}_{topic_key}'
 
-    # s = s.filter('term', topic_key=topic_key)
-    topic = EsEpisodeTranscript.get(id=doc_id, index='topics')
+    try:
+        topic = EsTopic.get(id=doc_id, index='topics')
+    except Exception as e:
+        print(f'Failed to fetch topic with topic_grouping={topic_grouping} topic_key={topic_key}')
+        return None
 
     return topic
 

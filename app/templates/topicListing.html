@@ -5,15 +5,16 @@
 {% endblock %} 
 
 {% block content %} 
-	<div class="container">
-        <br/>
+    <div class="margin">
+        <h3>{{ tdata['show_key'] }} topics</h3>
+		<p>&nbsp;</p>
 
         <!-- begin topic listings -->
         <form action="/web/topic_listing/{{ tdata['show_key'] }}" method="GET">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 {% for topic_grouping, topics in tdata['topic_groupings'].items() %}
-                    <button class="nav-link{% if tdata['selected_topic_grouping']=='{{ topic_grouping }}' %} active{% endif %}" id="nav-{{ topic_grouping }}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{ topic_grouping }}" type="button" role="tab" aria-controls="nav-{{ topic_grouping }}" aria-selected="true">
+                    <button class="nav-link{% if tdata['selected_topic_grouping']==topic_grouping %} active{% endif %}" id="nav-{{ topic_grouping }}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{ topic_grouping }}" type="button" role="tab" aria-controls="nav-{{ topic_grouping }}" aria-selected="true">
                         {{ topic_grouping }} ({{ topics|length }})
                     </button>
                 {% endfor %}
@@ -22,13 +23,12 @@
             <br/>
             <div class="tab-content" id="nav-tabContent">
             {% for topic_grouping, topics in tdata['topic_groupings'].items() %}
-                <div class="tab-pane fade{% if tdata['selected_topic_grouping']=='{{ topic_grouping }}' %} show active{% endif %}" id="nav-{{ topic_grouping }}" role="tabpanel" aria-labelledby="nav-{{ topic_grouping }}-tab">
+                <div class="tab-pane fade{% if tdata['selected_topic_grouping']==topic_grouping %} show active{% endif %}" id="nav-{{ topic_grouping }}" role="tabpanel" aria-labelledby="nav-{{ topic_grouping }}-tab">
                     <div class="col-10">
                         <table class="table table-hover table-striped table-fit">
                             <thead>
                                 <tr class="table-success">
                                     <th scope="col">Topic key</th>
-                                    <th scope="col">Topic name</th>
                                     <th scope="col">Breadcrumb</th>
                                     <th scope="col">Description</th>
                                   </tr>
@@ -37,9 +37,10 @@
                                 {% for topic in topics %}
                                 <tr class="table-secondary">
                                     <td>{{ topic['topic_key'] }}</td>
-                                    <td>{{ topic['name'] }}</td>
-                                    <td>{{ topic['breadcrumb'] }}</td>
-                                    <td>{{ topic['description'] }}</td>
+                                    <td><nobr>{{ topic['breadcrumb'] }}</nobr></td>
+                                    <td>{% autoescape false %}
+                                        {{ topic['description']|replace("\\n", "<br/>") }}
+                                        {% endautoescape %}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
