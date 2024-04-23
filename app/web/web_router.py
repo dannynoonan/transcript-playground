@@ -392,6 +392,23 @@ async def topic_listing_page(request: Request, show_key: ShowKey, selected_topic
 	return templates.TemplateResponse('topicListing.html', {'request': request, 'tdata': tdata})
 
 
+@web_app.get("/web/topic/{show_key}/{topic_grouping}/{topic_key}", response_class=HTMLResponse, tags=['Web'])
+async def topic_listing_page(request: Request, show_key: ShowKey, topic_grouping: str, topic_key: str):
+	tdata = {}
+
+	tdata['header'] = 'topic'
+	tdata['show_key'] = show_key.value
+	tdata['topic_grouping'] = topic_grouping
+	tdata['topic_key'] = topic_key
+
+	topic_response = esr.fetch_topic(topic_grouping, topic_key)
+	tdata['topic'] = topic_response['topic']
+	vector_search_response = esr.topic_episode_vector_search(topic_grouping, topic_key, show_key)
+	tdata['episodes'] = vector_search_response['episodes']
+	
+	return templates.TemplateResponse('topic.html', {'request': request, 'tdata': tdata})
+
+
 @web_app.get("/web/graph/{show_key}", response_class=HTMLResponse, tags=['Web'])
 async def show_page(request: Request, show_key: ShowKey, background_tasks: BackgroundTasks, num_clusters: int = 0):
 	if not num_clusters:

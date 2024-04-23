@@ -36,7 +36,9 @@
                             <tbody>
                                 {% for topic in topics %}
                                 <tr class="table-secondary">
-                                    <td>{{ topic['topic_key'] }}</td>
+                                    <td>
+                                        <a class="alert-link" href="/web/topic/{{ tdata['show_key'] }}/{{ topic_grouping }}/{{ topic['topic_key'] }}">{{ topic['topic_key'] }}</a>
+                                    </td>
                                     <td><nobr>{{ topic['breadcrumb'] }}</nobr></td>
                                     <td>{% autoescape false %}
                                         {{ topic['description']|replace("\\n", "<br/>") }}

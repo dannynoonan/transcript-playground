@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %} 
+    <title>{{ tdata['show_key'] }} topic: {{ tdata['topic']['breadcrumb'] }} ({{ tdata['topic_grouping'] }})</title>
+{% endblock %} 
+
+{% block content %} 
+    <div class="margin">
+        <h3>Topic: {{ tdata['topic']['breadcrumb'] }}</h3>
+		<br/>
+
+        <table class="table table-hover table-striped table-fit">
+            <tbody>
+                <tr>
+                    <td class="table-success">topic_grouping</td>
+                    <td class="table-secondary">{{ tdata['topic_grouping'] }}</td>
+                </tr>
+                <tr>
+                    <td class="table-success">topic_key</td>
+                    <td class="table-secondary">{{ tdata['topic']['topic_key'] }}</td>
+                </tr>
+                <tr>
+                    <td class="table-success">breadcrumb</td>
+                    <td class="table-secondary">{{ tdata['topic']['breadcrumb'] }}</td>
+                </tr>
+                <tr>
+                    <td class="table-success">description</td>
+                    <td class="table-secondary">{% autoescape false %}
+                        {{ tdata['topic']['description']|replace("\\n", "<br/>") }}
+                        {% endautoescape %}</td>
+                </tr>
+                {% if tdata['topic']['supercat_description'] != '' %}
+                <tr>
+                    <td class="table-success">supercat_description</td>
+                    <td class="table-secondary">{% autoescape false %}
+                        {{ tdata['topic']['supercat_description']|replace("\\n", "<br/>") }}
+                        {% endautoescape %}</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <br/>
+        <h3><strong>{{ tdata['episodes']|length }}</strong> {{ tdata['show_key'] }} episodes matching topic <strong>{{ tdata['topic']['breadcrumb'] }}</strong></h3>
+        <br/>
+
+        <table class="table table-hover table-striped table-fit">
+            <thead>
+                <tr class="table-success">
+                    <th scope="col">Title</th>
+                    <th scope="col">Season</th>
+                    <th scope="col">Episode</th>
+                    <th scope="col">Focal characters</th>
+                    <th scope="col">Focal locations</th>
+                    <th scope="col">Air date</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for episode in tdata['episodes'] %}
+                <tr class="table-secondary">
+                    <th scope="row"><a href="/web/episode/{{ episode['show_key'] }}/{{ episode['episode_key'] }}" 
+                        class="alert-link">{{ episode['title'] }}</a></th>
+                    <td>{{ episode['season'] }}</td>
+                    <td>{{ episode['sequence_in_season'] }}</td>
+                    <td>{{ episode['focal_speakers']|join(', ') }}</td>
+                    <td>{{ episode['focal_locations']|join(', ') }}</td>
+                    <td>{{ episode['air_date']|truncate(10,true,'') }}</td>
+                    <td>{{ '%0.2f'|format(episode['score']|float) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}
