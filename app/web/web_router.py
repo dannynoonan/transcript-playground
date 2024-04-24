@@ -404,7 +404,10 @@ async def topic_listing_page(request: Request, show_key: ShowKey, topic_grouping
 	topic_response = esr.fetch_topic(topic_grouping, topic_key)
 	tdata['topic'] = topic_response['topic']
 	vector_search_response = esr.topic_episode_vector_search(topic_grouping, topic_key, show_key)
-	tdata['episodes'] = vector_search_response['episodes']
+	episodes = vector_search_response['episodes']
+	if len(episodes) > 30:
+		episodes = episodes[:30]
+	tdata['episodes'] = episodes
 	
 	return templates.TemplateResponse('topic.html', {'request': request, 'tdata': tdata})
 

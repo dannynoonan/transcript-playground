@@ -281,8 +281,13 @@ def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
         data = trimmed_data
     elif type == 'locations':
         title='Scene location continuity over course of series'
+    elif type == 'topics':
+        title='Topics over course of series'
 
     df = pd.DataFrame(data)
+
+    if type == 'topics':
+        df = df.sort_values('Task')
 
     span_keys = df.Task.unique()
     keys_to_colors = {}
@@ -499,10 +504,10 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     # sum_df.sort_values(['season', x], ascending=[True, False], inplace=True)
     # category_orders = {'speaker': sum_df['speaker'].unique()}
 
-    if animate:
-        file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_animation.csv'
-    else:
-        file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_{season}_{sequence_in_season}.csv'
+    # if animate:
+    #     file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_animation.csv'
+    # else:
+    #     file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_{season}_{sequence_in_season}.csv'
     # sum_df.to_csv(file_path)
 
     # custom_data = []  # TODO

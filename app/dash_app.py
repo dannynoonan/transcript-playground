@@ -8,8 +8,8 @@ import urllib.parse
 
 import app.dash.components as cmp
 from app.dash import (
-    episode_gantt_chart, location_line_chart, series_search_results_gantt, show_3d_network_graph, speaker_3d_network_graph, 
-    show_cluster_scatter, show_gantt_chart, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
+    episode_gantt_chart, location_line_chart, series_gantt_chart, series_search_results_gantt, show_3d_network_graph, speaker_3d_network_graph, 
+    show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
 )
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
@@ -79,8 +79,8 @@ def display_page(pathname, search):
                 episode_key = episode_key[0]
         return episode_gantt_chart.generate_content(episode_dropdown_options, episode_key=episode_key)
     
-    elif pathname == "/tsp_dash/show-gantt-chart":
-        return show_gantt_chart.content
+    elif pathname == "/tsp_dash/series-gantt-chart":
+        return series_gantt_chart.content
     
     elif pathname == "/tsp_dash/speaker-line-chart":
         return speaker_line_chart.content
@@ -202,10 +202,11 @@ def render_episode_gantt_chart(show_key: str, episode_key: str):
     return episode_dialog_timeline, episode_location_timeline, show_key
 
 
-############ show-gantt-chart callbacks
+############ series-gantt-chart callbacks
 @dapp.callback(
-    Output('show-speaker-gantt', 'figure'),
-    Output('show-location-gantt', 'figure'),
+    Output('series-speaker-gantt', 'figure'),
+    Output('series-location-gantt', 'figure'),
+    Output('series-topic-gantt', 'figure'),
     Output('show-key-display6', 'children'),
     Input('show-key', 'value'))    
 def render_series_gantt_chart(show_key: str):
@@ -215,8 +216,9 @@ def render_series_gantt_chart(show_key: str):
     response = esr.generate_series_gantt_sequence(ShowKey(show_key))
     series_speaker_gantt = fb.build_series_gantt(show_key, response['episode_speakers_sequence'], 'speakers')
     series_location_gantt = fb.build_series_gantt(show_key, response['episode_locations_sequence'], 'locations')
+    series_topic_gantt = fb.build_series_gantt(show_key, response['episode_topics_sequence'], 'topics')
 
-    return series_speaker_gantt, series_location_gantt, show_key
+    return series_speaker_gantt, series_location_gantt, series_topic_gantt, show_key
 
 
 ############ speaker-line-chart callbacks

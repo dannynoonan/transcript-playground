@@ -7,7 +7,7 @@ import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 import app.nlp.query_preprocessor as qp
-from app.show_metadata import ShowKey, show_metadata
+from app.show_metadata import ShowKey, show_metadata, TOPIC_GROUPINGS
 
 
 esr_app = APIRouter()
@@ -646,14 +646,23 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
 
 
 @esr_app.get("/esr/generate_series_gantt_sequence/{show_key}", tags=['ES Reader'])
-def generate_series_gantt_sequence(show_key: ShowKey, season: str = None):
+def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_grouping: str = None, model_vendor: str = None, model_version: str = None):
     '''
     TODO Generate composite of all scene_event aggs per speaker for each individual episode
     '''
+    if not topic_grouping:
+        topic_grouping = TOPIC_GROUPINGS[0]
+    if not model_vendor:
+        model_vendor = 'openai'
+    if not model_version:
+        model_version = 'ada002'
+
     episodes_to_speaker_line_counts = {}
     episode_speakers_sequence = []
     episodes_to_location_counts = {}
     episode_locations_sequence = []
+    episodes_to_topics = {}
+    episode_topics_sequence = []
 
     # limit the superset of locations to those occurring in at least 3 episodes
     response = agg_episodes_by_location(show_key, season=season)
@@ -675,6 +684,7 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None):
         episode_title = episode['title']
         episode_season = episode['season']
         sequence_in_season = episode['sequence_in_season']
+
         # fetch speakers and line counts
         response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
         speaker_line_counts = response['scene_events_by_speaker']
@@ -687,6 +697,7 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None):
                                 count=line_count, season=episode_season, sequence_in_season=sequence_in_season,
                                 info=f'{episode_title} ({line_count} lines)')
             episode_speakers_sequence.append(speaker_span)
+
         # fetch locations and scene counts
         response = agg_scenes_by_location(show_key, episode_key=episode_key)
         location_counts = response['scenes_by_location']
@@ -699,12 +710,28 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None):
                 location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, count=scene_count, info=f'{episode_title} ({scene_count} scenes)')
                 episode_locations_sequence.append(location_span)
 
+        # fetch topics and scores
+        response = episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor, model_version)
+        topics = response['topics']
+        if len(topics) > 30:
+            topics = topics[:20]
+        simple_topics = [dict(topic_key=t['topic_key'], breadcrumb=t['breadcrumb'], score=t['score']) for t in topics]
+        episodes_to_topics[episode_key] = simple_topics
+        # transform topics/scores to plotly-gantt-friendly span dicts
+        for i in range(len(simple_topics)):
+            topic_key = simple_topics[i]['topic_key']
+            # location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({scene_count} scenes)')
+            topic_span = dict(Task=topic_key, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, count=i+1, info=f'{episode_title} (#{i+1} topic)')
+            episode_topics_sequence.append(topic_span)
+
         episode_i += 1
 
     return {"episodes_to_speaker_line_counts": episodes_to_speaker_line_counts, 
             "episode_speakers_sequence": episode_speakers_sequence,
             "episodes_to_location_counts": episodes_to_location_counts,
-            "episode_locations_sequence": episode_locations_sequence}
+            "episode_locations_sequence": episode_locations_sequence,
+            "episodes_to_topics": episodes_to_topics,
+            "episode_topics_sequence": episode_topics_sequence}
 
 
 @esr_app.get("/esr/generate_speaker_line_chart_sequences/{show_key}", tags=['ES Reader'])
