@@ -707,21 +707,24 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_
         for location, scene_count in location_counts.items():
             if location in recurring_locations:
                 # location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({scene_count} scenes)')
-                location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, count=scene_count, info=f'{episode_title} ({scene_count} scenes)')
+                location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
+                                     count=scene_count, info=f'{episode_title} ({scene_count} scenes)')
                 episode_locations_sequence.append(location_span)
 
         # fetch topics and scores
         response = episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor, model_version)
         topics = response['topics']
-        if len(topics) > 30:
+        if len(topics) > 20:
             topics = topics[:20]
         simple_topics = [dict(topic_key=t['topic_key'], breadcrumb=t['breadcrumb'], score=t['score']) for t in topics]
         episodes_to_topics[episode_key] = simple_topics
         # transform topics/scores to plotly-gantt-friendly span dicts
         for i in range(len(simple_topics)):
             topic_key = simple_topics[i]['topic_key']
+            topic_cat = topic_key.split('.')[0]
             # location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({scene_count} scenes)')
-            topic_span = dict(Task=topic_key, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, count=i+1, info=f'{episode_title} (#{i+1} topic)')
+            topic_span = dict(Task=topic_key, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
+                              rank=i+1, topic_cat=topic_cat, info=f'{episode_title} (#{i+1} topic)')
             episode_topics_sequence.append(topic_span)
 
         episode_i += 1
