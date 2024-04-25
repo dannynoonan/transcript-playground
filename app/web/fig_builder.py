@@ -287,30 +287,27 @@ def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
     df = pd.DataFrame(data)
 
     if type == 'topics':
-        df = df.sort_values('Task')
+        df = df.sort_values(['Task', 'Start'])
+        # file_path = f'build_series_gantt_{type}_{show_key}.csv'
+        # df.to_csv(file_path)
+        index_col = 'cat_rank'
         df['cat_rank'] = df['topic_cat'] + '_' + df['rank'].astype(str)
         topic_cats = list(df['topic_cat'].unique())
+        fig_height = len(topic_cats) * 50
         ranks = df['rank'].unique()
         cat_ranks = df['cat_rank'].unique()
-        # print(f'topic_cats={topic_cats} ranks={ranks} cat_ranks={cat_ranks}')
-        colors = {}
+        keys_to_colors = {}
+        colors_to_keys = {}
         for cat_rank in cat_ranks:
             cat = cat_rank.split('_')[0]
             rank = cat_rank.split('_')[1]
-            hex_hue = round(255/len(ranks)) * (int(rank)-1)
-            # print(f'topic_cats.index(cat)={topic_cats.index(cat)} hex_hue={hex_hue}')
+            hex_hue = round(255/len(ranks)) * int(rank)
             rgb = topic_cat_rank_color_mapper(topic_cats.index(cat), hex_hue)
-            colors[cat_rank] = rgb
-        # ranks = df['rank'].unique()
-        # colors = {}
-        # for i in range(len(ranks)):
-        #     c = round(255/len(ranks)) * i
-        #     rgb = f'rgb(255,{c},{c})'
-        #     colors[ranks[i]] = rgb
-        # print(f'len(cat_ranks)={len(cat_ranks)} len(colors)={len(colors)} colors={colors}')
-        fig = ff.create_gantt(df, index_col='cat_rank', bar_width=0.25, colors=colors, group_tasks=True, height=1000) # TODO scale height to number of rows
+            keys_to_colors[cat_rank] = rgb
+            colors_to_keys[rgb] = cat_rank
 
     else: # ['speakers', 'locations']
+        index_col = 'Task'
         span_keys = df.Task.unique()
         keys_to_colors = {}
         colors_to_keys = {}
@@ -321,52 +318,35 @@ def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
             rgb = f'rgb({r},{g},{b})'
             keys_to_colors[sk] = rgb
             colors_to_keys[rgb] = sk
-        if type == 'speakers':
-            fig_height = 600
-        elif type == 'locations':
-            fig_height = 1200
-        fig = ff.create_gantt(df, index_col='Task', bar_width=0.2, colors=keys_to_colors, group_tasks=True, title=title, height=fig_height) # TODO scale height to number of rows
-
+        fig_height = len(colors_to_keys) * 40
+    
+    fig = ff.create_gantt(df, index_col=index_col, bar_width=0.2, colors=keys_to_colors, group_tasks=True, title=title, height=fig_height) # TODO scale height to number of rows
     fig.update_layout(xaxis_type='linear', autosize=False)
 
-    # inject dialog into hover 'text' property
-    if type in ['speakers', 'locations']:
-        for gantt_row in fig['data']:
-            if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0:
-                # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
-                # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced, hence the colors_to_keys map.
-                rgb_val = gantt_row['legendgroup'].replace(' ', '')
-                gantt_row_key = colors_to_keys[rgb_val]
-                # the 'text' of a gantt row is stored in an unnamed 'data' element (associated to a gantt row via its 'legendgroup' rgb color) as a tuple, making it immutable.
-                # rather than updating it index-by-index, it must be copied, cast as a list, mutated iteratively, and updated in one swoop via gantt_row.update at the end.
-                gantt_row_text = list(gantt_row['text'])
-                for i in range(len(gantt_row['x'])):
-                    episode_i = gantt_row['x'][i]
-                    start_row = df.loc[(df['Task'] == gantt_row_key) & (df['Start'] == episode_i)]
-                    if len(start_row) > 0 and 'info' in start_row.iloc[0]:
-                        gantt_row_text[i] = start_row.iloc[0]['info']
-                        continue
-                    # finish_row = df.loc[(df['Info'] == gantt_row_key) & (df['Finish'] == episode_i)]
-                    # if len(finish_row) > 0 and 'Info' in finish_row.iloc[0]:
-                    #     gantt_row_text[i] = finish_row.iloc[0]['Info']
+    gantt_row_with_text_count = 0
+    for gantt_row in fig['data']:
+        if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0:
+            gantt_row_with_text_count += 1
+            # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
+            # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced, hence the colors_to_keys map.
+            rgb_val = gantt_row['legendgroup'].replace(' ', '')
+            gantt_row_key = colors_to_keys[rgb_val]
+            # the 'text' of a gantt row is stored in an unnamed 'data' element (associated to a gantt row via its 'legendgroup' rgb color) as a tuple, making it immutable.
+            # rather than updating it index-by-index, it must be copied, cast as a list, mutated iteratively, and updated in one swoop via gantt_row.update at the end.
+            gantt_row_text = list(gantt_row['text'])
+            for i in range(len(gantt_row['x'])):
+                episode_i = gantt_row['x'][i]
+                start_row = df.loc[(df[index_col] == gantt_row_key) & (df['Start'] == episode_i)]
+                if len(start_row) > 0 and 'info' in start_row.iloc[0]:
+                    gantt_row_text[i] = start_row.iloc[0]['info']
+                    continue
+                # if type == 'topics': 
+                finish_row = df.loc[(df[index_col] == gantt_row_key) & (df['Finish'] == episode_i)]
+                if len(finish_row) > 0 and 'info' in finish_row.iloc[0]:
+                    gantt_row_text[i] = finish_row.iloc[0]['info']
 
-                gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
-
-    # else: # 'topics'
-    #     # inject dialog stored in `hover_text` list into fig['data'] `text` property
-    #     for gantt_row in fig['data']:
-    #         print(gantt_row)
-    #         if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0 and gantt_row['legendgroup'] == 'rgb(255, 0, 0)':
-    #             # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
-    #             # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced.
-    #             # the 'text' of a gantt row is stored in an unnamed 'data' element (associated to a gantt row via its 'legendgroup' rgb color) as a tuple, making it immutable.
-    #             # rather than updating it index-by-index, it must be copied, cast as a list, mutated iteratively, and updated in one swoop via gantt_row.update at the end.
-    #             gantt_row_text = list(gantt_row['text'])
-    #             for i in range(len(gantt_row['x'])):
-    #                 # (*) mentioned above: the sequence and index positions of `hover_text` list map 1:2 to sequence and index positions of gantt rows in fig['data']
-    #                 gantt_row_text[i] = hover_text[math.floor(i/2)]
-
-    #             gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove episode index
+            gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
+        
     
     return fig
 

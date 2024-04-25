@@ -646,12 +646,14 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
 
 
 @esr_app.get("/esr/generate_series_gantt_sequence/{show_key}", tags=['ES Reader'])
-def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_grouping: str = None, model_vendor: str = None, model_version: str = None):
+def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_grouping: str = None, topic_threshold: int = None, model_vendor: str = None, model_version: str = None):
     '''
     TODO Generate composite of all scene_event aggs per speaker for each individual episode
     '''
     if not topic_grouping:
         topic_grouping = TOPIC_GROUPINGS[0]
+    if not topic_threshold:
+        topic_threshold = 20
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
@@ -714,8 +716,8 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_
         # fetch topics and scores
         response = episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor, model_version)
         topics = response['topics']
-        if len(topics) > 20:
-            topics = topics[:20]
+        if len(topics) > topic_threshold:
+            topics = topics[:topic_threshold]
         simple_topics = [dict(topic_key=t['topic_key'], breadcrumb=t['breadcrumb'], score=t['score']) for t in topics]
         episodes_to_topics[episode_key] = simple_topics
         # transform topics/scores to plotly-gantt-friendly span dicts
@@ -724,7 +726,7 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_
             topic_cat = topic_key.split('.')[0]
             # location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({scene_count} scenes)')
             topic_span = dict(Task=topic_key, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
-                              rank=i+1, topic_cat=topic_cat, info=f'{episode_title} (#{i+1} topic)')
+                              rank=i, topic_cat=topic_cat, info=f'{episode_title} (#{i+1} topic)')
             episode_topics_sequence.append(topic_span)
 
         episode_i += 1
