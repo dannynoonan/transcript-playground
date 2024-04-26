@@ -268,23 +268,21 @@ def build_episode_gantt(show_key: str, data: list) -> go.Figure:
     return fig
 
 
-def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
+def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
     print(f'in build_show_gantt show_key={show_key} type={type}')
 
-    # TODO where/how should this truncation happen?
+    # TODO handle truncation
     if type == 'speakers':
         title='Character continuity over duration of series'
-        trimmed_data = []
-        for d in data:
-            if d['Task'] in show_metadata[show_key]['regular_cast']:
-                trimmed_data.append(d)
-        data = trimmed_data
+        # trimmed_data = []
+        # for d in data:
+        #     if d['Task'] in show_metadata[show_key]['regular_cast']:
+        #         trimmed_data.append(d)
+        # data = trimmed_data
     elif type == 'locations':
         title='Scene location continuity over course of series'
     elif type == 'topics':
         title='Topics over course of series'
-
-    df = pd.DataFrame(data)
 
     if type == 'topics':
         df = df.sort_values(['Task', 'Start'])
@@ -293,7 +291,6 @@ def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
         index_col = 'cat_rank'
         df['cat_rank'] = df['topic_cat'] + '_' + df['rank'].astype(str)
         topic_cats = list(df['topic_cat'].unique())
-        fig_height = len(topic_cats) * 50
         ranks = df['rank'].unique()
         cat_ranks = df['cat_rank'].unique()
         keys_to_colors = {}
@@ -305,6 +302,7 @@ def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
             rgb = topic_cat_rank_color_mapper(topic_cats.index(cat), hex_hue)
             keys_to_colors[cat_rank] = rgb
             colors_to_keys[rgb] = cat_rank
+        fig_height = 250 + len(df['Task'].unique()) * 25
 
     else: # ['speakers', 'locations']
         index_col = 'Task'
@@ -318,7 +316,7 @@ def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
             rgb = f'rgb({r},{g},{b})'
             keys_to_colors[sk] = rgb
             colors_to_keys[rgb] = sk
-        fig_height = len(colors_to_keys) * 40
+        fig_height = 250 + len(colors_to_keys) * 25
     
     fig = ff.create_gantt(df, index_col=index_col, bar_width=0.2, colors=keys_to_colors, group_tasks=True, title=title, height=fig_height) # TODO scale height to number of rows
     fig.update_layout(xaxis_type='linear', autosize=False)
@@ -391,10 +389,12 @@ def build_series_search_results_gantt(show_key: str, qt: str, matching_episodes:
     # of the gantt data rows in fig['data'] below, because each speaker-episode element maps to two gantt row entries (a Start entry and a Finish entry)
     hover_text = list(matching_lines_df['hover_text'])
 
-    # file_path = f'./app/data/test_series_search_results_gantt_{show_key}.csv'
-    # df.to_csv(file_path)
+    file_path = f'./app/data/test_series_search_results_gantt_{show_key}.csv'
+    df.to_csv(file_path)
 
-    fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=1000) # TODO scale height to number of rows
+    fig_height = 250 + len(df['Task'].unique()) * 25
+
+    fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height) # TODO scale height to number of rows
     fig.update_layout(xaxis_type='linear', autosize=False)
 
     # inject dialog stored in `hover_text` list into fig['data'] `text` property

@@ -645,29 +645,165 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
     return {"dialog_timeline": dialog_timeline, "location_timeline": location_timeline}
 
 
-@esr_app.get("/esr/generate_series_gantt_sequence/{show_key}", tags=['ES Reader'])
-def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_grouping: str = None, topic_threshold: int = None, model_vendor: str = None, model_version: str = None):
-    '''
-    TODO Generate composite of all scene_event aggs per speaker for each individual episode
-    '''
-    if not topic_grouping:
-        topic_grouping = TOPIC_GROUPINGS[0]
-    if not topic_threshold:
-        topic_threshold = 20
-    if not model_vendor:
-        model_vendor = 'openai'
-    if not model_version:
-        model_version = 'ada002'
+# @DeprecationWarning
+# @esr_app.get("/esr/generate_series_gantt_sequence/{show_key}", tags=['ES Reader'])
+# def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_grouping: str = None, topic_threshold: int = None, model_vendor: str = None, model_version: str = None):
+#     '''
+#     TODO Generate composite of all scene_event aggs per speaker for each individual episode
+#     '''
+#     if not topic_grouping:
+#         topic_grouping = TOPIC_GROUPINGS[0]
+#     if not topic_threshold:
+#         topic_threshold = 20
+#     if not model_vendor:
+#         model_vendor = 'openai'
+#     if not model_version:
+#         model_version = 'ada002'
 
+#     episodes_to_speaker_line_counts = {}
+#     episode_speakers_sequence = []
+#     episodes_to_location_counts = {}
+#     episode_locations_sequence = []
+#     episodes_to_topics = {}
+#     episode_topics_sequence = []
+
+#     # limit the superset of locations to those occurring in at least 3 episodes
+#     response = agg_episodes_by_location(show_key, season=season)
+#     location_episode_counts = response['episodes_by_location']
+#     del location_episode_counts['_ALL_']
+#     recurring_locations = [location for location, episode_count in location_episode_counts.items() if episode_count > 2]
+    
+#     # get ordered list of all episodes
+#     response = fetch_simple_episodes(show_key)
+#     episodes = response['episodes']
+
+#     # for each episode:
+#     # - fetch all speakers ordered by scene_event count (how many lines they have)
+#     # - fetch all locations ordered by scene count
+#     # - transform results of both into lists of span dicts for creating plotly gantt charts
+#     episode_i = 0
+#     for episode in episodes:
+#         episode_key = episode['episode_key']
+#         episode_title = episode['title']
+#         episode_season = episode['season']
+#         sequence_in_season = episode['sequence_in_season']
+
+#         # fetch speakers and line counts
+#         response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
+#         speaker_line_counts = response['scene_events_by_speaker']
+#         del speaker_line_counts['_ALL_']
+#         episodes_to_speaker_line_counts[episode_key] = speaker_line_counts
+#         # transform speakers/line counts to plotly-gantt-friendly span dicts
+#         for speaker, line_count in speaker_line_counts.items():
+#             # speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({line_count} lines)')
+#             speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
+#                                 count=line_count, season=episode_season, sequence_in_season=sequence_in_season,
+#                                 info=f'{episode_title} ({line_count} lines)')
+#             episode_speakers_sequence.append(speaker_span)
+
+#         # fetch locations and scene counts
+#         response = agg_scenes_by_location(show_key, episode_key=episode_key)
+#         location_counts = response['scenes_by_location']
+#         del location_counts['_ALL_']
+#         episodes_to_location_counts[episode_key] = location_counts
+#         # transform locations/counts to plotly-gantt-friendly span dicts
+#         for location, scene_count in location_counts.items():
+#             if location in recurring_locations:
+#                 # location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({scene_count} scenes)')
+#                 location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
+#                                      count=scene_count, info=f'{episode_title} ({scene_count} scenes)')
+#                 episode_locations_sequence.append(location_span)
+
+#         # fetch topics and scores
+#         response = episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor, model_version)
+#         topics = response['topics']
+#         if len(topics) > topic_threshold:
+#             topics = topics[:topic_threshold]
+#         simple_topics = [dict(topic_key=t['topic_key'], breadcrumb=t['breadcrumb'], score=t['score']) for t in topics]
+#         episodes_to_topics[episode_key] = simple_topics
+#         # transform topics/scores to plotly-gantt-friendly span dicts
+#         for i in range(len(simple_topics)):
+#             topic_key = simple_topics[i]['topic_key']
+#             topic_cat = topic_key.split('.')[0]
+#             # location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({scene_count} scenes)')
+#             topic_span = dict(Task=topic_key, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
+#                               rank=i, topic_cat=topic_cat, info=f'{episode_title} (#{i+1} topic)')
+#             episode_topics_sequence.append(topic_span)
+
+#         episode_i += 1
+
+#     return {"episodes_to_speaker_line_counts": episodes_to_speaker_line_counts, 
+#             "episode_speakers_sequence": episode_speakers_sequence,
+#             "episodes_to_location_counts": episodes_to_location_counts,
+#             "episode_locations_sequence": episode_locations_sequence,
+#             "episodes_to_topics": episodes_to_topics,
+#             "episode_topics_sequence": episode_topics_sequence}
+
+
+@esr_app.get("/esr/generate_series_speaker_gantt_sequence/{show_key}", tags=['ES Reader'])
+def generate_series_speaker_gantt_sequence(show_key: ShowKey, limit_cast: bool = False, overwrite_file: bool = False):
+    '''
+    TODO 
+    '''
     episodes_to_speaker_line_counts = {}
     episode_speakers_sequence = []
+    
+    # get ordered list of all episodes
+    response = fetch_simple_episodes(show_key)
+    episodes = response['episodes']
+
+    # for each episode:
+    # - fetch all speakers ordered by scene_event count (how many lines they have)
+    # - transform results into lists of span dicts for creating plotly gantt charts
+    episode_i = 0
+    for episode in episodes:
+        episode_key = episode['episode_key']
+        episode_title = episode['title']
+        episode_season = episode['season']
+        sequence_in_season = episode['sequence_in_season']
+
+        # fetch speakers and line counts
+        response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
+        speaker_line_counts = response['scene_events_by_speaker']
+        del speaker_line_counts['_ALL_']
+        episodes_to_speaker_line_counts[episode_key] = speaker_line_counts
+        # transform speakers/line counts to plotly-gantt-friendly span dicts
+        for speaker, line_count in speaker_line_counts.items():
+            speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
+                                count=line_count, season=episode_season, sequence_in_season=sequence_in_season,
+                                info=f'{episode_title} ({line_count} lines)')
+            episode_speakers_sequence.append(speaker_span)
+
+        episode_i += 1
+
+    # TODO move this to fig_builder? (where it has to filter rows from the df)
+    if limit_cast:
+        trimmed_episode_speakers_sequence = []
+        for d in episode_speakers_sequence:
+            if d['Task'] in show_metadata[show_key]['regular_cast'] or d['Task'] in show_metadata[show_key]['recurring_cast']:
+                trimmed_episode_speakers_sequence.append(d)
+        episode_speakers_sequence = trimmed_episode_speakers_sequence
+
+    if overwrite_file:
+        file_path = f'./app/data/speaker_gantt_sequence_{show_key}.csv'
+        print(f'writing speaker gantt sequence dataframe to file_path={file_path}')
+        df = pd.DataFrame(episode_speakers_sequence)
+        df.to_csv(file_path)
+
+    return {"episodes_to_speaker_line_counts": episodes_to_speaker_line_counts, 
+            "episode_speakers_sequence": episode_speakers_sequence}
+
+
+@esr_app.get("/esr/generate_series_location_gantt_sequence/{show_key}", tags=['ES Reader'])
+def generate_series_location_gantt_sequence(show_key: ShowKey, overwrite_file: bool = False):
+    '''
+    TODO 
+    '''
     episodes_to_location_counts = {}
     episode_locations_sequence = []
-    episodes_to_topics = {}
-    episode_topics_sequence = []
 
     # limit the superset of locations to those occurring in at least 3 episodes
-    response = agg_episodes_by_location(show_key, season=season)
+    response = agg_episodes_by_location(show_key)
     location_episode_counts = response['episodes_by_location']
     del location_episode_counts['_ALL_']
     recurring_locations = [location for location, episode_count in location_episode_counts.items() if episode_count > 2]
@@ -687,19 +823,6 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_
         episode_season = episode['season']
         sequence_in_season = episode['sequence_in_season']
 
-        # fetch speakers and line counts
-        response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
-        speaker_line_counts = response['scene_events_by_speaker']
-        del speaker_line_counts['_ALL_']
-        episodes_to_speaker_line_counts[episode_key] = speaker_line_counts
-        # transform speakers/line counts to plotly-gantt-friendly span dicts
-        for speaker, line_count in speaker_line_counts.items():
-            # speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({line_count} lines)')
-            speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
-                                count=line_count, season=episode_season, sequence_in_season=sequence_in_season,
-                                info=f'{episode_title} ({line_count} lines)')
-            episode_speakers_sequence.append(speaker_span)
-
         # fetch locations and scene counts
         response = agg_scenes_by_location(show_key, episode_key=episode_key)
         location_counts = response['scenes_by_location']
@@ -708,10 +831,55 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_
         # transform locations/counts to plotly-gantt-friendly span dicts
         for location, scene_count in location_counts.items():
             if location in recurring_locations:
-                # location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({scene_count} scenes)')
                 location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
-                                     count=scene_count, info=f'{episode_title} ({scene_count} scenes)')
+                                     count=scene_count, season=episode_season, sequence_in_season=sequence_in_season,
+                                     info=f'{episode_title} ({scene_count} scenes)')
                 episode_locations_sequence.append(location_span)
+
+        episode_i += 1
+
+    if overwrite_file:
+        file_path = f'./app/data/location_gantt_sequence_{show_key}.csv'
+        print(f'writing location gantt sequence dataframe to file_path={file_path}')
+        df = pd.DataFrame(episode_locations_sequence)
+        df.to_csv(file_path)
+
+    return {"episodes_to_location_counts": episodes_to_location_counts,
+            "episode_locations_sequence": episode_locations_sequence}
+
+
+@esr_app.get("/esr/generate_series_topic_gantt_sequence/{show_key}", tags=['ES Reader'])
+def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str = None, topic_threshold: int = None, model_vendor: str = None, model_version: str = None,
+                                         overwrite_file: bool = False):
+    '''
+    TODO Generate composite of all scene_event aggs per speaker for each individual episode
+    '''
+    if not topic_grouping:
+        topic_grouping = TOPIC_GROUPINGS[0]
+    if not topic_threshold:
+        topic_threshold = 20
+    if not model_vendor:
+        model_vendor = 'openai'
+    if not model_version:
+        model_version = 'ada002'
+
+    episodes_to_topics = {}
+    episode_topics_sequence = []
+    
+    # get ordered list of all episodes
+    response = fetch_simple_episodes(show_key)
+    episodes = response['episodes']
+
+    # for each episode:
+    # - fetch all speakers ordered by scene_event count (how many lines they have)
+    # - fetch all locations ordered by scene count
+    # - transform results of both into lists of span dicts for creating plotly gantt charts
+    episode_i = 0
+    for episode in episodes:
+        episode_key = episode['episode_key']
+        episode_title = episode['title']
+        episode_season = episode['season']
+        sequence_in_season = episode['sequence_in_season']
 
         # fetch topics and scores
         response = episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor, model_version)
@@ -724,18 +892,20 @@ def generate_series_gantt_sequence(show_key: ShowKey, season: str = None, topic_
         for i in range(len(simple_topics)):
             topic_key = simple_topics[i]['topic_key']
             topic_cat = topic_key.split('.')[0]
-            # location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), Info=f'{episode_title} ({scene_count} scenes)')
             topic_span = dict(Task=topic_key, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
-                              rank=i, topic_cat=topic_cat, info=f'{episode_title} (#{i+1} topic)')
+                              rank=i, topic_cat=topic_cat, season=episode_season, sequence_in_season=sequence_in_season,
+                              info=f'{episode_title} (#{i+1} topic)')
             episode_topics_sequence.append(topic_span)
 
         episode_i += 1
 
-    return {"episodes_to_speaker_line_counts": episodes_to_speaker_line_counts, 
-            "episode_speakers_sequence": episode_speakers_sequence,
-            "episodes_to_location_counts": episodes_to_location_counts,
-            "episode_locations_sequence": episode_locations_sequence,
-            "episodes_to_topics": episodes_to_topics,
+    if overwrite_file:
+        file_path = f'./app/data/topic_gantt_sequence_{show_key}_{topic_grouping}_{model_vendor}_{model_version}.csv'
+        print(f'writing topic gantt sequence dataframe to file_path={file_path}')
+        df = pd.DataFrame(episode_topics_sequence)
+        df.to_csv(file_path)
+
+    return {"episodes_to_topics": episodes_to_topics,
             "episode_topics_sequence": episode_topics_sequence}
 
 
