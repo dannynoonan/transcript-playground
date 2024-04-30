@@ -2,6 +2,7 @@
 from gensim.models import Word2Vec, KeyedVectors
 # from gensim.scripts.glove2word2vec import glove2word2vec
 from gensim.test.utils import common_texts
+import math
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,6 +11,7 @@ from openai import OpenAI
 import os
 import pandas as pd
 from sklearn.cluster import KMeans
+import tiktoken
 import warnings
 
 from app.config import settings
@@ -231,7 +233,8 @@ def generate_topic_embeddings(es_topic: EsTopic, model_vendor: str, model_versio
 # TODO incorporate Word2Vec embeddings generation from generate_episode_embeddings into this generic function
 def generate_embeddings(text_to_vectorize: str, model_vendor: str, model_version: str) -> list|Exception:
     tokens = text_to_vectorize.split(' ')
-    print(f'begin generate_embeddings text_to_vectorize len(tokens)={len(tokens)} model {model_vendor}:{model_version}')
+    openai_token_count = openai_token_counter(text_to_vectorize)
+    print(f'begin generate_embeddings text_to_vectorize len(tokens)={len(tokens)} openai_token_count={openai_token_count} model {model_vendor}:{model_version}')
     
     if model_vendor == 'openai':
         vendor_meta = TRF_MODELS[model_vendor]
@@ -344,3 +347,40 @@ def shorten_flattened_text(es_episode: EsEpisodeTranscript, skip_increment: int 
                 flattened_text += f'{scene_event.dialog} '
 
     return flattened_text
+
+
+def shorten_lines_of_text(lines: list, target_token_count: int) -> str:
+    '''
+    Slim down text that is (slightly) longer than openai embeddings endpoint can handle by zapping lines incrementally distributed throughout the text, 
+    rather than lopping off large sections at the beginning or end (where the meaning might be most impactful)
+    '''
+    openai_token_count = openai_token_counter(' '.join(lines), 'cl100k_base')
+    skip_increment = math.ceil(target_token_count / (openai_token_count - target_token_count))
+    print(f'In shorten_lines_of_text len(lines)={len(lines)} openai_token_count={openai_token_count} target_token_count={target_token_count} skip_increment={skip_increment}')
+    
+    success = False
+    while not success and skip_increment > 1:
+        lines_out = []
+        for i in range(len(lines)):
+            if i % skip_increment == skip_increment-1:
+                continue
+            lines_out.append(lines[i])
+        openai_token_count = openai_token_counter(' '.join(lines_out), 'cl100k_base')
+        if openai_token_count < target_token_count:
+            success = True
+        else:
+            print(f"skip_increment={skip_increment} only got us down to openai_token_count={openai_token_count}, reducing increment by 1")
+            skip_increment -= 1
+    if not success:
+        print(f'Cannot run shorten_lines_of_text for skip_increment={skip_increment}')
+        return None
+    
+    return lines_out
+
+
+def openai_token_counter(raw_text: str, openai_encoding_version: str = None) -> int:
+    if not openai_encoding_version:
+        # openai_encoding_version = 'gpt-3.5-turbo'
+        openai_encoding_version = 'cl100k_base'
+    enc = tiktoken.get_encoding(openai_encoding_version)
+    return len(enc.encode(raw_text))

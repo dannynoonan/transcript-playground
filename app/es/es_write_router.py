@@ -293,6 +293,12 @@ def index_speaker(show_key: ShowKey, speaker: str):
 
     es_speaker.season_count = len(es_speaker_seasons)
     es_speaker.episode_count = len(es_speaker_episodes)
+    # special handling of openai token counters using `tiktoken`  
+    es_speaker.openai_ada002_word_count = ef.openai_token_counter(' '.join(es_speaker.lines), 'cl100k_base')
+    for _, ess in es_speaker_seasons.items():
+        ess.openai_ada002_word_count = ef.openai_token_counter(' '.join(ess.lines), 'cl100k_base')
+    for _, ese in es_speaker_episodes.items():
+        ese.openai_ada002_word_count = ef.openai_token_counter(' '.join(ese.lines), 'cl100k_base')
     
     # write to es
     try:    
@@ -429,6 +435,8 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
     Generate vector embedding for speaker using pre-trained Word2Vec and Transformer models
     '''
     max_tokens = TRF_MODELS[model_vendor]['versions'][model_version]['max_tokens']
+    word_count_field = f'{model_vendor}_{model_version}_word_count'
+    embeddings_field = f'{model_vendor}_{model_version}_embeddings'
 
     attempted_count = 0
     successful = []
@@ -442,20 +450,26 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
         es_speaker = EsSpeaker.get(id=es_speaker_id)
     except Exception as e:
         return {"error": f"Failure to populate speaker embeddings, no match in `speakers` index for es_speaker_id={es_speaker_id}, {e}"}
-    if es_speaker['word_count'] > max_tokens:
-        print(f"For speaker={speaker}, series word count of {es_speaker['word_count']} exceeds max_tokens={max_tokens} for model {model_vendor}:{model_version}; skipping series-level embeddings")
-        skipped.append(f'es_speaker_id={es_speaker_id}')
-    else:
-        print(f"Calling generate_embeddings on es_speaker_id={es_speaker_id} es_speaker['word_count']={es_speaker['word_count']}")
+    
+    # vectorize and generate embeddings for es_speaker.lines, paring down text with shorten_lines_of_text if necessary/possible
+    es_speaker_lines = es_speaker.lines
+    if es_speaker[word_count_field] > max_tokens:
+        es_speaker_lines = ef.shorten_lines_of_text(es_speaker_lines, max_tokens)
+        if not es_speaker_lines:
+            print(f"For speaker={speaker}, series {word_count_field}={es_speaker[word_count_field]} exceeds max_tokens={max_tokens} and attempts at shortening failed; skipping series-level embeddings")
+            skipped.append(f'es_speaker_id={es_speaker_id}')
+    if es_speaker_lines:
+        print(f"Calling generate_embeddings on es_speaker_id={es_speaker_id} es_speaker[{word_count_field}]={es_speaker[word_count_field]}")
         try:
-            text_to_vectorize = ' '.join(es_speaker.lines)
+            text_to_vectorize = ' '.join(es_speaker_lines)
             embeddings = ef.generate_embeddings(text_to_vectorize, model_vendor, model_version)
-            es_speaker[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+            es_speaker[embeddings_field] = embeddings
             esqb.save_es_speaker(es_speaker)   
             successful.append(f'es_speaker_id={es_speaker_id}')     
         except Exception as e:
             return {f"error": f"Failed to populate {model_vendor}:{model_version} embeddings for speaker {show_key.value}:{es_speaker}, {e}"}
     
+    # iterate through speaker_seasons indexed in es_speaker.seasons_to_episode_keys
     for season, episode_keys in es_speaker.seasons_to_episode_keys._d_.items():
         attempted_count += 1
         es_speaker_season_id = f'{show_key.value}_{speaker}_{season}'
@@ -467,15 +481,20 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
             failure_messages.append(err)
             failed.append(f'es_speaker_season_id={es_speaker_season_id}')
             continue
-        if es_speaker_season['word_count'] > max_tokens:
-            print(f"For es_speaker_season_id={es_speaker_season_id}, series word count of {es_speaker_season['word_count']} exceeds max_tokens={max_tokens} for model {model_vendor}:{model_version}; skipping season-level embeddings for season={season}")
-            skipped.append(f'es_speaker_season_id={es_speaker_season_id}')
-        else:
-            print(f"Calling generate_embeddings on es_speaker_season_id={es_speaker_season_id} es_speaker_season['word_count']={es_speaker_season['word_count']}")
+
+        # vectorize and generate embeddings for es_speaker_season.lines, paring down text with shorten_lines_of_text if necessary/possible
+        es_speaker_season_lines = es_speaker_season.lines
+        if es_speaker_season[word_count_field] > max_tokens:
+            es_speaker_season_lines = ef.shorten_lines_of_text(es_speaker_season_lines, max_tokens)
+            if not es_speaker_season_lines:
+                print(f"For es_speaker_season_id={es_speaker_season_id}, es_speaker_season[{word_count_field}]={es_speaker_season[word_count_field]} exceeds max_tokens={max_tokens} and attempts at shortening failed; skipping season-level embeddings for season={season}")
+                skipped.append(f'es_speaker_season_id={es_speaker_season_id}')
+        if es_speaker_season_lines:
+            print(f"Calling generate_embeddings on es_speaker_season_id={es_speaker_season_id} es_speaker_season[{word_count_field}]={es_speaker_season[word_count_field]}")
             try:
-                text_to_vectorize = ' '.join(es_speaker_season.lines)
+                text_to_vectorize = ' '.join(es_speaker_season_lines)
                 embeddings = ef.generate_embeddings(text_to_vectorize, model_vendor, model_version)
-                es_speaker_season[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+                es_speaker_season[embeddings_field] = embeddings
                 esqb.save_es_speaker_season(es_speaker_season)
                 successful.append(f'es_speaker_season_id={es_speaker_season_id}')      
             except Exception as e:
@@ -484,6 +503,7 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
                 failure_messages.append(err)
                 failed.append(f'es_speaker_season_id={es_speaker_season_id}')
 
+        # iterate through speaker_episodes indexed in es_speaker.seasons_to_episode_keys
         for episode_key in episode_keys:
             attempted_count += 1
             es_speaker_episode_id = f'{show_key.value}_{speaker}_{episode_key}'
@@ -495,16 +515,20 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
                 failure_messages.append(err)
                 failed.append(f'es_speaker_episode_id={es_speaker_episode_id}')
                 continue
-            if es_speaker_episode['word_count'] > max_tokens:
-                # TODO retry as with full episode text (refactor that logic out of episode embeddings and into generic embeddings)
-                print(f"For es_speaker_episode_id={es_speaker_episode_id}, episode word count of {es_speaker_episode['word_count']} exceeds max_tokens={max_tokens} for model {model_vendor}:{model_version}; skipping embeddings for episode_key={episode_key}")
-                skipped.append(f'es_speaker_episode_id={es_speaker_episode_id}')
-            else:
-                print(f"Calling generate_embeddings on es_speaker_episode_id={es_speaker_episode_id} es_speaker_episode['word_count']={es_speaker_episode['word_count']}")
+
+            # vectorize and generate embeddings for es_speaker_episode.lines, paring down text with shorten_lines_of_text if necessary/possible
+            es_speaker_episode_lines = es_speaker_episode.lines
+            if es_speaker_episode[word_count_field] > max_tokens:
+                es_speaker_episode_lines = ef.shorten_lines_of_text(es_speaker_episode_lines, max_tokens)
+                if not es_speaker_episode_lines:
+                    print(f"For es_speaker_episode_id={es_speaker_episode_id}, es_speaker_episode[{word_count_field}]={es_speaker_episode[word_count_field]} exceeds max_tokens={max_tokens} and attempts at shortening failed; skipping embeddings for episode_key={episode_key}")
+                    skipped.append(f'es_speaker_episode_id={es_speaker_episode_id}')
+            if es_speaker_episode_lines:
+                print(f"Calling generate_embeddings on es_speaker_episode_id={es_speaker_episode_id} es_speaker_episode[{word_count_field}]={es_speaker_episode[word_count_field]}")
                 try:
-                    text_to_vectorize = ' '.join(es_speaker_episode.lines)
+                    text_to_vectorize = ' '.join(es_speaker_episode_lines)
                     embeddings = ef.generate_embeddings(text_to_vectorize, model_vendor, model_version)
-                    es_speaker_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+                    es_speaker_episode[embeddings_field] = embeddings
                     esqb.save_es_speaker_episode(es_speaker_episode)
                     successful.append(f'es_speaker_episode_id={es_speaker_episode_id}')      
                 except Exception as e:
@@ -523,17 +547,17 @@ def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_
     matches = esrt.return_speakers(s)
     if not matches:
         return {"error": f"Failed to fetch_indexed_speakers for show_key={show_key}"}
-    
+        
     request_count = 0
     success_count = 0
     skipped_count = 0
     failure_count = 0
     super_fails = []
-    speakers = []
+    speaker_responses = {}
     for speaker in matches:
         try:
             response = populate_speaker_embeddings(show_key, speaker, model_vendor, model_version)
-            speakers[speaker] = response
+            speaker_responses[speaker] = response
             request_count += response['attempted_count']
             success_count += len(response['successful'])
             skipped_count += len(response['skipped'])
@@ -543,4 +567,4 @@ def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_
             super_fails.append(speaker)
 
     return {"request_count": request_count, "success_count": success_count, "skipped_count": skipped_count, "failure_count": failure_count,
-            "super_fails": super_fails, "speakers": speakers}
+            "super_fails": super_fails, "speaker_responses": speaker_responses}
