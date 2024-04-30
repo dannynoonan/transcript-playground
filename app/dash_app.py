@@ -108,7 +108,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
     vector_field = 'openai_ada002_embeddings'
 
     # fetch embeddings for all show episodes 
-    s = esqb.fetch_show_embeddings(show_key, vector_field)
+    s = esqb.fetch_series_embeddings(show_key, vector_field)
     doc_embeddings = esrt.return_all_embeddings(s, vector_field)
 
     # generate and color-stamp clusters for all show episodes 

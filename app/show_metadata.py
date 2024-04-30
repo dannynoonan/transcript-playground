@@ -58,8 +58,11 @@ WIKIPEDIA_DOMAIN = 'https://en.wikipedia.org/wiki/'
 GOT_SCENE_CHANGE_PREFIXES = ['CUT TO: ', 'EXT. ', 'INT. ']
 TNG_CAPTAINS_LOG_PREFIX = "captain's log"
 
-TOPIC_GROUPINGS = ['universalGenres', 'universalGenresGpt35', 'focusedGpt35']
-# TOPIC_GROUPINGS = ['universal', 'universalGpt35', 'focusedGpt35']
+EPISODE_TOPIC_GROUPINGS = ['universalGenres', 'universalGenresGpt35', 'focusedGpt35']
+SPEAKER_TOPIC_GROUPINGS = ['meyersBriggsKiersey']
+
+SPEAKERS_TO_IGNORE = ['_ALL_', 'ALL', 'BOTH', 'MAN', 'WOMAN', 'CREWMAN', 'CREWWOMAN', 'VOICE', 'VOICES', 'GIRL', 'BOY', 
+                      'ALIEN', 'ALIEN 2', 'WAITER', 'BELLBOY', 'TRAVELLER', 'POLICEMAN']
 
 
 show_ontology = {

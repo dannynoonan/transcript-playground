@@ -6,7 +6,7 @@ from elasticsearch_dsl.query import MoreLikeThis
 
 from app.config import settings
 from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
-from app.es.es_model import EsEpisodeTranscript, EsCharacter, EsTopic
+from app.es.es_model import EsEpisodeTranscript, EsTopic, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
 
@@ -38,14 +38,24 @@ def init_transcripts_index():
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
 
 
-def init_characters_index():
-    EsCharacter.init()
-    es_conn.indices.put_settings(index="characters", body={"index": {"max_inner_result_window": 1000}})
-
-
 def init_topics_index():
     EsTopic.init()
     es_conn.indices.put_settings(index="topics", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_speakers_index():
+    EsSpeaker.init()
+    es_conn.indices.put_settings(index="speakers", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_speaker_seasons_index():
+    EsSpeakerSeason.init()
+    es_conn.indices.put_settings(index="speaker_seasons", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_speaker_episodes_index():
+    EsSpeakerEpisode.init()
+    es_conn.indices.put_settings(index="speaker_episodes", body={"index": {"max_inner_result_window": 1000}})
 
 
 def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
@@ -59,10 +69,26 @@ def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
 
 
 def save_es_topic(es_topic: EsTopic) -> None:
+    # TODO this is functionally identical to `save_es_episode`, do we even need either of them?
     es_topic.save()
 
 
-def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = False) -> dict:
+def save_es_speaker(es_speaker: EsSpeaker) -> None:
+    # TODO this is functionally identical to `save_es_episode` and `save_es_topic`, do we even need any of them?
+    es_speaker.save()
+
+
+def save_es_speaker_season(es_speaker_season: EsSpeakerSeason) -> None:
+    # TODO this is functionally identical to other es `save` functions 
+    es_speaker_season.save()
+
+
+def save_es_speaker_episode(es_speaker_episode: EsSpeakerEpisode) -> None:
+    # TODO this is functionally identical to other es `save` functions 
+    es_speaker_episode.save()
+
+
+def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = False) -> Search:
     print(f'begin fetch_episode_by_key for show_key={show_key} episode_key={episode_key}')
 
     # s = Search(using=es_client, index='transcripts')
@@ -126,7 +152,7 @@ def fetch_simple_episodes(show_key: str, season: str = None) -> Search:
     return s
 
 
-async def search_episodes_by_title(show_key: str, qt: str) -> Search:
+def search_episodes_by_title(show_key: str, qt: str) -> Search:
     print(f'begin search_episodes_by_title for show_key={show_key} qt={qt}')
 
     s = Search(index='transcripts')
@@ -139,6 +165,199 @@ async def search_episodes_by_title(show_key: str, qt: str) -> Search:
     s = s.highlight('title')
 
     return s
+
+
+def fetch_speaker(show_key: str, speaker_name: str) -> EsSpeaker|None:
+    print(f'begin fetch_speaker for show_key={show_key} speaker_name={speaker_name}')
+
+    doc_id = f'{show_key}_{speaker_name}'
+
+    try:
+        speaker = EsSpeaker.get(id=doc_id, index='speakers')
+    except Exception as e:
+        print(f'Failed to fetch speaker `{speaker_name}` for show_key=`{show_key}`')
+        return None
+
+    return speaker
+
+
+def fetch_indexed_speakers(show_key: str) -> Search:
+    print(f'begin fetch_indexed_speakers for show_key={show_key}')
+
+    s = Search(index='speakers')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+
+    return s
+
+
+# def fetch_speaker_embedding(show_key: str, speaker: str, vector_field: str) -> Search:
+#     print(f'begin fetch_speaker_embedding for show_key={show_key} speaker={speaker} vector_field={vector_field}')
+
+#     s = Search(index='speakers')
+#     s = s.extra(size=1)
+
+#     s = s.filter('term', show_key=show_key)
+#     s = s.filter('term', name=speaker)
+#     s = s.source(includes=[vector_field])
+
+#     return s
+
+
+def fetch_speaker_season(show_key: str, speaker_name: str, season: int) -> EsSpeakerSeason|None:
+    print(f'begin fetch_speaker_season for show_key={show_key} speaker_name={speaker_name} season={season}')
+
+    doc_id = f'{show_key}_{speaker_name}_{season}'
+
+    try:
+        speaker_season = EsSpeakerSeason.get(id=doc_id, index='speaker_seasons')
+    except Exception as e:
+        print(f'Failed to fetch speaker_season for show_key={show_key} speaker={speaker_name} season={season}', e)
+        return None
+
+    return speaker_season
+
+
+def fetch_speaker_seasons(show_key: str, speaker: str, season: int = None, return_fields: list = []) -> Search:
+    print(f'begin fetch_speaker_seasons for show_key={show_key} speaker={speaker} season={season} return_fields={return_fields}')
+
+    s = Search(index='speaker_seasons')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+    s = s.filter('term', name=speaker)
+    if season:
+        s = s.filter('term', season=season)
+
+    s = s.sort('season')
+
+    if return_fields:
+        s = s.source(includes=return_fields)
+
+    return s
+
+
+# def fetch_speaker_season_embeddings(show_key: str, speaker: str, vector_field: str, season: int = None) -> Search:
+#     print(f'begin fetch_speaker_season_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field}')
+
+#     s = Search(index='speaker_seasons')
+#     s = s.extra(size=1000)
+
+#     s = s.filter('term', show_key=show_key)
+#     s = s.filter('term', name=speaker)
+#     if season:
+#         s = s.filter('term', season=season)
+
+#     s = s.sort('season')
+
+#     s = s.source(includes=[vector_field])
+
+#     return s
+
+
+def fetch_speaker_episode(show_key: str, speaker_name: str, episode_key: str) -> EsSpeakerEpisode|None:
+    print(f'begin fetch_speaker_episode for show_key={show_key} speaker_name={speaker_name} episode_key={episode_key}')
+
+    doc_id = f'{show_key}_{speaker_name}_{episode_key}'
+
+    try:
+        speaker_episode = EsSpeakerEpisode.get(id=doc_id, index='speaker_episodes')
+    except Exception as e:
+        print(f'Failed to fetch speaker_episode for show_key={show_key} speaker={speaker_name} episode_key={episode_key}', e)
+        return None
+
+    return speaker_episode
+
+
+def fetch_speaker_episodes(show_key: str, speaker: str, season: int = None, episode_key: str = None, return_fields: list = []) -> Search:
+    print(f'begin fetch_speaker_episodes for show_key={show_key} speaker={speaker} episode_key={episode_key} season={season} return_fields={return_fields}')
+
+    s = Search(index='speaker_episodes')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+    s = s.filter('term', name=speaker)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    elif season:
+        s = s.filter('term', season=season)
+
+    s = s.sort('season', 'sequence_in_season')
+
+    if return_fields:
+        s = s.source(includes=return_fields)
+
+    return s
+
+
+# def fetch_speaker_episode_embeddings(show_key: str, speaker: str, vector_field: str, season: int = None, episode_key: str = None) -> Search:
+#     print(f'begin fetch_speaker_episode_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field}')
+
+#     s = Search(index='speaker_episodes')
+#     s = s.extra(size=1000)
+
+#     s = s.filter('term', show_key=show_key)
+#     s = s.filter('term', name=speaker)
+#     if episode_key:
+#         s = s.filter('term', episode_key=episode_key)
+#     elif season:
+#         s = s.filter('term', season=season)
+#     s = s.source(includes=[vector_field])
+
+#     return s
+
+
+def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, seasons: list = [], episode_keys: list = [], min_depth: bool = True) -> tuple[list, dict, dict]:
+    print(f'begin fetch_speaker_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field} seasons={seasons} episode_keys={episode_keys}')
+
+    try:
+        es_speaker = fetch_speaker(show_key, speaker)
+        speaker_series_embeddings = getattr(es_speaker, vector_field)
+    except Exception as e:
+        return {"error": f"Failed fetch_speaker for show_key={show_key} speaker={speaker}: {e}"}
+    
+    if min_depth and speaker_series_embeddings:
+         return speaker_series_embeddings, {}, {}
+            
+    if not seasons:
+        seasons = es_speaker.seasons_to_episode_keys._d_.keys()
+    if not episode_keys:
+        for s, e_keys in es_speaker.seasons_to_episode_keys._d_.items():
+            if s in seasons:
+                episode_keys.extend(e_keys)
+
+    season_embeddings = {}
+    for season in seasons:
+        try:
+            es_speaker_season = fetch_speaker_season(show_key, speaker, season)
+            if not es_speaker_season:
+                print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} season={season}")
+                continue
+            speaker_season_embeddings = getattr(es_speaker_season, vector_field)
+            if speaker_season_embeddings:
+                season_embeddings[season] = speaker_season_embeddings
+        except Exception as e:
+            print(f"Failed fetch_speaker_season for show_key={show_key} speaker={speaker} season={season}: {e}")
+
+    if min_depth and len(speaker_season_embeddings) == len(seasons):
+        return speaker_series_embeddings, season_embeddings, {}
+    
+    episode_embeddings = {}
+
+    for episode_key in episode_keys:
+        try:
+            es_speaker_episode = fetch_speaker_episode(show_key, speaker, episode_key)
+            if not es_speaker_episode:
+                print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} episode_key={episode_key}")
+                continue
+            speaker_episode_embeddings = getattr(es_speaker_episode, vector_field)
+            if speaker_episode_embeddings:
+                episode_embeddings[episode_key] = speaker_episode_embeddings
+        except Exception as e:
+            print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} episode_key={episode_key}: {e}")
+
+    return speaker_series_embeddings, season_embeddings, episode_embeddings
 
 
 def fetch_topic(topic_grouping: str, topic_key: str) -> EsTopic|None:
@@ -168,7 +387,7 @@ def fetch_topic_grouping(topic_grouping: str) -> Search:
     return s
 
 
-async def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> Search:
+def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> Search:
     print(f'begin search_scenes for show_key={show_key} season={season} episode_key={episode_key} location={location} description={description}')
 
     if not (location or description):
@@ -265,7 +484,7 @@ def search_scene_events(show_key: str, season: str = None, episode_key: str = No
     return s
 
 
-async def search_scene_events_multi_speaker(show_key: str, speakers: str, season: str = None, episode_key: str = None) -> Search:
+def search_scene_events_multi_speaker(show_key: str, speakers: str, season: str = None, episode_key: str = None) -> Search:
     print(f'begin search_scene_events_multi_speaker for show_key={show_key} season={season} episode_key={episode_key} speakers={speakers}')
 
     speakers = speakers.split(',')
@@ -308,7 +527,7 @@ async def search_scene_events_multi_speaker(show_key: str, speakers: str, season
     return s
 
 
-async def search_episodes(show_key: str, season: str = None, episode_key: str = None, qt: str = None) -> Search:
+def search_episodes(show_key: str, season: str = None, episode_key: str = None, qt: str = None) -> Search:
     print(f'begin search for show_key={show_key} season={season} episode_key={episode_key} qt={qt}')
 
     '''
@@ -393,7 +612,7 @@ def fetch_all_episode_relations(show_key: str, model_vendor: str, model_version:
     return s
 
 
-async def agg_seasons(show_key: str, location: str = None) -> Search:
+def agg_seasons(show_key: str, location: str = None) -> Search:
     print(f'begin agg_episodes for show_key={show_key} location={location}')
 
     s = Search(index='transcripts')
@@ -423,7 +642,7 @@ def agg_episodes(show_key: str, season: str = None, location: str = None) -> Sea
     return s
 
 
-async def agg_seasons_by_speaker(show_key: str, location: str = None) -> Search:
+def agg_seasons_by_speaker(show_key: str, location: str = None) -> Search:
     print(f'begin agg_episodes_by_speaker for show_key={show_key} location={location}')
 
     s = Search(index='transcripts')
@@ -458,7 +677,7 @@ async def agg_seasons_by_speaker(show_key: str, location: str = None) -> Search:
     return s
 
 
-async def agg_seasons_by_location(show_key: str) -> Search:
+def agg_seasons_by_location(show_key: str) -> Search:
     print(f'begin agg_episodes_by_speaker for show_key={show_key}')
 
     s = Search(index='transcripts')
@@ -479,7 +698,7 @@ async def agg_seasons_by_location(show_key: str) -> Search:
     return s
 
 
-async def agg_episodes_by_speaker(show_key: str, season: str = None, location: str = None, other_speaker: str = None) -> Search:
+def agg_episodes_by_speaker(show_key: str, season: str = None, location: str = None, other_speaker: str = None) -> Search:
     print(f'begin agg_episodes_by_speaker for show_key={show_key} season={season} location={location} other_speaker={other_speaker}')
 
     # TODO this is nearly identical to agg_scenes_by_speaker, refactor?
@@ -732,7 +951,7 @@ def agg_dialog_word_counts(show_key: str, season: str = None, episode_key: str =
     return s
 
 
-async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
+def keywords_by_episode(show_key: str, episode_key: str) -> dict:
     print(f'begin keywords_by_episode for show_key={show_key} episode_key={episode_key}')
 
     response = es_conn.termvectors(index='transcripts', id=f'{show_key}_{episode_key}', term_statistics='true', field_statistics='true',
@@ -741,7 +960,7 @@ async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
     return response
 
 
-async def keywords_by_corpus(show_key: str, season: str = None) -> dict:
+def keywords_by_corpus(show_key: str, season: str = None) -> dict:
     print(f'begin keywords_by_corpus for show_key={show_key} season={season}')
 
     keys = esr.fetch_doc_ids(ShowKey(show_key), season=season)
@@ -754,7 +973,7 @@ async def keywords_by_corpus(show_key: str, season: str = None) -> dict:
     return response
 
 
-async def more_like_this(show_key: str, episode_key: str) -> Search:
+def more_like_this(show_key: str, episode_key: str) -> Search:
     print(f'begin search_more_like_this for show_key={show_key} episode_key={episode_key}')
 
     s = Search(index='transcripts')
@@ -840,8 +1059,11 @@ async def populate_relations(show_key: str, model_vendor: str, model_version: st
     return episodes_to_relations
 
 
-def vector_search(show_key: str, vector_field: str, vectorized_qt: list, season: str = None) -> Search:
-    print(f'begin vector_search for show_key={show_key} vector_field={vector_field}')
+def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_name: str = None, season: str = None) -> Search:
+    print(f'begin vector_search for show_key={show_key} vector_field={vector_field} index_name={index_name} season={season}')
+
+    if not index_name:
+        index_name = 'transcripts'
 
     # s = Search(index='transcripts')
     # s = s.extra(size=1000)
@@ -873,7 +1095,7 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, season:
 
     source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations']
     
-    response = es_conn.knn_search(index="transcripts", knn=knn_query, filter=filter_query, source=source)
+    response = es_conn.knn_search(index=index_name, knn=knn_query, filter=filter_query, source=source)
 
     # s = s.query(index="transcripts", knn=knn_query, source=source)
     # print(f's.to_dict()={s.to_dict()}')
@@ -924,8 +1146,8 @@ def fetch_episode_embedding(show_key: str, episode_key: str, vector_field: str) 
     return s
 
 
-def fetch_show_embeddings(show_key: str, vector_field: str) -> Search:
-    print(f'begin fetch_show_embeddings for show_key={show_key} vector_field={vector_field}')
+def fetch_series_embeddings(show_key: str, vector_field: str) -> Search:
+    print(f'begin fetch_series_embeddings for show_key={show_key} vector_field={vector_field}')
 
     s = Search(index='transcripts')
     s = s.extra(size=1000)

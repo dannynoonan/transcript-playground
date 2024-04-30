@@ -86,7 +86,7 @@ def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
 
 def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str) -> tuple[list, list, list]:
     print('------------------------------------------------------------------------------------')
-    print(f'begin calculate_embeddings for model_vendor={model_vendor} model_version={model_version} token_arr={token_arr}')
+    print(f'begin calculate_embeddings using model {model_vendor}:{model_version} token_arr={token_arr}')
 
     vendor_meta = W2V_MODELS[model_vendor]
     embedding_sum = [0.0] * vendor_meta['versions'][model_version]['dims']
@@ -112,7 +112,6 @@ def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str)
 
 
 def generate_openai_embeddings(input_text: str, model_version: str) -> tuple[list, int, int]:
-    print('------------------------------------------------------------------------------------')
     print(f'begin generate_openai_embeddings for model_version={model_version}')
 
     openai_client = OpenAI(api_key=settings.openai_api_key)
@@ -139,8 +138,10 @@ def generate_openai_embeddings(input_text: str, model_version: str) -> tuple[lis
         raise Exception(f'Failed to generate openai:{model_version} vector embeddings: {e}', e)
 
 
+@DeprecationWarning
+# TODO refactor to use generate_embeddings
 def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, model_vendor: str, model_version: str) -> None|Exception:
-    print(f'begin generate_episode_embeddings for {show_key}:{es_episode.episode_key} model_vendor={model_vendor} model_version={model_version}')
+    print(f'begin generate_episode_embeddings for {show_key}:{es_episode.episode_key} using model {model_vendor}:{model_version}')
 
     if model_vendor == 'openai':
         vendor_meta = TRF_MODELS[model_vendor]
@@ -202,8 +203,10 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, 
             es_episode[f'{model_vendor}_{model_version}_no_match_tokens'] = no_match_tokens
 
 
+@DeprecationWarning
+# TODO refactor to use generate_embeddings
 def generate_topic_embeddings(es_topic: EsTopic, model_vendor: str, model_version: str) -> None|Exception:
-    print(f'begin generate_topic_embeddings for es_topic={es_topic} model_vendor={model_vendor} model_version={model_version}')
+    print(f'begin generate_topic_embeddings for {es_topic.topic_grouping}:{es_topic.topic_key} using model {model_vendor}:{model_version}')
 
     text_to_vectorize = es_topic.description
     if es_topic.supercat_description:
@@ -223,6 +226,26 @@ def generate_topic_embeddings(es_topic: EsTopic, model_vendor: str, model_versio
         except Exception as e:
             print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for es_topic={es_topic}: {e}')
             raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for es_topic={es_topic}: {e}')
+        
+
+# TODO incorporate Word2Vec embeddings generation from generate_episode_embeddings into this generic function
+def generate_embeddings(text_to_vectorize: str, model_vendor: str, model_version: str) -> list|Exception:
+    tokens = text_to_vectorize.split(' ')
+    print(f'begin generate_embeddings text_to_vectorize len(tokens)={len(tokens)} model {model_vendor}:{model_version}')
+    
+    if model_vendor == 'openai':
+        vendor_meta = TRF_MODELS[model_vendor]
+        true_model_version = vendor_meta['versions'][model_version]['true_name']
+        try:
+            embeddings, _, _ = generate_openai_embeddings(text_to_vectorize, true_model_version)
+            return embeddings
+        except openai.BadRequestError as bre:
+            # TODO slice up request and retry
+            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)}: {bre}')
+            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {bre}')
+        except Exception as e:
+            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {e}')
+            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {e}')
         
 
 def build_embeddings_model(show_key: str) -> dict:
@@ -319,50 +342,5 @@ def shorten_flattened_text(es_episode: EsEpisodeTranscript, skip_increment: int 
             #     flattened_text += f'{scene_event.spoken_by}: '
             if scene_event.dialog:
                 flattened_text += f'{scene_event.dialog} '
-        
 
     return flattened_text
-
-
-
-    # model = Word2Vec(sentences=common_texts, vector_size=100, window=5, min_count=1, workers=4)
-    # model.save("word2vec.model")
-    # model = Word2Vec.load("word2vec.model")
-    # model.train([["hello", "world"]], total_examples=1, epochs=1)
-    # words = list(model.wv.index_to_key)
-
-
-# # iterate through each sentence in the file
-# for i in sent_tokenize(f):
-#     temp = []
-     
-#     # tokenize the sentence into words
-#     for j in word_tokenize(i):
-#         temp.append(j.lower())
- 
-#     data.append(temp)
- 
-# # Create CBOW model
-# model1 = Word2Vec(data, min_count = 1, vector_size = 100, window = 5)
- 
-# # Print results
-# print("Cosine similarity between 'alice' " +
-#                "and 'wonderland' - CBOW : ",
-#     model1.wv.similarity('alice', 'wonderland'))
-     
-# print("Cosine similarity between 'alice' " +
-#                  "and 'machines' - CBOW : ",
-#       model1.wv.similarity('alice', 'machines'))
- 
-# # Create Skip Gram model
-# model2 = Word2Vec(data, min_count = 1, vector_size = 100, window = 5, sg = 1)
- 
-# # Print results
-# print("Cosine similarity between 'alice' " +
-#           "and 'wonderland' - Skip Gram : ",
-#     model2.wv.similarity('alice', 'wonderland'))
-     
-# print("Cosine similarity between 'alice' " +
-#             "and 'machines' - Skip Gram : ",
-#       model2.wv.similarity('alice', 'machines'))
-    

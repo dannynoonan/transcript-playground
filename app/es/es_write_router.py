@@ -5,12 +5,14 @@ import pandas as pd
 
 import app.database.dao as dao
 import app.es.es_ingest_transformer as esit
-from app.es.es_metadata import ACTIVE_VENDOR_VERSIONS
-from app.es.es_model import EsEpisodeTranscript, EsTopic
+import app.es.es_response_transformer as esrt
+# from app.es.es_metadata import ACTIVE_VENDOR_VERSIONS
+from app.es.es_model import EsEpisodeTranscript, EsTopic, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode
 import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
-from app.show_metadata import ShowKey
+from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
+from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
 
 
 esw_app = APIRouter()
@@ -23,21 +25,27 @@ def init_es(index_name: str = None):
     Run this to explicitly define the mapping anytime the `transcripts` index is blown away and re-created. Not doing so will result in the wrong
     data types being auto-assigned to several fields in the schema mapping, and will break query (read) functionality down the line.
     '''
-    valid_indexes = ['transcripts', 'characters', 'topics']
+    valid_indexes = ['transcripts', 'topics', 'speakers', 'speaker_seasons', 'speaker_episodes']
     if index_name:
         if index_name not in valid_indexes:
-            return {"error": "Failed to initialize index_name={index_name}, valid_indexes={valid_indexes}"}
+            return {"error": f"Failed to initialize index_name=`{index_name}`, valid_indexes={valid_indexes}"}
         if index_name == 'transcripts':
             esqb.init_transcripts_index()
-        elif index_name == 'characters':
-            esqb.init_characters_index()
         elif index_name == 'topics':
             esqb.init_topics_index()
+        elif index_name == 'speakers':
+            esqb.init_speakers_index()
+        elif index_name == 'speaker_seasons':
+            esqb.init_speaker_seasons_index()
+        elif index_name == 'speaker_episodes':
+            esqb.init_speaker_episodes_index()
         initialized_indexes = [index_name]
     else:
         esqb.init_transcripts_index()
-        esqb.init_characters_index()
         esqb.init_topics_index()
+        esqb.init_speakers_index()
+        esqb.init_speaker_seasons_index()
+        esqb.init_speaker_episodes_index()
         initialized_indexes = valid_indexes
 
     return {"initialized_indexes": initialized_indexes}
@@ -238,6 +246,96 @@ def populate_all_embeddings(show_key: ShowKey, model_vendor: str, model_version:
     return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
 
 
+@esw_app.get("/esw/index_speaker/{show_key}/{speaker}", tags=['ES Writer'])
+def index_speaker(show_key: ShowKey, speaker: str):
+    '''
+    TODO
+    '''
+    es_speaker = EsSpeaker(show_key=show_key.value, name=speaker, scene_count=0, line_count=0, word_count=0, lines=[], seasons_to_episode_keys={})
+    es_speaker_seasons = {}
+    es_speaker_episodes = {}
+
+    response = esr.search_scene_events(show_key, speaker=speaker)
+    if 'matches' not in response:
+        return {"error": f"No scene_events found matching show_key={show_key.value} speaker={speaker}"}
+    
+    for episode in response['matches']:
+        season = str(episode['season'])
+        episode_key = episode['episode_key']
+        es_speaker_episode = EsSpeakerEpisode(show_key=show_key.value, name=speaker, episode_key=episode_key, season=season, 
+                                                sequence_in_season=episode['sequence_in_season'], scene_count=0, line_count=0, word_count=0, lines=[])
+        es_speaker_episodes[episode_key] = es_speaker_episode
+        if season in es_speaker_seasons:
+            es_speaker_season = es_speaker_seasons[season]
+            es_speaker.seasons_to_episode_keys[season].append(episode_key)
+        else:
+            es_speaker_season = EsSpeakerSeason(show_key=show_key.value, name=speaker, season=season, episode_count=0, scene_count=0, 
+                                                line_count=0, word_count=0, lines=[])
+            es_speaker_seasons[season] = es_speaker_season
+            es_speaker.seasons_to_episode_keys[season] = [episode_key]
+        for scene in episode['scenes']:
+            es_speaker_episode.scene_count += 1
+            for scene_event in scene['scene_events']:
+                es_speaker_episode.line_count += 1
+                es_speaker_episode.word_count += len(scene_event['dialog'].split(' '))
+                es_speaker_episode.lines.append(scene_event['dialog'])
+
+        # add episode scene/line/word data to aggregate season and overall data 
+        es_speaker_season.episode_count += 1
+        es_speaker_season.scene_count += es_speaker_episode.scene_count
+        es_speaker_season.line_count += es_speaker_episode.line_count
+        es_speaker_season.word_count += es_speaker_episode.word_count
+        es_speaker_season.lines.extend(es_speaker_episode.lines)
+        es_speaker.scene_count += es_speaker_episode.scene_count
+        es_speaker.line_count += es_speaker_episode.line_count
+        es_speaker.word_count += es_speaker_episode.word_count
+        es_speaker.lines.extend(es_speaker_episode.lines)
+
+    es_speaker.season_count = len(es_speaker_seasons)
+    es_speaker.episode_count = len(es_speaker_episodes)
+    
+    # write to es
+    try:    
+        print(f'Writing es_speaker {speaker} show_key={show_key.value} to `speakers`, `speaker_seasons`, and `speaker_episodes` indexes')  
+        esqb.save_es_speaker(es_speaker)
+        for _, es_speaker_season in es_speaker_seasons.items():
+            esqb.save_es_speaker_season(es_speaker_season)
+        for _, es_speaker_episode in es_speaker_episodes.items():
+            esqb.save_es_speaker_episode(es_speaker_episode)
+    except Exception as e:
+        return {"error": f"Failure indexing speaker lines and counts for speaker={speaker} show_key={show_key.value}: {e}"}
+
+    return {"speaker": speaker, "season_count": len(es_speaker_seasons), "episode_count": len(es_speaker_episodes)}
+
+
+@esw_app.get("/esw/index_all_speakers/{show_key}", tags=['ES Writer'])
+def index_all_speakers(show_key: ShowKey):
+    '''
+    TODO
+    '''
+    response = esr.agg_episodes_by_speaker(show_key)
+    speaker_episode_counts = response['episodes_by_speaker']
+    valid_speakers = [s for s,c in speaker_episode_counts.items() if s not in SPEAKERS_TO_IGNORE and c > 2]
+    attempt_count = 0
+    successful = []
+    failed = []
+    for speaker in valid_speakers:
+        attempt_count += 1
+        try:
+            response = index_speaker(show_key, speaker)
+            if "speaker" in response:
+                print(f"Successfully indexed speaker={speaker}")
+                successful.append(speaker)
+            else:
+                print(f"Failed to index speaker={speaker}: {response['Error']}")
+                failed.append(speaker)
+        except Exception as e:
+            print(f"Failed to index speaker={speaker}: {e}")
+            failed.append(speaker)
+
+    return {"attempt_count": attempt_count, "successful": successful, "failed": failed}
+
+
 @esw_app.get("/esw/index_topic_grouping/{topic_grouping}", tags=['ES Writer'])
 async def index_topic_grouping(topic_grouping: str):
     '''
@@ -295,7 +393,7 @@ def populate_topic_embeddings(topic_grouping: str, topic_key: str, model_vendor:
     es_topic = EsTopic.get(id=doc_id)
     try:
         ef.generate_topic_embeddings(es_topic, model_vendor, model_version)
-        esqb.save_es_episode(es_topic)
+        esqb.save_es_topic(es_topic)
         return {"topic": es_topic._d_}
     except Exception as e:
         return {f"error": "Failed to populate {model_vendor}:{model_version} embeddings for topic {topic_grouping}:{topic_key}, {e}"}
@@ -323,3 +421,126 @@ def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, m
                 failure_messages.append(topic_embeddings_response['error'])
         
     return {'attempted_count': attempted_count, 'successful_topics': successful_topics, 'failed_topics': failed_topics, 'failure_messages': failure_messages}
+
+
+@esw_app.get("/esw/populate_speaker_embeddings/{show_key}/{speaker}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: str, model_version: str):
+    '''
+    Generate vector embedding for speaker using pre-trained Word2Vec and Transformer models
+    '''
+    max_tokens = TRF_MODELS[model_vendor]['versions'][model_version]['max_tokens']
+
+    attempted_count = 0
+    successful = []
+    skipped = []
+    failed = []
+    failure_messages = []
+
+    attempted_count += 1
+    es_speaker_id = f'{show_key.value}_{speaker}'
+    try:
+        es_speaker = EsSpeaker.get(id=es_speaker_id)
+    except Exception as e:
+        return {"error": f"Failure to populate speaker embeddings, no match in `speakers` index for es_speaker_id={es_speaker_id}, {e}"}
+    if es_speaker['word_count'] > max_tokens:
+        print(f"For speaker={speaker}, series word count of {es_speaker['word_count']} exceeds max_tokens={max_tokens} for model {model_vendor}:{model_version}; skipping series-level embeddings")
+        skipped.append(f'es_speaker_id={es_speaker_id}')
+    else:
+        print(f"Calling generate_embeddings on es_speaker_id={es_speaker_id} es_speaker['word_count']={es_speaker['word_count']}")
+        try:
+            text_to_vectorize = ' '.join(es_speaker.lines)
+            embeddings = ef.generate_embeddings(text_to_vectorize, model_vendor, model_version)
+            es_speaker[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+            esqb.save_es_speaker(es_speaker)   
+            successful.append(f'es_speaker_id={es_speaker_id}')     
+        except Exception as e:
+            return {f"error": f"Failed to populate {model_vendor}:{model_version} embeddings for speaker {show_key.value}:{es_speaker}, {e}"}
+    
+    for season, episode_keys in es_speaker.seasons_to_episode_keys._d_.items():
+        attempted_count += 1
+        es_speaker_season_id = f'{show_key.value}_{speaker}_{season}'
+        try:
+            es_speaker_season = EsSpeakerSeason.get(id=es_speaker_season_id)
+        except Exception as e:
+            err = f"Failure to fetch EsSpeakerSeason with id={es_speaker_season_id}: {e}"
+            print(err)
+            failure_messages.append(err)
+            failed.append(f'es_speaker_season_id={es_speaker_season_id}')
+            continue
+        if es_speaker_season['word_count'] > max_tokens:
+            print(f"For es_speaker_season_id={es_speaker_season_id}, series word count of {es_speaker_season['word_count']} exceeds max_tokens={max_tokens} for model {model_vendor}:{model_version}; skipping season-level embeddings for season={season}")
+            skipped.append(f'es_speaker_season_id={es_speaker_season_id}')
+        else:
+            print(f"Calling generate_embeddings on es_speaker_season_id={es_speaker_season_id} es_speaker_season['word_count']={es_speaker_season['word_count']}")
+            try:
+                text_to_vectorize = ' '.join(es_speaker_season.lines)
+                embeddings = ef.generate_embeddings(text_to_vectorize, model_vendor, model_version)
+                es_speaker_season[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+                esqb.save_es_speaker_season(es_speaker_season)
+                successful.append(f'es_speaker_season_id={es_speaker_season_id}')      
+            except Exception as e:
+                err = f"Failed to populate {model_vendor}:{model_version} embeddings for es_speaker_season_id={es_speaker_season_id}: {e}"
+                print(err)
+                failure_messages.append(err)
+                failed.append(f'es_speaker_season_id={es_speaker_season_id}')
+
+        for episode_key in episode_keys:
+            attempted_count += 1
+            es_speaker_episode_id = f'{show_key.value}_{speaker}_{episode_key}'
+            try:
+                es_speaker_episode = EsSpeakerEpisode.get(id=es_speaker_episode_id)
+            except Exception as e:
+                err = f"Failure to fetch EsSpeakerEpisode with id={es_speaker_episode_id}: {e}"
+                print(err)
+                failure_messages.append(err)
+                failed.append(f'es_speaker_episode_id={es_speaker_episode_id}')
+                continue
+            if es_speaker_episode['word_count'] > max_tokens:
+                # TODO retry as with full episode text (refactor that logic out of episode embeddings and into generic embeddings)
+                print(f"For es_speaker_episode_id={es_speaker_episode_id}, episode word count of {es_speaker_episode['word_count']} exceeds max_tokens={max_tokens} for model {model_vendor}:{model_version}; skipping embeddings for episode_key={episode_key}")
+                skipped.append(f'es_speaker_episode_id={es_speaker_episode_id}')
+            else:
+                print(f"Calling generate_embeddings on es_speaker_episode_id={es_speaker_episode_id} es_speaker_episode['word_count']={es_speaker_episode['word_count']}")
+                try:
+                    text_to_vectorize = ' '.join(es_speaker_episode.lines)
+                    embeddings = ef.generate_embeddings(text_to_vectorize, model_vendor, model_version)
+                    es_speaker_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+                    esqb.save_es_speaker_episode(es_speaker_episode)
+                    successful.append(f'es_speaker_episode_id={es_speaker_episode_id}')      
+                except Exception as e:
+                    err = f"Failed to populate {model_vendor}:{model_version} embeddings for es_speaker_episode_id={es_speaker_episode_id}: {e}"
+                    print(err)
+                    failure_messages.append(err)
+                    failed.append(f'es_speaker_episode_id={es_speaker_episode_id}')
+
+    return {'attempted_count': attempted_count, 'successful': successful, 'skipped': skipped, 'failed': failed, 'failure_messages': failure_messages}
+
+
+@esw_app.get("/esw/populate_all_speaker_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
+
+    s = esqb.fetch_indexed_speakers(show_key.value)
+    matches = esrt.return_speakers(s)
+    if not matches:
+        return {"error": f"Failed to fetch_indexed_speakers for show_key={show_key}"}
+    
+    request_count = 0
+    success_count = 0
+    skipped_count = 0
+    failure_count = 0
+    super_fails = []
+    speakers = []
+    for speaker in matches:
+        try:
+            response = populate_speaker_embeddings(show_key, speaker, model_vendor, model_version)
+            speakers[speaker] = response
+            request_count += response['attempted_count']
+            success_count += len(response['successful'])
+            skipped_count += len(response['skipped'])
+            failure_count += len(response['failed'])
+        except Exception as e:
+            print(f"Failed to populate_speaker_embeddings for speaker={speaker}: {e}")
+            super_fails.append(speaker)
+
+    return {"request_count": request_count, "success_count": success_count, "skipped_count": skipped_count, "failure_count": failure_count,
+            "super_fails": super_fails, "speakers": speakers}

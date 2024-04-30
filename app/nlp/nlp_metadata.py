@@ -68,7 +68,9 @@ TRANSFORMER_VENDOR_VERSIONS = {
             'ada002': {
                 'dims': 1536,
                 'status': 'ACTIVE',
-                'true_name': 'text-embedding-ada-002'
+                'true_name': 'text-embedding-ada-002',
+                # 'max_tokens': 8192  TODO openai over-counts tokens somehow 
+                'max_tokens': 6300
             }
         }
     }
