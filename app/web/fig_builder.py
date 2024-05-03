@@ -271,14 +271,12 @@ def build_episode_gantt(show_key: str, data: list) -> go.Figure:
 def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
     print(f'in build_show_gantt show_key={show_key} type={type}')
 
-    # TODO handle truncation
     if type == 'speakers':
         title='Character continuity over duration of series'
-        # trimmed_data = []
-        # for d in data:
-        #     if d['Task'] in show_metadata[show_key]['regular_cast']:
-        #         trimmed_data.append(d)
-        # data = trimmed_data
+        # limit speaker gantt to those in `speakers` index (for visual layout, and only slightly for page load performance)
+        matches = esr.fetch_indexed_speakers(ShowKey(show_key), return_fields='name')
+        speakers = [m['name'] for m in matches['speakers']]
+        df = df.loc[df['Task'].isin(speakers)]
     elif type == 'locations':
         title='Scene location continuity over course of series'
     elif type == 'topics':
@@ -344,7 +342,6 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
                     gantt_row_text[i] = finish_row.iloc[0]['info']
 
             gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
-        
     
     return fig
 

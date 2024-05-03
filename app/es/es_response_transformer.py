@@ -34,7 +34,7 @@ def return_speakers(s: Search) -> list:
     results = []
 
     for hit in s.hits.hits:
-        results.append(hit._source['name'])
+        results.append(hit._source._d_)
     
     return results
 

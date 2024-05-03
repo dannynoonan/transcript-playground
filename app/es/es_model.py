@@ -1,5 +1,5 @@
 from datetime import datetime
-from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter, TokenCount, DenseVector, Object
+from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter, TokenCount, DenseVector, Object, Float
 
 
 freetext_analyzer = analyzer('freetext_analyzer', tokenizer='standard', type='custom',
@@ -106,7 +106,7 @@ class EsEpisodeTranscript(Document):
 
 class EsSpeaker(Document):
     show_key = Keyword()
-    name = Keyword()
+    speaker = Keyword()
     alt_names = Keyword(multi=True)
     actor_names = Keyword(multi=True)
     season_count = Integer()
@@ -117,6 +117,8 @@ class EsSpeaker(Document):
     lines = Text(multi=True)
     seasons_to_episode_keys = Object(multi=True)
     most_frequent_companions = Object(multi=True)
+    parent_topics = Object(multi=True)
+    child_topics = Object(multi=True)
     openai_ada002_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
@@ -126,14 +128,14 @@ class EsSpeaker(Document):
         name = 'speakers'
 
     def save(self, **kwargs):
-        self.meta.id = f'{self.show_key}_{self.name}'
+        self.meta.id = f'{self.show_key}_{self.speaker}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
     
 
 class EsSpeakerSeason(Document):
     show_key = Keyword()
-    name = Keyword()
+    speaker = Keyword()
     season = Integer()
     episode_count = Integer()
     # episode_keys = Keyword(multi=True)
@@ -142,6 +144,8 @@ class EsSpeakerSeason(Document):
     word_count = Integer()
     lines = Text(multi=True)
     most_frequent_companions = Object(multi=True)
+    parent_topics = Object(multi=True)
+    child_topics = Object(multi=True)
     openai_ada002_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
@@ -151,22 +155,27 @@ class EsSpeakerSeason(Document):
         name = 'speaker_seasons'
 
     def save(self, **kwargs):
-        self.meta.id = f'{self.show_key}_{self.name}_{self.season}'
+        self.meta.id = f'{self.show_key}_{self.speaker}_{self.season}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
     
 
 class EsSpeakerEpisode(Document):
     show_key = Keyword()
-    name = Keyword()
+    speaker = Keyword()
     episode_key = Keyword()
+    title = Text()
     season = Integer()
     sequence_in_season = Integer()
+    air_date = Date()
+    agg_score = Float()
     scene_count = Integer()
     line_count = Integer()
     word_count = Integer()
     lines = Text(multi=True)
     most_frequent_companions = Object(multi=True)
+    parent_topics = Object(multi=True)
+    child_topics = Object(multi=True)
     openai_ada002_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
@@ -176,7 +185,7 @@ class EsSpeakerEpisode(Document):
         name = 'speaker_episodes'
 
     def save(self, **kwargs):
-        self.meta.id = f'{self.show_key}_{self.name}_{self.episode_key}'
+        self.meta.id = f'{self.show_key}_{self.speaker}_{self.episode_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
 
@@ -184,12 +193,11 @@ class EsSpeakerEpisode(Document):
 class EsTopic(Document):
     topic_grouping = Keyword()
     topic_key = Keyword()
-    category = Keyword()
-    subcategory = Keyword()
-    # name = Keyword() # TODO redundant - is it necessary?
-    breadcrumb = Keyword() # TODO redundant - is it necessary?
+    parent_key = Keyword()
+    topic_name = Keyword()
+    parent_name = Keyword()
     description = Text()
-    supercat_description = Text()
+    parent_description = Text()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     indexed_ts = Date()
 
@@ -200,52 +208,3 @@ class EsTopic(Document):
         self.meta.id = f'{self.topic_grouping}_{self.topic_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
-    
-
-# class EsSpeakerEpisode(InnerDoc):
-#     episode_key = Keyword()
-#     season = Integer()
-#     sequence_in_season = Integer()
-#     scene_count = Integer()
-#     line_count = Integer()
-#     word_count = Integer()
-#     lines = Text(multi=True)
-#     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
-
-
-# class EsSpeakerSeason(InnerDoc):
-#     season = Integer()
-#     episode_count = Integer()
-#     scene_count = Integer()
-#     line_count = Integer()
-#     word_count = Integer()
-#     # lines = Text(multi=True)
-#     # most_frequent_companions = Object(multi=True)
-#     # episodes = Nested(EsSpeakerEpisode)
-#     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
-    
-
-# class EsSpeaker(Document):
-#     show_key = Keyword()
-#     name = Keyword()
-#     alt_names = Keyword(multi=True)
-#     actor_names = Keyword(multi=True)
-#     seasons = Nested(EsSpeakerSeason)
-#     episodes = Nested(EsSpeakerEpisode)
-#     episode_count = Integer()
-#     scene_count = Integer()
-#     line_count = Integer()
-#     word_count = Integer()
-#     lines = Text(multi=True)
-#     most_frequent_companions = Object(multi=True)
-#     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
-#     loaded_ts = Date()
-#     indexed_ts = Date()
-
-#     class Index:
-#         name = 'speakers'
-
-#     def save(self, **kwargs):
-#         self.meta.id = f'{self.show_key}_{self.name}'
-#         self.indexed_ts = datetime.now()
-#         return super().save(**kwargs)

@@ -13,6 +13,7 @@ import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
+from app.utils import split_parent_and_child_topics, TopicAgg
 
 
 esw_app = APIRouter()
@@ -251,7 +252,7 @@ def index_speaker(show_key: ShowKey, speaker: str):
     '''
     TODO
     '''
-    es_speaker = EsSpeaker(show_key=show_key.value, name=speaker, scene_count=0, line_count=0, word_count=0, lines=[], seasons_to_episode_keys={})
+    es_speaker = EsSpeaker(show_key=show_key.value, speaker=speaker, scene_count=0, line_count=0, word_count=0, lines=[], seasons_to_episode_keys={})
     es_speaker_seasons = {}
     es_speaker_episodes = {}
 
@@ -262,14 +263,16 @@ def index_speaker(show_key: ShowKey, speaker: str):
     for episode in response['matches']:
         season = str(episode['season'])
         episode_key = episode['episode_key']
-        es_speaker_episode = EsSpeakerEpisode(show_key=show_key.value, name=speaker, episode_key=episode_key, season=season, 
-                                                sequence_in_season=episode['sequence_in_season'], scene_count=0, line_count=0, word_count=0, lines=[])
+        es_speaker_episode = EsSpeakerEpisode(show_key=show_key.value, speaker=speaker, episode_key=episode_key, title=episode['title'], 
+                                              air_date=episode['air_date'], season=season, sequence_in_season=episode['sequence_in_season'], 
+                                              agg_score=episode['agg_score'], scene_count=0, line_count=0, word_count=0, lines=[])
+        print(f'init-ing es_speaker_episode={es_speaker_episode} with es_speaker_episode.episode_key={es_speaker_episode.episode_key}')
         es_speaker_episodes[episode_key] = es_speaker_episode
         if season in es_speaker_seasons:
             es_speaker_season = es_speaker_seasons[season]
             es_speaker.seasons_to_episode_keys[season].append(episode_key)
         else:
-            es_speaker_season = EsSpeakerSeason(show_key=show_key.value, name=speaker, season=season, episode_count=0, scene_count=0, 
+            es_speaker_season = EsSpeakerSeason(show_key=show_key.value, speaker=speaker, season=season, episode_count=0, scene_count=0, 
                                                 line_count=0, word_count=0, lines=[])
             es_speaker_seasons[season] = es_speaker_season
             es_speaker.seasons_to_episode_keys[season] = [episode_key]
@@ -307,6 +310,7 @@ def index_speaker(show_key: ShowKey, speaker: str):
         for _, es_speaker_season in es_speaker_seasons.items():
             esqb.save_es_speaker_season(es_speaker_season)
         for _, es_speaker_episode in es_speaker_episodes.items():
+            print(f'saving es_speaker_episode={es_speaker_episode} with es_speaker_episode.episode_key={es_speaker_episode.episode_key}')
             esqb.save_es_speaker_episode(es_speaker_episode)
     except Exception as e:
         return {"error": f"Failure indexing speaker lines and counts for speaker={speaker} show_key={show_key.value}: {e}"}
@@ -352,12 +356,19 @@ async def index_topic_grouping(topic_grouping: str):
         print(f'Loading topic_grouping dataframe from file_path={file_path}')
         topics_df = pd.read_csv(file_path)
         topics_df = topics_df.fillna('')
-        # for subcategories, adopt parent category descriptions into supercat_description field, for use in generating embeddings with fuller context
-        distinct_cats = topics_df['category'].unique()
-        for dc in distinct_cats:
-            cat_desc_series = topics_df[(topics_df['category'] == dc) & (topics_df['subcategory'] == '')]['description']
-            cat_desc = cat_desc_series.values[0] # NOTE feels like there should be a cleaner way to extract the category description
-            topics_df.loc[(topics_df['category'] == dc) & (topics_df['subcategory'] != ''), 'supercat_description'] = cat_desc
+        # for child categories, adopt parent category descriptions into parent_description field, for use in generating embeddings with fuller context
+        parent_keys = topics_df['parent_key'].unique()
+        print(f'parent_keys={parent_keys}')
+        for parent_key in parent_keys:
+            if parent_key == '':
+                continue
+            parent_desc_series = topics_df[(topics_df['topic_key'] == parent_key) & (topics_df['parent_key'] == '')]['description']
+            parent_desc = parent_desc_series.values[0] # NOTE feels like there should be a cleaner way to extract the parent topic description
+            parent_name_series = topics_df[(topics_df['topic_key'] == parent_key) & (topics_df['parent_key'] == '')]['topic_name']
+            parent_name = parent_name_series.values[0] # NOTE feels like there should be a cleaner way to extract the parent topic description
+
+            topics_df.loc[(topics_df['parent_key'] == parent_key), 'parent_description'] = parent_desc
+            topics_df.loc[(topics_df['parent_key'] == parent_key), 'parent_name'] = parent_name
         topics_df = topics_df.fillna('') # NOTE feels weird to do this a second time, but mop-up seems necessary in both places
         # new_file_path = f'./source/topics/{topic_grouping}_concat.csv'
         # topics_df.to_csv(new_file_path, sep='\t')
@@ -366,12 +377,13 @@ async def index_topic_grouping(topic_grouping: str):
     
     es_topics = []
     for _, row in topics_df.iterrows():
-        es_topic = EsTopic(topic_grouping=topic_grouping, topic_key=row['key'], category=row['category'], subcategory=row['subcategory'], description=row['description'])
-        if 'supercat_description' in row:
-            es_topic.supercat_description = row['supercat_description']
-        es_topic.breadcrumb = es_topic.category
-        if es_topic.subcategory:
-            es_topic.breadcrumb = f'{es_topic.breadcrumb} > {es_topic.subcategory}'
+        es_topic = EsTopic(topic_grouping=topic_grouping, topic_key=row['topic_key'], topic_name=row['topic_name'], description=row['description'])
+        if 'parent_key' in row:
+            es_topic.parent_key = row['parent_key']
+        if 'parent_name' in row:
+            es_topic.parent_name = row['parent_name']
+        if 'parent_description' in row:
+            es_topic.parent_description = row['parent_description']
         es_topics.append(es_topic)
     
     # write to es
@@ -395,14 +407,20 @@ def populate_topic_embeddings(topic_grouping: str, topic_key: str, model_vendor:
     '''
     Generate vector embedding for topic using pre-trained Word2Vec and Transformer models
     '''
+    embeddings_field = f'{model_vendor}_{model_version}_embeddings'
     doc_id = f'{topic_grouping}_{topic_key}'
-    es_topic = EsTopic.get(id=doc_id)
+    
     try:
-        ef.generate_topic_embeddings(es_topic, model_vendor, model_version)
+        es_topic = EsTopic.get(id=doc_id)
+        text_to_vectorize = es_topic.description
+        if es_topic.parent_description:
+            text_to_vectorize = f'{es_topic.parent_description} {text_to_vectorize}'
+        embeddings = ef.generate_embeddings(text_to_vectorize, model_vendor, model_version)
+        es_topic[embeddings_field] = embeddings
         esqb.save_es_topic(es_topic)
         return {"topic": es_topic._d_}
     except Exception as e:
-        return {f"error": "Failed to populate {model_vendor}:{model_version} embeddings for topic {topic_grouping}:{topic_key}, {e}"}
+        return {f"error": f"Failed to populate {model_vendor}:{model_version} embeddings for topic {topic_grouping}:{topic_key}, {e}"}
     
 
 @esw_app.get("/esw/populate_topic_grouping_embeddings/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
@@ -542,19 +560,23 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
 
 @esw_app.get("/esw/populate_all_speaker_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
 def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
+    '''
+    Generate vector embedding for all indexed speakers for a show using pre-trained Word2Vec and Transformer models
+    '''
 
-    s = esqb.fetch_indexed_speakers(show_key.value)
+    s = esqb.fetch_indexed_speakers(show_key.value, return_fields=['speaker'])
     matches = esrt.return_speakers(s)
     if not matches:
         return {"error": f"Failed to fetch_indexed_speakers for show_key={show_key}"}
-        
+    
+    speakers = [m['speaker'] for m in matches]
     request_count = 0
     success_count = 0
     skipped_count = 0
     failure_count = 0
     super_fails = []
     speaker_responses = {}
-    for speaker in matches:
+    for speaker in speakers:
         try:
             response = populate_speaker_embeddings(show_key, speaker, model_vendor, model_version)
             speaker_responses[speaker] = response
@@ -568,3 +590,138 @@ def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_
 
     return {"request_count": request_count, "success_count": success_count, "skipped_count": skipped_count, "failure_count": failure_count,
             "super_fails": super_fails, "speaker_responses": speaker_responses}
+
+
+# @esw_app.get("/esw/populate_episode_topics/{show_key}/{episode_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
+# def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str):
+#     '''
+#     Generate and store topic mappings for episode, via knn cosine similarity to vector embeddings within topic_grouping 
+#     '''
+#     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
+#     try:
+#         topics = esr.episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor=model_vendor, model_version=model_version)
+#         parent_topics, child_topics = split_parent_and_child_topics(topics, 2, 5)
+#         # add topics to es_episode
+#         es_episode.parent_topics = parent_topics
+#         es_episode.child_topics = child_topics
+#         esqb.save_es_episode(es_episode)
+#         return {"es_episode": es_episode}
+#     except Exception as e:
+#         return {"error": f"Failed to run {model_vendor}:{model_version} topic vector search and populate topics for episode {show_key.value}_{episode_key}": e}
+
+
+@esw_app.get("/esw/populate_speaker_topics/{show_key}/{speaker}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str, model_vendor: str, model_version: str):
+    '''
+    Using previously generated vector embeddings for speakers and topics, use knn vector cosine similarity to map speakers to topics, then populate speaker indexes with topics
+    Populate speaker topics at series-, season-, and episode-level, using vector embeddings at each level where possible (when text corpus is small enough for embeddings generation)
+    When a series- or season-level text corpus is too large for its own embedding, use topics mapped to sub-elements (episodes in season, seasons in series) to aggregate topic mappings
+    '''
+    es_speaker = EsSpeaker.get(id=f'{show_key.value}_{speaker}')
+
+    reference_topic_return_fields = 'topic_key,parent_key,topic_name,parent_name'
+    reference_topics_response = esr.fetch_topic_grouping(topic_grouping, return_fields=reference_topic_return_fields)
+    if 'topics' not in reference_topics_response or len(reference_topics_response['topics']) == 0:
+        return {"error": f"Failure to populate_speaker_topics: no topics returned from /fetch_topic_grouping for topic_grouping={topic_grouping}"}
+    reference_topics = {t['topic_key']:t for t in reference_topics_response['topics']}
+
+    speaker_topics_response = esr.speaker_topic_vector_search(show_key, speaker, topic_grouping, model_vendor=model_vendor, model_version=model_version)
+    # TODO since `speaker_topic_vector_search` is shared functionality, do I need to verify that a full response was generated before writing?
+
+    if not all(k in speaker_topics_response for k in ('series_topics', 'season_topics', 'episode_topics')):
+        err = f"Failure to populate_speaker_topics: response from `speaker_topic_vector_search` must include 'series_topics', 'season_topics', and 'episode_topics'"
+        print(f"{err}, incomplete topics_resopnse={speaker_topics_response}")
+        return {"error": err, "incomplete topics_resopnse": speaker_topics_response}
+    
+    speaker_series_topics = speaker_topics_response['series_topics']
+    speaker_season_topics = speaker_topics_response['season_topics']
+    speaker_episode_topics = speaker_topics_response['episode_topics']
+
+    series_topics_found = False
+    series_topic_agg = TopicAgg(reference_topics)
+    if len(speaker_series_topics) > 0:
+        series_parent_topics, series_child_topics = split_parent_and_child_topics(speaker_series_topics, parent_limit=3, child_limit=10)
+        series_topics_found = True
+        
+    # if 'season_topics' in topics_response and len(topics_response['series_topics']) > 0:
+    for season, episode_keys in es_speaker.seasons_to_episode_keys._d_.items():
+        season = int(season)
+        # season-level topics will either be x 
+        season_topics_found = False
+        season_topic_agg = TopicAgg(reference_topics)
+        es_speaker_season = EsSpeakerSeason.get(id=f'{show_key.value}_{speaker}_{season}')
+        if season in speaker_season_topics:
+            season_parent_topics, season_child_topics = split_parent_and_child_topics(speaker_season_topics[season], parent_limit=3, child_limit=10)
+            season_topics_found = True
+        for e_key in episode_keys:
+            if e_key in speaker_episode_topics:
+                es_speaker_episode = EsSpeakerEpisode.get(id=f'{show_key.value}_{speaker}_{e_key}')
+                episode_parent_topics, episode_child_topics = split_parent_and_child_topics(speaker_episode_topics[e_key], parent_limit=3, child_limit=10)
+                # add topics to es_speaker_episode
+                es_speaker_episode.parent_topics = episode_parent_topics
+                es_speaker_episode.child_topics = episode_child_topics
+                esqb.save_es_speaker_episode(es_speaker_episode)
+                # incorporate episode topics into season-level agg
+                season_topic_agg.update(episode_parent_topics, episode_child_topics, es_speaker_episode.word_count)
+            else:
+                print(f"Warning: episode_key={e_key} found in `es_speaker.seasons_to_episode_keys` but not in `speaker_topics_response['episode_topics']`, skipping but this is weird")
+        # add topics to es_speaker_season
+        if not season_topics_found:
+            # if no season-level topics, attempt to calculate them via aggs extracted from episodes
+            print(f'no season_topics_found for season={season}, so returning sorted_topics from season_topic_agg={season_topic_agg}')
+            season_parent_topics, season_child_topics = season_topic_agg.return_sorted(parent_limit=3, child_limit=10)
+        es_speaker_season.parent_topics = season_parent_topics
+        es_speaker_season.child_topics = season_child_topics
+        esqb.save_es_speaker_season(es_speaker_season)
+        # incorporate season topics into series-level agg
+        series_topic_agg.update(season_parent_topics, season_child_topics, es_speaker_season.word_count)
+
+    # add topics to es_speaker
+    if not series_topics_found:
+        # if no series-level topics, attempt to calculate them via aggs extracted from seasons  
+        print(f'no series_topics_found, so returning sorted_topics from series_topic_agg={series_topic_agg}')
+        series_parent_topics, series_child_topics = series_topic_agg.return_sorted(parent_limit=3, child_limit=10)
+    es_speaker.parent_topics = series_parent_topics
+    es_speaker.child_topics = series_child_topics
+    esqb.save_es_speaker(es_speaker)
+
+    updated_speaker = esr.fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)
+    # TODO this seems to be fetching stale (pre-update) speaker data, WTF? Caching issue?
+
+    return {"updated_speaker": updated_speaker}
+
+
+@esw_app.get("/esw/populate_all_speaker_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str):
+    '''
+    Map speakers to topics (using knn vector cosine similarity) for all indexed speakers for a show 
+    '''
+    s = esqb.fetch_indexed_speakers(show_key.value, return_fields=['speaker'])
+    matches = esrt.return_speakers(s)
+    if not matches:
+        return {"error": f"Failed to fetch_indexed_speakers for show_key={show_key}"}
+    
+    speakers = [m['speaker'] for m in matches]
+    attempt_count = 0
+    success_count = 0
+    successful_speakers = []
+    failure_count = 0
+    failed_speakers = []
+    for speaker in speakers:
+        attempt_count += 1
+        try:
+            response = populate_speaker_topics(show_key, speaker, topic_grouping, model_vendor, model_version)
+            if "error" in response:
+                print(f"Failed to populate_speaker_topics for speaker={speaker}: {response['error']}")
+                failed_speakers.append(speaker)
+                failure_count += 1
+            else:
+                successful_speakers.append(speaker)
+                success_count += 1
+        except Exception as e:
+            print(f"Failed to populate_speaker_topics for speaker={speaker}: {e}")
+            failed_speakers.append(speaker)
+            failure_count += 1
+
+    return {"attempt_count": attempt_count, "success_count": success_count, "failure_count": failure_count,
+            "successful_speakers": successful_speakers, "failed_speakers": failed_speakers}

@@ -259,16 +259,41 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 	tdata['header'] = 'character'
 	tdata['show_key'] = show_key.value
 	tdata['speaker'] = speaker
+	tdata['has_topics'] = False
 
-	episode_matches = esr.search_scene_events(show_key, speaker=speaker)
-	tdata['episodes'] = episode_matches['matches']
-	tdata['episode_count'] = episode_matches['episode_count']
-	tdata['scene_count'] = episode_matches['scene_count']
-	tdata['scene_event_count'] = episode_matches['scene_event_count']
+	response = esr.fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)
+	if 'speaker' in response:
+		es_speaker = response['speaker']
+		if 'episodes' in es_speaker:
+			tdata['episodes'] = es_speaker['episodes']
+		else:
+			# TODO if this happens something is wrong
+			tdata['episodes'] = []
+		if 'seasons' in es_speaker:
+			tdata['seasons'] = es_speaker['seasons']
+		else:
+			# TODO if this happens something is wrong
+			tdata['seasons'] = []
+		tdata['episode_count'] = es_speaker['episode_count']
+		tdata['scene_count'] = es_speaker['scene_count']
+		tdata['line_count'] = es_speaker['line_count']
+		tdata['word_count'] = es_speaker['word_count']
+		tdata['parent_topics'] = es_speaker['parent_topics']
+		tdata['child_topics'] = es_speaker['child_topics']
+	else:
+		episode_matches = esr.search_scene_events(show_key, speaker=speaker)
+		for m in episode_matches['matches']:
+			m['line_count'] = m['scene_event_count'] # understandable but sloppy naming inconsistency
+		tdata['episodes'] = episode_matches['matches']
+		tdata['episode_count'] = episode_matches['episode_count']
+		tdata['scene_count'] = episode_matches['scene_count']
+		tdata['line_count'] = episode_matches['scene_event_count']
+		word_count = esr.agg_dialog_word_counts(show_key, speaker=speaker)
+		tdata['word_count'] = int(word_count['dialog_word_counts'][speaker])
+		tdata['seasons'] = []
+		tdata['parent_topics'] = []
+		tdata['child_topics'] = []
 
-	word_count = esr.agg_dialog_word_counts(show_key, speaker=speaker)
-	tdata['word_count'] = int(word_count['dialog_word_counts'][speaker])
-	
 	locations_counts = esr.agg_scenes_by_location(show_key, speaker=speaker)
 	tdata['location_counts'] = locations_counts['scenes_by_location']
 
@@ -359,14 +384,18 @@ async def character_listing_page(request: Request, show_key: ShowKey, qt: str = 
 	speaker_counts = esr.composite_speaker_aggs(show_key)
 	tdata['speaker_stats'] = speaker_counts['speaker_agg_composite']
 
+	return_fields = ['speaker', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'parent_topics', 'child_topics']
+	s = esqb.fetch_indexed_speakers(show_key.value, return_fields=return_fields)
+	tdata['speakers'] = esrt.return_speakers(s)
+
 	tdata['speaker_matches'] = []
 	if qt:
 		tdata['qt'] = qt
 		qt = qt.lower()
 		# TODO I wish speaker_agg_composite were a dict instead of a list
-		for sc in tdata['speaker_counts']:
-			if qt in sc['speaker'].lower():
-				tdata['speaker_matches'].append(sc)
+		for speaker in tdata['speaker_stats']:
+			if qt in speaker['speaker'].lower():
+				tdata['speaker_matches'].append(speaker)
 	
 	return templates.TemplateResponse('characterListing.html', {'request': request, 'tdata': tdata})
 
@@ -383,16 +412,23 @@ async def topic_listing_page(request: Request, show_key: ShowKey, selected_topic
 	tdata['selected_topic_grouping'] = selected_topic_grouping
 	tdata['topic_groupings'] = {}
 
-	for tg in EPISODE_TOPIC_GROUPINGS:
+	# TODO will probably split up episode and speaker topics, for now keeping together
+	topic_groupings = EPISODE_TOPIC_GROUPINGS + SPEAKER_TOPIC_GROUPINGS
+
+	for tg in topic_groupings:
 		if tg.startswith('focused'):
 			tg = f'{tg}_{show_key.value}'
 		response = esr.fetch_topic_grouping(tg)
-		tdata['topic_groupings'][tg] = response['topics']
-
-	# TODO will probably split up episode and speaker topics, for now keeping together
-	for tg in SPEAKER_TOPIC_GROUPINGS:
-		response = esr.fetch_topic_grouping(tg)
-		tdata['topic_groupings'][tg] = response['topics']
+		if 'topics' not in response:
+			continue
+		# sort by combination of parent and child topic_keys
+		topics = response['topics']
+		for t in topics:
+			t['breadcrumb'] = t['topic_key']
+			if t['parent_key']:
+				t['breadcrumb'] = f"{t['parent_key']} > {t['breadcrumb']}"
+		breadcrumb_sorted_topics = sorted(topics, key=itemgetter('breadcrumb'))
+		tdata['topic_groupings'][tg] = breadcrumb_sorted_topics
 	
 	return templates.TemplateResponse('topicListing.html', {'request': request, 'tdata': tdata})
 
@@ -408,11 +444,19 @@ async def topic_listing_page(request: Request, show_key: ShowKey, topic_grouping
 	tdata['episodes'] = []
 	tdata['speakers'] = []
 
-	topic_response = esr.fetch_topic(topic_grouping, topic_key)
+	# TODO groan this is gross, I think it was temporary but I feel it getting baked in...
+	focused_topic_grouping = topic_grouping
+	if topic_grouping.startswith('focused'):
+		focused_topic_grouping = f'{topic_grouping}_{show_key.value}'
+
+	topic_response = esr.fetch_topic(focused_topic_grouping, topic_key)
 	tdata['topic'] = topic_response['topic']
+	tdata['topic']['breadcrumb'] = tdata['topic']['topic_key']
+	if tdata['topic']['parent_key']:
+		tdata['topic']['breadcrumb'] = f"{tdata['topic']['parent_key']} > {tdata['topic']['breadcrumb']}"
 
 	if topic_grouping in EPISODE_TOPIC_GROUPINGS:
-		vector_search_response = esr.topic_episode_vector_search(topic_grouping, topic_key, show_key)
+		vector_search_response = esr.topic_episode_vector_search(focused_topic_grouping, topic_key, show_key)
 		if 'episodes' in vector_search_response:
 			episodes = vector_search_response['episodes']
 			if len(episodes) > 30:
@@ -420,7 +464,7 @@ async def topic_listing_page(request: Request, show_key: ShowKey, topic_grouping
 			tdata['episodes'] = episodes
 			
 	elif topic_grouping in SPEAKER_TOPIC_GROUPINGS:
-		vector_search_response = esr.topic_speaker_vector_search(topic_grouping, topic_key, show_key)
+		vector_search_response = esr.topic_speaker_vector_search(focused_topic_grouping, topic_key, show_key)
 		if 'speakers' in vector_search_response:
 			speakers = vector_search_response['speakers']
 			if len(speakers) > 30:

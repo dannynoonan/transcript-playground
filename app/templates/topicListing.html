@@ -24,12 +24,13 @@
             <div class="tab-content" id="nav-tabContent">
             {% for topic_grouping, topics in tdata['topic_groupings'].items() %}
                 <div class="tab-pane fade{% if tdata['selected_topic_grouping']==topic_grouping %} show active{% endif %}" id="nav-{{ topic_grouping }}" role="tabpanel" aria-labelledby="nav-{{ topic_grouping }}-tab">
-                    <div class="col-10">
+                    <div class="col-12">
                         <table class="table table-hover table-striped table-fit">
                             <thead>
                                 <tr class="table-success">
                                     <th scope="col"><nobr>Topic key</nobr></th>
                                     <th scope="col">Breadcrumb</th>
+                                    <th scope="col"><nobr>Topic name</nobr></th>
                                     <th scope="col">Description</th>
                                   </tr>
                             </thead>
@@ -40,6 +41,7 @@
                                         <a class="alert-link" href="/web/topic/{{ tdata['show_key'] }}/{{ topic_grouping }}/{{ topic['topic_key'] }}">{{ topic['topic_key'] }}</a>
                                     </td>
                                     <td><nobr>{{ topic['breadcrumb'] }}</nobr></td>
+                                    <td><nobr>{{ topic['topic_name'] }}</nobr></td>
                                     <td>{% autoescape false %}
                                         {{ topic['description']|replace("\\n", "<br/>") }}
                                         {% endautoescape %}</td>

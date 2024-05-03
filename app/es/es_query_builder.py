@@ -174,6 +174,9 @@ def fetch_speaker(show_key: str, speaker_name: str) -> EsSpeaker|None:
 
     try:
         speaker = EsSpeaker.get(id=doc_id, index='speakers')
+        # TODO don't like having to do this 
+        speaker.child_topics = [t._d_ for t in speaker.child_topics]
+        speaker.parent_topics = [t._d_ for t in speaker.parent_topics]
     except Exception as e:
         print(f'Failed to fetch speaker `{speaker_name}` for show_key=`{show_key}`')
         return None
@@ -181,13 +184,18 @@ def fetch_speaker(show_key: str, speaker_name: str) -> EsSpeaker|None:
     return speaker
 
 
-def fetch_indexed_speakers(show_key: str) -> Search:
+def fetch_indexed_speakers(show_key: str, return_fields: list = []) -> Search:
     print(f'begin fetch_indexed_speakers for show_key={show_key}')
 
     s = Search(index='speakers')
     s = s.extra(size=1000)
 
     s = s.filter('term', show_key=show_key)
+
+    s = s.sort({"episode_count" : {"order" : "desc"}}, {"scene_count" : {"order" : "desc"}})
+
+    if return_fields:
+        s = s.source(includes=return_fields)
 
     return s
 
@@ -199,7 +207,7 @@ def fetch_indexed_speakers(show_key: str) -> Search:
 #     s = s.extra(size=1)
 
 #     s = s.filter('term', show_key=show_key)
-#     s = s.filter('term', name=speaker)
+#     s = s.filter('term', speaker=speaker)
 #     s = s.source(includes=[vector_field])
 
 #     return s
@@ -226,7 +234,7 @@ def fetch_speaker_seasons(show_key: str, speaker: str, season: int = None, retur
     s = s.extra(size=1000)
 
     s = s.filter('term', show_key=show_key)
-    s = s.filter('term', name=speaker)
+    s = s.filter('term', speaker=speaker)
     if season:
         s = s.filter('term', season=season)
 
@@ -245,7 +253,7 @@ def fetch_speaker_seasons(show_key: str, speaker: str, season: int = None, retur
 #     s = s.extra(size=1000)
 
 #     s = s.filter('term', show_key=show_key)
-#     s = s.filter('term', name=speaker)
+#     s = s.filter('term', speaker=speaker)
 #     if season:
 #         s = s.filter('term', season=season)
 
@@ -277,13 +285,14 @@ def fetch_speaker_episodes(show_key: str, speaker: str, season: int = None, epis
     s = s.extra(size=1000)
 
     s = s.filter('term', show_key=show_key)
-    s = s.filter('term', name=speaker)
+    s = s.filter('term', speaker=speaker)
     if episode_key:
         s = s.filter('term', episode_key=episode_key)
     elif season:
         s = s.filter('term', season=season)
 
-    s = s.sort('season', 'sequence_in_season')
+    # s = s.sort('agg_score', order='desc')
+    s = s.sort({"agg_score" : {"order" : "desc"}})
 
     if return_fields:
         s = s.source(includes=return_fields)
@@ -298,7 +307,7 @@ def fetch_speaker_episodes(show_key: str, speaker: str, season: int = None, epis
 #     s = s.extra(size=1000)
 
 #     s = s.filter('term', show_key=show_key)
-#     s = s.filter('term', name=speaker)
+#     s = s.filter('term', speaker=speaker)
 #     if episode_key:
 #         s = s.filter('term', episode_key=episode_key)
 #     elif season:
@@ -374,7 +383,7 @@ def fetch_topic(topic_grouping: str, topic_key: str) -> EsTopic|None:
     return topic
 
 
-def fetch_topic_grouping(topic_grouping: str) -> Search:
+def fetch_topic_grouping(topic_grouping: str, return_fields: list = None) -> Search:
     print(f'begin fetch_topics for topic_grouping={topic_grouping}')
 
     s = Search(index='topics')
@@ -382,7 +391,10 @@ def fetch_topic_grouping(topic_grouping: str) -> Search:
 
     s = s.filter('term', topic_grouping=topic_grouping)
 
-    s = s.sort('category', 'subcategory')
+    s = s.sort('parent_key', 'topic_key')
+
+    if return_fields:
+        s = s.source(includes=return_fields)
 
     return s
 
@@ -1073,12 +1085,15 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
     #     s = s.filter('term', episode_key=episode_key)
     # if season:
     #     s = s.filter('term', season=season)
+        
+    # TODO hard-mapped based on number of TNG episodes, this needs to be passed into function (as episode count, speaker count, etc)
+    k = 176
 
     knn_query = {
         "field": vector_field,
         "query_vector": vectorized_qt,
-        "k": 176,
-        "num_candidates": 176
+        "k": k,
+        "num_candidates": k
     }
 
     filter_query = {
@@ -1093,7 +1108,10 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
         }
     }
 
-    source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations']
+    if index_name == 'speakers':
+        source = ['show_key', 'speaker']
+    else:
+        source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations']
     
     response = es_conn.knn_search(index=index_name, knn=knn_query, filter=filter_query, source=source)
 
@@ -1126,8 +1144,8 @@ def topic_vector_search(topic_grouping: str, vector_field: str, vectorized_qt: l
         }
     }
 
-    source = ['topic_key', 'category', 'subcategory', 'breadcrumb', 'name', 'description']
-    
+    source = ['topic_grouping', 'topic_key', 'parent_key', 'topic_name', 'parent_name']
+
     response = es_conn.knn_search(index="topics", knn=knn_query, filter=filter_query, source=source)
 
     return response

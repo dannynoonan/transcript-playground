@@ -13,6 +13,30 @@
 
         <div class="row">
             <div class="col-6">
+
+                {% if tdata['child_topics'] %}
+                <h3>{{ tdata['speaker'] }} personality types</h3>
+                <ol>
+                    {% for topic in tdata['child_topics'] %}
+                        {% if loop.index < 6 %}
+                        <li>
+                            {{ topic['topic_key'] }}: {{ topic['topic_name'] }} ({{ topic['parent_name'] }})
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+                Broader types:
+                <ol>
+                    {% for topic in tdata['parent_topics'] %}
+                        {% if loop.index < 3 %}
+                        <li>
+                            {{ topic['topic_key'] }}: {{ topic['topic_name'] }}
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ol><br/>
+                {% endif %}
+
                 <!-- begin character-centric search form -->
                 <h3>{{ tdata['speaker'] }}-affiliated search</h3>
                 <br/>
@@ -158,6 +182,7 @@
                                         <th scope="col">Scenes</th>
                                         <th scope="col">Lines</th>
                                         <th scope="col">Words</th>
+                                        <th scope="col">Personality</th>
                                         <th scope="col">Score</th>
                                     </tr>
                                 </thead>
@@ -169,8 +194,16 @@
                                         <td>{{ episode['sequence_in_season'] }}</td>
                                         <td>{{ episode['air_date']|truncate(10,true,'') }}</td>
                                         <td>{{ episode['scene_count'] }}</td>
-                                        <td>{{ episode['scene_event_count'] }}</td>
+                                        <td>{{ episode['line_count'] }}</td>
                                         <td>{{ episode['word_count'] }}</td>
+                                        <td>
+                                        {% for topic in episode['child_topics'] %}
+                                            {% if loop.index < 3 %}
+                                                {{ topic['topic_key'] }}
+                                                {% if loop.index < 2 %}, {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        </td>
                                         <td>{{ '%0.2f'|format(episode['agg_score']|float) }}</td>
                                     </tr>
                                     {% endfor %}
