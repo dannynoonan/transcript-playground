@@ -260,6 +260,20 @@ def index_speaker(show_key: ShowKey, speaker: str):
     if 'matches' not in response:
         return {"error": f"No scene_events found matching show_key={show_key.value} speaker={speaker}"}
     
+    # TODO store cast source csv file/dataframe in memory, or operate on it more wholistically than this one-off per speaker flow
+    file_path = f'./source/speakers/{show_key.value}_cast.csv'
+    if os.path.isfile(file_path):
+        print(f'Loading cast dataframe from file_path={file_path}')
+        cast_df = pd.read_csv(file_path)
+        cast_df = cast_df.fillna('')
+        speaker_rows = cast_df.loc[cast_df['Key'] == speaker]
+        if len(speaker_rows) > 0:
+            if len(speaker_rows) > 1:
+                print(f'Warning: multiple rows in file_path={file_path} matched speaker={speaker}, using data from first result in series')
+            # pandas series are weird
+            es_speaker.alt_names = speaker_rows['Speaker names'].values[0].split('|')
+            es_speaker.actor_names = speaker_rows['Actor names'].values[0].split('|')
+    
     for episode in response['matches']:
         season = str(episode['season'])
         episode_key = episode['episode_key']
@@ -325,7 +339,7 @@ def index_all_speakers(show_key: ShowKey):
     '''
     response = esr.agg_episodes_by_speaker(show_key)
     speaker_episode_counts = response['episodes_by_speaker']
-    valid_speakers = [s for s,c in speaker_episode_counts.items() if s not in SPEAKERS_TO_IGNORE and c > 2]
+    valid_speakers = [s for s,c in speaker_episode_counts.items() if '+' not in s and s not in SPEAKERS_TO_IGNORE]
     attempt_count = 0
     successful = []
     failed = []
@@ -592,22 +606,45 @@ def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_
             "super_fails": super_fails, "speaker_responses": speaker_responses}
 
 
-# @esw_app.get("/esw/populate_episode_topics/{show_key}/{episode_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
-# def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str):
-#     '''
-#     Generate and store topic mappings for episode, via knn cosine similarity to vector embeddings within topic_grouping 
-#     '''
-#     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
-#     try:
-#         topics = esr.episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor=model_vendor, model_version=model_version)
-#         parent_topics, child_topics = split_parent_and_child_topics(topics, 2, 5)
-#         # add topics to es_episode
-#         es_episode.parent_topics = parent_topics
-#         es_episode.child_topics = child_topics
-#         esqb.save_es_episode(es_episode)
-#         return {"es_episode": es_episode}
-#     except Exception as e:
-#         return {"error": f"Failed to run {model_vendor}:{model_version} topic vector search and populate topics for episode {show_key.value}_{episode_key}": e}
+@esw_app.get("/esw/populate_episode_topics/{show_key}/{episode_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str):
+    '''
+    Generate and store topic mappings for episode, via knn cosine similarity to vector embeddings within topic_grouping 
+    '''
+    es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
+    try:
+        response = esr.episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor=model_vendor, model_version=model_version)
+        if 'topics' not in response:
+            return {"error": f"Failed to populate_episode_topics, episode_topic_vector_search returned no topics for {show_key.value}:{episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version}"}
+    except Exception as e:
+        return {"error": f"Failed to populate_episode_topics, episode_topic_vector_search failed for {show_key.value}:{episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version}: {e}"}
+    
+    # parse and add topics to es_episode
+    parent_topics, child_topics = split_parent_and_child_topics(response['topics'], parent_limit=3, child_limit=10)
+    es_episode.set_topics(topic_grouping, parent_topics, child_topics)
+    esqb.save_es_episode(es_episode)
+
+    # TODO not sure what to return here, or if it matters
+    return {"updated_episode": es_episode}
+
+
+@esw_app.get("/esw/populate_all_episode_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str):
+    '''
+    For specified topic_grouping, generate and store topic mappings for all series episodes  
+    '''
+    doc_ids = esr.fetch_doc_ids(show_key)
+    episode_doc_ids = doc_ids['doc_ids']
+    processed_episode_keys = []
+    failed_episode_keys = []
+    for doc_id in episode_doc_ids:
+        episode_key = doc_id.split('_')[-1]
+        try:
+            populate_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version)
+            processed_episode_keys.append(episode_key)
+        except Exception:
+            failed_episode_keys.append(episode_key)
+    return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
 
 
 @esw_app.get("/esw/populate_speaker_topics/{show_key}/{speaker}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
@@ -658,8 +695,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
                 es_speaker_episode = EsSpeakerEpisode.get(id=f'{show_key.value}_{speaker}_{e_key}')
                 episode_parent_topics, episode_child_topics = split_parent_and_child_topics(speaker_episode_topics[e_key], parent_limit=3, child_limit=10)
                 # add topics to es_speaker_episode
-                es_speaker_episode.parent_topics = episode_parent_topics
-                es_speaker_episode.child_topics = episode_child_topics
+                es_speaker_episode.set_topics(topic_grouping, episode_parent_topics, episode_child_topics)
                 esqb.save_es_speaker_episode(es_speaker_episode)
                 # incorporate episode topics into season-level agg
                 season_topic_agg.update(episode_parent_topics, episode_child_topics, es_speaker_episode.word_count)
@@ -670,8 +706,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
             # if no season-level topics, attempt to calculate them via aggs extracted from episodes
             print(f'no season_topics_found for season={season}, so returning sorted_topics from season_topic_agg={season_topic_agg}')
             season_parent_topics, season_child_topics = season_topic_agg.return_sorted(parent_limit=3, child_limit=10)
-        es_speaker_season.parent_topics = season_parent_topics
-        es_speaker_season.child_topics = season_child_topics
+        es_speaker_season.set_topics(topic_grouping, season_parent_topics, season_child_topics)
         esqb.save_es_speaker_season(es_speaker_season)
         # incorporate season topics into series-level agg
         series_topic_agg.update(season_parent_topics, season_child_topics, es_speaker_season.word_count)
@@ -681,8 +716,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
         # if no series-level topics, attempt to calculate them via aggs extracted from seasons  
         print(f'no series_topics_found, so returning sorted_topics from series_topic_agg={series_topic_agg}')
         series_parent_topics, series_child_topics = series_topic_agg.return_sorted(parent_limit=3, child_limit=10)
-    es_speaker.parent_topics = series_parent_topics
-    es_speaker.child_topics = series_child_topics
+    es_speaker.set_topics(topic_grouping, series_parent_topics, series_child_topics)
     esqb.save_es_speaker(es_speaker)
 
     updated_speaker = esr.fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)

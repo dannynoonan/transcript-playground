@@ -26,29 +26,6 @@ def truncate_dict(d: dict, length: int, start_index: int = 0) -> None:
 	return {k: d[k] for k in list(d.keys())[start_index:end_index]}
 
 
-# def shorten_flattened_text(es_episode: EsEpisodeTranscript, skip_increment: int = None) -> str:
-#     flattened_text = f'{es_episode.title} '
-#     scene_i = 0
-#     for scene in es_episode.scenes:
-#         scene_i += 1
-#         # if divisor is set, skip scenes at that skip_increment
-#         if skip_increment and scene_i % skip_increment == 0:
-#             continue
-#         # flattened_text += f'{scene.location} '
-#         # if scene.description:
-#         #     flattened_text += f'{scene.description} '
-#         for scene_event in scene.scene_events:
-#             # if scene_event.context_info:
-#             #     flattened_text += f'{scene_event.context_info} '
-#             # if scene_event.spoken_by:
-#             #     flattened_text += f'{scene_event.spoken_by}: '
-#             if scene_event.dialog:
-#                 flattened_text += f'{scene_event.dialog} '
-        
-
-#     return flattened_text
-
-
 def split_parent_and_child_topics(topics: list, parent_limit: int = None, child_limit: int = None) -> tuple[list, list]:
     '''
     output ordered lists of topics (child_topics) and parent_topics
@@ -89,29 +66,6 @@ def split_parent_and_child_topics(topics: list, parent_limit: int = None, child_
         child_topics = child_topics[:child_limit]
 
     return parent_topics, child_topics
-
-
-# def update_topic_agg(topic_aggs: dict, topics: list, multiplier: int) -> None:
-#     for t in topics:
-#         if t['topic_key'] not in topic_aggs:
-#             topic_aggs[t['topic_key']] = 0
-#         topic_aggs[t['topic_key']] += t['score'] * multiplier
-
-
-# def sort_topic_aggs(topic_aggs: dict, reference_topics: dict) -> list:
-#     sorted_topic_tuples = sorted(topic_aggs.items(), key=itemgetter(1), reverse=True)
-#     sorted_topics = []
-#     rank = 1
-#     for tt in sorted_topic_tuples:
-#         if tt[0] in reference_topics:
-#             rt = reference_topics[tt[0]]
-#             rt['rank'] = rank
-#             rt['agg_score'] = tt[1]
-#             sorted_topics.append(reference_topics[tt[0]])
-#             rank += 1
-#         else:
-#             print(f"in sort_topic_aggs: topic_aggs topic_key={tt[0]} wasn't found in reference_topics, so not adding to sorted_topic output")
-#     return sorted_topics
 
 
 class TopicAgg(object):

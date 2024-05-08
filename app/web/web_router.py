@@ -259,7 +259,6 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 	tdata['header'] = 'character'
 	tdata['show_key'] = show_key.value
 	tdata['speaker'] = speaker
-	tdata['has_topics'] = False
 
 	response = esr.fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)
 	if 'speaker' in response:
@@ -274,12 +273,22 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 		else:
 			# TODO if this happens something is wrong
 			tdata['seasons'] = []
+		tdata['season_count'] = es_speaker['season_count']
 		tdata['episode_count'] = es_speaker['episode_count']
 		tdata['scene_count'] = es_speaker['scene_count']
 		tdata['line_count'] = es_speaker['line_count']
 		tdata['word_count'] = es_speaker['word_count']
+		if 'actor_names' in es_speaker:
+			tdata['actor_names'] = es_speaker['actor_names']
+		else:
+			tdata['actor_names'] = []
+		if 'alt_names' in es_speaker:
+			tdata['alt_names'] = [name for name in es_speaker['alt_names'] if name.upper() != speaker]
+		else:
+			tdata['alt_names'] = []
 		tdata['parent_topics'] = es_speaker['parent_topics']
 		tdata['child_topics'] = es_speaker['child_topics']
+		print(f"tdata['child_topics']={tdata['child_topics']}")
 	else:
 		episode_matches = esr.search_scene_events(show_key, speaker=speaker)
 		for m in episode_matches['matches']:
@@ -291,8 +300,10 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 		word_count = esr.agg_dialog_word_counts(show_key, speaker=speaker)
 		tdata['word_count'] = int(word_count['dialog_word_counts'][speaker])
 		tdata['seasons'] = []
-		tdata['parent_topics'] = []
-		tdata['child_topics'] = []
+		tdata['actor_names'] = []
+		tdata['alt_names'] = []
+		tdata['parent_topics'] = {}
+		tdata['child_topics'] = {}
 
 	locations_counts = esr.agg_scenes_by_location(show_key, speaker=speaker)
 	tdata['location_counts'] = locations_counts['scenes_by_location']

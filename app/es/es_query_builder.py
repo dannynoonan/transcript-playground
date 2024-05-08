@@ -174,12 +174,15 @@ def fetch_speaker(show_key: str, speaker_name: str) -> EsSpeaker|None:
 
     try:
         speaker = EsSpeaker.get(id=doc_id, index='speakers')
-        # TODO don't like having to do this 
-        speaker.child_topics = [t._d_ for t in speaker.child_topics]
-        speaker.parent_topics = [t._d_ for t in speaker.parent_topics]
     except Exception as e:
         print(f'Failed to fetch speaker `{speaker_name}` for show_key=`{show_key}`')
         return None
+    
+    # TODO don't like having to do this 
+    if speaker.child_topics:
+        speaker.child_topics = speaker.child_topics._d_
+    if speaker.parent_topics:
+        speaker.parent_topics = speaker.parent_topics._d_
 
     return speaker
 
@@ -454,7 +457,7 @@ def search_scene_events(show_key: str, season: str = None, episode_key: str = No
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
-    speaker_q = Q('match', **{'scenes.scene_events.spoken_by': speaker})
+    speaker_q = Q('match', **{'scenes.scene_events.spoken_by.keyword': speaker})
     dialog_q = Q('match', **{'scenes.scene_events.dialog': dialog})
 
     q = None
@@ -507,7 +510,7 @@ def search_scene_events_multi_speaker(show_key: str, speakers: str, season: str 
     must_nested_qs = None
 
     for speaker in speakers: 
-        speaker_q = Q('bool', must=[Q('match', **{'scenes.scene_events.spoken_by': speaker})])
+        speaker_q = Q('bool', must=[Q('match', **{'scenes.scene_events.spoken_by.keyword': speaker})])
 
         nested_q = Q('nested', path='scenes.scene_events', 
                 query=speaker_q,
@@ -575,7 +578,7 @@ def search_episodes(show_key: str, season: str = None, episode_key: str = None, 
     
     scene_event_fields_q = Q('bool', minimum_should_match=1, should=[
             Q('match', **{'scenes.scene_events.context_info': qt}),
-            Q('match', **{'scenes.scene_events.spoken_by': qt}),
+            Q('match', **{'scenes.scene_events.spoken_by.keyword': qt}),
             Q('match', **{'scenes.scene_events.dialog': qt})])
     
     scene_events_q = Q('nested', path='scenes.scene_events', 
@@ -679,7 +682,7 @@ def agg_seasons_by_speaker(show_key: str, location: str = None) -> Search:
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=2000
         ).bucket(
             'by_season', 'reverse_nested'
         ).bucket(
@@ -738,7 +741,7 @@ def agg_episodes_by_speaker(show_key: str, season: str = None, location: str = N
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by": other_speaker}}
+            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by.keyword": other_speaker}}
         ).bucket(
             'for_scene', 'reverse_nested', path='scenes'
         ).bucket(
@@ -816,7 +819,7 @@ def agg_scenes_by_location(show_key: str, season: str = None, episode_key: str =
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by": speaker}}
+            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by.keyword": speaker}}
         ).bucket(
             'scenes', 'reverse_nested', path='scenes'
         ).bucket(
@@ -859,7 +862,7 @@ def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: str = 
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by": other_speaker}}
+            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by.keyword": other_speaker}}
         ).bucket(
             'for_scene', 'reverse_nested', path='scenes'
         ).bucket(
@@ -949,7 +952,7 @@ def agg_dialog_word_counts(show_key: str, season: str = None, episode_key: str =
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'speaker_match', 'filter', filter={'match': {'scenes.scene_events.spoken_by': speaker}}
+            'speaker_match', 'filter', filter={'match': {'scenes.scene_events.spoken_by.keyword': speaker}}
         ).bucket(
             'word_count', 'sum', field='scenes.scene_events.dialog.word_count')
     else:

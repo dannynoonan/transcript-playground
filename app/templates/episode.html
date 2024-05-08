@@ -14,8 +14,25 @@
 		<p>&nbsp;</p>
 
 		<div class="row">
-			<!-- begin in-episode search form -->
 			<div class="col-6">
+
+				{% if tdata['episode']['child_topics'] %}
+					{% if tdata['episode']['child_topics']['universalGenres'] %}
+					<h3>Genre mappings</h3>
+					<ol>
+						{% for topic in tdata['episode']['child_topics']['universalGenres'] %}
+							{% if loop.index < 9 %}
+							<li>
+								{{ topic['parent_name'] }} > {{ topic['topic_name'] }} 
+							</li>
+							{% endif %}
+						{% endfor %}
+					</ol>
+					{% endif %}
+				<br/>
+				{% endif %}
+
+				<!-- begin in-episode search form -->
 				<h3>In-episode search</h3>
 				<br/>
 				<form action="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}" method="GET">

@@ -324,9 +324,8 @@ def cluster_docs(doc_embeddings: dict, num_clusters: int):
     return doc_clusters_df
 
 
-'''
-TODO This obviously needs to live elsewhere
-'''
+@DeprecationWarning
+# TODO `generate_episode_embeddings` is only dependency and it is Deprecated, refactor everything to use generate_embeddings
 def shorten_flattened_text(es_episode: EsEpisodeTranscript, skip_increment: int = None) -> str:
     flattened_text = f'{es_episode.title} '
     scene_i = 0

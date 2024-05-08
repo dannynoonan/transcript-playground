@@ -121,7 +121,7 @@
                             <th scope="col">Scenes</th>
                             <th scope="col">Lines</th>
                             <th scope="col">Words</th>
-                            <th scope="col">Personalities</th>
+                            <th scope="col">Meyers-Briggs</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -139,12 +139,14 @@
                             <td>{{ speaker['line_count'] }}</td>
                             <td>{{ speaker['word_count'] }}</td>
                             <td>
-                                {% for topic in speaker['child_topics'] %}
+                            {% if speaker['child_topics'] and speaker['child_topics']['meyersBriggsKiersey'] %}
+                                {% for topic in speaker['child_topics']['meyersBriggsKiersey'] %}
                                     {% if loop.index < 4 %}
                                         {{ topic['topic_key'] }}
                                         {% if loop.index < 3 %}, {% endif %}
                                     {% endif %}
                                 {% endfor %}
+                            {% endif %}
                             </td>
                         </tr>
                         {% endfor %}

@@ -43,6 +43,9 @@ class EsEpisodeTranscript(Document):
     # generated 
     focal_speakers = Keyword(multi=True)
     focal_locations = Keyword(multi=True)
+    parent_topics = Object(multi=True)
+    child_topics = Object(multi=True)
+    # topics = Object(multi=True)
     es_mlt_relations_text = Text(multi=True)
     openai_ada002_relations_text = Text(multi=True)
     es_mlt_relations_tuple = Object(multi=True)
@@ -103,18 +106,26 @@ class EsEpisodeTranscript(Document):
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
     
+    def set_topics(self, topic_grouping: str, parent_topics: list, child_topics: list) -> None:
+        if not self.parent_topics:
+            self.parent_topics = {}
+        self.parent_topics[topic_grouping] = parent_topics
+        if not self.child_topics:
+            self.child_topics = {}
+        self.child_topics[topic_grouping] = child_topics
+    
 
 class EsSpeaker(Document):
     show_key = Keyword()
     speaker = Keyword()
-    alt_names = Keyword(multi=True)
-    actor_names = Keyword(multi=True)
+    alt_names = Text(multi=True, analyzer=freetext_analyzer, term_vector='yes')
+    actor_names = Text(multi=True, analyzer=freetext_analyzer, term_vector='yes')
     season_count = Integer()
     episode_count = Integer()
     scene_count = Integer()
     line_count = Integer()
     word_count = Integer()
-    lines = Text(multi=True)
+    lines = Text(multi=True, analyzer=freetext_analyzer, term_vector='yes')
     seasons_to_episode_keys = Object(multi=True)
     most_frequent_companions = Object(multi=True)
     parent_topics = Object(multi=True)
@@ -131,6 +142,14 @@ class EsSpeaker(Document):
         self.meta.id = f'{self.show_key}_{self.speaker}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
+    
+    def set_topics(self, topic_grouping: str, parent_topics: list, child_topics: list) -> None:
+        if not self.parent_topics:
+            self.parent_topics = {}
+        self.parent_topics[topic_grouping] = parent_topics
+        if not self.child_topics:
+            self.child_topics = {}
+        self.child_topics[topic_grouping] = child_topics
     
 
 class EsSpeakerSeason(Document):
@@ -158,6 +177,14 @@ class EsSpeakerSeason(Document):
         self.meta.id = f'{self.show_key}_{self.speaker}_{self.season}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
+    
+    def set_topics(self, topic_grouping: str, parent_topics: list, child_topics: list) -> None:
+        if not self.parent_topics:
+            self.parent_topics = {}
+        self.parent_topics[topic_grouping] = parent_topics
+        if not self.child_topics:
+            self.child_topics = {}
+        self.child_topics[topic_grouping] = child_topics
     
 
 class EsSpeakerEpisode(Document):
@@ -188,6 +215,14 @@ class EsSpeakerEpisode(Document):
         self.meta.id = f'{self.show_key}_{self.speaker}_{self.episode_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
+    
+    def set_topics(self, topic_grouping: str, parent_topics: list, child_topics: list) -> None:
+        if not self.parent_topics:
+            self.parent_topics = {}
+        self.parent_topics[topic_grouping] = parent_topics
+        if not self.child_topics:
+            self.child_topics = {}
+        self.child_topics[topic_grouping] = child_topics
 
 
 class EsTopic(Document):

@@ -61,8 +61,7 @@ TNG_CAPTAINS_LOG_PREFIX = "captain's log"
 EPISODE_TOPIC_GROUPINGS = ['universalGenres', 'universalGenresGpt35', 'focusedGpt35']
 SPEAKER_TOPIC_GROUPINGS = ['meyersBriggsKiersey']
 
-SPEAKERS_TO_IGNORE = ['_ALL_', 'ALL', 'BOTH', 'MAN', 'WOMAN', 'CREWMAN', 'CREWWOMAN', 'VOICE', 'VOICES', 'GIRL', 'BOY', 
-                      'ALIEN', 'ALIEN 2', 'WAITER', 'BELLBOY', 'TRAVELLER', 'POLICEMAN']
+SPEAKERS_TO_IGNORE = ['_ALL_', 'ALL', 'BOTH']
 
 
 show_ontology = {
