@@ -402,6 +402,33 @@ def fetch_topic_grouping(topic_grouping: str, return_fields: list = None) -> Sea
     return s
 
 
+def search_speakers_by_topic(topic_grouping: str, topic_key: str, is_parent: bool = False, show_key: str = None, min_word_count: int = None) -> Search:
+    print(f'begin search_speakers_by_topic for topic_grouping={topic_grouping} topic_key={topic_key} is_parent={is_parent} show_key={show_key} min_word_count={min_word_count}')
+
+    s = Search(index='speakers')
+    s = s.extra(size=1000)
+
+    if is_parent:
+        topic_path = f'parent_topics.{topic_grouping}'
+    else:
+        topic_path = f'child_topics.{topic_grouping}'
+    topic_key_path = f'{topic_path}.topic_key'
+
+    s = s.filter('match', **{topic_key_path: topic_key})
+    if show_key:
+        s = s.filter('term', show_key=show_key)
+    if min_word_count:
+        s = s.filter('range', word_count={'gt': min_word_count})
+
+    # TODO this doesn't work like you want it to, need to nest topics as InnerDocs
+    topic_score_path = f'{topic_path}.score'
+    s = s.sort(topic_score_path)
+
+    s = s.source(excludes=['lines', 'seasons_to_episode_keys', 'openai_ada002_embeddings'])
+
+    return s
+
+
 def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> Search:
     print(f'begin search_scenes for show_key={show_key} season={season} episode_key={episode_key} location={location} description={description}')
 

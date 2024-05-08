@@ -406,6 +406,8 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
     return {"series_topics": series_topics, "season_topics": season_topics, "episode_topics": episode_topics}
 
 
+@DeprecationWarning
+# TODO should this be deprecated, or just discouraged? Used as a fallback when `topic_speaker_search` fails?
 @esr_app.get("/esr/topic_speaker_vector_search/{topic_grouping}/{topic_key}/{show_key}", tags=['ES Reader'])
 def topic_speaker_vector_search(topic_grouping: str, topic_key: str, show_key: ShowKey, model_vendor: str = None, model_version: str = None):
     '''
@@ -427,6 +429,30 @@ def topic_speaker_vector_search(topic_grouping: str, topic_key: str, show_key: S
     es_response = esqb.vector_search(show_key, vector_field, topic_embedding, index_name='speakers')
     speakers = esrt.return_vector_search(es_response)
     return {"speakers_count": len(speakers), "vector_field": vector_field, "speakers": speakers}
+
+
+@esr_app.get("/esr/topic_speaker_search/{topic_grouping}/{topic_key}", tags=['ES Reader'])
+def topic_speaker_search(topic_grouping: str, topic_key: str, show_key: ShowKey = None, min_word_count: int = None):
+    '''
+    Search speakers by topic mapping
+    '''                
+    if show_key:
+        show_key = show_key.value
+
+    topic_response = fetch_topic(topic_grouping, topic_key)
+    if 'topic' not in topic_response:
+        return {"error": f"Unable to run `topic_speaker_search`: No topic found for topic_grouping={topic_grouping} topic_key={topic_key}"}
+    topic = topic_response['topic']
+
+    if 'parent_key' not in topic or topic['parent_key'] == '':
+        is_parent = True
+    else:
+        is_parent = False
+
+    s = esqb.search_speakers_by_topic(topic_grouping, topic_key, is_parent=is_parent, show_key=show_key, min_word_count=min_word_count)
+    es_query = s.to_dict()
+    speakers = esrt.return_speakers(s)
+    return {"speakers_count": len(speakers), "is_parent_topic": is_parent, "speakers": speakers, "es_query": es_query}
 
 
 # @esr_app.get("/esr/test_vector_search/{show_key}", tags=['ES Reader'])

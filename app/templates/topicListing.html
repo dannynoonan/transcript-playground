@@ -43,7 +43,7 @@
                                     <td><nobr>{{ topic['breadcrumb'] }}</nobr></td>
                                     <td><nobr>{{ topic['topic_name'] }}</nobr></td>
                                     <td>{% autoescape false %}
-                                        {{ topic['description']|replace("\\n", "<br/>") }}
+                                        {{ topic['description']|replace("\\n", "<br/>")|truncate(1000, true, ' ...') }}
                                         {% endautoescape %}</td>
                                 </tr>
                                 {% endfor %}

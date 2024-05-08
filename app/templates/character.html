@@ -29,7 +29,8 @@
                     {% for topic in child_topics %}
                         {% if loop.index < 6 %}
                         <li>
-                            {{ topic['topic_key'] }}: {{ topic['topic_name'] }} ({{ topic['parent_name'] }})
+                            <a class="alert-link" href="/web/topic/{{ tdata['show_key'] }}/{{ topic_grouping }}/{{ topic['topic_key'] }}">{{ topic['topic_key'] }}</a>: 
+                            {{ topic['topic_name'] }} ({{ topic['parent_name'] }})
                         </li>
                         {% endif %}
                     {% endfor %}
@@ -40,7 +41,8 @@
                         {% for topic in tdata['parent_topics'][topic_grouping] %}
                             {% if loop.index < 3 %}
                             <li>
-                                {{ topic['topic_key'] }}: {{ topic['topic_name'] }}
+                                <a class="alert-link" href="/web/topic/{{ tdata['show_key'] }}/{{ topic_grouping }}/{{ topic['topic_key'] }}">{{ topic['topic_key'] }}</a>:
+                                {{ topic['topic_name'] }}
                             </li>
                             {% endif %}
                         {% endfor %}

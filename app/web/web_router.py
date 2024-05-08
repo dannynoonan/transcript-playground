@@ -445,7 +445,7 @@ async def topic_listing_page(request: Request, show_key: ShowKey, selected_topic
 
 
 @web_app.get("/web/topic/{show_key}/{topic_grouping}/{topic_key}", response_class=HTMLResponse, tags=['Web'])
-async def topic_listing_page(request: Request, show_key: ShowKey, topic_grouping: str, topic_key: str):
+async def topic_page(request: Request, show_key: ShowKey, topic_grouping: str, topic_key: str):
 	tdata = {}
 
 	tdata['header'] = 'topic'
@@ -475,18 +475,35 @@ async def topic_listing_page(request: Request, show_key: ShowKey, topic_grouping
 			tdata['episodes'] = episodes
 			
 	elif topic_grouping in SPEAKER_TOPIC_GROUPINGS:
-		vector_search_response = esr.topic_speaker_vector_search(focused_topic_grouping, topic_key, show_key)
-		if 'speakers' in vector_search_response:
-			speakers = vector_search_response['speakers']
+		speaker_response = esr.topic_speaker_search(focused_topic_grouping, topic_key, show_key=show_key, min_word_count=3000)
+		# vector_search_response = esr.topic_speaker_vector_search(focused_topic_grouping, topic_key, show_key)
+		if 'speakers' in speaker_response:
+			speakers = speaker_response['speakers']
+			is_parent_topic = speaker_response['is_parent_topic']
+			for speaker in speakers:
+				topics = []
+				if is_parent_topic:
+					if 'parent_topics' in speaker and topic_grouping in speaker['parent_topics']:
+						topics = speaker['parent_topics'][topic_grouping]
+				else:
+					if 'child_topics' in speaker and topic_grouping in speaker['child_topics']:
+						topics = speaker['child_topics'][topic_grouping]
+				speaker['topic_score'] = 0
+				for topic in topics:
+					if topic['topic_key'] == topic_key:
+						speaker['topic_score'] = topic['score']
+						break
+			# TODO evil post-response sorting, to be replaced by nested topic documents
+			speakers = sorted(speakers, key=itemgetter('topic_score'), reverse=True)
+			tdata['speakers'] = speakers
 			if len(speakers) > 30:
 				speakers = speakers[:30]
-			tdata['speakers'] = speakers
 	
 	return templates.TemplateResponse('topic.html', {'request': request, 'tdata': tdata})
 
 
 @web_app.get("/web/graph/{show_key}", response_class=HTMLResponse, tags=['Web'])
-async def show_page(request: Request, show_key: ShowKey, background_tasks: BackgroundTasks, num_clusters: int = 0):
+async def graph_page(request: Request, show_key: ShowKey, background_tasks: BackgroundTasks, num_clusters: int = 0):
 	if not num_clusters:
 		num_clusters = 4
 

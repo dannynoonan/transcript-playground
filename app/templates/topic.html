@@ -90,7 +90,7 @@
                 <tr class="table-secondary">
                     <th scope="row"><a href="/web/character/{{ tdata['show_key'] }}/{{ speaker['speaker'] }}" 
                         class="alert-link">{{ speaker['speaker'] }}</a></th>
-                    <td>{{ '%0.2f'|format(speaker['score']|float) }}</td>
+                    <td>{{ '%0.2f'|format(speaker['topic_score']|float) }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
