@@ -6,14 +6,14 @@ import pandas as pd
 import app.database.dao as dao
 import app.es.es_ingest_transformer as esit
 import app.es.es_response_transformer as esrt
-# from app.es.es_metadata import ACTIVE_VENDOR_VERSIONS
+from app.es.es_metadata import VALID_ES_INDEXES
 from app.es.es_model import EsEpisodeTranscript, EsTopic, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode
 import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
-from app.utils import split_parent_and_child_topics, TopicAgg
+from app.utils import TopicAgg
 
 
 esw_app = APIRouter()
@@ -26,28 +26,39 @@ def init_es(index_name: str = None):
     Run this to explicitly define the mapping anytime the `transcripts` index is blown away and re-created. Not doing so will result in the wrong
     data types being auto-assigned to several fields in the schema mapping, and will break query (read) functionality down the line.
     '''
-    valid_indexes = ['transcripts', 'topics', 'speakers', 'speaker_seasons', 'speaker_episodes']
     if index_name:
-        if index_name not in valid_indexes:
-            return {"error": f"Failed to initialize index_name=`{index_name}`, valid_indexes={valid_indexes}"}
+        if index_name not in VALID_ES_INDEXES:
+            return {"error": f"Failed to initialize index_name=`{index_name}`, valid_indexes={VALID_ES_INDEXES}"}
         if index_name == 'transcripts':
             esqb.init_transcripts_index()
-        elif index_name == 'topics':
-            esqb.init_topics_index()
         elif index_name == 'speakers':
             esqb.init_speakers_index()
         elif index_name == 'speaker_seasons':
             esqb.init_speaker_seasons_index()
         elif index_name == 'speaker_episodes':
             esqb.init_speaker_episodes_index()
+        elif index_name == 'topics':
+            esqb.init_topics_index()
+        elif index_name == 'episode_topics':
+            esqb.init_episode_topics_index()
+        elif index_name == 'speaker_topics':
+            esqb.init_speaker_topics_index()
+        elif index_name == 'speaker_season_topics':
+            esqb.init_speaker_season_topics_index()
+        elif index_name == 'speaker_episode_topics':
+            esqb.init_speaker_episode_topics_index()
         initialized_indexes = [index_name]
     else:
         esqb.init_transcripts_index()
-        esqb.init_topics_index()
         esqb.init_speakers_index()
         esqb.init_speaker_seasons_index()
         esqb.init_speaker_episodes_index()
-        initialized_indexes = valid_indexes
+        esqb.init_topics_index()
+        esqb.init_episode_topics_index()
+        esqb.init_speaker_topics_index()
+        esqb.init_speaker_season_topics_index()
+        esqb.init_speaker_episode_topics_index()
+        initialized_indexes = VALID_ES_INDEXES
 
     return {"initialized_indexes": initialized_indexes}
 
@@ -179,7 +190,7 @@ async def populate_relations(show_key: ShowKey, episode_key: str, model_vendor: 
 
 
 @esw_app.get("/esw/populate_all_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-async def populate_relations(show_key: ShowKey, model_vendor: str, model_version: str, limit: int = 30, episode_key: str = None):
+async def populate_all_relations(show_key: ShowKey, model_vendor: str, model_version: str, limit: int = 30, episode_key: str = None):
     '''
     For each episode, query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
     '''
@@ -361,7 +372,7 @@ def index_all_speakers(show_key: ShowKey):
 
 
 @esw_app.get("/esw/index_topic_grouping/{topic_grouping}", tags=['ES Writer'])
-async def index_topic_grouping(topic_grouping: str):
+def index_topic_grouping(topic_grouping: str):
     '''
     Load set of Topics from csv file into es `topics` index.
     '''
@@ -619,13 +630,10 @@ def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping:
     except Exception as e:
         return {"error": f"Failed to populate_episode_topics, episode_topic_vector_search failed for {show_key.value}:{episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version}: {e}"}
     
-    # parse and add topics to es_episode
-    parent_topics, child_topics = split_parent_and_child_topics(response['topics'], parent_limit=3, child_limit=10)
-    es_episode.set_topics(topic_grouping, parent_topics, child_topics)
-    esqb.save_es_episode(es_episode)
+    # write to episode_topics
+    episode_topics = esqb.populate_episode_topics(show_key.value, es_episode, response['topics'], model_vendor, model_version)
 
-    # TODO not sure what to return here, or if it matters
-    return {"updated_episode": es_episode}
+    return {"episode_topics": episode_topics}
 
 
 @esw_app.get("/esw/populate_all_episode_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
@@ -656,8 +664,8 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
     '''
     es_speaker = EsSpeaker.get(id=f'{show_key.value}_{speaker}')
 
-    reference_topic_return_fields = 'topic_key,parent_key,topic_name,parent_name'
-    reference_topics_response = esr.fetch_topic_grouping(topic_grouping, return_fields=reference_topic_return_fields)
+    topic_fields = 'topic_grouping,topic_key,parent_key,topic_name,parent_name'
+    reference_topics_response = esr.fetch_topic_grouping(topic_grouping, return_fields=topic_fields)
     if 'topics' not in reference_topics_response or len(reference_topics_response['topics']) == 0:
         return {"error": f"Failure to populate_speaker_topics: no topics returned from /fetch_topic_grouping for topic_grouping={topic_grouping}"}
     reference_topics = {t['topic_key']:t for t in reference_topics_response['topics']}
@@ -671,58 +679,57 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
         return {"error": err, "incomplete topics_resopnse": speaker_topics_response}
     
     speaker_series_topics = speaker_topics_response['series_topics']
-    speaker_season_topics = speaker_topics_response['season_topics']
-    speaker_episode_topics = speaker_topics_response['episode_topics']
+    speaker_topics_by_season = speaker_topics_response['season_topics']
+    speaker_topics_by_episode = speaker_topics_response['episode_topics']
 
     series_topics_found = False
     series_topic_agg = TopicAgg(reference_topics)
     if len(speaker_series_topics) > 0:
-        series_parent_topics, series_child_topics = split_parent_and_child_topics(speaker_series_topics, parent_limit=3, child_limit=10)
         series_topics_found = True
         
-    # if 'season_topics' in topics_response and len(topics_response['series_topics']) > 0:
     for season, episode_keys in es_speaker.seasons_to_episode_keys._d_.items():
         season = int(season)
-        # season-level topics will either be x 
         season_topics_found = False
         season_topic_agg = TopicAgg(reference_topics)
         es_speaker_season = EsSpeakerSeason.get(id=f'{show_key.value}_{speaker}_{season}')
-        if season in speaker_season_topics:
-            season_parent_topics, season_child_topics = split_parent_and_child_topics(speaker_season_topics[season], parent_limit=3, child_limit=10)
+        if season in speaker_topics_by_season:
+            speaker_season_topics = speaker_topics_by_season[season]
             season_topics_found = True
         for e_key in episode_keys:
-            if e_key in speaker_episode_topics:
+            if e_key in speaker_topics_by_episode:
                 es_speaker_episode = EsSpeakerEpisode.get(id=f'{show_key.value}_{speaker}_{e_key}')
-                episode_parent_topics, episode_child_topics = split_parent_and_child_topics(speaker_episode_topics[e_key], parent_limit=3, child_limit=10)
-                # add topics to es_speaker_episode
-                es_speaker_episode.set_topics(topic_grouping, episode_parent_topics, episode_child_topics)
-                esqb.save_es_speaker_episode(es_speaker_episode)
+                # write to speaker_episode_topics
+                esqb.populate_speaker_episode_topics(show_key.value, speaker, es_speaker_episode, speaker_topics_by_episode[e_key], 
+                                                     model_vendor, model_version)
                 # incorporate episode topics into season-level agg
-                season_topic_agg.update(episode_parent_topics, episode_child_topics, es_speaker_episode.word_count)
+                season_topic_agg.add_topics(speaker_topics_by_episode[e_key], es_speaker_episode.word_count)
             else:
                 print(f"Warning: episode_key={e_key} found in `es_speaker.seasons_to_episode_keys` but not in `speaker_topics_response['episode_topics']`, skipping but this is weird")
-        # add topics to es_speaker_season
+        
+        # write to speaker_season_topics
         if not season_topics_found:
             # if no season-level topics, attempt to calculate them via aggs extracted from episodes
-            print(f'no season_topics_found for season={season}, so returning sorted_topics from season_topic_agg={season_topic_agg}')
-            season_parent_topics, season_child_topics = season_topic_agg.return_sorted(parent_limit=3, child_limit=10)
-        es_speaker_season.set_topics(topic_grouping, season_parent_topics, season_child_topics)
-        esqb.save_es_speaker_season(es_speaker_season)
+            print(f'no season_topics_found for season={season}, so using topics from season_topic_agg={season_topic_agg}')
+            speaker_season_topics = season_topic_agg.get_topics()
+        esqb.populate_speaker_season_topics(show_key.value, speaker, es_speaker_season, speaker_season_topics, model_vendor, model_version)
         # incorporate season topics into series-level agg
-        series_topic_agg.update(season_parent_topics, season_child_topics, es_speaker_season.word_count)
+        series_topic_agg.add_topics(speaker_season_topics, es_speaker_season.word_count)
 
-    # add topics to es_speaker
+    # write to speaker_topics
     if not series_topics_found:
         # if no series-level topics, attempt to calculate them via aggs extracted from seasons  
-        print(f'no series_topics_found, so returning sorted_topics from series_topic_agg={series_topic_agg}')
-        series_parent_topics, series_child_topics = series_topic_agg.return_sorted(parent_limit=3, child_limit=10)
-    es_speaker.set_topics(topic_grouping, series_parent_topics, series_child_topics)
-    esqb.save_es_speaker(es_speaker)
+        print(f'no series_topics_found, so using topics from series_topic_agg={series_topic_agg}')
+        speaker_series_topics = series_topic_agg.get_topics()
+    esqb.populate_speaker_topics(show_key.value, speaker, es_speaker, speaker_series_topics, model_vendor, model_version)
 
-    updated_speaker = esr.fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)
-    # TODO this seems to be fetching stale (pre-update) speaker data, WTF? Caching issue?
+    # TODO ugh these's caching or latency with these lookups, responses are stale
+    speaker_topics_response = esr.fetch_speaker_topics(speaker, show_key, topic_grouping)
+    speaker_season_topics_response = esr.fetch_speaker_season_topics(speaker, show_key, topic_grouping, limit=1000)
+    speaker_episode_topics_response = esr.fetch_speaker_episode_topics(speaker, show_key, topic_grouping, limit=10000)
 
-    return {"updated_speaker": updated_speaker}
+    return {"speaker_topics": speaker_topics_response['speaker_topics'], 
+            "speaker_season_topics": speaker_season_topics_response['speaker_season_topics'], 
+            "speaker_episode_topics": speaker_episode_topics_response['speaker_episode_topics']}
 
 
 @esw_app.get("/esw/populate_all_speaker_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])

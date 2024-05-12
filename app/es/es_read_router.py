@@ -105,6 +105,7 @@ def fetch_speaker(show_key: ShowKey, speaker_name: str, include_seasons: bool = 
         return {"error": f"Failed to fetch speaker `{speaker_name}` for show_key=`{show_key.value}`"}
     speaker.seasons_to_episode_keys = speaker.seasons_to_episode_keys._d_
     speaker = speaker._d_
+
     es_queries = []
     if include_seasons:
         s = esqb.fetch_speaker_seasons(show_key.value, speaker_name)
@@ -118,23 +119,26 @@ def fetch_speaker(show_key: ShowKey, speaker_name: str, include_seasons: bool = 
         speaker_episodes = esrt.return_speaker_episodes(s)
         if speaker_episodes:
             speaker['episodes'] = speaker_episodes
+
     return {"speaker": speaker, "es_queries": es_queries}
 
 
 @esr_app.get("/esr/fetch_indexed_speakers/{show_key}", tags=['ES Reader'])
-def fetch_indexed_speakers(show_key: ShowKey, return_fields: str = None):
+def fetch_indexed_speakers(show_key: ShowKey, extra_fields: str = None, min_episode_count: int = None):
     '''
-    For speakers indexed in es, fetch info, lines, and aggregate counts (optionally across seasons and episodes)
+    For speakers indexed in es, fetch info, lines, and aggregate counts
     '''
-    if return_fields:
-        return_fields = return_fields.split(',')
-    else:
-        return_fields = ['speaker', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_ada002_word_count', 'parent_topics', 'child_topics']
-    s = esqb.fetch_indexed_speakers(show_key.value, return_fields=return_fields)
-    matches = esrt.return_speakers(s)
-    if not matches:
+    return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_ada002_word_count']
+    if extra_fields:
+        extra_fields = extra_fields.split(',')
+        return_fields.extend(extra_fields)
+
+    s = esqb.fetch_indexed_speakers(show_key.value, return_fields=return_fields, min_episode_count=min_episode_count)
+    speakers = esrt.return_speakers(s)
+    if not speakers:
         return {"error": f"Failed to fetch_indexed_speakers for show_key={show_key}"}
-    return {"speakers": matches}
+
+    return {"speakers": speakers}
 
 
 @esr_app.get("/esr/topic/{topic_grouping}/{topic_key}", tags=['ES Reader'])
@@ -159,6 +163,51 @@ def fetch_topic_grouping(topic_grouping: str, return_fields: str = None):
     es_query = s.to_dict()
     topics = esrt.return_topics(s)
     return {"topics": topics, "es_query": es_query}
+
+
+@esr_app.get("/esr/fetch_episode_topics/{show_key}/{episode_key}/{topic_grouping}", tags=['ES Reader'])
+def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, level: str = None, limit: int = None):
+    '''
+    Fetch topics mapped to episode
+    '''
+    s = esqb.fetch_episode_topics(show_key.value, episode_key, topic_grouping, level=level, limit=limit)
+    es_query = s.to_dict()
+    episode_topics = esrt.return_topics(s)
+    return {"episode_topics": episode_topics, "es_query": es_query}
+
+
+@esr_app.get("/esr/fetch_speaker_topics/{speaker}/{show_key}/{topic_grouping}", tags=['ES Reader'])
+def fetch_speaker_topics(speaker: str, show_key: ShowKey, topic_grouping: str, level: str = None, limit: int = None):
+    '''
+    Fetch topics mapped to speaker 
+    '''
+    s = esqb.fetch_speaker_topics(speaker, show_key.value, topic_grouping, level=level, limit=limit)
+    es_query = s.to_dict()
+    speaker_topics = esrt.return_topics(s)
+    return {"speaker_topics": speaker_topics, "es_query": es_query}
+
+
+@esr_app.get("/esr/fetch_speaker_season_topics/{speaker}/{show_key}/{topic_grouping}", tags=['ES Reader'])
+def fetch_speaker_season_topics(speaker: str, show_key: ShowKey, topic_grouping: str, season: int = None, level: str = None, limit: int = None):
+    '''
+    Fetch topics mapped to speaker_season
+    '''
+    s = esqb.fetch_speaker_season_topics(speaker, show_key.value, topic_grouping, season=season, level=level, limit=limit)
+    es_query = s.to_dict()
+    speaker_season_topics = esrt.return_topics_by_season(s)
+    return {"speaker_season_topics": speaker_season_topics, "es_query": es_query}
+
+
+@esr_app.get("/esr/fetch_speaker_episode_topics/{speaker}/{show_key}/{topic_grouping}", tags=['ES Reader'])
+def fetch_speaker_episode_topics(speaker: str, show_key: ShowKey, topic_grouping: str, episode_key: str = None, season: int = None, 
+                                 level: str = None, limit: int = None):
+    '''
+    Fetch topics mapped to speaker_episode
+    '''
+    s = esqb.fetch_speaker_episode_topics(speaker, show_key.value, topic_grouping, episode_key=episode_key, season=season, level=level, limit=limit)
+    es_query = s.to_dict()
+    speaker_episode_topics = esrt.return_topics_by_episode(s)
+    return {"speaker_episode_topics": speaker_episode_topics, "es_query": es_query}
 
 
 
@@ -431,6 +480,7 @@ def topic_speaker_vector_search(topic_grouping: str, topic_key: str, show_key: S
     return {"speakers_count": len(speakers), "vector_field": vector_field, "speakers": speakers}
 
 
+@DeprecationWarning
 @esr_app.get("/esr/topic_speaker_search/{topic_grouping}/{topic_key}", tags=['ES Reader'])
 def topic_speaker_search(topic_grouping: str, topic_key: str, show_key: ShowKey = None, min_word_count: int = None):
     '''
@@ -477,6 +527,69 @@ def topic_speaker_search(topic_grouping: str, topic_key: str, show_key: ShowKey 
 #     except Exception as e:
 #         return {"error": e}
 #     return {"normd_expanded_qt": qt, "tokenized_qt": tokenized_qt}
+
+
+@esr_app.get("/esr/search_speakers/{qt}/", tags=['ES Reader'])
+def search_speakers(qt: str, show_key: ShowKey = None, extra_fields: str = None):
+    '''
+    Search for a speaker by query term
+    '''                
+    if show_key:
+        show_key = show_key.value
+    return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_ada002_word_count']
+    if extra_fields:
+        extra_fields = extra_fields.split(',')
+        return_fields.extend(extra_fields)
+    s = esqb.search_speakers(qt, show_key=show_key, return_fields=return_fields)
+    es_query = s.to_dict()
+    speaker_matches = esrt.return_speakers(s)
+    return {"speaker_matches": speaker_matches, "es_query": es_query}
+
+
+@esr_app.get("/esr/find_episodes_by_topic/{show_key}/{topic_grouping}/{topic_key}", tags=['ES Reader'])
+def find_episodes_by_topic(show_key: ShowKey, topic_grouping: str, topic_key: str, season: int = None):
+    '''
+    Search episodes by topic
+    '''                
+    s = esqb.search_episode_topics(show_key, topic_grouping, topic_key, season=season)
+    es_query = s.to_dict()
+    episode_topics = esrt.return_topics(s)
+    return {"episode_topics": episode_topics, "es_query": es_query}
+
+
+@esr_app.get("/esr/find_speakers_by_topic/{topic_grouping}/{topic_key}", tags=['ES Reader'])
+def find_speakers_by_topic(topic_grouping: str, topic_key: str, show_key: ShowKey = None, min_word_count: int = None):
+    '''
+    Search speakers by topic. Not restricted to a given show. 
+    '''    
+    if show_key:
+        show_key = show_key.value
+    s = esqb.search_speaker_topics(topic_grouping, topic_key, show_key=show_key, min_word_count=min_word_count)
+    es_query = s.to_dict()
+    speaker_topics = esrt.return_topics(s)
+    return {"speaker_topics": speaker_topics, "es_query": es_query}
+
+
+@esr_app.get("/esr/find_speaker_seasons_by_topic/{topic_grouping}/{topic_key}/{show_key}", tags=['ES Reader'])
+def find_speaker_seasons_by_topic(topic_grouping: str, topic_key: str, show_key: ShowKey, season: int = None, min_word_count: int = None):
+    '''
+    Search speaker_seasons by topic 
+    '''    
+    s = esqb.search_speaker_season_topics(topic_grouping, topic_key, show_key.value, season=season, min_word_count=min_word_count)
+    es_query = s.to_dict()
+    speaker_season_topics = esrt.return_topics(s)
+    return {"speaker_season_topics": speaker_season_topics, "es_query": es_query}
+
+
+@esr_app.get("/esr/find_speaker_episodes_by_topic/{topic_grouping}/{topic_key}/{show_key}", tags=['ES Reader'])
+def find_speaker_episodes_by_topic(topic_grouping: str, topic_key: str, show_key: ShowKey, season: int = None, episode_key: str = None, min_word_count: int = None):
+    '''
+    Search speaker_episodes by topic 
+    '''    
+    s = esqb.search_speaker_episode_topics(topic_grouping, topic_key, show_key.value, season=season, episode_key=episode_key, min_word_count=min_word_count)
+    es_query = s.to_dict()
+    speaker_episode_topics = esrt.return_topics(s)
+    return {"speaker_episode_topics": speaker_episode_topics, "es_query": es_query}
 
 
 
@@ -578,6 +691,7 @@ def agg_dialog_word_counts(show_key: ShowKey, season: str = None, episode_key: s
     return {"dialog_word_counts": matches, "es_query": es_query}
 
 
+# TODO this might be going away as it's largely replaced by speaker index
 @esr_app.get("/esr/composite_speaker_aggs/{show_key}", tags=['ES Reader'])
 def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_key: str = None):
     if not season and not episode_key:

@@ -67,8 +67,8 @@ async def show_page(request: Request, show_key: ShowKey):
 
 
 @web_app.get("/web/episode/{show_key}/{episode_key}", response_class=HTMLResponse, tags=['Web'])
-def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_type: str = None, qt: str = None,
-					   dialog: str = None, speaker: str = None, location: str = None, speakers: str = None, locationAMS: str = None):
+def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_type: str = None, qt: str = None, dialog: str = None, 
+				 speaker: str = None, location: str = None, speakers: str = None, locationAMS: str = None):
 	tdata = {}
 
 	tdata['header'] = 'episode'
@@ -96,12 +96,10 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 	mlt_embeddings = esr.mlt_vector_search(show_key, episode_key)
 	tdata['mlt_embeddings'] = mlt_embeddings['matches'][:30]
 
-	tdata['topic_embeddings'] = {}
-	for tg in EPISODE_TOPIC_GROUPINGS:
-		if tg.startswith('focused'):
-			tg = f'{tg}_{show_key.value}'
-		topic_embeddings = esr.episode_topic_vector_search(show_key, episode_key, tg, 'openai', 'ada002')
-		tdata['topic_embeddings'][tg] = topic_embeddings['topics'][:30]
+	tdata['topics_by_grouping'] = {}
+	for topic_grouping in EPISODE_TOPIC_GROUPINGS:
+		episode_topics_response = esr.fetch_episode_topics(show_key, episode_key, topic_grouping, limit=50)
+		tdata['topics_by_grouping'][topic_grouping] = episode_topics_response['episode_topics']
 
 	###### IN-EPISODE SEARCH ######
 
@@ -161,9 +159,9 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 
 
 @web_app.get("/web/episode_search/{show_key}", response_class=HTMLResponse, tags=['Web'])
-def episode_search_page(request: Request, show_key: ShowKey, search_type: str = None, season: str = None, qt: str = None, 
-							  dialog: str = None, speaker: str = None, location: str = None, qtSemantic: str = None, model_vendor: str = None, 
-							  model_version: str = None, speakers: str = None, locationAMS: str = None):
+def episode_search_page(request: Request, show_key: ShowKey, search_type: str = None, season: str = None, qt: str = None, dialog: str = None, 
+						speaker: str = None, location: str = None, qtSemantic: str = None, model_vendor: str = None, model_version: str = None, 
+						speakers: str = None, locationAMS: str = None):
 	tdata = {}
 
 	tdata['header'] = 'search'
@@ -252,8 +250,8 @@ def episode_search_page(request: Request, show_key: ShowKey, search_type: str = 
 
 
 @web_app.get("/web/character/{show_key}/{speaker}", response_class=HTMLResponse, tags=['Web'])
-def character_page(request: Request, show_key: ShowKey, speaker: str, search_type: str = None, season: str = None,
-						 dialog: str = None, location: str = None, speakers: str = None, locationAMS: str = None):
+def character_page(request: Request, show_key: ShowKey, speaker: str, search_type: str = None, season: str = None, dialog: str = None, 
+				   location: str = None, speakers: str = None, locationAMS: str = None):
 	tdata = {}
 
 	tdata['header'] = 'character'
@@ -265,14 +263,14 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 		es_speaker = response['speaker']
 		if 'episodes' in es_speaker:
 			tdata['episodes'] = es_speaker['episodes']
-		else:
-			# TODO if this happens something is wrong
-			tdata['episodes'] = []
+		# else:
+		# 	# TODO if this happens something is wrong
+		# 	tdata['episodes'] = []
 		if 'seasons' in es_speaker:
 			tdata['seasons'] = es_speaker['seasons']
-		else:
-			# TODO if this happens something is wrong
-			tdata['seasons'] = []
+		# else:
+		# 	# TODO if this happens something is wrong
+		# 	tdata['seasons'] = []
 		tdata['season_count'] = es_speaker['season_count']
 		tdata['episode_count'] = es_speaker['episode_count']
 		tdata['scene_count'] = es_speaker['scene_count']
@@ -280,15 +278,27 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 		tdata['word_count'] = es_speaker['word_count']
 		if 'actor_names' in es_speaker:
 			tdata['actor_names'] = es_speaker['actor_names']
-		else:
-			tdata['actor_names'] = []
 		if 'alt_names' in es_speaker:
 			tdata['alt_names'] = [name for name in es_speaker['alt_names'] if name.upper() != speaker]
-		else:
-			tdata['alt_names'] = []
-		tdata['parent_topics'] = es_speaker['parent_topics']
-		tdata['child_topics'] = es_speaker['child_topics']
-		print(f"tdata['child_topics']={tdata['child_topics']}")
+		# inject topics into speaker, speaker_seasons, and speaker_episodes
+		# TODO bleh I may have made a terrible mistake by not nesting topics
+		child_topics_response = esr.fetch_speaker_topics(speaker, show_key, 'meyersBriggsKiersey', level='child', limit=5)
+		tdata['child_topics'] = child_topics_response['speaker_topics']
+		parent_topics_response = esr.fetch_speaker_topics(speaker, show_key, 'meyersBriggsKiersey', level='parent', limit=2)
+		tdata['parent_topics'] = parent_topics_response['speaker_topics']
+		season_topics_response = esr.fetch_speaker_season_topics(speaker, show_key, 'meyersBriggsKiersey', level='child')
+		season_topics = season_topics_response['speaker_season_topics']
+		for season in tdata['seasons']:
+			s_key = season['season']
+			if s_key in season_topics:
+				season['topics'] = season_topics[s_key]
+		episode_topics_response = esr.fetch_speaker_episode_topics(speaker, show_key, 'meyersBriggsKiersey', level='child')
+		episode_topics = episode_topics_response['speaker_episode_topics']
+		for episode in tdata['episodes']:
+			e_key = episode['episode_key']
+			if e_key in episode_topics:
+				episode['topics'] = episode_topics[e_key]
+	# TODO legacy, would love to remove this
 	else:
 		episode_matches = esr.search_scene_events(show_key, speaker=speaker)
 		for m in episode_matches['matches']:
@@ -299,11 +309,6 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 		tdata['line_count'] = episode_matches['scene_event_count']
 		word_count = esr.agg_dialog_word_counts(show_key, speaker=speaker)
 		tdata['word_count'] = int(word_count['dialog_word_counts'][speaker])
-		tdata['seasons'] = []
-		tdata['actor_names'] = []
-		tdata['alt_names'] = []
-		tdata['parent_topics'] = {}
-		tdata['child_topics'] = {}
 
 	locations_counts = esr.agg_scenes_by_location(show_key, speaker=speaker)
 	tdata['location_counts'] = locations_counts['scenes_by_location']
@@ -386,33 +391,37 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 
 
 @web_app.get("/web/character_listing/{show_key}/", response_class=HTMLResponse, tags=['Web'])
-async def character_listing_page(request: Request, show_key: ShowKey, qt: str = None):
+def character_listing_page(request: Request, show_key: ShowKey, qt: str = None):
 	tdata = {}
 
 	tdata['header'] = 'character'
 	tdata['show_key'] = show_key.value
-	
-	speaker_counts = esr.composite_speaker_aggs(show_key)
-	tdata['speaker_stats'] = speaker_counts['speaker_agg_composite']
 
-	return_fields = ['speaker', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'parent_topics', 'child_topics']
-	s = esqb.fetch_indexed_speakers(show_key.value, return_fields=return_fields)
-	tdata['speakers'] = esrt.return_speakers(s)
+	indexed_speakers_response = esr.fetch_indexed_speakers(show_key)
+	indexed_speakers = indexed_speakers_response['speakers']
+	# indexed_speakers = {s['speaker']:s for s in indexed_speakers_response['speakers']}
+	for speaker in indexed_speakers:
+		speaker_topics_response = esr.fetch_speaker_topics(speaker['speaker'], show_key, 'meyersBriggsKiersey', level='leaf', limit=3)
+		speaker['topics'] = speaker_topics_response['speaker_topics']
+	tdata['indexed_speakers'] = indexed_speakers
+
+	# TODO well THIS is inefficient...
+	indexed_speaker_keys = [s['speaker'] for s in indexed_speakers]
+	speaker_aggs_response = esr.composite_speaker_aggs(show_key)
+	speaker_aggs = speaker_aggs_response['speaker_agg_composite']
+	tdata['non_indexed_speakers'] = [s for s in speaker_aggs if s['speaker'] not in indexed_speaker_keys]
 
 	tdata['speaker_matches'] = []
 	if qt:
 		tdata['qt'] = qt
-		qt = qt.lower()
-		# TODO I wish speaker_agg_composite were a dict instead of a list
-		for speaker in tdata['speaker_stats']:
-			if qt in speaker['speaker'].lower():
-				tdata['speaker_matches'].append(speaker)
+		speaker_search_response = esr.search_speakers(qt, show_key=show_key)
+		tdata['speaker_matches'] = speaker_search_response['speaker_matches']
 	
 	return templates.TemplateResponse('characterListing.html', {'request': request, 'tdata': tdata})
 
 
 @web_app.get("/web/topic_listing/{show_key}", response_class=HTMLResponse, tags=['Web'])
-async def topic_listing_page(request: Request, show_key: ShowKey, selected_topic_grouping: str = None):
+def topic_listing_page(request: Request, show_key: ShowKey, selected_topic_grouping: str = None):
 	tdata = {}
 
 	if not selected_topic_grouping:
@@ -427,8 +436,8 @@ async def topic_listing_page(request: Request, show_key: ShowKey, selected_topic
 	topic_groupings = EPISODE_TOPIC_GROUPINGS + SPEAKER_TOPIC_GROUPINGS
 
 	for tg in topic_groupings:
-		if tg.startswith('focused'):
-			tg = f'{tg}_{show_key.value}'
+		# if tg.startswith('focused'):
+		# 	tg = f'{tg}_{show_key.value}'
 		response = esr.fetch_topic_grouping(tg)
 		if 'topics' not in response:
 			continue
@@ -445,7 +454,7 @@ async def topic_listing_page(request: Request, show_key: ShowKey, selected_topic
 
 
 @web_app.get("/web/topic/{show_key}/{topic_grouping}/{topic_key}", response_class=HTMLResponse, tags=['Web'])
-async def topic_page(request: Request, show_key: ShowKey, topic_grouping: str, topic_key: str):
+def topic_page(request: Request, show_key: ShowKey, topic_grouping: str, topic_key: str):
 	tdata = {}
 
 	tdata['header'] = 'topic'
@@ -455,55 +464,31 @@ async def topic_page(request: Request, show_key: ShowKey, topic_grouping: str, t
 	tdata['episodes'] = []
 	tdata['speakers'] = []
 
-	# TODO groan this is gross, I think it was temporary but I feel it getting baked in...
-	focused_topic_grouping = topic_grouping
-	if topic_grouping.startswith('focused'):
-		focused_topic_grouping = f'{topic_grouping}_{show_key.value}'
-
-	topic_response = esr.fetch_topic(focused_topic_grouping, topic_key)
+	topic_response = esr.fetch_topic(topic_grouping, topic_key)
 	tdata['topic'] = topic_response['topic']
 	tdata['topic']['breadcrumb'] = tdata['topic']['topic_key']
 	if tdata['topic']['parent_key']:
 		tdata['topic']['breadcrumb'] = f"{tdata['topic']['parent_key']} > {tdata['topic']['breadcrumb']}"
 
 	if topic_grouping in EPISODE_TOPIC_GROUPINGS:
-		vector_search_response = esr.topic_episode_vector_search(focused_topic_grouping, topic_key, show_key)
-		if 'episodes' in vector_search_response:
-			episodes = vector_search_response['episodes']
-			if len(episodes) > 30:
-				episodes = episodes[:30]
-			tdata['episodes'] = episodes
+		episode_topic_response = esr.find_episodes_by_topic(show_key, topic_grouping, topic_key)
+		tdata['episode_topics'] = episode_topic_response['episode_topics']
 			
 	elif topic_grouping in SPEAKER_TOPIC_GROUPINGS:
-		speaker_response = esr.topic_speaker_search(focused_topic_grouping, topic_key, show_key=show_key, min_word_count=3000)
-		# vector_search_response = esr.topic_speaker_vector_search(focused_topic_grouping, topic_key, show_key)
-		if 'speakers' in speaker_response:
-			speakers = speaker_response['speakers']
-			is_parent_topic = speaker_response['is_parent_topic']
-			for speaker in speakers:
-				topics = []
-				if is_parent_topic:
-					if 'parent_topics' in speaker and topic_grouping in speaker['parent_topics']:
-						topics = speaker['parent_topics'][topic_grouping]
-				else:
-					if 'child_topics' in speaker and topic_grouping in speaker['child_topics']:
-						topics = speaker['child_topics'][topic_grouping]
-				speaker['topic_score'] = 0
-				for topic in topics:
-					if topic['topic_key'] == topic_key:
-						speaker['topic_score'] = topic['score']
-						break
-			# TODO evil post-response sorting, to be replaced by nested topic documents
-			speakers = sorted(speakers, key=itemgetter('topic_score'), reverse=True)
-			tdata['speakers'] = speakers
-			if len(speakers) > 30:
-				speakers = speakers[:30]
+		speaker_topic_response = esr.find_speakers_by_topic(topic_grouping, topic_key, show_key=show_key, min_word_count=3000)
+		tdata['speaker_topics'] = speaker_topic_response['speaker_topics']
+
+		speaker_season_topic_response = esr.find_speaker_seasons_by_topic(topic_grouping, topic_key, show_key, min_word_count=2000)
+		tdata['speaker_season_topics'] = speaker_season_topic_response['speaker_season_topics']
+
+		speaker_episode_topic_response = esr.find_speaker_episodes_by_topic(topic_grouping, topic_key, show_key, min_word_count=1000)
+		tdata['speaker_episode_topics'] = speaker_episode_topic_response['speaker_episode_topics']
 	
 	return templates.TemplateResponse('topic.html', {'request': request, 'tdata': tdata})
 
 
 @web_app.get("/web/graph/{show_key}", response_class=HTMLResponse, tags=['Web'])
-async def graph_page(request: Request, show_key: ShowKey, background_tasks: BackgroundTasks, num_clusters: int = 0):
+def graph_page(request: Request, show_key: ShowKey, background_tasks: BackgroundTasks, num_clusters: int = 0):
 	if not num_clusters:
 		num_clusters = 4
 

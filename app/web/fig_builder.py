@@ -274,8 +274,8 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
     if type == 'speakers':
         title='Character continuity over duration of series'
         # limit speaker gantt to those in `speakers` index (for visual layout, and only slightly for page load performance)
-        matches = esr.fetch_indexed_speakers(ShowKey(show_key), return_fields='name')
-        speakers = [m['name'] for m in matches['speakers']]
+        matches = esr.fetch_indexed_speakers(ShowKey(show_key), min_episode_count=2)
+        speakers = [m['speaker'] for m in matches['speakers']]
         df = df.loc[df['Task'].isin(speakers)]
     elif type == 'locations':
         title='Scene location continuity over course of series'

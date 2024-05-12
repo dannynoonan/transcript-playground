@@ -20,35 +20,28 @@
         <h5>{{ tdata['episode_count'] }} episodes, {{ tdata['scene_count'] }} scenes, {{ tdata['scene_event_count'] }} lines, {{ tdata['word_count'] }} words</h5>
 		<p>&nbsp;</p>
 
-
         <div class="row">
             <div class="col-6">
-                {% for topic_grouping, child_topics in tdata['child_topics'].items() %}
-                    <h3>{{ tdata['speaker'] }} {{ topic_grouping }} personality types</h3>
-                    <ol>
-                    {% for topic in child_topics %}
-                        {% if loop.index < 6 %}
-                        <li>
-                            <a class="alert-link" href="/web/topic/{{ tdata['show_key'] }}/{{ topic_grouping }}/{{ topic['topic_key'] }}">{{ topic['topic_key'] }}</a>: 
-                            {{ topic['topic_name'] }} ({{ topic['parent_name'] }})
-                        </li>
-                        {% endif %}
-                    {% endfor %}
-                    </ol>
-                    {% if tdata['parent_topics'] and tdata['parent_topics'][topic_grouping] %}
-                        Broader types:
-                        <ol>
-                        {% for topic in tdata['parent_topics'][topic_grouping] %}
-                            {% if loop.index < 3 %}
-                            <li>
-                                <a class="alert-link" href="/web/topic/{{ tdata['show_key'] }}/{{ topic_grouping }}/{{ topic['topic_key'] }}">{{ topic['topic_key'] }}</a>:
-                                {{ topic['topic_name'] }}
-                            </li>
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                    </ol><br/>
+                <h3>{{ tdata['speaker'] }} Meyers-Briggs personality types</h3>
+                <ol>
+                {% for topic in tdata['child_topics'] %}
+                    <li>
+                        <a class="alert-link" href="/web/topic/{{ tdata['show_key'] }}/meyersBriggsKiersey/{{ topic['topic_key'] }}">{{ topic['topic_key'] }}</a>: 
+                        {{ topic['topic_name'] }}
+                    </li>
                 {% endfor %}
+                </ol>
+                {% if tdata['parent_topics'] %}
+                    Broader types:
+                    <ol>
+                    {% for topic in tdata['parent_topics'] %}
+                        <li>
+                            <a class="alert-link" href="/web/topic/{{ tdata['show_key'] }}/meyersBriggsKiersey/{{ topic['topic_key'] }}">{{ topic['topic_key'] }}</a>:
+                            {{ topic['topic_name'] }}
+                        </li>
+                    {% endfor %}
+                {% endif %}
+                </ol><br/>
 
                 <!-- begin character-centric search form -->
                 <h3>{{ tdata['speaker'] }}-affiliated search</h3>
@@ -206,7 +199,7 @@
                                         <td>{{ season['line_count'] }}</td>
                                         <td>{{ season['word_count'] }}</td>
                                         <td>
-                                        {% for topic in season['child_topics']['meyersBriggsKiersey'] %}
+                                        {% for topic in season['topics'] %}
                                             {% if loop.index < 4 %}
                                                 {% set topic_names = topic['topic_name'].split('-') %}
                                                 {{ topic['topic_key'] }}: {{ topic_names[0] }}{% if loop.index < 3 %}, {% endif %}
@@ -250,7 +243,7 @@
                                         <td>{{ episode['line_count'] }}</td>
                                         <td>{{ episode['word_count'] }}</td>
                                         <td>
-                                        {% for topic in episode['child_topics']['meyersBriggsKiersey'] %}
+                                        {% for topic in episode['topics'] %}
                                             {% if loop.index < 3 %}
                                                 {{ topic['topic_key'] }}{% if loop.index < 2 %}, {% endif %}
                                             {% endif %}

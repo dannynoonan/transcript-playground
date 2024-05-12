@@ -1,5 +1,5 @@
 from datetime import datetime
-from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter, TokenCount, DenseVector, Object, Float
+from elasticsearch_dsl import Document, Date, Nested, InnerDoc, Keyword, Text, Integer, analyzer, token_filter, TokenCount, DenseVector, Object, Float, Boolean
 
 
 freetext_analyzer = analyzer('freetext_analyzer', tokenizer='standard', type='custom',
@@ -43,56 +43,22 @@ class EsEpisodeTranscript(Document):
     # generated 
     focal_speakers = Keyword(multi=True)
     focal_locations = Keyword(multi=True)
-    parent_topics = Object(multi=True)
-    child_topics = Object(multi=True)
-    # topics = Object(multi=True)
+    topics_universal = Object(multi=True)
+    topics_focused = Object(multi=True)
+    # parent_topics = Object(multi=True) # TODO remove
+    # child_topics = Object(multi=True) # TODO remove
     es_mlt_relations_text = Text(multi=True)
-    openai_ada002_relations_text = Text(multi=True)
-    es_mlt_relations_tuple = Object(multi=True)
-    openai_ada002_relations_tuple = Object(multi=True)
     es_mlt_relations_dict = Object(multi=True)
+    openai_ada002_relations_text = Text(multi=True)
     openai_ada002_relations_dict = Object(multi=True)
-    # webvectors_gigaword29_relations = Text(multi=True)
     # webvectors_enwiki223_relations = Text(multi=True)
     # glove_6B300d_relations = Text(multi=True)
-    # glove_twitter27B200d_relations = Text(multi=True)
-    # glove_twitter27B100d_relations = Text(multi=True)
-    # glove_42B300d_relations = Text(multi=True)
-    # glove_840B300d_relations = Text(multi=True)
     # fasttext_wikinews300d1M_relations = Text(multi=True)
-    # fasttext_crawl300d2M_relations = Text(multi=True)
     # embeddings per model
-    webvectors_gigaword29_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     webvectors_enwiki223_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     glove_6B300d_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
-    glove_twitter27B200d_embeddings = DenseVector(dims=200, index='true', similarity='cosine')
-    glove_twitter27B100d_embeddings = DenseVector(dims=100, index='true', similarity='cosine')
-    glove_42B300d_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
-    glove_840B300d_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     fasttext_wikinews300d1M_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
-    fasttext_crawl300d2M_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
-    # matched tokens per model
-    webvectors_gigaword29_tokens = Text()
-    webvectors_enwiki223_tokens = Text()
-    glove_6B300d_tokens = Text()
-    glove_twitter27B200d_tokens = Text()
-    glove_twitter27B100d_tokens = Text()
-    glove_42B300d_tokens = Text()
-    glove_840B300d_tokens = Text()
-    fasttext_wikinews300d1M_tokens = Text()
-    fasttext_crawl300d2M_tokens = Text()
-    # unmatched tokens per model
-    webvectors_gigaword29_no_match_tokens = Text()
-    webvectors_enwiki223_no_match_tokens = Text()
-    glove_6B300d_no_match_tokens = Text()
-    glove_twitter27B200d_no_match_tokens = Text()
-    glove_twitter27B100d_no_match_tokens = Text()
-    glove_42B300d_no_match_tokens = Text()
-    glove_840B300d_no_match_tokens = Text()
-    fasttext_wikinews300d1M_no_match_tokens = Text()
-    fasttext_crawl300d2M_no_match_tokens = Text()
-
 
     class Index:
         name = 'transcripts'
@@ -105,14 +71,6 @@ class EsEpisodeTranscript(Document):
         # self.meta.id = f'{self.show_key}_{self.episode_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
-    
-    def set_topics(self, topic_grouping: str, parent_topics: list, child_topics: list) -> None:
-        if not self.parent_topics:
-            self.parent_topics = {}
-        self.parent_topics[topic_grouping] = parent_topics
-        if not self.child_topics:
-            self.child_topics = {}
-        self.child_topics[topic_grouping] = child_topics
     
 
 class EsSpeaker(Document):
@@ -128,8 +86,10 @@ class EsSpeaker(Document):
     lines = Text(multi=True, analyzer=freetext_analyzer, term_vector='yes')
     seasons_to_episode_keys = Object(multi=True)
     most_frequent_companions = Object(multi=True)
-    parent_topics = Object(multi=True)
-    child_topics = Object(multi=True)
+    topics_mbti = Object(multi=True)
+    topics_dnda = Object(multi=True)
+    # parent_topics = Object(multi=True) # TODO remove
+    # child_topics = Object(multi=True) # TODO remove
     openai_ada002_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
@@ -143,14 +103,6 @@ class EsSpeaker(Document):
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
     
-    def set_topics(self, topic_grouping: str, parent_topics: list, child_topics: list) -> None:
-        if not self.parent_topics:
-            self.parent_topics = {}
-        self.parent_topics[topic_grouping] = parent_topics
-        if not self.child_topics:
-            self.child_topics = {}
-        self.child_topics[topic_grouping] = child_topics
-    
 
 class EsSpeakerSeason(Document):
     show_key = Keyword()
@@ -163,8 +115,10 @@ class EsSpeakerSeason(Document):
     word_count = Integer()
     lines = Text(multi=True)
     most_frequent_companions = Object(multi=True)
-    parent_topics = Object(multi=True)
-    child_topics = Object(multi=True)
+    topics_mbti = Object(multi=True)
+    topics_dnda = Object(multi=True)
+    # parent_topics = Object(multi=True) # TODO remove
+    # child_topics = Object(multi=True) # TODO remove
     openai_ada002_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
@@ -177,14 +131,6 @@ class EsSpeakerSeason(Document):
         self.meta.id = f'{self.show_key}_{self.speaker}_{self.season}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
-    
-    def set_topics(self, topic_grouping: str, parent_topics: list, child_topics: list) -> None:
-        if not self.parent_topics:
-            self.parent_topics = {}
-        self.parent_topics[topic_grouping] = parent_topics
-        if not self.child_topics:
-            self.child_topics = {}
-        self.child_topics[topic_grouping] = child_topics
     
 
 class EsSpeakerEpisode(Document):
@@ -201,8 +147,10 @@ class EsSpeakerEpisode(Document):
     word_count = Integer()
     lines = Text(multi=True)
     most_frequent_companions = Object(multi=True)
-    parent_topics = Object(multi=True)
-    child_topics = Object(multi=True)
+    topics_mbti = Object(multi=True)
+    topics_dnda = Object(multi=True)
+    # parent_topics = Object(multi=True) # TODO remove
+    # child_topics = Object(multi=True) # TODO remove
     openai_ada002_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
@@ -215,14 +163,6 @@ class EsSpeakerEpisode(Document):
         self.meta.id = f'{self.show_key}_{self.speaker}_{self.episode_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
-    
-    def set_topics(self, topic_grouping: str, parent_topics: list, child_topics: list) -> None:
-        if not self.parent_topics:
-            self.parent_topics = {}
-        self.parent_topics[topic_grouping] = parent_topics
-        if not self.child_topics:
-            self.child_topics = {}
-        self.child_topics[topic_grouping] = child_topics
 
 
 class EsTopic(Document):
@@ -241,5 +181,108 @@ class EsTopic(Document):
 
     def save(self, **kwargs):
         self.meta.id = f'{self.topic_grouping}_{self.topic_key}'
+        self.indexed_ts = datetime.now()
+        return super().save(**kwargs)
+    
+
+class EsEpisodeTopic(Document):
+    show_key = Keyword()
+    episode_key = Keyword()
+    episode_title = Text()
+    season = Integer()
+    sequence_in_season = Integer()
+    air_date = Date()
+    topic_grouping = Keyword()
+    topic_key = Keyword()
+    topic_name = Keyword()
+    is_parent = Boolean()
+    raw_score = Float()
+    score = Float()
+    model_vendor = Keyword()
+    model_version = Keyword()
+    indexed_ts = Date()
+
+    class Index:
+        name = 'episode_topics'
+
+    def save(self, **kwargs):
+        self.meta.id = f'{self.show_key}_{self.episode_key}_{self.topic_grouping}_{self.topic_key}_{self.model_vendor}_{self.model_version}'
+        self.indexed_ts = datetime.now()
+        return super().save(**kwargs)
+
+
+class EsSpeakerTopic(Document):
+    show_key = Keyword()
+    speaker = Keyword()
+    topic_grouping = Keyword()
+    topic_key = Keyword()
+    topic_name = Keyword()
+    is_parent = Boolean()
+    is_aggregate = Boolean()
+    raw_score = Float()
+    score = Float()
+    word_count = Integer()
+    model_vendor = Keyword()
+    model_version = Keyword()
+    indexed_ts = Date()
+
+    class Index:
+        name = 'speaker_topics'
+
+    def save(self, **kwargs):
+        self.meta.id = f'{self.show_key}_{self.speaker}_{self.topic_grouping}_{self.topic_key}_{self.model_vendor}_{self.model_version}'
+        self.indexed_ts = datetime.now()
+        return super().save(**kwargs)
+
+
+class EsSpeakerSeasonTopic(Document):
+    show_key = Keyword()
+    speaker = Keyword()
+    season = Integer()
+    topic_grouping = Keyword()
+    topic_key = Keyword()
+    topic_name = Keyword()
+    is_parent = Boolean()
+    is_aggregate = Boolean()
+    raw_score = Float()
+    score = Float()
+    word_count = Integer()
+    model_vendor = Keyword()
+    model_version = Keyword()
+    indexed_ts = Date()
+
+    class Index:
+        name = 'speaker_season_topics'
+
+    def save(self, **kwargs):
+        self.meta.id = f'{self.show_key}_{self.season}_{self.speaker}_{self.topic_grouping}_{self.topic_key}_{self.model_vendor}_{self.model_version}'
+        self.indexed_ts = datetime.now()
+        return super().save(**kwargs)
+
+
+class EsSpeakerEpisodeTopic(Document):
+    show_key = Keyword()
+    speaker = Keyword()
+    episode_key = Keyword()
+    episode_title = Text()
+    season = Integer()
+    sequence_in_season = Integer()
+    air_date = Date()
+    topic_grouping = Keyword()
+    topic_key = Keyword()
+    topic_name = Keyword()
+    is_parent = Boolean()
+    raw_score = Float()
+    score = Float()
+    word_count = Integer()
+    model_vendor = Keyword()
+    model_version = Keyword()
+    indexed_ts = Date()
+
+    class Index:
+        name = 'speaker_episode_topics'
+
+    def save(self, **kwargs):
+        self.meta.id = f'{self.show_key}_{self.episode_key}_{self.speaker}_{self.topic_grouping}_{self.topic_key}_{self.model_vendor}_{self.model_version}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)

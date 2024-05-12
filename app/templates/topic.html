@@ -6,7 +6,10 @@
 
 {% block content %} 
     <div class="margin">
-        <h3>Topic: {{ tdata['topic']['breadcrumb'] }}</h3>
+        <a href="/web/topic_listing/{{ tdata['show_key'] }}?selected_topic_grouping={{ tdata['topic_grouping'] }}" 
+            class="alert-link">&lt;&lt;&nbsp; Back to '{{ tdata['topic_grouping'] }}' topic listing</a>
+        <br/><br/>
+        <h3>Topic: {{ tdata['topic']['breadcrumb'] }}: <strong>{{ tdata['topic']['topic_name'] }}</strong></h3>
 		<br/>
 
         <table class="table table-hover table-striped table-fit">
@@ -20,29 +23,41 @@
                     <td class="table-secondary">{{ tdata['topic']['topic_key'] }}</td>
                 </tr>
                 <tr>
+                    <td class="table-success">name</td>
+                    <td class="table-secondary">{{ tdata['topic']['topic_name'] }}</td>
+                </tr>
+                <tr>
                     <td class="table-success">breadcrumb</td>
                     <td class="table-secondary">{{ tdata['topic']['breadcrumb'] }}</td>
                 </tr>
                 <tr>
                     <td class="table-success">description</td>
-                    <td class="table-secondary">{% autoescape false %}
-                        {{ tdata['topic']['description']|replace("\\n", "<br/>") }}
-                        {% endautoescape %}</td>
+                    <td class="table-secondary">
+                        <div class="overflow-scroll" style="max-height: 400px;">
+                        {% autoescape false %}
+                            {{ tdata['topic']['description']|replace("\\n", "<br/>") }}
+                        {% endautoescape %}
+                        </div>
+                    </td>
                 </tr>
-                {% if tdata['topic']['parent_description'] != '' %}
+                {% if tdata['topic']['parent_description'] and tdata['topic']['parent_description'] != '' %}
                 <tr>
                     <td class="table-success">parent description</td>
-                    <td class="table-secondary">{% autoescape false %}
-                        {{ tdata['topic']['parent_description']|replace("\\n", "<br/>") }}
-                        {% endautoescape %}</td>
+                    <td class="table-secondary">
+                        <div class="overflow-scroll" style="max-height: 300px;">
+                        {% autoescape false %}
+                            {{ tdata['topic']['parent_description']|replace("\\n", "<br/>") }}
+                        {% endautoescape %}
+                        </div>
+                    </td>
                 </tr>
                 {% endif %}
             </tbody>
         </table>
         <br/>
 
-        {% if tdata['episodes'] %}
-        <h3>Top <strong>{{ tdata['episodes']|length }}</strong> {{ tdata['show_key'] }} episodes matching <strong>{{ tdata['topic_grouping'] }}</strong> topic <strong>"{{ tdata['topic']['breadcrumb'] }}"</strong></h3>
+        {% if tdata['episode_topics'] %}
+        <h3>Top <strong>{{ tdata['episode_topics']|length }}</strong> {{ tdata['show_key'] }} episodes matching <strong>{{ tdata['topic_grouping'] }}</strong> topic <strong>"{{ tdata['topic']['breadcrumb'] }}"</strong></h3>
         <br/>
 
         <table class="table table-hover table-striped table-fit">
@@ -51,50 +66,117 @@
                     <th scope="col">Title</th>
                     <th scope="col">Season</th>
                     <th scope="col">Episode</th>
-                    <th scope="col">Focal characters</th>
-                    <th scope="col">Focal locations</th>
                     <th scope="col">Air date</th>
                     <th scope="col">Score</th>
+                    <th scope="col">Raw</th>
                 </tr>
             </thead>
             <tbody>
-                {% for episode in tdata['episodes'] %}
+                {% for episode_topic in tdata['episode_topics'] %}
                 <tr class="table-secondary">
-                    <th scope="row"><a href="/web/episode/{{ episode['show_key'] }}/{{ episode['episode_key'] }}" 
-                        class="alert-link">{{ episode['title'] }}</a></th>
-                    <td>{{ episode['season'] }}</td>
-                    <td>{{ episode['sequence_in_season'] }}</td>
-                    <td>{{ episode['focal_speakers']|join(', ') }}</td>
-                    <td>{{ episode['focal_locations']|join(', ') }}</td>
-                    <td>{{ episode['air_date']|truncate(10,true,'') }}</td>
-                    <td>{{ '%0.2f'|format(episode['score']|float) }}</td>
+                    <th scope="row"><a href="/web/episode/{{ episode_topic['show_key'] }}/{{ episode_topic['episode_key'] }}" 
+                        class="alert-link">{{ episode_topic['episode_title'] }}</a></th>
+                    <td>{{ episode_topic['season'] }}</td>
+                    <td>{{ episode_topic['sequence_in_season'] }}</td>
+                    <td>{{ episode_topic['air_date']|truncate(10,true,'') }}</td>
+                    <td>{{ '%0.2f'|format(episode_topic['score']|float) }}</td>
+                    <td>{{ '%0.2f'|format(episode_topic['raw_score']|float) }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
         {% endif %}
 
-        {% if tdata['speakers'] %}
-        <h3>Top <strong>{{ tdata['speakers']|length }}</strong> {{ tdata['show_key'] }} speakers matching <strong>{{ tdata['topic_grouping'] }}</strong> topic <strong>{{ tdata['topic']['topic_key'] }}:"{{ tdata['topic']['topic_name'] }}"</strong></h3>
-        <br/>
-
-        <table class="table table-hover table-striped table-fit">
-            <thead>
-                <tr class="table-success">
-                    <th scope="col">Character</th>
-                    <th scope="col">Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for speaker in tdata['speakers'] %}
-                <tr class="table-secondary">
-                    <th scope="row"><a href="/web/character/{{ tdata['show_key'] }}/{{ speaker['speaker'] }}" 
-                        class="alert-link">{{ speaker['speaker'] }}</a></th>
-                    <td>{{ '%0.2f'|format(speaker['topic_score']|float) }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        {% if tdata['speaker_topics'] or tdata['speaker_season_topics'] or tdata['speaker_episode_topics'] %}
+        <div class="row">
+            <h3>Top speakers matching <strong>{{ tdata['topic_grouping'] }}</strong> topic <strong>{{ tdata['topic']['topic_key'] }}:"{{ tdata['topic']['topic_name'] }}"</strong></h3>
+            <br/><br/>
+            {% if tdata['speaker_topics'] %}
+            <div class="col-3">
+                <h4>By series:</h4>
+                <table class="table table-hover table-striped table-fit">
+                    <thead>
+                        <tr class="table-success">
+                            <th scope="col">Character</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Raw</th>
+                            <th scope="col">Agg?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for speaker_topic in tdata['speaker_topics'] %}
+                        <tr class="table-secondary">
+                            <th scope="row"><a href="/web/character/{{ tdata['show_key'] }}/{{ speaker_topic['speaker'] }}" 
+                                class="alert-link">{{ speaker_topic['speaker'] }}</a></th>
+                            <td>{{ '%0.2f'|format(speaker_topic['score']|float) }}</td>
+                            <td>{{ '%0.2f'|format(speaker_topic['raw_score']|float) }}</td>
+                            <td>{{ speaker_topic['is_aggregate'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+            {% if tdata['speaker_season_topics'] %}
+            <div class="col-4">
+                <h4>By season:</h4>
+                <table class="table table-hover table-striped table-fit">
+                    <thead>
+                        <tr class="table-success">
+                            <th scope="col">Character</th>
+                            <th scope="col">Season</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Raw</th>
+                            <th scope="col">Agg?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for speaker_season_topic in tdata['speaker_season_topics'] %}
+                        <tr class="table-secondary">
+                            <th scope="row"><a href="/web/character/{{ tdata['show_key'] }}/{{ speaker_season_topic['speaker'] }}" 
+                                class="alert-link">{{ speaker_season_topic['speaker'] }}</a></th>
+                            <td>{{ speaker_season_topic['season'] }}</td>
+                            <td>{{ '%0.2f'|format(speaker_season_topic['score']|float) }}</td>
+                            <td>{{ '%0.2f'|format(speaker_season_topic['raw_score']|float) }}</td>
+                            <td>{{ speaker_season_topic['is_aggregate'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+            {% if tdata['speaker_episode_topics'] %}
+            <div class="col-5">
+                <h4>By episode:</h4>
+                <table class="table table-hover table-striped table-fit">
+                    <thead>
+                        <tr class="table-success">
+                            <th scope="col">Character</th>
+                            <th scope="col">Season</th>
+                            <th scope="col">Episode</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Raw</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for speaker_episode_topic in tdata['speaker_episode_topics'] %}
+                        <tr class="table-secondary">
+                            <th scope="row"><a href="/web/character/{{ tdata['show_key'] }}/{{ speaker_episode_topic['speaker'] }}" 
+                                class="alert-link">{{ speaker_episode_topic['speaker'] }}</a></th>
+                            <td>{{ speaker_episode_topic['season'] }}</td>
+                            <td>{{ speaker_episode_topic['sequence_in_season'] }}</td>
+                            <td><a href="/web/episode/{{ tdata['show_key'] }}/{{ speaker_episode_topic['episode_key'] }}" 
+                                class="alert-link">{{ speaker_episode_topic['episode_title'] }}</a></td>
+                            <td>{{ '%0.2f'|format(speaker_episode_topic['score']|float) }}</td>
+                            <td>{{ '%0.2f'|format(speaker_episode_topic['raw_score']|float) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </div>
         {% endif %}
 
     </div>

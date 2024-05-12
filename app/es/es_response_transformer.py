@@ -85,6 +85,36 @@ def return_topics(s: Search) -> dict:
         topics.append(hit._source._d_)
 
     return topics
+
+
+def return_topics_by_episode(s: Search) -> dict:
+    print(f'begin return_topics_by_episode for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = {}
+
+    for hit in s.hits.hits:
+        if hit._source.episode_key not in results:
+            results[hit._source.episode_key] = []
+        results[hit._source.episode_key].append(hit._source._d_)
+    
+    return results
+
+
+def return_topics_by_season(s: Search) -> dict:
+    print(f'begin return_topics_by_season for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = {}
+
+    for hit in s.hits.hits:
+        if hit._source.season not in results:
+            results[hit._source.season] = []
+        results[hit._source.season].append(hit._source._d_)
+    
+    return results
     
 
 def return_episodes_by_title(s: Search) -> list:

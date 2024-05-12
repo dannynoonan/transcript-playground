@@ -16,22 +16,6 @@
 		<div class="row">
 			<div class="col-6">
 
-				{% if tdata['episode']['child_topics'] %}
-					{% if tdata['episode']['child_topics']['universalGenres'] %}
-					<h3>Genre mappings</h3>
-					<ol>
-						{% for topic in tdata['episode']['child_topics']['universalGenres'] %}
-							{% if loop.index < 9 %}
-							<li>
-								{{ topic['parent_name'] }} > {{ topic['topic_name'] }} 
-							</li>
-							{% endif %}
-						{% endfor %}
-					</ol>
-					{% endif %}
-				<br/>
-				{% endif %}
-
 				<!-- begin in-episode search form -->
 				<h3>In-episode search</h3>
 				<br/>
@@ -374,7 +358,7 @@
 						</div>
 					</div>
 				</div>
-				{% for topic_grouping, topics in tdata['topic_embeddings'].items() %}
+				{% for topic_grouping, episode_topics in tdata['topics_by_grouping'].items() %}
 				<p>&nbsp;</p>
 				<div class="row">
 					<div class="col-12">
@@ -383,21 +367,22 @@
 							<table class="table table-hover table-striped table-fit">
 								<thead>
 									<tr class="table-success">
-										<th scope="col">Score</th>
-										<th scope="col">Topic key</th>
+										<th scope="col">Key</th>
 										<th scope="col">Name</th>
-										<!-- <th scope="col">Breadcrumb</th> -->
-										<th scope="col">Decription</th>
+										<th scope="col">Score</th>
+										<th scope="col">Raw</th>
 									</tr>
 								</thead>
 								<tbody>
-									{% for topic in topics %}
+									{% for episode_topic in episode_topics %}
 									<tr class="table-secondary">
-										<td>{{ '%0.2f'|format(topic['score']|float) }}</td>
-										<td>{{ topic['topic_key'] }}</td>
-										<td>{{ topic['name'] }}</td>
-										<!-- <td>{{ topic['breadcrumb'] }}</td> -->
-										<td>{{ topic['description']|truncate(180,true,'') }}...</td>
+										<td>
+											<a class="text-white" href="/web/topic/{{ tdata['show_key'] }}/{{ topic_grouping }}/{{ episode_topic['topic_key'] }}">
+												{{ episode_topic['topic_key'] }}</a>
+										</td>
+										<td>{{ episode_topic['topic_name'] }}</td>
+										<td>{{ '%0.2f'|format(episode_topic['score']|float) }}</td>
+										<td>{{ '%0.2f'|format(episode_topic['raw_score']|float) }}</td>
 									</tr>
 									{% endfor %}
 								</tbody>
