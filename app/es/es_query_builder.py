@@ -235,8 +235,11 @@ def search_speakers(qt: str, show_key: str, return_fields: list = None) -> Searc
     s = Search(index='speakers')
     s = s.extra(size=100)
 
+    # TODO this gets around limits on searching keyword `speaker` field, but true solution would be to add this to `alt_names` or `searchable_names`
+    qt_upper = qt.upper()
+
     q = Q('bool', minimum_should_match=1, should=[
-            Q('match', speaker=qt), Q('match', alt_names=qt), Q('match', actor_names=qt)])
+            Q('match', speaker=qt_upper), Q('match', alt_names=qt), Q('match', actor_names=qt)])
 
     s = s.query(q)
 
@@ -276,14 +279,18 @@ def fetch_speaker_season(show_key: str, speaker_name: str, season: int) -> EsSpe
     return speaker_season
 
 
-def fetch_speaker_seasons(show_key: str, speaker: str, season: int = None, return_fields: list = []) -> Search:
+def fetch_speaker_seasons(show_key: str, speaker: str = None, season: int = None, return_fields: list = []) -> Search:
     print(f'begin fetch_speaker_seasons for show_key={show_key} speaker={speaker} season={season} return_fields={return_fields}')
+
+    if not (speaker or season):
+        raise Exception('fetch_speaker_episodes requires at least `speaker` or `season')
 
     s = Search(index='speaker_seasons')
     s = s.extra(size=1000)
 
     s = s.filter('term', show_key=show_key)
-    s = s.filter('term', speaker=speaker)
+    if speaker:
+        s = s.filter('term', speaker=speaker)
     if season:
         s = s.filter('term', season=season)
 
@@ -327,14 +334,18 @@ def fetch_speaker_episode(show_key: str, speaker_name: str, episode_key: str) ->
     return speaker_episode
 
 
-def fetch_speaker_episodes(show_key: str, speaker: str, season: int = None, episode_key: str = None, return_fields: list = []) -> Search:
-    print(f'begin fetch_speaker_episodes for show_key={show_key} speaker={speaker} episode_key={episode_key} season={season} return_fields={return_fields}')
+def fetch_speaker_episodes(show_key: str, speaker: str = None, episode_key: str = None, season: int = None, return_fields: list = []) -> Search:
+    print(f'begin fetch_speaker_episodes for show_key={show_key} episode_key={episode_key} speaker={speaker} season={season} return_fields={return_fields}')
+
+    if not (speaker or episode_key):
+        raise Exception('fetch_speaker_episodes requires at least `speaker` or `episode_key')
 
     s = Search(index='speaker_episodes')
     s = s.extra(size=1000)
 
     s = s.filter('term', show_key=show_key)
-    s = s.filter('term', speaker=speaker)
+    if speaker:
+        s = s.filter('term', speaker=speaker)
     if episode_key:
         s = s.filter('term', episode_key=episode_key)
     elif season:
@@ -1491,7 +1502,8 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
     if index_name == 'speakers':
         source = ['show_key', 'speaker']
     else:
-        source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations']
+        source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations', 
+                  'topics_universal', 'topics_focused']
     
     response = es_conn.knn_search(index=index_name, knn=knn_query, filter=filter_query, source=source)
 

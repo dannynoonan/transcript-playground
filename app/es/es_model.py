@@ -45,8 +45,6 @@ class EsEpisodeTranscript(Document):
     focal_locations = Keyword(multi=True)
     topics_universal = Object(multi=True)
     topics_focused = Object(multi=True)
-    # parent_topics = Object(multi=True) # TODO remove
-    # child_topics = Object(multi=True) # TODO remove
     es_mlt_relations_text = Text(multi=True)
     es_mlt_relations_dict = Object(multi=True)
     openai_ada002_relations_text = Text(multi=True)
@@ -88,8 +86,6 @@ class EsSpeaker(Document):
     most_frequent_companions = Object(multi=True)
     topics_mbti = Object(multi=True)
     topics_dnda = Object(multi=True)
-    # parent_topics = Object(multi=True) # TODO remove
-    # child_topics = Object(multi=True) # TODO remove
     openai_ada002_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
@@ -117,8 +113,6 @@ class EsSpeakerSeason(Document):
     most_frequent_companions = Object(multi=True)
     topics_mbti = Object(multi=True)
     topics_dnda = Object(multi=True)
-    # parent_topics = Object(multi=True) # TODO remove
-    # child_topics = Object(multi=True) # TODO remove
     openai_ada002_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
@@ -149,8 +143,6 @@ class EsSpeakerEpisode(Document):
     most_frequent_companions = Object(multi=True)
     topics_mbti = Object(multi=True)
     topics_dnda = Object(multi=True)
-    # parent_topics = Object(multi=True) # TODO remove
-    # child_topics = Object(multi=True) # TODO remove
     openai_ada002_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()

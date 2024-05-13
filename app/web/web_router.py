@@ -31,8 +31,8 @@ async def show_page(request: Request, show_key: ShowKey):
 	location_counts = esr.composite_location_aggs(show_key)
 	tdata['location_counts'] = location_counts['location_agg_composite']
 
-	speaker_counts = esr.composite_speaker_aggs(show_key)
-	tdata['speaker_counts'] = speaker_counts['speaker_agg_composite']
+	indexed_speakers_response = esr.fetch_indexed_speakers(show_key, extra_fields='topics_mbti')
+	tdata['indexed_speakers'] = indexed_speakers_response['speakers']
 
 	keywords = esr.keywords_by_corpus(show_key, exclude_speakers=True)
 	tdata['keywords'] = keywords['keywords']
@@ -84,8 +84,12 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 	episode_word_counts = esr.agg_dialog_word_counts(show_key, episode_key=episode_key)
 	tdata['episode_word_counts'] = episode_word_counts['dialog_word_counts']
 
+	# TODO this is still being used in episode.html for top line agg stats, gotta get off of that
 	speaker_counts = esr.composite_speaker_aggs(show_key, episode_key=episode_key)
 	tdata['speaker_counts'] = speaker_counts['speaker_agg_composite']
+
+	speaker_episodes_response = esr.fetch_speakers_for_episode(show_key, episode_key, extra_fields='topics_mbti')
+	tdata['speaker_episodes'] = speaker_episodes_response['speaker_episodes']
 	
 	keywords = esr.keywords_by_episode(show_key, episode_key, exclude_speakers=True)
 	tdata['keywords'] = keywords['keywords']
@@ -263,14 +267,8 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 		es_speaker = response['speaker']
 		if 'episodes' in es_speaker:
 			tdata['episodes'] = es_speaker['episodes']
-		# else:
-		# 	# TODO if this happens something is wrong
-		# 	tdata['episodes'] = []
 		if 'seasons' in es_speaker:
 			tdata['seasons'] = es_speaker['seasons']
-		# else:
-		# 	# TODO if this happens something is wrong
-		# 	tdata['seasons'] = []
 		tdata['season_count'] = es_speaker['season_count']
 		tdata['episode_count'] = es_speaker['episode_count']
 		tdata['scene_count'] = es_speaker['scene_count']
@@ -280,24 +278,16 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 			tdata['actor_names'] = es_speaker['actor_names']
 		if 'alt_names' in es_speaker:
 			tdata['alt_names'] = [name for name in es_speaker['alt_names'] if name.upper() != speaker]
-		# inject topics into speaker, speaker_seasons, and speaker_episodes
-		# TODO bleh I may have made a terrible mistake by not nesting topics
-		child_topics_response = esr.fetch_speaker_topics(speaker, show_key, 'meyersBriggsKiersey', level='child', limit=5)
-		tdata['child_topics'] = child_topics_response['speaker_topics']
-		parent_topics_response = esr.fetch_speaker_topics(speaker, show_key, 'meyersBriggsKiersey', level='parent', limit=2)
-		tdata['parent_topics'] = parent_topics_response['speaker_topics']
-		season_topics_response = esr.fetch_speaker_season_topics(speaker, show_key, 'meyersBriggsKiersey', level='child')
-		season_topics = season_topics_response['speaker_season_topics']
-		for season in tdata['seasons']:
-			s_key = season['season']
-			if s_key in season_topics:
-				season['topics'] = season_topics[s_key]
-		episode_topics_response = esr.fetch_speaker_episode_topics(speaker, show_key, 'meyersBriggsKiersey', level='child')
-		episode_topics = episode_topics_response['speaker_episode_topics']
-		for episode in tdata['episodes']:
-			e_key = episode['episode_key']
-			if e_key in episode_topics:
-				episode['topics'] = episode_topics[e_key]
+
+		# inject full spectrum of speaker topics
+		tdata['child_topics_by_grouping'] = {}
+		tdata['parent_topics_by_grouping'] = {}
+		for topic_grouping in SPEAKER_TOPIC_GROUPINGS:
+			child_topics_response = esr.fetch_speaker_topics(speaker, show_key, topic_grouping, level='child')
+			tdata['child_topics_by_grouping'][topic_grouping] = child_topics_response['speaker_topics']
+			parent_topics_response = esr.fetch_speaker_topics(speaker, show_key, topic_grouping, level='parent')
+			tdata['parent_topics_by_grouping'][topic_grouping] = parent_topics_response['speaker_topics']
+
 	# TODO legacy, would love to remove this
 	else:
 		episode_matches = esr.search_scene_events(show_key, speaker=speaker)
@@ -397,12 +387,8 @@ def character_listing_page(request: Request, show_key: ShowKey, qt: str = None):
 	tdata['header'] = 'character'
 	tdata['show_key'] = show_key.value
 
-	indexed_speakers_response = esr.fetch_indexed_speakers(show_key)
+	indexed_speakers_response = esr.fetch_indexed_speakers(show_key, extra_fields='topics_mbti')
 	indexed_speakers = indexed_speakers_response['speakers']
-	# indexed_speakers = {s['speaker']:s for s in indexed_speakers_response['speakers']}
-	for speaker in indexed_speakers:
-		speaker_topics_response = esr.fetch_speaker_topics(speaker['speaker'], show_key, 'meyersBriggsKiersey', level='leaf', limit=3)
-		speaker['topics'] = speaker_topics_response['speaker_topics']
 	tdata['indexed_speakers'] = indexed_speakers
 
 	# TODO well THIS is inefficient...

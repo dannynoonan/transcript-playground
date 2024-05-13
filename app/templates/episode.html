@@ -6,15 +6,20 @@
 
 {% block content %} 
 	<div class="margin">
-		<h3>Season {{ tdata['episode']['season'] }}, Episode {{ tdata['episode']['sequence_in_season'] }}: 
-			<strong>"{{ tdata['episode']['title'] }}"</strong> <small>({{ tdata['episode']['air_date']|truncate(10,true,'') }})</small>
-			<small>[<a href="/tsp_dash/episode-gantt-chart?show_key={{ tdata['show_key'] }}&episode_key={{ tdata['episode_key'] }}">Dialog & location gantt charts</a>]</small>
-		</h3>
-		<p>&lt;&lt;&nbsp; Previous episode &nbsp;|&nbsp; Next episode &nbsp;&gt;&gt;</p>
-		<p>&nbsp;</p>
 
+		<!-- BEGIN ROW ONE -->
 		<div class="row">
+
+			<!-- BEGIN LEFT COLUMN -->
 			<div class="col-6">
+
+				<!-- begin top line info -->
+				<h3>Season {{ tdata['episode']['season'] }}, Episode {{ tdata['episode']['sequence_in_season'] }}: 
+					<strong>"{{ tdata['episode']['title'] }}"</strong> <small>({{ tdata['episode']['air_date']|truncate(10,true,'') }})</small></h3>
+				<p>[<a href="/tsp_dash/episode-gantt-chart?show_key={{ tdata['show_key'] }}&episode_key={{ tdata['episode_key'] }}">Dialog & location gantt charts</a>]</p>
+				<p>&lt;&lt;&nbsp; Previous episode &nbsp;|&nbsp; Next episode &nbsp;&gt;&gt;</p>
+				<p>&nbsp;</p>
+				<!-- end top line info -->
 
 				<!-- begin in-episode search form -->
 				<h3>In-episode search</h3>
@@ -197,10 +202,67 @@
 				{% endif %}
 				<!-- end full transcript display -->
 			</div>
+			<!-- END LEFT COLUMN -->
 
-			<!-- begin statistics frames -->
+			<!-- BEGIN RIGHT COLUMN -->
 			<div class="col-6">
+
+				<!-- begin first row of right column -->
 				<div class="row">
+
+					<!-- begin characters panel -->
+					<div class="col-8">
+						<h3>Characters (<a href="/tsp_dash/speaker-3d-network-graph?show_key={{ tdata['show_key'] }}&episode_key={{ tdata['episode_key'] }}">3d graph</a>)</h3>
+						<div class="overflow-scroll" style="max-height: 500px;">
+							<table class="table table-hover table-striped table-fit">
+								<thead>
+									<tr class="table-success">
+										<th scope="col">Speaker</th>
+										<th scope="col">Scenes</th>
+										<th scope="col">Lines</th>
+										<th scope="col">Words</th>
+										<th scope="col">Score</th>
+										<th scope="col">Meyers-Briggs</th>
+									</tr>
+								</thead>
+								<tbody>
+								{% for speaker in tdata['speaker_episodes'] %}
+									<tr class="table-secondary">
+									{% if speaker['speaker'] == '_ALL_' %}
+										<th scope="row">[ALL]</th>
+										<td><strong>{{ speaker['scene_count'] }}</strong></td>
+										<td><strong>{{ speaker['line_count'] }}</strong></td>
+										<td><strong>{{ speaker['word_count'] }}</strong></td>
+										<td>&nbsp;</td>
+									{% else %}
+										<th scope="row">
+											<a href="/web/character/{{ tdata['show_key'] }}/{{ speaker['speaker'] }}" 
+												class="alert-link">{{ speaker['speaker'] }}</a></th>
+										<td><a href="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?speaker={{ speaker['speaker'] }}&search_type=advanced" 
+												class="alert-link">{{ speaker['scene_count'] }}</a></td>
+										<td><a href="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?speaker={{ speaker['speaker'] }}&search_type=advanced" 
+											class="alert-link">{{ speaker['line_count'] }}</a></td>
+										<td>{{ speaker['word_count'] }}</td>
+										<td>{{ '%0.2f'|format(speaker['agg_score']|float) }}</td>
+										<td>
+										{% if speaker['topics_mbti'] %}
+											{% for topic in speaker['topics_mbti'] %}
+												{% if loop.index < 4 %}
+													{{ topic['topic_key'] }}{% if loop.index < 3 %}, {% endif %}
+												{% endif %}
+											{% endfor %}
+										{% endif %}
+										</td>
+									{% endif %}
+									</tr>
+								{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- begin characters panel -->
+
+					<!-- begin locations panel -->
 					<div class="col-4">
 						<h3>Locations</h3>
 						<div class="overflow-scroll" style="max-height: 500px;">
@@ -231,67 +293,17 @@
 							</table>
 						</div>
 					</div>
-					<div class="col-5">
-						<h3>Characters (<a href="/tsp_dash/speaker-3d-network-graph?show_key={{ tdata['show_key'] }}&episode_key={{ tdata['episode_key'] }}">3d graph</a>)</h3>
-						<div class="overflow-scroll" style="max-height: 500px;">
-							<table class="table table-hover table-striped table-fit">
-								<thead>
-									<tr class="table-success">
-										<th scope="col">Speaker</th>
-										<th scope="col">Scenes</th>
-										<th scope="col">Lines</th>
-										<th scope="col">Words</th>
-									</tr>
-								</thead>
-								<tbody>
-								{% for speaker in tdata['speaker_counts'] %}
-									<tr class="table-secondary">
-									{% if speaker['speaker'] == '_ALL_' %}
-										<th scope="row">[ALL]</th>
-										<td><strong>{{ speaker['scene_count'] }}</strong></td>
-										<td><strong>{{ speaker['line_count'] }}</strong></td>
-										<td><strong>{{ speaker['word_count'] }}</strong></td>
-									{% else %}
-										<th scope="row">
-											<a href="/web/character/{{ tdata['show_key'] }}/{{ speaker['speaker'] }}" 
-												class="alert-link">{{ speaker['speaker'] }}</a></th>
-										<td><a href="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?speaker={{ speaker['speaker'] }}&search_type=advanced" 
-												class="alert-link">{{ speaker['scene_count'] }}</a></td>
-										<td><a href="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?speaker={{ speaker['speaker'] }}&search_type=advanced" 
-											class="alert-link">{{ speaker['line_count'] }}</a></td>
-										<td>{{ speaker['word_count'] }}</td>
-									{% endif %}
-									</tr>
-								{% endfor %}
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div class="col-3">
-						<h3>Keywords</h3>
-						<div class="overflow-scroll" style="max-height: 500px;">
-							<table class="table table-hover table-striped table-fit">
-								<thead>
-									<tr class="table-primary">
-										<th scope="col">Term</th>
-										<th scope="col">Score</th>
-									</tr>
-								</thead>
-								<tbody>
-									{% for keyword in tdata['keywords'] %}
-									<tr class="table-secondary">
-										<th scope="row">{{  keyword['term'] }}</th>
-										<td>{{ '%0.2f'|format(keyword['score']|float) }}</td>
-									</tr>
-									{% endfor %}
-								</tbody>
-							</table>
-						</div>
-					</div>
+					<!-- end locations panel -->
+
 				</div>
 				<p>&nbsp;</p>
+				<!-- end right column first row -->
+
+				<!-- begin right column second row -->
 				<div class="row">
 					<div class="col-12">
+
+						<!-- begin similar episodes -->
 						<h3>Similar episodes - Elasticsearch MLT</h3>
 						<div class="overflow-scroll" style="max-height: 600px;">
 							<table class="table table-hover table-striped table-fit">
@@ -301,7 +313,7 @@
 										<th scope="col">Season</th>
 										<th scope="col">Episode</th>
 										<th scope="col">Focal characters</th>
-										<th scope="col">Focal locations</th>
+										<th scope="col">Genres</th>
 										<th scope="col">Air date</th>
 										<th scope="col">Score</th>
 									</tr>
@@ -313,7 +325,15 @@
 										<td>{{ sim_ep['season'] }}</td>
 										<td>{{ sim_ep['sequence_in_season'] }}</td>
 										<td>{{ sim_ep['focal_speakers']|join(', ') }}</td>
-										<td>{{ sim_ep['focal_locations']|join(', ') }}</td>
+										<td>
+										{% if sim_ep['topics_universal'] %}
+											{% for topic in sim_ep['topics_universal'] %}
+												{% if loop.index < 4 %}
+													{{ topic['topic_key'] }}{% if loop.index < 3 %}, {% endif %}
+												{% endif %}
+											{% endfor %}
+										{% endif %}
+										</td>
 										<td>{{ sim_ep['air_date']|truncate(10,true,'') }}</td>
 										<td>{{ '%0.2f'|format(sim_ep['score']|float) }}</td>
 									</tr>
@@ -321,11 +341,8 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
-				</div>
-				<p>&nbsp;</p>
-				<div class="row">
-					<div class="col-12">
+						<p>&nbsp;</p>
+
 						<h3>Similar episodes - OpenAI cosine similarity</h3>
 						<div class="overflow-scroll" style="max-height: 600px;">
 							<table class="table table-hover table-striped table-fit">
@@ -335,7 +352,7 @@
 										<th scope="col">Season</th>
 										<th scope="col">Episode</th>
 										<th scope="col">Focal characters</th>
-										<th scope="col">Focal locations</th>
+										<th scope="col">Genres</th>
 										<th scope="col">Air date</th>
 										<th scope="col">Score</th>
 									</tr>
@@ -348,7 +365,15 @@
 										<td>{{ sim_ep['season'] }}</td>
 										<td>{{ sim_ep['sequence_in_season'] }}</td>
 										<td>{{ sim_ep['focal_speakers']|join(', ') }}</td>
-										<td>{{ sim_ep['focal_locations']|join(', ') }}</td>
+										<td>
+										{% if sim_ep['topics_universal'] %}
+											{% for topic in sim_ep['topics_universal'] %}
+												{% if loop.index < 4 %}
+													{{ topic['topic_key'] }}{% if loop.index < 3 %}, {% endif %}
+												{% endif %}
+											{% endfor %}
+										{% endif %}
+										</td>
 										<td>{{ sim_ep['air_date']|truncate(10,true,'') }}</td>
 										<td>{{ '%0.2f'|format(sim_ep['score']|float) }}</td>
 									</tr>
@@ -356,12 +381,11 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
-				</div>
-				{% for topic_grouping, episode_topics in tdata['topics_by_grouping'].items() %}
-				<p>&nbsp;</p>
-				<div class="row">
-					<div class="col-12">
+						<p>&nbsp;</p>
+						<!-- end similar episodes -->
+
+						<!-- begin episode topics -->
+						{% for topic_grouping, episode_topics in tdata['topics_by_grouping'].items() %}
 						<h3>Topics: {{ topic_grouping }} - OpenAI cosine similarity</h3>
 						<div class="overflow-scroll" style="max-height: 600px;">
 							<table class="table table-hover table-striped table-fit">
@@ -388,15 +412,41 @@
 								</tbody>
 							</table>
 						</div>
+						<p>&nbsp;</p>
+						{% endfor %}
+						<!-- end episode topics -->
+
+						<!-- begin keywords -->
+						<h3>Keywords</h3>
+						<div class="overflow-scroll" style="max-height: 500px;">
+							<table class="table table-hover table-striped table-fit">
+								<thead>
+									<tr class="table-primary">
+										<th scope="col">Term</th>
+										<th scope="col">Score</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for keyword in tdata['keywords'] %}
+									<tr class="table-secondary">
+										<th scope="row">{{  keyword['term'] }}</th>
+										<td>{{ '%0.2f'|format(keyword['score']|float) }}</td>
+									</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+						<!-- end keywords -->
+
 					</div>
 				</div>
-				{% endfor %}
-			</div>
-		</div>
-		<p>&nbsp;</p>
-		<!-- end statistics frames -->
+				<!-- end right column second row -->
 
-		
+			</div>
+			<!-- END RIGHT COLUMN -->
+
+		</div>
+		<!-- END ROW ONE -->
 
 	</div>
 {% endblock %} 

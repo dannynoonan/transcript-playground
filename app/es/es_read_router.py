@@ -108,19 +108,39 @@ def fetch_speaker(show_key: ShowKey, speaker_name: str, include_seasons: bool = 
 
     es_queries = []
     if include_seasons:
-        s = esqb.fetch_speaker_seasons(show_key.value, speaker_name)
+        s = esqb.fetch_speaker_seasons(show_key.value, speaker=speaker_name)
         es_queries.append(s.to_dict())
         speaker_seasons = esrt.return_speaker_seasons(s)
         if speaker_seasons:
             speaker['seasons'] = speaker_seasons
     if include_episodes:
-        s = esqb.fetch_speaker_episodes(show_key.value, speaker_name)
+        s = esqb.fetch_speaker_episodes(show_key.value, speaker=speaker_name)
         es_queries.append(s.to_dict())
         speaker_episodes = esrt.return_speaker_episodes(s)
         if speaker_episodes:
             speaker['episodes'] = speaker_episodes
 
     return {"speaker": speaker, "es_queries": es_queries}
+
+
+@esr_app.get("/esr/fetch_speakers_for_episode/{show_key}/{episode_key}", tags=['ES Reader'])
+def fetch_speakers_for_episode(show_key: ShowKey, episode_key: str, extra_fields: str = None):
+    '''
+    Fetch speaker_episodes for a given episode 
+    '''
+    return_fields = ['speaker','scene_count','line_count','word_count','agg_score']
+    if extra_fields:
+        extra_fields = extra_fields.split(',')
+        return_fields.extend(extra_fields)
+
+    s = esqb.fetch_speaker_episodes(show_key.value, episode_key=episode_key, return_fields=return_fields)
+    es_query = s.to_dict()
+    speaker_episodes = esrt.return_speaker_episodes(s)
+
+    return {"speaker_episodes": speaker_episodes, "es_query": es_query}
+
+
+# TODO haven't needed `fetch_speakers_for_season` yet but will soon
 
 
 @esr_app.get("/esr/fetch_indexed_speakers/{show_key}", tags=['ES Reader'])

@@ -103,11 +103,13 @@
                     <td>{{ speaker['line_count'] }}</td>
                     <td>{{ speaker['word_count'] }}</td>
                     <td>
-                    {% if speaker['topics'] %}
-                        {% for topic in speaker['topics'] %}
-                            {% set topic_names = topic['topic_name'].split('-') %}
-                            <a href="/web/topic/{{ tdata['show_key'] }}/meyersBriggsKiersey/{{ topic['topic_key'] }}" 
-                                class="text-white" >{{ topic['topic_key'] }}</a>: {{ topic_names[0] }}{% if not loop.last %}, {% endif %}
+                    {% if speaker['topics_mbti'] %}
+                        {% for topic in speaker['topics_mbti'] %}
+                            {% if loop.index < 4 %}
+                                {% set topic_names = topic['topic_name'].split('-') %}
+                                <a href="/web/topic/{{ tdata['show_key'] }}/meyersBriggsKiersey/{{ topic['topic_key'] }}" 
+                                    class="text-white" >{{ topic['topic_key'] }}</a>: {{ topic_names[0] }}{% if loop.index < 3 %}, {% endif %}
+                            {% endif %}
                         {% endfor %}
                     {% endif %}
                     </td>

@@ -13,7 +13,7 @@ import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
-from app.utils import TopicAgg
+from app.utils import TopicAgg, flatten_topics
 
 
 esw_app = APIRouter()
@@ -633,6 +633,14 @@ def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping:
     # write to episode_topics
     episode_topics = esqb.populate_episode_topics(show_key.value, es_episode, response['topics'], model_vendor, model_version)
 
+    # write simplified subset of episode_topics to es_episode.topics_X
+    simple_episode_topics = flatten_topics(episode_topics)
+    if topic_grouping == 'universalGenres':
+        es_episode.topics_universal = simple_episode_topics
+    elif topic_grouping == 'focusedGpt35_TNG':
+        es_episode.topics_focused = simple_episode_topics
+    esqb.save_es_episode(es_episode)
+
     return {"episode_topics": episode_topics}
 
 
@@ -699,8 +707,17 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
             if e_key in speaker_topics_by_episode:
                 es_speaker_episode = EsSpeakerEpisode.get(id=f'{show_key.value}_{speaker}_{e_key}')
                 # write to speaker_episode_topics
-                esqb.populate_speaker_episode_topics(show_key.value, speaker, es_speaker_episode, speaker_topics_by_episode[e_key], 
-                                                     model_vendor, model_version)
+                es_speaker_episode_topics = esqb.populate_speaker_episode_topics(show_key.value, speaker, es_speaker_episode, speaker_topics_by_episode[e_key],
+                                                                                 model_vendor, model_version)
+                
+                # write simplified subset of episode_topics to es_speaker_episode.topics_X
+                simple_episode_topics = flatten_topics(es_speaker_episode_topics)
+                if topic_grouping == 'meyersBriggsKiersey':
+                    es_speaker_episode.topics_mbti = simple_episode_topics
+                elif topic_grouping == 'dndAlignments':
+                    es_speaker_episode.topics_dnda = simple_episode_topics
+                esqb.save_es_speaker_episode(es_speaker_episode)
+
                 # incorporate episode topics into season-level agg
                 season_topic_agg.add_topics(speaker_topics_by_episode[e_key], es_speaker_episode.word_count)
             else:
@@ -711,7 +728,16 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
             # if no season-level topics, attempt to calculate them via aggs extracted from episodes
             print(f'no season_topics_found for season={season}, so using topics from season_topic_agg={season_topic_agg}')
             speaker_season_topics = season_topic_agg.get_topics()
-        esqb.populate_speaker_season_topics(show_key.value, speaker, es_speaker_season, speaker_season_topics, model_vendor, model_version)
+        es_speaker_season_topics = esqb.populate_speaker_season_topics(show_key.value, speaker, es_speaker_season, speaker_season_topics, model_vendor, model_version)
+
+        # write simplified subset of season_topics to es_speaker_season.topics_X
+        simple_season_topics = flatten_topics(es_speaker_season_topics)
+        if topic_grouping == 'meyersBriggsKiersey':
+            es_speaker_season.topics_mbti = simple_season_topics
+        elif topic_grouping == 'dndAlignments':
+            es_speaker_season.topics_dnda = simple_season_topics
+        esqb.save_es_speaker_season(es_speaker_season)
+
         # incorporate season topics into series-level agg
         series_topic_agg.add_topics(speaker_season_topics, es_speaker_season.word_count)
 
@@ -720,7 +746,16 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
         # if no series-level topics, attempt to calculate them via aggs extracted from seasons  
         print(f'no series_topics_found, so using topics from series_topic_agg={series_topic_agg}')
         speaker_series_topics = series_topic_agg.get_topics()
-    esqb.populate_speaker_topics(show_key.value, speaker, es_speaker, speaker_series_topics, model_vendor, model_version)
+    print(f'speaker_series_topics={speaker_series_topics}')
+    es_speaker_topics = esqb.populate_speaker_topics(show_key.value, speaker, es_speaker, speaker_series_topics, model_vendor, model_version)
+    
+    # write simplified subset of speaker_topics to es_speaker.topics_X
+    simple_series_topics = flatten_topics(es_speaker_topics)
+    if topic_grouping == 'meyersBriggsKiersey':
+        es_speaker.topics_mbti = simple_series_topics
+    elif topic_grouping == 'dndAlignments':
+        es_speaker.topics_dnda = simple_series_topics
+    esqb.save_es_speaker(es_speaker)
 
     # TODO ugh these's caching or latency with these lookups, responses are stale
     speaker_topics_response = esr.fetch_speaker_topics(speaker, show_key, topic_grouping)

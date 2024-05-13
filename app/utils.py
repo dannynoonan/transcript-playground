@@ -98,3 +98,16 @@ class TopicAgg(object):
             else:
                 print(f"TopicAgg.get() warning: topic_key={st[0]} wasn't in reference_topics, not adding to sorted_topic output")
         return sorted_topics
+    
+    
+def flatten_topics(topics: list) -> list:
+    simple_topics = []
+    count = 0
+    for t in topics:
+        if 'is_parent' in t and t['is_parent']:
+            continue
+        simple_topics.append(dict(topic_key=t['topic_key'], topic_name=t['topic_name'], score=t['score'], raw_score=t['raw_score']))
+        count += 1
+        if count > 5:
+            break
+    return simple_topics
