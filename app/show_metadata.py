@@ -48,7 +48,7 @@ show_metadata = {
         #     'Default': 'Default'
         # }
         'regular_cast': ['PICARD', 'RIKER', 'WORF', 'DATA', 'LAFORGE', 'TROI', 'CRUSHER', 'COMPUTER', 'WESLEY', "O'BRIEN", 'GUINAN', 'TASHA', 'PULASKI'],
-        'recurring_cast': ['OGAWA', 'Q', 'ALEXANDER', 'RO', 'KEIKO', 'LWAXANA', 'BARCLAY', 'LORE', 'GOWRON', 'RAGER', 'FELTON', 'GATES']
+        'recurring_cast': ['OGAWA', 'Q', 'ALEXANDER', 'RO', 'KEIKO', 'LWAXANA', 'BARCLAY', 'LORE', 'GOWRON', 'RAGER', 'FELTON', 'GATES'],
     }
 }
 
@@ -57,6 +57,11 @@ WIKIPEDIA_DOMAIN = 'https://en.wikipedia.org/wiki/'
 
 GOT_SCENE_CHANGE_PREFIXES = ['CUT TO: ', 'EXT. ', 'INT. ']
 TNG_CAPTAINS_LOG_PREFIX = "captain's log"
+
+EPISODE_TOPIC_GROUPINGS = ['universalGenres', 'universalGenresGpt35', 'focusedGpt35_TNG']
+SPEAKER_TOPIC_GROUPINGS = ['meyersBriggsKiersey', 'dndAlignments']
+
+SPEAKERS_TO_IGNORE = ['_ALL_', 'ALL', 'BOTH']
 
 
 show_ontology = {

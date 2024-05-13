@@ -61,7 +61,7 @@ pip install -r /path/to/requirements.txt
 
 Run/restart the app using `uvicorn`:
 ```
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 (If you're content running within `venv` and `uvicorn` you can skip past the "Run app using docker compose" section to "Verify app is running.")

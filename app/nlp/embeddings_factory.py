@@ -2,6 +2,7 @@
 from gensim.models import Word2Vec, KeyedVectors
 # from gensim.scripts.glove2word2vec import glove2word2vec
 from gensim.test.utils import common_texts
+import math
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,6 +11,7 @@ from openai import OpenAI
 import os
 import pandas as pd
 from sklearn.cluster import KMeans
+import tiktoken
 import warnings
 
 from app.config import settings
@@ -84,9 +86,9 @@ def load_keyed_vectors(vendor: str, version: str) -> KeyedVectors:
 #     return data
 
 
-def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str) -> (list, list, list):
+def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str) -> tuple[list, list, list]:
     print('------------------------------------------------------------------------------------')
-    print(f'begin calculate_embeddings for model_vendor={model_vendor} model_version={model_version} token_arr={token_arr}')
+    print(f'begin calculate_embeddings using model {model_vendor}:{model_version} token_arr={token_arr}')
 
     vendor_meta = W2V_MODELS[model_vendor]
     embedding_sum = [0.0] * vendor_meta['versions'][model_version]['dims']
@@ -111,8 +113,7 @@ def calculate_embeddings(token_arr: list, model_vendor: str, model_version: str)
     return embedding_avg.tolist(), tokens_processed, tokens_failed
 
 
-def generate_openai_embeddings(input_text: str, model_version: str) -> (list, int, int):
-    print('------------------------------------------------------------------------------------')
+def generate_openai_embeddings(input_text: str, model_version: str) -> tuple[list, int, int]:
     print(f'begin generate_openai_embeddings for model_version={model_version}')
 
     openai_client = OpenAI(api_key=settings.openai_api_key)
@@ -139,8 +140,10 @@ def generate_openai_embeddings(input_text: str, model_version: str) -> (list, in
         raise Exception(f'Failed to generate openai:{model_version} vector embeddings: {e}', e)
 
 
+@DeprecationWarning
+# TODO refactor to use generate_embeddings
 def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, model_vendor: str, model_version: str) -> None|Exception:
-    print(f'begin generate_embeddings for {show_key}:{es_episode.episode_key} model_vendor={model_vendor} model_version={model_version}')
+    print(f'begin generate_episode_embeddings for {show_key}:{es_episode.episode_key} using model {model_vendor}:{model_version}')
 
     if model_vendor == 'openai':
         vendor_meta = TRF_MODELS[model_vendor]
@@ -200,7 +203,28 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, 
             es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
             es_episode[f'{model_vendor}_{model_version}_tokens'] = tokens
             es_episode[f'{model_vendor}_{model_version}_no_match_tokens'] = no_match_tokens
+        
 
+# TODO incorporate Word2Vec embeddings generation from generate_episode_embeddings into this generic function
+def generate_embeddings(text_to_vectorize: str, model_vendor: str, model_version: str) -> list|Exception:
+    tokens = text_to_vectorize.split(' ')
+    openai_token_count = openai_token_counter(text_to_vectorize)
+    print(f'begin generate_embeddings text_to_vectorize len(tokens)={len(tokens)} openai_token_count={openai_token_count} model {model_vendor}:{model_version}')
+    
+    if model_vendor == 'openai':
+        vendor_meta = TRF_MODELS[model_vendor]
+        true_model_version = vendor_meta['versions'][model_version]['true_name']
+        try:
+            embeddings, _, _ = generate_openai_embeddings(text_to_vectorize, true_model_version)
+            return embeddings
+        except openai.BadRequestError as bre:
+            # TODO slice up request and retry
+            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)}: {bre}')
+            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {bre}')
+        except Exception as e:
+            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {e}')
+            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {e}')
+        
 
 def build_embeddings_model(show_key: str) -> dict:
     print(f'begin build_embeddings_model for show_key={show_key}')
@@ -275,9 +299,8 @@ def cluster_docs(doc_embeddings: dict, num_clusters: int):
     return doc_clusters_df
 
 
-'''
-TODO This obviously needs to live elsewhere
-'''
+@DeprecationWarning
+# TODO `generate_episode_embeddings` is only dependency and it is Deprecated, refactor everything to use generate_embeddings
 def shorten_flattened_text(es_episode: EsEpisodeTranscript, skip_increment: int = None) -> str:
     flattened_text = f'{es_episode.title} '
     scene_i = 0
@@ -296,50 +319,42 @@ def shorten_flattened_text(es_episode: EsEpisodeTranscript, skip_increment: int 
             #     flattened_text += f'{scene_event.spoken_by}: '
             if scene_event.dialog:
                 flattened_text += f'{scene_event.dialog} '
-        
 
     return flattened_text
 
 
-
-    # model = Word2Vec(sentences=common_texts, vector_size=100, window=5, min_count=1, workers=4)
-    # model.save("word2vec.model")
-    # model = Word2Vec.load("word2vec.model")
-    # model.train([["hello", "world"]], total_examples=1, epochs=1)
-    # words = list(model.wv.index_to_key)
-
-
-# # iterate through each sentence in the file
-# for i in sent_tokenize(f):
-#     temp = []
-     
-#     # tokenize the sentence into words
-#     for j in word_tokenize(i):
-#         temp.append(j.lower())
- 
-#     data.append(temp)
- 
-# # Create CBOW model
-# model1 = Word2Vec(data, min_count = 1, vector_size = 100, window = 5)
- 
-# # Print results
-# print("Cosine similarity between 'alice' " +
-#                "and 'wonderland' - CBOW : ",
-#     model1.wv.similarity('alice', 'wonderland'))
-     
-# print("Cosine similarity between 'alice' " +
-#                  "and 'machines' - CBOW : ",
-#       model1.wv.similarity('alice', 'machines'))
- 
-# # Create Skip Gram model
-# model2 = Word2Vec(data, min_count = 1, vector_size = 100, window = 5, sg = 1)
- 
-# # Print results
-# print("Cosine similarity between 'alice' " +
-#           "and 'wonderland' - Skip Gram : ",
-#     model2.wv.similarity('alice', 'wonderland'))
-     
-# print("Cosine similarity between 'alice' " +
-#             "and 'machines' - Skip Gram : ",
-#       model2.wv.similarity('alice', 'machines'))
+def shorten_lines_of_text(lines: list, target_token_count: int) -> str:
+    '''
+    Slim down text that is (slightly) longer than openai embeddings endpoint can handle by zapping lines incrementally distributed throughout the text, 
+    rather than lopping off large sections at the beginning or end (where the meaning might be most impactful)
+    '''
+    openai_token_count = openai_token_counter(' '.join(lines), 'cl100k_base')
+    skip_increment = math.ceil(target_token_count / (openai_token_count - target_token_count))
+    print(f'In shorten_lines_of_text len(lines)={len(lines)} openai_token_count={openai_token_count} target_token_count={target_token_count} skip_increment={skip_increment}')
     
+    success = False
+    while not success and skip_increment > 1:
+        lines_out = []
+        for i in range(len(lines)):
+            if i % skip_increment == skip_increment-1:
+                continue
+            lines_out.append(lines[i])
+        openai_token_count = openai_token_counter(' '.join(lines_out), 'cl100k_base')
+        if openai_token_count < target_token_count:
+            success = True
+        else:
+            print(f"skip_increment={skip_increment} only got us down to openai_token_count={openai_token_count}, reducing increment by 1")
+            skip_increment -= 1
+    if not success:
+        print(f'Cannot run shorten_lines_of_text for skip_increment={skip_increment}')
+        return None
+    
+    return lines_out
+
+
+def openai_token_counter(raw_text: str, openai_encoding_version: str = None) -> int:
+    if not openai_encoding_version:
+        # openai_encoding_version = 'gpt-3.5-turbo'
+        openai_encoding_version = 'cl100k_base'
+    enc = tiktoken.get_encoding(openai_encoding_version)
+    return len(enc.encode(raw_text))

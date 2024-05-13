@@ -11,6 +11,15 @@
         "episode_key": {
           "type": "keyword"
         },
+        "es_mlt_relations_dict": {
+          "type": "object"
+        },
+        "es_mlt_relations_text": {
+          "type": "text"
+        },
+        "es_mlt_relations_tuple": {
+          "type": "object"
+        },
         "fasttext_crawl300d2M_embeddings": {
           "type": "dense_vector",
           "dims": 300,
@@ -125,6 +134,15 @@
           "index": true,
           "similarity": "cosine"
         },
+        "openai_ada002_relations_dict": {
+          "type": "object"
+        },
+        "openai_ada002_relations_text": {
+          "type": "text"
+        },
+        "openai_ada002_relations_tuple": {
+          "type": "object"
+        },
         "scene_count": {
           "type": "integer"
         },
@@ -226,7 +244,7 @@
       }
     }
   },
-  "characters": {
+  "speakers": {
     "mappings": {
       "properties": {
         "actor_names": {
@@ -238,17 +256,14 @@
         "episode_count": {
           "type": "integer"
         },
-        "episode_embeddings": {
-          "type": "dense_vector",
-          "dims": 1536,
-          "index": true,
-          "similarity": "cosine"
-        },
-        "episodes": {
-          "type": "object"
-        },
         "indexed_ts": {
           "type": "date"
+        },
+        "line_count": {
+          "type": "integer"
+        },
+        "lines": {
+          "type": "text"
         },
         "loaded_ts": {
           "type": "date"
@@ -259,13 +274,64 @@
         "name": {
           "type": "keyword"
         },
+        "openai_ada002_embeddings": {
+          "type": "dense_vector",
+          "dims": 1536,
+          "index": true,
+          "similarity": "cosine"
+        },
         "scene_count": {
           "type": "integer"
         },
-        "scene_event_count": {
+        "season_count": {
           "type": "integer"
         },
-        "season_count": {
+        "seasons_to_episode_keys": {
+          "type": "object"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "word_count": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "speaker_seasons": {
+    "mappings": {
+      "properties": {
+        "episode_count": {
+          "type": "integer"
+        },
+        "indexed_ts": {
+          "type": "date"
+        },
+        "line_count": {
+          "type": "integer"
+        },
+        "lines": {
+          "type": "text"
+        },
+        "loaded_ts": {
+          "type": "date"
+        },
+        "most_frequent_companions": {
+          "type": "object"
+        },
+        "name": {
+          "type": "keyword"
+        },
+        "openai_ada002_embeddings": {
+          "type": "dense_vector",
+          "dims": 1536,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "scene_count": {
+          "type": "integer"
+        },
+        "season": {
           "type": "integer"
         },
         "show_key": {
@@ -273,6 +339,90 @@
         },
         "word_count": {
           "type": "integer"
+        }
+      }
+    }
+  },
+  "speaker_episodes": {
+    "mappings": {
+      "properties": {
+        "episode_key": {
+          "type": "keyword"
+        },
+        "indexed_ts": {
+          "type": "date"
+        },
+        "line_count": {
+          "type": "integer"
+        },
+        "lines": {
+          "type": "text"
+        },
+        "loaded_ts": {
+          "type": "date"
+        },
+        "most_frequent_companions": {
+          "type": "object"
+        },
+        "name": {
+          "type": "keyword"
+        },
+        "openai_ada002_embeddings": {
+          "type": "dense_vector",
+          "dims": 1536,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "scene_count": {
+          "type": "integer"
+        },
+        "season": {
+          "type": "integer"
+        },
+        "sequence_in_season": {
+          "type": "integer"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "word_count": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "topics": {
+    "mappings": {
+      "properties": {
+        "breadcrumb": {
+          "type": "keyword"
+        },
+        "category": {
+          "type": "keyword"
+        },
+        "description": {
+          "type": "text"
+        },
+        "indexed_ts": {
+          "type": "date"
+        },
+        "openai_ada002_embeddings": {
+          "type": "dense_vector",
+          "dims": 1536,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "subcategory": {
+          "type": "keyword"
+        },
+        "supercat_description": {
+          "type": "text"
+        },
+        "topic_grouping": {
+          "type": "keyword"
+        },
+        "topic_key": {
+          "type": "keyword"
         }
       }
     }

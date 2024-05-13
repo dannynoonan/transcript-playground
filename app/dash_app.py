@@ -8,8 +8,8 @@ import urllib.parse
 
 import app.dash.components as cmp
 from app.dash import (
-    episode_gantt_chart, location_line_chart, series_search_results_gantt, show_3d_network_graph, speaker_3d_network_graph, 
-    show_cluster_scatter, show_gantt_chart, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
+    episode_gantt_chart, location_line_chart, series_gantt_chart, series_search_results_gantt, show_3d_network_graph, speaker_3d_network_graph, 
+    show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
 )
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
@@ -79,8 +79,8 @@ def display_page(pathname, search):
                 episode_key = episode_key[0]
         return episode_gantt_chart.generate_content(episode_dropdown_options, episode_key=episode_key)
     
-    elif pathname == "/tsp_dash/show-gantt-chart":
-        return show_gantt_chart.content
+    elif pathname == "/tsp_dash/series-gantt-chart":
+        return series_gantt_chart.content
     
     elif pathname == "/tsp_dash/speaker-line-chart":
         return speaker_line_chart.content
@@ -108,7 +108,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
     vector_field = 'openai_ada002_embeddings'
 
     # fetch embeddings for all show episodes 
-    s = esqb.fetch_show_embeddings(show_key, vector_field)
+    s = esqb.fetch_series_embeddings(show_key, vector_field)
     doc_embeddings = esrt.return_all_embeddings(s, vector_field)
 
     # generate and color-stamp clusters for all show episodes 
@@ -202,21 +202,68 @@ def render_episode_gantt_chart(show_key: str, episode_key: str):
     return episode_dialog_timeline, episode_location_timeline, show_key
 
 
-############ show-gantt-chart callbacks
+############ series-gantt-chart callbacks
 @dapp.callback(
-    Output('show-speaker-gantt', 'figure'),
-    Output('show-location-gantt', 'figure'),
+    Output('series-speaker-gantt', 'figure'),
+    Output('series-location-gantt', 'figure'),
+    Output('series-topic-gantt', 'figure'),
     Output('show-key-display6', 'children'),
     Input('show-key', 'value'))    
 def render_series_gantt_chart(show_key: str):
     print(f'in render_series_gantt_chart, show_key={show_key}')
 
-    # generate data and build series gantt charts
-    response = esr.generate_series_gantt_sequence(ShowKey(show_key))
-    series_speaker_gantt = fb.build_series_gantt(show_key, response['episode_speakers_sequence'], 'speakers')
-    series_location_gantt = fb.build_series_gantt(show_key, response['episode_locations_sequence'], 'locations')
+    # speaker gantt
+    file_path = f'./app/data/speaker_gantt_sequence_{show_key}.csv'
+    if os.path.isfile(file_path):
+        speaker_gantt_sequence_df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        print(f'no file found at file_path={file_path}, running `/esr/generate_series_speaker_gantt_sequence/{show_key}?overwrite_file=True` to generate')
+        esr.generate_series_speaker_gantt_sequence(ShowKey(show_key), overwrite_file=True, limit_cast=True)
+        if os.path.isfile(file_path):
+            speaker_gantt_sequence_df = pd.read_csv(file_path)
+            print(f'loading dataframe at file_path={file_path}')
+        else:
+            raise Exception('Failure to render_series_gantt_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    series_speaker_gantt = fb.build_series_gantt(show_key, speaker_gantt_sequence_df, 'speakers')
 
-    return series_speaker_gantt, series_location_gantt, show_key
+    # location gantt
+    file_path = f'./app/data/location_gantt_sequence_{show_key}.csv'
+    if os.path.isfile(file_path):
+        location_gantt_sequence_df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        print(f'no file found at file_path={file_path}, running `/esr/generate_series_location_gantt_sequence/{show_key}?overwrite_file=True` to generate')
+        esr.generate_series_location_gantt_sequence(ShowKey(show_key), overwrite_file=True)
+        if os.path.isfile(file_path):
+            location_gantt_sequence_df = pd.read_csv(file_path)
+            print(f'loading dataframe at file_path={file_path}')
+        else:
+            raise Exception('Failure to render_series_gantt_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    series_location_gantt = fb.build_series_gantt(show_key, location_gantt_sequence_df, 'locations')
+
+    # topic gantt
+    topic_grouping = 'universalGenres'
+    # topic_grouping = f'focusedGpt35_{show_key}'
+    topic_threshold = 20
+    model_vendor= 'openai'
+    model_version = 'ada002'
+    file_path = f'./app/data/topic_gantt_sequence_{show_key}_{topic_grouping}_{model_vendor}_{model_version}.csv'
+    if os.path.isfile(file_path):
+        topic_gantt_sequence_df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        print(f'no file found at file_path={file_path}, running `/esr/generate_series_topic_gantt_sequence/{show_key}?overwrite_file=True` to generate')
+        esr.generate_series_topic_gantt_sequence(ShowKey(show_key), overwrite_file=True, topic_grouping=topic_grouping, topic_threshold=topic_threshold,
+                                                 model_vendor=model_vendor, model_version=model_version)
+        if os.path.isfile(file_path):
+            topic_gantt_sequence_df = pd.read_csv(file_path)
+            print(f'loading dataframe at file_path={file_path}')
+        else:
+            raise Exception('Failure to render_series_gantt_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    series_topic_gantt = fb.build_series_gantt(show_key, topic_gantt_sequence_df, 'topics')
+
+    return series_speaker_gantt, series_location_gantt, series_topic_gantt, show_key
 
 
 ############ speaker-line-chart callbacks
@@ -311,7 +358,25 @@ def render_series_search_results_gantt(show_key: str, qt: str, qt_submit: bool =
     print(f'in render_series_gantt_chart, show_key={show_key} qt={qt} qt_submit={qt_submit}')
 
     # execute search query and filter response into series gantt charts
-    series_gantt_response = esr.generate_series_gantt_sequence(ShowKey(show_key))
+
+    # TODO fetch from file, but file has to have all speaker data
+    # file_path = f'./app/data/speaker_gantt_sequence_{show_key}.csv'
+    # if os.path.isfile(file_path):
+    #     speaker_gantt_sequence_df = pd.read_csv(file_path)
+    #     print(f'loading dataframe at file_path={file_path}')
+    # else:
+    #     print(f'no file found at file_path={file_path}, running `/esr/generate_series_speaker_gantt_sequence/{show_key}?overwrite_file=True` to generate')
+    #     esr.generate_series_speaker_gantt_sequence(ShowKey(show_key), overwrite_file=True)
+    #     if os.path.isfile(file_path):
+    #         speaker_gantt_sequence_df = pd.read_csv(file_path)
+    #         print(f'loading dataframe at file_path={file_path}')
+    #     else:
+    #         raise Exception('Failure to render_series_gantt_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    
+    # search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
+    # series_search_results_gantt = fb.build_series_search_results_gantt(show_key, qt, search_response['matches'], speaker_gantt_sequence_df)
+
+    series_gantt_response = esr.generate_series_speaker_gantt_sequence(ShowKey(show_key))
     search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
     series_search_results_gantt = fb.build_series_search_results_gantt(show_key, qt, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
 

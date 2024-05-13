@@ -16,7 +16,7 @@ from sklearn.manifold import TSNE
 
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey, show_metadata
-from app.web.fig_helper import apply_animation_settings
+from app.web.fig_helper import apply_animation_settings, topic_cat_rank_color_mapper
 import app.web.fig_metadata as fm
 
 
@@ -268,39 +268,61 @@ def build_episode_gantt(show_key: str, data: list) -> go.Figure:
     return fig
 
 
-def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
+def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
     print(f'in build_show_gantt show_key={show_key} type={type}')
 
-    # TODO where/how should this truncation happen?
     if type == 'speakers':
         title='Character continuity over duration of series'
-        trimmed_data = []
-        for d in data:
-            if d['Task'] in show_metadata[show_key]['regular_cast']:
-                trimmed_data.append(d)
-        data = trimmed_data
+        # limit speaker gantt to those in `speakers` index (for visual layout, and only slightly for page load performance)
+        matches = esr.fetch_indexed_speakers(ShowKey(show_key), min_episode_count=2)
+        speakers = [m['speaker'] for m in matches['speakers']]
+        df = df.loc[df['Task'].isin(speakers)]
     elif type == 'locations':
         title='Scene location continuity over course of series'
+    elif type == 'topics':
+        title='Topics over course of series'
 
-    df = pd.DataFrame(data)
+    if type == 'topics':
+        df = df.sort_values(['Task', 'Start'])
+        # file_path = f'build_series_gantt_{type}_{show_key}.csv'
+        # df.to_csv(file_path)
+        index_col = 'cat_rank'
+        df['cat_rank'] = df['topic_cat'] + '_' + df['rank'].astype(str)
+        topic_cats = list(df['topic_cat'].unique())
+        ranks = df['rank'].unique()
+        cat_ranks = df['cat_rank'].unique()
+        keys_to_colors = {}
+        colors_to_keys = {}
+        for cat_rank in cat_ranks:
+            cat = cat_rank.split('_')[0]
+            rank = cat_rank.split('_')[1]
+            hex_hue = round(255/len(ranks)) * int(rank)
+            rgb = topic_cat_rank_color_mapper(topic_cats.index(cat), hex_hue)
+            keys_to_colors[cat_rank] = rgb
+            colors_to_keys[rgb] = cat_rank
+        fig_height = 250 + len(df['Task'].unique()) * 25
 
-    span_keys = df.Task.unique()
-    keys_to_colors = {}
-    colors_to_keys = {}
-    for sk in span_keys:
-        r = random.randrange(255)
-        g = random.randrange(255)
-        b = random.randrange(255)
-        rgb = f'rgb({r},{g},{b})'
-        keys_to_colors[sk] = rgb
-        colors_to_keys[rgb] = sk
-
-    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True, title=title, height=1000) # TODO scale height to number of rows
+    else: # ['speakers', 'locations']
+        index_col = 'Task'
+        span_keys = df.Task.unique()
+        keys_to_colors = {}
+        colors_to_keys = {}
+        for sk in span_keys:
+            r = random.randrange(255)
+            g = random.randrange(255)
+            b = random.randrange(255)
+            rgb = f'rgb({r},{g},{b})'
+            keys_to_colors[sk] = rgb
+            colors_to_keys[rgb] = sk
+        fig_height = 250 + len(colors_to_keys) * 25
+    
+    fig = ff.create_gantt(df, index_col=index_col, bar_width=0.2, colors=keys_to_colors, group_tasks=True, title=title, height=fig_height) # TODO scale height to number of rows
     fig.update_layout(xaxis_type='linear', autosize=False)
 
-    # inject dialog into hover 'text' property
+    gantt_row_with_text_count = 0
     for gantt_row in fig['data']:
         if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0:
+            gantt_row_with_text_count += 1
             # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
             # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced, hence the colors_to_keys map.
             rgb_val = gantt_row['legendgroup'].replace(' ', '')
@@ -310,13 +332,14 @@ def build_series_gantt(show_key: str, data: list, type: str) -> go.Figure:
             gantt_row_text = list(gantt_row['text'])
             for i in range(len(gantt_row['x'])):
                 episode_i = gantt_row['x'][i]
-                start_row = df.loc[(df['Task'] == gantt_row_key) & (df['Start'] == episode_i)]
+                start_row = df.loc[(df[index_col] == gantt_row_key) & (df['Start'] == episode_i)]
                 if len(start_row) > 0 and 'info' in start_row.iloc[0]:
                     gantt_row_text[i] = start_row.iloc[0]['info']
                     continue
-                # finish_row = df.loc[(df['Info'] == gantt_row_key) & (df['Finish'] == episode_i)]
-                # if len(finish_row) > 0 and 'Info' in finish_row.iloc[0]:
-                #     gantt_row_text[i] = finish_row.iloc[0]['Info']
+                # if type == 'topics': 
+                finish_row = df.loc[(df[index_col] == gantt_row_key) & (df['Finish'] == episode_i)]
+                if len(finish_row) > 0 and 'info' in finish_row.iloc[0]:
+                    gantt_row_text[i] = finish_row.iloc[0]['info']
 
             gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
     
@@ -363,10 +386,12 @@ def build_series_search_results_gantt(show_key: str, qt: str, matching_episodes:
     # of the gantt data rows in fig['data'] below, because each speaker-episode element maps to two gantt row entries (a Start entry and a Finish entry)
     hover_text = list(matching_lines_df['hover_text'])
 
-    # file_path = f'./app/data/test_series_search_results_gantt_{show_key}.csv'
-    # df.to_csv(file_path)
+    file_path = f'./app/data/test_series_search_results_gantt_{show_key}.csv'
+    df.to_csv(file_path)
 
-    fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=1000) # TODO scale height to number of rows
+    fig_height = 250 + len(df['Task'].unique()) * 25
+
+    fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height) # TODO scale height to number of rows
     fig.update_layout(xaxis_type='linear', autosize=False)
 
     # inject dialog stored in `hover_text` list into fig['data'] `text` property
@@ -499,10 +524,10 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     # sum_df.sort_values(['season', x], ascending=[True, False], inplace=True)
     # category_orders = {'speaker': sum_df['speaker'].unique()}
 
-    if animate:
-        file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_animation.csv'
-    else:
-        file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_{season}_{sequence_in_season}.csv'
+    # if animate:
+    #     file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_animation.csv'
+    # else:
+    #     file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_{season}_{sequence_in_season}.csv'
     # sum_df.to_csv(file_path)
 
     # custom_data = []  # TODO

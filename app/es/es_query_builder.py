@@ -6,7 +6,10 @@ from elasticsearch_dsl.query import MoreLikeThis
 
 from app.config import settings
 from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
-from app.es.es_model import EsEpisodeTranscript, EsCharacter
+from app.es.es_model import (
+    EsEpisodeTranscript, EsTopic, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, 
+    EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
+)
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
 
@@ -38,9 +41,44 @@ def init_transcripts_index():
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
 
 
-def init_character_index():
-    EsCharacter.init()
-    es_conn.indices.put_settings(index="characters", body={"index": {"max_inner_result_window": 1000}})
+def init_speakers_index():
+    EsSpeaker.init()
+    es_conn.indices.put_settings(index="speakers", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_speaker_seasons_index():
+    EsSpeakerSeason.init()
+    es_conn.indices.put_settings(index="speaker_seasons", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_speaker_episodes_index():
+    EsSpeakerEpisode.init()
+    es_conn.indices.put_settings(index="speaker_episodes", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_topics_index():
+    EsTopic.init()
+    es_conn.indices.put_settings(index="topics", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_episode_topics_index():
+    EsEpisodeTopic.init()
+    es_conn.indices.put_settings(index="episode_topics", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_speaker_topics_index():
+    EsSpeakerTopic.init()
+    es_conn.indices.put_settings(index="speaker_topics", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_speaker_season_topics_index():
+    EsSpeakerSeasonTopic.init()
+    es_conn.indices.put_settings(index="speaker_season_topics", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_speaker_episode_topics_index():
+    EsSpeakerEpisodeTopic.init()
+    es_conn.indices.put_settings(index="speaker_episode_topics", body={"index": {"max_inner_result_window": 1000}})
 
 
 def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
@@ -53,7 +91,27 @@ def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     #     es_episode.save(using=es)
 
 
-def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = False) -> dict:
+def save_es_topic(es_topic: EsTopic) -> None:
+    # TODO this is functionally identical to `save_es_episode`, do we even need either of them?
+    es_topic.save()
+
+
+def save_es_speaker(es_speaker: EsSpeaker) -> None:
+    # TODO this is functionally identical to `save_es_episode` and `save_es_topic`, do we even need any of them?
+    es_speaker.save()
+
+
+def save_es_speaker_season(es_speaker_season: EsSpeakerSeason) -> None:
+    # TODO this is functionally identical to other es `save` functions 
+    es_speaker_season.save()
+
+
+def save_es_speaker_episode(es_speaker_episode: EsSpeakerEpisode) -> None:
+    # TODO this is functionally identical to other es `save` functions 
+    es_speaker_episode.save()
+
+
+def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = False) -> Search:
     print(f'begin fetch_episode_by_key for show_key={show_key} episode_key={episode_key}')
 
     # s = Search(using=es_client, index='transcripts')
@@ -82,6 +140,24 @@ def fetch_doc_ids(show_key: str, season: str = None) -> Search:
     return s
 
 
+# NOTE I'm not sure what this was for, probably created during BERTopic experimentation
+# def fetch_flattened_episodes(show_key: str, season: str = None) -> Search:
+#     print(f'begin fetch_flattened_episodes for show_key={show_key} season={season}')
+
+#     s = Search(index='transcripts')
+#     s = s.extra(size=1000)
+
+#     s = s.filter('term', show_key=show_key)
+#     if season:
+#         s = s.filter('term', season=season)
+
+#     s = s.sort('season', 'sequence_in_season')
+
+#     s = s.source(excludes=['scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
+
+#     return s
+
+
 def fetch_simple_episodes(show_key: str, season: str = None) -> Search:
     print(f'begin fetch_simple_episodes for show_key={show_key} season={season}')
 
@@ -99,7 +175,7 @@ def fetch_simple_episodes(show_key: str, season: str = None) -> Search:
     return s
 
 
-async def search_episodes_by_title(show_key: str, qt: str) -> Search:
+def search_episodes_by_title(show_key: str, qt: str) -> Search:
     print(f'begin search_episodes_by_title for show_key={show_key} qt={qt}')
 
     s = Search(index='transcripts')
@@ -114,7 +190,504 @@ async def search_episodes_by_title(show_key: str, qt: str) -> Search:
     return s
 
 
-async def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> Search:
+def fetch_speaker(show_key: str, speaker_name: str) -> EsSpeaker|None:
+    print(f'begin fetch_speaker for show_key={show_key} speaker_name={speaker_name}')
+
+    doc_id = f'{show_key}_{speaker_name}'
+
+    try:
+        speaker = EsSpeaker.get(id=doc_id, index='speakers')
+    except Exception as e:
+        print(f'Failed to fetch speaker `{speaker_name}` for show_key=`{show_key}`')
+        return None
+    
+    # TODO don't like having to do this 
+    # if speaker.child_topics:
+    #     speaker.child_topics = speaker.child_topics._d_
+    # if speaker.parent_topics:
+    #     speaker.parent_topics = speaker.parent_topics._d_
+
+    return speaker
+
+
+def fetch_indexed_speakers(show_key: str, return_fields: list = None, min_episode_count: int = None) -> Search:
+    print(f'begin fetch_indexed_speakers for show_key={show_key}')
+
+    s = Search(index='speakers')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+
+    if min_episode_count:
+        s = s.filter('range', episode_count={'gte': min_episode_count})
+
+    s = s.sort({"episode_count" : {"order" : "desc"}}, {"scene_count" : {"order" : "desc"}})
+
+    if return_fields:
+        s = s.source(includes=return_fields)
+
+    return s
+
+
+def search_speakers(qt: str, show_key: str, return_fields: list = None) -> Search:
+    print(f'begin search_speaker for qt={qt} show_key={show_key}')
+
+    s = Search(index='speakers')
+    s = s.extra(size=100)
+
+    # TODO this gets around limits on searching keyword `speaker` field, but true solution would be to add this to `alt_names` or `searchable_names`
+    qt_upper = qt.upper()
+
+    q = Q('bool', minimum_should_match=1, should=[
+            Q('match', speaker=qt_upper), Q('match', alt_names=qt), Q('match', actor_names=qt)])
+
+    s = s.query(q)
+
+    if show_key:
+        s = s.filter('term', show_key=show_key)
+
+    if return_fields:
+        s = s.source(includes=return_fields)
+
+    return s
+
+
+# def fetch_speaker_embedding(show_key: str, speaker: str, vector_field: str) -> Search:
+#     print(f'begin fetch_speaker_embedding for show_key={show_key} speaker={speaker} vector_field={vector_field}')
+
+#     s = Search(index='speakers')
+#     s = s.extra(size=1)
+
+#     s = s.filter('term', show_key=show_key)
+#     s = s.filter('term', speaker=speaker)
+#     s = s.source(includes=[vector_field])
+
+#     return s
+
+
+def fetch_speaker_season(show_key: str, speaker_name: str, season: int) -> EsSpeakerSeason|None:
+    print(f'begin fetch_speaker_season for show_key={show_key} speaker_name={speaker_name} season={season}')
+
+    doc_id = f'{show_key}_{speaker_name}_{season}'
+
+    try:
+        speaker_season = EsSpeakerSeason.get(id=doc_id, index='speaker_seasons')
+    except Exception as e:
+        print(f'Failed to fetch speaker_season for show_key={show_key} speaker={speaker_name} season={season}', e)
+        return None
+
+    return speaker_season
+
+
+def fetch_speaker_seasons(show_key: str, speaker: str = None, season: int = None, return_fields: list = []) -> Search:
+    print(f'begin fetch_speaker_seasons for show_key={show_key} speaker={speaker} season={season} return_fields={return_fields}')
+
+    if not (speaker or season):
+        raise Exception('fetch_speaker_episodes requires at least `speaker` or `season')
+
+    s = Search(index='speaker_seasons')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+    if speaker:
+        s = s.filter('term', speaker=speaker)
+    if season:
+        s = s.filter('term', season=season)
+
+    s = s.sort('season')
+
+    if return_fields:
+        s = s.source(includes=return_fields)
+
+    return s
+
+
+# def fetch_speaker_season_embeddings(show_key: str, speaker: str, vector_field: str, season: int = None) -> Search:
+#     print(f'begin fetch_speaker_season_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field}')
+
+#     s = Search(index='speaker_seasons')
+#     s = s.extra(size=1000)
+
+#     s = s.filter('term', show_key=show_key)
+#     s = s.filter('term', speaker=speaker)
+#     if season:
+#         s = s.filter('term', season=season)
+
+#     s = s.sort('season')
+
+#     s = s.source(includes=[vector_field])
+
+#     return s
+
+
+def fetch_speaker_episode(show_key: str, speaker_name: str, episode_key: str) -> EsSpeakerEpisode|None:
+    print(f'begin fetch_speaker_episode for show_key={show_key} speaker_name={speaker_name} episode_key={episode_key}')
+
+    doc_id = f'{show_key}_{speaker_name}_{episode_key}'
+
+    try:
+        speaker_episode = EsSpeakerEpisode.get(id=doc_id, index='speaker_episodes')
+    except Exception as e:
+        print(f'Failed to fetch speaker_episode for show_key={show_key} speaker={speaker_name} episode_key={episode_key}', e)
+        return None
+
+    return speaker_episode
+
+
+def fetch_speaker_episodes(show_key: str, speaker: str = None, episode_key: str = None, season: int = None, return_fields: list = []) -> Search:
+    print(f'begin fetch_speaker_episodes for show_key={show_key} episode_key={episode_key} speaker={speaker} season={season} return_fields={return_fields}')
+
+    if not (speaker or episode_key):
+        raise Exception('fetch_speaker_episodes requires at least `speaker` or `episode_key')
+
+    s = Search(index='speaker_episodes')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+    if speaker:
+        s = s.filter('term', speaker=speaker)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    elif season:
+        s = s.filter('term', season=season)
+
+    # s = s.sort('agg_score', order='desc')
+    s = s.sort({"agg_score" : {"order" : "desc"}})
+
+    if return_fields:
+        s = s.source(includes=return_fields)
+
+    return s
+
+
+# def fetch_speaker_episode_embeddings(show_key: str, speaker: str, vector_field: str, season: int = None, episode_key: str = None) -> Search:
+#     print(f'begin fetch_speaker_episode_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field}')
+
+#     s = Search(index='speaker_episodes')
+#     s = s.extra(size=1000)
+
+#     s = s.filter('term', show_key=show_key)
+#     s = s.filter('term', speaker=speaker)
+#     if episode_key:
+#         s = s.filter('term', episode_key=episode_key)
+#     elif season:
+#         s = s.filter('term', season=season)
+#     s = s.source(includes=[vector_field])
+
+#     return s
+
+
+def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, seasons: list = [], episode_keys: list = [], min_depth: bool = True) -> tuple[list, dict, dict]:
+    print(f'begin fetch_speaker_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field} seasons={seasons} episode_keys={episode_keys}')
+
+    try:
+        es_speaker = fetch_speaker(show_key, speaker)
+        speaker_series_embeddings = getattr(es_speaker, vector_field)
+    except Exception as e:
+        return {"error": f"Failed fetch_speaker for show_key={show_key} speaker={speaker}: {e}"}
+    
+    if min_depth and speaker_series_embeddings:
+         return speaker_series_embeddings, {}, {}
+            
+    if not seasons:
+        seasons = es_speaker.seasons_to_episode_keys._d_.keys()
+    if not episode_keys:
+        for s, e_keys in es_speaker.seasons_to_episode_keys._d_.items():
+            if s in seasons:
+                episode_keys.extend(e_keys)
+
+    season_embeddings = {}
+    for season in seasons:
+        try:
+            es_speaker_season = fetch_speaker_season(show_key, speaker, season)
+            if not es_speaker_season:
+                print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} season={season}")
+                continue
+            speaker_season_embeddings = getattr(es_speaker_season, vector_field)
+            if speaker_season_embeddings:
+                season_embeddings[season] = speaker_season_embeddings
+        except Exception as e:
+            print(f"Failed fetch_speaker_season for show_key={show_key} speaker={speaker} season={season}: {e}")
+
+    if min_depth and len(speaker_season_embeddings) == len(seasons):
+        return speaker_series_embeddings, season_embeddings, {}
+    
+    episode_embeddings = {}
+
+    for episode_key in episode_keys:
+        try:
+            es_speaker_episode = fetch_speaker_episode(show_key, speaker, episode_key)
+            if not es_speaker_episode:
+                print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} episode_key={episode_key}")
+                continue
+            speaker_episode_embeddings = getattr(es_speaker_episode, vector_field)
+            if speaker_episode_embeddings:
+                episode_embeddings[episode_key] = speaker_episode_embeddings
+        except Exception as e:
+            print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} episode_key={episode_key}: {e}")
+
+    return speaker_series_embeddings, season_embeddings, episode_embeddings
+
+
+def fetch_topic(topic_grouping: str, topic_key: str) -> EsTopic|None:
+    print(f'begin fetch_topic for topic_grouping={topic_grouping} topic_key={topic_key}')
+
+    doc_id = f'{topic_grouping}_{topic_key}'
+
+    try:
+        topic = EsTopic.get(id=doc_id, index='topics')
+    except Exception as e:
+        print(f'Failed to fetch topic with topic_grouping={topic_grouping} topic_key={topic_key}')
+        return None
+
+    return topic
+
+
+def fetch_topic_grouping(topic_grouping: str, return_fields: list = None) -> Search:
+    print(f'begin fetch_topic_grouping for topic_grouping={topic_grouping}')
+
+    s = Search(index='topics')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', topic_grouping=topic_grouping)
+
+    s = s.sort('parent_key', 'topic_key')
+
+    if return_fields:
+        s = s.source(includes=return_fields)
+
+    return s
+
+
+def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, level: str = None, limit: int = None) -> Search:
+    print(f'begin fetch_speaker_episode_topics for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping} level={level}')
+
+    if not limit:
+        limit = 100
+
+    s = Search(index='episode_topics')
+    s = s.extra(size=limit)
+
+    s = s.filter('match', show_key=show_key)
+    s = s.filter('term', episode_key=episode_key)
+    s = s.filter('match', topic_grouping=topic_grouping)
+    if level:
+        if level in ['parent', 'root', 'top']:
+            s = s.filter('term', is_parent=True)
+        elif level in ['child', 'leaf']:
+            s = s.filter('term', is_parent=False)
+
+    s = s.sort({'score': {'order': 'desc'}})
+
+    return s
+
+
+def fetch_speaker_topics(speaker: str, show_key: str, topic_grouping: str, level: str = None, limit: int = None) -> Search:
+    print(f'begin fetch_speaker_topics for speaker={speaker} show_key={show_key} topic_grouping={topic_grouping} level={level}')
+
+    if not limit:
+        limit = 100
+
+    s = Search(index='speaker_topics')
+    s = s.extra(size=limit)
+
+    s = s.filter('term', speaker=speaker)
+    s = s.filter('term', show_key=show_key)
+    s = s.filter('term', topic_grouping=topic_grouping)
+    if level:
+        if level in ['parent', 'root', 'top']:
+            s = s.filter('term', is_parent=True)
+        elif level in ['child', 'leaf']:
+            s = s.filter('term', is_parent=False)
+
+    s = s.sort({'score': {'order': 'desc'}})
+
+    return s
+
+
+def fetch_speaker_season_topics(speaker: str, show_key: str, topic_grouping: str, season: int = None, level: str = None, limit: int = None) -> Search:
+    print(f'begin fetch_speaker_season_topics for speaker={speaker} show_key={show_key} topic_grouping={topic_grouping} season={season} level={level}')
+
+    if not limit:
+        limit = 1000
+
+    s = Search(index='speaker_season_topics')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', speaker=speaker)
+    s = s.filter('term', show_key=show_key)
+    s = s.filter('term', topic_grouping=topic_grouping)
+    if season:
+        s = s.filter('term', season=season)
+    if level:
+        if level in ['parent', 'root', 'top']:
+            s = s.filter('term', is_parent=True)
+        elif level in ['child', 'leaf']:
+            s = s.filter('term', is_parent=False)
+
+    s = s.sort({'season': {'order': 'asc'}}, {'score': {'order': 'desc'}})
+
+    return s
+
+
+def fetch_speaker_episode_topics(speaker: str, show_key: str, topic_grouping: str, episode_key: str = None, season: int = None, 
+                                 level: str = None, limit: int = None) -> Search:
+    print(f'begin fetch_speaker_episode_topics for speaker={speaker} show_key={show_key} topic_grouping={topic_grouping} episode_key={episode_key} season={season} level={level}')
+
+    if not limit:
+        limit = 1000
+
+    s = Search(index='speaker_episode_topics')
+    # s = s.extra(size=limit)
+    s = s.extra(size=10000)
+
+    s = s.filter('term', speaker=speaker)
+    s = s.filter('term', show_key=show_key)
+    s = s.filter('term', topic_grouping=topic_grouping)
+    if episode_key:
+        s = s.filter('term', episode_key=episode_key)
+    if season:
+        s = s.filter('term', season=season)
+    if level:
+        if level in ['parent', 'root', 'top']:
+            s = s.filter('term', is_parent=True)
+        elif level in ['child', 'leaf']:
+            s = s.filter('term', is_parent=False)
+
+    s = s.sort({'season': {'order': 'asc'}}, {'episode_key': {'order': 'asc'}}, {'score': {'order': 'desc'}})
+
+    return s
+
+
+def search_episode_topics(show_key: str, topic_grouping: str, topic_key: str, season: int = None, limit: int = None) -> Search:
+    """
+    Find episodes by topic via episode_topics index
+    """
+    print(f'begin search_episode_topics for show_key={show_key} topic={topic_grouping}:{topic_key} season={season}')
+
+    if not limit:
+        limit = 100
+
+    s = Search(index='episode_topics')
+    s = s.extra(size=limit)
+
+    s = s.filter('match', show_key=show_key)
+    s = s.filter('match', topic_grouping=topic_grouping)
+    s = s.filter('match', topic_key=topic_key)
+    if season:
+        s = s.filter('match', season=season)
+
+    s = s.sort({'score': {'order': 'desc'}})
+
+    return s
+
+
+def search_speaker_topics(topic_grouping: str, topic_key: str, show_key: str = None, limit: int = None, min_word_count: int = None) -> Search:
+    """
+    Find speakers by topic via speaker_topics index
+    """
+    print(f'begin search_speaker_topics for topic={topic_grouping}:{topic_key} show_key={show_key}')
+
+    if not limit:
+        limit = 100
+
+    s = Search(index='speaker_topics')
+    s = s.extra(size=limit)
+
+    s = s.filter('match', topic_grouping=topic_grouping)
+    s = s.filter('match', topic_key=topic_key)
+    if show_key:
+        s = s.filter('match', show_key=show_key)
+    if min_word_count:
+        s = s.filter('range', word_count={'gt': min_word_count})
+
+    s = s.sort({'score': {'order': 'desc'}})
+
+    return s
+
+
+def search_speaker_season_topics(topic_grouping: str, topic_key: str, show_key: str, season: int = None, limit: int = None, min_word_count: int = None) -> Search:
+    """
+    Find speaker_seasons by topic via speaker_season_topics index
+    """
+    print(f'begin search_speaker_season_topics for topic={topic_grouping}:{topic_key} show_key={show_key} season={season}')
+
+    if not limit:
+        limit = 100
+
+    s = Search(index='speaker_season_topics')
+    s = s.extra(size=limit)
+
+    s = s.filter('match', topic_grouping=topic_grouping)
+    s = s.filter('match', topic_key=topic_key)
+    s = s.filter('match', show_key=show_key)
+    if season:
+        s = s.filter('match', season=season)
+    if min_word_count:
+        s = s.filter('range', word_count={'gt': min_word_count})
+
+    s = s.sort({'score': {'order': 'desc'}})
+
+    return s
+
+
+def search_speaker_episode_topics(topic_grouping: str, topic_key: str, show_key: str, season: int = None, episode_key: str = None, limit: int = None, 
+                                  min_word_count: int = None) -> Search:
+    """
+    Find speaker_episodes by topic via speaker_episode_topics index
+    """
+    print(f'begin search_speaker_episode_topics for topic={topic_grouping}:{topic_key} show_key={show_key} season={season} episode_key={episode_key}')
+
+    if not limit:
+        limit = 100
+
+    s = Search(index='speaker_episode_topics')
+    s = s.extra(size=limit)
+
+    s = s.filter('match', topic_grouping=topic_grouping)
+    s = s.filter('match', topic_key=topic_key)
+    s = s.filter('match', show_key=show_key)
+    if season:
+        s = s.filter('match', season=season)
+    if episode_key:
+        s = s.filter('match', episode_key=episode_key)
+    if min_word_count:
+        s = s.filter('range', word_count={'gt': min_word_count})
+
+    s = s.sort({'score': {'order': 'desc'}})
+
+    return s
+
+
+@DeprecationWarning
+def search_speakers_by_topic(topic_grouping: str, topic_key: str, is_parent: bool = False, show_key: str = None, min_word_count: int = None) -> Search:
+    print(f'begin search_speakers_by_topic for topic={topic_grouping}:{topic_key} is_parent={is_parent} show_key={show_key} min_word_count={min_word_count}')
+
+    s = Search(index='speakers')
+    s = s.extra(size=1000)
+
+    if is_parent:
+        topic_path = f'parent_topics.{topic_grouping}'
+    else:
+        topic_path = f'child_topics.{topic_grouping}'
+    topic_key_path = f'{topic_path}.topic_key'
+
+    s = s.filter('match', **{topic_key_path: topic_key})
+    if show_key:
+        s = s.filter('term', show_key=show_key)
+    if min_word_count:
+        s = s.filter('range', word_count={'gt': min_word_count})
+
+    # TODO this doesn't work like you want it to, need to nest topics as InnerDocs
+    topic_score_path = f'{topic_path}.score'
+    s = s.sort(topic_score_path)
+
+    s = s.source(excludes=['lines', 'seasons_to_episode_keys', 'openai_ada002_embeddings'])
+
+    return s
+
+
+def search_scenes(show_key: str, season: str = None, episode_key: str = None, location: str = None, description: str = None) -> Search:
     print(f'begin search_scenes for show_key={show_key} season={season} episode_key={episode_key} location={location} description={description}')
 
     if not (location or description):
@@ -169,7 +742,7 @@ def search_scene_events(show_key: str, season: str = None, episode_key: str = No
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
-    speaker_q = Q('match', **{'scenes.scene_events.spoken_by': speaker})
+    speaker_q = Q('match', **{'scenes.scene_events.spoken_by.keyword': speaker})
     dialog_q = Q('match', **{'scenes.scene_events.dialog': dialog})
 
     q = None
@@ -211,7 +784,7 @@ def search_scene_events(show_key: str, season: str = None, episode_key: str = No
     return s
 
 
-async def search_scene_events_multi_speaker(show_key: str, speakers: str, season: str = None, episode_key: str = None) -> Search:
+def search_scene_events_multi_speaker(show_key: str, speakers: str, season: str = None, episode_key: str = None) -> Search:
     print(f'begin search_scene_events_multi_speaker for show_key={show_key} season={season} episode_key={episode_key} speakers={speakers}')
 
     speakers = speakers.split(',')
@@ -222,7 +795,7 @@ async def search_scene_events_multi_speaker(show_key: str, speakers: str, season
     must_nested_qs = None
 
     for speaker in speakers: 
-        speaker_q = Q('bool', must=[Q('match', **{'scenes.scene_events.spoken_by': speaker})])
+        speaker_q = Q('bool', must=[Q('match', **{'scenes.scene_events.spoken_by.keyword': speaker})])
 
         nested_q = Q('nested', path='scenes.scene_events', 
                 query=speaker_q,
@@ -254,7 +827,7 @@ async def search_scene_events_multi_speaker(show_key: str, speakers: str, season
     return s
 
 
-async def search_episodes(show_key: str, season: str = None, episode_key: str = None, qt: str = None) -> Search:
+def search_episodes(show_key: str, season: str = None, episode_key: str = None, qt: str = None) -> Search:
     print(f'begin search for show_key={show_key} season={season} episode_key={episode_key} qt={qt}')
 
     '''
@@ -290,7 +863,7 @@ async def search_episodes(show_key: str, season: str = None, episode_key: str = 
     
     scene_event_fields_q = Q('bool', minimum_should_match=1, should=[
             Q('match', **{'scenes.scene_events.context_info': qt}),
-            Q('match', **{'scenes.scene_events.spoken_by': qt}),
+            Q('match', **{'scenes.scene_events.spoken_by.keyword': qt}),
             Q('match', **{'scenes.scene_events.dialog': qt})])
     
     scene_events_q = Q('nested', path='scenes.scene_events', 
@@ -339,7 +912,7 @@ def fetch_all_episode_relations(show_key: str, model_vendor: str, model_version:
     return s
 
 
-async def agg_seasons(show_key: str, location: str = None) -> Search:
+def agg_seasons(show_key: str, location: str = None) -> Search:
     print(f'begin agg_episodes for show_key={show_key} location={location}')
 
     s = Search(index='transcripts')
@@ -369,7 +942,7 @@ def agg_episodes(show_key: str, season: str = None, location: str = None) -> Sea
     return s
 
 
-async def agg_seasons_by_speaker(show_key: str, location: str = None) -> Search:
+def agg_seasons_by_speaker(show_key: str, location: str = None) -> Search:
     print(f'begin agg_episodes_by_speaker for show_key={show_key} location={location}')
 
     s = Search(index='transcripts')
@@ -394,7 +967,7 @@ async def agg_seasons_by_speaker(show_key: str, location: str = None) -> Search:
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
+            'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=2000
         ).bucket(
             'by_season', 'reverse_nested'
         ).bucket(
@@ -404,7 +977,7 @@ async def agg_seasons_by_speaker(show_key: str, location: str = None) -> Search:
     return s
 
 
-async def agg_seasons_by_location(show_key: str) -> Search:
+def agg_seasons_by_location(show_key: str) -> Search:
     print(f'begin agg_episodes_by_speaker for show_key={show_key}')
 
     s = Search(index='transcripts')
@@ -425,7 +998,7 @@ async def agg_seasons_by_location(show_key: str) -> Search:
     return s
 
 
-async def agg_episodes_by_speaker(show_key: str, season: str = None, location: str = None, other_speaker: str = None) -> Search:
+def agg_episodes_by_speaker(show_key: str, season: str = None, location: str = None, other_speaker: str = None) -> Search:
     print(f'begin agg_episodes_by_speaker for show_key={show_key} season={season} location={location} other_speaker={other_speaker}')
 
     # TODO this is nearly identical to agg_scenes_by_speaker, refactor?
@@ -453,7 +1026,7 @@ async def agg_episodes_by_speaker(show_key: str, season: str = None, location: s
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by": other_speaker}}
+            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by.keyword": other_speaker}}
         ).bucket(
             'for_scene', 'reverse_nested', path='scenes'
         ).bucket(
@@ -531,7 +1104,7 @@ def agg_scenes_by_location(show_key: str, season: str = None, episode_key: str =
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by": speaker}}
+            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by.keyword": speaker}}
         ).bucket(
             'scenes', 'reverse_nested', path='scenes'
         ).bucket(
@@ -574,7 +1147,7 @@ def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: str = 
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by": other_speaker}}
+            'speaker_match', 'filter', filter={"match": {"scenes.scene_events.spoken_by.keyword": other_speaker}}
         ).bucket(
             'for_scene', 'reverse_nested', path='scenes'
         ).bucket(
@@ -664,7 +1237,7 @@ def agg_dialog_word_counts(show_key: str, season: str = None, episode_key: str =
         s.aggs.bucket(
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
-            'speaker_match', 'filter', filter={'match': {'scenes.scene_events.spoken_by': speaker}}
+            'speaker_match', 'filter', filter={'match': {'scenes.scene_events.spoken_by.keyword': speaker}}
         ).bucket(
             'word_count', 'sum', field='scenes.scene_events.dialog.word_count')
     else:
@@ -678,7 +1251,7 @@ def agg_dialog_word_counts(show_key: str, season: str = None, episode_key: str =
     return s
 
 
-async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
+def keywords_by_episode(show_key: str, episode_key: str) -> dict:
     print(f'begin keywords_by_episode for show_key={show_key} episode_key={episode_key}')
 
     response = es_conn.termvectors(index='transcripts', id=f'{show_key}_{episode_key}', term_statistics='true', field_statistics='true',
@@ -687,7 +1260,7 @@ async def keywords_by_episode(show_key: str, episode_key: str) -> dict:
     return response
 
 
-async def keywords_by_corpus(show_key: str, season: str = None) -> dict:
+def keywords_by_corpus(show_key: str, season: str = None) -> dict:
     print(f'begin keywords_by_corpus for show_key={show_key} season={season}')
 
     keys = esr.fetch_doc_ids(ShowKey(show_key), season=season)
@@ -700,7 +1273,7 @@ async def keywords_by_corpus(show_key: str, season: str = None) -> dict:
     return response
 
 
-async def more_like_this(show_key: str, episode_key: str) -> Search:
+def more_like_this(show_key: str, episode_key: str) -> Search:
     print(f'begin search_more_like_this for show_key={show_key} episode_key={episode_key}')
 
     s = Search(index='transcripts')
@@ -714,7 +1287,7 @@ async def more_like_this(show_key: str, episode_key: str) -> Search:
     return s
 
 
-async def populate_focal_speakers(show_key: str, episode_key: str = None):
+def populate_focal_speakers(show_key: str, episode_key: str = None):
     print(f'begin populate_focal_speakers for show_key={show_key} episode_key={episode_key}')
 
     if episode_key:
@@ -726,7 +1299,7 @@ async def populate_focal_speakers(show_key: str, episode_key: str = None):
     episodes_to_focal_speakers = {}
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
-        episode_speakers = await esr.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
+        episode_speakers = esr.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
         episode_focal_speakers = list(episode_speakers['scene_events_by_speaker'].keys())
         focal_speaker_count = min(len(episode_focal_speakers), 4)
         focal_speakers = episode_focal_speakers[1:focal_speaker_count]
@@ -739,7 +1312,7 @@ async def populate_focal_speakers(show_key: str, episode_key: str = None):
     return episodes_to_focal_speakers
 
 
-async def populate_focal_locations(show_key: str, episode_key: str = None):
+def populate_focal_locations(show_key: str, episode_key: str = None):
     print(f'begin populate_focal_locations for show_key={show_key} episode_key={episode_key}')
 
     if episode_key:
@@ -751,7 +1324,7 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
     episodes_to_focal_locations = {}
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
-        episode_locations = await esr.agg_scenes_by_location(ShowKey(show_key), episode_key=episode_key)
+        episode_locations = esr.agg_scenes_by_location(ShowKey(show_key), episode_key=episode_key)
         episode_focal_locations = list(episode_locations['scenes_by_location'].keys())
         focal_location_count = min(len(episode_focal_locations), 4)
         focal_locations = episode_focal_locations[1:focal_location_count]
@@ -764,7 +1337,110 @@ async def populate_focal_locations(show_key: str, episode_key: str = None):
     return episodes_to_focal_locations
 
 
-async def populate_relations(show_key: str, model_vendor: str, model_version: str, episodes_to_relations: dict, limit: int = None) -> dict:
+def populate_episode_topics(show_key: str, episode: EsEpisodeTranscript, topics: list, model_vendor: str, model_version: str) -> list:
+    print(f'begin populate_episode_topics for show_key={show_key} episode_key={episode.episode_key} len(topics)={len(topics)}')
+    if not topics:
+        return []
+    es_episode_topics = []
+    # topics arrive sorted desc by score
+    high_score = topics[0]['score']
+    low_score = topics[len(topics)-1]['score']
+    score_range = high_score - low_score
+    for topic in topics:
+        topic['mod_score'] = (topic['score'] - low_score) / score_range
+        is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
+        es_episode_topic = EsEpisodeTopic(show_key=show_key, episode_key=episode.episode_key, episode_title=episode.title, season=episode.season, 
+                                          sequence_in_season=episode.sequence_in_season, air_date=episode.air_date, topic_grouping=topic['topic_grouping'], 
+                                          topic_key=topic['topic_key'], topic_name=topic['topic_name'], raw_score=topic['score'], score=topic['mod_score'], 
+                                          is_parent=is_parent, model_vendor=model_vendor, model_version=model_version)
+        es_episode_topics.append(es_episode_topic)
+        es_episode_topic.save()
+
+    return es_episode_topics
+
+
+def populate_speaker_topics(show_key: str, speaker: str, es_speaker: EsSpeaker, topics: list, model_vendor: str, model_version: str) -> list:
+    print(f'begin populate_speaker_topics for show_key={show_key} speaker={speaker} len(topics)={len(topics)}')
+    if not topics:
+        return []
+    es_speaker_topics = []
+    # topics arrive sorted desc by score
+    if 'mod_score' not in topics[0]:
+        high_score = topics[0]['score']
+        low_score = topics[len(topics)-1]['score']
+        score_range = high_score - low_score
+    for topic in topics:
+        # TODO this got hackey due to score normalization being added late
+        # this assumes that if first topic had mod_score then all of them did
+        if 'mod_score' not in topic:
+            topic['mod_score'] = (topic['score'] - low_score) / score_range
+        if 'score' not in topic:
+            topic['score'] = -1
+        is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
+        is_aggregate = 'is_aggregate' in topic and topic['is_aggregate']
+        es_speaker_topic = EsSpeakerTopic(show_key=show_key, speaker=speaker, word_count=es_speaker.word_count, topic_grouping=topic['topic_grouping'], 
+                                          topic_key=topic['topic_key'], topic_name=topic['topic_name'], raw_score=topic['score'], score=topic['mod_score'],
+                                          is_parent=is_parent, is_aggregate=is_aggregate, model_vendor=model_vendor, model_version=model_version)
+        es_speaker_topics.append(es_speaker_topic)
+        es_speaker_topic.save()
+
+    return es_speaker_topics
+
+
+def populate_speaker_season_topics(show_key: str, speaker: str, speaker_season: EsSpeakerSeason, topics: list, model_vendor: str, model_version: str) -> list:
+    print(f'begin populate_speaker_season_topics for show_key={show_key} speaker={speaker} season={speaker_season.season} len(topics)={len(topics)}')
+    if not topics:
+        return []
+    es_speaker_season_topics = []
+    # topics arrive sorted desc by score
+    if 'mod_score' not in topics[0]:
+        high_score = topics[0]['score']
+        low_score = topics[len(topics)-1]['score']
+        score_range = high_score - low_score
+    for topic in topics:
+        # TODO this got hackey due to score normalization being added late
+        # this assumes that if first topic had mod_score then all of them did
+        if 'mod_score' not in topic:
+            topic['mod_score'] = (topic['score'] - low_score) / score_range
+        if 'score' not in topic:
+            topic['score'] = -1
+        is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
+        is_aggregate = 'is_aggregate' in topic and topic['is_aggregate']
+        es_speaker_season_topic = EsSpeakerSeasonTopic(show_key=show_key, speaker=speaker, season=speaker_season.season, word_count=speaker_season.word_count, 
+                                                       topic_grouping=topic['topic_grouping'], topic_key=topic['topic_key'], topic_name=topic['topic_name'], 
+                                                       raw_score=topic['score'], score=topic['mod_score'], is_parent=is_parent, is_aggregate=is_aggregate,
+                                                       model_vendor=model_vendor, model_version=model_version)
+        es_speaker_season_topics.append(es_speaker_season_topic)
+        es_speaker_season_topic.save()
+
+    return es_speaker_season_topics
+
+
+def populate_speaker_episode_topics(show_key: str, speaker: str, speaker_episode: EsSpeakerEpisode, topics: list, model_vendor: str, model_version: str) -> list:
+    print(f'begin populate_speaker_season_topics for show_key={show_key} speaker={speaker} episode_key={speaker_episode.episode_key} len(topics)={len(topics)}')
+    if not topics:
+        return []
+    es_speaker_episode_topics = []
+    # topics arrive sorted desc by score
+    high_score = topics[0]['score']
+    low_score = topics[len(topics)-1]['score']
+    score_range = high_score - low_score
+    for topic in topics:
+        topic['mod_score'] = (topic['score'] - low_score) / score_range
+        is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
+        es_speaker_episode_topic = EsSpeakerEpisodeTopic(show_key=show_key, speaker=speaker, episode_key=speaker_episode.episode_key, 
+                                                         episode_title=speaker_episode.title, season=speaker_episode.season, 
+                                                         sequence_in_season=speaker_episode.sequence_in_season, air_date=speaker_episode.air_date, 
+                                                         word_count=speaker_episode.word_count, topic_grouping=topic['topic_grouping'], 
+                                                         topic_key=topic['topic_key'], topic_name=topic['topic_name'], raw_score=topic['score'],
+                                                         score=topic['mod_score'], is_parent=is_parent, model_vendor=model_vendor, model_version=model_version)
+        es_speaker_episode_topics.append(es_speaker_episode_topic)
+        es_speaker_episode_topic.save()
+
+    return es_speaker_episode_topics
+
+
+def populate_relations(show_key: str, model_vendor: str, model_version: str, episodes_to_relations: dict, limit: int = None) -> dict:
     print(f'begin populate_relations for show_key={show_key} model vendor:version={model_vendor}:{model_version} len(episodes_to_relations)={len(episodes_to_relations)} limit={limit}')
 
     for doc_id, similar_episodes in episodes_to_relations.items():
@@ -786,8 +1462,11 @@ async def populate_relations(show_key: str, model_vendor: str, model_version: st
     return episodes_to_relations
 
 
-def vector_search(show_key: str, vector_field: str, vectorized_qt: list, season: str = None) -> Search:
-    print(f'begin vector_search for show_key={show_key} vector_field={vector_field}')
+def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_name: str = None, season: str = None) -> Search:
+    print(f'begin vector_search for show_key={show_key} vector_field={vector_field} index_name={index_name} season={season}')
+
+    if not index_name:
+        index_name = 'transcripts'
 
     # s = Search(index='transcripts')
     # s = s.extra(size=1000)
@@ -797,12 +1476,15 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, season:
     #     s = s.filter('term', episode_key=episode_key)
     # if season:
     #     s = s.filter('term', season=season)
+        
+    # TODO hard-mapped based on number of TNG episodes, this needs to be passed into function (as episode count, speaker count, etc)
+    k = 176
 
     knn_query = {
         "field": vector_field,
         "query_vector": vectorized_qt,
-        "k": 176,
-        "num_candidates": 176
+        "k": k,
+        "num_candidates": k
     }
 
     filter_query = {
@@ -817,13 +1499,46 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, season:
         }
     }
 
-    source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations']
+    if index_name == 'speakers':
+        source = ['show_key', 'speaker']
+    else:
+        source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations', 
+                  'topics_universal', 'topics_focused']
     
-    response = es_conn.knn_search(index="transcripts", knn=knn_query, filter=filter_query, source=source)
+    response = es_conn.knn_search(index=index_name, knn=knn_query, filter=filter_query, source=source)
 
     # s = s.query(index="transcripts", knn=knn_query, source=source)
     # print(f's.to_dict()={s.to_dict()}')
     # return s
+
+    return response
+
+
+def topic_vector_search(topic_grouping: str, vector_field: str, vectorized_qt: list) -> Search:
+    print(f'begin topic_vector_search for topic_grouping={topic_grouping} vector_field={vector_field}')
+
+    knn_query = {
+        "field": vector_field,
+        "query_vector": vectorized_qt,
+        "k": 50,
+        "num_candidates": 50
+    }
+
+    filter_query = {
+        "bool": {
+            "filter": [
+                {
+                    "term": {
+                        "topic_grouping": topic_grouping
+                    }
+                }
+            ]
+        }
+    }
+
+    source = ['topic_grouping', 'topic_key', 'parent_key', 'topic_name', 'parent_name']
+
+    response = es_conn.knn_search(index="topics", knn=knn_query, filter=filter_query, source=source)
 
     return response
 
@@ -841,13 +1556,26 @@ def fetch_episode_embedding(show_key: str, episode_key: str, vector_field: str) 
     return s
 
 
-def fetch_show_embeddings(show_key: str, vector_field: str) -> Search:
-    print(f'begin fetch_show_embeddings for show_key={show_key} vector_field={vector_field}')
+def fetch_series_embeddings(show_key: str, vector_field: str) -> Search:
+    print(f'begin fetch_series_embeddings for show_key={show_key} vector_field={vector_field}')
 
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
     s = s.filter('term', show_key=show_key)
+    s = s.source(includes=[vector_field])
+
+    return s
+
+
+def fetch_topic_embedding(topic_grouping: str, topic_key: str, vector_field: str) -> Search:
+    print(f'begin fetch_topic_embedding for topic_grouping={topic_grouping} topic_key={topic_key} vector_field={vector_field}')
+
+    s = Search(index='topics')
+    s = s.extra(size=1)
+
+    s = s.filter('term', topic_grouping=topic_grouping)
+    s = s.filter('term', topic_key=topic_key)
     s = s.source(includes=[vector_field])
 
     return s

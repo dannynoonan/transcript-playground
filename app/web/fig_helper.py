@@ -30,4 +30,51 @@ def apply_animation_settings(fig: go.Figure, base_fig_title: str, frame_rate: in
     #     fig.frames[k]['layout'].update(title_text=f'{base_fig_title}: {year} ({era})')
         
     print(f'fig.layout={fig.layout}')
+
+
+def topic_cat_rank_color_mapper(topic_cat_i: int, hex_hue: int) -> str:
+    i = topic_cat_i % 9
+    j = int(topic_cat_i / 9)
+    low = j
+    high = 255 - j
+    if i == 0:
+        return f'rgb({hex_hue},{hex_hue},{high})'
+    if i == 1:
+        return f'rgb({hex_hue},{high},{hex_hue})'
+    if i == 2:
+        return f'rgb({high},{hex_hue},{hex_hue})'
+    if i == 3:
+        return f'rgb({hex_hue},{high},{high})'
+    if i == 4:
+        return f'rgb({high},{hex_hue},{high})'
+    if i == 5:
+        return f'rgb({high},{high},{hex_hue})'
+    if i == 6:
+        return f'rgb({hex_hue},{hex_hue},{low})'
+    if i == 7:
+        return f'rgb({hex_hue},{low},{hex_hue})'
+    if i == 8:
+        return f'rgb({low},{hex_hue},{hex_hue})'
+    if i == 9:
+        return f'rgb({hex_hue},{hex_hue},{hex_hue})'
+    
+    # if i == 7:
+    #     return f'rgb({hex_hue},0,0)'
+    # if i == 8:
+    #     return f'rgb(0,{hex_hue},0)'
+    # if i == 9:
+    #     return f'rgb(0,0,{hex_hue})'
+
+    # if i == 7:
+    #     return f'rgb({hex_hue},0,255)'
+    # if i == 8:
+    #     return f'rgb(0,{hex_hue},255)'
+    # if i == 9:
+    #     return f'rgb(0,255,{hex_hue})'
+    # if i == 10:
+    #     return f'rgb({hex_hue},255,0)'
+    # if i == 11:
+    #     return f'rgb(255,{hex_hue},0)'
+    # if i == 12:
+    #     return f'rgb(255,0,{hex_hue})'
         

@@ -4,7 +4,7 @@ WORD2VEC_VENDOR_VERSIONS = {
         'versions': {
             'gigaword29': {
                 'dims': 300,  # 854M
-                'status': 'ACTIVE'
+                'status': 'INACTIVE'
             },
             'enwiki223': {
                 'dims': 300,  # 691M
@@ -24,19 +24,19 @@ WORD2VEC_VENDOR_VERSIONS = {
             },
             'twitter27B200d': {
                 'dims': 200,  # 2.06G
-                'status': 'ACTIVE'
+                'status': 'INACTIVE'
             },
             'twitter27B100d': {
                 'dims': 100,  # 1.02G
-                'status': 'ACTIVE'
+                'status': 'INACTIVE'
             },
             '42B300d': {
                 'dims': 300,  # 5.03G
-                'status': 'ACTIVE'
+                'status': 'INACTIVE'
             },
             '840B300d': {
                 'dims': 300,  # 5.65G
-                'status': 'ACTIVE'
+                'status': 'INACTIVE'
             }
         },
         'file_suffix': '_model.txt',
@@ -52,7 +52,7 @@ WORD2VEC_VENDOR_VERSIONS = {
             },
             'crawl300d2M': {
                 'dims': 300,  # 4.51G
-                'status': 'ACTIVE'
+                'status': 'INACTIVE'
             }
         },
         'file_suffix': '.vec',
@@ -68,7 +68,8 @@ TRANSFORMER_VENDOR_VERSIONS = {
             'ada002': {
                 'dims': 1536,
                 'status': 'ACTIVE',
-                'true_name': 'text-embedding-ada-002'
+                'true_name': 'text-embedding-ada-002',
+                'max_tokens': 8191
             }
         }
     }
