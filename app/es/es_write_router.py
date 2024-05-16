@@ -1,4 +1,6 @@
 from fastapi import APIRouter
+from operator import itemgetter
+import math
 import os
 import numpy as np
 import pandas as pd
@@ -225,8 +227,8 @@ def build_embeddings_model(show_key: ShowKey):
     return {"model_info": model_info}
 
 
-@esw_app.get("/esw/populate_embeddings/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_embeddings(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str):
+@esw_app.get("/esw/populate_episode_embeddings/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_episode_embeddings(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str):
     '''
     Generate vector embedding for episode using pre-trained Word2Vec and Transformer models (enumerated in `nlp/nlp_metadata.py`)
     '''
@@ -239,10 +241,10 @@ def populate_embeddings(show_key: ShowKey, episode_key: str, model_vendor: str, 
         return {f"Failed to populate {model_vendor}:{model_version} embeddings for episode {show_key.value}_{episode_key}": e}
 
 
-@esw_app.get("/esw/populate_all_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
+@esw_app.get("/esw/populate_all_episode_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_episode_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
     '''
-    Bulk run of `/esw/populate_embeddings` for all episodes of a given show
+    Bulk run of `/esw/populate_episode_embeddings` for all episodes of a given show
     '''
     doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']
@@ -251,7 +253,7 @@ def populate_all_embeddings(show_key: ShowKey, model_vendor: str, model_version:
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
         try:
-            populate_embeddings(ShowKey(show_key), episode_key, model_vendor, model_version)
+            populate_episode_embeddings(ShowKey(show_key), episode_key, model_vendor, model_version)
             processed_episode_keys.append(episode_key)
         except Exception:
             failed_episode_keys.append(episode_key)
@@ -632,9 +634,12 @@ def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping:
     
     # write to episode_topics
     episode_topics = esqb.populate_episode_topics(show_key.value, es_episode, response['topics'], model_vendor, model_version)
+    for et in episode_topics:
+        print(f'et.to_dict()={et.to_dict()}')
 
     # write simplified subset of episode_topics to es_episode.topics_X
     simple_episode_topics = flatten_topics(episode_topics)
+    print(f'simple_episode_topics={simple_episode_topics}')
     if topic_grouping == 'universalGenres':
         es_episode.topics_universal = simple_episode_topics
     elif topic_grouping == 'focusedGpt35_TNG':
@@ -660,7 +665,64 @@ def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_ve
             processed_episode_keys.append(episode_key)
         except Exception:
             failed_episode_keys.append(episode_key)
+
     return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
+
+
+@esw_app.get("/esw/populate_episode_topic_tfidf_scores/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str):
+    '''
+    For specified topic_grouping, calculate 'tfidf'-like scores for all episode_topics and store in `tfidf_score` field  
+    '''
+    all_topics_response = esr.fetch_topic_grouping(topic_grouping)
+    # topic_agg_scores is a stand-in for "document frequency"
+    topic_agg_scores = {t['topic_key']:0 for t in all_topics_response['topics']}
+
+    simple_episodes_response = esr.fetch_simple_episodes(show_key)
+    e_keys = [e['episode_key'] for e in simple_episodes_response['episodes']]
+    ekey_tkey_scores = {ek:{} for ek in e_keys}
+
+    # TODO replace with agg query? since we're not actually fetching the `episode_topic` entities by id to update them
+    for e_key in e_keys:
+        episode_topics_response = esr.fetch_episode_topics(show_key, e_key, topic_grouping)
+        episode_topics = episode_topics_response['episode_topics']
+        # topic_agg_scores is a stand-in for "document frequency"
+        for topic in episode_topics:
+            t_key = topic['topic_key']
+            t_score = topic['score']
+            topic_agg_scores[t_key] += t_score
+            ekey_tkey_scores[e_key][t_key] = t_score
+
+    # use topic_agg_scores to generate "inverse document frequency"
+    topic_idfs = {}
+    for t_key in topic_agg_scores.keys():
+        topic_idfs[t_key] = math.log(len(e_keys) / (topic_agg_scores[t_key] + 1))
+
+    # generate and store episode-level "tf-idf" values per topic
+    e_keys_to_episode_topics = {}
+    for e_key, t_keys_to_scores in ekey_tkey_scores.items():
+        e_keys_to_episode_topics[e_key] = []
+        for t_key, score in t_keys_to_scores.items():
+            episode_topic = esqb.fetch_episode_topic(show_key.value, e_key, topic_grouping, t_key, model_vendor, model_version)
+            if episode_topic:
+                # use topic.score as a stand-in for "term frequency"
+                tfidf_score = score * topic_idfs[t_key]
+                episode_topic.tfidf_score = tfidf_score
+                episode_topic.save()
+                e_keys_to_episode_topics[e_key].append(episode_topic)
+        
+        # save simplified subset of season_topics to es_episode.topics_X_tfidf
+        if topic_grouping in ['universalGenres', 'focusedGpt35_TNG']:
+            tfidf_sorted_episode_topics = sorted(e_keys_to_episode_topics[e_key], key=itemgetter('tfidf_score'), reverse=True)
+            es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{e_key}')
+            simple_episode_topics = flatten_topics(tfidf_sorted_episode_topics)
+            if topic_grouping == 'universalGenres':
+                es_episode.topics_universal_tfidf = simple_episode_topics
+            elif topic_grouping == 'focusedGpt35_TNG':
+                es_episode.topics_focused_tfidf = simple_episode_topics
+            es_episode.save()
+
+    return {"e_keys_to_episode_topics": e_keys_to_episode_topics}
 
 
 @esw_app.get("/esw/populate_speaker_topics/{show_key}/{speaker}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])

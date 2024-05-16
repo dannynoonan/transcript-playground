@@ -459,11 +459,26 @@ def fetch_topic_grouping(topic_grouping: str, return_fields: list = None) -> Sea
     return s
 
 
-def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, level: str = None, limit: int = None) -> Search:
+def fetch_episode_topic(show_key: str, episode_key: str, topic_grouping: str, topic_key: str, model_vendor: str, model_version: str) -> EsEpisodeTopic|None:
+    doc_id = f'{show_key}_{episode_key}_{topic_grouping}_{topic_key}_{model_vendor}_{model_version}'
+    print(f'begin fetch_episode_topic for doc_id={doc_id}')
+
+    try:
+        episode_topic = EsEpisodeTopic.get(id=doc_id, index='episode_topics')
+    except Exception as e:
+        print(f'Failed to fetch episode_topic with doc_id={doc_id}')
+        return None
+
+    return episode_topic
+
+
+def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, level: str = None, limit: int = None, sort_by: str = None) -> Search:
     print(f'begin fetch_speaker_episode_topics for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping} level={level}')
 
     if not limit:
         limit = 100
+    if not sort_by:
+        sort_by = 'score'
 
     s = Search(index='episode_topics')
     s = s.extra(size=limit)
@@ -477,7 +492,7 @@ def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, l
         elif level in ['child', 'leaf']:
             s = s.filter('term', is_parent=False)
 
-    s = s.sort({'score': {'order': 'desc'}})
+    s = s.sort({sort_by: {'order': 'desc'}})
 
     return s
 
@@ -559,7 +574,7 @@ def fetch_speaker_episode_topics(speaker: str, show_key: str, topic_grouping: st
     return s
 
 
-def search_episode_topics(show_key: str, topic_grouping: str, topic_key: str, season: int = None, limit: int = None) -> Search:
+def search_episode_topics(show_key: str, topic_grouping: str, topic_key: str, season: int = None, limit: int = None, sort_by: str = None) -> Search:
     """
     Find episodes by topic via episode_topics index
     """
@@ -567,6 +582,8 @@ def search_episode_topics(show_key: str, topic_grouping: str, topic_key: str, se
 
     if not limit:
         limit = 100
+    if not sort_by:
+        sort_by = 'score'
 
     s = Search(index='episode_topics')
     s = s.extra(size=limit)
@@ -577,7 +594,7 @@ def search_episode_topics(show_key: str, topic_grouping: str, topic_key: str, se
     if season:
         s = s.filter('match', season=season)
 
-    s = s.sort({'score': {'order': 'desc'}})
+    s = s.sort({sort_by: {'order': 'desc'}})
 
     return s
 
@@ -1347,11 +1364,14 @@ def populate_episode_topics(show_key: str, episode: EsEpisodeTranscript, topics:
     low_score = topics[len(topics)-1]['score']
     score_range = high_score - low_score
     for topic in topics:
-        topic['mod_score'] = (topic['score'] - low_score) / score_range
+        if score_range > 0:
+            topic['dist_score'] = (topic['score'] - low_score) / score_range
+        else:
+            topic['dist_score'] = None
         is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
         es_episode_topic = EsEpisodeTopic(show_key=show_key, episode_key=episode.episode_key, episode_title=episode.title, season=episode.season, 
                                           sequence_in_season=episode.sequence_in_season, air_date=episode.air_date, topic_grouping=topic['topic_grouping'], 
-                                          topic_key=topic['topic_key'], topic_name=topic['topic_name'], raw_score=topic['score'], score=topic['mod_score'], 
+                                          topic_key=topic['topic_key'], topic_name=topic['topic_name'], raw_score=topic['score'], score=topic['dist_score'], 
                                           is_parent=is_parent, model_vendor=model_vendor, model_version=model_version)
         es_episode_topics.append(es_episode_topic)
         es_episode_topic.save()
@@ -1365,21 +1385,21 @@ def populate_speaker_topics(show_key: str, speaker: str, es_speaker: EsSpeaker, 
         return []
     es_speaker_topics = []
     # topics arrive sorted desc by score
-    if 'mod_score' not in topics[0]:
+    if 'dist_score' not in topics[0]:
         high_score = topics[0]['score']
         low_score = topics[len(topics)-1]['score']
         score_range = high_score - low_score
     for topic in topics:
         # TODO this got hackey due to score normalization being added late
-        # this assumes that if first topic had mod_score then all of them did
-        if 'mod_score' not in topic:
-            topic['mod_score'] = (topic['score'] - low_score) / score_range
+        # this assumes that if first topic had dist_score then all of them did
+        if 'dist_score' not in topic:
+            topic['dist_score'] = (topic['score'] - low_score) / score_range
         if 'score' not in topic:
             topic['score'] = -1
         is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
         is_aggregate = 'is_aggregate' in topic and topic['is_aggregate']
         es_speaker_topic = EsSpeakerTopic(show_key=show_key, speaker=speaker, word_count=es_speaker.word_count, topic_grouping=topic['topic_grouping'], 
-                                          topic_key=topic['topic_key'], topic_name=topic['topic_name'], raw_score=topic['score'], score=topic['mod_score'],
+                                          topic_key=topic['topic_key'], topic_name=topic['topic_name'], raw_score=topic['score'], score=topic['dist_score'],
                                           is_parent=is_parent, is_aggregate=is_aggregate, model_vendor=model_vendor, model_version=model_version)
         es_speaker_topics.append(es_speaker_topic)
         es_speaker_topic.save()
@@ -1393,22 +1413,22 @@ def populate_speaker_season_topics(show_key: str, speaker: str, speaker_season: 
         return []
     es_speaker_season_topics = []
     # topics arrive sorted desc by score
-    if 'mod_score' not in topics[0]:
+    if 'dist_score' not in topics[0]:
         high_score = topics[0]['score']
         low_score = topics[len(topics)-1]['score']
         score_range = high_score - low_score
     for topic in topics:
         # TODO this got hackey due to score normalization being added late
-        # this assumes that if first topic had mod_score then all of them did
-        if 'mod_score' not in topic:
-            topic['mod_score'] = (topic['score'] - low_score) / score_range
+        # this assumes that if first topic had dist_score then all of them did
+        if 'dist_score' not in topic:
+            topic['dist_score'] = (topic['score'] - low_score) / score_range
         if 'score' not in topic:
             topic['score'] = -1
         is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
         is_aggregate = 'is_aggregate' in topic and topic['is_aggregate']
         es_speaker_season_topic = EsSpeakerSeasonTopic(show_key=show_key, speaker=speaker, season=speaker_season.season, word_count=speaker_season.word_count, 
                                                        topic_grouping=topic['topic_grouping'], topic_key=topic['topic_key'], topic_name=topic['topic_name'], 
-                                                       raw_score=topic['score'], score=topic['mod_score'], is_parent=is_parent, is_aggregate=is_aggregate,
+                                                       raw_score=topic['score'], score=topic['dist_score'], is_parent=is_parent, is_aggregate=is_aggregate,
                                                        model_vendor=model_vendor, model_version=model_version)
         es_speaker_season_topics.append(es_speaker_season_topic)
         es_speaker_season_topic.save()
@@ -1426,14 +1446,14 @@ def populate_speaker_episode_topics(show_key: str, speaker: str, speaker_episode
     low_score = topics[len(topics)-1]['score']
     score_range = high_score - low_score
     for topic in topics:
-        topic['mod_score'] = (topic['score'] - low_score) / score_range
+        topic['dist_score'] = (topic['score'] - low_score) / score_range
         is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
         es_speaker_episode_topic = EsSpeakerEpisodeTopic(show_key=show_key, speaker=speaker, episode_key=speaker_episode.episode_key, 
                                                          episode_title=speaker_episode.title, season=speaker_episode.season, 
                                                          sequence_in_season=speaker_episode.sequence_in_season, air_date=speaker_episode.air_date, 
                                                          word_count=speaker_episode.word_count, topic_grouping=topic['topic_grouping'], 
                                                          topic_key=topic['topic_key'], topic_name=topic['topic_name'], raw_score=topic['score'],
-                                                         score=topic['mod_score'], is_parent=is_parent, model_vendor=model_vendor, model_version=model_version)
+                                                         score=topic['dist_score'], is_parent=is_parent, model_vendor=model_vendor, model_version=model_version)
         es_speaker_episode_topics.append(es_speaker_episode_topic)
         es_speaker_episode_topic.save()
 
@@ -1503,7 +1523,7 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
         source = ['show_key', 'speaker']
     else:
         source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations', 
-                  'topics_universal', 'topics_focused']
+                  'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
     
     response = es_conn.knn_search(index=index_name, knn=knn_query, filter=filter_query, source=source)
 

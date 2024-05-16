@@ -102,7 +102,10 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 
 	tdata['topics_by_grouping'] = {}
 	for topic_grouping in EPISODE_TOPIC_GROUPINGS:
-		episode_topics_response = esr.fetch_episode_topics(show_key, episode_key, topic_grouping, limit=50)
+		sort_by = 'score'
+		if topic_grouping in ['universalGenres', 'focusedGpt35_TNG']:
+			sort_by = 'tfidf_score'
+		episode_topics_response = esr.fetch_episode_topics(show_key, episode_key, topic_grouping, limit=50, sort_by=sort_by)
 		tdata['topics_by_grouping'][topic_grouping] = episode_topics_response['episode_topics']
 
 	###### IN-EPISODE SEARCH ######
@@ -457,8 +460,10 @@ def topic_page(request: Request, show_key: ShowKey, topic_grouping: str, topic_k
 		tdata['topic']['breadcrumb'] = f"{tdata['topic']['parent_key']} > {tdata['topic']['breadcrumb']}"
 
 	if topic_grouping in EPISODE_TOPIC_GROUPINGS:
-		episode_topic_response = esr.find_episodes_by_topic(show_key, topic_grouping, topic_key)
+		episode_topic_response = esr.find_episodes_by_topic(show_key, topic_grouping, topic_key, sort_by='score')
 		tdata['episode_topics'] = episode_topic_response['episode_topics']
+		episode_topic_response_raw_sort = esr.find_episodes_by_topic(show_key, topic_grouping, topic_key, sort_by='raw_score')
+		tdata['episode_topics_raw_sort'] = episode_topic_response_raw_sort['episode_topics']
 			
 	elif topic_grouping in SPEAKER_TOPIC_GROUPINGS:
 		speaker_topic_response = esr.find_speakers_by_topic(topic_grouping, topic_key, show_key=show_key, min_word_count=3000)

@@ -56,39 +56,75 @@
         </table>
         <br/>
 
+        <div class="row">
         {% if tdata['episode_topics'] %}
-        <h3>Top <strong>{{ tdata['episode_topics']|length }}</strong> {{ tdata['show_key'] }} episodes matching <strong>{{ tdata['topic_grouping'] }}</strong> topic <strong>"{{ tdata['topic']['breadcrumb'] }}"</strong></h3>
-        <br/>
+            <h3>Top <strong>{{ tdata['episode_topics']|length }}</strong> {{ tdata['show_key'] }} episodes matching <strong>{{ tdata['topic_grouping'] }}</strong> topic <strong>"{{ tdata['topic']['breadcrumb'] }}"</strong></h3>
+            <br/>
 
-        <table class="table table-hover table-striped table-fit">
-            <thead>
-                <tr class="table-success">
-                    <th scope="col">Title</th>
-                    <th scope="col">Season</th>
-                    <th scope="col">Episode</th>
-                    <th scope="col">Air date</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Raw</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for episode_topic in tdata['episode_topics'] %}
-                <tr class="table-secondary">
-                    <th scope="row"><a href="/web/episode/{{ episode_topic['show_key'] }}/{{ episode_topic['episode_key'] }}" 
-                        class="alert-link">{{ episode_topic['episode_title'] }}</a></th>
-                    <td>{{ episode_topic['season'] }}</td>
-                    <td>{{ episode_topic['sequence_in_season'] }}</td>
-                    <td>{{ episode_topic['air_date']|truncate(10,true,'') }}</td>
-                    <td>{{ '%0.2f'|format(episode_topic['score']|float) }}</td>
-                    <td>{{ '%0.2f'|format(episode_topic['raw_score']|float) }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+            <div class="col-4">
+                <h4>By score / tfidf:</h4>
+                <table class="table table-hover table-striped table-fit">
+                    <thead>
+                        <tr class="table-success">
+                            <th scope="col">Title</th>
+                            <th scope="col">Season</th>
+                            <th scope="col">Episode</th>
+                            <!-- <th scope="col">Air date</th> -->
+                            <th scope="col">Score</th>
+                            <th scope="col">Tfidf</th>
+                            <th scope="col">Raw</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for episode_topic in tdata['episode_topics'] %}
+                        <tr class="table-secondary">
+                            <th scope="row"><a href="/web/episode/{{ episode_topic['show_key'] }}/{{ episode_topic['episode_key'] }}" 
+                                class="alert-link">{{ episode_topic['episode_title'] }}</a></th>
+                            <td>{{ episode_topic['season'] }}</td>
+                            <td>{{ episode_topic['sequence_in_season'] }}</td>
+                            <!-- <td>{{ episode_topic['air_date']|truncate(10,true,'') }}</td> -->
+                            <td>{{ '%0.2f'|format(episode_topic['score']|float) }}</td>
+                            <td>{{ '%0.2f'|format(episode_topic['tfidf_score']|float) }}</td>
+                            <td>{{ '%0.2f'|format(episode_topic['raw_score']|float) }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-4">
+                <h4>By raw score:</h4>
+                <table class="table table-hover table-striped table-fit">
+                    <thead>
+                        <tr class="table-success">
+                            <th scope="col">Title</th>
+                            <th scope="col">Season</th>
+                            <th scope="col">Episode</th>
+                            <!-- <th scope="col">Air date</th> -->
+                            <th scope="col">Score</th>
+                            <th scope="col">Tfidf</th>
+                            <th scope="col">Raw</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for episode_topic in tdata['episode_topics_raw_sort'] %}
+                        <tr class="table-secondary">
+                            <th scope="row"><a href="/web/episode/{{ episode_topic['show_key'] }}/{{ episode_topic['episode_key'] }}" 
+                                class="alert-link">{{ episode_topic['episode_title'] }}</a></th>
+                            <td>{{ episode_topic['season'] }}</td>
+                            <td>{{ episode_topic['sequence_in_season'] }}</td>
+                            <!-- <td>{{ episode_topic['air_date']|truncate(10,true,'') }}</td> -->
+                            <td>{{ '%0.2f'|format(episode_topic['score']|float) }}</td>
+                            <td>{{ '%0.2f'|format(episode_topic['tfidf_score']|float) }}</td>
+                            <td>{{ '%0.2f'|format(episode_topic['raw_score']|float) }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         {% endif %}
 
         {% if tdata['speaker_topics'] or tdata['speaker_season_topics'] or tdata['speaker_episode_topics'] %}
-        <div class="row">
             <h3>Top speakers matching <strong>{{ tdata['topic_grouping'] }}</strong> topic <strong>{{ tdata['topic']['topic_key'] }}:"{{ tdata['topic']['topic_name'] }}"</strong></h3>
             <br/><br/>
             {% if tdata['speaker_topics'] %}
@@ -176,7 +212,6 @@
                 </table>
             </div>
             {% endif %}
-        </div>
         {% endif %}
 
     </div>

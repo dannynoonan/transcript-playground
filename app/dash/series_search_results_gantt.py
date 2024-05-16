@@ -9,7 +9,7 @@ content = html.Div([
     dbc.Card(className="bg-dark", children=[
         dbc.CardBody([
             dbc.Row([
-                html.H3(children=["Search results gantt chart visualization for query ", html.Span(id='qt-display'), " in ", html.Span(id='show-key-display9')]),
+                html.H3(children=["Search results gantt chart visualization for query '", html.Span(id='qt-display'), "' in ", html.Span(id='show-key-display9')]),
                 dbc.Col(md=2, children=[
                     html.Div([
                         "Show: ",

@@ -45,6 +45,8 @@ class EsEpisodeTranscript(Document):
     focal_locations = Keyword(multi=True)
     topics_universal = Object(multi=True)
     topics_focused = Object(multi=True)
+    topics_universal_tfidf = Object(multi=True)
+    topics_focused_tfidf = Object(multi=True)
     es_mlt_relations_text = Text(multi=True)
     es_mlt_relations_dict = Object(multi=True)
     openai_ada002_relations_text = Text(multi=True)
@@ -189,7 +191,8 @@ class EsEpisodeTopic(Document):
     topic_name = Keyword()
     is_parent = Boolean()
     raw_score = Float()
-    score = Float()
+    score = Float()  # TODO change to 'dist_score' or 'norm_score'?
+    tfidf_score = Float()
     model_vendor = Keyword()
     model_version = Keyword()
     indexed_ts = Date()

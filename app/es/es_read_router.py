@@ -186,11 +186,11 @@ def fetch_topic_grouping(topic_grouping: str, return_fields: str = None):
 
 
 @esr_app.get("/esr/fetch_episode_topics/{show_key}/{episode_key}/{topic_grouping}", tags=['ES Reader'])
-def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, level: str = None, limit: int = None):
+def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, level: str = None, limit: int = None, sort_by: str = None):
     '''
     Fetch topics mapped to episode
     '''
-    s = esqb.fetch_episode_topics(show_key.value, episode_key, topic_grouping, level=level, limit=limit)
+    s = esqb.fetch_episode_topics(show_key.value, episode_key, topic_grouping, level=level, limit=limit, sort_by=sort_by)
     es_query = s.to_dict()
     episode_topics = esrt.return_topics(s)
     return {"episode_topics": episode_topics, "es_query": es_query}
@@ -567,11 +567,13 @@ def search_speakers(qt: str, show_key: ShowKey = None, extra_fields: str = None)
 
 
 @esr_app.get("/esr/find_episodes_by_topic/{show_key}/{topic_grouping}/{topic_key}", tags=['ES Reader'])
-def find_episodes_by_topic(show_key: ShowKey, topic_grouping: str, topic_key: str, season: int = None):
+def find_episodes_by_topic(show_key: ShowKey, topic_grouping: str, topic_key: str, season: int = None, sort_by: str = None):
     '''
     Search episodes by topic
     '''                
-    s = esqb.search_episode_topics(show_key, topic_grouping, topic_key, season=season)
+    if not sort_by:
+        sort_by = 'score'
+    s = esqb.search_episode_topics(show_key, topic_grouping, topic_key, season=season, sort_by=sort_by)
     es_query = s.to_dict()
     episode_topics = esrt.return_topics(s)
     return {"episode_topics": episode_topics, "es_query": es_query}

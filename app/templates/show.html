@@ -70,8 +70,8 @@
                                                             <td>{{ episode['air_date']|truncate(10,true,'') }}</td>
                                                             <td>{{ episode['focal_speakers']|join(', ') }}</td>
                                                             <td>
-                                                            {% if episode['topics_universal'] %}
-                                                                {% for topic in episode['topics_universal'] %}
+                                                            {% if episode['topics_universal_tfidf'] %}
+                                                                {% for topic in episode['topics_universal_tfidf'] %}
                                                                     {% if loop.index < 4 %}
                                                                         {{ topic['topic_key'] }}{% if loop.index < 3 %}, {% endif %}
                                                                     {% endif %}

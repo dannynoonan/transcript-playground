@@ -106,7 +106,10 @@ def flatten_topics(topics: list) -> list:
     for t in topics:
         if 'is_parent' in t and t['is_parent']:
             continue
-        simple_topics.append(dict(topic_key=t['topic_key'], topic_name=t['topic_name'], score=t['score'], raw_score=t['raw_score']))
+        simple_topic = dict(topic_key=t['topic_key'], topic_name=t['topic_name'], score=t['score'], raw_score=t['raw_score'])
+        if 'tfidf_score' in t:
+            simple_topic['tfidf_score'] = t['tfidf_score']
+        simple_topics.append(simple_topic)
         count += 1
         if count > 5:
             break
