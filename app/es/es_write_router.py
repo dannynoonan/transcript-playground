@@ -821,7 +821,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
 
     # TODO ugh these's caching or latency with these lookups, responses are stale
     speaker_topics_response = esr.fetch_speaker_topics(speaker, show_key, topic_grouping)
-    speaker_season_topics_response = esr.fetch_speaker_season_topics(speaker, show_key, topic_grouping, limit=1000)
+    speaker_season_topics_response = esr.fetch_speaker_season_topics(show_key, topic_grouping, speaker=speaker, limit=1000)
     speaker_episode_topics_response = esr.fetch_speaker_episode_topics(speaker, show_key, topic_grouping, limit=10000)
 
     return {"speaker_topics": speaker_topics_response['speaker_topics'], 

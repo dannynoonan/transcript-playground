@@ -115,6 +115,21 @@ def return_topics_by_season(s: Search) -> dict:
         results[hit._source.season].append(hit._source._d_)
     
     return results
+
+
+def return_topics_by_speaker(s: Search) -> dict:
+    print(f'begin return_topics_by_speaker for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = {}
+
+    for hit in s.hits.hits:
+        if hit._source.speaker not in results:
+            results[hit._source.speaker] = []
+        results[hit._source.speaker].append(hit._source._d_)
+    
+    return results
     
 
 def return_episodes_by_title(s: Search) -> list:
@@ -378,6 +393,19 @@ def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = 
     results = sorted(results, key=itemgetter('agg_score'), reverse=True)
 
     return results, scene_count, scene_event_count
+
+
+def return_seasons(s: Search) -> list:
+    print(f'begin return_seasons for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = []
+
+    for item in s.aggregations.by_season.buckets:
+        results.append(item.key)
+
+    return results
 
 
 def return_seasons_by_speaker(s: Search, agg_season_count: str, location: str = None) -> list:

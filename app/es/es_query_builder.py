@@ -210,13 +210,16 @@ def fetch_speaker(show_key: str, speaker_name: str) -> EsSpeaker|None:
     return speaker
 
 
-def fetch_indexed_speakers(show_key: str, return_fields: list = None, min_episode_count: int = None) -> Search:
+def fetch_indexed_speakers(show_key: str, season: int = None, return_fields: list = None, min_episode_count: int = None) -> Search:
     print(f'begin fetch_indexed_speakers for show_key={show_key}')
 
     s = Search(index='speakers')
     s = s.extra(size=1000)
 
     s = s.filter('term', show_key=show_key)
+    # NOTE this filter is misleading: it will exclude speakers by season but will not adjust aggregate series-level counts
+    if season:
+        s = s.filter('term', season=str(season))
 
     if min_episode_count:
         s = s.filter('range', episode_count={'gte': min_episode_count})
@@ -252,19 +255,6 @@ def search_speakers(qt: str, show_key: str, return_fields: list = None) -> Searc
     return s
 
 
-# def fetch_speaker_embedding(show_key: str, speaker: str, vector_field: str) -> Search:
-#     print(f'begin fetch_speaker_embedding for show_key={show_key} speaker={speaker} vector_field={vector_field}')
-
-#     s = Search(index='speakers')
-#     s = s.extra(size=1)
-
-#     s = s.filter('term', show_key=show_key)
-#     s = s.filter('term', speaker=speaker)
-#     s = s.source(includes=[vector_field])
-
-#     return s
-
-
 def fetch_speaker_season(show_key: str, speaker_name: str, season: int) -> EsSpeakerSeason|None:
     print(f'begin fetch_speaker_season for show_key={show_key} speaker_name={speaker_name} season={season}')
 
@@ -283,7 +273,7 @@ def fetch_speaker_seasons(show_key: str, speaker: str = None, season: int = None
     print(f'begin fetch_speaker_seasons for show_key={show_key} speaker={speaker} season={season} return_fields={return_fields}')
 
     if not (speaker or season):
-        raise Exception('fetch_speaker_episodes requires at least `speaker` or `season')
+        raise Exception('fetch_speaker_seasons requires at least `speaker` or `season')
 
     s = Search(index='speaker_seasons')
     s = s.extra(size=1000)
@@ -300,24 +290,6 @@ def fetch_speaker_seasons(show_key: str, speaker: str = None, season: int = None
         s = s.source(includes=return_fields)
 
     return s
-
-
-# def fetch_speaker_season_embeddings(show_key: str, speaker: str, vector_field: str, season: int = None) -> Search:
-#     print(f'begin fetch_speaker_season_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field}')
-
-#     s = Search(index='speaker_seasons')
-#     s = s.extra(size=1000)
-
-#     s = s.filter('term', show_key=show_key)
-#     s = s.filter('term', speaker=speaker)
-#     if season:
-#         s = s.filter('term', season=season)
-
-#     s = s.sort('season')
-
-#     s = s.source(includes=[vector_field])
-
-#     return s
 
 
 def fetch_speaker_episode(show_key: str, speaker_name: str, episode_key: str) -> EsSpeakerEpisode|None:
@@ -358,23 +330,6 @@ def fetch_speaker_episodes(show_key: str, speaker: str = None, episode_key: str 
         s = s.source(includes=return_fields)
 
     return s
-
-
-# def fetch_speaker_episode_embeddings(show_key: str, speaker: str, vector_field: str, season: int = None, episode_key: str = None) -> Search:
-#     print(f'begin fetch_speaker_episode_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field}')
-
-#     s = Search(index='speaker_episodes')
-#     s = s.extra(size=1000)
-
-#     s = s.filter('term', show_key=show_key)
-#     s = s.filter('term', speaker=speaker)
-#     if episode_key:
-#         s = s.filter('term', episode_key=episode_key)
-#     elif season:
-#         s = s.filter('term', season=season)
-#     s = s.source(includes=[vector_field])
-
-#     return s
 
 
 def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, seasons: list = [], episode_keys: list = [], min_depth: bool = True) -> tuple[list, dict, dict]:
@@ -520,18 +475,22 @@ def fetch_speaker_topics(speaker: str, show_key: str, topic_grouping: str, level
     return s
 
 
-def fetch_speaker_season_topics(speaker: str, show_key: str, topic_grouping: str, season: int = None, level: str = None, limit: int = None) -> Search:
-    print(f'begin fetch_speaker_season_topics for speaker={speaker} show_key={show_key} topic_grouping={topic_grouping} season={season} level={level}')
+def fetch_speaker_season_topics(show_key: str, topic_grouping: str, speaker: str = None, season: int = None, level: str = None, limit: int = None) -> Search:
+    print(f'begin fetch_speaker_season_topics for show_key={show_key} topic_grouping={topic_grouping} speaker={speaker} season={season} level={level}')
 
+    if not (speaker or season):
+        raise Exception(f'Failure to fetch_speaker_season_topics: both `speaker` and `season` were None, at least one must be set')
+    
     if not limit:
         limit = 1000
 
     s = Search(index='speaker_season_topics')
     s = s.extra(size=1000)
 
-    s = s.filter('term', speaker=speaker)
     s = s.filter('term', show_key=show_key)
     s = s.filter('term', topic_grouping=topic_grouping)
+    if speaker:
+        s = s.filter('term', speaker=speaker)
     if season:
         s = s.filter('term', season=season)
     if level:

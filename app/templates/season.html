@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %} 
+	<title>{{ tdata['show_key'] }} season {{ tdata['season'] }} show page</title>
+{% endblock %} 
+
+{% block content %} 
+	<div class="margin">
+
+        <!-- BEGIN FIRST ROW -->
+        <div class="row">
+
+            <!-- begin top line info -->
+            <div class="col-4">
+                <h3>{{ tdata['show_key'] }} Season {{ tdata['season'] }} <small>({{ tdata['air_date_range'] }})</small></h3>
+                <h5>{{ tdata['episode_count'] }} episodes, {{ tdata['scene_count'] }} scenes, {{ tdata['line_count'] }} lines, {{ tdata['word_count'] }} words</h5>
+                <p>{% if tdata['prev_season'] %}
+                    &lt;&lt;&nbsp; <a class="alert-link" href="/web/season/{{ tdata['show_key'] }}/{{ tdata['prev_season'] }}">Previous season</a> &nbsp;
+                    {% endif %}
+                    |
+                    {% if tdata['next_season'] %}
+                    &nbsp; <a class="alert-link" href="/web/season/{{ tdata['show_key'] }}/{{ tdata['next_season'] }}">Next season</a> &nbsp;&gt;&gt;
+                    {% endif %}
+                </p>
+                <p>&nbsp;</p>
+            </div>
+            <!-- end top line info -->
+
+            <!-- begin characters -->
+            <div class="col-5">
+                <h3>Characters</h3>
+                <div class="overflow-scroll" style="max-height: 300px;">
+                    <table class="table table-hover table-striped table-fit">
+                        <thead>
+                            <tr class="table-success">
+                                <th scope="col">Character</th>
+                                <th scope="col">Episodes</th>
+                                <th scope="col">Scenes</th>
+                                <th scope="col">Lines</th>
+                                <th scope="col">Words</th>
+                                <th scope="col">Meyers-Briggs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for speaker in tdata['speaker_seasons'] %}
+                            <tr class="table-secondary">
+                                <th scope="row">
+                                    {% if speaker['speaker'] == '_ALL_' %}
+                                        [ALL]
+                                    {% else %}
+                                        <a class="alert-link" href="/web/character/{{ tdata['show_key'] }}/{{ speaker['speaker'] }}">{{ speaker['speaker'] }}</a>
+                                    {% endif %}
+                                </th>
+                                <td>
+                                    {% if speaker['speaker'] == '_ALL_' %}
+                                        {{ speaker['episode_count'] }}
+                                    {% else %}
+                                        <a href="/web/episode_search/{{ tdata['show_key'] }}?speaker={{ speaker['speaker'] }}&search_type=advanced" 
+                                            class="alert-link" >{{ speaker['episode_count'] }}</a>
+                                    {% endif %}
+                                </td>
+                                <td>{{ speaker['scene_count'] }}</td>
+                                <td>{{ speaker['line_count'] }}</td>
+                                <td>{{ speaker['word_count'] }}</td>
+                                <td>
+                                {% if speaker['topics_mbti'] %}
+                                    {% for topic in speaker['topics_mbti'] %}
+                                        {% if loop.index < 4 %}
+                                            {{ topic['topic_key'] }}{% if loop.index < 3 %}, {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- end characters -->
+
+            <!-- begin locations -->
+			<div class="col-3">
+                <h3>Locations</h3>
+                <div class="overflow-scroll" style="max-height: 300px;">
+                    <table class="table table-hover table-striped table-fit">
+                        <thead>
+                            <tr class="table-primary">
+                                <th scope="col">Location</th>
+                                <th scope="col">Episodes</th>
+                                <th scope="col">Scenes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for location in tdata['location_counts'] %}
+                            <tr class="table-secondary">
+                                <th scope="row">
+                                    {% if location['location'] == '_ALL_' %}
+                                        [ALL]
+                                    {% else %}
+                                        {{ location['location'] }}
+                                    {% endif %}
+                                </th>
+                                <td>{{ location['episode_count'] }}</td>
+                                <td>{{ location['scene_count'] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- end locations -->
+
+        </div>
+        <p>&nbsp;</p>
+        <!-- END FIRST ROW -->
+
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr class="table-success">
+                    <th scope="col">Episode</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Air date</th>
+                    <th scope="col">Focal characters</th>
+                    <th scope="col">Universal genres</th>
+                    <th scope="col">Focused genres</th>
+                    <th scope="col">Scenes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for episode in tdata['episodes'] %}
+                <tr class="table-secondary">
+                    <th scope="row">{{ episode['sequence_in_season'] }}</th>
+                    <td>
+                        <a class="alert-link" href="/web/episode/{{ tdata['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title'] }}</a>
+                    </td>
+                    <td><nobr>{{ episode['air_date']|truncate(10,true,'') }}</nobr></td>
+                    <td>{{ episode['focal_speakers']|join(', ') }}</td>
+                    <td>
+                    {% if episode['topics_universal_tfidf'] %}
+                        {% for topic in episode['topics_universal_tfidf'] %}
+                            {% if loop.index < 4 %}
+                                {{ topic['topic_key'] }}{% if loop.index < 3 %}, {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    </td>
+                    <td>
+                    {% if episode['topics_focused_tfidf'] %}
+                        {% for topic in episode['topics_focused_tfidf'] %}
+                            {% if loop.index < 4 %}
+                                {{ topic['topic_key'] }}{% if loop.index < 3 %}, {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    </td>
+                    <td>{{ episode['scene_count'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>   
+        <p>&nbsp;</p>
+    </div>
+
+{% endblock %}

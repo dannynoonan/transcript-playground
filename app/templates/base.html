@@ -29,6 +29,17 @@
                     <li class="nav-item">
                         <a class="nav-link {% if tdata['header'] == 'show' %}active{% endif %}" href="/web/show/{{ tdata['show_key'] }}">{{ tdata['show_key'] }}</a>
                     </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link {% if tdata['header'] == 'season' %}active{% endif %}">Seasons</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {% if tdata['header'] == 'season' %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seasons</a>
+                        <div class="dropdown-menu">
+                        {% for season in tdata['all_seasons'] %}
+                            <a class="dropdown-item" href="/web/season/{{ tdata['show_key'] }}/{{ season }}">{{ season }}</a>
+                        {% endfor %}
+                        </div>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link {% if tdata['header'] == 'search' %}active{% endif %}" href="/web/episode_search/{{ tdata['show_key'] }}">Search</a>
                     </li>

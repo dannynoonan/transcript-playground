@@ -24,8 +24,10 @@ async def show_page(request: Request, show_key: ShowKey):
 
 	tdata['header'] = 'show'
 	tdata['show_key'] = show_key.value
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
 
-	# locations_by_scene = await esr.agg_scenes_by_location(show_key)
+	# locations_by_scene = esr.agg_scenes_by_location(show_key)
 	# tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
 
 	location_counts = esr.composite_location_aggs(show_key)
@@ -66,6 +68,74 @@ async def show_page(request: Request, show_key: ShowKey):
 	return templates.TemplateResponse("show.html", {"request": request, 'tdata': tdata})
 
 
+@web_app.get("/web/season/{show_key}/{season}", response_class=HTMLResponse, tags=['Web'])
+async def season_page(request: Request, show_key: ShowKey, season: str):
+	tdata = {}
+
+	tdata['header'] = 'season'
+	tdata['show_key'] = show_key.value
+	tdata['season'] = season
+	list_seasons_response = esr.list_seasons(show_key)
+	all_seasons = list_seasons_response['seasons']
+	tdata['all_seasons'] = all_seasons
+
+	tdata['prev_season'] = None
+	tdata['next_season'] = None
+	season_index = all_seasons.index(int(season))
+	if season_index > 0:
+		tdata['prev_season'] = all_seasons[season_index-1]
+	if season_index < len(all_seasons)-1:
+		tdata['next_season'] = all_seasons[season_index+1]
+
+	locations_by_scene = esr.agg_scenes_by_location(show_key, season=season)
+	tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
+
+	location_counts = esr.composite_location_aggs(show_key, season=season)
+	tdata['location_counts'] = location_counts['location_agg_composite']
+
+	speaker_seasons_response = esr.fetch_speakers_for_season(show_key, season)
+	speaker_seasons = speaker_seasons_response['speaker_seasons']
+
+	speaker_season_topics_response = esr.fetch_speaker_season_topics(show_key, 'meyersBriggsKiersey', season=season, level='child')
+	speaker_season_topics = speaker_season_topics_response['speaker_season_topics']
+	for speaker_season in speaker_seasons:
+		speaker = speaker_season['speaker']
+		if speaker in speaker_season_topics:
+			speaker_season['topics_mbti'] = speaker_season_topics[speaker]
+	tdata['speaker_seasons'] = speaker_seasons
+
+	keywords = esr.keywords_by_corpus(show_key, season=season, exclude_speakers=True)
+	tdata['keywords'] = keywords['keywords']
+
+	episodes_response = esr.fetch_simple_episodes(show_key, season=season)
+	episodes = episodes_response['episodes']
+	tdata['episode_count'] = len(episodes)
+	tdata['episodes'] = episodes
+
+	locations = esr.agg_scenes_by_location(show_key, season=season)
+	tdata['location_count'] = locations['location_count']
+
+	# TODO this is what gets replaced by fetch_indexed_speakers, right?
+	speaker_line_aggs_response = esr.agg_scene_events_by_speaker(show_key, season=season)
+	tdata['line_count'] = speaker_line_aggs_response['scene_events_by_speaker']['_ALL_']
+
+	speaker_scene_aggs_response = esr.agg_scenes_by_speaker(show_key, season=season)
+	tdata['scene_count'] = speaker_scene_aggs_response['scenes_by_speaker']['_ALL_']
+
+	speaker_episode_aggs_response = esr.agg_episodes_by_speaker(show_key, season=season)
+	tdata['speaker_count'] = speaker_episode_aggs_response['speaker_count']	
+	
+	speaker_wc_aggs_response = esr.agg_dialog_word_counts(show_key, season=season)
+	tdata['word_count'] = int(speaker_wc_aggs_response['dialog_word_counts']['_ALL_'])
+	
+	# generate air_date_range
+	first_episode_in_season = episodes[0]
+	last_episode_in_season = episodes[-1]
+	tdata['air_date_range'] = f"{first_episode_in_season['air_date'][:10]} - {last_episode_in_season['air_date'][:10]}"
+
+	return templates.TemplateResponse("season.html", {"request": request, 'tdata': tdata})
+
+
 @web_app.get("/web/episode/{show_key}/{episode_key}", response_class=HTMLResponse, tags=['Web'])
 def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_type: str = None, qt: str = None, dialog: str = None, 
 				 speaker: str = None, location: str = None, speakers: str = None, locationAMS: str = None):
@@ -74,6 +144,8 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 	tdata['header'] = 'episode'
 	tdata['show_key'] = show_key.value
 	tdata['episode_key'] = episode_key
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
 
 	episode = esr.fetch_episode(show_key, episode_key)
 	tdata['episode'] = episode['es_episode']
@@ -178,6 +250,8 @@ def episode_search_page(request: Request, show_key: ShowKey, search_type: str = 
 	else:
 		tdata['search_type'] = search_type
 	tdata['season'] = season
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
 
 	tdata['qt'] = ''
 
@@ -264,6 +338,8 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 	tdata['header'] = 'character'
 	tdata['show_key'] = show_key.value
 	tdata['speaker'] = speaker
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
 
 	response = esr.fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)
 	if 'speaker' in response:
@@ -389,6 +465,8 @@ def character_listing_page(request: Request, show_key: ShowKey, qt: str = None):
 
 	tdata['header'] = 'character'
 	tdata['show_key'] = show_key.value
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
 
 	indexed_speakers_response = esr.fetch_indexed_speakers(show_key, extra_fields='topics_mbti')
 	indexed_speakers = indexed_speakers_response['speakers']
@@ -419,6 +497,9 @@ def topic_listing_page(request: Request, show_key: ShowKey, selected_topic_group
 	tdata['header'] = 'topic'
 	tdata['show_key'] = show_key.value
 	tdata['selected_topic_grouping'] = selected_topic_grouping
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
+
 	tdata['topic_groupings'] = {}
 
 	# TODO will probably split up episode and speaker topics, for now keeping together
@@ -450,6 +531,9 @@ def topic_page(request: Request, show_key: ShowKey, topic_grouping: str, topic_k
 	tdata['show_key'] = show_key.value
 	tdata['topic_grouping'] = topic_grouping
 	tdata['topic_key'] = topic_key
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
+
 	tdata['episodes'] = []
 	tdata['speakers'] = []
 

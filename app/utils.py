@@ -81,7 +81,7 @@ class TopicAgg(object):
         for t in topics:
             if t['topic_key'] not in self.keys_to_scores:
                 self.keys_to_scores[t['topic_key']] = 0
-            self.keys_to_scores[t['topic_key']] += t['mod_score'] * multiplier
+            self.keys_to_scores[t['topic_key']] += t['dist_score'] * multiplier
 
         self.denominator += multiplier
 
@@ -91,8 +91,7 @@ class TopicAgg(object):
         for st in sorted_tuples:
             if st[0] in self.reference_topics:
                 rt_copy = dict(self.reference_topics[st[0]])
-                rt_copy['mod_score'] = st[1] / self.denominator
-                print(f"topic_key={st[0]} had agg mod_score={st[1]}, divided by denominator={self.denominator} resulting in mod_score={rt_copy['mod_score']}")
+                rt_copy['dist_score'] = st[1] / self.denominator
                 rt_copy['is_aggregate'] = True
                 sorted_topics.append(rt_copy)
             else:
