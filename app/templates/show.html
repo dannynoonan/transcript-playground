@@ -7,7 +7,8 @@
 
 {% block content %} 
 	<div class="margin">
-        <h3><strong>{{ tdata['show_key'] }}</strong> show page</h3>
+        <h3><strong>{{ tdata['show_key'] }}</strong> show page <small>({{ tdata['air_date_range'] }})</small></h3>
+        <h5>{{ tdata['season_count'] }} seasons, {{ tdata['episode_count'] }} episodes, {{ tdata['scene_count'] }} scenes, {{ tdata['line_count'] }} lines, {{ tdata['word_count'] }} words</h5>
 		<p>&nbsp;</p>
 
         <div class="row">

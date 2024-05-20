@@ -27,8 +27,17 @@ async def show_page(request: Request, show_key: ShowKey):
 	list_seasons_response = esr.list_seasons(show_key)
 	tdata['all_seasons'] = list_seasons_response['seasons']
 
-	# locations_by_scene = esr.agg_scenes_by_location(show_key)
-	# tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
+	tdata['season_count'] = len(tdata['all_seasons'])
+	series_locations_response = esr.agg_scenes_by_location(show_key)
+	tdata['location_count'] = series_locations_response['location_count']
+	series_speakers_response = esr.agg_scene_events_by_speaker(show_key)
+	tdata['line_count'] = series_speakers_response['scene_events_by_speaker']['_ALL_']
+	series_speaker_scene_counts_response = esr.agg_scenes_by_speaker(show_key)
+	tdata['scene_count'] = series_speaker_scene_counts_response['scenes_by_speaker']['_ALL_']
+	series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(show_key)
+	tdata['speaker_count'] = series_speaker_episode_counts_response['speaker_count']	
+	series_speaker_word_counts_response = esr.agg_dialog_word_counts(show_key)
+	tdata['word_count'] = int(series_speaker_word_counts_response['dialog_word_counts']['_ALL_'])
 
 	location_counts = esr.composite_location_aggs(show_key)
 	tdata['location_counts'] = location_counts['location_agg_composite']
@@ -42,16 +51,20 @@ async def show_page(request: Request, show_key: ShowKey):
 	episodes_by_season = esr.list_simple_episodes_by_season(show_key)
 	tdata['episodes_by_season'] = episodes_by_season['episodes_by_season']
 
+	tdata['episode_count'] = 0
+	first_episode_in_series = None
+	last_episode_in_series = None
 	stats_by_season = {}
 	for season in tdata['episodes_by_season'].keys():
 		season_episode_count = len(tdata['episodes_by_season'][season])
+		tdata['episode_count'] += len(tdata['episodes_by_season'][season])
 		stats = {}
 		season_locations = esr.agg_scenes_by_location(show_key, season=season)
 		stats['location_count'] = season_locations['location_count']
-		stats['location_counts'] = utils.truncate_dict(season_locations['scenes_by_location'], season_episode_count, 1)
+		stats['location_counts'] = utils.truncate_dict(season_locations['scenes_by_location'], season_episode_count, start_index=1)
 		season_speakers = esr.agg_scene_events_by_speaker(show_key, season=season)
 		stats['line_count'] = season_speakers['scene_events_by_speaker']['_ALL_']
-		stats['speaker_line_counts'] = utils.truncate_dict(season_speakers['scene_events_by_speaker'], season_episode_count, 1)
+		stats['speaker_line_counts'] = utils.truncate_dict(season_speakers['scene_events_by_speaker'], season_episode_count, start_index=1)
 		season_speaker_scene_counts = esr.agg_scenes_by_speaker(show_key, season=season)
 		stats['scene_count'] = season_speaker_scene_counts['scenes_by_speaker']['_ALL_']
 		season_speaker_episode_counts = esr.agg_episodes_by_speaker(show_key, season=season)
@@ -62,8 +75,12 @@ async def show_page(request: Request, show_key: ShowKey):
 		first_episode_in_season = tdata['episodes_by_season'][season][0]
 		last_episode_in_season = tdata['episodes_by_season'][season][-1]
 		stats['air_date_range'] = f"{first_episode_in_season['air_date'][:10]} - {last_episode_in_season['air_date'][:10]}"
+		if not first_episode_in_series:
+			first_episode_in_series = tdata['episodes_by_season'][season][0]
+		last_episode_in_series = tdata['episodes_by_season'][season][-1]
 		stats_by_season[season] = stats
 	tdata['stats_by_season'] = stats_by_season
+	tdata['air_date_range'] = f"{first_episode_in_series['air_date'][:10]} - {last_episode_in_series['air_date'][:10]}"
 
 	return templates.TemplateResponse("show.html", {"request": request, 'tdata': tdata})
 
