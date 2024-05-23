@@ -315,7 +315,7 @@ def return_scene_events(s: Search, location: str = None) -> tuple[list, int, int
     return results, scene_count, scene_event_count
 
 
-def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = None) -> tuple[list, int, int]:
+def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = None, intersection: bool = False) -> tuple[list, int, int]:
     print(f'begin return_scene_events_multi_speaker for speakers={speakers} location={location} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
@@ -380,6 +380,15 @@ def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = 
             # sort scene_events by sequence
             sorted_scene_events = sorted(scene._d_['scene_events'], key=itemgetter('sequence'))
             scene._d_['scene_events'] = sorted_scene_events
+            # if intersection=True then all speakers must be present for scene to be added
+            # NOTE ideally this would be added at query level, but feels tricky and not high priority
+            if intersection:
+                speakers_in_scene = set()
+                for sse in sorted_scene_events:
+                    speakers_in_scene.add(sse['spoken_by'])
+                if len(speakers_in_scene) < len(speakers):
+                    # print(f'dropping scene at scene_offset={scene_offset}, speakers_in_scene={speakers_in_scene} is a subset of speakers={speakers}')
+                    continue
             # highlight scene.location match here for now (a little ugly)
             if location:
                 scene._d_['location'] = scene._d_['location'].replace(location, f'<em>{location}</em>')

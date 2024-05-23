@@ -305,14 +305,14 @@ def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str 
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/search_scene_events_multi_speaker/{show_key}", tags=['ES Reader'])
-def search_scene_events_multi_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, speakers: str = None, location: str = None):
+@esr_app.get("/esr/search_scene_events_multi_speaker/{show_key}/{speakers}", tags=['ES Reader'])
+def search_scene_events_multi_speaker(show_key: ShowKey, speakers: str, season: str = None, episode_key: str = None, location: str = None, intersection: bool = False):
     '''
     Facet query of Scenes comprised of SceneEvents matching 1-n speakers
     '''
     s = esqb.search_scene_events_multi_speaker(show_key.value, speakers, season=season, episode_key=episode_key)
     es_query = s.to_dict()
-    matches, scene_count, scene_event_count = esrt.return_scene_events_multi_speaker(s, speakers, location=location)
+    matches, scene_count, scene_event_count = esrt.return_scene_events_multi_speaker(s, speakers, location=location, intersection=intersection)
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 

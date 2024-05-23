@@ -167,15 +167,18 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 	episode = esr.fetch_episode(show_key, episode_key)
 	tdata['episode'] = episode['es_episode']
 	
-	locations_by_scene = esr.agg_scenes_by_location(show_key, episode_key=episode_key)
-	tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
+	scenes_by_location_response = esr.agg_scenes_by_location(show_key, episode_key=episode_key)
+	tdata['locations_by_scene'] = scenes_by_location_response['scenes_by_location']
+	tdata['scene_count'] = tdata['locations_by_scene']['_ALL_']
+	del tdata['locations_by_scene']['_ALL_']
 
-	episode_word_counts = esr.agg_dialog_word_counts(show_key, episode_key=episode_key)
-	tdata['episode_word_counts'] = episode_word_counts['dialog_word_counts']
+	scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(show_key, episode_key=episode_key)
+	tdata['line_count'] = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
 
-	# TODO this is still being used in episode.html for top line agg stats, gotta get off of that
-	speaker_counts = esr.composite_speaker_aggs(show_key, episode_key=episode_key)
-	tdata['speaker_counts'] = speaker_counts['speaker_agg_composite']
+	dialog_word_counts_response = esr.agg_dialog_word_counts(show_key, episode_key=episode_key)
+	tdata['episode_word_counts'] = dialog_word_counts_response['dialog_word_counts']
+	tdata['word_count'] = round(tdata['episode_word_counts']['_ALL_'])
+	del tdata['episode_word_counts']['_ALL_']
 
 	speaker_episodes_response = esr.fetch_speakers_for_episode(show_key, episode_key, extra_fields='topics_mbti')
 	tdata['speaker_episodes'] = speaker_episodes_response['speaker_episodes']
@@ -245,7 +248,7 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 			tdata['speakers'] = speakers
 		if locationAMS:
 			tdata['locationAMS'] = locationAMS
-		matches = esr.search_scene_events_multi_speaker(show_key, episode_key=episode_key, speakers=speakers, location=locationAMS)
+		matches = esr.search_scene_events_multi_speaker(show_key, speakers, episode_key=episode_key, location=locationAMS, intersection=True)
 		if matches and matches['matches']:
 			tdata['episode_match'] = matches['matches'][0]
 			tdata['scene_match_count'] = matches['scene_count']
@@ -335,7 +338,7 @@ def episode_search_page(request: Request, show_key: ShowKey, search_type: str = 
 			tdata['speakers'] = speakers
 		if locationAMS:
 			tdata['locationAMS'] = locationAMS
-		matches = esr.search_scene_events_multi_speaker(show_key, season=season, speakers=speakers, location=locationAMS)
+		matches = esr.search_scene_events_multi_speaker(show_key, speakers, season=season, location=locationAMS, intersection=True)
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = matches['episode_count']
 		tdata['scene_match_count'] = matches['scene_count']
@@ -451,7 +454,7 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 			all_speakers = f'{speaker},{speakers}'
 		if locationAMS:
 			tdata['locationAMS'] = locationAMS
-		matches = esr.search_scene_events_multi_speaker(show_key, speakers=all_speakers, location=locationAMS)
+		matches = esr.search_scene_events_multi_speaker(show_key, all_speakers, location=locationAMS, intersection=True)
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = matches['episode_count']
 		tdata['scene_match_count'] = matches['scene_count']

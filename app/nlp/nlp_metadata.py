@@ -1,3 +1,9 @@
+MIN_WORDS_FOR_BERT = 25
+MAX_WORDS_FOR_BERT = 500
+MIN_SPEAKER_LINES = 8
+MIN_SPEAKER_LINE_RATIOS = {2: 0.33, 3: 0.25, 4: 0.2}
+
+
 WORD2VEC_VENDOR_VERSIONS = {
     # Download webvectors models: http://vectors.nlpl.eu/explore/embeddings/en/models/
     'webvectors': {

@@ -16,6 +16,7 @@
 				<!-- begin top line info -->
 				<h3>Season {{ tdata['episode']['season'] }}, Episode {{ tdata['episode']['sequence_in_season'] }}: 
 					<strong>"{{ tdata['episode']['title'] }}"</strong> <small>({{ tdata['episode']['air_date']|truncate(10,true,'') }})</small></h3>
+                <h5>{{ tdata['scene_count'] }} scenes, {{ tdata['line_count'] }} lines, {{ tdata['word_count'] }} words</h5>
 				<p>[<a href="/tsp_dash/episode-gantt-chart?show_key={{ tdata['show_key'] }}&episode_key={{ tdata['episode_key'] }}">Dialog & location gantt charts</a>]</p>
 				<p>&lt;&lt;&nbsp; Previous episode &nbsp;|&nbsp; Next episode &nbsp;&gt;&gt;</p>
 				<p>&nbsp;</p>
@@ -279,8 +280,8 @@
 				{% else %}
 				<!-- begin full transcript display -->
 					<h3><strong>{{ tdata['episode']['scene_count'] }}</strong> scenes / 
-						<strong>{{ tdata['speaker_counts'][0]['line_count'] }}</strong> lines /
-						<strong>{{ tdata['speaker_counts'][0]['word_count'] }}</strong> words
+						<strong>{{ tdata['line_count'] }}</strong> lines /
+						<strong>{{ tdata['word_count'] }}</strong> words
 					</h3>
 					<br/>
 					{% for scene in tdata['episode']['scenes'] %}
@@ -326,13 +327,6 @@
 							<tbody>
 							{% for speaker in tdata['speaker_episodes'] %}
 								<tr class="table-secondary">
-								{% if speaker['speaker'] == '_ALL_' %}
-									<th scope="row">[ALL]</th>
-									<td><strong>{{ speaker['scene_count'] }}</strong></td>
-									<td><strong>{{ speaker['line_count'] }}</strong></td>
-									<td><strong>{{ speaker['word_count'] }}</strong></td>
-									<td>&nbsp;</td>
-								{% else %}
 									<th scope="row">
 										<a href="/web/character/{{ tdata['show_key'] }}/{{ speaker['speaker'] }}" 
 											class="alert-link">{{ speaker['speaker'] }}</a></th>
@@ -351,7 +345,6 @@
 										{% endfor %}
 									{% endif %}
 									</td>
-								{% endif %}
 								</tr>
 							{% endfor %}
 							</tbody>

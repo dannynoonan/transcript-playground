@@ -390,6 +390,7 @@ def index_topic_grouping(topic_grouping: str):
             if parent_key == '':
                 continue
             parent_desc_series = topics_df[(topics_df['topic_key'] == parent_key) & (topics_df['parent_key'] == '')]['description']
+            print(f'parent_key={parent_key} parent_desc_series={parent_desc_series}')
             parent_desc = parent_desc_series.values[0] # NOTE feels like there should be a cleaner way to extract the parent topic description
             parent_name_series = topics_df[(topics_df['topic_key'] == parent_key) & (topics_df['parent_key'] == '')]['topic_name']
             parent_name = parent_name_series.values[0] # NOTE feels like there should be a cleaner way to extract the parent topic description
@@ -397,8 +398,6 @@ def index_topic_grouping(topic_grouping: str):
             topics_df.loc[(topics_df['parent_key'] == parent_key), 'parent_description'] = parent_desc
             topics_df.loc[(topics_df['parent_key'] == parent_key), 'parent_name'] = parent_name
         topics_df = topics_df.fillna('') # NOTE feels weird to do this a second time, but mop-up seems necessary in both places
-        # new_file_path = f'./source/topics/{topic_grouping}_concat.csv'
-        # topics_df.to_csv(new_file_path, sep='\t')
     else:
         return {'Error': f'Unable to load topics for topic_grouping={topic_grouping}, no file found at file_path={file_path}'}
     
@@ -430,7 +429,7 @@ def index_topic_grouping(topic_grouping: str):
 
 
 @esw_app.get("/esw/populate_topic_embeddings/{topic_grouping}/{topic_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_topic_embeddings(topic_grouping: str, topic_key: str, model_vendor: str, model_version: str):
+def populate_topic_embeddings(topic_grouping: str, topic_key: str, model_vendor: str, model_version: str, prefix_parent_descs: bool = False):
     '''
     Generate vector embedding for topic using pre-trained Word2Vec and Transformer models
     '''
@@ -440,7 +439,7 @@ def populate_topic_embeddings(topic_grouping: str, topic_key: str, model_vendor:
     try:
         es_topic = EsTopic.get(id=doc_id)
         text_to_vectorize = es_topic.description
-        if es_topic.parent_description:
+        if prefix_parent_descs and es_topic.parent_description:
             text_to_vectorize = f'{es_topic.parent_description} {text_to_vectorize}'
         embeddings = ef.generate_embeddings(text_to_vectorize, model_vendor, model_version)
         es_topic[embeddings_field] = embeddings
