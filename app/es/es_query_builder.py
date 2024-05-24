@@ -7,8 +7,8 @@ from elasticsearch_dsl.query import MoreLikeThis
 from app.config import settings
 from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
 from app.es.es_model import (
-    EsEpisodeTranscript, EsTopic, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, 
-    EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
+    EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, 
+    EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
 )
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
@@ -39,6 +39,11 @@ def init_transcripts_index():
     # EsEpisodeTranscript.init(using=es_client)
     EsEpisodeTranscript.init()
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
+
+
+def init_narratives_index():
+    EsEpisodeNarrativeSequence.init()
+    es_conn.indices.put_settings(index="narratives", body={"index": {"max_inner_result_window": 1000}})
 
 
 def init_speakers_index():
@@ -171,6 +176,18 @@ def fetch_simple_episodes(show_key: str, season: str = None) -> Search:
     s = s.sort('season', 'sequence_in_season')
 
     s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
+
+    return s
+
+
+def fetch_narrative_sequences(show_key: str, episode_key: str) -> Search:
+    print(f'begin fetch_narrative_sequences for show_key={show_key} season={episode_key}')
+
+    s = Search(index='narratives')
+    s = s.extra(size=1000)
+
+    s = s.filter('term', show_key=show_key)
+    s = s.filter('term', episode_key=episode_key)
 
     return s
 
@@ -761,7 +778,7 @@ def search_scene_events(show_key: str, season: str = None, episode_key: str = No
 
 
 def search_scene_events_multi_speaker(show_key: str, speakers: str, season: str = None, episode_key: str = None) -> Search:
-    print(f'begin search_scene_events_multi_speaker for show_key={show_key} season={season} episode_key={episode_key} speakers={speakers}')
+    # print(f'begin search_scene_events_multi_speaker for show_key={show_key} season={season} episode_key={episode_key} speakers={speakers}')
 
     speakers = speakers.split(',')
 

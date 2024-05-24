@@ -73,6 +73,25 @@ class EsEpisodeTranscript(Document):
         return super().save(**kwargs)
     
 
+class EsEpisodeNarrativeSequence(Document):
+    show_key = Keyword()
+    episode_key = Keyword()
+    speaker_group = Keyword()
+    narrative_lines = Text(multi=True, analyzer=freetext_analyzer, term_vector='yes', fields={'word_count': TokenCount(analyzer=token_count_analyzer, store='true')})
+    word_count = Integer()
+    source_scene_word_counts = Object(multi=True)
+    speaker_line_counts = Object(multi=True)
+    indexed_ts = Date()
+
+    class Index:
+        name = 'narratives'
+
+    def save(self, **kwargs):
+        self.meta.id = f'{self.show_key}_{self.episode_key}_{self.speaker_group}'
+        self.indexed_ts = datetime.now()
+        return super().save(**kwargs)
+    
+
 class EsSpeaker(Document):
     show_key = Keyword()
     speaker = Keyword()

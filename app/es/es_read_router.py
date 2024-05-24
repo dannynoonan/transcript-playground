@@ -84,7 +84,17 @@ def list_simple_episodes_by_season(show_key: ShowKey):
     return {"episodes_by_season": episodes_by_season, "es_query": es_query}
 
 
-# NOTE added during BERTopic `topic_modeling.py` tinkering, still not sure if that code will be committed
+@esr_app.get("/esr/fetch_narrative_sequences/{show_key}/{episode_key}", tags=['ES Reader'])
+def fetch_narrative_sequences(show_key: ShowKey, episode_key: str):
+    '''
+    Fetch pre-generated narrative sequences for a given episode
+    '''
+    s = esqb.fetch_narrative_sequences(show_key.value, episode_key)
+    es_query = s.to_dict()
+    narrative_sequences = esrt.return_narrative_sequences(s)
+    return {"narrative_sequences": narrative_sequences, "es_query": es_query}
+
+
 @esr_app.get("/esr/fetch_flattened_scenes/{show_key}/{episode_key}", tags=['ES Reader'])
 def fetch_flattened_scenes(show_key: ShowKey, episode_key: str, include_speakers: bool = False, include_context: bool = False):
     '''

@@ -196,7 +196,19 @@ def return_scenes(s: Search) -> tuple[list, int]:
     return results, scene_count
 
 
-# NOTE added during BERTopic `topic_modeling.py` tinkering, still not sure if that code will be committed
+def return_narrative_sequences(s: Search) -> list:
+    print(f'begin return_narrative_sequences for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    narrative_sequences = []
+
+    for hit in s.hits.hits:
+        narrative_sequences.append(hit._source._d_)
+
+    return narrative_sequences
+
+
 def return_flattened_scenes(s: Search, include_speakers: bool = False, include_context: bool = False) -> dict:
     print(f'begin return_flattened_scenes for s.to_dict()={s.to_dict()}')
 
@@ -316,7 +328,7 @@ def return_scene_events(s: Search, location: str = None) -> tuple[list, int, int
 
 
 def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = None, intersection: bool = False) -> tuple[list, int, int]:
-    print(f'begin return_scene_events_multi_speaker for speakers={speakers} location={location} s.to_dict()={s.to_dict()}')
+    # print(f'begin return_scene_events_multi_speaker for speakers={speakers} location={location} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 

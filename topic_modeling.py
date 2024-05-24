@@ -15,7 +15,6 @@ from hdbscan import HDBSCAN
 
 from app.config import settings
 import app.es.es_read_router as esr
-from app.nlp.narrative_extractor import extract_narrative_segments
 from app.nlp.nlp_metadata import MIN_WORDS_FOR_BERT, MAX_WORDS_FOR_BERT
 from app.show_metadata import ShowKey
 
@@ -36,52 +35,84 @@ def main():
 
     show_key = 'TNG'
 
-    # extract_individual_lines = True
-    # min_lines_exchanged = 10
-    # max_words_for_bert = 500
-    # min_words_for_bert = 30
-    # min_speaker_lines = 10
-    # min_speaker_line_ratios = {2: 0.33, 3: 0.25, 4: 0.2}
-
 
     bert_text_inputs = []
     bert_text_sources = []
-    small_deleted_scene_count = 0
+    # small_deleted_scene_count = 0
 
     doc_ids_response = esr.fetch_doc_ids(ShowKey(show_key))
     for doc_id in doc_ids_response['doc_ids']:
     # for doc_id in ['TNG_238', 'TNG_218']:
         episode_key = doc_id.split('_')[1]
         
-        narrative_sequences, all_sourced_scene_wcs = extract_narrative_segments(ShowKey(show_key), episode_key)
+        # fetch narrative sequences for episode
+        narrative_sequences_response = esr.fetch_narrative_sequences(ShowKey(show_key), episode_key)
+        if 'narrative_sequences' not in narrative_sequences_response:
+            print(f'Failure to fetch narrative_sequences for show_key={show_key} episode_key={episode_key}, skipping')
+            continue
+        narrative_sequences = narrative_sequences_response['narrative_sequences']
+
+        # establish word counts per scene already sourced into narrative sequences, to avoid duplicating that dialog text during rote scene addition further down
+        narrative_source_scene_wcs = {}
+        for narr_seq in narrative_sequences:
+            # convert source_scene_wcs keys back to ints for scene index comparison
+            source_scene_wcs = {int(k):v for k,v in narr_seq['source_scene_word_counts'].items()}
+            for ss, wc in source_scene_wcs.items():
+                if ss not in narrative_source_scene_wcs:
+                    narrative_source_scene_wcs[ss] = 0
+                narrative_source_scene_wcs[ss] += wc
+
+        # carve up and flatten narrative_lines into single narrative_text strings of bert-friendly token lengths
+        bert_ready_narrative_sequences = []
+        for narr_seq in narrative_sequences:
+            if narr_seq['word_count'] < MAX_WORDS_FOR_BERT:
+                narr_seq['narrative_text'] = ' '.join(narr_seq['narrative_lines'])
+                # NOTE at this point narr_seq has a bunch of data it doesn't need, but also doesn't need to get rid of
+                bert_ready_narrative_sequences.append(narr_seq)
+            else:
+                wc = 0
+                narrative_subseq = []
+                for i, line in enumerate(narr_seq['narrative_lines']):
+                    line_wc = len(line.split(' '))
+                    if (wc + line_wc) > MAX_WORDS_FOR_BERT:
+                        narrative_text = ' '.join(narrative_subseq)
+                        narr_subseq = dict(speaker_group=narr_seq['speaker_group'], narrative_text=narrative_text, word_count=wc)
+                        bert_ready_narrative_sequences.append(narr_subseq)
+                        narrative_subseq = []
+                        wc = 0
+                    narrative_subseq.append(line)
+                    wc += line_wc
+                    if i == len(narr_seq['narrative_lines'])-1:
+                        narrative_text = ' '.join(narrative_subseq)
+                        if len(narrative_text.split(' ')) > MIN_WORDS_FOR_BERT:
+                            narr_subseq = dict(speaker_group=narr_seq['speaker_group'], narrative_text=narrative_text, word_count=wc)
+                            bert_ready_narrative_sequences.append(narr_subseq)
 
         print('----------------------------------------------------------------------------------------')
-        print(f'len(narrative_sequences)={len(narrative_sequences)} all_sourced_scene_wcs={all_sourced_scene_wcs} for episode_key={episode_key}')
-        print(f'narrative_sequences={narrative_sequences}')
+        print(f'len(bert_ready_narrative_sequences)={len(bert_ready_narrative_sequences)} all_sourced_scene_wcs={narrative_source_scene_wcs} for episode_key={episode_key}')
+        print(f'bert_ready_narrative_sequences={bert_ready_narrative_sequences}')
 
+        # fetch all flattened scenes for episode, to cover portion of episode not sourced into narrative sequences
         flattened_scenes_response = esr.fetch_flattened_scenes(ShowKey(show_key), episode_key, include_speakers=False, include_context=True)
         episode_flattened_scenes = flattened_scenes_response['flattened_scenes']
         print(f'len(episode_flattened_scenes)={len(episode_flattened_scenes)} for episode_key={episode_key}')
 
         procd_episode_flattened_scenes = []
         for i in range(len(episode_flattened_scenes)):
-            # if not extract_individual_lines and i in all_sourced_scenes:
-            #     print(f'scene {i} is already part of a narrative_sequence, skipping it during sequential scene sourcing')
-            #     continue
             scene = episode_flattened_scenes[i]
             scene_wc = len(scene.split(' '))
             if scene_wc < MIN_WORDS_FOR_BERT:
-                if i in all_sourced_scene_wcs:
-                    print(f'episode_key={episode_key} scene={i} survived via narrative inclusion, otherwise it was too short and would have been dropped')
-                else:
-                    small_deleted_scene_count += 1
+                # if i in all_sourced_scene_wcs:
+                #     print(f'episode_key={episode_key} scene={i} survived via narrative inclusion, otherwise it was too short and would have been dropped')
+                # else:
+                #     small_deleted_scene_count += 1
                 continue
-            if i in all_sourced_scene_wcs:
-                sourced_wc = all_sourced_scene_wcs[i]
-                if sourced_wc / scene_wc > 0.75:
-                    print(f'episode_key={episode_key} scene={i} was {round(sourced_wc / scene_wc, 2) * 100}% covered via narrative inclusion, so the standalone scene has been dropped')
+            if i in narrative_source_scene_wcs:
+                # sourced_wc = narrative_source_scene_wcs[i]
+                if narrative_source_scene_wcs[i] / scene_wc > 0.75:
+                    print(f'episode_key={episode_key} scene={i} was {round(narrative_source_scene_wcs[i] / scene_wc, 2) * 100}% covered via narrative inclusion, so the standalone scene has been dropped')
                     continue
-            elif scene_wc < MAX_WORDS_FOR_BERT:
+            if scene_wc < MAX_WORDS_FOR_BERT:
                 procd_episode_flattened_scenes.append(scene)
             else:
                 split_ct = math.ceil(scene_wc / MAX_WORDS_FOR_BERT)
@@ -97,24 +128,27 @@ def main():
         print('----------------------------------------------------------------------------------------')        
         print(f'len(procd_episode_flattened_scenes)={len(procd_episode_flattened_scenes)} for episode_key={episode_key}')
 
-        bert_text_inputs.extend([ns['narrative_text'] for ns in narrative_sequences])
-        bert_text_sources.extend([f"{episode_key}_{'_'.join(ns['speaker_group'])}" for ns in narrative_sequences])
+        bert_text_inputs.extend([ns['narrative_text'] for ns in bert_ready_narrative_sequences])
+        bert_text_sources.extend([(f"{episode_key}_{ns['speaker_group']}", ns['word_count']) for ns in bert_ready_narrative_sequences])
         bert_text_inputs.extend(procd_episode_flattened_scenes)
-        bert_text_sources.extend([episode_key for _ in range(len(procd_episode_flattened_scenes))])
+        bert_text_sources.extend([(episode_key, len(scene.split(' '))) for scene in procd_episode_flattened_scenes])
 
         print(f'len(bert_text_inputs)={len(bert_text_inputs)} len(bert_text_sources)={len(bert_text_sources)} after episode_key={episode_key}')
 
 
     print('----------------------------------------------------------------------------------------')        
-    print(f'len(bert_text_inputs)={len(bert_text_inputs)} len(bert_text_sources)={len(bert_text_sources)} small_deleted_scene_count={small_deleted_scene_count}')
+    print(f'len(bert_text_inputs)={len(bert_text_inputs)} len(bert_text_sources)={len(bert_text_sources)}')
 
-    sources_df = pd.DataFrame({'source': bert_text_sources})
+
+    sources_df = pd.DataFrame(bert_text_sources, columns=['source', 'wc'])
 
     # all_scene_embeddings = []
     # for scene in all_flattened_scenes:
     #     scene_embeddings = embed_minilm.encode(scene)
     #     all_scene_embeddings.append(scene_embeddings)
 
+
+    # start basic model
     vectorizer_model = CountVectorizer(ngram_range=(1, 2), stop_words='english')
     model_basic = BERTopic(vectorizer_model=vectorizer_model, language='english', calculate_probabilities=True, verbose=True)
     topics_basic, probs_basic = model_basic.fit_transform(bert_text_inputs)
@@ -131,42 +165,31 @@ def main():
     # df2 = doc_info_basic.join(sources_df)
     doc_info_basic = pd.concat([doc_info_basic, sources_df], axis=1)
     doc_info_basic['episode_key'] = doc_info_basic['source'].apply(lambda x: x.split('_')[0])
+    doc_info_basic['prob_x_wc'] = doc_info_basic['Probability'] * doc_info_basic['wc']
     doc_info_basic.to_csv('topic_data/doc_info_basic.csv')
 
     # drop topic -1
     doc_info_basic = doc_info_basic[doc_info_basic['Topic'] > -1]
     # assemble tuple lists mapping episodes to topics
-    topics_to_episode_hi_probs = {}
-    topics_to_episode_map_cnts = {}
     topic_episode_rows = []
     for i in range(doc_info_basic['Topic'].max()):
-        topics_to_episode_map_cnts[i] = []
-        topics_to_episode_hi_probs[i] = []
         temp_df = doc_info_basic[doc_info_basic['Topic'] == i]
         e_keys = list(temp_df['episode_key'].unique())
         for e_key in e_keys:
             e_key_df = temp_df[temp_df.episode_key == e_key]
-            topics_to_episode_map_cnts[i].append((e_key, len(e_key_df)))
-            topics_to_episode_hi_probs[i].append((e_key, e_key_df['Probability'].max()))
-            topic_episode_rows.append(dict(topic=i, episode_key=e_key, mapping_count=len(e_key_df), high_probability=e_key_df.Probability.max())) 
-        topics_to_episode_map_cnts[i] = sorted(topics_to_episode_map_cnts[i])
-        topics_to_episode_hi_probs[i] = sorted(topics_to_episode_hi_probs[i])
+            topic_episode_rows.append(dict(topic=i, episode_key=e_key, mapping_cnt=len(e_key_df), high_prob=e_key_df['Probability'].max(), sum_weighted_probs=e_key_df['prob_x_wc'].sum())) 
 
     topic_episode_df = pd.DataFrame(topic_episode_rows)
-    topic_episode_df = topic_episode_df.sort_values(['topic', 'high_probability', 'mapping_count'], ascending=[True, False, False])
-    topic_episode_df.to_csv('topic_data/topic_episode.csv')
-
-    print(f'topics_to_episode_map_cnts={topics_to_episode_map_cnts}')
-    print(f'topics_to_episode_hi_probs={topics_to_episode_hi_probs}')
-
+    topic_episode_df = topic_episode_df.sort_values(['topic', 'sum_weighted_probs'], ascending=[True, False])
+    topic_episode_df.to_csv('topic_data/topic_episode_basic.csv')
 
     model_basic.save('topic_models/model_basic')
-
-    
 
     # scatter_fig = model.visualize_topics()
     # hierarchy_fig = model.visualize_hierarchy()
 
+
+    # start custom model
     embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
     umap_model = UMAP(n_neighbors=3, n_components=3, min_dist=0.05)
     hdbscan_model = HDBSCAN(min_cluster_size=50, min_samples=30, gen_min_span_tree=True, prediction_data=True)
@@ -188,23 +211,18 @@ def main():
     # model_custom.push_to_hf_hub(repo_id='andyshirey/test_bert_custom', save_ctfidf=True, save_embedding_model=embed_model, serialization='pytorch')
     model_custom.save('topic_models/model_custom')
 
-
     # model_topic_info = model_custom.get_topic_info(topic=2)
-    # print(f'type(model_topic_info)={type(model_topic_info)}')
-    # print(f'model_topic_info={model_topic_info}')
 
     # bar_fig = model_custom.visualize_barchart()
 
     # flattened_scene_embeddings = embedding_model.encode(all_flattened_scenes, batch_size=64)
     # flattened_scene_umap = umap_model.transform(flattened_scene_embeddings)
 
-
-
     # fig = px.scatter_3d(docs_data[docs_data.Topic.isin([0,1,2]),x='x_coord',y='y_coord',z='z_coord',color='Topic',opacity=0.7,size='point_size')
     # fig.update_traces(marker=dict(line=dict(width=0.1, color='DarkSlateGrey')), selector=dict(mode='markers'))
                         
 
-
+    # start repKb model
     representation_model = KeyBERTInspired()
 
     model_repKb = BERTopic(umap_model=umap_model, hdbscan_model=hdbscan_model, embedding_model=embedding_model, vectorizer_model=vectorizer_model,
@@ -223,8 +241,6 @@ def main():
 
     # model_repKb.push_to_hf_hub(repo_id='andyshirey/test_bert_repKb', save_ctfidf=True, save_embedding_model=embed_model, serialization='pytorch')
     model_repKb.save('topic_models/model_repKb')
-
-
 
 
 

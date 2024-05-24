@@ -9,10 +9,11 @@ import app.database.dao as dao
 import app.es.es_ingest_transformer as esit
 import app.es.es_response_transformer as esrt
 from app.es.es_metadata import VALID_ES_INDEXES
-from app.es.es_model import EsEpisodeTranscript, EsTopic, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode
+from app.es.es_model import EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsTopic, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode
 import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
+import app.nlp.narrative_extractor as ne
 from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
 from app.utils import TopicAgg, flatten_topics
@@ -25,14 +26,16 @@ esw_app = APIRouter()
 @esw_app.get("/esw/init_es", tags=['ES Writer'])
 def init_es(index_name: str = None):
     '''
-    Run this to explicitly define the mapping anytime the `transcripts` index is blown away and re-created. Not doing so will result in the wrong
-    data types being auto-assigned to several fields in the schema mapping, and will break query (read) functionality down the line.
+    Run this to explicitly define index mappings anytime an index is blown away. Not doing so will result in an index being auto-created with the wrong
+    auto-assigned data types, breaking query functionality down the line.
     '''
     if index_name:
         if index_name not in VALID_ES_INDEXES:
             return {"error": f"Failed to initialize index_name=`{index_name}`, valid_indexes={VALID_ES_INDEXES}"}
         if index_name == 'transcripts':
             esqb.init_transcripts_index()
+        if index_name == 'narratives':
+            esqb.init_narratives_index()
         elif index_name == 'speakers':
             esqb.init_speakers_index()
         elif index_name == 'speaker_seasons':
@@ -52,6 +55,7 @@ def init_es(index_name: str = None):
         initialized_indexes = [index_name]
     else:
         esqb.init_transcripts_index()
+        esqb.init_narratives_index()
         esqb.init_speakers_index()
         esqb.init_speaker_seasons_index()
         esqb.init_speaker_episodes_index()
@@ -862,3 +866,42 @@ def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_ve
 
     return {"attempt_count": attempt_count, "success_count": success_count, "failure_count": failure_count,
             "successful_speakers": successful_speakers, "failed_speakers": failed_speakers}
+
+
+@esw_app.get("/esw/populate_episode_narratives/{show_key}/{episode_key}/", tags=['ES Writer'])
+def populate_episode_narratives(show_key: ShowKey, episode_key: str):
+    '''
+    Generate and populate narrative sequences for a given episode
+    '''
+    narrative_sequences = ne.extract_narrative_sequences(show_key, episode_key)
+
+    for ns in narrative_sequences:
+        # irritating datatype conversion for scene indexes, elasticsearch won't accept int keys in its Object type
+        source_scene_wcs = {str(k):v for k,v in ns['source_scene_wcs'].items()}
+        es_narrative_sequence = EsEpisodeNarrativeSequence(show_key=show_key.value, episode_key=episode_key, speaker_group='_'.join(ns['speaker_group']),
+                                                           narrative_lines=ns['narrative_lines'], word_count=int(ns['wc']),
+                                                           source_scene_word_counts=source_scene_wcs, speaker_line_counts=ns['speaker_line_counts'])
+        es_narrative_sequence.save()
+
+    return {"narrative_sequences": narrative_sequences}
+
+
+@esw_app.get("/esw/populate_all_episode_narratives/{show_key}/", tags=['ES Writer'])
+def populate_all_episode_narratives(show_key: ShowKey):
+    '''
+    Generate and populate all narrative sequences for a show
+    '''
+    successful_keys = []
+    failed_keys = []
+
+    doc_ids_response = esr.fetch_doc_ids(ShowKey(show_key))
+    for doc_id in doc_ids_response['doc_ids']:
+        episode_key = doc_id.split('_')[1]
+        narrative_sequences_response = populate_episode_narratives(show_key, episode_key)
+        if 'narrative_sequences' not in narrative_sequences_response:
+            print(f'Failed to populate_episode_narratives for show_key={show_key} episode_key={episode_key}')
+            failed_keys.append(episode_key)
+        else:
+            successful_keys.append(episode_key)
+
+    return {"successful_keys": successful_keys, "failed_keys": failed_keys}
