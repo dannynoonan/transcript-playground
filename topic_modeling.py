@@ -27,27 +27,25 @@ openai_client = openai.OpenAI(api_key=settings.openai_api_key)
 
 # embed_minilm = SentenceTransformer('all-MiniLM-L12-v2')
 
+LOG_FILE = 'bertopic_config_test.txt'
+REPORT_FILE = 'bertopic_config_report.csv'
+
 
 CONFIG_OPTIONS = {
     # 'narrative_only': [True, False],
-    # 'sentence_transformer_lm': ['all-MiniLM-L6-v2', 'all-MiniLM-L12-v2'],
-    'sentence_transformer_lm': 'all-MiniLM-L6-v2',
+    'sentence_transformer_lm': 'all-MiniLM-L12-v2',
     'vec_ngram_low': 1,
-    'vec_ngram_high': [2, 3],
-    # 'vec_ngram_high': 2,
-    # 'bertopic_top_n_words': [3, 4, 5, 6, 7],
-    'bertopic_top_n_words': 5,
-    'umap_n_neighbors': [2, 5, 10, 20],
-    # 'umap_n_components': [3],
+    'vec_ngram_high': 2,
+    'bertopic_top_n_words': [4, 5, 6],
+    'umap_n_neighbors': [5, 10],
     'umap_n_components': 3,
-    'umap_min_dist': [0.0, 0.02, 0.05],
+    'umap_min_dist': [0.0, 0.01],
     # 'umap_metric': ['euclidian', 'manhattan', 'chebyshev', 'minkowski', 'cosine', 'correlation' 
     #                 'canberra', 'braycurtis', 'haversine', 'mahalanobis', 'wminkowski', 'seuclidian'],
     'umap_metric': 'cosine',
-    # 'umap_random_state': [v for v in range(1, 6)],
-    'umap_random_state': [4, 14, 43, 64],
-    # 'umap_random_state': 14,
-    'hdbscan_min_cluster_size': [25, 50, 75],
+    'umap_random_state': [4, 53],
+    # 'hdbscan_min_cluster_size': [25, 50, 75],
+    'hdbscan_min_cluster_size': [30, 70],
     'hdbscan_min_samples': 10,
     # 'mmr_diversity': [0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5],
     'mmr_diversity': 0.05,
@@ -71,10 +69,12 @@ def main():
     # print(f'huggingface login success')
 
     config_params = []
+    config_params_to_values = {}
     config_param_value_counts = []
     for config_param, config_values in CONFIG_OPTIONS.items():
         if isinstance(config_values, list):
             config_params.append(config_param)
+            config_params_to_values[config_param] = config_values
             config_param_value_counts.append(len(config_values))
     
     print('------------------------------------------------------------------------------------------')
@@ -110,8 +110,25 @@ def main():
     sources_df = pd.DataFrame(bert_text_sources, columns=['episode_key', 'speaker_group', 'wc'])
     sources_df = pd.merge(sources_df, episodes_df, on='episode_key')
 
+    log_file = open(LOG_FILE, 'a')  # append mode
+    log_file.write('=======================================================================================\n')
+    log_file.write(f'Begin new job for {len(configs)} config variations\n')
+    log_file.write(f'config_params_to_values: {config_params_to_values}\n')
+    log_file.close()
+
+    report_dicts = []
+    i = 1
     for config in configs:
-        run_and_log_bert_config(bert_text_inputs, config, sources_df)
+        print(f'processing config {i} of {len(configs)}')
+        report_dict = run_and_log_bert_config(bert_text_inputs, config, sources_df)
+        i += 1
+        if report_dict:
+            report_dicts.append(report_dict)
+
+    # print(f'report_dicts={report_dicts}')
+    if report_dicts:
+        report_df = pd.DataFrame(report_dicts)
+        report_df.to_csv(REPORT_FILE, sep='\t')
 
 
 def generate_config_instance(config_params: list, config_value_indexes: tuple) -> dict:
@@ -126,10 +143,10 @@ def generate_config_instance(config_params: list, config_value_indexes: tuple) -
     return config_instance
 
 
-def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd.DataFrame):
+def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd.DataFrame) -> dict|None:
     logs = []
-    topic_count_threshold = 6
-    topic_ratio_threshold = 0.5
+    topic_count_threshold = 7
+    topic_ratio_threshold = 0.6
     corr_threshold = 0.2
     match_threshold = 4
 
@@ -194,10 +211,13 @@ def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd
     topic_count = len(bertopic_topics_df)
     doc_count_with_topic = bertopic_topics_df[bertopic_topics_df['Topic'] >= 0]['Count'].sum()
     topic_coverage_ratio = doc_count_with_topic / bertopic_topics_df['Count'].sum()
-    if topic_count >= topic_count_threshold and topic_coverage_ratio > topic_ratio_threshold:
-        logs.append(f'topic_count={topic_count}, topic_coverage_ratio={topic_coverage_ratio}')
-    else:
-        return
+    if topic_count < topic_count_threshold or topic_coverage_ratio < topic_ratio_threshold:
+        return None
+    
+    logs.append(f'topic_count={topic_count}, topic_coverage_ratio={topic_coverage_ratio}')
+    report_dict = config.copy()
+    report_dict['topic_count'] = topic_count
+    report_dict['topic_coverage_ratio'] = topic_coverage_ratio
 
     '''
     bertopic_model.visualize_barchart()
@@ -236,19 +256,33 @@ def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd
     bertopic_docs_df['topic_str'] = bertopic_docs_df['Topic'].apply(lambda x: str(x))
     bertopic_docs_df = pd.get_dummies(bertopic_docs_df, columns=['Topic'], dtype=int, drop_first=False)
     
-    # topics_focused_tfidf and speaker_group: convert to list, then one-hot encode values from the resulting 'list' column 
-    # topics_focused_tfidf
-    focused_topic_prefix = 'foctopic_'
-    bertopic_docs_df['topics_focused_tfidf_list'] = bertopic_docs_df['topics_focused_tfidf'].apply(lambda x: [t['topic_key'] for t in x[:3]])
-    distinct_focused_topics = sorted(set(chain.from_iterable(bertopic_docs_df['topics_focused_tfidf_list'])))
-    distinct_focused_topics_series = pd.Series(distinct_focused_topics, index=[f'{focused_topic_prefix}{s}' for s in distinct_focused_topics])
-    bertopic_docs_df = bertopic_docs_df.join(bertopic_docs_df['topics_focused_tfidf_list'].apply(lambda x: distinct_focused_topics_series.isin(x)).astype(int))
-    # speaker_group 
+    # vector topics and speaker_group: convert to list, then one-hot encode values from the resulting 'list' column 
+    topics_focused_prefix = 'foctopic_'
+    topics_focused_tfidf_prefix = 'foctopictfidf_'
+    topics_universal_prefix = 'univtopic_'
+    topics_universal_tfidf_prefix = 'univtopictfidf_'
     speaker_prefix = 'spkr_'
+    # topics_focused
+    bertopic_docs_df['topics_focused_list'] = bertopic_docs_df['topics_focused'].apply(lambda x: [t['topic_key'] for t in x[:3]])
+    bertopic_docs_df = one_hot_multival_col(bertopic_docs_df, topics_focused_prefix, 'topics_focused_list')
+    # topics_focused_tfidf
+    bertopic_docs_df['topics_focused_tfidf_list'] = bertopic_docs_df['topics_focused_tfidf'].apply(lambda x: [t['topic_key'] for t in x[:3]])
+    bertopic_docs_df = one_hot_multival_col(bertopic_docs_df, topics_focused_tfidf_prefix, 'topics_focused_tfidf_list')
+    # distinct_focused_topics = sorted(set(chain.from_iterable(bertopic_docs_df['topics_focused_tfidf_list'])))
+    # distinct_focused_topics_series = pd.Series(distinct_focused_topics, index=[f'{focused_topic_prefix}{s}' for s in distinct_focused_topics])
+    # bertopic_docs_df = bertopic_docs_df.join(bertopic_docs_df['topics_focused_tfidf_list'].apply(lambda x: distinct_focused_topics_series.isin(x)).astype(int))
+    # topics_universal
+    bertopic_docs_df['topics_universal_list'] = bertopic_docs_df['topics_universal'].apply(lambda x: [t['topic_key'] for t in x[:3]])
+    bertopic_docs_df = one_hot_multival_col(bertopic_docs_df, topics_universal_prefix, 'topics_universal_list')
+    # topics_universal_tfidf
+    bertopic_docs_df['topics_universal_tfidf_list'] = bertopic_docs_df['topics_universal_tfidf'].apply(lambda x: [t['topic_key'] for t in x[:3]])
+    bertopic_docs_df = one_hot_multival_col(bertopic_docs_df, topics_universal_tfidf_prefix, 'topics_universal_tfidf_list')
+    # speaker_group 
     bertopic_docs_df['speaker_group_list'] = bertopic_docs_df['speaker_group'].apply(lambda x: x.split('_'))
-    distinct_speakers = sorted(set(chain.from_iterable(bertopic_docs_df['speaker_group_list'])))
-    distinct_speaker_series = pd.Series(distinct_speakers, index=[f'{speaker_prefix}{s}' for s in distinct_speakers])
-    bertopic_docs_df = bertopic_docs_df.join(bertopic_docs_df['speaker_group_list'].apply(lambda x: distinct_speaker_series.isin(x)).astype(int))
+    bertopic_docs_df = one_hot_multival_col(bertopic_docs_df, speaker_prefix, 'speaker_group_list')
+    # distinct_speakers = sorted(set(chain.from_iterable(bertopic_docs_df['speaker_group_list'])))
+    # distinct_speaker_series = pd.Series(distinct_speakers, index=[f'{speaker_prefix}{s}' for s in distinct_speakers])
+    # bertopic_docs_df = bertopic_docs_df.join(bertopic_docs_df['speaker_group_list'].apply(lambda x: distinct_speaker_series.isin(x)).astype(int))
 
     # trim one-hot encoded speaker columns down to a manageable size
     spkr_count = 30
@@ -270,30 +304,87 @@ def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd
 
     # generate corr dfs
     bertopic_cols = [c for c in bertopic_docs_df.columns if bertopic_prefix in c]
-    foctopic_cols = [c for c in bertopic_docs_df.columns if focused_topic_prefix in c]
+    foctopic_cols = [c for c in bertopic_docs_df.columns if topics_focused_prefix in c]
+    foctopictfidf_cols = [c for c in bertopic_docs_df.columns if topics_focused_tfidf_prefix in c]
+    univtopic_cols = [c for c in bertopic_docs_df.columns if topics_universal_prefix in c]
+    univtopictfidf_cols = [c for c in bertopic_docs_df.columns if topics_universal_tfidf_prefix in c]
     speaker_cols = [c for c in bertopic_docs_df.columns if speaker_prefix in c]
 
-    # bertopic_cols + foctopic_cols
+    # bertopic_cols corrs to vector topic and speaker cols
     corr_values_bertopic_x_foctopic = extract_corr_values(bertopic_docs_df, bertopic_cols, foctopic_cols, corr_threshold)
     if len(corr_values_bertopic_x_foctopic) >= match_threshold:
         logs.append(f'corr_values_bertopic_x_foctopic={corr_values_bertopic_x_foctopic}')
+        report_dict['bertopic_x_foctopic'] = len(corr_values_bertopic_x_foctopic)
+    else:
+        report_dict['bertopic_x_foctopic'] = 0
+    corr_values_foctopic_x_bertopic = extract_corr_values(bertopic_docs_df, foctopic_cols, bertopic_cols, corr_threshold)
+    if len(corr_values_foctopic_x_bertopic) >= match_threshold:
+        logs.append(f'corr_values_foctopic_x_bertopic={corr_values_foctopic_x_bertopic}')
+        report_dict['foctopic_x_bertopic'] = len(corr_values_foctopic_x_bertopic)
+    else:
+        report_dict['foctopic_x_bertopic'] = 0
+    corr_values_bertopic_x_foctopictfidf = extract_corr_values(bertopic_docs_df, bertopic_cols, foctopictfidf_cols, corr_threshold)
+    if len(corr_values_bertopic_x_foctopictfidf) >= match_threshold:
+        logs.append(f'corr_values_bertopic_x_foctopictfidf={corr_values_bertopic_x_foctopictfidf}')
+        report_dict['bertopic_x_foctopictfidf'] = len(corr_values_bertopic_x_foctopictfidf)
+    else:
+        report_dict['bertopic_x_foctopictfidf'] = 0
+    corr_values_foctopictfidf_x_bertopic = extract_corr_values(bertopic_docs_df, foctopictfidf_cols, bertopic_cols, corr_threshold)
+    if len(corr_values_foctopictfidf_x_bertopic) >= match_threshold:
+        logs.append(f'corr_values_foctopictfidf_x_bertopic={corr_values_foctopictfidf_x_bertopic}')
+        report_dict['foctopictfidf_x_bertopic'] = len(corr_values_foctopictfidf_x_bertopic)
+    else:
+        report_dict['foctopictfidf_x_bertopic'] = 0
+    corr_values_bertopic_x_univtopic = extract_corr_values(bertopic_docs_df, bertopic_cols, univtopic_cols, corr_threshold)
+    if len(corr_values_bertopic_x_univtopic) >= match_threshold:
+        logs.append(f'corr_values_bertopic_x_univtopic={corr_values_bertopic_x_univtopic}')
+        report_dict['bertopic_x_univtopic'] = len(corr_values_bertopic_x_univtopic)
+    else:
+        report_dict['bertopic_x_univtopic'] = 0
+    corr_values_univtopic_x_bertopic = extract_corr_values(bertopic_docs_df, univtopic_cols, bertopic_cols, corr_threshold)
+    if len(corr_values_univtopic_x_bertopic) >= match_threshold:
+        logs.append(f'corr_values_univtopic_x_bertopic={corr_values_univtopic_x_bertopic}')
+        report_dict['univtopic_x_bertopic'] = len(corr_values_univtopic_x_bertopic)
+    else:
+        report_dict['univtopic_x_bertopic'] = 0
+    corr_values_bertopic_x_univtopictfidf = extract_corr_values(bertopic_docs_df, bertopic_cols, univtopictfidf_cols, corr_threshold)
+    if len(corr_values_bertopic_x_univtopictfidf) >= match_threshold:
+        logs.append(f'corr_values_bertopic_x_univtopictfidf={corr_values_bertopic_x_univtopictfidf}')
+        report_dict['bertopic_x_univtopictfidf'] = len(corr_values_bertopic_x_univtopictfidf)
+    else:
+        report_dict['bertopic_x_univtopictfidf'] = 0
+    corr_values_univtopictfidf_x_bertopic = extract_corr_values(bertopic_docs_df, univtopictfidf_cols, bertopic_cols, corr_threshold)
+    if len(corr_values_univtopictfidf_x_bertopic) >= match_threshold:
+        logs.append(f'corr_values_univtopictfidf_x_bertopic={corr_values_univtopictfidf_x_bertopic}')
+        report_dict['univtopictfidf_x_bertopic'] = len(corr_values_univtopictfidf_x_bertopic)
+    else:
+        report_dict['univtopictfidf_x_bertopic'] = 0
     corr_values_bertopic_x_speaker = extract_corr_values(bertopic_docs_df, bertopic_cols, speaker_cols, corr_threshold)
     if len(corr_values_bertopic_x_speaker) >= match_threshold:
         logs.append(f'corr_values_bertopic_x_speaker={corr_values_bertopic_x_speaker}')
-    corr_values_foctopic_x_speaker = extract_corr_values(bertopic_docs_df, foctopic_cols, speaker_cols, corr_threshold)
-    if len(corr_values_foctopic_x_speaker) >= match_threshold:
-        logs.append(f'corr_values_foctopic_x_speaker={corr_values_foctopic_x_speaker}')
+        report_dict['bertopic_x_speaker'] = len(corr_values_bertopic_x_speaker)
+    else:
+        report_dict['bertopic_x_speaker'] = 0
+    corr_values_speaker_x_bertopic = extract_corr_values(bertopic_docs_df, speaker_cols, bertopic_cols, corr_threshold)
+    if len(corr_values_speaker_x_bertopic) >= match_threshold:
+        logs.append(f'corr_values_speaker_x_bertopic={corr_values_speaker_x_bertopic}')
+        report_dict['speaker_x_bertopic'] = len(corr_values_speaker_x_bertopic)
+    else:
+        report_dict['speaker_x_bertopic'] = 0
 
     print('-----------------------------------------------------------------------------------------')
     print(f'config={config}')
     print(f'logs={logs}')
-    f = open("bertopic_config_test.txt", "a")  # append mode
+    f = open(LOG_FILE, 'a')  # append mode
     f.write('-----------------------------------------------------------------------------------------\n')
     f.write(f'config: {config}\n')
     for log in logs:
         f.write(f'*** {log}\n')
     f.close()
 
+    # print(f'report_dict={report_dict}')
+
+    return report_dict
 
     '''
     custom_data = ['topic_str', 'title', 'season', 'sequence_in_season', 'focal_speakers', 'x_coord', 'y_coord', 'z_coord', 'topics_focused_tfidf_str']
@@ -340,6 +431,13 @@ def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd
         topics_openai, probs_openai = model_openai.fit_transform(bert_text_inputs)
         log_and_save_topics(model_openai, "openAI", bert_text_inputs, sources_df)
     '''
+
+
+def one_hot_multival_col(bertopic_docs_df: pd.DataFrame, prefix: str, multi_val_list_col: str) -> pd.DataFrame:
+    distinct_vals = sorted(set(chain.from_iterable(bertopic_docs_df[multi_val_list_col])))
+    distinct_val_series = pd.Series(distinct_vals, index=[f'{prefix}{s}' for s in distinct_vals])
+    bertopic_docs_df = bertopic_docs_df.join(bertopic_docs_df[multi_val_list_col].apply(lambda x: distinct_val_series.isin(x)).astype(int))
+    return bertopic_docs_df
 
 
 def extract_corr_values(bertopic_docs_df: pd.DataFrame, cols1: list, cols2: list, threshold: float) -> list:
@@ -589,34 +687,6 @@ def original_main():
     # model_response = get_model_response(docs, prompt)
 
     # print(f'type(model_response)={type(model_response)}')
-
-
-LEGACY_CONFIG_OPTIONS_JUN03 = {
-    # 'narrative_only': [True, False],
-    # 'sentence_transformer_lm': ['all-MiniLM-L6-v2', 'all-MiniLM-L12-v2'],
-    'sentence_transformer_lm': 'all-MiniLM-L6-v2',
-    'vec_ngram_low': 1,
-    # 'vec_ngram_high': [2, 3, 4],
-    'vec_ngram_high': 2,
-    # 'bertopic_top_n_words': [3, 4, 5, 6, 7],
-    'bertopic_top_n_words': 5,
-    'umap_n_neighbors': [2, 5, 10, 25, 50, 100, 200],
-    # 'umap_n_components': [3],
-    'umap_n_components': 3,
-    'umap_min_dist': [0.0, 0.02, 0.05, 0.1, 0.3, 0.8],
-    # 'umap_metric': ['euclidian', 'manhattan', 'chebyshev', 'minkowski', 'cosine', 'correlation' 
-    #                 'canberra', 'braycurtis', 'haversine', 'mahalanobis', 'wminkowski', 'seuclidian'],
-    'umap_metric': 'cosine',
-    # 'umap_random_state': [v for v in range(1, 6)],
-    # 'umap_random_state': [4, 14, 43, 64],
-    'umap_random_state': 14,
-    'hdbscan_min_cluster_size': [25, 50, 100],
-    'hdbscan_min_samples': [10, 25, 50],
-    # 'mmr_diversity': [0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5],
-    'mmr_diversity': 0.05,
-    # 'representation_model_type': ['Custom', 'MaximalMarginalRelevance', 'KeyBERTInspired', 'BertOpenAI'],
-    'representation_model_type': 'Custom',
-}
 
     
 def get_model_response(messages, prompt):
