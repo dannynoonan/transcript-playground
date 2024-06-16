@@ -364,8 +364,8 @@ def fetch_speaker_episodes(show_key: str, speaker: str = None, episode_key: str 
     return s
 
 
-def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, seasons: list = [], episode_keys: list = [], min_depth: bool = True) -> tuple[list, dict, dict]:
-    print(f'begin fetch_speaker_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field} seasons={seasons} episode_keys={episode_keys}')
+def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, min_depth: bool = True) -> tuple[list, dict, dict]:
+    print(f'begin fetch_speaker_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field}')
 
     try:
         es_speaker = fetch_speaker(show_key, speaker)
@@ -373,17 +373,13 @@ def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, sea
     except Exception as e:
         return {"error": f"Failed fetch_speaker for show_key={show_key} speaker={speaker}: {e}"}
     
+    # min_depth: if we found series-level embeddings, return them - we're done 
     if min_depth and speaker_series_embeddings:
          return speaker_series_embeddings, {}, {}
             
-    if not seasons:
-        seasons = es_speaker.seasons_to_episode_keys._d_.keys()
-    if not episode_keys:
-        for s, e_keys in es_speaker.seasons_to_episode_keys._d_.items():
-            if s in seasons:
-                episode_keys.extend(e_keys)
+    seasons = es_speaker.seasons_to_episode_keys._d_.keys()
 
-    season_embeddings = {}
+    all_speaker_season_embeddings = {}
     for season in seasons:
         try:
             es_speaker_season = fetch_speaker_season(show_key, speaker, season)
@@ -392,28 +388,32 @@ def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, sea
                 continue
             speaker_season_embeddings = getattr(es_speaker_season, vector_field)
             if speaker_season_embeddings:
-                season_embeddings[season] = speaker_season_embeddings
+                all_speaker_season_embeddings[season] = speaker_season_embeddings
         except Exception as e:
             print(f"Failed fetch_speaker_season for show_key={show_key} speaker={speaker} season={season}: {e}")
 
-    if min_depth and len(speaker_season_embeddings) == len(seasons):
-        return speaker_series_embeddings, season_embeddings, {}
+    # min_depth: if we found season-level embeddings for all seasons, return them - we're done 
+    if min_depth and len(all_speaker_season_embeddings) == len(seasons):
+        return speaker_series_embeddings, all_speaker_season_embeddings, {}
     
-    episode_embeddings = {}
+    all_speaker_episode_embeddings = {}
+    for season, episode_keys in es_speaker.seasons_to_episode_keys._d_.items():
+        # min_depth: skip episodes in seasons we've already fetched embeddings for
+        if min_depth and season in all_speaker_season_embeddings:
+            continue
+        for episode_key in episode_keys:
+            try:
+                es_speaker_episode = fetch_speaker_episode(show_key, speaker, episode_key)
+                if not es_speaker_episode:
+                    print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} episode_key={episode_key}")
+                    continue
+                speaker_episode_embeddings = getattr(es_speaker_episode, vector_field)
+                if speaker_episode_embeddings:
+                    all_speaker_episode_embeddings[episode_key] = speaker_episode_embeddings
+            except Exception as e:
+                print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} episode_key={episode_key}: {e}")
 
-    for episode_key in episode_keys:
-        try:
-            es_speaker_episode = fetch_speaker_episode(show_key, speaker, episode_key)
-            if not es_speaker_episode:
-                print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} episode_key={episode_key}")
-                continue
-            speaker_episode_embeddings = getattr(es_speaker_episode, vector_field)
-            if speaker_episode_embeddings:
-                episode_embeddings[episode_key] = speaker_episode_embeddings
-        except Exception as e:
-            print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} episode_key={episode_key}: {e}")
-
-    return speaker_series_embeddings, season_embeddings, episode_embeddings
+    return speaker_series_embeddings, all_speaker_season_embeddings, all_speaker_episode_embeddings
 
 
 def fetch_topic(topic_grouping: str, topic_key: str) -> EsTopic|None:

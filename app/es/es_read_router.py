@@ -415,8 +415,24 @@ def episode_mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor:
     return {"match_count": len(matches), "vector_field": vector_field, "matches": matches}
 
 
+# def util(speaker: str, m: dict, matches_by_speaker_series_embedding: dict, all_speaker_matches: list, other_speaker_count: int, other_speaker_quota: int):
+#     if other_speaker_count >= other_speaker_quota:
+#         return False
+#     match_speaker = m['speaker']
+#     # add self-matches to list, but don't count them against other_speaker quota 
+#     matches_by_speaker_series_embedding.append(m)
+#     if match_speaker == speaker:
+#         return True
+#     other_speaker_count += 1
+#     # increment match_speaker overall score  
+#     if match_speaker not in all_speaker_matches:
+#         all_speaker_matches[match_speaker] = 0
+#     inv_rank = other_speaker_quota - other_speaker_count # eesh
+#     all_speaker_matches[match_speaker] += inv_rank
+
+
 @esr_app.get("/esr/speaker_mlt_vector_search/{show_key}/{speaker}", tags=['ES Reader'])
-def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, model_vendor: str = None, model_version: str = None):
+def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool = True, model_vendor: str = None, model_version: str = None):
     '''
     Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
     '''
@@ -447,57 +463,74 @@ def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, model_vendor: str
         (1) speaker2 embeddings most similar to each speaker1 embedding across min_depth layer(s)
         (2) aggregate speaker2 similarity across all speaker1 embeddings across min_depth layer(s)
     '''
-    series_embeddings, season_embeddings, episode_embeddings = esqb.fetch_speaker_embeddings(show_key.value, speaker, vector_field, min_depth=True)
+    series_embeddings, season_embeddings, episode_embeddings = esqb.fetch_speaker_embeddings(show_key.value, speaker, vector_field, min_depth=min_depth)
     
-    cutoff = 30
-    matches_by_speaker_embedding = {}
+    other_speaker_quota = 30
+    matches_by_speaker_series_embedding = []
     all_speaker_matches = {}
     if series_embeddings:
-        layer_key = 'series'
-        matches_by_speaker_embedding[layer_key] = []
+        other_speaker_count = 0
+        matches_by_speaker_series_embedding = []
         vec_search_response = esqb.vector_search(show_key.value, vector_field, series_embeddings, index_name='speaker_embeddings_unified', min_word_count=100)
         speaker_matches = esrt.return_vector_search(vec_search_response)
-        for m in speaker_matches[:cutoff]:
+        for m in speaker_matches:
+            if other_speaker_count >= other_speaker_quota:
+                break
             match_speaker = m['speaker']
-            # if match_speaker == speaker:
-            #     continue
-            matches_by_speaker_embedding[layer_key].append(m)
+            # add self-matches to list, but don't count them against other_speaker quota 
+            matches_by_speaker_series_embedding.append(m)
+            if match_speaker == speaker:
+                continue
+            other_speaker_count += 1
+            # increment match_speaker overall score  
             if match_speaker not in all_speaker_matches:
                 all_speaker_matches[match_speaker] = 0
-            rank = cutoff - m['rank']
-            all_speaker_matches[match_speaker] += rank
+            inv_rank = other_speaker_quota - other_speaker_count # eesh
+            all_speaker_matches[match_speaker] += inv_rank
 
+    matches_by_speaker_season_embedding = {}
     if season_embeddings:
         for season, season_embedding in season_embeddings.items():
-            layer_key = f'S{season}'
-            matches_by_speaker_embedding[layer_key] = []
+            other_speaker_count = 0
+            matches_by_speaker_season_embedding[season] = []
             vec_search_response = esqb.vector_search(show_key.value, vector_field, season_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
             speaker_matches = esrt.return_vector_search(vec_search_response)
-            for m in speaker_matches[:cutoff]:
+            for m in speaker_matches:
+                if other_speaker_count >= other_speaker_quota:
+                    break
                 match_speaker = m['speaker']
-                # if match_speaker == speaker:
-                #     continue
-                matches_by_speaker_embedding[layer_key].append(m)
+                # add self-matches to list, but don't count them against other_speaker quota 
+                matches_by_speaker_season_embedding[season].append(m)
+                if match_speaker == speaker:
+                    continue
+                other_speaker_count += 1
+                # increment match_speaker overall score  
                 if match_speaker not in all_speaker_matches:
                     all_speaker_matches[match_speaker] = 0
-                rank = cutoff - m['rank']
-                all_speaker_matches[match_speaker] += rank
+                inv_rank = other_speaker_quota - other_speaker_count # eesh
+                all_speaker_matches[match_speaker] += inv_rank
 
+    matches_by_speaker_episode_embedding = {}
     if episode_embeddings:
         for episode_key, episode_embedding in episode_embeddings.items():
-            layer_key = f'E{episode_key}'
-            matches_by_speaker_embedding[layer_key] = []
+            other_speaker_count = 0
+            matches_by_speaker_episode_embedding[episode_key] = []
             vec_search_response = esqb.vector_search(show_key.value, vector_field, episode_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
             speaker_matches = esrt.return_vector_search(vec_search_response)
-            for m in speaker_matches[:cutoff]:
+            for m in speaker_matches:
+                if other_speaker_count >= other_speaker_quota:
+                    break
                 match_speaker = m['speaker']
-                # if match_speaker == speaker:
-                #     continue
-                matches_by_speaker_embedding[layer_key].append(m)
+                # add self-matches to list, but don't count them against other_speaker quota 
+                matches_by_speaker_episode_embedding[episode_key].append(m)
+                if match_speaker == speaker:
+                    continue
+                other_speaker_count += 1
+                # increment match_speaker overall score  
                 if match_speaker not in all_speaker_matches:
                     all_speaker_matches[match_speaker] = 0
-                rank = cutoff - m['rank']
-                all_speaker_matches[match_speaker] += rank
+                inv_rank = other_speaker_quota - other_speaker_count # eesh
+                all_speaker_matches[match_speaker] += inv_rank
     
     '''
     matches_by_speaker_embedding = {
@@ -585,7 +618,12 @@ def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, model_vendor: str
     
     all_speaker_matches = sorted(all_speaker_matches.items(), key=lambda kv: kv[1], reverse=True)
 
-    return {"all_speaker_matches": all_speaker_matches, "matches_by_speaker_embedding": matches_by_speaker_embedding}
+    return {
+        "all_speaker_matches": all_speaker_matches, 
+        "matches_by_speaker_series_embedding": matches_by_speaker_series_embedding,
+        "matches_by_speaker_season_embedding": matches_by_speaker_season_embedding, 
+        "matches_by_speaker_episode_embedding": matches_by_speaker_episode_embedding
+    }
 
 
 @esr_app.get("/esr/episode_topic_vector_search/{show_key}/{episode_key}/{topic_grouping}", tags=['ES Reader'])
