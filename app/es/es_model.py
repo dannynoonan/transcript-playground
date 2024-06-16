@@ -176,6 +176,23 @@ class EsSpeakerEpisode(Document):
         self.meta.id = f'{self.show_key}_{self.speaker}_{self.episode_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
+    
+
+class EsSpeakerUnified(Document):
+    show_key = Keyword()
+    speaker = Keyword()
+    layer_key = Keyword()
+    word_count = Integer()
+    openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    indexed_ts = Date()
+
+    class Index:
+        name = 'speaker_embeddings_unified'
+
+    def save(self, **kwargs):
+        self.meta.id = f'{self.show_key}_{self.speaker}_{self.layer_key}'
+        self.indexed_ts = datetime.now()
+        return super().save(**kwargs)
 
 
 class EsTopic(Document):

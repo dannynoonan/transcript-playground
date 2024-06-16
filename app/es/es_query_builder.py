@@ -8,7 +8,7 @@ from app.config import settings
 from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
 from app.es.es_model import (
     EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, 
-    EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
+    EsSpeakerUnified, EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
 )
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
@@ -61,6 +61,11 @@ def init_speaker_episodes_index():
     es_conn.indices.put_settings(index="speaker_episodes", body={"index": {"max_inner_result_window": 1000}})
 
 
+def init_speaker_unified_index():
+    EsSpeakerUnified.init()
+    es_conn.indices.put_settings(index="speaker_embeddings_unified", body={"index": {"max_inner_result_window": 1000}})
+
+
 def init_topics_index():
     EsTopic.init()
     es_conn.indices.put_settings(index="topics", body={"index": {"max_inner_result_window": 1000}})
@@ -102,22 +107,32 @@ def save_es_topic(es_topic: EsTopic) -> None:
 
 
 def save_es_speaker(es_speaker: EsSpeaker) -> None:
-    # TODO this is functionally identical to `save_es_episode` and `save_es_topic`, do we even need any of them?
     es_speaker.save()
+    es_speaker_unified = EsSpeakerUnified(show_key=es_speaker.show_key, speaker=es_speaker.speaker, 
+                                          layer_key='SERIES', word_count=es_speaker.word_count,
+                                          openai_ada002_embeddings=es_speaker.openai_ada002_embeddings)
+    es_speaker_unified.save()
 
 
 def save_es_speaker_season(es_speaker_season: EsSpeakerSeason) -> None:
-    # TODO this is functionally identical to other es `save` functions 
     es_speaker_season.save()
+    es_speaker_unified = EsSpeakerUnified(show_key=es_speaker_season.show_key, speaker=es_speaker_season.speaker, 
+                                          layer_key=f'S{es_speaker_season.season}', word_count=es_speaker_season.word_count,
+                                          openai_ada002_embeddings=es_speaker_season.openai_ada002_embeddings)
+    es_speaker_unified.save()
 
 
 def save_es_speaker_episode(es_speaker_episode: EsSpeakerEpisode) -> None:
-    # TODO this is functionally identical to other es `save` functions 
     es_speaker_episode.save()
+    es_speaker_unified = EsSpeakerUnified(show_key=es_speaker_episode.show_key, speaker=es_speaker_episode.speaker, 
+                                          layer_key=f'S{es_speaker_episode.season}E{es_speaker_episode.sequence_in_season}', 
+                                          word_count=es_speaker_episode.word_count,
+                                          openai_ada002_embeddings=es_speaker_episode.openai_ada002_embeddings)
+    es_speaker_unified.save()
 
 
 def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = False) -> Search:
-    print(f'begin fetch_episode_by_key for show_key={show_key} episode_key={episode_key}')
+    # print(f'begin fetch_episode_by_key for show_key={show_key} episode_key={episode_key}')
 
     # s = Search(using=es_client, index='transcripts')
     s = Search(index='transcripts')
@@ -181,7 +196,7 @@ def fetch_simple_episodes(show_key: str, season: str = None) -> Search:
 
 
 def fetch_narrative_sequences(show_key: str, episode_key: str) -> Search:
-    print(f'begin fetch_narrative_sequences for show_key={show_key} season={episode_key}')
+    # print(f'begin fetch_narrative_sequences for show_key={show_key} season={episode_key}')
 
     s = Search(index='narratives')
     s = s.extra(size=1000)
@@ -1458,11 +1473,21 @@ def populate_relations(show_key: str, model_vendor: str, model_version: str, epi
     return episodes_to_relations
 
 
-def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_name: str = None, season: str = None) -> Search:
-    print(f'begin vector_search for show_key={show_key} vector_field={vector_field} index_name={index_name} season={season}')
+def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_name: str = None, min_word_count: int = None, season: str = None) -> Search:
+    print(f'begin vector_search for show_key={show_key} vector_field={vector_field} index_name={index_name} min_word_count={min_word_count} season={season}')
 
     if not index_name:
         index_name = 'transcripts'
+
+    # TODO hard-mapped based on number of TNG episodes / arbitary speaker count, need to calculate this or pass as parameter
+    if index_name == 'transcripts':
+        k = 176
+    elif index_name in ['speakers', 'speaker_seasons', 'speaker_episodes']:
+        k = 50
+    elif index_name == 'speaker_embeddings_unified':
+        k = 100
+    else:
+        k = 176
 
     # s = Search(index='transcripts')
     # s = s.extra(size=1000)
@@ -1472,10 +1497,7 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
     #     s = s.filter('term', episode_key=episode_key)
     # if season:
     #     s = s.filter('term', season=season)
-        
-    # TODO hard-mapped based on number of TNG episodes, this needs to be passed into function (as episode count, speaker count, etc)
-    k = 176
-
+    
     knn_query = {
         "field": vector_field,
         "query_vector": vectorized_qt,
@@ -1495,12 +1517,23 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
         }
     }
 
+    if min_word_count:
+        min_wc_filer = dict(range=dict(word_count=dict(gte=min_word_count)))
+        filter_query['bool']['filter'].append(min_wc_filer)
+
     if index_name == 'speakers':
         source = ['show_key', 'speaker']
+    elif index_name == 'speaker_seasons':
+        source = ['show_key', 'season', 'speaker']
+    elif index_name == 'speaker_episodes':
+        source = ['show_key', 'episode_key', 'season', 'sequence_in_season', 'speaker']
+    elif index_name == 'speaker_embeddings_unified':
+        source = ['show_key', 'layer_key', 'speaker']
     else:
         source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations', 
                   'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
     
+    print(f'filter_query={filter_query}')
     response = es_conn.knn_search(index=index_name, knn=knn_query, filter=filter_query, source=source)
 
     # s = s.query(index="transcripts", knn=knn_query, source=source)

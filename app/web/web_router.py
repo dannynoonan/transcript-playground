@@ -189,7 +189,7 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 	mlt_tfidf = esr.more_like_this(show_key, episode_key)
 	tdata['mlt_tfidf'] = mlt_tfidf['matches']
 
-	mlt_embeddings = esr.mlt_vector_search(show_key, episode_key)
+	mlt_embeddings = esr.episode_mlt_vector_search(show_key, episode_key)
 	tdata['mlt_embeddings'] = mlt_embeddings['matches'][:30]
 
 	tdata['topics_by_grouping'] = {}
@@ -322,7 +322,7 @@ def episode_search_page(request: Request, show_key: ShowKey, search_type: str = 
 			model_version = 'ada002'
 		tdata['model_vendor'] = model_vendor
 		tdata['model_version'] = model_version
-		matches = esr.vector_search(show_key, qt=qtSemantic, model_vendor=model_vendor, model_version=model_version)
+		matches = esr.episode_vector_search(show_key, qt=qtSemantic, model_vendor=model_vendor, model_version=model_version)
 		print(f'############ matches={matches}')
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = len(matches['matches'])

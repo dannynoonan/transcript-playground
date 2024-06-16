@@ -42,6 +42,8 @@ def init_es(index_name: str = None):
             esqb.init_speaker_seasons_index()
         elif index_name == 'speaker_episodes':
             esqb.init_speaker_episodes_index()
+        elif index_name == 'speaker_embeddings_unified':
+            esqb.init_speaker_unified_index()
         elif index_name == 'topics':
             esqb.init_topics_index()
         elif index_name == 'episode_topics':
@@ -59,6 +61,7 @@ def init_es(index_name: str = None):
         esqb.init_speakers_index()
         esqb.init_speaker_seasons_index()
         esqb.init_speaker_episodes_index()
+        esqb.init_speaker_unified_index()
         esqb.init_topics_index()
         esqb.init_episode_topics_index()
         esqb.init_speaker_topics_index()
@@ -180,7 +183,7 @@ async def populate_relations(show_key: ShowKey, episode_key: str, model_vendor: 
     if (model_vendor, model_version) == ('es','mlt'):
         similar_episodes = await esr.more_like_this(ShowKey(show_key), episode_key)
     else:
-        similar_episodes = esr.mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
+        similar_episodes = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
     # only keep the episode keys and corresponding scores 
     # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
     # sim_eps = [(sim_ep['episode_key'], sim_ep['score']) for sim_ep in similar_episodes['matches']]
@@ -212,7 +215,7 @@ async def populate_all_relations(show_key: ShowKey, model_vendor: str, model_ver
         if (model_vendor, model_version) == ('es','mlt'):
             similar_episodes = await esr.more_like_this(ShowKey(show_key), episode_key)
         else:
-            similar_episodes = esr.mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
+            similar_episodes = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
         # only keep the episode keys and corresponding scores 
         # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
         episodes_to_relations[doc_id] = similar_episodes
@@ -336,7 +339,7 @@ def index_speaker(show_key: ShowKey, speaker: str):
     
     # write to es
     try:    
-        print(f'Writing es_speaker {speaker} show_key={show_key.value} to `speakers`, `speaker_seasons`, and `speaker_episodes` indexes')  
+        print(f'Writing es_speaker {speaker} show_key={show_key.value} to `speakers`, `speaker_seasons`, `speaker_episodes`, and `speaker_embeddings_unified` indexes')  
         esqb.save_es_speaker(es_speaker)
         for _, es_speaker_season in es_speaker_seasons.items():
             esqb.save_es_speaker_season(es_speaker_season)

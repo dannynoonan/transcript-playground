@@ -4,6 +4,7 @@ __pycache__/
 .DS_Store
 .vscode/
 *_notes.txt
+/bertopic_config_tests
 /data/*
 /database/backups
 /source
