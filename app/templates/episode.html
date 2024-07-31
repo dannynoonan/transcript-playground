@@ -123,6 +123,51 @@
 				<p>&nbsp;</p>
 				<!-- end similar episodes -->
 
+				<!-- begin narrative sequences -->
+				{% if tdata['narrative_sequences'] %}
+				<h3>Episode sub-narratives for <strong>{{ tdata['narrative_sequences']|length }}</strong> speaker groupings:</h3>
+				<div class="table-responsive"> 
+                    <!-- https://stackoverflow.com/questions/68951263/how-to-make-accordion-table-with-bootstrap-5 -->
+                    <table class="table accordion">
+                        <thead>
+                            <tr class="table-primary">
+                                <th scope="col">&nbsp;</th>
+                                <th scope="col">Speaker group</th>
+                                <th scope="col">Word count</th>
+								<th scope="col">Speaker (line counts)</th>
+                                <th scope="col">Source scene (word counts)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for narrative_sequence in tdata['narrative_sequences'] %}
+                            <tr class="table-secondary" data-bs-toggle="collapse" data-bs-target="#expandNarrative_{{ narrative_sequence['speaker_group'] }}">
+                                <td>[+]</td>
+								<td>{{ narrative_sequence['speaker_group'] }}</td>
+								<td>{{ narrative_sequence['word_count'] }}</td>
+                                <td>{% for spkr, lc in narrative_sequence['speaker_line_counts'].items() %}
+										{{ spkr }} ({{lc}}){% if not loop.last %},{% endif %}
+									{% endfor %}</td>
+									<td>{% for scene, wc in narrative_sequence['source_scene_word_counts'].items() %}
+										{{ scene }} ({{wc}}){% if not loop.last %},{% endif %}
+									{% endfor %}</td>
+                            </tr>
+                            <tr class="collapse accordion-collapse" id="expandNarrative_{{ narrative_sequence['speaker_group'] }}" data-bs-parent=".table">
+                                <td colspan="9">
+                                    <div class="overflow-scroll" style="max-height: 500px; color: #FFFFFF">
+                                    {% for narrative_line in narrative_sequence['narrative_lines'] %}
+										{{ narrative_line }}<br/>
+									{% endfor %}
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+				<p>&nbsp;</p>
+				{% endif %}
+				<!-- end narrative sequences -->
+				
 				<!-- begin in-episode search form -->
 				<h3>In-episode search</h3>
 				<br/>

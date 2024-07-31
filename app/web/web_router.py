@@ -200,6 +200,9 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 		episode_topics_response = esr.fetch_episode_topics(show_key, episode_key, topic_grouping, limit=50, sort_by=sort_by)
 		tdata['topics_by_grouping'][topic_grouping] = episode_topics_response['episode_topics']
 
+	narrative_sequences_response = esr.fetch_narrative_sequences(show_key, episode_key)
+	tdata['narrative_sequences'] = narrative_sequences_response['narrative_sequences']
+
 	###### IN-EPISODE SEARCH ######
 
 	if not search_type:
@@ -425,7 +428,7 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 
 	speaker_mlt_response = esr.speaker_mlt_vector_search(show_key, speaker)
 	tdata['speaker_mlt_aggs'] = speaker_mlt_response['all_speaker_matches']
-	# TODO struggling with preserving season sorting
+	# TODO struggling to preserve season and episode sorting
 	tdata['speaker_mlt_series_matches'] = speaker_mlt_response['matches_by_speaker_series_embedding']
 	tdata['speaker_mlt_season_matches'] = speaker_mlt_response['matches_by_speaker_season_embedding']
 	tdata['speaker_mlt_episode_matches'] = speaker_mlt_response['matches_by_speaker_episode_embedding']
