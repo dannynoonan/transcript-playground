@@ -361,9 +361,9 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 	list_seasons_response = esr.list_seasons(show_key)
 	tdata['all_seasons'] = list_seasons_response['seasons']
 
-	response = esr.fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)
-	if 'speaker' in response:
-		es_speaker = response['speaker']
+	speaker_es_response = esr.fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)
+	if 'speaker' in speaker_es_response:
+		es_speaker = speaker_es_response['speaker']
 		if 'episodes' in es_speaker:
 			tdata['episodes'] = es_speaker['episodes']
 		if 'seasons' in es_speaker:
@@ -422,6 +422,13 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 	# TODO shouldn't I be able to sort on a key for a dict within a dict
 	speaker_dicts = other_speakers.values()
 	tdata['other_speaker_agg_composite'] = sorted(speaker_dicts, key=itemgetter('episode_count'), reverse=True)
+
+	speaker_mlt_response = esr.speaker_mlt_vector_search(show_key, speaker)
+	tdata['speaker_mlt_aggs'] = speaker_mlt_response['all_speaker_matches']
+	# TODO struggling with preserving season sorting
+	tdata['speaker_mlt_series_matches'] = speaker_mlt_response['matches_by_speaker_series_embedding']
+	tdata['speaker_mlt_season_matches'] = speaker_mlt_response['matches_by_speaker_season_embedding']
+	tdata['speaker_mlt_episode_matches'] = speaker_mlt_response['matches_by_speaker_episode_embedding']
 
 	###### CHARACTER-CENTRIC SEARCH ######
 

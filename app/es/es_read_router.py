@@ -617,6 +617,7 @@ def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool =
     #         all_speaker_episode_matches[match_speaker]['sources'].append(f"{key}:{m['episode_key']}")
     
     all_speaker_matches = sorted(all_speaker_matches.items(), key=lambda kv: kv[1], reverse=True)
+    all_speaker_matches = {asm[0]:asm[1] for asm in all_speaker_matches}
 
     return {
         "all_speaker_matches": all_speaker_matches, 
