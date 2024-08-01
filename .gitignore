@@ -7,6 +7,7 @@ __pycache__/
 /bertopic_config_tests
 /data/*
 /database/backups
+/jupyter
 /source
 /venv
 /w2v_models
