@@ -26,10 +26,8 @@ from app.show_metadata import ShowKey
 openai_client = openai.OpenAI(api_key=settings.openai_api_key)
 # openai.api_key = settings.openai_api_key
 
-# embed_minilm = SentenceTransformer('all-MiniLM-L12-v2')
-
-LOG_FILE = 'bertopic_config_test.txt'
-REPORT_FILE = 'bertopic_config_report'
+LOG_FILE = 'bertopic_config_tests/bertopic_config_test'
+REPORT_FILE = 'bertopic_config_tests/bertopic_config_report'
 
 
 CONFIG_OPTIONS = {
@@ -40,18 +38,17 @@ CONFIG_OPTIONS = {
     'bertopic_top_n_words': 5,
     'umap_n_neighbors': 5,
     'umap_n_components': 3,
-    'umap_min_dist': [0.0, 0.01, 0.02],
+    'umap_min_dist': 0.01,
     # 'invalid_umap_metric': ['euclidian', 'seuclidian', 'haversine', 'mahalanobis'],
     # 'unusable_umap_metric': ['wminkowski'],  # wminkowski: best correlation to vector-based topics, but doesn't translate to 3D clusters
     # 'umap_metric': ['braycurtis', 'minkowski', 'canberra', 'manhattan', 'cosine', 'correlation'],
-    'umap_metric': ['cosine', 'correlation'],
-    'umap_random_state': [4, 53, 87],
-    'hdbscan_min_cluster_size': [25, 50],
+    'umap_metric': 'manhattan',
+    'umap_random_state': 4,
+    'hdbscan_min_cluster_size': 50,
     'hdbscan_min_samples': 10,
     # 'mmr_diversity': [0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5],
     'mmr_diversity': 0.05,
     # 'representation_model_type': ['Custom', 'MaximalMarginalRelevance', 'KeyBERTInspired', 'BertOpenAI'],
-    'representation_model_type': ['MaximalMarginalRelevance', 'KeyBERTInspired', 'BertOpenAI'],
     'topic_count_threshold': 6,
     'topic_ratio_threshold': 0.5,
     'corr_threshold': 0.4,
@@ -86,7 +83,7 @@ def main():
     sources_df = pd.DataFrame(bert_text_sources, columns=['episode_key', 'speaker_group', 'wc'])
     sources_df = pd.merge(sources_df, episodes_df, on='episode_key')
 
-    log_file = open(LOG_FILE, 'a')  # append mode
+    log_file = open(f'{LOG_FILE}_{ts_filename}.csv', 'a')  # append mode
     log_file.write('=======================================================================================\n')
     log_file.write(f'Begin new job for {len(configs)} config variations at {ts_log}\n')
     log_file.write(f'config_params_to_values: {config_params_to_values}\n')
@@ -95,8 +92,8 @@ def main():
     report_dicts = []
     i = 1
     for config in configs:
-        print(f"processing config {i} of {len(configs)} (metric={config['umap_metric']}, representation_model_type={config['representation_model_type']})")
-        report_dict = run_and_log_bert_config(bert_text_inputs, config, sources_df)
+        print(f"processing config {i} of {len(configs)} (metric={config['umap_metric']}")
+        report_dict = generate_bertopic_models(bert_text_inputs, config, sources_df, ts_filename)
         i += 1
         if report_dict:
             report_dicts.append(report_dict)
@@ -147,7 +144,7 @@ def generate_config_instance(config_params: list, config_value_indexes: tuple) -
     return config_instance
 
 
-def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd.DataFrame) -> dict|None:
+def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: pd.DataFrame, ts_filename: str) -> dict|None:
     logs = []
     topic_count_threshold = config['topic_count_threshold']
     topic_ratio_threshold = config['topic_ratio_threshold']
@@ -157,7 +154,7 @@ def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd
 
     vec_ngram_low = config['vec_ngram_low']
     vec_ngram_high = config['vec_ngram_high']
-    representation_model_type = config['representation_model_type']
+    # representation_model_type = config['representation_model_type']
     sentence_transformer_lm = config['sentence_transformer_lm']
     umap_n_neighbors = config['umap_n_neighbors']
     umap_n_components = config['umap_n_components']
@@ -172,46 +169,79 @@ def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd
     # configurable component models pt 1
     vectorizer_model = CountVectorizer(ngram_range=(vec_ngram_low, vec_ngram_high), stop_words='english')
         
-    if representation_model_type:
-        # configurable component models pt 2
-        embedding_model = SentenceTransformer(sentence_transformer_lm)
-        umap_model = UMAP(n_neighbors=umap_n_neighbors, n_components=umap_n_components, min_dist=umap_min_dist, metric=umap_metric, random_state=umap_random_state)
-        hdbscan_model = HDBSCAN(min_cluster_size=hdbscan_min_cluster_size, min_samples=hdbscan_min_samples, gen_min_span_tree=True, prediction_data=True)
+    # if representation_model_type:
+    # configurable component models pt 2
+    embedding_model = SentenceTransformer(sentence_transformer_lm)
+    umap_model = UMAP(n_neighbors=umap_n_neighbors, n_components=umap_n_components, min_dist=umap_min_dist, metric=umap_metric, random_state=umap_random_state)
+    hdbscan_model = HDBSCAN(min_cluster_size=hdbscan_min_cluster_size, min_samples=hdbscan_min_samples, gen_min_span_tree=True, prediction_data=True)
 
-        if representation_model_type == 'MaximalMarginalRelevance':
-            mmr_representation_model = MaximalMarginalRelevance(diversity=mmr_diversity)
-            bertopic_model = BERTopic(umap_model=umap_model, hdbscan_model=hdbscan_model, embedding_model=embedding_model, vectorizer_model=vectorizer_model,
-                                      representation_model=mmr_representation_model, top_n_words=bertopic_top_n_words, language='english', 
-                                      calculate_probabilities=True, verbose=True)
-        elif representation_model_type == 'KeyBERTInspired':
-            kb_representation_model = KeyBERTInspired()
-            bertopic_model = BERTopic(umap_model=umap_model, hdbscan_model=hdbscan_model, embedding_model=embedding_model, vectorizer_model=vectorizer_model,
-                                      representation_model=kb_representation_model, top_n_words=bertopic_top_n_words, language='english', 
-                                      calculate_probabilities=True, verbose=True)
-        elif representation_model_type == 'BertOpenAI':
-            openai_representation_model = BertOpenAI(openai_client, delay_in_seconds=5, model='gpt-3.5-turbo', chat=True)
-            bertopic_model = BERTopic(umap_model=umap_model, hdbscan_model=hdbscan_model, embedding_model=embedding_model, vectorizer_model=vectorizer_model,
-                                      representation_model=openai_representation_model, top_n_words=bertopic_top_n_words, language='english', 
-                                      calculate_probabilities=True, verbose=True)
-        elif representation_model_type == 'Custom':
-            bertopic_model = BERTopic(umap_model=umap_model, hdbscan_model=hdbscan_model, embedding_model=embedding_model, vectorizer_model=vectorizer_model,
-                                      top_n_words=bertopic_top_n_words, language='english', calculate_probabilities=True, verbose=True)
-        else:
-            print(f'Cannot instantiate bertopic_model for invalid representation_model_type={representation_model_type}, exiting.')
-            return
-    else:
-        bertopic_model = BERTopic(vectorizer_model=vectorizer_model, language='english', calculate_probabilities=True, verbose=True)
+    mmr_representation_model = MaximalMarginalRelevance(diversity=mmr_diversity)
+    mmr_bertopic_model = BERTopic(umap_model=umap_model, hdbscan_model=hdbscan_model, embedding_model=embedding_model, vectorizer_model=vectorizer_model,
+                                  representation_model=mmr_representation_model, top_n_words=bertopic_top_n_words, language='english',
+                                  calculate_probabilities=True, verbose=True)
+    kb_representation_model = KeyBERTInspired()
+    kb_bertopic_model = BERTopic(umap_model=umap_model, hdbscan_model=hdbscan_model, embedding_model=embedding_model, vectorizer_model=vectorizer_model,
+                                representation_model=kb_representation_model, top_n_words=bertopic_top_n_words, language='english', 
+                                calculate_probabilities=True, verbose=True)
+    openai_representation_model = BertOpenAI(openai_client, delay_in_seconds=5, model='gpt-3.5-turbo', chat=True)
+    openai_bertopic_model = BERTopic(umap_model=umap_model, hdbscan_model=hdbscan_model, embedding_model=embedding_model, vectorizer_model=vectorizer_model,
+                                     representation_model=openai_representation_model, top_n_words=bertopic_top_n_words, language='english',
+                                     calculate_probabilities=True, verbose=True)
+    # elif representation_model_type == 'Custom':
+    #     bertopic_model = BERTopic(umap_model=umap_model, hdbscan_model=hdbscan_model, embedding_model=embedding_model, vectorizer_model=vectorizer_model,
+    #                                 top_n_words=bertopic_top_n_words, language='english', calculate_probabilities=True, verbose=True)
+    # else:
+    #     bertopic_model = BERTopic(vectorizer_model=vectorizer_model, language='english', calculate_probabilities=True, verbose=True)
 
     try:
-        topics_custom, probs_custom = bertopic_model.fit_transform(bert_text_inputs)
+        mmr_bertopic_model.fit_transform(bert_text_inputs)
     except Exception as e:
-        print(f'Failure to fit_transform against bertopic_mode with config={config}', e)
+        print(f'Failure to fit_transform against mmr_bertopic_model with config={config}', e)
+        return None
+    try:
+        kb_bertopic_model.fit_transform(bert_text_inputs)
+    except Exception as e:
+        print(f'Failure to fit_transform against kb_bertopic_model with config={config}', e)
+        return None
+    try:
+        openai_bertopic_model.fit_transform(bert_text_inputs)
+    except Exception as e:
+        print(f'Failure to fit_transform against openai_bertopic_model with config={config}', e)
         return None
 
-    bertopic_docs_df = bertopic_model.get_document_info(bert_text_inputs)
-    bertopic_topics_df = bertopic_model.get_topic_info()
+    mmr_bertopic_docs_df = mmr_bertopic_model.get_document_info(bert_text_inputs)
+    mmr_bertopic_topics_df = mmr_bertopic_model.get_topic_info()
+    kb_bertopic_docs_df = kb_bertopic_model.get_document_info(bert_text_inputs)
+    # kb_bertopic_topics_df = kb_bertopic_model.get_topic_info()
+    openai_bertopic_docs_df = openai_bertopic_model.get_document_info(bert_text_inputs)
+    # openai_bertopic_topics_df = openai_bertopic_model.get_topic_info()
 
-    # REPORTING
+    # the 3 {representation_type}_bertopic_docs_dfs differ only on 3 columns: Name, Representation, and Top_n_words
+    # consolidate the 3 of them now to streamline remaining steps (using mmr, but could have used kb or openai)
+    bertopic_docs_df = mmr_bertopic_docs_df
+
+    bertopic_docs_df['Name_mmr'] = mmr_bertopic_docs_df['Name']
+    bertopic_docs_df['Name_kb'] = kb_bertopic_docs_df['Name']
+    bertopic_docs_df['Name_openai'] = openai_bertopic_docs_df['Name']
+
+    bertopic_docs_df['Representation_mmr'] = mmr_bertopic_docs_df['Representation']
+    bertopic_docs_df['Representation_kb'] = kb_bertopic_docs_df['Representation']
+    bertopic_docs_df['Representation_openai'] = openai_bertopic_docs_df['Representation']
+
+    bertopic_docs_df['Top_n_words_mmr'] = mmr_bertopic_docs_df['Top_n_words']
+    bertopic_docs_df['Top_n_words_kb'] = kb_bertopic_docs_df['Top_n_words']
+    bertopic_docs_df['Top_n_words_openai'] = openai_bertopic_docs_df['Top_n_words']
+
+    bertopic_docs_df.drop('Name', axis=1, inplace=True)
+    bertopic_docs_df.drop('Representation', axis=1, inplace=True)
+    bertopic_docs_df.drop('Top_n_words', axis=1, inplace=True)
+
+    # the 3 {representation_type}_bertopic_topics_dfs have identical counts and mappings, despite having very different contents
+    # using mmr (but could have used kb or openai) for initial analysis/results filtering
+    bertopic_topics_df = mmr_bertopic_topics_df
+
+    #### RESULTS ANALYSIS PT 1 ####
+    # filter out data sets that don't meet minimum threshold criteria
     topic_count = len(bertopic_topics_df)
     doc_count_with_topic = bertopic_topics_df[bertopic_topics_df['Topic'] >= 0]['Count'].sum()
     topic_coverage_ratio = doc_count_with_topic / bertopic_topics_df['Count'].sum()
@@ -223,22 +253,15 @@ def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd
     report_dict['topic_count'] = topic_count
     report_dict['topic_coverage_ratio'] = topic_coverage_ratio
 
-    '''
-    bertopic_model.visualize_barchart()
-    bertopic_model.visualize_topics()
-    bertopic_model.visualize_hierarchy()
-    '''
+    #### GENERATE 
+    embeds = embedding_model.encode(bert_text_inputs, batch_size=64)
+    umapd_embeds = umap_model.transform(embeds)
 
-    # TODO I'm still unclear on why embeddings won't work first time when representation_model_type is not fed into BERTopic
-    if representation_model_type:
-        embeds = embedding_model.encode(bert_text_inputs, batch_size=64)
-        umapd_embeds = umap_model.transform(embeds)
-
-        # before dropping rows, map reduced-dimension coords from umapd_embeds
-        bertopic_docs_df.loc[:,'x_coord'] = [coord[0] for coord in umapd_embeds]
-        bertopic_docs_df.loc[:,'y_coord'] = [coord[1] for coord in umapd_embeds]
-        bertopic_docs_df.loc[:,'z_coord'] = [coord[2] for coord in umapd_embeds]
-        bertopic_docs_df.loc[:,'point_size'] = [abs(round(coord[0],0)) for coord in umapd_embeds]
+    # before dropping rows, map reduced-dimension coords from umapd_embeds
+    bertopic_docs_df.loc[:,'x_coord'] = [coord[0] for coord in umapd_embeds]
+    bertopic_docs_df.loc[:,'y_coord'] = [coord[1] for coord in umapd_embeds]
+    bertopic_docs_df.loc[:,'z_coord'] = [coord[2] for coord in umapd_embeds]
+    bertopic_docs_df.loc[:,'point_size'] = [abs(round(coord[0],0)) for coord in umapd_embeds]
 
     # merge with sources_df
     bertopic_docs_df = pd.concat([bertopic_docs_df, sources_df], axis=1)
@@ -300,6 +323,7 @@ def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd
             if speaker not in top_speaker_list:
                 bertopic_docs_df.drop(col_name, axis=1, inplace=True)  
 
+    #### RESULTS ANALYSIS PT 2 ####
     # generate corr dfs
     bertopic_cols = [c for c in bertopic_docs_df.columns if bertopic_prefix in c]
     foctopic_cols = [c for c in bertopic_docs_df.columns if topics_focused_prefix in c]
@@ -309,49 +333,44 @@ def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd
     speaker_cols = [c for c in bertopic_docs_df.columns if speaker_prefix in c]
 
     # bertopic_cols corrs to vector topic and speaker cols
-    save_df = False
+    # save_models = False
     corr_values_foctopic_x_bertopic = extract_corr_values(bertopic_docs_df, foctopic_cols, bertopic_cols, corr_threshold, narrative_freq_threshold)
     if len(corr_values_foctopic_x_bertopic) >= match_threshold:
         logs.append(f'corr_values_foctopic_x_bertopic={corr_values_foctopic_x_bertopic}')
         report_dict['foctopic_x_bertopic'] = len(corr_values_foctopic_x_bertopic)
-        save_df = True
+        # save_models = True
     else:
         report_dict['foctopic_x_bertopic'] = 0
     corr_values_foctopictfidf_x_bertopic = extract_corr_values(bertopic_docs_df, foctopictfidf_cols, bertopic_cols, corr_threshold, narrative_freq_threshold)
     if len(corr_values_foctopictfidf_x_bertopic) >= match_threshold:
         logs.append(f'corr_values_foctopictfidf_x_bertopic={corr_values_foctopictfidf_x_bertopic}')
         report_dict['foctopictfidf_x_bertopic'] = len(corr_values_foctopictfidf_x_bertopic)
-        save_df = True
+        # save_models = True
     else:
         report_dict['foctopictfidf_x_bertopic'] = 0
     corr_values_univtopic_x_bertopic = extract_corr_values(bertopic_docs_df, univtopic_cols, bertopic_cols, corr_threshold, narrative_freq_threshold)
     if len(corr_values_univtopic_x_bertopic) >= match_threshold:
         logs.append(f'corr_values_univtopic_x_bertopic={corr_values_univtopic_x_bertopic}')
         report_dict['univtopic_x_bertopic'] = len(corr_values_univtopic_x_bertopic)
-        save_df = True
+        # save_models = True
     else:
         report_dict['univtopic_x_bertopic'] = 0
     corr_values_univtopictfidf_x_bertopic = extract_corr_values(bertopic_docs_df, univtopictfidf_cols, bertopic_cols, corr_threshold, narrative_freq_threshold)
     if len(corr_values_univtopictfidf_x_bertopic) >= match_threshold:
         logs.append(f'corr_values_univtopictfidf_x_bertopic={corr_values_univtopictfidf_x_bertopic}')
         report_dict['univtopictfidf_x_bertopic'] = len(corr_values_univtopictfidf_x_bertopic)
-        save_df = True
+        # save_models = True
     else:
         report_dict['univtopictfidf_x_bertopic'] = 0
     corr_values_speaker_x_bertopic = extract_corr_values(bertopic_docs_df, speaker_cols, bertopic_cols, corr_threshold, narrative_freq_threshold)
     if len(corr_values_speaker_x_bertopic) >= match_threshold:
         logs.append(f'corr_values_speaker_x_bertopic={corr_values_speaker_x_bertopic}')
         report_dict['speaker_x_bertopic'] = len(corr_values_speaker_x_bertopic)
-        save_df = True
+        # save_models = True
     else:
         report_dict['speaker_x_bertopic'] = 0
 
-    if save_df:
-        print(f'save_df true for config={config}')
-        bertopic_docs_file_name = f'bertopic_{umap_metric}_{representation_model_type}_{umap_random_state}_{umap_min_dist}_{hdbscan_min_cluster_size}.csv'
-        print(f'writing to bertopic_docs_file_name={bertopic_docs_file_name}')
-        bertopic_docs_df.to_csv(bertopic_docs_file_name, sep='\t')
-
+    #### LOGGING ####
     print('-----------------------------------------------------------------------------------------')
     print(f'config={config}')
     print(f'logs={logs}')
@@ -361,6 +380,23 @@ def run_and_log_bert_config(bert_text_inputs: list, config: dict, sources_df: pd
     for log in logs:
         f.write(f'*** {log}\n')
     f.close()
+
+    #### SAVE MODEL DATA ####
+    # if save_models:
+    # create model dirs
+    os.mkdir(f"bertopic_models/{ts_filename}")
+    os.mkdir(f"bertopic_models/{ts_filename}/mmr")
+    os.mkdir(f"bertopic_models/{ts_filename}/kb")
+    os.mkdir(f"bertopic_models/{ts_filename}/openai")
+    # save models
+    se_model = f"sentence-transformers/{sentence_transformer_lm}"
+    mmr_bertopic_model.save(f"bertopic_models/{ts_filename}/mmr", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    kb_bertopic_model.save(f"bertopic_models/{ts_filename}/kb", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    openai_bertopic_model.save(f"bertopic_models/{ts_filename}/openai", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    # save bertopic_docs_df
+    bertopic_docs_file_name = f'bertopic_data/bertopic_{umap_metric}_{umap_random_state}_{umap_min_dist}_{hdbscan_min_cluster_size}_{ts_filename}.csv'
+    print(f'writing bertopic_docs_df to file path={bertopic_docs_file_name}')
+    bertopic_docs_df.to_csv(bertopic_docs_file_name, sep='\t')
 
     # print(f'report_dict={report_dict}')
 
