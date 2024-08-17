@@ -38,13 +38,13 @@ CONFIG_OPTIONS = {
     'bertopic_top_n_words': 5,
     'umap_n_neighbors': 5,
     'umap_n_components': 3,
-    'umap_min_dist': 0.01,
+    'umap_min_dist': [0, 0.01, 0.02],
     # 'invalid_umap_metric': ['euclidian', 'seuclidian', 'haversine', 'mahalanobis'],
     # 'unusable_umap_metric': ['wminkowski'],  # wminkowski: best correlation to vector-based topics, but doesn't translate to 3D clusters
     # 'umap_metric': ['braycurtis', 'minkowski', 'canberra', 'manhattan', 'cosine', 'correlation'],
-    'umap_metric': 'manhattan',
-    'umap_random_state': 4,
-    'hdbscan_min_cluster_size': 50,
+    'umap_metric': 'braycurtis',
+    'umap_random_state': [4, 53],
+    'hdbscan_min_cluster_size': 25,
     'hdbscan_min_samples': 10,
     # 'mmr_diversity': [0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5],
     'mmr_diversity': 0.05,
@@ -383,18 +383,19 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
 
     #### SAVE MODEL DATA ####
     # if save_models:
+    model_id = f'{umap_metric}_{umap_random_state}_{umap_min_dist}_{hdbscan_min_cluster_size}_{ts_filename}'
     # create model dirs
-    os.mkdir(f"bertopic_models/{ts_filename}")
-    os.mkdir(f"bertopic_models/{ts_filename}/mmr")
-    os.mkdir(f"bertopic_models/{ts_filename}/kb")
-    os.mkdir(f"bertopic_models/{ts_filename}/openai")
+    os.mkdir(f"bertopic_models/{model_id}")
+    os.mkdir(f"bertopic_models/{model_id}/mmr")
+    os.mkdir(f"bertopic_models/{model_id}/kb")
+    os.mkdir(f"bertopic_models/{model_id}/openai")
     # save models
     se_model = f"sentence-transformers/{sentence_transformer_lm}"
-    mmr_bertopic_model.save(f"bertopic_models/{ts_filename}/mmr", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
-    kb_bertopic_model.save(f"bertopic_models/{ts_filename}/kb", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
-    openai_bertopic_model.save(f"bertopic_models/{ts_filename}/openai", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    mmr_bertopic_model.save(f"bertopic_models/{model_id}/mmr", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    kb_bertopic_model.save(f"bertopic_models/{model_id}/kb", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    openai_bertopic_model.save(f"bertopic_models/{model_id}/openai", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
     # save bertopic_docs_df
-    bertopic_docs_file_name = f'bertopic_data/bertopic_{umap_metric}_{umap_random_state}_{umap_min_dist}_{hdbscan_min_cluster_size}_{ts_filename}.csv'
+    bertopic_docs_file_name = f'bertopic_data/bertopic_{model_id}.csv'
     print(f'writing bertopic_docs_df to file path={bertopic_docs_file_name}')
     bertopic_docs_df.to_csv(bertopic_docs_file_name, sep='\t')
 
