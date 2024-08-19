@@ -42,9 +42,9 @@ CONFIG_OPTIONS = {
     # 'invalid_umap_metric': ['euclidian', 'seuclidian', 'haversine', 'mahalanobis'],
     # 'unusable_umap_metric': ['wminkowski'],  # wminkowski: best correlation to vector-based topics, but doesn't translate to 3D clusters
     # 'umap_metric': ['braycurtis', 'minkowski', 'canberra', 'manhattan', 'cosine', 'correlation'],
-    'umap_metric': 'braycurtis',
-    'umap_random_state': [4, 53],
-    'hdbscan_min_cluster_size': 25,
+    'umap_metric': ['braycurtis', 'minkowski', 'canberra', 'manhattan', 'cosine', 'correlation'],
+    'umap_random_state': [4, 53, 87],
+    'hdbscan_min_cluster_size': [25, 50],
     'hdbscan_min_samples': 10,
     # 'mmr_diversity': [0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5],
     'mmr_diversity': 0.05,
@@ -61,19 +61,32 @@ def main():
     ts_log = str(datetime.datetime.now())[:19]
     ts_filename = ts_log.replace(' ', '_').replace('-', '').replace(':', '')
     print(f'begin bertopic_modeling at {ts_log}')
+    # parse script params
     parser = argparse.ArgumentParser()
     parser.add_argument("--show_key", "-s", help="Show key", required=True)
-    # parser.add_argument("--model_names", "-m", help="BERTopic model names", required=True)
+    parser.add_argument("--umap_metric", "-m", help="UMAP metric", required=False)
+    parser.add_argument("--umap_random_state", "-r", help="UMAP random state", required=False)
+    parser.add_argument("--umap_min_dist", "-d", help="UMAP min dist", required=False)
+    parser.add_argument("--hdbscan_min_cluster_size", "-c", help="HDBSCAN min cluster size", required=False)
     args = parser.parse_args()
+    # assign script params to vars
     show_key = args.show_key
-    # model_names = args.model_names
-    # model_names = model_names.split(',')
+    override_config = {}
+    if args.umap_metric:
+        override_config['umap_metric'] = args.umap_metric.split(',')
+    if args.umap_random_state:
+        override_config['umap_random_state'] = [int(v) for v in args.umap_random_state.split(',')]
+    if args.umap_min_dist:
+        override_config['umap_min_dist'] = [float(v) for v in args.umap_min_dist.split(',')]
+    if args.hdbscan_min_cluster_size:
+        override_config['hdbscan_min_cluster_size'] = [int(v) for v in args.hdbscan_min_cluster_size.split(',')]
 
     # print(f'attempt huggingface login')
     # login()
     # print(f'huggingface login success')
-
-    configs, config_params_to_values = generate_configs()
+        
+    print(f"override_config={override_config}")
+    configs, config_params_to_values = generate_configs(override_config)
 
     bert_text_inputs, bert_text_sources = generate_bert_text_inputs(ShowKey(show_key), narrative_only=False)
 
@@ -92,7 +105,7 @@ def main():
     report_dicts = []
     i = 1
     for config in configs:
-        print(f"processing config {i} of {len(configs)} (metric={config['umap_metric']}")
+        print(f"processing config {i} of {len(configs)}")
         report_dict = generate_bertopic_models(bert_text_inputs, config, sources_df, ts_filename)
         i += 1
         if report_dict:
@@ -105,24 +118,30 @@ def main():
         report_df.to_csv(report_file_name, sep='\t')
 
 
-def generate_configs() -> tuple[list, dict]:
+def generate_configs(config_overrides: dict = None) -> tuple[list, dict]:
+    # incorporate overrides
+    config_options = CONFIG_OPTIONS
+    if config_overrides:
+        for override_param, override_values in config_overrides.items():
+            config_options[override_param] = override_values
+    # generate 'flattened' single-value config variants out of multi-value config
     config_params = []
     config_params_to_values = {}
     config_param_value_counts = []
-    for config_param, config_values in CONFIG_OPTIONS.items():
+    for config_param, config_values in config_options.items():
         if isinstance(config_values, list):
             config_params.append(config_param)
             config_params_to_values[config_param] = config_values
             config_param_value_counts.append(len(config_values))
-    print(f'config_params={config_params}')
-    print(f'config_params_to_values={config_params_to_values}')
+    # print(f'config_params={config_params}')
+    # print(f'config_params_to_values={config_params_to_values}')
     # print(f'config_param_value_counts={config_param_value_counts}')
 
     mx = []
     for vc in config_param_value_counts:
         mx.append([i for i in range(vc)])
     config_combos = list(product(*mx))
-    print(f'config_combos={config_combos}')
+    # print(f'config_combos={config_combos}')
 
     configs = []
     for config_combo in config_combos:
@@ -166,15 +185,14 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
     mmr_diversity = config['mmr_diversity']
     bertopic_top_n_words = config['bertopic_top_n_words']
 
-    # configurable component models pt 1
+    #### INITIATLIZE MODELS ####
+    # configurable component models
     vectorizer_model = CountVectorizer(ngram_range=(vec_ngram_low, vec_ngram_high), stop_words='english')
-        
-    # if representation_model_type:
-    # configurable component models pt 2
     embedding_model = SentenceTransformer(sentence_transformer_lm)
     umap_model = UMAP(n_neighbors=umap_n_neighbors, n_components=umap_n_components, min_dist=umap_min_dist, metric=umap_metric, random_state=umap_random_state)
     hdbscan_model = HDBSCAN(min_cluster_size=hdbscan_min_cluster_size, min_samples=hdbscan_min_samples, gen_min_span_tree=True, prediction_data=True)
 
+    # bertopic models for 3 representation model types: MaximalMarginalRelevance, KeyBERTInspired, BertOpenAI
     mmr_representation_model = MaximalMarginalRelevance(diversity=mmr_diversity)
     mmr_bertopic_model = BERTopic(umap_model=umap_model, hdbscan_model=hdbscan_model, embedding_model=embedding_model, vectorizer_model=vectorizer_model,
                                   representation_model=mmr_representation_model, top_n_words=bertopic_top_n_words, language='english',
@@ -193,6 +211,7 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
     # else:
     #     bertopic_model = BERTopic(vectorizer_model=vectorizer_model, language='english', calculate_probabilities=True, verbose=True)
 
+    #### FIT MODELS TO TEXT INPUT DATA ####
     try:
         mmr_bertopic_model.fit_transform(bert_text_inputs)
     except Exception as e:
@@ -246,6 +265,8 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
     doc_count_with_topic = bertopic_topics_df[bertopic_topics_df['Topic'] >= 0]['Count'].sum()
     topic_coverage_ratio = doc_count_with_topic / bertopic_topics_df['Count'].sum()
     if topic_count < topic_count_threshold or topic_coverage_ratio < topic_ratio_threshold:
+        print(f'Topic results fail to pass filter: either (a) topic_count={topic_count} falls below topic_count_threshold={topic_count_threshold}, ')
+        print(f'or (b) topic_coverage_ratio={topic_coverage_ratio} falls below topic_ratio_threshold={topic_ratio_threshold}')
         return None
     
     logs.append(f'topic_count={topic_count}, topic_coverage_ratio={topic_coverage_ratio}')
@@ -253,7 +274,7 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
     report_dict['topic_count'] = topic_count
     report_dict['topic_coverage_ratio'] = topic_coverage_ratio
 
-    #### GENERATE 
+    #### GENERATE 3D GRAPH ####
     embeds = embedding_model.encode(bert_text_inputs, batch_size=64)
     umapd_embeds = umap_model.transform(embeds)
 
@@ -273,9 +294,22 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
     # remove non-narrative entries
     bertopic_docs_df = bertopic_docs_df[bertopic_docs_df['speaker_group'] != '']
 
-    # set prob_x_wc
+    # if an episode-narrative maps to multiple clusters, select the one with greater probability * word count
+    # the MAX_WORDS_FOR_BERT constraint forced us to slice up narratives into fragments, resulting in some episode-narratives mapping to multiple clusters
+    # it was useful to have all text represented for cluster creation, but for persistence each episode-narrative must map to one and only one cluster
     bertopic_docs_df['prob_x_wc'] = bertopic_docs_df['Probability'] * bertopic_docs_df['wc']
     # TODO: set point_size to 'prob_x_wc' or 'Probability'?
+    bertopic_docs_df.sort_values(['episode_key', 'speaker_group', 'prob_x_wc'], ascending=[True, True, False])
+    # print(f'len(bertopic_docs_df) before de-duping={len(bertopic_docs_df)}')
+    last_ekey = None
+    last_spkrgrp = None
+    for index, row in bertopic_docs_df.iterrows():
+        if row['episode_key'] == last_ekey and row['speaker_group'] == last_spkrgrp:
+            bertopic_docs_df.drop(index, inplace=True)
+        else:
+            last_ekey = row['episode_key']
+            last_spkrgrp = row['speaker_group']
+    # print(f'len(bertopic_docs_df) after de-duping={len(bertopic_docs_df)}')
 
     # one-hot encoding of topics and speakers
     # Topic: back up as topic_str, then run get_dummies against column with single topic value 
@@ -383,7 +417,7 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
 
     #### SAVE MODEL DATA ####
     # if save_models:
-    model_id = f'{umap_metric}_{umap_random_state}_{umap_min_dist}_{hdbscan_min_cluster_size}_{ts_filename}'
+    model_id = f'{umap_metric}_{umap_random_state}_{umap_min_dist}_{hdbscan_min_cluster_size}'
     # create model dirs
     os.mkdir(f"bertopic_models/{model_id}")
     os.mkdir(f"bertopic_models/{model_id}/mmr")
@@ -395,11 +429,9 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
     kb_bertopic_model.save(f"bertopic_models/{model_id}/kb", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
     openai_bertopic_model.save(f"bertopic_models/{model_id}/openai", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
     # save bertopic_docs_df
-    bertopic_docs_file_name = f'bertopic_data/bertopic_{model_id}.csv'
+    bertopic_docs_file_name = f'bertopic_data/{model_id}.csv'
     print(f'writing bertopic_docs_df to file path={bertopic_docs_file_name}')
     bertopic_docs_df.to_csv(bertopic_docs_file_name, sep='\t')
-
-    # print(f'report_dict={report_dict}')
 
     return report_dict
 
