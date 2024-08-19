@@ -939,22 +939,21 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
     # populate episode-narrative-speaker-groups with any model_clusters of which they are a member
     for bertopic_data_file in bertopic_data_files:
         df = pd.read_csv(f'{parent_dir}/{bertopic_data_file}', sep='\t')
+        model_cluster_id = bertopic_data_file.removesuffix('.csv')
         for _, row in df.iterrows():
             e_key = str(row['episode_key'])
             spkr_grp = row['speaker_group']
             model_cluster = {}
-            model_cluster['cluster_id'] = f"{e_key}__{spkr_grp}__{row['topic_str']}"
+            model_cluster['cluster_id'] = f"{model_cluster_id}__{e_key}_{row['cluster_id']}__{spkr_grp}"
             model_cluster['probability'] = row['Probability']
             model_cluster['prob_x_wc'] = row['prob_x_wc']
-            model_cluster['name_mmr'] = row['Name_mmr']
-            model_cluster['name_kb'] = row['Name_kb']
-            model_cluster['name_openai'] = row['Name_openai']
-            model_cluster['representation_mmr'] = row['Representation_mmr']
-            model_cluster['representation_kb'] = row['Representation_kb']
-            model_cluster['representation_openai'] = row['Representation_openai']
-            model_cluster['keywords_mmr'] = row['Top_n_words_mmr']
-            model_cluster['keywords_kb'] = row['Top_n_words_kb']
-            model_cluster['keywords_openai'] = row['Top_n_words_openai']
+            model_cluster['cluster_title'] = row['cluster_title']
+            # convert stringified cluster_keywords back into list
+            cluster_keywords = row['cluster_keywords'].split("', '")
+            if cluster_keywords:
+                cluster_keywords[0] = cluster_keywords[0].removeprefix("['")
+                cluster_keywords[len(cluster_keywords)-1] = cluster_keywords[len(cluster_keywords)-1].removesuffix("']")
+            model_cluster['cluster_keywords'] = cluster_keywords
             epnarr_spkrgrps_to_model_clusters[e_key][spkr_grp].append(model_cluster)
 
     # update all cluster_memberships for any given episode-narrative at once, as opposed to piece-meal incrementally (since we don't have any criteria for deleting old mappings)
@@ -977,7 +976,4 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
                 print(f'Failure to update cluster_memberships for episode narrative at show_key={show_key} e_key={e_key} spkr_grp={spkr_grp}: {e}')
                 failure_count += 1
 
-
-    return {"epnarr_spkrgrps_to_model_clusters": epnarr_spkrgrps_to_model_clusters}
-
-
+    return {"attempt_count": attempt_count, "success_count": success_count, "failure_count": failure_count}

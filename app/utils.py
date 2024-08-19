@@ -24,6 +24,22 @@ def truncate_dict(d: dict, length: int, start_index: int = 0) -> None:
 	return {k: d[k] for k in list(d.keys())[start_index:end_index]}
 
 
+def merge_sorted_lists(list1: list, list2: list) -> list:
+    keywords_to_ranks = {}
+
+    for i, kw in list(enumerate(list1)):
+        if kw not in keywords_to_ranks:
+            keywords_to_ranks[kw] = 0
+        keywords_to_ranks[kw] += len(list1)-i
+    for i, kw in list(enumerate(list2)):
+        if kw not in keywords_to_ranks:
+            keywords_to_ranks[kw] = 0
+        keywords_to_ranks[kw] += len(list2)-i
+    
+    merged_sorted_list = [k for k, _ in sorted(keywords_to_ranks.items(), key=lambda kv: kv[1], reverse=True)]
+    return merged_sorted_list
+
+
 # @DeprecationWarning
 # def split_parent_and_child_topics(topics: list, parent_limit: int = None, child_limit: int = None) -> tuple[list, list]:
 #     '''

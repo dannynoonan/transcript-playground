@@ -21,6 +21,7 @@ from app.config import settings
 import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import MIN_WORDS_FOR_BERT, MAX_WORDS_FOR_BERT
 from app.show_metadata import ShowKey
+import app.utils as utils
 
 
 openai_client = openai.OpenAI(api_key=settings.openai_api_key)
@@ -229,27 +230,32 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
         return None
 
     mmr_bertopic_docs_df = mmr_bertopic_model.get_document_info(bert_text_inputs)
-    mmr_bertopic_topics_df = mmr_bertopic_model.get_topic_info()
     kb_bertopic_docs_df = kb_bertopic_model.get_document_info(bert_text_inputs)
-    # kb_bertopic_topics_df = kb_bertopic_model.get_topic_info()
     openai_bertopic_docs_df = openai_bertopic_model.get_document_info(bert_text_inputs)
-    # openai_bertopic_topics_df = openai_bertopic_model.get_topic_info()
 
     # the 3 {representation_type}_bertopic_docs_dfs differ only on 3 columns: Name, Representation, and Top_n_words
     # consolidate the 3 of them now to streamline remaining steps (using mmr, but could have used kb or openai)
     bertopic_docs_df = mmr_bertopic_docs_df
 
-    bertopic_docs_df['Name_mmr'] = mmr_bertopic_docs_df['Name']
-    bertopic_docs_df['Name_kb'] = kb_bertopic_docs_df['Name']
-    bertopic_docs_df['Name_openai'] = openai_bertopic_docs_df['Name']
-
+    # extract cluster keywords from 'Representation' output of MaximalMarginalRelevance and KeyBERTInspired representations
+    # same words may appear in both, so de-dupe and preserve aggregate ranking using merge_sorted_lists util func
     bertopic_docs_df['Representation_mmr'] = mmr_bertopic_docs_df['Representation']
     bertopic_docs_df['Representation_kb'] = kb_bertopic_docs_df['Representation']
-    bertopic_docs_df['Representation_openai'] = openai_bertopic_docs_df['Representation']
+    bertopic_docs_df['cluster_keywords'] = bertopic_docs_df.apply(lambda x: utils.merge_sorted_lists(x['Representation_mmr'], x['Representation_kb']), axis=1) 
 
-    bertopic_docs_df['Top_n_words_mmr'] = mmr_bertopic_docs_df['Top_n_words']
-    bertopic_docs_df['Top_n_words_kb'] = kb_bertopic_docs_df['Top_n_words']
-    bertopic_docs_df['Top_n_words_openai'] = openai_bertopic_docs_df['Top_n_words']
+    # extract cluster title from 'Top_n_words' output of BertOpenAI representation 
+    bertopic_docs_df['cluster_title'] = openai_bertopic_docs_df['Top_n_words']
+
+    # TODO Any reason to preserve these? 
+    # bertopic_docs_df['Name_mmr'] = mmr_bertopic_docs_df['Name']
+    # bertopic_docs_df['Name_kb'] = kb_bertopic_docs_df['Name']
+    # bertopic_docs_df['Name_openai'] = openai_bertopic_docs_df['Name']
+    # # bertopic_docs_df['Representation_mmr'] = mmr_bertopic_docs_df['Representation']
+    # # bertopic_docs_df['Representation_kb'] = kb_bertopic_docs_df['Representation']
+    # bertopic_docs_df['Representation_openai'] = openai_bertopic_docs_df['Representation']
+    # bertopic_docs_df['Top_n_words_mmr'] = mmr_bertopic_docs_df['Top_n_words']
+    # bertopic_docs_df['Top_n_words_kb'] = kb_bertopic_docs_df['Top_n_words']
+    # bertopic_docs_df['Top_n_words_openai'] = openai_bertopic_docs_df['Top_n_words']
 
     bertopic_docs_df.drop('Name', axis=1, inplace=True)
     bertopic_docs_df.drop('Representation', axis=1, inplace=True)
@@ -257,7 +263,9 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
 
     # the 3 {representation_type}_bertopic_topics_dfs have identical counts and mappings, despite having very different contents
     # using mmr (but could have used kb or openai) for initial analysis/results filtering
-    bertopic_topics_df = mmr_bertopic_topics_df
+    bertopic_topics_df = mmr_bertopic_model.get_topic_info()
+    # kb_bertopic_topics_df = kb_bertopic_model.get_topic_info()
+    # openai_bertopic_topics_df = openai_bertopic_model.get_topic_info()
 
     #### RESULTS ANALYSIS PT 1 ####
     # filter out data sets that don't meet minimum threshold criteria
@@ -312,9 +320,9 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
     # print(f'len(bertopic_docs_df) after de-duping={len(bertopic_docs_df)}')
 
     # one-hot encoding of topics and speakers
-    # Topic: back up as topic_str, then run get_dummies against column with single topic value 
+    # Topic: back up as cluster_id, then run get_dummies against column with single topic value 
     bertopic_prefix = 'Topic_'
-    bertopic_docs_df['topic_str'] = bertopic_docs_df['Topic'].apply(lambda x: str(x))
+    bertopic_docs_df['cluster_id'] = bertopic_docs_df['Topic'].apply(lambda x: str(x))
     bertopic_docs_df = pd.get_dummies(bertopic_docs_df, columns=['Topic'], dtype=int, drop_first=False)
     
     # vector topics and speaker_group: convert to list, then one-hot encode values from the resulting 'list' column 
