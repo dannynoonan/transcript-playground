@@ -939,12 +939,13 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
     # populate episode-narrative-speaker-groups with any model_clusters of which they are a member
     for bertopic_data_file in bertopic_data_files:
         df = pd.read_csv(f'{parent_dir}/{bertopic_data_file}', sep='\t')
-        model_cluster_id = bertopic_data_file.removesuffix('.csv')
+        model_id = bertopic_data_file.removesuffix('.csv')
         for _, row in df.iterrows():
             e_key = str(row['episode_key'])
             spkr_grp = row['speaker_group']
             model_cluster = {}
-            model_cluster['cluster_id'] = f"{model_cluster_id}__{e_key}_{row['cluster_id']}__{spkr_grp}"
+            model_cluster['model_id'] = model_id
+            model_cluster['model_cluster_id'] = f"{model_id}__{e_key}_{row['cluster_id']}__{spkr_grp}"
             model_cluster['probability'] = row['Probability']
             model_cluster['prob_x_wc'] = row['prob_x_wc']
             model_cluster['cluster_title'] = row['cluster_title']

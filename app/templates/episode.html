@@ -136,6 +136,7 @@
                                 <th scope="col">Word count</th>
 								<th scope="col">Speaker (line counts)</th>
                                 <th scope="col">Source scene (word counts)</th>
+								<th scope="col">Clusters</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -150,13 +151,36 @@
 									<td>{% for scene, wc in narrative_sequence['source_scene_word_counts'].items() %}
 										{{ scene }} ({{wc}}){% if not loop.last %},{% endif %}
 									{% endfor %}</td>
+								<td>{{ narrative_sequence['cluster_memberships']|length }}</td>
                             </tr>
                             <tr class="collapse accordion-collapse" id="expandNarrative_{{ narrative_sequence['speaker_group'] }}" data-bs-parent=".table">
                                 <td colspan="9">
                                     <div class="overflow-scroll" style="max-height: 500px; color: #FFFFFF">
-                                    {% for narrative_line in narrative_sequence['narrative_lines'] %}
-										{{ narrative_line }}<br/>
-									{% endfor %}
+										<h4>Cluster memberships</h4>
+										<table class="table table-hover table-striped table-fit">
+											<thead>
+												<tr class="table-success">
+													<th scope="col">BERTopic model id</th>
+													<th scope="col">Cluster label</th>
+													<th scope="col">Cluster keywords</th>
+													<th scope="col">Probability</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for cluster in narrative_sequence['cluster_memberships'] %}
+												<tr class="table-light">
+													<td>{{ cluster['model_id'] }}</td>
+													<th scope="row"><a href="">{{ cluster['cluster_title'] }}</a></th>
+													<td>{{ cluster['cluster_keywords']|join(", ") }}</td>
+													<td>{{ '%0.2f'|format(cluster['probability']|float) }}</td>
+												</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+										<h4>Narrative text</h4>
+										{% for narrative_line in narrative_sequence['narrative_lines'] %}
+											{{ narrative_line }}<br/>
+										{% endfor %}
                                     </div>
                                 </td>
                             </tr>

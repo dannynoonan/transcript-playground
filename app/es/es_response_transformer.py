@@ -197,20 +197,25 @@ def return_scenes(s: Search) -> tuple[list, int]:
 
 
 def return_narrative_sequences(s: Search) -> list:
-    print(f'begin return_narrative_sequences for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_narrative_sequences for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
     narrative_sequences = []
 
     for hit in s.hits.hits:
-        narrative_sequences.append(hit._source._d_)
+        narrative_sequence = hit._source._d_
+        # manually re-order clusters by probability desc, since non-nested 'Object' field doesn't support ordering
+        if 'cluster_memberships' in narrative_sequence:
+            clusters = narrative_sequence['cluster_memberships']
+            narrative_sequence['cluster_memberships'] = sorted(clusters, key=itemgetter('probability'), reverse=True)
+        narrative_sequences.append(narrative_sequence)
 
     return narrative_sequences
 
 
 def return_flattened_scenes(s: Search, include_speakers: bool = False, include_context: bool = False) -> dict:
-    print(f'begin return_flattened_scenes for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_flattened_scenes for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
