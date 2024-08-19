@@ -81,6 +81,7 @@ class EsEpisodeNarrativeSequence(Document):
     word_count = Integer()
     source_scene_word_counts = Object(multi=True)
     speaker_line_counts = Object(multi=True)
+    cluster_memberships = Object(multi=True)
     indexed_ts = Date()
 
     class Index:

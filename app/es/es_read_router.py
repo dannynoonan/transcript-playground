@@ -84,6 +84,19 @@ def list_simple_episodes_by_season(show_key: ShowKey):
     return {"episodes_by_season": episodes_by_season, "es_query": es_query}
 
 
+@esr_app.get("/esr/fetch_episode_narrative/{show_key}/{episode_key}/{speaker_group}", tags=['ES Reader'])
+def fetch_episode_narrative(show_key: ShowKey, episode_key: str, speaker_group: str):
+    '''
+    Fetch individual pre-generated narrative sequence for a given episode + speaker_group
+    '''
+    episode_narrative = esqb.fetch_episode_narrative(show_key.value, episode_key, speaker_group)
+    if not episode_narrative:
+        return {"error": f"Failed to /fetch_episode_narrative for show_key=`{show_key.value}` episode_key=`{episode_key}` speaker_group=`{speaker_group}`"}
+    episode_narrative = episode_narrative._d_
+
+    return {"episode_narrative": episode_narrative}
+
+
 @esr_app.get("/esr/fetch_narrative_sequences/{show_key}/{episode_key}", tags=['ES Reader'])
 def fetch_narrative_sequences(show_key: ShowKey, episode_key: str):
     '''

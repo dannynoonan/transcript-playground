@@ -106,6 +106,11 @@ def save_es_topic(es_topic: EsTopic) -> None:
     es_topic.save()
 
 
+def save_episode_narrative(es_episode_narrative: EsEpisodeNarrativeSequence) -> None:
+    # TODO this is functionally identical to `save_es_episode`, do we even need either of them?
+    es_episode_narrative.save()
+
+
 def save_es_speaker(es_speaker: EsSpeaker) -> None:
     es_speaker.save()
     es_speaker_unified = EsSpeakerUnified(show_key=es_speaker.show_key, speaker=es_speaker.speaker, 
@@ -193,6 +198,20 @@ def fetch_simple_episodes(show_key: str, season: str = None) -> Search:
     s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
 
     return s
+
+
+def fetch_episode_narrative(show_key: str, episode_key: str, speaker_group: str) -> EsEpisodeNarrativeSequence|None:
+    print(f'begin fetch_episode_narrative for show_key={show_key} episode_key={episode_key} speaker_group={speaker_group}')
+
+    doc_id = f'{show_key}_{episode_key}_{speaker_group}'
+
+    try:
+        ep_narr = EsEpisodeNarrativeSequence.get(id=doc_id, index='narratives')
+    except Exception as e:
+        print(f'Failed to fetch episode narrative for show_key=`{show_key}` episode_key=`{episode_key}` speaker_group=`{speaker_group}`')
+        return None
+
+    return ep_narr
 
 
 def fetch_narrative_sequences(show_key: str, episode_key: str) -> Search:

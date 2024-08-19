@@ -908,3 +908,76 @@ def populate_all_episode_narratives(show_key: ShowKey):
             successful_keys.append(episode_key)
 
     return {"successful_keys": successful_keys, "failed_keys": failed_keys}
+
+
+@esw_app.get("/esw/populate_bertopic_model_clusters/{show_key}/", tags=['ES Writer'])
+def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None):
+    '''
+    Load each bertopic_model's csv into dataframe, upsert referenced episode_narratives with mapping back to bertopic_model
+    '''
+    # load bertopic_data files 
+    parent_dir = 'bertopic_data'
+    bertopic_data_files = [f for f in os.listdir(parent_dir) if os.path.isfile(os.path.join(parent_dir, f))]
+    if umap_metric:
+        bertopic_data_files = [f for f in bertopic_data_files if f.startswith(umap_metric)]
+
+    # initialize dict of narrative-speaker-groups per episode
+    epnarr_spkrgrps_to_model_clusters = {}
+    simple_episodes_response = esr.fetch_simple_episodes(show_key)
+    if 'episodes' not in simple_episodes_response:
+        print(f'Failure to /populate_bertopic_model_clusters for show_key={show_key}: /fetch_simple_episodes returned no episodes')
+        return None
+    for episode in simple_episodes_response['episodes']:
+        e_key = episode['episode_key']
+        narrative_sequences_response = esr.fetch_narrative_sequences(show_key, e_key)
+        if 'narrative_sequences' not in narrative_sequences_response:
+            print(f'Unable to /populate_bertopic_model_clusters for e_key={e_key} show_key={show_key}: /fetch_narrative_sequences returned no narrative_sequences. Skipping episode.')
+            continue
+        ep_narrs = narrative_sequences_response['narrative_sequences']
+        epnarr_spkrgrps_to_model_clusters[e_key] = {narr['speaker_group']:[] for narr in ep_narrs}
+    
+    # populate episode-narrative-speaker-groups with any model_clusters of which they are a member
+    for bertopic_data_file in bertopic_data_files:
+        df = pd.read_csv(f'{parent_dir}/{bertopic_data_file}', sep='\t')
+        for _, row in df.iterrows():
+            e_key = str(row['episode_key'])
+            spkr_grp = row['speaker_group']
+            model_cluster = {}
+            model_cluster['cluster_id'] = f"{e_key}__{spkr_grp}__{row['topic_str']}"
+            model_cluster['probability'] = row['Probability']
+            model_cluster['prob_x_wc'] = row['prob_x_wc']
+            model_cluster['name_mmr'] = row['Name_mmr']
+            model_cluster['name_kb'] = row['Name_kb']
+            model_cluster['name_openai'] = row['Name_openai']
+            model_cluster['representation_mmr'] = row['Representation_mmr']
+            model_cluster['representation_kb'] = row['Representation_kb']
+            model_cluster['representation_openai'] = row['Representation_openai']
+            model_cluster['keywords_mmr'] = row['Top_n_words_mmr']
+            model_cluster['keywords_kb'] = row['Top_n_words_kb']
+            model_cluster['keywords_openai'] = row['Top_n_words_openai']
+            epnarr_spkrgrps_to_model_clusters[e_key][spkr_grp].append(model_cluster)
+
+    # update all cluster_memberships for any given episode-narrative at once, as opposed to piece-meal incrementally (since we don't have any criteria for deleting old mappings)
+    attempt_count = 0
+    success_count = 0
+    failure_count = 0
+    for e_key, spkr_grps_to_clusters in epnarr_spkrgrps_to_model_clusters.items():
+        for spkr_grp, model_clusters in spkr_grps_to_clusters.items():
+            attempt_count += 1
+            es_episode_narrative = esqb.fetch_episode_narrative(show_key, e_key, spkr_grp)
+            if not es_episode_narrative:
+                print(f'Failure to update cluster_memberships for episode narrative: no EsEpisodeNarrativeSequence found matching show_key={show_key} e_key={e_key} spkr_grp={spkr_grp}. Skipping to next episode narrative.')
+                failure_count += 1
+                continue
+            es_episode_narrative.cluster_memberships = model_clusters
+            try:
+                esqb.save_episode_narrative(es_episode_narrative)
+                success_count += 1
+            except Exception as e:
+                print(f'Failure to update cluster_memberships for episode narrative at show_key={show_key} e_key={e_key} spkr_grp={spkr_grp}: {e}')
+                failure_count += 1
+
+
+    return {"epnarr_spkrgrps_to_model_clusters": epnarr_spkrgrps_to_model_clusters}
+
+
