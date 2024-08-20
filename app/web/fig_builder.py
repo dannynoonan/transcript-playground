@@ -16,6 +16,7 @@ from sklearn.manifold import TSNE
 
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey, show_metadata
+import app.utils as utils
 from app.web.fig_helper import apply_animation_settings, topic_cat_rank_color_mapper
 import app.web.fig_metadata as fm
 
@@ -90,6 +91,7 @@ def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key
                      title=base_fig_title, custom_data=custom_data,
                      # hover_name=episode_clusters_df.episode_key, hover_data=hover_data,
                      height=fig_height, width=fig_width, opacity=0.7)
+    
     # axis metadata
     fig.update_xaxes(title_text='x axis of t-SNE')
     fig.update_yaxes(title_text='y axis of t-SNE')
@@ -274,8 +276,9 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
     if type == 'speakers':
         title='Character continuity over duration of series'
         # limit speaker gantt to those in `speakers` index (for visual layout, and only slightly for page load performance)
-        matches = esr.fetch_indexed_speakers(ShowKey(show_key), min_episode_count=2)
-        speakers = [m['speaker'] for m in matches['speakers']]
+        # matches = esr.fetch_indexed_speakers(ShowKey(show_key), min_episode_count=2)
+        # speakers = [m['speaker'] for m in matches['speakers']]
+        speakers = show_metadata[show_key]['regular_cast'] + show_metadata[show_key]['recurring_cast']
         df = df.loc[df['Task'].isin(speakers)]
     elif type == 'locations':
         title='Scene location continuity over course of series'
@@ -666,4 +669,30 @@ def build_network_graph() -> go.Figure:
             yaxis=dict(showgrid=False, zeroline=False, showticklabels=False)
         )
     )
+    return fig
+
+
+def build_bertopic_model_3d_scatter(bertopic_model_id: str, show_key: str, bertopic_docs_df: pd.DataFrame) -> go.Figure:
+    print(f'in build_bertopic_model_3d_scatter show_key={show_key} bertopic_model_id={bertopic_model_id}')
+
+    custom_data = ['title', 'season', 'sequence_in_season', 'focal_speakers', 'x_coord', 'y_coord', 'z_coord', 'topics_focused_tfidf_list']
+    bertopic_docs_df['cluster_title_short'] = bertopic_docs_df['cluster_title'].apply(utils.truncate)
+
+    fig = px.scatter_3d(bertopic_docs_df, x='x_coord', y='y_coord', z='z_coord', color='cluster_title_short', opacity=0.7, custom_data=custom_data,
+                        # labels={'Topic', 'Topic'}, color_discrete_map=color_discrete_map, category_orders=category_orders,
+                        height=1000, width=1600)
+
+    fig.update_traces(marker=dict(line=dict(width=0.1, color='DarkSlateGrey')), selector=dict(mode='markers'))
+
+    fig.update_traces(
+            hovertemplate = "<br>".join([
+                "Episode: %{customdata[0]} (S%{customdata[1]}:E%{customdata[2]})",            
+                "Focal speakers: %{customdata[3]}",
+                "Focal topics: %{customdata[7]}",
+                "x: %{customdata[4]}",
+                "y: %{customdata[5]}",
+                "z: %{customdata[6]}"
+            ])
+        )
+
     return fig

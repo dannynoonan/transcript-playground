@@ -40,6 +40,12 @@ def merge_sorted_lists(list1: list, list2: list) -> list:
     return merged_sorted_list
 
 
+def truncate(text: str) -> str:
+    if len(text) > 80:
+        text = f'{text[:80]}...'
+    return text
+
+
 # @DeprecationWarning
 # def split_parent_and_child_topics(topics: list, parent_limit: int = None, child_limit: int = None) -> tuple[list, list]:
 #     '''

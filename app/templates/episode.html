@@ -170,7 +170,7 @@
 												{% for cluster in narrative_sequence['cluster_memberships'] %}
 												<tr class="table-light">
 													<td>{{ cluster['model_id'] }}</td>
-													<th scope="row"><a href="">{{ cluster['cluster_title'] }}</a></th>
+													<th scope="row"><a href="/tsp_dash/bertopic-3d-clusters?bertopic_model_id={{ cluster['model_id'] }}">{{ cluster['cluster_title'] }}</a></th>
 													<td>{{ cluster['cluster_keywords']|join(", ") }}</td>
 													<td>{{ '%0.2f'|format(cluster['probability']|float) }}</td>
 												</tr>

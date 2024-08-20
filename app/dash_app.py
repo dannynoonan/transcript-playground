@@ -8,13 +8,14 @@ import urllib.parse
 
 import app.dash.components as cmp
 from app.dash import (
-    episode_gantt_chart, location_line_chart, series_gantt_chart, series_search_results_gantt, show_3d_network_graph, speaker_3d_network_graph, 
-    show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
+    bertopic_model_clusters, episode_gantt_chart, location_line_chart, series_gantt_chart, series_search_results_gantt, show_3d_network_graph, 
+    speaker_3d_network_graph, show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
 )
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
+from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR
 from app.show_metadata import ShowKey
 import app.web.fig_builder as fb
 import app.web.fig_metadata as fm
@@ -93,6 +94,17 @@ def display_page(pathname, search):
     
     elif pathname == "/tsp_dash/speaker-frequency-bar-chart":
         return speaker_frequency_bar_chart.content
+    
+    elif pathname == "/tsp_dash/bertopic-3d-clusters":
+        bertopic_model_id_options = [f.removesuffix('.csv') for f in os.listdir(BERTOPIC_DATA_DIR) if os.path.isfile(os.path.join(BERTOPIC_DATA_DIR, f))]
+        bertopic_model_id_options = sorted(bertopic_model_id_options)
+        # parse bertopic_model_id from params
+        bertopic_model_id = None
+        if 'bertopic_model_id' in parsed_dict:
+            bertopic_model_id = parsed_dict['bertopic_model_id']
+            if isinstance(bertopic_model_id, list):
+                bertopic_model_id = bertopic_model_id[0]
+        return bertopic_model_clusters.generate_content(bertopic_model_id_options, bertopic_model_id)
 
 
 ############ show-cluster-scatter callbacks
@@ -418,6 +430,25 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
     speaker_episode_frequency_bar_chart = fb.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=True, season=season, sequence_in_season=sequence_in_season)
 
     return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart, show_key
+
+
+############ bertopic-model-clusters callbacks
+@dapp.callback(
+    Output('bertopic-model-clusters', 'figure'),
+    Output('show-key-display11', 'children'),
+    # Output('episode-narratives-per-cluster-df', 'children'),
+    Input('show-key', 'value'),
+    Input('bertopic-model-id', 'value'))    
+def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
+    print(f'in render_bertopic_model_clusters, show_key={show_key} bertopic_model_id={bertopic_model_id}')
+
+    # load cluster data for bertopic model 
+    bertopic_model_docs_df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{bertopic_model_id}.csv', sep='\t')
+
+    # generate 3d scatter
+    bertopic_3d_scatter = fb.build_bertopic_model_3d_scatter(bertopic_model_id, show_key, bertopic_model_docs_df)
+
+    return bertopic_3d_scatter, show_key
 
 
 if __name__ == "__main__":

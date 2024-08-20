@@ -19,7 +19,7 @@ from umap import UMAP
 
 from app.config import settings
 import app.es.es_read_router as esr
-from app.nlp.nlp_metadata import MIN_WORDS_FOR_BERT, MAX_WORDS_FOR_BERT
+from app.nlp.nlp_metadata import MIN_WORDS_FOR_BERT, MAX_WORDS_FOR_BERT, BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR
 from app.show_metadata import ShowKey
 import app.utils as utils
 
@@ -427,17 +427,17 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
     # if save_models:
     model_id = f'{umap_metric}_{umap_random_state}_{umap_min_dist}_{hdbscan_min_cluster_size}'
     # create model dirs
-    os.mkdir(f"bertopic_models/{model_id}")
-    os.mkdir(f"bertopic_models/{model_id}/mmr")
-    os.mkdir(f"bertopic_models/{model_id}/kb")
-    os.mkdir(f"bertopic_models/{model_id}/openai")
+    os.mkdir(f"{BERTOPIC_MODELS_DIR}/{model_id}")
+    os.mkdir(f"{BERTOPIC_MODELS_DIR}/{model_id}/mmr")
+    os.mkdir(f"{BERTOPIC_MODELS_DIR}/{model_id}/kb")
+    os.mkdir(f"{BERTOPIC_MODELS_DIR}/{model_id}/openai")
     # save models
     se_model = f"sentence-transformers/{sentence_transformer_lm}"
-    mmr_bertopic_model.save(f"bertopic_models/{model_id}/mmr", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
-    kb_bertopic_model.save(f"bertopic_models/{model_id}/kb", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
-    openai_bertopic_model.save(f"bertopic_models/{model_id}/openai", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    mmr_bertopic_model.save(f"{BERTOPIC_MODELS_DIR}/{model_id}/mmr", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    kb_bertopic_model.save(f"{BERTOPIC_MODELS_DIR}/{model_id}/kb", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    openai_bertopic_model.save(f"{BERTOPIC_MODELS_DIR}/{model_id}/openai", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
     # save bertopic_docs_df
-    bertopic_docs_file_name = f'bertopic_data/{model_id}.csv'
+    bertopic_docs_file_name = f'{BERTOPIC_DATA_DIR}/{model_id}.csv'
     print(f'writing bertopic_docs_df to file path={bertopic_docs_file_name}')
     bertopic_docs_df.to_csv(bertopic_docs_file_name, sep='\t')
 

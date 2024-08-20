@@ -14,7 +14,7 @@ import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 import app.nlp.narrative_extractor as ne
-from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
+from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_DATA_DIR
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
 from app.utils import TopicAgg, flatten_topics
 
@@ -916,8 +916,7 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
     Load each bertopic_model's csv into dataframe, upsert referenced episode_narratives with mapping back to bertopic_model
     '''
     # load bertopic_data files 
-    parent_dir = 'bertopic_data'
-    bertopic_data_files = [f for f in os.listdir(parent_dir) if os.path.isfile(os.path.join(parent_dir, f))]
+    bertopic_data_files = [f for f in os.listdir(BERTOPIC_DATA_DIR) if os.path.isfile(os.path.join(BERTOPIC_DATA_DIR, f))]
     if umap_metric:
         bertopic_data_files = [f for f in bertopic_data_files if f.startswith(umap_metric)]
 
@@ -938,7 +937,7 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
     
     # populate episode-narrative-speaker-groups with any model_clusters of which they are a member
     for bertopic_data_file in bertopic_data_files:
-        df = pd.read_csv(f'{parent_dir}/{bertopic_data_file}', sep='\t')
+        df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{bertopic_data_file}', sep='\t')
         model_id = bertopic_data_file.removesuffix('.csv')
         for _, row in df.iterrows():
             e_key = str(row['episode_key'])
