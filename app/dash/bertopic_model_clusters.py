@@ -43,6 +43,18 @@ def generate_content(bertopic_model_options: list, bertopic_model_id: str = None
                     dcc.Graph(id="bertopic-model-clusters"),
                 ]),
                 html.Br(),
+                dbc.Row(justify="evenly", children=[
+                    dcc.Graph(id="bertopic-visualize-barchart"),
+                ]),
+                html.Br(),
+                dbc.Row(justify="evenly", children=[
+                    dcc.Graph(id="bertopic-visualize-topics"),
+                ]),
+                html.Br(),
+                dbc.Row(justify="evenly", children=[
+                    dcc.Graph(id="bertopic-visualize-hierarchy"),
+                ]),
+                html.Br(),
                 html.Div(id="episode-narratives-per-cluster-df"),
             ]),
         ])

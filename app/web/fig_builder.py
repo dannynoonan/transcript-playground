@@ -1,3 +1,4 @@
+from bertopic import BERTopic
 import copy
 import igraph as ig
 import io
@@ -671,7 +672,7 @@ def build_network_graph() -> go.Figure:
     return fig
 
 
-def build_bertopic_model_3d_scatter(bertopic_model_id: str, show_key: str, bertopic_docs_df: pd.DataFrame) -> go.Figure:
+def build_bertopic_model_3d_scatter(show_key: str, bertopic_model_id: str, bertopic_docs_df: pd.DataFrame) -> go.Figure:
     print(f'in build_bertopic_model_3d_scatter show_key={show_key} bertopic_model_id={bertopic_model_id}')
 
     custom_data = ['title', 'season', 'episode', 'focal_speakers', 'x_coord', 'y_coord', 'z_coord', 'topics_focused_tfidf_list']
@@ -692,5 +693,33 @@ def build_bertopic_model_3d_scatter(bertopic_model_id: str, show_key: str, berto
                 "z: %{customdata[6]}"
             ])
         )
+
+    return fig
+
+
+def build_bertopic_visualize_barchart(bertopic_model: BERTopic) -> go.Figure:
+    '''
+    Generate topic keyword barcharts using saved model file
+    '''
+    # fig = bertopic_model.visualize_barchart(top_n_topics=16, width=200, height=250)
+    fig = bertopic_model.visualize_barchart(top_n_topics=16, width=400, height=300)
+
+    return fig
+
+
+def build_bertopic_visualize_topics(bertopic_model: BERTopic) -> go.Figure:
+    '''
+    Generate topic graphs using saved model file
+    '''
+    fig = bertopic_model.visualize_topics(width=800, height=800)
+
+    return fig
+
+
+def build_bertopic_visualize_hierarchy(bertopic_model: BERTopic) -> go.Figure:
+    '''
+    Generate topic hierarchy using saved model file
+    '''
+    fig = bertopic_model.visualize_hierarchy(width=1600, height=1200)
 
     return fig

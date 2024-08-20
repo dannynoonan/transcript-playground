@@ -1,4 +1,5 @@
 # import dash
+from bertopic import BERTopic
 import dash_bootstrap_components as dbc
 from dash import dcc, html, Dash, dash_table
 from dash.dependencies import Input, Output, State
@@ -15,7 +16,7 @@ import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR
+from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR
 from app.show_metadata import ShowKey
 import app.utils as utils
 import app.web.fig_builder as fb
@@ -441,6 +442,9 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
 ############ bertopic-model-clusters callbacks
 @dapp.callback(
     Output('bertopic-model-clusters', 'figure'),
+    Output('bertopic-visualize-barchart', 'figure'),
+    Output('bertopic-visualize-topics', 'figure'),
+    Output('bertopic-visualize-hierarchy', 'figure'),
     Output('show-key-display11', 'children'),
     Output('bertopic-model-id-display', 'children'),
     Output('episode-narratives-per-cluster-df', 'children'),
@@ -463,9 +467,16 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
     table_div = cmp.merge_and_simplify_df(bertopic_model_docs_df)
 
     # generate 3d scatter
-    bertopic_3d_scatter = fb.build_bertopic_model_3d_scatter(bertopic_model_id, show_key, bertopic_model_docs_df)
+    bertopic_3d_scatter = fb.build_bertopic_model_3d_scatter(show_key, bertopic_model_id, bertopic_model_docs_df)
 
-    return bertopic_3d_scatter, show_key, bertopic_model_id, table_div
+    # generate topic keyword maps and topic graphs
+    mmr_bertopic_model = BERTopic.load(f'{BERTOPIC_MODELS_DIR}/{show_key}/{bertopic_model_id}/mmr')
+    openai_bertopic_model = BERTopic.load(f'{BERTOPIC_MODELS_DIR}/{show_key}/{bertopic_model_id}/openai')
+    bertopic_visualize_barchart = fb.build_bertopic_visualize_barchart(mmr_bertopic_model)
+    bertopic_visualize_topics = fb.build_bertopic_visualize_topics(openai_bertopic_model)
+    bertopic_visualize_hierarchy = fb.build_bertopic_visualize_hierarchy(openai_bertopic_model)
+
+    return bertopic_3d_scatter, bertopic_visualize_barchart, bertopic_visualize_topics, bertopic_visualize_hierarchy, show_key, bertopic_model_id, table_div
 
 
 if __name__ == "__main__":
