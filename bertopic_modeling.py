@@ -107,7 +107,7 @@ def main():
     i = 1
     for config in configs:
         print(f"processing config {i} of {len(configs)}")
-        report_dict = generate_bertopic_models(bert_text_inputs, config, sources_df, ts_filename)
+        report_dict = generate_bertopic_models(show_key, bert_text_inputs, config, sources_df)
         i += 1
         if report_dict:
             report_dicts.append(report_dict)
@@ -164,7 +164,7 @@ def generate_config_instance(config_params: list, config_value_indexes: tuple) -
     return config_instance
 
 
-def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: pd.DataFrame, ts_filename: str) -> dict|None:
+def generate_bertopic_models(show_key: str, bert_text_inputs: list, config: dict, sources_df: pd.DataFrame) -> dict|None:
     logs = []
     topic_count_threshold = config['topic_count_threshold']
     topic_ratio_threshold = config['topic_ratio_threshold']
@@ -427,17 +427,19 @@ def generate_bertopic_models(bert_text_inputs: list, config: dict, sources_df: p
     # if save_models:
     model_id = f'{umap_metric}_{umap_random_state}_{umap_min_dist}_{hdbscan_min_cluster_size}'
     # create model dirs
-    os.mkdir(f"{BERTOPIC_MODELS_DIR}/{model_id}")
-    os.mkdir(f"{BERTOPIC_MODELS_DIR}/{model_id}/mmr")
-    os.mkdir(f"{BERTOPIC_MODELS_DIR}/{model_id}/kb")
-    os.mkdir(f"{BERTOPIC_MODELS_DIR}/{model_id}/openai")
+    bertopic_models_dir = f'{BERTOPIC_MODELS_DIR}/{show_key}'
+    bertopic_data_dir = f'{BERTOPIC_DATA_DIR}/{show_key}'
+    os.mkdir(f"{bertopic_models_dir}/{model_id}")
+    os.mkdir(f"{bertopic_models_dir}/{model_id}/mmr")
+    os.mkdir(f"{bertopic_models_dir}/{model_id}/kb")
+    os.mkdir(f"{bertopic_models_dir}/{model_id}/openai")
     # save models
     se_model = f"sentence-transformers/{sentence_transformer_lm}"
-    mmr_bertopic_model.save(f"{BERTOPIC_MODELS_DIR}/{model_id}/mmr", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
-    kb_bertopic_model.save(f"{BERTOPIC_MODELS_DIR}/{model_id}/kb", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
-    openai_bertopic_model.save(f"{BERTOPIC_MODELS_DIR}/{model_id}/openai", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    mmr_bertopic_model.save(f"{bertopic_models_dir}/{model_id}/mmr", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    kb_bertopic_model.save(f"{bertopic_models_dir}/{model_id}/kb", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
+    openai_bertopic_model.save(f"{bertopic_models_dir}/{model_id}/openai", serialization="safetensors", save_ctfidf=True, save_embedding_model=se_model)
     # save bertopic_docs_df
-    bertopic_docs_file_name = f'{BERTOPIC_DATA_DIR}/{model_id}.csv'
+    bertopic_docs_file_name = f'{bertopic_data_dir}/{model_id}.csv'
     print(f'writing bertopic_docs_df to file path={bertopic_docs_file_name}')
     bertopic_docs_df.to_csv(bertopic_docs_file_name, sep='\t')
 

@@ -97,15 +97,20 @@ def display_page(pathname, search):
         return speaker_frequency_bar_chart.content
     
     elif pathname == "/tsp_dash/bertopic-3d-clusters":
-        bertopic_model_id_options = [f.removesuffix('.csv') for f in os.listdir(BERTOPIC_DATA_DIR) if os.path.isfile(os.path.join(BERTOPIC_DATA_DIR, f))]
-        bertopic_model_id_options = sorted(bertopic_model_id_options)
+        # parse show_key from params and populate bertopic_model_options
+        if 'show_key' in parsed_dict:
+            show_key = parsed_dict['show_key']
+            if isinstance(show_key, list):
+                show_key = show_key[0]
+        bertopic_model_list_response = esr.list_bertopic_models(show_key)
+        bertopic_model_options = bertopic_model_list_response['bertopic_model_ids']
         # parse bertopic_model_id from params
         bertopic_model_id = None
         if 'bertopic_model_id' in parsed_dict:
             bertopic_model_id = parsed_dict['bertopic_model_id']
             if isinstance(bertopic_model_id, list):
                 bertopic_model_id = bertopic_model_id[0]
-        return bertopic_model_clusters.generate_content(bertopic_model_id_options, bertopic_model_id)
+        return bertopic_model_clusters.generate_content(bertopic_model_options, bertopic_model_id)
 
 
 ############ show-cluster-scatter callbacks
@@ -437,6 +442,7 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
 @dapp.callback(
     Output('bertopic-model-clusters', 'figure'),
     Output('show-key-display11', 'children'),
+    Output('bertopic-model-id-display', 'children'),
     Output('episode-narratives-per-cluster-df', 'children'),
     Input('show-key', 'value'),
     Input('bertopic-model-id', 'value'))    
@@ -444,7 +450,7 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
     print(f'in render_bertopic_model_clusters, show_key={show_key} bertopic_model_id={bertopic_model_id}')
 
     # load cluster data for bertopic model 
-    bertopic_model_docs_df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{bertopic_model_id}.csv', sep='\t')
+    bertopic_model_docs_df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{show_key}/{bertopic_model_id}.csv', sep='\t')
 
     bertopic_model_docs_df['cluster_title_short'] = bertopic_model_docs_df['cluster_title'].apply(utils.truncate)
     bertopic_model_docs_df['cluster'] = bertopic_model_docs_df['cluster_id']
@@ -459,7 +465,7 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
     # generate 3d scatter
     bertopic_3d_scatter = fb.build_bertopic_model_3d_scatter(bertopic_model_id, show_key, bertopic_model_docs_df)
 
-    return bertopic_3d_scatter, show_key, table_div
+    return bertopic_3d_scatter, show_key, bertopic_model_id, table_div
 
 
 if __name__ == "__main__":

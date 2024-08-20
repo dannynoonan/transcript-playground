@@ -4,7 +4,7 @@ from dash import dcc, html
 from app.dash.components import navbar
 
 
-def generate_content(bertopic_model_id_options: list, bertopic_model_id: str = None) -> html.Div:
+def generate_content(bertopic_model_options: list, bertopic_model_id: str = None) -> html.Div:
     if not bertopic_model_id:
         bertopic_model_id = 'braycurtis_53_0_25'
 
@@ -13,7 +13,7 @@ def generate_content(bertopic_model_id_options: list, bertopic_model_id: str = N
         dbc.Card(className="bg-dark", children=[
             dbc.CardBody([
                 dbc.Row([
-                    html.H3(children=["BERTopic clusters for ", html.Span(id='show-key-display11'), " model ", bertopic_model_id]),
+                    html.H3(children=["BERTopic clusters for ", html.Span(id='show-key-display11'), " model ", html.Span(id='bertopic-model-id-display')]),
                     dbc.Col(md=2, children=[
                         html.Div([
                             "Show: ",
@@ -32,7 +32,7 @@ def generate_content(bertopic_model_id_options: list, bertopic_model_id: str = N
                             "BERTopic model id: ",
                             dcc.Dropdown(
                                 id="bertopic-model-id",
-                                options=bertopic_model_id_options, 
+                                options=bertopic_model_options, 
                                 value=bertopic_model_id,
                             )
                         ]),

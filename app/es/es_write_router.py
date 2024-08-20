@@ -916,9 +916,11 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
     Load each bertopic_model's csv into dataframe, upsert referenced episode_narratives with mapping back to bertopic_model
     '''
     # load bertopic_data files 
-    bertopic_data_files = [f for f in os.listdir(BERTOPIC_DATA_DIR) if os.path.isfile(os.path.join(BERTOPIC_DATA_DIR, f))]
-    if umap_metric:
-        bertopic_data_files = [f for f in bertopic_data_files if f.startswith(umap_metric)]
+    bertopic_model_list_response = esr.list_bertopic_models(show_key, umap_metric=umap_metric)
+    bertopic_model_ids = bertopic_model_list_response['bertopic_model_ids']
+    # bertopic_data_files = [f for f in os.listdir(BERTOPIC_DATA_DIR) if os.path.isfile(os.path.join(BERTOPIC_DATA_DIR, f))]
+    # if umap_metric:
+    #     bertopic_data_files = [f for f in bertopic_data_files if f.startswith(umap_metric)]
 
     # initialize dict of narrative-speaker-groups per episode
     epnarr_spkrgrps_to_model_clusters = {}
@@ -936,15 +938,15 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
         epnarr_spkrgrps_to_model_clusters[e_key] = {narr['speaker_group']:[] for narr in ep_narrs}
     
     # populate episode-narrative-speaker-groups with any model_clusters of which they are a member
-    for bertopic_data_file in bertopic_data_files:
-        df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{bertopic_data_file}', sep='\t')
-        model_id = bertopic_data_file.removesuffix('.csv')
+    for bertopic_model_id in bertopic_model_ids:
+        df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{show_key.value}/{bertopic_model_id}.csv', sep='\t')
+        # model_id = bertopic_model_id.removesuffix('.csv')
         for _, row in df.iterrows():
             e_key = str(row['episode_key'])
             spkr_grp = row['speaker_group']
             model_cluster = {}
-            model_cluster['model_id'] = model_id
-            model_cluster['model_cluster_id'] = f"{model_id}__{e_key}_{row['cluster_id']}__{spkr_grp}"
+            model_cluster['model_id'] = bertopic_model_id
+            model_cluster['model_cluster_id'] = f"{bertopic_model_id}__{e_key}_{row['cluster_id']}__{spkr_grp}"
             model_cluster['probability'] = row['Probability']
             model_cluster['prob_x_wc'] = row['prob_x_wc']
             model_cluster['cluster_title'] = row['cluster_title']

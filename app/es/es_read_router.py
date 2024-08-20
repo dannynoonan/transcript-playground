@@ -1,11 +1,12 @@
 from fastapi import APIRouter
 from operator import itemgetter
+import os
 import pandas as pd
 
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
+from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_MODELS_DIR
 import app.nlp.query_preprocessor as qp
 from app.show_metadata import ShowKey, show_metadata, EPISODE_TOPIC_GROUPINGS
 
@@ -284,6 +285,22 @@ def fetch_speaker_episode_topics(speaker: str, show_key: ShowKey, topic_grouping
     es_query = s.to_dict()
     speaker_episode_topics = esrt.return_topics_by_episode(s)
     return {"speaker_episode_topics": speaker_episode_topics, "es_query": es_query}
+
+
+@esr_app.get("/esr/list_bertopic_models/{show_key}", tags=['ES Reader'])
+def list_bertopic_models(show_key: str, umap_metric: str = None):
+    '''
+    List bertopic models for show using a directory scan
+    NOTE this isn't an `es_read` but it might be in the future (and there's no other obvious place for it to live)
+    '''
+    bertopic_models_dir = f'{BERTOPIC_MODELS_DIR}/{show_key}'
+    # bertopic_model_id_options = [f.removesuffix('.csv') for f in os.listdir(bertopic_data_dir) if os.path.isfile(os.path.join(bertopic_data_dir, f))]
+    bertopic_model_ids = [m for m in os.listdir(bertopic_models_dir)]
+    if umap_metric:
+        bertopic_model_ids = [m for m in bertopic_model_ids if m.startswith(umap_metric)]
+    bertopic_model_ids = sorted(bertopic_model_ids)
+
+    return {"bertopic_model_ids": bertopic_model_ids}
 
 
 
