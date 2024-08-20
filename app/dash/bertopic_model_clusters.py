@@ -42,8 +42,8 @@ def generate_content(bertopic_model_id_options: list, bertopic_model_id: str = N
                 dbc.Row(justify="evenly", children=[
                     dcc.Graph(id="bertopic-model-clusters"),
                 ]),
-                # html.Br(),
-                # html.Div(id="episode-narratives-per-cluster-df"),
+                html.Br(),
+                html.Div(id="episode-narratives-per-cluster-df"),
             ]),
         ])
     ])

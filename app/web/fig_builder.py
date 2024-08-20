@@ -16,7 +16,6 @@ from sklearn.manifold import TSNE
 
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey, show_metadata
-import app.utils as utils
 from app.web.fig_helper import apply_animation_settings, topic_cat_rank_color_mapper
 import app.web.fig_metadata as fm
 
@@ -675,8 +674,7 @@ def build_network_graph() -> go.Figure:
 def build_bertopic_model_3d_scatter(bertopic_model_id: str, show_key: str, bertopic_docs_df: pd.DataFrame) -> go.Figure:
     print(f'in build_bertopic_model_3d_scatter show_key={show_key} bertopic_model_id={bertopic_model_id}')
 
-    custom_data = ['title', 'season', 'sequence_in_season', 'focal_speakers', 'x_coord', 'y_coord', 'z_coord', 'topics_focused_tfidf_list']
-    bertopic_docs_df['cluster_title_short'] = bertopic_docs_df['cluster_title'].apply(utils.truncate)
+    custom_data = ['title', 'season', 'episode', 'focal_speakers', 'x_coord', 'y_coord', 'z_coord', 'topics_focused_tfidf_list']
 
     fig = px.scatter_3d(bertopic_docs_df, x='x_coord', y='y_coord', z='z_coord', color='cluster_title_short', opacity=0.7, custom_data=custom_data,
                         # labels={'Topic', 'Topic'}, color_discrete_map=color_discrete_map, category_orders=category_orders,

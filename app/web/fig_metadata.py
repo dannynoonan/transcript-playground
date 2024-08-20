@@ -28,7 +28,9 @@ fig_dims = FigDimensions()
 
 
 colors = ["cornflowerblue", "burlywood", "crimson", "chartreuse", "coral", "cyan", "darkgoldenrod", "cadetblue", "darkcyan", "cornsilk"]
+colors = colors + colors + colors + colors
 text_colors = ["white", "black", "white", "black", "white", "black", "white", "white", "white", "black"]
+text_colors = text_colors + text_colors + text_colors + text_colors
 
 color_map = {}
 for v in colors:

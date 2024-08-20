@@ -17,6 +17,7 @@ import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR
 from app.show_metadata import ShowKey
+import app.utils as utils
 import app.web.fig_builder as fb
 import app.web.fig_metadata as fm
 
@@ -436,7 +437,7 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
 @dapp.callback(
     Output('bertopic-model-clusters', 'figure'),
     Output('show-key-display11', 'children'),
-    # Output('episode-narratives-per-cluster-df', 'children'),
+    Output('episode-narratives-per-cluster-df', 'children'),
     Input('show-key', 'value'),
     Input('bertopic-model-id', 'value'))    
 def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
@@ -445,10 +446,20 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
     # load cluster data for bertopic model 
     bertopic_model_docs_df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{bertopic_model_id}.csv', sep='\t')
 
+    bertopic_model_docs_df['cluster_title_short'] = bertopic_model_docs_df['cluster_title'].apply(utils.truncate)
+    bertopic_model_docs_df['cluster'] = bertopic_model_docs_df['cluster_id']
+
+    # generate dash_table div as part of callback output
+    bertopic_model_docs_df = bertopic_model_docs_df[['cluster', 'cluster_title_short', 'Probability', 'wc', 'speaker_group', 'episode_key', 
+                                                     'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'focal_speakers', 'focal_locations',
+                                                     'topics_focused_tfidf_list', 'topics_universal_tfidf_list', 'x_coord', 'y_coord', 'z_coord', 'point_size']]
+    bertopic_model_docs_df['cluster_color'] = bertopic_model_docs_df['cluster'].apply(lambda x: fm.colors[x])
+    table_div = cmp.merge_and_simplify_df(bertopic_model_docs_df)
+
     # generate 3d scatter
     bertopic_3d_scatter = fb.build_bertopic_model_3d_scatter(bertopic_model_id, show_key, bertopic_model_docs_df)
 
-    return bertopic_3d_scatter, show_key
+    return bertopic_3d_scatter, show_key, table_div
 
 
 if __name__ == "__main__":
