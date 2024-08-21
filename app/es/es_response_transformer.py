@@ -115,6 +115,21 @@ def return_topics_by_season(s: Search) -> dict:
         results[hit._source.season].append(hit._source._d_)
     
     return results
+
+
+def return_topics_by_speaker(s: Search) -> dict:
+    print(f'begin return_topics_by_speaker for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = {}
+
+    for hit in s.hits.hits:
+        if hit._source.speaker not in results:
+            results[hit._source.speaker] = []
+        results[hit._source.speaker].append(hit._source._d_)
+    
+    return results
     
 
 def return_episodes_by_title(s: Search) -> list:
@@ -181,9 +196,26 @@ def return_scenes(s: Search) -> tuple[list, int]:
     return results, scene_count
 
 
-# NOTE added during BERTopic `topic_modeling.py` tinkering, still not sure if that code will be committed
+def return_narrative_sequences(s: Search) -> list:
+    # print(f'begin return_narrative_sequences for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    narrative_sequences = []
+
+    for hit in s.hits.hits:
+        narrative_sequence = hit._source._d_
+        # manually re-order clusters by probability desc, since non-nested 'Object' field doesn't support ordering
+        if 'cluster_memberships' in narrative_sequence:
+            clusters = narrative_sequence['cluster_memberships']
+            narrative_sequence['cluster_memberships'] = sorted(clusters, key=itemgetter('probability'), reverse=True)
+        narrative_sequences.append(narrative_sequence)
+
+    return narrative_sequences
+
+
 def return_flattened_scenes(s: Search, include_speakers: bool = False, include_context: bool = False) -> dict:
-    print(f'begin return_flattened_scenes for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_flattened_scenes for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -300,8 +332,8 @@ def return_scene_events(s: Search, location: str = None) -> tuple[list, int, int
     return results, scene_count, scene_event_count
 
 
-def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = None) -> tuple[list, int, int]:
-    print(f'begin return_scene_events_multi_speaker for speakers={speakers} location={location} s.to_dict()={s.to_dict()}')
+def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = None, intersection: bool = False) -> tuple[list, int, int]:
+    # print(f'begin return_scene_events_multi_speaker for speakers={speakers} location={location} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -365,6 +397,15 @@ def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = 
             # sort scene_events by sequence
             sorted_scene_events = sorted(scene._d_['scene_events'], key=itemgetter('sequence'))
             scene._d_['scene_events'] = sorted_scene_events
+            # if intersection=True then all speakers must be present for scene to be added
+            # NOTE ideally this would be added at query level, but feels tricky and not high priority
+            if intersection:
+                speakers_in_scene = set()
+                for sse in sorted_scene_events:
+                    speakers_in_scene.add(sse['spoken_by'])
+                if len(speakers_in_scene) < len(speakers):
+                    # print(f'dropping scene at scene_offset={scene_offset}, speakers_in_scene={speakers_in_scene} is a subset of speakers={speakers}')
+                    continue
             # highlight scene.location match here for now (a little ugly)
             if location:
                 scene._d_['location'] = scene._d_['location'].replace(location, f'<em>{location}</em>')
@@ -378,6 +419,19 @@ def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = 
     results = sorted(results, key=itemgetter('agg_score'), reverse=True)
 
     return results, scene_count, scene_event_count
+
+
+def return_seasons(s: Search) -> list:
+    print(f'begin return_seasons for s.to_dict()={s.to_dict()}')
+
+    s = s.execute()
+
+    results = []
+
+    for item in s.aggregations.by_season.buckets:
+        results.append(item.key)
+
+    return results
 
 
 def return_seasons_by_speaker(s: Search, agg_season_count: str, location: str = None) -> list:

@@ -1,3 +1,4 @@
+from bertopic import BERTopic
 import copy
 import igraph as ig
 import io
@@ -90,6 +91,7 @@ def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key
                      title=base_fig_title, custom_data=custom_data,
                      # hover_name=episode_clusters_df.episode_key, hover_data=hover_data,
                      height=fig_height, width=fig_width, opacity=0.7)
+    
     # axis metadata
     fig.update_xaxes(title_text='x axis of t-SNE')
     fig.update_yaxes(title_text='y axis of t-SNE')
@@ -274,8 +276,9 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
     if type == 'speakers':
         title='Character continuity over duration of series'
         # limit speaker gantt to those in `speakers` index (for visual layout, and only slightly for page load performance)
-        matches = esr.fetch_indexed_speakers(ShowKey(show_key), min_episode_count=2)
-        speakers = [m['speaker'] for m in matches['speakers']]
+        # matches = esr.fetch_indexed_speakers(ShowKey(show_key), min_episode_count=2)
+        # speakers = [m['speaker'] for m in matches['speakers']]
+        speakers = show_metadata[show_key]['regular_cast'] + show_metadata[show_key]['recurring_cast']
         df = df.loc[df['Task'].isin(speakers)]
     elif type == 'locations':
         title='Scene location continuity over course of series'
@@ -666,4 +669,62 @@ def build_network_graph() -> go.Figure:
             yaxis=dict(showgrid=False, zeroline=False, showticklabels=False)
         )
     )
+    return fig
+
+
+def build_bertopic_model_3d_scatter(show_key: str, bertopic_model_id: str, bertopic_docs_df: pd.DataFrame) -> go.Figure:
+    print(f'in build_bertopic_model_3d_scatter show_key={show_key} bertopic_model_id={bertopic_model_id}')
+
+    custom_data = ['cluster_title_short', 'cluster', 'season', 'episode', 'title', 'speaker_group', 'topics_focused_tfidf_list']
+
+    bertopic_docs_df['cluster_title_short_legend'] = bertopic_docs_df['cluster'].astype(str) + ' ' + bertopic_docs_df['cluster_title_short']
+    # bertopic_docs_df['cluster_title_short_legend'] = bertopic_docs_df[['cluster', 'cluster_title_short']].apply(lambda x: ' '.join(str(x)), axis=1)
+
+    fig = px.scatter_3d(bertopic_docs_df, x='x_coord', y='y_coord', z='z_coord', color='cluster_title_short_legend', opacity=0.7, custom_data=custom_data,
+                        # labels={'Topic', 'Topic'}, color_discrete_map=color_discrete_map, category_orders=category_orders,
+                        height=1000, width=1600)
+
+    fig.update_traces(marker=dict(line=dict(width=0.1, color='DarkSlateGrey')), selector=dict(mode='markers'))
+
+    fig.update_traces(
+        hovertemplate = "".join([
+            "<b>%{customdata[0]} (Topic %{customdata[1]})</b><br><br>",
+            "<b>S%{customdata[2]}:E%{customdata[3]}: %{customdata[4]}</b><br>",            
+            "Speaker group: %{customdata[5]}<br>",
+            "Focal topics: %{customdata[6]}",
+            "<extra></extra>"
+        ]),
+        # mode='markers',
+        # marker={'sizemode':'area',
+        #         'sizeref':10},
+    )
+
+    return fig
+
+
+def build_bertopic_visualize_barchart(bertopic_model: BERTopic) -> go.Figure:
+    '''
+    Generate topic keyword barcharts using saved model file
+    '''
+    # fig = bertopic_model.visualize_barchart(top_n_topics=16, width=200, height=250)
+    fig = bertopic_model.visualize_barchart(top_n_topics=16, width=400, height=300)
+
+    return fig
+
+
+def build_bertopic_visualize_topics(bertopic_model: BERTopic) -> go.Figure:
+    '''
+    Generate topic graphs using saved model file
+    '''
+    fig = bertopic_model.visualize_topics(width=800, height=800)
+
+    return fig
+
+
+def build_bertopic_visualize_hierarchy(bertopic_model: BERTopic) -> go.Figure:
+    '''
+    Generate topic hierarchy using saved model file
+    '''
+    fig = bertopic_model.visualize_hierarchy(width=1600, height=1200)
+
     return fig

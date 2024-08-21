@@ -58,6 +58,6 @@ VECTOR_FIELDS = concat_vector_fields()
 RELATIONS_FIELDS = ['es_mlt_relations_text', 'es_mlt_relations_dict', 'openai_ada002_relations_text', 'openai_ada002_relations_dict']
 
 
-VALID_ES_INDEXES = ['transcripts', 'speakers', 'speaker_seasons', 'speaker_episodes', 'topics', 
-                    'episode_topics', 'speaker_topics', 'speaker_season_topics', 'speaker_episode_topics']
+VALID_ES_INDEXES = ['transcripts', 'narratives', 'speakers', 'speaker_seasons', 'speaker_episodes', 'speaker_embeddings_unified',
+                    'topics', 'episode_topics', 'speaker_topics', 'speaker_season_topics', 'speaker_episode_topics']
 

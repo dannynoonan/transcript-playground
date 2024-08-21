@@ -1,11 +1,12 @@
 from fastapi import APIRouter
 from operator import itemgetter
+import os
 import pandas as pd
 
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
+from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_MODELS_DIR
 import app.nlp.query_preprocessor as qp
 from app.show_metadata import ShowKey, show_metadata, EPISODE_TOPIC_GROUPINGS
 
@@ -36,6 +37,18 @@ def fetch_doc_ids(show_key: ShowKey, season: str = None):
     es_query = s.to_dict()
     matches = esrt.return_doc_ids(s)
     return {"doc_count": len(matches), "doc_ids": matches, "es_query": es_query}
+
+
+@esr_app.get("/esr/list_seasons/{show_key}", tags=['ES Reader'])
+def list_seasons(show_key: ShowKey):
+    '''
+    List all distincts seasons, sorted ascending
+    '''
+    s = esqb.agg_seasons(show_key.value)
+    es_query = s.to_dict()
+    seasons = esrt.return_seasons(s)
+    seasons = sorted(seasons)
+    return {"seasons": seasons, "es_query": es_query}
 
 
 # NOTE I'm not sure what this was for, probably created during BERTopic experimentation
@@ -72,7 +85,30 @@ def list_simple_episodes_by_season(show_key: ShowKey):
     return {"episodes_by_season": episodes_by_season, "es_query": es_query}
 
 
-# NOTE added during BERTopic `topic_modeling.py` tinkering, still not sure if that code will be committed
+@esr_app.get("/esr/fetch_episode_narrative/{show_key}/{episode_key}/{speaker_group}", tags=['ES Reader'])
+def fetch_episode_narrative(show_key: ShowKey, episode_key: str, speaker_group: str):
+    '''
+    Fetch individual pre-generated narrative sequence for a given episode + speaker_group
+    '''
+    episode_narrative = esqb.fetch_episode_narrative(show_key.value, episode_key, speaker_group)
+    if not episode_narrative:
+        return {"error": f"Failed to /fetch_episode_narrative for show_key=`{show_key.value}` episode_key=`{episode_key}` speaker_group=`{speaker_group}`"}
+    episode_narrative = episode_narrative._d_
+
+    return {"episode_narrative": episode_narrative}
+
+
+@esr_app.get("/esr/fetch_narrative_sequences/{show_key}/{episode_key}", tags=['ES Reader'])
+def fetch_narrative_sequences(show_key: ShowKey, episode_key: str):
+    '''
+    Fetch pre-generated narrative sequences for a given episode
+    '''
+    s = esqb.fetch_narrative_sequences(show_key.value, episode_key)
+    es_query = s.to_dict()
+    narrative_sequences = esrt.return_narrative_sequences(s)
+    return {"narrative_sequences": narrative_sequences, "es_query": es_query}
+
+
 @esr_app.get("/esr/fetch_flattened_scenes/{show_key}/{episode_key}", tags=['ES Reader'])
 def fetch_flattened_scenes(show_key: ShowKey, episode_key: str, include_speakers: bool = False, include_context: bool = False):
     '''
@@ -140,11 +176,25 @@ def fetch_speakers_for_episode(show_key: ShowKey, episode_key: str, extra_fields
     return {"speaker_episodes": speaker_episodes, "es_query": es_query}
 
 
-# TODO haven't needed `fetch_speakers_for_season` yet but will soon
+@esr_app.get("/esr/fetch_speakers_for_season/{show_key}/{season}", tags=['ES Reader'])
+def fetch_speakers_for_season(show_key: ShowKey, season: str, extra_fields: str = None):
+    '''
+    Fetch speaker_seasons for a given season 
+    '''
+    return_fields = ['speaker','episode_count','scene_count','line_count','word_count','agg_score']
+    if extra_fields:
+        extra_fields = extra_fields.split(',')
+        return_fields.extend(extra_fields)
+
+    s = esqb.fetch_speaker_seasons(show_key.value, season=season, return_fields=return_fields)
+    es_query = s.to_dict()
+    speaker_seasons = esrt.return_speaker_seasons(s)
+
+    return {"speaker_seasons": speaker_seasons, "es_query": es_query}
 
 
 @esr_app.get("/esr/fetch_indexed_speakers/{show_key}", tags=['ES Reader'])
-def fetch_indexed_speakers(show_key: ShowKey, extra_fields: str = None, min_episode_count: int = None):
+def fetch_indexed_speakers(show_key: ShowKey, season: int = None, extra_fields: str = None, min_episode_count: int = None):
     '''
     For speakers indexed in es, fetch info, lines, and aggregate counts
     '''
@@ -153,12 +203,14 @@ def fetch_indexed_speakers(show_key: ShowKey, extra_fields: str = None, min_epis
         extra_fields = extra_fields.split(',')
         return_fields.extend(extra_fields)
 
-    s = esqb.fetch_indexed_speakers(show_key.value, return_fields=return_fields, min_episode_count=min_episode_count)
+    # NOTE I'm not sure the `season` parameter will last, it excludes speakers by season but still returns series-level agg counts
+    s = esqb.fetch_indexed_speakers(show_key.value, season=season, return_fields=return_fields, min_episode_count=min_episode_count)
+    es_query = s.to_dict()
     speakers = esrt.return_speakers(s)
     if not speakers:
         return {"error": f"Failed to fetch_indexed_speakers for show_key={show_key}"}
 
-    return {"speakers": speakers}
+    return {"speakers": speakers, "es_query": es_query}
 
 
 @esr_app.get("/esr/topic/{topic_grouping}/{topic_key}", tags=['ES Reader'])
@@ -186,11 +238,11 @@ def fetch_topic_grouping(topic_grouping: str, return_fields: str = None):
 
 
 @esr_app.get("/esr/fetch_episode_topics/{show_key}/{episode_key}/{topic_grouping}", tags=['ES Reader'])
-def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, level: str = None, limit: int = None):
+def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, level: str = None, limit: int = None, sort_by: str = None):
     '''
     Fetch topics mapped to episode
     '''
-    s = esqb.fetch_episode_topics(show_key.value, episode_key, topic_grouping, level=level, limit=limit)
+    s = esqb.fetch_episode_topics(show_key.value, episode_key, topic_grouping, level=level, limit=limit, sort_by=sort_by)
     es_query = s.to_dict()
     episode_topics = esrt.return_topics(s)
     return {"episode_topics": episode_topics, "es_query": es_query}
@@ -207,17 +259,22 @@ def fetch_speaker_topics(speaker: str, show_key: ShowKey, topic_grouping: str, l
     return {"speaker_topics": speaker_topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_speaker_season_topics/{speaker}/{show_key}/{topic_grouping}", tags=['ES Reader'])
-def fetch_speaker_season_topics(speaker: str, show_key: ShowKey, topic_grouping: str, season: int = None, level: str = None, limit: int = None):
+@esr_app.get("/esr/fetch_speaker_season_topics/{show_key}/{topic_grouping}", tags=['ES Reader'])
+def fetch_speaker_season_topics(show_key: ShowKey, topic_grouping: str, speaker: str = None, season: int = None, level: str = None, limit: int = None):
     '''
     Fetch topics mapped to speaker_season
     '''
-    s = esqb.fetch_speaker_season_topics(speaker, show_key.value, topic_grouping, season=season, level=level, limit=limit)
+    s = esqb.fetch_speaker_season_topics(show_key.value, topic_grouping, speaker=speaker, season=season, level=level, limit=limit)
     es_query = s.to_dict()
-    speaker_season_topics = esrt.return_topics_by_season(s)
+    # TODO feels like I should either do this in more places or not do it here
+    if speaker:
+        speaker_season_topics = esrt.return_topics_by_season(s)
+    else:
+        speaker_season_topics = esrt.return_topics_by_speaker(s)
     return {"speaker_season_topics": speaker_season_topics, "es_query": es_query}
 
 
+# TODO speaker should be an optional parameter, this will be changed when use case arrives
 @esr_app.get("/esr/fetch_speaker_episode_topics/{speaker}/{show_key}/{topic_grouping}", tags=['ES Reader'])
 def fetch_speaker_episode_topics(speaker: str, show_key: ShowKey, topic_grouping: str, episode_key: str = None, season: int = None, 
                                  level: str = None, limit: int = None):
@@ -228,6 +285,22 @@ def fetch_speaker_episode_topics(speaker: str, show_key: ShowKey, topic_grouping
     es_query = s.to_dict()
     speaker_episode_topics = esrt.return_topics_by_episode(s)
     return {"speaker_episode_topics": speaker_episode_topics, "es_query": es_query}
+
+
+@esr_app.get("/esr/list_bertopic_models/{show_key}", tags=['ES Reader'])
+def list_bertopic_models(show_key: str, umap_metric: str = None):
+    '''
+    List bertopic models for show using a directory scan
+    NOTE this isn't an `es_read` but it might be in the future (and there's no other obvious place for it to live)
+    '''
+    bertopic_models_dir = f'{BERTOPIC_MODELS_DIR}/{show_key}'
+    # bertopic_model_id_options = [f.removesuffix('.csv') for f in os.listdir(bertopic_data_dir) if os.path.isfile(os.path.join(bertopic_data_dir, f))]
+    bertopic_model_ids = [m for m in os.listdir(bertopic_models_dir)]
+    if umap_metric:
+        bertopic_model_ids = [m for m in bertopic_model_ids if m.startswith(umap_metric)]
+    bertopic_model_ids = sorted(bertopic_model_ids)
+
+    return {"bertopic_model_ids": bertopic_model_ids}
 
 
 
@@ -272,14 +345,14 @@ def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str 
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/search_scene_events_multi_speaker/{show_key}", tags=['ES Reader'])
-def search_scene_events_multi_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, speakers: str = None, location: str = None):
+@esr_app.get("/esr/search_scene_events_multi_speaker/{show_key}/{speakers}", tags=['ES Reader'])
+def search_scene_events_multi_speaker(show_key: ShowKey, speakers: str, season: str = None, episode_key: str = None, location: str = None, intersection: bool = False):
     '''
     Facet query of Scenes comprised of SceneEvents matching 1-n speakers
     '''
     s = esqb.search_scene_events_multi_speaker(show_key.value, speakers, season=season, episode_key=episode_key)
     es_query = s.to_dict()
-    matches, scene_count, scene_event_count = esrt.return_scene_events_multi_speaker(s, speakers, location=location)
+    matches, scene_count, scene_event_count = esrt.return_scene_events_multi_speaker(s, speakers, location=location, intersection=intersection)
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
@@ -303,8 +376,8 @@ def more_like_this(show_key: ShowKey, episode_key: str):
 
 
 # TODO support POST for long requests?
-@esr_app.get("/esr/vector_search/{show_key}", tags=['ES Reader'])
-def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
+@esr_app.get("/esr/episode_vector_search/{show_key}", tags=['ES Reader'])
+def episode_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
     '''
     Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
     '''
@@ -351,8 +424,8 @@ def vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_ve
     }
 
 
-@esr_app.get("/esr/mlt_vector_search/{show_key}/{episode_key}", tags=['ES Reader'])
-def mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor: str = None, model_version: str = None):
+@esr_app.get("/esr/episode_mlt_vector_search/{show_key}/{episode_key}", tags=['ES Reader'])
+def episode_mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor: str = None, model_version: str = None):
     '''
     Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
     '''
@@ -370,6 +443,218 @@ def mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor: str = N
     matches = esrt.return_vector_search(es_response)
     matches = matches[1:] # remove episode itself from results
     return {"match_count": len(matches), "vector_field": vector_field, "matches": matches}
+
+
+# def util(speaker: str, m: dict, matches_by_speaker_series_embedding: dict, all_speaker_matches: list, other_speaker_count: int, other_speaker_quota: int):
+#     if other_speaker_count >= other_speaker_quota:
+#         return False
+#     match_speaker = m['speaker']
+#     # add self-matches to list, but don't count them against other_speaker quota 
+#     matches_by_speaker_series_embedding.append(m)
+#     if match_speaker == speaker:
+#         return True
+#     other_speaker_count += 1
+#     # increment match_speaker overall score  
+#     if match_speaker not in all_speaker_matches:
+#         all_speaker_matches[match_speaker] = 0
+#     inv_rank = other_speaker_quota - other_speaker_count # eesh
+#     all_speaker_matches[match_speaker] += inv_rank
+
+
+@esr_app.get("/esr/speaker_mlt_vector_search/{show_key}/{speaker}", tags=['ES Reader'])
+def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool = True, model_vendor: str = None, model_version: str = None):
+    '''
+    Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
+    '''
+    if not model_vendor:
+        model_vendor = 'openai'
+    if not model_version:
+        model_version = 'ada002'
+
+    vector_field = f'{model_vendor}_{model_version}_embeddings'
+        
+    # alldepth_speaker_embeddings = {}
+    # if speaker_series_embeddings:
+    #     alldepth_speaker_embeddings['series'] = speaker_series_embeddings
+    # if season_embeddings:
+    #     for season, embeddings in season_embeddings.items():
+    #         alldepth_speaker_embeddings[f'S{season}'] = embeddings
+    # if episode_embeddings:
+    #     for episode_key, embeddings in episode_embeddings.items():
+    #         alldepth_speaker_embeddings[f'E{episode_key}'] = embeddings
+
+    '''
+    - fetch all speaker1 embeddings at min_depth layer 
+    - for each speaker1 embedding at min_depth, init speaker2 aggs and run vector search against speaker_embeddings_unified
+        - save top X matches desc by score as matches_by_speaker_embedding[speaker_embedding_layer_key][most_similar]
+        - add agg ranks and tally match_count in matches_by_speaker_embedding[speaker_embedding_layer_key][speaker_rank_aggs]
+        - add agg ranks and tally match_count in agg_speaker_similarity
+    - assemble two data objects:
+        (1) speaker2 embeddings most similar to each speaker1 embedding across min_depth layer(s)
+        (2) aggregate speaker2 similarity across all speaker1 embeddings across min_depth layer(s)
+    '''
+    series_embeddings, season_embeddings, episode_embeddings = esqb.fetch_speaker_embeddings(show_key.value, speaker, vector_field, min_depth=min_depth)
+    
+    other_speaker_quota = 30
+    matches_by_speaker_series_embedding = []
+    all_speaker_matches = {}
+    if series_embeddings:
+        other_speaker_count = 0
+        matches_by_speaker_series_embedding = []
+        vec_search_response = esqb.vector_search(show_key.value, vector_field, series_embeddings, index_name='speaker_embeddings_unified', min_word_count=100)
+        speaker_matches = esrt.return_vector_search(vec_search_response)
+        for m in speaker_matches:
+            if other_speaker_count >= other_speaker_quota:
+                break
+            match_speaker = m['speaker']
+            # add self-matches to list, but don't count them against other_speaker quota 
+            matches_by_speaker_series_embedding.append(m)
+            if match_speaker == speaker:
+                continue
+            other_speaker_count += 1
+            # increment match_speaker overall score  
+            if match_speaker not in all_speaker_matches:
+                all_speaker_matches[match_speaker] = 0
+            inv_rank = other_speaker_quota - other_speaker_count # eesh
+            all_speaker_matches[match_speaker] += inv_rank
+
+    matches_by_speaker_season_embedding = {}
+    if season_embeddings:
+        for season, season_embedding in season_embeddings.items():
+            other_speaker_count = 0
+            matches_by_speaker_season_embedding[season] = []
+            vec_search_response = esqb.vector_search(show_key.value, vector_field, season_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
+            speaker_matches = esrt.return_vector_search(vec_search_response)
+            for m in speaker_matches:
+                if other_speaker_count >= other_speaker_quota:
+                    break
+                match_speaker = m['speaker']
+                # add self-matches to list, but don't count them against other_speaker quota 
+                matches_by_speaker_season_embedding[season].append(m)
+                if match_speaker == speaker:
+                    continue
+                other_speaker_count += 1
+                # increment match_speaker overall score  
+                if match_speaker not in all_speaker_matches:
+                    all_speaker_matches[match_speaker] = 0
+                inv_rank = other_speaker_quota - other_speaker_count # eesh
+                all_speaker_matches[match_speaker] += inv_rank
+
+    matches_by_speaker_episode_embedding = {}
+    if episode_embeddings:
+        for episode_key, episode_embedding in episode_embeddings.items():
+            other_speaker_count = 0
+            matches_by_speaker_episode_embedding[episode_key] = []
+            vec_search_response = esqb.vector_search(show_key.value, vector_field, episode_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
+            speaker_matches = esrt.return_vector_search(vec_search_response)
+            for m in speaker_matches:
+                if other_speaker_count >= other_speaker_quota:
+                    break
+                match_speaker = m['speaker']
+                # add self-matches to list, but don't count them against other_speaker quota 
+                matches_by_speaker_episode_embedding[episode_key].append(m)
+                if match_speaker == speaker:
+                    continue
+                other_speaker_count += 1
+                # increment match_speaker overall score  
+                if match_speaker not in all_speaker_matches:
+                    all_speaker_matches[match_speaker] = 0
+                inv_rank = other_speaker_quota - other_speaker_count # eesh
+                all_speaker_matches[match_speaker] += inv_rank
+    
+    '''
+    matches_by_speaker_embedding = {
+        <speaker_embedding_layer_key>: {
+            'most_similar': [{
+                <speaker_embedding_layer_key>: <score>
+            }],
+            'speaker_rank_aggs': {}
+                <speaker>: {
+                    'agg_score': <agg_score>,
+                    'match_count': <match_count>
+                }
+            }
+        }
+    }
+
+    agg_speaker_similarity = {
+        <speaker>: {
+            'agg_score': <agg_score>,
+            'match_count': <match_count>
+        }
+    }
+    '''
+
+    # all_speaker_matches = {}
+
+    # cutoff = 30
+    # speaker_series_matches = {}
+    # all_speaker_season_matches = {}
+    # all_speaker_episode_matches = {}
+    # if speaker_series_embeddings:
+    #     es_speakers_response = esqb.vector_search(show_key.value, vector_field, speaker_series_embeddings, index_name='speakers')
+    #     speaker_matches = esrt.return_vector_search(es_speakers_response)
+    #     for m in speaker_matches[:cutoff]:
+    #         match_speaker = m['speaker']
+    #         if match_speaker == speaker:
+    #             continue
+    #         if match_speaker not in all_speaker_matches:
+    #             all_speaker_matches[match_speaker] = 0
+    #         rank = cutoff - m['rank']
+    #         all_speaker_matches[match_speaker] += rank
+
+    # cutoff = 10
+    # # all_speaker_matches = {}
+    # all_speaker_season_matches = {}
+    # all_speaker_episode_matches = {}
+    # for key, speaker_embeddings in alldepth_speaker_embeddings.items():
+    #     # compare to series-level embeddings
+    #     es_speakers_response = esqb.vector_search(show_key.value, vector_field, speaker_embeddings, index_name='speakers')
+    #     speaker_matches = esrt.return_vector_search(es_speakers_response)
+    #     for m in speaker_matches[:cutoff]:
+    #         match_speaker = m['speaker']
+    #         if match_speaker == speaker:
+    #             continue
+    #         if match_speaker not in all_speaker_matches:
+    #             all_speaker_matches[match_speaker] = 0
+    #         rank = cutoff - m['rank']
+    #         all_speaker_matches[match_speaker] += rank
+
+    #     # compare to season-level embeddings
+    #     es_speaker_seasons_response = esqb.vector_search(show_key.value, vector_field, speaker_embeddings, index_name='speaker_seasons')
+    #     speaker_season_matches = esrt.return_vector_search(es_speaker_seasons_response)
+    #     for m in speaker_season_matches[:cutoff]:
+    #         match_speaker = m['speaker']
+    #         if match_speaker == speaker:
+    #             continue
+    #         if match_speaker not in all_speaker_season_matches:
+    #             all_speaker_season_matches[match_speaker] = dict(agg_score=0, sources=[])
+    #         rank = cutoff - m['rank']
+    #         all_speaker_season_matches[match_speaker]['agg_score'] += rank
+    #         all_speaker_season_matches[match_speaker]['sources'].append(f"{key}:{m['season']}")
+
+    #     # compare to season-level embeddings
+    #     es_speaker_episodes_response = esqb.vector_search(show_key.value, vector_field, speaker_embeddings, index_name='speaker_episodes')
+    #     speaker_episode_matches = esrt.return_vector_search(es_speaker_episodes_response)
+    #     for m in speaker_episode_matches[:cutoff]:
+    #         match_speaker = m['speaker']
+    #         if match_speaker == speaker:
+    #             continue
+    #         if match_speaker not in all_speaker_episode_matches:
+    #             all_speaker_episode_matches[match_speaker] = dict(agg_score=0, sources=[])
+    #         rank = cutoff - m['rank']
+    #         all_speaker_episode_matches[match_speaker]['agg_score'] += rank
+    #         all_speaker_episode_matches[match_speaker]['sources'].append(f"{key}:{m['episode_key']}")
+    
+    all_speaker_matches = sorted(all_speaker_matches.items(), key=lambda kv: kv[1], reverse=True)
+    all_speaker_matches = {asm[0]:asm[1] for asm in all_speaker_matches}
+
+    return {
+        "all_speaker_matches": all_speaker_matches, 
+        "matches_by_speaker_series_embedding": matches_by_speaker_series_embedding,
+        "matches_by_speaker_season_embedding": matches_by_speaker_season_embedding, 
+        "matches_by_speaker_episode_embedding": matches_by_speaker_episode_embedding
+    }
 
 
 @esr_app.get("/esr/episode_topic_vector_search/{show_key}/{episode_key}/{topic_grouping}", tags=['ES Reader'])
@@ -567,11 +852,13 @@ def search_speakers(qt: str, show_key: ShowKey = None, extra_fields: str = None)
 
 
 @esr_app.get("/esr/find_episodes_by_topic/{show_key}/{topic_grouping}/{topic_key}", tags=['ES Reader'])
-def find_episodes_by_topic(show_key: ShowKey, topic_grouping: str, topic_key: str, season: int = None):
+def find_episodes_by_topic(show_key: ShowKey, topic_grouping: str, topic_key: str, season: int = None, sort_by: str = None):
     '''
     Search episodes by topic
     '''                
-    s = esqb.search_episode_topics(show_key, topic_grouping, topic_key, season=season)
+    if not sort_by:
+        sort_by = 'score'
+    s = esqb.search_episode_topics(show_key, topic_grouping, topic_key, season=season, sort_by=sort_by)
     es_query = s.to_dict()
     episode_topics = esrt.return_topics(s)
     return {"episode_topics": episode_topics, "es_query": es_query}

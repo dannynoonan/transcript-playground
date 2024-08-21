@@ -1,4 +1,5 @@
 # import dash
+from bertopic import BERTopic
 import dash_bootstrap_components as dbc
 from dash import dcc, html, Dash, dash_table
 from dash.dependencies import Input, Output, State
@@ -8,14 +9,16 @@ import urllib.parse
 
 import app.dash.components as cmp
 from app.dash import (
-    episode_gantt_chart, location_line_chart, series_gantt_chart, series_search_results_gantt, show_3d_network_graph, speaker_3d_network_graph, 
-    show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
+    bertopic_model_clusters, episode_gantt_chart, location_line_chart, series_gantt_chart, series_search_results_gantt, show_3d_network_graph, 
+    speaker_3d_network_graph, show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
 )
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
+from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR
 from app.show_metadata import ShowKey
+import app.utils as utils
 import app.web.fig_builder as fb
 import app.web.fig_metadata as fm
 
@@ -93,6 +96,22 @@ def display_page(pathname, search):
     
     elif pathname == "/tsp_dash/speaker-frequency-bar-chart":
         return speaker_frequency_bar_chart.content
+    
+    elif pathname == "/tsp_dash/bertopic-3d-clusters":
+        # parse show_key from params and populate bertopic_model_options
+        if 'show_key' in parsed_dict:
+            show_key = parsed_dict['show_key']
+            if isinstance(show_key, list):
+                show_key = show_key[0]
+        bertopic_model_list_response = esr.list_bertopic_models(show_key)
+        bertopic_model_options = bertopic_model_list_response['bertopic_model_ids']
+        # parse bertopic_model_id from params
+        bertopic_model_id = None
+        if 'bertopic_model_id' in parsed_dict:
+            bertopic_model_id = parsed_dict['bertopic_model_id']
+            if isinstance(bertopic_model_id, list):
+                bertopic_model_id = bertopic_model_id[0]
+        return bertopic_model_clusters.generate_content(bertopic_model_options, bertopic_model_id)
 
 
 ############ show-cluster-scatter callbacks
@@ -125,7 +144,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
 
     # generate dash_table div as part of callback output
     episode_clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()
-    table_div = cmp.merge_and_simplify_df(episode_clusters_df)
+    table_div = cmp.merge_and_simplify_df(show_key, episode_clusters_df)
 
     # generate scatterplot
     fig_scatter = fb.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
@@ -418,6 +437,47 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
     speaker_episode_frequency_bar_chart = fb.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=True, season=season, sequence_in_season=sequence_in_season)
 
     return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart, show_key
+
+
+############ bertopic-model-clusters callbacks
+@dapp.callback(
+    Output('bertopic-model-clusters', 'figure'),
+    Output('bertopic-visualize-barchart', 'figure'),
+    Output('bertopic-visualize-topics', 'figure'),
+    Output('bertopic-visualize-hierarchy', 'figure'),
+    Output('show-key-display11', 'children'),
+    Output('bertopic-model-id-display', 'children'),
+    Output('episode-narratives-per-cluster-df', 'children'),
+    Input('show-key', 'value'),
+    Input('bertopic-model-id', 'value'))    
+def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
+    print(f'in render_bertopic_model_clusters, show_key={show_key} bertopic_model_id={bertopic_model_id}')
+
+    # load cluster data for bertopic model 
+    bertopic_model_docs_df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{show_key}/{bertopic_model_id}.csv', sep='\t')
+
+    bertopic_model_docs_df['cluster_title_short'] = bertopic_model_docs_df['cluster_title'].apply(utils.truncate)
+    bertopic_model_docs_df['cluster'] = bertopic_model_docs_df['cluster_id']
+
+    # generate dash_table div as part of callback output
+    bertopic_model_docs_df = bertopic_model_docs_df[['cluster', 'cluster_title_short', 'Probability', 'wc', 'speaker_group', 'episode_key', 
+                                                     'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'focal_speakers', 'focal_locations',
+                                                     'topics_focused_tfidf_list', 'topics_universal_tfidf_list', 'x_coord', 'y_coord', 'z_coord', 'point_size']]
+    bertopic_model_docs_df['cluster_color'] = bertopic_model_docs_df['cluster'].apply(lambda x: fm.colors[x])
+    bertopic_model_docs_df.drop(['focal_speakers', 'focal_locations'], axis=1, inplace=True) 
+    table_div = cmp.merge_and_simplify_df(show_key, bertopic_model_docs_df)
+
+    # generate 3d scatter
+    bertopic_3d_scatter = fb.build_bertopic_model_3d_scatter(show_key, bertopic_model_id, bertopic_model_docs_df)
+
+    # generate topic keyword maps and topic graphs
+    mmr_bertopic_model = BERTopic.load(f'{BERTOPIC_MODELS_DIR}/{show_key}/{bertopic_model_id}/mmr')
+    openai_bertopic_model = BERTopic.load(f'{BERTOPIC_MODELS_DIR}/{show_key}/{bertopic_model_id}/openai')
+    bertopic_visualize_barchart = fb.build_bertopic_visualize_barchart(mmr_bertopic_model)
+    bertopic_visualize_topics = fb.build_bertopic_visualize_topics(openai_bertopic_model)
+    bertopic_visualize_hierarchy = fb.build_bertopic_visualize_hierarchy(openai_bertopic_model)
+
+    return bertopic_3d_scatter, bertopic_visualize_barchart, bertopic_visualize_topics, bertopic_visualize_hierarchy, show_key, bertopic_model_id, table_div
 
 
 if __name__ == "__main__":

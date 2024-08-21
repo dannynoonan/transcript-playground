@@ -45,6 +45,8 @@ class EsEpisodeTranscript(Document):
     focal_locations = Keyword(multi=True)
     topics_universal = Object(multi=True)
     topics_focused = Object(multi=True)
+    topics_universal_tfidf = Object(multi=True)
+    topics_focused_tfidf = Object(multi=True)
     es_mlt_relations_text = Text(multi=True)
     es_mlt_relations_dict = Object(multi=True)
     openai_ada002_relations_text = Text(multi=True)
@@ -67,6 +69,26 @@ class EsEpisodeTranscript(Document):
 
     def save(self, **kwargs):
         # self.meta.id = f'{self.show_key}_{self.episode_key}'
+        self.indexed_ts = datetime.now()
+        return super().save(**kwargs)
+    
+
+class EsEpisodeNarrativeSequence(Document):
+    show_key = Keyword()
+    episode_key = Keyword()
+    speaker_group = Keyword()
+    narrative_lines = Text(multi=True, analyzer=freetext_analyzer, term_vector='yes', fields={'word_count': TokenCount(analyzer=token_count_analyzer, store='true')})
+    word_count = Integer()
+    source_scene_word_counts = Object(multi=True)
+    speaker_line_counts = Object(multi=True)
+    cluster_memberships = Object(multi=True)
+    indexed_ts = Date()
+
+    class Index:
+        name = 'narratives'
+
+    def save(self, **kwargs):
+        self.meta.id = f'{self.show_key}_{self.episode_key}_{self.speaker_group}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
     
@@ -155,6 +177,23 @@ class EsSpeakerEpisode(Document):
         self.meta.id = f'{self.show_key}_{self.speaker}_{self.episode_key}'
         self.indexed_ts = datetime.now()
         return super().save(**kwargs)
+    
+
+class EsSpeakerUnified(Document):
+    show_key = Keyword()
+    speaker = Keyword()
+    layer_key = Keyword()
+    word_count = Integer()
+    openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    indexed_ts = Date()
+
+    class Index:
+        name = 'speaker_embeddings_unified'
+
+    def save(self, **kwargs):
+        self.meta.id = f'{self.show_key}_{self.speaker}_{self.layer_key}'
+        self.indexed_ts = datetime.now()
+        return super().save(**kwargs)
 
 
 class EsTopic(Document):
@@ -189,7 +228,8 @@ class EsEpisodeTopic(Document):
     topic_name = Keyword()
     is_parent = Boolean()
     raw_score = Float()
-    score = Float()
+    score = Float()  # TODO change to 'dist_score' or 'norm_score'?
+    tfidf_score = Float()
     model_vendor = Keyword()
     model_version = Keyword()
     indexed_ts = Date()

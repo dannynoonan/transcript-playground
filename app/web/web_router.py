@@ -24,9 +24,20 @@ async def show_page(request: Request, show_key: ShowKey):
 
 	tdata['header'] = 'show'
 	tdata['show_key'] = show_key.value
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
 
-	# locations_by_scene = await esr.agg_scenes_by_location(show_key)
-	# tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
+	tdata['season_count'] = len(tdata['all_seasons'])
+	series_locations_response = esr.agg_scenes_by_location(show_key)
+	tdata['location_count'] = series_locations_response['location_count']
+	series_speakers_response = esr.agg_scene_events_by_speaker(show_key)
+	tdata['line_count'] = series_speakers_response['scene_events_by_speaker']['_ALL_']
+	series_speaker_scene_counts_response = esr.agg_scenes_by_speaker(show_key)
+	tdata['scene_count'] = series_speaker_scene_counts_response['scenes_by_speaker']['_ALL_']
+	series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(show_key)
+	tdata['speaker_count'] = series_speaker_episode_counts_response['speaker_count']	
+	series_speaker_word_counts_response = esr.agg_dialog_word_counts(show_key)
+	tdata['word_count'] = int(series_speaker_word_counts_response['dialog_word_counts']['_ALL_'])
 
 	location_counts = esr.composite_location_aggs(show_key)
 	tdata['location_counts'] = location_counts['location_agg_composite']
@@ -40,16 +51,20 @@ async def show_page(request: Request, show_key: ShowKey):
 	episodes_by_season = esr.list_simple_episodes_by_season(show_key)
 	tdata['episodes_by_season'] = episodes_by_season['episodes_by_season']
 
+	tdata['episode_count'] = 0
+	first_episode_in_series = None
+	last_episode_in_series = None
 	stats_by_season = {}
 	for season in tdata['episodes_by_season'].keys():
 		season_episode_count = len(tdata['episodes_by_season'][season])
+		tdata['episode_count'] += len(tdata['episodes_by_season'][season])
 		stats = {}
 		season_locations = esr.agg_scenes_by_location(show_key, season=season)
 		stats['location_count'] = season_locations['location_count']
-		stats['location_counts'] = utils.truncate_dict(season_locations['scenes_by_location'], season_episode_count, 1)
+		stats['location_counts'] = utils.truncate_dict(season_locations['scenes_by_location'], season_episode_count, start_index=1)
 		season_speakers = esr.agg_scene_events_by_speaker(show_key, season=season)
 		stats['line_count'] = season_speakers['scene_events_by_speaker']['_ALL_']
-		stats['speaker_line_counts'] = utils.truncate_dict(season_speakers['scene_events_by_speaker'], season_episode_count, 1)
+		stats['speaker_line_counts'] = utils.truncate_dict(season_speakers['scene_events_by_speaker'], season_episode_count, start_index=1)
 		season_speaker_scene_counts = esr.agg_scenes_by_speaker(show_key, season=season)
 		stats['scene_count'] = season_speaker_scene_counts['scenes_by_speaker']['_ALL_']
 		season_speaker_episode_counts = esr.agg_episodes_by_speaker(show_key, season=season)
@@ -60,10 +75,82 @@ async def show_page(request: Request, show_key: ShowKey):
 		first_episode_in_season = tdata['episodes_by_season'][season][0]
 		last_episode_in_season = tdata['episodes_by_season'][season][-1]
 		stats['air_date_range'] = f"{first_episode_in_season['air_date'][:10]} - {last_episode_in_season['air_date'][:10]}"
+		if not first_episode_in_series:
+			first_episode_in_series = tdata['episodes_by_season'][season][0]
+		last_episode_in_series = tdata['episodes_by_season'][season][-1]
 		stats_by_season[season] = stats
 	tdata['stats_by_season'] = stats_by_season
+	tdata['air_date_range'] = f"{first_episode_in_series['air_date'][:10]} - {last_episode_in_series['air_date'][:10]}"
 
 	return templates.TemplateResponse("show.html", {"request": request, 'tdata': tdata})
+
+
+@web_app.get("/web/season/{show_key}/{season}", response_class=HTMLResponse, tags=['Web'])
+async def season_page(request: Request, show_key: ShowKey, season: str):
+	tdata = {}
+
+	tdata['header'] = 'season'
+	tdata['show_key'] = show_key.value
+	tdata['season'] = season
+	list_seasons_response = esr.list_seasons(show_key)
+	all_seasons = list_seasons_response['seasons']
+	tdata['all_seasons'] = all_seasons
+
+	tdata['prev_season'] = None
+	tdata['next_season'] = None
+	season_index = all_seasons.index(int(season))
+	if season_index > 0:
+		tdata['prev_season'] = all_seasons[season_index-1]
+	if season_index < len(all_seasons)-1:
+		tdata['next_season'] = all_seasons[season_index+1]
+
+	locations_by_scene = esr.agg_scenes_by_location(show_key, season=season)
+	tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
+
+	location_counts = esr.composite_location_aggs(show_key, season=season)
+	tdata['location_counts'] = location_counts['location_agg_composite']
+
+	speaker_seasons_response = esr.fetch_speakers_for_season(show_key, season)
+	speaker_seasons = speaker_seasons_response['speaker_seasons']
+
+	speaker_season_topics_response = esr.fetch_speaker_season_topics(show_key, 'meyersBriggsKiersey', season=season, level='child')
+	speaker_season_topics = speaker_season_topics_response['speaker_season_topics']
+	for speaker_season in speaker_seasons:
+		speaker = speaker_season['speaker']
+		if speaker in speaker_season_topics:
+			speaker_season['topics_mbti'] = speaker_season_topics[speaker]
+	tdata['speaker_seasons'] = speaker_seasons
+
+	keywords = esr.keywords_by_corpus(show_key, season=season, exclude_speakers=True)
+	tdata['keywords'] = keywords['keywords']
+
+	episodes_response = esr.fetch_simple_episodes(show_key, season=season)
+	episodes = episodes_response['episodes']
+	tdata['episode_count'] = len(episodes)
+	tdata['episodes'] = episodes
+
+	locations = esr.agg_scenes_by_location(show_key, season=season)
+	tdata['location_count'] = locations['location_count']
+
+	# TODO this is what gets replaced by fetch_indexed_speakers, right?
+	speaker_line_aggs_response = esr.agg_scene_events_by_speaker(show_key, season=season)
+	tdata['line_count'] = speaker_line_aggs_response['scene_events_by_speaker']['_ALL_']
+
+	speaker_scene_aggs_response = esr.agg_scenes_by_speaker(show_key, season=season)
+	tdata['scene_count'] = speaker_scene_aggs_response['scenes_by_speaker']['_ALL_']
+
+	speaker_episode_aggs_response = esr.agg_episodes_by_speaker(show_key, season=season)
+	tdata['speaker_count'] = speaker_episode_aggs_response['speaker_count']	
+	
+	speaker_wc_aggs_response = esr.agg_dialog_word_counts(show_key, season=season)
+	tdata['word_count'] = int(speaker_wc_aggs_response['dialog_word_counts']['_ALL_'])
+	
+	# generate air_date_range
+	first_episode_in_season = episodes[0]
+	last_episode_in_season = episodes[-1]
+	tdata['air_date_range'] = f"{first_episode_in_season['air_date'][:10]} - {last_episode_in_season['air_date'][:10]}"
+
+	return templates.TemplateResponse("season.html", {"request": request, 'tdata': tdata})
 
 
 @web_app.get("/web/episode/{show_key}/{episode_key}", response_class=HTMLResponse, tags=['Web'])
@@ -74,19 +161,24 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 	tdata['header'] = 'episode'
 	tdata['show_key'] = show_key.value
 	tdata['episode_key'] = episode_key
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
 
 	episode = esr.fetch_episode(show_key, episode_key)
 	tdata['episode'] = episode['es_episode']
 	
-	locations_by_scene = esr.agg_scenes_by_location(show_key, episode_key=episode_key)
-	tdata['locations_by_scene'] = locations_by_scene['scenes_by_location']
+	scenes_by_location_response = esr.agg_scenes_by_location(show_key, episode_key=episode_key)
+	tdata['locations_by_scene'] = scenes_by_location_response['scenes_by_location']
+	tdata['scene_count'] = tdata['locations_by_scene']['_ALL_']
+	del tdata['locations_by_scene']['_ALL_']
 
-	episode_word_counts = esr.agg_dialog_word_counts(show_key, episode_key=episode_key)
-	tdata['episode_word_counts'] = episode_word_counts['dialog_word_counts']
+	scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(show_key, episode_key=episode_key)
+	tdata['line_count'] = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
 
-	# TODO this is still being used in episode.html for top line agg stats, gotta get off of that
-	speaker_counts = esr.composite_speaker_aggs(show_key, episode_key=episode_key)
-	tdata['speaker_counts'] = speaker_counts['speaker_agg_composite']
+	dialog_word_counts_response = esr.agg_dialog_word_counts(show_key, episode_key=episode_key)
+	tdata['episode_word_counts'] = dialog_word_counts_response['dialog_word_counts']
+	tdata['word_count'] = round(tdata['episode_word_counts']['_ALL_'])
+	del tdata['episode_word_counts']['_ALL_']
 
 	speaker_episodes_response = esr.fetch_speakers_for_episode(show_key, episode_key, extra_fields='topics_mbti')
 	tdata['speaker_episodes'] = speaker_episodes_response['speaker_episodes']
@@ -97,13 +189,19 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 	mlt_tfidf = esr.more_like_this(show_key, episode_key)
 	tdata['mlt_tfidf'] = mlt_tfidf['matches']
 
-	mlt_embeddings = esr.mlt_vector_search(show_key, episode_key)
+	mlt_embeddings = esr.episode_mlt_vector_search(show_key, episode_key)
 	tdata['mlt_embeddings'] = mlt_embeddings['matches'][:30]
 
 	tdata['topics_by_grouping'] = {}
 	for topic_grouping in EPISODE_TOPIC_GROUPINGS:
-		episode_topics_response = esr.fetch_episode_topics(show_key, episode_key, topic_grouping, limit=50)
+		sort_by = 'score'
+		if topic_grouping in ['universalGenres', 'focusedGpt35_TNG']:
+			sort_by = 'tfidf_score'
+		episode_topics_response = esr.fetch_episode_topics(show_key, episode_key, topic_grouping, limit=50, sort_by=sort_by)
 		tdata['topics_by_grouping'][topic_grouping] = episode_topics_response['episode_topics']
+
+	narrative_sequences_response = esr.fetch_narrative_sequences(show_key, episode_key)
+	tdata['narrative_sequences'] = narrative_sequences_response['narrative_sequences']
 
 	###### IN-EPISODE SEARCH ######
 
@@ -153,7 +251,7 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 			tdata['speakers'] = speakers
 		if locationAMS:
 			tdata['locationAMS'] = locationAMS
-		matches = esr.search_scene_events_multi_speaker(show_key, episode_key=episode_key, speakers=speakers, location=locationAMS)
+		matches = esr.search_scene_events_multi_speaker(show_key, speakers, episode_key=episode_key, location=locationAMS, intersection=True)
 		if matches and matches['matches']:
 			tdata['episode_match'] = matches['matches'][0]
 			tdata['scene_match_count'] = matches['scene_count']
@@ -175,6 +273,8 @@ def episode_search_page(request: Request, show_key: ShowKey, search_type: str = 
 	else:
 		tdata['search_type'] = search_type
 	tdata['season'] = season
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
 
 	tdata['qt'] = ''
 
@@ -225,7 +325,7 @@ def episode_search_page(request: Request, show_key: ShowKey, search_type: str = 
 			model_version = 'ada002'
 		tdata['model_vendor'] = model_vendor
 		tdata['model_version'] = model_version
-		matches = esr.vector_search(show_key, qt=qtSemantic, model_vendor=model_vendor, model_version=model_version)
+		matches = esr.episode_vector_search(show_key, qt=qtSemantic, model_vendor=model_vendor, model_version=model_version)
 		print(f'############ matches={matches}')
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = len(matches['matches'])
@@ -241,7 +341,7 @@ def episode_search_page(request: Request, show_key: ShowKey, search_type: str = 
 			tdata['speakers'] = speakers
 		if locationAMS:
 			tdata['locationAMS'] = locationAMS
-		matches = esr.search_scene_events_multi_speaker(show_key, season=season, speakers=speakers, location=locationAMS)
+		matches = esr.search_scene_events_multi_speaker(show_key, speakers, season=season, location=locationAMS, intersection=True)
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = matches['episode_count']
 		tdata['scene_match_count'] = matches['scene_count']
@@ -261,10 +361,12 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 	tdata['header'] = 'character'
 	tdata['show_key'] = show_key.value
 	tdata['speaker'] = speaker
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
 
-	response = esr.fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)
-	if 'speaker' in response:
-		es_speaker = response['speaker']
+	speaker_es_response = esr.fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)
+	if 'speaker' in speaker_es_response:
+		es_speaker = speaker_es_response['speaker']
 		if 'episodes' in es_speaker:
 			tdata['episodes'] = es_speaker['episodes']
 		if 'seasons' in es_speaker:
@@ -324,6 +426,13 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 	speaker_dicts = other_speakers.values()
 	tdata['other_speaker_agg_composite'] = sorted(speaker_dicts, key=itemgetter('episode_count'), reverse=True)
 
+	speaker_mlt_response = esr.speaker_mlt_vector_search(show_key, speaker)
+	tdata['speaker_mlt_aggs'] = speaker_mlt_response['all_speaker_matches']
+	# TODO struggling to preserve season and episode sorting
+	tdata['speaker_mlt_series_matches'] = speaker_mlt_response['matches_by_speaker_series_embedding']
+	tdata['speaker_mlt_season_matches'] = speaker_mlt_response['matches_by_speaker_season_embedding']
+	tdata['speaker_mlt_episode_matches'] = speaker_mlt_response['matches_by_speaker_episode_embedding']
+
 	###### CHARACTER-CENTRIC SEARCH ######
 
 	if not search_type:
@@ -355,7 +464,7 @@ def character_page(request: Request, show_key: ShowKey, speaker: str, search_typ
 			all_speakers = f'{speaker},{speakers}'
 		if locationAMS:
 			tdata['locationAMS'] = locationAMS
-		matches = esr.search_scene_events_multi_speaker(show_key, speakers=all_speakers, location=locationAMS)
+		matches = esr.search_scene_events_multi_speaker(show_key, all_speakers, location=locationAMS, intersection=True)
 		tdata['episode_matches'] = matches['matches']
 		tdata['episode_match_count'] = matches['episode_count']
 		tdata['scene_match_count'] = matches['scene_count']
@@ -386,6 +495,8 @@ def character_listing_page(request: Request, show_key: ShowKey, qt: str = None):
 
 	tdata['header'] = 'character'
 	tdata['show_key'] = show_key.value
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
 
 	indexed_speakers_response = esr.fetch_indexed_speakers(show_key, extra_fields='topics_mbti')
 	indexed_speakers = indexed_speakers_response['speakers']
@@ -416,6 +527,9 @@ def topic_listing_page(request: Request, show_key: ShowKey, selected_topic_group
 	tdata['header'] = 'topic'
 	tdata['show_key'] = show_key.value
 	tdata['selected_topic_grouping'] = selected_topic_grouping
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
+
 	tdata['topic_groupings'] = {}
 
 	# TODO will probably split up episode and speaker topics, for now keeping together
@@ -447,6 +561,9 @@ def topic_page(request: Request, show_key: ShowKey, topic_grouping: str, topic_k
 	tdata['show_key'] = show_key.value
 	tdata['topic_grouping'] = topic_grouping
 	tdata['topic_key'] = topic_key
+	list_seasons_response = esr.list_seasons(show_key)
+	tdata['all_seasons'] = list_seasons_response['seasons']
+
 	tdata['episodes'] = []
 	tdata['speakers'] = []
 
@@ -457,8 +574,10 @@ def topic_page(request: Request, show_key: ShowKey, topic_grouping: str, topic_k
 		tdata['topic']['breadcrumb'] = f"{tdata['topic']['parent_key']} > {tdata['topic']['breadcrumb']}"
 
 	if topic_grouping in EPISODE_TOPIC_GROUPINGS:
-		episode_topic_response = esr.find_episodes_by_topic(show_key, topic_grouping, topic_key)
+		episode_topic_response = esr.find_episodes_by_topic(show_key, topic_grouping, topic_key, sort_by='score')
 		tdata['episode_topics'] = episode_topic_response['episode_topics']
+		episode_topic_response_raw_sort = esr.find_episodes_by_topic(show_key, topic_grouping, topic_key, sort_by='raw_score')
+		tdata['episode_topics_raw_sort'] = episode_topic_response_raw_sort['episode_topics']
 			
 	elif topic_grouping in SPEAKER_TOPIC_GROUPINGS:
 		speaker_topic_response = esr.find_speakers_by_topic(topic_grouping, topic_key, show_key=show_key, min_word_count=3000)

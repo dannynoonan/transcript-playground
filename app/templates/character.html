@@ -31,7 +31,7 @@
 
                 <!-- begin seasons -->
                 {% if tdata['seasons'] %}
-                <h3>{{ tdata['season_count'] }} seasons with {{ tdata['speaker'] }}</h3></h3>
+                <h3>{{ tdata['season_count'] }} seasons with {{ tdata['speaker'] }}</h3>
                 <div class="overflow-scroll" style="max-height: 600px;">
                     <table class="table table-hover table-striped table-fit">
                         <thead>
@@ -78,7 +78,7 @@
                 <!-- end seasons -->
 
                 <!-- begin episodes -->
-                <h3>{{ tdata['episode_count'] }} episodes with {{ tdata['speaker'] }}</h3></h3>
+                <h3>{{ tdata['episode_count'] }} episodes with {{ tdata['speaker'] }}</h3>
                 <div class="overflow-scroll" style="max-height: 600px;">
                     <table class="table table-hover table-striped table-fit">
                         <thead>
@@ -127,6 +127,94 @@
                 </div>
                 <p>&nbsp;</p>
                 <!-- end episodes -->
+
+                <!-- begin character similarity -->
+                <h3>Characters similar to {{ tdata['speaker'] }}</h3>
+                {% if tdata['speaker_mlt_series_matches'] %}
+                <div class="overflow-scroll" style="max-height: 600px;">
+                    <h5>Series-wide:</h5>
+                    <table class="table table-hover table-striped table-fit">
+                        <thead>
+                            <tr class="table-success">
+                                <th scope="col">Character</th>
+                                <th scope="col">Layer</th>
+                                <th scope="col">Score</th>
+                                <th scope="col">Rank</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for speaker_mlt_match in tdata['speaker_mlt_series_matches'] %}
+                            <tr class="table-light">
+                                <th scope="row"><a href="/web/speaker/{{ show_key }}/{{ speaker_mlt_match['speaker'] }}">{{ speaker_mlt_match['speaker'] }}</a></th>
+                                <td>{{ speaker_mlt_match['layer_key'] }}</td>
+                                <td>{{ '%0.2f'|format(speaker_mlt_match['score']|float) }}</td>
+                                <td>{{ speaker_mlt_match['rank'] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <p>&nbsp;</p>
+                {% endif %}
+
+                {% if tdata['speaker_mlt_season_matches'] %}
+                <div class="overflow-scroll" style="max-height: 600px;">
+                    {% for season, speaker_mlt_matches in tdata['speaker_mlt_season_matches'].items() %}
+                    <h5>Season {{ season }}:</h5>
+                    <table class="table table-hover table-striped table-fit">
+                        <thead>
+                            <tr class="table-success">
+                                <th scope="col">Character</th>
+                                <th scope="col">Layer</th>
+                                <th scope="col">Score</th>
+                                <th scope="col">Rank</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for speaker_mlt_match in speaker_mlt_matches %}
+                            <tr class="table-light">
+                                <th scope="row"><a href="/web/speaker/{{ show_key }}/{{ speaker_mlt_match['speaker'] }}">{{ speaker_mlt_match['speaker'] }}</a></th>
+                                <td>{{ speaker_mlt_match['layer_key'] }}</td>
+                                <td>{{ '%0.2f'|format(speaker_mlt_match['score']|float) }}</td>
+                                <td>{{ speaker_mlt_match['rank'] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endfor %}
+                </div>
+                <p>&nbsp;</p>
+                {% endif %}
+
+                {% if tdata['speaker_mlt_episode_matches'] %}
+                <div class="overflow-scroll" style="max-height: 600px;">
+                    {% for episode, speaker_mlt_matches in tdata['speaker_mlt_episode_matches'].items() %}
+                    <h5>Episode {{ episode }}:</h5>
+                    <table class="table table-hover table-striped table-fit">
+                        <thead>
+                            <tr class="table-success">
+                                <th scope="col">Character</th>
+                                <th scope="col">Layer</th>
+                                <th scope="col">Score</th>
+                                <th scope="col">Rank</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for speaker_mlt_match in speaker_mlt_matches %}
+                            <tr class="table-light">
+                                <th scope="row"><a href="/web/speaker/{{ show_key }}/{{ speaker_mlt_match['speaker'] }}">{{ speaker_mlt_match['speaker'] }}</a></th>
+                                <td>{{ speaker_mlt_match['layer_key'] }}</td>
+                                <td>{{ '%0.2f'|format(speaker_mlt_match['score']|float) }}</td>
+                                <td>{{ speaker_mlt_match['rank'] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endfor %}
+                </div>
+                <p>&nbsp;</p>
+                {% endif %}
+                <!-- end character similarity -->
 
                 <!-- begin character-centric search form -->
                 <h3>{{ tdata['speaker'] }}-affiliated search</h3>
@@ -389,7 +477,31 @@
                         </tbody>
                     </table>
                 </div>
+                <p>&nbsp;</p>
                 <!-- end who speaker's with -->
+
+                <!-- begin speaker-to-speaker vector similarity -->
+                <h3>Who sounds like {{ tdata['speaker'] }}?</h3>
+                <div class="overflow-scroll" style="max-height: 600px;">
+                    <table class="table table-hover table-striped table-fit">
+                        <thead>
+                            <tr class="table-success">
+                                <th scope="col">Character</th>
+                                <th scope="col">Agg score?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for speaker_mlt, agg_score in tdata['speaker_mlt_aggs'].items() %}
+                            <tr class="table-secondary">
+                                <th scope="row"><a class="alert-link" href="/web/character/{{ tdata['show_key'] }}/{{ speaker_mlt }}">{{ speaker_mlt }}</a></th>
+                                <td>{{ agg_score }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <p>&nbsp;</p>
+                <!-- end speaker-to-speaker vector similarity -->
 
             </div>
             <!-- END RIGHT COLUMN -->

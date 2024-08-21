@@ -24,6 +24,32 @@ def truncate_dict(d: dict, length: int, start_index: int = 0) -> None:
 	return {k: d[k] for k in list(d.keys())[start_index:end_index]}
 
 
+def merge_sorted_lists(list1: list, list2: list) -> list:
+    keywords_to_ranks = {}
+
+    for i, kw in list(enumerate(list1)):
+        if kw not in keywords_to_ranks:
+            keywords_to_ranks[kw] = 0
+        keywords_to_ranks[kw] += len(list1)-i
+    for i, kw in list(enumerate(list2)):
+        if kw not in keywords_to_ranks:
+            keywords_to_ranks[kw] = 0
+        keywords_to_ranks[kw] += len(list2)-i
+    
+    merged_sorted_list = [k for k, _ in sorted(keywords_to_ranks.items(), key=lambda kv: kv[1], reverse=True)]
+    return merged_sorted_list
+
+
+def truncate(text: str) -> str:
+    if len(text) > 80:
+        text = f'{text[:80]}...'
+    return text
+
+
+def wrap_title_in_url(show_key: str, episode_key: str) -> str:
+    return f'[link](/web/episode/{show_key}/{episode_key})'
+
+
 # @DeprecationWarning
 # def split_parent_and_child_topics(topics: list, parent_limit: int = None, child_limit: int = None) -> tuple[list, list]:
 #     '''
@@ -81,7 +107,7 @@ class TopicAgg(object):
         for t in topics:
             if t['topic_key'] not in self.keys_to_scores:
                 self.keys_to_scores[t['topic_key']] = 0
-            self.keys_to_scores[t['topic_key']] += t['mod_score'] * multiplier
+            self.keys_to_scores[t['topic_key']] += t['dist_score'] * multiplier
 
         self.denominator += multiplier
 
@@ -91,8 +117,7 @@ class TopicAgg(object):
         for st in sorted_tuples:
             if st[0] in self.reference_topics:
                 rt_copy = dict(self.reference_topics[st[0]])
-                rt_copy['mod_score'] = st[1] / self.denominator
-                print(f"topic_key={st[0]} had agg mod_score={st[1]}, divided by denominator={self.denominator} resulting in mod_score={rt_copy['mod_score']}")
+                rt_copy['dist_score'] = st[1] / self.denominator
                 rt_copy['is_aggregate'] = True
                 sorted_topics.append(rt_copy)
             else:
@@ -106,7 +131,10 @@ def flatten_topics(topics: list) -> list:
     for t in topics:
         if 'is_parent' in t and t['is_parent']:
             continue
-        simple_topics.append(dict(topic_key=t['topic_key'], topic_name=t['topic_name'], score=t['score'], raw_score=t['raw_score']))
+        simple_topic = dict(topic_key=t['topic_key'], topic_name=t['topic_name'], score=t['score'], raw_score=t['raw_score'])
+        if 'tfidf_score' in t:
+            simple_topic['tfidf_score'] = t['tfidf_score']
+        simple_topics.append(simple_topic)
         count += 1
         if count > 5:
             break
