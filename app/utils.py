@@ -46,6 +46,10 @@ def truncate(text: str) -> str:
     return text
 
 
+def wrap_title_in_url(show_key: str, episode_key: str) -> str:
+    return f'[link](/web/episode/{show_key}/{episode_key})'
+
+
 # @DeprecationWarning
 # def split_parent_and_child_topics(topics: list, parent_limit: int = None, child_limit: int = None) -> tuple[list, list]:
 #     '''

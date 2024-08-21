@@ -144,7 +144,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
 
     # generate dash_table div as part of callback output
     episode_clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()
-    table_div = cmp.merge_and_simplify_df(episode_clusters_df)
+    table_div = cmp.merge_and_simplify_df(show_key, episode_clusters_df)
 
     # generate scatterplot
     fig_scatter = fb.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
@@ -464,7 +464,8 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
                                                      'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'focal_speakers', 'focal_locations',
                                                      'topics_focused_tfidf_list', 'topics_universal_tfidf_list', 'x_coord', 'y_coord', 'z_coord', 'point_size']]
     bertopic_model_docs_df['cluster_color'] = bertopic_model_docs_df['cluster'].apply(lambda x: fm.colors[x])
-    table_div = cmp.merge_and_simplify_df(bertopic_model_docs_df)
+    bertopic_model_docs_df.drop(['focal_speakers', 'focal_locations'], axis=1, inplace=True) 
+    table_div = cmp.merge_and_simplify_df(show_key, bertopic_model_docs_df)
 
     # generate 3d scatter
     bertopic_3d_scatter = fb.build_bertopic_model_3d_scatter(show_key, bertopic_model_id, bertopic_model_docs_df)

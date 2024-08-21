@@ -3,6 +3,7 @@ from dash import dash_table, dcc, html
 import pandas as pd
 
 import app.web.fig_metadata as fm
+import app.utils as utils
 
 
 navbar = dbc.Card(className="text-white bg-primary", style={"z-index":"2000"}, children=[
@@ -27,17 +28,18 @@ url_bar_and_content_div = html.Div([
 ])
 
 
-def merge_and_simplify_df(clusters_df: pd.DataFrame) -> html.Div:
+def merge_and_simplify_df(show_key: str, clusters_df: pd.DataFrame) -> html.Div:
     '''
     TODO Holy smackers does this need to be cleaned up. Amazingly it sorta works against two different cluster data sets, but either
     (a) needs to be made more generic or (b) any usage of it must share common column names and data types
     '''
     # reformat columns, sort table
     clusters_df['air_date'] = clusters_df['air_date'].apply(lambda x: x[:10])
-    # if 'focal_speakers' in clusters_df.columns:
-    #     clusters_df['focal_speakers'] = clusters_df['focal_speakers'].apply(lambda x: ", ".join(x))
-    # if 'focal_locations' in clusters_df.columns:
-    #     clusters_df['focal_locations'] = clusters_df['focal_locations'].apply(lambda x: ", ".join(x))
+    if 'focal_speakers' in clusters_df.columns:
+        clusters_df['focal_speakers'] = clusters_df['focal_speakers'].apply(lambda x: ", ".join(x))
+    if 'focal_locations' in clusters_df.columns:
+        clusters_df['focal_locations'] = clusters_df['focal_locations'].apply(lambda x: ", ".join(x))
+    clusters_df['link'] = clusters_df.apply(lambda x: utils.wrap_title_in_url(show_key, x['episode_key']), axis=1)
     clusters_df.sort_values(['cluster', 'season', 'sequence_in_season'], inplace=True)
     # rename columns for display
     clusters_df.rename(columns={'sequence_in_season': 'episode', 'scene_count': 'scenes'}, inplace=True)
@@ -47,7 +49,7 @@ def merge_and_simplify_df(clusters_df: pd.DataFrame) -> html.Div:
     table_div = html.Div([
         dash_table.DataTable(
             data=clusters_df.to_dict("records"),
-            columns=[{"id": x, "name": x} for x in clusters_df.columns],
+            columns=[{"id": x, "name": x, "presentation": "markdown"} for x in clusters_df.columns],
             style_header={
                 'backgroundColor': 'white',
                 'fontWeight': 'bold',
@@ -61,6 +63,7 @@ def merge_and_simplify_df(clusters_df: pd.DataFrame) -> html.Div:
             #     'backgroundColor': 'black',
             #     'color': 'white',
             # },
+            # TODO derp too lazy 
             style_data_conditional=[
                 {
                     'if': {'filter_query': "{cluster} = 0"},

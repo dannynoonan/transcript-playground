@@ -675,24 +675,29 @@ def build_network_graph() -> go.Figure:
 def build_bertopic_model_3d_scatter(show_key: str, bertopic_model_id: str, bertopic_docs_df: pd.DataFrame) -> go.Figure:
     print(f'in build_bertopic_model_3d_scatter show_key={show_key} bertopic_model_id={bertopic_model_id}')
 
-    custom_data = ['title', 'season', 'episode', 'focal_speakers', 'x_coord', 'y_coord', 'z_coord', 'topics_focused_tfidf_list']
+    custom_data = ['cluster_title_short', 'cluster', 'season', 'episode', 'title', 'speaker_group', 'topics_focused_tfidf_list']
 
-    fig = px.scatter_3d(bertopic_docs_df, x='x_coord', y='y_coord', z='z_coord', color='cluster_title_short', opacity=0.7, custom_data=custom_data,
+    bertopic_docs_df['cluster_title_short_legend'] = bertopic_docs_df['cluster'].astype(str) + ' ' + bertopic_docs_df['cluster_title_short']
+    # bertopic_docs_df['cluster_title_short_legend'] = bertopic_docs_df[['cluster', 'cluster_title_short']].apply(lambda x: ' '.join(str(x)), axis=1)
+
+    fig = px.scatter_3d(bertopic_docs_df, x='x_coord', y='y_coord', z='z_coord', color='cluster_title_short_legend', opacity=0.7, custom_data=custom_data,
                         # labels={'Topic', 'Topic'}, color_discrete_map=color_discrete_map, category_orders=category_orders,
                         height=1000, width=1600)
 
     fig.update_traces(marker=dict(line=dict(width=0.1, color='DarkSlateGrey')), selector=dict(mode='markers'))
 
     fig.update_traces(
-            hovertemplate = "<br>".join([
-                "Episode: %{customdata[0]} (S%{customdata[1]}:E%{customdata[2]})",            
-                "Focal speakers: %{customdata[3]}",
-                "Focal topics: %{customdata[7]}",
-                "x: %{customdata[4]}",
-                "y: %{customdata[5]}",
-                "z: %{customdata[6]}"
-            ])
-        )
+        hovertemplate = "".join([
+            "<b>%{customdata[0]} (Topic %{customdata[1]})</b><br><br>",
+            "<b>S%{customdata[2]}:E%{customdata[3]}: %{customdata[4]}</b><br>",            
+            "Speaker group: %{customdata[5]}<br>",
+            "Focal topics: %{customdata[6]}",
+            "<extra></extra>"
+        ]),
+        # mode='markers',
+        # marker={'sizemode':'area',
+        #         'sizeref':10},
+    )
 
     return fig
 
