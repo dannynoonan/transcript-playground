@@ -17,6 +17,16 @@ class EsSceneEvent(InnerDoc):
     nltk_sent_pos = Float()
     nltk_sent_neg = Float()
     nltk_sent_neu = Float()
+    openai_sent_joy = Float()
+    openai_sent_love = Float()
+    openai_sent_empathy = Float()
+    openai_sent_curiosity = Float()
+    openai_sent_sadness = Float()
+    openai_sent_anger = Float()
+    openai_sent_fear = Float()
+    openai_sent_disgust = Float()
+    openai_sent_surprise = Float()
+    openai_sent_confusion = Float()
 
 
 class EsScene(InnerDoc):
@@ -27,7 +37,17 @@ class EsScene(InnerDoc):
     nltk_sent_pos = Float()
     nltk_sent_neg = Float()
     nltk_sent_neu = Float()
-    nltk_speaker_sentiments = Object(multi=True)
+    # nltk_speaker_sentiments = Object(multi=True)
+    openai_sent_joy = Float()
+    openai_sent_love = Float()
+    openai_sent_empathy = Float()
+    openai_sent_curiosity = Float()
+    openai_sent_sadness = Float()
+    openai_sent_anger = Float()
+    openai_sent_fear = Float()
+    openai_sent_disgust = Float()
+    openai_sent_surprise = Float()
+    openai_sent_confusion = Float()
 
 
 class EsEpisodeTranscript(Document):
@@ -65,6 +85,16 @@ class EsEpisodeTranscript(Document):
     nltk_sent_pos = Float()
     nltk_sent_neg = Float()
     nltk_sent_neu = Float()
+    openai_sent_joy = Float()
+    openai_sent_love = Float()
+    openai_sent_empathy = Float()
+    openai_sent_curiosity = Float()
+    openai_sent_sadness = Float()
+    openai_sent_anger = Float()
+    openai_sent_fear = Float()
+    openai_sent_disgust = Float()
+    openai_sent_surprise = Float()
+    openai_sent_confusion = Float()
 
     class Index:
         name = 'transcripts'

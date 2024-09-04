@@ -6,6 +6,8 @@ MIN_SPEAKER_LINE_RATIOS = {2: 0.33, 3: 0.25, 4: 0.2}
 BERTOPIC_DATA_DIR = 'bertopic_data'
 BERTOPIC_MODELS_DIR = 'bertopic_models'
 
+OPENAI_EMOTIONS = ['Joy', 'Love', 'Empathy', 'Curiosity', 'Sadness', 'Anger', 'Fear', 'Disgust', 'Surprise', 'Confusion']
+
 
 WORD2VEC_VENDOR_VERSIONS = {
     # Download webvectors models: http://vectors.nlpl.eu/explore/embeddings/en/models/

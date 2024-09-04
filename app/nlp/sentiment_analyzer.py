@@ -54,26 +54,19 @@ def generate_emotional_sentiment(text: str) -> tuple[pd.DataFrame, dict]:
 
     success = False
     if prompt_response.choices:
-        # print('stage 1')
         if len(prompt_response.choices) > 0:
-            # print('stage 2')
             if prompt_response.choices[0].message:
-                # print('stage 3')
                 if prompt_response.choices[0].message.content:
-                    # print('stage 4')
                     response_content = prompt_response.choices[0].message.content
                     response_content_bits = response_content.split('```')
                     if len(response_content_bits) == 3:
-                        # print(f'attempting to assing csv_string to response_content_bits[1]={response_content_bits[1]}')
                         csv_string = response_content_bits[1]
                         if csv_string.startswith('csv\n'):
                             csv_string = csv_string.removeprefix('csv\n')
                         try:
-                            # print(f'attempting to call StringIO on csv_string')
                             csv_string_io = StringIO(csv_string)
-                            # print(f'attempting to create df out of csv_string_io')
                             emo_df = pd.read_csv(csv_string_io, sep=",")
-                            print(f'successful emo_df={emo_df}')
+                            # print(f'successful emo_df={emo_df}')
                             success = True
                         except Exception as e:
                             print(f'failure to init StringIO for csv_string={csv_string}')

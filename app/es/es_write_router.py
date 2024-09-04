@@ -16,9 +16,9 @@ import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 import app.nlp.narrative_extractor as ne
 import app.nlp.sentiment_analyzer as sa
-from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_DATA_DIR
+from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_DATA_DIR, OPENAI_EMOTIONS
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
-from app.utils import TopicAgg, flatten_topics
+from app.utils import TopicAgg, flatten_topics, set_dict_value_as_es_value
 
 
 esw_app = APIRouter()
@@ -1074,7 +1074,7 @@ def populate_episode_emotional_sentiment(show_key: ShowKey, episode_key: str, sc
 
     openai_total_reqs = 0
     openai_success_reqs = 0
-    openai_failure_reqs = 0
+    openai_failure_reqs = []
     start_ts = time.time()
     print(f'begin generate_emotional_sentiment against full episode at start_ts={start_ts}')
 
@@ -1083,79 +1083,98 @@ def populate_episode_emotional_sentiment(show_key: ShowKey, episode_key: str, sc
     episode_emo_df, episode_emo_dict = sa.generate_emotional_sentiment(es_episode.flattened_text)
     if episode_emo_df is None:
         return {"error": f"failure to execute generate_emotional_sentiment on es_episode.flattened_text for show_key={show_key.value} episode_key={episode_key}"}
-    # print(f'redundant print of episode_emo_df={episode_emo_df}')
     openai_success_reqs += 1
-    episode_emo_df['scene'] = 'all in episode'
-    episode_emo_df['scene_event'] = 'all in episode'
-    episode_emo_df['speaker'] = 'all in episode'
-    # print(f'still alive')
+    # add contextual properties to emo_df
+    episode_emo_df['key'] = 'E'
+    episode_emo_df['scene'] = 'ALL'
+    episode_emo_df['line'] = 'ALL'
+    episode_emo_df['speaker'] = 'ALL'
+    # update es object
+    if write_to_es:
+        for emo in OPENAI_EMOTIONS:
+            set_dict_value_as_es_value(es_episode, episode_emo_dict, emo, 'openai_sent_')
 
-    # scene-level emotional sentiment 
+    # scene- and line-level emotional sentiment 
     scene_emo_dicts = []
-    if scene_level:
-        flattened_scenes_response = esr.fetch_flattened_scenes(show_key, episode_key)
-        flattened_scenes = flattened_scenes_response['flattened_scenes']
-        # scene_emo_dicts = [{}] * len(flattened_scenes)
-        # print(f'len(flattened_scenes)={len(flattened_scenes)}')
-        for i in range(len(flattened_scenes)):
-            print(f'executing generate_emotional_sentiment against flattened_scene i={i}')
-            openai_total_reqs += 1
-            scene_emo_df, scene_emo_dict = sa.generate_emotional_sentiment(flattened_scenes[i])
-            if scene_emo_df is None:
-                openai_failure_reqs += 1
-                print(f'failure to execute generate_emotional_sentiment on flattened_scene i={i} with text=`{flattened_scenes[i]}`')
-                scene_emo_dicts.append({})
-                continue
-            # scene_emo_dicts[i] = scene_emo_dict
-            openai_success_reqs += 1
-            scene_emo_dicts.append(scene_emo_dict)
-            scene_emo_df['scene'] = i
-            scene_emo_df['scene_event'] = 'all in scene'
-            scene_emo_df['speaker'] = 'all in scene'
-            episode_emo_df = pd.concat([episode_emo_df, scene_emo_df], axis=0)
-            # scene_sentiments.append((flattened_scenes[i], dict(pos=scene_sentiment['pos'], neg=scene_sentiment['neg'], neu=scene_sentiment['neu'])))
+    if scene_level or line_level:
 
-    # line-level emotional sentiment 
-    line_emo_dicts = []
-    if line_level:
-        for i in range(len(es_episode.scenes)):
-            es_scene = es_episode.scenes[i]
-            line_i = 0
-            line_emo_dicts_for_scene = []
-            for es_scene_event in es_scene.scene_events:
-                if es_scene_event.spoken_by and es_scene_event.dialog:
-                    print(f'executing generate_emotional_sentiment against flattened_scene i={i} line_i={line_i}')
-                    openai_total_reqs += 1
-                    line_emo_df, line_emo_dict = sa.generate_emotional_sentiment(es_scene_event.dialog)
-                    if line_emo_df is None:
-                        openai_failure_reqs += 1
-                        print(f'failure to execute generate_emotional_sentiment on flattened_scene i={i} line_i={line_i} es_scene_event.dialog=`{es_scene_event.dialog}`')
-                        continue
-                    openai_success_reqs += 1
-                    line_emo_dicts_for_scene.append(line_emo_dict)
-                    line_emo_df['scene'] = i
-                    line_emo_df['scene_event'] = line_i
-                    line_emo_df['speaker'] = es_scene_event.spoken_by
-                    line_i += 1
-                    episode_emo_df = pd.concat([episode_emo_df, line_emo_df], axis=0)
-            line_emo_dicts.append(line_emo_dicts_for_scene)
+        # scene-level processing will use fetch_flattened_scenes, trusting (gulp) that scene index positions align with their es_episode.scenes counterparts
+        if scene_level:
+            flattened_scenes_response = esr.fetch_flattened_scenes(show_key, episode_key)
+            flattened_scenes = flattened_scenes_response['flattened_scenes']
+
+        # both scene- and line-level processing iterate over es_episode.scenes, carefully tracking scene index position
+        for scene_i in range(len(es_episode.scenes)):
+            es_scene = es_episode.scenes[scene_i]
+            scene_emo_dict = dict(scene_i=scene_i, scene_level=None, line_level=[])
+            scene_emo_dicts.append(scene_emo_dict)
+
+            # scene-level: analyze flattened_scene
+            if scene_level:
+                print(f'executing generate_emotional_sentiment on flattened_scene at scene_i={scene_i}')
+                if not flattened_scenes[scene_i]:
+                    print(f'flattened_scene at scene_i={scene_i} contains no dialog text, skipping')
+                    continue
+                openai_total_reqs += 1
+                scene_emo_df, scene_emo_dict['scene_level'] = sa.generate_emotional_sentiment(flattened_scenes[scene_i])
+                if scene_emo_df is None:
+                    failure_message = f'failure to execute generate_emotional_sentiment on flattened_scene at scene_i={scene_i} with text=`{flattened_scenes[scene_i]}`'
+                    openai_failure_reqs.append(failure_message)
+                    print(failure_message)
+                    continue
+                openai_success_reqs += 1
+                scene_emo_df['key'] = f'S{scene_i}'
+                scene_emo_df['scene'] = scene_i
+                scene_emo_df['line'] = 'ALL'
+                scene_emo_df['speaker'] = 'ALL'
+                episode_emo_df = pd.concat([episode_emo_df, scene_emo_df], axis=0)
+                # update es object
+                if write_to_es:
+                    for emo in OPENAI_EMOTIONS:
+                        set_dict_value_as_es_value(es_scene, episode_emo_dict, emo, 'openai_sent_')
+
+            # line-level: analyze dialog for each line in scene
+            if line_level:
+                line_i = 0
+                for es_scene_event in es_scene.scene_events:
+                    if es_scene_event.spoken_by and es_scene_event.dialog:
+                        print(f'executing generate_emotional_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i}')
+                        openai_total_reqs += 1
+                        line_emo_df, line_emo_dict = sa.generate_emotional_sentiment(es_scene_event.dialog)
+                        if line_emo_df is None:
+                            failure_message = f'failure to execute generate_emotional_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i} es_scene_event.dialog=`{es_scene_event.dialog}`'
+                            openai_failure_reqs.append(failure_message)
+                            print(failure_message)
+                            continue
+                        openai_success_reqs += 1
+                        scene_emo_dict['line_level'].append(line_emo_dict)
+                        line_emo_df['key'] = f'S{scene_i}L{line_i}'
+                        line_emo_df['scene'] = scene_i
+                        line_emo_df['line'] = line_i
+                        line_emo_df['speaker'] = es_scene_event.spoken_by
+                        line_i += 1
+                        episode_emo_df = pd.concat([episode_emo_df, line_emo_df], axis=0)
+                        # update es object
+                        if write_to_es:
+                            for emo in OPENAI_EMOTIONS:
+                                set_dict_value_as_es_value(es_scene_event, episode_emo_dict, emo, 'openai_sent_')
 
     end_ts = time.time()
     duration = end_ts - start_ts
     duration = round(duration, 2)
     print(f'finish generate_emotional_sentiment against full episode at end_ts={end_ts}')
 
+    # write dataframe to csv
     file_path = f'sentiment_data/{show_key.value}/{show_key.value}_{episode_key}.csv'
     episode_emo_df.to_csv(file_path, sep=',', header=True)
 
-    # print(f'about to convert episode_emo_df to dict')
-    # episode_emo_dict = episode_emo_df.to_dict()
-    # print(f'episode_emo_dict={episode_emo_dict}')
+    # write to es
+    if write_to_es:
+        esqb.save_es_episode(es_episode)
 
     return {"duration": duration, 
             "openai_total_reqs": openai_total_reqs,
             "openai_success_reqs": openai_success_reqs,
             "openai_failure_reqs": openai_failure_reqs,
             "episode_emo_dict": episode_emo_dict, 
-            "scene_emo_dicts": scene_emo_dicts, 
-            "line_emo_dicts": line_emo_dicts}
+            "scene_emo_dicts": scene_emo_dicts}
