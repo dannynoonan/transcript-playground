@@ -14,8 +14,9 @@ class EsSceneEvent(InnerDoc):
     spoken_by = Text(analyzer='standard', fields={'keyword': Keyword()})
     dialog = Text(analyzer=freetext_analyzer, term_vector='yes', fields={'word_count': TokenCount(analyzer=token_count_analyzer, store='true')})
     # generated
-    # cbow_embedding = DenseVector(dims=100, index='true', similarity='cosine')
-    # skipgram_embedding = DenseVector(dims=100, index='true', similarity='cosine')
+    nltk_sent_pos = Float()
+    nltk_sent_neg = Float()
+    nltk_sent_neu = Float()
 
 
 class EsScene(InnerDoc):
@@ -23,8 +24,10 @@ class EsScene(InnerDoc):
     description = Text(analyzer=freetext_analyzer, term_vector='yes')
     scene_events = Nested(EsSceneEvent)
     # generated
-    # cbow_embedding = DenseVector(dims=100, index='true', similarity='cosine')
-    # skipgram_embedding = DenseVector(dims=100, index='true', similarity='cosine')
+    nltk_sent_pos = Float()
+    nltk_sent_neg = Float()
+    nltk_sent_neu = Float()
+    nltk_speaker_sentiments = Object(multi=True)
 
 
 class EsEpisodeTranscript(Document):
@@ -59,6 +62,9 @@ class EsEpisodeTranscript(Document):
     glove_6B300d_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     fasttext_wikinews300d1M_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    nltk_sent_pos = Float()
+    nltk_sent_neg = Float()
+    nltk_sent_neu = Float()
 
     class Index:
         name = 'transcripts'
@@ -83,6 +89,10 @@ class EsEpisodeNarrativeSequence(Document):
     speaker_line_counts = Object(multi=True)
     cluster_memberships = Object(multi=True)
     indexed_ts = Date()
+    # generated
+    nltk_sent_pos = Float()
+    nltk_sent_neg = Float()
+    nltk_sent_neu = Float()
 
     class Index:
         name = 'narratives'
@@ -112,6 +122,10 @@ class EsSpeaker(Document):
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
     indexed_ts = Date()
+    # generated
+    nltk_sent_pos = Float()
+    nltk_sent_neg = Float()
+    nltk_sent_neu = Float()
 
     class Index:
         name = 'speakers'
@@ -169,6 +183,10 @@ class EsSpeakerEpisode(Document):
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
     indexed_ts = Date()
+    # generated
+    nltk_sent_pos = Float()
+    nltk_sent_neg = Float()
+    nltk_sent_neu = Float()
 
     class Index:
         name = 'speaker_episodes'

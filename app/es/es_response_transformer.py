@@ -239,8 +239,8 @@ def return_flattened_scenes(s: Search, include_speakers: bool = False, include_c
                     scene_event_elements.append(scene_event['dialog'])
                 if scene_event_elements: 
                     scene_event_dialog.append(' '.join(scene_event_elements))
-            if scene_event_dialog:
-                flattened_scenes.append(' '.join(scene_event_dialog))
+            # to preserve scene index positions, append scene even if it lacks dialog content
+            flattened_scenes.append(' '.join(scene_event_dialog))
     
     return flattened_scenes
 

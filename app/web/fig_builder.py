@@ -709,6 +709,11 @@ def build_bertopic_visualize_barchart(bertopic_model: BERTopic) -> go.Figure:
     # fig = bertopic_model.visualize_barchart(top_n_topics=16, width=200, height=250)
     fig = bertopic_model.visualize_barchart(top_n_topics=16, width=400, height=300)
 
+    # TODO saving
+    # https://maartengr.github.io/BERTopic/api/plotting/barchart.html#bertopic.plotting._barchart.visualize_barchart
+    # fig = topic_model.visualize_barchart()
+    # fig.write_html("path/to/file.html")
+
     return fig
 
 

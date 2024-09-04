@@ -17,32 +17,11 @@
         "es_mlt_relations_text": {
           "type": "text"
         },
-        "es_mlt_relations_tuple": {
-          "type": "object"
-        },
-        "fasttext_crawl300d2M_embeddings": {
-          "type": "dense_vector",
-          "dims": 300,
-          "index": true,
-          "similarity": "cosine"
-        },
-        "fasttext_crawl300d2M_no_match_tokens": {
-          "type": "text"
-        },
-        "fasttext_crawl300d2M_tokens": {
-          "type": "text"
-        },
         "fasttext_wikinews300d1M_embeddings": {
           "type": "dense_vector",
           "dims": 300,
           "index": true,
           "similarity": "cosine"
-        },
-        "fasttext_wikinews300d1M_no_match_tokens": {
-          "type": "text"
-        },
-        "fasttext_wikinews300d1M_tokens": {
-          "type": "text"
         },
         "flattened_text": {
           "type": "text",
@@ -62,71 +41,26 @@
         "focal_speakers": {
           "type": "keyword"
         },
-        "glove_42B300d_embeddings": {
-          "type": "dense_vector",
-          "dims": 300,
-          "index": true,
-          "similarity": "cosine"
-        },
-        "glove_42B300d_no_match_tokens": {
-          "type": "text"
-        },
-        "glove_42B300d_tokens": {
-          "type": "text"
-        },
         "glove_6B300d_embeddings": {
           "type": "dense_vector",
           "dims": 300,
           "index": true,
           "similarity": "cosine"
         },
-        "glove_6B300d_no_match_tokens": {
-          "type": "text"
-        },
-        "glove_6B300d_tokens": {
-          "type": "text"
-        },
-        "glove_840B300d_embeddings": {
-          "type": "dense_vector",
-          "dims": 300,
-          "index": true,
-          "similarity": "cosine"
-        },
-        "glove_840B300d_no_match_tokens": {
-          "type": "text"
-        },
-        "glove_840B300d_tokens": {
-          "type": "text"
-        },
-        "glove_twitter27B100d_embeddings": {
-          "type": "dense_vector",
-          "dims": 100,
-          "index": true,
-          "similarity": "cosine"
-        },
-        "glove_twitter27B100d_no_match_tokens": {
-          "type": "text"
-        },
-        "glove_twitter27B100d_tokens": {
-          "type": "text"
-        },
-        "glove_twitter27B200d_embeddings": {
-          "type": "dense_vector",
-          "dims": 200,
-          "index": true,
-          "similarity": "cosine"
-        },
-        "glove_twitter27B200d_no_match_tokens": {
-          "type": "text"
-        },
-        "glove_twitter27B200d_tokens": {
-          "type": "text"
-        },
         "indexed_ts": {
           "type": "date"
         },
         "loaded_ts": {
           "type": "date"
+        },
+        "nltk_sent_neg": {
+          "type": "float"
+        },
+        "nltk_sent_neu": {
+          "type": "float"
+        },
+        "nltk_sent_pos": {
+          "type": "float"
         },
         "openai_ada002_embeddings": {
           "type": "dense_vector",
@@ -139,9 +73,6 @@
         },
         "openai_ada002_relations_text": {
           "type": "text"
-        },
-        "openai_ada002_relations_tuple": {
-          "type": "object"
         },
         "scene_count": {
           "type": "integer"
@@ -163,6 +94,18 @@
               },
               "analyzer": "standard"
             },
+            "nltk_sent_neg": {
+              "type": "float"
+            },
+            "nltk_sent_neu": {
+              "type": "float"
+            },
+            "nltk_sent_pos": {
+              "type": "float"
+            },
+            "nltk_speaker_sentiments": {
+              "type": "object"
+            },
             "scene_events": {
               "type": "nested",
               "properties": {
@@ -182,6 +125,15 @@
                   },
                   "term_vector": "yes",
                   "analyzer": "freetext_analyzer"
+                },
+                "nltk_sent_neg": {
+                  "type": "float"
+                },
+                "nltk_sent_neu": {
+                  "type": "float"
+                },
+                "nltk_sent_pos": {
+                  "type": "float"
                 },
                 "spoken_by": {
                   "type": "text",
@@ -222,24 +174,56 @@
           "dims": 300,
           "index": true,
           "similarity": "cosine"
+        }
+      }
+    }
+  },
+  "narratives": {
+    "mappings": {
+      "properties": {
+        "cluster_memberships": {
+          "type": "object"
         },
-        "webvectors_enwiki223_no_match_tokens": {
-          "type": "text"
+        "episode_key": {
+          "type": "keyword"
         },
-        "webvectors_enwiki223_tokens": {
-          "type": "text"
+        "indexed_ts": {
+          "type": "date"
         },
-        "webvectors_gigaword29_embeddings": {
-          "type": "dense_vector",
-          "dims": 300,
-          "index": true,
-          "similarity": "cosine"
+        "narrative_lines": {
+          "type": "text",
+          "fields": {
+            "word_count": {
+              "type": "token_count",
+              "store": true,
+              "analyzer": "token_count_analyzer"
+            }
+          },
+          "term_vector": "yes",
+          "analyzer": "freetext_analyzer"
         },
-        "webvectors_gigaword29_no_match_tokens": {
-          "type": "text"
+        "nltk_sent_neg": {
+          "type": "float"
         },
-        "webvectors_gigaword29_tokens": {
-          "type": "text"
+        "nltk_sent_neu": {
+          "type": "float"
+        },
+        "nltk_sent_pos": {
+          "type": "float"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "source_scene_word_counts": {
+          "type": "object"
+        },"speaker_group": {
+          "type": "keyword"
+        },
+        "speaker_line_counts": {
+          "type": "object"
+        },
+        "word_count": {
+          "type": "integer"
         }
       }
     }
@@ -248,10 +232,14 @@
     "mappings": {
       "properties": {
         "actor_names": {
-          "type": "keyword"
+          "type": "text",
+          "term_vector": "yes",
+          "analyzer": "freetext_analyzer"
         },
         "alt_names": {
-          "type": "keyword"
+          "type": "text",
+          "term_vector": "yes",
+          "analyzer": "freetext_analyzer"
         },
         "episode_count": {
           "type": "integer"
@@ -263,7 +251,9 @@
           "type": "integer"
         },
         "lines": {
-          "type": "text"
+          "type": "text",
+          "term_vector": "yes",
+          "analyzer": "freetext_analyzer"
         },
         "loaded_ts": {
           "type": "date"
@@ -271,14 +261,23 @@
         "most_frequent_companions": {
           "type": "object"
         },
-        "name": {
-          "type": "keyword"
+        "nltk_sent_neg": {
+          "type": "float"
+        },
+        "nltk_sent_neu": {
+          "type": "float"
+        },
+        "nltk_sent_pos": {
+          "type": "float"
         },
         "openai_ada002_embeddings": {
           "type": "dense_vector",
           "dims": 1536,
           "index": true,
           "similarity": "cosine"
+        },
+        "openai_ada002_word_count": {
+          "type": "integer"
         },
         "scene_count": {
           "type": "integer"
@@ -291,6 +290,15 @@
         },
         "show_key": {
           "type": "keyword"
+        },
+        "speaker": {
+          "type": "keyword"
+        },
+        "topics_dnda": {
+          "type": "object"
+        },
+        "topics_mbti": {
+          "type": "object"
         },
         "word_count": {
           "type": "integer"
@@ -319,14 +327,14 @@
         "most_frequent_companions": {
           "type": "object"
         },
-        "name": {
-          "type": "keyword"
-        },
         "openai_ada002_embeddings": {
           "type": "dense_vector",
           "dims": 1536,
           "index": true,
           "similarity": "cosine"
+        },
+        "openai_ada002_word_count": {
+          "type": "integer"
         },
         "scene_count": {
           "type": "integer"
@@ -337,6 +345,15 @@
         "show_key": {
           "type": "keyword"
         },
+        "speaker": {
+          "type": "keyword"
+        },
+        "topics_dnda": {
+          "type": "object"
+        },
+        "topics_mbti": {
+          "type": "object"
+        },
         "word_count": {
           "type": "integer"
         }
@@ -346,6 +363,12 @@
   "speaker_episodes": {
     "mappings": {
       "properties": {
+        "agg_score": {
+          "type": "float"
+        },
+        "air_date": {
+          "type": "date"
+        },
         "episode_key": {
           "type": "keyword"
         },
@@ -364,14 +387,23 @@
         "most_frequent_companions": {
           "type": "object"
         },
-        "name": {
-          "type": "keyword"
+        "nltk_sent_neg": {
+          "type": "float"
+        },
+        "nltk_sent_neu": {
+          "type": "float"
+        },
+        "nltk_sent_pos": {
+          "type": "float"
         },
         "openai_ada002_embeddings": {
           "type": "dense_vector",
           "dims": 1536,
           "index": true,
           "similarity": "cosine"
+        },
+        "openai_ada002_word_count": {
+          "type": "integer"
         },
         "scene_count": {
           "type": "integer"
@@ -385,6 +417,45 @@
         "show_key": {
           "type": "keyword"
         },
+        "speaker": {
+          "type": "keyword"
+        },
+        "title": {
+          "type": "text"
+        },
+        "topics_dnda": {
+          "type": "object"
+        },
+        "topics_mbti": {
+          "type": "object"
+        },
+        "word_count": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "speaker_embeddings_unified": {
+    "mappings": {
+      "properties": {
+        "indexed_ts": {
+          "type": "date"
+        },
+        "layer_key": {
+          "type": "keyword"
+        },
+        "openai_ada002_embeddings": {
+          "type": "dense_vector",
+          "dims": 1536,
+          "index": true,
+          "similarity": "cosine"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "speaker": {
+          "type": "keyword"
+        },
         "word_count": {
           "type": "integer"
         }
@@ -394,12 +465,6 @@
   "topics": {
     "mappings": {
       "properties": {
-        "breadcrumb": {
-          "type": "keyword"
-        },
-        "category": {
-          "type": "keyword"
-        },
         "description": {
           "type": "text"
         },
@@ -412,17 +477,227 @@
           "index": true,
           "similarity": "cosine"
         },
-        "subcategory": {
+        "parent_description": {
+          "type": "text"
+        },
+        "parent_key": {
           "type": "keyword"
         },
-        "supercat_description": {
-          "type": "text"
+        "parent_name": {
+          "type": "keyword"
         },
         "topic_grouping": {
           "type": "keyword"
         },
         "topic_key": {
           "type": "keyword"
+        },
+        "topic_name": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "episode_topics": {
+    "mappings": {
+      "properties": {
+        "air_date": {
+          "type": "date"
+        },
+        "episode_key": {
+          "type": "keyword"
+        },
+        "episode_title": {
+          "type": "text"
+        },
+        "indexed_ts": {
+          "type": "date"
+        },
+        "is_parent": {
+          "type": "boolean"
+        },
+        "model_vendor": {
+          "type": "keyword"
+        },
+        "model_version": {
+          "type": "keyword"
+        },
+        "raw_score": {
+          "type": "float"
+        },
+        "score": {
+          "type": "float"
+        },
+        "season": {
+          "type": "integer"
+        },
+        "sequence_in_season": {
+          "type": "integer"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "tfidf_score": {
+          "type": "float"
+        },
+        "topic_grouping": {
+          "type": "keyword"
+        },
+        "topic_key": {
+          "type": "keyword"
+        },
+        "topic_name": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "speaker_topics": {
+    "mappings": {
+      "properties": {
+        "indexed_ts": {
+          "type": "date"
+        },
+        "is_aggregate": {
+          "type": "boolean"
+        },
+        "is_parent": {
+          "type": "boolean"
+        },
+        "model_vendor": {
+          "type": "keyword"
+        },
+        "model_version": {
+          "type": "keyword"
+        },
+        "raw_score": {
+          "type": "float"
+        },
+        "score": {
+          "type": "float"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "speaker": {
+          "type": "keyword"
+        },
+        "topic_grouping": {
+          "type": "keyword"
+        },
+        "topic_key": {
+          "type": "keyword"
+        },
+        "topic_name": {
+          "type": "keyword"
+        },
+        "word_count": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "speaker_season_topics": {
+    "mappings": {
+      "properties": {
+        "indexed_ts": {
+          "type": "date"
+        },
+        "is_aggregate": {
+          "type": "boolean"
+        },
+        "is_parent": {
+          "type": "boolean"
+        },
+        "model_vendor": {
+          "type": "keyword"
+        },
+        "model_version": {
+          "type": "keyword"
+        },
+        "raw_score": {
+          "type": "float"
+        },
+        "score": {
+          "type": "float"
+        },
+        "season": {
+          "type": "integer"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "speaker": {
+          "type": "keyword"
+        },
+        "topic_grouping": {
+          "type": "keyword"
+        },
+        "topic_key": {
+          "type": "keyword"
+        },
+        "topic_name": {
+          "type": "keyword"
+        },
+        "word_count": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "speaker_episode_topics": {
+    "mappings": {
+      "properties": {
+        "air_date": {
+          "type": "date"
+        },
+        "episode_key": {
+          "type": "keyword"
+        },
+        "episode_title": {
+          "type": "text"
+        },
+        "indexed_ts": {
+          "type": "date"
+        },
+        "is_parent": {
+          "type": "boolean"
+        },
+        "model_vendor": {
+          "type": "keyword"
+        },
+        "model_version": {
+          "type": "keyword"
+        },
+        "raw_score": {
+          "type": "float"
+        },
+        "score": {
+          "type": "float"
+        },
+        "season": {
+          "type": "integer"
+        },
+        "sequence_in_season": {
+          "type": "integer"
+        },
+        "show_key": {
+          "type": "keyword"
+        },
+        "speaker": {
+          "type": "keyword"
+        },
+        "topic_grouping": {
+          "type": "keyword"
+        },
+        "topic_key": {
+          "type": "keyword"
+        },
+        "topic_name": {
+          "type": "keyword"
+        },
+        "word_count": {
+          "type": "integer"
         }
       }
     }
