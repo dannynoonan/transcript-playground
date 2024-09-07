@@ -2,9 +2,7 @@ from fastapi import APIRouter
 from operator import itemgetter
 import math
 import os
-import numpy as np
 import pandas as pd
-import time
 
 import app.database.dao as dao
 import app.es.es_ingest_transformer as esit
@@ -15,8 +13,7 @@ import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 import app.nlp.narrative_extractor as ne
-import app.nlp.sentiment_analyzer as sa
-from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_DATA_DIR, OPENAI_EMOTIONS
+from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_DATA_DIR
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
 from app.utils import TopicAgg, flatten_topics, set_dict_value_as_es_value
 
@@ -983,198 +980,225 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
     return {"attempt_count": attempt_count, "success_count": success_count, "failure_count": failure_count}
 
 
-@esw_app.get("/esw/populate_episode_polarity_sentiment/{show_key}/{episode_key}", tags=['ES Writer'])
-def populate_episode_polarity_sentiment(show_key: ShowKey, episode_key: str, scene_level: bool = False, scene_event_level: bool = False):
-    '''
-    Generate and populate nltk polarity sentiment for episode
-    '''
-    es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
-    scene_sentiments = []
-    if scene_level:
-        flattened_scenes_response = esr.fetch_flattened_scenes(show_key, episode_key)
-        flattened_scenes = flattened_scenes_response['flattened_scenes']
-        # print(f'len(flattened_scenes)={len(flattened_scenes)}')
-        for i in range(len(flattened_scenes)):
-            scene_sentiment = sa.generate_polarity_sentiment(flattened_scenes[i])
-            es_episode.scenes[i].nltk_sent_pos = scene_sentiment['pos']
-            es_episode.scenes[i].nltk_sent_neg = scene_sentiment['neg']
-            es_episode.scenes[i].nltk_sent_neu = scene_sentiment['neu']
-            scene_sentiments.append((flattened_scenes[i], dict(pos=scene_sentiment['pos'], neg=scene_sentiment['neg'], neu=scene_sentiment['neu'])))
-    if scene_event_level:
-        for es_scene in es_episode.scenes:
-            # agg_wc = 0
-            # agg_pos = 0
-            # agg_neg = 0
-            # agg_neu = 0
-            # speaker_sentiments = {}
-            # speaker_word_counts = {}
-            for es_scene_event in es_scene.scene_events:
-                if es_scene_event.spoken_by and es_scene_event.dialog:
-                    line_sentiment = sa.generate_polarity_sentiment(es_scene_event.dialog)
-                    # set line-level sentiment
-                    es_scene_event.nltk_sent_pos = line_sentiment['pos']
-                    es_scene_event.nltk_sent_neg = line_sentiment['neg']
-                    es_scene_event.nltk_sent_neu = line_sentiment['neu']
-                    # # for aggregation and eventual averaging, calculate weighted sentiment based on word count
-                    # line_wc = es_scene_event.dialog.word_count
-                    # line_speaker = es_scene_event.spoken_by
-                    # line_weighted_pos = line_sentiment['pos'] * line_wc
-                    # line_weighted_neg = line_sentiment['neg'] * line_wc
-                    # line_weighted_neu = line_sentiment['neu'] * line_wc
-                    # # aggregate scene-level sentiment
-                    # agg_wc += line_wc
-                    # agg_pos += line_weighted_pos
-                    # agg_neg += line_weighted_neg
-                    # agg_neu += line_weighted_neu
-                    # # aggregate scene-level speaker sentiment
-                    # if line_speaker not in speaker_sentiments:
-                    #     speaker_sentiments[line_speaker] = dict(nltk_sent_pos=0, nltk_sent_neg=0, nltk_sent_neu=0)
-                    # speaker_sentiments[line_speaker]['nltk_sent_pos'] += line_weighted_pos
-                    # speaker_sentiments[line_speaker]['nltk_sent_neg'] += line_weighted_neg
-                    # speaker_sentiments[line_speaker]['nltk_sent_neu'] += line_weighted_neu
-                    # speaker_word_counts += line_wc
+# @esw_app.get("/esw/populate_episode_polarity_sentiment/{show_key}/{episode_key}", tags=['ES Writer'])
+# def populate_episode_polarity_sentiment(show_key: ShowKey, episode_key: str, scene_level: bool = False, scene_event_level: bool = False):
+#     '''
+#     Generate and populate nltk polarity sentiment for episode
+#     '''
+#     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
+#     scene_sentiments = []
+#     if scene_level:
+#         flattened_scenes_response = esr.fetch_flattened_scenes(show_key, episode_key)
+#         flattened_scenes = flattened_scenes_response['flattened_scenes']
+#         # print(f'len(flattened_scenes)={len(flattened_scenes)}')
+#         for i in range(len(flattened_scenes)):
+#             scene_sentiment = sa.generate_polarity_sentiment(flattened_scenes[i])
+#             es_episode.scenes[i].nltk_sent_pos = scene_sentiment['pos']
+#             es_episode.scenes[i].nltk_sent_neg = scene_sentiment['neg']
+#             es_episode.scenes[i].nltk_sent_neu = scene_sentiment['neu']
+#             scene_sentiments.append((flattened_scenes[i], dict(pos=scene_sentiment['pos'], neg=scene_sentiment['neg'], neu=scene_sentiment['neu'])))
+#     if scene_event_level:
+#         for es_scene in es_episode.scenes:
+#             # agg_wc = 0
+#             # agg_pos = 0
+#             # agg_neg = 0
+#             # agg_neu = 0
+#             # speaker_sentiments = {}
+#             # speaker_word_counts = {}
+#             for es_scene_event in es_scene.scene_events:
+#                 if es_scene_event.spoken_by and es_scene_event.dialog:
+#                     line_sentiment = sa.generate_polarity_sentiment(es_scene_event.dialog)
+#                     # set line-level sentiment
+#                     es_scene_event.nltk_sent_pos = line_sentiment['pos']
+#                     es_scene_event.nltk_sent_neg = line_sentiment['neg']
+#                     es_scene_event.nltk_sent_neu = line_sentiment['neu']
+#                     # # for aggregation and eventual averaging, calculate weighted sentiment based on word count
+#                     # line_wc = es_scene_event.dialog.word_count
+#                     # line_speaker = es_scene_event.spoken_by
+#                     # line_weighted_pos = line_sentiment['pos'] * line_wc
+#                     # line_weighted_neg = line_sentiment['neg'] * line_wc
+#                     # line_weighted_neu = line_sentiment['neu'] * line_wc
+#                     # # aggregate scene-level sentiment
+#                     # agg_wc += line_wc
+#                     # agg_pos += line_weighted_pos
+#                     # agg_neg += line_weighted_neg
+#                     # agg_neu += line_weighted_neu
+#                     # # aggregate scene-level speaker sentiment
+#                     # if line_speaker not in speaker_sentiments:
+#                     #     speaker_sentiments[line_speaker] = dict(nltk_sent_pos=0, nltk_sent_neg=0, nltk_sent_neu=0)
+#                     # speaker_sentiments[line_speaker]['nltk_sent_pos'] += line_weighted_pos
+#                     # speaker_sentiments[line_speaker]['nltk_sent_neg'] += line_weighted_neg
+#                     # speaker_sentiments[line_speaker]['nltk_sent_neu'] += line_weighted_neu
+#                     # speaker_word_counts += line_wc
 
-    episode_sentiment = sa.generate_polarity_sentiment(es_episode.flattened_text)
-    esqb.save_episode_sentiment(es_episode, episode_sentiment)
+#     episode_sentiment = sa.generate_polarity_sentiment(es_episode.flattened_text)
+#     esqb.save_episode_sentiment(es_episode, episode_sentiment)
 
-    return {f"title": es_episode.title,
-             "season": es_episode.season, 
-             "episode": es_episode.sequence_in_season, 
-             "episode_sentiment": episode_sentiment,
-             "scene_sentiments": scene_sentiments}
-
-
-@esw_app.get("/esw/generate_all_episode_polarity_sentiments/{show_key}", tags=['ES Writer'])
-def generate_all_episode_polarity_sentiments(show_key: ShowKey, scene_level: bool = False, scene_event_level: bool = False):
-    '''
-    Generate and  populate nltk polarity sentiment for all episodes in series
-    '''
-    episodes_with_sentiment = []
-    # successful = []
-    # failed = []
-
-    simple_episodes_response = esr.fetch_simple_episodes(show_key)
-    simple_episodes = simple_episodes_response['episodes']
-    for se in simple_episodes:
-        episode_sentiment_response = populate_episode_polarity_sentiment(show_key, se['episode_key'], scene_level=scene_level, scene_event_level=scene_event_level)
-        episodes_with_sentiment.append(episode_sentiment_response)
-
-    return {f"episodes_with_sentiment": episodes_with_sentiment}
+#     return {f"title": es_episode.title,
+#              "season": es_episode.season, 
+#              "episode": es_episode.sequence_in_season, 
+#              "episode_sentiment": episode_sentiment,
+#              "scene_sentiments": scene_sentiments}
 
 
-@esw_app.get("/esw/populate_episode_emotional_sentiment/{show_key}/{episode_key}", tags=['ES Writer'])
-def populate_episode_emotional_sentiment(show_key: ShowKey, episode_key: str, scene_level: bool = False, line_level: bool = False, write_to_es: bool = False):
-    '''
-    Generate and populate openai emotional sentiment for episode. Currently populating to 3 places: 
-    1. api response
-    2. dataframe
-    3. es index (optional)
-    '''
-    es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
+# @esw_app.get("/esw/generate_all_episode_polarity_sentiments/{show_key}", tags=['ES Writer'])
+# def generate_all_episode_polarity_sentiments(show_key: ShowKey, scene_level: bool = False, scene_event_level: bool = False):
+#     '''
+#     Generate and  populate nltk polarity sentiment for all episodes in series
+#     '''
+#     episodes_with_sentiment = []
+#     # successful = []
+#     # failed = []
 
-    openai_total_reqs = 0
-    openai_success_reqs = 0
-    openai_failure_reqs = []
-    start_ts = time.time()
-    print(f'begin generate_emotional_sentiment against full episode at start_ts={start_ts}')
+#     simple_episodes_response = esr.fetch_simple_episodes(show_key)
+#     simple_episodes = simple_episodes_response['episodes']
+#     for se in simple_episodes:
+#         episode_sentiment_response = populate_episode_polarity_sentiment(show_key, se['episode_key'], scene_level=scene_level, scene_event_level=scene_event_level)
+#         episodes_with_sentiment.append(episode_sentiment_response)
 
-    # episode-level emotional sentiment 
-    openai_total_reqs += 1
-    episode_emo_df, episode_emo_dict = sa.generate_emotional_sentiment(es_episode.flattened_text)
-    if episode_emo_df is None:
-        return {"error": f"failure to execute generate_emotional_sentiment on es_episode.flattened_text for show_key={show_key.value} episode_key={episode_key}"}
-    openai_success_reqs += 1
-    # add contextual properties to emo_df
-    episode_emo_df['key'] = 'E'
-    episode_emo_df['scene'] = 'ALL'
-    episode_emo_df['line'] = 'ALL'
-    episode_emo_df['speaker'] = 'ALL'
-    # update es object
-    if write_to_es:
-        for emo in OPENAI_EMOTIONS:
-            set_dict_value_as_es_value(es_episode, episode_emo_dict, emo, 'openai_sent_')
+#     return {f"episodes_with_sentiment": episodes_with_sentiment}
 
-    # scene- and line-level emotional sentiment 
-    scene_emo_dicts = []
-    if scene_level or line_level:
 
-        # scene-level processing will use fetch_flattened_scenes, trusting (gulp) that scene index positions align with their es_episode.scenes counterparts
-        if scene_level:
-            flattened_scenes_response = esr.fetch_flattened_scenes(show_key, episode_key)
-            flattened_scenes = flattened_scenes_response['flattened_scenes']
+# @esw_app.get("/esw/populate_episode_emotional_sentiment/{show_key}/{episode_key}", tags=['ES Writer'])
+# def populate_episode_emotional_sentiment(show_key: ShowKey, episode_key: str, scene_level: bool = False, line_level: bool = False, write_to_es: bool = False):
+#     '''
+#     Generate and populate openai emotional sentiment for episode. Currently populating to 3 places: 
+#     1. api response
+#     2. dataframe
+#     3. es index (optional)
+#     '''
+#     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
 
-        # both scene- and line-level processing iterate over es_episode.scenes, carefully tracking scene index position
-        for scene_i in range(len(es_episode.scenes)):
-            es_scene = es_episode.scenes[scene_i]
-            scene_emo_dict = dict(scene_i=scene_i, scene_level=None, line_level=[])
-            scene_emo_dicts.append(scene_emo_dict)
+#     openai_total_reqs = 0
+#     openai_success_reqs = 0
+#     openai_failure_reqs = []
+#     start_ts = time.time()
+#     print(f'begin generate_emotional_sentiment against full episode at start_ts={start_ts}')
 
-            # scene-level: analyze flattened_scene
-            if scene_level:
-                print(f'executing generate_emotional_sentiment on flattened_scene at scene_i={scene_i}')
-                if not flattened_scenes[scene_i]:
-                    print(f'flattened_scene at scene_i={scene_i} contains no dialog text, skipping')
-                    continue
-                openai_total_reqs += 1
-                scene_emo_df, scene_emo_dict['scene_level'] = sa.generate_emotional_sentiment(flattened_scenes[scene_i])
-                if scene_emo_df is None:
-                    failure_message = f'failure to execute generate_emotional_sentiment on flattened_scene at scene_i={scene_i} with text=`{flattened_scenes[scene_i]}`'
-                    openai_failure_reqs.append(failure_message)
-                    print(failure_message)
-                    continue
-                openai_success_reqs += 1
-                scene_emo_df['key'] = f'S{scene_i}'
-                scene_emo_df['scene'] = scene_i
-                scene_emo_df['line'] = 'ALL'
-                scene_emo_df['speaker'] = 'ALL'
-                episode_emo_df = pd.concat([episode_emo_df, scene_emo_df], axis=0)
-                # update es object
-                if write_to_es:
-                    for emo in OPENAI_EMOTIONS:
-                        set_dict_value_as_es_value(es_scene, episode_emo_dict, emo, 'openai_sent_')
+#     # episode-level emotional sentiment 
+#     openai_total_reqs += 1
+#     episode_emo_df, episode_emo_dict = sa.generate_emotional_sentiment(es_episode.flattened_text)
+#     if episode_emo_df is None:
+#         return {"error": f"failure to execute generate_emotional_sentiment on es_episode.flattened_text for show_key={show_key.value} episode_key={episode_key}"}
+#     openai_success_reqs += 1
+#     # add contextual properties to emo_df
+#     episode_emo_df['key'] = 'E'
+#     episode_emo_df['scene'] = 'ALL'
+#     episode_emo_df['line'] = 'ALL'
+#     episode_emo_df['speaker'] = 'ALL'
+#     # update es object
+#     if write_to_es:
+#         for emo in OPENAI_EMOTIONS:
+#             set_dict_value_as_es_value(es_episode, episode_emo_dict, emo, 'openai_sent_')
 
-            # line-level: analyze dialog for each line in scene
-            if line_level:
-                line_i = 0
-                for es_scene_event in es_scene.scene_events:
-                    if es_scene_event.spoken_by and es_scene_event.dialog:
-                        print(f'executing generate_emotional_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i}')
-                        openai_total_reqs += 1
-                        line_emo_df, line_emo_dict = sa.generate_emotional_sentiment(es_scene_event.dialog)
-                        if line_emo_df is None:
-                            failure_message = f'failure to execute generate_emotional_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i} es_scene_event.dialog=`{es_scene_event.dialog}`'
-                            openai_failure_reqs.append(failure_message)
-                            print(failure_message)
-                            continue
-                        openai_success_reqs += 1
-                        scene_emo_dict['line_level'].append(line_emo_dict)
-                        line_emo_df['key'] = f'S{scene_i}L{line_i}'
-                        line_emo_df['scene'] = scene_i
-                        line_emo_df['line'] = line_i
-                        line_emo_df['speaker'] = es_scene_event.spoken_by
-                        line_i += 1
-                        episode_emo_df = pd.concat([episode_emo_df, line_emo_df], axis=0)
-                        # update es object
-                        if write_to_es:
-                            for emo in OPENAI_EMOTIONS:
-                                set_dict_value_as_es_value(es_scene_event, episode_emo_dict, emo, 'openai_sent_')
+#     # scene- and line-level emotional sentiment 
+#     scene_emo_dicts = []
+#     if scene_level or line_level:
 
-    end_ts = time.time()
-    duration = end_ts - start_ts
-    duration = round(duration, 2)
-    print(f'finish generate_emotional_sentiment against full episode at end_ts={end_ts}')
+#         # scene-level processing will use fetch_flattened_scenes, trusting (gulp) that scene index positions align with their es_episode.scenes counterparts
+#         if scene_level:
+#             flattened_scenes_response = esr.fetch_flattened_scenes(show_key, episode_key)
+#             flattened_scenes = flattened_scenes_response['flattened_scenes']
 
-    # write dataframe to csv
-    file_path = f'sentiment_data/{show_key.value}/{show_key.value}_{episode_key}.csv'
-    episode_emo_df.to_csv(file_path, sep=',', header=True)
+#         # both scene- and line-level processing iterate over es_episode.scenes, carefully tracking scene index position
+#         for scene_i in range(len(es_episode.scenes)):
+#             es_scene = es_episode.scenes[scene_i]
+#             scene_emo_dict = dict(scene_i=scene_i, scene_level=None, line_level=[])
+#             scene_emo_dicts.append(scene_emo_dict)
 
-    # write to es
-    if write_to_es:
-        esqb.save_es_episode(es_episode)
+#             # scene-level: analyze flattened_scene
+#             if scene_level:
+#                 print(f'executing generate_emotional_sentiment on flattened_scene at scene_i={scene_i}')
+#                 if not flattened_scenes[scene_i]:
+#                     print(f'flattened_scene at scene_i={scene_i} contains no dialog text, skipping')
+#                     continue
+#                 openai_total_reqs += 1
+#                 scene_emo_df, scene_emo_dict['scene_level'] = sa.generate_emotional_sentiment(flattened_scenes[scene_i])
+#                 if scene_emo_df is None:
+#                     failure_message = f'failure to execute generate_emotional_sentiment on flattened_scene at scene_i={scene_i} with text=`{flattened_scenes[scene_i]}`'
+#                     openai_failure_reqs.append(failure_message)
+#                     print(failure_message)
+#                     continue
+#                 openai_success_reqs += 1
+#                 scene_emo_df['key'] = f'S{scene_i}'
+#                 scene_emo_df['scene'] = scene_i
+#                 scene_emo_df['line'] = 'ALL'
+#                 scene_emo_df['speaker'] = 'ALL'
+#                 episode_emo_df = pd.concat([episode_emo_df, scene_emo_df], axis=0)
+#                 # update es object
+#                 if write_to_es:
+#                     for emo in OPENAI_EMOTIONS:
+#                         set_dict_value_as_es_value(es_scene, episode_emo_dict, emo, 'openai_sent_')
 
-    return {"duration": duration, 
-            "openai_total_reqs": openai_total_reqs,
-            "openai_success_reqs": openai_success_reqs,
-            "openai_failure_reqs": openai_failure_reqs,
-            "episode_emo_dict": episode_emo_dict, 
-            "scene_emo_dicts": scene_emo_dicts}
+#             # line-level: analyze dialog for each line in scene
+#             if line_level:
+#                 line_i = 0
+#                 for es_scene_event in es_scene.scene_events:
+#                     if es_scene_event.spoken_by and es_scene_event.dialog:
+#                         print(f'executing generate_emotional_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i}')
+#                         openai_total_reqs += 1
+#                         line_emo_df, line_emo_dict = sa.generate_emotional_sentiment(es_scene_event.dialog)
+#                         if line_emo_df is None:
+#                             failure_message = f'failure to execute generate_emotional_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i} es_scene_event.dialog=`{es_scene_event.dialog}`'
+#                             openai_failure_reqs.append(failure_message)
+#                             print(failure_message)
+#                             continue
+#                         openai_success_reqs += 1
+#                         scene_emo_dict['line_level'].append(line_emo_dict)
+#                         line_emo_df['key'] = f'S{scene_i}L{line_i}'
+#                         line_emo_df['scene'] = scene_i
+#                         line_emo_df['line'] = line_i
+#                         line_emo_df['speaker'] = es_scene_event.spoken_by
+#                         line_i += 1
+#                         episode_emo_df = pd.concat([episode_emo_df, line_emo_df], axis=0)
+#                         # update es object
+#                         if write_to_es:
+#                             for emo in OPENAI_EMOTIONS:
+#                                 set_dict_value_as_es_value(es_scene_event, episode_emo_dict, emo, 'openai_sent_')
+
+#     end_ts = time.time()
+#     duration = end_ts - start_ts
+#     duration = round(duration, 2)
+#     print(f'finish generate_emotional_sentiment against full episode at end_ts={end_ts}')
+
+#     # write dataframe to csv
+#     file_path = f'sentiment_data/{show_key.value}/{show_key.value}_{episode_key}.csv'
+#     episode_emo_df.to_csv(file_path, sep=',', header=True)
+
+#     # write to es
+#     if write_to_es:
+#         esqb.save_es_episode(es_episode)
+
+#     return {"duration": duration, 
+#             "openai_total_reqs": openai_total_reqs,
+#             "openai_success_reqs": openai_success_reqs,
+#             "openai_failure_reqs": openai_failure_reqs,
+#             "episode_emo_dict": episode_emo_dict, 
+#             "scene_emo_dicts": scene_emo_dicts}
+
+
+# @esw_app.get("/esw/test_episode_emotional_sentiment", tags=['ES Writer'])
+# def test_episode_emotional_sentiment():
+
+#     scene_emo_dicts = []
+    
+#     flattened_scenes = ["You're absolutely right, Doctor. Right now, I can't imagine ever hurting anybody. How do you feel about that person you used to be? I feel terrible. But thanks to you, I'm doing much better now. And I'm confident that when I leave, I will be ready to take my place in society again. When do you think that will be? Well, now. Right away. Why do you say that? You said that when I was able to accept what I'd done and I understood the consequences of my actions, that I would be free to go. Free to go? You mean you don't think you should stand trial for what you've did? No, I'm looking forward to proving my innocence. I thought you said you accepted what you'd done. That's, that's not what I meant. I was sick when it happened. I wasn't responsible for what I did. How do I know you're not just telling me what I want to hear? Perhaps we should continue this discussion next week. No. I want to talk about this now. You're starting to sound angry again. Maybe you need another treatment. What I need is to get out of this cell. I've been locked in here for days. You've controlled my every move. You've told me what to eat, and what to think, and what to say, and when I show a glimmer of independent thought you strap me down, you inject me with drugs. You call it a treatment. You're becoming agitated. You bet I'm agitated. I may be surrounded by insanity, but I'm not insane. And there isn't any. There isn't. There's nothing. 'm sorry. Could we go back to 'you're becoming agitated'? No. Why don't we take a break for tonight? I think we've made a lot of progress. I'm still not comfortable with that final speech. There's such a thing as over-rehearsing, Will. You're going to be fine. Maybe I'm just not right for this part. Most humanoids have the potential to be irrational. Perhaps you should attempt to access that part of your psyche. Thank you, Data. Your character feels at odds with everyone, as if the world's against him. Like my first year at the Academy. Yes, that's what your character is going through. But I want you, Will Riker, to relax. I'll do my best. It'll be wonderful. You're going to knock 'em dead. Right.",
+#                         "You control my every move, tell me what to say, what to think. What to eat, what to say. What to think, what to eat. Then when I show a glimmer of independent thought, you strap me down, inject me with drugs, call it a treatment. I may be surrounded by insanity, but I am not insane. Excuse me.",
+#                         "Tilonus Four? Didn't their government just collapse? It's in a state of total anarchy. When the Prime Minister was assassinated, a Federation research team was on the planet. It's believed that they were forced into hiding. Your mission will be to locate and to evacuate them. Can't they go to local authorities? There are no local authorities. The government is splintered. It seems that there are various factions vying for power. They're desperate for weapons or technology of any kind. Apparently, some of the factions have resorted to torture to gather their information. Well, a Starfleet research team would be a prime target. Then I'll have to go down there alone, undercover. Agreed. Mister Worf is ready to give you a detailed briefing on Tilonian culture. Well, I guess I'll have to back out of Beverly's play after all. Oh no, no, there'll be plenty of time for that. We don't arriving at Tilonus for another five days. And besides, if you back out, she'll come after me to play the part.",
+#                         "This is the last known location of the research team. They had occupied a small building in the south-west quarter of the city. You will begin your search there. The south-west quarter covers over two hundred square kilometres. That's a lot of land for one man to cover. I guess I'd better pack an extra pair of boots. This apparel will allow you to pass as a common merchant. This Tilonian pendant is equipped with a communicator circuit. It doesn't really match the outfit. I suggest you pay closer attention, Commander. Your life will be at stake. Do you understand what I am saying? Of course I do. Because you will be posing as a merchant, you will need to know how to use the nisroh for the traditional bartering ceremony. You will be judged on your prowess with the blade. I am sorry, Commander! I did not intend It's okay. I guess I really wasn't paying attention. I'd better go to Sickbay. We'll continue this later.",
+#                         "Boy, you will do anything to get out of doing this play, but you're going to have to do something better than this. The play's not till tomorrow night. I've still got twenty four hours. Don't get any ideas. I will see you on stage at eighteen hundred hours. Right. That still hurts. There was no damage to the nerves so you shouldn't be feeling any pain. Probably just a symptom of stage fright. It hurts! He was working on a conduit on deck thirty nine. A plasma torch blew up in his hands. It hurts! Please! Hypospray. Yes, Doctor. Get me twenty cc's of opporozine. Treat the surface burns with the anabolic stabiliser. Yes, Doctor. Should we get a stasis unit? Have one standing by just in case. Get me an epidermal sample. Begin dermal regeneration. Have tissue regrowth standing by. I want him sedated.",
+#                         "I've been on a lot of missions, seen a lot of people injured, but I've never been affected by anything like this. He was looking right at me. And that was disturbing to you. It was as if he was blaming me for something. This wasn't the only incident. The last several days, I've felt like everybody's staring at me or talking about me. It's as if I was in Frame of Mind. Frame of Mind? Beverly's play. Ever since I began rehearsing for the role, I've been uneasy and restless. You're probably drawing on feelings that you're not used to expressing. Right. The play is full of disturbing images. People losing their minds, being tortured by doctors. I can't get it out of my mind. Sometimes it's healthy to explore the darker sides of the psyche. Jung called it owning your own shadow. This could be a sign that you're a real actor. This is becoming more than just a role to you. Maybe you're right. Don't be afraid of your darker side. Have fun with it. Who was that? You just missed him. Is there a new Lieutenant on board? I'm not sure. Do you want me to check the personnel logs? No, I'll check them tomorrow. I'm going to bed early. The performance is tomorrow night. I want to be up for it. I'm looking forward to it. Break a leg. I'll try not to take you literally.",
+#                         "You're becoming agitated. You bet I'm agitated! I may be surrounded by insanity, but I am not insane. And nothing you or anyone else can say will change that. And I won't let you or anyone else tell me that I am. You may be able to destroy my mind, but you can't change the fact that I'm innocent. I didn't kill that man! And that's what's driving you crazy. I can see we have a lot of work to do. No matter you can say will the fact that I'm innocent! I'm not crazy! I'm not crazy. I'm not crazy. Bravo, bravo! Well done. Bravo.",
+#                         "Where am I? How did you get me off the ship? The ship again? What's going on? I understand this must be disturbing for you, but try to relax. Tell me, where were you a moment ago? I was on the Enterprise in the middle of a play. But it was here. It was not real, it was on a stage. I can assure you this is not a stage. Do you remember your name? I'm Commander. Commander. A second ago I knew who I was. I was on the ship. I was in a play. And now I'm having trouble remembering anything. That's good. You're starting to come out of your delusional state. Delusional? It was not a delusion. I was there. We discussed this. Do you remember, we contacted Starfleet and asked them about you? No. We spoke with Admiral Budrow. Starbase twenty nine. He had never heard of me, and they had no officer that fit my description. That's right. Now, I want you to focus on who I am. Do you remember me? I don't know. I'm Doctor Syrus. Do you remember anything about where you are now? My head hurts. Somebody hit me. You tried to escape. You struggled with one of the attendants and hit your head on a door. Do you remember that? Yes. I remember that now. But I thought it was a Klingon who had cut me with a knife. That's called transposition. You're projecting elements from your delusions onto events that really happened. But that's good. There was a time when you couldn't break away from your starship fantasy at all. Now, if what you say is true, where am I? You're in Ward forty seven of the Tilonus Institute for Mental Disorders. Why am I here? We'll talk more later. You don't have to remember everything today. You're making excellent progress. Wait. Good afternoon. I've got some good news for you. Doctor Syrus suggested that you might enjoy a couple of hours in the common area today. Well? I guess so. I hope you're hungry. They're serving spiny lobe-fish today. You won't need that. That's what you said the last time.",
+#                         "Run!",
+#                         "I'll be back with your lunch. I hear you're a Starfleet officer. I'm Commander Bloom from the Yorktown. There are at least a dozen of us here, maybe more. We were kidnapped, brought here against our will. Sanders was on the Yosemite. They did something to his mind. I think they're trying to get neurochemicals from our brains. Stafko was with me on the Yorktown. I don't know what they did to him. We're going to get out of here. I've made a communicator. You have? Yes. There are three starships in orbit. They're going to beam us out of here any day now. I'll tell them to get you out, too. Lieutenant Bloom to Yorktown. Come in, Yorktown. I've made contact with another officer. Talking to your Starship again, Jaya? No. Don't let them tell you you're crazy. You know you're not supposed to take utensils from the common area. You're welcome to try. I'm not that far gone, am I? Of course you are. Your name is Mavek. That's right. Not bad for a crazy man. I am beginning to remember certain things. Why am I here? I remember when they brought you in. You were struggling, screaming. We could barely hold you down. In fact, just getting the blood off your hands took over an hour. Blood? On your hands, clothes. You didn't just kill that man, you mutilated him. What are you talking about? I didn't kill anybody. I'm afraid you did. You stabbed him. They found you near the body, the knife in your hand. No. It's not true. Yes it is. And if you get out of here, you're going to stand trial. You're lying! I imagine the punishment will be quite severe, considering you stabbed him nine times. No!",
+#                         "I was there, in Ward forty seven, just like in the play. Everyone thought that I was insane, that I'd actually killed someone. But it was all real. Deanna mentioned that you went to bed early because you were feeling a little anxious about the play, but I had no idea. You said that in your dream, we performed the play. How'd it go? It was a smash. We got a standing ovation. Let's hope it goes that well tonight. Well, we have got one hour before curtain. How are you feeling? I feel like an actor. Well, you're certainly beginning to look the part.",
+#                         "Perhaps we should continue this discussion next week No. I want to talk about this now. You're starting to sound angry again. Maybe you need another treatment. What I need is to get out of this cell. I'm locked up in here for days. You've controlled my every move. You've told me what to eat, what to think, what to say. And when I show a glimmer of independent thought And when I show a glimmer of independent thought, you strap me down, inject me with drugs and call it a treatment. You're becoming agitated. You bet I'm agitated! I may be surrounded by insanity, but I am not insane. And there is nothing you What's happening? I can see we have a lot of work to do. Nothing you can do will change the fact that I'm innocent. I'm not crazy. I'm not You're the key to all this, aren't you? Who are you? Who are you? Lieutenant Suna, sir. Will, are you all right? I. Yes. I don't know Why don't we get him to Sickbay.",
+#                         "There's nothing wrong with you neurologically, and I can't find anything that could cause the hallucinations. But your heart rate is way up and your blood pressure's way above normal. And you're physically exhausted. This is not a case of simple fatigue. Will, you know that when you're under conditions of extreme stress the mind can manufacture all kinds of things. Drugs. They injected me with me drugs. See if the drug's in my system. Nothing. In that dream they gave me drugs. Didn't anybody at the theatre see anything strange happen during the performance? No, nobody. Get some rest, Will. The play is over. Don't give it another thought. Right.",
+#                         "How's Lieutenant Suna? A little shaken but all right. I feel like such an idiot. It's nothing to be embarrassed about. We're your friends. We all know the stress you've been under. I'm sure everyone understands perfectly. Commander, I must compliment you on your performance this evening. Oh? Your unexpected choice to improvise was an effective method of drawing the audience into the plight of your character. You gave a truly realistic interpretation of multi-infarct dementia. Thank you. Well, maybe not everyone understands. I think I'd better get a little rest. Clear my mind a little. I want you to try a few relaxation techniques as well. Remember the ones I showed you a few months ago? They never seem to work for me. Maybe you need another treatment. What's wrong? Nothing. Nothing. Will, I want you to get some sleep. I'll see you tomorrow. Okay.",
+#                         "It's not real. It's not real.",
+#                         "Don't let them tell you you're crazy."]
+    
+#     a, b = sa.generate_emotional_sentiments(flattened_scenes)
+    
+#     return {'success': 'success'}

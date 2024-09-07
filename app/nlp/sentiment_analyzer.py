@@ -21,19 +21,28 @@ def init_nltk() -> None:
     nltk.download('all')
 
 
-def generate_polarity_sentiment(text: str, pre_process_text: bool = True) -> dict:
+def generate_polarity_sentiment(text: str, pre_process_text: bool = True) -> tuple[pd.DataFrame, dict]:
     init_nltk()
     if pre_process_text:
         tokens = word_tokenize(text)
         filtered_tokens = [word for word in tokens if word.lower() not in NLTK_STOP_WORDS]
         text = ' '.join(filtered_tokens)
-    polarity_metrics = analyzer.polarity_scores(text)
-    return polarity_metrics
+    
+    polarity_dict = analyzer.polarity_scores(text)
+    # print(f'polarity_dict={polarity_dict}')
+
+    polarity_df = pd.DataFrame(polarity_dict, index=['score'])
+    polarity_df = polarity_df.transpose()
+    polarity_df.index.name = 'polarity'
+    polarity_df = polarity_df.rename_axis('polarity', axis=1)
+    # print(f'polarity_df={polarity_df}')
+
+    return polarity_df, polarity_dict
 
 
 def generate_emotional_sentiment(text: str) -> tuple[pd.DataFrame, dict]:
     prompt = f"""
-    Hi ChatGPT! I'd like your help quantifying the range and degree of emotions expressed in a snippet of text. In the text snippet below, please assess the degree of emotion in 10 dimensions: (1) Joy, (2) Love, (3) Empathy, (4) Curiosity, (5) Sadness, (6) Anger, (7) Fear, (8) Disgust, (9) Surprise, (10) Confusion. 
+    Hi ChatGPT! I'd like your help quantifying the range and intensity of emotions expressed in a snippet of text. In the text snippet below, please assess the degree of emotion in 10 dimensions: (1) Joy, (2) Love, (3) Empathy, (4) Curiosity, (5) Sadness, (6) Anger, (7) Fear, (8) Disgust, (9) Surprise, (10) Confusion. 
     
     For each of these 10 emotions, please return a decimal value between 0 and 1 indicating the 'score' (or 'weight' / 'intensity') of that emotion. The 'score' should be precise to 2 decimal places.
     
@@ -81,6 +90,56 @@ def generate_emotional_sentiment(text: str) -> tuple[pd.DataFrame, dict]:
         return None, {}
     slim_emo_df = emo_df[['emotion', 'score']]
     emo_dict = dict(zip(slim_emo_df.emotion, slim_emo_df.score))
+
+    # print(f'emo_dict={emo_dict}')
+    # print(f'emo_df={emo_df}')
     
     return emo_df, emo_dict
 
+
+def generate_sentiment(text: str, analyzer: str) -> tuple[pd.DataFrame, dict]:
+    if analyzer == 'nltk_pol':
+        return generate_polarity_sentiment(text)
+    elif analyzer == 'openai_emo':
+        return generate_emotional_sentiment(text)
+    else:
+        print(f'Unsupported analyzer={analyzer}')
+        return None, {}
+
+
+# def generate_emotional_sentiments(texts: list) -> tuple[pd.DataFrame, dict]:
+#     if len(texts) == 0:
+#         return None
+    
+#     prompt = f"""
+#     Hi ChatGPT! I'd like your help quantifying the range and intensity of emotions expressed in snippet of text. When I feed you a text snippet, please assess the degree of emotion in 10 dimensions: (1) Joy, (2) Love, (3) Empathy, (4) Curiosity, (5) Sadness, (6) Anger, (7) Fear, (8) Disgust, (9) Surprise, (10) Confusion. 
+    
+#     For each of these 10 emotions, please return a decimal value between 0 and 1 indicating the 'score' (or 'weight' / 'intensity') of that emotion. The 'score' should be precise to 2 decimal places.
+    
+#     Note: there need not be any relationship between the individual emotional metric scores. In aggregate, they may all add up to less than 1.0, or their combined total may greatly exceed 1.0 - each emotional metric is independent of the others. 
+    
+#     Provide the response in CSV format with 3 columns for (1) 'emotion', (2) 'score', (3) 'explanation' for score. If column (3) contains any quotes or apostrophes, please be sure to escape the text properly. 
+#     """
+#     message_prompts = [{"role": "user", "content": prompt}]
+#     first = True
+#     for text in texts:
+#         if first:
+#             message_prompts.append({"role": "user", "content": f'First text to emotionally anaylze: `{text}`'})
+#             first = False
+#         else:
+#             message_prompts.append({"role": "user", "content": f'Next text to emotionally anaylze: `{text}`'})
+
+#     prompt_response = openai_client.chat.completions.create(
+#         model="gpt-4o-mini",
+#         messages=message_prompts,
+#         stream=False,
+#     )
+
+#     if prompt_response.choices:
+#         if len(prompt_response.choices) > 0:
+#             print(f'len(prompt_response.choices)={len(prompt_response.choices)}')
+#             print(f'prompt_response.choices={prompt_response.choices}')
+
+
+#     return None, {}
+    

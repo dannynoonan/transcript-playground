@@ -226,9 +226,11 @@ def return_flattened_scenes(s: Search, include_speakers: bool = False, include_c
         if 'scenes' not in episode:
             continue
         for scene in episode['scenes']:
-            if 'scene_events' not in scene:
-                continue
             scene_event_dialog = []
+            # NOTE: to preserve scene index positions, append scene even if it lacks dialog content
+            if 'scene_events' not in scene:
+                flattened_scenes.append('')
+                continue
             for scene_event in scene['scene_events']:
                 scene_event_elements = []
                 if include_context and 'context_info' in scene_event and not scene_event['context_info'] == 'OC':
@@ -239,7 +241,6 @@ def return_flattened_scenes(s: Search, include_speakers: bool = False, include_c
                     scene_event_elements.append(scene_event['dialog'])
                 if scene_event_elements: 
                     scene_event_dialog.append(' '.join(scene_event_elements))
-            # to preserve scene index positions, append scene even if it lacks dialog content
             flattened_scenes.append(' '.join(scene_event_dialog))
     
     return flattened_scenes
