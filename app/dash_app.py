@@ -9,8 +9,8 @@ import urllib.parse
 
 import app.dash.components as cmp
 from app.dash import (
-    bertopic_model_clusters, episode_gantt_chart, location_line_chart, series_gantt_chart, series_search_results_gantt, show_3d_network_graph, 
-    speaker_3d_network_graph, show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
+    bertopic_model_clusters, episode_gantt_chart, location_line_chart, sentiment_line_chart, series_gantt_chart, series_search_results_gantt, 
+    show_3d_network_graph, speaker_3d_network_graph, show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
 )
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
@@ -112,6 +112,9 @@ def display_page(pathname, search):
             if isinstance(bertopic_model_id, list):
                 bertopic_model_id = bertopic_model_id[0]
         return bertopic_model_clusters.generate_content(bertopic_model_options, bertopic_model_id)
+    
+    elif pathname == "/tsp_dash/sentiment-line-chart":
+        return sentiment_line_chart.content
 
 
 ############ show-cluster-scatter callbacks
@@ -479,6 +482,31 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
 
     return bertopic_3d_scatter, bertopic_visualize_barchart, bertopic_visualize_topics, bertopic_visualize_hierarchy, show_key, bertopic_model_id, table_div
 
+
+############ sentiment-line-chart callbacks
+@dapp.callback(
+    Output('sentiment-line-chart', 'figure'),
+    Input('show-key', 'value'),
+    Input('emotion', 'value'))    
+def render_episode_sentiment_line_chart(show_key: str, emotion: str):
+    print(f'in render_episode_sentiment_line_chart, show_key={show_key}')
+
+    episode_key = '169'
+    speakers = ['PICARD', 'DATA', 'WORF', 'RIKER', 'LAFORGE']
+
+    # fetch or generate aggregate speaker data and build speaker line chart
+    # response = esr.generate_speaker_line_chart_sequence(ShowKey(show_key), span_granularity=span_granularity, aggregate_ratio=aggregate_ratio, season=season)
+    file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+    if os.path.isfile(file_path):
+        df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        raise Exception(f'Failure to render_episode_sentiment_line_chart: unable to fetch dataframe at file_path={file_path}')
+    
+    sentiment_line_chart = fb.build_sentiment_line_chart(show_key, df, speakers, emotion)
+
+    return sentiment_line_chart
+    
 
 if __name__ == "__main__":
     dapp.run_server(debug=True)

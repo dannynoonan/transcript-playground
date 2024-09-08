@@ -92,7 +92,6 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
                 set_dict_value_as_es_value(es_episode, episode_sent_dict, pol, 'nltk_sent_')
 
     # scene- and line-level sentiment 
-    # scene_sent_dicts = [] # TODO this isn't being used
     if scene_level or line_level:
 
         # scene-level processing will use fetch_flattened_scenes, trusting (gulp) that scene index positions align with their es_episode.scenes counterparts
@@ -105,9 +104,6 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
         # both scene- and line-level processing iterate over es_episode.scenes, carefully tracking scene index position
         for scene_i in range(len(es_episode.scenes)):
             es_scene = es_episode.scenes[scene_i]
-            # scene_sent_dict = dict(scene_i=scene_i, scene_level=None, multi_speaker=None, line_level=[])
-            # scene_sent_dicts.append(scene_sent_dict) # TODO this isn't being used
-
             # scene-level: analyze flattened_scene
             if scene_level:
                 print(f'executing populate_episode_sentiment on flattened_scene at scene_i={scene_i}')
@@ -117,8 +113,7 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
 
                 # process flattened scene as one uninterrupted blob of text
                 total_reqs += 1
-                scene_sent_df, scene_level_dict = sa.generate_sentiment(flattened_scenes[scene_i], analyzer)
-                # scene_sent_df, scene_sent_dict['scene_level'] = sa.generate_sentiment(flattened_scenes[scene_i], analyzer)
+                scene_sent_df, scene_sent_dict = sa.generate_sentiment(flattened_scenes[scene_i], analyzer)
                 if scene_sent_df is None:
                     failure_message = f'failure to execute generate_sentiment on flattened_scene at scene_i={scene_i} with text=`{flattened_scenes[scene_i]}`'
                     failure_reqs.append(failure_message)
@@ -136,8 +131,7 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
                 # requires special prompting so only applicable to openai
                 if analyzer == 'openai_emo': 
                     total_reqs += 1
-                    # scene_sent_multi_speaker_df, scene_sent_dict['multi_speaker'] = sa.generate_sentiment(flattened_scenes_with_speakers[scene_i], analyzer, multi_speaker=True)
-                    scene_sent_multi_speaker_df, multi_speaker_dict = sa.generate_sentiment(flattened_scenes_with_speakers[scene_i], analyzer, multi_speaker=True)
+                    scene_sent_multi_speaker_df, scene_sent_multi_speaker_dict = sa.generate_sentiment(flattened_scenes_with_speakers[scene_i], analyzer, multi_speaker=True)
                     if scene_sent_multi_speaker_df is None:
                         # NOTE this should never happen as it would have been caught in previous loop against flattened_scenes
                         failure_message = f'failure to execute generate_sentiment on flattened_scenes_with_speakers at scene_i={scene_i} with text=`{flattened_scenes_with_speakers[scene_i]}`'
@@ -156,11 +150,11 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
                 if write_to_es:
                     if analyzer == 'openai_emo':
                         for emo in OPENAI_EMOTIONS:
-                            set_dict_value_as_es_value(es_scene, scene_level_dict, emo, 'openai_sent_')
-                        es_scene.speaker_summaries = multi_speaker_dict
+                            set_dict_value_as_es_value(es_scene, scene_sent_dict, emo, 'openai_sent_') 
+                        es_scene.speaker_summaries = scene_sent_multi_speaker_dict
                     elif analyzer == 'nltk_pol':
                         for pol in NTLK_POLARITY:
-                            set_dict_value_as_es_value(es_scene, scene_level_dict, pol, 'nltk_sent_')
+                            set_dict_value_as_es_value(es_scene, scene_sent_dict, pol, 'nltk_sent_')
 
             # line-level: analyze dialog for each line in scene
             if line_level:
@@ -177,7 +171,6 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
                             continue
                         success_reqs += 1
                         # add contextual properties to line_sent_df, concat with episode_sent_df
-                        # scene_sent_dict['line_level'].append(line_sent_dict)
                         line_sent_df['key'] = f'S{scene_i}L{line_i}'
                         line_sent_df['scene'] = scene_i
                         line_sent_df['line'] = line_i

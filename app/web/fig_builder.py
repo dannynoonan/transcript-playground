@@ -733,3 +733,26 @@ def build_bertopic_visualize_hierarchy(bertopic_model: BERTopic) -> go.Figure:
     fig = bertopic_model.visualize_hierarchy(width=1600, height=1200)
 
     return fig
+
+
+def build_sentiment_line_chart(show_key: str, df: pd.DataFrame, speakers: list, emotion: str) -> go.Figure:
+    print(f'in build_sentiment_line_chart show_key={show_key} emotion={emotion} speakers={speakers}')
+
+    # remove episode-level rows 
+    df = df.loc[df['scene'] != 'ALL']
+    # remove live-level rows 
+    df = df.loc[df['line'] == 'ALL']
+    # filter out all other emotions 
+    df = df.loc[df['emotion'] == emotion]
+    # filter out all other speakers 
+    df = df.loc[df['speaker'].isin(speakers)]
+    # cast numeric columns correctly TODO should this happen upstream?
+    df['scene'] = pd.to_numeric(df['scene'])
+    df['score'] = pd.to_numeric(df['score'])
+
+    # df = df.sort_values(['scene', 'speaker', 'emotion'])
+    # print(df)
+
+    fig = px.line(df, x='scene', y='score', color='speaker', height=800, render_mode='svg', line_shape='spline')
+
+    return fig
