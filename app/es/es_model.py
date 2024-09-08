@@ -34,10 +34,10 @@ class EsScene(InnerDoc):
     description = Text(analyzer=freetext_analyzer, term_vector='yes')
     scene_events = Nested(EsSceneEvent)
     # generated
+    speaker_summaries = Object(multi=True) # this should probably be a nested type
     nltk_sent_pos = Float()
     nltk_sent_neg = Float()
     nltk_sent_neu = Float()
-    # nltk_speaker_sentiments = Object(multi=True)
     openai_sent_joy = Float()
     openai_sent_love = Float()
     openai_sent_empathy = Float()
