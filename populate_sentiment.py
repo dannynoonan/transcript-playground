@@ -12,41 +12,43 @@ from app.utils import set_dict_value_as_es_value
 
 
 def main():
-    # start_ts = str(datetime.datetime.now())[:19]
-    start_ts = datetime.datetime.now()
-    print(f'begin populate_sentiment against full episode at start_ts={str(start_ts)[:19]}')
     # parse script params
     parser = argparse.ArgumentParser()
     parser.add_argument("--show_key", "-s", help="Show key", required=True)
-    parser.add_argument("--episode_key", "-e", help="Episode key", required=True)
+    parser.add_argument("--episode_key", "-e", help="Episode key", required=False)
+    parser.add_argument("--season", "-n", help="Season", required=False)
     parser.add_argument("--analyzer", "-a", help="Analyzer", required=True)
     parser.add_argument("--scene_level", "-c", help="Scene level", required=False)
     parser.add_argument("--line_level", "-l", help="Line level", required=False)
     parser.add_argument("--write_to_es", "-w", help="Write to es", required=False)
     args = parser.parse_args()
     # assign script params to vars
+    episode_key = None
+    season = None
     scene_level = False
     line_level = False
     write_to_es = False
+    if args.episode_key: 
+        episode_key = args.episode_key
+    if args.season: 
+        season = args.season
     if args.scene_level: 
         scene_level = args.scene_level
     if args.line_level: 
         line_level = args.line_level
     if args.write_to_es: 
         write_to_es = args.write_to_es
-    episode_emo_df, req_report = populate_episode_sentiment(
-        args.show_key, args.episode_key, args.analyzer, scene_level=scene_level, line_level=line_level, write_to_es=write_to_es)
 
-    end_ts = datetime.datetime.now()
-    duration = end_ts - start_ts
-    req_report['duration'] = duration.seconds
-    print(f'finish populate_episode_sentiment against full episode in {duration.seconds} seconds at end_ts={str(end_ts)[:19]}')
-
-    # write dataframe to csv
-    file_path = f'sentiment_data/{args.show_key}/{args.analyzer}/{args.show_key}_{args.episode_key}.csv'
-    episode_emo_df.to_csv(file_path, sep=',', header=True)
-
-    print(f'req_report={req_report}')
+    if episode_key:
+        populate_episode_sentiment(args.show_key, episode_key, args.analyzer, scene_level=scene_level, line_level=line_level, write_to_es=write_to_es)
+    elif season:
+        simple_episodes_response = esr.fetch_simple_episodes(ShowKey(args.show_key), season=season)
+        simple_episodes = simple_episodes_response['episodes']
+        for ep in simple_episodes:
+            populate_episode_sentiment(args.show_key, ep['episode_key'], args.analyzer, scene_level=scene_level, line_level=line_level, write_to_es=write_to_es)
+    else:
+        print(f'Either `episode_key` (-e) or `season` (-n) is required, populating sentiment for an entire series in a single job is currently not supported')
+        return 
 
 
 def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, scene_level: bool = False, line_level: bool = False, write_to_es: bool = False) -> tuple[pd.DataFrame, dict]:
@@ -56,6 +58,9 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
     2. dataframe -> csv file
     3. es index (optional)
     '''
+    start_ts = datetime.datetime.now()
+    print(f'begin populate_episode_sentiment episode_key={episode_key} analyzer={analyzer} scene_level={scene_level} line_level={line_level} write_to_es={write_to_es} at start_ts={str(start_ts)[:19]}')
+
     if analyzer not in SENTIMENT_ANALYZERS:
         print(f'`{analyzer}` in not a valid sentiment analyzer, supported analyzers are {SENTIMENT_ANALYZERS}')
         return 
@@ -196,7 +201,18 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
     if write_to_es:
         esqb.save_es_episode(es_episode)
 
-    return episode_sent_df, req_report
+    end_ts = datetime.datetime.now()
+    duration = end_ts - start_ts
+    req_report['duration'] = duration.seconds
+    print(f'finish populate_episode_sentiment against full episode in {duration.seconds} seconds at end_ts={str(end_ts)[:19]}')
+
+    # write dataframe to csv
+    file_path = f'sentiment_data/{show_key}/{analyzer}/{show_key}_{episode_key}.csv'
+    episode_sent_df.to_csv(file_path, sep=',', header=True)
+
+    print(f'req_report={req_report}')
+
+    # return episode_sent_df, req_report
 
 
 if __name__ == '__main__':

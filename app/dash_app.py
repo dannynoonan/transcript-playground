@@ -16,7 +16,7 @@ import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR
+from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR, OPENAI_EMOTIONS
 from app.show_metadata import ShowKey
 import app.utils as utils
 import app.web.fig_builder as fb
@@ -487,15 +487,26 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
 @dapp.callback(
     Output('sentiment-line-chart', 'figure'),
     Input('show-key', 'value'),
-    Input('emotion', 'value'))    
-def render_episode_sentiment_line_chart(show_key: str, emotion: str):
-    print(f'in render_episode_sentiment_line_chart, show_key={show_key}')
+    Input('freeze-on', 'value'),
+    Input('emotion', 'value'),
+    Input('speaker1', 'value'))    
+def render_episode_sentiment_line_chart(show_key: str, freeze_on: str, emotion: str, speaker: str):
+    print(f'in render_episode_sentiment_line_chart, show_key={show_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
+
+    if freeze_on == 'emotion':
+        emotions = [emotion]
+        speakers = ['PICARD', 'RIKER', 'DATA', 'TROI', 'LAFORGE', 'WORF', 'CRUSHER']
+        focal_property = 'speaker'
+    elif freeze_on == 'speaker':
+        emotions = OPENAI_EMOTIONS
+        speakers = [speaker]
+        focal_property = 'emotion'
+    else:
+        raise Exception(f"Failure to render_episode_sentiment_line_chart: freeze_on={freeze_on} is not supported, accepted values are ['emotion', 'speaker']")
 
     episode_key = '169'
-    speakers = ['PICARD', 'DATA', 'WORF', 'RIKER', 'LAFORGE']
 
-    # fetch or generate aggregate speaker data and build speaker line chart
-    # response = esr.generate_speaker_line_chart_sequence(ShowKey(show_key), span_granularity=span_granularity, aggregate_ratio=aggregate_ratio, season=season)
+    # fetch episode sentiment data and build line chart
     file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
     if os.path.isfile(file_path):
         df = pd.read_csv(file_path)
@@ -503,7 +514,7 @@ def render_episode_sentiment_line_chart(show_key: str, emotion: str):
     else:
         raise Exception(f'Failure to render_episode_sentiment_line_chart: unable to fetch dataframe at file_path={file_path}')
     
-    sentiment_line_chart = fb.build_sentiment_line_chart(show_key, df, speakers, emotion)
+    sentiment_line_chart = fb.build_episode_sentiment_line_chart(show_key, df, speakers, emotions, focal_property)
 
     return sentiment_line_chart
     

@@ -25,11 +25,34 @@ content = html.Div([
                 ]),
                 dbc.Col(md=2, children=[
                     html.Div([
+                        "Freeze on ",
+                        dcc.Dropdown(
+                            id="freeze-on",
+                            options=[
+                                {'label': 'emotion', 'value': 'emotion'},
+                                {'label': 'speaker', 'value': 'speaker'},
+                            ], 
+                            value='emotion',
+                        )
+                    ]),
+                ]),
+                dbc.Col(md=2, children=[
+                    html.Div([
                         "Emotion ",
                         dcc.Dropdown(
                             id="emotion",
                             options=['Joy', 'Love', 'Empathy', 'Curiosity', 'Sadness', 'Anger', 'Fear', 'Disgust', 'Surprise', 'Confusion'],
                             value='Joy',
+                        )
+                    ]),
+                ]),
+                dbc.Col(md=2, children=[
+                    html.Div([
+                        "Speaker ",
+                        dcc.Dropdown(
+                            id="speaker1",
+                            options=['PICARD', 'RIKER', 'DATA', 'TROI', 'LAFORGE', 'WORF', 'CRUSHER'],
+                            value='PICARD',
                         )
                     ]),
                 ]),

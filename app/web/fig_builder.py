@@ -735,15 +735,15 @@ def build_bertopic_visualize_hierarchy(bertopic_model: BERTopic) -> go.Figure:
     return fig
 
 
-def build_sentiment_line_chart(show_key: str, df: pd.DataFrame, speakers: list, emotion: str) -> go.Figure:
-    print(f'in build_sentiment_line_chart show_key={show_key} emotion={emotion} speakers={speakers}')
+def build_episode_sentiment_line_chart(show_key: str, df: pd.DataFrame, speakers: list, emotions: list, focal_property: str) -> go.Figure:
+    print(f'in build_sentiment_line_chart show_key={show_key} emotion={emotions} speakers={speakers} focal_property={focal_property}')
 
     # remove episode-level rows 
     df = df.loc[df['scene'] != 'ALL']
     # remove live-level rows 
     df = df.loc[df['line'] == 'ALL']
     # filter out all other emotions 
-    df = df.loc[df['emotion'] == emotion]
+    df = df.loc[df['emotion'].isin(emotions)]
     # filter out all other speakers 
     df = df.loc[df['speaker'].isin(speakers)]
     # cast numeric columns correctly TODO should this happen upstream?
@@ -753,6 +753,8 @@ def build_sentiment_line_chart(show_key: str, df: pd.DataFrame, speakers: list, 
     # df = df.sort_values(['scene', 'speaker', 'emotion'])
     # print(df)
 
-    fig = px.line(df, x='scene', y='score', color='speaker', height=800, render_mode='svg', line_shape='spline')
+    fig = px.line(df, x='scene', y='score', color=focal_property, height=800, render_mode='svg', line_shape='spline')
+
+    fig.data[0].update(mode='markers+lines')
 
     return fig
