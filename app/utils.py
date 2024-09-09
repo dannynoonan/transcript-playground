@@ -51,7 +51,7 @@ def wrap_title_in_url(show_key: str, episode_key: str) -> str:
 
 
 def set_dict_value_as_es_value(es_object: object, d: dict, k: str, es_field_prefix: str) -> None:
-    if k not in d:
+    if not d or k not in d:
         print(f'failed to set_dict_value_as_es_value, k={k} is not in d={d}')
         return
     es_field = f'{es_field_prefix}{k.lower()}'

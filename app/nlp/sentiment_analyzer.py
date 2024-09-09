@@ -29,13 +29,14 @@ def generate_polarity_sentiment(text: str, pre_process_text: bool = True) -> tup
         text = ' '.join(filtered_tokens)
     
     polarity_dict = analyzer.polarity_scores(text)
-    # print(f'polarity_dict={polarity_dict}')
 
+    # kind of a lot of steps to turn the output of polarity_scores into a properly indexed df with coherently named columns, but...
     polarity_df = pd.DataFrame(polarity_dict, index=['score'])
     polarity_df = polarity_df.transpose()
-    polarity_df.index.name = 'polarity'
-    polarity_df = polarity_df.rename_axis('polarity', axis=1)
-    # print(f'polarity_df={polarity_df}')
+    polarity_df.reset_index(inplace=True)
+    polarity_df = polarity_df.rename(columns={'index': 'polarity'})
+    # remove 'compound' polarity value, we're never using it
+    polarity_df = polarity_df.loc[polarity_df['polarity'] != 'compound']
 
     return polarity_df, polarity_dict
 
