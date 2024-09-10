@@ -2,7 +2,6 @@ from fastapi import APIRouter
 from operator import itemgetter
 import math
 import os
-import numpy as np
 import pandas as pd
 
 import app.database.dao as dao
@@ -14,9 +13,10 @@ import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 import app.nlp.narrative_extractor as ne
+import app.nlp.sentiment_analyzer as sa
 from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_DATA_DIR
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
-from app.utils import TopicAgg, flatten_topics
+from app.utils import TopicAgg, flatten_topics, set_dict_value_as_es_value
 
 
 esw_app = APIRouter()
@@ -979,3 +979,216 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
                 failure_count += 1
 
     return {"attempt_count": attempt_count, "success_count": success_count, "failure_count": failure_count}
+
+
+# @esw_app.get("/esw/populate_episode_polarity_sentiment/{show_key}/{episode_key}", tags=['ES Writer'])
+# def populate_episode_polarity_sentiment(show_key: ShowKey, episode_key: str, scene_level: bool = False, scene_event_level: bool = False):
+#     '''
+#     Generate and populate nltk polarity sentiment for episode
+#     '''
+#     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
+#     scene_sentiments = []
+#     if scene_level:
+#         flattened_scenes_response = esr.fetch_flattened_scenes(show_key, episode_key)
+#         flattened_scenes = flattened_scenes_response['flattened_scenes']
+#         # print(f'len(flattened_scenes)={len(flattened_scenes)}')
+#         for i in range(len(flattened_scenes)):
+#             scene_sentiment = sa.generate_polarity_sentiment(flattened_scenes[i])
+#             es_episode.scenes[i].nltk_sent_pos = scene_sentiment['pos']
+#             es_episode.scenes[i].nltk_sent_neg = scene_sentiment['neg']
+#             es_episode.scenes[i].nltk_sent_neu = scene_sentiment['neu']
+#             scene_sentiments.append((flattened_scenes[i], dict(pos=scene_sentiment['pos'], neg=scene_sentiment['neg'], neu=scene_sentiment['neu'])))
+#     if scene_event_level:
+#         for es_scene in es_episode.scenes:
+#             # agg_wc = 0
+#             # agg_pos = 0
+#             # agg_neg = 0
+#             # agg_neu = 0
+#             # speaker_sentiments = {}
+#             # speaker_word_counts = {}
+#             for es_scene_event in es_scene.scene_events:
+#                 if es_scene_event.spoken_by and es_scene_event.dialog:
+#                     line_sentiment = sa.generate_polarity_sentiment(es_scene_event.dialog)
+#                     # set line-level sentiment
+#                     es_scene_event.nltk_sent_pos = line_sentiment['pos']
+#                     es_scene_event.nltk_sent_neg = line_sentiment['neg']
+#                     es_scene_event.nltk_sent_neu = line_sentiment['neu']
+#                     # # for aggregation and eventual averaging, calculate weighted sentiment based on word count
+#                     # line_wc = es_scene_event.dialog.word_count
+#                     # line_speaker = es_scene_event.spoken_by
+#                     # line_weighted_pos = line_sentiment['pos'] * line_wc
+#                     # line_weighted_neg = line_sentiment['neg'] * line_wc
+#                     # line_weighted_neu = line_sentiment['neu'] * line_wc
+#                     # # aggregate scene-level sentiment
+#                     # agg_wc += line_wc
+#                     # agg_pos += line_weighted_pos
+#                     # agg_neg += line_weighted_neg
+#                     # agg_neu += line_weighted_neu
+#                     # # aggregate scene-level speaker sentiment
+#                     # if line_speaker not in speaker_sentiments:
+#                     #     speaker_sentiments[line_speaker] = dict(nltk_sent_pos=0, nltk_sent_neg=0, nltk_sent_neu=0)
+#                     # speaker_sentiments[line_speaker]['nltk_sent_pos'] += line_weighted_pos
+#                     # speaker_sentiments[line_speaker]['nltk_sent_neg'] += line_weighted_neg
+#                     # speaker_sentiments[line_speaker]['nltk_sent_neu'] += line_weighted_neu
+#                     # speaker_word_counts += line_wc
+
+#     episode_sentiment = sa.generate_polarity_sentiment(es_episode.flattened_text)
+#     esqb.save_episode_sentiment(es_episode, episode_sentiment)
+
+#     return {f"title": es_episode.title,
+#              "season": es_episode.season, 
+#              "episode": es_episode.sequence_in_season, 
+#              "episode_sentiment": episode_sentiment,
+#              "scene_sentiments": scene_sentiments}
+
+
+# @esw_app.get("/esw/generate_all_episode_polarity_sentiments/{show_key}", tags=['ES Writer'])
+# def generate_all_episode_polarity_sentiments(show_key: ShowKey, scene_level: bool = False, scene_event_level: bool = False):
+#     '''
+#     Generate and  populate nltk polarity sentiment for all episodes in series
+#     '''
+#     episodes_with_sentiment = []
+#     # successful = []
+#     # failed = []
+
+#     simple_episodes_response = esr.fetch_simple_episodes(show_key)
+#     simple_episodes = simple_episodes_response['episodes']
+#     for se in simple_episodes:
+#         episode_sentiment_response = populate_episode_polarity_sentiment(show_key, se['episode_key'], scene_level=scene_level, scene_event_level=scene_event_level)
+#         episodes_with_sentiment.append(episode_sentiment_response)
+
+#     return {f"episodes_with_sentiment": episodes_with_sentiment}
+
+
+# @esw_app.get("/esw/populate_episode_emotional_sentiment/{show_key}/{episode_key}", tags=['ES Writer'])
+# def populate_episode_emotional_sentiment(show_key: ShowKey, episode_key: str, scene_level: bool = False, line_level: bool = False, write_to_es: bool = False):
+#     '''
+#     Generate and populate openai emotional sentiment for episode. Currently populating to 3 places: 
+#     1. api response
+#     2. dataframe
+#     3. es index (optional)
+#     '''
+#     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
+
+#     openai_total_reqs = 0
+#     openai_success_reqs = 0
+#     openai_failure_reqs = []
+#     start_ts = time.time()
+#     print(f'begin generate_emotional_sentiment against full episode at start_ts={start_ts}')
+
+#     # episode-level emotional sentiment 
+#     openai_total_reqs += 1
+#     episode_emo_df, episode_emo_dict = sa.generate_emotional_sentiment(es_episode.flattened_text)
+#     if episode_emo_df is None:
+#         return {"error": f"failure to execute generate_emotional_sentiment on es_episode.flattened_text for show_key={show_key.value} episode_key={episode_key}"}
+#     openai_success_reqs += 1
+#     # add contextual properties to emo_df
+#     episode_emo_df['key'] = 'E'
+#     episode_emo_df['scene'] = 'ALL'
+#     episode_emo_df['line'] = 'ALL'
+#     episode_emo_df['speaker'] = 'ALL'
+#     # update es object
+#     if write_to_es:
+#         for emo in OPENAI_EMOTIONS:
+#             set_dict_value_as_es_value(es_episode, episode_emo_dict, emo, 'openai_sent_')
+
+#     # scene- and line-level emotional sentiment 
+#     scene_emo_dicts = []
+#     if scene_level or line_level:
+
+#         # scene-level processing will use fetch_flattened_scenes, trusting (gulp) that scene index positions align with their es_episode.scenes counterparts
+#         if scene_level:
+#             flattened_scenes_response = esr.fetch_flattened_scenes(show_key, episode_key)
+#             flattened_scenes = flattened_scenes_response['flattened_scenes']
+
+#         # both scene- and line-level processing iterate over es_episode.scenes, carefully tracking scene index position
+#         for scene_i in range(len(es_episode.scenes)):
+#             es_scene = es_episode.scenes[scene_i]
+#             scene_emo_dict = dict(scene_i=scene_i, scene_level=None, line_level=[])
+#             scene_emo_dicts.append(scene_emo_dict)
+
+#             # scene-level: analyze flattened_scene
+#             if scene_level:
+#                 print(f'executing generate_emotional_sentiment on flattened_scene at scene_i={scene_i}')
+#                 if not flattened_scenes[scene_i]:
+#                     print(f'flattened_scene at scene_i={scene_i} contains no dialog text, skipping')
+#                     continue
+#                 openai_total_reqs += 1
+#                 scene_emo_df, scene_emo_dict['scene_level'] = sa.generate_emotional_sentiment(flattened_scenes[scene_i])
+#                 if scene_emo_df is None:
+#                     failure_message = f'failure to execute generate_emotional_sentiment on flattened_scene at scene_i={scene_i} with text=`{flattened_scenes[scene_i]}`'
+#                     openai_failure_reqs.append(failure_message)
+#                     print(failure_message)
+#                     continue
+#                 openai_success_reqs += 1
+#                 scene_emo_df['key'] = f'S{scene_i}'
+#                 scene_emo_df['scene'] = scene_i
+#                 scene_emo_df['line'] = 'ALL'
+#                 scene_emo_df['speaker'] = 'ALL'
+#                 episode_emo_df = pd.concat([episode_emo_df, scene_emo_df], axis=0)
+#                 # update es object
+#                 if write_to_es:
+#                     for emo in OPENAI_EMOTIONS:
+#                         set_dict_value_as_es_value(es_scene, episode_emo_dict, emo, 'openai_sent_')
+
+#             # line-level: analyze dialog for each line in scene
+#             if line_level:
+#                 line_i = 0
+#                 for es_scene_event in es_scene.scene_events:
+#                     if es_scene_event.spoken_by and es_scene_event.dialog:
+#                         print(f'executing generate_emotional_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i}')
+#                         openai_total_reqs += 1
+#                         line_emo_df, line_emo_dict = sa.generate_emotional_sentiment(es_scene_event.dialog)
+#                         if line_emo_df is None:
+#                             failure_message = f'failure to execute generate_emotional_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i} es_scene_event.dialog=`{es_scene_event.dialog}`'
+#                             openai_failure_reqs.append(failure_message)
+#                             print(failure_message)
+#                             continue
+#                         openai_success_reqs += 1
+#                         scene_emo_dict['line_level'].append(line_emo_dict)
+#                         line_emo_df['key'] = f'S{scene_i}L{line_i}'
+#                         line_emo_df['scene'] = scene_i
+#                         line_emo_df['line'] = line_i
+#                         line_emo_df['speaker'] = es_scene_event.spoken_by
+#                         line_i += 1
+#                         episode_emo_df = pd.concat([episode_emo_df, line_emo_df], axis=0)
+#                         # update es object
+#                         if write_to_es:
+#                             for emo in OPENAI_EMOTIONS:
+#                                 set_dict_value_as_es_value(es_scene_event, episode_emo_dict, emo, 'openai_sent_')
+
+#     end_ts = time.time()
+#     duration = end_ts - start_ts
+#     duration = round(duration, 2)
+#     print(f'finish generate_emotional_sentiment against full episode at end_ts={end_ts}')
+
+#     # write dataframe to csv
+#     file_path = f'sentiment_data/{show_key.value}/{show_key.value}_{episode_key}.csv'
+#     episode_emo_df.to_csv(file_path, sep=',', header=True)
+
+#     # write to es
+#     if write_to_es:
+#         esqb.save_es_episode(es_episode)
+
+#     return {"duration": duration, 
+#             "openai_total_reqs": openai_total_reqs,
+#             "openai_success_reqs": openai_success_reqs,
+#             "openai_failure_reqs": openai_failure_reqs,
+#             "episode_emo_dict": episode_emo_dict, 
+#             "scene_emo_dicts": scene_emo_dicts}
+
+
+# @esw_app.get("/esw/test_episode_emotional_sentiment", tags=['ES Writer'])
+# def test_episode_emotional_sentiment():
+    
+#     flattened_scenes = ["PICARD: Captain's log, stardate 43930.7. The Enterprise has been in attendance at the biennial Trade Agreements Conference on Betazed. For the first time, the Ferengi are present, and I have reluctantly consented to their boarding the Enterprise for the closing reception.\n\nRIKER: Check and mate.\n\nWESLEY: Perfect. The queen's gambit finished off with the Aldabren Exchange.\n\nNIBOR: That is unfair. I couldn't concentrate with all that noise.\n\nWESLEY: Noise? It's Algolian ceremonial rhythms.\n\nPICARD: A toast to the success of the trade conference, Reittan. I must admit, I had some doubts when you invited the Ferengi.\n\nGRAX: They made a profit and behaved themselves. What more could one ask? Still, they trouble me. We Betazeds are uncomfortable with species like the Ferengi whose minds we can't read.\n\nDATA: Perhaps your telepathic abilities are ineffective owing to the anomalous construction of the Ferengi brain, which is composed of four different\n\nPICARD: Thank you, Mister Data. It was thoughtful of you to invite Lwaxana Troi to be part of the Betazed delegation.\n\nGRAX: Yes, Lwaxana and I go way back. Her first husband and I were old friends, and I've known Deanna since she was a child.\n\nPICARD: I'm sure Counsellor Troi appreciates the opportunity to spend time with her mother.\n\nLWAXANA: Little One, you could at least pretend you're happy to see me.\n\nTROI: Mother, we're among non-telepaths. It's impolite not to speak aloud.\n\nLWAXANA: You mean talk with my mouth full? Deanna, please!\n\nLWAXANA: All right, you want me to say something aloud? Have you considered if you had stayed on Betazed, you might have been a happier person.\n\nTROI: Let's not guess what might have been. I love my work aboard the Enterprise.\n\nLWAXANA: Yes, of course you do, but its all business and no play. You've got to enjoy life, relax, like I do. Find yourself the right man, think of your future. Think of my future.\n\nRIKER: Lwaxana, Deanna. Anything I can do for you?\n\nTROI: Could I?\n\nFAREK: She's as repulsive as the rest of them.\n\nTOG: Repulsive? I find her exotic. And what an advantage her telepathy would be in our negotiations.\n\nFAREK: To read our competitors' minds? Yes, that would be valuable. But she'd never agree to use her powers to help us.\n\nTOG: I'm not so sure.\n\nTOG: Lwaxana Troi of Betazed, I believe. I am DaiMon Tog of the Ferengi vessel Krayton. May I join you?\n\nLWAXANA: I was just going to see Captain Picard. Excuse me.\n\nLWAXANA: Oh, Jean-Luc! Jean-Luc! Come have a drink with me. Tell me what you've been up to.\n\nPICARD: Perhaps later, Lwaxana. Mister Data and I were just about to show Reittan Grax the er, the er, the new door mechanisms on the aft turbolifts. If you'll excuse us?\n\nTOG: Lwaxana Troi. I desire you.\n\nLWAXANA: What?\n\nTOG: You see, your Betazoid skills would be very useful to me, and I find you very attractive. I am willing to pay handsomely for you.\n\nLWAXANA: I don't believe this.\n\nTOG: You must be aware that every female has her price.\n\nLWAXANA: Let's get one thing straight, little man. I am not for sale. And if, by some chance I were to become available, I would rather eat Orion wing-slugs than deal with a toad-faced troll like you! So go away and find someone else to become your property.\n\nTOG: As you wish.\n\nFAREK: Now that you've totally humiliated us, may we return to our vessel?\n\nTOG: She is exhilarating, isn't she? Now I want her more than ever. Lwaxana Troi, you will be mine.",
+#         "TROI: Are we at war with the Ferengi yet?\n\nWORF: DaiMon Tog has returned to his vessel and the Ferengi have left orbit.\n\nTROI: My mother will be relieved.\n\nWORF: I hear she handled the situation quite skillfully. An admirable woman.\n\nTROI: I'll be sure to tell her you said so.\n\nLWAXANA: Come in, Little One.",
+#         "TROI: Mother? Mother, please.\n\nLWAXANA: After that awful little Ferengi insulted me, I needed to centre myself. Can you imagine that dreadful little creature talking to me like that? Doesn't he realise that I am a daughter of the Fifth House of Betazed. Holder of the Sacred Chalice of Rixx?\n\nTROI: The Sacred Chalice of Rixx is an old clay pot with mold growing inside it.\n\nLWAXANA: Perhaps one day when you're older and wiser, you'll understand. Come on, sit down. Talk to me. We spend so little time together.\n\nTROI: That's true. I'm sorry, and I didn't mean to get so upset with you at the reception.\n\nLWAXANA: Deanna, try to understand. You're all I have. My only concern is for your happiness.\n\nTROI: I am happy. Why can't you believe that?\n\nLWAXANA: I wish I could, but how much happiness is there in always being there for someone else, and never being there for yourself?\n\nTROI: I get a great deal of satisfaction out of my work.\n\nLWAXANA: I'm sure you do. I'm sure it's very rewarding in its way. What about a family?\n\nTROI: This is my family. My friends here on the Enterprise.\n\nLWAXANA: All right. In case I have to spell it out for you, I'm talking about finding a husband, having a child. That's what made me happy. At least until now.\n\nTROI: Mother, look. Perhaps some day I will marry. But you've got to let me make my own choices, live my own life, and not the life you would choose for me.\n\nLWAXANA: You had your chance with Commander Riker. Look how you ruined that.\n\nTROI: I did not ruin anything. We've became very good friends.\n\nLWAXANA: Well, all the better. You certainly wouldn't want to marry an enemy. I see we can't talk about this. Very well, have it your way, Little One.\n\nTROI: Little One? You called me that when I was five. Now stop demeaning me and address me as an adult!",
+#         "LWAXANA: I'll be home on Betazed if you need me, Little. Deanna.",
+#         "WESLEY: Adding pre-processors to the neutrino counters boosted efficiency by eleven percent. Of course, Commander La Forge and Commander Data did most of the work.\n\nLAFORGE: Not so fast, Wesley. Pre-processing the data with an optical chip was your idea.\n\nDATA: That is correct, sir. Although Commander La Forge and I designed the chip, Mister Crusher derived the equation governing its operation.\n\nRIKER: The point is, you've completed the upgrade well ahead of schedule. Very impressive.\n\nPICARD: Indeed. Fine work. We shall miss you, Mister Crusher. As you've guessed, final entrance examination scores from Starfleet Academy have arrived. Congratulations. As soon as you have completed the oral exam, you'll be formally admitted.\n\nRIKER: We'll have you back at Betazed in plenty of time to meet up with the Academy transport ship.\n\nWESLEY: Thank you, sir.\n\nPICARD: That'll be all. Number One, a moment.\n\nRIKER: Yes, Captain?\n\nPICARD: You'll agree that this is a fairly routine mapping mission?\n\nRIKER: Yes, sir.\n\nPICARD: Counsellor Troi had the good sense to ask for shore leave. I can see I'm going to have to suggest it to you. Have a good time, Number One.",
+#         "RIKER: I think it's around here somewhere.\n\nTROI: Maybe it died. It has been a few years.\n\nRIKER: Muktok live for hundreds of years. Here it is.\n\nTROI: It's lovely. I remember that sound, and all the good times we had.\n\nRIKER: I remember a certain junior officer meeting a very serious psychologist. The best part about being assigned to Betazed.\n\nLWAXANA: Oh, this is the perfect spot. Put the food down over there, Mister Homn. Isn't it a beautiful day for a picnic? They'll join us in a minute. No, no, no, no. Here, put the food over there. No, you can go back\n\nTROI: Mother, how did you know about this place?\n\nLWAXANA: Your father used to bring me here. Sit down.\n\nRIKER: And you even brought provisions. Very thoughtful.\n\nLWAXANA: Here, Will, Deanna. Try an oskoid. They're delicious. That sap running through the veins helps keep it warm.\n\nRIKER: Very tasty. So tell us, Lwaxana. The last time we met, you were looking for a husband. Did you have any luck?\n\nLWAXANA: Alas, no, but what happens to me isn't important. I'm much more concerned about other people getting on with their lives.\n\nTROI: Mother.\n\nLWAXANA: Mister Homn, I noticed some uttaberries back along the path. Pick some.\n\nLWAXANA: Well, Mister Homn and I could go back home if you two would like to be alone. It's such a romantic setting.\n\nTROI: Mother, stop it.\n\nLWAXANA: Darling, you have been so excitable lately. Have you ever thought of a leave of absence? I could talk to Jean-Luc.\n\nRIKER: Try the oskoid. Very different.\n\nRIKER: What the?\n\nTOG: For one whose beauty surpasses even these pericules.\n\nRIKER: DaiMon Tog, I thought the Krayton left orbit hours ago.\n\nTOG: It did. But when I tried to get the image of Lwaxana Troi out of my mind, I could not succeed.\n\nLWAXANA: This is ludicrous. You mean you came all the way back to Betazed for me?\n\nTOG: Why continue to search for perfection once you have found it?\n\nTROI: I don't believe this.\n\nLWAXANA: Look, Demon Tog, or whatever you call yourself, I am the Daughter of the Fifth House, Holder of the Sacred Chalice of Rixx, heir to the Holy Rings of Betazed. And unless you want to create an interstellar incident, you had better beam back to your ship.\n\nTOG: Returning to my ship is exactly what I had in mind. Krayton, transport four immediately.\n\nRIKER: No, Tog!",]
+    
+#     for scene in flattened_scenes:
+#         _, _ = sa.generate_sentiment(scene, 'openai_emo', multi_speaker=True)
+    
+#     return {'success': 'success'}

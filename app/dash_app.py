@@ -9,14 +9,14 @@ import urllib.parse
 
 import app.dash.components as cmp
 from app.dash import (
-    bertopic_model_clusters, episode_gantt_chart, location_line_chart, series_gantt_chart, series_search_results_gantt, show_3d_network_graph, 
-    speaker_3d_network_graph, show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
+    bertopic_model_clusters, episode_gantt_chart, location_line_chart, sentiment_line_chart, series_gantt_chart, series_search_results_gantt, 
+    show_3d_network_graph, speaker_3d_network_graph, show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
 )
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR
+from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR, OPENAI_EMOTIONS
 from app.show_metadata import ShowKey
 import app.utils as utils
 import app.web.fig_builder as fb
@@ -103,6 +103,8 @@ def display_page(pathname, search):
             show_key = parsed_dict['show_key']
             if isinstance(show_key, list):
                 show_key = show_key[0]
+        else:
+            show_key = 'TNG'
         bertopic_model_list_response = esr.list_bertopic_models(show_key)
         bertopic_model_options = bertopic_model_list_response['bertopic_model_ids']
         # parse bertopic_model_id from params
@@ -112,6 +114,56 @@ def display_page(pathname, search):
             if isinstance(bertopic_model_id, list):
                 bertopic_model_id = bertopic_model_id[0]
         return bertopic_model_clusters.generate_content(bertopic_model_options, bertopic_model_id)
+    
+    elif pathname == "/tsp_dash/sentiment-line-chart":
+        # TODO this duplicates speaker-3d-network-graph
+        # generate form-backing data 
+        # parse episode_key from params
+        if 'show_key' in parsed_dict:
+            show_key = parsed_dict['show_key']
+            if isinstance(show_key, list):
+                show_key = show_key[0]
+        else:
+            show_key = 'TNG'
+        # fetch episode listing for dropdown menu
+        all_simple_episodes = esr.fetch_simple_episodes(ShowKey(show_key))
+        episode_dropdown_options = []
+        for episode in all_simple_episodes['episodes']:
+            label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
+            episode_dropdown_options.append({'label': label, 'value': episode['episode_key']})
+        # parse episode_key from params
+        if 'episode_key' in parsed_dict:
+            episode_key = parsed_dict['episode_key']
+            if isinstance(episode_key, list):
+                episode_key = episode_key[0]
+        else:
+            episode_key = '218'
+
+        speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+        episode_speakers = speaker_episodes_response['speaker_episodes']
+        speaker_dropdown_options = [s['speaker'] for s in episode_speakers]
+
+        # # load sentiment df to get
+        # file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+        # if os.path.isfile(file_path):
+        #     df = pd.read_csv(file_path)
+        #     print(f'loading dataframe at file_path={file_path}')
+        # else:
+        #     raise Exception(f'Failure to render_episode_sentiment_line_chart: unable to fetch dataframe at file_path={file_path}')
+
+        # episode_speakers = df['speaker'].value_counts().sort_values(ascending=False)
+        # print(f'episode_speakers={episode_speakers}')
+        # print(f'type(episode_speakers)={type(episode_speakers)}')
+        # print(f'episode_speakers.iloc[0]={episode_speakers.iloc[0]}')
+        # print(f'type(episode_speakers.iloc[0])={type(episode_speakers.iloc[0])}')
+
+        # episode_speaker_options = []
+        # for speaker, _ in episode_speakers.items():
+        #     episode_speaker_options.append({"label": speaker, "value": speaker})
+        
+        print(f'episode_speaker_options={speaker_dropdown_options}')
+
+        return sentiment_line_chart.generate_content(episode_key, episode_dropdown_options, speaker_dropdown_options)
 
 
 ############ show-cluster-scatter callbacks
@@ -479,6 +531,49 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
 
     return bertopic_3d_scatter, bertopic_visualize_barchart, bertopic_visualize_topics, bertopic_visualize_hierarchy, show_key, bertopic_model_id, table_div
 
+
+############ sentiment-line-chart callbacks
+@dapp.callback(
+    Output('sentiment-line-chart', 'figure'),
+    # Output('episode-speaker-options', 'options'),
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'),
+    Input('freeze-on', 'value'),
+    Input('emotion', 'value'),
+    Input('speaker', 'value'))    
+def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_on: str, emotion: str, speaker: str):
+    print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
+
+    if freeze_on == 'emotion':
+        emotions = [emotion]
+        # speakers = ['PICARD', 'RIKER', 'DATA', 'TROI', 'LAFORGE', 'WORF', 'CRUSHER']
+        speakers = []
+        focal_property = 'speaker'
+    elif freeze_on == 'speaker':
+        emotions = OPENAI_EMOTIONS
+        speakers = [speaker]
+        focal_property = 'emotion'
+    else:
+        raise Exception(f"Failure to render_episode_sentiment_line_chart: freeze_on={freeze_on} is not supported, accepted values are ['emotion', 'speaker']")
+
+    # fetch episode sentiment data and build line chart
+    file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+    if os.path.isfile(file_path):
+        df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        raise Exception(f'Failure to render_episode_sentiment_line_chart: unable to fetch dataframe at file_path={file_path}')
+    
+    # ick, don't like the second freeze_on check
+    if freeze_on == 'emotion':
+        print(f'got here 2')
+        speakers_series = df['speaker'].value_counts().sort_values(ascending=False)
+        speakers = [s for s,_ in speakers_series.items()]        
+    
+    sentiment_line_chart = fb.build_episode_sentiment_line_chart(show_key, df, speakers, emotions, focal_property)
+
+    return sentiment_line_chart
+    
 
 if __name__ == "__main__":
     dapp.run_server(debug=True)

@@ -110,13 +110,13 @@ def fetch_narrative_sequences(show_key: ShowKey, episode_key: str):
 
 
 @esr_app.get("/esr/fetch_flattened_scenes/{show_key}/{episode_key}", tags=['ES Reader'])
-def fetch_flattened_scenes(show_key: ShowKey, episode_key: str, include_speakers: bool = False, include_context: bool = False):
+def fetch_flattened_scenes(show_key: ShowKey, episode_key: str, include_speakers: bool = False, include_context: bool = False, line_breaks: bool = False):
     '''
     Fetch denormalized scene text for a given episode
     '''
     s = esqb.fetch_episode_by_key(show_key.value, episode_key)
     es_query = s.to_dict()
-    flattened_scenes = esrt.return_flattened_scenes(s, include_speakers=include_speakers, include_context=include_context)
+    flattened_scenes = esrt.return_flattened_scenes(s, include_speakers=include_speakers, include_context=include_context, line_breaks=line_breaks)
     return {"flattened_scenes": flattened_scenes, "es_query": es_query}
  
 
@@ -1135,6 +1135,8 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
     episode = fetch_episode(show_key, episode_key)
     es_episode = episode['es_episode']
     for scene in es_episode['scenes']:
+        if 'scene_events' not in scene:
+            continue
         speakers_in_scene = set()
         speaker_node_ids_in_scene = set()
         for scene_event in scene['scene_events']:

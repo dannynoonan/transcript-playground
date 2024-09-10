@@ -709,6 +709,11 @@ def build_bertopic_visualize_barchart(bertopic_model: BERTopic) -> go.Figure:
     # fig = bertopic_model.visualize_barchart(top_n_topics=16, width=200, height=250)
     fig = bertopic_model.visualize_barchart(top_n_topics=16, width=400, height=300)
 
+    # TODO saving
+    # https://maartengr.github.io/BERTopic/api/plotting/barchart.html#bertopic.plotting._barchart.visualize_barchart
+    # fig = topic_model.visualize_barchart()
+    # fig.write_html("path/to/file.html")
+
     return fig
 
 
@@ -726,5 +731,31 @@ def build_bertopic_visualize_hierarchy(bertopic_model: BERTopic) -> go.Figure:
     Generate topic hierarchy using saved model file
     '''
     fig = bertopic_model.visualize_hierarchy(width=1600, height=1200)
+
+    return fig
+
+
+def build_episode_sentiment_line_chart(show_key: str, df: pd.DataFrame, speakers: list, emotions: list, focal_property: str) -> go.Figure:
+    print(f'in build_sentiment_line_chart show_key={show_key} emotion={emotions} speakers={speakers} focal_property={focal_property}')
+
+    # remove episode-level rows 
+    df = df.loc[df['scene'] != 'ALL']
+    # remove live-level rows 
+    df = df.loc[df['line'] == 'ALL']
+    # filter out all other emotions 
+    df = df.loc[df['emotion'].isin(emotions)]
+    # filter out all other speakers 
+    df = df.loc[df['speaker'].isin(speakers)]
+    # cast numeric columns correctly TODO should this happen upstream?
+    df['scene'] = pd.to_numeric(df['scene'])
+    df['score'] = pd.to_numeric(df['score'])
+
+    # df = df.sort_values(['scene', 'speaker', 'emotion'])
+    # print(df)
+
+    fig = px.line(df, x='scene', y='score', color=focal_property, height=800, render_mode='svg', line_shape='spline')
+
+    for i in range(len(fig.data)):
+        fig.data[i].update(mode='markers+lines')
 
     return fig

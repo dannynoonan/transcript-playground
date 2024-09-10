@@ -39,6 +39,7 @@ def init_transcripts_index():
     # EsEpisodeTranscript.init(using=es_client)
     EsEpisodeTranscript.init()
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
+    es_conn.indices.put_settings(index="transcripts", body={"index.mapping.total_fields.limit": 5000})
 
 
 def init_narratives_index():
@@ -1627,3 +1628,14 @@ def fetch_topic_embedding(topic_grouping: str, topic_key: str, vector_field: str
     s = s.source(includes=[vector_field])
 
     return s
+
+
+def save_episode_sentiment(es_episode: EsEpisodeTranscript, episode_sentiment: dict) -> None:
+    print(f'begin save_episode_sentiment for es_episode={es_episode.title}')
+
+    es_episode.nltk_sent_pos = episode_sentiment['pos']
+    es_episode.nltk_sent_neg = episode_sentiment['neg']
+    es_episode.nltk_sent_neu = episode_sentiment['neu']
+
+    es_episode.save()
+

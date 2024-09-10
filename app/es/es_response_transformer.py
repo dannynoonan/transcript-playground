@@ -214,33 +214,38 @@ def return_narrative_sequences(s: Search) -> list:
     return narrative_sequences
 
 
-def return_flattened_scenes(s: Search, include_speakers: bool = False, include_context: bool = False) -> dict:
+def return_flattened_scenes(s: Search, include_speakers: bool = False, include_context: bool = False, line_breaks: bool = False) -> dict:
     # print(f'begin return_flattened_scenes for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
     flattened_scenes = []
 
+    split_str = ' '
+    if line_breaks:
+        split_str = '\n\n'
+
     for hit in s.hits:
         episode = hit._d_
         if 'scenes' not in episode:
             continue
         for scene in episode['scenes']:
-            if 'scene_events' not in scene:
-                continue
             scene_event_dialog = []
+            # NOTE: to preserve scene index positions, append scene even if it lacks dialog content
+            if 'scene_events' not in scene:
+                flattened_scenes.append('')
+                continue
             for scene_event in scene['scene_events']:
                 scene_event_elements = []
                 if include_context and 'context_info' in scene_event and not scene_event['context_info'] == 'OC':
-                    scene_event_elements.append(f"{scene_event['context_info']}.")
+                    scene_event_elements.append(f"[{scene_event['context_info']}]")
                 if include_speakers and 'spoken_by' in scene_event:
                     scene_event_elements.append(f"{scene_event['spoken_by']}:")
                 if 'dialog' in scene_event:
                     scene_event_elements.append(scene_event['dialog'])
                 if scene_event_elements: 
                     scene_event_dialog.append(' '.join(scene_event_elements))
-            if scene_event_dialog:
-                flattened_scenes.append(' '.join(scene_event_dialog))
+            flattened_scenes.append(f'{split_str}'.join(scene_event_dialog))
     
     return flattened_scenes
 
