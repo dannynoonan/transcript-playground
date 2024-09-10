@@ -22,7 +22,7 @@ def init_nltk() -> None:
 
 
 def generate_polarity_sentiment(text: str, pre_process_text: bool = True) -> tuple[pd.DataFrame, dict]:
-    init_nltk()
+    # init_nltk()
     if pre_process_text:
         tokens = word_tokenize(text)
         filtered_tokens = [word for word in tokens if word.lower() not in NLTK_STOP_WORDS]

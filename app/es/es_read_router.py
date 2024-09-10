@@ -1135,6 +1135,8 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
     episode = fetch_episode(show_key, episode_key)
     es_episode = episode['es_episode']
     for scene in es_episode['scenes']:
+        if 'scene_events' not in scene:
+            continue
         speakers_in_scene = set()
         speaker_node_ids_in_scene = set()
         for scene_event in scene['scene_events']:

@@ -114,7 +114,20 @@ def display_page(pathname, search):
         return bertopic_model_clusters.generate_content(bertopic_model_options, bertopic_model_id)
     
     elif pathname == "/tsp_dash/sentiment-line-chart":
-        return sentiment_line_chart.content
+        # TODO this duplicates speaker-3d-network-graph
+        # generate form-backing data 
+        all_simple_episodes = esr.fetch_simple_episodes(ShowKey('TNG'))
+        episode_dropdown_options = []
+        for episode in all_simple_episodes['episodes']:
+            label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
+            episode_dropdown_options.append({'label': label, 'value': episode['episode_key']})
+        # parse episode_key from params
+        episode_key = None
+        if 'episode_key' in parsed_dict:
+            episode_key = parsed_dict['episode_key']
+            if isinstance(episode_key, list):
+                episode_key = episode_key[0]
+        return sentiment_line_chart.generate_content(episode_dropdown_options, episode_key=episode_key)
 
 
 ############ show-cluster-scatter callbacks
@@ -487,11 +500,12 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
 @dapp.callback(
     Output('sentiment-line-chart', 'figure'),
     Input('show-key', 'value'),
+    Input('episode-key', 'value'),
     Input('freeze-on', 'value'),
     Input('emotion', 'value'),
-    Input('speaker1', 'value'))    
-def render_episode_sentiment_line_chart(show_key: str, freeze_on: str, emotion: str, speaker: str):
-    print(f'in render_episode_sentiment_line_chart, show_key={show_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
+    Input('speaker', 'value'))    
+def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_on: str, emotion: str, speaker: str):
+    print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
 
     if freeze_on == 'emotion':
         emotions = [emotion]
@@ -503,8 +517,6 @@ def render_episode_sentiment_line_chart(show_key: str, freeze_on: str, emotion: 
         focal_property = 'emotion'
     else:
         raise Exception(f"Failure to render_episode_sentiment_line_chart: freeze_on={freeze_on} is not supported, accepted values are ['emotion', 'speaker']")
-
-    episode_key = '169'
 
     # fetch episode sentiment data and build line chart
     file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
