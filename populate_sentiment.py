@@ -16,7 +16,7 @@ def main():
     # parse script params
     parser = argparse.ArgumentParser()
     parser.add_argument("--show_key", "-s", help="Show key", required=True)
-    parser.add_argument("--episode_key", "-e", help="Episode key", required=False)
+    parser.add_argument("--episode_keys", "-e", help="Episode keys", required=False)
     parser.add_argument("--season", "-n", help="Season", required=False)
     parser.add_argument("--analyzer", "-a", help="Analyzer", required=True)
     parser.add_argument("--scene_level", "-c", help="Scene level", required=False)
@@ -25,14 +25,14 @@ def main():
     parser.add_argument("--write_to_es", "-w", help="Write to es", required=False)
     args = parser.parse_args()
     # assign script params to vars
-    episode_key = None
+    episode_keys = []
     season = None
     scene_level = False
     line_level = False
     overwrite_csv = False
     write_to_es = False
-    if args.episode_key: 
-        episode_key = args.episode_key
+    if args.episode_keys: 
+        episode_keys = args.episode_keys
     if args.season: 
         season = args.season
     if args.scene_level: 
@@ -44,8 +44,10 @@ def main():
     if args.write_to_es: 
         write_to_es = args.write_to_es
 
-    if episode_key:
-        populate_episode_sentiment(args.show_key, episode_key, args.analyzer, scene_level=scene_level, line_level=line_level, overwrite_csv=overwrite_csv, write_to_es=write_to_es)
+    if episode_keys:
+        e_keys = episode_keys.split(',')
+        for e_key in e_keys:
+            populate_episode_sentiment(args.show_key, e_key, args.analyzer, scene_level=scene_level, line_level=line_level, overwrite_csv=overwrite_csv, write_to_es=write_to_es)
     elif season:
         simple_episodes_response = esr.fetch_simple_episodes(ShowKey(args.show_key), season=season)
         simple_episodes = simple_episodes_response['episodes']
