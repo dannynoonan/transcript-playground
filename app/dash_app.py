@@ -103,6 +103,8 @@ def display_page(pathname, search):
             show_key = parsed_dict['show_key']
             if isinstance(show_key, list):
                 show_key = show_key[0]
+        else:
+            show_key = 'TNG'
         bertopic_model_list_response = esr.list_bertopic_models(show_key)
         bertopic_model_options = bertopic_model_list_response['bertopic_model_ids']
         # parse bertopic_model_id from params
@@ -116,18 +118,52 @@ def display_page(pathname, search):
     elif pathname == "/tsp_dash/sentiment-line-chart":
         # TODO this duplicates speaker-3d-network-graph
         # generate form-backing data 
-        all_simple_episodes = esr.fetch_simple_episodes(ShowKey('TNG'))
+        # parse episode_key from params
+        if 'show_key' in parsed_dict:
+            show_key = parsed_dict['show_key']
+            if isinstance(show_key, list):
+                show_key = show_key[0]
+        else:
+            show_key = 'TNG'
+        # fetch episode listing for dropdown menu
+        all_simple_episodes = esr.fetch_simple_episodes(ShowKey(show_key))
         episode_dropdown_options = []
         for episode in all_simple_episodes['episodes']:
             label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
             episode_dropdown_options.append({'label': label, 'value': episode['episode_key']})
         # parse episode_key from params
-        episode_key = None
         if 'episode_key' in parsed_dict:
             episode_key = parsed_dict['episode_key']
             if isinstance(episode_key, list):
                 episode_key = episode_key[0]
-        return sentiment_line_chart.generate_content(episode_dropdown_options, episode_key=episode_key)
+        else:
+            episode_key = '218'
+
+        speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+        episode_speakers = speaker_episodes_response['speaker_episodes']
+        speaker_dropdown_options = [s['speaker'] for s in episode_speakers]
+
+        # # load sentiment df to get
+        # file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+        # if os.path.isfile(file_path):
+        #     df = pd.read_csv(file_path)
+        #     print(f'loading dataframe at file_path={file_path}')
+        # else:
+        #     raise Exception(f'Failure to render_episode_sentiment_line_chart: unable to fetch dataframe at file_path={file_path}')
+
+        # episode_speakers = df['speaker'].value_counts().sort_values(ascending=False)
+        # print(f'episode_speakers={episode_speakers}')
+        # print(f'type(episode_speakers)={type(episode_speakers)}')
+        # print(f'episode_speakers.iloc[0]={episode_speakers.iloc[0]}')
+        # print(f'type(episode_speakers.iloc[0])={type(episode_speakers.iloc[0])}')
+
+        # episode_speaker_options = []
+        # for speaker, _ in episode_speakers.items():
+        #     episode_speaker_options.append({"label": speaker, "value": speaker})
+        
+        print(f'episode_speaker_options={speaker_dropdown_options}')
+
+        return sentiment_line_chart.generate_content(episode_key, episode_dropdown_options, speaker_dropdown_options)
 
 
 ############ show-cluster-scatter callbacks
@@ -499,6 +535,7 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
 ############ sentiment-line-chart callbacks
 @dapp.callback(
     Output('sentiment-line-chart', 'figure'),
+    # Output('episode-speaker-options', 'options'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('freeze-on', 'value'),
@@ -509,7 +546,8 @@ def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_
 
     if freeze_on == 'emotion':
         emotions = [emotion]
-        speakers = ['PICARD', 'RIKER', 'DATA', 'TROI', 'LAFORGE', 'WORF', 'CRUSHER']
+        # speakers = ['PICARD', 'RIKER', 'DATA', 'TROI', 'LAFORGE', 'WORF', 'CRUSHER']
+        speakers = []
         focal_property = 'speaker'
     elif freeze_on == 'speaker':
         emotions = OPENAI_EMOTIONS
@@ -525,6 +563,12 @@ def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_
         print(f'loading dataframe at file_path={file_path}')
     else:
         raise Exception(f'Failure to render_episode_sentiment_line_chart: unable to fetch dataframe at file_path={file_path}')
+    
+    # ick, don't like the second freeze_on check
+    if freeze_on == 'emotion':
+        print(f'got here 2')
+        speakers_series = df['speaker'].value_counts().sort_values(ascending=False)
+        speakers = [s for s,_ in speakers_series.items()]        
     
     sentiment_line_chart = fb.build_episode_sentiment_line_chart(show_key, df, speakers, emotions, focal_property)
 
