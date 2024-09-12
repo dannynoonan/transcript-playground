@@ -58,6 +58,33 @@ def set_dict_value_as_es_value(es_object: object, d: dict, k: str, es_field_pref
     es_object[es_field] = d[k]
 
 
+def extract_phrase_qts(qt: str) -> tuple[str, list]:
+    # remove internal whitespace
+    qt = ' '.join(qt.split())
+    # if no quotes present, there's no phrase to extract
+    if not '"' in qt:
+        return qt, []
+    # carve up qt into portions between quotes and outside of quotes
+    tokens = []
+    phrases = []
+    qt_bits = qt.split('"')
+    inside_quotes = False
+    # NOTE we're not verifying an even number of quotes
+    # text after an odd quote is always treated as a phrase until the next even quote
+    for bit in qt_bits:
+        if inside_quotes:
+            phrases.append(bit.strip())
+            inside_quotes = False
+        else:
+            if bit:
+                bit = bit.strip()
+                if bit:
+                    tokens.append(bit)
+            inside_quotes = True
+    # print(f'tokens={tokens}')
+    return ' '.join(tokens), phrases
+
+
 # @DeprecationWarning
 # def split_parent_and_child_topics(topics: list, parent_limit: int = None, child_limit: int = None) -> tuple[list, list]:
 #     '''

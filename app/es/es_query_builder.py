@@ -12,6 +12,7 @@ from app.es.es_model import (
 )
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
+from app import utils
 
 
 # es_client = Elasticsearch(
@@ -233,7 +234,17 @@ def search_episodes_by_title(show_key: str, qt: str) -> Search:
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
-    q = Q('bool', must=[Q('match', title=qt)])
+    match_qt, phrase_qts = utils.extract_phrase_qts(qt)
+        
+    should = []
+    if match_qt:
+        should.append(Q('match', title=match_qt))
+    for pqt in phrase_qts:
+        should.append(Q('match_phrase', title=pqt))
+        
+    q = Q('bool', should=should)
+    # else:
+    #     q = Q('bool', must=[Q('match', title=match_qt)])
 
     s = s.filter('term', show_key=show_key)
     s = s.query(q)
@@ -770,8 +781,18 @@ def search_scene_events(show_key: str, season: str = None, episode_key: str = No
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
+    dialog_match_qt, dialog_phrase_qts = utils.extract_phrase_qts(dialog)
+
+    should = []
     speaker_q = Q('match', **{'scenes.scene_events.spoken_by.keyword': speaker})
-    dialog_q = Q('match', **{'scenes.scene_events.dialog': dialog})
+    if dialog_match_qt:
+        should.append(Q('match', **{'scenes.scene_events.dialog': dialog_match_qt}))
+    for pqt in dialog_phrase_qts:
+        should.append(Q('match_phrase', **{'scenes.scene_events.dialog': pqt}))
+    
+    dialog_q = Q('bool', should=should)
+    # else:
+    #     dialog_q = Q('match', **{'scenes.scene_events.dialog': dialog_match_qt})
 
     q = None
     if speaker:
@@ -871,11 +892,33 @@ def search_episodes(show_key: str, season: str = None, episode_key: str = None, 
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
-    episode_q = Q('match', title=qt)
-    
-    scene_fields_q = Q('bool', minimum_should_match=1, should=[
-            Q('match', **{'scenes.location': qt}),
-            Q('match', **{'scenes.description': qt})])
+    match_qt, phrase_qts = utils.extract_phrase_qts(qt)
+
+    episode_should = []
+    scene_should = []
+    scene_event_should = []
+
+    # if match_qt, append/extend as 'match' queries to 'should' query lists
+    if match_qt:
+        episode_should.append(Q('match', title=match_qt))
+        scene_should.extend([Q('match', **{'scenes.location': match_qt}),
+                             Q('match', **{'scenes.description': match_qt})])
+        scene_event_should.extend([Q('match', **{'scenes.scene_events.context_info': match_qt}),
+                                   Q('match', **{'scenes.scene_events.spoken_by.keyword': match_qt}),
+                                   Q('match', **{'scenes.scene_events.dialog': match_qt})])
+
+    # if phrase_qts, append/extend as 'match_phrase' queries to 'should' query lists
+    for pqt in phrase_qts:
+        episode_should.append(Q('match_phrase', title=pqt))
+        scene_should.extend([Q('match_phrase', **{'scenes.location': pqt}),
+                             Q('match_phrase', **{'scenes.description': pqt})])
+        scene_event_should.extend([Q('match_phrase', **{'scenes.scene_events.context_info': pqt}),
+                                   Q('match_phrase', **{'scenes.scene_events.spoken_by.keyword': pqt}),
+                                   Q('match_phrase', **{'scenes.scene_events.dialog': pqt})])
+
+    episode_q = Q('bool', minimum_should_match=1, should=episode_should)
+    scene_fields_q = Q('bool', minimum_should_match=1, should=scene_should)
+    scene_event_fields_q = Q('bool', minimum_should_match=1, should=scene_event_should)
     
     scenes_q = Q('nested', path='scenes', 
             query=scene_fields_q,
@@ -888,11 +931,6 @@ def search_episodes(show_key: str, season: str = None, episode_key: str = None, 
                     }
                 }
             })
-    
-    scene_event_fields_q = Q('bool', minimum_should_match=1, should=[
-            Q('match', **{'scenes.scene_events.context_info': qt}),
-            Q('match', **{'scenes.scene_events.spoken_by.keyword': qt}),
-            Q('match', **{'scenes.scene_events.dialog': qt})])
     
     scene_events_q = Q('nested', path='scenes.scene_events', 
             query=scene_event_fields_q,
