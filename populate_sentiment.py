@@ -25,7 +25,6 @@ def main():
     parser.add_argument("--write_to_es", "-w", help="Write to es", required=False)
     args = parser.parse_args()
     # assign script params to vars
-    episode_keys = []
     season = None
     scene_level = False
     line_level = False
@@ -54,7 +53,7 @@ def main():
         for ep in simple_episodes:
             populate_episode_sentiment(args.show_key, ep['episode_key'], args.analyzer, scene_level=scene_level, line_level=line_level, overwrite_csv=overwrite_csv, write_to_es=write_to_es)
     else:
-        print(f'Either `episode_key` (-e) or `season` (-n) is required, populating sentiment for an entire series in a single job is currently not supported')
+        print(f'Either `episode_keys` (-e) or `season` (-n) is required, populating sentiment for an entire series in a single job is currently not supported')
         return 
 
 

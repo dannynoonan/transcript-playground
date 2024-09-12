@@ -39,7 +39,7 @@ def init_transcripts_index():
     # EsEpisodeTranscript.init(using=es_client)
     EsEpisodeTranscript.init()
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
-    es_conn.indices.put_settings(index="transcripts", body={"index.mapping.total_fields.limit": 5000})
+    es_conn.indices.put_settings(index="transcripts", body={"index.mapping.total_fields.limit": 10000})
 
 
 def init_narratives_index():
