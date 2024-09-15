@@ -449,6 +449,11 @@ def render_series_search_results_gantt(show_key: str, qt: str, qt_submit: bool =
 
     series_gantt_response = esr.generate_series_speaker_gantt_sequence(ShowKey(show_key))
     search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
+    # if 'matches' not in search_response or len(search_response['matches']) == 0:
+    #     print(f"no matches for show_key={show_key} qt=`{qt}` qt_submit=`{qt_submit}`")
+    #     return None, show_key, qt
+    # print(f"len(search_response['matches'])={len(search_response['matches'])}")
+    # print(f"len(series_gantt_response['episode_speakers_sequence'])={len(series_gantt_response['episode_speakers_sequence'])}")
     series_search_results_gantt = fb.build_series_search_results_gantt(show_key, qt, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
 
     return series_search_results_gantt, show_key, qt

@@ -557,6 +557,41 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     return fig
 
 
+def build_speaker_episode_frequency_bar(show_key: str, episode_key: str, df: pd.DataFrame, span_granularity: str) -> go.Figure:
+    print(f'in build_speaker_frequency_bar show_key={show_key} episode_key={episode_key} span_granularity={span_granularity}')
+
+    # in this context:
+    #   - `aggregate_ratio=True`: intra-season episode-by-episode tabulation using sum()
+    #   - `aggregate_ratio=False`: inter-season comparison between totals using max() (and `sequence_in_season` is ignored)
+    x = f'{span_granularity}_count'
+    # sum_df = df.groupby(['speaker', 'season'], as_index=False)[x].sum()
+
+    # sum_df.sort_values(['season', x], ascending=[True, False], inplace=True)
+    # category_orders = {'speaker': sum_df['speaker'].unique()}
+
+    # file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_{season}_{sequence_in_season}.csv'
+    # sum_df.to_csv(file_path)
+
+    # custom_data = []  # TODO
+
+    fig = px.bar(df, x=x, y='speaker', color='speaker',
+                # custom_data=custom_data, hover_name=cols.VOTE_WEIGHT, hover_data=hover_data,
+                # text=cols.EC_VOTES, 
+                #  category_orders=category_orders,
+                # color_discrete_map=color_discrete_map, category_orders=category_orders,
+                # labels={cols.GROUP: groups_label},
+                # range_x=[vw_min,vw_max], log_x=True, height=fig_height
+    )
+
+    fig.update_layout(showlegend=False)
+
+    fig.update_layout(
+        yaxis={'tickangle': 35, 'showticklabels': True, 'type': 'category', 'tickfont_size': 8},
+        yaxis_categoryorder='total ascending') # yaxis_categoryorder
+    
+    return fig
+
+
 # def build_speaker_line_chart(show_key: str, data: list, aggregate_ratio: bool = False) -> go.Figure:
 #     print(f'in build_speaker_line_chart show_key={show_key}')
 

@@ -68,7 +68,7 @@
                                                             <td>
                                                                 <a class="alert-link" href="/web/episode/{{ tdata['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title'] }}</a>
                                                             </td>
-                                                            <td>{{ episode['air_date']|truncate(10,true,'') }}</td>
+                                                            <td><nobr>{{ episode['air_date']|truncate(10,true,'') }}</nobr></td>
                                                             <td>{{ episode['focal_speakers']|join(', ') }}</td>
                                                             <td>
                                                             {% if episode['topics_universal_tfidf'] %}

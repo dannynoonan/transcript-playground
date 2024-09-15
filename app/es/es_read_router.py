@@ -1416,7 +1416,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
     episode_i = 0
     curr_season = None
     for episode in episodes:
-        episode_key = episode['episode_key']
+        episode_key = str(episode['episode_key'])
         episode_title = episode['title']
         season = episode['season']
         sequence_in_season = episode['sequence_in_season']
@@ -1478,6 +1478,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
             # init speaker_episode_row
             speaker_episode_row = dict(
                 speaker=speaker,
+                episode_key=episode_key,
                 episode_i=episode_i, 
                 episode_title=episode_title,
                 season=season,
