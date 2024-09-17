@@ -273,17 +273,23 @@ def fetch_speaker(show_key: str, speaker_name: str) -> EsSpeaker|None:
     return speaker
 
 
-def fetch_indexed_speakers(show_key: str, season: int = None, return_fields: list = None, min_episode_count: int = None) -> Search:
+def fetch_indexed_speakers(show_key: str, speaker_list: str = None, season: int = None, return_fields: list = None, min_episode_count: int = None) -> Search:
     print(f'begin fetch_indexed_speakers for show_key={show_key}')
 
     s = Search(index='speakers')
     s = s.extra(size=1000)
 
     s = s.filter('term', show_key=show_key)
+    # if speaker_list is set, restrict to specific speakers using bool/should
+    if speaker_list:
+        speaker_match_shoulds = []
+        for spkr in speaker_list:
+            speaker_match_shoulds.append(Q('match', speaker=spkr))
+        q = Q('bool', minimum_should_match=1, should=speaker_match_shoulds)
+        s = s.query(q)
     # NOTE this filter is misleading: it will exclude speakers by season but will not adjust aggregate series-level counts
     if season:
         s = s.filter('term', season=str(season))
-
     if min_episode_count:
         s = s.filter('range', episode_count={'gte': min_episode_count})
 
@@ -567,9 +573,9 @@ def fetch_speaker_season_topics(show_key: str, topic_grouping: str, speaker: str
     return s
 
 
-def fetch_speaker_episode_topics(speaker: str, show_key: str, topic_grouping: str, episode_key: str = None, season: int = None, 
+def fetch_speaker_episode_topics(show_key: str, topic_grouping: str, speaker: str = None, episode_key: str = None, season: int = None, 
                                  level: str = None, limit: int = None) -> Search:
-    print(f'begin fetch_speaker_episode_topics for speaker={speaker} show_key={show_key} topic_grouping={topic_grouping} episode_key={episode_key} season={season} level={level}')
+    print(f'begin fetch_speaker_episode_topics for show_key={show_key} topic_grouping={topic_grouping} speaker={speaker} episode_key={episode_key} season={season} level={level}')
 
     if not limit:
         limit = 1000
@@ -578,9 +584,10 @@ def fetch_speaker_episode_topics(speaker: str, show_key: str, topic_grouping: st
     # s = s.extra(size=limit)
     s = s.extra(size=10000)
 
-    s = s.filter('term', speaker=speaker)
     s = s.filter('term', show_key=show_key)
     s = s.filter('term', topic_grouping=topic_grouping)
+    if speaker:
+        s = s.filter('term', speaker=speaker)
     if episode_key:
         s = s.filter('term', episode_key=episode_key)
     if season:
@@ -592,6 +599,29 @@ def fetch_speaker_episode_topics(speaker: str, show_key: str, topic_grouping: st
             s = s.filter('term', is_parent=False)
 
     s = s.sort({'season': {'order': 'asc'}}, {'episode_key': {'order': 'asc'}}, {'score': {'order': 'desc'}})
+
+    return s
+
+
+def fetch_speaker_topics_for_episode(show_key: str, episode_key: str, topic_grouping: str = None, limit: int = None, min_word_count: int = None) -> Search:
+    """
+    Fetch speaker_topics for episode via speaker_episode_topics index
+    """
+    print(f'begin fetch_speaker_topics_for_episode for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping}')
+
+    if not limit:
+        limit = 100
+
+    s = Search(index='speaker_episode_topics')
+    s = s.extra(size=limit)
+
+    s = s.filter('match', show_key=show_key)
+    s = s.filter('match', episode_key=episode_key)
+    s = s.filter('match', topic_grouping=topic_grouping)
+    if min_word_count:
+        s = s.filter('range', word_count={'gt': min_word_count})
+
+    s = s.sort({'score': {'order': 'desc'}})
 
     return s
 
@@ -696,6 +726,29 @@ def search_speaker_episode_topics(topic_grouping: str, topic_key: str, show_key:
     s = s.sort({'score': {'order': 'desc'}})
 
     return s
+
+
+# def fetch_speaker_topics_for_episode(show_key: str, episode_key: str, topic_grouping: str = None, limit: int = None, min_word_count: int = None) -> Search:
+#     """
+#     Fetch speaker_topics for episode via speaker_episode_topics index
+#     """
+#     print(f'begin fetch_speaker_topics_for_episode for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping}')
+
+#     if not limit:
+#         limit = 100
+
+#     s = Search(index='speaker_episode_topics')
+#     s = s.extra(size=limit)
+
+#     s = s.filter('match', show_key=show_key)
+#     s = s.filter('match', episode_key=episode_key)
+#     s = s.filter('match', topic_grouping=topic_grouping)
+#     if min_word_count:
+#         s = s.filter('range', word_count={'gt': min_word_count})
+
+#     s = s.sort({'score': {'order': 'desc'}})
+
+#     return s
 
 
 @DeprecationWarning

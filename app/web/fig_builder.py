@@ -17,7 +17,7 @@ from sklearn.manifold import TSNE
 
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey, show_metadata
-from app.web.fig_helper import apply_animation_settings, topic_cat_rank_color_mapper
+from app.web.fig_helper import apply_animation_settings, topic_cat_rank_color_mapper, to_mbti_x, to_mbti_y, to_dnda_x, to_dnda_y
 import app.web.fig_metadata as fm
 
 
@@ -560,23 +560,12 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
 def build_speaker_episode_frequency_bar(show_key: str, episode_key: str, df: pd.DataFrame, span_granularity: str) -> go.Figure:
     print(f'in build_speaker_frequency_bar show_key={show_key} episode_key={episode_key} span_granularity={span_granularity}')
 
-    # in this context:
-    #   - `aggregate_ratio=True`: intra-season episode-by-episode tabulation using sum()
-    #   - `aggregate_ratio=False`: inter-season comparison between totals using max() (and `sequence_in_season` is ignored)
     x = f'{span_granularity}_count'
-    # sum_df = df.groupby(['speaker', 'season'], as_index=False)[x].sum()
-
-    # sum_df.sort_values(['season', x], ascending=[True, False], inplace=True)
-    # category_orders = {'speaker': sum_df['speaker'].unique()}
-
-    # file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_{season}_{sequence_in_season}.csv'
-    # sum_df.to_csv(file_path)
 
     # custom_data = []  # TODO
 
     fig = px.bar(df, x=x, y='speaker', color='speaker',
                 # custom_data=custom_data, hover_name=cols.VOTE_WEIGHT, hover_data=hover_data,
-                # text=cols.EC_VOTES, 
                 #  category_orders=category_orders,
                 # color_discrete_map=color_discrete_map, category_orders=category_orders,
                 # labels={cols.GROUP: groups_label},
@@ -590,6 +579,73 @@ def build_speaker_episode_frequency_bar(show_key: str, episode_key: str, df: pd.
         yaxis_categoryorder='total ascending') # yaxis_categoryorder
     
     return fig
+
+
+def build_episode_speaker_topic_scatter(show_key: str, episode_key: str, df: pd.DataFrame, topic_type: str) -> go.Figure:
+    print(f'in build_episode_speaker_topic_scatter show_key={show_key} episode_key={episode_key} topic_type={topic_type}')
+
+    ep_topic_key = f'ep_{topic_type}_topic_key'
+    ep_topic_score = f'ep_{topic_type}_score'
+    # ser_topic_key = f'ser_{topic_type}_topic_key'
+    # ser_topic_score = f'ser_{topic_type}_score'
+
+    shapes = []
+    bgs = []
+
+    if topic_type == 'mbti':
+        topic_types = fm.mbti_types
+        df['ep_x'] = df[ep_topic_key].apply(to_mbti_x)
+        df['ep_y'] = df[ep_topic_key].apply(to_mbti_y)
+        colors = ['orange', 'yellowgreen', 'crimson', 'mediumaquamarine']
+        bgs = [[0, 2, 0, 2], [0, 2, 2, 4], [2, 4, 0, 2], [2, 4, 2, 4]]
+        high_x = high_y = 4
+    elif topic_type == 'dnda':
+        topic_types = fm.dnda_types
+        df['ep_x'] = df[ep_topic_key].apply(to_dnda_x)
+        df['ep_y'] = df[ep_topic_key].apply(to_dnda_y)
+        colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'brown', 'yellowgreen', 'crimson']
+        bgs = [[0, 1, 0, 1], [1, 2, 0, 1], [2, 3, 0, 1],
+               [0, 1, 1, 2], [1, 2, 1, 2], [2, 3, 1, 2],
+               [0, 1, 2, 3], [1, 2, 2, 3], [2, 3, 2, 3]]
+        high_x = high_y = 3
+
+    topics_to_counts = df[ep_topic_key].value_counts()
+
+    topics_to_i = {t[0]:0 for t in topics_to_counts.items()}
+
+    for index, row in df.iterrows():
+        topic_key = row[ep_topic_key]
+        topic_count = topics_to_counts[topic_key]
+        topic_i = topics_to_i[topic_key]
+        df.at[index, 'ep_x'] = row['ep_x'] + fm.topic_grid_coord_deltas[topic_count][topic_i][0]
+        df.at[index, 'ep_y'] = row['ep_y'] + fm.topic_grid_coord_deltas[topic_count][topic_i][1]
+        topics_to_i[topic_key] += 1
+        
+    fig = px.scatter(df, x='ep_x', y='ep_y', size=ep_topic_score, text='speaker',
+                     range_x=[0,high_x], range_y=[0,high_y], width=800, height=600)
+    
+    for i, b in enumerate(bgs):
+        shapes.append(dict(type="rect", x0=b[0], x1=b[1], y0=b[2], y1=b[3], fillcolor=colors[i], opacity=0.5, layer="below", line_width=0))
+    fig.update_layout(shapes=shapes)
+
+    fig.update_xaxes(showgrid=True, gridwidth=2, dtick="M2")
+    fig.update_yaxes(showgrid=True, gridwidth=2, dtick="M2")
+
+    fig.update_traces(textposition='top center')
+
+    if topic_type == 'mbti':
+        topic_types = fm.mbti_types
+    elif topic_type == 'dnda':
+        topic_types = fm.dnda_types
+
+    for label, coords in topic_types.items():
+        fig.add_annotation(text=label, x=(coords['coords'][0] + 0.2), y=(coords['coords'][1] - 0.1), 
+                        showarrow=False, font=dict(family="arial", size=14, color="white"))
+        fig.add_annotation(text=coords['descr'], x=(coords['coords'][0] + 0.5), y=(coords['coords'][1] - 0.9),
+                        showarrow=False, font=dict(family="arial", size=14, color="white"))
+
+    return fig
+
 
 
 # def build_speaker_line_chart(show_key: str, data: list, aggregate_ratio: bool = False) -> go.Figure:

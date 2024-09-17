@@ -194,17 +194,20 @@ def fetch_speakers_for_season(show_key: ShowKey, season: str, extra_fields: str 
 
 
 @esr_app.get("/esr/fetch_indexed_speakers/{show_key}", tags=['ES Reader'])
-def fetch_indexed_speakers(show_key: ShowKey, season: int = None, extra_fields: str = None, min_episode_count: int = None):
+def fetch_indexed_speakers(show_key: ShowKey, speakers: str = None, season: int = None, extra_fields: str = None, min_episode_count: int = None):
     '''
     For speakers indexed in es, fetch info, lines, and aggregate counts
     '''
     return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_ada002_word_count']
+    speaker_list = []
+    if speakers:
+        speaker_list = speakers.split(',')
     if extra_fields:
         extra_fields = extra_fields.split(',')
         return_fields.extend(extra_fields)
 
     # NOTE I'm not sure the `season` parameter will last, it excludes speakers by season but still returns series-level agg counts
-    s = esqb.fetch_indexed_speakers(show_key.value, season=season, return_fields=return_fields, min_episode_count=min_episode_count)
+    s = esqb.fetch_indexed_speakers(show_key.value, speaker_list=speaker_list, season=season, return_fields=return_fields, min_episode_count=min_episode_count)
     es_query = s.to_dict()
     speakers = esrt.return_speakers(s)
     if not speakers:
@@ -274,14 +277,13 @@ def fetch_speaker_season_topics(show_key: ShowKey, topic_grouping: str, speaker:
     return {"speaker_season_topics": speaker_season_topics, "es_query": es_query}
 
 
-# TODO speaker should be an optional parameter, this will be changed when use case arrives
-@esr_app.get("/esr/fetch_speaker_episode_topics/{speaker}/{show_key}/{topic_grouping}", tags=['ES Reader'])
-def fetch_speaker_episode_topics(speaker: str, show_key: ShowKey, topic_grouping: str, episode_key: str = None, season: int = None, 
+@esr_app.get("/esr/fetch_speaker_episode_topics/{show_key}/{topic_grouping}", tags=['ES Reader'])
+def fetch_speaker_episode_topics(show_key: ShowKey, topic_grouping: str, speaker: str = None, episode_key: str = None, season: int = None, 
                                  level: str = None, limit: int = None):
     '''
     Fetch topics mapped to speaker_episode
     '''
-    s = esqb.fetch_speaker_episode_topics(speaker, show_key.value, topic_grouping, episode_key=episode_key, season=season, level=level, limit=limit)
+    s = esqb.fetch_speaker_episode_topics(show_key.value, topic_grouping, speaker=speaker, episode_key=episode_key, season=season, level=level, limit=limit)
     es_query = s.to_dict()
     speaker_episode_topics = esrt.return_topics_by_episode(s)
     return {"speaker_episode_topics": speaker_episode_topics, "es_query": es_query}

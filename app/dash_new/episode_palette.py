@@ -197,6 +197,50 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                 ]),
                 html.Br(),
             ]),
+            dbc.CardBody([
+                dbc.Row([
+                    html.H3(children=["Character personalities"]),
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            "Show: ",
+                            dcc.Dropdown(
+                                id="show-key5",
+                                options=[
+                                    {'label': 'TNG', 'value': 'TNG'},
+                                    {'label': 'GoT', 'value': 'GoT'},
+                                ], 
+                                value='TNG',
+                            )
+                        ]),
+                    ]),
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            "Episode key: ",
+                            dcc.Dropdown(
+                                id="episode-key5",
+                                options=episode_dropdown_options,
+                                value=episode_key,
+                            )
+                        ]),
+                    ]),
+                ]),
+                html.Br(),
+                dbc.Row(justify="evenly", children=[
+                    dbc.Col(md=6, children=[
+                        html.Div([
+                            html.Br(),
+                            dcc.Graph(id="episode-speaker-mbti-scatter"),
+                        ]),
+                    ]),
+                    dbc.Col(md=6, children=[
+                        html.Div([
+                            html.Br(),
+                            dcc.Graph(id="episode-speaker-dnda-scatter"),
+                        ]),
+                    ]),       
+                ]),
+                html.Br(),
+            ]),
         ])
     ])
 

@@ -46,7 +46,9 @@ def display_page(pathname, search):
     print(f'parsed_dict={parsed_dict}')
 
     if pathname == "/tsp_dash_new/episode-palette":
-         # generate form-backing data 
+        # generate form-backing data 
+
+        # all episodes
         all_simple_episodes = esr.fetch_simple_episodes(ShowKey('TNG'))
         episode_dropdown_options = []
         for episode in all_simple_episodes['episodes']:
@@ -59,9 +61,11 @@ def display_page(pathname, search):
             if isinstance(episode_key, list):
                 episode_key = episode_key[0]
 
+        # speakers in episode
         speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey('TNG'), episode_key)
         episode_speakers = speaker_episodes_response['speaker_episodes']
         speaker_dropdown_options = [s['speaker'] for s in episode_speakers]
+
         return episode_palette.generate_content(episode_dropdown_options, episode_key, speaker_dropdown_options)
     
 
@@ -153,15 +157,74 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str):
 def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, span_granularity: str):
     print(f'in render_speaker_frequency_bar_chart_new, show_key={show_key} episode_key={episode_key} span_granularity={span_granularity}')
 
-    # fetch or generate aggregate speaker data and build speaker frequency bar chart
-    file_path = f'./app/data/speaker_episode_aggs_{show_key}.csv'
-    print(f'loading dataframe at file_path={file_path}')
-    df = pd.read_csv(file_path)
-    df = df.loc[df['episode_key'] == int(episode_key)]
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+    speakers_for_episode = speakers_for_episode_response['speaker_episodes']
+    df = pd.DataFrame(speakers_for_episode, columns = ['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
     
     speaker_episode_frequency_bar_chart = fb.build_speaker_episode_frequency_bar(show_key, episode_key, df, span_granularity)
 
     return speaker_episode_frequency_bar_chart
+
+
+############ episode-speaker-topic-scatter callbacks
+@dapp_new.callback(
+    Output('episode-speaker-mbti-scatter', 'figure'),
+    Output('episode-speaker-dnda-scatter', 'figure'),
+    Input('show-key5', 'value'),
+    Input('episode-key5', 'value'))    
+def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
+    print(f'in render_episode_speaker_topic_scatter, show_key={show_key} episode_key={episode_key}')
+
+    # fetch episode speakers
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey('TNG'), episode_key, extra_fields='topics_mbti,topics_dnda')
+    episode_speakers = speakers_for_episode_response['speaker_episodes']
+    
+    # fetched series-level indexed version of episode speakers
+    episode_speaker_names = [s['speaker'] for s in episode_speakers]
+    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey('TNG'), extra_fields='topics_mbti,topics_dnda', speakers=','.join(episode_speaker_names))
+    series_speakers = indexed_speakers_response['speakers']
+    series_speaker_dicts = {series_s['speaker']:series_s for series_s in series_speakers}
+
+    # merge episode-level and series-level speaker topic data (mbti, dnda) for each episode speaker, keeping only the top topic from each context
+    flat_speakers = []
+    for s in episode_speakers:
+        if s['word_count'] < 20 and s['line_count'] < 3:
+            continue
+        flat_s = s.copy()
+        flat_speakers.append(flat_s)
+        # copy high-scoring topic_mbti and topic_dnda for episode
+        ep_topic_mbti = s['topics_mbti'][0]
+        flat_s['ep_mbti_topic_key'] = ep_topic_mbti['topic_key']
+        flat_s['ep_mbti_topic_name'] = ep_topic_mbti['topic_name']
+        flat_s['ep_mbti_score'] = ep_topic_mbti['score']
+        flat_s['ep_mbti_raw_score'] = ep_topic_mbti['raw_score']
+        del flat_s['topics_mbti']
+        ep_topic_dnda = s['topics_dnda'][0]
+        flat_s['ep_dnda_topic_key'] = ep_topic_dnda['topic_key']
+        flat_s['ep_dnda_topic_name'] = ep_topic_dnda['topic_name']
+        flat_s['ep_dnda_score'] = ep_topic_dnda['score']
+        flat_s['ep_dnda_raw_score'] = ep_topic_dnda['raw_score']
+        del flat_s['topics_dnda']
+        # copy high-scoring topic_mbti and topic_dnda for series
+        if flat_s['speaker'] in series_speaker_dicts:
+            series_s = series_speaker_dicts[flat_s['speaker']]
+            ser_topic_mbti = series_s['topics_mbti'][0]
+            flat_s['ser_mbti_topic_key'] = ser_topic_mbti['topic_key']
+            flat_s['ser_mbti_topic_name'] = ser_topic_mbti['topic_name']
+            flat_s['ser_mbti_score'] = ser_topic_mbti['score']
+            flat_s['ser_mbti_raw_score'] = ser_topic_mbti['raw_score']
+            ser_topic_dnda = series_s['topics_dnda'][0]
+            flat_s['ser_dnda_topic_key'] = ser_topic_dnda['topic_key']
+            flat_s['ser_dnda_topic_name'] = ser_topic_dnda['topic_name']
+            flat_s['ser_dnda_score'] = ser_topic_dnda['score']
+            flat_s['ser_dnda_raw_score'] = ser_topic_dnda['raw_score']
+    
+    df = pd.DataFrame(flat_speakers)
+
+    episode_speaker_mbti_scatter = fb.build_episode_speaker_topic_scatter(show_key, episode_key, df, 'mbti')
+    episode_speaker_dnda_scatter = fb.build_episode_speaker_topic_scatter(show_key, episode_key, df, 'dnda')
+
+    return episode_speaker_mbti_scatter, episode_speaker_dnda_scatter
 
 
 if __name__ == "__main__":

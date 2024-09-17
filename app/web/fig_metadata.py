@@ -45,3 +45,48 @@ episode_keep_cols = ['title', 'season', 'sequence_in_season', 'air_date', 'scene
 # episode_drop_cols = ['doc_id', 'show_key', 'indexed_ts', 'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
 episode_drop_cols = ['doc_id', 'show_key', 'indexed_ts'] + SENTIMENT_FIELDS + TOPICS_FIELDS + FOCAL_FIELDS
 cluster_cols = ['cluster', 'cluster_color']
+
+
+topic_grid_coord_deltas = [
+    [], #0
+    [(0, 0)], #1
+    [(-0.2, 0), (0.2, 0)], #2 
+    [(-0.4, 0), (0, 0), (0.4, 0)], #3
+    [(-0.2, 0.2), (0.2, 0.2), (-0.2, -0.2), (0.2, -0.2)], #4 2,2
+    [(-0.4, 0.2), (0, 0.2), (0.4, 0.2), (-0.2, -0.2), (0.2, -0.2)], #5 3,2
+    [(-0.4, 0.2), (0, 0.2), (0.4, 0.2), (-0.4, -0.2), (0, -0.2), (0.4, -0.2)], #6 3,3
+    [(-0.4, 0.4), (0, 0.4), (0.4, 0.4), (-0.2, 0), (0.2, 0), (-0.2, -0.4), (0.2, -0.4)], #7 3,2,2
+    [(-0.4, 0.4), (0, 0.4), (0.4, 0.4), (-0.2, 0), (0.2, 0), (-0.4, -0.4), (0, -0.4), (0.4, -0.4)], #8 3,2,3
+    [(-0.4, 0.4), (0, 0.4), (0.4, 0.4), (-0.4, 0), (0, 0), (0.4, 0), (-0.4, -0.4), (0, -0.4), (0.4, -0.4)], #9 3,3,3
+]
+
+
+mbti_types = {}
+mbti_types['ESFJ'] = dict(coords=(0,1), descr='Provider')
+mbti_types['ESFP'] = dict(coords=(0,2), descr='Performer')
+mbti_types['ISFJ'] = dict(coords=(1,1), descr='Protector')
+mbti_types['ISFP'] = dict(coords=(1,2), descr='Composer')
+mbti_types['ENFP'] = dict(coords=(0,3), descr='Champion')
+mbti_types['ENFJ'] = dict(coords=(0,4), descr='Teacher')
+mbti_types['INFP'] = dict(coords=(1,3), descr='Healer')
+mbti_types['INFJ'] = dict(coords=(1,4), descr='Counselor')
+mbti_types['ISTJ'] = dict(coords=(2,1), descr='Inspector')
+mbti_types['ISTP'] = dict(coords=(2,2), descr='Operator')
+mbti_types['ESTJ'] = dict(coords=(3,1), descr='Supervisor')
+mbti_types['ESTP'] = dict(coords=(3,2), descr='Promoter')
+mbti_types['INTP'] = dict(coords=(2,3), descr='Architect')
+mbti_types['INTJ'] = dict(coords=(2,4), descr='Mastermind')
+mbti_types['ENTP'] = dict(coords=(3,3), descr='Inventor')
+mbti_types['ENTJ'] = dict(coords=(3,4), descr='Field Marshall')
+
+
+dnda_types = {}
+dnda_types['Chaotic.Evil'] = dict(coords=(0,1), descr='Chaotic Evil')
+dnda_types['Chaotic.Neutral'] = dict(coords=(1,1), descr='Chaotic Neutral')
+dnda_types['Chaotic.Good'] = dict(coords=(2,1), descr='Chaotic Good')
+dnda_types['Neutral.Evil'] = dict(coords=(0,2), descr='Neutral Evil')
+dnda_types['Neutral.Neutral'] = dict(coords=(1,2), descr='Neutral')
+dnda_types['Neutral.Good'] = dict(coords=(2,2), descr='Neutral Good')
+dnda_types['Lawful.Evil'] = dict(coords=(0,3), descr='Lawful Evil')
+dnda_types['Lawful.Neutral'] = dict(coords=(1,3), descr='Lawful Neutral')
+dnda_types['Lawful.Good'] = dict(coords=(2,3), descr='Lawful Good')

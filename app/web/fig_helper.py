@@ -77,4 +77,42 @@ def topic_cat_rank_color_mapper(topic_cat_i: int, hex_hue: int) -> str:
     #     return f'rgb(255,{hex_hue},0)'
     # if i == 12:
     #     return f'rgb(255,0,{hex_hue})'
+
+
+def to_mbti_x(topic_key: str):
+    if 'ESF' in topic_key or 'ISF' in topic_key:
+        return 0.5
+    if 'ISF' in topic_key or 'INF' in topic_key:
+        return 1.5
+    if 'INT' in topic_key or 'IST' in topic_key:
+        return 2.5
+    if 'ENT' in topic_key or 'EST' in topic_key:
+        return 3.5
+        
+def to_mbti_y(topic_key: str):
+    if 'SFJ' in topic_key or 'STJ' in topic_key:
+        return 0.5
+    if 'SFP' in topic_key or 'STP' in topic_key:
+        return 1.5
+    if 'NFP' in topic_key or 'NTP' in topic_key:
+        return 2.5
+    if 'NFJ' in topic_key or 'NTJ' in topic_key:
+        return 3.5
+    
+
+def to_dnda_x(topic_key: str):
+    if '.Evil' in topic_key:
+        return 0.5
+    if '.Neutral' in topic_key:
+        return 1.5
+    if '.Good' in topic_key:
+        return 2.5
+        
+def to_dnda_y(topic_key: str):
+    if 'Chaotic.' in topic_key:
+        return 0.5
+    if 'Neutral.' in topic_key:
+        return 1.5
+    if 'Lawful.' in topic_key:
+        return 2.5
         
