@@ -51,42 +51,150 @@ topic_grid_coord_deltas = [
     [], #0
     [(0, 0)], #1
     [(-0.2, 0), (0.2, 0)], #2 
-    [(-0.4, 0), (0, 0), (0.4, 0)], #3
+    [(-0.3, 0), (0, 0), (0.3, 0)], #3
     [(-0.2, 0.2), (0.2, 0.2), (-0.2, -0.2), (0.2, -0.2)], #4 2,2
-    [(-0.4, 0.2), (0, 0.2), (0.4, 0.2), (-0.2, -0.2), (0.2, -0.2)], #5 3,2
-    [(-0.4, 0.2), (0, 0.2), (0.4, 0.2), (-0.4, -0.2), (0, -0.2), (0.4, -0.2)], #6 3,3
-    [(-0.4, 0.4), (0, 0.4), (0.4, 0.4), (-0.2, 0), (0.2, 0), (-0.2, -0.4), (0.2, -0.4)], #7 3,2,2
-    [(-0.4, 0.4), (0, 0.4), (0.4, 0.4), (-0.2, 0), (0.2, 0), (-0.4, -0.4), (0, -0.4), (0.4, -0.4)], #8 3,2,3
-    [(-0.4, 0.4), (0, 0.4), (0.4, 0.4), (-0.4, 0), (0, 0), (0.4, 0), (-0.4, -0.4), (0, -0.4), (0.4, -0.4)], #9 3,3,3
+    [(-0.3, 0.2), (0, 0.2), (0.3, 0.2), (-0.2, -0.2), (0.2, -0.2)], #5 3,2
+    [(-0.3, 0.2), (0, 0.2), (0.3, 0.2), (-0.3, -0.2), (0, -0.2), (0.3, -0.2)], #6 3,3
+    [(-0.3, 0.3), (0, 0.3), (0.3, 0.3), (-0.2, 0), (0.2, 0), (-0.2, -0.3), (0.2, -0.3)], #7 3,2,2
+    [(-0.3, 0.3), (0, 0.3), (0.3, 0.3), (-0.2, 0), (0.2, 0), (-0.3, -0.3), (0, -0.3), (0.3, -0.3)], #8 3,2,3
+    [(-0.3, 0.3), (0, 0.3), (0.3, 0.3), (-0.3, 0), (0, 0), (0.3, 0), (-0.3, -0.3), (0, -0.3), (0.3, -0.3)], #9 3,3,3
 ]
 
 
-mbti_types = {}
-mbti_types['ESFJ'] = dict(coords=(0,1), descr='Provider')
-mbti_types['ESFP'] = dict(coords=(0,2), descr='Performer')
-mbti_types['ISFJ'] = dict(coords=(1,1), descr='Protector')
-mbti_types['ISFP'] = dict(coords=(1,2), descr='Composer')
-mbti_types['ENFP'] = dict(coords=(0,3), descr='Champion')
-mbti_types['ENFJ'] = dict(coords=(0,4), descr='Teacher')
-mbti_types['INFP'] = dict(coords=(1,3), descr='Healer')
-mbti_types['INFJ'] = dict(coords=(1,4), descr='Counselor')
-mbti_types['ISTJ'] = dict(coords=(2,1), descr='Inspector')
-mbti_types['ISTP'] = dict(coords=(2,2), descr='Operator')
-mbti_types['ESTJ'] = dict(coords=(3,1), descr='Supervisor')
-mbti_types['ESTP'] = dict(coords=(3,2), descr='Promoter')
-mbti_types['INTP'] = dict(coords=(2,3), descr='Architect')
-mbti_types['INTJ'] = dict(coords=(2,4), descr='Mastermind')
-mbti_types['ENTP'] = dict(coords=(3,3), descr='Inventor')
-mbti_types['ENTJ'] = dict(coords=(3,4), descr='Field Marshall')
+mbti_types = {
+     # SF
+    'ESFJ': {
+        'descr': 'ESFJ: Provider',
+        'color': 'Tomato',
+        'coords': [0, 1, 0, 1]
+    },
+    'ESFP': {
+        'descr': 'ESFP: Performer',
+        'color': 'OrangeRed',
+        'coords': [0, 1, 1, 2]
+    },
+    'ISFJ': {
+        'descr': 'ISFJ: Protector',
+        'color': 'Crimson',
+        'coords': [1, 2, 0, 1]
+    },
+    'ISFP': {
+        'descr': 'ISFP: Composer',
+        'color': 'Red',
+        'coords': [1, 2, 1, 2]
+    },
+    # NF
+    'ENFP': {
+        'descr': 'ENFP: Champion',
+        'color': 'Purple',
+        'coords': [0, 1, 2, 3]
+    },
+    'ENFJ': {
+        'descr': 'ENFJ: Teacher',
+        'color': 'DarkMagenta',
+        'coords': [0, 1, 3, 4]
+    },
+    'INFP': {
+        'descr': 'INFP: Healer',
+        'color': 'DarkOrchid',
+        'coords': [1, 2, 2, 3]
+    },
+    'INFJ': {
+        'descr': 'INFJ: Counselor',
+        'color': 'DarkViolet',
+        'coords': [1, 2, 3, 4]
+    },
+    # ST
+    'ISTJ': {
+        'descr': 'ISTJ: Inspector',
+        'color': 'ForestGreen',
+        'coords': [2, 3, 0, 1]
+    },
+    'ISTP': {
+        'descr': 'ISTP: Operator',
+        'color': 'Green',
+        'coords': [2, 3, 1, 2]
+    },
+    'ESTJ': {
+        'descr': 'ESTJ: Supervisor',
+        'color': 'SeaGreen',
+        'coords': [3, 4, 0, 1]
+    },
+    'ESTP': {
+        'descr': 'ESTP: Promoter',
+        'color': 'MediumSeaGreen',
+        'coords': [3, 4, 1, 2]
+    },
+    # NT
+    'INTP': {
+        'descr': 'INTP: Architect',
+        'color': 'Sienna',
+        'coords': [2, 3, 2, 3]
+    },
+    'INTJ': {
+        'descr': 'INTJ: Mastermind',
+        'color': 'SaddleBrown',
+        'coords': [2, 3, 3, 4]
+    },
+    'ENTP': {
+        'descr': 'ENTP: Inventor',
+        'color': 'Chocolate',
+        'coords': [3, 4, 2, 3]
+    },
+    'ENTJ': {
+        'descr': 'ENTJ: Field Marshall',
+        'color': 'Peru',
+        'coords': [3, 4, 3, 4]
+    }
+}
 
 
-dnda_types = {}
-dnda_types['Chaotic.Evil'] = dict(coords=(0,1), descr='Chaotic Evil')
-dnda_types['Chaotic.Neutral'] = dict(coords=(1,1), descr='Chaotic Neutral')
-dnda_types['Chaotic.Good'] = dict(coords=(2,1), descr='Chaotic Good')
-dnda_types['Neutral.Evil'] = dict(coords=(0,2), descr='Neutral Evil')
-dnda_types['Neutral.Neutral'] = dict(coords=(1,2), descr='Neutral')
-dnda_types['Neutral.Good'] = dict(coords=(2,2), descr='Neutral Good')
-dnda_types['Lawful.Evil'] = dict(coords=(0,3), descr='Lawful Evil')
-dnda_types['Lawful.Neutral'] = dict(coords=(1,3), descr='Lawful Neutral')
-dnda_types['Lawful.Good'] = dict(coords=(2,3), descr='Lawful Good')
+
+dnda_types = {
+     # SF
+    'Chaotic.Evil': {
+        'descr': 'Chaotic Evil',
+        'color': 'Red',
+        'coords': [0, 1, 0, 1]
+    },
+    'Chaotic.Neutral': {
+        'descr': 'Chaotic Neutral',
+        'color': 'Purple',
+        'coords': [1, 2, 0, 1]
+    },
+    'Chaotic.Good': {
+        'descr': 'Chaotic.Good',
+        'color': 'Blue',
+        'coords': [2, 3, 0, 1]
+    },
+    'Neutral.Evil': {
+        'descr': 'Neutral Evil',
+        'color': 'Orange',
+        'coords': [0, 1, 1, 2]
+    },
+    'Neutral.Neutral': {
+        'descr': 'Neutral',
+        'color': 'Gray',
+        'coords': [1, 2, 1, 2]
+    },
+    'Neutral.Good': {
+        'descr': 'Neutral Good',
+        'color': 'LightSeaGreen',
+        'coords': [2, 3, 1, 2]
+    },
+    'Lawful.Evil': {
+        'descr': 'Lawful Evil',
+        'color': 'Yellow',
+        'coords': [0, 1, 2, 3]
+    },
+    'Lawful.Neutral': {
+        'descr': 'Lawful Neutral',
+        'color': 'GreenYellow',
+        'coords': [1, 2, 2, 3]
+    },
+    'Lawful.Good': {
+        'descr': 'Lawful Good',
+        'color': 'Green',
+        'coords': [2, 3, 2, 3]
+    }
+}

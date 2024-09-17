@@ -590,23 +590,20 @@ def build_episode_speaker_topic_scatter(show_key: str, episode_key: str, df: pd.
     # ser_topic_score = f'ser_{topic_type}_score'
 
     shapes = []
-    bgs = []
 
     if topic_type == 'mbti':
         topic_types = fm.mbti_types
         df['ep_x'] = df[ep_topic_key].apply(to_mbti_x)
         df['ep_y'] = df[ep_topic_key].apply(to_mbti_y)
-        colors = ['orange', 'yellowgreen', 'crimson', 'mediumaquamarine']
-        bgs = [[0, 2, 0, 2], [0, 2, 2, 4], [2, 4, 0, 2], [2, 4, 2, 4]]
+        title = "Myers–Briggs Temperaments"
+        labels = {"ep_x": "<-- personal | logical -->", "ep_y": "<-- present | possible -->"}
         high_x = high_y = 4
     elif topic_type == 'dnda':
         topic_types = fm.dnda_types
         df['ep_x'] = df[ep_topic_key].apply(to_dnda_x)
         df['ep_y'] = df[ep_topic_key].apply(to_dnda_y)
-        colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'brown', 'yellowgreen', 'crimson']
-        bgs = [[0, 1, 0, 1], [1, 2, 0, 1], [2, 3, 0, 1],
-               [0, 1, 1, 2], [1, 2, 1, 2], [2, 3, 1, 2],
-               [0, 1, 2, 3], [1, 2, 2, 3], [2, 3, 2, 3]]
+        title = "D & D Alignments"
+        labels = {"ep_x": "<-- evil | good -->", "ep_y": "<-- chaotic | lawful -->"}
         high_x = high_y = 3
 
     topics_to_counts = df[ep_topic_key].value_counts()
@@ -622,27 +619,28 @@ def build_episode_speaker_topic_scatter(show_key: str, episode_key: str, df: pd.
         topics_to_i[topic_key] += 1
         
     fig = px.scatter(df, x='ep_x', y='ep_y', size=ep_topic_score, text='speaker',
-                     range_x=[0,high_x], range_y=[0,high_y], width=800, height=600)
+                     title=title, labels=labels,
+                     range_x=[0,high_x], range_y=[0,high_y], width=800, height=650)
     
-    for i, b in enumerate(bgs):
-        shapes.append(dict(type="rect", x0=b[0], x1=b[1], y0=b[2], y1=b[3], fillcolor=colors[i], opacity=0.5, layer="below", line_width=0))
+    for label, d in topic_types.items():
+        # fig.add_annotation(text=label, x=(d['coords'][0] + 0.2), y=(d['coords'][3] - 0.1), 
+        #                 showarrow=False, font=dict(family="arial", size=14, color="White"))
+        fig.add_annotation(text=d['descr'], x=(d['coords'][0] + 0.5), y=(d['coords'][3] - 0.9),
+                        showarrow=False, font=dict(family="Arial", size=14, color="White"))
+        shapes.append(dict(type="rect", x0=d['coords'][0], x1=d['coords'][1], y0=d['coords'][2], y1=d['coords'][3],
+                           fillcolor=d['color'], opacity=0.5, layer="below", line_width=0))
+    
     fig.update_layout(shapes=shapes)
+
+    fig.update_layout(font=dict(family="Arial", size=11, color="DarkSlateGray"))
 
     fig.update_xaxes(showgrid=True, gridwidth=2, dtick="M2")
     fig.update_yaxes(showgrid=True, gridwidth=2, dtick="M2")
 
+    fig.update_xaxes(showticklabels=False)
+    fig.update_yaxes(showticklabels=False)
+
     fig.update_traces(textposition='top center')
-
-    if topic_type == 'mbti':
-        topic_types = fm.mbti_types
-    elif topic_type == 'dnda':
-        topic_types = fm.dnda_types
-
-    for label, coords in topic_types.items():
-        fig.add_annotation(text=label, x=(coords['coords'][0] + 0.2), y=(coords['coords'][1] - 0.1), 
-                        showarrow=False, font=dict(family="arial", size=14, color="white"))
-        fig.add_annotation(text=coords['descr'], x=(coords['coords'][0] + 0.5), y=(coords['coords'][1] - 0.9),
-                        showarrow=False, font=dict(family="arial", size=14, color="white"))
 
     return fig
 
