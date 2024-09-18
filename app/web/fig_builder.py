@@ -14,6 +14,7 @@ import plotly.figure_factory as ff
 import plotly.graph_objects as go
 import random
 from sklearn.manifold import TSNE
+# import statsmodels
 
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey, show_metadata
@@ -183,11 +184,13 @@ def build_3d_network_graph(show_key: str, data: dict) -> go.Figure:
         title=''
     )
 
-    fig_width = fm.fig_dims.MD10
-    fig_height = fm.fig_dims.hdef(fig_width)
+    # fig_width = fm.fig_dims.MD10
+    # fig_height = fm.fig_dims.hdef(fig_width)
+    fig_width = 800
+    fig_height = 650
 
     layout = go.Layout(
-        title="placeholder title",
+        title="placeholder",
         width=fig_width,
         height=fig_height,
         showlegend=False,
@@ -564,13 +567,7 @@ def build_speaker_episode_frequency_bar(show_key: str, episode_key: str, df: pd.
 
     # custom_data = []  # TODO
 
-    fig = px.bar(df, x=x, y='speaker', color='speaker',
-                # custom_data=custom_data, hover_name=cols.VOTE_WEIGHT, hover_data=hover_data,
-                #  category_orders=category_orders,
-                # color_discrete_map=color_discrete_map, category_orders=category_orders,
-                # labels={cols.GROUP: groups_label},
-                # range_x=[vw_min,vw_max], log_x=True, height=fig_height
-    )
+    fig = px.bar(df, x=x, y='speaker', color='speaker', width=800, height=650)
 
     fig.update_layout(showlegend=False)
 
@@ -629,6 +626,12 @@ def build_episode_speaker_topic_scatter(show_key: str, episode_key: str, df: pd.
                         showarrow=False, font=dict(family="Arial", size=14, color="White"))
         shapes.append(dict(type="rect", x0=d['coords'][0], x1=d['coords'][1], y0=d['coords'][2], y1=d['coords'][3],
                            fillcolor=d['color'], opacity=0.5, layer="below", line_width=0))
+        
+    if topic_type == 'mbti':
+        fig.add_annotation(text='SF: Relating', x=0, y=0, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
+        fig.add_annotation(text='NF: Valuing', x=0, y=4, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
+        fig.add_annotation(text='ST: Directing', x=4, y=0, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
+        fig.add_annotation(text='NT: Visioning', x=4, y=4, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
     
     fig.update_layout(shapes=shapes)
 
@@ -644,6 +647,16 @@ def build_episode_speaker_topic_scatter(show_key: str, episode_key: str, df: pd.
 
     return fig
 
+
+def build_speaker_chatter_scatter(show_key: str, episode_key: str, df: pd.DataFrame, x_axis: str, y_axis: str) -> go.Figure:
+    print(f'in build_speaker_chatter_scatter show_key={show_key} episode_key={episode_key} x_axis=`{x_axis}` y_axis=`{y_axis}`')
+
+    fig = px.scatter(df, x=x_axis, y=y_axis, text='speaker', width=800, height=650)
+                    #  trendline="ols", trendline_scope="overall", trendline_color_override="black")
+
+    fig.update_traces(textposition='middle right')
+
+    return fig
 
 
 # def build_speaker_line_chart(show_key: str, data: list, aggregate_ratio: bool = False) -> go.Figure:

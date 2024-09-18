@@ -166,6 +166,26 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, span
     return speaker_episode_frequency_bar_chart
 
 
+############ speaker-chatter-scatter callbacks
+@dapp_new.callback(
+    Output('speaker-chatter-scatter', 'figure'),
+    Input('show-key4', 'value'),
+    Input('episode-key4', 'value'),
+    Input('x-axis', 'value'),
+    Input('y-axis', 'value'))    
+def render_speaker_chatter_scatter(show_key: str, episode_key: str, x_axis: str, y_axis: str):
+    print(f'in render_speaker_chatter_scatter, show_key={show_key} episode_key={episode_key} x_axis={x_axis} y_axis={y_axis}')
+
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+    speakers_for_episode = speakers_for_episode_response['speaker_episodes']
+    df = pd.DataFrame(speakers_for_episode, columns = ['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
+    # df = pd.DataFrame(speakers_for_episode)
+    
+    speaker_chatter_scatter = fb.build_speaker_chatter_scatter(show_key, episode_key, df, x_axis, y_axis)
+
+    return speaker_chatter_scatter
+
+
 ############ episode-speaker-topic-scatter callbacks
 @dapp_new.callback(
     Output('episode-speaker-mbti-scatter', 'figure'),
