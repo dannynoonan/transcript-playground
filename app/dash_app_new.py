@@ -91,8 +91,8 @@ def render_episode_chromatographs(show_key: str, episode_key: str):
 @dapp_new.callback(
     Output('sentiment-line-chart-new', 'figure'),
     # Output('episode-speaker-options', 'options'),
-    Input('show-key2', 'value'),
-    Input('episode-key2', 'value'),
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'),
     Input('freeze-on', 'value'),
     Input('emotion', 'value'),
     Input('speaker', 'value'))    
@@ -133,8 +133,8 @@ def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, fre
 ############ speaker-3d-network-graph callbacks
 @dapp_new.callback(
     Output('speaker-3d-network-graph-new', 'figure'),
-    Input('show-key3', 'value'),
-    Input('episode-key3', 'value'))    
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'))    
 def render_speaker_3d_network_graph_new(show_key: str, episode_key: str):
     print(f'in render_speaker_3d_network_graph_new, show_key={show_key} episode_key={episode_key}')
 
@@ -151,8 +151,8 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str):
 ############ speaker-frequency-bar-chart callbacks
 @dapp_new.callback(
     Output('speaker-episode-frequency-bar-chart-new', 'figure'),
-    Input('show-key4', 'value'),
-    Input('episode-key4', 'value'),
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'),
     Input('span-granularity', 'value'))    
 def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, span_granularity: str):
     print(f'in render_speaker_frequency_bar_chart_new, show_key={show_key} episode_key={episode_key} span_granularity={span_granularity}')
@@ -161,7 +161,7 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, span
     speakers_for_episode = speakers_for_episode_response['speaker_episodes']
     df = pd.DataFrame(speakers_for_episode, columns = ['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
     
-    speaker_episode_frequency_bar_chart = fb.build_speaker_episode_frequency_bar(show_key, episode_key, df, span_granularity)
+    speaker_episode_frequency_bar_chart = fb.build_speaker_episode_frequency_bar(df, span_granularity)
 
     return speaker_episode_frequency_bar_chart
 
@@ -169,8 +169,8 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, span
 ############ speaker-chatter-scatter callbacks
 @dapp_new.callback(
     Output('speaker-chatter-scatter', 'figure'),
-    Input('show-key4', 'value'),
-    Input('episode-key4', 'value'),
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'),
     Input('x-axis', 'value'),
     Input('y-axis', 'value'))    
 def render_speaker_chatter_scatter(show_key: str, episode_key: str, x_axis: str, y_axis: str):
@@ -181,7 +181,7 @@ def render_speaker_chatter_scatter(show_key: str, episode_key: str, x_axis: str,
     df = pd.DataFrame(speakers_for_episode, columns = ['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
     # df = pd.DataFrame(speakers_for_episode)
     
-    speaker_chatter_scatter = fb.build_speaker_chatter_scatter(show_key, episode_key, df, x_axis, y_axis)
+    speaker_chatter_scatter = fb.build_speaker_chatter_scatter(df, x_axis, y_axis)
 
     return speaker_chatter_scatter
 
@@ -190,18 +190,18 @@ def render_speaker_chatter_scatter(show_key: str, episode_key: str, x_axis: str,
 @dapp_new.callback(
     Output('episode-speaker-mbti-scatter', 'figure'),
     Output('episode-speaker-dnda-scatter', 'figure'),
-    Input('show-key5', 'value'),
-    Input('episode-key5', 'value'))    
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'))    
 def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
     print(f'in render_episode_speaker_topic_scatter, show_key={show_key} episode_key={episode_key}')
 
     # fetch episode speakers
-    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey('TNG'), episode_key, extra_fields='topics_mbti,topics_dnda')
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti,topics_dnda')
     episode_speakers = speakers_for_episode_response['speaker_episodes']
     
     # fetched series-level indexed version of episode speakers
     episode_speaker_names = [s['speaker'] for s in episode_speakers]
-    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey('TNG'), extra_fields='topics_mbti,topics_dnda', speakers=','.join(episode_speaker_names))
+    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(episode_speaker_names))
     series_speakers = indexed_speakers_response['speakers']
     series_speaker_dicts = {series_s['speaker']:series_s for series_s in series_speakers}
 
@@ -241,10 +241,54 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
     
     df = pd.DataFrame(flat_speakers)
 
-    episode_speaker_mbti_scatter = fb.build_episode_speaker_topic_scatter(show_key, episode_key, df, 'mbti')
-    episode_speaker_dnda_scatter = fb.build_episode_speaker_topic_scatter(show_key, episode_key, df, 'dnda')
+    episode_speaker_mbti_scatter = fb.build_episode_speaker_topic_scatter(df, 'mbti')
+    episode_speaker_dnda_scatter = fb.build_episode_speaker_topic_scatter(df, 'dnda')
 
     return episode_speaker_mbti_scatter, episode_speaker_dnda_scatter
+
+
+############ episode-topic-treemap callbacks
+@dapp_new.callback(
+    Output('episode-universal-genres-treemap', 'figure'),
+    Output('episode-universal-genres-gpt35-v2-treemap', 'figure'),
+    # Output('episode-focused-gpt35-treemap', 'figure'),
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'),
+    Input('topic-score-type', 'value'))    
+def render_episode_topic_treemap(show_key: str, episode_key: str, topic_score_type: str):
+    print(f'in render_episode_topic_treemap, show_key={show_key} episode_key={episode_key}')
+
+    figs = []
+    # topic_groupings = ['universalGenres', 'universalGenresGpt35_v2', f'focusedGpt35_{show_key}']
+    topic_groupings = ['universalGenres', 'universalGenresGpt35_v2']
+    for tg in topic_groupings:
+        r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
+        episode_topics = r['episode_topics']
+        df = pd.DataFrame(episode_topics)
+        fig = fb.build_episode_topic_treemap(df, tg, topic_score_type)
+        figs.append(fig)
+
+    return tuple(figs)
+
+
+############ episode-topic-treemap callbacks
+@dapp_new.callback(
+    Output('episode-similarity-scatter', 'figure'),
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'))    
+def render_episode_similarity_scatter(show_key: str, episode_key: str):
+    print(f'in render_episode_similarity_scatter, show_key={show_key} episode_key={episode_key}')
+
+    episode_response = esr.fetch_episode(ShowKey(show_key), episode_key)
+    episode = episode_response['es_episode']
+
+    mlt_tfidf_response = esr.more_like_this(ShowKey(show_key), episode_key)
+    mlt_tfidf = mlt_tfidf_response['matches']
+    sim_eps_df = pd.DataFrame(mlt_tfidf)
+
+    episode_similarity_scatter = fb.build_episode_similarity_scatter(episode, sim_eps_df)
+
+    return episode_similarity_scatter
 
 
 if __name__ == "__main__":

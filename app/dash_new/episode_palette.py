@@ -9,8 +9,8 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
         navbar,
         dbc.Card(className="bg-dark", children=[
             dbc.CardBody([
-                dbc.Row([
-                    html.H3(children=["Character dialog timeline in episode"]),
+                html.H3(children=["Character dialog timeline in episode"]),
+                dbc.Row([ 
                     dbc.Col(md=2, children=[
                         html.Div([
                             "Show: ",
@@ -46,31 +46,8 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                 html.Br(),
             ]),
             dbc.CardBody([
+                html.H3(children=["Character sentiment timeline"]),
                 dbc.Row([
-                    html.H3(children=["Character sentiment timeline"]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Show: ",
-                            dcc.Dropdown(
-                                id="show-key2",
-                                options=[
-                                    {'label': 'TNG', 'value': 'TNG'},
-                                    {'label': 'GoT', 'value': 'GoT'},
-                                ], 
-                                value='TNG',
-                            )
-                        ]),
-                    ]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Episode key: ",
-                            dcc.Dropdown(
-                                id="episode-key2",
-                                options=episode_dropdown_options,
-                                value=episode_key,
-                            )
-                        ]),
-                    ]),
                     dbc.Col(md=2, children=[
                         html.Div([
                             "Freeze on ",
@@ -111,33 +88,7 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                 html.Br(),
             ]),
             dbc.CardBody([
-                dbc.Row([
-                    html.H3(children=["Character conversations during episode"]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Show: ",
-                            dcc.Dropdown(
-                                id="show-key3",
-                                options=[
-                                    {'label': 'TNG', 'value': 'TNG'},
-                                    {'label': 'GoT', 'value': 'GoT'},
-                                ], 
-                                value='TNG',
-                            )
-                        ]),
-                    ]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Episode key: ",
-                            dcc.Dropdown(
-                                id="episode-key3",
-                                options=episode_dropdown_options,
-                                value=episode_key,
-                            )
-                        ]),
-                    ]),
-                ]),
-                html.Br(),
+                html.H3(children=["Character conversations during episode"]),
                 dbc.Row(justify="evenly", children=[
                     dbc.Col(md=6, children=[
                         html.Div([
@@ -155,107 +106,67 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                 html.Br(),
             ]),
             dbc.CardBody([
+                html.H3(children=["Character prominence in episode"]),
                 dbc.Row([
-                    html.H3(children=["Character prominence in episode"]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Show: ",
-                            dcc.Dropdown(
-                                id="show-key4",
-                                options=[
-                                    {'label': 'TNG', 'value': 'TNG'},
-                                    {'label': 'GoT', 'value': 'GoT'},
-                                ], 
-                                value='TNG',
-                            )
-                        ]),
-                    ]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Episode key: ",
-                            dcc.Dropdown(
-                                id="episode-key4",
-                                options=episode_dropdown_options,
-                                value=episode_key,
-                            )
-                        ]),
-                    ]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Span granularity: ",
-                            dcc.Dropdown(
-                                id="span-granularity",
-                                options=['scene', 'line', 'word'],
-                                value='line',
-                            )
-                        ]),
-                    ]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "X Axis: ",
-                            dcc.Dropdown(
-                                id="x-axis",
-                                options=['scene_count', 'line_count', 'word_count'],
-                                value='line_count',
-                            )
-                        ]),
-                    ]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Y Axis: ",
-                            dcc.Dropdown(
-                                id="y-axis",
-                                options=['scene_count', 'line_count', 'word_count'],
-                                value='scene_count',
-                            )
-                        ]),
-                    ]),
-                ]),
-                html.Br(),
-                dbc.Row(justify="evenly", children=[
                     dbc.Col(md=6, children=[
-                        html.Div([
-                            html.Br(),
-                            dcc.Graph(id="speaker-episode-frequency-bar-chart-new"),
+                        dbc.Row([
+                            dbc.Col(md=4, children=[
+                                html.Div([
+                                    "Span granularity: ",
+                                    dcc.Dropdown(
+                                        id="span-granularity",
+                                        options=['scene', 'line', 'word'],
+                                        value='line',
+                                    )
+                                ]),
+                            ]),
+                        ]),
+                        dbc.Row([
+                            dbc.Col(md=12, children=[
+                                html.Div([
+                                    html.Br(),
+                                    dcc.Graph(id="speaker-episode-frequency-bar-chart-new"),
+                                ]),
+                            ]),
                         ]),
                     ]),
                     dbc.Col(md=6, children=[
-                        html.Div([
-                            html.Br(),
-                            dcc.Graph(id="speaker-chatter-scatter"),
+                        dbc.Row([
+                            dbc.Col(md=4, children=[
+                                html.Div([
+                                    "X Axis: ",
+                                    dcc.Dropdown(
+                                        id="x-axis",
+                                        options=['scene_count', 'line_count', 'word_count'],
+                                        value='line_count',
+                                    )
+                                ]),
+                            ]),
+                            dbc.Col(md=4, children=[
+                                html.Div([
+                                    "Y Axis: ",
+                                    dcc.Dropdown(
+                                        id="y-axis",
+                                        options=['scene_count', 'line_count', 'word_count'],
+                                        value='scene_count',
+                                    )
+                                ]),
+                            ]),
                         ]),
-                    ]),       
-                ]),
-                html.Br(),
+                        dbc.Row([
+                            dbc.Col(md=12, children=[
+                                html.Div([
+                                    html.Br(),
+                                    dcc.Graph(id="speaker-chatter-scatter"),
+                                ]),
+                            ]),       
+                        ]),
+                        html.Br(),
+                    ]),
+                ]), 
             ]),
             dbc.CardBody([
-                dbc.Row([
-                    html.H3(children=["Character personalities during episode"]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Show: ",
-                            dcc.Dropdown(
-                                id="show-key5",
-                                options=[
-                                    {'label': 'TNG', 'value': 'TNG'},
-                                    {'label': 'GoT', 'value': 'GoT'},
-                                ], 
-                                value='TNG',
-                            )
-                        ]),
-                    ]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Episode key: ",
-                            dcc.Dropdown(
-                                id="episode-key5",
-                                options=episode_dropdown_options,
-                                value=episode_key,
-                            )
-                        ]),
-                    ]),
-                ]),
-                html.Br(),
+                html.H3(children=["Character personalities during episode"]),
                 dbc.Row(justify="evenly", children=[
                     dbc.Col(md=6, children=[
                         html.Div([
@@ -271,6 +182,51 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                     ]),       
                 ]),
                 html.Br(),
+            ]),
+            dbc.CardBody([
+                html.H3(children=["Episode topic distributions"]),
+                dbc.Row([
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            "Score type ",
+                            dcc.Dropdown(
+                                id="topic-score-type",
+                                options=['raw_score', 'score', 'tfidf_score'], 
+                                value='tfidf_score',
+                            )
+                        ]),
+                    ]),
+                ]),
+                dbc.Row([
+                    dbc.Col(md=6, children=[
+                        html.Div([
+                            html.Br(),
+                            dcc.Graph(id="episode-universal-genres-treemap"),
+                        ]),
+                    ]),
+                    dbc.Col(md=6, children=[
+                        html.Div([
+                            html.Br(),
+                            dcc.Graph(id="episode-universal-genres-gpt35-v2-treemap"),
+                        ]),
+                    ]),     
+                ]),
+                html.Br(),
+                # dbc.Row([
+                #     dbc.Col(md=6, children=[
+                #         html.Div([
+                #             html.Br(),
+                #             dcc.Graph(id="episode-focused-gpt35-treemap"),
+                #         ]),
+                #     ]),       
+                # ]),
+                # html.Br(),
+            ]),
+            dbc.CardBody([
+                html.H3(children=["Similar episodes"]),
+                dbc.Row(justify="evenly", children=[
+                    dcc.Graph(id="episode-similarity-scatter"),
+                ]),
             ]),
         ])
     ])

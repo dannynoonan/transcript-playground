@@ -18,7 +18,7 @@ from sklearn.manifold import TSNE
 
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey, show_metadata
-from app.web.fig_helper import apply_animation_settings, topic_cat_rank_color_mapper, to_mbti_x, to_mbti_y, to_dnda_x, to_dnda_y
+from app.web.fig_helper import apply_animation_settings, topic_cat_rank_color_mapper, to_mbti_x, to_mbti_y, to_dnda_x, to_dnda_y, extract_parent
 import app.web.fig_metadata as fm
 
 
@@ -418,6 +418,34 @@ def build_series_search_results_gantt(show_key: str, qt: str, matching_episodes:
     return fig
 
 
+def build_episode_similarity_scatter(episode: dict, sim_eps_df: pd.DataFrame) -> go.Figure:
+    print(f"in build_episode_similarity_scatter episode['episode_key']={episode['episode_key']} len(sim_eps_df)={len(sim_eps_df)}")
+    
+    # rename 'sequence_in_season' to 'episode' for display
+    sim_eps_df.rename(columns={'sequence_in_season': 'episode'}, inplace=True) 
+
+    custom_data = ['title', 'season', 'episode', 'score']
+
+    fig = px.scatter(sim_eps_df, x='episode', y='season', size='score', color='score', 
+                    custom_data=custom_data, color_continuous_scale='viridis', width=1000, height=500)
+
+    fig.add_trace(
+        go.Scatter(
+            mode='markers', x=[episode['sequence_in_season']], y=[episode['season']], showlegend=False,
+            marker=dict(color='black', size=30, symbol='diamond')
+        )
+    )
+
+    fig.update_traces(
+        hovertemplate="<br>".join([
+            "S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"",
+            "Similarity score: %{customdata[3]:.2f}",
+        ])
+    )    
+
+    return fig
+
+
 def build_speaker_line_chart(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool = False, season: str = None) -> go.Figure:
     print(f'in build_speaker_line_chart show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season}')
 
@@ -560,8 +588,8 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     return fig
 
 
-def build_speaker_episode_frequency_bar(show_key: str, episode_key: str, df: pd.DataFrame, span_granularity: str) -> go.Figure:
-    print(f'in build_speaker_frequency_bar show_key={show_key} episode_key={episode_key} span_granularity={span_granularity}')
+def build_speaker_episode_frequency_bar(df: pd.DataFrame, span_granularity: str) -> go.Figure:
+    print(f'in build_speaker_frequency_bar span_granularity={span_granularity}')
 
     x = f'{span_granularity}_count'
 
@@ -578,8 +606,8 @@ def build_speaker_episode_frequency_bar(show_key: str, episode_key: str, df: pd.
     return fig
 
 
-def build_episode_speaker_topic_scatter(show_key: str, episode_key: str, df: pd.DataFrame, topic_type: str) -> go.Figure:
-    print(f'in build_episode_speaker_topic_scatter show_key={show_key} episode_key={episode_key} topic_type={topic_type}')
+def build_episode_speaker_topic_scatter(df: pd.DataFrame, topic_type: str) -> go.Figure:
+    print(f'in build_episode_speaker_topic_scatter topic_type={topic_type}')
 
     ep_topic_key = f'ep_{topic_type}_topic_key'
     ep_topic_score = f'ep_{topic_type}_score'
@@ -648,13 +676,24 @@ def build_episode_speaker_topic_scatter(show_key: str, episode_key: str, df: pd.
     return fig
 
 
-def build_speaker_chatter_scatter(show_key: str, episode_key: str, df: pd.DataFrame, x_axis: str, y_axis: str) -> go.Figure:
-    print(f'in build_speaker_chatter_scatter show_key={show_key} episode_key={episode_key} x_axis=`{x_axis}` y_axis=`{y_axis}`')
+def build_speaker_chatter_scatter(df: pd.DataFrame, x_axis: str, y_axis: str) -> go.Figure:
+    print(f'in build_speaker_chatter_scatter x_axis=`{x_axis}` y_axis=`{y_axis}`')
 
     fig = px.scatter(df, x=x_axis, y=y_axis, text='speaker', width=800, height=650)
                     #  trendline="ols", trendline_scope="overall", trendline_color_override="black")
 
     fig.update_traces(textposition='middle right')
+
+    return fig
+
+
+def build_episode_topic_treemap(df: pd.DataFrame, topic_grouping: str, score_type: str) -> go.Figure:
+    df = df[['topic_key', 'topic_name', 'raw_score', 'score', 'is_parent', 'tfidf_score']]
+    df['parent_topic'] = df['topic_key'].apply(extract_parent)
+    df = df[df['parent_topic'] != df['topic_key']]
+    df['total_score'] = df[score_type].sum()
+
+    fig = px.treemap(df, path=['parent_topic', 'topic_name'], values=score_type, width=800, height=650, title=topic_grouping)
 
     return fig
 
