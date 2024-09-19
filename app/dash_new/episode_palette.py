@@ -224,9 +224,23 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
             ]),
             dbc.CardBody([
                 html.H3(children=["Similar episodes"]),
+                dbc.Row([
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            "MLT type ",
+                            dcc.Dropdown(
+                                id="mlt-type",
+                                options=['tfidf', 'openai_embeddings'], 
+                                value='tfidf',
+                            )
+                        ]),
+                    ]),
+                ]),
+                html.Br(),
                 dbc.Row(justify="evenly", children=[
                     dcc.Graph(id="episode-similarity-scatter"),
                 ]),
+                html.Br(),
             ]),
         ])
     ])

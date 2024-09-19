@@ -275,16 +275,25 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, topic_score_ty
 @dapp_new.callback(
     Output('episode-similarity-scatter', 'figure'),
     Input('show-key', 'value'),
-    Input('episode-key', 'value'))    
-def render_episode_similarity_scatter(show_key: str, episode_key: str):
-    print(f'in render_episode_similarity_scatter, show_key={show_key} episode_key={episode_key}')
+    Input('episode-key', 'value'),
+    Input('mlt-type', 'value'))    
+def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type: str):
+    print(f'in render_episode_similarity_scatter, show_key={show_key} episode_key={episode_key} mlt_type={mlt_type}')
 
     episode_response = esr.fetch_episode(ShowKey(show_key), episode_key)
     episode = episode_response['es_episode']
 
-    mlt_tfidf_response = esr.more_like_this(ShowKey(show_key), episode_key)
-    mlt_tfidf = mlt_tfidf_response['matches']
-    sim_eps_df = pd.DataFrame(mlt_tfidf)
+    if mlt_type == 'tfidf':
+        mlt_response = esr.more_like_this(ShowKey(show_key), episode_key)
+        mlt_matches = mlt_response['matches']
+        sim_eps_df = pd.DataFrame(mlt_matches)
+        sim_eps_df['rank'] = range(0, len(sim_eps_df))
+    elif mlt_type == 'openai_embeddings':
+        mlt_response = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key)
+        mlt_matches = mlt_response['matches'][:30]
+        sim_eps_df = pd.DataFrame(mlt_matches)
+
+    sim_eps_df['rev_rank'] = range(len(sim_eps_df), 0, -1)
 
     episode_similarity_scatter = fb.build_episode_similarity_scatter(episode, sim_eps_df)
 

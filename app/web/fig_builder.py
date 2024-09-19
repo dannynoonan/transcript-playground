@@ -424,9 +424,9 @@ def build_episode_similarity_scatter(episode: dict, sim_eps_df: pd.DataFrame) ->
     # rename 'sequence_in_season' to 'episode' for display
     sim_eps_df.rename(columns={'sequence_in_season': 'episode'}, inplace=True) 
 
-    custom_data = ['title', 'season', 'episode', 'score']
+    custom_data = ['title', 'season', 'episode', 'score', 'rank']
 
-    fig = px.scatter(sim_eps_df, x='episode', y='season', size='score', color='score', 
+    fig = px.scatter(sim_eps_df, x='episode', y='season', size='rev_rank', color='score', 
                     custom_data=custom_data, color_continuous_scale='viridis', width=1000, height=500)
 
     fig.add_trace(
@@ -439,7 +439,7 @@ def build_episode_similarity_scatter(episode: dict, sim_eps_df: pd.DataFrame) ->
     fig.update_traces(
         hovertemplate="<br>".join([
             "S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"",
-            "Similarity score: %{customdata[3]:.2f}",
+            "Similarity score: %{customdata[3]:.2f} (#%{customdata[4]})",
         ])
     )    
 
