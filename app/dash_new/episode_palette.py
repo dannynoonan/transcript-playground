@@ -9,17 +9,14 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
         navbar,
         dbc.Card(className="bg-dark", children=[
             dbc.CardBody([
-                html.H3(children=["Character dialog timeline in episode"]),
+                html.H3("Character dialog timeline in episode"),
                 dbc.Row([ 
                     dbc.Col(md=2, children=[
                         html.Div([
                             "Show: ",
                             dcc.Dropdown(
                                 id="show-key",
-                                options=[
-                                    {'label': 'TNG', 'value': 'TNG'},
-                                    {'label': 'GoT', 'value': 'GoT'},
-                                ], 
+                                options=['TNG', 'GoT'],
                                 value='TNG',
                             )
                         ]),
@@ -46,17 +43,14 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                 html.Br(),
             ]),
             dbc.CardBody([
-                html.H3(children=["Character sentiment timeline"]),
+                html.H3("Character sentiment timeline"),
                 dbc.Row([
                     dbc.Col(md=2, children=[
                         html.Div([
                             "Freeze on ",
                             dcc.Dropdown(
                                 id="freeze-on",
-                                options=[
-                                    {'label': 'emotion', 'value': 'emotion'},
-                                    {'label': 'speaker', 'value': 'speaker'},
-                                ], 
+                                options=['emotion', 'speaker'],
                                 value='emotion',
                             )
                         ]),
@@ -88,7 +82,7 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                 html.Br(),
             ]),
             dbc.CardBody([
-                html.H3(children=["Character conversations during episode"]),
+                html.H3("Character conversations during episode"),
                 dbc.Row(justify="evenly", children=[
                     dbc.Col(md=6, children=[
                         html.Div([
@@ -106,7 +100,7 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                 html.Br(),
             ]),
             dbc.CardBody([
-                html.H3(children=["Character prominence in episode"]),
+                html.H3("Character prominence in episode"),
                 dbc.Row([
                     dbc.Col(md=6, children=[
                         dbc.Row([
@@ -166,7 +160,7 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                 ]), 
             ]),
             dbc.CardBody([
-                html.H3(children=["Character personalities during episode"]),
+                html.H3("Character personalities during episode"),
                 dbc.Row(justify="evenly", children=[
                     dbc.Col(md=6, children=[
                         html.Div([
@@ -184,7 +178,7 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                 html.Br(),
             ]),
             dbc.CardBody([
-                html.H3(children=["Episode topic distributions"]),
+                html.H3("Episode topic distributions"),
                 dbc.Row([
                     dbc.Col(md=2, children=[
                         html.Div([
@@ -212,18 +206,9 @@ def generate_content(episode_dropdown_options: list, episode_key: str, speaker_d
                     ]),     
                 ]),
                 html.Br(),
-                # dbc.Row([
-                #     dbc.Col(md=6, children=[
-                #         html.Div([
-                #             html.Br(),
-                #             dcc.Graph(id="episode-focused-gpt35-treemap"),
-                #         ]),
-                #     ]),       
-                # ]),
-                # html.Br(),
             ]),
             dbc.CardBody([
-                html.H3(children=["Similar episodes"]),
+                html.H3("Similar episodes"),
                 dbc.Row([
                     dbc.Col(md=2, children=[
                         html.Div([

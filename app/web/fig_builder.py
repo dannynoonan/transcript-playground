@@ -652,7 +652,17 @@ def build_episode_speaker_topic_scatter(df: pd.DataFrame, topic_type: str) -> go
     for index, row in df.iterrows():
         topic_key = row[ep_topic_key]
         topic_count = topics_to_counts[topic_key]
+        # NOTE Ick. When there's overflow of speakers mapped to a particular topic, things get messy
+        # The topic_count and topic_i counters are off by 1, so the checks here are gross
+        # Ultimately we df.drop any overflow speaker (current cut-off is 9) mapped to the same topic
+        if topic_count >= len(fm.topic_grid_coord_deltas):
+            topic_count = len(fm.topic_grid_coord_deltas) - 1
         topic_i = topics_to_i[topic_key]
+        # print(f'topic_key={topic_key} topics_to_counts[topic_key]={topics_to_counts[topic_key]} topic_count={topic_count} topic_i={topic_i}')
+        if topic_i >= topic_count:
+            # print(f"too many speakers mapped to topic_key={topic_key}, dropping row['speaker']={row['speaker']} from display")
+            df.drop(index, inplace=True)
+            continue
         df.at[index, 'ep_x'] = row['ep_x'] + fm.topic_grid_coord_deltas[topic_count][topic_i][0]
         df.at[index, 'ep_y'] = row['ep_y'] + fm.topic_grid_coord_deltas[topic_count][topic_i][1]
         topics_to_i[topic_key] += 1
