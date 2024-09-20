@@ -190,9 +190,9 @@ def build_3d_network_graph(show_key: str, data: dict) -> go.Figure:
     fig_height = 650
 
     layout = go.Layout(
-        title="placeholder",
-        width=fig_width,
-        height=fig_height,
+        title="Character chatter",
+        # width=fig_width,
+        # height=fig_height,
         showlegend=False,
         scene=dict(
             xaxis=dict(axis),
@@ -204,7 +204,7 @@ def build_3d_network_graph(show_key: str, data: dict) -> go.Figure:
         annotations=[
             dict(
                 showarrow=False,
-                text="placeholder text",
+                text="TODO",
                 xref='paper',
                 yref='paper',
                 x=0,
@@ -430,7 +430,9 @@ def build_episode_similarity_scatter(episode: dict, df: pd.DataFrame, seasons: l
     custom_data = ['title', 'season', 'episode', 'score', 'rank', 'focal_speakers', 'flattened_topics']
     
     fig = px.scatter(df, x='episode', y='season', size='rev_rank', color='score', symbol='symbol',
-                     custom_data=custom_data, color_continuous_scale='viridis', width=1000, height=500)
+                     custom_data=custom_data, color_continuous_scale='viridis', 
+                    #  width=1000, height=500
+                     )
 
     fig.update_traces(
         hovertemplate="<br>".join([
@@ -605,11 +607,11 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
 def build_speaker_episode_frequency_bar(df: pd.DataFrame, span_granularity: str) -> go.Figure:
     print(f'in build_speaker_frequency_bar span_granularity={span_granularity}')
 
-    x = f'{span_granularity}_count'
+    df.rename(columns={'speaker': 'character'}, inplace=True)
 
     # custom_data = []  # TODO
 
-    fig = px.bar(df, x=x, y='speaker', color='speaker', width=800, height=650)
+    fig = px.bar(df, x=span_granularity, y='character', color='character')
 
     fig.update_layout(showlegend=False)
 

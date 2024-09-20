@@ -12,7 +12,7 @@ import app.dash.components as cmp
 #     bertopic_model_clusters, episode_gantt_chart, location_line_chart, sentiment_line_chart, series_gantt_chart, series_search_results_gantt, 
 #     show_3d_network_graph, speaker_3d_network_graph, show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
 # )
-from app.dash_new import episode_palette
+from app.dash_new import episode_palette, oopsy
 # import app.es.es_query_builder as esqb
 # import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
@@ -49,9 +49,10 @@ def display_page(pathname, search):
         # generate form-backing data 
 
         # all episodes
-        all_simple_episodes = esr.fetch_simple_episodes(ShowKey('TNG'))
+        all_episodes_response = esr.fetch_simple_episodes(ShowKey('TNG'))
+        all_episodes = all_episodes_response['episodes']
         episode_dropdown_options = []
-        for episode in all_simple_episodes['episodes']:
+        for episode in all_episodes:
             label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
             episode_dropdown_options.append({'label': label, 'value': episode['episode_key']})
 
@@ -61,12 +62,29 @@ def display_page(pathname, search):
             if isinstance(episode_key, list):
                 episode_key = episode_key[0]
 
+        episode = None
+        for ep in all_episodes:
+            if ep['episode_key'] == episode_key:
+                episode = ep
+                break
+        if not episode:
+            err_msg = f'no episode matching episode_key={episode_key}'
+            print(err_msg)
+            return oopsy.generate_content(err_msg)
+
+        scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey('TNG'), episode_key=episode_key)
+        episode['line_count'] = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
+
+        dialog_word_counts_response = esr.agg_dialog_word_counts(ShowKey('TNG'), episode_key=episode_key)
+        episode_word_counts = dialog_word_counts_response['dialog_word_counts']
+        episode['word_count'] = round(episode_word_counts['_ALL_'])
+
         # speakers in episode
         speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey('TNG'), episode_key)
         episode_speakers = speaker_episodes_response['speaker_episodes']
         speaker_dropdown_options = [s['speaker'] for s in episode_speakers]
 
-        return episode_palette.generate_content(episode_dropdown_options, episode_key, speaker_dropdown_options)
+        return episode_palette.generate_content(episode_dropdown_options, episode, speaker_dropdown_options)
     
 
 
