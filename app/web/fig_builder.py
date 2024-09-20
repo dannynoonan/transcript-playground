@@ -18,7 +18,7 @@ from sklearn.manifold import TSNE
 
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey, show_metadata
-from app.web.fig_helper import apply_animation_settings, topic_cat_rank_color_mapper, to_mbti_x, to_mbti_y, to_dnda_x, to_dnda_y, extract_parent
+from app.web.fig_helper import apply_animation_settings, topic_cat_rank_color_mapper, to_mbti_x, to_mbti_y, to_dnda_x, to_dnda_y, extract_parent, flatten_topics
 import app.web.fig_metadata as fm
 
 
@@ -418,30 +418,44 @@ def build_series_search_results_gantt(show_key: str, qt: str, matching_episodes:
     return fig
 
 
-def build_episode_similarity_scatter(episode: dict, sim_eps_df: pd.DataFrame) -> go.Figure:
-    print(f"in build_episode_similarity_scatter episode['episode_key']={episode['episode_key']} len(sim_eps_df)={len(sim_eps_df)}")
+def build_episode_similarity_scatter(episode: dict, df: pd.DataFrame, seasons: list) -> go.Figure:
+    print(f"in build_episode_similarity_scatter episode['episode_key']={episode['episode_key']} len(df)={len(df)}")
     
     # rename 'sequence_in_season' to 'episode' for display
-    sim_eps_df.rename(columns={'sequence_in_season': 'episode'}, inplace=True) 
+    df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
 
-    custom_data = ['title', 'season', 'episode', 'score', 'rank']
+    # ad-hoc method of flattening topic metadata for hovertemplate display
+    df['flattened_topics'] = df['topics_universal_tfidf'].apply(flatten_topics)
 
-    fig = px.scatter(sim_eps_df, x='episode', y='season', size='rev_rank', color='score', 
-                    custom_data=custom_data, color_continuous_scale='viridis', width=1000, height=500)
-
-    fig.add_trace(
-        go.Scatter(
-            mode='markers', x=[episode['sequence_in_season']], y=[episode['season']], showlegend=False,
-            marker=dict(color='black', size=30, symbol='diamond')
-        )
-    )
+    custom_data = ['title', 'season', 'episode', 'score', 'rank', 'focal_speakers', 'flattened_topics']
+    
+    fig = px.scatter(df, x='episode', y='season', size='rev_rank', color='score', symbol='symbol',
+                     custom_data=custom_data, color_continuous_scale='viridis', width=1000, height=500)
 
     fig.update_traces(
         hovertemplate="<br>".join([
             "S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"",
             "Similarity score: %{customdata[3]:.2f} (#%{customdata[4]})",
+            "Focal characters: %{customdata[5]}",
+            "Categories: %{customdata[6]}"
         ])
     )    
+
+    fig.update_yaxes(autorange="reversed")
+    
+    fig.update_layout(
+        showlegend=False, 
+        yaxis=dict(
+            tickmode = 'array',
+            tickvals = seasons,
+            ticktext = [f'S{s}' for s in seasons]
+        )
+    )
+
+    # This took a while to nail down. What's confusing is that--if I'm not mistaken--this is *not* a way to alter marker symbol/shape. 
+    # Symbols seem to fall under higher-order groupings and thus can't be altered ad hoc the way color and outline can.
+    fig['data'][1]['marker']['color'] = 'Black'
+    fig['data'][1]['marker']['line'] = dict(width=3, color='Yellow')
 
     return fig
 

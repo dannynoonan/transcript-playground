@@ -89,7 +89,7 @@ def to_mbti_x(topic_key: str):
     if 'ENT' in topic_key or 'EST' in topic_key:
         return 3.5
         
-        
+
 def to_mbti_y(topic_key: str):
     if 'SFJ' in topic_key or 'STJ' in topic_key:
         return 0.5
@@ -122,4 +122,16 @@ def to_dnda_y(topic_key: str):
 def extract_parent(topic_key: str):
     topic_path = topic_key.split('.')
     return topic_path[0]
+
+
+def flatten_topics(topics: list):
+    out_list = []
+    parents_seen = []
+    for topic in topics:
+        t_bits = topic['topic_key'].split('.')
+        if len(t_bits) <= 1 or t_bits[0] in parents_seen:
+            continue
+        parents_seen.append(t_bits[0])
+        out_list.append(topic['topic_key'])
+    return ', '.join(out_list)
         

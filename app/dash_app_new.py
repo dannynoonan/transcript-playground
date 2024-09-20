@@ -280,8 +280,13 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, topic_score_ty
 def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type: str):
     print(f'in render_episode_similarity_scatter, show_key={show_key} episode_key={episode_key} mlt_type={mlt_type}')
 
+    season_response = esr.list_seasons(ShowKey(show_key))
+    seasons = season_response['seasons']
+
     episode_response = esr.fetch_episode(ShowKey(show_key), episode_key)
     episode = episode_response['es_episode']
+    episode_df = pd.DataFrame([episode])
+    episode_df['rank'] = 0
 
     if mlt_type == 'tfidf':
         mlt_response = esr.more_like_this(ShowKey(show_key), episode_key)
@@ -293,9 +298,27 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
         mlt_matches = mlt_response['matches'][:30]
         sim_eps_df = pd.DataFrame(mlt_matches)
 
-    sim_eps_df['rev_rank'] = range(len(sim_eps_df), 0, -1)
+    # TODO would be great to extract these into a metadata constant like EPISODE_CORE_FIELDS (then add score, rank, & symbol)
+    cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'score', 'rank', 'focal_speakers', 'focal_locations', 
+                    'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf', 'symbol']
 
-    episode_similarity_scatter = fb.build_episode_similarity_scatter(episode, sim_eps_df)
+    # incorporate episode being analyzed into mlt_episode results, assign it the (ever-so-slightly) highest score, map it to a distinct symbol
+    episode_df['score'] = sim_eps_df['score'].max() + .01
+    episode_df['symbol'] = 'diamond'
+    sim_eps_df['symbol'] = 'circle'
+
+    episode_df = episode_df[cols_to_keep]
+    sim_eps_df = sim_eps_df[cols_to_keep]
+
+    df = pd.concat([sim_eps_df, episode_df], ignore_index=True)
+    df.sort_values('score', inplace=True)
+    df['rev_rank'] = range(0, len(df))
+    # NOTE sequence matters: sorting this way is an admission of defeat wrt symbol setting
+    # px.scatter ignores explicitly set 'diamond' and 'circle' values and goes by df row sequence when assigning traces to symbols
+    # Symbol groupings are relevant, but the actual symbol values are ignored (those 2 words could be anything and result would be the same)
+    df.sort_values('rev_rank', inplace=True)
+
+    episode_similarity_scatter = fb.build_episode_similarity_scatter(episode, df, seasons)
 
     return episode_similarity_scatter
 
