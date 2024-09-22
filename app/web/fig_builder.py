@@ -17,8 +17,11 @@ from sklearn.manifold import TSNE
 # import statsmodels
 
 import app.es.es_read_router as esr
-from app.show_metadata import ShowKey, show_metadata
-from app.web.fig_helper import apply_animation_settings, topic_cat_rank_color_mapper, to_mbti_x, to_mbti_y, to_dnda_x, to_dnda_y, extract_parent, flatten_topics
+from app.show_metadata import ShowKey, show_metadata, EXTRA_SPEAKER_COLORS
+from app.web.fig_helper import (
+    apply_animation_settings, topic_cat_rank_color_mapper, to_mbti_x, to_mbti_y, to_dnda_x, to_dnda_y, extract_parent, flatten_topics,
+    build_and_annotate_scene_labels, flatten_speaker_colors, generate_speaker_color_discrete_map
+)
 import app.web.fig_metadata as fm
 
 
@@ -221,7 +224,7 @@ def build_3d_network_graph(show_key: str, data: dict) -> go.Figure:
     return fig    
 
 
-def build_episode_gantt(show_key: str, data: list) -> go.Figure:
+def build_episode_gantt(show_key: str, y_axis: str, data: list, interval_data: list = None) -> go.Figure:
     print(f'in build_episode_gantt show_key={show_key}')
 
     '''
@@ -232,20 +235,29 @@ def build_episode_gantt(show_key: str, data: list) -> go.Figure:
     '''
 
     df = pd.DataFrame(data)
+    speaker_colors = flatten_speaker_colors(show_key, to_rgb=True)
+    if y_axis == 'speakers':
+        title = 'Character dialog timeline'
+    elif y_axis == 'locations':
+        title = 'Scene location timeline'
+    else:
+        title = 'Placeholder title'
 
     span_keys = df.Task.unique()
     keys_to_colors = {}
     colors_to_keys = {}
     for sk in span_keys:
-        r = random.randrange(255)
-        g = random.randrange(255)
-        b = random.randrange(255)
-        rgb = f'rgb({r},{g},{b})'
+        if y_axis == 'speakers' and sk in speaker_colors:
+            rgb = speaker_colors[sk]
+        else:
+            r = random.randrange(255)
+            g = random.randrange(255)
+            b = random.randrange(255)
+            rgb = f'rgb({r},{g},{b})'
         keys_to_colors[sk] = rgb
         colors_to_keys[rgb] = sk
 
-    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True, 
-                          title='Character dialog over duration of episode') # TODO change this for locations
+    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True, title=title)
     fig.update_layout(xaxis_type='linear', autosize=False)
 
     # inject dialog into hover 'text' property
@@ -269,6 +281,15 @@ def build_episode_gantt(show_key: str, data: list) -> go.Figure:
                     gantt_row_text[i] = finish_row.iloc[0]['Line']
 
             gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
+
+    shapes = []
+    # if interval_data, add markers and labels designating intervals 
+    if interval_data:
+        interval_shapes = build_and_annotate_scene_labels(fig, interval_data)
+        shapes.extend(interval_shapes)
+        # scene_blocks = build_and_annotate_scene_blocks(interval_data)
+        # shapes.extend(scene_blocks)
+    fig.update_layout(shapes=shapes)
     
     return fig
 
@@ -281,7 +302,7 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
         # limit speaker gantt to those in `speakers` index (for visual layout, and only slightly for page load performance)
         # matches = esr.fetch_indexed_speakers(ShowKey(show_key), min_episode_count=2)
         # speakers = [m['speaker'] for m in matches['speakers']]
-        speakers = show_metadata[show_key]['regular_cast'] + show_metadata[show_key]['recurring_cast']
+        speakers = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
         df = df.loc[df['Task'].isin(speakers)]
     elif type == 'locations':
         title='Scene location continuity over course of series'
@@ -604,14 +625,17 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     return fig
 
 
-def build_speaker_episode_frequency_bar(df: pd.DataFrame, span_granularity: str) -> go.Figure:
+def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, span_granularity: str) -> go.Figure:
     print(f'in build_speaker_frequency_bar span_granularity={span_granularity}')
+
+    speakers = df['speaker'].unique()
+    color_discrete_map = generate_speaker_color_discrete_map(show_key, speakers)
 
     df.rename(columns={'speaker': 'character'}, inplace=True)
 
-    # custom_data = []  # TODO
+    # custom_data = []  # TODO    
 
-    fig = px.bar(df, x=span_granularity, y='character', color='character')
+    fig = px.bar(df, x=span_granularity, y='character', color='character', color_discrete_map=color_discrete_map)
 
     fig.update_layout(showlegend=False)
 
@@ -905,6 +929,9 @@ def build_bertopic_visualize_hierarchy(bertopic_model: BERTopic) -> go.Figure:
 def build_episode_sentiment_line_chart(show_key: str, df: pd.DataFrame, speakers: list, emotions: list, focal_property: str) -> go.Figure:
     print(f'in build_sentiment_line_chart show_key={show_key} emotion={emotions} speakers={speakers} focal_property={focal_property}')
 
+    speakers = df['speaker'].unique()
+    color_discrete_map = generate_speaker_color_discrete_map(show_key, speakers)
+
     # remove episode-level rows 
     df = df.loc[df['scene'] != 'ALL']
     # remove live-level rows 
@@ -920,7 +947,7 @@ def build_episode_sentiment_line_chart(show_key: str, df: pd.DataFrame, speakers
     # df = df.sort_values(['scene', 'speaker', 'emotion'])
     # print(df)
 
-    fig = px.line(df, x='scene', y='score', color=focal_property, height=800, render_mode='svg', line_shape='spline')
+    fig = px.line(df, x='scene', y='score', color=focal_property, height=800, render_mode='svg', line_shape='spline', color_discrete_map=color_discrete_map)
 
     for i in range(len(fig.data)):
         fig.data[i].update(mode='markers+lines')

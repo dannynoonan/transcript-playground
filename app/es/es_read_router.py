@@ -1146,7 +1146,7 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
                 speakers_in_scene.add(scene_event['spoken_by'])
         for speaker in speakers_in_scene:
             if speaker not in speakers_to_node_i:
-                if speaker in show_metadata[show_key.value]['regular_cast']:
+                if speaker in show_metadata[show_key.value]['regular_cast'].keys():
                     group = 1
                 else:
                     group = 2
@@ -1266,7 +1266,7 @@ def generate_series_speaker_gantt_sequence(show_key: ShowKey, limit_cast: bool =
     if limit_cast:
         trimmed_episode_speakers_sequence = []
         for d in episode_speakers_sequence:
-            if d['Task'] in show_metadata[show_key]['regular_cast'] or d['Task'] in show_metadata[show_key]['recurring_cast']:
+            if d['Task'] in show_metadata[show_key]['regular_cast'].keys() or d['Task'] in show_metadata[show_key]['recurring_cast'].keys():
                 trimmed_episode_speakers_sequence.append(d)
         episode_speakers_sequence = trimmed_episode_speakers_sequence
 
@@ -1400,10 +1400,10 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
     '''
     TODO 
     '''
-    speaker_series_agg_word_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-    speaker_series_agg_line_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-    speaker_series_agg_scene_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-    speaker_series_agg_episode_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
+    speaker_series_agg_word_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+    speaker_series_agg_line_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+    speaker_series_agg_scene_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+    speaker_series_agg_episode_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
 
     series_agg_word_count = 0
     series_agg_line_count = 0
@@ -1429,10 +1429,10 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
             season_agg_line_count = 0
             season_agg_scene_count = 0
             season_agg_episode_count = 0
-            speaker_season_agg_word_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-            speaker_season_agg_line_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-            speaker_season_agg_scene_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-            speaker_season_agg_episode_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
+            speaker_season_agg_word_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+            speaker_season_agg_line_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+            speaker_season_agg_scene_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+            speaker_season_agg_episode_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
 
         season_agg_episode_count += 1
         series_agg_episode_count += 1
@@ -1457,7 +1457,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
         series_agg_scene_count += episode_scene_count
         # episodes_to_speaker_counts[episode_key] = speaker_scene_counts.keys()
 
-        for speaker in show_metadata[show_key.value]['regular_cast']:
+        for speaker in show_metadata[show_key.value]['regular_cast'].keys():
             if speaker in speaker_word_counts:
                 # speaker_episode_row = {}
                 word_count = speaker_word_counts[speaker] 

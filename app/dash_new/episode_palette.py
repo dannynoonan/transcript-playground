@@ -10,7 +10,7 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
         dbc.Card(className="bg-dark", children=[
             dbc.CardBody([
                 dbc.Row([
-                    dbc.Col(md=5, children=[
+                    dbc.Col(md=4, children=[
                         dbc.Row([ 
                             dbc.Col(md=6, children=[
                                 html.Div([
@@ -44,7 +44,7 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                         html.Br(),
                         html.P("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam massa orci, sit amet ultricies neque placerat sit amet. Nullam pellentesque massa vitae lectus placerat fermentum. Morbi dapibus rhoncus purus, nec posuere metus condimentum ac. In congue leo sit amet condimentum faucibus."),
                     ]),
-                    dbc.Col(md=3, children=[
+                    dbc.Col(md=4, children=[
                         html.Div([
                             html.Br(),
                             dcc.Graph(id="speaker-episode-frequency-bar-chart-new"),
@@ -68,8 +68,19 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
             ]),
             dbc.CardBody([
                 dbc.Row([
-                    dbc.Col(md=5, children=[
+                    dbc.Col(md=4, children=[
                         html.H3("Character dialog timeline"),
+                    ]),
+                    dbc.Col(md=2, style={'textAlign': 'center'}, children=[
+                        dcc.Checklist(
+                            id="show-layers",
+                            # className="text-white", 
+                            options=[
+                                {'label': 'Show scenes / locations', 'value': 'scene_locations'}
+                            ],
+                            value=[],
+                            inputStyle={"margin-left": "4px", "margin-right": "4px"}
+                        )
                     ]),
                 ]),
                 dbc.Row(justify="evenly", children=[

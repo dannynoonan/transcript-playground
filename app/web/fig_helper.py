@@ -1,4 +1,8 @@
+from PIL import ImageColor
 import plotly.graph_objects as go
+
+from app.show_metadata import show_metadata, EXTRA_SPEAKER_COLORS
+
 
 FRAME_RATE = 1000
 
@@ -134,4 +138,74 @@ def flatten_topics(topics: list):
         parents_seen.append(t_bits[0])
         out_list.append(topic['topic_key'])
     return ', '.join(out_list)
+
+
+def build_and_annotate_scene_labels(fig: go.Figure, scenes: list) -> list:
+    """
+    helper function to layer scene labels into episode dialog gantt
+    """
+
+    # build markers and labels marking events 
+    scene_lines = []
+    yshift = -22 # NOTE might need to be derived based on speaker count / y axis length
+
+    for scene in scenes:
+        # add vertical line for each scene
+        scene_line = dict(type='line', line_width=1, line_color='#A0A0A0', x0=scene['Start'], x1=scene['Start'], y0=0, y1=1, yref='paper')
+        scene_lines.append(scene_line)
+        # add annotation for each scene location
+        fig.add_annotation(x=scene['Start'], y=0, text=scene['Task'], showarrow=False, 
+            yshift=yshift, xshift=6, textangle=-90, align='left', yanchor='bottom',
+            font=dict(family="Arial", size=10, color="#A0A0A0"))
+
+    return scene_lines
+
+
+def flatten_speaker_colors(show_key: str, to_rgb: bool = False) -> dict:
+    speaker_colors = {}
+    for s, d in show_metadata[show_key]['regular_cast'].items():
+        if to_rgb:
+            rgb = ImageColor.getcolor(d['color'], 'RGB')
+            speaker_colors[s] = f'rgb{rgb}'.replace(' ', '')
+        else:
+            speaker_colors[s] = d['color']
+    for s, d in show_metadata[show_key]['recurring_cast'].items():
+        if to_rgb:
+            rgb = ImageColor.getcolor(d['color'], 'RGB')
+            speaker_colors[s] = f'rgb{rgb}'.replace(' ', '')
+        else:
+            speaker_colors[s] = d['color']
+    return speaker_colors
+
+
+def generate_speaker_color_discrete_map(show_key: str, speakers: list) -> dict:
+    speaker_colors = flatten_speaker_colors(show_key)
+    color_discrete_map = {}
+    extra_speaker_i = 0
+    for s in speakers:
+        if s in speaker_colors:
+            color_discrete_map[s] = speaker_colors[s]
+        else:
+            color_discrete_map[s] = EXTRA_SPEAKER_COLORS[extra_speaker_i]
+            extra_speaker_i += 1
+    return color_discrete_map
+
+
+# def build_and_annotate_scene_blocks(scenes: list) -> list:
+#     """
+#     Helper function to layer scene blocks into episode dialog gantt
+#     """
+
+#     # build shaded blocks designating eras
+#     scene_blocks = []
+
+#     for scene in scenes:
+#         # add rectangle for each era date range
+#         block = dict(type='rect', line_width=1, x0=scene['Start'], x1=scene['Finish'], y0=0, y1=1,
+#                      yref='paper',
+#                     # fillcolor=era['color'], 
+#                     opacity=0.12)
+#         scene_blocks.append(block) 
+
+#     return scene_blocks
         

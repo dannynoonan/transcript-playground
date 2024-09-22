@@ -267,8 +267,8 @@ def render_episode_gantt_chart(show_key: str, episode_key: str):
 
     # generate data and build episode gantt charts
     response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
-    episode_dialog_timeline = fb.build_episode_gantt(show_key, response['dialog_timeline'])
-    episode_location_timeline = fb.build_episode_gantt(show_key, response['location_timeline'])
+    episode_dialog_timeline = fb.build_episode_gantt(show_key, 'speakers', response['dialog_timeline'])
+    episode_location_timeline = fb.build_episode_gantt(show_key, 'locations', response['location_timeline'])
 
     return episode_dialog_timeline, episode_location_timeline, show_key
 

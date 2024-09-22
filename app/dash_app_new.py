@@ -93,14 +93,21 @@ def display_page(pathname, search):
     Output('episode-dialog-timeline-new', 'figure'),
     Output('episode-location-timeline-new', 'figure'),
     Input('show-key', 'value'),
-    Input('episode-key', 'value'))    
-def render_episode_chromatographs(show_key: str, episode_key: str):
+    Input('episode-key', 'value'),
+    Input('show-layers', 'value'))    
+def render_episode_chromatographs(show_key: str, episode_key: str, show_layers: list):
     print(f'in render_episode_chromatographs, show_key={show_key} episode_key={episode_key}')
 
-    # generate data and build episode gantt charts
+    # generate timeline data
     response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
-    episode_dialog_timeline = fb.build_episode_gantt(show_key, response['dialog_timeline'])
-    episode_location_timeline = fb.build_episode_gantt(show_key, response['location_timeline'])
+
+    interval_data = None
+    if 'scene_locations' in show_layers:
+        interval_data = response['location_timeline']
+
+    # build episode gantt charts
+    episode_dialog_timeline = fb.build_episode_gantt(show_key, 'speakers', response['dialog_timeline'], interval_data=interval_data)
+    episode_location_timeline = fb.build_episode_gantt(show_key, 'locations', response['location_timeline'])
 
     return episode_dialog_timeline, episode_location_timeline
 
@@ -179,7 +186,7 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, span
     speakers_for_episode = speakers_for_episode_response['speaker_episodes']
     df = pd.DataFrame(speakers_for_episode, columns = ['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
     
-    speaker_episode_frequency_bar_chart = fb.build_speaker_episode_frequency_bar(df, span_granularity)
+    speaker_episode_frequency_bar_chart = fb.build_speaker_episode_frequency_bar(show_key, df, span_granularity)
 
     return speaker_episode_frequency_bar_chart
 
