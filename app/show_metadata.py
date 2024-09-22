@@ -84,6 +84,23 @@ EXTRA_SPEAKER_COLORS = ['PaleVioletRed', 'Tomato', 'Magenta', 'LightGreen', 'Ste
                         'PeachPuff', 'Orchid', 'ForestGreen', 'LightBlue', 'Tan', 'Violet', 'Orange', 'Purple', 'Chocolate',
                         'OrangeRed', 'PapayaWhip', 'DarkSlateBlue', 'MediumSeaGreen', 'DarkOliveGreen', 'PowderBlue', 'Sienna']
 
+TOPIC_COLORS = {
+    'Action': 'DarkGoldenrod',
+    'Comedy': 'Crimson',
+    'Horror': 'MediumSeaGreen',
+    'Drama': 'Fuchsia',
+    'SciFi': 'DeepSkyBlue',
+    'Fantasy': 'Orange',
+    'Thriller': 'MediumBlue',
+    'Crime': 'Maroon',
+    'War': 'Turquoise',
+    'Musical': 'SlateBlue',
+    'Romance': 'Coral',
+    'Western': 'BurlyWood',
+    'Historical': 'LightSlateGray',
+    'Sports': 'SpringGreen',
+}
+
 
 WIKIPEDIA_DOMAIN = 'https://en.wikipedia.org/wiki/'
 

@@ -19,8 +19,14 @@ import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR, OPENAI_EMOTIONS
 from app.show_metadata import ShowKey
 import app.utils as utils
-import app.web.fig_builder as fb
-import app.web.fig_metadata as fm
+# import app.web.fig_builder as fb
+import app.fig_builder.fig_metadata as fm
+import app.fig_builder.plotly_bar as pbar
+import app.fig_builder.plotly_bertopic as pbert
+import app.fig_builder.plotly_gantt as pgantt
+import app.fig_builder.plotly_line as pline
+import app.fig_builder.plotly_networkgraph as pgraph
+import app.fig_builder.plotly_scatter as pscat
 
 
 dapp = Dash(__name__,
@@ -199,7 +205,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
     table_div = cmp.merge_and_simplify_df(show_key, episode_clusters_df)
 
     # generate scatterplot
-    fig_scatter = fb.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
+    fig_scatter = pscat.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
 
     return fig_scatter, show_key, table_div
 
@@ -213,7 +219,7 @@ def render_show_network_graph(show_key: str):
     print(f'in render_show_network_graph, show_key={show_key}')
 
     # generate network graph
-    fig_scatter = fb.build_network_graph()
+    fig_scatter = pgraph.build_network_graph()
 
     return fig_scatter, show_key
 
@@ -231,7 +237,7 @@ def render_show_3d_network_graph(show_key: str):
     max_edges = 3
     # generate data and build 3d network graph
     data = esr.episode_relations_graph(ShowKey(show_key), model_vendor, model_version, max_edges=max_edges)
-    fig_scatter = fb.build_3d_network_graph(show_key, data)
+    fig_scatter = pgraph.build_3d_network_graph(show_key, data)
 
     return fig_scatter, show_key
 
@@ -250,7 +256,7 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str):
 
     # generate data and build generate 3d network graph
     data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
-    fig_scatter = fb.build_3d_network_graph(show_key, data)
+    fig_scatter = pgraph.build_3d_network_graph(show_key, data)
 
     return fig_scatter, show_key
 
@@ -267,8 +273,8 @@ def render_episode_gantt_chart(show_key: str, episode_key: str):
 
     # generate data and build episode gantt charts
     response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
-    episode_dialog_timeline = fb.build_episode_gantt(show_key, 'speakers', response['dialog_timeline'])
-    episode_location_timeline = fb.build_episode_gantt(show_key, 'locations', response['location_timeline'])
+    episode_dialog_timeline = pgantt.build_episode_gantt(show_key, 'speakers', response['dialog_timeline'])
+    episode_location_timeline = pgantt.build_episode_gantt(show_key, 'locations', response['location_timeline'])
 
     return episode_dialog_timeline, episode_location_timeline, show_key
 
@@ -296,7 +302,7 @@ def render_series_gantt_chart(show_key: str):
             print(f'loading dataframe at file_path={file_path}')
         else:
             raise Exception('Failure to render_series_gantt_chart: unable to fetch or generate dataframe at file_path={file_path}')
-    series_speaker_gantt = fb.build_series_gantt(show_key, speaker_gantt_sequence_df, 'speakers')
+    series_speaker_gantt = pgantt.build_series_gantt(show_key, speaker_gantt_sequence_df, 'speakers')
 
     # location gantt
     file_path = f'./app/data/location_gantt_sequence_{show_key}.csv'
@@ -311,7 +317,7 @@ def render_series_gantt_chart(show_key: str):
             print(f'loading dataframe at file_path={file_path}')
         else:
             raise Exception('Failure to render_series_gantt_chart: unable to fetch or generate dataframe at file_path={file_path}')
-    series_location_gantt = fb.build_series_gantt(show_key, location_gantt_sequence_df, 'locations')
+    series_location_gantt = pgantt.build_series_gantt(show_key, location_gantt_sequence_df, 'locations')
 
     # topic gantt
     topic_grouping = 'universalGenres'
@@ -332,7 +338,7 @@ def render_series_gantt_chart(show_key: str):
             print(f'loading dataframe at file_path={file_path}')
         else:
             raise Exception('Failure to render_series_gantt_chart: unable to fetch or generate dataframe at file_path={file_path}')
-    series_topic_gantt = fb.build_series_gantt(show_key, topic_gantt_sequence_df, 'topics')
+    series_topic_gantt = pgantt.build_series_gantt(show_key, topic_gantt_sequence_df, 'topics')
 
     return series_speaker_gantt, series_location_gantt, series_topic_gantt, show_key
 
@@ -372,7 +378,7 @@ def render_series_speaker_line_chart(show_key: str, span_granularity: str, aggre
         else:
             raise Exception('Failure to render_series_speaker_line_chart: unable to fetch or generate dataframe at file_path={file_path}')
     
-    speaker_line_chart = fb.build_speaker_line_chart(show_key, df, span_granularity, aggregate_ratio=aggregate_ratio, season=season)
+    speaker_line_chart = pline.build_speaker_line_chart(show_key, df, span_granularity, aggregate_ratio=aggregate_ratio, season=season)
 
     return speaker_line_chart, show_key
 
@@ -411,7 +417,7 @@ def render_series_location_line_chart(show_key: str, span_granularity: str, aggr
         else:
             raise Exception('Failure to render_series_location_line_chart: unable to fetch or generate dataframe at file_path={file_path}')
     
-    location_line_chart = fb.build_location_line_chart(show_key, df, span_granularity, aggregate_ratio=aggregate_ratio, season=season)
+    location_line_chart = pline.build_location_line_chart(show_key, df, span_granularity, aggregate_ratio=aggregate_ratio, season=season)
 
     return location_line_chart, show_key
 
@@ -445,7 +451,7 @@ def render_series_search_results_gantt(show_key: str, qt: str, qt_submit: bool =
     #         raise Exception('Failure to render_series_gantt_chart: unable to fetch or generate dataframe at file_path={file_path}')
     
     # search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
-    # series_search_results_gantt = fb.build_series_search_results_gantt(show_key, qt, search_response['matches'], speaker_gantt_sequence_df)
+    # series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, qt, search_response['matches'], speaker_gantt_sequence_df)
 
     series_gantt_response = esr.generate_series_speaker_gantt_sequence(ShowKey(show_key))
     search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
@@ -454,7 +460,7 @@ def render_series_search_results_gantt(show_key: str, qt: str, qt_submit: bool =
     #     return None, show_key, qt
     # print(f"len(search_response['matches'])={len(search_response['matches'])}")
     # print(f"len(series_gantt_response['episode_speakers_sequence'])={len(series_gantt_response['episode_speakers_sequence'])}")
-    series_search_results_gantt = fb.build_series_search_results_gantt(show_key, qt, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
+    series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, qt, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
 
     return series_search_results_gantt, show_key, qt
 
@@ -490,8 +496,8 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
         else:
             raise Exception('Failure to render_speaker_frequency_bar_chart: unable to fetch or generate dataframe at file_path={file_path}')
     
-    speaker_season_frequency_bar_chart = fb.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=False, season=season)
-    speaker_episode_frequency_bar_chart = fb.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=True, season=season, sequence_in_season=sequence_in_season)
+    speaker_season_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=False, season=season)
+    speaker_episode_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=True, season=season, sequence_in_season=sequence_in_season)
 
     return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart, show_key
 
@@ -525,14 +531,14 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
     table_div = cmp.merge_and_simplify_df(show_key, bertopic_model_docs_df)
 
     # generate 3d scatter
-    bertopic_3d_scatter = fb.build_bertopic_model_3d_scatter(show_key, bertopic_model_id, bertopic_model_docs_df)
+    bertopic_3d_scatter = pgraph.build_bertopic_model_3d_scatter(show_key, bertopic_model_id, bertopic_model_docs_df)
 
     # generate topic keyword maps and topic graphs
     mmr_bertopic_model = BERTopic.load(f'{BERTOPIC_MODELS_DIR}/{show_key}/{bertopic_model_id}/mmr')
     openai_bertopic_model = BERTopic.load(f'{BERTOPIC_MODELS_DIR}/{show_key}/{bertopic_model_id}/openai')
-    bertopic_visualize_barchart = fb.build_bertopic_visualize_barchart(mmr_bertopic_model)
-    bertopic_visualize_topics = fb.build_bertopic_visualize_topics(openai_bertopic_model)
-    bertopic_visualize_hierarchy = fb.build_bertopic_visualize_hierarchy(openai_bertopic_model)
+    bertopic_visualize_barchart = pbert.build_bertopic_visualize_barchart(mmr_bertopic_model)
+    bertopic_visualize_topics = pbert.build_bertopic_visualize_topics(openai_bertopic_model)
+    bertopic_visualize_hierarchy = pbert.build_bertopic_visualize_hierarchy(openai_bertopic_model)
 
     return bertopic_3d_scatter, bertopic_visualize_barchart, bertopic_visualize_topics, bertopic_visualize_hierarchy, show_key, bertopic_model_id, table_div
 
@@ -575,7 +581,7 @@ def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_
         speakers_series = df['speaker'].value_counts().sort_values(ascending=False)
         speakers = [s for s,_ in speakers_series.items()]        
     
-    sentiment_line_chart = fb.build_episode_sentiment_line_chart(show_key, df, speakers, emotions, focal_property)
+    sentiment_line_chart = pline.build_episode_sentiment_line_chart(show_key, df, speakers, emotions, focal_property)
 
     return sentiment_line_chart
     

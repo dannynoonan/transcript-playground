@@ -6,6 +6,7 @@ from app.show_metadata import show_metadata, EXTRA_SPEAKER_COLORS
 
 FRAME_RATE = 1000
 
+
 def apply_animation_settings(fig: go.Figure, base_fig_title: str, frame_rate: int = None) -> None:
     """
     generic recipe of steps to execute on animation figure after its built: explicitly set frame rate, dynamically update fig title, etc

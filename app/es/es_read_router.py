@@ -1213,13 +1213,15 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
     for s in es_episode['scenes']:
         if 'scene_events' not in s:
             continue
+        scene_lines = []
         for se in s['scene_events']:
             if 'spoken_by' and 'dialog' in se:
                 line_len = len(se['dialog'].split())
                 dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_len-1), Line=se['dialog'])
                 dialog_timeline.append(dialog_span)
                 word_i += line_len
-        location_span = dict(Task=s['location'], Start=scene_start_i, Finish=(word_i-1))
+                scene_lines.append(f"{se['spoken_by']}: {se['dialog']}")
+        location_span = dict(Task=s['location'], Start=scene_start_i, Finish=(word_i-1), Line='\n'.join(scene_lines))
         location_timeline.append(location_span)
         scene_start_i = word_i
 

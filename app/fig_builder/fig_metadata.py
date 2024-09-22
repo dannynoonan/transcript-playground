@@ -1,5 +1,6 @@
 from app.es.es_metadata import SENTIMENT_FIELDS, TOPICS_FIELDS, FOCAL_FIELDS
 
+
 class FigDimensions():
     def __init__(self):
         self.MD5 = 650
@@ -147,7 +148,6 @@ mbti_types = {
         'coords': [3, 4, 3, 4]
     }
 }
-
 
 
 dnda_types = {

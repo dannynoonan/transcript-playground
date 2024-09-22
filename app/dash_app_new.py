@@ -7,21 +7,23 @@ import os
 import pandas as pd
 import urllib.parse
 
-import app.dash.components as cmp
-# from app.dash import (
-#     bertopic_model_clusters, episode_gantt_chart, location_line_chart, sentiment_line_chart, series_gantt_chart, series_search_results_gantt, 
-#     show_3d_network_graph, speaker_3d_network_graph, show_cluster_scatter, show_network_graph, speaker_frequency_bar_chart, speaker_line_chart
-# )
+import app.dash_new.components as cmp
 from app.dash_new import episode_palette, oopsy
 # import app.es.es_query_builder as esqb
 # import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
 # import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR, OPENAI_EMOTIONS
+from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 from app.show_metadata import ShowKey
 # import app.utils as utils
-import app.web.fig_builder as fb
-# import app.web.fig_metadata as fm
+# import app.fig_builder.fig_metadata as fm
+import app.fig_builder.plotly_bar as pbar
+# import app.fig_builder.plotly_bertopic as pbert
+import app.fig_builder.plotly_gantt as pgantt
+import app.fig_builder.plotly_line as pline
+import app.fig_builder.plotly_networkgraph as pgraph
+import app.fig_builder.plotly_scatter as pscat
+import app.fig_builder.plotly_treemap as ptree
 
 
 dapp_new = Dash(__name__,
@@ -106,8 +108,8 @@ def render_episode_chromatographs(show_key: str, episode_key: str, show_layers: 
         interval_data = response['location_timeline']
 
     # build episode gantt charts
-    episode_dialog_timeline = fb.build_episode_gantt(show_key, 'speakers', response['dialog_timeline'], interval_data=interval_data)
-    episode_location_timeline = fb.build_episode_gantt(show_key, 'locations', response['location_timeline'])
+    episode_dialog_timeline = pgantt.build_episode_gantt(show_key, 'speakers', response['dialog_timeline'], interval_data=interval_data)
+    episode_location_timeline = pgantt.build_episode_gantt(show_key, 'locations', response['location_timeline'])
 
     return episode_dialog_timeline, episode_location_timeline
 
@@ -126,7 +128,6 @@ def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, fre
 
     if freeze_on == 'emotion':
         emotions = [emotion]
-        # speakers = ['PICARD', 'RIKER', 'DATA', 'TROI', 'LAFORGE', 'WORF', 'CRUSHER']
         speakers = []
         focal_property = 'speaker'
     elif freeze_on == 'speaker':
@@ -150,7 +151,7 @@ def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, fre
         speakers_series = df['speaker'].value_counts().sort_values(ascending=False)
         speakers = [s for s,_ in speakers_series.items()]        
     
-    sentiment_line_chart = fb.build_episode_sentiment_line_chart(show_key, df, speakers, emotions, focal_property)
+    sentiment_line_chart = pline.build_episode_sentiment_line_chart(show_key, df, speakers, emotions, focal_property)
 
     return sentiment_line_chart
 
@@ -168,7 +169,7 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str):
 
     # generate data and build generate 3d network graph
     data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
-    fig_scatter = fb.build_3d_network_graph(show_key, data)
+    fig_scatter = pgraph.build_3d_network_graph(show_key, data)
 
     return fig_scatter
 
@@ -186,7 +187,7 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, span
     speakers_for_episode = speakers_for_episode_response['speaker_episodes']
     df = pd.DataFrame(speakers_for_episode, columns = ['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
     
-    speaker_episode_frequency_bar_chart = fb.build_speaker_episode_frequency_bar(show_key, df, span_granularity)
+    speaker_episode_frequency_bar_chart = pbar.build_speaker_episode_frequency_bar(show_key, df, span_granularity)
 
     return speaker_episode_frequency_bar_chart
 
@@ -206,7 +207,7 @@ def render_speaker_chatter_scatter(show_key: str, episode_key: str, x_axis: str,
     df = pd.DataFrame(speakers_for_episode, columns = ['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
     # df = pd.DataFrame(speakers_for_episode)
     
-    speaker_chatter_scatter = fb.build_speaker_chatter_scatter(df, x_axis, y_axis)
+    speaker_chatter_scatter = pscat.build_speaker_chatter_scatter(df, x_axis, y_axis)
 
     return speaker_chatter_scatter
 
@@ -266,8 +267,8 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
     
     df = pd.DataFrame(flat_speakers)
 
-    episode_speaker_mbti_scatter = fb.build_episode_speaker_topic_scatter(df, 'mbti')
-    episode_speaker_dnda_scatter = fb.build_episode_speaker_topic_scatter(df, 'dnda')
+    episode_speaker_mbti_scatter = pscat.build_episode_speaker_topic_scatter(df, 'mbti')
+    episode_speaker_dnda_scatter = pscat.build_episode_speaker_topic_scatter(df, 'dnda')
 
     return episode_speaker_mbti_scatter, episode_speaker_dnda_scatter
 
@@ -290,7 +291,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, topic_score_ty
         r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
-        fig = fb.build_episode_topic_treemap(df, tg, topic_score_type)
+        fig = ptree.build_episode_topic_treemap(df, tg, topic_score_type)
         figs.append(fig)
 
     return tuple(figs)
@@ -343,7 +344,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     # Symbol groupings are relevant, but the actual symbol values are ignored (those 2 words could be anything and result would be the same)
     df.sort_values('rev_rank', inplace=True)
 
-    episode_similarity_scatter = fb.build_episode_similarity_scatter(episode, df, seasons)
+    episode_similarity_scatter = pscat.build_episode_similarity_scatter(episode, df, seasons)
 
     return episode_similarity_scatter
 
