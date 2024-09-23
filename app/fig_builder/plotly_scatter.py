@@ -13,16 +13,17 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
     # rename 'sequence_in_season' to 'episode' for display
     df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
 
+    symbol_map = {'all': 'square', 'mlt': 'circle', 'focal': 'diamond'}
+
     # ad-hoc method of flattening topic metadata for hovertemplate display
     df['flattened_topics'] = df['topics_universal_tfidf'].apply(fh.flatten_topics)
 
     custom_data = ['title', 'season', 'episode', 'score', 'rank', 'focal_speakers', 'flattened_topics']
     
-    fig = px.scatter(df, x='episode', y='season', size='rev_rank', color='score', symbol='symbol',
-                     custom_data=custom_data, color_continuous_scale='viridis', 
+    fig = px.scatter(df, x='episode', y='season', size='rev_rank', color='score', symbol='group',
+                     custom_data=custom_data, color_continuous_scale='viridis', symbol_map=symbol_map)
                     #  width=1000, height=500
-                     )
-
+                    
     fig.update_traces(
         hovertemplate="<br>".join([
             "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b>",
@@ -43,8 +44,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
         )
     )
 
-    # This took a while to nail down. What's confusing is that--if I'm not mistaken--this is *not* a way to alter marker symbol/shape. 
-    # Symbols seem to fall under higher-order groupings and thus can't be altered ad hoc the way color and outline can.
+    fig['data'][1]['marker']['color'] = 'Silver'
     fig['data'][2]['marker']['color'] = 'Black'
     fig['data'][2]['marker']['line'] = dict(width=3, color='Yellow')
 

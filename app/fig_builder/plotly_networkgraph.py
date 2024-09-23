@@ -42,105 +42,47 @@ def build_3d_network_graph(show_key: str, data: dict) -> go.Figure:
     
     # data = esr.episode_relations_graph(ShowKey(show_key), model_vendor, model_version, max_edges=max_edges)
 
-    N=len(data['nodes'])
+    node_count = len(data['nodes'])
 
-    L=len(data['links'])
-    Edges=[(data['links'][k]['source'], data['links'][k]['target']) for k in range(L)]
+    edge_count = len(data['links'])
+    edges = [(data['links'][k]['source'], data['links'][k]['target']) for k in range(edge_count)]
 
-    G=ig.Graph(Edges, directed=False)
+    graph = ig.Graph(edges, directed=False)
 
-    labels=[]
-    group=[]
-    for node in data['nodes']:
-        labels.append(node['name'])
-        group.append(node['group'])
+    labels = [node['name'] for node in data['nodes']]
+    group = [node['group'] for node in data['nodes']]
 
-    layt=G.layout('kk', dim=3)
+    graph_layout = graph.layout('kk', dim=3)
 
-    Xn=[layt[k][0] for k in range(N)]# x-coordinates of nodes
-    Yn=[layt[k][1] for k in range(N)]# y-coordinates
-    Zn=[layt[k][2] for k in range(N)]# z-coordinates
-    Xe=[]
-    Ye=[]
-    Ze=[]
-    for e in Edges:
-        Xe+=[layt[e[0]][0],layt[e[1]][0], None]# x-coordinates of edge ends
-        Ye+=[layt[e[0]][1],layt[e[1]][1], None]
-        Ze+=[layt[e[0]][2],layt[e[1]][2], None]
+    Xn = [graph_layout[k][0] for k in range(node_count)] # x-coordinates of nodes
+    Yn = [graph_layout[k][1] for k in range(node_count)] # y-coordinates
+    Zn = [graph_layout[k][2] for k in range(node_count)] # z-coordinates
+    Xe = []
+    Ye = []
+    Ze = []
+    for e in edges:
+        Xe += [graph_layout[e[0]][0], graph_layout[e[1]][0], None] # x-coordinates of edge ends
+        Ye += [graph_layout[e[0]][1], graph_layout[e[1]][1], None]
+        Ze += [graph_layout[e[0]][2], graph_layout[e[1]][2], None]
 
-    trace1=go.Scatter3d(
-        x=Xe,
-        y=Ye,
-        z=Ze,
-        mode='lines',
-        line=dict(
-            color='rgb(125,125,125)', 
-            width=1
-        ),
-        hoverinfo='none'
+    edge_line = dict(color='rgb(125,125,125)', width=1)
+    node_line = dict(color='rgb(50,50,50)', width=0.5)
+
+    edges_trace = go.Scatter3d(x=Xe, y=Ye, z=Ze, mode='lines', line=edge_line, hoverinfo='none')
+
+    nodes_trace = go.Scatter3d(x=Xn, y=Yn, z=Zn, mode='markers', name='actors', text=labels, hoverinfo='text',
+        marker=dict(symbol='circle', size=6, color=group, colorscale='Viridis', line=node_line))
+
+    axis = dict(showbackground=False,  showline=False, zeroline=False, showgrid=False, showticklabels=False, title='')
+
+    layout = go.Layout(title="Character chatter", showlegend=False, margin=dict(t=100), hovermode='closest',
+        scene=dict(xaxis=dict(axis), yaxis=dict(axis), zaxis=dict(axis)),
+        annotations=[dict(showarrow=False, text="TODO", xref='paper', yref='paper', x=0, y=0.1, xanchor='left', yanchor='bottom', font=dict(size=14))],
+        # width=800, height=650,
     )
-
-    trace2=go.Scatter3d(
-        x=Xn,
-        y=Yn,
-        z=Zn,
-        mode='markers',
-        name='actors',
-        marker=dict(
-            symbol='circle',
-            size=6,
-            color=group,
-            colorscale='Viridis',
-            line=dict(
-                color='rgb(50,50,50)', 
-                width=0.5
-            )
-        ),
-        text=labels,
-        hoverinfo='text'
-    )
-
-    axis=dict(showbackground=False,
-        showline=False,
-        zeroline=False,
-        showgrid=False,
-        showticklabels=False,
-        title=''
-    )
-
-    # fig_width = fm.fig_dims.MD10
-    # fig_height = fm.fig_dims.hdef(fig_width)
-    fig_width = 800
-    fig_height = 650
-
-    layout = go.Layout(
-        title="Character chatter",
-        # width=fig_width,
-        # height=fig_height,
-        showlegend=False,
-        scene=dict(
-            xaxis=dict(axis),
-            yaxis=dict(axis),
-            zaxis=dict(axis),
-        ),
-        margin=dict(t=100),
-        hovermode='closest',
-        annotations=[
-            dict(
-                showarrow=False,
-                text="TODO",
-                xref='paper',
-                yref='paper',
-                x=0,
-                y=0.1,
-                xanchor='left',
-                yanchor='bottom',
-                font=dict(size=14)
-            )
-        ],    
-    )
-    data=[trace1, trace2]
-    fig=go.Figure(data=data, layout=layout)
+    
+    data = [edges_trace, nodes_trace]
+    fig = go.Figure(data=data, layout=layout)
 
     return fig  
 

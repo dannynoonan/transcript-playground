@@ -313,20 +313,24 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     high_score = mlt_matches[0]['score']
     simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
     all_episodes = simple_episodes_response['episodes']
-    all_episodes = [dict(episode, rank=len(mlt_matches)+1, rev_rank=1, score=0, symbol='square') for episode in all_episodes]
+    all_episodes = [dict(episode, rank=len(mlt_matches)+1, rev_rank=1, score=0, group='all') for episode in all_episodes]
     all_episodes_dict = {episode['episode_key']:episode for episode in all_episodes}
     # transfer rank/score properties from mlt_matches to all_episodes_dict
-    for mlt_match in mlt_matches:
+    for i, mlt_match in enumerate(mlt_matches):
         if mlt_match['episode_key'] in all_episodes_dict:
-            all_episodes_dict[mlt_match['episode_key']]['rank'] = mlt_match['rank']
-            all_episodes_dict[mlt_match['episode_key']]['rev_rank'] = len(mlt_matches) - mlt_match['rank']
-            all_episodes_dict[mlt_match['episode_key']]['score'] = mlt_match['score']
-            all_episodes_dict[mlt_match['episode_key']]['symbol'] = 'circle'
+            ep = all_episodes_dict[mlt_match['episode_key']]
+            if mlt_type == 'openai_embeddings':
+                ep['rank'] = i+1
+            else:
+                ep['rank'] = mlt_match['rank']
+            ep['rev_rank'] = len(mlt_matches) - ep['rank']
+            ep['score'] = mlt_match['score']
+            ep['group'] = 'mlt'
     # assign 'highest' rank/score properties to focal episode inside all_episodes_dict
     all_episodes_dict[episode_key]['rank'] = 0
     all_episodes_dict[episode_key]['rev_rank'] = len(mlt_matches) + 1
     all_episodes_dict[episode_key]['score'] = high_score + .01
-    all_episodes_dict[episode_key]['symbol'] = 'diamond'
+    all_episodes_dict[episode_key]['group'] = 'focal'
 
     all_episodes = list(all_episodes_dict.values())
 
@@ -335,7 +339,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
 
     # TODO would be great to extract these into a metadata constant like EPISODE_CORE_FIELDS (then add score, rank, & symbol)
     cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'score', 'rank', 'rev_rank', 'focal_speakers', 'focal_locations', 
-                    'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf', 'symbol']
+                    'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf', 'group']
 
     df = df[cols_to_keep]
     # NOTE sequence matters: sorting this way is an admission of defeat wrt symbol setting
