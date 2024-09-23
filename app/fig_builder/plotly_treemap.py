@@ -12,7 +12,17 @@ def build_episode_topic_treemap(df: pd.DataFrame, topic_grouping: str, score_typ
     df = df[df['parent_topic'] != df['topic_key']]
     df['total_score'] = df[score_type].sum()
 
+    custom_data = ['topic_name', score_type]
+
     fig = px.treemap(df, path=['parent_topic', 'topic_name'], values=score_type, title=topic_grouping, color='parent_topic',
-                     color_discrete_map=TOPIC_COLORS, width=800, height=650)
+                     custom_data=custom_data, color_discrete_map=TOPIC_COLORS, width=800, height=650)
+    
+    fig.update_traces(
+        hovertemplate="<br>".join([
+            "<b>%{customdata[0]}</b>",
+            "Score: %{customdata[1]:.2f}",
+            "<extra></extra>"
+        ])
+    )    
 
     return fig

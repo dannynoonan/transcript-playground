@@ -1,5 +1,3 @@
-# import dash
-# from bertopic import BERTopic
 import dash_bootstrap_components as dbc
 from dash import dcc, html, Dash, dash_table
 from dash.dependencies import Input, Output, State
@@ -9,16 +7,10 @@ import urllib.parse
 
 import app.dash_new.components as cmp
 from app.dash_new import episode_palette, oopsy
-# import app.es.es_query_builder as esqb
-# import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
-# import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 from app.show_metadata import ShowKey
-# import app.utils as utils
-# import app.fig_builder.fig_metadata as fm
 import app.fig_builder.plotly_bar as pbar
-# import app.fig_builder.plotly_bertopic as pbert
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_line as pline
 import app.fig_builder.plotly_networkgraph as pgraph
@@ -309,42 +301,49 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     season_response = esr.list_seasons(ShowKey(show_key))
     seasons = season_response['seasons']
 
-    episode_response = esr.fetch_episode(ShowKey(show_key), episode_key)
-    episode = episode_response['es_episode']
-    episode_df = pd.DataFrame([episode])
-    episode_df['rank'] = 0
-
     if mlt_type == 'tfidf':
         mlt_response = esr.more_like_this(ShowKey(show_key), episode_key)
         mlt_matches = mlt_response['matches']
-        sim_eps_df = pd.DataFrame(mlt_matches)
-        sim_eps_df['rank'] = range(0, len(sim_eps_df))
+        for i, match in enumerate(mlt_matches):
+            match['rank'] = i+1
     elif mlt_type == 'openai_embeddings':
         mlt_response = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key)
         mlt_matches = mlt_response['matches'][:30]
-        sim_eps_df = pd.DataFrame(mlt_matches)
+        
+    high_score = mlt_matches[0]['score']
+    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+    all_episodes = simple_episodes_response['episodes']
+    all_episodes = [dict(episode, rank=len(mlt_matches)+1, rev_rank=1, score=0, symbol='square') for episode in all_episodes]
+    all_episodes_dict = {episode['episode_key']:episode for episode in all_episodes}
+    # transfer rank/score properties from mlt_matches to all_episodes_dict
+    for mlt_match in mlt_matches:
+        if mlt_match['episode_key'] in all_episodes_dict:
+            all_episodes_dict[mlt_match['episode_key']]['rank'] = mlt_match['rank']
+            all_episodes_dict[mlt_match['episode_key']]['rev_rank'] = len(mlt_matches) - mlt_match['rank']
+            all_episodes_dict[mlt_match['episode_key']]['score'] = mlt_match['score']
+            all_episodes_dict[mlt_match['episode_key']]['symbol'] = 'circle'
+    # assign 'highest' rank/score properties to focal episode inside all_episodes_dict
+    all_episodes_dict[episode_key]['rank'] = 0
+    all_episodes_dict[episode_key]['rev_rank'] = len(mlt_matches) + 1
+    all_episodes_dict[episode_key]['score'] = high_score + .01
+    all_episodes_dict[episode_key]['symbol'] = 'diamond'
+
+    all_episodes = list(all_episodes_dict.values())
+
+    # load all episodes, with ranks/scores assigned to focal episode and similar episodes, into dataframe
+    df = pd.DataFrame(all_episodes)
 
     # TODO would be great to extract these into a metadata constant like EPISODE_CORE_FIELDS (then add score, rank, & symbol)
-    cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'score', 'rank', 'focal_speakers', 'focal_locations', 
+    cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'score', 'rank', 'rev_rank', 'focal_speakers', 'focal_locations', 
                     'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf', 'symbol']
 
-    # incorporate episode being analyzed into mlt_episode results, assign it the (ever-so-slightly) highest score, map it to a distinct symbol
-    episode_df['score'] = sim_eps_df['score'].max() + .01
-    episode_df['symbol'] = 'diamond'
-    sim_eps_df['symbol'] = 'circle'
-
-    episode_df = episode_df[cols_to_keep]
-    sim_eps_df = sim_eps_df[cols_to_keep]
-
-    df = pd.concat([sim_eps_df, episode_df], ignore_index=True)
-    df.sort_values('score', inplace=True)
-    df['rev_rank'] = range(0, len(df))
+    df = df[cols_to_keep]
     # NOTE sequence matters: sorting this way is an admission of defeat wrt symbol setting
     # px.scatter ignores explicitly set 'diamond' and 'circle' values and goes by df row sequence when assigning traces to symbols
     # Symbol groupings are relevant, but the actual symbol values are ignored (those 2 words could be anything and result would be the same)
     df.sort_values('rev_rank', inplace=True)
 
-    episode_similarity_scatter = pscat.build_episode_similarity_scatter(episode, df, seasons)
+    episode_similarity_scatter = pscat.build_episode_similarity_scatter(df, seasons)
 
     return episode_similarity_scatter
 

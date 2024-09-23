@@ -43,6 +43,7 @@ def build_episode_gantt(show_key: str, y_axis: str, data: list, interval_data: l
         colors_to_keys[rgb] = sk
 
     fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True, title=title)
+
     fig.update_layout(xaxis_type='linear', autosize=False)
 
     # inject dialog into hover 'text' property
@@ -130,6 +131,7 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
         fig_height = 250 + len(colors_to_keys) * 25
     
     fig = ff.create_gantt(df, index_col=index_col, bar_width=0.2, colors=keys_to_colors, group_tasks=True, title=title, height=fig_height) # TODO scale height to number of rows
+    
     fig.update_layout(xaxis_type='linear', autosize=False)
 
     gantt_row_with_text_count = 0

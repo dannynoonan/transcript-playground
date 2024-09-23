@@ -7,8 +7,8 @@ import app.fig_builder.fig_helper as fh
 import app.fig_builder.fig_metadata as fm
 
 
-def build_episode_similarity_scatter(episode: dict, df: pd.DataFrame, seasons: list) -> go.Figure:
-    print(f"in build_episode_similarity_scatter episode['episode_key']={episode['episode_key']} len(df)={len(df)}")
+def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figure:
+    print(f"in build_episode_similarity_scatter len(df)={len(df)}")
     
     # rename 'sequence_in_season' to 'episode' for display
     df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
@@ -25,7 +25,7 @@ def build_episode_similarity_scatter(episode: dict, df: pd.DataFrame, seasons: l
 
     fig.update_traces(
         hovertemplate="<br>".join([
-            "S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"",
+            "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b>",
             "Similarity score: %{customdata[3]:.2f} (#%{customdata[4]})",
             "Focal characters: %{customdata[5]}",
             "Categories: %{customdata[6]}"
@@ -45,8 +45,8 @@ def build_episode_similarity_scatter(episode: dict, df: pd.DataFrame, seasons: l
 
     # This took a while to nail down. What's confusing is that--if I'm not mistaken--this is *not* a way to alter marker symbol/shape. 
     # Symbols seem to fall under higher-order groupings and thus can't be altered ad hoc the way color and outline can.
-    fig['data'][1]['marker']['color'] = 'Black'
-    fig['data'][1]['marker']['line'] = dict(width=3, color='Yellow')
+    fig['data'][2]['marker']['color'] = 'Black'
+    fig['data'][2]['marker']['line'] = dict(width=3, color='Yellow')
 
     return fig
 
@@ -98,8 +98,10 @@ def build_episode_speaker_topic_scatter(df: pd.DataFrame, topic_type: str) -> go
         df.at[index, 'ep_y'] = row['ep_y'] + fm.topic_grid_coord_deltas[topic_count][topic_i][1]
         topics_to_i[topic_key] += 1
         
+    custom_data = ['speaker', ep_topic_key, ep_topic_score]
+
     fig = px.scatter(df, x='ep_x', y='ep_y', size=ep_topic_score, text='speaker',
-                     title=title, labels=labels,
+                     title=title, labels=labels, custom_data=custom_data,
                      range_x=[0,high_x], range_y=[0,high_y], width=800, height=650)
     
     for label, d in topic_types.items():
@@ -116,9 +118,7 @@ def build_episode_speaker_topic_scatter(df: pd.DataFrame, topic_type: str) -> go
         fig.add_annotation(text='ST: Directing', x=4, y=0, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
         fig.add_annotation(text='NT: Visioning', x=4, y=4, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
     
-    fig.update_layout(shapes=shapes)
-
-    fig.update_layout(font=dict(family="Arial", size=11, color="DarkSlateGray"))
+    fig.update_layout(shapes=shapes, font=dict(family="Arial", size=11, color="DarkSlateGray"))
 
     fig.update_xaxes(showgrid=True, gridwidth=2, dtick="M2")
     fig.update_yaxes(showgrid=True, gridwidth=2, dtick="M2")
@@ -127,6 +127,13 @@ def build_episode_speaker_topic_scatter(df: pd.DataFrame, topic_type: str) -> go
     fig.update_yaxes(showticklabels=False)
 
     fig.update_traces(textposition='top center')
+    fig.update_traces(
+        hovertemplate="<br>".join([
+            "<b>%{customdata[0]}</b>",
+            "%{customdata[1]} score: %{customdata[2]:.2f}",
+            "<extra></extra>"
+        ])
+    )    
 
     return fig
 
