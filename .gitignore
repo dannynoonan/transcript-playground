@@ -2,6 +2,7 @@ __pycache__/
 .env
 .env.bk
 .DS_Store
+.ipynb
 .vscode/
 *_notes.txt
 /bertopic_config_tests
