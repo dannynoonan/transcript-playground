@@ -1169,10 +1169,6 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
 
     for s in speakers:
         s['associations'] = list(speaker_associations[s['speaker']])
-        # assoc_str = ','.join(list(speaker_associations[s['speaker']]))
-        # if len(assoc_str) > 60:
-        #     assoc_str = f'{assoc_str[:60]}...'
-        # s['assoc'] = assoc_str
 
     return {"nodes": speakers, "edges": edges}
 

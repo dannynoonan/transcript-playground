@@ -225,6 +225,7 @@ def render_show_network_graph(show_key: str):
     return fig_scatter, show_key
 
 
+# TODO this is out of date and probably not going to be used
 ############ show-3d-network-graph callbacks
 @dapp.callback(
     Output('show-3d-network-graph', 'figure'),
@@ -262,7 +263,9 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str, scale_by: s
     for n in speaker_relations_data['nodes']:
         n['color'] = speaker_colors[n['speaker']].lower() # ugh with the lowercase
 
-    fig_scatter = pgraph.build_3d_network_graph(show_key, speaker_relations_data, scale_by)
+    dims = {'height': 800, 'width': 1400, 'node_max': 80, 'node_min': 15}
+
+    fig_scatter = pgraph.build_3d_network_graph(show_key, speaker_relations_data, scale_by, dims=dims)
 
     return fig_scatter, show_key
 

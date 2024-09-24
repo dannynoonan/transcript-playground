@@ -1,3 +1,4 @@
+import numpy as np
 from PIL import ImageColor
 import plotly.graph_objects as go
 
@@ -190,6 +191,22 @@ def generate_speaker_color_discrete_map(show_key: str, speakers: list) -> dict:
             color_discrete_map[s] = EXTRA_SPEAKER_COLORS[extra_speaker_i]
             extra_speaker_i += 1
     return color_discrete_map
+
+
+def scale_values(values: list, low: int = 0, high: int = 1) -> list:
+    # print(f'low={low} high={high}')
+    raw_low = np.min(values)
+    raw_high = np.max(values)
+    raw_range = raw_high - raw_low
+    # print(f'raw_low={raw_low} raw_high={raw_high} raw_range={raw_range}')
+    scaled_range = high - low
+    # print(f'scaled_range={scaled_range}')
+    scaled_values = []
+    for v in values:
+        scaled_v = (v - raw_low) / raw_range * scaled_range + low
+        # scaled_v = scaled_v * scaled_range + low
+        scaled_values.append(scaled_v)
+    return scaled_values
 
 
 # def build_and_annotate_scene_blocks(scenes: list) -> list:

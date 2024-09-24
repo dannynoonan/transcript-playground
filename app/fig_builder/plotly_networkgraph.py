@@ -37,15 +37,45 @@ def build_bertopic_model_3d_scatter(show_key: str, bertopic_model_id: str, berto
     return fig
 
 
-def build_3d_network_graph(show_key: str, data: dict, scale_by: str) -> go.Figure:
+def build_3d_network_graph(show_key: str, data: dict, scale_by: str, dims: dict = None) -> go.Figure:
     print(f'in build_3d_network_graph show_key={show_key}')
 
     # reference: https://plotly.com/python/v3/3d-network-graph/
+
+    # dimension defaults
+    height = None
+    width = None
+    node_min = 8
+    node_max = 40
+    # line_min = 1
+    # line_max = 10
+    zoom_scale = 1.7
+    hover_truncate = 30
+    if dims:
+        if 'height' in dims:
+            height = dims['height']
+        if 'width' in dims:
+            width = dims['width']
+        if 'node_min' in dims:
+            node_min = dims['node_min']
+        if 'node_max' in dims:
+            node_max = dims['node_max']
+        # if 'line_min' in dims:
+        #     line_min = dims['line_min']
+        # if 'line_max' in dims:
+        #     line_max = dims['line_max']
+        if 'zoom_scale' in dims:
+            zoom_scale = dims['zoom_scale']
+        if 'hover_truncate' in dims:
+            hover_truncate = dims['hover_truncate']
     
     node_count = len(data['nodes'])
 
-    edge_count = len(data['edges'])
-    edges = [(data['edges'][k]['source'], data['edges'][k]['target']) for k in range(edge_count)]
+    # edge_count = len(data['edges'])
+    # edges = [(data['edges'][k]['source'], data['edges'][k]['target']) for k in range(edge_count)]
+    edges = [(edge['source'], edge['target']) for edge in data['edges']]
+    edge_weights = [edge['value'] for edge in data['edges']]
+    edge_colors = ['rgb(125,125,125)'] * len(data['edges'])
 
     graph = ig.Graph(edges, directed=False)
 
@@ -56,18 +86,12 @@ def build_3d_network_graph(show_key: str, data: dict, scale_by: str) -> go.Figur
         speakers.append(n['speaker'])
         colors.append(n['color'])
         n['assoc_str'] = ','.join(n['associations'])
-        if len(n['assoc_str']) > 30:
-            n['assoc_str'] = f"{n['assoc_str'][:30]}..."
+        if len(n['assoc_str']) > hover_truncate:
+            n['assoc_str'] = f"{n['assoc_str'][:hover_truncate]}..."
         customdata_set.append((n['scene_count'], n['line_count'], n['word_count'], n['assoc_str']))
 
-    # speakers = [node['speaker'] for node in data['nodes']]
-    # colors = [node['color'] for node in data['nodes']]
-    # customdata_set = [(node['scene_count'], node['line_count'], node['word_count'], node['associations']) for node in data['nodes']]
-
     scale_basis = [node[scale_by] for node in data['nodes']]
-    sizes = fh.scale_values(scale_basis, low=8, high=40)
-
-    zoom_scale = 1.7
+    sizes = fh.scale_values(scale_basis, low=node_min, high=node_max)
 
     hovertemplate = "<br>".join([
             "<b>%{text}</b>",
@@ -83,33 +107,51 @@ def build_3d_network_graph(show_key: str, data: dict, scale_by: str) -> go.Figur
     Xn = [graph_layout[k][0] for k in range(node_count)] # x-coordinates of nodes
     Yn = [graph_layout[k][1] for k in range(node_count)] # y-coordinates
     Zn = [graph_layout[k][2] for k in range(node_count)] # z-coordinates
-    Xe = []
-    Ye = []
-    Ze = []
+    # Xe = []
+    # Ye = []
+    # Ze = []
+    Xe2 = []
+    Ye2 = []
+    Ze2 = []
     for e in edges:
-        Xe += [graph_layout[e[0]][0], graph_layout[e[1]][0], None] # x-coordinates of edge ends
-        Ye += [graph_layout[e[0]][1], graph_layout[e[1]][1], None]
-        Ze += [graph_layout[e[0]][2], graph_layout[e[1]][2], None]
+        # Xe.extend([graph_layout[e[0]][0], graph_layout[e[1]][0], None]) # x-coordinates of edge ends
+        # Ye.extend([graph_layout[e[0]][1], graph_layout[e[1]][1], None])
+        # Ze.extend([graph_layout[e[0]][2], graph_layout[e[1]][2], None])
+        Xe2.append([graph_layout[e[0]][0], graph_layout[e[1]][0], None]) # x-coordinates of edge ends
+        Ye2.append([graph_layout[e[0]][1], graph_layout[e[1]][1], None])
+        Ze2.append([graph_layout[e[0]][2], graph_layout[e[1]][2], None])
 
     edge_line = dict(color='rgb(125,125,125)', width=1)
     node_line = dict(color='rgb(50,50,50)', width=0.5)
 
-    edges_trace = go.Scatter3d(x=Xe, y=Ye, z=Ze, mode='lines', line=edge_line, hoverinfo='none')
+    # edges_trace = go.Scatter3d(x=Xe, y=Ye, z=Ze, mode='lines', line=edge_line, hoverinfo='none')
+
+    edge_traces = []
+    for i in range(0, len(Xe2)):
+        edge_traces.append(go.Scatter3d(x=Xe2[i], y=Ye2[i], z=Ze2[i], line=dict(color=edge_colors[i], width=edge_weights[i]),
+                                        mode='lines', hoverinfo='none', opacity=0.5))
 
     nodes_trace = go.Scatter3d(x=Xn, y=Yn, z=Zn, mode='markers', name='speakers', text=speakers, 
                                hovertemplate=hovertemplate, customdata=customdata_set,
                                marker=dict(symbol='circle', size=sizes, color=colors, colorscale='Viridis', line=node_line))
 
-    axis = dict(showbackground=False,  showline=False, zeroline=False, showgrid=False, showticklabels=False, title='')
+    axis = dict(showbackground=False, showline=False, zeroline=False, showgrid=False, showticklabels=False, title='')
 
-    layout = go.Layout(title="Character chatter (scroll to zoom, drag to rotate)", showlegend=False, margin=dict(t=100), hovermode='closest',
+    layout = go.Layout(title="Character chatter (scroll to zoom, drag to rotate)", showlegend=False, margin=dict(t=50), hovermode='closest',
         scene=dict(xaxis=dict(axis), yaxis=dict(axis), zaxis=dict(axis), aspectmode='manual', aspectratio=dict(x=zoom_scale, y=zoom_scale, z=zoom_scale)),
         annotations=[dict(showarrow=False, text='', xref='paper', yref='paper', x=0, y=0.1, xanchor='left', yanchor='bottom', font=dict(size=14))],
         # width=800, height=650,
     )
     
-    data = [edges_trace, nodes_trace]
+    data = edge_traces + [nodes_trace]
     fig = go.Figure(data=data, layout=layout)
+
+    fig.update_layout(scene=dict(xaxis=dict(visible=False), yaxis=dict(visible=False), zaxis=dict(visible=False)))
+
+    if width:
+        fig.update_layout(width=width)
+    if height:
+        fig.update_layout(height=height)
 
     return fig  
 
