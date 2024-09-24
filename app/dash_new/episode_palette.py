@@ -52,7 +52,7 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                         html.Div([
                             "Count by: ",
                             dcc.Dropdown(
-                                id="span-granularity",
+                                id="scale-by",
                                 options=['scene_count', 'line_count', 'word_count'],
                                 value='line_count',
                             )

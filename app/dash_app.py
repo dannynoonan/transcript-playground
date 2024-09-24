@@ -20,6 +20,7 @@ from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR, OPENAI_
 from app.show_metadata import ShowKey
 import app.utils as utils
 # import app.web.fig_builder as fb
+import app.fig_builder.fig_helper as fh
 import app.fig_builder.fig_metadata as fm
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_bertopic as pbert
@@ -247,16 +248,21 @@ def render_show_3d_network_graph(show_key: str):
     Output('speaker-3d-network-graph', 'figure'),
     Output('show-key-display4', 'children'),
     Input('show-key', 'value'),
-    Input('episode-key', 'value'))    
-def render_speaker_3d_network_graph(show_key: str, episode_key: str):
-    print(f'in render_speaker_3d_network_graph, show_key={show_key} episode_key={episode_key}')
-
-    # form-backing data
-    # episodes = esr.fetch_simple_episodes(ShowKey(show_key))
+    Input('episode-key', 'value'),
+    Input('scale-by', 'value'))    
+def render_speaker_3d_network_graph(show_key: str, episode_key: str, scale_by: str):
+    print(f'in render_speaker_3d_network_graph, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
     # generate data and build generate 3d network graph
-    data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
-    fig_scatter = pgraph.build_3d_network_graph(show_key, data)
+    speaker_relations_data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
+
+    # NOTE where and how to layer in color mapping is a WIP
+    speakers = [n['speaker'] for n in speaker_relations_data['nodes']]
+    speaker_colors = fh.generate_speaker_color_discrete_map(show_key, speakers)
+    for n in speaker_relations_data['nodes']:
+        n['color'] = speaker_colors[n['speaker']].lower() # ugh with the lowercase
+
+    fig_scatter = pgraph.build_3d_network_graph(show_key, speaker_relations_data, scale_by)
 
     return fig_scatter, show_key
 

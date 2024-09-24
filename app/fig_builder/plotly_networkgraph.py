@@ -4,6 +4,8 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
+import app.fig_builder.fig_helper as fh
+
 
 def build_bertopic_model_3d_scatter(show_key: str, bertopic_model_id: str, bertopic_docs_df: pd.DataFrame) -> go.Figure:
     print(f'in build_bertopic_model_3d_scatter show_key={show_key} bertopic_model_id={bertopic_model_id}')
@@ -35,22 +37,46 @@ def build_bertopic_model_3d_scatter(show_key: str, bertopic_model_id: str, berto
     return fig
 
 
-def build_3d_network_graph(show_key: str, data: dict) -> go.Figure:
+def build_3d_network_graph(show_key: str, data: dict, scale_by: str) -> go.Figure:
     print(f'in build_3d_network_graph show_key={show_key}')
 
     # reference: https://plotly.com/python/v3/3d-network-graph/
     
-    # data = esr.episode_relations_graph(ShowKey(show_key), model_vendor, model_version, max_edges=max_edges)
-
     node_count = len(data['nodes'])
 
-    edge_count = len(data['links'])
-    edges = [(data['links'][k]['source'], data['links'][k]['target']) for k in range(edge_count)]
+    edge_count = len(data['edges'])
+    edges = [(data['edges'][k]['source'], data['edges'][k]['target']) for k in range(edge_count)]
 
     graph = ig.Graph(edges, directed=False)
 
-    labels = [node['name'] for node in data['nodes']]
-    group = [node['group'] for node in data['nodes']]
+    speakers = []
+    colors = []
+    customdata_set = []
+    for n in data['nodes']:
+        speakers.append(n['speaker'])
+        colors.append(n['color'])
+        n['assoc_str'] = ','.join(n['associations'])
+        if len(n['assoc_str']) > 30:
+            n['assoc_str'] = f"{n['assoc_str'][:30]}..."
+        customdata_set.append((n['scene_count'], n['line_count'], n['word_count'], n['assoc_str']))
+
+    # speakers = [node['speaker'] for node in data['nodes']]
+    # colors = [node['color'] for node in data['nodes']]
+    # customdata_set = [(node['scene_count'], node['line_count'], node['word_count'], node['associations']) for node in data['nodes']]
+
+    scale_basis = [node[scale_by] for node in data['nodes']]
+    sizes = fh.scale_values(scale_basis, low=8, high=40)
+
+    zoom_scale = 1.7
+
+    hovertemplate = "<br>".join([
+            "<b>%{text}</b>",
+            "Scenes: %{customdata[0]}",
+            "Lines: %{customdata[1]}",
+            "Words: %{customdata[2]}",
+            "Scenes with: %{customdata[3]}",
+            "<extra></extra>"
+        ])
 
     graph_layout = graph.layout('kk', dim=3)
 
@@ -70,14 +96,15 @@ def build_3d_network_graph(show_key: str, data: dict) -> go.Figure:
 
     edges_trace = go.Scatter3d(x=Xe, y=Ye, z=Ze, mode='lines', line=edge_line, hoverinfo='none')
 
-    nodes_trace = go.Scatter3d(x=Xn, y=Yn, z=Zn, mode='markers', name='actors', text=labels, hoverinfo='text',
-        marker=dict(symbol='circle', size=6, color=group, colorscale='Viridis', line=node_line))
+    nodes_trace = go.Scatter3d(x=Xn, y=Yn, z=Zn, mode='markers', name='speakers', text=speakers, 
+                               hovertemplate=hovertemplate, customdata=customdata_set,
+                               marker=dict(symbol='circle', size=sizes, color=colors, colorscale='Viridis', line=node_line))
 
     axis = dict(showbackground=False,  showline=False, zeroline=False, showgrid=False, showticklabels=False, title='')
 
-    layout = go.Layout(title="Character chatter", showlegend=False, margin=dict(t=100), hovermode='closest',
-        scene=dict(xaxis=dict(axis), yaxis=dict(axis), zaxis=dict(axis)),
-        annotations=[dict(showarrow=False, text="TODO", xref='paper', yref='paper', x=0, y=0.1, xanchor='left', yanchor='bottom', font=dict(size=14))],
+    layout = go.Layout(title="Character chatter (scroll to zoom, drag to rotate)", showlegend=False, margin=dict(t=100), hovermode='closest',
+        scene=dict(xaxis=dict(axis), yaxis=dict(axis), zaxis=dict(axis), aspectmode='manual', aspectratio=dict(x=zoom_scale, y=zoom_scale, z=zoom_scale)),
+        annotations=[dict(showarrow=False, text='', xref='paper', yref='paper', x=0, y=0.1, xanchor='left', yanchor='bottom', font=dict(size=14))],
         # width=800, height=650,
     )
     

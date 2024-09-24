@@ -39,6 +39,16 @@ def generate_content(episode_dropdown_options: list, episode_key: str = None) ->
                             )
                         ]),
                     ]),
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            "Scale by: ",
+                            dcc.Dropdown(
+                                id="scale-by",
+                                options=['scene_count', 'line_count', 'word_count'],
+                                value='line_count',
+                            )
+                        ]),
+                    ]),
                 ]),
                 html.Br(),
                 dbc.Row(justify="evenly", children=[

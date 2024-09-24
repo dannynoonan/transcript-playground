@@ -77,8 +77,8 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     return fig
 
 
-def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, span_granularity: str) -> go.Figure:
-    print(f'in build_speaker_frequency_bar span_granularity={span_granularity}')
+def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, scale_by: str) -> go.Figure:
+    print(f'in build_speaker_frequency_bar scale_by={scale_by}')
 
     speakers = df['speaker'].unique()
     color_discrete_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
@@ -87,7 +87,7 @@ def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, span_gr
 
     custom_data = ['scene_count', 'line_count', 'word_count']
 
-    fig = px.bar(df, x=span_granularity, y='character', color='character', 
+    fig = px.bar(df, x=scale_by, y='character', color='character', 
                  custom_data=custom_data, color_discrete_map=color_discrete_map)
 
     fig.update_traces(

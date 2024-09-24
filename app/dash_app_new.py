@@ -10,6 +10,7 @@ from app.dash_new import episode_palette, oopsy
 import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 from app.show_metadata import ShowKey
+import app.fig_builder.fig_helper as fh
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_line as pline
@@ -152,16 +153,21 @@ def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, fre
 @dapp_new.callback(
     Output('speaker-3d-network-graph-new', 'figure'),
     Input('show-key', 'value'),
-    Input('episode-key', 'value'))    
-def render_speaker_3d_network_graph_new(show_key: str, episode_key: str):
-    print(f'in render_speaker_3d_network_graph_new, show_key={show_key} episode_key={episode_key}')
+    Input('episode-key', 'value'),
+    Input('scale-by', 'value'))    
+def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_by: str):
+    print(f'in render_speaker_3d_network_graph_new, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
-    # form-backing data
-    # episodes = esr.fetch_simple_episodes(ShowKey(show_key))
+    # generate speaker relations data and build 3d network graph
+    speaker_relations_data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
 
-    # generate data and build generate 3d network graph
-    data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
-    fig_scatter = pgraph.build_3d_network_graph(show_key, data)
+    # NOTE where and how to layer in color mapping is a WIP
+    speakers = [n['speaker'] for n in speaker_relations_data['nodes']]
+    speaker_colors = fh.generate_speaker_color_discrete_map(show_key, speakers)
+    for n in speaker_relations_data['nodes']:
+        n['color'] = speaker_colors[n['speaker']].lower() # ugh with the lowercase
+
+    fig_scatter = pgraph.build_3d_network_graph(show_key, speaker_relations_data, scale_by)
 
     return fig_scatter
 
@@ -171,15 +177,15 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str):
     Output('speaker-episode-frequency-bar-chart-new', 'figure'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
-    Input('span-granularity', 'value'))    
-def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, span_granularity: str):
-    print(f'in render_speaker_frequency_bar_chart_new, show_key={show_key} episode_key={episode_key} span_granularity={span_granularity}')
+    Input('scale-by', 'value'))    
+def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scale_by: str):
+    print(f'in render_speaker_frequency_bar_chart_new, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
     speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
     speakers_for_episode = speakers_for_episode_response['speaker_episodes']
     df = pd.DataFrame(speakers_for_episode, columns = ['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
     
-    speaker_episode_frequency_bar_chart = pbar.build_speaker_episode_frequency_bar(show_key, df, span_granularity)
+    speaker_episode_frequency_bar_chart = pbar.build_speaker_episode_frequency_bar(show_key, df, scale_by)
 
     return speaker_episode_frequency_bar_chart
 

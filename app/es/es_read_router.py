@@ -1130,13 +1130,19 @@ def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version:
 
 @esr_app.get("/esr/speaker_relations_graph/{show_key}/{episode_key}", tags=['ES Reader'])
 def speaker_relations_graph(show_key: ShowKey, episode_key: str):
-    nodes = []
-    links = []
-    speakers_to_node_i = {}
-    source_targets_to_link_i = {}
-    episode = fetch_episode(show_key, episode_key)
-    es_episode = episode['es_episode']
-    for scene in es_episode['scenes']:
+    
+    episode_response = fetch_episode(show_key, episode_key)
+    episode = episode_response['es_episode']
+
+    episode_speakers_response = fetch_speakers_for_episode(show_key, episode_key)
+    speakers = episode_speakers_response['speaker_episodes']
+    speakers_to_node_i = {s['speaker']:i for i, s in enumerate(speakers)}
+    speaker_associations = {s['speaker']:set() for i, s in enumerate(speakers)}
+
+    edges = []
+    source_targets_to_edge_i = {}
+    
+    for i, scene in enumerate(episode['scenes']):
         if 'scene_events' not in scene:
             continue
         speakers_in_scene = set()
@@ -1144,28 +1150,31 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
         for scene_event in scene['scene_events']:
             if 'spoken_by' in scene_event:
                 speakers_in_scene.add(scene_event['spoken_by'])
-        for speaker in speakers_in_scene:
-            if speaker not in speakers_to_node_i:
-                if speaker in show_metadata[show_key.value]['regular_cast'].keys():
-                    group = 1
-                else:
-                    group = 2
-                nodes.append({'name': speaker, 'group': group})
-                speakers_to_node_i[speaker] = len(nodes)-1
-            speaker_node_ids_in_scene.add(speakers_to_node_i[speaker])
+        for spkr in speakers_in_scene:
+            speaker_node_ids_in_scene.add(speakers_to_node_i[spkr])
+            other_speakers = set(speakers_in_scene)
+            other_speakers.remove(spkr)
+            speaker_associations[spkr].update(other_speakers)
         for source_speaker_node_i in speaker_node_ids_in_scene:
             for target_speaker_node_i in speaker_node_ids_in_scene:
                 if source_speaker_node_i == target_speaker_node_i:
                     continue
                 source_target = f'{source_speaker_node_i}_{target_speaker_node_i}'
-                if source_target not in source_targets_to_link_i:
-                    links.append({'source': source_speaker_node_i, 'target': target_speaker_node_i, 'value': 1})
-                    source_targets_to_link_i[source_target] = len(links)-1
+                if source_target not in source_targets_to_edge_i:
+                    edges.append({'source': source_speaker_node_i, 'target': target_speaker_node_i, 'value': 1})
+                    source_targets_to_edge_i[source_target] = len(edges)-1
                 else:
-                    link_i = source_targets_to_link_i[source_target]
-                    links[link_i]['value'] += 1
-    
-    return {"nodes": nodes, "links": links}
+                    edge_i = source_targets_to_edge_i[source_target]
+                    edges[edge_i]['value'] += 1
+
+    for s in speakers:
+        s['associations'] = list(speaker_associations[s['speaker']])
+        # assoc_str = ','.join(list(speaker_associations[s['speaker']]))
+        # if len(assoc_str) > 60:
+        #     assoc_str = f'{assoc_str[:60]}...'
+        # s['assoc'] = assoc_str
+
+    return {"nodes": speakers, "edges": edges}
 
 
 
