@@ -4,7 +4,7 @@ from dash import dcc, html
 from app.dash_new.components import generate_navbar
 
 
-def generate_content(episode_dropdown_options: list, episode: dict, speaker_dropdown_options: list) -> html.Div:
+def generate_content(episode_dropdown_options: list, episode: dict, speaker_dropdown_options: list, emotion_dropdown_options: list) -> html.Div:
     content = html.Div([
         generate_navbar(episode_dropdown_options, episode),
         dbc.Card(className="bg-dark", children=[
@@ -39,31 +39,47 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                         html.H3(className="text-white", children=[
                             episode['scene_count'], " scenes, ", episode['line_count'], " lines, ", episode['word_count'], " words"]),
                         html.P(className="text-white", children=['<<  Previous episode  |  Next episode  >>']),
-                        html.Br(),
-                        html.P("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam massa orci, sit amet ultricies neque placerat sit amet. Nullam pellentesque massa vitae lectus placerat fermentum. Morbi dapibus rhoncus purus, nec posuere metus condimentum ac. In congue leo sit amet condimentum faucibus. Integer nec diam fermentum nulla commodo imperdiet viverra et libero. Curabitur dignissim metus non ex cursus, quis egestas lacus vestibulum. Maecenas efficitur varius ex in imperdiet. Sed pharetra tellus quis neque efficitur, quis varius mi semper. Nulla nisi velit, egestas eu rhoncus id, porta vitae nibh. Quisque id dictum eros. Nam sed lorem rutrum, faucibus tortor et, scelerisque dui. Nullam porta tortor quis erat luctus placerat."),
-                        html.Br(),
-                        html.P("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam massa orci, sit amet ultricies neque placerat sit amet. Nullam pellentesque massa vitae lectus placerat fermentum. Morbi dapibus rhoncus purus, nec posuere metus condimentum ac. In congue leo sit amet condimentum faucibus."),
-                    ]),
-                    dbc.Col(md=4, children=[
                         html.Div([
-                            html.Br(),
-                            dcc.Graph(id="speaker-episode-frequency-bar-chart-new"),
+                            html.Img(src=f"/static/wordclouds/TNG/TNG_{episode['episode_key']}.png", width='100%',
+                                     style={"padding-left": "10px", "padding-top": "5px"}
+                            ),
                         ]),
+                    ]),
+                    dbc.Col(md=8, children=[
+                        html.H3("Similar episodes"),
                         html.Div([
-                            "Count by: ",
+                            dcc.Graph(id="episode-similarity-scatter"),
+                        ]),
+                        html.Br(),
+                        html.Div([
+                            "MLT type ",
                             dcc.Dropdown(
-                                id="scale-by",
-                                options=['scene_count', 'line_count', 'word_count'],
-                                value='line_count',
+                                id="mlt-type",
+                                options=['tfidf', 'openai_embeddings'], 
+                                value='tfidf',
                             )
                         ]),
                     ]),
-                    dbc.Col(md=4, children=[
-                        html.Div([
-                            html.Br(),
-                            dcc.Graph(id="speaker-3d-network-graph-new"),
-                        ]),
-                    ]), 
+                    # dbc.Col(md=4, children=[
+                    #     html.Div([
+                    #         html.Br(),
+                    #         dcc.Graph(id="speaker-episode-frequency-bar-chart-new"),
+                    #     ]),
+                    #     html.Div([
+                    #         "Count by: ",
+                    #         dcc.Dropdown(
+                    #             id="scale-by",
+                    #             options=['scene_count', 'line_count', 'word_count'],
+                    #             value='line_count',
+                    #         )
+                    #     ]),
+                    # ]),
+                    # dbc.Col(md=4, children=[
+                    #     html.Div([
+                    #         html.Br(),
+                    #         dcc.Graph(id="speaker-3d-network-graph-new"),
+                    #     ]),
+                    # ]), 
                 ]),
             ]),
             dbc.CardBody([
@@ -94,6 +110,31 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                 ]),
             ]),
             dbc.CardBody([
+                html.H3("Character chatter"),
+                dbc.Row([
+                    dbc.Col(md=4, children=[
+                        html.Div([
+                            html.Br(),
+                            dcc.Graph(id="speaker-episode-frequency-bar-chart-new"),
+                        ]),
+                        html.Div([
+                            "Count by: ",
+                            dcc.Dropdown(
+                                id="scale-by",
+                                options=['scene_count', 'line_count', 'word_count'],
+                                value='line_count',
+                            )
+                        ]),
+                    ]),
+                    dbc.Col(md=8, children=[
+                        html.Div([
+                            html.Br(),
+                            dcc.Graph(id="speaker-3d-network-graph-new"),
+                        ]),
+                    ]), 
+                ]),
+            ]),
+            dbc.CardBody([
                 html.H3("Character sentiment timeline"),
                 dbc.Row([
                     dbc.Col(md=2, children=[
@@ -111,7 +152,7 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                             "Emotion ",
                             dcc.Dropdown(
                                 id="emotion",
-                                options=['Joy', 'Love', 'Empathy', 'Curiosity', 'Sadness', 'Anger', 'Fear', 'Disgust', 'Surprise', 'Confusion'],
+                                options=emotion_dropdown_options,
                                 value='Joy',
                             )
                         ]),
@@ -122,6 +163,7 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                             dcc.Dropdown(
                                 id="speaker",
                                 options=speaker_dropdown_options,
+                                value='ALL'
                             )
                         ]),
                     ]),
@@ -177,37 +219,37 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                     ]),     
                 ]),
             ]),
-            dbc.CardBody([
-                html.H3("Similar episodes"),
-                dbc.Row([
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "MLT type ",
-                            dcc.Dropdown(
-                                id="mlt-type",
-                                options=['tfidf', 'openai_embeddings'], 
-                                value='tfidf',
-                            )
-                        ]),
-                    ]),
-                ]),
-                dbc.Row([
-                    dbc.Col(md=8, children=[
-                        html.Div([
-                            html.Br(),
-                            dcc.Graph(id="episode-similarity-scatter"),
-                        ]),
-                    ]),
-                    dbc.Col(md=4, children=[
-                        html.Div([
-                            html.Br(),
-                            html.Img(src=f"/static/wordclouds/TNG/TNG_{episode['episode_key']}.png", width='100%',
-                                     style={"padding-left": "10px", "padding-top": "5px"}
-                            ),
-                        ]),
-                    ]),
-                ]),
-            ]),
+            # dbc.CardBody([
+            #     html.H3("Similar episodes"),
+            #     dbc.Row([
+            #         dbc.Col(md=2, children=[
+            #             html.Div([
+            #                 "MLT type ",
+            #                 dcc.Dropdown(
+            #                     id="mlt-type",
+            #                     options=['tfidf', 'openai_embeddings'], 
+            #                     value='tfidf',
+            #                 )
+            #             ]),
+            #         ]),
+            #     ]),
+            #     dbc.Row([
+            #         dbc.Col(md=8, children=[
+            #             html.Div([
+            #                 html.Br(),
+            #                 dcc.Graph(id="episode-similarity-scatter"),
+            #             ]),
+            #         ]),
+            #         dbc.Col(md=4, children=[
+            #             html.Div([
+            #                 html.Br(),
+            #                 html.Img(src=f"/static/wordclouds/TNG/TNG_{episode['episode_key']}.png", width='100%',
+            #                          style={"padding-left": "10px", "padding-top": "5px"}
+            #                 ),
+            #             ]),
+            #         ]),
+            #     ]),
+            # ]),
         ])
     ])
 

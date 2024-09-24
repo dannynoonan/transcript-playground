@@ -13,7 +13,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
     # rename 'sequence_in_season' to 'episode' for display
     df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
 
-    symbol_map = {'all': 'square', 'mlt': 'circle', 'focal': 'diamond'}
+    symbol_map = {'all': 'square', 'mlt': 'circle', 'focal': 'star'}
 
     # ad-hoc method of flattening topic metadata for hovertemplate display
     df['flattened_topics'] = df['topics_universal_tfidf'].apply(fh.flatten_topics)
@@ -40,7 +40,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
         yaxis=dict(
             tickmode = 'array',
             tickvals = seasons,
-            ticktext = [f'S{s}' for s in seasons]
+            ticktext = [f'Season {s}' for s in seasons]
         )
     )
 

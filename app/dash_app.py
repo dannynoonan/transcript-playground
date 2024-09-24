@@ -148,7 +148,7 @@ def display_page(pathname, search):
 
         speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
         episode_speakers = speaker_episodes_response['speaker_episodes']
-        speaker_dropdown_options = [s['speaker'] for s in episode_speakers]
+        speaker_dropdown_options = ['ALL'] + [s['speaker'] for s in episode_speakers]
 
         # # load sentiment df to get
         # file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
@@ -239,7 +239,7 @@ def render_show_3d_network_graph(show_key: str):
     max_edges = 3
     # generate data and build 3d network graph
     data = esr.episode_relations_graph(ShowKey(show_key), model_vendor, model_version, max_edges=max_edges)
-    fig_scatter = pgraph.build_3d_network_graph(show_key, data)
+    fig_scatter = pgraph.build_speaker_chatter_scatter3d(show_key, data)
 
     return fig_scatter, show_key
 
@@ -265,7 +265,7 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str, scale_by: s
 
     dims = {'height': 800, 'width': 1400, 'node_max': 80, 'node_min': 15}
 
-    fig_scatter = pgraph.build_3d_network_graph(show_key, speaker_relations_data, scale_by, dims=dims)
+    fig_scatter = pgraph.build_speaker_chatter_scatter3d(show_key, speaker_relations_data, scale_by, dims=dims)
 
     return fig_scatter, show_key
 
@@ -564,18 +564,6 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
 def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_on: str, emotion: str, speaker: str):
     print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
 
-    if freeze_on == 'emotion':
-        emotions = [emotion]
-        # speakers = ['PICARD', 'RIKER', 'DATA', 'TROI', 'LAFORGE', 'WORF', 'CRUSHER']
-        speakers = []
-        focal_property = 'speaker'
-    elif freeze_on == 'speaker':
-        emotions = OPENAI_EMOTIONS
-        speakers = [speaker]
-        focal_property = 'emotion'
-    else:
-        raise Exception(f"Failure to render_episode_sentiment_line_chart: freeze_on={freeze_on} is not supported, accepted values are ['emotion', 'speaker']")
-
     # fetch episode sentiment data and build line chart
     file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
     if os.path.isfile(file_path):
@@ -584,13 +572,62 @@ def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_
     else:
         raise Exception(f'Failure to render_episode_sentiment_line_chart: unable to fetch dataframe at file_path={file_path}')
     
-    # ick, don't like the second freeze_on check
+    # extract episode speakers (may or may not be needed)
+    episode_speakers_series = df['speaker'].value_counts().sort_values(ascending=False)
+    episode_speakers = [s for s,_ in episode_speakers_series.items()]
+    if not speaker:
+        speaker = 'ALL'
+    if not emotion:
+        emotion = 'ALL'
+
+    # TODO `freeze_on` toggle should alter `speaker` and `emotion` pulldown values, in the meantime these conditionals cover many of the gaps
+    # freeze_on emotion -> constrain display to one emotion, display all speakers
     if freeze_on == 'emotion':
-        print(f'got here 2')
-        speakers_series = df['speaker'].value_counts().sort_values(ascending=False)
-        speakers = [s for s,_ in speakers_series.items()]        
+        emotions = [emotion]
+        if speaker == 'ALL':
+            speakers = episode_speakers
+        else:
+            speakers = [speaker]
+        focal_property = 'speaker'
+    # freeze_on speaker -> constrain display to one speaker, display all emotions
+    elif freeze_on == 'speaker':
+        if emotion == 'ALL':
+            emotions = OPENAI_EMOTIONS
+        else:
+            emotions = [emotion]
+        speakers = [speaker]
+        focal_property = 'emotion'
+    else:
+        raise Exception(f"Failure to render_episode_sentiment_line_chart: freeze_on={freeze_on} is not supported, accepted values are ['emotion', 'speaker']")
     
     sentiment_line_chart = pline.build_episode_sentiment_line_chart(show_key, df, speakers, emotions, focal_property)
+
+
+    # if freeze_on == 'emotion':
+    #     emotions = [emotion]
+    #     speakers = []
+    #     focal_property = 'speaker'
+    # elif freeze_on == 'speaker':
+    #     emotions = OPENAI_EMOTIONS
+    #     speakers = [speaker]
+    #     focal_property = 'emotion'
+    # else:
+    #     raise Exception(f"Failure to render_episode_sentiment_line_chart: freeze_on={freeze_on} is not supported, accepted values are ['emotion', 'speaker']")
+
+    # # fetch episode sentiment data and build line chart
+    # file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+    # if os.path.isfile(file_path):
+    #     df = pd.read_csv(file_path)
+    #     print(f'loading dataframe at file_path={file_path}')
+    # else:
+    #     raise Exception(f'Failure to render_episode_sentiment_line_chart: unable to fetch dataframe at file_path={file_path}')
+    
+    # # ick, don't like the second freeze_on check
+    # if freeze_on == 'emotion':
+    #     speakers_series = df['speaker'].value_counts().sort_values(ascending=False)
+    #     speakers = [s for s,_ in speakers_series.items()]        
+    
+    # sentiment_line_chart = pline.build_episode_sentiment_line_chart(show_key, df, speakers, emotions, focal_property)
 
     return sentiment_line_chart
     

@@ -78,7 +78,6 @@ def build_location_line_chart(show_key: str, df: pd.DataFrame, span_granularity:
 def build_episode_sentiment_line_chart(show_key: str, df: pd.DataFrame, speakers: list, emotions: list, focal_property: str) -> go.Figure:
     print(f'in build_sentiment_line_chart show_key={show_key} emotion={emotions} speakers={speakers} focal_property={focal_property}')
 
-    speakers = df['speaker'].unique()
     color_discrete_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
 
     # remove episode-level rows 

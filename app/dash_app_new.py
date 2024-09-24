@@ -41,10 +41,18 @@ def display_page(pathname, search):
     print(f'parsed_dict={parsed_dict}')
 
     if pathname == "/tsp_dash_new/episode-palette":
-        # generate form-backing data 
+        # parse show_key from params
+        if 'show_key' in parsed_dict:
+            show_key = parsed_dict['show_key']
+            if isinstance(show_key, list):
+                show_key = show_key[0]
+        else:
+            err_msg = f'show_key is required'
+            print(err_msg)
+            return oopsy.generate_content(err_msg)
 
         # all episodes
-        all_episodes_response = esr.fetch_simple_episodes(ShowKey('TNG'))
+        all_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
         all_episodes = all_episodes_response['episodes']
         episode_dropdown_options = []
         for episode in all_episodes:
@@ -67,19 +75,23 @@ def display_page(pathname, search):
             print(err_msg)
             return oopsy.generate_content(err_msg)
 
-        scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey('TNG'), episode_key=episode_key)
+        # supplement episode data with line_count and word_count
+        scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
         episode['line_count'] = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
 
-        dialog_word_counts_response = esr.agg_dialog_word_counts(ShowKey('TNG'), episode_key=episode_key)
+        dialog_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), episode_key=episode_key)
         episode_word_counts = dialog_word_counts_response['dialog_word_counts']
         episode['word_count'] = round(episode_word_counts['_ALL_'])
 
         # speakers in episode
-        speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey('TNG'), episode_key)
+        speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
         episode_speakers = speaker_episodes_response['speaker_episodes']
-        speaker_dropdown_options = [s['speaker'] for s in episode_speakers]
+        speaker_dropdown_options = ['ALL'] + [s['speaker'] for s in episode_speakers]
 
-        return episode_palette.generate_content(episode_dropdown_options, episode, speaker_dropdown_options)
+        # emotions
+        emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
+
+        return episode_palette.generate_content(episode_dropdown_options, episode, speaker_dropdown_options, emotion_dropdown_options)
     
 
 
@@ -119,18 +131,7 @@ def render_episode_chromatographs(show_key: str, episode_key: str, show_layers: 
 def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, freeze_on: str, emotion: str, speaker: str):
     print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
 
-    if freeze_on == 'emotion':
-        emotions = [emotion]
-        speakers = []
-        focal_property = 'speaker'
-    elif freeze_on == 'speaker':
-        emotions = OPENAI_EMOTIONS
-        speakers = [speaker]
-        focal_property = 'emotion'
-    else:
-        raise Exception(f"Failure to render_episode_sentiment_line_chart: freeze_on={freeze_on} is not supported, accepted values are ['emotion', 'speaker']")
-
-    # fetch episode sentiment data and build line chart
+   # fetch episode sentiment data and build line chart
     file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
     if os.path.isfile(file_path):
         df = pd.read_csv(file_path)
@@ -138,11 +139,33 @@ def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, fre
     else:
         raise Exception(f'Failure to render_episode_sentiment_line_chart: unable to fetch dataframe at file_path={file_path}')
     
-    # ick, don't like the second freeze_on check
+    # extract episode speakers (may or may not be needed)
+    episode_speakers_series = df['speaker'].value_counts().sort_values(ascending=False)
+    episode_speakers = [s for s,_ in episode_speakers_series.items()]
+    if not speaker:
+        speaker = 'ALL'
+    if not emotion:
+        emotion = 'ALL'
+
+    # TODO `freeze_on` toggle should alter `speaker` and `emotion` pulldown values, in the meantime these conditionals cover many of the gaps
+    # freeze_on emotion -> constrain display to one emotion, display all speakers or--for now--selected speaker
     if freeze_on == 'emotion':
-        print(f'got here 2')
-        speakers_series = df['speaker'].value_counts().sort_values(ascending=False)
-        speakers = [s for s,_ in speakers_series.items()]        
+        emotions = [emotion]
+        if speaker == 'ALL':
+            speakers = episode_speakers
+        else:
+            speakers = [speaker]
+        focal_property = 'speaker'
+    # freeze_on speaker -> constrain display to one speaker, display all emotions or--for now--selected emotion
+    elif freeze_on == 'speaker':
+        if emotion == 'ALL':
+            emotions = OPENAI_EMOTIONS
+        else:
+            emotions = [emotion]
+        speakers = [speaker]
+        focal_property = 'emotion'
+    else:
+        raise Exception(f"Failure to render_episode_sentiment_line_chart: freeze_on={freeze_on} is not supported, accepted values are ['emotion', 'speaker']")
     
     sentiment_line_chart = pline.build_episode_sentiment_line_chart(show_key, df, speakers, emotions, focal_property)
 
@@ -167,7 +190,9 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_b
     for n in speaker_relations_data['nodes']:
         n['color'] = speaker_colors[n['speaker']].lower() # ugh with the lowercase
 
-    fig_scatter = pgraph.build_3d_network_graph(show_key, speaker_relations_data, scale_by)
+    dims = {'height': 800, 'node_max': 60, 'node_min': 12}
+
+    fig_scatter = pgraph.build_speaker_chatter_scatter3d(show_key, speaker_relations_data, scale_by, dims=dims)
 
     return fig_scatter
 

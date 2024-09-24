@@ -2,13 +2,14 @@ __pycache__/
 .env
 .env.bk
 .DS_Store
-.ipynb
 .vscode/
+*.ipynb
 *_notes.txt
 /bertopic_config_tests
 /data/*
 /database/backups
 /jupyter
+/my_venv
 /source
 /venv
 /w2v_models
