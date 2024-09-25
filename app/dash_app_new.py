@@ -9,7 +9,7 @@ import app.dash_new.components as cmp
 from app.dash_new import episode_palette, oopsy
 import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
-from app.show_metadata import ShowKey
+from app.show_metadata import ShowKey, TOPIC_COLORS
 import app.fig_builder.fig_helper as fh
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
@@ -299,7 +299,9 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
 ############ episode-topic-treemap callbacks
 @dapp_new.callback(
     Output('episode-universal-genres-treemap', 'figure'),
+    Output('episode-universal-genres-dt', 'children'),
     Output('episode-universal-genres-gpt35-v2-treemap', 'figure'),
+    Output('episode-universal-genres-gpt35-v2-dt', 'children'),
     # Output('episode-focused-gpt35-treemap', 'figure'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
@@ -307,17 +309,26 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
 def render_episode_topic_treemap(show_key: str, episode_key: str, topic_score_type: str):
     print(f'in render_episode_topic_treemap, show_key={show_key} episode_key={episode_key}')
 
-    figs = []
+    figs = {}
+    dts = {}
     # topic_groupings = ['universalGenres', 'universalGenresGpt35_v2', f'focusedGpt35_{show_key}']
     topic_groupings = ['universalGenres', 'universalGenresGpt35_v2']
     for tg in topic_groupings:
+        # fetch episode topics, load into df, modify / reformat
         r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
+        df = cmp.flatten_and_format_topics_df(df, topic_score_type)
+        # build treemap fig
         fig = ptree.build_episode_topic_treemap(df, tg, topic_score_type)
-        figs.append(fig)
+        figs[tg] = fig
+        # build dash datatable
+        parent_topics = df['parent_topic'].unique()
+        display_cols = ['parent_topic', 'topic_name', 'raw_score', 'score', 'tfidf_score']
+        dash_dt = cmp.pandas_df_to_dash_dt(df, display_cols, 'parent_topic', parent_topics, TOPIC_COLORS, sort_by=topic_score_type)
+        dts[tg] = dash_dt
 
-    return tuple(figs)
+    return figs['universalGenres'], dts['universalGenres'], figs['universalGenresGpt35_v2'], dts['universalGenresGpt35_v2']
 
 
 ############ episode-topic-treemap callbacks

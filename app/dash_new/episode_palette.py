@@ -60,26 +60,6 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                             )
                         ]),
                     ]),
-                    # dbc.Col(md=4, children=[
-                    #     html.Div([
-                    #         html.Br(),
-                    #         dcc.Graph(id="speaker-episode-frequency-bar-chart-new"),
-                    #     ]),
-                    #     html.Div([
-                    #         "Count by: ",
-                    #         dcc.Dropdown(
-                    #             id="scale-by",
-                    #             options=['scene_count', 'line_count', 'word_count'],
-                    #             value='line_count',
-                    #         )
-                    #     ]),
-                    # ]),
-                    # dbc.Col(md=4, children=[
-                    #     html.Div([
-                    #         html.Br(),
-                    #         dcc.Graph(id="speaker-3d-network-graph-new"),
-                    #     ]),
-                    # ]), 
                 ]),
             ]),
             dbc.CardBody([
@@ -207,49 +187,20 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                 dbc.Row([
                     dbc.Col(md=6, children=[
                         html.Div([
-                            html.Br(),
                             dcc.Graph(id="episode-universal-genres-treemap"),
                         ]),
+                        html.Br(),
+                        html.Div(id="episode-universal-genres-dt"),
                     ]),
                     dbc.Col(md=6, children=[
                         html.Div([
-                            html.Br(),
                             dcc.Graph(id="episode-universal-genres-gpt35-v2-treemap"),
                         ]),
+                        html.Br(),
+                        html.Div(id="episode-universal-genres-gpt35-v2-dt")
                     ]),     
                 ]),
             ]),
-            # dbc.CardBody([
-            #     html.H3("Similar episodes"),
-            #     dbc.Row([
-            #         dbc.Col(md=2, children=[
-            #             html.Div([
-            #                 "MLT type ",
-            #                 dcc.Dropdown(
-            #                     id="mlt-type",
-            #                     options=['tfidf', 'openai_embeddings'], 
-            #                     value='tfidf',
-            #                 )
-            #             ]),
-            #         ]),
-            #     ]),
-            #     dbc.Row([
-            #         dbc.Col(md=8, children=[
-            #             html.Div([
-            #                 html.Br(),
-            #                 dcc.Graph(id="episode-similarity-scatter"),
-            #             ]),
-            #         ]),
-            #         dbc.Col(md=4, children=[
-            #             html.Div([
-            #                 html.Br(),
-            #                 html.Img(src=f"/static/wordclouds/TNG/TNG_{episode['episode_key']}.png", width='100%',
-            #                          style={"padding-left": "10px", "padding-top": "5px"}
-            #                 ),
-            #             ]),
-            #         ]),
-            #     ]),
-            # ]),
         ])
     ])
 

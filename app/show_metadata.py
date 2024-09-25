@@ -102,6 +102,25 @@ TOPIC_COLORS = {
 }
 
 
+# TODO needs to be an algorithm
+BGCOLORS_TO_TEXT_COLORS = {
+    'DarkGoldenrod': 'White',
+    'Crimson': 'White',
+    'MediumSeaGreen': 'Black',
+    'Fuchsia': 'White',
+    'DeepSkyBlue': 'White',
+    'Orange': 'White',
+    'MediumBlue': 'White',
+    'Maroon': 'White',
+    'Turquoise': 'Black',
+    'SlateBlue': 'White',
+    'Coral': 'Black',
+    'BurlyWood': 'Black',
+    'LightSlateGray': 'Black',
+    'SpringGreen': 'White',
+}
+
+
 WIKIPEDIA_DOMAIN = 'https://en.wikipedia.org/wiki/'
 
 GOT_SCENE_CHANGE_PREFIXES = ['CUT TO: ', 'EXT. ', 'INT. ']
