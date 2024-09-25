@@ -203,7 +203,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
 
     # generate dash_table div as part of callback output
     episode_clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()
-    table_div = cmp.merge_and_simplify_df(show_key, episode_clusters_df)
+    table_div = cmp.merge_and_simplify_df(show_key, episode_clusters_df, num_clusters)
 
     # generate scatterplot
     fig_scatter = pscat.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
@@ -530,6 +530,7 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
 
     bertopic_model_docs_df['cluster_title_short'] = bertopic_model_docs_df['cluster_title'].apply(utils.truncate)
     bertopic_model_docs_df['cluster'] = bertopic_model_docs_df['cluster_id']
+    num_clusters = len(bertopic_model_docs_df['cluster'].unique())
 
     # generate dash_table div as part of callback output
     bertopic_model_docs_df = bertopic_model_docs_df[['cluster', 'cluster_title_short', 'Probability', 'wc', 'speaker_group', 'episode_key', 
@@ -537,7 +538,7 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
                                                      'topics_focused_tfidf_list', 'topics_universal_tfidf_list', 'x_coord', 'y_coord', 'z_coord', 'point_size']]
     bertopic_model_docs_df['cluster_color'] = bertopic_model_docs_df['cluster'].apply(lambda x: fm.colors[x])
     bertopic_model_docs_df.drop(['focal_speakers', 'focal_locations'], axis=1, inplace=True) 
-    table_div = cmp.merge_and_simplify_df(show_key, bertopic_model_docs_df)
+    table_div = cmp.merge_and_simplify_df(show_key, bertopic_model_docs_df, num_clusters)
 
     # generate 3d scatter
     bertopic_3d_scatter = pgraph.build_bertopic_model_3d_scatter(show_key, bertopic_model_id, bertopic_model_docs_df)
