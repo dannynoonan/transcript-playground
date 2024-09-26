@@ -104,12 +104,12 @@ TOPIC_COLORS = {
 
 # TODO needs to be an algorithm
 BGCOLORS_TO_TEXT_COLORS = {
-    'DarkGoldenrod': 'White',
+    'DarkGoldenrod': 'Black',
     'Crimson': 'White',
     'MediumSeaGreen': 'Black',
     'Fuchsia': 'White',
-    'DeepSkyBlue': 'White',
-    'Orange': 'White',
+    'DeepSkyBlue': 'Black',
+    'Orange': 'Black',
     'MediumBlue': 'White',
     'Maroon': 'White',
     'Turquoise': 'Black',

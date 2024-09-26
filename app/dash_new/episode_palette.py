@@ -178,12 +178,13 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                             "Score type ",
                             dcc.Dropdown(
                                 id="topic-score-type",
-                                options=['raw_score', 'score', 'tfidf_score'], 
+                                options=['scaled_score', 'tfidf_score'], 
                                 value='tfidf_score',
                             )
                         ]),
                     ]),
                 ]),
+                html.Br(),
                 dbc.Row([
                     dbc.Col(md=6, children=[
                         html.Div([

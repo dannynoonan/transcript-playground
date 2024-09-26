@@ -32,12 +32,10 @@ url_bar_and_content_div = html.Div([
 ])
 
 
-def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: str, color_keys: list, color_map: dict, sort_by: str = None) -> dash_table.DataTable:
+def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: str, color_keys: list, color_map: dict) -> dash_table.DataTable:
     '''
     Turn pandas dataframe into dash_table.DataTable
     '''
-    if sort_by:
-        df.sort_values(sort_by, ascending=False, inplace=True)
 
     # https://dash.plotly.com/datatable/conditional-formatting
     style_data_conditional_list = []
@@ -73,8 +71,10 @@ def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFr
     '''
 
     df = df[['topic_key', 'topic_name', 'raw_score', 'score', 'is_parent', 'tfidf_score']]
+    df.rename(columns={'score': 'scaled_score'}, inplace=True)
     df['parent_topic'] = df['topic_key'].apply(fh.extract_parent)
     df = df[df['parent_topic'] != df['topic_key']]
     df['total_score'] = df[score_type].sum()
+    df.sort_values(score_type, ascending=False, inplace=True)
 
     return df

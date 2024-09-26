@@ -209,6 +209,49 @@ def scale_values(values: list, low: int = 0, high: int = 1) -> list:
     return scaled_values
 
 
+def flatten_episode_speaker_topics(episode_speakers: list, series_speakers: list) -> list:
+    '''
+    Extracted from dash_app render_episode_speaker_topic_scatter
+    TODO I'm sure this duplicates functionality elsewhere and/or could be rewritten more generically
+    '''
+    series_speaker_dicts = {series_s['speaker']:series_s for series_s in series_speakers}
+
+    flat_speakers = []
+    for s in episode_speakers:
+        if s['word_count'] < 20 and s['line_count'] < 3:
+            continue
+        flat_s = s.copy()
+        flat_speakers.append(flat_s)
+        # copy high-scoring topic_mbti and topic_dnda for episode
+        ep_topic_mbti = s['topics_mbti'][0]
+        flat_s['ep_mbti_topic_key'] = ep_topic_mbti['topic_key']
+        flat_s['ep_mbti_topic_name'] = ep_topic_mbti['topic_name']
+        flat_s['ep_mbti_score'] = ep_topic_mbti['score']
+        flat_s['ep_mbti_raw_score'] = ep_topic_mbti['raw_score']
+        del flat_s['topics_mbti']
+        ep_topic_dnda = s['topics_dnda'][0]
+        flat_s['ep_dnda_topic_key'] = ep_topic_dnda['topic_key']
+        flat_s['ep_dnda_topic_name'] = ep_topic_dnda['topic_name']
+        flat_s['ep_dnda_score'] = ep_topic_dnda['score']
+        flat_s['ep_dnda_raw_score'] = ep_topic_dnda['raw_score']
+        del flat_s['topics_dnda']
+        # copy high-scoring topic_mbti and topic_dnda for series
+        if flat_s['speaker'] in series_speaker_dicts:
+            series_s = series_speaker_dicts[flat_s['speaker']]
+            ser_topic_mbti = series_s['topics_mbti'][0]
+            flat_s['ser_mbti_topic_key'] = ser_topic_mbti['topic_key']
+            flat_s['ser_mbti_topic_name'] = ser_topic_mbti['topic_name']
+            flat_s['ser_mbti_score'] = ser_topic_mbti['score']
+            flat_s['ser_mbti_raw_score'] = ser_topic_mbti['raw_score']
+            ser_topic_dnda = series_s['topics_dnda'][0]
+            flat_s['ser_dnda_topic_key'] = ser_topic_dnda['topic_key']
+            flat_s['ser_dnda_topic_name'] = ser_topic_dnda['topic_name']
+            flat_s['ser_dnda_score'] = ser_topic_dnda['score']
+            flat_s['ser_dnda_raw_score'] = ser_topic_dnda['raw_score']
+
+    return flat_speakers
+
+
 # def build_and_annotate_scene_blocks(scenes: list) -> list:
 #     """
 #     Helper function to layer scene blocks into episode dialog gantt

@@ -51,8 +51,12 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
     return fig
 
 
-def build_episode_speaker_topic_scatter(df: pd.DataFrame, topic_type: str) -> go.Figure:
+def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_type: str) -> go.Figure:
     print(f'in build_episode_speaker_topic_scatter topic_type={topic_type}')
+
+    speakers = df['speaker'].unique()
+
+    color_discrete_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
 
     ep_topic_key = f'ep_{topic_type}_topic_key'
     ep_topic_score = f'ep_{topic_type}_score'
@@ -66,14 +70,16 @@ def build_episode_speaker_topic_scatter(df: pd.DataFrame, topic_type: str) -> go
         df['ep_x'] = df[ep_topic_key].apply(fh.to_mbti_x)
         df['ep_y'] = df[ep_topic_key].apply(fh.to_mbti_y)
         title = "Myers-Briggs Temperaments"
-        labels = {"ep_x": "<-- personal | logical -->", "ep_y": "<-- present | possible -->"}
+        labels = {"ep_x": "←  personal                                    logical  →",
+                  "ep_y": "←  present                                    possible  →"}
         high_x = high_y = 4
     elif topic_type == 'dnda':
         topic_types = fm.dnda_types
         df['ep_x'] = df[ep_topic_key].apply(fh.to_dnda_x)
         df['ep_y'] = df[ep_topic_key].apply(fh.to_dnda_y)
         title = "D & D Alignments"
-        labels = {"ep_x": "<-- evil | good -->", "ep_y": "<-- chaotic | lawful -->"}
+        labels = {"ep_x": "←  evil                                            good  →",
+                  "ep_y": "←  chaotic                                       lawful  →"}
         high_x = high_y = 3
 
     topics_to_counts = df[ep_topic_key].value_counts()
@@ -100,34 +106,42 @@ def build_episode_speaker_topic_scatter(df: pd.DataFrame, topic_type: str) -> go
         
     custom_data = ['speaker', ep_topic_key, ep_topic_score]
 
-    fig = px.scatter(df, x='ep_x', y='ep_y', size=ep_topic_score, text='speaker',
-                     title=title, labels=labels, custom_data=custom_data,
+    fig = px.scatter(df, x='ep_x', y='ep_y', size=ep_topic_score, text='speaker', 
+                     title=title, labels=labels, color='speaker',
+                     color_discrete_map=color_discrete_map, custom_data=custom_data,
                      range_x=[0,high_x], range_y=[0,high_y], width=800, height=650)
     
     for label, d in topic_types.items():
         # fig.add_annotation(text=label, x=(d['coords'][0] + 0.2), y=(d['coords'][3] - 0.1), 
         #                 showarrow=False, font=dict(family="arial", size=14, color="White"))
         fig.add_annotation(text=d['descr'], x=(d['coords'][0] + 0.5), y=(d['coords'][3] - 0.9),
-                        showarrow=False, font=dict(family="Arial", size=14, color="White"))
+                           showarrow=False, font=dict(family="Arial", size=14, color="White"))
         shapes.append(dict(type="rect", x0=d['coords'][0], x1=d['coords'][1], y0=d['coords'][2], y1=d['coords'][3],
                            fillcolor=d['color'], opacity=0.5, layer="below", line_width=0))
         
     if topic_type == 'mbti':
-        fig.add_annotation(text='SF: Relating', x=0, y=0, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
-        fig.add_annotation(text='NF: Valuing', x=0, y=4, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
-        fig.add_annotation(text='ST: Directing', x=4, y=0, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
-        fig.add_annotation(text='NT: Visioning', x=4, y=4, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
+        fig.add_annotation(text='SF', x=0, y=0.15, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
+        fig.add_annotation(text='Relating', x=0, y=0, showarrow=False, font=dict(family="Arial", size=14, color="Black"))
+        fig.add_annotation(text='NF', x=0, y=3.85, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
+        fig.add_annotation(text='Valuing', x=0, y=4, showarrow=False, font=dict(family="Arial", size=14, color="Black"))
+        fig.add_annotation(text='ST', x=4, y=0.15, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
+        fig.add_annotation(text='Directing', x=4, y=0, showarrow=False, font=dict(family="Arial", size=14, color="Black"))
+        fig.add_annotation(text='NT', x=4, y=3.85, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
+        fig.add_annotation(text='Visioning', x=4, y=4, showarrow=False, font=dict(family="Arial", size=14, color="Black"))
     
-    fig.update_layout(shapes=shapes, font=dict(family="Arial", size=11, color="DarkSlateGray"))
+    fig.update_layout(shapes=shapes, showlegend=False, title_font=dict(size=20), title_x=0.5,
+                      font=dict(family="Arial", size=11, color="DarkSlateGray"))
+    
+    # NOTE workaround to plotly bug where showticklabels=False (or tickvals=[]) forces x axis to top of figure
+    # solution is to set showticklabels=True and set color to white
+    # https://stackoverflow.com/questions/75350817/plotly-remove-axis-ticks-and-numbers-but-keep-label
+    fig.update_xaxes(showgrid=True, gridwidth=2, dtick="M2", 
+                     showticklabels=True, color='white', title_font={"size": 18, "color": "black"})
+    fig.update_yaxes(showgrid=True, gridwidth=2, dtick="M2", 
+                     showticklabels=True, color='white', title_font={"size": 18, "color": "black"})
 
-    fig.update_xaxes(showgrid=True, gridwidth=2, dtick="M2")
-    fig.update_yaxes(showgrid=True, gridwidth=2, dtick="M2")
-
-    fig.update_xaxes(showticklabels=False)
-    fig.update_yaxes(showticklabels=False)
-
-    fig.update_traces(textposition='top center')
     fig.update_traces(
+        textposition='top center',
         hovertemplate="<br>".join([
             "<b>%{customdata[0]}</b>",
             "%{customdata[1]} score: %{customdata[2]:.2f}",

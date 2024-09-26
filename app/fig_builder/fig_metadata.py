@@ -66,85 +66,85 @@ mbti_types = {
      # SF
     'ESFJ': {
         'descr': 'ESFJ: Provider',
-        'color': 'Tomato',
+        'color': 'Orange',
         'coords': [0, 1, 0, 1]
     },
     'ESFP': {
         'descr': 'ESFP: Performer',
-        'color': 'OrangeRed',
+        'color': 'Orange',
         'coords': [0, 1, 1, 2]
     },
     'ISFJ': {
         'descr': 'ISFJ: Protector',
-        'color': 'Crimson',
+        'color': 'Orange',
         'coords': [1, 2, 0, 1]
     },
     'ISFP': {
         'descr': 'ISFP: Composer',
-        'color': 'Red',
+        'color': 'Orange',
         'coords': [1, 2, 1, 2]
     },
     # NF
     'ENFP': {
         'descr': 'ENFP: Champion',
-        'color': 'Purple',
+        'color': 'YellowGreen',
         'coords': [0, 1, 2, 3]
     },
     'ENFJ': {
         'descr': 'ENFJ: Teacher',
-        'color': 'DarkMagenta',
+        'color': 'YellowGreen',
         'coords': [0, 1, 3, 4]
     },
     'INFP': {
         'descr': 'INFP: Healer',
-        'color': 'DarkOrchid',
+        'color': 'YellowGreen',
         'coords': [1, 2, 2, 3]
     },
     'INFJ': {
         'descr': 'INFJ: Counselor',
-        'color': 'DarkViolet',
+        'color': 'YellowGreen',
         'coords': [1, 2, 3, 4]
     },
     # ST
     'ISTJ': {
         'descr': 'ISTJ: Inspector',
-        'color': 'ForestGreen',
+        'color': 'Crimson',
         'coords': [2, 3, 0, 1]
     },
     'ISTP': {
         'descr': 'ISTP: Operator',
-        'color': 'Green',
+        'color': 'Crimson',
         'coords': [2, 3, 1, 2]
     },
     'ESTJ': {
         'descr': 'ESTJ: Supervisor',
-        'color': 'SeaGreen',
+        'color': 'Crimson',
         'coords': [3, 4, 0, 1]
     },
     'ESTP': {
         'descr': 'ESTP: Promoter',
-        'color': 'MediumSeaGreen',
+        'color': 'Crimson',
         'coords': [3, 4, 1, 2]
     },
     # NT
     'INTP': {
         'descr': 'INTP: Architect',
-        'color': 'Sienna',
+        'color': 'MediumAquamarine',
         'coords': [2, 3, 2, 3]
     },
     'INTJ': {
         'descr': 'INTJ: Mastermind',
-        'color': 'SaddleBrown',
+        'color': 'MediumAquamarine',
         'coords': [2, 3, 3, 4]
     },
     'ENTP': {
         'descr': 'ENTP: Inventor',
-        'color': 'Chocolate',
+        'color': 'MediumAquamarine',
         'coords': [3, 4, 2, 3]
     },
     'ENTJ': {
         'descr': 'ENTJ: Field Marshall',
-        'color': 'Peru',
+        'color': 'MediumAquamarine',
         'coords': [3, 4, 3, 4]
     }
 }
