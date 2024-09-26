@@ -63,18 +63,3 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
     )
 
     return dash_dt
-
-
-def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFrame:
-    '''
-    TODO copied after being extracted from another function, not sure where / how this sort of dataframe reformatting should be encapsulated
-    '''
-
-    df = df[['topic_key', 'topic_name', 'raw_score', 'score', 'is_parent', 'tfidf_score']]
-    df.rename(columns={'score': 'scaled_score'}, inplace=True)
-    df['parent_topic'] = df['topic_key'].apply(fh.extract_parent)
-    df = df[df['parent_topic'] != df['topic_key']]
-    df['total_score'] = df[score_type].sum()
-    df.sort_values(score_type, ascending=False, inplace=True)
-
-    return df

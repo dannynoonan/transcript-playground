@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 from PIL import ImageColor
 import plotly.graph_objects as go
 
@@ -209,12 +210,14 @@ def scale_values(values: list, low: int = 0, high: int = 1) -> list:
     return scaled_values
 
 
-def flatten_episode_speaker_topics(episode_speakers: list, series_speakers: list) -> list:
+def flatten_episode_speaker_topics(episode_speakers: list, series_speakers: list = None) -> list:
     '''
     Extracted from dash_app render_episode_speaker_topic_scatter
     TODO I'm sure this duplicates functionality elsewhere and/or could be rewritten more generically
     '''
-    series_speaker_dicts = {series_s['speaker']:series_s for series_s in series_speakers}
+    series_speaker_dicts = None
+    if series_speakers:
+        series_speaker_dicts = {series_s['speaker']:series_s for series_s in series_speakers}
 
     flat_speakers = []
     for s in episode_speakers:
@@ -224,19 +227,19 @@ def flatten_episode_speaker_topics(episode_speakers: list, series_speakers: list
         flat_speakers.append(flat_s)
         # copy high-scoring topic_mbti and topic_dnda for episode
         ep_topic_mbti = s['topics_mbti'][0]
-        flat_s['ep_mbti_topic_key'] = ep_topic_mbti['topic_key']
-        flat_s['ep_mbti_topic_name'] = ep_topic_mbti['topic_name']
-        flat_s['ep_mbti_score'] = ep_topic_mbti['score']
-        flat_s['ep_mbti_raw_score'] = ep_topic_mbti['raw_score']
+        flat_s['mbti_topic_key'] = ep_topic_mbti['topic_key']
+        flat_s['mbti_topic_name'] = ep_topic_mbti['topic_name']
+        flat_s['mbti_score'] = ep_topic_mbti['score']
+        flat_s['mbti_raw_score'] = ep_topic_mbti['raw_score']
         del flat_s['topics_mbti']
         ep_topic_dnda = s['topics_dnda'][0]
-        flat_s['ep_dnda_topic_key'] = ep_topic_dnda['topic_key']
-        flat_s['ep_dnda_topic_name'] = ep_topic_dnda['topic_name']
-        flat_s['ep_dnda_score'] = ep_topic_dnda['score']
-        flat_s['ep_dnda_raw_score'] = ep_topic_dnda['raw_score']
+        flat_s['dnda_topic_key'] = ep_topic_dnda['topic_key']
+        flat_s['dnda_topic_name'] = ep_topic_dnda['topic_name']
+        flat_s['dnda_score'] = ep_topic_dnda['score']
+        flat_s['dnda_raw_score'] = ep_topic_dnda['raw_score']
         del flat_s['topics_dnda']
-        # copy high-scoring topic_mbti and topic_dnda for series
-        if flat_s['speaker'] in series_speaker_dicts:
+        # optional: copy high-scoring topic_mbti and topic_dnda for series
+        if series_speaker_dicts and flat_s['speaker'] in series_speaker_dicts:
             series_s = series_speaker_dicts[flat_s['speaker']]
             ser_topic_mbti = series_s['topics_mbti'][0]
             flat_s['ser_mbti_topic_key'] = ser_topic_mbti['topic_key']
@@ -250,6 +253,21 @@ def flatten_episode_speaker_topics(episode_speakers: list, series_speakers: list
             flat_s['ser_dnda_raw_score'] = ser_topic_dnda['raw_score']
 
     return flat_speakers
+
+
+def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFrame:
+    '''
+    TODO copied after being extracted from another function, not sure where / how this sort of dataframe reformatting should be encapsulated
+    '''
+
+    df = df[['topic_key', 'topic_name', 'raw_score', 'score', 'is_parent', 'tfidf_score']]
+    df.rename(columns={'score': 'scaled_score'}, inplace=True)
+    df['parent_topic'] = df['topic_key'].apply(extract_parent)
+    df = df[df['parent_topic'] != df['topic_key']]
+    df['total_score'] = df[score_type].sum()
+    df.sort_values(score_type, ascending=False, inplace=True)
+
+    return df
 
 
 # def build_and_annotate_scene_blocks(scenes: list) -> list:

@@ -158,15 +158,17 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                 dbc.Row(justify="evenly", children=[
                     dbc.Col(md=6, children=[
                         html.Div([
-                            html.Br(),
                             dcc.Graph(id="episode-speaker-mbti-scatter"),
                         ]),
+                        html.Br(),
+                        html.Div(id="episode-speaker-mbti-dt"),
                     ]),
                     dbc.Col(md=6, children=[
                         html.Div([
-                            html.Br(),
                             dcc.Graph(id="episode-speaker-dnda-scatter"),
                         ]),
+                        html.Br(),
+                        html.Div(id="episode-speaker-dnda-dt"),
                     ]),       
                 ]),
             ]),

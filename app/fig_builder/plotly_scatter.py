@@ -51,15 +51,15 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
     return fig
 
 
-def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_type: str) -> go.Figure:
-    print(f'in build_episode_speaker_topic_scatter topic_type={topic_type}')
+def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_type: str, speaker_color_map: dict = None) -> go.Figure:
+    print(f'in build_episode_speaker_topic_scatter show_key={show_key} topic_type={topic_type}')
 
-    speakers = df['speaker'].unique()
+    if not speaker_color_map:
+        speakers = df['speaker'].unique()
+        speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
 
-    color_discrete_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
-
-    ep_topic_key = f'ep_{topic_type}_topic_key'
-    ep_topic_score = f'ep_{topic_type}_score'
+    ep_topic_key = f'{topic_type}_topic_key'
+    ep_topic_score = f'{topic_type}_score'
     # ser_topic_key = f'ser_{topic_type}_topic_key'
     # ser_topic_score = f'ser_{topic_type}_score'
 
@@ -108,7 +108,7 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
 
     fig = px.scatter(df, x='ep_x', y='ep_y', size=ep_topic_score, text='speaker', 
                      title=title, labels=labels, color='speaker',
-                     color_discrete_map=color_discrete_map, custom_data=custom_data,
+                     color_discrete_map=speaker_color_map, custom_data=custom_data,
                      range_x=[0,high_x], range_y=[0,high_y], width=800, height=650)
     
     for label, d in topic_types.items():

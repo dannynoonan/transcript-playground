@@ -238,6 +238,8 @@ def render_speaker_chatter_scatter(show_key: str, episode_key: str, x_axis: str,
 @dapp_new.callback(
     Output('episode-speaker-mbti-scatter', 'figure'),
     Output('episode-speaker-dnda-scatter', 'figure'),
+    Output('episode-speaker-mbti-dt', 'children'),
+    Output('episode-speaker-dnda-dt', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'))    
 def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
@@ -251,15 +253,23 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
     episode_speaker_names = [s['speaker'] for s in episode_speakers]
     indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(episode_speaker_names))
 
+    speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, episode_speaker_names)
+
     # merge episode-level and series-level speaker topic data (mbti, dnda) for each episode speaker, keeping only the top topic from each context
     flat_speakers = fh.flatten_episode_speaker_topics(episode_speakers, indexed_speakers_response['speakers'])
     
     df = pd.DataFrame(flat_speakers)
 
-    episode_speaker_mbti_scatter = pscat.build_episode_speaker_topic_scatter(show_key, df, 'mbti')
-    episode_speaker_dnda_scatter = pscat.build_episode_speaker_topic_scatter(show_key, df, 'dnda')
+    episode_speaker_mbti_scatter = pscat.build_episode_speaker_topic_scatter(show_key, df, 'mbti', speaker_color_map=speaker_color_map)
+    episode_speaker_dnda_scatter = pscat.build_episode_speaker_topic_scatter(show_key, df, 'dnda', speaker_color_map=speaker_color_map)
 
-    return episode_speaker_mbti_scatter, episode_speaker_dnda_scatter
+    # build dash datatable
+    mbti_display_cols = ['speaker', 'mbti_topic_key', 'mbti_topic_name', 'mbti_score', 'mbti_raw_score']
+    episode_speaker_mbti_dt = cmp.pandas_df_to_dash_dt(df, mbti_display_cols, 'speaker', episode_speaker_names, speaker_color_map)
+    dnda_display_cols = ['speaker', 'dnda_topic_key', 'dnda_topic_name', 'dnda_score', 'dnda_raw_score']
+    episode_speaker_dnda_dt = cmp.pandas_df_to_dash_dt(df, dnda_display_cols, 'speaker', episode_speaker_names, speaker_color_map)
+
+    return episode_speaker_mbti_scatter, episode_speaker_dnda_scatter, episode_speaker_mbti_dt, episode_speaker_dnda_dt
 
 
 ############ episode-topic-treemap callbacks
@@ -284,7 +294,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, topic_score_ty
         r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
-        df = cmp.flatten_and_format_topics_df(df, topic_score_type)
+        df = fh.flatten_and_format_topics_df(df, topic_score_type)
         # build treemap fig
         fig = ptree.build_episode_topic_treemap(df.copy(), tg, topic_score_type, max_per_parent=3)
         figs[tg] = fig
@@ -297,7 +307,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, topic_score_ty
     return figs['universalGenres'], dts['universalGenres'], figs['universalGenresGpt35_v2'], dts['universalGenresGpt35_v2']
 
 
-############ episode-topic-treemap callbacks
+############ episode-similarity-scatter callbacks
 @dapp_new.callback(
     Output('episode-similarity-scatter', 'figure'),
     Input('show-key', 'value'),
