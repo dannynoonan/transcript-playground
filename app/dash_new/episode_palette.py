@@ -35,7 +35,8 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                         ]),
                         html.Br(),
                         html.H3(className="text-white", children=[
-                            "Season ", episode['season'], ", Episode ", episode['sequence_in_season'], ": \"", episode['title'], "\" (", episode['air_date'][:10], ")"]),
+                            "Season ", episode['season'], ", Episode ", episode['sequence_in_season'], ": \"", episode['title'], "\" " , 
+                            html.Nobr(episode['air_date'][:10])]),
                         html.H3(className="text-white", children=[
                             episode['scene_count'], " scenes, ", episode['line_count'], " lines, ", episode['word_count'], " words"]),
                         html.P(className="text-white", children=['<<  Previous episode  |  Next episode  >>']),

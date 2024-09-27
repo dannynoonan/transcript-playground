@@ -706,22 +706,24 @@ def topic_episode_vector_search(topic_grouping: str, topic_key: str, show_key: S
 def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping: str, model_vendor: str = None, model_version: str = None,
                                 seasons: str = None, episode_keys: str = None, min_depth: bool = False):
     '''
-    Fetches vector embedding for speaker, then determines vector cosine similarity to indexed topics using k-nearest neighbors search
+    Fetches (does not generate) vector embedding for speaker, then determines vector cosine similarity to indexed topics using k-nearest neighbors search
     '''
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
         model_version = 'ada002'
 
-    # TODO keep these or drop?
-    # if seasons:
-    #     seasons = seasons.split(',')
-    # else:
-    #     seasons = []
-    # if episode_keys:
-    #     episode_keys = episode_keys.split(',')
-    # else:
-    #     episode_keys = []
+    # this got hella ugly
+    if seasons:
+        seasons = seasons.split(',')
+    if episode_keys:
+        episode_keys = episode_keys.split(',')
+    seasons_only = False
+    episodes_only = False
+    if seasons and not episode_keys:
+        seasons_only = True
+    elif episode_keys and not seasons:
+        episodes_only = True
 
     vector_field = f'{model_vendor}_{model_version}_embeddings'
 
@@ -738,21 +740,27 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
     es_speaker = es_speaker_response['speaker']
 
     # speaker_series_embeddings = getattr(es_speaker, vector_field)
-    # if speaker_series_embeddings:
-    if vector_field in es_speaker:
+    # NOTE 9/26/2024 I'm grossed out by how complicated this endpoint is. And I just made it more complicated by forcing it to do the simple
+    # thing I need it to do right now, which is run a topic vector search for a single speaker_episode against a topic. I don't think there's
+    # any other endpoint that's close to having that capability.
+    if vector_field in es_speaker and not (episode_keys or seasons):
         s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker[vector_field])
         series_topics = esrt.return_vector_search(s)
 
-    if 'episodes' in es_speaker:
+    if 'episodes' in es_speaker and not seasons_only:
         for es_speaker_episode in es_speaker['episodes']:
+            if episode_keys and es_speaker_episode['episode_key'] not in episode_keys:
+                continue
             if vector_field in es_speaker_episode:
                 s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_episode[vector_field])
                 topics = esrt.return_vector_search(s)
                 if topics:
                     episode_topics[es_speaker_episode['episode_key']] = topics
 
-    if 'seasons' in es_speaker:
+    if 'seasons' in es_speaker and not episodes_only:
         for es_speaker_season in es_speaker['seasons']:
+            if seasons and es_speaker_season['season'] not in seasons:
+                continue
             if vector_field in es_speaker_season:
                 s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_season[vector_field])
                 topics = esrt.return_vector_search(s)
@@ -1089,6 +1097,34 @@ def composite_location_aggs(show_key: ShowKey, season: str = None, episode_key: 
     return {"location_count": len(location_agg_composite), "location_agg_composite": location_agg_composite} 
 
 
+@esr_app.get("/esr/agg_numeric_distrib_into_percentiles/{show_key}/{index}/{numeric_field}", tags=['ES Reader'])
+def agg_numeric_distrib_into_percentiles(show_key: ShowKey, index: str, numeric_field: str, constraints: str = None):
+    '''
+    Slice up the distribution of values for a numeric field into 100 percentile slots, so it's easier to compare those values
+    Motivation: KNN similarity of episode topics, ranging from 81-91, with most results between 84-86, being difficult to usefully compare in a pie chart
+    TODO this invalidates the current `speaker_episode_topics.score` field and probably similar fields elsewhere, should it be:
+        (a) incorporated as part of the existing bulk speaker_episode_topics index populator function
+        (b) added as a new downstream dependency in the broader speaker_episode_topics index populating pipeline
+        (c) invoked in real time rather than baked into an index
+    '''
+
+    constraints_dict = {}
+    if constraints:
+        constraint_bits = constraints.split(',')
+        for c_bit in constraint_bits:
+            c_kv = c_bit.split(':')
+            if len(c_kv) != 2:
+                print(f'Malformed constraint={c_kv}, must have `key`:`value` format. Ignoring.')
+                continue
+            constraints_dict[c_kv[0]] = c_kv[1]
+
+    s = esqb.agg_numeric_distrib_into_percentiles(show_key.value, index, numeric_field, constraints=constraints_dict)
+    es_query = s.to_dict()
+    percentile_distribution = esrt.return_numeric_distrib_into_percentiles(s, numeric_field)
+
+    return {"percentile_distribution": percentile_distribution, "es_query": es_query}
+        
+
 
 ###################### RELATIONS ###########################
 
@@ -1151,6 +1187,8 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
             if 'spoken_by' in scene_event:
                 speakers_in_scene.add(scene_event['spoken_by'])
         for spkr in speakers_in_scene:
+            if spkr not in speakers_to_node_i:
+                continue
             speaker_node_ids_in_scene.add(speakers_to_node_i[spkr])
             other_speakers = set(speakers_in_scene)
             other_speakers.remove(spkr)

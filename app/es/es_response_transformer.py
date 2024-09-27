@@ -780,6 +780,14 @@ def return_dialog_word_counts(s: Search, speaker: str = None) -> list:
     return results
 
 
+def return_numeric_distrib_into_percentiles(s: Search, numeric_field: str) -> dict:
+    print(f'begin return_numeric_distrib_into_percentiles s.to_dict()={s.to_dict()} numeric_field={numeric_field}')
+
+    s = s.execute()
+
+    return s.aggregations[f'{numeric_field}_slices'].values._d_
+
+
 def return_keywords_by_episode(query_response: dict, exclude_terms: bool = False) -> list:
     print(f'begin return_keywords_by_episode for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
 

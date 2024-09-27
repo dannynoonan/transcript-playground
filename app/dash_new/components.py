@@ -37,11 +37,17 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
     Turn pandas dataframe into dash_table.DataTable
     '''
 
+    # fun fact: dash_table 'columns' property doesn't prevent data from being loaded into DataTable, it just limits what's displayed
+    df = df[display_cols]
+
     # https://dash.plotly.com/datatable/conditional-formatting
     style_data_conditional_list = []
     for v in color_keys:
+        # If v isn't escaped, `if: filter_query` block will cause the page to infinitely reload. Escaping causes the color_map match to fail.
+        # TODO circle back to address how to store special chars in these reference sets
+        v_escaped = v.replace("'", "") 
         sdc = {}
-        sdc['if'] = dict(filter_query=f"{{{color_key_col}}} = {v}")
+        sdc['if'] = dict(filter_query=f"{{{color_key_col}}} = {v_escaped}")
         sdc['backgroundColor'] = color_map[v]
         sdc['color'] = BGCOLORS_TO_TEXT_COLORS[color_map[v]]
         style_data_conditional_list.append(sdc)

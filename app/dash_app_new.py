@@ -251,23 +251,32 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
     
     # fetched series-level indexed version of episode speakers
     episode_speaker_names = [s['speaker'] for s in episode_speakers]
-    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(episode_speaker_names))
+    # indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(episode_speaker_names))
 
     speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, episode_speaker_names)
 
-    # merge episode-level and series-level speaker topic data (mbti, dnda) for each episode speaker, keeping only the top topic from each context
-    flat_speakers = fh.flatten_episode_speaker_topics(episode_speakers, indexed_speakers_response['speakers'])
-    
-    df = pd.DataFrame(flat_speakers)
+    # NOTE ended up not using this data downstream
+    mbti_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:meyersBriggsKiersey')
+    dnda_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:dndAlignments')
 
-    episode_speaker_mbti_scatter = pscat.build_episode_speaker_topic_scatter(show_key, df, 'mbti', speaker_color_map=speaker_color_map)
-    episode_speaker_dnda_scatter = pscat.build_episode_speaker_topic_scatter(show_key, df, 'dnda', speaker_color_map=speaker_color_map)
+    mbti_percent_distrib = mbti_distribution_response["percentile_distribution"]
+    mbti_percent_distrib_list = list(mbti_percent_distrib.values())
+    dnda_percent_distrib = dnda_distribution_response["percentile_distribution"]
+    dnda_percent_distrib_list = list(dnda_percent_distrib.values())
+
+    # flatten episode speaker topic data for each episode speaker
+    flat_speakers_mbti = fh.flatten_speaker_topics(episode_speakers, 'mbti', limit_per_speaker=3, percent_distrib_list=mbti_percent_distrib_list)
+    flat_speakers_dnda = fh.flatten_speaker_topics(episode_speakers, 'dnda', limit_per_speaker=3, percent_distrib_list=dnda_percent_distrib_list)
+    mbti_df = pd.DataFrame(flat_speakers_mbti)
+    dnda_df = pd.DataFrame(flat_speakers_dnda)
+    episode_speaker_mbti_scatter = pscat.build_episode_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
+    episode_speaker_dnda_scatter = pscat.build_episode_speaker_topic_scatter(show_key, dnda_df.copy(), 'dnda', speaker_color_map=speaker_color_map)
 
     # build dash datatable
-    mbti_display_cols = ['speaker', 'mbti_topic_key', 'mbti_topic_name', 'mbti_score', 'mbti_raw_score']
-    episode_speaker_mbti_dt = cmp.pandas_df_to_dash_dt(df, mbti_display_cols, 'speaker', episode_speaker_names, speaker_color_map)
-    dnda_display_cols = ['speaker', 'dnda_topic_key', 'dnda_topic_name', 'dnda_score', 'dnda_raw_score']
-    episode_speaker_dnda_dt = cmp.pandas_df_to_dash_dt(df, dnda_display_cols, 'speaker', episode_speaker_names, speaker_color_map)
+    mbti_display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
+    episode_speaker_mbti_dt = cmp.pandas_df_to_dash_dt(mbti_df, mbti_display_cols, 'speaker', episode_speaker_names, speaker_color_map)
+    dnda_display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
+    episode_speaker_dnda_dt = cmp.pandas_df_to_dash_dt(dnda_df, dnda_display_cols, 'speaker', episode_speaker_names, speaker_color_map)
 
     return episode_speaker_mbti_scatter, episode_speaker_dnda_scatter, episode_speaker_mbti_dt, episode_speaker_dnda_dt
 

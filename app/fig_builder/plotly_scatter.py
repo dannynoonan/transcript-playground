@@ -58,36 +58,33 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
         speakers = df['speaker'].unique()
         speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
 
-    ep_topic_key = f'{topic_type}_topic_key'
-    ep_topic_score = f'{topic_type}_score'
-    # ser_topic_key = f'ser_{topic_type}_topic_key'
-    # ser_topic_score = f'ser_{topic_type}_score'
-
     shapes = []
 
     if topic_type == 'mbti':
         topic_types = fm.mbti_types
-        df['ep_x'] = df[ep_topic_key].apply(fh.to_mbti_x)
-        df['ep_y'] = df[ep_topic_key].apply(fh.to_mbti_y)
+        df['ep_x'] = df['topic_key'].apply(fh.to_mbti_x)
+        df['ep_y'] = df['topic_key'].apply(fh.to_mbti_y)
         title = "Myers-Briggs Temperaments"
         labels = {"ep_x": "←  personal                                    logical  →",
                   "ep_y": "←  present                                    possible  →"}
         high_x = high_y = 4
     elif topic_type == 'dnda':
         topic_types = fm.dnda_types
-        df['ep_x'] = df[ep_topic_key].apply(fh.to_dnda_x)
-        df['ep_y'] = df[ep_topic_key].apply(fh.to_dnda_y)
+        df['ep_x'] = df['topic_key'].apply(fh.to_dnda_x)
+        df['ep_y'] = df['topic_key'].apply(fh.to_dnda_y)
         title = "D & D Alignments"
         labels = {"ep_x": "←  evil                                            good  →",
                   "ep_y": "←  chaotic                                       lawful  →"}
         high_x = high_y = 3
 
-    topics_to_counts = df[ep_topic_key].value_counts()
+    topics_to_counts = df['topic_key'].value_counts()
 
     topics_to_i = {t[0]:0 for t in topics_to_counts.items()}
 
+    df.sort_values('rank', inplace=True)
+
     for index, row in df.iterrows():
-        topic_key = row[ep_topic_key]
+        topic_key = row['topic_key']
         topic_count = topics_to_counts[topic_key]
         # NOTE Ick. When there's overflow of speakers mapped to a particular topic, things get messy
         # The topic_count and topic_i counters are off by 1, so the checks here are gross
@@ -104,12 +101,15 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
         df.at[index, 'ep_y'] = row['ep_y'] + fm.topic_grid_coord_deltas[topic_count][topic_i][1]
         topics_to_i[topic_key] += 1
         
-    custom_data = ['speaker', ep_topic_key, ep_topic_score]
+    custom_data = ['speaker', 'rank', 'topic_key', 'score']
 
-    fig = px.scatter(df, x='ep_x', y='ep_y', size=ep_topic_score, text='speaker', 
-                     title=title, labels=labels, color='speaker',
-                     color_discrete_map=speaker_color_map, custom_data=custom_data,
+    fig = px.scatter(df, x='ep_x', y='ep_y', size='dot_size', size_max=15, color='speaker', text='rank', 
+                     title=title, labels=labels, color_discrete_map=speaker_color_map, custom_data=custom_data,
                      range_x=[0,high_x], range_y=[0,high_y], width=800, height=650)
+    
+    for index, row in df.iterrows():
+         fig.add_annotation(text=row['speaker'], x=row['ep_x'], y=(row['ep_y'] + 0.12),
+                           showarrow=False, font=dict(family="Arial", size=9, color="Black"))
     
     for label, d in topic_types.items():
         # fig.add_annotation(text=label, x=(d['coords'][0] + 0.2), y=(d['coords'][3] - 0.1), 
@@ -118,6 +118,10 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
                            showarrow=False, font=dict(family="Arial", size=14, color="White"))
         shapes.append(dict(type="rect", x0=d['coords'][0], x1=d['coords'][1], y0=d['coords'][2], y1=d['coords'][3],
                            fillcolor=d['color'], opacity=0.5, layer="below", line_width=0))
+        
+    # add speaker names above scatter points
+    fig.update_layout(shapes=shapes, showlegend=False, title_font=dict(size=20), title_x=0.5,
+                      font=dict(family="Arial", size=9, color="Black"))
         
     if topic_type == 'mbti':
         fig.add_annotation(text='SF', x=0, y=0.15, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
@@ -129,9 +133,6 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
         fig.add_annotation(text='NT', x=4, y=3.85, showarrow=False, font=dict(family="Arial", size=18, color="Black"))
         fig.add_annotation(text='Visioning', x=4, y=4, showarrow=False, font=dict(family="Arial", size=14, color="Black"))
     
-    fig.update_layout(shapes=shapes, showlegend=False, title_font=dict(size=20), title_x=0.5,
-                      font=dict(family="Arial", size=11, color="DarkSlateGray"))
-    
     # NOTE workaround to plotly bug where showticklabels=False (or tickvals=[]) forces x axis to top of figure
     # solution is to set showticklabels=True and set color to white
     # https://stackoverflow.com/questions/75350817/plotly-remove-axis-ticks-and-numbers-but-keep-label
@@ -141,10 +142,10 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
                      showticklabels=True, color='white', title_font={"size": 18, "color": "black"})
 
     fig.update_traces(
-        textposition='top center',
+        # textposition='top center',
         hovertemplate="<br>".join([
-            "<b>%{customdata[0]}</b>",
-            "%{customdata[1]} score: %{customdata[2]:.2f}",
+            "<b>%{customdata[0]}</b> (#%{customdata[1]})",
+            "%{customdata[2]} score: %{customdata[3]:.2f}",
             "<extra></extra>"
         ])
     )    
