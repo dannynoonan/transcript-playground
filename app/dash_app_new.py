@@ -95,15 +95,15 @@ def display_page(pathname, search):
     
 
 
-############ episode-palette callbacks
+############ episode-gantt callbacks
 @dapp_new.callback(
     Output('episode-dialog-timeline-new', 'figure'),
     Output('episode-location-timeline-new', 'figure'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('show-layers', 'value'))    
-def render_episode_chromatographs(show_key: str, episode_key: str, show_layers: list):
-    print(f'in render_episode_chromatographs, show_key={show_key} episode_key={episode_key}')
+def render_episode_gantts(show_key: str, episode_key: str, show_layers: list):
+    print(f'in render_episode_gantts, show_key={show_key} episode_key={episode_key}')
 
     # generate timeline data
     response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
@@ -377,6 +377,47 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     episode_similarity_scatter = pscat.build_episode_similarity_scatter(df, seasons)
 
     return episode_similarity_scatter
+
+
+############ episode-search callbacks
+@dapp_new.callback(
+    Output('out-text', 'children'),
+    Output('episode-search-results-gantt', 'figure'),
+    # Output('episode-search-results-gantt-dt', 'figure'),
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'),
+    Input('qt', 'value'))    
+def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
+    print(f'in render_episode_search_gantt, show_key={show_key} episode_key={episode_key} qt={qt}')
+
+    scene_count = None
+    scene_event_count = None
+
+    if not qt:
+        return 'No query specified', fh.blank_fig()
+    
+    match_coords = []
+    search_response = esr.search_scene_events(ShowKey(show_key), episode_key=str(episode_key), dialog=qt)
+    scene_count = search_response['scene_count']
+    scene_event_count = search_response['scene_event_count']
+    if scene_count > 0:
+        episode = search_response['matches'][0]
+        for scene in episode['scenes']:
+            for scene_event in scene['scene_events']:
+                match_coords.append((scene['sequence'], scene_event['sequence']))
+
+    if not match_coords:
+        return f"No episode dialog matching query '{qt}'", fh.blank_fig()
+
+    # generate timeline data
+    response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
+
+    # build episode gantt charts
+    episode_dialog_timeline = pgantt.build_episode_search_results_gantt(show_key, match_coords, response['dialog_timeline'])
+
+    out_text = f"{scene_event_count} lines matching query '{qt}'"
+
+    return out_text, episode_dialog_timeline
 
 
 if __name__ == "__main__":

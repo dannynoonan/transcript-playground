@@ -9,7 +9,7 @@ import app.fig_builder.fig_helper as fh
 from app.show_metadata import show_metadata
 
 
-def build_episode_gantt(show_key: str, y_axis: str, data: list, interval_data: list = None) -> go.Figure:
+def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interval_data: list = None) -> go.Figure:
     print(f'in build_episode_gantt show_key={show_key}')
 
     '''
@@ -19,7 +19,7 @@ def build_episode_gantt(show_key: str, y_axis: str, data: list, interval_data: l
     https://community.plotly.com/t/gantt-chart-issue-legend-and-hover/8011
     '''
 
-    df = pd.DataFrame(data)
+    df = pd.DataFrame(timeline_data)
     speaker_colors = fh.flatten_speaker_colors(show_key, to_rgb=True)
     if y_axis == 'speakers':
         title = 'Character dialog timeline'
@@ -161,8 +161,47 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
     return fig
 
 
-def build_series_search_results_gantt(show_key: str, qt: str, matching_episodes: list, episode_speakers_sequence: list) -> go.Figure:
-    print(f'in build_series_search_results_gantt show_key={show_key} qt={qt} len(matching_episodes)={len(matching_episodes)}, len(episode_speakers_sequence)={len(episode_speakers_sequence)}')
+def build_episode_search_results_gantt(show_key: str, matching_scene_events: list, timeline_data: list) -> go.Figure:
+    print(f'in build_episode_search_results_gantt show_key={show_key} len(matching_scene_events)={len(matching_scene_events)}, len(timeline_data)={len(timeline_data)}')
+
+    # load full time-series sequence of speakers by episode into a dataframe
+    df = pd.DataFrame(timeline_data)
+    df['highlight'] = 'no'
+    # highlight rows corresponding to scene_event_coords in df 
+    for scene_event_coords in matching_scene_events:
+        df.loc[(df['scene'] == scene_event_coords[0]) & (df['scene_event'] == scene_event_coords[1]), 'highlight'] = 'yes'
+
+    matching_lines_df = df[df['highlight'] == 'yes']
+    # (*) this feels a little fragile, but the sequence and index positions of the `hover_text` list map precisely 1:2 to the sequence and index positions 
+    # of the gantt data rows in fig['data'] below, because each speaker-episode element maps to two gantt row entries (a Start entry and a Finish entry)
+    hover_text = list(matching_lines_df['Line'])
+
+    # scale height to number of rows
+    fig_height = 250 + len(df['Task'].unique()) * 25
+
+    fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title='Search results')
+    fig.update_layout(xaxis_type='linear', autosize=False)
+
+    # inject dialog stored in `hover_text` list into fig['data'] `text` property
+    for gantt_row in fig['data']:
+        print(gantt_row)
+        if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0 and gantt_row['legendgroup'] == 'rgb(255, 0, 0)':
+            # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
+            # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced.
+            # the 'text' of a gantt row is stored in an unnamed 'data' element (associated to a gantt row via its 'legendgroup' rgb color) as a tuple, making it immutable.
+            # rather than updating it index-by-index, it must be copied, cast as a list, mutated iteratively, and updated in one swoop via gantt_row.update at the end.
+            gantt_row_text = list(gantt_row['text'])
+            for i in range(len(gantt_row['x'])):
+                # (*) mentioned above: the sequence and index positions of `hover_text` list map 1:2 to sequence and index positions of gantt rows in fig['data']
+                gantt_row_text[i] = hover_text[math.floor(i/2)]
+
+            gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove episode index
+    
+    return fig
+
+
+def build_series_search_results_gantt(show_key: str, matching_episodes: list, episode_speakers_sequence: list) -> go.Figure:
+    print(f'in build_series_search_results_gantt show_key={show_key} len(matching_episodes)={len(matching_episodes)}, len(episode_speakers_sequence)={len(episode_speakers_sequence)}')
 
     # load full time-series sequence of speakers by episode into a dataframe
     df = pd.DataFrame(episode_speakers_sequence)
@@ -188,7 +227,7 @@ def build_series_search_results_gantt(show_key: str, qt: str, matching_episodes:
             df.loc[(df['Task'] == speaker) & (df['episode_key'] == episode['episode_key']), 'matching_line_count'] = speakers_to_line_counts[speaker]
             df.loc[(df['Task'] == speaker) & (df['episode_key'] == episode['episode_key']), 'matching_lines'] = ''.join(speakers_to_lines[speaker])
     
-    speakers_to_keep = list(dict.fromkeys(speakers_to_keep))
+    speakers_to_keep = list(dict.fromkeys(speakers_to_keep)) 
     # only keep rows for speakers that have at least 1 match
     df = df.loc[df['Task'].isin(speakers_to_keep)]
     # if `matching_line_count` > 0:
@@ -201,17 +240,18 @@ def build_series_search_results_gantt(show_key: str, qt: str, matching_episodes:
     # of the gantt data rows in fig['data'] below, because each speaker-episode element maps to two gantt row entries (a Start entry and a Finish entry)
     hover_text = list(matching_lines_df['hover_text'])
 
-    file_path = f'./app/data/test_series_search_results_gantt_{show_key}.csv'
-    df.to_csv(file_path)
+    # file_path = f'./app/data/test_series_search_results_gantt_{show_key}.csv'
+    # df.to_csv(file_path)
 
+    # scale height to number of rows
     fig_height = 250 + len(df['Task'].unique()) * 25
 
-    fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height) # TODO scale height to number of rows
+    fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title='Search results')
     fig.update_layout(xaxis_type='linear', autosize=False)
 
     # inject dialog stored in `hover_text` list into fig['data'] `text` property
     for gantt_row in fig['data']:
-        print(gantt_row)
+        # print(gantt_row)
         if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0 and gantt_row['legendgroup'] == 'rgb(255, 0, 0)':
             # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
             # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced.

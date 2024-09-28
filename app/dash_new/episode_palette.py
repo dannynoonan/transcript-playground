@@ -65,29 +65,34 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
             ]),
             dbc.CardBody([
                 dbc.Row([
-                    dbc.Col(md=4, children=[
-                        html.H3("Character dialog timeline"),
+                    dbc.Col(md=12, children=[
+                        html.H3("Episode timeline"),
+                        dbc.Tabs(className="nav nav-tabs", children=[
+                            dbc.Tab(label="By speaker dialog", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row(justify="evenly", children=[
+                                    dcc.Graph(id="episode-dialog-timeline-new"),
+                                ]),
+                                dbc.Row([
+                                    dbc.Col(md=2, style={'textAlign': 'center'}, children=[
+                                        dcc.Checklist(
+                                            id="show-layers",
+                                            # className="text-white", 
+                                            options=[
+                                                {'label': 'Show scenes / locations', 'value': 'scene_locations'}
+                                            ],
+                                            value=[],
+                                            inputStyle={"margin-left": "4px", "margin-right": "4px"}
+                                        )
+                                    ]),
+                                ]),
+                            ]),
+                            dbc.Tab(label="By scene location", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row(justify="evenly", children=[
+                                    dcc.Graph(id="episode-location-timeline-new"),
+                                ]),
+                            ]),
+                        ]),
                     ]),
-                    dbc.Col(md=2, style={'textAlign': 'center'}, children=[
-                        dcc.Checklist(
-                            id="show-layers",
-                            # className="text-white", 
-                            options=[
-                                {'label': 'Show scenes / locations', 'value': 'scene_locations'}
-                            ],
-                            value=[],
-                            inputStyle={"margin-left": "4px", "margin-right": "4px"}
-                        )
-                    ]),
-                ]),
-                dbc.Row(justify="evenly", children=[
-                    dcc.Graph(id="episode-dialog-timeline-new"),
-                ]),
-                html.Br(),
-                html.H3("Scene location timeline"),
-                html.Br(),
-                dbc.Row(justify="evenly", children=[
-                    dcc.Graph(id="episode-location-timeline-new"),
                 ]),
             ]),
             dbc.CardBody([
@@ -203,6 +208,31 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                         html.Br(),
                         html.Div(id="episode-universal-genres-gpt35-v2-dt")
                     ]),     
+                ]),
+            ]),
+            dbc.CardBody([
+                html.H3("In-episode search"),
+                dbc.Row([
+                    dbc.Col(md=4, children=[
+                        html.Div([
+                            "Find lines containing ",
+                            dbc.Input(
+                                id="qt", 
+                                type="text"
+                            ),
+                        ]),
+                    ]),
+                ]),
+                html.Br(),
+                dbc.Row([
+                    dbc.Col(md=12, children=[
+                        html.P(children=["Results: ", html.Span(id='out-text')]),
+                        html.Div([
+                            dcc.Graph(id="episode-search-results-gantt"),
+                        ]),
+                        # html.Br(),
+                        # html.Div(id="episode-search-results-dt"),
+                    ]), 
                 ]),
             ]),
         ])

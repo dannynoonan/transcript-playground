@@ -1253,14 +1253,14 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
     # for each scene containing dialog:
     #   - for each dialog scene_event, add a dialog_span specifying speaker and start/end word index of dialog
     #   - add a location_span specifying location and start/end word index of scene
-    for s in es_episode['scenes']:
+    for i, s in enumerate(es_episode['scenes']):
         if 'scene_events' not in s:
             continue
         scene_lines = []
-        for se in s['scene_events']:
+        for j, se in enumerate(s['scene_events']):
             if 'spoken_by' and 'dialog' in se:
                 line_len = len(se['dialog'].split())
-                dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_len-1), Line=se['dialog'])
+                dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_len-1), Line=se['dialog'], scene=i, scene_event=j)
                 dialog_timeline.append(dialog_span)
                 word_i += line_len
                 scene_lines.append(f"{se['spoken_by']}: {se['dialog']}")

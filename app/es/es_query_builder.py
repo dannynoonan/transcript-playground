@@ -1370,6 +1370,21 @@ def agg_dialog_word_counts(show_key: str, season: str = None, episode_key: str =
     return s
 
 
+def agg_numeric_distrib_into_percentiles(show_key: str, index_name: str, numeric_field: str, constraints: dict = None) -> Search:
+    print(f'begin agg_numeric_distrib_into_percentiles for show_key={show_key} index_name={index_name} numeric_field={numeric_field} constraints={constraints}')
+
+    s = Search(index=index_name)
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+    for k, v in constraints.items():
+        s = s.filter({'term': {k: v}})
+
+    s.aggs.bucket(f'{numeric_field}_slices', 'percentiles', field=numeric_field, percents=[n for n in range(0,101)])
+
+    return s
+
+
 def keywords_by_episode(show_key: str, episode_key: str) -> dict:
     print(f'begin keywords_by_episode for show_key={show_key} episode_key={episode_key}')
 

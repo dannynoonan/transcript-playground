@@ -320,4 +320,16 @@ def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFr
 #         scene_blocks.append(block) 
 
 #     return scene_blocks
+
+
+def blank_fig():
+    '''
+    Best I've come up with so far to dynamically show or hide (almost) a graph that's declared as a dash page object
+    '''
+    fig = go.Figure(go.Scatter(x=[], y=[]))
+    fig.update_layout(template=None, width=10, height=10)
+    fig.update_xaxes(showgrid=False, showticklabels=False, zeroline=False)
+    fig.update_yaxes(showgrid=False, showticklabels=False, zeroline=False)
+    
+    return fig
         
