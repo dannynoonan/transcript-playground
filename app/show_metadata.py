@@ -167,7 +167,8 @@ BGCOLORS_TO_TEXT_COLORS = {
     'DarkSlateBlue': 'White', 
     'DarkOliveGreen': 'White', 
     'PowderBlue': 'Black', 
-    'Sienna': 'Black'
+    'Sienna': 'Black',
+    'Red': 'White'
 }
 
 

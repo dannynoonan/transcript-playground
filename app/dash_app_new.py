@@ -17,6 +17,7 @@ import app.fig_builder.plotly_line as pline
 import app.fig_builder.plotly_networkgraph as pgraph
 import app.fig_builder.plotly_scatter as pscat
 import app.fig_builder.plotly_treemap as ptree
+from app import utils
 
 
 dapp_new = Dash(__name__,
@@ -383,7 +384,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
 @dapp_new.callback(
     Output('out-text', 'children'),
     Output('episode-search-results-gantt', 'figure'),
-    # Output('episode-search-results-gantt-dt', 'figure'),
+    Output('episode-search-results-dt', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('qt', 'value'))    
@@ -394,7 +395,7 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     scene_event_count = None
 
     if not qt:
-        return 'No query specified', fh.blank_fig()
+        return 'No query specified', fh.blank_fig(), ''
     
     match_coords = []
     search_response = esr.search_scene_events(ShowKey(show_key), episode_key=str(episode_key), dialog=qt)
@@ -404,20 +405,36 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
         episode = search_response['matches'][0]
         for scene in episode['scenes']:
             for scene_event in scene['scene_events']:
-                match_coords.append((scene['sequence'], scene_event['sequence']))
+                match_coords.append((scene['sequence'], scene_event['sequence'], scene_event['dialog']))
 
     if not match_coords:
-        return f"No episode dialog matching query '{qt}'", fh.blank_fig()
+        return f"No episode dialog matching query '{qt}'", fh.blank_fig(), ''
 
     # generate timeline data
     response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
 
-    # build episode gantt charts
-    episode_dialog_timeline = pgantt.build_episode_search_results_gantt(show_key, match_coords, response['dialog_timeline'])
+    # load full time-series sequence of speakers by episode into a dataframe
+    df = pd.DataFrame(response['dialog_timeline'])
+    # for df rows corresponding to scene_event_coords in df: (1) set highlight col to yes, and (2) replace Line with marked-up search result dialog
+    df['highlight'] = 'no'
+    for scene_event_coords in match_coords:
+        df.loc[(df['scene'] == scene_event_coords[0]) & (df['scene_event'] == scene_event_coords[1]), 'highlight'] = 'yes'
+        df.loc[(df['scene'] == scene_event_coords[0]) & (df['scene_event'] == scene_event_coords[1]), 'Line'] = scene_event_coords[2]
+    matching_lines_df = df[df['highlight'] == 'yes']
+
+    # build gantt chart
+    episode_search_results_gantt = pgantt.build_episode_search_results_gantt(show_key, df, matching_lines_df)
+
+    # build dash datatable
+    matching_lines_df.rename(columns={'Task': 'character', 'scene_event': 'line', 'Line': 'dialog'}, inplace=True)
+    # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
+    display_cols = ['character', 'scene', 'line', 'dialog', 'highlight']
+    episode_search_results_dt = cmp.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'highlight', ['yes'], {'yes': 'Red'}, 
+                                                         numeric_precision_overrides={'scene': 0, 'line': 0})
 
     out_text = f"{scene_event_count} lines matching query '{qt}'"
 
-    return out_text, episode_dialog_timeline
+    return out_text, episode_search_results_gantt, episode_search_results_dt
 
 
 if __name__ == "__main__":

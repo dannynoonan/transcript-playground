@@ -32,13 +32,19 @@ url_bar_and_content_div = html.Div([
 ])
 
 
-def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: str, color_keys: list, color_map: dict) -> dash_table.DataTable:
+def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: str, color_keys: list, color_map: dict, numeric_precision_overrides: dict = None) -> dash_table.DataTable:
     '''
     Turn pandas dataframe into dash_table.DataTable
     '''
 
     # fun fact: dash_table 'columns' property doesn't prevent data from being loaded into DataTable, it just limits what's displayed
     df = df[display_cols]
+
+    # kinda gross: default numeric precision is 2, if we want something else then override it in numeric_precision_overrides
+    numeric_precision = {col:2 for col in display_cols}
+    if numeric_precision_overrides:
+        for col, precision in numeric_precision_overrides.items():
+            numeric_precision[col] = precision
 
     # https://dash.plotly.com/datatable/conditional-formatting
     style_data_conditional_list = []
@@ -52,20 +58,20 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
         sdc['color'] = BGCOLORS_TO_TEXT_COLORS[color_map[v]]
         style_data_conditional_list.append(sdc)
 
+    columns=[
+        {
+            "id": col, "name": col, "type": "numeric", 
+            "format": dtf.Format(group=dtf.Group.yes, precision=numeric_precision[col], scheme=dtf.Scheme.fixed)
+        }
+        for col in display_cols]
+
     dash_dt = dash_table.DataTable(
         data=df.to_dict("records"),
-        columns=[
-            {
-                "id": x,
-                "name": x, 
-                # "presentation": "markdown",
-                "type": "numeric",
-                "format": dtf.Format(group=dtf.Group.yes, precision=2, scheme=dtf.Scheme.fixed),
-            } 
-            for x in display_cols],
+        columns=columns,
         style_header={'backgroundColor': 'white', 'fontWeight': 'bold', 'color': 'black'},
-        style_cell={'textAlign': 'left', 'font-size': '10pt'},
+        style_cell={'textAlign': 'left', 'font-size': '10pt', 'whiteSpace': 'normal', 'height': 'auto'},
         style_data_conditional=style_data_conditional_list,
+        markdown_options={"html": True}
     )
 
     return dash_dt

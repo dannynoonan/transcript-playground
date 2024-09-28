@@ -161,25 +161,17 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
     return fig
 
 
-def build_episode_search_results_gantt(show_key: str, matching_scene_events: list, timeline_data: list) -> go.Figure:
-    print(f'in build_episode_search_results_gantt show_key={show_key} len(matching_scene_events)={len(matching_scene_events)}, len(timeline_data)={len(timeline_data)}')
+def build_episode_search_results_gantt(show_key: str, timeline_df: pd.DataFrame, matching_lines_df: pd.DataFrame) -> go.Figure:
+    print(f'in build_episode_search_results_gantt show_key={show_key} len(timeline_df)={len(timeline_df)}, len(matching_lines_df)={len(matching_lines_df)}')
 
-    # load full time-series sequence of speakers by episode into a dataframe
-    df = pd.DataFrame(timeline_data)
-    df['highlight'] = 'no'
-    # highlight rows corresponding to scene_event_coords in df 
-    for scene_event_coords in matching_scene_events:
-        df.loc[(df['scene'] == scene_event_coords[0]) & (df['scene_event'] == scene_event_coords[1]), 'highlight'] = 'yes'
-
-    matching_lines_df = df[df['highlight'] == 'yes']
     # (*) this feels a little fragile, but the sequence and index positions of the `hover_text` list map precisely 1:2 to the sequence and index positions 
     # of the gantt data rows in fig['data'] below, because each speaker-episode element maps to two gantt row entries (a Start entry and a Finish entry)
     hover_text = list(matching_lines_df['Line'])
 
     # scale height to number of rows
-    fig_height = 250 + len(df['Task'].unique()) * 25
+    fig_height = 250 + len(timeline_df['Task'].unique()) * 25
 
-    fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title='Search results')
+    fig = ff.create_gantt(timeline_df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title='Search results')
     fig.update_layout(xaxis_type='linear', autosize=False)
 
     # inject dialog stored in `hover_text` list into fig['data'] `text` property

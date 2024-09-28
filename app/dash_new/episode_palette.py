@@ -230,8 +230,8 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                         html.Div([
                             dcc.Graph(id="episode-search-results-gantt"),
                         ]),
-                        # html.Br(),
-                        # html.Div(id="episode-search-results-dt"),
+                        html.Br(),
+                        html.Div(id="episode-search-results-dt"),
                     ]), 
                 ]),
             ]),
