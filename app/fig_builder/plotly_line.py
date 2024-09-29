@@ -99,6 +99,8 @@ def build_episode_sentiment_line_chart(show_key: str, df: pd.DataFrame, speakers
 
     fig = px.line(df, x='scene', y='score', color=focal_property, height=800, render_mode='svg', line_shape='spline', 
                   custom_data=custom_data, color_discrete_map=color_discrete_map)
+    
+    fig.update_layout(margin=dict(l=60, t=30, b=60))
 
     for i in range(len(fig.data)):
         fig.data[i].update(mode='markers+lines')

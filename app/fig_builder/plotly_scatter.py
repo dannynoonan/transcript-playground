@@ -35,14 +35,8 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
 
     fig.update_yaxes(autorange="reversed")
     
-    fig.update_layout(
-        showlegend=False, 
-        yaxis=dict(
-            tickmode = 'array',
-            tickvals = seasons,
-            ticktext = [f'Season {s}' for s in seasons]
-        )
-    )
+    fig.update_layout(showlegend=False, margin=dict(t=30, b=60), 
+                      yaxis=dict(tickmode = 'array', tickvals=seasons, ticktext=[f'Season {s}' for s in seasons]))
 
     fig['data'][1]['marker']['color'] = 'Silver'
     fig['data'][2]['marker']['color'] = 'Black'
@@ -120,8 +114,8 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
                            fillcolor=d['color'], opacity=0.5, layer="below", line_width=0))
         
     # add speaker names above scatter points
-    fig.update_layout(shapes=shapes, showlegend=False, title_font=dict(size=20), title_x=0.5,
-                      font=dict(family="Arial", size=9, color="Black"))
+    fig.update_layout(shapes=shapes, showlegend=False, margin=dict(l=60, t=60, r=40, b=50),
+                      title_font=dict(size=20), title_x=0.5, font=dict(family="Arial", size=9, color="Black"))
         
     if topic_type == 'mbti':
         fig.add_annotation(text='SF', x=0, y=0.15, showarrow=False, font=dict(family="Arial", size=18, color="Black"))

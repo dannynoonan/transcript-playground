@@ -98,9 +98,8 @@ def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, scale_b
         ])
     )
 
-    fig.update_layout(showlegend=False)
-
     fig.update_layout(
+        showlegend=False, margin=dict(l=60, t=30, r=30, b=60),
         yaxis={'tickangle': 35, 'showticklabels': True, 'type': 'category', 'tickfont_size': 8},
         yaxis_categoryorder='total ascending') # yaxis_categoryorder
     

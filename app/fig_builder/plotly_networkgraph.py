@@ -154,7 +154,10 @@ def build_speaker_chatter_scatter3d(show_key: str, data: dict, scale_by: str, di
     data = edge_traces + [nodes_trace]
     fig = go.Figure(data=data, layout=layout)
 
-    fig.update_layout(scene=dict(xaxis=dict(visible=False), yaxis=dict(visible=False), zaxis=dict(visible=False)))
+    fig.update_layout(
+        scene=dict(xaxis=dict(visible=False), yaxis=dict(visible=False), zaxis=dict(visible=False)),
+        margin=dict(l=20, t=50, r=20, b=20)
+    )
 
     if width:
         fig.update_layout(width=width)

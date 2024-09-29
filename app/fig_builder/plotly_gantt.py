@@ -22,11 +22,14 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
     df = pd.DataFrame(timeline_data)
     speaker_colors = fh.flatten_speaker_colors(show_key, to_rgb=True)
     if y_axis == 'speakers':
-        title = 'Character dialog timeline'
+        # title = 'Character dialog timeline'
+        x_label = 'line of dialog'
     elif y_axis == 'locations':
-        title = 'Scene location timeline'
+        # title = 'Scene location timeline'
+        x_label = 'location'
     else:
-        title = 'Placeholder title'
+        # title = 'Placeholder title'
+        x_label = None
 
     span_keys = df.Task.unique()
     keys_to_colors = {}
@@ -42,9 +45,9 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
         keys_to_colors[sk] = rgb
         colors_to_keys[rgb] = sk
 
-    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True, title=title)
+    fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True, title=None)
 
-    fig.update_layout(xaxis_type='linear', autosize=False)
+    fig.update_layout(xaxis_type='linear', xaxis_title=x_label, autosize=False, margin=dict(r=30, t=30, b=60))
 
     # inject dialog into hover 'text' property
     for gantt_row in fig['data']:
@@ -164,6 +167,8 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
 def build_episode_search_results_gantt(show_key: str, timeline_df: pd.DataFrame, matching_lines_df: pd.DataFrame) -> go.Figure:
     print(f'in build_episode_search_results_gantt show_key={show_key} len(timeline_df)={len(timeline_df)}, len(matching_lines_df)={len(matching_lines_df)}')
 
+    x_label = 'line of dialog'
+    
     # (*) this feels a little fragile, but the sequence and index positions of the `hover_text` list map precisely 1:2 to the sequence and index positions 
     # of the gantt data rows in fig['data'] below, because each speaker-episode element maps to two gantt row entries (a Start entry and a Finish entry)
     hover_text = list(matching_lines_df['Line'])
@@ -171,8 +176,9 @@ def build_episode_search_results_gantt(show_key: str, timeline_df: pd.DataFrame,
     # scale height to number of rows
     fig_height = 250 + len(timeline_df['Task'].unique()) * 25
 
-    fig = ff.create_gantt(timeline_df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title='Search results')
-    fig.update_layout(xaxis_type='linear', autosize=False)
+    fig = ff.create_gantt(timeline_df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title=None)
+
+    fig.update_layout(xaxis_type='linear', autosize=False, xaxis_title=x_label, margin=dict(r=30, t=30, b=60))
 
     # inject dialog stored in `hover_text` list into fig['data'] `text` property
     for gantt_row in fig['data']:

@@ -31,6 +31,8 @@ def build_episode_topic_treemap(df: pd.DataFrame, topic_grouping: str, score_typ
             "Score: %{customdata[1]:.2f}",
             "<extra></extra>"
         ])
-    )    
+    )
+
+    fig.update_layout(margin=dict(l=30, t=50, r=30, b=30), title_x=0.5)
 
     return fig
