@@ -193,6 +193,14 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_b
 
     dims = {'height': 800, 'node_max': 60, 'node_min': 12}
 
+    # TODO gross
+    if scale_by == 'scenes':
+        scale_by = 'scene_count'
+    elif scale_by == 'lines':
+        scale_by = 'line_count'
+    elif scale_by == 'words':
+        scale_by = 'word_count'
+
     fig_scatter = pgraph.build_speaker_chatter_scatter3d(show_key, speaker_relations_data, scale_by, dims=dims)
 
     return fig_scatter
@@ -201,38 +209,29 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_b
 ############ speaker-frequency-bar-chart callbacks
 @dapp_new.callback(
     Output('speaker-episode-frequency-bar-chart-new', 'figure'),
+    Output('speaker-episode-summary-dt', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('scale-by', 'value'))    
 def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scale_by: str):
     print(f'in render_speaker_frequency_bar_chart_new, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
-    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti')
     speakers_for_episode = speakers_for_episode_response['speaker_episodes']
-    df = pd.DataFrame(speakers_for_episode, columns = ['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
-    
+    speakers_for_episode = fh.flatten_speaker_topics(speakers_for_episode, 'mbti', 3)
+    df = pd.DataFrame(speakers_for_episode, columns=['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count', 'topics_mbti'])
+
+    episode_speaker_names = [s['speaker'] for s in speakers_for_episode]
+    speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, episode_speaker_names)
+
+    df.rename(columns={'speaker': 'character', 'scene_count': 'scenes', 'line_count': 'lines', 'word_count': 'words'}, inplace=True)
+
     speaker_episode_frequency_bar_chart = pbar.build_speaker_episode_frequency_bar(show_key, df, scale_by)
 
-    return speaker_episode_frequency_bar_chart
+    speaker_episode_summary_dt = cmp.pandas_df_to_dash_dt(df, df.columns, 'character', episode_speaker_names, speaker_color_map, 
+                                                          numeric_precision_overrides={'scenes': 0, 'lines': 0, 'words': 0})
 
-
-############ speaker-chatter-scatter callbacks
-@dapp_new.callback(
-    Output('speaker-chatter-scatter', 'figure'),
-    Input('show-key', 'value'),
-    Input('episode-key', 'value'),
-    Input('x-axis', 'value'),
-    Input('y-axis', 'value'))    
-def render_speaker_chatter_scatter(show_key: str, episode_key: str, x_axis: str, y_axis: str):
-    print(f'in render_speaker_chatter_scatter, show_key={show_key} episode_key={episode_key} x_axis={x_axis} y_axis={y_axis}')
-
-    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
-    speakers_for_episode = speakers_for_episode_response['speaker_episodes']
-    df = pd.DataFrame(speakers_for_episode, columns=['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
-    
-    speaker_chatter_scatter = pscat.build_speaker_chatter_scatter(df, x_axis, y_axis)
-
-    return speaker_chatter_scatter
+    return speaker_episode_frequency_bar_chart, speaker_episode_summary_dt
 
 
 ############ episode-speaker-topic-scatter callbacks
@@ -266,10 +265,10 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
     dnda_percent_distrib_list = list(dnda_percent_distrib.values())
 
     # flatten episode speaker topic data for each episode speaker
-    flat_speakers_mbti = fh.flatten_speaker_topics(episode_speakers, 'mbti', limit_per_speaker=3, percent_distrib_list=mbti_percent_distrib_list)
-    flat_speakers_dnda = fh.flatten_speaker_topics(episode_speakers, 'dnda', limit_per_speaker=3, percent_distrib_list=dnda_percent_distrib_list)
-    mbti_df = pd.DataFrame(flat_speakers_mbti)
-    dnda_df = pd.DataFrame(flat_speakers_dnda)
+    exploded_speakers_mbti = fh.explode_speaker_topics(episode_speakers, 'mbti', limit_per_speaker=3, percent_distrib_list=mbti_percent_distrib_list)
+    exploded_speakers_dnda = fh.explode_speaker_topics(episode_speakers, 'dnda', limit_per_speaker=3, percent_distrib_list=dnda_percent_distrib_list)
+    mbti_df = pd.DataFrame(exploded_speakers_mbti)
+    dnda_df = pd.DataFrame(exploded_speakers_dnda)
     episode_speaker_mbti_scatter = pscat.build_episode_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
     episode_speaker_dnda_scatter = pscat.build_episode_speaker_topic_scatter(show_key, dnda_df.copy(), 'dnda', speaker_color_map=speaker_color_map)
 
@@ -395,7 +394,7 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     scene_event_count = None
 
     if not qt:
-        return 'No query specified', fh.blank_fig(), ''
+        return 'No query specified', {}, ''
     
     match_coords = []
     search_response = esr.search_scene_events(ShowKey(show_key), episode_key=str(episode_key), dialog=qt)
@@ -408,18 +407,24 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
                 match_coords.append((scene['sequence'], scene_event['sequence'], scene_event['dialog']))
 
     if not match_coords:
-        return f"No episode dialog matching query '{qt}'", fh.blank_fig(), ''
+        return f"No episode dialog matching query '{qt}'", {}, ''
 
     # generate timeline data
     response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
 
     # load full time-series sequence of speakers by episode into a dataframe
     df = pd.DataFrame(response['dialog_timeline'])
+
+    # not all scenes have dialog, and index position in `location_timeline` can't be trusted, so load scene-index-to-scene-location dict
+    scene_i_to_locations = {scene['scene']:scene['Task'] for scene in response['location_timeline']}
+
     # for df rows corresponding to scene_event_coords in df: (1) set highlight col to yes, and (2) replace Line with marked-up search result dialog
     df['highlight'] = 'no'
+    df['location'] = 'NA'
     for scene_event_coords in match_coords:
         df.loc[(df['scene'] == scene_event_coords[0]) & (df['scene_event'] == scene_event_coords[1]), 'highlight'] = 'yes'
         df.loc[(df['scene'] == scene_event_coords[0]) & (df['scene_event'] == scene_event_coords[1]), 'Line'] = scene_event_coords[2]
+        df.loc[(df['scene'] == scene_event_coords[0]) & (df['scene_event'] == scene_event_coords[1]), 'location'] = scene_i_to_locations[scene_event_coords[0]]
     matching_lines_df = df[df['highlight'] == 'yes']
 
     # build gantt chart
@@ -427,14 +432,36 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
 
     # build dash datatable
     matching_lines_df.rename(columns={'Task': 'character', 'scene_event': 'line', 'Line': 'dialog'}, inplace=True)
+    matching_speakers = list(matching_lines_df['character'].unique())
+    speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, matching_speakers)
     # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
-    display_cols = ['character', 'scene', 'line', 'dialog', 'highlight']
-    episode_search_results_dt = cmp.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'highlight', ['yes'], {'yes': 'Red'}, 
+    display_cols = ['character', 'scene', 'line', 'location', 'dialog']
+    episode_search_results_dt = cmp.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map, 
                                                          numeric_precision_overrides={'scene': 0, 'line': 0})
 
     out_text = f"{scene_event_count} lines matching query '{qt}'"
 
     return out_text, episode_search_results_gantt, episode_search_results_dt
+
+
+# NOTE not being used
+############ speaker-chatter-scatter callbacks
+@dapp_new.callback(
+    Output('speaker-chatter-scatter', 'figure'),
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'),
+    Input('x-axis', 'value'),
+    Input('y-axis', 'value'))    
+def render_speaker_chatter_scatter(show_key: str, episode_key: str, x_axis: str, y_axis: str):
+    print(f'in render_speaker_chatter_scatter, show_key={show_key} episode_key={episode_key} x_axis={x_axis} y_axis={y_axis}')
+
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+    speakers_for_episode = speakers_for_episode_response['speaker_episodes']
+    df = pd.DataFrame(speakers_for_episode, columns=['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
+    
+    speaker_chatter_scatter = pscat.build_speaker_chatter_scatter(df, x_axis, y_axis)
+
+    return speaker_chatter_scatter
 
 
 if __name__ == "__main__":

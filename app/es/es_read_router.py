@@ -1241,6 +1241,8 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
     '''
     TODO
     '''
+    max_line_chars = 280
+    
     dialog_timeline = []
     location_timeline = []
     word_i = 0
@@ -1259,12 +1261,15 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
         scene_lines = []
         for j, se in enumerate(s['scene_events']):
             if 'spoken_by' and 'dialog' in se:
-                line_len = len(se['dialog'].split())
-                dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_len-1), Line=se['dialog'], scene=i, scene_event=j)
+                line_dialog = se['dialog']
+                line_wc = len(line_dialog.split())
+                if len(line_dialog) > max_line_chars:
+                    line_dialog = f'{line_dialog[:max_line_chars]}...'
+                dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_wc-1), Line=line_dialog, scene=i, scene_event=j)
                 dialog_timeline.append(dialog_span)
-                word_i += line_len
-                scene_lines.append(f"{se['spoken_by']}: {se['dialog']}")
-        location_span = dict(Task=s['location'], Start=scene_start_i, Finish=(word_i-1), Line='\n'.join(scene_lines))
+                word_i += line_wc
+                scene_lines.append(f"{se['spoken_by']}: {line_dialog}")
+        location_span = dict(Task=s['location'], Start=scene_start_i, Finish=(word_i-1), Line='<br>'.join(scene_lines), scene=i)
         location_timeline.append(location_span)
         scene_start_i = word_i
 

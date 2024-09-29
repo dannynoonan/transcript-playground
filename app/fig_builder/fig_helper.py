@@ -256,13 +256,16 @@ def scale_values(values: list, low: int = 0, high: int = 1) -> list:
 #     return flat_speakers
 
 
-def flatten_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: int = None, percent_distrib_list: list = None) -> list: 
+def explode_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: int = None, percent_distrib_list: list = None) -> list: 
+    '''
+    Expand individual speaker rows containing multiple nested topics into multiple speaker rows each containing one topic
+    '''
 
     if not limit_per_speaker:
         limit_per_speaker = 10
     topic_field = f'topics_{topic_type}'
     
-    flattened_speakers = []
+    exploded_speakers = []
     for s in speakers:
         if s['word_count'] < 20 and s['line_count'] < 3:
             continue
@@ -271,7 +274,7 @@ def flatten_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: i
         topic_limit = min(limit_per_speaker, len(s[topic_field]))
         for i in range(topic_limit):
             flat_s = s.copy()
-            flattened_speakers.append(flat_s)
+            exploded_speakers.append(flat_s)
             topic = s[topic_field][i]
             flat_s['topic_key'] = topic['topic_key']
             flat_s['topic_name'] = topic['topic_name']
@@ -284,6 +287,33 @@ def flatten_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: i
                 flat_s['scaled_score'] = utils.normalize_score(topic['raw_score'], percent_distrib_list)
             # extract each topic (up to topic_limit) into its own flattened speaker item
             del flat_s[topic_field]
+
+    return exploded_speakers
+
+
+def flatten_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: int = None) -> list: 
+    '''
+    Replace multiple nested speaker topics with concatenated string of topic_keys in speaker rows 
+    '''
+
+    if not limit_per_speaker:
+        limit_per_speaker = 10
+    topic_field = f'topics_{topic_type}'
+    
+    flattened_speakers = []
+    for s in speakers:
+        if s['word_count'] < 20 and s['line_count'] < 3:
+            continue
+        
+        # extract each topic (up to topic_limit) into its own flattened speaker item
+        topic_limit = min(limit_per_speaker, len(s[topic_field]))
+        topics = []
+        for i in range(topic_limit):
+            topic = s[topic_field][i]
+            topics.append(topic['topic_key'])
+        flat_s = s.copy()
+        flat_s[topic_field] = ', '.join(topics)
+        flattened_speakers.append(flat_s)
 
     return flattened_speakers
 

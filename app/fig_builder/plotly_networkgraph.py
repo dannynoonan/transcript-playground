@@ -49,7 +49,7 @@ def build_speaker_chatter_scatter3d(show_key: str, data: dict, scale_by: str, di
     node_max = 40
     # line_min = 1
     # line_max = 10
-    zoom_scale = 1.7
+    zoom_scale = 1.5
     hover_truncate = 30
     if dims:
         if 'height' in dims:

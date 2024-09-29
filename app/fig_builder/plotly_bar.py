@@ -80,12 +80,10 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
 def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, scale_by: str) -> go.Figure:
     print(f'in build_speaker_frequency_bar scale_by={scale_by}')
 
-    speakers = df['speaker'].unique()
+    speakers = df['character'].unique()
     color_discrete_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
 
-    df.rename(columns={'speaker': 'character'}, inplace=True)
-
-    custom_data = ['scene_count', 'line_count', 'word_count']
+    custom_data = ['scenes', 'lines', 'words']
 
     fig = px.bar(df, x=scale_by, y='character', color='character', 
                  custom_data=custom_data, color_discrete_map=color_discrete_map)
@@ -98,7 +96,7 @@ def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, scale_b
             "Word count: %{customdata[2]}",
             "<extra></extra>"
         ])
-    )    
+    )
 
     fig.update_layout(showlegend=False)
 
