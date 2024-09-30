@@ -1,6 +1,7 @@
 import dash_bootstrap_components as dbc
 from dash import dcc, html, Dash, dash_table
 from dash.dependencies import Input, Output, State
+from operator import itemgetter
 import os
 import pandas as pd
 import urllib.parse
@@ -51,6 +52,10 @@ def display_page(pathname, search):
             err_msg = f'show_key is required'
             print(err_msg)
             return oopsy.generate_content(err_msg)
+        
+        # all seasons
+        all_seasons_response = esr.list_seasons(ShowKey(show_key))
+        all_seasons = all_seasons_response['seasons']
 
         # all episodes
         all_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
@@ -92,7 +97,7 @@ def display_page(pathname, search):
         # emotions
         emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
 
-        return episode_palette.generate_content(episode_dropdown_options, episode, speaker_dropdown_options, emotion_dropdown_options)
+        return episode_palette.generate_content(all_seasons, episode_dropdown_options, episode, speaker_dropdown_options, emotion_dropdown_options)
     
 
 
@@ -219,10 +224,33 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
     speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti')
     speakers_for_episode = speakers_for_episode_response['speaker_episodes']
     speakers_for_episode = fh.flatten_speaker_topics(speakers_for_episode, 'mbti', 3)
+
     df = pd.DataFrame(speakers_for_episode, columns=['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count', 'topics_mbti'])
 
     episode_speaker_names = [s['speaker'] for s in speakers_for_episode]
     speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, episode_speaker_names)
+
+    # TODO incorporate episode-level sentiment into es writer workflow; for now it's a quick lookup in episode-level dfs
+    emo_limit = 3
+    file_path = f'sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+    if not os.path.isfile(file_path):
+        print(f'No sentiment data found at file_path={file_path}, continuing without it')
+        pass
+    else:
+        df['emotions'] = ''
+        ep_df = pd.read_csv(file_path)
+        emotions = list(ep_df['emotion'].unique())
+        # speaker_avg_emotions = {}
+        for spkr in episode_speaker_names:
+            spkr_df = ep_df[ep_df['speaker'] == spkr]
+            spkr_emo_avgs = []
+            for emo in emotions:
+                emo_df = spkr_df[spkr_df['emotion'] == emo]
+                spkr_emo_avgs.append((emo, round(emo_df['score'].mean(), 4)))
+            spkr_emo_avgs.sort(key=itemgetter(1), reverse=True)
+            spkr_emo_avgs = spkr_emo_avgs[:emo_limit]
+            spkr_emos = [sea[0] for sea in spkr_emo_avgs]
+            df.loc[df['speaker'] == spkr, 'emotions'] = ', '.join(spkr_emos)
 
     df.rename(columns={'speaker': 'character', 'scene_count': 'scenes', 'line_count': 'lines', 'word_count': 'words'}, inplace=True)
 
@@ -230,6 +258,8 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
 
     speaker_episode_summary_dt = cmp.pandas_df_to_dash_dt(df, df.columns, 'character', episode_speaker_names, speaker_color_map, 
                                                           numeric_precision_overrides={'scenes': 0, 'lines': 0, 'words': 0})
+    
+    utils.hilite_in_logs(speaker_episode_summary_dt)
 
     return speaker_episode_frequency_bar_chart, speaker_episode_summary_dt
 

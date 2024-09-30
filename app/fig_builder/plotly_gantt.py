@@ -21,15 +21,20 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
 
     df = pd.DataFrame(timeline_data)
     speaker_colors = fh.flatten_speaker_colors(show_key, to_rgb=True)
-    if y_axis == 'speakers':
-        # title = 'Character dialog timeline'
-        x_label = 'line of dialog'
-    elif y_axis == 'locations':
-        # title = 'Scene location timeline'
-        x_label = 'location'
-    else:
-        # title = 'Placeholder title'
-        x_label = None
+    # if y_axis == 'speakers':
+    #     # title = 'Character dialog timeline'
+    # elif y_axis == 'locations':
+    #     # title = 'Scene location timeline'
+    # else:
+    #     # title = 'Placeholder title'
+
+    x_label = 'line of dialog'
+
+    # tighten x axis margins to 2% of the x axis span
+    x_max = df.Finish.max()
+    buffer = x_max * 0.02
+    x_low = -buffer
+    x_high = x_max + buffer
 
     span_keys = df.Task.unique()
     keys_to_colors = {}
@@ -48,6 +53,7 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
     fig = ff.create_gantt(df, index_col='Task', bar_width=0.1, colors=keys_to_colors, group_tasks=True, title=None)
 
     fig.update_layout(xaxis_type='linear', xaxis_title=x_label, autosize=False, margin=dict(r=30, t=30, b=60))
+    fig.update_xaxes(range=[x_low, x_high])
 
     # inject dialog into hover 'text' property
     for gantt_row in fig['data']:
@@ -168,6 +174,12 @@ def build_episode_search_results_gantt(show_key: str, timeline_df: pd.DataFrame,
     print(f'in build_episode_search_results_gantt show_key={show_key} len(timeline_df)={len(timeline_df)}, len(matching_lines_df)={len(matching_lines_df)}')
 
     x_label = 'line of dialog'
+
+    # tighten x axis margins to 2% of the x axis span
+    x_max = timeline_df.Finish.max()
+    buffer = x_max * 0.02
+    x_low = -buffer
+    x_high = x_max + buffer
     
     # (*) this feels a little fragile, but the sequence and index positions of the `hover_text` list map precisely 1:2 to the sequence and index positions 
     # of the gantt data rows in fig['data'] below, because each speaker-episode element maps to two gantt row entries (a Start entry and a Finish entry)
@@ -179,6 +191,7 @@ def build_episode_search_results_gantt(show_key: str, timeline_df: pd.DataFrame,
     fig = ff.create_gantt(timeline_df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title=None)
 
     fig.update_layout(xaxis_type='linear', autosize=False, xaxis_title=x_label, margin=dict(r=30, t=30, b=60))
+    fig.update_xaxes(range=[x_low, x_high])
 
     # inject dialog stored in `hover_text` list into fig['data'] `text` property
     for gantt_row in fig['data']:

@@ -91,9 +91,9 @@ def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, scale_b
     fig.update_traces(
         hovertemplate="<br>".join([
             "<b>%{y}</b>",
-            "Scene count: %{customdata[0]}",
-            "Line count: %{customdata[1]}",
-            "Word count: %{customdata[2]}",
+            "Scenes: %{customdata[0]}",
+            "Lines: %{customdata[1]}",
+            "Words: %{customdata[2]}",
             "<extra></extra>"
         ])
     )

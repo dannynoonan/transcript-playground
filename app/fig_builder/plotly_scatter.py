@@ -20,7 +20,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
 
     custom_data = ['title', 'season', 'episode', 'score', 'rank', 'focal_speakers', 'flattened_topics']
     
-    fig = px.scatter(df, x='episode', y='season', size='rev_rank', color='score', symbol='group',
+    fig = px.scatter(df, x='episode', y='season', size='rev_rank', color='score', symbol='group', title='Similar episodes',
                      custom_data=custom_data, color_continuous_scale='viridis', symbol_map=symbol_map)
                     #  width=1000, height=500
                     
@@ -35,8 +35,8 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
 
     fig.update_yaxes(autorange="reversed")
     
-    fig.update_layout(showlegend=False, margin=dict(t=30, b=60), 
-                      yaxis=dict(tickmode = 'array', tickvals=seasons, ticktext=[f'Season {s}' for s in seasons]))
+    fig.update_layout(showlegend=False, margin=dict(t=60, b=60), 
+                      yaxis=dict(tickmode='array', tickvals=seasons, ticktext=[f'Season {s}' for s in seasons]))
 
     fig['data'][1]['marker']['color'] = 'Silver'
     fig['data'][2]['marker']['color'] = 'Black'

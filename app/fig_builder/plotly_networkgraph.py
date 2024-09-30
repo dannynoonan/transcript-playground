@@ -50,7 +50,7 @@ def build_speaker_chatter_scatter3d(show_key: str, data: dict, scale_by: str, di
     # line_min = 1
     # line_max = 10
     zoom_scale = 1.5
-    hover_truncate = 30
+    hover_truncate = 100
     if dims:
         if 'height' in dims:
             height = dims['height']
@@ -87,7 +87,7 @@ def build_speaker_chatter_scatter3d(show_key: str, data: dict, scale_by: str, di
     for n in data['nodes']:
         speakers.append(n['speaker'])
         node_colors.append(n['color'])
-        n['assoc_str'] = ','.join(n['associations'])
+        n['assoc_str'] = ', '.join(n['associations'])
         if len(n['assoc_str']) > hover_truncate:
             n['assoc_str'] = f"{n['assoc_str'][:hover_truncate]}..."
         nodes_customdata.append((n['scene_count'], n['line_count'], n['word_count'], n['assoc_str']))

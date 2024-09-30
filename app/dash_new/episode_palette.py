@@ -1,15 +1,24 @@
 import dash_bootstrap_components as dbc
 from dash import dcc, html
 
-from app.dash_new.components import generate_navbar
+import app.dash_new.components as cmp
 
 
-def generate_content(episode_dropdown_options: list, episode: dict, speaker_dropdown_options: list, emotion_dropdown_options: list) -> html.Div:
+def generate_content(all_seasons: list, episode_dropdown_options: list, episode: dict, speaker_dropdown_options: list, emotion_dropdown_options: list) -> html.Div:
+    navbar = cmp.generate_navbar(all_seasons, episode_dropdown_options, episode)
+
     content = html.Div([
-        generate_navbar(episode_dropdown_options, episode),
+        navbar,
         dbc.Card(className="bg-dark", children=[
             dbc.CardBody([
                 dbc.Row([
+                    dbc.Col(md=8, children=[
+                        html.H3(className="text-white", children=[
+                            "Season ", episode['season'], ", Episode ", episode['sequence_in_season'], ": \"", episode['title'], "\" (", episode['air_date'][:10], ")"]),
+                        html.H5(className="text-white", children=[
+                            html.B(episode['scene_count']), " scenes, ", html.B(episode['line_count']), " lines, ", html.B(episode['word_count']), " words"]),
+                        # html.P(className="text-white", children=['<<  Previous episode  |  Next episode  >>']),
+                    ]),
                     dbc.Col(md=4, children=[
                         dbc.Row([ 
                             dbc.Col(md=6, children=[
@@ -24,7 +33,7 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                             ]),
                             dbc.Col(md=6, children=[
                                 html.Div([
-                                    "Episode key: ",
+                                    "Episode: ",
                                     dcc.Dropdown(
                                         id="episode-key",
                                         options=episode_dropdown_options,
@@ -33,42 +42,14 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                                 ]),
                             ]),
                         ]),
-                        html.Br(),
-                        html.H3(className="text-white", children=[
-                            "Season ", episode['season'], ", Episode ", episode['sequence_in_season'], ": \"", episode['title'], "\" " , 
-                            html.Nobr(episode['air_date'][:10])]),
-                        html.H3(className="text-white", children=[
-                            episode['scene_count'], " scenes, ", episode['line_count'], " lines, ", episode['word_count'], " words"]),
-                        html.P(className="text-white", children=['<<  Previous episode  |  Next episode  >>']),
-                        html.Div([
-                            html.Img(src=f"/static/wordclouds/TNG/TNG_{episode['episode_key']}.png", width='100%',
-                                     style={"padding-left": "10px", "padding-top": "5px"}
-                            ),
-                        ]),
-                    ]),
-                    dbc.Col(md=8, children=[
-                        html.H3("Similar episodes"),
-                        html.Div([
-                            dcc.Graph(id="episode-similarity-scatter"),
-                        ]),
-                        html.Br(),
-                        html.Div([
-                            "MLT type ",
-                            dcc.Dropdown(
-                                id="mlt-type",
-                                options=['tfidf', 'openai_embeddings'], 
-                                value='tfidf',
-                            )
-                        ]),
                     ]),
                 ]),
             ]),
             dbc.CardBody([
                 dbc.Row([
                     dbc.Col(md=12, children=[
-                        html.H3("Episode timeline"),
                         dbc.Tabs(className="nav nav-tabs", children=[
-                            dbc.Tab(label="By character dialog", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            dbc.Tab(label="Timeline by dialog", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
                                     dcc.Graph(id="episode-dialog-timeline-new"),
                                 ]),
@@ -86,12 +67,12 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                                     ]),
                                 ]),
                             ]),
-                            dbc.Tab(label="By scene location", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            dbc.Tab(label="Timeline by location", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
                                     dcc.Graph(id="episode-location-timeline-new"),
                                 ]),
                             ]),
-                            dbc.Tab(label="By character sentiment", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            dbc.Tab(label="Timeline by sentiment", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row([
                                     dbc.Col(md=2, children=[
                                         html.Div([
@@ -129,11 +110,11 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                                     dcc.Graph(id="sentiment-line-chart-new"),
                                 ]),
                             ]),
-                            dbc.Tab(label="Keyword search", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            dbc.Tab(label="Timeline search", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row([
                                     dbc.Col(md=4, children=[
                                         html.Div([
-                                            "Find lines containing ",
+                                            "Search in dialog: ",
                                             dbc.Input(
                                                 id="qt", 
                                                 type="text"
@@ -145,9 +126,7 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                                 dbc.Row([
                                     dbc.Col(md=12, children=[
                                         html.P(children=["Results: ", html.Span(id='out-text')]),
-                                        html.Div([
-                                            dcc.Graph(id="episode-search-results-gantt"),
-                                        ]),
+                                        html.Div(dcc.Graph(id="episode-search-results-gantt")),
                                         html.Br(),
                                         html.Div(id="episode-search-results-dt"),
                                     ]), 
@@ -158,28 +137,45 @@ def generate_content(episode_dropdown_options: list, episode: dict, speaker_drop
                 ]),
             ]),
             dbc.CardBody([
-                html.H3("Character chatter"),
                 dbc.Row([
-                    dbc.Col(md=4, children=[
-                        html.Div([
-                            html.Br(),
-                            dcc.Graph(id="speaker-episode-frequency-bar-chart-new"),
-                        ]),
-                        html.Div([
-                            "Count by: ",
-                            dcc.Dropdown(
-                                id="scale-by",
-                                options=['scenes', 'lines', 'words'],
-                                value='lines',
-                            )
-                        ]),
-                        html.Br(),
+                    dbc.Col(md=5, children=[
                         html.Div(id="speaker-episode-summary-dt"),
+                        html.Br(),
+                        html.Div(dcc.Graph(id="speaker-episode-frequency-bar-chart-new")),
+                        dcc.RadioItems(
+                            id="scale-by",
+                            className="text-white", 
+                            options=['scenes', 'lines', 'words'],
+                            value='lines',
+                            inputStyle={"margin-left": "12px", "margin-right": "4px"},
+                            style={"display": "flex", "padding-bottom": "0"}
+                        ),
                     ]),
+                    dbc.Col(md=7, children=[
+                        html.Div(dcc.Graph(id="speaker-3d-network-graph-new")),
+                    ]),
+                ]),
+            ]),
+            dbc.CardBody([
+                dbc.Row([
                     dbc.Col(md=8, children=[
                         html.Div([
-                            html.Br(),
-                            dcc.Graph(id="speaker-3d-network-graph-new"),
+                            dcc.Graph(id="episode-similarity-scatter"),
+                        ]),
+                        dcc.RadioItems(
+                            id="mlt-type",
+                            className="text-white", 
+                            options=['tfidf', 'openai_embeddings'],
+                            value='tfidf',
+                            inputStyle={"margin-left": "12px", "margin-right": "4px"},
+                            style={"display": "flex", "padding-bottom": "0"}
+                        ),
+                    ]),
+                    dbc.Col(md=4, children=[
+                        html.Div([
+                            html.Img(src=f"/static/wordclouds/TNG/TNG_{episode['episode_key']}.png", width='100%',
+                                    #  style={"padding-left": "10px", "padding-top": "5px"}
+                            ),
                         ]),
                     ]), 
                 ]),
