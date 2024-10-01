@@ -5,7 +5,7 @@ from app.es.es_metadata import STOPWORDS
 
 
 def return_episode_by_key(s: Search) -> dict:
-    print(f'begin return_episode_by_key for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_episode_by_key for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -14,7 +14,7 @@ def return_episode_by_key(s: Search) -> dict:
     
 
 def return_doc_ids(s: Search) -> list:
-    print(f'begin return_doc_ids for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_doc_ids for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -27,7 +27,7 @@ def return_doc_ids(s: Search) -> list:
 
 
 def return_speakers(s: Search) -> list:
-    print(f'begin return_speakers for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_speakers for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -40,7 +40,7 @@ def return_speakers(s: Search) -> list:
 
 
 def return_speaker_seasons(s: Search) -> list:
-    print(f'begin return_speaker_seasons for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_speaker_seasons for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -53,7 +53,7 @@ def return_speaker_seasons(s: Search) -> list:
 
 
 def return_speaker_episodes(s: Search) -> list:
-    print(f'begin return_speaker_episodes for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_speaker_episodes for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -66,7 +66,7 @@ def return_speaker_episodes(s: Search) -> list:
 
 
 def return_topic(s: Search) -> dict:
-    print(f'begin return_topic for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_topic for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -75,7 +75,7 @@ def return_topic(s: Search) -> dict:
     
 
 def return_topics(s: Search) -> dict:
-    print(f'begin return_topics for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_topics for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -88,7 +88,7 @@ def return_topics(s: Search) -> dict:
 
 
 def return_topics_by_episode(s: Search) -> dict:
-    print(f'begin return_topics_by_episode for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_topics_by_episode for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -103,7 +103,7 @@ def return_topics_by_episode(s: Search) -> dict:
 
 
 def return_topics_by_season(s: Search) -> dict:
-    print(f'begin return_topics_by_season for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_topics_by_season for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -118,7 +118,7 @@ def return_topics_by_season(s: Search) -> dict:
 
 
 def return_topics_by_speaker(s: Search) -> dict:
-    print(f'begin return_topics_by_speaker for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_topics_by_speaker for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -133,7 +133,7 @@ def return_topics_by_speaker(s: Search) -> dict:
     
 
 def return_episodes_by_title(s: Search) -> list:
-    print(f'begin return_episodes_by_title for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_episodes_by_title for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -150,7 +150,7 @@ def return_episodes_by_title(s: Search) -> list:
 
 
 def return_scenes(s: Search) -> tuple[list, int]:
-    print(f'begin return_scenes for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_scenes for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -427,7 +427,7 @@ def return_scene_events_multi_speaker(s: Search, speakers: str, location: str = 
 
 
 def return_seasons(s: Search) -> list:
-    print(f'begin return_seasons for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_seasons for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -440,7 +440,7 @@ def return_seasons(s: Search) -> list:
 
 
 def return_seasons_by_speaker(s: Search, agg_season_count: str, location: str = None) -> list:
-    print(f'begin return_seasons_by_speaker for location={location} s.to_dict()={s.to_dict()}')
+    # print(f'begin return_seasons_by_speaker for location={location} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -465,7 +465,7 @@ def return_seasons_by_speaker(s: Search, agg_season_count: str, location: str = 
 
 
 def return_seasons_by_location(s: Search, agg_season_count: str) -> list:
-    print(f'begin return_seasons_by_speaker s.to_dict()={s.to_dict()}')
+    # print(f'begin return_seasons_by_speaker s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -485,7 +485,7 @@ def return_seasons_by_location(s: Search, agg_season_count: str) -> list:
 
 
 def return_season_count(s: Search) -> int:
-    print(f'begin return_episode_count for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_episode_count for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -493,7 +493,7 @@ def return_season_count(s: Search) -> int:
 
 
 def return_episodes(s: Search) -> tuple[list, int, int]:
-    print(f'begin return_episodes for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_episodes for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -579,7 +579,7 @@ def return_episodes(s: Search) -> tuple[list, int, int]:
 
 
 def return_simple_episodes(s: Search) -> list:
-    print(f'begin return_simple_episodes for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_simple_episodes for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -592,7 +592,7 @@ def return_simple_episodes(s: Search) -> list:
 
 
 def return_episodes_by_season(s: Search) -> dict:
-    print(f'begin return_episodes_by_season for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_episodes_by_season for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -614,7 +614,7 @@ def return_episodes_by_season(s: Search) -> dict:
 
 
 def return_all_episode_relations(s: Search) -> dict:
-    print(f'begin return_all_episode_relations for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_all_episode_relations for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -627,7 +627,7 @@ def return_all_episode_relations(s: Search) -> dict:
 
 
 def return_episode_count(s: Search) -> int:
-    print(f'begin return_episode_count for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_episode_count for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -635,7 +635,7 @@ def return_episode_count(s: Search) -> int:
 
 
 def return_episodes_by_speaker(s: Search, agg_episode_count: str, location: str = None, other_speaker: str = None) -> list:
-    print(f'begin return_episodes_by_speaker for location={location} other_speaker={other_speaker} s.to_dict()={s.to_dict()}')
+    # print(f'begin return_episodes_by_speaker for location={location} other_speaker={other_speaker} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -662,7 +662,7 @@ def return_episodes_by_speaker(s: Search, agg_episode_count: str, location: str 
 
 
 def return_episodes_by_location(s: Search, agg_episode_count: str) -> list:
-    print(f'begin return_episodes_by_speaker s.to_dict()={s.to_dict()}')
+    # print(f'begin return_episodes_by_speaker s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -682,7 +682,7 @@ def return_episodes_by_location(s: Search, agg_episode_count: str) -> list:
 
 
 def return_scene_count(s: Search) -> int:
-    print(f'begin return_scene_count for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_scene_count for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -690,7 +690,7 @@ def return_scene_count(s: Search) -> int:
 
 
 def return_scenes_by_location(s: Search, speaker: str = None) -> list:
-    print(f'begin return_scenes_by_location for speaker={speaker} s.to_dict()={s.to_dict()}')
+    # print(f'begin return_scenes_by_location for speaker={speaker} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -710,7 +710,7 @@ def return_scenes_by_location(s: Search, speaker: str = None) -> list:
 
 
 def return_scenes_by_speaker(s: Search, agg_scene_count: str, location: str = None, other_speaker: str = None) -> list:
-    print(f'begin return_scenes_by_speaker for location={location} other_speaker={other_speaker} s.to_dict()={s.to_dict()}')
+    # print(f'begin return_scenes_by_speaker for location={location} other_speaker={other_speaker} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -737,7 +737,7 @@ def return_scenes_by_speaker(s: Search, agg_scene_count: str, location: str = No
 
 
 def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
-    print(f'begin return_scene_events_by_speaker for dialog={dialog} s.to_dict()={s.to_dict()}')
+    # print(f'begin return_scene_events_by_speaker for dialog={dialog} s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -757,7 +757,7 @@ def return_scene_events_by_speaker(s: Search, dialog: str = None) -> list:
 
 
 def return_dialog_word_counts(s: Search, speaker: str = None) -> list:
-    print(f'begin return_dialog_word_counts s.to_dict()={s.to_dict()}')
+    # print(f'begin return_dialog_word_counts s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -780,8 +780,16 @@ def return_dialog_word_counts(s: Search, speaker: str = None) -> list:
     return results
 
 
+def return_numeric_distrib_into_percentiles(s: Search, numeric_field: str) -> dict:
+    # print(f'begin return_numeric_distrib_into_percentiles s.to_dict()={s.to_dict()} numeric_field={numeric_field}')
+
+    s = s.execute()
+
+    return s.aggregations[f'{numeric_field}_slices'].values._d_
+
+
 def return_keywords_by_episode(query_response: dict, exclude_terms: bool = False) -> list:
-    print(f'begin return_keywords_by_episode for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
+    # print(f'begin return_keywords_by_episode for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
 
     results = []
 
@@ -807,7 +815,7 @@ def return_keywords_by_episode(query_response: dict, exclude_terms: bool = False
 
 
 def return_keywords_by_corpus(query_response: dict, exclude_terms: bool = False) -> list:
-    print(f'begin return_keywords_by_corpus for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
+    # print(f'begin return_keywords_by_corpus for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
 
     # TODO if this is a partial corpus (e.g. single season) then need to aggregate term-freq-for-corpus ad hoc rather than use the 'ttf' value 
     results = []
@@ -833,7 +841,7 @@ def return_keywords_by_corpus(query_response: dict, exclude_terms: bool = False)
 
 
 def return_more_like_this(s: Search) -> list:
-    print(f'begin return_more_like_this for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_more_like_this for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -848,7 +856,7 @@ def return_more_like_this(s: Search) -> list:
 
 
 def return_vector_search(es_response: dict) -> list:
-    print(f'begin return_vector_search')
+    # print(f'begin return_vector_search')
 
     results = []
     
@@ -864,7 +872,7 @@ def return_vector_search(es_response: dict) -> list:
 
 
 def return_topic_vector_search(es_response: dict) -> list:
-    print(f'begin return_topic_vector_search')
+    # print(f'begin return_topic_vector_search')
 
     # TODO currently exactly the same as `return_vector_search`, maybe we don't need both
 
@@ -882,7 +890,7 @@ def return_topic_vector_search(es_response: dict) -> list:
 
 
 def return_embedding(s: Search, vector_field: str) -> dict:
-    print(f'begin return_embedding for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_embedding for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 
@@ -892,7 +900,7 @@ def return_embedding(s: Search, vector_field: str) -> dict:
 
 
 def return_all_embeddings(s: Search, vector_field: str) -> dict:
-    print(f'begin return_all_embeddings for s.to_dict()={s.to_dict()}')
+    # print(f'begin return_all_embeddings for s.to_dict()={s.to_dict()}')
 
     s = s.execute()
 

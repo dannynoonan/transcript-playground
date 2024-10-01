@@ -12,6 +12,7 @@ from app.es.es_model import (
 )
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
+from app import utils
 
 
 # es_client = Elasticsearch(
@@ -39,7 +40,7 @@ def init_transcripts_index():
     # EsEpisodeTranscript.init(using=es_client)
     EsEpisodeTranscript.init()
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
-    es_conn.indices.put_settings(index="transcripts", body={"index.mapping.total_fields.limit": 5000})
+    es_conn.indices.put_settings(index="transcripts", body={"index.mapping.total_fields.limit": 10000})
 
 
 def init_narratives_index():
@@ -233,7 +234,17 @@ def search_episodes_by_title(show_key: str, qt: str) -> Search:
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
-    q = Q('bool', must=[Q('match', title=qt)])
+    match_qt, phrase_qts = utils.extract_phrase_qts(qt)
+        
+    should = []
+    if match_qt:
+        should.append(Q('match', title=match_qt))
+    for pqt in phrase_qts:
+        should.append(Q('match_phrase', title=pqt))
+        
+    q = Q('bool', should=should)
+    # else:
+    #     q = Q('bool', must=[Q('match', title=match_qt)])
 
     s = s.filter('term', show_key=show_key)
     s = s.query(q)
@@ -262,17 +273,23 @@ def fetch_speaker(show_key: str, speaker_name: str) -> EsSpeaker|None:
     return speaker
 
 
-def fetch_indexed_speakers(show_key: str, season: int = None, return_fields: list = None, min_episode_count: int = None) -> Search:
+def fetch_indexed_speakers(show_key: str, speaker_list: str = None, season: int = None, return_fields: list = None, min_episode_count: int = None) -> Search:
     print(f'begin fetch_indexed_speakers for show_key={show_key}')
 
     s = Search(index='speakers')
     s = s.extra(size=1000)
 
     s = s.filter('term', show_key=show_key)
+    # if speaker_list is set, restrict to specific speakers using bool/should
+    if speaker_list:
+        speaker_match_shoulds = []
+        for spkr in speaker_list:
+            speaker_match_shoulds.append(Q('match', speaker=spkr))
+        q = Q('bool', minimum_should_match=1, should=speaker_match_shoulds)
+        s = s.query(q)
     # NOTE this filter is misleading: it will exclude speakers by season but will not adjust aggregate series-level counts
     if season:
         s = s.filter('term', season=str(season))
-
     if min_episode_count:
         s = s.filter('range', episode_count={'gte': min_episode_count})
 
@@ -556,9 +573,9 @@ def fetch_speaker_season_topics(show_key: str, topic_grouping: str, speaker: str
     return s
 
 
-def fetch_speaker_episode_topics(speaker: str, show_key: str, topic_grouping: str, episode_key: str = None, season: int = None, 
+def fetch_speaker_episode_topics(show_key: str, topic_grouping: str, speaker: str = None, episode_key: str = None, season: int = None, 
                                  level: str = None, limit: int = None) -> Search:
-    print(f'begin fetch_speaker_episode_topics for speaker={speaker} show_key={show_key} topic_grouping={topic_grouping} episode_key={episode_key} season={season} level={level}')
+    print(f'begin fetch_speaker_episode_topics for show_key={show_key} topic_grouping={topic_grouping} speaker={speaker} episode_key={episode_key} season={season} level={level}')
 
     if not limit:
         limit = 1000
@@ -567,9 +584,10 @@ def fetch_speaker_episode_topics(speaker: str, show_key: str, topic_grouping: st
     # s = s.extra(size=limit)
     s = s.extra(size=10000)
 
-    s = s.filter('term', speaker=speaker)
     s = s.filter('term', show_key=show_key)
     s = s.filter('term', topic_grouping=topic_grouping)
+    if speaker:
+        s = s.filter('term', speaker=speaker)
     if episode_key:
         s = s.filter('term', episode_key=episode_key)
     if season:
@@ -581,6 +599,29 @@ def fetch_speaker_episode_topics(speaker: str, show_key: str, topic_grouping: st
             s = s.filter('term', is_parent=False)
 
     s = s.sort({'season': {'order': 'asc'}}, {'episode_key': {'order': 'asc'}}, {'score': {'order': 'desc'}})
+
+    return s
+
+
+def fetch_speaker_topics_for_episode(show_key: str, episode_key: str, topic_grouping: str = None, limit: int = None, min_word_count: int = None) -> Search:
+    """
+    Fetch speaker_topics for episode via speaker_episode_topics index
+    """
+    print(f'begin fetch_speaker_topics_for_episode for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping}')
+
+    if not limit:
+        limit = 100
+
+    s = Search(index='speaker_episode_topics')
+    s = s.extra(size=limit)
+
+    s = s.filter('match', show_key=show_key)
+    s = s.filter('match', episode_key=episode_key)
+    s = s.filter('match', topic_grouping=topic_grouping)
+    if min_word_count:
+        s = s.filter('range', word_count={'gt': min_word_count})
+
+    s = s.sort({'score': {'order': 'desc'}})
 
     return s
 
@@ -687,6 +728,29 @@ def search_speaker_episode_topics(topic_grouping: str, topic_key: str, show_key:
     return s
 
 
+# def fetch_speaker_topics_for_episode(show_key: str, episode_key: str, topic_grouping: str = None, limit: int = None, min_word_count: int = None) -> Search:
+#     """
+#     Fetch speaker_topics for episode via speaker_episode_topics index
+#     """
+#     print(f'begin fetch_speaker_topics_for_episode for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping}')
+
+#     if not limit:
+#         limit = 100
+
+#     s = Search(index='speaker_episode_topics')
+#     s = s.extra(size=limit)
+
+#     s = s.filter('match', show_key=show_key)
+#     s = s.filter('match', episode_key=episode_key)
+#     s = s.filter('match', topic_grouping=topic_grouping)
+#     if min_word_count:
+#         s = s.filter('range', word_count={'gt': min_word_count})
+
+#     s = s.sort({'score': {'order': 'desc'}})
+
+#     return s
+
+
 @DeprecationWarning
 def search_speakers_by_topic(topic_grouping: str, topic_key: str, is_parent: bool = False, show_key: str = None, min_word_count: int = None) -> Search:
     print(f'begin search_speakers_by_topic for topic={topic_grouping}:{topic_key} is_parent={is_parent} show_key={show_key} min_word_count={min_word_count}')
@@ -770,8 +834,18 @@ def search_scene_events(show_key: str, season: str = None, episode_key: str = No
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
+    dialog_match_qt, dialog_phrase_qts = utils.extract_phrase_qts(dialog)
+
+    should = []
     speaker_q = Q('match', **{'scenes.scene_events.spoken_by.keyword': speaker})
-    dialog_q = Q('match', **{'scenes.scene_events.dialog': dialog})
+    if dialog_match_qt:
+        should.append(Q('match', **{'scenes.scene_events.dialog': dialog_match_qt}))
+    for pqt in dialog_phrase_qts:
+        should.append(Q('match_phrase', **{'scenes.scene_events.dialog': pqt}))
+    
+    dialog_q = Q('bool', should=should)
+    # else:
+    #     dialog_q = Q('match', **{'scenes.scene_events.dialog': dialog_match_qt})
 
     q = None
     if speaker:
@@ -871,11 +945,33 @@ def search_episodes(show_key: str, season: str = None, episode_key: str = None, 
     s = Search(index='transcripts')
     s = s.extra(size=1000)
 
-    episode_q = Q('match', title=qt)
-    
-    scene_fields_q = Q('bool', minimum_should_match=1, should=[
-            Q('match', **{'scenes.location': qt}),
-            Q('match', **{'scenes.description': qt})])
+    match_qt, phrase_qts = utils.extract_phrase_qts(qt)
+
+    episode_should = []
+    scene_should = []
+    scene_event_should = []
+
+    # if match_qt, append/extend as 'match' queries to 'should' query lists
+    if match_qt:
+        episode_should.append(Q('match', title=match_qt))
+        scene_should.extend([Q('match', **{'scenes.location': match_qt}),
+                             Q('match', **{'scenes.description': match_qt})])
+        scene_event_should.extend([Q('match', **{'scenes.scene_events.context_info': match_qt}),
+                                   Q('match', **{'scenes.scene_events.spoken_by.keyword': match_qt}),
+                                   Q('match', **{'scenes.scene_events.dialog': match_qt})])
+
+    # if phrase_qts, append/extend as 'match_phrase' queries to 'should' query lists
+    for pqt in phrase_qts:
+        episode_should.append(Q('match_phrase', title=pqt))
+        scene_should.extend([Q('match_phrase', **{'scenes.location': pqt}),
+                             Q('match_phrase', **{'scenes.description': pqt})])
+        scene_event_should.extend([Q('match_phrase', **{'scenes.scene_events.context_info': pqt}),
+                                   Q('match_phrase', **{'scenes.scene_events.spoken_by.keyword': pqt}),
+                                   Q('match_phrase', **{'scenes.scene_events.dialog': pqt})])
+
+    episode_q = Q('bool', minimum_should_match=1, should=episode_should)
+    scene_fields_q = Q('bool', minimum_should_match=1, should=scene_should)
+    scene_event_fields_q = Q('bool', minimum_should_match=1, should=scene_event_should)
     
     scenes_q = Q('nested', path='scenes', 
             query=scene_fields_q,
@@ -888,11 +984,6 @@ def search_episodes(show_key: str, season: str = None, episode_key: str = None, 
                     }
                 }
             })
-    
-    scene_event_fields_q = Q('bool', minimum_should_match=1, should=[
-            Q('match', **{'scenes.scene_events.context_info': qt}),
-            Q('match', **{'scenes.scene_events.spoken_by.keyword': qt}),
-            Q('match', **{'scenes.scene_events.dialog': qt})])
     
     scene_events_q = Q('nested', path='scenes.scene_events', 
             query=scene_event_fields_q,
@@ -1276,6 +1367,21 @@ def agg_dialog_word_counts(show_key: str, season: str = None, episode_key: str =
         ).bucket(
             'word_count', 'sum', field='scenes.scene_events.dialog.word_count')
         
+    return s
+
+
+def agg_numeric_distrib_into_percentiles(show_key: str, index_name: str, numeric_field: str, constraints: dict = None) -> Search:
+    print(f'begin agg_numeric_distrib_into_percentiles for show_key={show_key} index_name={index_name} numeric_field={numeric_field} constraints={constraints}')
+
+    s = Search(index=index_name)
+    s = s.extra(size=0)
+
+    s = s.filter('term', show_key=show_key)
+    for k, v in constraints.items():
+        s = s.filter({'term': {k: v}})
+
+    s.aggs.bucket(f'{numeric_field}_slices', 'percentiles', field=numeric_field, percents=[n for n in range(0,101)])
+
     return s
 
 

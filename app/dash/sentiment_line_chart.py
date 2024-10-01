@@ -53,7 +53,7 @@ def generate_content(episode_key: str, episode_dropdown_options: list, speaker_d
                             "Emotion ",
                             dcc.Dropdown(
                                 id="emotion",
-                                options=['Joy', 'Love', 'Empathy', 'Curiosity', 'Sadness', 'Anger', 'Fear', 'Disgust', 'Surprise', 'Confusion'],
+                                options=['ALL', 'Joy', 'Love', 'Empathy', 'Curiosity', 'Sadness', 'Anger', 'Fear', 'Disgust', 'Surprise', 'Confusion'],
                                 value='Joy',
                             )
                         ]),
@@ -63,10 +63,8 @@ def generate_content(episode_key: str, episode_dropdown_options: list, speaker_d
                             "Speaker ",
                             dcc.Dropdown(
                                 id="speaker",
-                                # options="episode-speaker-options",
-                                # options=[dbc.Select(id="episode-speaker-options")],
                                 options=speaker_dropdown_options,
-                                # value='PICARD',
+                                value='ALL'
                             )
                         ]),
                     ]),

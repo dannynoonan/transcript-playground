@@ -194,17 +194,20 @@ def fetch_speakers_for_season(show_key: ShowKey, season: str, extra_fields: str 
 
 
 @esr_app.get("/esr/fetch_indexed_speakers/{show_key}", tags=['ES Reader'])
-def fetch_indexed_speakers(show_key: ShowKey, season: int = None, extra_fields: str = None, min_episode_count: int = None):
+def fetch_indexed_speakers(show_key: ShowKey, speakers: str = None, season: int = None, extra_fields: str = None, min_episode_count: int = None):
     '''
     For speakers indexed in es, fetch info, lines, and aggregate counts
     '''
     return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_ada002_word_count']
+    speaker_list = []
+    if speakers:
+        speaker_list = speakers.split(',')
     if extra_fields:
         extra_fields = extra_fields.split(',')
         return_fields.extend(extra_fields)
 
     # NOTE I'm not sure the `season` parameter will last, it excludes speakers by season but still returns series-level agg counts
-    s = esqb.fetch_indexed_speakers(show_key.value, season=season, return_fields=return_fields, min_episode_count=min_episode_count)
+    s = esqb.fetch_indexed_speakers(show_key.value, speaker_list=speaker_list, season=season, return_fields=return_fields, min_episode_count=min_episode_count)
     es_query = s.to_dict()
     speakers = esrt.return_speakers(s)
     if not speakers:
@@ -274,14 +277,13 @@ def fetch_speaker_season_topics(show_key: ShowKey, topic_grouping: str, speaker:
     return {"speaker_season_topics": speaker_season_topics, "es_query": es_query}
 
 
-# TODO speaker should be an optional parameter, this will be changed when use case arrives
-@esr_app.get("/esr/fetch_speaker_episode_topics/{speaker}/{show_key}/{topic_grouping}", tags=['ES Reader'])
-def fetch_speaker_episode_topics(speaker: str, show_key: ShowKey, topic_grouping: str, episode_key: str = None, season: int = None, 
+@esr_app.get("/esr/fetch_speaker_episode_topics/{show_key}/{topic_grouping}", tags=['ES Reader'])
+def fetch_speaker_episode_topics(show_key: ShowKey, topic_grouping: str, speaker: str = None, episode_key: str = None, season: int = None, 
                                  level: str = None, limit: int = None):
     '''
     Fetch topics mapped to speaker_episode
     '''
-    s = esqb.fetch_speaker_episode_topics(speaker, show_key.value, topic_grouping, episode_key=episode_key, season=season, level=level, limit=limit)
+    s = esqb.fetch_speaker_episode_topics(show_key.value, topic_grouping, speaker=speaker, episode_key=episode_key, season=season, level=level, limit=limit)
     es_query = s.to_dict()
     speaker_episode_topics = esrt.return_topics_by_episode(s)
     return {"speaker_episode_topics": speaker_episode_topics, "es_query": es_query}
@@ -704,22 +706,24 @@ def topic_episode_vector_search(topic_grouping: str, topic_key: str, show_key: S
 def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping: str, model_vendor: str = None, model_version: str = None,
                                 seasons: str = None, episode_keys: str = None, min_depth: bool = False):
     '''
-    Fetches vector embedding for speaker, then determines vector cosine similarity to indexed topics using k-nearest neighbors search
+    Fetches (does not generate) vector embedding for speaker, then determines vector cosine similarity to indexed topics using k-nearest neighbors search
     '''
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
         model_version = 'ada002'
 
-    # TODO keep these or drop?
-    # if seasons:
-    #     seasons = seasons.split(',')
-    # else:
-    #     seasons = []
-    # if episode_keys:
-    #     episode_keys = episode_keys.split(',')
-    # else:
-    #     episode_keys = []
+    # this got hella ugly
+    if seasons:
+        seasons = seasons.split(',')
+    if episode_keys:
+        episode_keys = episode_keys.split(',')
+    seasons_only = False
+    episodes_only = False
+    if seasons and not episode_keys:
+        seasons_only = True
+    elif episode_keys and not seasons:
+        episodes_only = True
 
     vector_field = f'{model_vendor}_{model_version}_embeddings'
 
@@ -736,21 +740,27 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
     es_speaker = es_speaker_response['speaker']
 
     # speaker_series_embeddings = getattr(es_speaker, vector_field)
-    # if speaker_series_embeddings:
-    if vector_field in es_speaker:
+    # NOTE 9/26/2024 I'm grossed out by how complicated this endpoint is. And I just made it more complicated by forcing it to do the simple
+    # thing I need it to do right now, which is run a topic vector search for a single speaker_episode against a topic. I don't think there's
+    # any other endpoint that's close to having that capability.
+    if vector_field in es_speaker and not (episode_keys or seasons):
         s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker[vector_field])
         series_topics = esrt.return_vector_search(s)
 
-    if 'episodes' in es_speaker:
+    if 'episodes' in es_speaker and not seasons_only:
         for es_speaker_episode in es_speaker['episodes']:
+            if episode_keys and es_speaker_episode['episode_key'] not in episode_keys:
+                continue
             if vector_field in es_speaker_episode:
                 s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_episode[vector_field])
                 topics = esrt.return_vector_search(s)
                 if topics:
                     episode_topics[es_speaker_episode['episode_key']] = topics
 
-    if 'seasons' in es_speaker:
+    if 'seasons' in es_speaker and not episodes_only:
         for es_speaker_season in es_speaker['seasons']:
+            if seasons and es_speaker_season['season'] not in seasons:
+                continue
             if vector_field in es_speaker_season:
                 s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_season[vector_field])
                 topics = esrt.return_vector_search(s)
@@ -1087,6 +1097,34 @@ def composite_location_aggs(show_key: ShowKey, season: str = None, episode_key: 
     return {"location_count": len(location_agg_composite), "location_agg_composite": location_agg_composite} 
 
 
+@esr_app.get("/esr/agg_numeric_distrib_into_percentiles/{show_key}/{index}/{numeric_field}", tags=['ES Reader'])
+def agg_numeric_distrib_into_percentiles(show_key: ShowKey, index: str, numeric_field: str, constraints: str = None):
+    '''
+    Slice up the distribution of values for a numeric field into 100 percentile slots, so it's easier to compare those values
+    Motivation: KNN similarity of episode topics, ranging from 81-91, with most results between 84-86, being difficult to usefully compare in a pie chart
+    TODO this invalidates the current `speaker_episode_topics.score` field and probably similar fields elsewhere, should it be:
+        (a) incorporated as part of the existing bulk speaker_episode_topics index populator function
+        (b) added as a new downstream dependency in the broader speaker_episode_topics index populating pipeline
+        (c) invoked in real time rather than baked into an index
+    '''
+
+    constraints_dict = {}
+    if constraints:
+        constraint_bits = constraints.split(',')
+        for c_bit in constraint_bits:
+            c_kv = c_bit.split(':')
+            if len(c_kv) != 2:
+                print(f'Malformed constraint={c_kv}, must have `key`:`value` format. Ignoring.')
+                continue
+            constraints_dict[c_kv[0]] = c_kv[1]
+
+    s = esqb.agg_numeric_distrib_into_percentiles(show_key.value, index, numeric_field, constraints=constraints_dict)
+    es_query = s.to_dict()
+    percentile_distribution = esrt.return_numeric_distrib_into_percentiles(s, numeric_field)
+
+    return {"percentile_distribution": percentile_distribution, "es_query": es_query}
+        
+
 
 ###################### RELATIONS ###########################
 
@@ -1128,13 +1166,19 @@ def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version:
 
 @esr_app.get("/esr/speaker_relations_graph/{show_key}/{episode_key}", tags=['ES Reader'])
 def speaker_relations_graph(show_key: ShowKey, episode_key: str):
-    nodes = []
-    links = []
-    speakers_to_node_i = {}
-    source_targets_to_link_i = {}
-    episode = fetch_episode(show_key, episode_key)
-    es_episode = episode['es_episode']
-    for scene in es_episode['scenes']:
+    
+    episode_response = fetch_episode(show_key, episode_key)
+    episode = episode_response['es_episode']
+
+    episode_speakers_response = fetch_speakers_for_episode(show_key, episode_key)
+    speakers = episode_speakers_response['speaker_episodes']
+    speakers_to_node_i = {s['speaker']:i for i, s in enumerate(speakers)}
+    speaker_associations = {s['speaker']:set() for i, s in enumerate(speakers)}
+
+    edges = []
+    source_targets_to_edge_i = {}
+    
+    for i, scene in enumerate(episode['scenes']):
         if 'scene_events' not in scene:
             continue
         speakers_in_scene = set()
@@ -1142,28 +1186,29 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
         for scene_event in scene['scene_events']:
             if 'spoken_by' in scene_event:
                 speakers_in_scene.add(scene_event['spoken_by'])
-        for speaker in speakers_in_scene:
-            if speaker not in speakers_to_node_i:
-                if speaker in show_metadata[show_key.value]['regular_cast']:
-                    group = 1
-                else:
-                    group = 2
-                nodes.append({'name': speaker, 'group': group})
-                speakers_to_node_i[speaker] = len(nodes)-1
-            speaker_node_ids_in_scene.add(speakers_to_node_i[speaker])
+        for spkr in speakers_in_scene:
+            if spkr not in speakers_to_node_i:
+                continue
+            speaker_node_ids_in_scene.add(speakers_to_node_i[spkr])
+            other_speakers = set(speakers_in_scene)
+            other_speakers.remove(spkr)
+            speaker_associations[spkr].update(other_speakers)
         for source_speaker_node_i in speaker_node_ids_in_scene:
             for target_speaker_node_i in speaker_node_ids_in_scene:
                 if source_speaker_node_i == target_speaker_node_i:
                     continue
                 source_target = f'{source_speaker_node_i}_{target_speaker_node_i}'
-                if source_target not in source_targets_to_link_i:
-                    links.append({'source': source_speaker_node_i, 'target': target_speaker_node_i, 'value': 1})
-                    source_targets_to_link_i[source_target] = len(links)-1
+                if source_target not in source_targets_to_edge_i:
+                    edges.append({'source': source_speaker_node_i, 'target': target_speaker_node_i, 'value': 1})
+                    source_targets_to_edge_i[source_target] = len(edges)-1
                 else:
-                    link_i = source_targets_to_link_i[source_target]
-                    links[link_i]['value'] += 1
-    
-    return {"nodes": nodes, "links": links}
+                    edge_i = source_targets_to_edge_i[source_target]
+                    edges[edge_i]['value'] += 1
+
+    for s in speakers:
+        s['associations'] = list(speaker_associations[s['speaker']])
+
+    return {"nodes": speakers, "edges": edges}
 
 
 
@@ -1196,6 +1241,8 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
     '''
     TODO
     '''
+    max_line_chars = 280
+    
     dialog_timeline = []
     location_timeline = []
     word_i = 0
@@ -1208,16 +1255,21 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
     # for each scene containing dialog:
     #   - for each dialog scene_event, add a dialog_span specifying speaker and start/end word index of dialog
     #   - add a location_span specifying location and start/end word index of scene
-    for s in es_episode['scenes']:
+    for i, s in enumerate(es_episode['scenes']):
         if 'scene_events' not in s:
             continue
-        for se in s['scene_events']:
+        scene_lines = []
+        for j, se in enumerate(s['scene_events']):
             if 'spoken_by' and 'dialog' in se:
-                line_len = len(se['dialog'].split())
-                dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_len-1), Line=se['dialog'])
+                line_dialog = se['dialog']
+                line_wc = len(line_dialog.split())
+                if len(line_dialog) > max_line_chars:
+                    line_dialog = f'{line_dialog[:max_line_chars]}...'
+                dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_wc-1), Line=line_dialog, scene=i, scene_event=j)
                 dialog_timeline.append(dialog_span)
-                word_i += line_len
-        location_span = dict(Task=s['location'], Start=scene_start_i, Finish=(word_i-1))
+                word_i += line_wc
+                scene_lines.append(f"{se['spoken_by']}: {line_dialog}")
+        location_span = dict(Task=s['location'], Start=scene_start_i, Finish=(word_i-1), Line='<br>'.join(scene_lines), scene=i)
         location_timeline.append(location_span)
         scene_start_i = word_i
 
@@ -1264,7 +1316,7 @@ def generate_series_speaker_gantt_sequence(show_key: ShowKey, limit_cast: bool =
     if limit_cast:
         trimmed_episode_speakers_sequence = []
         for d in episode_speakers_sequence:
-            if d['Task'] in show_metadata[show_key]['regular_cast'] or d['Task'] in show_metadata[show_key]['recurring_cast']:
+            if d['Task'] in show_metadata[show_key]['regular_cast'].keys() or d['Task'] in show_metadata[show_key]['recurring_cast'].keys():
                 trimmed_episode_speakers_sequence.append(d)
         episode_speakers_sequence = trimmed_episode_speakers_sequence
 
@@ -1398,10 +1450,10 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
     '''
     TODO 
     '''
-    speaker_series_agg_word_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-    speaker_series_agg_line_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-    speaker_series_agg_scene_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-    speaker_series_agg_episode_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
+    speaker_series_agg_word_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+    speaker_series_agg_line_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+    speaker_series_agg_scene_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+    speaker_series_agg_episode_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
 
     series_agg_word_count = 0
     series_agg_line_count = 0
@@ -1416,7 +1468,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
     episode_i = 0
     curr_season = None
     for episode in episodes:
-        episode_key = episode['episode_key']
+        episode_key = str(episode['episode_key'])
         episode_title = episode['title']
         season = episode['season']
         sequence_in_season = episode['sequence_in_season']
@@ -1427,10 +1479,10 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
             season_agg_line_count = 0
             season_agg_scene_count = 0
             season_agg_episode_count = 0
-            speaker_season_agg_word_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-            speaker_season_agg_line_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-            speaker_season_agg_scene_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
-            speaker_season_agg_episode_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast']}
+            speaker_season_agg_word_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+            speaker_season_agg_line_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+            speaker_season_agg_scene_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
+            speaker_season_agg_episode_counts = {spkr:0 for spkr in show_metadata[show_key.value]['regular_cast'].keys()}
 
         season_agg_episode_count += 1
         series_agg_episode_count += 1
@@ -1455,7 +1507,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
         series_agg_scene_count += episode_scene_count
         # episodes_to_speaker_counts[episode_key] = speaker_scene_counts.keys()
 
-        for speaker in show_metadata[show_key.value]['regular_cast']:
+        for speaker in show_metadata[show_key.value]['regular_cast'].keys():
             if speaker in speaker_word_counts:
                 # speaker_episode_row = {}
                 word_count = speaker_word_counts[speaker] 
@@ -1478,6 +1530,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
             # init speaker_episode_row
             speaker_episode_row = dict(
                 speaker=speaker,
+                episode_key=episode_key,
                 episode_i=episode_i, 
                 episode_title=episode_title,
                 season=season,

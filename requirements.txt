@@ -36,7 +36,9 @@ requests==2.30.0
 scikit-learn==1.4.0
 scipy==1.10.1
 # starlette==0.27.0
+# statsmodels==0.14.3
 tiktoken==0.6.0
 tortoise-orm==0.20.0
 uvicorn==0.23.2 
 urllib3==1.26.15
+wordcloud==1.9.3
