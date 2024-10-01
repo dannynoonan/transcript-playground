@@ -20,7 +20,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
 
     custom_data = ['title', 'season', 'episode', 'score', 'rank', 'focal_speakers', 'flattened_topics']
     
-    fig = px.scatter(df, x='episode', y='season', size='rev_rank', color='score', symbol='group', title='Similar episodes',
+    fig = px.scatter(df, x='episode', y='season', size='rev_rank', color='score', symbol='group',
                      custom_data=custom_data, color_continuous_scale='viridis', symbol_map=symbol_map)
                     #  width=1000, height=500
                     
@@ -35,7 +35,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
 
     fig.update_yaxes(autorange="reversed")
     
-    fig.update_layout(showlegend=False, margin=dict(t=60, b=60), 
+    fig.update_layout(showlegend=False, margin=dict(t=30, b=60), 
                       yaxis=dict(tickmode='array', tickvals=seasons, ticktext=[f'Season {s}' for s in seasons]))
 
     fig['data'][1]['marker']['color'] = 'Silver'
@@ -59,16 +59,16 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
         df['ep_x'] = df['topic_key'].apply(fh.to_mbti_x)
         df['ep_y'] = df['topic_key'].apply(fh.to_mbti_y)
         title = "Myers-Briggs Temperaments"
-        labels = {"ep_x": "←  personal                                    logical  →",
-                  "ep_y": "←  present                                    possible  →"}
+        labels = {"ep_x": "←  personal                                            logical  →",
+                  "ep_y": "←  present                                            possible  →"}
         high_x = high_y = 4
     elif topic_type == 'dnda':
         topic_types = fm.dnda_types
         df['ep_x'] = df['topic_key'].apply(fh.to_dnda_x)
         df['ep_y'] = df['topic_key'].apply(fh.to_dnda_y)
         title = "D & D Alignments"
-        labels = {"ep_x": "←  evil                                            good  →",
-                  "ep_y": "←  chaotic                                       lawful  →"}
+        labels = {"ep_x": "←  evil                                                    good  →",
+                  "ep_y": "←  chaotic                                               lawful  →"}
         high_x = high_y = 3
 
     topics_to_counts = df['topic_key'].value_counts()
@@ -99,10 +99,12 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
 
     fig = px.scatter(df, x='ep_x', y='ep_y', size='dot_size', size_max=15, color='speaker', text='rank', 
                      title=title, labels=labels, color_discrete_map=speaker_color_map, custom_data=custom_data,
-                     range_x=[0,high_x], range_y=[0,high_y], width=800, height=650)
+                     range_x=[0,high_x], range_y=[0,high_y], height=800)
+
+    # fig['layout']['yaxis']['scaleanchor'] = "x"
     
     for index, row in df.iterrows():
-         fig.add_annotation(text=row['speaker'], x=row['ep_x'], y=(row['ep_y'] + 0.12),
+        fig.add_annotation(text=row['speaker'], x=row['ep_x'], y=(row['ep_y'] + 0.12),
                            showarrow=False, font=dict(family="Arial", size=9, color="Black"))
     
     for label, d in topic_types.items():
@@ -114,7 +116,7 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
                            fillcolor=d['color'], opacity=0.5, layer="below", line_width=0))
         
     # add speaker names above scatter points
-    fig.update_layout(shapes=shapes, showlegend=False, margin=dict(l=60, t=60, r=40, b=50),
+    fig.update_layout(shapes=shapes, showlegend=True, legend_title=None, margin=dict(l=60, t=60, r=40, b=50),
                       title_font=dict(size=20), title_x=0.5, font=dict(family="Arial", size=9, color="Black"))
         
     if topic_type == 'mbti':

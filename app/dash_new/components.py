@@ -8,7 +8,7 @@ import app.fig_builder.fig_metadata as fm
 from app.show_metadata import BGCOLORS_TO_TEXT_COLORS
 
 
-def generate_navbar(season_dropdown_options: list, episode_dropdown_options: list, episode: dict) -> dbc.Card:
+def generate_navbar(season_dropdown_options: list) -> dbc.Card:
 
     season_dropdown_menu = []
     for season in season_dropdown_options:
@@ -31,7 +31,7 @@ def generate_navbar(season_dropdown_options: list, episode_dropdown_options: lis
             ])
         ])
     ])
-    
+
     return navbar
 
 
@@ -77,10 +77,11 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
     dash_dt = dash_table.DataTable(
         data=df.to_dict("records"),
         columns=columns,
-        style_header={'backgroundColor': 'white', 'fontWeight': 'bold', 'color': 'black'},
+        style_header={'backgroundColor': 'white', 'fontWeight': 'bold', 'color': 'black', 'position': 'sticky', 'top': '0'},
         style_cell={'textAlign': 'left', 'font-size': '10pt', 'whiteSpace': 'normal', 'height': 'auto'},
         style_data_conditional=style_data_conditional_list,
-        markdown_options={"html": True}
+        markdown_options={"html": True},
+        style_table={'maxHeight': '850px', 'overflowY': 'auto'}
     )
 
     return dash_dt

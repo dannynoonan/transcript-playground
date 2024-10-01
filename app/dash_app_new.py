@@ -40,7 +40,7 @@ def display_page(pathname, search):
     # parse params
     parsed = urllib.parse.urlparse(search)
     parsed_dict = urllib.parse.parse_qs(parsed.query)
-    print(f'parsed_dict={parsed_dict}')
+    utils.hilite_in_logs(f'NEW PAGE LOAD with parsed_dict={parsed_dict}')
 
     if pathname == "/tsp_dash_new/episode-palette":
         # parse show_key from params
@@ -71,34 +71,93 @@ def display_page(pathname, search):
             if isinstance(episode_key, list):
                 episode_key = episode_key[0]
 
-        episode = None
-        for ep in all_episodes:
-            if ep['episode_key'] == episode_key:
-                episode = ep
-                break
-        if not episode:
-            err_msg = f'no episode matching episode_key={episode_key}'
-            print(err_msg)
-            return oopsy.generate_content(err_msg)
+        # episode = None
+        # for ep in all_episodes:
+        #     if ep['episode_key'] == episode_key:
+        #         episode = ep
+        #         break
+        # if not episode:
+        #     err_msg = f'no episode matching episode_key={episode_key}'
+        #     print(err_msg)
+        #     return oopsy.generate_content(err_msg)
 
-        # supplement episode data with line_count and word_count
-        scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
-        episode['line_count'] = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
+        # # supplement episode data with line_count and word_count
+        # scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
+        # episode['line_count'] = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
 
-        dialog_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), episode_key=episode_key)
-        episode_word_counts = dialog_word_counts_response['dialog_word_counts']
-        episode['word_count'] = round(episode_word_counts['_ALL_'])
+        # dialog_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), episode_key=episode_key)
+        # episode_word_counts = dialog_word_counts_response['dialog_word_counts']
+        # episode['word_count'] = round(episode_word_counts['_ALL_'])
 
-        # speakers in episode
-        speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
-        episode_speakers = speaker_episodes_response['speaker_episodes']
-        speaker_dropdown_options = ['ALL'] + [s['speaker'] for s in episode_speakers]
+        # # speakers in episode
+        # speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+        # episode_speakers = speaker_episodes_response['speaker_episodes']
+        # speaker_dropdown_options = ['ALL'] + [s['speaker'] for s in episode_speakers]
 
         # emotions
         emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
 
-        return episode_palette.generate_content(all_seasons, episode_dropdown_options, episode, speaker_dropdown_options, emotion_dropdown_options)
+        return episode_palette.generate_content(episode_key, all_seasons, episode_dropdown_options, emotion_dropdown_options)
     
+
+############ episode core info callbacks
+@dapp_new.callback(
+    Output('episode-title-summary', 'children'),
+    Output('episode-scene-count', 'children'),
+    Output('episode-line-count', 'children'),
+    Output('episode-word-count', 'children'),
+    Output('episode-focal-speakers', 'children'),
+    Output('episode-topics', 'children'),
+    Output('episode-speakers', 'options'),
+    Output('wordcloud-img', 'src'),
+    Input('show-key', 'value'),
+    Input('episode-key', 'value'))    
+def render_episode_summary(show_key: str, episode_key: str):
+    print(f'in render_episode_summary, show_key={show_key} episode_key={episode_key}')
+
+    episode_response = esr.fetch_episode(ShowKey(show_key), episode_key)
+    if not 'es_episode' in episode_response:
+        err_msg = f'no episode matching show_key={show_key} episode_key={episode_key}'
+        print(err_msg)
+        # TODO
+
+    episode = episode_response['es_episode']
+    episode_title_summary = f"Season {episode['season']}, Episode {episode['sequence_in_season']}: \"{episode['title']}\""
+    if 'air_date' in episode:
+        episode_title_summary = f"{episode_title_summary} ({episode['air_date'][:10]})"
+    episode_scene_count = episode['scene_count']
+    if 'focal_speakers' in episode:
+        episode_focal_speakers = ', '.join(episode['focal_speakers'])
+    else:
+        episode_focal_speakers = ''
+    if 'topics_universal_tfidf' in episode:
+        parent_topics = [t['topic_key'].split('.')[0] for t in episode['topics_universal_tfidf']]
+        distinct_parent_topics = list(dict.fromkeys(parent_topics))
+        episode_parent_topics_tfidf = ', '.join(distinct_parent_topics)
+    else:
+        episode_parent_topics_tfidf = ''
+    
+    # supplement episode data with line_count and word_count
+    scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
+    if 'scene_events_by_speaker' in scene_events_by_speaker_response and '_ALL_' in scene_events_by_speaker_response['scene_events_by_speaker']:
+        episode_line_count = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
+    else:
+        episode_line_count = ''
+
+    dialog_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), episode_key=episode_key)
+    if 'dialog_word_counts' in dialog_word_counts_response and '_ALL_' in dialog_word_counts_response['dialog_word_counts']:
+        episode_word_count = round(dialog_word_counts_response['dialog_word_counts']['_ALL_'])
+    else:
+        episode_word_count = ''
+
+    # speakers in episode, for sentiment timeline pulldown
+    speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+    episode_speakers = speaker_episodes_response['speaker_episodes']
+    episode_speaker_list = ['ALL'] + [s['speaker'] for s in episode_speakers]
+
+    wordcloud_img = f"/static/wordclouds/{show_key}/{show_key}_{episode_key}.png"
+
+    return episode_title_summary, episode_scene_count, episode_line_count, episode_word_count, episode_focal_speakers, episode_parent_topics_tfidf, episode_speaker_list, wordcloud_img
 
 
 ############ episode-gantt callbacks
@@ -133,7 +192,7 @@ def render_episode_gantts(show_key: str, episode_key: str, show_layers: list):
     Input('episode-key', 'value'),
     Input('freeze-on', 'value'),
     Input('emotion', 'value'),
-    Input('speaker', 'value'))    
+    Input('episode-speakers', 'value'))    
 def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, freeze_on: str, emotion: str, speaker: str):
     print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
 
@@ -234,15 +293,23 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
     emo_limit = 3
     file_path = f'sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
     if not os.path.isfile(file_path):
-        print(f'No sentiment data found at file_path={file_path}, continuing without it')
+        utils.hilite_in_logs(f'No sentiment data found at file_path={file_path}, continuing without it')
         pass
     else:
         df['emotions'] = ''
         ep_df = pd.read_csv(file_path)
+
+        # NOTE bizarre: converting 'score' to float only needed when callback component invoked by dropdown menu selection, not by full page refresh
+        utils.hilite_in_logs(ep_df)
+        ep_df['score'].apply(lambda x: float(x))
+
         emotions = list(ep_df['emotion'].unique())
+        utils.hilite_in_logs(f'for episode_key={episode_key} emotions={emotions}')
         # speaker_avg_emotions = {}
         for spkr in episode_speaker_names:
             spkr_df = ep_df[ep_df['speaker'] == spkr]
+            # print(f'spkr={spkr}, spkr_df:')
+            # print(spkr_df)
             spkr_emo_avgs = []
             for emo in emotions:
                 emo_df = spkr_df[spkr_df['emotion'] == emo]
@@ -259,8 +326,9 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
     speaker_episode_summary_dt = cmp.pandas_df_to_dash_dt(df, df.columns, 'character', episode_speaker_names, speaker_color_map, 
                                                           numeric_precision_overrides={'scenes': 0, 'lines': 0, 'words': 0})
     
-    utils.hilite_in_logs(speaker_episode_summary_dt)
-
+    print(f'updated speaker_episode_summary_dt for episode_key={episode_key} episode_speaker_names={episode_speaker_names}')
+    # utils.hilite_in_logs(speaker_episode_summary_dt)
+    
     return speaker_episode_frequency_bar_chart, speaker_episode_summary_dt
 
 
@@ -271,9 +339,11 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
     Output('episode-speaker-mbti-dt', 'children'),
     Output('episode-speaker-dnda-dt', 'children'),
     Input('show-key', 'value'),
-    Input('episode-key', 'value'))    
-def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
-    print(f'in render_episode_speaker_topic_scatter, show_key={show_key} episode_key={episode_key}')
+    Input('episode-key', 'value'),
+    Input('mbti-count', 'value'),
+    Input('dnda-count', 'value'))    
+def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_count: int, dnda_count: int):
+    print(f'in render_episode_speaker_topic_scatter, show_key={show_key} episode_key={episode_key} mbti_count={mbti_count} dnda_count={dnda_count}')
 
     # fetch episode speakers
     speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti,topics_dnda')
@@ -286,17 +356,17 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
     speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, episode_speaker_names)
 
     # NOTE ended up not using this data downstream
-    mbti_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:meyersBriggsKiersey')
-    dnda_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:dndAlignments')
+    # mbti_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:meyersBriggsKiersey')
+    # dnda_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:dndAlignments')
 
-    mbti_percent_distrib = mbti_distribution_response["percentile_distribution"]
-    mbti_percent_distrib_list = list(mbti_percent_distrib.values())
-    dnda_percent_distrib = dnda_distribution_response["percentile_distribution"]
-    dnda_percent_distrib_list = list(dnda_percent_distrib.values())
+    # mbti_percent_distrib = mbti_distribution_response["percentile_distribution"]
+    # mbti_percent_distrib_list = list(mbti_percent_distrib.values())
+    # dnda_percent_distrib = dnda_distribution_response["percentile_distribution"]
+    # dnda_percent_distrib_list = list(dnda_percent_distrib.values())
 
     # flatten episode speaker topic data for each episode speaker
-    exploded_speakers_mbti = fh.explode_speaker_topics(episode_speakers, 'mbti', limit_per_speaker=3, percent_distrib_list=mbti_percent_distrib_list)
-    exploded_speakers_dnda = fh.explode_speaker_topics(episode_speakers, 'dnda', limit_per_speaker=3, percent_distrib_list=dnda_percent_distrib_list)
+    exploded_speakers_mbti = fh.explode_speaker_topics(episode_speakers, 'mbti', limit_per_speaker=mbti_count)
+    exploded_speakers_dnda = fh.explode_speaker_topics(episode_speakers, 'dnda', limit_per_speaker=dnda_count)
     mbti_df = pd.DataFrame(exploded_speakers_mbti)
     dnda_df = pd.DataFrame(exploded_speakers_dnda)
     episode_speaker_mbti_scatter = pscat.build_episode_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
@@ -320,22 +390,24 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str):
     # Output('episode-focused-gpt35-treemap', 'figure'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
-    Input('topic-score-type', 'value'))    
-def render_episode_topic_treemap(show_key: str, episode_key: str, topic_score_type: str):
-    print(f'in render_episode_topic_treemap, show_key={show_key} episode_key={episode_key}')
+    Input('universal-genres-score-type', 'value'),
+    Input('universal-genres-gpt35-v2-score-type', 'value'))    
+def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type: str, ug2_score_type: str):
+    print(f'in render_episode_topic_treemap, show_key={show_key} episode_key={episode_key} ug_score_type={ug_score_type} ug2_score_type={ug2_score_type}')
 
     figs = {}
     dts = {}
     # topic_groupings = ['universalGenres', 'universalGenresGpt35_v2', f'focusedGpt35_{show_key}']
     topic_groupings = ['universalGenres', 'universalGenresGpt35_v2']
-    for tg in topic_groupings:
+    topic_score_types = [ug_score_type, ug2_score_type]
+    for i, tg in enumerate(topic_groupings):
         # fetch episode topics, load into df, modify / reformat
         r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
-        df = fh.flatten_and_format_topics_df(df, topic_score_type)
+        df = fh.flatten_and_format_topics_df(df, topic_score_types[i])
         # build treemap fig
-        fig = ptree.build_episode_topic_treemap(df.copy(), tg, topic_score_type, max_per_parent=3)
+        fig = ptree.build_episode_topic_treemap(df.copy(), tg, topic_score_types[i], max_per_parent=3)
         figs[tg] = fig
         # build dash datatable
         parent_topics = df['parent_topic'].unique()

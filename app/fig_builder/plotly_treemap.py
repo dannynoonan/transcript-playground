@@ -10,6 +10,8 @@ def build_episode_topic_treemap(df: pd.DataFrame, topic_grouping: str, score_typ
     
     custom_data = ['topic_name', score_type]
 
+    title = f"Genre mappings model: '{topic_grouping}'"
+
     # limit each parent topic to X child topics, avoids appearance of a parent having higher score simply due to having more children
     # NOTE implementing this revealed how completely useless `raw_score` is because all the boxes end up identically sized
     if max_per_parent:
@@ -22,8 +24,8 @@ def build_episode_topic_treemap(df: pd.DataFrame, topic_grouping: str, score_typ
             if parents_to_counts[row['parent_topic']] > 3:
                 df.drop(index, inplace=True)
 
-    fig = px.treemap(df, path=['parent_topic', 'topic_name'], values=score_type, title=topic_grouping, color='parent_topic',
-                     custom_data=custom_data, color_discrete_map=TOPIC_COLORS, width=800, height=650)
+    fig = px.treemap(df, path=['parent_topic', 'topic_name'], values=score_type, title=title, color='parent_topic',
+                     custom_data=custom_data, color_discrete_map=TOPIC_COLORS, height=800)
     
     fig.update_traces(
         hovertemplate="<br>".join([
@@ -33,6 +35,6 @@ def build_episode_topic_treemap(df: pd.DataFrame, topic_grouping: str, score_typ
         ])
     )
 
-    fig.update_layout(margin=dict(l=30, t=50, r=30, b=30), title_x=0.5)
+    fig.update_layout(margin=dict(l=30, t=40, r=30, b=30), title_x=0.5)
 
     return fig

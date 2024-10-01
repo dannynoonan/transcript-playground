@@ -54,6 +54,7 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
 
     fig.update_layout(xaxis_type='linear', xaxis_title=x_label, autosize=False, margin=dict(r=30, t=30, b=60))
     fig.update_xaxes(range=[x_low, x_high])
+    fig.update_yaxes(autorange=True)
 
     # inject dialog into hover 'text' property
     for gantt_row in fig['data']:
@@ -195,7 +196,7 @@ def build_episode_search_results_gantt(show_key: str, timeline_df: pd.DataFrame,
 
     # inject dialog stored in `hover_text` list into fig['data'] `text` property
     for gantt_row in fig['data']:
-        print(gantt_row)
+        # print(gantt_row)
         if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0 and gantt_row['legendgroup'] == 'rgb(255, 0, 0)':
             # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
             # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced.
