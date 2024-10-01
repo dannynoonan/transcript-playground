@@ -176,10 +176,22 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                             inputStyle={"margin-left": "12px", "margin-right": "4px"},
                             style={"display": "flex", "padding-bottom": "0"}
                         ),
+                        html.Br(),
+                        html.Div(id="episode-similarity-dt"),
                     ]),
                     dbc.Col(md=4, children=[
                         # html.Div(html.Img(src=f"/static/wordclouds/TNG/TNG_{episode_key}.png", width='100%')),
                         html.Div(html.Img(id='wordcloud-img', width='100%')),
+                        html.Br(),
+                        dcc.Checklist(
+                            id="show-similar-episodes-dt",
+                            # className="text-white", 
+                            options=[
+                                {'label': 'Display as table listing', 'value': 'yes'}
+                            ],
+                            value=[],
+                            inputStyle={"margin-left": "4px", "margin-right": "4px"}
+                        )
                     ]), 
                 ]),
             ]),

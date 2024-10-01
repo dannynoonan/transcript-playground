@@ -421,10 +421,12 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
 ############ episode-similarity-scatter callbacks
 @dapp_new.callback(
     Output('episode-similarity-scatter', 'figure'),
+    Output('episode-similarity-dt', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
-    Input('mlt-type', 'value'))    
-def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type: str):
+    Input('mlt-type', 'value'),
+    Input('show-similar-episodes-dt', 'value'))    
+def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type: str, show_dt: list):
     print(f'in render_episode_similarity_scatter, show_key={show_key} episode_key={episode_key} mlt_type={mlt_type}')
 
     season_response = esr.list_seasons(ShowKey(show_key))
@@ -478,7 +480,22 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
 
     episode_similarity_scatter = pscat.build_episode_similarity_scatter(df, seasons)
 
-    return episode_similarity_scatter
+    if 'yes' in show_dt:
+        # NOTE last-minute first draft effort to sync datatable colors with matplotlib/plotly figure color gradient
+        display_cols = ['title', 'season', 'episode', 'score', 'rank', 'flattened_topics']
+        df = df.loc[df['score'] > 0]
+        df = df.loc[df['rank'] > 0]
+        df.sort_values('rank', inplace=True, ascending=True)
+        similar_episode_scores = list(df['score'].values)
+        viridis_discrete_rgbs = fh.matplotlib_gradient_to_rgb_strings('viridis')
+        sim_ep_rgbs = fh.map_range_values_to_gradient(similar_episode_scores, viridis_discrete_rgbs)
+        # sim_ep_rgb_textcolors = {rgb:"Black" for rgb in sim_ep_rgbs}
+        episode_similarity_dt = cmp.pandas_df_to_dash_dt(df, display_cols, 'rank', sim_ep_rgbs, {}, numeric_precision_overrides={'season': 0, 'episode': 0, 'rank': 0})
+        # utils.hilite_in_logs(episode_similarity_dt)
+    else: 
+        episode_similarity_dt = {}
+
+    return episode_similarity_scatter, episode_similarity_dt
 
 
 ############ episode-search callbacks

@@ -1,3 +1,5 @@
+import matplotlib
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from PIL import ImageColor
@@ -196,19 +198,40 @@ def generate_speaker_color_discrete_map(show_key: str, speakers: list) -> dict:
 
 
 def scale_values(values: list, low: int = 0, high: int = 1) -> list:
-    # print(f'low={low} high={high}')
     raw_low = np.min(values)
     raw_high = np.max(values)
     raw_range = raw_high - raw_low
-    # print(f'raw_low={raw_low} raw_high={raw_high} raw_range={raw_range}')
     scaled_range = high - low
-    # print(f'scaled_range={scaled_range}')
     scaled_values = []
     for v in values:
         scaled_v = (v - raw_low) / raw_range * scaled_range + low
-        # scaled_v = scaled_v * scaled_range + low
         scaled_values.append(scaled_v)
     return scaled_values
+
+
+def matplotlib_gradient_to_rgb_strings(gradient_type: str):
+    gradient = plt.cm.get_cmap(gradient_type)
+    rgb_strings = []
+    for c in gradient.colors:
+        mpl_color = matplotlib.colors.to_rgb(c)
+        rgb = tuple([int(c*255) for c in mpl_color])
+        rgb_str = f'rgb{rgb}'.replace(' ', '')
+        rgb_strings.append(rgb_str)
+    return rgb_strings
+
+
+def map_range_values_to_gradient(range_values: list, gradient_values: list) -> list:
+    '''
+    Both 'range_values' and 'gradient_values' are assumed to be sorted
+    '''
+    scaled_range_values = scale_values(range_values, 0, len(gradient_values)-1)
+    discrete_gradient_values = []
+    for v in scaled_range_values:
+        discrete_gradient_values.append(gradient_values[round(v)])
+
+    # TODO incorporate Black vs White font color here?
+
+    return discrete_gradient_values
 
 
 # def flatten_episode_speaker_topics(episode_speakers: list, series_speakers: list = None) -> list:
