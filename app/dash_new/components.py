@@ -62,7 +62,7 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
         # TODO circle back to address how to store special chars in these reference sets
         v_escaped = v.replace("'", "") 
         sdc = {}
-        sdc['if'] = dict(filter_query=f"{{{color_key_col}}} = {v_escaped}")
+        sdc['if'] = dict(filter_query=f"{{{color_key_col}}} = \"{v_escaped}\"")
         sdc['backgroundColor'] = color_map[v]
         sdc['color'] = BGCOLORS_TO_TEXT_COLORS[color_map[v]]
         style_data_conditional_list.append(sdc)

@@ -193,6 +193,7 @@ def build_episode_search_results_gantt(show_key: str, timeline_df: pd.DataFrame,
 
     fig.update_layout(xaxis_type='linear', autosize=False, xaxis_title=x_label, margin=dict(r=30, t=30, b=60))
     fig.update_xaxes(range=[x_low, x_high])
+    fig.update_yaxes(autorange=True)
 
     # inject dialog stored in `hover_text` list into fig['data'] `text` property
     for gantt_row in fig['data']:

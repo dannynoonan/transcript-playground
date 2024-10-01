@@ -266,27 +266,27 @@ def explode_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: i
     topic_field = f'topics_{topic_type}'
     
     exploded_speakers = []
-    for s in speakers:
-        if s['word_count'] < 20 and s['line_count'] < 3:
+    for spkr in speakers:
+        if topic_field not in spkr or (spkr['word_count'] < 20 and spkr['line_count'] < 3):
             continue
         
         # extract each topic (up to topic_limit) into its own flattened speaker item
-        topic_limit = min(limit_per_speaker, len(s[topic_field]))
+        topic_limit = min(limit_per_speaker, len(spkr[topic_field]))
         for i in range(topic_limit):
-            flat_s = s.copy()
-            exploded_speakers.append(flat_s)
-            topic = s[topic_field][i]
-            flat_s['topic_key'] = topic['topic_key']
-            flat_s['topic_name'] = topic['topic_name']
-            flat_s['rank'] = i+1
-            flat_s['dot_size'] = (topic_limit - i) / topic_limit
-            flat_s['score'] = topic['score']
-            flat_s['raw_score'] = topic['raw_score']
+            flat_spkr = spkr.copy()
+            exploded_speakers.append(flat_spkr)
+            topic = spkr[topic_field][i]
+            flat_spkr['topic_key'] = topic['topic_key']
+            flat_spkr['topic_name'] = topic['topic_name']
+            flat_spkr['rank'] = i+1
+            flat_spkr['dot_size'] = (topic_limit - i) / topic_limit
+            flat_spkr['score'] = topic['score']
+            flat_spkr['raw_score'] = topic['raw_score']
             # NOTE sad kazoo this was conceived on a false premise, but keeping it in here for now
             if percent_distrib_list:
-                flat_s['scaled_score'] = utils.normalize_score(topic['raw_score'], percent_distrib_list)
+                flat_spkr['scaled_score'] = utils.normalize_score(topic['raw_score'], percent_distrib_list)
             # extract each topic (up to topic_limit) into its own flattened speaker item
-            del flat_s[topic_field]
+            del flat_spkr[topic_field]
 
     return exploded_speakers
 
@@ -301,19 +301,19 @@ def flatten_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: i
     topic_field = f'topics_{topic_type}'
     
     flattened_speakers = []
-    for s in speakers:
-        if s['word_count'] < 20 and s['line_count'] < 3:
+    for spkr in speakers:
+        if topic_field not in spkr or (spkr['word_count'] < 20 and spkr['line_count'] < 3):
             continue
         
         # extract each topic (up to topic_limit) into its own flattened speaker item
-        topic_limit = min(limit_per_speaker, len(s[topic_field]))
+        topic_limit = min(limit_per_speaker, len(spkr[topic_field]))
         topics = []
         for i in range(topic_limit):
-            topic = s[topic_field][i]
+            topic = spkr[topic_field][i]
             topics.append(topic['topic_key'])
-        flat_s = s.copy()
-        flat_s[topic_field] = ', '.join(topics)
-        flattened_speakers.append(flat_s)
+        flat_spkr = spkr.copy()
+        flat_spkr[topic_field] = ', '.join(topics)
+        flattened_speakers.append(flat_spkr)
 
     return flattened_speakers
 
