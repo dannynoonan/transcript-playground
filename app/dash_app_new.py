@@ -300,16 +300,13 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
         ep_df = pd.read_csv(file_path)
 
         # NOTE bizarre: converting 'score' to float only needed when callback component invoked by dropdown menu selection, not by full page refresh
-        utils.hilite_in_logs(ep_df)
+        # utils.hilite_in_logs(ep_df)
         ep_df['score'].apply(lambda x: float(x))
 
         emotions = list(ep_df['emotion'].unique())
-        utils.hilite_in_logs(f'for episode_key={episode_key} emotions={emotions}')
-        # speaker_avg_emotions = {}
+        # utils.hilite_in_logs(f'for episode_key={episode_key} emotions={emotions}')
         for spkr in episode_speaker_names:
             spkr_df = ep_df[ep_df['speaker'] == spkr]
-            # print(f'spkr={spkr}, spkr_df:')
-            # print(spkr_df)
             spkr_emo_avgs = []
             for emo in emotions:
                 emo_df = spkr_df[spkr_df['emotion'] == emo]
@@ -326,7 +323,7 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
     speaker_episode_summary_dt = cmp.pandas_df_to_dash_dt(df, df.columns, 'character', episode_speaker_names, speaker_color_map, 
                                                           numeric_precision_overrides={'scenes': 0, 'lines': 0, 'words': 0})
     
-    print(f'updated speaker_episode_summary_dt for episode_key={episode_key} episode_speaker_names={episode_speaker_names}')
+    # print(f'updated speaker_episode_summary_dt for episode_key={episode_key} episode_speaker_names={episode_speaker_names}')
     # utils.hilite_in_logs(speaker_episode_summary_dt)
     
     return speaker_episode_frequency_bar_chart, speaker_episode_summary_dt

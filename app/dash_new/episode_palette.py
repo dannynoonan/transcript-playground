@@ -164,34 +164,34 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                 html.H3("Similar episodes"),
                 dbc.Row([
                     dbc.Col(md=8, children=[
-                        html.Div(dcc.Graph(id="episode-similarity-scatter") ),
-                        dcc.RadioItems(
-                            id="mlt-type",
-                            className="text-white", 
-                            options=[
-                                {'label': 'keyword-based', 'value': 'tfidf'},
-                                {'label': 'embeddings-based', 'value': 'openai_embeddings'},
-                            ],
-                            value='tfidf',
-                            inputStyle={"margin-left": "12px", "margin-right": "4px"},
-                            style={"display": "flex", "padding-bottom": "0"}
-                        ),
-                        html.Br(),
+                        html.Div(dcc.Graph(id="episode-similarity-scatter")),
+                        html.Div(className="text-white", style={"display": "flex", "padding-bottom": "0"}, children=[
+                            dcc.RadioItems(
+                                id="mlt-type",
+                                className="text-white", 
+                                options=[
+                                    {'label': 'keyword-based', 'value': 'tfidf'},
+                                    {'label': 'embeddings-based', 'value': 'openai_embeddings'},
+                                ],
+                                value='tfidf',
+                                inputStyle={"margin-left": "12px", "margin-right": "4px"},
+                                style={"display": "flex", "padding-bottom": "0"}
+                            ),
+                            # TODO align with right side of episode-similarity-scatter
+                            dcc.Checklist(
+                                id="show-similar-episodes-dt",
+                                options=[
+                                    {'label': 'Display as table listing', 'value': 'yes'}
+                                ],
+                                value=[],
+                                inputStyle={"text-align": "right", "margin-left": "400px", "margin-right": "4px"}
+                            ),
+                        ]),
                         html.Div(id="episode-similarity-dt"),
                     ]),
                     dbc.Col(md=4, children=[
                         # html.Div(html.Img(src=f"/static/wordclouds/TNG/TNG_{episode_key}.png", width='100%')),
                         html.Div(html.Img(id='wordcloud-img', width='100%')),
-                        html.Br(),
-                        dcc.Checklist(
-                            id="show-similar-episodes-dt",
-                            # className="text-white", 
-                            options=[
-                                {'label': 'Display as table listing', 'value': 'yes'}
-                            ],
-                            value=[],
-                            inputStyle={"margin-left": "4px", "margin-right": "4px"}
-                        )
                     ]), 
                 ]),
             ]),
