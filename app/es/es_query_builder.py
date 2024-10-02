@@ -728,29 +728,6 @@ def search_speaker_episode_topics(topic_grouping: str, topic_key: str, show_key:
     return s
 
 
-# def fetch_speaker_topics_for_episode(show_key: str, episode_key: str, topic_grouping: str = None, limit: int = None, min_word_count: int = None) -> Search:
-#     """
-#     Fetch speaker_topics for episode via speaker_episode_topics index
-#     """
-#     print(f'begin fetch_speaker_topics_for_episode for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping}')
-
-#     if not limit:
-#         limit = 100
-
-#     s = Search(index='speaker_episode_topics')
-#     s = s.extra(size=limit)
-
-#     s = s.filter('match', show_key=show_key)
-#     s = s.filter('match', episode_key=episode_key)
-#     s = s.filter('match', topic_grouping=topic_grouping)
-#     if min_word_count:
-#         s = s.filter('range', word_count={'gt': min_word_count})
-
-#     s = s.sort({'score': {'order': 'desc'}})
-
-#     return s
-
-
 @DeprecationWarning
 def search_speakers_by_topic(topic_grouping: str, topic_key: str, is_parent: bool = False, show_key: str = None, min_word_count: int = None) -> Search:
     print(f'begin search_speakers_by_topic for topic={topic_grouping}:{topic_key} is_parent={is_parent} show_key={show_key} min_word_count={min_word_count}')

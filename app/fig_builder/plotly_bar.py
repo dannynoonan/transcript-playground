@@ -10,6 +10,7 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     print(f'in build_speaker_frequency_bar show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season} sequence_in_season={sequence_in_season} animate={animate}')
 
     animation_frame = None
+    title = 'Character frequency'
 
     # in this context:
     #   - `aggregate_ratio=True`: intra-season episode-by-episode tabulation using sum()
@@ -25,6 +26,7 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
                 season = 1
             if not sequence_in_season:
                 sequence_in_season = 1
+            title = f'{title} in Season {season} Episode {sequence_in_season}'
             df = df.loc[df['season'] == season]
             df = df.loc[df['sequence_in_season'] <= sequence_in_season]
             x = f'{span_granularity}_count'
@@ -38,6 +40,7 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
         else:
             if season:
                 df = df.loc[df['season'] == season]
+                title = f'{title} in Season {season}'
         x = f'{span_granularity}_count'
         # if `span_granularity='episode'` dynamically populate `episode_count` column using `scene_count` column to enable episode tabulation
         if span_granularity == 'episode':
@@ -55,7 +58,7 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
 
     # custom_data = []  # TODO
 
-    fig = px.bar(sum_df, x=x, y='speaker', color='speaker',
+    fig = px.bar(sum_df, x=x, y='speaker', color='speaker', title=title,
                 # custom_data=custom_data, hover_name=cols.VOTE_WEIGHT, hover_data=hover_data,
                 # text=cols.EC_VOTES, 
                  animation_frame=animation_frame, # ignored if df is for single year

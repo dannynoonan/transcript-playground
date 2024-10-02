@@ -1,0 +1,161 @@
+import dash_bootstrap_components as dbc
+from dash import dcc, html
+
+import app.dash_new.components as cmp
+
+
+def generate_content(show_key: str, all_seasons: list, episode_dropdown_options: list, emotion_dropdown_options: list) -> html.Div:
+    navbar = cmp.generate_navbar(all_seasons)
+
+    content = html.Div([
+        navbar,
+        dbc.Card(className="bg-dark", children=[
+
+            # series summary
+            dbc.CardBody([
+                dbc.Row([
+                    dbc.Col(md=8, children=[
+                        html.H3(className="text-white", children=[html.B(id='series-title-summary'), " (", html.Span(id='series-air-date-range'), ")"]),
+                        html.H5(className="text-white", style={'display': 'flex'}, children=[
+                            html.Div(style={"margin-right": "30px"}, children=[
+                                html.B(id='series-season-count'), " seasons, ", html.B(id='series-episode-count'), " episodes, ", 
+                                html.B(id='series-scene-count'), " scenes, ", html.B(id='series-line-count'), " lines, ", html.B(id='series-word-count'), " words",
+                            ]),
+                            # html.Div(style={"margin-right": "10px"}, children=[
+                            #     "Predominant genres: ", html.Span(id='series-topics')
+                            # ]),
+                        ]),
+                    ]),
+                    dbc.Col(md=4, children=[
+                        dbc.Row([ 
+                            dbc.Col(md=6, children=[
+                                html.Div([
+                                    "Show: ", dcc.Dropdown(id="show-key", options=[show_key], value=show_key)
+                                ]),
+                            ]),
+                        ]),
+                    ]),
+                ]),
+            ]),
+
+            # series continuity timelines for character / location / topic / search
+            dbc.CardBody([
+                dbc.Row([
+                    dbc.Col(md=12, children=[
+                        dbc.Tabs(className="nav nav-tabs", children=[
+                            dbc.Tab(label="Characters", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row(justify="evenly", children=[
+                                    dcc.Graph(id="series-speakers-gantt"),
+                                ])
+                            ]),
+                            dbc.Tab(label="Locations", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row(justify="evenly", children=[
+                                    dcc.Graph(id="series-locations-gantt"),
+                                ]),
+                            ]),
+                            dbc.Tab(label="Topics", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row(justify="evenly", children=[
+                                    dcc.Graph(id="series-topics-gantt"),
+                                ]),
+                            ]),
+                            dbc.Tab(label="Search", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row([
+                                    html.H3(children=["Search results gantt chart visualization for query \"", html.Span(id='qt-display'), "\""]),
+                                    dbc.Col(md=2, children=[
+                                        html.Div([
+                                            "Query term: ",
+                                            html.Br(),
+                                            dcc.Input(
+                                                id="qt",
+                                                type="text",
+                                                placeholder="enter text to search",
+                                                size=30,
+                                                autoFocus=True,
+                                                debounce=True,
+                                                # required=True,
+                                            )
+                                        ]),
+                                    ]),
+                                    # NOTE: I believe this button is a placebo: it's a call to action, but simply exiting the qt field invokes the callback 
+                                    dbc.Col(md=2, children=[
+                                        html.Div([
+                                            html.Br(),
+                                            html.Button(
+                                                'Search', 
+                                                id='qt-submit',
+                                            ),
+                                        ]),
+                                    ]),
+                                ]),
+                                html.Br(),
+                                dbc.Row(justify="evenly", children=[
+                                    dcc.Graph(id="series-search-results-gantt-new"),
+                                ]),
+                            ]),
+                        ]),
+                    ]),
+                ]),
+            ]),
+
+            # series speaker counts
+            dbc.CardBody([
+                dbc.Row([
+                    html.H3("Character chatter"),
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            "Span granularity: ",
+                            dcc.Dropdown(
+                                id="span-granularity",
+                                options=['episode', 'scene', 'line', 'word'],
+                                value='line',
+                            )
+                        ]),
+                    ]),
+                ]),
+                html.Br(),
+                dbc.Row(justify="evenly", children=[
+                    dbc.Col(md=6, children=[
+                        html.Div([
+                            "Season ",
+                            html.Br(),
+                            dcc.Slider(
+                                id="character-chatter-season",
+                                min=0,
+                                max=7,
+                                step=None,
+                                marks={
+                                    int(y): {'label': str(y), 'style': {'transform': 'rotate(45deg)', 'color': 'white'}}
+                                    for y in range(0,8)
+                                },
+                                value=1,
+                            ),
+                            html.Br(),
+                            dcc.Graph(id="speaker-season-frequency-bar-chart"),
+                        ]),
+                    ]),
+                    dbc.Col(md=6, children=[
+                        html.Div([
+                            "Episode ",
+                            html.Br(),
+                            dcc.Slider(
+                                id="character-chatter-sequence-in-season",
+                                min=1,
+                                max=25,
+                                step=None,
+                                marks={
+                                    int(y): {'label': str(y), 'style': {'transform': 'rotate(45deg)', 'color': 'white'}}
+                                    for y in range(1,26)
+                                },
+                                value=1,
+                            ),
+                            html.Br(),
+                            dcc.Graph(id="speaker-episode-frequency-bar-chart"),
+                        ]),
+                    ]),
+                ]),
+                html.Br(),
+            ]),    
+        ])
+    ])
+
+    return content

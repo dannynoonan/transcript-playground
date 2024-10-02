@@ -4,7 +4,7 @@ from dash import dcc, html
 import app.dash_new.components as cmp
 
 
-def generate_content(episode_key: str, all_seasons: list, episode_dropdown_options: list, emotion_dropdown_options: list) -> html.Div:
+def generate_content(show_key: str, episode_key: str, all_seasons: list, episode_dropdown_options: list, emotion_dropdown_options: list) -> html.Div:
     navbar = cmp.generate_navbar(all_seasons)
 
     content = html.Div([
@@ -37,7 +37,7 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                         dbc.Row([ 
                             dbc.Col(md=6, children=[
                                 html.Div([
-                                    "Show: ", dcc.Dropdown(id="show-key", options=['TNG', 'GoT'], value='TNG')
+                                    "Show: ", dcc.Dropdown(id="show-key", options=[show_key], value=show_key)
                                 ]),
                             ]),
                             dbc.Col(md=6, children=[
