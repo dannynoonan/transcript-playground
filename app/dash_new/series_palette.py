@@ -25,13 +25,33 @@ def generate_content(show_key: str, all_seasons: list, episode_dropdown_options:
                             #     "Predominant genres: ", html.Span(id='series-topics')
                             # ]),
                         ]),
+                        html.Br(),
+                        html.Div(dcc.Graph(id="all-series-episodes-scatter")),
+                        html.Div(className="text-white", style={"display": "flex", "padding-bottom": "0"}, children=[
+                            dcc.Checklist(
+                                id="show-all-series-episodes-dt",
+                                options=[
+                                    {'label': 'Display as table listing', 'value': 'yes'}
+                                ],
+                                value=[],
+                                inputStyle={"margin-left": "12px", "margin-right": "4px"},
+                            ),
+                        ]),
+                        html.Div(id="all-series-episodes-dt"),
                     ]),
                     dbc.Col(md=4, children=[
                         dbc.Row([ 
+                            dbc.Col(md=6),
                             dbc.Col(md=6, children=[
                                 html.Div([
                                     "Show: ", dcc.Dropdown(id="show-key", options=[show_key], value=show_key)
                                 ]),
+                            ]),
+                        ]),
+                        html.Br(),
+                        dbc.Row([ 
+                            dbc.Col(md=12, children=[
+                                html.Div(html.Img(id='series-wordcloud-img', width='100%'))
                             ]),
                         ]),
                     ]),
@@ -60,13 +80,13 @@ def generate_content(show_key: str, all_seasons: list, episode_dropdown_options:
                             ]),
                             dbc.Tab(label="Search", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row([
-                                    html.H3(children=["Search results gantt chart visualization for query \"", html.Span(id='qt-display'), "\""]),
+                                    html.H3(children=["Search results gantt chart visualization for query \"", html.Span(id='series-dialog-qt-display'), "\""]),
                                     dbc.Col(md=2, children=[
                                         html.Div([
                                             "Query term: ",
                                             html.Br(),
                                             dcc.Input(
-                                                id="qt",
+                                                id="series-dialog-qt",
                                                 type="text",
                                                 placeholder="enter text to search",
                                                 size=30,
@@ -90,6 +110,8 @@ def generate_content(show_key: str, all_seasons: list, episode_dropdown_options:
                                 html.Br(),
                                 dbc.Row(justify="evenly", children=[
                                     dcc.Graph(id="series-search-results-gantt-new"),
+                                    html.Br(),
+                                    html.Div(id="series-search-results-dt"),
                                 ]),
                             ]),
                         ]),
@@ -155,6 +177,16 @@ def generate_content(show_key: str, all_seasons: list, episode_dropdown_options:
                 ]),
                 html.Br(),
             ]),    
+
+            # series speaker listing
+            dbc.CardBody([
+                html.H3("Characters in series"),
+                dbc.Row([
+                    dbc.Col(md=12, children=[
+                        html.Div(id="speaker-listing-dt"),
+                    ]),
+                ]),
+            ]),
         ])
     ])
 

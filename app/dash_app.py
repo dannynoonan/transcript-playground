@@ -470,7 +470,8 @@ def render_series_search_results_gantt(show_key: str, qt: str, qt_submit: bool =
     #     return None, show_key, qt
     # print(f"len(search_response['matches'])={len(search_response['matches'])}")
     # print(f"len(series_gantt_response['episode_speakers_sequence'])={len(series_gantt_response['episode_speakers_sequence'])}")
-    series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
+    timeline_df = pd.DataFrame(series_gantt_response['episode_speakers_sequence'])
+    series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, timeline_df, search_response['matches'])
 
     return series_search_results_gantt, show_key, qt
 

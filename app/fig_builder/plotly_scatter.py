@@ -8,7 +8,7 @@ import app.fig_builder.fig_metadata as fm
 
 
 def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figure:
-    print(f"in build_episode_similarity_scatter len(df)={len(df)}")
+    print(f"in build_episode_similarity_scatter len(df)={len(df)} seasons={seasons}")
     
     # rename 'sequence_in_season' to 'episode' for display
     df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
@@ -41,6 +41,37 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
     fig['data'][1]['marker']['color'] = 'Silver'
     fig['data'][2]['marker']['color'] = 'Black'
     fig['data'][2]['marker']['line'] = dict(width=3, color='Yellow')
+
+    return fig
+
+
+def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list) -> go.Figure:
+    print(f"in build_all_series_episodes_scatter len(df)={len(df)} seasons={seasons}")
+    
+    # rename 'sequence_in_season' to 'episode' for display
+    df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
+
+    # ad-hoc method of flattening topic metadata for hovertemplate display
+    df['flattened_topics'] = df['topics_universal_tfidf'].apply(fh.flatten_topics)
+
+    custom_data = ['title', 'season', 'episode', 'air_date', 'focal_speakers', 'flattened_topics']
+    # custom_data = ['title', 'season', 'episode', 'focal_speakers', 'flattened_topics']
+    
+    fig = px.scatter(df, x='episode', y='season', custom_data=custom_data)
+                    
+    fig.update_traces(
+        hovertemplate="<br>".join([
+            "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b>",
+            "Date: %{customdata[3]}",
+            "Focal characters: %{customdata[4]}",
+            "Categories: %{customdata[5]}"
+        ])
+    )    
+
+    fig.update_yaxes(autorange="reversed")
+    
+    fig.update_layout(showlegend=False, margin=dict(t=30, b=60), 
+                      yaxis=dict(tickmode='array', tickvals=seasons, ticktext=[f'Season {s}' for s in seasons]))
 
     return fig
 

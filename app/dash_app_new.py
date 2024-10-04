@@ -121,7 +121,7 @@ def display_page(pathname, search):
     Output('episode-focal-speakers', 'children'),
     Output('episode-topics', 'children'),
     Output('episode-speakers', 'options'),
-    Output('wordcloud-img', 'src'),
+    Output('episode-wordcloud-img', 'src'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'))    
 def render_episode_summary(show_key: str, episode_key: str):
@@ -134,42 +134,42 @@ def render_episode_summary(show_key: str, episode_key: str):
         # TODO
 
     episode = episode_response['es_episode']
-    episode_title_summary = f"Season {episode['season']}, Episode {episode['sequence_in_season']}: \"{episode['title']}\""
+    title_summary = f"Season {episode['season']}, Episode {episode['sequence_in_season']}: \"{episode['title']}\""
     if 'air_date' in episode:
-        episode_title_summary = f"{episode_title_summary} ({episode['air_date'][:10]})"
-    episode_scene_count = episode['scene_count']
+        title_summary = f"{title_summary} ({episode['air_date'][:10]})"
+    scene_count = episode['scene_count']
     if 'focal_speakers' in episode:
-        episode_focal_speakers = ', '.join(episode['focal_speakers'])
+        focal_speakers = ', '.join(episode['focal_speakers'])
     else:
-        episode_focal_speakers = ''
+        focal_speakers = ''
     if 'topics_universal_tfidf' in episode:
         parent_topics = [t['topic_key'].split('.')[0] for t in episode['topics_universal_tfidf']]
         distinct_parent_topics = list(dict.fromkeys(parent_topics))
-        episode_parent_topics_tfidf = ', '.join(distinct_parent_topics)
+        parent_topics_tfidf = ', '.join(distinct_parent_topics)
     else:
-        episode_parent_topics_tfidf = ''
+        parent_topics_tfidf = ''
     
     # supplement episode data with line_count and word_count
     scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
     if 'scene_events_by_speaker' in scene_events_by_speaker_response and '_ALL_' in scene_events_by_speaker_response['scene_events_by_speaker']:
-        episode_line_count = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
+        line_count = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
     else:
-        episode_line_count = ''
+        line_count = ''
 
     dialog_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), episode_key=episode_key)
     if 'dialog_word_counts' in dialog_word_counts_response and '_ALL_' in dialog_word_counts_response['dialog_word_counts']:
-        episode_word_count = round(dialog_word_counts_response['dialog_word_counts']['_ALL_'])
+        word_count = round(dialog_word_counts_response['dialog_word_counts']['_ALL_'])
     else:
-        episode_word_count = ''
+        word_count = ''
 
     # speakers in episode, for sentiment timeline pulldown
     speaker_episodes_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
-    episode_speakers = speaker_episodes_response['speaker_episodes']
-    episode_speaker_list = ['ALL'] + [s['speaker'] for s in episode_speakers]
+    speaker_episodes = speaker_episodes_response['speaker_episodes']
+    episode_speakers = ['ALL'] + [s['speaker'] for s in speaker_episodes]
 
     wordcloud_img = f"/static/wordclouds/{show_key}/{show_key}_{episode_key}.png"
 
-    return episode_title_summary, episode_scene_count, episode_line_count, episode_word_count, episode_focal_speakers, episode_parent_topics_tfidf, episode_speaker_list, wordcloud_img
+    return title_summary, scene_count, line_count, word_count, focal_speakers, parent_topics_tfidf, episode_speakers, wordcloud_img
 
 
 ############ episode gantt callbacks
@@ -598,6 +598,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
     Output('series-line-count', 'children'),
     Output('series-word-count', 'children'),
     Output('series-air-date-range', 'children'),
+    Output('series-wordcloud-img', 'src'),
     # Output('series-topics', 'children'),
     Input('show-key', 'value'))    
 def render_series_summary(show_key: str):
@@ -671,9 +672,54 @@ def render_series_summary(show_key: str):
 
     air_date_range = f"{first_episode_in_series['air_date'][:10]} - {last_episode_in_series['air_date'][:10]}"
 
-    # print(f'stats_by_season={stats_by_season}')
+    wordcloud_img = f"/static/wordclouds/{show_key}/{show_key}_SERIES.png"
 
-    return series_title_summary, season_count, episode_count, scene_count, line_count, word_count, air_date_range
+    return series_title_summary, season_count, episode_count, scene_count, line_count, word_count, air_date_range, wordcloud_img
+
+
+############ all series episodes scatter
+@dapp_new.callback(
+    Output('all-series-episodes-scatter', 'figure'),
+    # Output('all-series-episodes-dt', 'children'),
+    Input('show-key', 'value'))
+    # Input('show-all-series-episodes-dt', 'value'))    
+def render_all_series_episodes_scatter(show_key: str):
+    print(f'in render_all_series_episodes_scatter, show_key={show_key}')
+
+    season_response = esr.list_seasons(ShowKey(show_key))
+    seasons = season_response['seasons']
+        
+    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+    all_episodes = simple_episodes_response['episodes']
+    # all_episodes_dict = {episode['episode_key']:episode for episode in all_episodes}
+    # all_episodes = list(all_episodes_dict.values())
+
+    # load all episodes into dataframe
+    df = pd.DataFrame(all_episodes)
+    df['air_date'] = df['air_date'].apply(lambda x: x[:10])
+
+    cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'focal_speakers', 'focal_locations', 
+                    'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
+
+    df = df[cols_to_keep]
+
+    all_series_episodes_scatter = pscat.build_all_series_episodes_scatter(df, seasons)
+
+    # if 'yes' in show_dt:
+    #     # NOTE last-minute first draft effort to sync datatable colors with matplotlib/plotly figure color gradient
+    #     display_cols = ['title', 'season', 'episode', 'score', 'rank', 'flattened_topics']
+    #     df = df.loc[df['score'] > 0]
+    #     df = df.loc[df['rank'] > 0]
+    #     df.sort_values('rank', inplace=True, ascending=True)
+    #     similar_episode_scores = list(df['score'].values)
+    #     viridis_discrete_rgbs = fh.matplotlib_gradient_to_rgb_strings('viridis')
+    #     sim_ep_rgbs = fh.map_range_values_to_gradient(similar_episode_scores, viridis_discrete_rgbs)
+    #     # sim_ep_rgb_textcolors = {rgb:"Black" for rgb in sim_ep_rgbs}
+    #     episode_similarity_dt = cmp.pandas_df_to_dash_dt(df, display_cols, 'rank', sim_ep_rgbs, {}, numeric_precision_overrides={'season': 0, 'episode': 0, 'rank': 0})
+    # else: 
+    #     episode_similarity_dt = {}
+
+    return all_series_episodes_scatter
 
 
 ############ series speakers gantt callback
@@ -758,14 +804,15 @@ def render_series_topics_gantt(show_key: str):
 
 ############ series search gantt callback
 @dapp_new.callback(
+    Output('series-dialog-qt-display', 'children'),
     Output('series-search-results-gantt-new', 'figure'),
-    Output('qt-display', 'children'),
+    Output('series-search-results-dt', 'children'),
     Input('show-key', 'value'),
-    Input('qt', 'value'),
+    Input('series-dialog-qt', 'value'),
     # NOTE: I believe 'qt-submit' is a placebo: it's a call to action, but simply exiting the qt field invokes the callback
     Input('qt-submit', 'value'))    
-def render_series_search_gantt(show_key: str, qt: str, qt_submit: bool = False):
-    print(f'in render_series_search_gantt, show_key={show_key} qt={qt} qt_submit={qt_submit}')
+def render_series_search_gantt(show_key: str, series_dialog_qt: str, qt_submit: bool = False):
+    print(f'in render_series_search_gantt, show_key={show_key} series_dialog_qt={series_dialog_qt} qt_submit={qt_submit}')
 
     # execute search query and filter response into series gantt charts
 
@@ -786,16 +833,35 @@ def render_series_search_gantt(show_key: str, qt: str, qt_submit: bool = False):
     # search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
     # series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, qt, search_response['matches'], speaker_gantt_sequence_df)
 
-    series_gantt_response = esr.generate_series_speaker_gantt_sequence(ShowKey(show_key))
-    search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
-    # if 'matches' not in search_response or len(search_response['matches']) == 0:
-    #     print(f"no matches for show_key={show_key} qt=`{qt}` qt_submit=`{qt_submit}`")
-    #     return None, show_key, qt
-    # print(f"len(search_response['matches'])={len(search_response['matches'])}")
-    # print(f"len(series_gantt_response['episode_speakers_sequence'])={len(series_gantt_response['episode_speakers_sequence'])}")
-    series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, search_response['matches'], series_gantt_response['episode_speakers_sequence'])
+    if series_dialog_qt:
+        series_gantt_response = esr.generate_series_speaker_gantt_sequence(ShowKey(show_key))
+        search_response = esr.search_scene_events(ShowKey(show_key), dialog=series_dialog_qt)
+        # if 'matches' not in search_response or len(search_response['matches']) == 0:
+        #     print(f"no matches for show_key={show_key} qt=`{qt}` qt_submit=`{qt_submit}`")
+        #     return None, show_key, qt
+        # print(f"len(search_response['matches'])={len(search_response['matches'])}")
+        # print(f"len(series_gantt_response['episode_speakers_sequence'])={len(series_gantt_response['episode_speakers_sequence'])}")
+        timeline_df = pd.DataFrame(series_gantt_response['episode_speakers_sequence'])
+        series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, timeline_df, search_response['matches'])
 
-    return series_search_results_gantt, qt
+        matching_lines_df = timeline_df.loc[timeline_df['matching_line_count'] > 0]
+
+        # build dash datatable
+        matching_lines_df.rename(columns={'Task': 'character', 'sequence_in_season': 'episode'}, inplace=True)
+        matching_speakers = matching_lines_df['character'].unique()
+        speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, matching_speakers)
+        # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
+        display_cols = ['episode_key', 'episode_title', 'count', 'season', 'episode', 'info', 'matching_line_count', 'matching_lines']
+        episode_search_results_dt = cmp.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'episode_key', matching_speakers, speaker_color_map, 
+                                                            numeric_precision_overrides={'count': 0, 'season': 0, 'episode': 0, 'matching_line_count': 0})
+
+        # out_text = f"{scene_event_count} lines matching query '{qt}'"
+
+    else:
+        series_search_results_gantt = {}
+        episode_search_results_dt = {}
+
+    return series_dialog_qt, series_search_results_gantt, episode_search_results_dt
 
 
 ############ speaker frequency bar chart callback
@@ -832,6 +898,59 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
     speaker_episode_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=True, season=season, sequence_in_season=sequence_in_season)
 
     return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart
+
+
+@dapp_new.callback(
+    # Output('speaker-qt-display', 'children'),
+    Output('speaker-listing-dt', 'children'),
+    # Output('speaker-matches-dt', 'children'),
+    Input('show-key', 'value'))
+    # Input('speaker-qt', 'value')) 
+def render_speaker_listing_dt(show_key: str):
+    print(f'in render_speaker_listing_dt, show_key={show_key}')   
+# def render_speaker_listing_dt(show_key: str, speaker_qt: str):
+#     print(f'in render_speaker_listing_dt, show_key={show_key} speaker_qt={speaker_qt}')
+
+    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti')
+    indexed_speakers = indexed_speakers_response['speakers']
+    indexed_speakers = fh.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
+    indexed_speakers = fh.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
+    
+    speakers_df = pd.DataFrame(indexed_speakers)
+
+	# # TODO well THIS is inefficient...
+    # indexed_speaker_keys = [s['speaker'] for s in indexed_speakers]
+    # speaker_aggs_response = esr.composite_speaker_aggs(show_key)
+    # speaker_aggs = speaker_aggs_response['speaker_agg_composite']
+    # non_indexed_speakers = [s for s in speaker_aggs if s['speaker'] not in indexed_speaker_keys]
+
+    speaker_names = [s['speaker'] for s in indexed_speakers]
+
+    speakers_df.rename(columns={'speaker': 'character', 'scene_count': 'scenes', 'line_count': 'lines', 'word_count': 'words', 'season_count': 'seasons', 
+                                'episode_count': 'episodes', 'actor_names': 'actor(s)', 'topics_mbti': 'mbti'}, inplace=True)
+    display_cols = ['character', 'aka', 'actor(s)', 'seasons', 'episodes', 'scenes', 'lines', 'words', 'mbti']
+
+    # replace actor nan values with empty string, flatten list into string
+    speakers_df['actor(s)'].fillna('', inplace=True)
+    speakers_df['actor(s)'] = speakers_df['actor(s)'].apply(lambda x: ', '.join(x))
+
+    speaker_colors = fh.generate_speaker_color_discrete_map(show_key, speaker_names)
+
+    speaker_listing_dt = cmp.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
+                                                  numeric_precision_overrides={'seasons': 0, 'episodes': 0, 'scenes': 0, 'lines': 0, 'words': 0})
+
+    # print('speaker_listing_dt:')
+    # utils.hilite_in_logs(speaker_listing_dt)
+
+    # speaker_matches = []
+    # if speaker_qt:
+    # 	# speaker_qt_display = speaker_qt
+    #     speaker_search_response = esr.search_speakers(speaker_qt, show_key=show_key)
+    #     speaker_matches = speaker_search_response['speaker_matches']
+    #     speaker_matches_dt = None
+
+    # return speaker_qt, speaker_listing_dt, speaker_matches_dt
+    return speaker_listing_dt
 
 
 if __name__ == "__main__":

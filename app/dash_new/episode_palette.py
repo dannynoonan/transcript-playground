@@ -191,7 +191,7 @@ def generate_content(show_key: str, episode_key: str, all_seasons: list, episode
                     ]),
                     dbc.Col(md=4, children=[
                         # html.Div(html.Img(src=f"/static/wordclouds/TNG/TNG_{episode_key}.png", width='100%')),
-                        html.Div(html.Img(id='wordcloud-img', width='100%')),
+                        html.Div(html.Img(id='episode-wordcloud-img', width='100%')),
                     ]), 
                 ]),
             ]),

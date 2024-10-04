@@ -41,7 +41,8 @@ url_bar_and_content_div = html.Div([
 ])
 
 
-def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: str, conditional_color_keys: list, text_color_map: dict, numeric_precision_overrides: dict = None) -> dash_table.DataTable:
+def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: str, conditional_color_keys: list, text_color_map: dict, 
+                         numeric_precision_overrides: dict = None) -> dash_table.DataTable:
     '''
     Turn pandas dataframe into dash_table.DataTable
     '''
@@ -68,6 +69,7 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
             # If v isn't escaped, `if: filter_query` block will cause the page to infinitely reload. Escaping causes the color_map match to fail.
             # TODO circle back to address how to store special chars in these reference sets
             v_escaped = v.replace("'", "") 
+            v_escaped = v.replace("\"", "") 
             sdc['if'] = dict(filter_query=f"{{{color_key_col}}} = \"{v_escaped}\"")
             sdc['backgroundColor'] = text_color_map[v]
             if text_color_map[v] in BGCOLORS_TO_TEXT_COLORS:

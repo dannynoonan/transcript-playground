@@ -213,13 +213,11 @@ def build_episode_search_results_gantt(show_key: str, timeline_df: pd.DataFrame,
     return fig
 
 
-def build_series_search_results_gantt(show_key: str, matching_episodes: list, episode_speakers_sequence: list) -> go.Figure:
-    print(f'in build_series_search_results_gantt show_key={show_key} len(matching_episodes)={len(matching_episodes)}, len(episode_speakers_sequence)={len(episode_speakers_sequence)}')
+def build_series_search_results_gantt(show_key: str, timeline_df: pd.DataFrame, matching_episodes: list) -> go.Figure:
+    print(f'in build_series_search_results_gantt show_key={show_key} len(timeline_df)={len(timeline_df)} len(matching_episodes)={len(matching_episodes)}')
 
-    # load full time-series sequence of speakers by episode into a dataframe
-    df = pd.DataFrame(episode_speakers_sequence)
-    df['matching_line_count'] = 0
-    df['matching_lines'] = np.NaN
+    timeline_df['matching_line_count'] = 0
+    timeline_df['matching_lines'] = np.NaN
     speakers_to_keep = []
     # for each matching episode, concat lines and tally line_count per speaker, then insert into corresponding row in df 
     for episode in matching_episodes:
@@ -237,17 +235,17 @@ def build_series_search_results_gantt(show_key: str, matching_episodes: list, ep
                 # speakers_to_lines[speaker].append(f"{scene_event['dialog']}\n\n")
                 speakers_to_line_counts[speaker] += 1
         for speaker, _ in speakers_to_line_counts.items():
-            df.loc[(df['Task'] == speaker) & (df['episode_key'] == episode['episode_key']), 'matching_line_count'] = speakers_to_line_counts[speaker]
-            df.loc[(df['Task'] == speaker) & (df['episode_key'] == episode['episode_key']), 'matching_lines'] = ''.join(speakers_to_lines[speaker])
+            timeline_df.loc[(timeline_df['Task'] == speaker) & (timeline_df['episode_key'] == episode['episode_key']), 'matching_line_count'] = speakers_to_line_counts[speaker]
+            timeline_df.loc[(timeline_df['Task'] == speaker) & (timeline_df['episode_key'] == episode['episode_key']), 'matching_lines'] = ''.join(speakers_to_lines[speaker])
     
     speakers_to_keep = list(dict.fromkeys(speakers_to_keep)) 
     # only keep rows for speakers that have at least 1 match
-    df = df.loc[df['Task'].isin(speakers_to_keep)]
+    timeline_df = timeline_df.loc[timeline_df['Task'].isin(speakers_to_keep)]
     # if `matching_line_count` > 0:
     #   - mark `highlight` column yes/no: tells ff.create_gantt which color to use (gray or highlighted) via `index_col` 
     #   - set `hover_text` column with episode and matching_line data for hover display 
-    df['highlight'] = df['matching_line_count'].apply(lambda x: 'yes' if x > 0 else 'no')
-    matching_lines_df = df[df['highlight'] == 'yes']
+    timeline_df['highlight'] = timeline_df['matching_line_count'].apply(lambda x: 'yes' if x > 0 else 'no')
+    matching_lines_df = timeline_df[timeline_df['highlight'] == 'yes']
     matching_lines_df['hover_text'] = matching_lines_df['episode_title'] + ':\n\n' + matching_lines_df['matching_lines']  # TODO newlines not working
     # (*) this feels a little fragile, but the sequence and index positions of the `hover_text` list map precisely 1:2 to the sequence and index positions 
     # of the gantt data rows in fig['data'] below, because each speaker-episode element maps to two gantt row entries (a Start entry and a Finish entry)
@@ -257,9 +255,9 @@ def build_series_search_results_gantt(show_key: str, matching_episodes: list, ep
     # df.to_csv(file_path)
 
     # scale height to number of rows
-    fig_height = 250 + len(df['Task'].unique()) * 25
+    fig_height = 250 + len(timeline_df['Task'].unique()) * 25
 
-    fig = ff.create_gantt(df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title='Search results')
+    fig = ff.create_gantt(timeline_df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title='Search results')
     fig.update_layout(xaxis_type='linear', autosize=False)
 
     # inject dialog stored in `hover_text` list into fig['data'] `text` property

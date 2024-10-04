@@ -135,6 +135,9 @@ def extract_parent(topic_key: str):
 
 
 def flatten_topics(topics: list):
+    '''
+    TODO description needs to distinguish this from other topic flattening
+    '''
     out_list = []
     parents_seen = []
     for topic in topics:
@@ -192,8 +195,11 @@ def generate_speaker_color_discrete_map(show_key: str, speakers: list) -> dict:
         if s in speaker_colors:
             color_discrete_map[s] = speaker_colors[s]
         else:
+            if extra_speaker_i >= len(EXTRA_SPEAKER_COLORS):
+                extra_speaker_i = 0
             color_discrete_map[s] = EXTRA_SPEAKER_COLORS[extra_speaker_i]
             extra_speaker_i += 1
+
     return color_discrete_map
 
 
@@ -234,51 +240,6 @@ def map_range_values_to_gradient(range_values: list, gradient_values: list) -> l
     return discrete_gradient_values
 
 
-# def flatten_episode_speaker_topics(episode_speakers: list, series_speakers: list = None) -> list:
-#     '''
-#     Extracted from dash_app render_episode_speaker_topic_scatter
-#     TODO I'm sure this duplicates functionality elsewhere and/or could be rewritten more generically
-#     '''
-#     series_speaker_dicts = None
-#     if series_speakers:
-#         series_speaker_dicts = {series_s['speaker']:series_s for series_s in series_speakers}
-
-#     flat_speakers = []
-#     for s in episode_speakers:
-#         if s['word_count'] < 20 and s['line_count'] < 3:
-#             continue
-#         flat_s = s.copy()
-#         flat_speakers.append(flat_s)
-#         # copy high-scoring topic_mbti and topic_dnda for episode
-#         ep_topic_mbti = s['topics_mbti'][0]
-#         flat_s['mbti_topic_key'] = ep_topic_mbti['topic_key']
-#         flat_s['mbti_topic_name'] = ep_topic_mbti['topic_name']
-#         flat_s['mbti_score'] = ep_topic_mbti['score']
-#         flat_s['mbti_raw_score'] = ep_topic_mbti['raw_score']
-#         del flat_s['topics_mbti']
-#         ep_topic_dnda = s['topics_dnda'][0]
-#         flat_s['dnda_topic_key'] = ep_topic_dnda['topic_key']
-#         flat_s['dnda_topic_name'] = ep_topic_dnda['topic_name']
-#         flat_s['dnda_score'] = ep_topic_dnda['score']
-#         flat_s['dnda_raw_score'] = ep_topic_dnda['raw_score']
-#         del flat_s['topics_dnda']
-#         # optional: copy high-scoring topic_mbti and topic_dnda for series
-#         if series_speaker_dicts and flat_s['speaker'] in series_speaker_dicts:
-#             series_s = series_speaker_dicts[flat_s['speaker']]
-#             ser_topic_mbti = series_s['topics_mbti'][0]
-#             flat_s['ser_mbti_topic_key'] = ser_topic_mbti['topic_key']
-#             flat_s['ser_mbti_topic_name'] = ser_topic_mbti['topic_name']
-#             flat_s['ser_mbti_score'] = ser_topic_mbti['score']
-#             flat_s['ser_mbti_raw_score'] = ser_topic_mbti['raw_score']
-#             ser_topic_dnda = series_s['topics_dnda'][0]
-#             flat_s['ser_dnda_topic_key'] = ser_topic_dnda['topic_key']
-#             flat_s['ser_dnda_topic_name'] = ser_topic_dnda['topic_name']
-#             flat_s['ser_dnda_score'] = ser_topic_dnda['score']
-#             flat_s['ser_dnda_raw_score'] = ser_topic_dnda['raw_score']
-
-#     return flat_speakers
-
-
 def explode_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: int = None, percent_distrib_list: list = None) -> list: 
     '''
     Expand individual speaker rows containing multiple nested topics into multiple speaker rows each containing one topic
@@ -316,7 +277,8 @@ def explode_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: i
 
 def flatten_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: int = None) -> list: 
     '''
-    Replace multiple nested speaker topics with concatenated string of topic_keys in speaker rows 
+    Replace nested speaker topic dicts with concatenated string of topic_keys in speaker rows, dropping speakers with few lines/words in process
+    For reasons I can't recall, I'm being careful to copy each speaker rather than altering the existing speakers
     '''
 
     if not limit_per_speaker:
@@ -325,20 +287,41 @@ def flatten_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: i
     
     flattened_speakers = []
     for spkr in speakers:
-        if topic_field not in spkr or (spkr['word_count'] < 20 and spkr['line_count'] < 3):
+        if spkr['word_count'] < 20 and spkr['line_count'] < 3:
             continue
-        
-        # extract each topic (up to topic_limit) into its own flattened speaker item
-        topic_limit = min(limit_per_speaker, len(spkr[topic_field]))
-        topics = []
-        for i in range(topic_limit):
-            topic = spkr[topic_field][i]
-            topics.append(topic['topic_key'])
+
         flat_spkr = spkr.copy()
+        topics = []
+        if topic_field in spkr:
+            # extract each topic (up to topic_limit) into its own flattened speaker item
+            topic_limit = min(limit_per_speaker, len(spkr[topic_field]))
+            for i in range(topic_limit):
+                topic = spkr[topic_field][i]
+                topics.append(topic['topic_key'])
+
         flat_spkr[topic_field] = ', '.join(topics)
         flattened_speakers.append(flat_spkr)
 
     return flattened_speakers
+
+
+def flatten_and_refine_alt_names(speakers: list, ignore_dupes: bool = False, limit_per_speaker: int = None) -> list:
+    flattened_speakers = []
+    for spkr in speakers:
+        flat_spkr = spkr.copy()
+        alt_names = []
+        if 'alt_names' in spkr:
+            alt_names_limit = min(limit_per_speaker, len(spkr['alt_names']))
+            alt_names = []
+            for i in range(alt_names_limit):
+                if ignore_dupes and spkr['alt_names'][i].upper() == spkr['speaker'].upper():
+                    continue
+                alt_names.append(spkr['alt_names'][i])
+        flat_spkr['aka'] = ', '.join(alt_names)
+        flattened_speakers.append(flat_spkr)
+
+    return flattened_speakers
+
 
 
 def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFrame:
