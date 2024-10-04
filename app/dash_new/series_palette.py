@@ -37,7 +37,7 @@ def generate_content(show_key: str, all_seasons: list, episode_dropdown_options:
                                 inputStyle={"margin-left": "12px", "margin-right": "4px"},
                             ),
                         ]),
-                        html.Div(id="all-series-episodes-dt"),
+                        # html.Div(id="all-series-episodes-dt"),
                     ]),
                     dbc.Col(md=4, children=[
                         dbc.Row([ 
@@ -183,7 +183,51 @@ def generate_content(show_key: str, all_seasons: list, episode_dropdown_options:
                 html.H3("Characters in series"),
                 dbc.Row([
                     dbc.Col(md=12, children=[
-                        html.Div(id="speaker-listing-dt"),
+                        html.Div(id="speaker-series-listing-dt"),
+                    ]),
+                ]),
+            ]),
+
+            # series-speaker-topic mappings
+            dbc.CardBody([
+                dbc.Row([
+                    dbc.Col(md=12, children=[
+                        dbc.Tabs(className="nav nav-tabs", children=[
+                            dbc.Tab(label="Character MBTI temperaments", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row([
+                                    dbc.Col(md=7, children=[
+                                        html.Div(dcc.Graph(id="series-speaker-mbti-scatter")),
+                                        html.Br(),
+                                        dbc.Row([
+                                            dbc.Col(md=5, style={"text-align": "right", "color": "white"}, children=['Alt temperaments:']),
+                                            dbc.Col(md=4, children=[
+                                                dcc.Slider(id="series-mbti-count", min=1, max=4, step=1, value=3),
+                                            ]),
+                                        ]),
+                                    ]),
+                                    dbc.Col(md=5, children=[
+                                        html.Div(id="series-speaker-mbti-dt"),
+                                    ]),
+                                ]),
+                            ]),
+                            dbc.Tab(label="Character D&D alignments", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row([
+                                    dbc.Col(md=7, children=[
+                                        html.Div(dcc.Graph(id="series-speaker-dnda-scatter")),
+                                        html.Br(),
+                                        dbc.Row([
+                                            dbc.Col(md=5, style={"text-align": "right", "color": "white"}, children=['Alt alignments:']),
+                                            dbc.Col(md=4, children=[
+                                                dcc.Slider( id="series-dnda-count", min=1, max=3, step=1, value=2),
+                                            ]),
+                                        ]),
+                                    ]),
+                                    dbc.Col(md=5, children=[
+                                        html.Div(id="series-speaker-dnda-dt"),
+                                    ]),
+                                ]),
+                            ]),
+                        ]),
                     ]),
                 ]),
             ]),

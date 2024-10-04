@@ -10,7 +10,7 @@ import app.dash_new.components as cmp
 from app.dash_new import episode_palette, series_palette, oopsy
 import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
-from app.show_metadata import ShowKey, TOPIC_COLORS
+from app.show_metadata import ShowKey, TOPIC_COLORS, show_metadata
 import app.fig_builder.fig_helper as fh
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
@@ -488,8 +488,8 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     Output('episode-speaker-dnda-dt', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
-    Input('mbti-count', 'value'),
-    Input('dnda-count', 'value'))    
+    Input('episode-mbti-count', 'value'),
+    Input('episode-dnda-count', 'value'))    
 def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_count: int, dnda_count: int):
     print(f'in render_episode_speaker_topic_scatter, show_key={show_key} episode_key={episode_key} mbti_count={mbti_count} dnda_count={dnda_count}')
 
@@ -517,14 +517,13 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
     exploded_speakers_dnda = fh.explode_speaker_topics(episode_speakers, 'dnda', limit_per_speaker=dnda_count)
     mbti_df = pd.DataFrame(exploded_speakers_mbti)
     dnda_df = pd.DataFrame(exploded_speakers_dnda)
-    episode_speaker_mbti_scatter = pscat.build_episode_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
-    episode_speaker_dnda_scatter = pscat.build_episode_speaker_topic_scatter(show_key, dnda_df.copy(), 'dnda', speaker_color_map=speaker_color_map)
+    episode_speaker_mbti_scatter = pscat.build_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
+    episode_speaker_dnda_scatter = pscat.build_speaker_topic_scatter(show_key, dnda_df.copy(), 'dnda', speaker_color_map=speaker_color_map)
 
     # build dash datatable
-    mbti_display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
-    episode_speaker_mbti_dt = cmp.pandas_df_to_dash_dt(mbti_df, mbti_display_cols, 'speaker', episode_speaker_names, speaker_color_map)
-    dnda_display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
-    episode_speaker_dnda_dt = cmp.pandas_df_to_dash_dt(dnda_df, dnda_display_cols, 'speaker', episode_speaker_names, speaker_color_map)
+    display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
+    episode_speaker_mbti_dt = cmp.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', episode_speaker_names, speaker_color_map)
+    episode_speaker_dnda_dt = cmp.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', episode_speaker_names, speaker_color_map)
 
     return episode_speaker_mbti_scatter, episode_speaker_dnda_scatter, episode_speaker_mbti_dt, episode_speaker_dnda_dt
 
@@ -902,14 +901,14 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
 
 @dapp_new.callback(
     # Output('speaker-qt-display', 'children'),
-    Output('speaker-listing-dt', 'children'),
+    Output('speaker-series-listing-dt', 'children'),
     # Output('speaker-matches-dt', 'children'),
     Input('show-key', 'value'))
     # Input('speaker-qt', 'value')) 
-def render_speaker_listing_dt(show_key: str):
-    print(f'in render_speaker_listing_dt, show_key={show_key}')   
-# def render_speaker_listing_dt(show_key: str, speaker_qt: str):
-#     print(f'in render_speaker_listing_dt, show_key={show_key} speaker_qt={speaker_qt}')
+def render_series_speaker_listing_dt(show_key: str):
+    print(f'in render_series_speaker_listing_dt, show_key={show_key}')   
+# def render_series_speaker_listing_dt(show_key: str, speaker_qt: str):
+#     print(f'in render_series_speaker_listing_dt, show_key={show_key} speaker_qt={speaker_qt}')
 
     indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti')
     indexed_speakers = indexed_speakers_response['speakers']
@@ -951,6 +950,41 @@ def render_speaker_listing_dt(show_key: str):
 
     # return speaker_qt, speaker_listing_dt, speaker_matches_dt
     return speaker_listing_dt
+
+
+############ episode speaker topic grid callbacks
+@dapp_new.callback(
+    Output('series-speaker-mbti-scatter', 'figure'),
+    Output('series-speaker-dnda-scatter', 'figure'),
+    Output('series-speaker-mbti-dt', 'children'),
+    Output('series-speaker-dnda-dt', 'children'),
+    Input('show-key', 'value'),
+    Input('series-mbti-count', 'value'),
+    Input('series-dnda-count', 'value'))    
+def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_count: int):
+    print(f'in render_series_speaker_topic_scatter, show_key={show_key} mbti_count={mbti_count}')
+
+    series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
+    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(series_speaker_names))
+    indexed_speakers = indexed_speakers_response['speakers']
+    # indexed_speakers = fh.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
+
+    speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, series_speaker_names)
+
+    # flatten episode speaker topic data for each episode speaker
+    exploded_speakers_mbti = fh.explode_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=mbti_count)
+    exploded_speakers_dnda = fh.explode_speaker_topics(indexed_speakers, 'dnda', limit_per_speaker=dnda_count)
+    mbti_df = pd.DataFrame(exploded_speakers_mbti)
+    dnda_df = pd.DataFrame(exploded_speakers_dnda)
+    series_speaker_mbti_scatter = pscat.build_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
+    series_speaker_dnda_scatter = pscat.build_speaker_topic_scatter(show_key, dnda_df.copy(), 'dnda', speaker_color_map=speaker_color_map)
+
+    # build dash datatable
+    display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
+    series_speaker_mbti_dt = cmp.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
+    series_speaker_dnda_dt = cmp.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
+
+    return series_speaker_mbti_scatter, series_speaker_dnda_scatter, series_speaker_mbti_dt, series_speaker_dnda_dt
 
 
 if __name__ == "__main__":

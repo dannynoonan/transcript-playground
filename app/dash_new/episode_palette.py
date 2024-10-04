@@ -209,7 +209,7 @@ def generate_content(show_key: str, episode_key: str, all_seasons: list, episode
                                         dbc.Row([
                                             dbc.Col(md=5, style={"text-align": "right", "color": "white"}, children=['Alt temperaments:']),
                                             dbc.Col(md=4, children=[
-                                                dcc.Slider(id="mbti-count", min=1, max=4, step=1, value=3),
+                                                dcc.Slider(id="episode-mbti-count", min=1, max=4, step=1, value=3),
                                             ]),
                                         ]),
                                     ]),
@@ -226,7 +226,7 @@ def generate_content(show_key: str, episode_key: str, all_seasons: list, episode
                                         dbc.Row([
                                             dbc.Col(md=5, style={"text-align": "right", "color": "white"}, children=['Alt alignments:']),
                                             dbc.Col(md=4, children=[
-                                                dcc.Slider( id="dnda-count", min=1, max=3, step=1, value=2),
+                                                dcc.Slider( id="episode-dnda-count", min=1, max=3, step=1, value=2),
                                             ]),
                                         ]),
                                     ]),

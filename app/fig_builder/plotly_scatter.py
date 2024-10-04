@@ -76,8 +76,8 @@ def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list) -> go.Fig
     return fig
 
 
-def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_type: str, speaker_color_map: dict = None) -> go.Figure:
-    print(f'in build_episode_speaker_topic_scatter show_key={show_key} topic_type={topic_type}')
+def build_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_type: str, speaker_color_map: dict = None) -> go.Figure:
+    print(f'in build_speaker_topic_scatter show_key={show_key} topic_type={topic_type}')
 
     if not speaker_color_map:
         speakers = df['speaker'].unique()
