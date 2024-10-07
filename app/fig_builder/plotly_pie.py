@@ -1,0 +1,23 @@
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+
+import app.fig_builder.fig_helper as fh
+from app.show_metadata import TOPIC_COLORS
+
+
+def build_topic_aggs_pie(df: pd.DataFrame, topic_grouping: str, score_type: str, is_parent: bool = False) -> go.Figure:
+
+    topic_col = 'genre'
+    title = f'{topic_grouping} topic distribution by {score_type}'
+
+    if is_parent:
+        color_col='genre'
+    else:
+        color_col='parent'
+
+    fig = px.pie(df, values=score_type, names=topic_col, title=title, color=color_col, color_discrete_map=TOPIC_COLORS, hole=.3)
+
+    fig.update_traces(sort=False, textinfo='label')
+
+    return fig

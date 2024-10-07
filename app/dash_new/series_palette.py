@@ -231,6 +231,39 @@ def generate_content(show_key: str, all_seasons: list, episode_dropdown_options:
                     ]),
                 ]),
             ]),
+
+            # series-speaker-topic mappings
+            dbc.CardBody([
+                dbc.Row([
+                    dbc.Col(md=12, children=[
+                        dbc.Tabs(className="nav nav-tabs", children=[
+                            dbc.Tab(label="Character MBTI temperaments", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row([
+                                    dbc.Col(md=2, children=[
+                                        html.Div([
+                                            "Topic grouping: ", dcc.Dropdown(id="topic-grouping", options=['universalGenres', 'universalGenresGpt35_v2'], value='universalGenres')
+                                        ]),
+                                    ]),
+                                    dbc.Col(md=2, children=[
+                                        html.Div([
+                                            "Score type: ", dcc.Dropdown(id="score-type", options=['score', 'tfidf_score'], value='tfidf_score')
+                                        ]),
+                                    ]),
+                                ]),
+                                html.Br(),
+                                dbc.Row([
+                                    dbc.Col(md=6, children=[
+                                        html.Div(dcc.Graph(id="series-parent-topic-pie")),
+                                    ]),
+                                    dbc.Col(md=6, children=[
+                                        html.Div(dcc.Graph(id="series-topic-pie")),
+                                    ]),
+                                ]),
+                            ]),
+                        ]),
+                    ]),
+                ]),
+            ]),
         ])
     ])
 

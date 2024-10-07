@@ -16,6 +16,7 @@ import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_line as pline
 import app.fig_builder.plotly_networkgraph as pgraph
+import app.fig_builder.plotly_pie as ppie
 import app.fig_builder.plotly_scatter as pscat
 import app.fig_builder.plotly_treemap as ptree
 from app import utils
@@ -952,7 +953,7 @@ def render_series_speaker_listing_dt(show_key: str):
     return speaker_listing_dt
 
 
-############ episode speaker topic grid callbacks
+############ series speaker topic grid callbacks
 @dapp_new.callback(
     Output('series-speaker-mbti-scatter', 'figure'),
     Output('series-speaker-dnda-scatter', 'figure'),
@@ -962,7 +963,7 @@ def render_series_speaker_listing_dt(show_key: str):
     Input('series-mbti-count', 'value'),
     Input('series-dnda-count', 'value'))    
 def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_count: int):
-    print(f'in render_series_speaker_topic_scatter, show_key={show_key} mbti_count={mbti_count}')
+    print(f'in render_series_speaker_topic_scatter, show_key={show_key} mbti_count={mbti_count} dnda_count={dnda_count}')
 
     series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
     indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(series_speaker_names))
@@ -985,6 +986,33 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     series_speaker_dnda_dt = cmp.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
 
     return series_speaker_mbti_scatter, series_speaker_dnda_scatter, series_speaker_mbti_dt, series_speaker_dnda_dt
+
+
+############ series topic pie and bar chart callbacks
+@dapp_new.callback(
+    Output('series-topic-pie', 'figure'),
+    Output('series-parent-topic-pie', 'figure'),
+    # Output('series-topic-bar', 'figure'),
+    # Output('series-parent-topic-bar', 'figure'),
+    # Output('series-topic-dt', 'children'),
+    Input('show-key', 'value'),
+    Input('topic-grouping', 'value'),
+    Input('score-type', 'value'))    
+def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str):
+    print(f'in render_series_topic_figs, show_key={show_key} topic_grouping={topic_grouping} score_type={score_type}')
+
+    episode_response = esr.fetch_simple_episodes(ShowKey(show_key))
+    episode_topic_lists = []
+    for episode in episode_response['episodes']:
+        episode_topics_response = esr.fetch_episode_topics(ShowKey(show_key), episode['episode_key'], topic_grouping)
+        episode_topic_lists.append(episode_topics_response['episode_topics'])
+
+    series_topics_df, series_parent_topics_df = fh.generate_topic_aggs_from_episode_topics(episode_topic_lists, max_rank=20, max_parent_repeats=2)
+
+    series_topics_pie = ppie.build_topic_aggs_pie(series_topics_df, topic_grouping, score_type)
+    series_parent_topics_pie = ppie.build_topic_aggs_pie(series_parent_topics_df, topic_grouping, score_type, is_parent=True)
+
+    return series_topics_pie, series_parent_topics_pie
 
 
 if __name__ == "__main__":
