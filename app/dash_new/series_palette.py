@@ -4,7 +4,7 @@ from dash import dcc, html
 import app.dash_new.components as cmp
 
 
-def generate_content(show_key: str, all_seasons: list, episode_dropdown_options: list, emotion_dropdown_options: list) -> html.Div:
+def generate_content(show_key: str, all_seasons: list, universal_genres_parent_topics: list) -> html.Div:
     navbar = cmp.generate_navbar(all_seasons)
 
     content = html.Div([
@@ -237,7 +237,7 @@ def generate_content(show_key: str, all_seasons: list, episode_dropdown_options:
                 dbc.Row([
                     dbc.Col(md=12, children=[
                         dbc.Tabs(className="nav nav-tabs", children=[
-                            dbc.Tab(label="Character MBTI temperaments", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            dbc.Tab(label="Series topics", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row([
                                     dbc.Col(md=2, children=[
                                         html.Div([
@@ -257,6 +257,20 @@ def generate_content(show_key: str, all_seasons: list, episode_dropdown_options:
                                     ]),
                                     dbc.Col(md=6, children=[
                                         html.Div(dcc.Graph(id="series-topic-pie")),
+                                    ]),
+                                ]),
+                                html.Br(),
+                                dbc.Row([
+                                    dbc.Col(md=2, children=[
+                                        html.Div([
+                                            "List episodes for topic: ", dcc.Dropdown(id="parent-topic", options=universal_genres_parent_topics, value='Action')
+                                        ]),
+                                    ]),
+                                ]),
+                                html.Br(),
+                                dbc.Row([
+                                    dbc.Col(md=12, children=[
+                                        html.Div(id="series-topic-episodes-dt"),
                                     ]),
                                 ]),
                             ]),

@@ -16,8 +16,11 @@ def build_topic_aggs_pie(df: pd.DataFrame, topic_grouping: str, score_type: str,
     else:
         color_col='parent'
 
-    fig = px.pie(df, values=score_type, names=topic_col, title=title, color=color_col, color_discrete_map=TOPIC_COLORS, hole=.3)
+    fig = px.pie(df, values=score_type, names=topic_col, title=title, color=color_col, color_discrete_map=TOPIC_COLORS, 
+                 height=800, hole=.3)
 
-    fig.update_traces(sort=False, textinfo='label')
+    fig.update_traces(sort=False, textinfo='label', textposition='inside')
+
+    fig.update_layout(margin=dict(l=30, t=40, r=30, b=30), title_x=0.5)
 
     return fig

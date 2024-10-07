@@ -96,18 +96,25 @@ def display_page(pathname, search):
         all_seasons_response = esr.list_seasons(ShowKey(show_key))
         all_seasons = all_seasons_response['seasons']
 
-        # all episodes
-        all_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
-        all_episodes = all_episodes_response['episodes']
-        episode_dropdown_options = []
-        for episode in all_episodes:
-            label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
-            episode_dropdown_options.append({'label': label, 'value': episode['episode_key']})
+        # # all episodes
+        # all_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+        # all_episodes = all_episodes_response['episodes']
+        # episode_dropdown_options = []
+        # for episode in all_episodes:
+        #     label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"
+        #     episode_dropdown_options.append({'label': label, 'value': episode['episode_key']})
 
-        # emotions
-        emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
+        # # emotions
+        # emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
 
-        return series_palette.generate_content(show_key, all_seasons, episode_dropdown_options, emotion_dropdown_options)
+        universal_genres_parent_topics = []
+        topic_grouping_response = esr.fetch_topic_grouping('universalGenres')
+        for t in topic_grouping_response['topics']:
+            # only process topics that have parents (ignore the parents themselves)
+            if not t['parent_key']:
+                universal_genres_parent_topics.append(t['topic_key'])
+
+        return series_palette.generate_content(show_key, all_seasons, universal_genres_parent_topics)
     
 
 
@@ -994,7 +1001,6 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     Output('series-parent-topic-pie', 'figure'),
     # Output('series-topic-bar', 'figure'),
     # Output('series-parent-topic-bar', 'figure'),
-    # Output('series-topic-dt', 'children'),
     Input('show-key', 'value'),
     Input('topic-grouping', 'value'),
     Input('score-type', 'value'))    
@@ -1013,6 +1019,48 @@ def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str
     series_parent_topics_pie = ppie.build_topic_aggs_pie(series_parent_topics_df, topic_grouping, score_type, is_parent=True)
 
     return series_topics_pie, series_parent_topics_pie
+
+
+############ series topic episode datatable callbacks
+@dapp_new.callback(
+    Output('series-topic-episodes-dt', 'children'),
+    Input('show-key', 'value'),
+    Input('topic-grouping', 'value'),
+    Input('parent-topic', 'value'),
+    Input('score-type', 'value'))    
+def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_topic: str, score_type: str):
+    print(f'in render_series_topic_episodes_dt, show_key={show_key} topic_grouping={topic_grouping} parent_topic={parent_topic} score_type={score_type}')
+
+    # NOTE assembling entire parent-child topic hierarchy here, but only using one branch of the tree
+    child_topics = []
+    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping)
+    for t in topic_grouping_response['topics']:
+        # only process topics that have parents (ignore the parents themselves)
+        if not t['parent_key']:
+            continue
+        if parent_topic == t['topic_key'].split('.')[0]:
+            child_topics.append(t['topic_key'])
+
+    if not child_topics:
+        utils.hilite_in_logs(f'Failure to render_series_topic_episodes_dt, no child topics for parent_topic={parent_topic} in topic_grouping={topic_grouping}')
+        return {}
+
+    columns = ['topic_key', 'parent_topic', 'episode_key', 'episode_title', 'season', 'sequence_in_season', 'air_date', 'score', 'tfidf_score']
+    topic_episodes_df = pd.DataFrame(columns=columns)
+    # for parent_topic, child_topics in parent_to_leaf_topics.items():
+    for topic in child_topics:
+        episodes_by_topic = esr.find_episodes_by_topic(ShowKey(show_key), topic_grouping, topic)
+        df = pd.DataFrame(episodes_by_topic['episode_topics'])
+        df['parent_topic'] = parent_topic
+        df = df[columns]
+        df = df[(df['score'] > 0.5) | (df['tfidf_score'] > 0.5)]
+        topic_episodes_df = pd.concat([topic_episodes_df, df])
+
+    topic_episodes_df.sort_values(score_type, ascending=False, inplace=True)
+
+    series_topic_episodes_dt = cmp.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [parent_topic], TOPIC_COLORS)
+
+    return series_topic_episodes_dt
 
 
 if __name__ == "__main__":
