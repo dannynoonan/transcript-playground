@@ -192,8 +192,8 @@ def build_speaker_chatter_scatter(df: pd.DataFrame, x_axis: str, y_axis: str) ->
 
 
 def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key: str, num_clusters: int) -> go.Figure:
-    fig_width = fm.fig_dims.MD11
-    fig_height = fm.fig_dims.hdef(fig_width)
+    # fig_width = fm.fig_dims.MD11
+    # fig_height = fm.fig_dims.hdef(fig_width)
     base_fig_title = f'{num_clusters} clusters for {show_key} visualized in 2D using t-SNE'
     custom_data = ['title', 'season', 'sequence_in_season', 'air_date', 'episode_key']
     # hover_data = {'title': True, 'season': True, 'sequence_in_season': True, 'air_date': True, 'episode_key': True}
@@ -213,9 +213,9 @@ def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key
     fig = px.scatter(episode_embeddings_clusters_df, x=x, y=y, 
                      color=episode_embeddings_clusters_df['cluster_color'],
                      color_discrete_map=fm.color_map,
-                     title=base_fig_title, custom_data=custom_data,
+                     title=base_fig_title, custom_data=custom_data, height=800)
                      # hover_name=episode_clusters_df.episode_key, hover_data=hover_data,
-                     height=fig_height, width=fig_width, opacity=0.7)
+                     # height=fig_height, width=fig_width, opacity=0.7
     
     # axis metadata
     fig.update_xaxes(title_text='x axis of t-SNE')

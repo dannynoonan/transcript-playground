@@ -8,10 +8,14 @@ import urllib.parse
 
 import app.dash_new.components as cmp
 from app.dash_new import episode_palette, series_palette, oopsy
+import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
+import app.es.es_response_transformer as esrt
+import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 from app.show_metadata import ShowKey, TOPIC_COLORS, show_metadata
 import app.fig_builder.fig_helper as fh
+import app.fig_builder.fig_metadata as fm
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_line as pline
@@ -907,6 +911,7 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
     return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart
 
 
+############ series speaker listing callback
 @dapp_new.callback(
     # Output('speaker-qt-display', 'children'),
     Output('speaker-series-listing-dt', 'children'),
@@ -960,7 +965,7 @@ def render_series_speaker_listing_dt(show_key: str):
     return speaker_listing_dt
 
 
-############ series speaker topic grid callbacks
+############ series speaker topic grid callback
 @dapp_new.callback(
     Output('series-speaker-mbti-scatter', 'figure'),
     Output('series-speaker-dnda-scatter', 'figure'),
@@ -995,12 +1000,10 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     return series_speaker_mbti_scatter, series_speaker_dnda_scatter, series_speaker_mbti_dt, series_speaker_dnda_dt
 
 
-############ series topic pie and bar chart callbacks
+############ series topic pie and bar chart callback
 @dapp_new.callback(
     Output('series-topic-pie', 'figure'),
     Output('series-parent-topic-pie', 'figure'),
-    # Output('series-topic-bar', 'figure'),
-    # Output('series-parent-topic-bar', 'figure'),
     Input('show-key', 'value'),
     Input('topic-grouping', 'value'),
     Input('score-type', 'value'))    
@@ -1021,7 +1024,7 @@ def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str
     return series_topics_pie, series_parent_topics_pie
 
 
-############ series topic episode datatable callbacks
+############ series topic episode datatable callback
 @dapp_new.callback(
     Output('series-topic-episodes-dt', 'children'),
     Input('show-key', 'value'),
@@ -1030,6 +1033,9 @@ def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str
     Input('score-type', 'value'))    
 def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_topic: str, score_type: str):
     print(f'in render_series_topic_episodes_dt, show_key={show_key} topic_grouping={topic_grouping} parent_topic={parent_topic} score_type={score_type}')
+
+    # configurable score threshold
+    min_score = 0.5
 
     # NOTE assembling entire parent-child topic hierarchy here, but only using one branch of the tree
     child_topics = []
@@ -1053,7 +1059,7 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
         df = pd.DataFrame(episodes_by_topic['episode_topics'])
         df['parent_topic'] = parent_topic
         df = df[columns]
-        df = df[(df['score'] > 0.5) | (df['tfidf_score'] > 0.5)]
+        df = df[(df['score'] > min_score) | (df['tfidf_score'] > min_score)]
         topic_episodes_df = pd.concat([topic_episodes_df, df])
 
     topic_episodes_df.sort_values(score_type, ascending=False, inplace=True)
@@ -1061,6 +1067,48 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
     series_topic_episodes_dt = cmp.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [parent_topic], TOPIC_COLORS)
 
     return series_topic_episodes_dt
+
+
+############ series cluster scatter callback
+@dapp_new.callback(
+    Output('series-episodes-cluster-scatter', 'figure'),
+    Output('series-episodes-cluster-dt', 'children'),
+    Input('show-key', 'value'),
+    Input('num-clusters', 'value'))    
+def render_series_cluster_scatter(show_key: str, num_clusters: int):
+    print(f'in render_series_cluster_scatter, show_key={show_key} num_clusters={num_clusters}')
+    num_clusters = int(num_clusters)
+    vector_field = 'openai_ada002_embeddings'
+
+    # fetch embeddings for all show episodes 
+    s = esqb.fetch_series_embeddings(show_key, vector_field)
+    doc_embeddings = esrt.return_all_embeddings(s, vector_field)
+
+    # generate and color-stamp clusters for all show episodes 
+    doc_embeddings_clusters_df = ef.cluster_docs(doc_embeddings, num_clusters)
+    doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: fm.colors[x])
+
+    # fetch basic title/season data for all show episodes 
+    all_episodes = esr.fetch_simple_episodes(ShowKey(show_key))
+    episodes_df = pd.DataFrame(all_episodes['episodes'])
+
+    # merge basic episode data into cluster data
+    episodes_df['doc_id'] = episodes_df['episode_key'].apply(lambda x: f'{show_key}_{x}')
+    episode_embeddings_clusters_df = pd.merge(doc_embeddings_clusters_df, episodes_df, on='doc_id', how='outer')
+
+    # generate dash_table div as part of callback output
+    episode_clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()
+    # TODO this flatten_and_format_cluster_df function is a holdover from a bygone era, figure out where/how to generically handle this
+    episode_clusters_df = cmp.flatten_and_format_cluster_df(show_key, episode_clusters_df)
+    clusters = [str(c) for c in list(episode_clusters_df['cluster'].unique())]
+    bg_color_map = {str(i):color for i, color in enumerate(fm.colors)}
+    episode_clusters_dt = cmp.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, bg_color_map,
+                                                   numeric_precision_overrides={'season': 0, 'episode': 0, 'scenes': 0, 'episode_key': 0, 'cluster': 0})
+
+    # generate scatterplot
+    episode_clusters_scatter = pscat.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
+
+    return episode_clusters_scatter, episode_clusters_dt
 
 
 if __name__ == "__main__":

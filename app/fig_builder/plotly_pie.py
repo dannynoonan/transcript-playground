@@ -2,7 +2,6 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-import app.fig_builder.fig_helper as fh
 from app.show_metadata import TOPIC_COLORS
 
 

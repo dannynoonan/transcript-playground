@@ -6,6 +6,7 @@ import pandas as pd
 import app.fig_builder.fig_helper as fh
 import app.fig_builder.fig_metadata as fm
 from app.show_metadata import BGCOLORS_TO_TEXT_COLORS
+from app import utils
 
 
 def generate_navbar(season_dropdown_options: list) -> dbc.Card:
@@ -41,7 +42,7 @@ url_bar_and_content_div = html.Div([
 ])
 
 
-def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: str, conditional_color_keys: list, text_color_map: dict, 
+def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: str, conditional_color_keys: list, bg_color_map: dict, 
                          numeric_precision_overrides: dict = None) -> dash_table.DataTable:
     '''
     Turn pandas dataframe into dash_table.DataTable
@@ -71,9 +72,9 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
             v_escaped = v.replace("'", "") 
             v_escaped = v.replace("\"", "") 
             sdc['if'] = dict(filter_query=f"{{{color_key_col}}} = \"{v_escaped}\"")
-            sdc['backgroundColor'] = text_color_map[v]
-            if text_color_map[v] in BGCOLORS_TO_TEXT_COLORS:
-                sdc['color'] = BGCOLORS_TO_TEXT_COLORS[text_color_map[v]]
+            sdc['backgroundColor'] = bg_color_map[v]
+            if bg_color_map[v] in BGCOLORS_TO_TEXT_COLORS:
+                sdc['color'] = BGCOLORS_TO_TEXT_COLORS[bg_color_map[v]]
             else:
                 sdc['color'] = 'Black'
         style_data_conditional_list.append(sdc)
@@ -81,6 +82,7 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
     columns=[
         {
             "id": col, "name": col, "type": "numeric", 
+            # "presentation": "markdown",
             "format": dtf.Format(group=dtf.Group.yes, precision=numeric_precision[col], scheme=dtf.Scheme.fixed)
         }
         for col in display_cols]
@@ -96,3 +98,28 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
     )
 
     return dash_dt
+
+
+# TODO this is an exact copy of flatten_and_format_cluster_df from dash.components
+def flatten_and_format_cluster_df(show_key: str, clusters_df: pd.DataFrame) -> pd.DataFrame:
+    '''
+    TODO Holy smackers does this need to be cleaned up. Amazingly it sorta works against two different cluster data sets, but either
+    (a) needs to be made more generic or (b) any usage of it must share common column names and data types
+    '''
+
+    # reformat columns, sort table
+    clusters_df['air_date'] = clusters_df['air_date'].apply(lambda x: x[:10])
+    if 'focal_speakers' in clusters_df.columns:
+        clusters_df['focal_speakers'] = clusters_df['focal_speakers'].apply(lambda x: ", ".join(x))
+    if 'focal_locations' in clusters_df.columns:
+        clusters_df['focal_locations'] = clusters_df['focal_locations'].apply(lambda x: ", ".join(x))
+    clusters_df['link'] = clusters_df.apply(lambda x: utils.wrap_title_in_url(show_key, x['episode_key']), axis=1)
+    clusters_df.sort_values(['cluster', 'season', 'sequence_in_season'], inplace=True)
+
+    # rename columns for display
+    clusters_df.rename(columns={'sequence_in_season': 'episode', 'scene_count': 'scenes'}, inplace=True)
+
+    # TODO stop populating this color column, row color is set within dash datatable using style_data_conditional filter_query
+    clusters_df.drop('cluster_color', axis=1, inplace=True) 
+
+    return clusters_df

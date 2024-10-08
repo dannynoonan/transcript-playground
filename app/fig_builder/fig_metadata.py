@@ -34,6 +34,18 @@ colors = ["cornflowerblue", "burlywood", "crimson", "chartreuse", "coral", "cyan
 colors = colors + colors + colors + colors
 text_colors = ["white", "black", "white", "black", "white", "black", "white", "white", "white", "black"]
 text_colors = text_colors + text_colors + text_colors + text_colors
+text_color_map = {
+    "cornflowerblue": "white",
+    "burlywood": "black", 
+    "crimson": "white", 
+    "chartreuse": "black", 
+    "coral": "white", 
+    "cyan": "black", 
+    "darkgoldenrod": "white", 
+    "cadetblue": "white", 
+    "darkcyan": "white", 
+    "cornsilk": "black"
+}
 
 color_map = {}
 for v in colors:

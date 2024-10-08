@@ -263,7 +263,7 @@ def generate_content(show_key: str, all_seasons: list, universal_genres_parent_t
                                 dbc.Row([
                                     dbc.Col(md=2, children=[
                                         html.Div([
-                                            "List episodes for topic: ", dcc.Dropdown(id="parent-topic", options=universal_genres_parent_topics, value='Action')
+                                            "List episodes for topic: ", dcc.Dropdown(id="parent-topic", options=universal_genres_parent_topics)
                                         ]),
                                     ]),
                                 ]),
@@ -271,6 +271,27 @@ def generate_content(show_key: str, all_seasons: list, universal_genres_parent_t
                                 dbc.Row([
                                     dbc.Col(md=12, children=[
                                         html.Div(id="series-topic-episodes-dt"),
+                                    ]),
+                                ]),
+                            ]),
+                            dbc.Tab(label="Episode clustering", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row([
+                                    dbc.Col(md=2, children=[
+                                        html.Div([
+                                            "Number of clusters: ", dcc.Dropdown(id="num-clusters", options=[2, 3, 4, 5, 6, 7, 8, 9, 10], value=5)
+                                        ]),
+                                    ]),
+                                ]),
+                                html.Br(),
+                                dbc.Row([
+                                    dbc.Col(md=12, children=[
+                                        html.Div(dcc.Graph(id="series-episodes-cluster-scatter")),
+                                    ]),
+                                ]),
+                                html.Br(),
+                                dbc.Row([
+                                    dbc.Col(md=12, children=[
+                                        html.Div(id="series-episodes-cluster-dt"),
                                     ]),
                                 ]),
                             ]),
