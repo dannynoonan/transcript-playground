@@ -4,9 +4,14 @@ from dash import dcc, html
 import app.dash_new.components as cmp
 
 
-def generate_content(show_key: str, all_seasons: list, universal_genres_parent_topics: list) -> html.Div:
+def generate_content(show_key: str, all_seasons: list, series_summary: dict, all_season_dicts: dict, universal_genres_parent_topics: list) -> html.Div:
+    # generate navbar
     navbar = cmp.generate_navbar(all_seasons)
 
+    # generate season episode listing datatables in accordion items
+    season_accordion_items = cmp.generate_season_episodes_accordion_items(all_season_dicts)
+
+    # define content div
     content = html.Div([
         navbar,
         dbc.Card(className="bg-dark", children=[
@@ -15,11 +20,13 @@ def generate_content(show_key: str, all_seasons: list, universal_genres_parent_t
             dbc.CardBody([
                 dbc.Row([
                     dbc.Col(md=8, children=[
-                        html.H3(className="text-white", children=[html.B(id='series-title-summary'), " (", html.Span(id='series-air-date-range'), ")"]),
+                        html.H3(className="text-white", children=[
+                            html.B(series_summary['series_title']), " (", series_summary['air_date_begin'], " - ", series_summary['air_date_end'], ")"
+                        ]),
                         html.H5(className="text-white", style={'display': 'flex'}, children=[
                             html.Div(style={"margin-right": "30px"}, children=[
-                                html.B(id='series-season-count'), " seasons, ", html.B(id='series-episode-count'), " episodes, ", 
-                                html.B(id='series-scene-count'), " scenes, ", html.B(id='series-line-count'), " lines, ", html.B(id='series-word-count'), " words",
+                                html.B(series_summary['season_count']), " seasons, ", html.B(series_summary['episode_count']), " episodes, ", 
+                                html.B(series_summary['scene_count']), " scenes, ", html.B(series_summary['line_count']), " lines, ", html.B(series_summary['word_count']), " words",
                             ]),
                             # html.Div(style={"margin-right": "10px"}, children=[
                             #     "Predominant genres: ", html.Span(id='series-topics')
@@ -27,17 +34,6 @@ def generate_content(show_key: str, all_seasons: list, universal_genres_parent_t
                         ]),
                         html.Br(),
                         html.Div(dcc.Graph(id="all-series-episodes-scatter")),
-                        html.Div(className="text-white", style={"display": "flex", "padding-bottom": "0"}, children=[
-                            dcc.Checklist(
-                                id="show-all-series-episodes-dt",
-                                options=[
-                                    {'label': 'Display as table listing', 'value': 'yes'}
-                                ],
-                                value=[],
-                                inputStyle={"margin-left": "12px", "margin-right": "4px"},
-                            ),
-                        ]),
-                        # html.Div(id="all-series-episodes-dt"),
                     ]),
                     dbc.Col(md=4, children=[
                         dbc.Row([ 
@@ -56,6 +52,10 @@ def generate_content(show_key: str, all_seasons: list, universal_genres_parent_t
                         ]),
                     ]),
                 ]),
+                html.Br(),
+                # season episode listing accordion
+                dbc.Accordion(id="accordion", active_item="acc_textarea", children=season_accordion_items),
+                html.Div(id="accordion-contents", className="mt-3"),
             ]),
 
             # series continuity timelines for character / location / topic / search
@@ -237,7 +237,7 @@ def generate_content(show_key: str, all_seasons: list, universal_genres_parent_t
                 dbc.Row([
                     dbc.Col(md=12, children=[
                         dbc.Tabs(className="nav nav-tabs", children=[
-                            dbc.Tab(label="Series topics", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            dbc.Tab(label="Episode genres", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row([
                                     dbc.Col(md=2, children=[
                                         html.Div([
@@ -274,7 +274,7 @@ def generate_content(show_key: str, all_seasons: list, universal_genres_parent_t
                                     ]),
                                 ]),
                             ]),
-                            dbc.Tab(label="Episode clustering", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            dbc.Tab(label="Episode clusters", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row([
                                     dbc.Col(md=2, children=[
                                         html.Div([

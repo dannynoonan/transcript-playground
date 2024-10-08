@@ -96,9 +96,73 @@ def display_page(pathname, search):
             print(err_msg)
             return oopsy.generate_content(err_msg)
         
-        # all seasons
-        all_seasons_response = esr.list_seasons(ShowKey(show_key))
-        all_seasons = all_seasons_response['seasons']
+        series_summary = {}
+        series_summary['series_title'] = 'Star Trek: The Next Generation'
+
+        series_speaker_scene_counts_response = esr.agg_scenes_by_speaker(ShowKey(show_key))
+        series_summary['scene_count'] = series_speaker_scene_counts_response['scenes_by_speaker']['_ALL_']
+
+        series_speakers_response = esr.agg_scene_events_by_speaker(ShowKey(show_key))
+        series_summary['line_count'] = series_speakers_response['scene_events_by_speaker']['_ALL_']
+
+        series_speaker_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key))
+        series_summary['word_count'] = int(series_speaker_word_counts_response['dialog_word_counts']['_ALL_'])
+
+        # series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(show_key)
+        # speaker_count = series_speaker_episode_counts_response['speaker_count']	
+
+        # series_locations_response = esr.agg_scenes_by_location(show_key)
+        # location_count = series_locations_response['location_count']
+
+        episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
+        episodes_by_season = episodes_by_season_response['episodes_by_season']
+
+        all_seasons = episodes_by_season.keys()
+        series_summary['season_count'] = len(all_seasons)
+
+        series_summary['episode_count'] = 0
+        first_episode_in_series = None
+        last_episode_in_series = None
+        all_season_dicts = {}
+
+        for season, episodes in episodes_by_season.items():
+            season_dict = {}
+
+            season_dict['episodes'] = episodes
+            season_episode_count = len(episodes_by_season[season])
+            series_summary['episode_count'] += len(episodes_by_season[season])
+            
+            scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key), season=season)
+            season_dict['location_count'] = scenes_by_location_response['location_count']
+            season_dict['location_counts'] = utils.truncate_dict(scenes_by_location_response['scenes_by_location'], season_episode_count, start_index=1)
+
+            scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), season=season)
+            season_dict['line_count'] = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
+            season_dict['speaker_line_counts'] = utils.truncate_dict(scene_events_by_speaker_response['scene_events_by_speaker'], season_episode_count, start_index=1)
+            
+            scenes_by_speaker_response = esr.agg_scenes_by_speaker(ShowKey(show_key), season=season)
+            season_dict['scene_count'] = scenes_by_speaker_response['scenes_by_speaker']['_ALL_']
+
+            episodes_by_speaker_resopnse = esr.agg_episodes_by_speaker(ShowKey(show_key), season=season)
+            season_dict['speaker_count'] = episodes_by_speaker_resopnse['speaker_count']
+
+            word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), season=season)
+            season_dict['word_count'] = int(word_counts_response['dialog_word_counts']['_ALL_'])
+
+            # air_date range
+            first_episode_in_season = episodes_by_season[season][0]
+            last_episode_in_season = episodes_by_season[season][-1]
+            season_dict['air_date_begin'] = first_episode_in_season['air_date'][:10]
+            season_dict['air_date_end'] = last_episode_in_season['air_date'][:10]
+            if not first_episode_in_series:
+                first_episode_in_series = episodes_by_season[season][0]
+            last_episode_in_series = episodes_by_season[season][-1]
+            all_season_dicts[season] = season_dict
+
+        series_summary['air_date_begin'] = first_episode_in_series['air_date'][:10]
+        series_summary['air_date_end'] = last_episode_in_series['air_date'][:10]
+
+        # wordcloud_img = f"/static/wordclouds/{show_key}/{show_key}_SERIES.png"
 
         # # all episodes
         # all_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
@@ -118,7 +182,7 @@ def display_page(pathname, search):
             if not t['parent_key']:
                 universal_genres_parent_topics.append(t['topic_key'])
 
-        return series_palette.generate_content(show_key, all_seasons, universal_genres_parent_topics)
+        return series_palette.generate_content(show_key, all_seasons, series_summary, all_season_dicts, universal_genres_parent_topics)
     
 
 
@@ -602,98 +666,26 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
 
 ############ series summary callbacks
 @dapp_new.callback(
-    Output('series-title-summary', 'children'),
-    Output('series-season-count', 'children'),
-    Output('series-episode-count', 'children'),
-    Output('series-scene-count', 'children'),
-    Output('series-line-count', 'children'),
-    Output('series-word-count', 'children'),
-    Output('series-air-date-range', 'children'),
     Output('series-wordcloud-img', 'src'),
+    Output("accordion-contents", "children"),
     # Output('series-topics', 'children'),
-    Input('show-key', 'value'))    
-def render_series_summary(show_key: str):
-    print(f'in render_series_summary, show_key={show_key}')
-
-    '''
-    <h3><strong>{{ tdata['show_key'] }}</strong> show page <small>({{ tdata['air_date_range'] }})</small></h3>
-    <h5>{{ tdata['season_count'] }} seasons, {{ tdata['episode_count'] }} episodes, {{ tdata['scene_count'] }} scenes, {{ tdata['line_count'] }} lines, {{ tdata['word_count'] }} words</h5>
-    '''
-    series_title_summary = 'Star Trek: The Next Generation'
-
-    list_seasons_response = esr.list_seasons(ShowKey(show_key))
-    all_seasons = list_seasons_response['seasons']
-    season_count = len(all_seasons)
-
-    episode_count = 0
-
-    series_speaker_scene_counts_response = esr.agg_scenes_by_speaker(ShowKey(show_key))
-    scene_count = series_speaker_scene_counts_response['scenes_by_speaker']['_ALL_']
-
-    series_speakers_response = esr.agg_scene_events_by_speaker(ShowKey(show_key))
-    line_count = series_speakers_response['scene_events_by_speaker']['_ALL_']
-
-    series_speaker_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key))
-    word_count = int(series_speaker_word_counts_response['dialog_word_counts']['_ALL_'])
-
-    # series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(show_key)
-    # speaker_count = series_speaker_episode_counts_response['speaker_count']	
-
-    # series_locations_response = esr.agg_scenes_by_location(show_key)
-    # location_count = series_locations_response['location_count']
-
-    episodes_by_season = esr.list_simple_episodes_by_season(ShowKey(show_key))
-    episodes_by_season = episodes_by_season['episodes_by_season']
-
-    episode_count = 0
-    first_episode_in_series = None
-    last_episode_in_series = None
-    stats_by_season = {}
-
-    for season in episodes_by_season.keys():
-        season_episode_count = len(episodes_by_season[season])
-        episode_count += len(episodes_by_season[season])
-        season_stats = {}
-
-        scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key), season=season)
-        season_stats['location_count'] = scenes_by_location_response['location_count']
-        season_stats['location_counts'] = utils.truncate_dict(scenes_by_location_response['scenes_by_location'], season_episode_count, start_index=1)
-
-        scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), season=season)
-        season_stats['line_count'] = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
-        season_stats['speaker_line_counts'] = utils.truncate_dict(scene_events_by_speaker_response['scene_events_by_speaker'], season_episode_count, start_index=1)
-        
-        scenes_by_speaker_response = esr.agg_scenes_by_speaker(ShowKey(show_key), season=season)
-        season_stats['scene_count'] = scenes_by_speaker_response['scenes_by_speaker']['_ALL_']
-
-        episodes_by_speaker_resopnse = esr.agg_episodes_by_speaker(ShowKey(show_key), season=season)
-        season_stats['speaker_count'] = episodes_by_speaker_resopnse['speaker_count']
-
-        word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), season=season)
-        season_stats['word_count'] = int(word_counts_response['dialog_word_counts']['_ALL_'])
-
-		# generate air_date_range
-        first_episode_in_season = episodes_by_season[season][0]
-        last_episode_in_season = episodes_by_season[season][-1]
-        season_stats['air_date_range'] = f"{first_episode_in_season['air_date'][:10]} - {last_episode_in_season['air_date'][:10]}"
-        if not first_episode_in_series:
-            first_episode_in_series = episodes_by_season[season][0]
-        last_episode_in_series = episodes_by_season[season][-1]
-        stats_by_season[season] = season_stats
-
-    air_date_range = f"{first_episode_in_series['air_date'][:10]} - {last_episode_in_series['air_date'][:10]}"
+    Input('show-key', 'value'),
+    Input("accordion", "active_item"))    
+def render_series_summary(show_key: str, expanded_season: str):
+    print(f'in render_series_summary, show_key={show_key} expanded_season={expanded_season}')
 
     wordcloud_img = f"/static/wordclouds/{show_key}/{show_key}_SERIES.png"
 
-    return series_title_summary, season_count, episode_count, scene_count, line_count, word_count, air_date_range, wordcloud_img
+    # TODO circle back to whether this is needed and how to label it
+    accordion_contents = {}
+
+    return wordcloud_img, accordion_contents
 
 
 ############ all series episodes scatter
 @dapp_new.callback(
     Output('all-series-episodes-scatter', 'figure'),
-    # Output('all-series-episodes-dt', 'children'),
-    Input('show-key', 'value'))
-    # Input('show-all-series-episodes-dt', 'value'))    
+    Input('show-key', 'value'))    
 def render_all_series_episodes_scatter(show_key: str):
     print(f'in render_all_series_episodes_scatter, show_key={show_key}')
 
@@ -715,20 +707,6 @@ def render_all_series_episodes_scatter(show_key: str):
     df = df[cols_to_keep]
 
     all_series_episodes_scatter = pscat.build_all_series_episodes_scatter(df, seasons)
-
-    # if 'yes' in show_dt:
-    #     # NOTE last-minute first draft effort to sync datatable colors with matplotlib/plotly figure color gradient
-    #     display_cols = ['title', 'season', 'episode', 'score', 'rank', 'flattened_topics']
-    #     df = df.loc[df['score'] > 0]
-    #     df = df.loc[df['rank'] > 0]
-    #     df.sort_values('rank', inplace=True, ascending=True)
-    #     similar_episode_scores = list(df['score'].values)
-    #     viridis_discrete_rgbs = fh.matplotlib_gradient_to_rgb_strings('viridis')
-    #     sim_ep_rgbs = fh.map_range_values_to_gradient(similar_episode_scores, viridis_discrete_rgbs)
-    #     # sim_ep_rgb_textcolors = {rgb:"Black" for rgb in sim_ep_rgbs}
-    #     episode_similarity_dt = cmp.pandas_df_to_dash_dt(df, display_cols, 'rank', sim_ep_rgbs, {}, numeric_precision_overrides={'season': 0, 'episode': 0, 'rank': 0})
-    # else: 
-    #     episode_similarity_dt = {}
 
     return all_series_episodes_scatter
 

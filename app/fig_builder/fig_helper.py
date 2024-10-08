@@ -137,7 +137,7 @@ def extract_parent(topic_key: str):
 
 def flatten_topics(topics: list):
     '''
-    TODO description needs to distinguish this from other topic flattening
+    This is the simplest topic flattener and ideally everything should be using it
     '''
     out_list = []
     parents_seen = []
@@ -322,7 +322,6 @@ def flatten_and_refine_alt_names(speakers: list, ignore_dupes: bool = False, lim
         flattened_speakers.append(flat_spkr)
 
     return flattened_speakers
-
 
 
 def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFrame:

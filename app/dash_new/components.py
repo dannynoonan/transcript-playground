@@ -123,3 +123,39 @@ def flatten_and_format_cluster_df(show_key: str, clusters_df: pd.DataFrame) -> p
     clusters_df.drop('cluster_color', axis=1, inplace=True) 
 
     return clusters_df
+
+
+def generate_season_episodes_accordion_items(all_season_dicts: dict) -> list:
+    season_accordion_items = []
+
+    for season, season_dict in all_season_dicts.items():
+        # label for collapsed season accordion item
+        season_title_text = f"Season {season}: {len(season_dict['episodes'])} episodes ({season_dict['air_date_begin']} - {season_dict['air_date_end']})"
+        # episode listing datatable for expanded season accordion item
+        season_episodes_dt = generate_season_episodes_dt(season_dict['episodes'])
+        # combine elements into accordion item dash object
+        season_accordion_item = dbc.AccordionItem(title=season_title_text, item_id=season, children=[season_episodes_dt])
+        season_accordion_items.append(season_accordion_item)
+
+    return season_accordion_items
+
+
+def generate_season_episodes_dt(episodes: list) -> dash_table.DataTable:
+    episodes_df = pd.DataFrame(episodes)
+
+    # field naming and processing
+    episodes_df['focal_characters'] = episodes_df['focal_speakers'].apply(lambda x: ', '.join(x))
+    episodes_df['genres'] = episodes_df['topics_universal_tfidf'].apply(fh.flatten_topics)
+    episodes_df['air_date'] = episodes_df['air_date'].apply(lambda x: x[:10])
+    episodes_df.rename(columns={'sequence_in_season': 'episode'}, inplace=True) 
+
+    # table display input
+    display_cols = ['episode', 'title', 'air_date', 'focal_characters', 'genres']
+    episode_list = [str(e) for e in list(episodes_df['episode'].unique())]
+    bg_color_map = {e:'Maroon' for e in episode_list}
+
+    # convert to dash datatable
+    episodes_dt = pandas_df_to_dash_dt(episodes_df, display_cols, 'episode', episode_list, bg_color_map, 
+                                       numeric_precision_overrides={'episode': 0})
+
+    return episodes_dt
