@@ -4,12 +4,13 @@ from dash import dcc, html
 import app.dash_new.components as cmp
 
 
-def generate_content(show_key: str, all_seasons: list, series_summary: dict, all_season_dicts: dict, universal_genres_parent_topics: list) -> html.Div:
+def generate_content(show_key: str, all_seasons: list, series_summary: dict, all_season_dicts: dict, series_speaker_names: list, speaker_color_map: dict,
+                     universal_genres_parent_topics: list) -> html.Div:
     # generate navbar
     navbar = cmp.generate_navbar(all_seasons)
 
     # generate season episode listing datatables in accordion items
-    season_accordion_items = cmp.generate_season_episodes_accordion_items(all_season_dicts)
+    season_accordion_items = cmp.generate_season_episodes_accordion_items(all_season_dicts, speaker_color_map)
 
     # define content div
     content = html.Div([
@@ -21,7 +22,7 @@ def generate_content(show_key: str, all_seasons: list, series_summary: dict, all
                 dbc.Row([
                     dbc.Col(md=8, children=[
                         html.H3(className="text-white", children=[
-                            html.B(series_summary['series_title']), " (", series_summary['air_date_begin'], " - ", series_summary['air_date_end'], ")"
+                            html.B(series_summary['series_title']), " (", series_summary['air_date_begin'], " — ", series_summary['air_date_end'], ")"
                         ]),
                         html.H5(className="text-white", style={'display': 'flex'}, children=[
                             html.Div(style={"margin-right": "30px"}, children=[

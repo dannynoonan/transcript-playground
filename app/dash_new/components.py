@@ -125,16 +125,40 @@ def flatten_and_format_cluster_df(show_key: str, clusters_df: pd.DataFrame) -> p
     return clusters_df
 
 
-def generate_season_episodes_accordion_items(all_season_dicts: dict) -> list:
+def generate_season_episodes_accordion_items(all_season_dicts: dict, speaker_color_map: dict) -> list:
     season_accordion_items = []
 
     for season, season_dict in all_season_dicts.items():
         # label for collapsed season accordion item
-        season_title_text = f"Season {season}: {len(season_dict['episodes'])} episodes ({season_dict['air_date_begin']} - {season_dict['air_date_end']})"
+        season_title_text = f"Season {season} ({season_dict['air_date_begin']} — {season_dict['air_date_end']}): {len(season_dict['episodes'])} episodes"
+
         # episode listing datatable for expanded season accordion item
         season_episodes_dt = generate_season_episodes_dt(season_dict['episodes'])
+        
+        # recurring speaker datatable
+        recurring_speaker_cols = ['character', 'lines']
+        recurring_speaker_df = pd.DataFrame(season_dict['speaker_line_counts'].items(), columns=recurring_speaker_cols)
+        speaker_list = list(season_dict['speaker_line_counts'].keys())
+        recurring_speaker_dt = pandas_df_to_dash_dt(recurring_speaker_df, recurring_speaker_cols, 'character', speaker_list, speaker_color_map,
+                                                    numeric_precision_overrides={'lines': 0})
+
+        # recurring location datatable
+        recurring_location_cols = ['location', 'scenes']
+        recurring_location_df = pd.DataFrame(season_dict['location_counts'].items(), columns=recurring_location_cols)
+        locations_list = list(season_dict['location_counts'].keys())
+        bg_color_map = {loc:'DarkSlateBlue' for loc in locations_list}
+        recurring_location_dt = pandas_df_to_dash_dt(recurring_location_df, recurring_location_cols, 'location', locations_list, bg_color_map, 
+                                                     numeric_precision_overrides={'scenes': 0})
+
         # combine elements into accordion item dash object
-        season_accordion_item = dbc.AccordionItem(title=season_title_text, item_id=season, children=[season_episodes_dt])
+        accordion_children = [
+            dbc.Row([
+                dbc.Col(md=8, children=[season_episodes_dt]),
+                dbc.Col(md=2, children=[recurring_speaker_dt]),
+                dbc.Col(md=2, children=[recurring_location_dt])
+            ])
+        ]
+        season_accordion_item = dbc.AccordionItem(title=season_title_text, item_id=season, children=accordion_children)
         season_accordion_items.append(season_accordion_item)
 
     return season_accordion_items
@@ -145,7 +169,7 @@ def generate_season_episodes_dt(episodes: list) -> dash_table.DataTable:
 
     # field naming and processing
     episodes_df['focal_characters'] = episodes_df['focal_speakers'].apply(lambda x: ', '.join(x))
-    episodes_df['genres'] = episodes_df['topics_universal_tfidf'].apply(fh.flatten_topics)
+    episodes_df['genres'] = episodes_df.apply(lambda x: fh.flatten_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
     episodes_df['air_date'] = episodes_df['air_date'].apply(lambda x: x[:10])
     episodes_df.rename(columns={'sequence_in_season': 'episode'}, inplace=True) 
 

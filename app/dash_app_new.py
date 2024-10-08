@@ -108,10 +108,10 @@ def display_page(pathname, search):
         series_speaker_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key))
         series_summary['word_count'] = int(series_speaker_word_counts_response['dialog_word_counts']['_ALL_'])
 
-        # series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(show_key)
-        # speaker_count = series_speaker_episode_counts_response['speaker_count']	
+        series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(ShowKey(show_key))
+        all_series_speakers = list(series_speaker_episode_counts_response['episodes_by_speaker'].keys())
 
-        # series_locations_response = esr.agg_scenes_by_location(show_key)
+        # series_locations_response = esr.agg_scenes_by_location(ShowKey(show_key))
         # location_count = series_locations_response['location_count']
 
         episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
@@ -143,8 +143,8 @@ def display_page(pathname, search):
             scenes_by_speaker_response = esr.agg_scenes_by_speaker(ShowKey(show_key), season=season)
             season_dict['scene_count'] = scenes_by_speaker_response['scenes_by_speaker']['_ALL_']
 
-            episodes_by_speaker_resopnse = esr.agg_episodes_by_speaker(ShowKey(show_key), season=season)
-            season_dict['speaker_count'] = episodes_by_speaker_resopnse['speaker_count']
+            episodes_by_speaker_response = esr.agg_episodes_by_speaker(ShowKey(show_key), season=season)
+            season_dict['speaker_count'] = episodes_by_speaker_response['speaker_count']
 
             word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), season=season)
             season_dict['word_count'] = int(word_counts_response['dialog_word_counts']['_ALL_'])
@@ -182,7 +182,10 @@ def display_page(pathname, search):
             if not t['parent_key']:
                 universal_genres_parent_topics.append(t['topic_key'])
 
-        return series_palette.generate_content(show_key, all_seasons, series_summary, all_season_dicts, universal_genres_parent_topics)
+        # series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
+        speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, all_series_speakers)
+
+        return series_palette.generate_content(show_key, all_seasons, series_summary, all_season_dicts, all_series_speakers, speaker_color_map, universal_genres_parent_topics)
     
 
 

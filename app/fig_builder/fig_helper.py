@@ -135,7 +135,7 @@ def extract_parent(topic_key: str):
     return topic_path[0]
 
 
-def flatten_topics(topics: list):
+def flatten_topics(topics: list, parent_only: bool = False):
     '''
     This is the simplest topic flattener and ideally everything should be using it
     '''
@@ -146,7 +146,10 @@ def flatten_topics(topics: list):
         if len(t_bits) <= 1 or t_bits[0] in parents_seen:
             continue
         parents_seen.append(t_bits[0])
-        out_list.append(topic['topic_key'])
+        if parent_only:
+            out_list.append(t_bits[0])
+        else:
+            out_list.append(topic['topic_key'])
     return ', '.join(out_list)
 
 
