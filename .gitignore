@@ -5,11 +5,17 @@ __pycache__/
 .vscode/
 *.ipynb
 *_notes.txt
+/app/animations
+/app/data
 /bertopic_config_tests
+/bertopic_data
+/bertopic_models
 /data/*
 /database/backups
+/es_data_volume
 /jupyter
 /my_venv
+/sentiment_data
 /source
 /venv
 /w2v_models

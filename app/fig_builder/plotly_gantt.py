@@ -10,7 +10,7 @@ from app.show_metadata import show_metadata
 
 
 def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interval_data: list = None) -> go.Figure:
-    print(f'in build_episode_gantt show_key={show_key}')
+    print(f'in build_episode_gantt show_key={show_key} y_axis={y_axis}')
 
     '''
     reference:
@@ -91,22 +91,32 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
     return fig
 
 
-def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
-    print(f'in build_show_gantt show_key={show_key} type={type}')
+def build_series_gantt(show_key: str, df: pd.DataFrame, y_axis: str) -> go.Figure:
+    print(f'in build_series_gantt show_key={show_key} y_axis={y_axis}')
 
-    if type == 'speakers':
+    speaker_colors = fh.flatten_speaker_colors(show_key, to_rgb=True)
+
+    x_label = 'episode number'
+
+    # tighten x axis margins to 2% of the x axis span
+    x_max = df.Finish.max()
+    buffer = x_max * 0.02
+    x_low = -buffer
+    x_high = x_max + buffer
+
+    if y_axis == 'speakers':
         title='Character continuity over duration of series'
         # limit speaker gantt to those in `speakers` index (for visual layout, and only slightly for page load performance)
         # matches = esr.fetch_indexed_speakers(ShowKey(show_key), min_episode_count=2)
         # speakers = [m['speaker'] for m in matches['speakers']]
         speakers = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
         df = df.loc[df['Task'].isin(speakers)]
-    elif type == 'locations':
+    elif y_axis == 'locations':
         title='Scene location continuity over course of series'
-    elif type == 'topics':
-        title='Topics over course of series'
+    elif y_axis == 'topics':
+        title='Episode genres over course of series'
 
-    if type == 'topics':
+    if y_axis == 'topics':
         df = df.sort_values(['Task', 'Start'])
         # file_path = f'build_series_gantt_{type}_{show_key}.csv'
         # df.to_csv(file_path)
@@ -124,7 +134,7 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
             rgb = fh.topic_cat_rank_color_mapper(topic_cats.index(cat), hex_hue)
             keys_to_colors[cat_rank] = rgb
             colors_to_keys[rgb] = cat_rank
-        fig_height = 250 + len(df['Task'].unique()) * 25
+        fig_height = 200 + len(df['Task'].unique()) * 20
 
     else: # ['speakers', 'locations']
         index_col = 'Task'
@@ -132,17 +142,21 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, type: str) -> go.Figure:
         keys_to_colors = {}
         colors_to_keys = {}
         for sk in span_keys:
-            r = random.randrange(255)
-            g = random.randrange(255)
-            b = random.randrange(255)
-            rgb = f'rgb({r},{g},{b})'
+            if y_axis == 'speakers' and sk in speaker_colors:
+                rgb = speaker_colors[sk]
+            else:
+                r = random.randrange(255)
+                g = random.randrange(255)
+                b = random.randrange(255)
+                rgb = f'rgb({r},{g},{b})'
             keys_to_colors[sk] = rgb
             colors_to_keys[rgb] = sk
-        fig_height = 250 + len(colors_to_keys) * 25
+        fig_height = 200 + len(colors_to_keys) * 20
     
-    fig = ff.create_gantt(df, index_col=index_col, bar_width=0.2, colors=keys_to_colors, group_tasks=True, title=title, height=fig_height) # TODO scale height to number of rows
+    fig = ff.create_gantt(df, index_col=index_col, bar_width=0.1, colors=keys_to_colors, group_tasks=True, title=title, height=fig_height) # TODO scale height to number of rows
     
-    fig.update_layout(xaxis_type='linear', autosize=False)
+    fig.update_layout(xaxis_type='linear', xaxis_title=x_label, autosize=False, margin=dict(r=30, t=60, b=60))
+    fig.update_xaxes(range=[x_low, x_high])
 
     gantt_row_with_text_count = 0
     for gantt_row in fig['data']:

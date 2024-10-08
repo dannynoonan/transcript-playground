@@ -732,7 +732,8 @@ def render_series_speakers_gantt(show_key: str):
             speaker_gantt_sequence_df = pd.read_csv(file_path)
             print(f'loading dataframe at file_path={file_path}')
         else:
-            raise Exception(f'Failure to render_series_gantts: unable to fetch or generate dataframe at file_path={file_path}')
+            raise Exception(f'Failure to render_series_speakers_gantt: unable to fetch or generate dataframe at file_path={file_path}')
+
     series_speakers_gantt = pgantt.build_series_gantt(show_key, speaker_gantt_sequence_df, 'speakers')
 
     return series_speakers_gantt

@@ -12,6 +12,9 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     animation_frame = None
     title = 'Character frequency'
 
+    speakers = df['speaker'].unique()
+    color_discrete_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
+
     # in this context:
     #   - `aggregate_ratio=True`: intra-season episode-by-episode tabulation using sum()
     #   - `aggregate_ratio=False`: inter-season comparison between totals using max() (and `sequence_in_season` is ignored)
@@ -58,15 +61,10 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
 
     # custom_data = []  # TODO
 
-    fig = px.bar(sum_df, x=x, y='speaker', color='speaker', title=title,
-                # custom_data=custom_data, hover_name=cols.VOTE_WEIGHT, hover_data=hover_data,
-                # text=cols.EC_VOTES, 
-                 animation_frame=animation_frame, # ignored if df is for single year
-                #  category_orders=category_orders,
-                # color_discrete_map=color_discrete_map, category_orders=category_orders,
-                # labels={cols.GROUP: groups_label},
-                # range_x=[vw_min,vw_max], log_x=True, height=fig_height
-    )
+    fig = px.bar(sum_df, x=x, y='speaker', color='speaker', title=title, color_discrete_map=color_discrete_map,
+                 animation_frame=animation_frame) # ignored if df is for single year
+                # custom_data=custom_data, hover_data=hover_data, category_orders=category_orders,
+                # range_x=[vw_min,vw_max], height=fig_height
 
     fig.update_layout(showlegend=False)
 
