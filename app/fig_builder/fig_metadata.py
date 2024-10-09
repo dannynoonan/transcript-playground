@@ -30,10 +30,9 @@ class FigDimensions():
 fig_dims = FigDimensions()
 
 
+# TODO clarify the scope of the usage of this 
 colors = ["cornflowerblue", "burlywood", "crimson", "chartreuse", "coral", "cyan", "darkgoldenrod", "cadetblue", "darkcyan", "cornsilk"]
-colors = colors + colors + colors + colors + colors + colors
 text_colors = ["white", "black", "white", "black", "white", "black", "white", "white", "white", "black"]
-text_colors = text_colors + text_colors + text_colors + text_colors + text_colors + text_colors
 text_color_map = {
     "cornflowerblue": "white",
     "burlywood": "black", 

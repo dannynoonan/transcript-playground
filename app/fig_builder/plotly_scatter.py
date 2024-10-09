@@ -63,6 +63,7 @@ def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list, hilite: s
     df['flattened_topics'] = df.apply(lambda x: fh.flatten_topics(x['topics_universal'], parent_only=True), axis=1)
     df['flattened_speakers'] = df['focal_speakers'].apply(lambda x: ', '.join(x))
     df['flattened_locations'] = df['focal_locations'].apply(lambda x: ', '.join(x))
+    df['size'] = 1
 
     if hilite == 'topics_universal':
         df['hilite'] = df.apply(lambda x: fh.flatten_topics(x['topics_universal'], parent_only=True, max_rank=1), axis=1)
@@ -83,9 +84,10 @@ def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list, hilite: s
     custom_data = ['title', 'season', 'episode', 'air_date', 'flattened_speakers', 'flattened_locations', 'flattened_topics_tfidf', 'flattened_topics']
 
     if hilite:
-        fig = px.scatter(df, x='episode', y='season', color='hilite', color_discrete_map=hilite_color_map, custom_data=custom_data)
+        fig = px.scatter(df, x='episode', y='season', size='size', custom_data=custom_data,
+                         color='hilite', color_discrete_map=hilite_color_map, symbol='hilite')
     else:
-        fig = px.scatter(df, x='episode', y='season', custom_data=custom_data)
+        fig = px.scatter(df, x='episode', y='season', size='size', custom_data=custom_data)
              
     fig.update_traces(
         hovertemplate="<br>".join([

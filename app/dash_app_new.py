@@ -628,7 +628,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
     topic_score_types = [ug_score_type, ug2_score_type]
     for i, tg in enumerate(topic_groupings):
         # fetch episode topics, load into df, modify / reformat
-        r = esr.fetch_episode_topics(ShowKey(show_key), tg, episode_key=episode_key)
+        r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
         df = fh.flatten_and_format_topics_df(df, topic_score_types[i])
@@ -705,8 +705,8 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str):
     elif hilite == 'focal_locations':
         scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key))
         scenes_by_location = scenes_by_location_response['scenes_by_location']
-        locations = utils.truncate_dict(scenes_by_location, 50, start_index=1)
-        hilite_color_map = {loc:fm.colors[i] for i, loc in enumerate(locations)}
+        locations = utils.truncate_dict(scenes_by_location, 500, start_index=1)
+        hilite_color_map = {loc:fm.colors[i % 10] for i, loc in enumerate(locations)}
     else:
         hilite_color_map = None
 
@@ -1098,7 +1098,7 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int):
 
     # generate and color-stamp clusters for all show episodes 
     doc_embeddings_clusters_df = ef.cluster_docs(doc_embeddings, num_clusters)
-    doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: fm.colors[x])
+    doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: fm.colors[x % 10])
 
     # fetch basic title/season data for all show episodes 
     all_episodes = esr.fetch_simple_episodes(ShowKey(show_key))

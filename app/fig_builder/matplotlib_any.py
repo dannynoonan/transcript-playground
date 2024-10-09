@@ -28,7 +28,7 @@ def build_cluster_scatter_matplotlib(df: pd.DataFrame, show_key: str, num_cluste
     x = [x for x, _ in vis_dims2]
     y = [y for _, y in vis_dims2]
 
-    for category, color in enumerate(fm.colors[:num_clusters]):
+    for category, color in enumerate(fm.colors[:(num_clusters % 10)]):
         xs = np.array(x)[df.cluster == category]
         ys = np.array(y)[df.cluster == category]
         plt.scatter(xs, ys, color=color, alpha=0.3)

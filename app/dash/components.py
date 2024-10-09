@@ -62,8 +62,8 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, num_groups: int) -> dash_table.DataTa
     for i in range(num_groups):
         sdc = {}
         sdc['if'] = dict(filter_query=f"{{cluster}} = {i}")
-        sdc['backgroundColor'] = fm.colors[i]
-        sdc['color'] = fm.text_colors[i]
+        sdc['backgroundColor'] = fm.colors[i % 10]
+        sdc['color'] = fm.text_colors[i % 10]
         style_data_conditional_list.append(sdc)
 
     dash_dt = dash_table.DataTable(
