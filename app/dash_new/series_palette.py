@@ -34,7 +34,20 @@ def generate_content(show_key: str, all_seasons: list, series_summary: dict, all
                             # ]),
                         ]),
                         html.Br(),
-                        html.Div(dcc.Graph(id="all-series-episodes-scatter")),
+                        html.Div(dcc.Graph(id="series-episodes-scatter-grid")),
+                        dcc.RadioItems(
+                            id="scatter-grid-hilite",
+                            className="text-white", 
+                            options=[
+                                {'label': 'focal character', 'value': 'focal_speakers'},
+                                {'label': 'focal location', 'value': 'focal_locations'},
+                                {'label': 'genre (raw)', 'value': 'topics_universal'},
+                                {'label': 'genre (weighted by frequency)', 'value': 'topics_universal_tfidf'},
+                            ],
+                            value='tfidf_score',
+                            inputStyle={"margin-left": "12px", "margin-right": "4px"},
+                            style={"display": "flex", "padding-bottom": "0"}
+                        ),
                     ]),
                     dbc.Col(md=4, children=[
                         dbc.Row([ 

@@ -5,6 +5,7 @@ from sklearn.manifold import TSNE
 
 import app.fig_builder.fig_helper as fh
 import app.fig_builder.fig_metadata as fm
+from app import utils
 
 
 def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figure:
@@ -45,32 +46,61 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
     return fig
 
 
-def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list) -> go.Figure:
-    print(f"in build_all_series_episodes_scatter len(df)={len(df)} seasons={seasons}")
+def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list, hilite: str = None, hilite_color_map: dict = None) -> go.Figure:
+    print(f"in build_all_series_episodes_scatter len(df)={len(df)} seasons={seasons} hilite={hilite} hilite_color_map={hilite_color_map}")
     
     # rename 'sequence_in_season' to 'episode' for display
     df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
 
-    # ad-hoc method of flattening topic metadata for hovertemplate display
-    df['flattened_topics'] = df['topics_universal_tfidf'].apply(fh.flatten_topics)
+    # tighten x axis margins to 2% of the x axis span
+    x_max = df['episode'].max()
+    buffer = x_max * 0.02
+    x_low = 1-buffer
+    x_high = x_max + buffer
 
-    custom_data = ['title', 'season', 'episode', 'air_date', 'focal_speakers', 'flattened_topics']
-    # custom_data = ['title', 'season', 'episode', 'focal_speakers', 'flattened_topics']
-    
-    fig = px.scatter(df, x='episode', y='season', custom_data=custom_data)
-                    
+    # ad-hoc method of flattening topic metadata for hovertemplate display
+    df['flattened_topics_tfidf'] = df.apply(lambda x: fh.flatten_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
+    df['flattened_topics'] = df.apply(lambda x: fh.flatten_topics(x['topics_universal'], parent_only=True), axis=1)
+    df['flattened_speakers'] = df['focal_speakers'].apply(lambda x: ', '.join(x))
+    df['flattened_locations'] = df['focal_locations'].apply(lambda x: ', '.join(x))
+
+    if hilite == 'topics_universal':
+        df['hilite'] = df.apply(lambda x: fh.flatten_topics(x['topics_universal'], parent_only=True, max_rank=1), axis=1)
+        legend_title = 'Primary genre'
+    elif hilite == 'topics_universal_tfidf':
+        df['hilite'] = df.apply(lambda x: fh.flatten_topics(x['topics_universal_tfidf'], parent_only=True, max_rank=1), axis=1)
+        legend_title = 'Primary genre'
+    elif hilite == 'focal_speakers':
+        df['hilite'] = df.apply(lambda x: fh.flatten_df_list_column(x['focal_speakers'], hilite_color_map, truncate_at=1), axis=1)
+        legend_title = 'Focal characters'
+    elif hilite == 'focal_locations':
+        df['hilite'] = df.apply(lambda x: fh.flatten_df_list_column(x['focal_locations'], hilite_color_map, truncate_at=1), axis=1)
+        legend_title = 'Focal location'
+    else:
+        df['hilite'] = ''
+        legend_title = ''
+
+    custom_data = ['title', 'season', 'episode', 'air_date', 'flattened_speakers', 'flattened_locations', 'flattened_topics_tfidf', 'flattened_topics']
+
+    if hilite:
+        fig = px.scatter(df, x='episode', y='season', color='hilite', color_discrete_map=hilite_color_map, custom_data=custom_data)
+    else:
+        fig = px.scatter(df, x='episode', y='season', custom_data=custom_data)
+             
     fig.update_traces(
         hovertemplate="<br>".join([
             "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b>",
             "Date: %{customdata[3]}",
             "Focal characters: %{customdata[4]}",
-            "Categories: %{customdata[5]}"
+            "Focal locations: %{customdata[5]}",
+            "Genres (by freq): %{customdata[6]}",
+            "Genres (raw): %{customdata[7]}"
         ])
     )    
 
     fig.update_yaxes(autorange="reversed")
     
-    fig.update_layout(showlegend=False, margin=dict(t=30, b=60), 
+    fig.update_layout(margin=dict(t=30, b=60), xaxis_range=(x_low, x_high), yaxis_range=(1, len(seasons)), legend_title_text=legend_title,
                       yaxis=dict(tickmode='array', tickvals=seasons, ticktext=[f'Season {s}' for s in seasons]))
 
     return fig

@@ -628,7 +628,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
     topic_score_types = [ug_score_type, ug2_score_type]
     for i, tg in enumerate(topic_groupings):
         # fetch episode topics, load into df, modify / reformat
-        r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
+        r = esr.fetch_episode_topics(ShowKey(show_key), tg, episode_key=episode_key)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
         df = fh.flatten_and_format_topics_df(df, topic_score_types[i])
@@ -665,6 +665,10 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
 
 
 
+
+
+
+
 ######################################## SERIES CALLBACKS ##########################################
 
 ############ series summary callbacks
@@ -675,7 +679,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
     Input('show-key', 'value'),
     Input("accordion", "active_item"))    
 def render_series_summary(show_key: str, expanded_season: str):
-    print(f'in render_series_summary, show_key={show_key} expanded_season={expanded_season}')
+    utils.hilite_in_logs(f'callback invoked: render_series_summary, show_key={show_key} expanded_season={expanded_season}')
 
     wordcloud_img = f"/static/wordclouds/{show_key}/{show_key}_SERIES.png"
 
@@ -687,10 +691,24 @@ def render_series_summary(show_key: str, expanded_season: str):
 
 ############ all series episodes scatter
 @dapp_new.callback(
-    Output('all-series-episodes-scatter', 'figure'),
-    Input('show-key', 'value'))    
-def render_all_series_episodes_scatter(show_key: str):
-    print(f'in render_all_series_episodes_scatter, show_key={show_key}')
+    Output('series-episodes-scatter-grid', 'figure'),
+    Input('show-key', 'value'),
+    Input('scatter-grid-hilite', 'value'))    
+def render_all_series_episodes_scatter(show_key: str, hilite: str):
+    utils.hilite_in_logs(f'callback invoked: render_all_series_episodes_scatter, show_key={show_key} hilite={hilite}')
+
+    if hilite in ['topics_universal', 'topics_universal_tfidf']:
+        hilite_color_map = TOPIC_COLORS
+    elif hilite == 'focal_speakers':
+        speakers = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
+        hilite_color_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
+    elif hilite == 'focal_locations':
+        scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key))
+        scenes_by_location = scenes_by_location_response['scenes_by_location']
+        locations = utils.truncate_dict(scenes_by_location, 50, start_index=1)
+        hilite_color_map = {loc:fm.colors[i] for i, loc in enumerate(locations)}
+    else:
+        hilite_color_map = None
 
     season_response = esr.list_seasons(ShowKey(show_key))
     seasons = season_response['seasons']
@@ -705,11 +723,11 @@ def render_all_series_episodes_scatter(show_key: str):
     df['air_date'] = df['air_date'].apply(lambda x: x[:10])
 
     cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'focal_speakers', 'focal_locations', 
-                    'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
+                    'topics_universal', 'topics_universal_tfidf']
 
     df = df[cols_to_keep]
 
-    all_series_episodes_scatter = pscat.build_all_series_episodes_scatter(df, seasons)
+    all_series_episodes_scatter = pscat.build_all_series_episodes_scatter(df, seasons, hilite=hilite, hilite_color_map=hilite_color_map)
 
     return all_series_episodes_scatter
 
@@ -719,7 +737,7 @@ def render_all_series_episodes_scatter(show_key: str):
     Output('series-speakers-gantt', 'figure'),
     Input('show-key', 'value'))    
 def render_series_speakers_gantt(show_key: str):
-    print(f'in render_series_speakers_gantt, show_key={show_key}')
+    utils.hilite_in_logs(f'callback invoked: render_series_speakers_gantt, show_key={show_key}')
 
     episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
     season_interval_data = fh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
@@ -747,7 +765,7 @@ def render_series_speakers_gantt(show_key: str):
     Output('series-locations-gantt', 'figure'),
     Input('show-key', 'value'))    
 def render_series_locations_gantt(show_key: str):
-    print(f'in render_series_locations_gantt, show_key={show_key}')
+    utils.hilite_in_logs(f'callback invoked: render_series_locations_gantt, show_key={show_key}')
 
     episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
     season_interval_data = fh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
@@ -775,7 +793,7 @@ def render_series_locations_gantt(show_key: str):
     Output('series-topics-gantt', 'figure'),
     Input('show-key', 'value'))    
 def render_series_topics_gantt(show_key: str):
-    print(f'in render_series_topics_gantt, show_key={show_key}')
+    utils.hilite_in_logs(f'callback invoked: render_series_topics_gantt, show_key={show_key}')
 
     episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
     season_interval_data = fh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
@@ -814,7 +832,7 @@ def render_series_topics_gantt(show_key: str):
     # NOTE: I believe 'qt-submit' is a placebo: it's a call to action, but simply exiting the qt field invokes the callback
     Input('qt-submit', 'value'))    
 def render_series_search_gantt(show_key: str, series_dialog_qt: str, qt_submit: bool = False):
-    print(f'in render_series_search_gantt, show_key={show_key} series_dialog_qt={series_dialog_qt} qt_submit={qt_submit}')
+    utils.hilite_in_logs(f'callback invoked: render_series_search_gantt, show_key={show_key} series_dialog_qt={series_dialog_qt} qt_submit={qt_submit}')
 
     # execute search query and filter response into series gantt charts
 
@@ -875,7 +893,7 @@ def render_series_search_gantt(show_key: str, series_dialog_qt: str, qt_submit: 
     Input('character-chatter-season', 'value'),
     Input('character-chatter-sequence-in-season', 'value'))    
 def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, season: str, sequence_in_season: str = None):
-    print(f'in render_speaker_frequency_bar_chart, show_key={show_key} span_granularity={span_granularity} season={season} sequence_in_season={sequence_in_season}')
+    utils.hilite_in_logs(f'callback invoked: render_speaker_frequency_bar_chart, show_key={show_key} span_granularity={span_granularity} season={season} sequence_in_season={sequence_in_season}')
 
     if season in ['0', 0, 'All']:
         season = None
@@ -910,7 +928,7 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
     Input('show-key', 'value'))
     # Input('speaker-qt', 'value')) 
 def render_series_speaker_listing_dt(show_key: str):
-    print(f'in render_series_speaker_listing_dt, show_key={show_key}')   
+    utils.hilite_in_logs(f'callback invoked: render_series_speaker_listing_dt, show_key={show_key}')   
 # def render_series_speaker_listing_dt(show_key: str, speaker_qt: str):
 #     print(f'in render_series_speaker_listing_dt, show_key={show_key} speaker_qt={speaker_qt}')
 
@@ -966,7 +984,7 @@ def render_series_speaker_listing_dt(show_key: str):
     Input('series-mbti-count', 'value'),
     Input('series-dnda-count', 'value'))    
 def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_count: int):
-    print(f'in render_series_speaker_topic_scatter, show_key={show_key} mbti_count={mbti_count} dnda_count={dnda_count}')
+    utils.hilite_in_logs(f'callback invoked: render_series_speaker_topic_scatter, show_key={show_key} mbti_count={mbti_count} dnda_count={dnda_count}')
 
     series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
     indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(series_speaker_names))
@@ -999,8 +1017,9 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     Input('topic-grouping', 'value'),
     Input('score-type', 'value'))    
 def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str):
-    print(f'in render_series_topic_figs, show_key={show_key} topic_grouping={topic_grouping} score_type={score_type}')
+    utils.hilite_in_logs(f'callback invoked: render_series_topic_figs, show_key={show_key} topic_grouping={topic_grouping} score_type={score_type}')
 
+    ##### TODO begin optimization block 
     episode_response = esr.fetch_simple_episodes(ShowKey(show_key))
     episode_topic_lists = []
     for episode in episode_response['episodes']:
@@ -1008,6 +1027,7 @@ def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str
         episode_topic_lists.append(episode_topics_response['episode_topics'])
 
     series_topics_df, series_parent_topics_df = fh.generate_topic_aggs_from_episode_topics(episode_topic_lists, max_rank=20, max_parent_repeats=2)
+    ##### TODO end optimization block 
 
     series_topics_pie = ppie.build_topic_aggs_pie(series_topics_df, topic_grouping, score_type)
     series_parent_topics_pie = ppie.build_topic_aggs_pie(series_parent_topics_df, topic_grouping, score_type, is_parent=True)
@@ -1023,7 +1043,7 @@ def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str
     Input('parent-topic', 'value'),
     Input('score-type', 'value'))    
 def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_topic: str, score_type: str):
-    print(f'in render_series_topic_episodes_dt, show_key={show_key} topic_grouping={topic_grouping} parent_topic={parent_topic} score_type={score_type}')
+    utils.hilite_in_logs(f'callback invoked: render_series_topic_episodes_dt, show_key={show_key} topic_grouping={topic_grouping} parent_topic={parent_topic} score_type={score_type}')
 
     # configurable score threshold
     min_score = 0.5
@@ -1067,7 +1087,8 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
     Input('show-key', 'value'),
     Input('num-clusters', 'value'))    
 def render_series_cluster_scatter(show_key: str, num_clusters: int):
-    print(f'in render_series_cluster_scatter, show_key={show_key} num_clusters={num_clusters}')
+    utils.hilite_in_logs(f'callback invoked: render_series_cluster_scatter, show_key={show_key} num_clusters={num_clusters}')
+
     num_clusters = int(num_clusters)
     vector_field = 'openai_ada002_embeddings'
 
