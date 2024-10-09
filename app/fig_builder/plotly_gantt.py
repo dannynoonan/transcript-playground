@@ -91,7 +91,7 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
     return fig
 
 
-def build_series_gantt(show_key: str, df: pd.DataFrame, y_axis: str) -> go.Figure:
+def build_series_gantt(show_key: str, df: pd.DataFrame, y_axis: str, interval_data: dict = None) -> go.Figure:
     print(f'in build_series_gantt show_key={show_key} y_axis={y_axis}')
 
     speaker_colors = fh.flatten_speaker_colors(show_key, to_rgb=True)
@@ -181,6 +181,13 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, y_axis: str) -> go.Figur
                     gantt_row_text[i] = finish_row.iloc[0]['info']
 
             gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove word index
+
+    shapes = []
+    # if interval_data, add markers and labels designating intervals 
+    if interval_data:
+        interval_shapes = fh.build_and_annotate_season_labels(fig, interval_data)
+        shapes.extend(interval_shapes)
+    fig.update_layout(shapes=shapes)
     
     return fig
 

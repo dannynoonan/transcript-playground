@@ -721,6 +721,9 @@ def render_all_series_episodes_scatter(show_key: str):
 def render_series_speakers_gantt(show_key: str):
     print(f'in render_series_speakers_gantt, show_key={show_key}')
 
+    episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
+    season_interval_data = fh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
+
     file_path = f'./app/data/speaker_gantt_sequence_{show_key}.csv'
     if os.path.isfile(file_path):
         speaker_gantt_sequence_df = pd.read_csv(file_path)
@@ -734,7 +737,7 @@ def render_series_speakers_gantt(show_key: str):
         else:
             raise Exception(f'Failure to render_series_speakers_gantt: unable to fetch or generate dataframe at file_path={file_path}')
 
-    series_speakers_gantt = pgantt.build_series_gantt(show_key, speaker_gantt_sequence_df, 'speakers')
+    series_speakers_gantt = pgantt.build_series_gantt(show_key, speaker_gantt_sequence_df, 'speakers', interval_data=season_interval_data)
 
     return series_speakers_gantt
 
@@ -746,7 +749,9 @@ def render_series_speakers_gantt(show_key: str):
 def render_series_locations_gantt(show_key: str):
     print(f'in render_series_locations_gantt, show_key={show_key}')
 
-    # location gantt
+    episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
+    season_interval_data = fh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
+
     file_path = f'./app/data/location_gantt_sequence_{show_key}.csv'
     if os.path.isfile(file_path):
         location_gantt_sequence_df = pd.read_csv(file_path)
@@ -758,8 +763,9 @@ def render_series_locations_gantt(show_key: str):
             location_gantt_sequence_df = pd.read_csv(file_path)
             print(f'loading dataframe at file_path={file_path}')
         else:
-            raise Exception(f'Failure to render_series_gantts: unable to fetch or generate dataframe at file_path={file_path}')
-    series_locations_gantt = pgantt.build_series_gantt(show_key, location_gantt_sequence_df, 'locations')
+            raise Exception(f'Failure to render_series_locations_gantt: unable to fetch or generate dataframe at file_path={file_path}')
+        
+    series_locations_gantt = pgantt.build_series_gantt(show_key, location_gantt_sequence_df, 'locations', interval_data=season_interval_data)
 
     return series_locations_gantt
 
@@ -771,7 +777,9 @@ def render_series_locations_gantt(show_key: str):
 def render_series_topics_gantt(show_key: str):
     print(f'in render_series_topics_gantt, show_key={show_key}')
 
-    # topic gantt
+    episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
+    season_interval_data = fh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
+
     topic_grouping = 'universalGenres'
     # topic_grouping = f'focusedGpt35_{show_key}'
     topic_threshold = 20
@@ -790,7 +798,8 @@ def render_series_topics_gantt(show_key: str):
             print(f'loading dataframe at file_path={file_path}')
         else:
             raise Exception(f'Failure to render_series_gantts: unable to fetch or generate dataframe at file_path={file_path}')
-    series_topics_gantt = pgantt.build_series_gantt(show_key, topic_gantt_sequence_df, 'topics')
+        
+    series_topics_gantt = pgantt.build_series_gantt(show_key, topic_gantt_sequence_df, 'topics', interval_data=season_interval_data)
 
     return series_topics_gantt
 
