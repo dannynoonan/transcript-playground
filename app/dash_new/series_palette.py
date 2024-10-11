@@ -139,9 +139,9 @@ def generate_content(show_key: str, all_seasons: list, series_summary: dict, all
                     html.H3("Character chatter"),
                     dbc.Col(md=2, children=[
                         html.Div([
-                            "Span granularity: ",
+                            "Tally by: ",
                             dcc.Dropdown(
-                                id="span-granularity",
+                                id="speaker-chatter-tally-by",
                                 options=['episode', 'scene', 'line', 'word'],
                                 value='line',
                             )
@@ -155,7 +155,7 @@ def generate_content(show_key: str, all_seasons: list, series_summary: dict, all
                             "Season ",
                             html.Br(),
                             dcc.Slider(
-                                id="character-chatter-season",
+                                id="speaker-chatter-season",
                                 min=0,
                                 max=7,
                                 step=None,
@@ -174,7 +174,7 @@ def generate_content(show_key: str, all_seasons: list, series_summary: dict, all
                             "Episode ",
                             html.Br(),
                             dcc.Slider(
-                                id="character-chatter-sequence-in-season",
+                                id="speaker-chatter-sequence-in-season",
                                 min=1,
                                 max=25,
                                 step=None,

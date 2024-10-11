@@ -15,9 +15,11 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     speakers = df['speaker'].unique()
     color_discrete_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
 
+    # TODO 10/10/24 aggregate_ratio param and descriptions of usage are super confusion. Was this mainly designed for animation?
     # in this context:
     #   - `aggregate_ratio=True`: intra-season episode-by-episode tabulation using sum()
-    #   - `aggregate_ratio=False`: inter-season comparison between totals using max() (and `sequence_in_season` is ignored)
+    #   - `aggregate_ratio=False`: inter-season comparison between totals using max() 
+    # NOTE: previously, when `aggregate_ratio=False` the `sequence_in_season` param was ignored. Made sense for animation, but not episode-by-episode browsing
     if aggregate_ratio:
         if animate:
             animation_frame = 'sequence_in_season'
@@ -44,6 +46,9 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
             if season:
                 df = df.loc[df['season'] == season]
                 title = f'{title} in Season {season}'
+                if sequence_in_season:
+                    df = df.loc[df['sequence_in_season'] == sequence_in_season]
+                    title = f'{title} Episode {sequence_in_season}'
         x = f'{span_granularity}_count'
         # if `span_granularity='episode'` dynamically populate `episode_count` column using `scene_count` column to enable episode tabulation
         if span_granularity == 'episode':
@@ -61,7 +66,7 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
 
     # custom_data = []  # TODO
 
-    fig = px.bar(sum_df, x=x, y='speaker', color='speaker', title=title, color_discrete_map=color_discrete_map,
+    fig = px.bar(sum_df, x=x, y='speaker', color='speaker', title=title, color_discrete_map=color_discrete_map, height=650,
                  animation_frame=animation_frame) # ignored if df is for single year
                 # custom_data=custom_data, hover_data=hover_data, category_orders=category_orders,
                 # range_x=[vw_min,vw_max], height=fig_height

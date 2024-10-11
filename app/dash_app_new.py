@@ -889,11 +889,11 @@ def render_series_search_gantt(show_key: str, series_dialog_qt: str, qt_submit: 
     Output('speaker-season-frequency-bar-chart', 'figure'),
     Output('speaker-episode-frequency-bar-chart', 'figure'),
     Input('show-key', 'value'),
-    Input('span-granularity', 'value'),
-    Input('character-chatter-season', 'value'),
-    Input('character-chatter-sequence-in-season', 'value'))    
-def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, season: str, sequence_in_season: str = None):
-    utils.hilite_in_logs(f'callback invoked: render_speaker_frequency_bar_chart, show_key={show_key} span_granularity={span_granularity} season={season} sequence_in_season={sequence_in_season}')
+    Input('speaker-chatter-tally-by', 'value'),
+    Input('speaker-chatter-season', 'value'),
+    Input('speaker-chatter-sequence-in-season', 'value'))    
+def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str, sequence_in_season: str = None):
+    utils.hilite_in_logs(f'callback invoked: render_speaker_frequency_bar_chart, show_key={show_key} tally_by={tally_by} season={season} sequence_in_season={sequence_in_season}')
 
     if season in ['0', 0, 'All']:
         season = None
@@ -914,8 +914,8 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
         else:
             raise Exception('Failure to render_speaker_frequency_bar_chart: unable to fetch or generate dataframe at file_path={file_path}')
     
-    speaker_season_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=False, season=season)
-    speaker_episode_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, span_granularity, aggregate_ratio=True, season=season, sequence_in_season=sequence_in_season)
+    speaker_season_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, tally_by, aggregate_ratio=False, season=season)
+    speaker_episode_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, tally_by, aggregate_ratio=False, season=season, sequence_in_season=sequence_in_season)
 
     return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart
 
