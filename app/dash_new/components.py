@@ -9,7 +9,7 @@ from app.show_metadata import BGCOLORS_TO_TEXT_COLORS
 from app import utils
 
 
-def generate_navbar(season_dropdown_options: list) -> dbc.Card:
+def generate_navbar(show_key: str, season_dropdown_options: list) -> dbc.Card:
 
     season_dropdown_menu = []
     for season in season_dropdown_options:
@@ -21,13 +21,16 @@ def generate_navbar(season_dropdown_options: list) -> dbc.Card:
             dbc.Nav(className="nav nav-pills", children=[
                 dbc.NavItem(dbc.NavLink("Transcript Playground", style={"color": "White", "font-size": "16pt"}, href="/tsp_dash_new")),
                 dbc.DropdownMenu(label="Shows", color="primary", children=[
-                    dbc.DropdownMenuItem("TNG", style={"color": "White"}, href='/web/show/TNG', target="_blank"), 
+                    dbc.DropdownMenuItem("TNG", style={"color": "White"}, target="_blank",
+                                         href=f'/tsp_dash_new/series-palette?show_key={show_key}'), 
                 ]),
-                dbc.NavItem(dbc.NavLink("TNG", style={"color": "White"}, href='/web/show/TNG', external_link=True)),
+                dbc.NavItem(dbc.NavLink(show_key, style={"color": "White"}, external_link=True,
+                                        href=f'/tsp_dash_new/series-palette?show_key={show_key}')),
                 dbc.DropdownMenu(label="Seasons", color="primary", children=season_dropdown_menu),
                 dbc.NavItem(dbc.NavLink("Search", style={"color": "White"}, href='/web/episode_search/TNG', external_link=True)),
                 dbc.NavItem(dbc.NavLink("Episodes", style={"color": "White"}, href='/web/episode_search/TNG', external_link=True)),
-                dbc.NavItem(dbc.NavLink("Characters", style={"color": "White"}, href='/web/character_listing/TNG', external_link=True)),
+                dbc.NavItem(dbc.NavLink("Characters", style={"color": "White"}, external_link=True,
+                                        href=f'/tsp_dash_new/character-listing-palette?show_key={show_key}')),
                 dbc.NavItem(dbc.NavLink("Topics", style={"color": "White"}, href='/web/topic_listing/TNG', external_link=True)),
             ])
         ])

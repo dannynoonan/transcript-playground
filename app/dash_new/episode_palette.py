@@ -5,7 +5,7 @@ import app.dash_new.components as cmp
 
 
 def generate_content(show_key: str, episode_key: str, all_seasons: list, episode_dropdown_options: list, emotion_dropdown_options: list) -> html.Div:
-    navbar = cmp.generate_navbar(all_seasons)
+    navbar = cmp.generate_navbar(show_key, all_seasons)
 
     content = html.Div([
         navbar,

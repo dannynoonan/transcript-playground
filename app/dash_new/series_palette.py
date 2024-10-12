@@ -4,10 +4,11 @@ from dash import dcc, html
 import app.dash_new.components as cmp
 
 
-def generate_content(show_key: str, all_seasons: list, series_summary: dict, all_season_dicts: dict, series_speaker_names: list, speaker_color_map: dict,
+def generate_content(show_key: str, all_seasons: list, series_summary: dict, all_season_dicts: dict, speaker_color_map: dict,
                      universal_genres_parent_topics: list) -> html.Div:
     # generate navbar
-    navbar = cmp.generate_navbar(all_seasons)
+    navbar = cmp.generate_navbar(show_key, all_seasons)
+    wordcloud_img = f'/static/wordclouds/{show_key}/{show_key}_SERIES.png'
 
     # generate season episode listing datatables in accordion items
     season_accordion_items = cmp.generate_season_episodes_accordion_items(all_season_dicts, speaker_color_map)
@@ -29,9 +30,6 @@ def generate_content(show_key: str, all_seasons: list, series_summary: dict, all
                                 html.B(series_summary['season_count']), " seasons, ", html.B(series_summary['episode_count']), " episodes, ", 
                                 html.B(series_summary['scene_count']), " scenes, ", html.B(series_summary['line_count']), " lines, ", html.B(series_summary['word_count']), " words",
                             ]),
-                            # html.Div(style={"margin-right": "10px"}, children=[
-                            #     "Predominant genres: ", html.Span(id='series-topics')
-                            # ]),
                         ]),
                         html.Br(),
                         html.Div(dcc.Graph(id="series-episodes-scatter-grid")),
@@ -61,7 +59,7 @@ def generate_content(show_key: str, all_seasons: list, series_summary: dict, all
                         html.Br(),
                         dbc.Row([ 
                             dbc.Col(md=12, children=[
-                                html.Div(html.Img(id='series-wordcloud-img', width='100%'))
+                                html.Img(src=wordcloud_img, width="100%")
                             ]),
                         ]),
                     ]),
@@ -156,14 +154,14 @@ def generate_content(show_key: str, all_seasons: list, series_summary: dict, all
                             html.Br(),
                             dcc.Slider(
                                 id="speaker-chatter-season",
-                                min=0,
-                                max=7,
+                                min=all_seasons[0],
+                                max=all_seasons[len(all_seasons)-1],
                                 step=None,
                                 marks={
                                     int(y): {'label': str(y), 'style': {'transform': 'rotate(45deg)', 'color': 'white'}}
-                                    for y in range(0,8)
+                                    for y in all_seasons
                                 },
-                                value=1,
+                                value=all_seasons[0],
                             ),
                             html.Br(),
                             dcc.Graph(id="speaker-season-frequency-bar-chart"),
@@ -194,10 +192,10 @@ def generate_content(show_key: str, all_seasons: list, series_summary: dict, all
 
             # series speaker listing
             dbc.CardBody([
-                html.H3("Characters in series"),
+                html.H3("Regular and recurring characters in series"),
                 dbc.Row([
                     dbc.Col(md=12, children=[
-                        html.Div(id="speaker-series-listing-dt"),
+                        html.Div(id="series-speaker-listing-dt"),
                     ]),
                 ]),
             ]),

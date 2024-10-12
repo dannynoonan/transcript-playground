@@ -7,7 +7,7 @@ import pandas as pd
 import urllib.parse
 
 import app.dash_new.components as cmp
-from app.dash_new import episode_palette, series_palette, oopsy
+from app.dash_new import episode_palette, character_listing_palette, series_palette, oopsy
 import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.es.es_response_transformer as esrt
@@ -117,7 +117,7 @@ def display_page(pathname, search):
         episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
         episodes_by_season = episodes_by_season_response['episodes_by_season']
 
-        all_seasons = episodes_by_season.keys()
+        all_seasons = list(episodes_by_season.keys())
         series_summary['season_count'] = len(all_seasons)
 
         series_summary['episode_count'] = 0
@@ -185,8 +185,46 @@ def display_page(pathname, search):
         # series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
         speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, all_series_speakers)
 
-        return series_palette.generate_content(show_key, all_seasons, series_summary, all_season_dicts, all_series_speakers, speaker_color_map, universal_genres_parent_topics)
+        return series_palette.generate_content(show_key, all_seasons, series_summary, all_season_dicts, speaker_color_map, universal_genres_parent_topics)
     
+    elif pathname == "/tsp_dash_new/character-listing-palette":
+        # parse show_key from params
+        if 'show_key' in parsed_dict:
+            show_key = parsed_dict['show_key']
+            if isinstance(show_key, list):
+                show_key = show_key[0]
+        else:
+            err_msg = f'show_key is required'
+            print(err_msg)
+            return oopsy.generate_content(err_msg)
+        
+        # TODO this is a quick copy-paste hack-together, series_summary needs some attention if it's being re-used across pages
+        series_summary = {}
+        series_summary['series_title'] = 'Star Trek: The Next Generation'
+
+        series_speaker_scene_counts_response = esr.agg_scenes_by_speaker(ShowKey(show_key))
+        series_summary['scene_count'] = series_speaker_scene_counts_response['scenes_by_speaker']['_ALL_']
+
+        series_speakers_response = esr.agg_scene_events_by_speaker(ShowKey(show_key))
+        series_summary['line_count'] = series_speakers_response['scene_events_by_speaker']['_ALL_']
+
+        series_speaker_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key))
+        series_summary['word_count'] = int(series_speaker_word_counts_response['dialog_word_counts']['_ALL_'])
+
+        series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(ShowKey(show_key))
+        all_series_speakers = list(series_speaker_episode_counts_response['episodes_by_speaker'].keys())
+        
+        # all seasons
+        all_seasons_response = esr.list_seasons(ShowKey(show_key))
+        all_seasons = all_seasons_response['seasons']
+        series_summary['season_count'] = len(all_seasons)
+
+        # all episodes
+        all_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+        all_episodes = all_episodes_response['episodes']
+        series_summary['episode_count'] = len(all_episodes)
+
+        return character_listing_palette.generate_content(show_key, all_seasons, series_summary)
 
 
 ######################################## EPISODE CALLBACKS ##########################################
@@ -673,7 +711,6 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
 
 ############ series summary callbacks
 @dapp_new.callback(
-    Output('series-wordcloud-img', 'src'),
     Output("accordion-contents", "children"),
     # Output('series-topics', 'children'),
     Input('show-key', 'value'),
@@ -681,12 +718,10 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
 def render_series_summary(show_key: str, expanded_season: str):
     utils.hilite_in_logs(f'callback invoked: render_series_summary, show_key={show_key} expanded_season={expanded_season}')
 
-    wordcloud_img = f"/static/wordclouds/{show_key}/{show_key}_SERIES.png"
-
     # TODO circle back to whether this is needed and how to label it
-    accordion_contents = {}
+    # accordion_contents = {}
 
-    return wordcloud_img, accordion_contents
+    return {}
 
 
 ############ all series episodes scatter
@@ -923,7 +958,7 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
 ############ series speaker listing callback
 @dapp_new.callback(
     # Output('speaker-qt-display', 'children'),
-    Output('speaker-series-listing-dt', 'children'),
+    Output('series-speaker-listing-dt', 'children'),
     # Output('speaker-matches-dt', 'children'),
     Input('show-key', 'value'))
     # Input('speaker-qt', 'value')) 
@@ -932,7 +967,9 @@ def render_series_speaker_listing_dt(show_key: str):
 # def render_series_speaker_listing_dt(show_key: str, speaker_qt: str):
 #     print(f'in render_series_speaker_listing_dt, show_key={show_key} speaker_qt={speaker_qt}')
 
-    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti')
+    series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
+
+    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), speakers=','.join(series_speaker_names), extra_fields='topics_mbti')
     indexed_speakers = indexed_speakers_response['speakers']
     indexed_speakers = fh.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
     indexed_speakers = fh.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
@@ -1121,6 +1158,69 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int):
     episode_clusters_scatter = pscat.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
 
     return episode_clusters_scatter, episode_clusters_dt
+
+
+
+
+
+
+######################################## CHARACTER LISTING CALLBACKS ##########################################
+
+############ series speaker listing callback
+@dapp_new.callback(
+    # Output('speaker-qt-display', 'children'),
+    Output('speaker-listing-dt', 'children'),
+    # Output('speaker-matches-dt', 'children'),
+    Input('show-key', 'value'))
+    # Input('speaker-qt', 'value')) 
+def render_speaker_listing_dt(show_key: str):
+    utils.hilite_in_logs(f'callback invoked: render_speaker_listing_dt, show_key={show_key}')   
+# def render_speaker_listing_dt(show_key: str, speaker_qt: str):
+#     print(f'in render_speaker_listing_dt, show_key={show_key} speaker_qt={speaker_qt}')
+
+    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti')
+    indexed_speakers = indexed_speakers_response['speakers']
+    indexed_speakers = fh.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
+    indexed_speakers = fh.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
+    
+    speakers_df = pd.DataFrame(indexed_speakers)
+
+	# # TODO well THIS is inefficient...
+    # indexed_speaker_keys = [s['speaker'] for s in indexed_speakers]
+    # speaker_aggs_response = esr.composite_speaker_aggs(show_key)
+    # speaker_aggs = speaker_aggs_response['speaker_agg_composite']
+    # non_indexed_speakers = [s for s in speaker_aggs if s['speaker'] not in indexed_speaker_keys]
+
+    speaker_names = [s['speaker'] for s in indexed_speakers]
+
+    speakers_df.rename(columns={'speaker': 'character', 'scene_count': 'scenes', 'line_count': 'lines', 'word_count': 'words', 'season_count': 'seasons', 
+                                'episode_count': 'episodes', 'actor_names': 'actor(s)', 'topics_mbti': 'mbti'}, inplace=True)
+    display_cols = ['character', 'aka', 'actor(s)', 'seasons', 'episodes', 'scenes', 'lines', 'words', 'mbti']
+
+    # replace actor nan values with empty string, flatten list into string
+    speakers_df['actor(s)'].fillna('', inplace=True)
+    speakers_df['actor(s)'] = speakers_df['actor(s)'].apply(lambda x: ', '.join(x))
+
+    speaker_colors = fh.generate_speaker_color_discrete_map(show_key, speaker_names)
+
+    speaker_listing_dt = cmp.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
+                                                  numeric_precision_overrides={'seasons': 0, 'episodes': 0, 'scenes': 0, 'lines': 0, 'words': 0})
+
+    # print('speaker_listing_dt:')
+    # utils.hilite_in_logs(speaker_listing_dt)
+
+    # speaker_matches = []
+    # if speaker_qt:
+    # 	# speaker_qt_display = speaker_qt
+    #     speaker_search_response = esr.search_speakers(speaker_qt, show_key=show_key)
+    #     speaker_matches = speaker_search_response['speaker_matches']
+    #     speaker_matches_dt = None
+
+    # return speaker_qt, speaker_listing_dt, speaker_matches_dt
+    return speaker_listing_dt
+
+
+
 
 
 if __name__ == "__main__":

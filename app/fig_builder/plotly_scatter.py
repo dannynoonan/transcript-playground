@@ -47,7 +47,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
 
 
 def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list, hilite: str = None, hilite_color_map: dict = None) -> go.Figure:
-    print(f"in build_all_series_episodes_scatter len(df)={len(df)} seasons={seasons} hilite={hilite} hilite_color_map={hilite_color_map}")
+    print(f"in build_all_series_episodes_scatter len(df)={len(df)} seasons={seasons} hilite={hilite}")
     
     # rename 'sequence_in_season' to 'episode' for display
     df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
