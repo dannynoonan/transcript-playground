@@ -19,18 +19,18 @@ def generate_navbar(show_key: str, season_dropdown_options: list) -> dbc.Card:
     navbar = dbc.Card(className="text-white bg-primary", style={"z-index":"2000"}, children=[
         dbc.CardBody([
             dbc.Nav(className="nav nav-pills", children=[
-                dbc.NavItem(dbc.NavLink("Transcript Playground", style={"color": "White", "font-size": "16pt"}, href="/tsp_dash_new")),
+                dbc.NavItem(dbc.NavLink("Transcript Playground", style={"color": "White", "font-size": "16pt"}, href="/dash_pages")),
                 dbc.DropdownMenu(label="Shows", color="primary", children=[
                     dbc.DropdownMenuItem("TNG", style={"color": "White"}, target="_blank",
-                                         href=f'/tsp_dash_new/series-palette?show_key={show_key}'), 
+                                         href=f'/dash_pages/series/{show_key}'), 
                 ]),
                 dbc.NavItem(dbc.NavLink(show_key, style={"color": "White"}, external_link=True,
-                                        href=f'/tsp_dash_new/series-palette?show_key={show_key}')),
+                                        href=f'/dash_pages/series/{show_key}')),
                 dbc.DropdownMenu(label="Seasons", color="primary", children=season_dropdown_menu),
                 dbc.NavItem(dbc.NavLink("Search", style={"color": "White"}, href='/web/episode_search/TNG', external_link=True)),
                 dbc.NavItem(dbc.NavLink("Episodes", style={"color": "White"}, href='/web/episode_search/TNG', external_link=True)),
                 dbc.NavItem(dbc.NavLink("Characters", style={"color": "White"}, external_link=True,
-                                        href=f'/tsp_dash_new/character-listing-palette?show_key={show_key}')),
+                                        href=f'/dash_pages/character_listing/{show_key}')),
                 dbc.NavItem(dbc.NavLink("Topics", style={"color": "White"}, href='/web/topic_listing/TNG', external_link=True)),
             ])
         ])

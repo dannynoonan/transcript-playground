@@ -1,10 +1,14 @@
-import dash_bootstrap_components as dbc
+import dash
 from dash import dcc, html
+import dash_bootstrap_components as dbc
 
 from app.dash.components import navbar
 
 
-def generate_content(err_msg: str) -> html.Div:
+dash.register_page(__name__)
+
+
+def layout(err_msg: str) -> html.Div:
     content = html.Div([
         navbar,
         dbc.Card(className="bg-dark", children=[
