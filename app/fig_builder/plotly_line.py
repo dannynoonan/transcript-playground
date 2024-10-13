@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-import app.figdata_transformer.color_processor as cp
+import app.figdata_manager.color_meta as cm
 
 
 def build_speaker_line_chart(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool = False, season: str = None) -> go.Figure:
@@ -78,7 +78,7 @@ def build_location_line_chart(show_key: str, df: pd.DataFrame, span_granularity:
 def build_episode_sentiment_line_chart(show_key: str, df: pd.DataFrame, speakers: list, emotions: list, focal_property: str) -> go.Figure:
     print(f'in build_sentiment_line_chart show_key={show_key} emotion={emotions} speakers={speakers} focal_property={focal_property}')
 
-    color_discrete_map = cp.generate_speaker_color_discrete_map(show_key, speakers)
+    color_discrete_map = cm.generate_speaker_color_discrete_map(show_key, speakers)
 
     # remove episode-level rows 
     df = df.loc[df['scene'] != 'ALL']

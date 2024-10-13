@@ -28,7 +28,7 @@ import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_line as pline
 import app.fig_builder.plotly_networkgraph as pgraph
 import app.fig_builder.plotly_scatter as pscat
-import app.figdata_transformer.color_processor as cp
+import app.figdata_manager.color_meta as cm
 
 
 dapp = Dash(__name__,
@@ -192,7 +192,7 @@ def render_show_cluster_scatter(show_key: str, num_clusters: int):
 
     # generate and color-stamp clusters for all show episodes 
     doc_embeddings_clusters_df = ef.cluster_docs(doc_embeddings, num_clusters)
-    doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: fm.colors[x % 10])
+    doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: cm.colors[x % 10])
 
     # fetch basic title/season data for all show episodes 
     all_episodes = esr.fetch_simple_episodes(ShowKey(show_key))
@@ -261,7 +261,7 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str, scale_by: s
 
     # NOTE where and how to layer in color mapping is a WIP
     speakers = [n['speaker'] for n in speaker_relations_data['nodes']]
-    speaker_colors = cp.generate_speaker_color_discrete_map(show_key, speakers)
+    speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speakers)
     for n in speaker_relations_data['nodes']:
         n['color'] = speaker_colors[n['speaker']].lower() # ugh with the lowercase
 
@@ -539,7 +539,7 @@ def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
     bertopic_model_docs_df = bertopic_model_docs_df[['cluster', 'cluster_title_short', 'Probability', 'wc', 'speaker_group', 'episode_key', 
                                                      'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'focal_speakers', 'focal_locations',
                                                      'topics_focused_tfidf_list', 'topics_universal_tfidf_list', 'x_coord', 'y_coord', 'z_coord', 'point_size']]
-    bertopic_model_docs_df['cluster_color'] = bertopic_model_docs_df['cluster'].apply(lambda x: fm.colors[x % 10])
+    bertopic_model_docs_df['cluster_color'] = bertopic_model_docs_df['cluster'].apply(lambda x: cm.colors[x % 10])
     bertopic_model_docs_df.drop(['focal_speakers', 'focal_locations'], axis=1, inplace=True) 
     bertopic_model_docs_df = cmp.flatten_and_format_cluster_df(show_key, bertopic_model_docs_df)
     dash_dt = cmp.pandas_df_to_dash_dt(bertopic_model_docs_df, num_clusters)

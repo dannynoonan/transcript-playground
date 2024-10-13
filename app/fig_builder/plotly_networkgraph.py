@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-import app.fig_builder.fig_helper as fh
+import app.figdata_manager.data_processor as dp
 
 
 def build_bertopic_model_3d_scatter(show_key: str, bertopic_model_id: str, bertopic_docs_df: pd.DataFrame) -> go.Figure:
@@ -93,7 +93,7 @@ def build_speaker_chatter_scatter3d(show_key: str, data: dict, scale_by: str, di
         nodes_customdata.append((n['scene_count'], n['line_count'], n['word_count'], n['assoc_str']))
 
     node_scale_basis = [node[scale_by] for node in data['nodes']]
-    node_sizes = fh.scale_values(node_scale_basis, low=node_min, high=node_max)
+    node_sizes = dp.scale_values(node_scale_basis, low=node_min, high=node_max)
 
     node_line = dict(color='rgb(50,50,50)', width=0.5)
     nodes_hovertemplate = "<br>".join([

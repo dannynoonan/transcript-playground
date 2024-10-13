@@ -14,12 +14,12 @@ import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_pie as ppie
 import app.fig_builder.plotly_scatter as pscat
-import app.figdata_transformer.color_processor as cp
-import app.figdata_transformer.pandas_transformer as pt
+import app.figdata_manager.color_meta as cm
+import app.figdata_manager.data_processor as dp
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.pages.components as cmp
-from app.show_metadata import show_metadata, ShowKey, TOPIC_COLORS
+from app.show_metadata import show_metadata, ShowKey
 from app import utils
 
 
@@ -107,7 +107,7 @@ def layout(show_key: str) -> html.Div:
             universal_genres_parent_topics.append(t['topic_key'])
 
     # series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
-    speaker_color_map = cp.generate_speaker_color_discrete_map(show_key, all_series_speakers)
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, all_series_speakers)
 
     display_page_end_ts = dt.now()
     display_page_duration = display_page_end_ts - display_page_start_ts
@@ -465,15 +465,15 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str):
     utils.hilite_in_logs(f'callback invoked: render_all_series_episodes_scatter ts={callback_start_ts} show_key={show_key} hilite={hilite}')
 
     if hilite in ['topics_universal', 'topics_universal_tfidf']:
-        hilite_color_map = TOPIC_COLORS
+        hilite_color_map = cm.TOPIC_COLORS
     elif hilite == 'focal_speakers':
         speakers = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
-        hilite_color_map = cp.generate_speaker_color_discrete_map(show_key, speakers)
+        hilite_color_map = cm.generate_speaker_color_discrete_map(show_key, speakers)
     elif hilite == 'focal_locations':
         scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key))
         scenes_by_location = scenes_by_location_response['scenes_by_location']
         locations = utils.truncate_dict(scenes_by_location, 500, start_index=1)
-        hilite_color_map = {loc:fm.colors[i % 10] for i, loc in enumerate(locations)}
+        hilite_color_map = {loc:cm.colors[i % 10] for i, loc in enumerate(locations)}
     else:
         hilite_color_map = None
 
@@ -656,7 +656,7 @@ def render_series_search_gantt(show_key: str, series_dialog_qt: str, qt_submit: 
         # build dash datatable
         matching_lines_df.rename(columns={'Task': 'character', 'sequence_in_season': 'episode'}, inplace=True)
         matching_speakers = matching_lines_df['character'].unique()
-        speaker_color_map = cp.generate_speaker_color_discrete_map(show_key, matching_speakers)
+        speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
         # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
         display_cols = ['episode_key', 'episode_title', 'count', 'season', 'episode', 'info', 'matching_line_count', 'matching_lines']
         episode_search_results_dt = cmp.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'episode_key', matching_speakers, speaker_color_map, 
@@ -734,8 +734,8 @@ def render_series_speaker_listing_dt(show_key: str):
 
     indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), speakers=','.join(series_speaker_names), extra_fields='topics_mbti')
     indexed_speakers = indexed_speakers_response['speakers']
-    indexed_speakers = fh.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
-    indexed_speakers = fh.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
+    indexed_speakers = dp.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
+    indexed_speakers = dp.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
     
     speakers_df = pd.DataFrame(indexed_speakers)
 
@@ -755,7 +755,7 @@ def render_series_speaker_listing_dt(show_key: str):
     speakers_df['actor(s)'].fillna('', inplace=True)
     speakers_df['actor(s)'] = speakers_df['actor(s)'].apply(lambda x: ', '.join(x))
 
-    speaker_colors = cp.generate_speaker_color_discrete_map(show_key, speaker_names)
+    speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
 
     speaker_listing_dt = cmp.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
                                                   numeric_precision_overrides={'seasons': 0, 'episodes': 0, 'scenes': 0, 'lines': 0, 'words': 0})
@@ -796,11 +796,11 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     indexed_speakers = indexed_speakers_response['speakers']
     # indexed_speakers = fh.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
 
-    speaker_color_map = cp.generate_speaker_color_discrete_map(show_key, series_speaker_names)
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, series_speaker_names)
 
     # flatten episode speaker topic data for each episode speaker
-    exploded_speakers_mbti = fh.explode_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=mbti_count)
-    exploded_speakers_dnda = fh.explode_speaker_topics(indexed_speakers, 'dnda', limit_per_speaker=dnda_count)
+    exploded_speakers_mbti = dp.explode_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=mbti_count)
+    exploded_speakers_dnda = dp.explode_speaker_topics(indexed_speakers, 'dnda', limit_per_speaker=dnda_count)
     mbti_df = pd.DataFrame(exploded_speakers_mbti)
     dnda_df = pd.DataFrame(exploded_speakers_dnda)
     series_speaker_mbti_scatter = pscat.build_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
@@ -836,7 +836,7 @@ def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str
         episode_topics_response = esr.fetch_episode_topics(ShowKey(show_key), episode['episode_key'], topic_grouping)
         episode_topic_lists.append(episode_topics_response['episode_topics'])
 
-    series_topics_df, series_parent_topics_df = pt.generate_topic_aggs_from_episode_topics(episode_topic_lists, max_rank=20, max_parent_repeats=2)
+    series_topics_df, series_parent_topics_df = dp.generate_topic_aggs_from_episode_topics(episode_topic_lists, max_rank=20, max_parent_repeats=2)
     ##### TODO end optimization block 
 
     series_topics_pie = ppie.build_topic_aggs_pie(series_topics_df, topic_grouping, score_type)
@@ -890,7 +890,7 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
 
     topic_episodes_df.sort_values(score_type, ascending=False, inplace=True)
 
-    series_topic_episodes_dt = cmp.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [parent_topic], TOPIC_COLORS)
+    series_topic_episodes_dt = cmp.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [parent_topic], cm.TOPIC_COLORS)
 
     callback_end_ts = dt.now()
     display_page_duration = callback_end_ts - callback_start_ts
@@ -918,7 +918,7 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int):
 
     # generate and color-stamp clusters for all show episodes 
     doc_embeddings_clusters_df = ef.cluster_docs(doc_embeddings, num_clusters)
-    doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: fm.colors[x % 10])
+    doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: cm.colors[x % 10])
 
     # fetch basic title/season data for all show episodes 
     all_episodes = esr.fetch_simple_episodes(ShowKey(show_key))
@@ -933,7 +933,7 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int):
     # TODO this flatten_and_format_cluster_df function is a holdover from a bygone era, figure out where/how to generically handle this
     episode_clusters_df = cmp.flatten_and_format_cluster_df(show_key, episode_clusters_df)
     clusters = [str(c) for c in list(episode_clusters_df['cluster'].unique())]
-    bg_color_map = {str(i):color for i, color in enumerate(fm.colors)}
+    bg_color_map = {str(i):color for i, color in enumerate(cm.colors)}
     episode_clusters_dt = cmp.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, bg_color_map,
                                                    numeric_precision_overrides={'season': 0, 'episode': 0, 'scenes': 0, 'episode_key': 0, 'cluster': 0})
 

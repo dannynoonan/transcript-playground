@@ -3,10 +3,8 @@ from dash import dash_table, dcc, html
 import dash.dash_table.Format as dtf
 import pandas as pd
 
-import app.fig_builder.fig_helper as fh
-import app.fig_builder.fig_metadata as fm
-import app.figdata_transformer.pandas_transformer as pt
-from app.show_metadata import BGCOLORS_TO_TEXT_COLORS
+import app.figdata_manager.color_meta as cm
+import app.figdata_manager.matrix_operations as mxop
 from app import utils
 
 
@@ -77,8 +75,8 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
             v_escaped = v.replace("\"", "") 
             sdc['if'] = dict(filter_query=f"{{{color_key_col}}} = \"{v_escaped}\"")
             sdc['backgroundColor'] = bg_color_map[v]
-            if bg_color_map[v] in BGCOLORS_TO_TEXT_COLORS:
-                sdc['color'] = BGCOLORS_TO_TEXT_COLORS[bg_color_map[v]]
+            if bg_color_map[v] in cm.BGCOLORS_TO_TEXT_COLORS:
+                sdc['color'] = cm.BGCOLORS_TO_TEXT_COLORS[bg_color_map[v]]
             else:
                 sdc['color'] = 'Black'
         style_data_conditional_list.append(sdc)
@@ -173,7 +171,7 @@ def generate_season_episodes_dt(episodes: list) -> dash_table.DataTable:
 
     # field naming and processing
     episodes_df['focal_characters'] = episodes_df['focal_speakers'].apply(lambda x: ', '.join(x))
-    episodes_df['genres'] = episodes_df.apply(lambda x: pt.flatten_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
+    episodes_df['genres'] = episodes_df.apply(lambda x: mxop.flatten_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
     episodes_df['air_date'] = episodes_df['air_date'].apply(lambda x: x[:10])
     episodes_df.rename(columns={'sequence_in_season': 'episode'}, inplace=True) 
 

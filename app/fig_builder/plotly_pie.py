@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-from app.show_metadata import TOPIC_COLORS
+import app.figdata_manager.color_meta as cm
 
 
 def build_topic_aggs_pie(df: pd.DataFrame, topic_grouping: str, score_type: str, is_parent: bool = False) -> go.Figure:
@@ -15,7 +15,7 @@ def build_topic_aggs_pie(df: pd.DataFrame, topic_grouping: str, score_type: str,
     else:
         color_col='parent'
 
-    fig = px.pie(df, values=score_type, names=topic_col, title=title, color=color_col, color_discrete_map=TOPIC_COLORS, 
+    fig = px.pie(df, values=score_type, names=topic_col, title=title, color=color_col, color_discrete_map=cm.TOPIC_COLORS, 
                  height=800, hole=.3)
 
     fig.update_traces(sort=False, textinfo='label', textposition='inside')

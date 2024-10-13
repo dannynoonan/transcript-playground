@@ -14,11 +14,11 @@ import app.fig_builder.plotly_line as pline
 import app.fig_builder.plotly_networkgraph as pgraph
 import app.fig_builder.plotly_scatter as pscat
 import app.fig_builder.plotly_treemap as ptree
-import app.figdata_transformer.color_processor as cp
-import app.figdata_transformer.pandas_transformer as pt
+import app.figdata_manager.color_meta as cm
+import app.figdata_manager.data_processor as dp
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.pages.components as cmp
-from app.show_metadata import ShowKey, TOPIC_COLORS
+from app.show_metadata import ShowKey
 from app import utils
 
 
@@ -495,7 +495,7 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     # build dash datatable
     matching_lines_df.rename(columns={'Task': 'character', 'scene_event': 'line', 'Line': 'dialog'}, inplace=True)
     matching_speakers = list(matching_lines_df['character'].unique())
-    speaker_color_map = cp.generate_speaker_color_discrete_map(show_key, matching_speakers)
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
     # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
     display_cols = ['character', 'scene', 'line', 'location', 'dialog']
     episode_search_results_dt = cmp.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map, 
@@ -573,7 +573,7 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_b
 
     # NOTE where and how to layer in color mapping is a WIP
     speakers = [n['speaker'] for n in speaker_relations_data['nodes']]
-    speaker_colors = cp.generate_speaker_color_discrete_map(show_key, speakers)
+    speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speakers)
     for n in speaker_relations_data['nodes']:
         n['color'] = speaker_colors[n['speaker']].lower() # ugh with the lowercase
 
@@ -604,12 +604,12 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
 
     speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti')
     speakers_for_episode = speakers_for_episode_response['speaker_episodes']
-    speakers_for_episode = fh.flatten_speaker_topics(speakers_for_episode, 'mbti', 3)
+    speakers_for_episode = dp.flatten_speaker_topics(speakers_for_episode, 'mbti', 3)
 
     df = pd.DataFrame(speakers_for_episode, columns=['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count', 'topics_mbti'])
 
     episode_speaker_names = [s['speaker'] for s in speakers_for_episode]
-    speaker_color_map = cp.generate_speaker_color_discrete_map(show_key, episode_speaker_names)
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, episode_speaker_names)
 
     # TODO incorporate episode-level sentiment into es writer workflow; for now it's a quick lookup in episode-level dfs
     emo_limit = 3
@@ -715,8 +715,8 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
         df = df.loc[df['rank'] > 0]
         df.sort_values('rank', inplace=True, ascending=True)
         similar_episode_scores = list(df['score'].values)
-        viridis_discrete_rgbs = fh.matplotlib_gradient_to_rgb_strings('viridis')
-        sim_ep_rgbs = fh.map_range_values_to_gradient(similar_episode_scores, viridis_discrete_rgbs)
+        viridis_discrete_rgbs = cm.matplotlib_gradient_to_rgb_strings('viridis')
+        sim_ep_rgbs = cm.map_range_values_to_gradient(similar_episode_scores, viridis_discrete_rgbs)
         # sim_ep_rgb_textcolors = {rgb:"Black" for rgb in sim_ep_rgbs}
         episode_similarity_dt = cmp.pandas_df_to_dash_dt(df, display_cols, 'rank', sim_ep_rgbs, {}, numeric_precision_overrides={'season': 0, 'episode': 0, 'rank': 0})
     else: 
@@ -746,7 +746,7 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
     episode_speaker_names = [s['speaker'] for s in episode_speakers]
     # indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(episode_speaker_names))
 
-    speaker_color_map = cp.generate_speaker_color_discrete_map(show_key, episode_speaker_names)
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, episode_speaker_names)
 
     # NOTE ended up not using this data downstream
     # mbti_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:meyersBriggsKiersey')
@@ -758,8 +758,8 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
     # dnda_percent_distrib_list = list(dnda_percent_distrib.values())
 
     # flatten episode speaker topic data for each episode speaker
-    exploded_speakers_mbti = fh.explode_speaker_topics(episode_speakers, 'mbti', limit_per_speaker=mbti_count)
-    exploded_speakers_dnda = fh.explode_speaker_topics(episode_speakers, 'dnda', limit_per_speaker=dnda_count)
+    exploded_speakers_mbti = dp.explode_speaker_topics(episode_speakers, 'mbti', limit_per_speaker=mbti_count)
+    exploded_speakers_dnda = dp.explode_speaker_topics(episode_speakers, 'dnda', limit_per_speaker=dnda_count)
     mbti_df = pd.DataFrame(exploded_speakers_mbti)
     dnda_df = pd.DataFrame(exploded_speakers_dnda)
     episode_speaker_mbti_scatter = pscat.build_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
@@ -797,14 +797,14 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
         r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
-        df = pt.flatten_and_format_topics_df(df, topic_score_types[i])
+        df = dp.flatten_and_format_topics_df(df, topic_score_types[i])
         # build treemap fig
         fig = ptree.build_episode_topic_treemap(df.copy(), tg, topic_score_types[i], max_per_parent=3)
         figs[tg] = fig
         # build dash datatable
         parent_topics = df['parent_topic'].unique()
         display_cols = ['parent_topic', 'topic_name', 'raw_score', 'scaled_score', 'tfidf_score']
-        dash_dt = cmp.pandas_df_to_dash_dt(df, display_cols, 'parent_topic', parent_topics, TOPIC_COLORS)
+        dash_dt = cmp.pandas_df_to_dash_dt(df, display_cols, 'parent_topic', parent_topics, cm.TOPIC_COLORS)
         dts[tg] = dash_dt
 
     return figs['universalGenres'], dts['universalGenres'], figs['universalGenresGpt35_v2'], dts['universalGenresGpt35_v2']

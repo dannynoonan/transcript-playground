@@ -4,9 +4,9 @@ import plotly.graph_objects as go
 from sklearn.manifold import TSNE
 
 import app.fig_builder.fig_metadata as fm
-import app.figdata_transformer.color_processor as cp
-import app.figdata_transformer.pandas_transformer as pt
-import app.figdata_transformer.speaker_topic_scatter_meta as stsm
+import app.figdata_manager.color_meta as cm
+import app.figdata_manager.matrix_operations as mxop
+import app.figdata_manager.speaker_topic_scatter_meta as stsm
 
 
 def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figure:
@@ -18,7 +18,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
     symbol_map = {'all': 'square', 'mlt': 'circle', 'focal': 'star'}
 
     # ad-hoc method of flattening topic metadata for hovertemplate display
-    df['flattened_topics'] = df['topics_universal_tfidf'].apply(pt.flatten_topics)
+    df['flattened_topics'] = df['topics_universal_tfidf'].apply(mxop.flatten_topics)
 
     custom_data = ['title', 'season', 'episode', 'score', 'rank', 'focal_speakers', 'flattened_topics']
     
@@ -60,23 +60,23 @@ def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list, hilite: s
     x_high = x_max + buffer
 
     # ad-hoc method of flattening topic metadata for hovertemplate display
-    df['flattened_topics_tfidf'] = df.apply(lambda x: pt.flatten_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
-    df['flattened_topics'] = df.apply(lambda x: pt.flatten_topics(x['topics_universal'], parent_only=True), axis=1)
+    df['flattened_topics_tfidf'] = df.apply(lambda x: mxop.flatten_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
+    df['flattened_topics'] = df.apply(lambda x: mxop.flatten_topics(x['topics_universal'], parent_only=True), axis=1)
     df['flattened_speakers'] = df['focal_speakers'].apply(lambda x: ', '.join(x))
     df['flattened_locations'] = df['focal_locations'].apply(lambda x: ', '.join(x))
     df['size'] = 1
 
     if hilite == 'topics_universal':
-        df['hilite'] = df.apply(lambda x: pt.flatten_topics(x['topics_universal'], parent_only=True, max_rank=1), axis=1)
+        df['hilite'] = df.apply(lambda x: mxop.flatten_topics(x['topics_universal'], parent_only=True, max_rank=1), axis=1)
         legend_title = 'Primary genre'
     elif hilite == 'topics_universal_tfidf':
-        df['hilite'] = df.apply(lambda x: pt.flatten_topics(x['topics_universal_tfidf'], parent_only=True, max_rank=1), axis=1)
+        df['hilite'] = df.apply(lambda x: mxop.flatten_topics(x['topics_universal_tfidf'], parent_only=True, max_rank=1), axis=1)
         legend_title = 'Primary genre'
     elif hilite == 'focal_speakers':
-        df['hilite'] = df.apply(lambda x: pt.flatten_df_list_column(x['focal_speakers'], hilite_color_map, truncate_at=1), axis=1)
+        df['hilite'] = df.apply(lambda x: mxop.flatten_df_list_column(x['focal_speakers'], hilite_color_map, truncate_at=1), axis=1)
         legend_title = 'Focal characters'
     elif hilite == 'focal_locations':
-        df['hilite'] = df.apply(lambda x: pt.flatten_df_list_column(x['focal_locations'], hilite_color_map, truncate_at=1), axis=1)
+        df['hilite'] = df.apply(lambda x: mxop.flatten_df_list_column(x['focal_locations'], hilite_color_map, truncate_at=1), axis=1)
         legend_title = 'Focal location'
     else:
         df['hilite'] = ''
@@ -114,7 +114,7 @@ def build_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_type: str
 
     if not speaker_color_map:
         speakers = df['speaker'].unique()
-        speaker_color_map = cp.generate_speaker_color_discrete_map(show_key, speakers)
+        speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, speakers)
 
     shapes = []
 
@@ -245,7 +245,7 @@ def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key
     # init figure with core properties
     fig = px.scatter(episode_embeddings_clusters_df, x=x, y=y, 
                      color=episode_embeddings_clusters_df['cluster_color'],
-                     color_discrete_map=fm.color_map,
+                     color_discrete_map=cm.color_map,
                      title=base_fig_title, custom_data=custom_data, height=800)
                      # hover_name=episode_clusters_df.episode_key, hover_data=hover_data,
                      # height=fig_height, width=fig_width, opacity=0.7
