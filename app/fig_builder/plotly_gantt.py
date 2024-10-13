@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import random
 
 import app.fig_builder.fig_helper as fh
+import app.figdata_transformer.color_processor as cp
 from app.show_metadata import show_metadata
 
 
@@ -20,7 +21,7 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
     '''
 
     df = pd.DataFrame(timeline_data)
-    speaker_colors = fh.flatten_speaker_colors(show_key, to_rgb=True)
+    speaker_colors = cp.flatten_speaker_colors(show_key, to_rgb=True)
     # if y_axis == 'speakers':
     #     # title = 'Character dialog timeline'
     # elif y_axis == 'locations':
@@ -94,7 +95,7 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
 def build_series_gantt(show_key: str, df: pd.DataFrame, y_axis: str, interval_data: dict = None) -> go.Figure:
     print(f'in build_series_gantt show_key={show_key} y_axis={y_axis}')
 
-    speaker_colors = fh.flatten_speaker_colors(show_key, to_rgb=True)
+    speaker_colors = cp.flatten_speaker_colors(show_key, to_rgb=True)
 
     x_label = 'episode number'
 
@@ -131,7 +132,7 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, y_axis: str, interval_da
             cat = cat_rank.split('_')[0]
             rank = cat_rank.split('_')[1]
             hex_hue = round(255/len(ranks)) * int(rank)
-            rgb = fh.topic_cat_rank_color_mapper(topic_cats.index(cat), hex_hue)
+            rgb = cp.topic_cat_rank_color_mapper(topic_cats.index(cat), hex_hue)
             keys_to_colors[cat_rank] = rgb
             colors_to_keys[rgb] = cat_rank
         fig_height = 200 + len(df['Task'].unique()) * 20

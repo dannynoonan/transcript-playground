@@ -6,6 +6,7 @@ import pandas as pd
 
 import app.es.es_read_router as esr
 import app.fig_builder.fig_helper as fh 
+import app.figdata_transformer.color_processor as cp
 import app.pages.components as cmp
 from app.show_metadata import ShowKey
 from app import utils
@@ -147,7 +148,7 @@ def render_speaker_listing_dt(show_key: str):
     speakers_df['actor(s)'].fillna('', inplace=True)
     speakers_df['actor(s)'] = speakers_df['actor(s)'].apply(lambda x: ', '.join(x))
 
-    speaker_colors = fh.generate_speaker_color_discrete_map(show_key, speaker_names)
+    speaker_colors = cp.generate_speaker_color_discrete_map(show_key, speaker_names)
 
     speaker_listing_dt = cmp.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
                                                   numeric_precision_overrides={'seasons': 0, 'episodes': 0, 'scenes': 0, 'lines': 0, 'words': 0})

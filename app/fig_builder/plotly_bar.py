@@ -3,6 +3,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 import app.fig_builder.fig_helper as fh
+import app.figdata_transformer.color_processor as cp
 
 
 def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool, season: int, 
@@ -13,7 +14,7 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     title = 'Character frequency'
 
     speakers = df['speaker'].unique()
-    color_discrete_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
+    color_discrete_map = cp.generate_speaker_color_discrete_map(show_key, speakers)
 
     # TODO 10/10/24 aggregate_ratio param and descriptions of usage are super confusion. Was this mainly designed for animation?
     # in this context:
@@ -87,7 +88,7 @@ def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, scale_b
     print(f'in build_speaker_frequency_bar scale_by={scale_by}')
 
     speakers = df['character'].unique()
-    color_discrete_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
+    color_discrete_map = cp.generate_speaker_color_discrete_map(show_key, speakers)
 
     custom_data = ['scenes', 'lines', 'words']
 

@@ -28,6 +28,7 @@ import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_line as pline
 import app.fig_builder.plotly_networkgraph as pgraph
 import app.fig_builder.plotly_scatter as pscat
+import app.figdata_transformer.color_processor as cp
 
 
 dapp = Dash(__name__,
@@ -260,7 +261,7 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str, scale_by: s
 
     # NOTE where and how to layer in color mapping is a WIP
     speakers = [n['speaker'] for n in speaker_relations_data['nodes']]
-    speaker_colors = fh.generate_speaker_color_discrete_map(show_key, speakers)
+    speaker_colors = cp.generate_speaker_color_discrete_map(show_key, speakers)
     for n in speaker_relations_data['nodes']:
         n['color'] = speaker_colors[n['speaker']].lower() # ugh with the lowercase
 

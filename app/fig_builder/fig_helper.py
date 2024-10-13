@@ -1,12 +1,8 @@
-from operator import itemgetter
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
-from PIL import ImageColor
 import plotly.graph_objects as go
 
-from app.show_metadata import show_metadata, EXTRA_SPEAKER_COLORS
 from app import utils
 
 
@@ -43,120 +39,6 @@ def apply_animation_settings(fig: go.Figure, base_fig_title: str, frame_rate: in
     print(f'fig.layout={fig.layout}')
 
 
-def topic_cat_rank_color_mapper(topic_cat_i: int, hex_hue: int) -> str:
-    i = topic_cat_i % 9
-    j = int(topic_cat_i / 9)
-    low = j
-    high = 255 - j
-    if i == 0:
-        return f'rgb({hex_hue},{hex_hue},{high})'
-    if i == 1:
-        return f'rgb({hex_hue},{high},{hex_hue})'
-    if i == 2:
-        return f'rgb({high},{hex_hue},{hex_hue})'
-    if i == 3:
-        return f'rgb({hex_hue},{high},{high})'
-    if i == 4:
-        return f'rgb({high},{hex_hue},{high})'
-    if i == 5:
-        return f'rgb({high},{high},{hex_hue})'
-    if i == 6:
-        return f'rgb({hex_hue},{hex_hue},{low})'
-    if i == 7:
-        return f'rgb({hex_hue},{low},{hex_hue})'
-    if i == 8:
-        return f'rgb({low},{hex_hue},{hex_hue})'
-    if i == 9:
-        return f'rgb({hex_hue},{hex_hue},{hex_hue})'
-    
-    # if i == 7:
-    #     return f'rgb({hex_hue},0,0)'
-    # if i == 8:
-    #     return f'rgb(0,{hex_hue},0)'
-    # if i == 9:
-    #     return f'rgb(0,0,{hex_hue})'
-
-    # if i == 7:
-    #     return f'rgb({hex_hue},0,255)'
-    # if i == 8:
-    #     return f'rgb(0,{hex_hue},255)'
-    # if i == 9:
-    #     return f'rgb(0,255,{hex_hue})'
-    # if i == 10:
-    #     return f'rgb({hex_hue},255,0)'
-    # if i == 11:
-    #     return f'rgb(255,{hex_hue},0)'
-    # if i == 12:
-    #     return f'rgb(255,0,{hex_hue})'
-
-
-def to_mbti_x(topic_key: str):
-    if 'ESF' in topic_key or 'ENF' in topic_key:
-        return 0.5
-    if 'ISF' in topic_key or 'INF' in topic_key:
-        return 1.5
-    if 'IST' in topic_key or 'INT' in topic_key:
-        return 2.5
-    if 'EST' in topic_key or 'ENT' in topic_key:
-        return 3.5
-        
-
-def to_mbti_y(topic_key: str):
-    if 'SFJ' in topic_key or 'STJ' in topic_key:
-        return 0.5
-    if 'SFP' in topic_key or 'STP' in topic_key:
-        return 1.5
-    if 'NFP' in topic_key or 'NTP' in topic_key:
-        return 2.5
-    if 'NFJ' in topic_key or 'NTJ' in topic_key:
-        return 3.5
-    
-
-def to_dnda_x(topic_key: str):
-    if '.Evil' in topic_key:
-        return 0.5
-    if '.Neutral' in topic_key:
-        return 1.5
-    if '.Good' in topic_key:
-        return 2.5
-        
-
-def to_dnda_y(topic_key: str):
-    if 'Chaotic.' in topic_key:
-        return 0.5
-    if 'Neutral.' in topic_key:
-        return 1.5
-    if 'Lawful.' in topic_key:
-        return 2.5
-    
-
-def extract_parent(topic_key: str):
-    topic_path = topic_key.split('.')
-    return topic_path[0]
-
-
-def flatten_topics(topics: list, parent_only: bool = False, max_rank: int = None):
-    '''
-    This is the simplest topic flattener and ideally everything should be using it
-    '''
-    out_list = []
-    parents_seen = []
-
-    for i, topic in enumerate(topics):
-        if max_rank and i >= max_rank:
-            break
-        t_bits = topic['topic_key'].split('.')
-        if len(t_bits) <= 1 or t_bits[0] in parents_seen:
-            continue
-        parents_seen.append(t_bits[0])
-        if parent_only:
-            out_list.append(t_bits[0])
-        else:
-            out_list.append(topic['topic_key'])
-
-    return ', '.join(out_list)
-
-
 # def flatten_focal_speakers(speakers: list, eligible_speakers: list = None, max_rank: int = None):
 #     '''
 #     Could be a simple lambda function, but sometimes we want to ignore focal speakers that aren't part of the regular or recurring cast
@@ -174,25 +56,6 @@ def flatten_topics(topics: list, parent_only: bool = False, max_rank: int = None
 #         i += 1
 
 #     return ', '.join(out_list)
-
-
-def flatten_df_list_column(col_contents: list, eligible_col_values: list = None, truncate_at: int = None):
-    '''
-    Would be a simple list-concat lambda, except that sometimes we want to ignore column values that aren't part of an 'eligible' reference set
-    '''
-    out_list = []
-
-    i = 0
-    for cell_contents in col_contents:
-        if truncate_at and i >= truncate_at:
-            break
-        if eligible_col_values and cell_contents not in eligible_col_values:
-            # skip ineligible values without incrementing truncate_at comparison counter
-            continue  
-        out_list.append(cell_contents)
-        i += 1
-
-    return ', '.join(out_list)
 
 
 def simple_season_episode_i_map(episodes_by_season: dict):
@@ -245,39 +108,6 @@ def build_and_annotate_season_labels(fig: go.Figure, seasons_to_first_episodes: 
             font=dict(family="Arial", size=10, color="#A0A0A0"))
 
     return season_lines
-
-
-def flatten_speaker_colors(show_key: str, to_rgb: bool = False) -> dict:
-    speaker_colors = {}
-    for s, d in show_metadata[show_key]['regular_cast'].items():
-        if to_rgb:
-            rgb = ImageColor.getcolor(d['color'], 'RGB')
-            speaker_colors[s] = f'rgb{rgb}'.replace(' ', '')
-        else:
-            speaker_colors[s] = d['color']
-    for s, d in show_metadata[show_key]['recurring_cast'].items():
-        if to_rgb:
-            rgb = ImageColor.getcolor(d['color'], 'RGB')
-            speaker_colors[s] = f'rgb{rgb}'.replace(' ', '')
-        else:
-            speaker_colors[s] = d['color']
-    return speaker_colors
-
-
-def generate_speaker_color_discrete_map(show_key: str, speakers: list) -> dict:
-    speaker_colors = flatten_speaker_colors(show_key)
-    color_discrete_map = {}
-    extra_speaker_i = 0
-    for s in speakers:
-        if s in speaker_colors:
-            color_discrete_map[s] = speaker_colors[s]
-        else:
-            if extra_speaker_i >= len(EXTRA_SPEAKER_COLORS):
-                extra_speaker_i = 0
-            color_discrete_map[s] = EXTRA_SPEAKER_COLORS[extra_speaker_i]
-            extra_speaker_i += 1
-
-    return color_discrete_map
 
 
 def scale_values(values: list, low: int = 0, high: int = 1) -> list:
@@ -400,40 +230,6 @@ def flatten_and_refine_alt_names(speakers: list, ignore_dupes: bool = False, lim
     return flattened_speakers
 
 
-def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFrame:
-    '''
-    TODO copied after being extracted from another function, not sure where / how this sort of dataframe reformatting should be encapsulated
-    '''
-
-    df = df[['topic_key', 'topic_name', 'raw_score', 'score', 'is_parent', 'tfidf_score']]
-    df.rename(columns={'score': 'scaled_score'}, inplace=True)
-    df['parent_topic'] = df['topic_key'].apply(extract_parent)
-    df = df[df['parent_topic'] != df['topic_key']]
-    df['total_score'] = df[score_type].sum()
-    df.sort_values(score_type, ascending=False, inplace=True)
-
-    return df
-
-
-# def build_and_annotate_scene_blocks(scenes: list) -> list:
-#     """
-#     Helper function to layer scene blocks into episode dialog gantt
-#     """
-
-#     # build shaded blocks designating eras
-#     scene_blocks = []
-
-#     for scene in scenes:
-#         # add rectangle for each era date range
-#         block = dict(type='rect', line_width=1, x0=scene['Start'], x1=scene['Finish'], y0=0, y1=1,
-#                      yref='paper',
-#                     # fillcolor=era['color'], 
-#                     opacity=0.12)
-#         scene_blocks.append(block) 
-
-#     return scene_blocks
-
-
 def blank_fig():
     '''
     Best I've come up with so far to dynamically show or hide (almost) a graph that's declared as a dash page object
@@ -444,67 +240,6 @@ def blank_fig():
     fig.update_yaxes(showgrid=False, showticklabels=False, zeroline=False)
     
     return fig
-
-
-def generate_topic_aggs_from_episode_topics(episode_topic_lists: list, max_rank: int = None, max_parent_repeats: int = None) -> tuple[pd.DataFrame, pd.DataFrame]:
-    '''
-    Aggregate topic scores from multiple episodes, output as two dataframes with each topic (parent or leaf) as its own row.
-    Takes a list of episode_topics as input. `max_rank` and `max_parent_repeats` inputs for score aggregate tuning.
-    '''
-    if not max_rank:
-        max_rank = 3
-
-    topic_agg_scores = {}
-    parent_topic_agg_scores = {}
-    topic_agg_tfidf_scores = {}
-    parent_topic_agg_tfidf_scores = {}
-
-    for episode_topic_list in episode_topic_lists:
-        parents_this_episode = {}
-        topic_counter = min(max_rank, len(episode_topic_list))
-        for i in range(topic_counter):
-            episode_topic = episode_topic_list[i]
-            # ignore actual parent topics, do all parent scoring attribution in relation to their child topics
-            if episode_topic['is_parent']:
-                continue
-            topic_key = episode_topic['topic_key']
-            parent_topic = topic_key.split('.')[0]
-            # aggregate score and ranks for topic
-            if topic_key not in topic_agg_scores:
-                topic_agg_scores[topic_key] = 0
-                topic_agg_tfidf_scores[topic_key] = 0
-            topic_agg_scores[topic_key] += episode_topic['score']
-            topic_agg_tfidf_scores[topic_key] += episode_topic['tfidf_score']
-            # avoid double/triple-scoring using a max_parent_repeats param
-            if max_parent_repeats: 
-                if parent_topic not in parents_this_episode:
-                    parents_this_episode[parent_topic] = 0
-                parents_this_episode[parent_topic] += 1
-                if parents_this_episode[parent_topic] > max_parent_repeats:
-                    continue      
-            if parent_topic not in parent_topic_agg_scores:
-                parent_topic_agg_scores[parent_topic] = 0
-                parent_topic_agg_tfidf_scores[parent_topic] = 0
-            parent_topic_agg_scores[parent_topic] += episode_topic['score']
-            parent_topic_agg_tfidf_scores[parent_topic] += episode_topic['tfidf_score']
-
-    # topics
-    scored_topics = sorted(topic_agg_scores.items(), key=itemgetter(1), reverse=True)
-    tfidf_scored_topics = sorted(topic_agg_tfidf_scores.items(), key=itemgetter(1), reverse=True)
-    scored_topics_df = pd.DataFrame(scored_topics, columns=['genre', 'score'])
-    tfidf_scored_topics_df = pd.DataFrame(tfidf_scored_topics, columns=['genre', 'tfidf_score'])
-    topics_df = scored_topics_df.merge(tfidf_scored_topics_df, on='genre')
-    topics_df['parent'] = topics_df['genre'].apply(lambda x: x.split('.')[0])
-    topics_df.sort_values('parent', inplace=True) # not sure this is needed, or should maybe externalize
-
-    # parent topics
-    scored_parent_topics = sorted(parent_topic_agg_scores.items(), key=itemgetter(1), reverse=True)
-    tfidf_scored_parent_topics = sorted(parent_topic_agg_tfidf_scores.items(), key=itemgetter(1), reverse=True)
-    scored_parent_topics_df = pd.DataFrame(scored_parent_topics, columns=['genre', 'score'])
-    tfidf_scored_parent_topics_df = pd.DataFrame(tfidf_scored_parent_topics, columns=['genre', 'tfidf_score'])
-    parent_topics_df = scored_parent_topics_df.merge(tfidf_scored_parent_topics_df, on='genre')
-
-    return topics_df, parent_topics_df 
 
 
 # NOTE not using and not sure if will be used
