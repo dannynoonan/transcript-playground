@@ -2,7 +2,7 @@ import dash_bootstrap_components as dbc
 from dash import dash_table, dcc, html
 import pandas as pd
 
-import app.fig_builder.fig_metadata as fm
+import app.fig_data.fig_metadata as fm
 import app.utils as utils
 
 

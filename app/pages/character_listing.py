@@ -5,7 +5,7 @@ from datetime import datetime as dt
 import pandas as pd
 
 import app.es.es_read_router as esr
-import app.fig_builder.fig_helper as fh 
+import app.fig_data.fig_helper as fh 
 import app.pages.components as cmp
 from app.show_metadata import ShowKey
 from app import utils

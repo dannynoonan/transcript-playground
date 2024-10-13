@@ -3,8 +3,7 @@ from dash import dash_table, dcc, html
 import dash.dash_table.Format as dtf
 import pandas as pd
 
-import app.fig_builder.fig_helper as fh
-import app.fig_builder.fig_metadata as fm
+import app.fig_data.fig_helper as fh
 from app.show_metadata import BGCOLORS_TO_TEXT_COLORS
 from app import utils
 

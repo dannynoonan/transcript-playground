@@ -19,9 +19,8 @@ import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR, OPENAI_EMOTIONS
 from app.show_metadata import ShowKey
 import app.utils as utils
-# import app.web.fig_builder as fb
-import app.fig_builder.fig_helper as fh
-import app.fig_builder.fig_metadata as fm
+import app.fig_data.fig_helper as fh
+import app.fig_data.fig_metadata as fm
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_bertopic as pbert
 import app.fig_builder.plotly_gantt as pgantt

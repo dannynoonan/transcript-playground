@@ -3,9 +3,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.manifold import TSNE
 
-import app.fig_builder.fig_helper as fh
-import app.fig_builder.fig_metadata as fm
-from app import utils
+import app.fig_data.fig_helper as fh
+import app.fig_data.fig_metadata as fm
+import app.fig_data.speaker_topic_scatter_meta as stsm
 
 
 def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figure:
@@ -118,17 +118,17 @@ def build_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_type: str
     shapes = []
 
     if topic_type == 'mbti':
-        topic_types = fm.mbti_types
-        df['ep_x'] = df['topic_key'].apply(fh.to_mbti_x)
-        df['ep_y'] = df['topic_key'].apply(fh.to_mbti_y)
+        topic_types = stsm.mbti_types
+        df['ep_x'] = df['topic_key'].apply(stsm.to_mbti_x)
+        df['ep_y'] = df['topic_key'].apply(stsm.to_mbti_y)
         title = "Myers-Briggs Temperaments"
         labels = {"ep_x": "←  personal                                            logical  →",
                   "ep_y": "←  present                                            possible  →"}
         high_x = high_y = 4
     elif topic_type == 'dnda':
-        topic_types = fm.dnda_types
-        df['ep_x'] = df['topic_key'].apply(fh.to_dnda_x)
-        df['ep_y'] = df['topic_key'].apply(fh.to_dnda_y)
+        topic_types = stsm.dnda_types
+        df['ep_x'] = df['topic_key'].apply(stsm.to_dnda_x)
+        df['ep_y'] = df['topic_key'].apply(stsm.to_dnda_y)
         title = "D & D Alignments"
         labels = {"ep_x": "←  evil                                                    good  →",
                   "ep_y": "←  chaotic                                               lawful  →"}
@@ -146,16 +146,16 @@ def build_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_type: str
         # NOTE Ick. When there's overflow of speakers mapped to a particular topic, things get messy
         # The topic_count and topic_i counters are off by 1, so the checks here are gross
         # Ultimately we df.drop any overflow speaker (current cut-off is 9) mapped to the same topic
-        if topic_count >= len(fm.topic_grid_coord_deltas):
-            topic_count = len(fm.topic_grid_coord_deltas) - 1
+        if topic_count >= len(stsm.topic_grid_coord_deltas):
+            topic_count = len(stsm.topic_grid_coord_deltas) - 1
         topic_i = topics_to_i[topic_key]
         # print(f'topic_key={topic_key} topics_to_counts[topic_key]={topics_to_counts[topic_key]} topic_count={topic_count} topic_i={topic_i}')
         if topic_i >= topic_count:
             # print(f"too many speakers mapped to topic_key={topic_key}, dropping row['speaker']={row['speaker']} from display")
             df.drop(index, inplace=True)
             continue
-        df.at[index, 'ep_x'] = row['ep_x'] + fm.topic_grid_coord_deltas[topic_count][topic_i][0]
-        df.at[index, 'ep_y'] = row['ep_y'] + fm.topic_grid_coord_deltas[topic_count][topic_i][1]
+        df.at[index, 'ep_x'] = row['ep_x'] + stsm.topic_grid_coord_deltas[topic_count][topic_i][0]
+        df.at[index, 'ep_y'] = row['ep_y'] + stsm.topic_grid_coord_deltas[topic_count][topic_i][1]
         topics_to_i[topic_key] += 1
         
     custom_data = ['speaker', 'rank', 'topic_key', 'score']

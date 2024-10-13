@@ -8,8 +8,8 @@ import pandas as pd
 import app.es.es_read_router as esr
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
-import app.fig_builder.fig_helper as fh
-import app.fig_builder.fig_metadata as fm
+import app.fig_data.fig_helper as fh
+import app.fig_data.fig_metadata as fm
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_pie as ppie
@@ -230,7 +230,7 @@ def layout(show_key: str) -> html.Div:
                                 ]),
                                 html.Br(),
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="series-search-results-gantt-new"),
+                                    dcc.Graph(id="series-search-results-gantt"),
                                     html.Br(),
                                     html.Div(id="series-search-results-dt"),
                                 ]),
@@ -609,7 +609,7 @@ def render_series_topics_gantt(show_key: str):
 ############ series search gantt callback
 @callback(
     Output('series-dialog-qt-display', 'children'),
-    Output('series-search-results-gantt-new', 'figure'),
+    Output('series-search-results-gantt', 'figure'),
     Output('series-search-results-dt', 'children'),
     Input('show-key', 'value'),
     Input('series-dialog-qt', 'value'),

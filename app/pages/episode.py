@@ -7,7 +7,7 @@ import os
 import pandas as pd
 
 import app.es.es_read_router as esr
-import app.fig_builder.fig_helper as fh
+import app.fig_data.fig_helper as fh
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_line as pline
@@ -103,7 +103,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                         dbc.Tabs(className="nav nav-tabs", children=[
                             dbc.Tab(label="Timeline by dialog", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="episode-dialog-timeline-new"),
+                                    dcc.Graph(id="episode-dialog-timeline"),
                                 ]),
                                 dbc.Row([
                                     dbc.Col(md=2, style={'textAlign': 'center'}, children=[
@@ -121,7 +121,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                             ]),
                             dbc.Tab(label="Timeline by location", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="episode-location-timeline-new"),
+                                    dcc.Graph(id="episode-location-timeline"),
                                 ]),
                             ]),
                             dbc.Tab(label="Timeline by sentiment", tab_style={"font-size": "20px", "color": "white"}, children=[
@@ -156,7 +156,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                                 ]),
                                 html.Br(),
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="sentiment-line-chart-new"),
+                                    dcc.Graph(id="sentiment-line-chart"),
                                 ]),
                             ]),
                             dbc.Tab(label="Timeline search", tab_style={"font-size": "20px", "color": "white"}, children=[
@@ -189,10 +189,10 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                     dbc.Col(md=5, children=[
                         html.Div(id="speaker-episode-summary-dt"),
                         html.Br(),
-                        html.Div(dcc.Graph(id="speaker-episode-frequency-bar-chart-new")),
+                        html.Div(dcc.Graph(id="speaker-episode-frequency-bar-chart")),
                     ]),
                     dbc.Col(md=7, children=[
-                        html.Div(dcc.Graph(id="speaker-3d-network-graph-new")),
+                        html.Div(dcc.Graph(id="speaker-3d-network-graph")),
                         dcc.RadioItems(
                             id="scale-by",
                             className="text-white", 
@@ -417,8 +417,8 @@ def render_episode_summary(show_key: str, episode_key: str):
 
 ############ episode gantt callbacks
 @callback(
-    Output('episode-dialog-timeline-new', 'figure'),
-    Output('episode-location-timeline-new', 'figure'),
+    Output('episode-dialog-timeline', 'figure'),
+    Output('episode-location-timeline', 'figure'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('show-layers', 'value'))    
@@ -506,14 +506,14 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
 
 ############ sentiment line chart callbacks
 @callback(
-    Output('sentiment-line-chart-new', 'figure'),
+    Output('sentiment-line-chart', 'figure'),
     # Output('episode-speaker-options', 'options'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('freeze-on', 'value'),
     Input('emotion', 'value'),
     Input('episode-speakers', 'value'))    
-def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, freeze_on: str, emotion: str, speaker: str):
+def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_on: str, emotion: str, speaker: str):
     print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
 
    # fetch episode sentiment data and build line chart
@@ -559,12 +559,12 @@ def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, fre
 
 ############ speaker 3d network graph callbacks
 @callback(
-    Output('speaker-3d-network-graph-new', 'figure'),
+    Output('speaker-3d-network-graph', 'figure'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('scale-by', 'value'))    
-def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_by: str):
-    print(f'in render_speaker_3d_network_graph_new, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
+def render_speaker_3d_network_graph(show_key: str, episode_key: str, scale_by: str):
+    print(f'in render_speaker_3d_network_graph, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
     # generate speaker relations data and build 3d network graph
     speaker_relations_data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
@@ -592,13 +592,13 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_b
 
 ############ speaker frequency bar chart callbacks
 @callback(
-    Output('speaker-episode-frequency-bar-chart-new', 'figure'),
+    Output('speaker-episode-frequency-bar-chart', 'figure'),
     Output('speaker-episode-summary-dt', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('scale-by', 'value'))    
-def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scale_by: str):
-    print(f'in render_speaker_frequency_bar_chart_new, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
+def render_speaker_frequency_bar_chart(show_key: str, episode_key: str, scale_by: str):
+    print(f'in render_speaker_frequency_bar_chart, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
     speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti')
     speakers_for_episode = speakers_for_episode_response['speaker_episodes']
