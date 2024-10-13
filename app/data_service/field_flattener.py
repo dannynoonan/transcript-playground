@@ -2,8 +2,9 @@ import numpy as np
 from operator import itemgetter
 import pandas as pd
 
-import app.figdata_manager.matrix_operations as mxop
-from app import utils
+import app.data_service.data_processor as dp
+import app.data_service.matrix_operations as mxop
+
 
 
 def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFrame:
@@ -19,18 +20,6 @@ def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFr
     df.sort_values(score_type, ascending=False, inplace=True)
 
     return df
-
-
-def scale_values(values: list, low: int = 0, high: int = 1) -> list:
-    raw_low = np.min(values)
-    raw_high = np.max(values)
-    raw_range = raw_high - raw_low
-    scaled_range = high - low
-    scaled_values = []
-    for v in values:
-        scaled_v = (v - raw_low) / raw_range * scaled_range + low
-        scaled_values.append(scaled_v)
-    return scaled_values
 
 
 def explode_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: int = None, percent_distrib_list: list = None) -> list: 
@@ -61,7 +50,7 @@ def explode_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: i
             flat_spkr['raw_score'] = topic['raw_score']
             # NOTE sad kazoo this was conceived on a false premise, but keeping it in here for now
             if percent_distrib_list:
-                flat_spkr['scaled_score'] = utils.normalize_score(topic['raw_score'], percent_distrib_list)
+                flat_spkr['scaled_score'] = dp.normalize_score(topic['raw_score'], percent_distrib_list)
             # extract each topic (up to topic_limit) into its own flattened speaker item
             del flat_spkr[topic_field]
 

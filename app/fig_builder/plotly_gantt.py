@@ -7,6 +7,7 @@ import random
 
 import app.fig_builder.fig_helper as fh
 import app.figdata_manager.color_meta as cm
+import app.figdata_manager.gantt_helper as gh
 from app.show_metadata import show_metadata
 
 
@@ -83,7 +84,7 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
     # if interval_data, add markers and labels designating intervals 
     if interval_data:
         if y_axis == 'speakers':
-            interval_shapes = fh.build_and_annotate_scene_labels(fig, interval_data)
+            interval_shapes = gh.build_and_annotate_scene_labels(fig, interval_data)
             shapes.extend(interval_shapes)
             # scene_blocks = build_and_annotate_scene_blocks(interval_data)
             # shapes.extend(scene_blocks)
@@ -186,7 +187,7 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, y_axis: str, interval_da
     shapes = []
     # if interval_data, add markers and labels designating intervals 
     if interval_data:
-        interval_shapes = fh.build_and_annotate_season_labels(fig, interval_data)
+        interval_shapes = gh.build_and_annotate_season_labels(fig, interval_data)
         shapes.extend(interval_shapes)
     fig.update_layout(shapes=shapes)
     

@@ -15,7 +15,8 @@ import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_pie as ppie
 import app.fig_builder.plotly_scatter as pscat
 import app.figdata_manager.color_meta as cm
-import app.figdata_manager.data_processor as dp
+import app.figdata_manager.gantt_helper as gh
+import app.data_service.field_flattener as fflat
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.pages.components as cmp
@@ -512,7 +513,7 @@ def render_series_speakers_gantt(show_key: str):
     utils.hilite_in_logs(f'callback invoked: render_series_speakers_gantt ts={callback_start_ts} show_key={show_key}')
 
     episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
-    season_interval_data = fh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
+    season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
 
     file_path = f'./app/data/speaker_gantt_sequence_{show_key}.csv'
     if os.path.isfile(file_path):
@@ -545,7 +546,7 @@ def render_series_locations_gantt(show_key: str):
     utils.hilite_in_logs(f'callback invoked: render_series_locations_gantt ts={callback_start_ts} show_key={show_key}')
 
     episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
-    season_interval_data = fh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
+    season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
 
     file_path = f'./app/data/location_gantt_sequence_{show_key}.csv'
     if os.path.isfile(file_path):
@@ -578,7 +579,7 @@ def render_series_topics_gantt(show_key: str):
     utils.hilite_in_logs(f'callback invoked: render_series_topics_gantt ts={callback_start_ts} show_key={show_key}')
 
     episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
-    season_interval_data = fh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
+    season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
 
     topic_grouping = 'universalGenres'
     # topic_grouping = f'focusedGpt35_{show_key}'
@@ -734,8 +735,8 @@ def render_series_speaker_listing_dt(show_key: str):
 
     indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), speakers=','.join(series_speaker_names), extra_fields='topics_mbti')
     indexed_speakers = indexed_speakers_response['speakers']
-    indexed_speakers = dp.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
-    indexed_speakers = dp.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
+    indexed_speakers = fflat.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
+    indexed_speakers = fflat.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
     
     speakers_df = pd.DataFrame(indexed_speakers)
 
@@ -799,8 +800,8 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, series_speaker_names)
 
     # flatten episode speaker topic data for each episode speaker
-    exploded_speakers_mbti = dp.explode_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=mbti_count)
-    exploded_speakers_dnda = dp.explode_speaker_topics(indexed_speakers, 'dnda', limit_per_speaker=dnda_count)
+    exploded_speakers_mbti = fflat.explode_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=mbti_count)
+    exploded_speakers_dnda = fflat.explode_speaker_topics(indexed_speakers, 'dnda', limit_per_speaker=dnda_count)
     mbti_df = pd.DataFrame(exploded_speakers_mbti)
     dnda_df = pd.DataFrame(exploded_speakers_dnda)
     series_speaker_mbti_scatter = pscat.build_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
@@ -825,9 +826,9 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     Input('show-key', 'value'),
     Input('topic-grouping', 'value'),
     Input('score-type', 'value'))    
-def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str):
+def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str):
     callback_start_ts = dt.now()
-    utils.hilite_in_logs(f'callback invoked: render_series_topic_figs ts={callback_start_ts} show_key={show_key} topic_grouping={topic_grouping} score_type={score_type}')
+    utils.hilite_in_logs(f'callback invoked: render_series_topic_pies ts={callback_start_ts} show_key={show_key} topic_grouping={topic_grouping} score_type={score_type}')
 
     ##### TODO begin optimization block 
     episode_response = esr.fetch_simple_episodes(ShowKey(show_key))
@@ -836,7 +837,7 @@ def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str
         episode_topics_response = esr.fetch_episode_topics(ShowKey(show_key), episode['episode_key'], topic_grouping)
         episode_topic_lists.append(episode_topics_response['episode_topics'])
 
-    series_topics_df, series_parent_topics_df = dp.generate_topic_aggs_from_episode_topics(episode_topic_lists, max_rank=20, max_parent_repeats=2)
+    series_topics_df, series_parent_topics_df = fflat.generate_topic_aggs_from_episode_topics(episode_topic_lists, max_rank=20, max_parent_repeats=2)
     ##### TODO end optimization block 
 
     series_topics_pie = ppie.build_topic_aggs_pie(series_topics_df, topic_grouping, score_type)
@@ -844,7 +845,7 @@ def render_series_topic_figs(show_key: str, topic_grouping: str, score_type: str
 
     callback_end_ts = dt.now()
     display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_topic_figs returned at ts={callback_end_ts} duration={display_page_duration}')
+    utils.hilite_in_logs(f'render_series_topic_pies returned at ts={callback_end_ts} duration={display_page_duration}')
 
     return series_topics_pie, series_parent_topics_pie
 

@@ -15,7 +15,7 @@ import app.fig_builder.plotly_networkgraph as pgraph
 import app.fig_builder.plotly_scatter as pscat
 import app.fig_builder.plotly_treemap as ptree
 import app.figdata_manager.color_meta as cm
-import app.figdata_manager.data_processor as dp
+import app.data_service.field_flattener as fflat
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.pages.components as cmp
 from app.show_metadata import ShowKey
@@ -604,7 +604,7 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
 
     speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti')
     speakers_for_episode = speakers_for_episode_response['speaker_episodes']
-    speakers_for_episode = dp.flatten_speaker_topics(speakers_for_episode, 'mbti', 3)
+    speakers_for_episode = fflat.flatten_speaker_topics(speakers_for_episode, 'mbti', 3)
 
     df = pd.DataFrame(speakers_for_episode, columns=['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count', 'topics_mbti'])
 
@@ -758,8 +758,8 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
     # dnda_percent_distrib_list = list(dnda_percent_distrib.values())
 
     # flatten episode speaker topic data for each episode speaker
-    exploded_speakers_mbti = dp.explode_speaker_topics(episode_speakers, 'mbti', limit_per_speaker=mbti_count)
-    exploded_speakers_dnda = dp.explode_speaker_topics(episode_speakers, 'dnda', limit_per_speaker=dnda_count)
+    exploded_speakers_mbti = fflat.explode_speaker_topics(episode_speakers, 'mbti', limit_per_speaker=mbti_count)
+    exploded_speakers_dnda = fflat.explode_speaker_topics(episode_speakers, 'dnda', limit_per_speaker=dnda_count)
     mbti_df = pd.DataFrame(exploded_speakers_mbti)
     dnda_df = pd.DataFrame(exploded_speakers_dnda)
     episode_speaker_mbti_scatter = pscat.build_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
@@ -797,7 +797,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
         r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
-        df = dp.flatten_and_format_topics_df(df, topic_score_types[i])
+        df = fflat.flatten_and_format_topics_df(df, topic_score_types[i])
         # build treemap fig
         fig = ptree.build_episode_topic_treemap(df.copy(), tg, topic_score_types[i], max_per_parent=3)
         figs[tg] = fig

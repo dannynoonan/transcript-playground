@@ -2,7 +2,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from PIL import ImageColor
 
-import app.figdata_manager.data_processor as dp
+import app.data_service.data_processor as dp
 from app.show_metadata import show_metadata, EXTRA_SPEAKER_COLORS
 
 

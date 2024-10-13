@@ -4,7 +4,7 @@ import dash.dash_table.Format as dtf
 import pandas as pd
 
 import app.figdata_manager.color_meta as cm
-import app.figdata_manager.matrix_operations as mxop
+import app.data_service.matrix_operations as mxop
 from app import utils
 
 

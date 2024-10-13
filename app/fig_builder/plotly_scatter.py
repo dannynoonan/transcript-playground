@@ -5,7 +5,7 @@ from sklearn.manifold import TSNE
 
 import app.fig_builder.fig_metadata as fm
 import app.figdata_manager.color_meta as cm
-import app.figdata_manager.matrix_operations as mxop
+import app.data_service.matrix_operations as mxop
 import app.figdata_manager.speaker_topic_scatter_meta as stsm
 
 
