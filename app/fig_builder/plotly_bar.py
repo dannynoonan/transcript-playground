@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-import app.fig_builder.fig_helper as fh
+import app.fig_meta.layout_meta as lm
 import app.fig_meta.color_meta as cm
 
 
@@ -79,7 +79,7 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
         yaxis_categoryorder='total ascending') # yaxis_categoryorder
  
     if animate:
-        fh.apply_animation_settings(fig, 'TODO', frame_rate=1500)
+        lm.apply_animation_settings(fig, 'TODO', frame_rate=1500)
     
     return fig
 

@@ -171,7 +171,7 @@ def generate_season_episodes_dt(episodes: list) -> dash_table.DataTable:
 
     # field naming and processing
     episodes_df['focal_characters'] = episodes_df['focal_speakers'].apply(lambda x: ', '.join(x))
-    episodes_df['genres'] = episodes_df.apply(lambda x: mxop.flatten_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
+    episodes_df['genres'] = episodes_df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
     episodes_df['air_date'] = episodes_df['air_date'].apply(lambda x: x[:10])
     episodes_df.rename(columns={'sequence_in_season': 'episode'}, inplace=True) 
 

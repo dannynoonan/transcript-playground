@@ -1,4 +1,4 @@
-def flatten_topics(topics: list, parent_only: bool = False, max_rank: int = None):
+def flatten_df_topics(topics: list, parent_only: bool = False, max_rank: int = None):
     '''
     This is the simplest topic flattener and ideally everything should be using it
     '''

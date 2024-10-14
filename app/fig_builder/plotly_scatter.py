@@ -18,7 +18,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
     symbol_map = {'all': 'square', 'mlt': 'circle', 'focal': 'star'}
 
     # ad-hoc method of flattening topic metadata for hovertemplate display
-    df['flattened_topics'] = df['topics_universal_tfidf'].apply(mxop.flatten_topics)
+    df['flattened_topics'] = df['topics_universal_tfidf'].apply(mxop.flatten_df_topics)
 
     custom_data = ['title', 'season', 'episode', 'score', 'rank', 'focal_speakers', 'flattened_topics']
     
@@ -60,17 +60,17 @@ def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list, hilite: s
     x_high = x_max + buffer
 
     # ad-hoc method of flattening topic metadata for hovertemplate display
-    df['flattened_topics_tfidf'] = df.apply(lambda x: mxop.flatten_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
-    df['flattened_topics'] = df.apply(lambda x: mxop.flatten_topics(x['topics_universal'], parent_only=True), axis=1)
+    df['flattened_topics_tfidf'] = df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
+    df['flattened_topics'] = df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal'], parent_only=True), axis=1)
     df['flattened_speakers'] = df['focal_speakers'].apply(lambda x: ', '.join(x))
     df['flattened_locations'] = df['focal_locations'].apply(lambda x: ', '.join(x))
     df['size'] = 1
 
     if hilite == 'topics_universal':
-        df['hilite'] = df.apply(lambda x: mxop.flatten_topics(x['topics_universal'], parent_only=True, max_rank=1), axis=1)
+        df['hilite'] = df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal'], parent_only=True, max_rank=1), axis=1)
         legend_title = 'Primary genre'
     elif hilite == 'topics_universal_tfidf':
-        df['hilite'] = df.apply(lambda x: mxop.flatten_topics(x['topics_universal_tfidf'], parent_only=True, max_rank=1), axis=1)
+        df['hilite'] = df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal_tfidf'], parent_only=True, max_rank=1), axis=1)
         legend_title = 'Primary genre'
     elif hilite == 'focal_speakers':
         df['hilite'] = df.apply(lambda x: mxop.flatten_df_list_column(x['focal_speakers'], hilite_color_map, truncate_at=1), axis=1)

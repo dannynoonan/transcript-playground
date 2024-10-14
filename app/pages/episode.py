@@ -7,7 +7,6 @@ import os
 import pandas as pd
 
 import app.es.es_read_router as esr
-import app.fig_builder.fig_helper as fh
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_line as pline
