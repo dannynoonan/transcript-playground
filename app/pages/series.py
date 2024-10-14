@@ -66,7 +66,20 @@ def layout(show_key: str) -> html.Div:
                                 html.B(series_summary['scene_count']), " scenes, ", html.B(series_summary['line_count']), " lines, ", html.B(series_summary['word_count']), " words",
                             ]),
                         ]),
-                        html.Br(),
+                    ]),
+                    dbc.Col(md=2),
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            "Show: ", dcc.Dropdown(id="show-key", options=[show_key], value=show_key)
+                        ]),
+                    ]),
+                ]),
+            ]),
+
+            # series episode scatter grid and listing accordion
+            dbc.CardBody([
+                dbc.Row([
+                    dbc.Col(md=8, children=[
                         html.Div(dcc.Graph(id="series-episodes-scatter-grid")),
                         dcc.RadioItems(
                             id="scatter-grid-hilite",
@@ -83,26 +96,16 @@ def layout(show_key: str) -> html.Div:
                         ),
                     ]),
                     dbc.Col(md=4, children=[
-                        dbc.Row([ 
-                            dbc.Col(md=6),
-                            dbc.Col(md=6, children=[
-                                html.Div([
-                                    "Show: ", dcc.Dropdown(id="show-key", options=[show_key], value=show_key)
-                                ]),
-                            ]),
-                        ]),
-                        html.Br(),
-                        dbc.Row([ 
-                            dbc.Col(md=12, children=[
-                                html.Img(src=wordcloud_img, width="100%")
-                            ]),
-                        ]),
+                        html.Img(src=wordcloud_img, width="100%")
                     ]),
                 ]),
                 html.Br(),
-                # season episode listing accordion
-                dbc.Accordion(id="accordion", active_item="acc_textarea", children=season_accordion_items),
-                html.Div(id="accordion-contents", className="mt-3"),
+                dbc.Row([
+                    dbc.Col(md=12, children=[
+                        dbc.Accordion(id="accordion", active_item="acc_textarea", children=season_accordion_items),
+                        html.Div(id="accordion-contents", className="mt-3"),
+                    ]),
+                ]),
             ]),
 
             # series continuity timelines for character / location / topic / search
