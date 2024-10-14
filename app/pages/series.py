@@ -8,15 +8,15 @@ import pandas as pd
 import app.es.es_read_router as esr
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
-import app.fig_builder.fig_helper as fh
-import app.fig_builder.fig_metadata as fm
+import app.data_service.field_meta as fm
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_pie as ppie
 import app.fig_builder.plotly_scatter as pscat
-import app.figdata_manager.color_meta as cm
-import app.figdata_manager.gantt_helper as gh
+import app.fig_meta.color_meta as cm
+import app.fig_meta.gantt_helper as gh
 import app.data_service.field_flattener as fflat
+import app.data_service.topic_aggregator as tagg
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.pages.components as cmp
@@ -837,7 +837,7 @@ def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str
         episode_topics_response = esr.fetch_episode_topics(ShowKey(show_key), episode['episode_key'], topic_grouping)
         episode_topic_lists.append(episode_topics_response['episode_topics'])
 
-    series_topics_df, series_parent_topics_df = fflat.generate_topic_aggs_from_episode_topics(episode_topic_lists, max_rank=20, max_parent_repeats=2)
+    series_topics_df, series_parent_topics_df = tagg.generate_topic_aggs_from_episode_topics(episode_topic_lists, max_rank=20, max_parent_repeats=2)
     ##### TODO end optimization block 
 
     series_topics_pie = ppie.build_topic_aggs_pie(series_topics_df, topic_grouping, score_type)

@@ -6,8 +6,8 @@ import plotly.graph_objects as go
 import random
 
 import app.fig_builder.fig_helper as fh
-import app.figdata_manager.color_meta as cm
-import app.figdata_manager.gantt_helper as gh
+import app.fig_meta.color_meta as cm
+import app.fig_meta.gantt_helper as gh
 from app.show_metadata import show_metadata
 
 

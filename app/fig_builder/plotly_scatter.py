@@ -3,10 +3,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.manifold import TSNE
 
-import app.fig_builder.fig_metadata as fm
-import app.figdata_manager.color_meta as cm
+import app.data_service.field_meta as fm
 import app.data_service.matrix_operations as mxop
-import app.figdata_manager.speaker_topic_scatter_meta as stsm
+import app.fig_meta.color_meta as cm
+import app.fig_meta.speaker_topic_scatter_meta as stsm
 
 
 def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figure:

@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-import app.figdata_manager.color_meta as cm
+import app.fig_meta.color_meta as cm
 
 
 def build_speaker_line_chart(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool = False, season: str = None) -> go.Figure:

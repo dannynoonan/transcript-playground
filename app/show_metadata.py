@@ -1,22 +1,10 @@
 from enum import Enum
-# from pydantic import BaseModel
 
 
 class ShowKey(str, Enum):
     TNG = "TNG"
     GoT = "GoT"
     Succession = "Succession"
-
-
-# class TranscriptType(str, Enum):
-#     Fanon = "Fanon"
-#     TOC = "TOC"
-#     Default = "Default"
-#     ALL = "ALL"
-
-
-# class Status(BaseModel):
-#     message: str
 
 
 show_metadata = {

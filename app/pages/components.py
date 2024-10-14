@@ -3,7 +3,7 @@ from dash import dash_table, dcc, html
 import dash.dash_table.Format as dtf
 import pandas as pd
 
-import app.figdata_manager.color_meta as cm
+import app.fig_meta.color_meta as cm
 import app.data_service.matrix_operations as mxop
 from app import utils
 

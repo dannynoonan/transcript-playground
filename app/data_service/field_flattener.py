@@ -2,9 +2,24 @@ import numpy as np
 from operator import itemgetter
 import pandas as pd
 
-import app.data_service.data_processor as dp
+import app.data_service.calculator as calc
 import app.data_service.matrix_operations as mxop
 
+
+def flatten_es_topics(topics: list) -> list:
+    simple_topics = []
+    count = 0
+    for t in topics:
+        if 'is_parent' in t and t['is_parent']:
+            continue
+        simple_topic = dict(topic_key=t['topic_key'], topic_name=t['topic_name'], score=t['score'], raw_score=t['raw_score'])
+        if 'tfidf_score' in t:
+            simple_topic['tfidf_score'] = t['tfidf_score']
+        simple_topics.append(simple_topic)
+        count += 1
+        if count > 5:
+            break
+    return simple_topics
 
 
 def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFrame:
@@ -50,7 +65,7 @@ def explode_speaker_topics(speakers: list, topic_type: str, limit_per_speaker: i
             flat_spkr['raw_score'] = topic['raw_score']
             # NOTE sad kazoo this was conceived on a false premise, but keeping it in here for now
             if percent_distrib_list:
-                flat_spkr['scaled_score'] = dp.normalize_score(topic['raw_score'], percent_distrib_list)
+                flat_spkr['scaled_score'] = calc.normalize_score(topic['raw_score'], percent_distrib_list)
             # extract each topic (up to topic_limit) into its own flattened speaker item
             del flat_spkr[topic_field]
 
@@ -103,64 +118,3 @@ def flatten_and_refine_alt_names(speakers: list, ignore_dupes: bool = False, lim
         flattened_speakers.append(flat_spkr)
 
     return flattened_speakers
-
-
-def generate_topic_aggs_from_episode_topics(episode_topic_lists: list, max_rank: int = None, max_parent_repeats: int = None) -> tuple[pd.DataFrame, pd.DataFrame]:
-    '''
-    Aggregate topic scores from multiple episodes, output as two dataframes with each topic (parent or leaf) as its own row.
-    Takes a list of episode_topics as input. `max_rank` and `max_parent_repeats` inputs for score aggregate tuning.
-    '''
-    if not max_rank:
-        max_rank = 3
-
-    topic_agg_scores = {}
-    parent_topic_agg_scores = {}
-    topic_agg_tfidf_scores = {}
-    parent_topic_agg_tfidf_scores = {}
-
-    for episode_topic_list in episode_topic_lists:
-        parents_this_episode = {}
-        topic_counter = min(max_rank, len(episode_topic_list))
-        for i in range(topic_counter):
-            episode_topic = episode_topic_list[i]
-            # ignore actual parent topics, do all parent scoring attribution in relation to their child topics
-            if episode_topic['is_parent']:
-                continue
-            topic_key = episode_topic['topic_key']
-            parent_topic = topic_key.split('.')[0]
-            # aggregate score and ranks for topic
-            if topic_key not in topic_agg_scores:
-                topic_agg_scores[topic_key] = 0
-                topic_agg_tfidf_scores[topic_key] = 0
-            topic_agg_scores[topic_key] += episode_topic['score']
-            topic_agg_tfidf_scores[topic_key] += episode_topic['tfidf_score']
-            # avoid double/triple-scoring using a max_parent_repeats param
-            if max_parent_repeats: 
-                if parent_topic not in parents_this_episode:
-                    parents_this_episode[parent_topic] = 0
-                parents_this_episode[parent_topic] += 1
-                if parents_this_episode[parent_topic] > max_parent_repeats:
-                    continue      
-            if parent_topic not in parent_topic_agg_scores:
-                parent_topic_agg_scores[parent_topic] = 0
-                parent_topic_agg_tfidf_scores[parent_topic] = 0
-            parent_topic_agg_scores[parent_topic] += episode_topic['score']
-            parent_topic_agg_tfidf_scores[parent_topic] += episode_topic['tfidf_score']
-
-    # topics
-    scored_topics = sorted(topic_agg_scores.items(), key=itemgetter(1), reverse=True)
-    tfidf_scored_topics = sorted(topic_agg_tfidf_scores.items(), key=itemgetter(1), reverse=True)
-    scored_topics_df = pd.DataFrame(scored_topics, columns=['genre', 'score'])
-    tfidf_scored_topics_df = pd.DataFrame(tfidf_scored_topics, columns=['genre', 'tfidf_score'])
-    topics_df = scored_topics_df.merge(tfidf_scored_topics_df, on='genre')
-    topics_df['parent'] = topics_df['genre'].apply(lambda x: x.split('.')[0])
-    topics_df.sort_values('parent', inplace=True) # not sure this is needed, or should maybe externalize
-
-    # parent topics
-    scored_parent_topics = sorted(parent_topic_agg_scores.items(), key=itemgetter(1), reverse=True)
-    tfidf_scored_parent_topics = sorted(parent_topic_agg_tfidf_scores.items(), key=itemgetter(1), reverse=True)
-    scored_parent_topics_df = pd.DataFrame(scored_parent_topics, columns=['genre', 'score'])
-    tfidf_scored_parent_topics_df = pd.DataFrame(tfidf_scored_parent_topics, columns=['genre', 'tfidf_score'])
-    parent_topics_df = scored_parent_topics_df.merge(tfidf_scored_parent_topics_df, on='genre')
-
-    return topics_df, parent_topics_df 

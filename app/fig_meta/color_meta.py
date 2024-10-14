@@ -2,7 +2,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from PIL import ImageColor
 
-import app.data_service.data_processor as dp
+import app.data_service.calculator as calc
 from app.show_metadata import show_metadata, EXTRA_SPEAKER_COLORS
 
 
@@ -54,7 +54,7 @@ def map_range_values_to_gradient(range_values: list, gradient_values: list) -> l
     '''
     Both 'range_values' and 'gradient_values' are assumed to be sorted
     '''
-    scaled_range_values = dp.scale_values(range_values, 0, len(gradient_values)-1)
+    scaled_range_values = calc.scale_values(range_values, 0, len(gradient_values)-1)
     discrete_gradient_values = []
     for v in scaled_range_values:
         discrete_gradient_values.append(gradient_values[round(v)])

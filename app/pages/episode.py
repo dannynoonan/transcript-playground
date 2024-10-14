@@ -14,7 +14,7 @@ import app.fig_builder.plotly_line as pline
 import app.fig_builder.plotly_networkgraph as pgraph
 import app.fig_builder.plotly_scatter as pscat
 import app.fig_builder.plotly_treemap as ptree
-import app.figdata_manager.color_meta as cm
+import app.fig_meta.color_meta as cm
 import app.data_service.field_flattener as fflat
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.pages.components as cmp

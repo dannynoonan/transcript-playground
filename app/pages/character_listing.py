@@ -6,7 +6,7 @@ import pandas as pd
 
 import app.es.es_read_router as esr
 import app.data_service.field_flattener as fflat 
-import app.figdata_manager.color_meta as cm
+import app.fig_meta.color_meta as cm
 import app.pages.components as cmp
 from app.show_metadata import ShowKey
 from app import utils

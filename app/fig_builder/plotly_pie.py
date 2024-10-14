@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-import app.figdata_manager.color_meta as cm
+import app.fig_meta.color_meta as cm
 
 
 def build_topic_aggs_pie(df: pd.DataFrame, topic_grouping: str, score_type: str, is_parent: bool = False) -> go.Figure:

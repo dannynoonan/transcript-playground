@@ -5,6 +5,8 @@ import os
 import pandas as pd
 
 import app.database.dao as dao
+import app.data_service.field_flattener as fflat
+from app.data_service.topic_aggregator import TopicAgg
 import app.es.es_ingest_transformer as esit
 import app.es.es_response_transformer as esrt
 from app.es.es_metadata import VALID_ES_INDEXES
@@ -13,14 +15,11 @@ import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 import app.nlp.narrative_extractor as ne
-import app.nlp.sentiment_analyzer as sa
 from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_DATA_DIR
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
-from app.utils import TopicAgg, flatten_topics, set_dict_value_as_es_value
 
 
 esw_app = APIRouter()
-
 
 
 @esw_app.get("/esw/init_es", tags=['ES Writer'])
@@ -644,7 +643,7 @@ def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping:
         print(f'et.to_dict()={et.to_dict()}')
 
     # write simplified subset of episode_topics to es_episode.topics_X
-    simple_episode_topics = flatten_topics(episode_topics)
+    simple_episode_topics = fflat.flatten_es_topics(episode_topics)
     print(f'simple_episode_topics={simple_episode_topics}')
     if topic_grouping == 'universalGenres':
         es_episode.topics_universal = simple_episode_topics
@@ -721,7 +720,7 @@ def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, 
         if topic_grouping in ['universalGenres', 'focusedGpt35_TNG']:
             tfidf_sorted_episode_topics = sorted(e_keys_to_episode_topics[e_key], key=itemgetter('tfidf_score'), reverse=True)
             es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{e_key}')
-            simple_episode_topics = flatten_topics(tfidf_sorted_episode_topics)
+            simple_episode_topics = fflat.flatten_es_topics(tfidf_sorted_episode_topics)
             if topic_grouping == 'universalGenres':
                 es_episode.topics_universal_tfidf = simple_episode_topics
             elif topic_grouping == 'focusedGpt35_TNG':
@@ -779,7 +778,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
                                                                                  model_vendor, model_version)
                 
                 # write simplified subset of episode_topics to es_speaker_episode.topics_X
-                simple_episode_topics = flatten_topics(es_speaker_episode_topics)
+                simple_episode_topics = fflat.flatten_es_topics(es_speaker_episode_topics)
                 if topic_grouping == 'meyersBriggsKiersey':
                     es_speaker_episode.topics_mbti = simple_episode_topics
                 elif topic_grouping == 'dndAlignments':
@@ -799,7 +798,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
         es_speaker_season_topics = esqb.populate_speaker_season_topics(show_key.value, speaker, es_speaker_season, speaker_season_topics, model_vendor, model_version)
 
         # write simplified subset of season_topics to es_speaker_season.topics_X
-        simple_season_topics = flatten_topics(es_speaker_season_topics)
+        simple_season_topics = fflat.flatten_es_topics(es_speaker_season_topics)
         if topic_grouping == 'meyersBriggsKiersey':
             es_speaker_season.topics_mbti = simple_season_topics
         elif topic_grouping == 'dndAlignments':
@@ -818,7 +817,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
     es_speaker_topics = esqb.populate_speaker_topics(show_key.value, speaker, es_speaker, speaker_series_topics, model_vendor, model_version)
     
     # write simplified subset of speaker_topics to es_speaker.topics_X
-    simple_series_topics = flatten_topics(es_speaker_topics)
+    simple_series_topics = fflat.flatten_es_topics(es_speaker_topics)
     if topic_grouping == 'meyersBriggsKiersey':
         es_speaker.topics_mbti = simple_series_topics
     elif topic_grouping == 'dndAlignments':

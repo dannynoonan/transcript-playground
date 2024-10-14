@@ -3,7 +3,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 import app.fig_builder.fig_helper as fh
-import app.figdata_manager.color_meta as cm
+import app.fig_meta.color_meta as cm
 
 
 def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool, season: int, 

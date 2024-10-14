@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 from sklearn.manifold import TSNE
 
-import app.figdata_manager.color_meta as cm
+import app.fig_meta.color_meta as cm
 
 
 matplotlib.use('AGG')
