@@ -159,10 +159,8 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, y_axis: str, interval_da
     fig.update_layout(xaxis_type='linear', xaxis_title=x_label, autosize=False, margin=dict(r=30, t=60, b=60))
     fig.update_xaxes(range=[x_low, x_high])
 
-    gantt_row_with_text_count = 0
     for gantt_row in fig['data']:
         if 'text' in gantt_row and gantt_row['text'] and len(gantt_row['text']) > 0:
-            gantt_row_with_text_count += 1
             # once gantt figure is generated, speaker and location info is distributed across figure 'data' elements, and 'name' is not stored for every row.
             # the rgb data stored in 'legendgroup' seems to be the only way to reverse lookup which speaker or location is being referenced, hence the colors_to_keys map.
             rgb_val = gantt_row['legendgroup'].replace(' ', '')

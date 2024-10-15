@@ -76,40 +76,9 @@ def layout(show_key: str) -> html.Div:
                 ]),
             ]),
 
-            # series episode scatter grid and listing accordion
-            dbc.CardBody([
-                dbc.Row([
-                    dbc.Col(md=8, children=[
-                        html.Div(dcc.Graph(id="series-episodes-scatter-grid")),
-                        dcc.RadioItems(
-                            id="scatter-grid-hilite",
-                            className="text-white", 
-                            options=[
-                                {'label': 'focal character', 'value': 'focal_speakers'},
-                                {'label': 'focal location', 'value': 'focal_locations'},
-                                {'label': 'genre (raw)', 'value': 'topics_universal'},
-                                {'label': 'genre (weighted by frequency)', 'value': 'topics_universal_tfidf'},
-                            ],
-                            value='tfidf_score',
-                            inputStyle={"margin-left": "12px", "margin-right": "4px"},
-                            style={"display": "flex", "padding-bottom": "0"}
-                        ),
-                    ]),
-                    dbc.Col(md=4, children=[
-                        html.Img(src=wordcloud_img, width="100%")
-                    ]),
-                ]),
-                html.Br(),
-                dbc.Row([
-                    dbc.Col(md=12, children=[
-                        dbc.Accordion(id="accordion", active_item="acc_textarea", children=season_accordion_items),
-                        html.Div(id="accordion-contents", className="mt-3"),
-                    ]),
-                ]),
-            ]),
-
             # series continuity timelines for character / location / topic / search
             dbc.CardBody([
+                html.H3("Continuity over duration of series"),
                 dbc.Row([
                     dbc.Col(md=12, children=[
                         dbc.Tabs(className="nav nav-tabs", children=[
@@ -123,7 +92,7 @@ def layout(show_key: str) -> html.Div:
                                     dcc.Graph(id="series-locations-gantt"),
                                 ]),
                             ]),
-                            dbc.Tab(label="Topics", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            dbc.Tab(label="Genres", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dcc.RadioItems(
                                     id="series-topics-gantt-score-type",
                                     className="text-white", 
@@ -180,115 +149,38 @@ def layout(show_key: str) -> html.Div:
                 ]),
             ]),
 
-            # series speaker counts
+            # series episode scatter grid 
             dbc.CardBody([
+                html.H3("Season-episode grid / Prominent characters, locations, and genres"),
                 dbc.Row([
-                    html.H3("Character chatter"),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Tally by: ",
-                            dcc.Dropdown(
-                                id="speaker-chatter-tally-by",
-                                options=['episode', 'scene', 'line', 'word'],
-                                value='line',
-                            )
-                        ]),
+                    dbc.Col(md=8, children=[
+                        dcc.RadioItems(
+                            id="scatter-grid-hilite",
+                            className="text-white", 
+                            options=[
+                                {'label': 'focal character', 'value': 'focal_speakers'},
+                                {'label': 'focal location', 'value': 'focal_locations'},
+                                {'label': 'genre (absolute scoring)', 'value': 'topics_universal'},
+                                {'label': 'genre (weighted by frequency)', 'value': 'topics_universal_tfidf'},
+                            ],
+                            value='focal_speakers',
+                            inputStyle={"margin-left": "12px", "margin-right": "4px"},
+                            style={"display": "flex", "padding-bottom": "0"}
+                        ),
+                        html.Div(dcc.Graph(id="series-episodes-scatter-grid")),
                     ]),
-                ]),
-                html.Br(),
-                dbc.Row(justify="evenly", children=[
-                    dbc.Col(md=6, children=[
-                        html.Div([
-                            "Season ",
-                            html.Br(),
-                            dcc.Slider(
-                                id="speaker-chatter-season",
-                                min=all_seasons[0],
-                                max=all_seasons[len(all_seasons)-1],
-                                step=None,
-                                marks={
-                                    int(y): {'label': str(y), 'style': {'transform': 'rotate(45deg)', 'color': 'white'}}
-                                    for y in all_seasons
-                                },
-                                value=all_seasons[0],
-                            ),
-                            html.Br(),
-                            dcc.Graph(id="speaker-season-frequency-bar-chart"),
-                        ]),
-                    ]),
-                    dbc.Col(md=6, children=[
-                        html.Div([
-                            "Episode ",
-                            html.Br(),
-                            dcc.Slider(
-                                id="speaker-chatter-sequence-in-season",
-                                min=1,
-                                max=25,
-                                step=None,
-                                marks={
-                                    int(y): {'label': str(y), 'style': {'transform': 'rotate(45deg)', 'color': 'white'}}
-                                    for y in range(1,26)
-                                },
-                                value=1,
-                            ),
-                            html.Br(),
-                            dcc.Graph(id="speaker-episode-frequency-bar-chart"),
-                        ]),
-                    ]),
-                ]),
-                html.Br(),
-            ]),    
-
-            # series speaker listing
-            dbc.CardBody([
-                html.H3("Regular and recurring characters in series"),
-                dbc.Row([
-                    dbc.Col(md=12, children=[
-                        html.Div(id="series-speaker-listing-dt"),
+                    dbc.Col(md=4, children=[
+                        html.Img(src=wordcloud_img, width="100%")
                     ]),
                 ]),
             ]),
 
-            # series-speaker-topic mappings
+            # series episode listing accordion
             dbc.CardBody([
                 dbc.Row([
                     dbc.Col(md=12, children=[
-                        dbc.Tabs(className="nav nav-tabs", children=[
-                            dbc.Tab(label="Character MBTI temperaments", tab_style={"font-size": "20px", "color": "white"}, children=[
-                                dbc.Row([
-                                    dbc.Col(md=7, children=[
-                                        html.Div(dcc.Graph(id="series-speaker-mbti-scatter")),
-                                        html.Br(),
-                                        dbc.Row([
-                                            dbc.Col(md=5, style={"text-align": "right", "color": "white"}, children=['Alt temperaments:']),
-                                            dbc.Col(md=4, children=[
-                                                dcc.Slider(id="series-mbti-count", min=1, max=4, step=1, value=3),
-                                            ]),
-                                        ]),
-                                    ]),
-                                    dbc.Col(md=5, children=[
-                                        html.Div(id="series-speaker-mbti-dt"),
-                                    ]),
-                                ]),
-                            ]),
-                            dbc.Tab(label="Character D&D alignments", tab_style={"font-size": "20px", "color": "white"}, children=[
-                                dbc.Row([
-                                    dbc.Col(md=7, children=[
-                                        html.Div(dcc.Graph(id="series-speaker-dnda-scatter")),
-                                        html.Br(),
-                                        dbc.Row([
-                                            dbc.Col(md=5, style={"text-align": "right", "color": "white"}, children=['Alt alignments:']),
-                                            dbc.Col(md=4, children=[
-                                                dcc.Slider( id="series-dnda-count", min=1, max=3, step=1, value=2),
-                                            ]),
-                                        ]),
-                                    ]),
-                                    dbc.Col(md=5, children=[
-                                        html.Div(id="series-speaker-dnda-dt"),
-                                    ]),
-                                ]),
-                            ]),
-                        ]),
+                        dbc.Accordion(id="accordion", active_item="acc_textarea", children=season_accordion_items),
+                        html.Div(id="accordion-contents", className="mt-3"),
                     ]),
                 ]),
             ]),
@@ -361,6 +253,119 @@ def layout(show_key: str) -> html.Div:
                                 dbc.Row([
                                     dbc.Col(md=12, children=[
                                         html.Div(id="series-episodes-cluster-dt"),
+                                    ]),
+                                ]),
+                            ]),
+                        ]),
+                    ]),
+                ]),
+            ]),
+
+            # series speaker listing
+            dbc.CardBody([
+                html.H3("Regular and recurring characters in series"),
+                dbc.Row([
+                    dbc.Col(md=12, children=[
+                        html.Div(id="series-speaker-listing-dt"),
+                    ]),
+                ]),
+            ]),
+
+            # series speaker counts
+            dbc.CardBody([
+                dbc.Row([
+                    html.H3("Character chatter"),
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            "Tally by: ",
+                            dcc.Dropdown(
+                                id="speaker-chatter-tally-by",
+                                options=['episode', 'scene', 'line', 'word'],
+                                value='line',
+                            )
+                        ]),
+                    ]),
+                ]),
+                html.Br(),
+                dbc.Row(justify="evenly", children=[
+                    dbc.Col(md=6, children=[
+                        html.Div([
+                            "Season ",
+                            html.Br(),
+                            dcc.Slider(
+                                id="speaker-chatter-season",
+                                min=all_seasons[0],
+                                max=all_seasons[len(all_seasons)-1],
+                                step=None,
+                                marks={
+                                    int(y): {'label': str(y), 'style': {'transform': 'rotate(45deg)', 'color': 'white'}}
+                                    for y in all_seasons
+                                },
+                                value=all_seasons[0],
+                            ),
+                            html.Br(),
+                            dcc.Graph(id="speaker-season-frequency-bar-chart"),
+                        ]),
+                    ]),
+                    dbc.Col(md=6, children=[
+                        html.Div([
+                            "Episode ",
+                            html.Br(),
+                            dcc.Slider(
+                                id="speaker-chatter-sequence-in-season",
+                                min=1,
+                                max=25,
+                                step=None,
+                                marks={
+                                    int(y): {'label': str(y), 'style': {'transform': 'rotate(45deg)', 'color': 'white'}}
+                                    for y in range(1,26)
+                                },
+                                value=1,
+                            ),
+                            html.Br(),
+                            dcc.Graph(id="speaker-episode-frequency-bar-chart"),
+                        ]),
+                    ]),
+                ]),
+                html.Br(),
+            ]),
+
+            # series-speaker-topic mappings
+            dbc.CardBody([
+                dbc.Row([
+                    dbc.Col(md=12, children=[
+                        dbc.Tabs(className="nav nav-tabs", children=[
+                            dbc.Tab(label="Character MBTI temperaments", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row([
+                                    dbc.Col(md=7, children=[
+                                        html.Div(dcc.Graph(id="series-speaker-mbti-scatter")),
+                                        html.Br(),
+                                        dbc.Row([
+                                            dbc.Col(md=5, style={"text-align": "right", "color": "white"}, children=['Alt temperaments:']),
+                                            dbc.Col(md=4, children=[
+                                                dcc.Slider(id="series-mbti-count", min=1, max=4, step=1, value=3),
+                                            ]),
+                                        ]),
+                                    ]),
+                                    dbc.Col(md=5, children=[
+                                        html.Div(id="series-speaker-mbti-dt"),
+                                    ]),
+                                ]),
+                            ]),
+                            dbc.Tab(label="Character D&D alignments", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row([
+                                    dbc.Col(md=7, children=[
+                                        html.Div(dcc.Graph(id="series-speaker-dnda-scatter")),
+                                        html.Br(),
+                                        dbc.Row([
+                                            dbc.Col(md=5, style={"text-align": "right", "color": "white"}, children=['Alt alignments:']),
+                                            dbc.Col(md=4, children=[
+                                                dcc.Slider( id="series-dnda-count", min=1, max=3, step=1, value=2),
+                                            ]),
+                                        ]),
+                                    ]),
+                                    dbc.Col(md=5, children=[
+                                        html.Div(id="series-speaker-dnda-dt"),
                                     ]),
                                 ]),
                             ]),
