@@ -43,7 +43,9 @@ def render_series_summary(show_key: str, expanded_season: str):
 @callback(
     Output('series-episodes-scatter-grid', 'figure'),
     Input('show-key', 'value'),
-    Input('scatter-grid-hilite', 'value'))    
+    Input('scatter-grid-hilite', 'value'),
+    background=True
+)    
 def render_all_series_episodes_scatter(show_key: str, hilite: str):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_all_series_episodes_scatter ts={callback_start_ts} show_key={show_key} hilite={hilite}')
@@ -91,7 +93,8 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str):
 @callback(
     Output('series-speakers-gantt', 'figure'),
     Input('show-key', 'value'),
-    background=True)    
+    background=True
+)    
 def render_series_speakers_gantt(show_key: str):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_speakers_gantt ts={callback_start_ts} show_key={show_key}')
@@ -99,7 +102,7 @@ def render_series_speakers_gantt(show_key: str):
     episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
     season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
 
-    file_path = f'./app/data/speaker_gantt_sequence_{show_key}.csv'
+    file_path = f'./app/data/{show_key}/speaker_gantt_sequence_{show_key}.csv'
     if os.path.isfile(file_path):
         speaker_gantt_sequence_df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')
@@ -125,7 +128,8 @@ def render_series_speakers_gantt(show_key: str):
 @callback(
     Output('series-locations-gantt', 'figure'),
     Input('show-key', 'value'),
-    background=True)    
+    background=True
+)    
 def render_series_locations_gantt(show_key: str):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_locations_gantt ts={callback_start_ts} show_key={show_key}')
@@ -133,7 +137,7 @@ def render_series_locations_gantt(show_key: str):
     episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
     season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
 
-    file_path = f'./app/data/location_gantt_sequence_{show_key}.csv'
+    file_path = f'./app/data/{show_key}/location_gantt_sequence_{show_key}.csv'
     if os.path.isfile(file_path):
         location_gantt_sequence_df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')
@@ -159,8 +163,10 @@ def render_series_locations_gantt(show_key: str):
 @callback(
     Output('series-topics-gantt', 'figure'),
     Input('show-key', 'value'),
-    background=True)    
-def render_series_topics_gantt(show_key: str):
+    Input('series-topics-gantt-score-type', 'value'),
+    background=True
+)    
+def render_series_topics_gantt(show_key: str, score_type: str):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_topics_gantt ts={callback_start_ts} show_key={show_key}')
 
@@ -170,16 +176,14 @@ def render_series_topics_gantt(show_key: str):
     topic_grouping = 'universalGenres'
     # topic_grouping = f'focusedGpt35_{show_key}'
     topic_threshold = 20
-    model_vendor= 'openai'
-    model_version = 'ada002'
-    file_path = f'./app/data/topic_gantt_sequence_{show_key}_{topic_grouping}_{model_vendor}_{model_version}.csv'
+    file_path = f'./app/data/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
     if os.path.isfile(file_path):
         topic_gantt_sequence_df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')
     else:
-        print(f'no file found at file_path={file_path}, running `/esr/generate_series_topic_gantt_sequence/{show_key}?overwrite_file=True` to generate')
-        esr.generate_series_topic_gantt_sequence(ShowKey(show_key), overwrite_file=True, topic_grouping=topic_grouping, topic_threshold=topic_threshold,
-                                                 model_vendor=model_vendor, model_version=model_version)
+        print(f'no file found at file_path={file_path}, running `/esr/generate_series_topic_gantt_sequence/{show_key}?overwrite_file=True` with params to generate')
+        esr.generate_series_topic_gantt_sequence(ShowKey(show_key), overwrite_file=True, topic_grouping=topic_grouping, 
+                                                 topic_threshold=topic_threshold, score_type=score_type)
         if os.path.isfile(file_path):
             topic_gantt_sequence_df = pd.read_csv(file_path)
             print(f'loading dataframe at file_path={file_path}')
@@ -410,8 +414,10 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     Output('series-topic-pie', 'figure'),
     Output('series-parent-topic-pie', 'figure'),
     Input('show-key', 'value'),
-    Input('topic-grouping', 'value'),
-    Input('score-type', 'value'))    
+    Input('series-topic-pie-topic-grouping', 'value'),
+    Input('series-topic-pie-score-type', 'value'),
+    background=True
+)    
 def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_topic_pies ts={callback_start_ts} show_key={show_key} topic_grouping={topic_grouping} score_type={score_type}')
@@ -491,7 +497,9 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
     Output('series-episodes-cluster-scatter', 'figure'),
     Output('series-episodes-cluster-dt', 'children'),
     Input('show-key', 'value'),
-    Input('num-clusters', 'value'))
+    Input('num-clusters', 'value'),
+    # background=True
+)
 def render_series_cluster_scatter(show_key: str, num_clusters: int):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_cluster_scatter ts={callback_start_ts} show_key={show_key} num_clusters={num_clusters}')

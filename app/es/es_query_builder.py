@@ -1646,7 +1646,7 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
     return response
 
 
-def topic_vector_search(topic_grouping: str, vector_field: str, vectorized_qt: list) -> Search:
+def topic_vector_search(topic_grouping: str, vector_field: str, vectorized_qt: list):
     print(f'begin topic_vector_search for topic_grouping={topic_grouping} vector_field={vector_field}')
 
     knn_query = {

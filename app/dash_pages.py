@@ -6,10 +6,10 @@ from uuid import uuid4
 
 
 # https://dash.plotly.com/background-callback-caching recommends for local dev only, but may work for prod MVP
-launch_uid = uuid4()
+launch_uuid = uuid4()
 cache = diskcache.Cache("./cache")
 background_callback_manager = DiskcacheManager(
-    cache, cache_by=[lambda: launch_uid], expire=60
+    cache, cache_by=[lambda: launch_uuid], expire=60
 )
 
 

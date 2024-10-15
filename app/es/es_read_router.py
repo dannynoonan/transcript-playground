@@ -1321,7 +1321,7 @@ def generate_series_speaker_gantt_sequence(show_key: ShowKey, limit_cast: bool =
         episode_speakers_sequence = trimmed_episode_speakers_sequence
 
     if overwrite_file:
-        file_path = f'./app/data/speaker_gantt_sequence_{show_key}.csv'
+        file_path = f'./app/data/{show_key}/speaker_gantt_sequence_{show_key}.csv'
         print(f'writing speaker gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_speakers_sequence)
         df.to_csv(file_path)
@@ -1375,7 +1375,7 @@ def generate_series_location_gantt_sequence(show_key: ShowKey, overwrite_file: b
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/location_gantt_sequence_{show_key}.csv'
+        file_path = f'./app/data/{show_key}/location_gantt_sequence_{show_key}.csv'
         print(f'writing location gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_locations_sequence)
         df.to_csv(file_path)
@@ -1385,8 +1385,8 @@ def generate_series_location_gantt_sequence(show_key: ShowKey, overwrite_file: b
 
 
 @esr_app.get("/esr/generate_series_topic_gantt_sequence/{show_key}", tags=['ES Reader'])
-def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str = None, topic_threshold: int = None, model_vendor: str = None, model_version: str = None,
-                                         overwrite_file: bool = False):
+def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str = None, topic_threshold: int = None, level: str = None,
+                                         score_type: str = None, model_vendor: str = None, model_version: str = None, overwrite_file: bool = False):
     '''
     TODO Generate composite of all scene_event aggs per speaker for each individual episode
     '''
@@ -1394,6 +1394,11 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
         topic_grouping = EPISODE_TOPIC_GROUPINGS[0]
     if not topic_threshold:
         topic_threshold = 20
+    if not level:
+        level = 'leaf'
+    if not score_type:
+        score_type = 'score'
+    # TODO phasing out dynamic execution of /episode_topic_vector_search in favor of indexed /fetch_episode_topics
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
@@ -1418,11 +1423,12 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
         sequence_in_season = episode['sequence_in_season']
 
         # fetch topics and scores
-        response = episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor, model_version)
-        topics = response['topics']
+        response = fetch_episode_topics(show_key, episode_key, topic_grouping)
+        topics = response['episode_topics']
         if len(topics) > topic_threshold:
             topics = topics[:topic_threshold]
-        simple_topics = [dict(topic_key=t['topic_key'], breadcrumb=t['breadcrumb'], score=t['score']) for t in topics]
+        simple_topics = [dict(topic_key=t['topic_key'], score=t[score_type]) for t in topics]
+        simple_topics = sorted(simple_topics, key=itemgetter('score'), reverse=True)
         episodes_to_topics[episode_key] = simple_topics
         # transform topics/scores to plotly-gantt-friendly span dicts
         for i in range(len(simple_topics)):
@@ -1436,7 +1442,7 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/topic_gantt_sequence_{show_key}_{topic_grouping}_{model_vendor}_{model_version}.csv'
+        file_path = f'./app/data/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
         print(f'writing topic gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_topics_sequence)
         df.to_csv(file_path)

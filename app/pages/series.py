@@ -124,6 +124,17 @@ def layout(show_key: str) -> html.Div:
                                 ]),
                             ]),
                             dbc.Tab(label="Topics", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dcc.RadioItems(
+                                    id="series-topics-gantt-score-type",
+                                    className="text-white", 
+                                    options=[
+                                        {'label': 'absolute scoring', 'value': 'score'},
+                                        {'label': 'frequency-based scoring', 'value': 'tfidf_score'},
+                                    ],
+                                    value='score',
+                                    inputStyle={"margin-left": "12px", "margin-right": "4px"},
+                                    style={"display": "flex", "padding-bottom": "0"}
+                                ),
                                 dbc.Row(justify="evenly", children=[
                                     dcc.Graph(id="series-topics-gantt"),
                                 ]),
@@ -291,12 +302,20 @@ def layout(show_key: str) -> html.Div:
                                 dbc.Row([
                                     dbc.Col(md=2, children=[
                                         html.Div([
-                                            "Topic grouping: ", dcc.Dropdown(id="topic-grouping", options=['universalGenres', 'universalGenresGpt35_v2'], value='universalGenres')
+                                            "Topic grouping: ", 
+                                            dcc.Dropdown(
+                                                id="series-topic-pie-topic-grouping", 
+                                                options=['universalGenres', 'universalGenresGpt35_v2'], 
+                                                value='universalGenres')
                                         ]),
                                     ]),
                                     dbc.Col(md=2, children=[
                                         html.Div([
-                                            "Score type: ", dcc.Dropdown(id="score-type", options=['score', 'tfidf_score'], value='tfidf_score')
+                                            "Score type: ", 
+                                            dcc.Dropdown(
+                                                id="series-topic-pie-score-type", 
+                                                options=['score', 'tfidf_score'], 
+                                                value='tfidf_score')
                                         ]),
                                     ]),
                                 ]),
