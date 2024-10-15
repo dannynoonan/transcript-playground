@@ -5,7 +5,7 @@ from datetime import datetime as dt
 import pandas as pd
 
 import app.es.es_read_router as esr
-import app.pages.components as cmp
+import app.page_builder_service.page_components as pc
 from app.page_callbacks.character_listing_callbacks import *
 from app.show_metadata import ShowKey
 from app import utils
@@ -53,7 +53,7 @@ def layout(show_key: str) -> html.Div:
 
 
     # generate navbar
-    navbar = cmp.generate_navbar(show_key, all_seasons)
+    navbar = pc.generate_navbar(show_key, all_seasons)
 
     # define content div
     content = html.Div([

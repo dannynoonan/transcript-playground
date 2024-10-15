@@ -10,6 +10,7 @@ __pycache__/
 /bertopic_config_tests
 /bertopic_data
 /bertopic_models
+/cache
 /data/*
 /database/backups
 /es_data_volume

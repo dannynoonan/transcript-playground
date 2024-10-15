@@ -7,7 +7,7 @@ import app.es.es_read_router as esr
 import app.fig_meta.color_meta as cm
 import app.page_builder_service.series_page_service as sps
 from app.page_callbacks.series_callbacks import *
-import app.pages.components as cmp
+import app.page_builder_service.page_components as pc
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -30,7 +30,7 @@ def layout(show_key: str) -> html.Div:
     # series summary and season episode listing data
     series_summary, episodes_by_season = sps.generate_series_summary(show_key)
     all_season_episode_data = sps.generate_all_season_episode_data(show_key, episodes_by_season, series_summary)
-    season_accordion_items = cmp.generate_season_episodes_accordion_items(all_season_episode_data, speaker_color_map)
+    season_accordion_items = sps.generate_season_episodes_accordion_items(all_season_episode_data, speaker_color_map)
 
     # topic listing data
     universal_genres_parent_topics = sps.get_parent_topics_for_grouping('universalGenres')
@@ -43,7 +43,7 @@ def layout(show_key: str) -> html.Div:
 
     # generate navbar
     all_seasons = list(episodes_by_season.keys())
-    navbar = cmp.generate_navbar(show_key, all_seasons)
+    navbar = pc.generate_navbar(show_key, all_seasons)
 
     # other page assets
     wordcloud_img = f'/static/wordclouds/{show_key}/{show_key}_SERIES.png'

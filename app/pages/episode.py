@@ -7,7 +7,7 @@ import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.page_builder_service.episode_page_service as eps
 from app.page_callbacks.episode_callbacks import *
-import app.pages.components as cmp
+import app.page_builder_service.page_components as pc
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -38,7 +38,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
     display_page_duration = display_page_end_ts - display_page_start_ts
     utils.hilite_in_logs(f'LAYOUT: /episode/{show_key}/{episode_key} at ts={display_page_end_ts} duration={display_page_duration}')
 
-    navbar = cmp.generate_navbar(show_key, all_seasons)
+    navbar = pc.generate_navbar(show_key, all_seasons)
 
     content = html.Div([
         navbar,

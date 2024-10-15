@@ -17,7 +17,8 @@ import app.data_service.field_flattener as fflat
 import app.data_service.topic_aggregator as tagg
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
-import app.pages.components as cmp
+import app.page_builder_service.page_components as pc
+import app.page_builder_service.series_page_service as sps
 from app.show_metadata import show_metadata, ShowKey
 from app import utils
 
@@ -245,7 +246,7 @@ def render_series_search_gantt(show_key: str, series_dialog_qt: str, qt_submit: 
         speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
         # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
         display_cols = ['episode_key', 'episode_title', 'count', 'season', 'episode', 'info', 'matching_line_count', 'matching_lines']
-        episode_search_results_dt = cmp.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'episode_key', matching_speakers, speaker_color_map, 
+        episode_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'episode_key', matching_speakers, speaker_color_map, 
                                                             numeric_precision_overrides={'count': 0, 'season': 0, 'episode': 0, 'matching_line_count': 0})
 
         # out_text = f"{scene_event_count} lines matching query '{qt}'"
@@ -343,7 +344,7 @@ def render_series_speaker_listing_dt(show_key: str):
 
     speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
 
-    speaker_listing_dt = cmp.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
+    speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
                                                   numeric_precision_overrides={'seasons': 0, 'episodes': 0, 'scenes': 0, 'lines': 0, 'words': 0})
 
     # print('speaker_listing_dt:')
@@ -394,8 +395,8 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
 
     # build dash datatable
     display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
-    series_speaker_mbti_dt = cmp.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
-    series_speaker_dnda_dt = cmp.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
+    series_speaker_mbti_dt = pc.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
+    series_speaker_dnda_dt = pc.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
@@ -476,7 +477,7 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
 
     topic_episodes_df.sort_values(score_type, ascending=False, inplace=True)
 
-    series_topic_episodes_dt = cmp.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [parent_topic], cm.TOPIC_COLORS)
+    series_topic_episodes_dt = pc.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [parent_topic], cm.TOPIC_COLORS)
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
@@ -517,10 +518,10 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int):
     # generate dash_table div as part of callback output
     episode_clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()
     # TODO this flatten_and_format_cluster_df function is a holdover from a bygone era, figure out where/how to generically handle this
-    episode_clusters_df = cmp.flatten_and_format_cluster_df(show_key, episode_clusters_df)
+    episode_clusters_df = sps.flatten_and_format_cluster_df(show_key, episode_clusters_df)
     clusters = [str(c) for c in list(episode_clusters_df['cluster'].unique())]
     bg_color_map = {str(i):color for i, color in enumerate(cm.colors)}
-    episode_clusters_dt = cmp.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, bg_color_map,
+    episode_clusters_dt = pc.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, bg_color_map,
                                                    numeric_precision_overrides={'season': 0, 'episode': 0, 'scenes': 0, 'episode_key': 0, 'cluster': 0})
 
     # generate scatterplot

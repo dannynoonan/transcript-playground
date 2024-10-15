@@ -1,7 +1,12 @@
+import dash_bootstrap_components as dbc
+from dash import dash_table
+import pandas as pd
+
+import app.data_service.matrix_operations as mxop
 import app.es.es_read_router as esr
+import app.page_builder_service.page_components as pc
 from app.show_metadata import ShowKey
 from app import utils
-
 
 
 def generate_series_summary(show_key: str) -> tuple[dict, dict]:
@@ -83,3 +88,88 @@ def get_parent_topics_for_grouping(topic_grouping: str):
             parent_topics.append(t['topic_key'])
     
     return parent_topics
+
+
+def generate_season_episodes_accordion_items(all_season_dicts: dict, speaker_color_map: dict) -> list:
+    season_accordion_items = []
+
+    for season, season_dict in all_season_dicts.items():
+        # label for collapsed season accordion item
+        season_title_text = f"Season {season} ({season_dict['air_date_begin']} — {season_dict['air_date_end']}): {len(season_dict['episodes'])} episodes"
+
+        # episode listing datatable for expanded season accordion item
+        season_episodes_dt = generate_season_episodes_dt(season_dict['episodes'])
+        
+        # recurring speaker datatable
+        recurring_speaker_cols = ['character', 'lines']
+        recurring_speaker_df = pd.DataFrame(season_dict['speaker_line_counts'].items(), columns=recurring_speaker_cols)
+        speaker_list = list(season_dict['speaker_line_counts'].keys())
+        recurring_speaker_dt = pc.pandas_df_to_dash_dt(recurring_speaker_df, recurring_speaker_cols, 'character', speaker_list, speaker_color_map,
+                                                    numeric_precision_overrides={'lines': 0})
+
+        # recurring location datatable
+        recurring_location_cols = ['location', 'scenes']
+        recurring_location_df = pd.DataFrame(season_dict['location_counts'].items(), columns=recurring_location_cols)
+        locations_list = list(season_dict['location_counts'].keys())
+        bg_color_map = {loc:'DarkSlateBlue' for loc in locations_list}
+        recurring_location_dt = pc.pandas_df_to_dash_dt(recurring_location_df, recurring_location_cols, 'location', locations_list, bg_color_map, 
+                                                     numeric_precision_overrides={'scenes': 0})
+
+        # combine elements into accordion item dash object
+        accordion_children = [
+            dbc.Row([
+                dbc.Col(md=8, children=[season_episodes_dt]),
+                dbc.Col(md=2, children=[recurring_speaker_dt]),
+                dbc.Col(md=2, children=[recurring_location_dt])
+            ])
+        ]
+        season_accordion_item = dbc.AccordionItem(title=season_title_text, item_id=season, children=accordion_children)
+        season_accordion_items.append(season_accordion_item)
+
+    return season_accordion_items
+
+
+def generate_season_episodes_dt(episodes: list) -> dash_table.DataTable:
+    episodes_df = pd.DataFrame(episodes)
+
+    # field naming and processing
+    episodes_df['focal_characters'] = episodes_df['focal_speakers'].apply(lambda x: ', '.join(x))
+    episodes_df['genres'] = episodes_df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
+    episodes_df['air_date'] = episodes_df['air_date'].apply(lambda x: x[:10])
+    episodes_df.rename(columns={'sequence_in_season': 'episode'}, inplace=True) 
+
+    # table display input
+    display_cols = ['episode', 'title', 'air_date', 'focal_characters', 'genres']
+    episode_list = [str(e) for e in list(episodes_df['episode'].unique())]
+    bg_color_map = {e:'Maroon' for e in episode_list}
+
+    # convert to dash datatable
+    episodes_dt = pc.pandas_df_to_dash_dt(episodes_df, display_cols, 'episode', episode_list, bg_color_map, 
+                                       numeric_precision_overrides={'episode': 0})
+
+    return episodes_dt
+
+
+# TODO this is an exact copy of flatten_and_format_cluster_df from dash.components
+def flatten_and_format_cluster_df(show_key: str, clusters_df: pd.DataFrame) -> pd.DataFrame:
+    '''
+    TODO Holy smackers does this need to be cleaned up. Amazingly it sorta works against two different cluster data sets, but either
+    (a) needs to be made more generic or (b) any usage of it must share common column names and data types
+    '''
+
+    # reformat columns, sort table
+    clusters_df['air_date'] = clusters_df['air_date'].apply(lambda x: x[:10])
+    if 'focal_speakers' in clusters_df.columns:
+        clusters_df['focal_speakers'] = clusters_df['focal_speakers'].apply(lambda x: ", ".join(x))
+    if 'focal_locations' in clusters_df.columns:
+        clusters_df['focal_locations'] = clusters_df['focal_locations'].apply(lambda x: ", ".join(x))
+    clusters_df['link'] = clusters_df.apply(lambda x: utils.wrap_title_in_url(show_key, x['episode_key']), axis=1)
+    clusters_df.sort_values(['cluster', 'season', 'sequence_in_season'], inplace=True)
+
+    # rename columns for display
+    clusters_df.rename(columns={'sequence_in_season': 'episode', 'scene_count': 'scenes'}, inplace=True)
+
+    # TODO stop populating this color column, row color is set within dash datatable using style_data_conditional filter_query
+    clusters_df.drop('cluster_color', axis=1, inplace=True) 
+
+    return clusters_df

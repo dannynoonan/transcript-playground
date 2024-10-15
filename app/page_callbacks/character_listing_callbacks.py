@@ -5,7 +5,7 @@ import pandas as pd
 import app.es.es_read_router as esr
 import app.data_service.field_flattener as fflat 
 import app.fig_meta.color_meta as cm
-import app.pages.components as cmp
+import app.page_builder_service.page_components as pc
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -48,7 +48,7 @@ def render_speaker_listing_dt(show_key: str):
 
     speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
 
-    speaker_listing_dt = cmp.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
+    speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
                                                   numeric_precision_overrides={'seasons': 0, 'episodes': 0, 'scenes': 0, 'lines': 0, 'words': 0})
 
     # print('speaker_listing_dt:')

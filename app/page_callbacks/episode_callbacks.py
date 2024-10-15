@@ -13,7 +13,7 @@ import app.fig_builder.plotly_treemap as ptree
 import app.fig_meta.color_meta as cm
 import app.data_service.field_flattener as fflat
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
-import app.pages.components as cmp
+import app.page_builder_service.page_components as pc
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -159,7 +159,7 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
     # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
     display_cols = ['character', 'scene', 'line', 'location', 'dialog']
-    episode_search_results_dt = cmp.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map, 
+    episode_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map, 
                                                          numeric_precision_overrides={'scene': 0, 'line': 0})
 
     out_text = f"{scene_event_count} lines matching query '{qt}'"
@@ -301,7 +301,7 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
 
     speaker_episode_frequency_bar_chart = pbar.build_speaker_episode_frequency_bar(show_key, df, scale_by)
 
-    speaker_episode_summary_dt = cmp.pandas_df_to_dash_dt(df, df.columns, 'character', episode_speaker_names, speaker_color_map, 
+    speaker_episode_summary_dt = pc.pandas_df_to_dash_dt(df, df.columns, 'character', episode_speaker_names, speaker_color_map, 
                                                           numeric_precision_overrides={'scenes': 0, 'lines': 0, 'words': 0})
         
     return speaker_episode_frequency_bar_chart, speaker_episode_summary_dt
@@ -379,7 +379,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
         viridis_discrete_rgbs = cm.matplotlib_gradient_to_rgb_strings('viridis')
         sim_ep_rgbs = cm.map_range_values_to_gradient(similar_episode_scores, viridis_discrete_rgbs)
         # sim_ep_rgb_textcolors = {rgb:"Black" for rgb in sim_ep_rgbs}
-        episode_similarity_dt = cmp.pandas_df_to_dash_dt(df, display_cols, 'rank', sim_ep_rgbs, {}, numeric_precision_overrides={'season': 0, 'episode': 0, 'rank': 0})
+        episode_similarity_dt = pc.pandas_df_to_dash_dt(df, display_cols, 'rank', sim_ep_rgbs, {}, numeric_precision_overrides={'season': 0, 'episode': 0, 'rank': 0})
     else: 
         episode_similarity_dt = {}
 
@@ -428,8 +428,8 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
 
     # build dash datatable
     display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
-    episode_speaker_mbti_dt = cmp.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', episode_speaker_names, speaker_color_map)
-    episode_speaker_dnda_dt = cmp.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', episode_speaker_names, speaker_color_map)
+    episode_speaker_mbti_dt = pc.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', episode_speaker_names, speaker_color_map)
+    episode_speaker_dnda_dt = pc.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', episode_speaker_names, speaker_color_map)
 
     return episode_speaker_mbti_scatter, episode_speaker_dnda_scatter, episode_speaker_mbti_dt, episode_speaker_dnda_dt
 
@@ -465,7 +465,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
         # build dash datatable
         parent_topics = df['parent_topic'].unique()
         display_cols = ['parent_topic', 'topic_name', 'raw_score', 'scaled_score', 'tfidf_score']
-        dash_dt = cmp.pandas_df_to_dash_dt(df, display_cols, 'parent_topic', parent_topics, cm.TOPIC_COLORS)
+        dash_dt = pc.pandas_df_to_dash_dt(df, display_cols, 'parent_topic', parent_topics, cm.TOPIC_COLORS)
         dts[tg] = dash_dt
 
     return figs['universalGenres'], dts['universalGenres'], figs['universalGenresGpt35_v2'], dts['universalGenresGpt35_v2']
