@@ -80,8 +80,8 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str):
     all_series_episodes_scatter = pscat.build_all_series_episodes_scatter(df, seasons, hilite=hilite, hilite_color_map=hilite_color_map)
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_all_series_episodes_scatter returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_all_series_episodes_scatter returned at ts={callback_end_ts} duration={callback_duration}')
 
     return all_series_episodes_scatter
 
@@ -89,7 +89,8 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str):
 ############ series speakers gantt callback
 @callback(
     Output('series-speakers-gantt', 'figure'),
-    Input('show-key', 'value'))    
+    Input('show-key', 'value'),
+    background=True)    
 def render_series_speakers_gantt(show_key: str):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_speakers_gantt ts={callback_start_ts} show_key={show_key}')
@@ -113,8 +114,8 @@ def render_series_speakers_gantt(show_key: str):
     series_speakers_gantt = pgantt.build_series_gantt(show_key, speaker_gantt_sequence_df, 'speakers', interval_data=season_interval_data)
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_speakers_gantt returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_speakers_gantt returned at ts={callback_end_ts} duration={callback_duration}')
 
     return series_speakers_gantt
 
@@ -122,7 +123,8 @@ def render_series_speakers_gantt(show_key: str):
 ############ series locations gantt callback
 @callback(
     Output('series-locations-gantt', 'figure'),
-    Input('show-key', 'value'))    
+    Input('show-key', 'value'),
+    background=True)    
 def render_series_locations_gantt(show_key: str):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_locations_gantt ts={callback_start_ts} show_key={show_key}')
@@ -146,8 +148,8 @@ def render_series_locations_gantt(show_key: str):
     series_locations_gantt = pgantt.build_series_gantt(show_key, location_gantt_sequence_df, 'locations', interval_data=season_interval_data)
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_locations_gantt returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_locations_gantt returned at ts={callback_end_ts} duration={callback_duration}')
 
     return series_locations_gantt
 
@@ -155,7 +157,8 @@ def render_series_locations_gantt(show_key: str):
 ############ series topics gantt callback
 @callback(
     Output('series-topics-gantt', 'figure'),
-    Input('show-key', 'value'))    
+    Input('show-key', 'value'),
+    background=True)    
 def render_series_topics_gantt(show_key: str):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_topics_gantt ts={callback_start_ts} show_key={show_key}')
@@ -185,8 +188,8 @@ def render_series_topics_gantt(show_key: str):
     series_topics_gantt = pgantt.build_series_gantt(show_key, topic_gantt_sequence_df, 'topics', interval_data=season_interval_data)
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_topics_gantt returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_topics_gantt returned at ts={callback_end_ts} duration={callback_duration}')
 
     return series_topics_gantt
 
@@ -252,8 +255,8 @@ def render_series_search_gantt(show_key: str, series_dialog_qt: str, qt_submit: 
         episode_search_results_dt = {}
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_search_gantt returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_search_gantt returned at ts={callback_end_ts} duration={callback_duration}')
 
     return series_dialog_qt, series_search_results_gantt, episode_search_results_dt
 
@@ -293,8 +296,8 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
     speaker_episode_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, tally_by, aggregate_ratio=False, season=season, sequence_in_season=sequence_in_season)
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_speaker_frequency_bar_chart returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_speaker_frequency_bar_chart returned at ts={callback_end_ts} duration={callback_duration}')
 
     return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart
 
@@ -305,7 +308,7 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
     Output('series-speaker-listing-dt', 'children'),
     # Output('speaker-matches-dt', 'children'),
     Input('show-key', 'value'))
-    # Input('speaker-qt', 'value')) 
+    # Input('speaker-qt', 'value'))
 def render_series_speaker_listing_dt(show_key: str):
     utils.hilite_in_logs(f'callback invoked: render_series_speaker_listing_dt, show_key={show_key}')   
 # def render_series_speaker_listing_dt(show_key: str, speaker_qt: str):
@@ -354,8 +357,8 @@ def render_series_speaker_listing_dt(show_key: str):
     #     speaker_matches_dt = None
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_speaker_listing_dt returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_speaker_listing_dt returned at ts={callback_end_ts} duration={callback_duration}')
 
     # return speaker_qt, speaker_listing_dt, speaker_matches_dt
     return speaker_listing_dt
@@ -395,8 +398,8 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     series_speaker_dnda_dt = cmp.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_speaker_topic_scatter returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_speaker_topic_scatter returned at ts={callback_end_ts} duration={callback_duration}')
 
     return series_speaker_mbti_scatter, series_speaker_dnda_scatter, series_speaker_mbti_dt, series_speaker_dnda_dt
 
@@ -426,8 +429,8 @@ def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str
     series_parent_topics_pie = ppie.build_topic_aggs_pie(series_parent_topics_df, topic_grouping, score_type, is_parent=True)
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_topic_pies returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_topic_pies returned at ts={callback_end_ts} duration={callback_duration}')
 
     return series_topics_pie, series_parent_topics_pie
 
@@ -476,8 +479,8 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
     series_topic_episodes_dt = cmp.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [parent_topic], cm.TOPIC_COLORS)
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_topic_episodes_dt returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_topic_episodes_dt returned at ts={callback_end_ts} duration={callback_duration}')
 
     return series_topic_episodes_dt
 
@@ -487,7 +490,7 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
     Output('series-episodes-cluster-scatter', 'figure'),
     Output('series-episodes-cluster-dt', 'children'),
     Input('show-key', 'value'),
-    Input('num-clusters', 'value'))    
+    Input('num-clusters', 'value'))
 def render_series_cluster_scatter(show_key: str, num_clusters: int):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_cluster_scatter ts={callback_start_ts} show_key={show_key} num_clusters={num_clusters}')
@@ -524,7 +527,7 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int):
     episode_clusters_scatter = pscat.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
 
     callback_end_ts = dt.now()
-    display_page_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_cluster_scatter returned at ts={callback_end_ts} duration={display_page_duration}')
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_cluster_scatter returned at ts={callback_end_ts} duration={callback_duration}')
 
     return episode_clusters_scatter, episode_clusters_dt

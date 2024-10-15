@@ -282,7 +282,7 @@ def layout(show_key: str) -> html.Div:
                 ]),
             ]),
 
-            # series-speaker-topic mappings
+            # series-topic mappings & episode clusters
             dbc.CardBody([
                 dbc.Row([
                     dbc.Col(md=12, children=[
