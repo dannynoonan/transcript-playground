@@ -1,3 +1,4 @@
+import pandas as pd
 import plotly.graph_objects as go
 
 
@@ -51,3 +52,12 @@ def build_and_annotate_season_labels(fig: go.Figure, seasons_to_first_episodes: 
             font=dict(family="Arial", size=10, color="#A0A0A0"))
 
     return season_lines
+
+
+def search_results_hover_text(df: pd.DataFrame):
+    hover_lines = []
+    hover_lines.append(f"<b>{df['episode_title']}</b> (Season {str(df['season'])}, Episode {str(df['sequence_in_season'])})")
+    hover_lines.append(f"Agg score: <b>{str(round(df['agg_score'], 2))}</b>")
+    hover_lines.append(df['matching_lines'])
+
+    return '<br>'.join(hover_lines)

@@ -29,6 +29,7 @@ def flatten_and_format_topics_df(df: pd.DataFrame, score_type: str) -> pd.DataFr
 
     df = df[['topic_key', 'topic_name', 'raw_score', 'score', 'is_parent', 'tfidf_score']]
     df.rename(columns={'score': 'scaled_score'}, inplace=True)
+    df = df.loc[df['scaled_score'] > 0]
     df['parent_topic'] = df['topic_key'].apply(mxop.extract_parent)
     df = df[df['parent_topic'] != df['topic_key']]
     df['total_score'] = df[score_type].sum()

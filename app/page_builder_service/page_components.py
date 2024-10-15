@@ -7,7 +7,6 @@ import app.fig_meta.color_meta as cm
 
 
 def generate_navbar(show_key: str, season_dropdown_options: list) -> dbc.Card:
-
     season_dropdown_menu = []
     for season in season_dropdown_options:
         season_menu_item = dbc.DropdownMenuItem(str(season), style={"color": "White"}, href='/web/show/TNG', target="_blank")
@@ -52,7 +51,7 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
     df = df[display_cols]
 
     # kinda gross: default numeric precision is 2, if we want something else then override it in numeric_precision_overrides
-    numeric_precision = {col:2 for col in display_cols}
+    numeric_precision = {col:0 for col in display_cols}
     if numeric_precision_overrides:
         for col, precision in numeric_precision_overrides.items():
             numeric_precision[col] = precision

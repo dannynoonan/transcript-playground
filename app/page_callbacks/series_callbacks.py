@@ -22,7 +22,6 @@ from app.show_metadata import show_metadata, ShowKey
 from app import utils
 
 
-
 ############ series summary callbacks
 @callback(
     Output("accordion-contents", "children"),
@@ -245,13 +244,14 @@ def render_series_search_gantt(show_key: str, qt: str):
 
     # build dash datatable
     matching_lines_df = timeline_df.loc[timeline_df['matching_line_count'] > 0]
-    matching_lines_df.rename(columns={'Task': 'character', 'sequence_in_season': 'episode'}, inplace=True)
+    matching_lines_df.sort_values('agg_score', ascending=False, inplace=True)
+    matching_lines_df.rename(columns={'Task': 'character', 'sequence_in_season': 'episode', 'matching_line_count': 'line_count', 'matching_lines': 'lines'}, inplace=True)
     matching_speakers = matching_lines_df['character'].unique()
     speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
     # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
-    display_cols = ['episode_key', 'episode_title', 'count', 'season', 'episode', 'info', 'matching_line_count', 'matching_lines']
-    series_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'episode_key', matching_speakers, speaker_color_map, 
-                                                        numeric_precision_overrides={'count': 0, 'season': 0, 'episode': 0, 'matching_line_count': 0})
+    display_cols = ['character', 'episode_key', 'episode_title', 'season', 'episode', 'agg_score', 'line_count', 'lines']
+    series_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'episode_key', matching_speakers, speaker_color_map,
+                                                       numeric_precision_overrides={'agg_score': 2})
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
@@ -300,85 +300,6 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
     utils.hilite_in_logs(f'render_speaker_frequency_bar_chart returned at ts={callback_end_ts} duration={callback_duration}')
 
     return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart
-
-
-############ series speaker listing callback
-@callback(
-    Output('series-speaker-listing-dt', 'children'),
-    Input('show-key', 'value')
-)
-def render_series_speaker_listing_dt(show_key: str):
-    callback_start_ts = dt.now()
-    utils.hilite_in_logs(f'callback invoked: render_series_speaker_listing_dt ts={callback_start_ts} show_key={show_key}')
-
-    series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
-
-    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), speakers=','.join(series_speaker_names), extra_fields='topics_mbti')
-    indexed_speakers = indexed_speakers_response['speakers']
-    indexed_speakers = fflat.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
-    indexed_speakers = fflat.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
-    
-    speaker_names = [s['speaker'] for s in indexed_speakers]
-    speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
-    
-    speakers_df = pd.DataFrame(indexed_speakers)
-    speakers_df.rename(columns={'speaker': 'character', 'scene_count': 'scenes', 'line_count': 'lines', 'word_count': 'words', 'season_count': 'seasons', 
-                                'episode_count': 'episodes', 'actor_names': 'actor(s)', 'topics_mbti': 'mbti'}, inplace=True)
-    display_cols = ['character', 'aka', 'actor(s)', 'seasons', 'episodes', 'scenes', 'lines', 'words', 'mbti']
-    # replace actor nan values with empty string, flatten list into string
-    speakers_df['actor(s)'].fillna('', inplace=True)
-    speakers_df['actor(s)'] = speakers_df['actor(s)'].apply(lambda x: ', '.join(x))
-
-    speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
-                                                  numeric_precision_overrides={'seasons': 0, 'episodes': 0, 'scenes': 0, 'lines': 0, 'words': 0})
-
-    callback_end_ts = dt.now()
-    callback_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_speaker_listing_dt returned at ts={callback_end_ts} duration={callback_duration}')
-
-    # return speaker_qt, speaker_listing_dt, speaker_matches_dt
-    return speaker_listing_dt
-
-
-############ series speaker topic grid callback
-@callback(
-    Output('series-speaker-mbti-scatter', 'figure'),
-    Output('series-speaker-dnda-scatter', 'figure'),
-    Output('series-speaker-mbti-dt', 'children'),
-    Output('series-speaker-dnda-dt', 'children'),
-    Input('show-key', 'value'),
-    Input('series-mbti-count', 'value'),
-    Input('series-dnda-count', 'value')
-)    
-def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_count: int):
-    callback_start_ts = dt.now()
-    utils.hilite_in_logs(f'callback invoked: render_series_speaker_topic_scatter ts={callback_start_ts} show_key={show_key} mbti_count={mbti_count} dnda_count={dnda_count}')
-
-    series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
-    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(series_speaker_names))
-    indexed_speakers = indexed_speakers_response['speakers']
-    # indexed_speakers = fh.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
-
-    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, series_speaker_names)
-
-    # flatten episode speaker topic data for each episode speaker
-    exploded_speakers_mbti = fflat.explode_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=mbti_count)
-    exploded_speakers_dnda = fflat.explode_speaker_topics(indexed_speakers, 'dnda', limit_per_speaker=dnda_count)
-    mbti_df = pd.DataFrame(exploded_speakers_mbti)
-    dnda_df = pd.DataFrame(exploded_speakers_dnda)
-    series_speaker_mbti_scatter = pscat.build_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
-    series_speaker_dnda_scatter = pscat.build_speaker_topic_scatter(show_key, dnda_df.copy(), 'dnda', speaker_color_map=speaker_color_map)
-
-    # build dash datatable
-    display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
-    series_speaker_mbti_dt = pc.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
-    series_speaker_dnda_dt = pc.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
-
-    callback_end_ts = dt.now()
-    callback_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_series_speaker_topic_scatter returned at ts={callback_end_ts} duration={callback_duration}')
-
-    return series_speaker_mbti_scatter, series_speaker_dnda_scatter, series_speaker_mbti_dt, series_speaker_dnda_dt
 
 
 ############ series topic pie and bar chart callback
@@ -511,8 +432,7 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: lis
         episode_clusters_df = sps.flatten_and_format_cluster_df(show_key, episode_clusters_df)
         clusters = [str(c) for c in list(episode_clusters_df['cluster'].unique())]
         bg_color_map = {str(i):color for i, color in enumerate(cm.colors)}
-        episode_clusters_dt = pc.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, bg_color_map,
-                                                      numeric_precision_overrides={'season': 0, 'episode': 0, 'scenes': 0, 'episode_key': 0, 'cluster': 0})
+        episode_clusters_dt = pc.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, bg_color_map)
     else:
         episode_clusters_dt = {}
 
@@ -521,3 +441,81 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: lis
     utils.hilite_in_logs(f'render_series_cluster_scatter returned at ts={callback_end_ts} duration={callback_duration}')
 
     return episode_clusters_scatter, episode_clusters_dt
+
+
+############ series speaker listing callback
+@callback(
+    Output('series-speaker-listing-dt', 'children'),
+    Input('show-key', 'value')
+)
+def render_series_speaker_listing_dt(show_key: str):
+    callback_start_ts = dt.now()
+    utils.hilite_in_logs(f'callback invoked: render_series_speaker_listing_dt ts={callback_start_ts} show_key={show_key}')
+
+    series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
+
+    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), speakers=','.join(series_speaker_names), extra_fields='topics_mbti')
+    indexed_speakers = indexed_speakers_response['speakers']
+    indexed_speakers = fflat.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
+    indexed_speakers = fflat.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
+    
+    speaker_names = [s['speaker'] for s in indexed_speakers]
+    speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
+    
+    speakers_df = pd.DataFrame(indexed_speakers)
+    speakers_df.rename(columns={'speaker': 'character', 'scene_count': 'scenes', 'line_count': 'lines', 'word_count': 'words', 'season_count': 'seasons', 
+                                'episode_count': 'episodes', 'actor_names': 'actor(s)', 'topics_mbti': 'mbti'}, inplace=True)
+    display_cols = ['character', 'aka', 'actor(s)', 'seasons', 'episodes', 'scenes', 'lines', 'words', 'mbti']
+    # replace actor nan values with empty string, flatten list into string
+    speakers_df['actor(s)'].fillna('', inplace=True)
+    speakers_df['actor(s)'] = speakers_df['actor(s)'].apply(lambda x: ', '.join(x))
+
+    speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors)
+
+    callback_end_ts = dt.now()
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_speaker_listing_dt returned at ts={callback_end_ts} duration={callback_duration}')
+
+    # return speaker_qt, speaker_listing_dt, speaker_matches_dt
+    return speaker_listing_dt
+
+
+############ series speaker topic grid callback
+@callback(
+    Output('series-speaker-mbti-scatter', 'figure'),
+    Output('series-speaker-dnda-scatter', 'figure'),
+    Output('series-speaker-mbti-dt', 'children'),
+    Output('series-speaker-dnda-dt', 'children'),
+    Input('show-key', 'value'),
+    Input('series-mbti-count', 'value'),
+    Input('series-dnda-count', 'value')
+)    
+def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_count: int):
+    callback_start_ts = dt.now()
+    utils.hilite_in_logs(f'callback invoked: render_series_speaker_topic_scatter ts={callback_start_ts} show_key={show_key} mbti_count={mbti_count} dnda_count={dnda_count}')
+
+    series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
+    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(series_speaker_names))
+    indexed_speakers = indexed_speakers_response['speakers']
+    # indexed_speakers = fh.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
+
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, series_speaker_names)
+
+    # flatten episode speaker topic data for each episode speaker
+    exploded_speakers_mbti = fflat.explode_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=mbti_count)
+    exploded_speakers_dnda = fflat.explode_speaker_topics(indexed_speakers, 'dnda', limit_per_speaker=dnda_count)
+    mbti_df = pd.DataFrame(exploded_speakers_mbti)
+    dnda_df = pd.DataFrame(exploded_speakers_dnda)
+    series_speaker_mbti_scatter = pscat.build_speaker_topic_scatter(show_key, mbti_df.copy(), 'mbti', speaker_color_map=speaker_color_map)
+    series_speaker_dnda_scatter = pscat.build_speaker_topic_scatter(show_key, dnda_df.copy(), 'dnda', speaker_color_map=speaker_color_map)
+
+    # build dash datatable
+    display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
+    series_speaker_mbti_dt = pc.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
+    series_speaker_dnda_dt = pc.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
+
+    callback_end_ts = dt.now()
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_series_speaker_topic_scatter returned at ts={callback_end_ts} duration={callback_duration}')
+
+    return series_speaker_mbti_scatter, series_speaker_dnda_scatter, series_speaker_mbti_dt, series_speaker_dnda_dt

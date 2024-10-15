@@ -48,8 +48,7 @@ def render_speaker_listing_dt(show_key: str):
 
     speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
 
-    speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
-                                                  numeric_precision_overrides={'seasons': 0, 'episodes': 0, 'scenes': 0, 'lines': 0, 'words': 0})
+    speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors)
 
     # print('speaker_listing_dt:')
     # utils.hilite_in_logs(speaker_listing_dt)

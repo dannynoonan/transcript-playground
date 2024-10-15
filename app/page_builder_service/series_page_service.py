@@ -105,15 +105,15 @@ def generate_season_episodes_accordion_items(all_season_dicts: dict, speaker_col
         recurring_speaker_df = pd.DataFrame(season_dict['speaker_line_counts'].items(), columns=recurring_speaker_cols)
         speaker_list = list(season_dict['speaker_line_counts'].keys())
         recurring_speaker_dt = pc.pandas_df_to_dash_dt(recurring_speaker_df, recurring_speaker_cols, 'character', speaker_list, speaker_color_map,
-                                                    numeric_precision_overrides={'lines': 0})
+                                                       numeric_precision_overrides={'lines': 0})
 
         # recurring location datatable
         recurring_location_cols = ['location', 'scenes']
         recurring_location_df = pd.DataFrame(season_dict['location_counts'].items(), columns=recurring_location_cols)
         locations_list = list(season_dict['location_counts'].keys())
         bg_color_map = {loc:'DarkSlateBlue' for loc in locations_list}
-        recurring_location_dt = pc.pandas_df_to_dash_dt(recurring_location_df, recurring_location_cols, 'location', locations_list, bg_color_map, 
-                                                     numeric_precision_overrides={'scenes': 0})
+        recurring_location_dt = pc.pandas_df_to_dash_dt(recurring_location_df, recurring_location_cols, 'location', locations_list, bg_color_map,
+                                                        numeric_precision_overrides={'scenes': 0})
 
         # combine elements into accordion item dash object
         accordion_children = [
