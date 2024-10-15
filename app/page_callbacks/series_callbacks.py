@@ -16,7 +16,6 @@ import app.fig_meta.gantt_helper as gh
 import app.data_service.field_flattener as fflat
 import app.data_service.topic_aggregator as tagg
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.page_builder_service.page_components as pc
 import app.page_builder_service.series_page_service as sps
 from app.show_metadata import show_metadata, ShowKey
@@ -27,9 +26,9 @@ from app import utils
 ############ series summary callbacks
 @callback(
     Output("accordion-contents", "children"),
-    # Output('series-topics', 'children'),
     Input('show-key', 'value'),
-    Input("accordion", "active_item"))    
+    Input("accordion", "active_item")
+)    
 def render_series_summary(show_key: str, expanded_season: str):
     utils.hilite_in_logs(f'callback invoked: render_series_summary, show_key={show_key} expanded_season={expanded_season}')
 
@@ -174,7 +173,6 @@ def render_series_topics_gantt(show_key: str, score_type: str):
     season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
 
     topic_grouping = 'universalGenres'
-    # topic_grouping = f'focusedGpt35_{show_key}'
     topic_threshold = 20
     file_path = f'./app/data/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
     if os.path.isfile(file_path):
@@ -201,16 +199,18 @@ def render_series_topics_gantt(show_key: str, score_type: str):
 
 ############ series search gantt callback
 @callback(
-    Output('series-dialog-qt-display', 'children'),
+    Output('series-search-response-text', 'children'),
     Output('series-search-results-gantt-new', 'figure'),
     Output('series-search-results-dt', 'children'),
     Input('show-key', 'value'),
-    Input('series-dialog-qt', 'value'),
-    # NOTE: I believe 'qt-submit' is a placebo: it's a call to action, but simply exiting the qt field invokes the callback
-    Input('qt-submit', 'value'))    
-def render_series_search_gantt(show_key: str, series_dialog_qt: str, qt_submit: bool = False):
+    Input('series-search-qt', 'value')
+)    
+def render_series_search_gantt(show_key: str, qt: str):
     callback_start_ts = dt.now()
-    utils.hilite_in_logs(f'callback invoked: render_series_search_gantt ts={callback_start_ts} show_key={show_key} series_dialog_qt={series_dialog_qt} qt_submit={qt_submit}')
+    utils.hilite_in_logs(f'callback invoked: render_series_search_gantt ts={callback_start_ts} show_key={show_key} series_dialog_qt={qt}')
+
+    episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
+    season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
 
     # execute search query and filter response into series gantt charts
 
@@ -231,39 +231,33 @@ def render_series_search_gantt(show_key: str, series_dialog_qt: str, qt_submit: 
     # search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
     # series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, qt, search_response['matches'], speaker_gantt_sequence_df)
 
-    if series_dialog_qt:
-        series_gantt_response = esr.generate_series_speaker_gantt_sequence(ShowKey(show_key))
-        search_response = esr.search_scene_events(ShowKey(show_key), dialog=series_dialog_qt)
-        # if 'matches' not in search_response or len(search_response['matches']) == 0:
-        #     print(f"no matches for show_key={show_key} qt=`{qt}` qt_submit=`{qt_submit}`")
-        #     return None, show_key, qt
-        # print(f"len(search_response['matches'])={len(search_response['matches'])}")
-        # print(f"len(series_gantt_response['episode_speakers_sequence'])={len(series_gantt_response['episode_speakers_sequence'])}")
-        timeline_df = pd.DataFrame(series_gantt_response['episode_speakers_sequence'])
-        series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, timeline_df, search_response['matches'])
+    if not qt:
+        return '', {}, {}
+    
+    series_gantt_response = esr.generate_series_speaker_gantt_sequence(ShowKey(show_key))
+    search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
+    episode_count = search_response['episode_count']
+    scene_event_count = search_response['scene_event_count']
+    response_text = f"{scene_event_count} line(s) in {episode_count} episode(s) matching query '{qt}'"
 
-        matching_lines_df = timeline_df.loc[timeline_df['matching_line_count'] > 0]
+    timeline_df = pd.DataFrame(series_gantt_response['episode_speakers_sequence'])
+    series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, timeline_df, search_response['matches'], interval_data=season_interval_data)
 
-        # build dash datatable
-        matching_lines_df.rename(columns={'Task': 'character', 'sequence_in_season': 'episode'}, inplace=True)
-        matching_speakers = matching_lines_df['character'].unique()
-        speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
-        # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
-        display_cols = ['episode_key', 'episode_title', 'count', 'season', 'episode', 'info', 'matching_line_count', 'matching_lines']
-        episode_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'episode_key', matching_speakers, speaker_color_map, 
-                                                            numeric_precision_overrides={'count': 0, 'season': 0, 'episode': 0, 'matching_line_count': 0})
-
-        # out_text = f"{scene_event_count} lines matching query '{qt}'"
-
-    else:
-        series_search_results_gantt = {}
-        episode_search_results_dt = {}
+    # build dash datatable
+    matching_lines_df = timeline_df.loc[timeline_df['matching_line_count'] > 0]
+    matching_lines_df.rename(columns={'Task': 'character', 'sequence_in_season': 'episode'}, inplace=True)
+    matching_speakers = matching_lines_df['character'].unique()
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
+    # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
+    display_cols = ['episode_key', 'episode_title', 'count', 'season', 'episode', 'info', 'matching_line_count', 'matching_lines']
+    series_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'episode_key', matching_speakers, speaker_color_map, 
+                                                        numeric_precision_overrides={'count': 0, 'season': 0, 'episode': 0, 'matching_line_count': 0})
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
     utils.hilite_in_logs(f'render_series_search_gantt returned at ts={callback_end_ts} duration={callback_duration}')
 
-    return series_dialog_qt, series_search_results_gantt, episode_search_results_dt
+    return response_text, series_search_results_gantt, series_search_results_dt
 
 
 ############ speaker frequency bar chart callback
@@ -273,7 +267,8 @@ def render_series_search_gantt(show_key: str, series_dialog_qt: str, qt_submit: 
     Input('show-key', 'value'),
     Input('speaker-chatter-tally-by', 'value'),
     Input('speaker-chatter-season', 'value'),
-    Input('speaker-chatter-sequence-in-season', 'value'))    
+    Input('speaker-chatter-sequence-in-season', 'value')
+)    
 def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str, sequence_in_season: str = None):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_speaker_frequency_bar_chart ts={callback_start_ts} show_key={show_key} tally_by={tally_by} season={season} sequence_in_season={sequence_in_season}')
@@ -309,15 +304,10 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
 
 ############ series speaker listing callback
 @callback(
-    # Output('speaker-qt-display', 'children'),
     Output('series-speaker-listing-dt', 'children'),
-    # Output('speaker-matches-dt', 'children'),
-    Input('show-key', 'value'))
-    # Input('speaker-qt', 'value'))
+    Input('show-key', 'value')
+)
 def render_series_speaker_listing_dt(show_key: str):
-    utils.hilite_in_logs(f'callback invoked: render_series_speaker_listing_dt, show_key={show_key}')   
-# def render_series_speaker_listing_dt(show_key: str, speaker_qt: str):
-#     print(f'in render_series_speaker_listing_dt, show_key={show_key} speaker_qt={speaker_qt}')
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_speaker_listing_dt ts={callback_start_ts} show_key={show_key}')
 
@@ -328,38 +318,19 @@ def render_series_speaker_listing_dt(show_key: str):
     indexed_speakers = fflat.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
     indexed_speakers = fflat.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
     
-    speakers_df = pd.DataFrame(indexed_speakers)
-
-	# # TODO well THIS is inefficient...
-    # indexed_speaker_keys = [s['speaker'] for s in indexed_speakers]
-    # speaker_aggs_response = esr.composite_speaker_aggs(show_key)
-    # speaker_aggs = speaker_aggs_response['speaker_agg_composite']
-    # non_indexed_speakers = [s for s in speaker_aggs if s['speaker'] not in indexed_speaker_keys]
-
     speaker_names = [s['speaker'] for s in indexed_speakers]
-
+    speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
+    
+    speakers_df = pd.DataFrame(indexed_speakers)
     speakers_df.rename(columns={'speaker': 'character', 'scene_count': 'scenes', 'line_count': 'lines', 'word_count': 'words', 'season_count': 'seasons', 
                                 'episode_count': 'episodes', 'actor_names': 'actor(s)', 'topics_mbti': 'mbti'}, inplace=True)
     display_cols = ['character', 'aka', 'actor(s)', 'seasons', 'episodes', 'scenes', 'lines', 'words', 'mbti']
-
     # replace actor nan values with empty string, flatten list into string
     speakers_df['actor(s)'].fillna('', inplace=True)
     speakers_df['actor(s)'] = speakers_df['actor(s)'].apply(lambda x: ', '.join(x))
 
-    speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
-
     speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors,
                                                   numeric_precision_overrides={'seasons': 0, 'episodes': 0, 'scenes': 0, 'lines': 0, 'words': 0})
-
-    # print('speaker_listing_dt:')
-    # utils.hilite_in_logs(speaker_listing_dt)
-
-    # speaker_matches = []
-    # if speaker_qt:
-    # 	# speaker_qt_display = speaker_qt
-    #     speaker_search_response = esr.search_speakers(speaker_qt, show_key=show_key)
-    #     speaker_matches = speaker_search_response['speaker_matches']
-    #     speaker_matches_dt = None
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
@@ -377,7 +348,8 @@ def render_series_speaker_listing_dt(show_key: str):
     Output('series-speaker-dnda-dt', 'children'),
     Input('show-key', 'value'),
     Input('series-mbti-count', 'value'),
-    Input('series-dnda-count', 'value'))    
+    Input('series-dnda-count', 'value')
+)    
 def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_count: int):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_speaker_topic_scatter ts={callback_start_ts} show_key={show_key} mbti_count={mbti_count} dnda_count={dnda_count}')
@@ -442,17 +414,22 @@ def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str
     return series_topics_pie, series_parent_topics_pie
 
 
+# NOTE I'm not sure why this isn't just part of `render_series_topic_pies` callback (or maybe all optional dts should have separate callbacks?)
 ############ series topic episode datatable callback
 @callback(
     Output('series-topic-episodes-dt', 'children'),
     Input('show-key', 'value'),
-    Input('topic-grouping', 'value'),
-    Input('parent-topic', 'value'),
-    Input('score-type', 'value'))    
-def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_topic: str, score_type: str):
+    Input('show-series-topic-episodes-dt-for-topic', 'value'),
+    Input('series-topic-pie-topic-grouping', 'value'),
+    Input('series-topic-pie-score-type', 'value')
+)    
+def render_series_topic_episodes_dt(show_key: str, show_dt_for_parent_topic: str, topic_grouping: str, score_type: str):
     callback_start_ts = dt.now()
-    utils.hilite_in_logs(f'callback invoked: render_series_topic_episodes_dt ts={callback_start_ts} show_key={show_key} topic_grouping={topic_grouping} parent_topic={parent_topic} score_type={score_type}')
+    utils.hilite_in_logs(f'callback invoked: render_series_topic_episodes_dt ts={callback_start_ts} show_key={show_key} show_dt_for_parent_topic={show_dt_for_parent_topic} topic_grouping={topic_grouping} score_type={score_type}')
 
+    if not show_dt_for_parent_topic:
+        return {}
+    
     # configurable score threshold
     min_score = 0.5
 
@@ -463,11 +440,11 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
         # only process topics that have parents (ignore the parents themselves)
         if not t['parent_key']:
             continue
-        if parent_topic == t['topic_key'].split('.')[0]:
+        if show_dt_for_parent_topic == t['topic_key'].split('.')[0]:
             child_topics.append(t['topic_key'])
 
     if not child_topics:
-        utils.hilite_in_logs(f'Failure to render_series_topic_episodes_dt, no child topics for parent_topic={parent_topic} in topic_grouping={topic_grouping}')
+        utils.hilite_in_logs(f'Failure to render_series_topic_episodes_dt, no child topics for parent_topic={show_dt_for_parent_topic} in topic_grouping={topic_grouping}')
         return {}
 
     columns = ['topic_key', 'parent_topic', 'episode_key', 'episode_title', 'season', 'sequence_in_season', 'air_date', 'score', 'tfidf_score']
@@ -476,14 +453,14 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
     for topic in child_topics:
         episodes_by_topic = esr.find_episodes_by_topic(ShowKey(show_key), topic_grouping, topic)
         df = pd.DataFrame(episodes_by_topic['episode_topics'])
-        df['parent_topic'] = parent_topic
+        df['parent_topic'] = show_dt_for_parent_topic
         df = df[columns]
         df = df[(df['score'] > min_score) | (df['tfidf_score'] > min_score)]
         topic_episodes_df = pd.concat([topic_episodes_df, df])
 
     topic_episodes_df.sort_values(score_type, ascending=False, inplace=True)
 
-    series_topic_episodes_dt = pc.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [parent_topic], cm.TOPIC_COLORS)
+    series_topic_episodes_dt = pc.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [show_dt_for_parent_topic], cm.TOPIC_COLORS)
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
@@ -498,11 +475,12 @@ def render_series_topic_episodes_dt(show_key: str, topic_grouping: str, parent_t
     Output('series-episodes-cluster-dt', 'children'),
     Input('show-key', 'value'),
     Input('num-clusters', 'value'),
+    Input('show-series-episodes-cluster-dt', 'value'),
     # background=True
 )
-def render_series_cluster_scatter(show_key: str, num_clusters: int):
+def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: list):
     callback_start_ts = dt.now()
-    utils.hilite_in_logs(f'callback invoked: render_series_cluster_scatter ts={callback_start_ts} show_key={show_key} num_clusters={num_clusters}')
+    utils.hilite_in_logs(f'callback invoked: render_series_cluster_scatter ts={callback_start_ts} show_key={show_key} num_clusters={num_clusters} show_dt={show_dt}')
 
     num_clusters = int(num_clusters)
     vector_field = 'openai_ada002_embeddings'
@@ -523,17 +501,20 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int):
     episodes_df['doc_id'] = episodes_df['episode_key'].apply(lambda x: f'{show_key}_{x}')
     episode_embeddings_clusters_df = pd.merge(doc_embeddings_clusters_df, episodes_df, on='doc_id', how='outer')
 
-    # generate dash_table div as part of callback output
-    episode_clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()
-    # TODO this flatten_and_format_cluster_df function is a holdover from a bygone era, figure out where/how to generically handle this
-    episode_clusters_df = sps.flatten_and_format_cluster_df(show_key, episode_clusters_df)
-    clusters = [str(c) for c in list(episode_clusters_df['cluster'].unique())]
-    bg_color_map = {str(i):color for i, color in enumerate(cm.colors)}
-    episode_clusters_dt = pc.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, bg_color_map,
-                                                   numeric_precision_overrides={'season': 0, 'episode': 0, 'scenes': 0, 'episode_key': 0, 'cluster': 0})
-
     # generate scatterplot
     episode_clusters_scatter = pscat.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
+
+    if 'yes' in show_dt:
+        # generate dash_table div as part of callback output
+        episode_clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()
+        # TODO this flatten_and_format_cluster_df function is a holdover from a bygone era, figure out where/how to generically handle this
+        episode_clusters_df = sps.flatten_and_format_cluster_df(show_key, episode_clusters_df)
+        clusters = [str(c) for c in list(episode_clusters_df['cluster'].unique())]
+        bg_color_map = {str(i):color for i, color in enumerate(cm.colors)}
+        episode_clusters_dt = pc.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, bg_color_map,
+                                                      numeric_precision_overrides={'season': 0, 'episode': 0, 'scenes': 0, 'episode_key': 0, 'cluster': 0})
+    else:
+        episode_clusters_dt = {}
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts

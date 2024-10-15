@@ -78,7 +78,7 @@ def layout(show_key: str) -> html.Div:
 
             # series continuity timelines for character / location / topic / search
             dbc.CardBody([
-                html.H3("Continuity over duration of series"),
+                html.H3("Continuity over course of series"),
                 dbc.Row([
                     dbc.Col(md=12, children=[
                         dbc.Tabs(className="nav nav-tabs", children=[
@@ -108,40 +108,22 @@ def layout(show_key: str) -> html.Div:
                                     dcc.Graph(id="series-topics-gantt"),
                                 ]),
                             ]),
-                            dbc.Tab(label="Search", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            dbc.Tab(label="Dialog search", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row([
-                                    html.H3(children=["Search results gantt chart visualization for query \"", html.Span(id='series-dialog-qt-display'), "\""]),
-                                    dbc.Col(md=2, children=[
+                                    dbc.Col(md=4, children=[
                                         html.Div([
-                                            "Query term: ",
-                                            html.Br(),
-                                            dcc.Input(
-                                                id="series-dialog-qt",
-                                                type="text",
-                                                placeholder="enter text to search",
-                                                size=30,
-                                                autoFocus=True,
-                                                debounce=True,
-                                                # required=True,
-                                            )
-                                        ]),
-                                    ]),
-                                    # NOTE: I believe this button is a placebo: it's a call to action, but simply exiting the qt field invokes the callback 
-                                    dbc.Col(md=2, children=[
-                                        html.Div([
-                                            html.Br(),
-                                            html.Button(
-                                                'Search', 
-                                                id='qt-submit',
-                                            ),
+                                            "Search in dialog: ", dbc.Input(id="series-search-qt", type="text", autoFocus=True, debounce=True),
                                         ]),
                                     ]),
                                 ]),
                                 html.Br(),
-                                dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="series-search-results-gantt-new"),
-                                    html.Br(),
-                                    html.Div(id="series-search-results-dt"),
+                                dbc.Row([
+                                    dbc.Col(md=12, children=[
+                                        html.H5(children=["Results: ", html.Span(id='series-search-response-text')]),
+                                        dcc.Graph(id="series-search-results-gantt-new"),
+                                        html.Br(),
+                                        html.Div(id="series-search-results-dt"),
+                                    ]),
                                 ]),
                             ]),
                         ]),
@@ -151,7 +133,7 @@ def layout(show_key: str) -> html.Div:
 
             # series episode scatter grid 
             dbc.CardBody([
-                html.H3("Season-episode grid / Prominent characters, locations, and genres"),
+                html.H3("Season-episode grid — Prominent characters, locations, and genres"),
                 dbc.Row([
                     dbc.Col(md=8, children=[
                         dcc.RadioItems(
@@ -224,7 +206,7 @@ def layout(show_key: str) -> html.Div:
                                 dbc.Row([
                                     dbc.Col(md=2, children=[
                                         html.Div([
-                                            "List episodes for topic: ", dcc.Dropdown(id="parent-topic", options=universal_genres_parent_topics)
+                                            "List episodes for topic: ", dcc.Dropdown(id="show-series-topic-episodes-dt-for-topic", options=universal_genres_parent_topics)
                                         ]),
                                     ]),
                                 ]),
@@ -249,6 +231,16 @@ def layout(show_key: str) -> html.Div:
                                         html.Div(dcc.Graph(id="series-episodes-cluster-scatter")),
                                     ]),
                                 ]),
+                                dcc.Checklist(
+                                    id="show-series-episodes-cluster-dt",
+                                    className="text-white", 
+                                    options=[
+                                        {'label': 'Display as table listing', 'value': 'yes'}
+                                    ],
+                                    value=[],
+                                    inputStyle={"margin-left": "12px", "margin-right": "4px"},
+                                    style={"display": "flex", "padding-bottom": "0"}
+                                ),
                                 html.Br(),
                                 dbc.Row([
                                     dbc.Col(md=12, children=[

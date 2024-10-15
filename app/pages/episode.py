@@ -150,14 +150,14 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                                 dbc.Row([
                                     dbc.Col(md=4, children=[
                                         html.Div([
-                                            "Search in dialog: ", dbc.Input(id="qt", type="text"),
+                                            "Search in dialog: ", dbc.Input(id="episode-search-qt", type="text"),
                                         ]),
                                     ]),
                                 ]),
                                 html.Br(),
                                 dbc.Row([
                                     dbc.Col(md=12, children=[
-                                        html.P(children=["Results: ", html.Span(id='out-text')]),
+                                        html.H5(children=["Results: ", html.Span(id='episode-search-response-text')]),
                                         html.Div(dcc.Graph(id="episode-search-results-gantt")),
                                         html.Br(),
                                         html.Div(id="episode-search-results-dt"),

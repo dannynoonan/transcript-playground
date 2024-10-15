@@ -29,7 +29,8 @@ from app import utils
     Output('episode-speakers', 'options'),
     Output('episode-wordcloud-img', 'src'),
     Input('show-key', 'value'),
-    Input('episode-key', 'value'))    
+    Input('episode-key', 'value')
+)    
 def render_episode_summary(show_key: str, episode_key: str):
     print(f'in render_episode_summary, show_key={show_key} episode_key={episode_key}')
 
@@ -84,7 +85,8 @@ def render_episode_summary(show_key: str, episode_key: str):
     Output('episode-location-timeline-new', 'figure'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
-    Input('show-layers', 'value'))    
+    Input('show-layers', 'value')
+)    
 def render_episode_gantts(show_key: str, episode_key: str, show_layers: list):
     print(f'in render_episode_gantts, show_key={show_key} episode_key={episode_key}')
 
@@ -104,12 +106,13 @@ def render_episode_gantts(show_key: str, episode_key: str, show_layers: list):
 
 ############ episode search gantt callbacks
 @callback(
-    Output('out-text', 'children'),
+    Output('episode-search-response-text', 'children'),
     Output('episode-search-results-gantt', 'figure'),
     Output('episode-search-results-dt', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
-    Input('qt', 'value'))    
+    Input('episode-search-qt', 'value')
+)    
 def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     print(f'in render_episode_search_gantt, show_key={show_key} episode_key={episode_key} qt={qt}')
 
@@ -162,9 +165,9 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     episode_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map, 
                                                          numeric_precision_overrides={'scene': 0, 'line': 0})
 
-    out_text = f"{scene_event_count} lines matching query '{qt}'"
+    response_text = f"{scene_event_count} line(s) matching query '{qt}'"
 
-    return out_text, episode_search_results_gantt, episode_search_results_dt
+    return response_text, episode_search_results_gantt, episode_search_results_dt
 
 
 ############ sentiment line chart callbacks
@@ -175,7 +178,8 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     Input('episode-key', 'value'),
     Input('freeze-on', 'value'),
     Input('emotion', 'value'),
-    Input('episode-speakers', 'value'))    
+    Input('episode-speakers', 'value')
+)    
 def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, freeze_on: str, emotion: str, speaker: str):
     print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
 
@@ -225,7 +229,8 @@ def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, fre
     Output('speaker-3d-network-graph-new', 'figure'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
-    Input('scale-by', 'value'))    
+    Input('scale-by', 'value')
+)    
 def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_by: str):
     print(f'in render_speaker_3d_network_graph_new, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
@@ -259,7 +264,8 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_b
     Output('speaker-episode-summary-dt', 'children'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
-    Input('scale-by', 'value'))    
+    Input('scale-by', 'value')
+)    
 def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scale_by: str):
     print(f'in render_speaker_frequency_bar_chart_new, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
@@ -314,9 +320,10 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('mlt-type', 'value'),
-    Input('show-similar-episodes-dt', 'value'))    
+    Input('show-similar-episodes-dt', 'value')
+)    
 def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type: str, show_dt: list):
-    print(f'in render_episode_similarity_scatter, show_key={show_key} episode_key={episode_key} mlt_type={mlt_type}')
+    print(f'in render_episode_similarity_scatter, show_key={show_key} episode_key={episode_key} mlt_type={mlt_type} show_dt={show_dt}')
 
     season_response = esr.list_seasons(ShowKey(show_key))
     seasons = season_response['seasons']
@@ -395,7 +402,8 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('episode-mbti-count', 'value'),
-    Input('episode-dnda-count', 'value'))    
+    Input('episode-dnda-count', 'value')
+)    
 def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_count: int, dnda_count: int):
     print(f'in render_episode_speaker_topic_scatter, show_key={show_key} episode_key={episode_key} mbti_count={mbti_count} dnda_count={dnda_count}')
 
@@ -444,7 +452,8 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
     Input('universal-genres-score-type', 'value'),
-    Input('universal-genres-gpt35-v2-score-type', 'value'))    
+    Input('universal-genres-gpt35-v2-score-type', 'value')
+)    
 def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type: str, ug2_score_type: str):
     print(f'in render_episode_topic_treemap, show_key={show_key} episode_key={episode_key} ug_score_type={ug_score_type} ug2_score_type={ug2_score_type}')
 
@@ -478,7 +487,8 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
 #     Input('show-key', 'value'),
 #     Input('episode-key', 'value'),
 #     Input('x-axis', 'value'),
-#     Input('y-axis', 'value'))    
+#     Input('y-axis', 'value')
+# )    
 # def render_speaker_chatter_scatter(show_key: str, episode_key: str, x_axis: str, y_axis: str):
 #     print(f'in render_speaker_chatter_scatter, show_key={show_key} episode_key={episode_key} x_axis={x_axis} y_axis={y_axis}')
 

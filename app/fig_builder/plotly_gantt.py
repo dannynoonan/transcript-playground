@@ -106,16 +106,16 @@ def build_series_gantt(show_key: str, df: pd.DataFrame, y_axis: str, interval_da
     x_high = x_max + buffer
 
     if y_axis == 'speakers':
-        title='Character continuity over duration of series'
+        title = 'Character continuity over course of series'
         # limit speaker gantt to those in `speakers` index (for visual layout, and only slightly for page load performance)
         # matches = esr.fetch_indexed_speakers(ShowKey(show_key), min_episode_count=2)
         # speakers = [m['speaker'] for m in matches['speakers']]
         speakers = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
         df = df.loc[df['Task'].isin(speakers)]
     elif y_axis == 'locations':
-        title='Scene location continuity over course of series'
+        title = 'Scene location continuity over course of series'
     elif y_axis == 'topics':
-        title='Episode genres over course of series'
+        title = 'Episode genres over course of series'
 
     if y_axis == 'topics':
         df = df.sort_values(['Task', 'Start'])
@@ -207,7 +207,7 @@ def build_episode_search_results_gantt(show_key: str, timeline_df: pd.DataFrame,
     hover_text = list(matching_lines_df['Line'])
 
     # scale height to number of rows
-    fig_height = 250 + len(timeline_df['Task'].unique()) * 25
+    fig_height = 200 + len(timeline_df['Task'].unique()) * 20
 
     fig = ff.create_gantt(timeline_df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title=None)
 
@@ -233,8 +233,16 @@ def build_episode_search_results_gantt(show_key: str, timeline_df: pd.DataFrame,
     return fig
 
 
-def build_series_search_results_gantt(show_key: str, timeline_df: pd.DataFrame, matching_episodes: list) -> go.Figure:
+def build_series_search_results_gantt(show_key: str, timeline_df: pd.DataFrame, matching_episodes: list, interval_data: dict = None) -> go.Figure:
     print(f'in build_series_search_results_gantt show_key={show_key} len(timeline_df)={len(timeline_df)} len(matching_episodes)={len(matching_episodes)}')
+
+    x_label = 'episode'
+
+    # tighten x axis margins to 2% of the x axis span
+    x_max = timeline_df.Finish.max()
+    buffer = x_max * 0.02
+    x_low = -buffer
+    x_high = x_max + buffer
 
     timeline_df['matching_line_count'] = 0
     timeline_df['matching_lines'] = np.NaN
@@ -275,10 +283,13 @@ def build_series_search_results_gantt(show_key: str, timeline_df: pd.DataFrame, 
     # df.to_csv(file_path)
 
     # scale height to number of rows
-    fig_height = 250 + len(timeline_df['Task'].unique()) * 25
+    fig_height = 200 + len(timeline_df['Task'].unique()) * 18
 
-    fig = ff.create_gantt(timeline_df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title='Search results')
-    fig.update_layout(xaxis_type='linear', autosize=False)
+    fig = ff.create_gantt(timeline_df, index_col='highlight', bar_width=0.1, colors=['#B0B0B0', '#FF0000'], group_tasks=True, height=fig_height, title=None)
+
+    fig.update_layout(xaxis_type='linear', autosize=False, xaxis_title=x_label, margin=dict(r=30, t=30, b=60))
+    fig.update_xaxes(range=[x_low, x_high])
+    fig.update_yaxes(autorange=True)
 
     # inject dialog stored in `hover_text` list into fig['data'] `text` property
     for gantt_row in fig['data']:
@@ -294,5 +305,12 @@ def build_series_search_results_gantt(show_key: str, timeline_df: pd.DataFrame, 
                 gantt_row_text[i] = hover_text[math.floor(i/2)]
 
             gantt_row.update(text=gantt_row_text, hoverinfo='all') # TODO hoverinfo='text+y' would remove episode index
+
+    shapes = []
+    # if interval_data, add markers and labels designating intervals 
+    if interval_data:
+        interval_shapes = gh.build_and_annotate_season_labels(fig, interval_data)
+        shapes.extend(interval_shapes)
+    fig.update_layout(shapes=shapes)
     
     return fig
