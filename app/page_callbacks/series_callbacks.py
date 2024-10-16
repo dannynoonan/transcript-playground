@@ -244,14 +244,14 @@ def render_series_search_gantt(show_key: str, qt: str):
 
     # build dash datatable
     matching_lines_df = timeline_df.loc[timeline_df['matching_line_count'] > 0]
-    matching_lines_df.sort_values('agg_score', ascending=False, inplace=True)
+    matching_lines_df.sort_values('score', ascending=False, inplace=True)
     matching_lines_df.rename(columns={'Task': 'character', 'sequence_in_season': 'episode', 'matching_line_count': 'line_count', 'matching_lines': 'lines'}, inplace=True)
     matching_speakers = matching_lines_df['character'].unique()
     speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
     # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
-    display_cols = ['character', 'episode_key', 'episode_title', 'season', 'episode', 'agg_score', 'line_count', 'lines']
-    series_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'episode_key', matching_speakers, speaker_color_map,
-                                                       numeric_precision_overrides={'agg_score': 2})
+    display_cols = ['character', 'episode_key', 'episode_title', 'season', 'episode', 'line_count', 'lines', 'score']
+    series_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map,
+                                                       numeric_precision_overrides={'score': 2})
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts

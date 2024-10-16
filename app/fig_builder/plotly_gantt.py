@@ -260,13 +260,11 @@ def build_series_search_results_gantt(show_key: str, timeline_df: pd.DataFrame, 
                     if speaker not in speakers_to_keep:
                         speakers_to_keep.append(speaker)
                 speakers_to_lines[speaker].append(f"[scene {scene['sequence']+1}] {scene_event['dialog']}") 
-                # speakers_to_lines[speaker].append(f"{scene_event['dialog']}\n\n")
                 speakers_to_line_counts[speaker] += 1
         for speaker, _ in speakers_to_line_counts.items():
             timeline_df.loc[(timeline_df['Task'] == speaker) & (timeline_df['episode_key'] == episode['episode_key']), 'matching_line_count'] = speakers_to_line_counts[speaker]
             timeline_df.loc[(timeline_df['Task'] == speaker) & (timeline_df['episode_key'] == episode['episode_key']), 'matching_lines'] = '<br>'.join(speakers_to_lines[speaker])
-            # timeline_df.loc[(timeline_df['Task'] == speaker) & (timeline_df['episode_key'] == episode['episode_key']), 'score'] = episode['score']
-            timeline_df.loc[(timeline_df['Task'] == speaker) & (timeline_df['episode_key'] == episode['episode_key']), 'agg_score'] = episode['agg_score']
+            timeline_df.loc[(timeline_df['Task'] == speaker) & (timeline_df['episode_key'] == episode['episode_key']), 'score'] = episode['agg_score']
     
     speakers_to_keep = list(dict.fromkeys(speakers_to_keep)) 
     # only keep rows for speakers that have at least 1 match
@@ -276,6 +274,9 @@ def build_series_search_results_gantt(show_key: str, timeline_df: pd.DataFrame, 
     #   - set `hover_text` column with episode and matching_line data for hover display 
     timeline_df['highlight'] = timeline_df['matching_line_count'].apply(lambda x: 'yes' if x > 0 else 'no')
     matching_lines_df = timeline_df[timeline_df['highlight'] == 'yes']
+    # sort and rank rows in matching_lines_df for inclusion in hover_text display
+    # matching_lines_df.sort_values('score', ascending=False, inplace=True)
+    matching_lines_df['rank'] = matching_lines_df['score'].rank(method='min', ascending=False)
     # concatenate fields into single 'hover_text' cell, in lieu of dynamically generated ff.crate_gantt hovertemplate
     matching_lines_df['hover_text'] = matching_lines_df.apply(lambda x: gh.search_results_hover_text(x), axis=1) 
     # (*) this feels a little fragile, but the sequence and index positions of the `hover_text` list map precisely 1:2 to the sequence and index positions 
