@@ -381,7 +381,8 @@ def render_series_topic_episodes_dt(show_key: str, show_dt_for_parent_topic: str
 
     topic_episodes_df.sort_values(score_type, ascending=False, inplace=True)
 
-    series_topic_episodes_dt = pc.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [show_dt_for_parent_topic], cm.TOPIC_COLORS)
+    series_topic_episodes_dt = pc.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [show_dt_for_parent_topic], cm.TOPIC_COLORS,
+                                                       numeric_precision_overrides={'score': 2, 'tfidf_score': 2})
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
@@ -510,9 +511,12 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     series_speaker_dnda_scatter = pscat.build_speaker_topic_scatter(show_key, dnda_df.copy(), 'dnda', speaker_color_map=speaker_color_map)
 
     # build dash datatable
-    display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
-    series_speaker_mbti_dt = pc.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
-    series_speaker_dnda_dt = pc.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', series_speaker_names, speaker_color_map)
+    display_cols = ['speaker', 'topic_key', 'topic_name', 'score']
+    numeric_precision_overrides = {'score': 2}
+    series_speaker_mbti_dt = pc.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', series_speaker_names, speaker_color_map, 
+                                                     numeric_precision_overrides=numeric_precision_overrides)
+    series_speaker_dnda_dt = pc.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', series_speaker_names, speaker_color_map,
+                                                     numeric_precision_overrides=numeric_precision_overrides)
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts

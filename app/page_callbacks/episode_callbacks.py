@@ -435,8 +435,8 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
     episode_speaker_dnda_scatter = pscat.build_speaker_topic_scatter(show_key, dnda_df.copy(), 'dnda', speaker_color_map=speaker_color_map)
 
     # build dash datatable
-    display_cols = ['speaker', 'topic_key', 'topic_name', 'score', 'raw_score']
-    numeric_precision_overrides = {'score': 2, 'raw_score': 2}
+    display_cols = ['speaker', 'topic_key', 'topic_name', 'score']
+    numeric_precision_overrides = {'score': 2}
     episode_speaker_mbti_dt = pc.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', episode_speaker_names, speaker_color_map, 
                                                       numeric_precision_overrides=numeric_precision_overrides)
     episode_speaker_dnda_dt = pc.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', episode_speaker_names, speaker_color_map,
@@ -475,9 +475,10 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
         figs[tg] = fig
         # build dash datatable
         parent_topics = df['parent_topic'].unique()
-        display_cols = ['parent_topic', 'topic_name', 'raw_score', 'scaled_score', 'tfidf_score']
+        df.rename(columns={'scaled_score': 'score'}, inplace=True)
+        display_cols = ['parent_topic', 'topic_name', 'score', 'tfidf_score']
         dash_dt = pc.pandas_df_to_dash_dt(df, display_cols, 'parent_topic', parent_topics, cm.TOPIC_COLORS,
-                                          numeric_precision_overrides={'raw_score': 2, 'scaled_score': 2, 'tfidf_score': 2})
+                                          numeric_precision_overrides={'score': 2, 'tfidf_score': 2})
         dts[tg] = dash_dt
 
     return figs['universalGenres'], dts['universalGenres'], figs['universalGenresGpt35_v2'], dts['universalGenresGpt35_v2']
