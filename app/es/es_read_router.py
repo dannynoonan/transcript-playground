@@ -1567,7 +1567,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/speaker_episode_aggs_{show_key}.csv'
+        file_path = f'./app/data/{show_key}/speaker_episode_aggs_{show_key}.csv'
         print(f'writing speaker word/line/scene/episode counts and aggs dataframe to file_path={file_path}')
         df = pd.DataFrame(speaker_episode_rows)
         df.to_csv(file_path)

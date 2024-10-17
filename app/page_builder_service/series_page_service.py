@@ -223,3 +223,23 @@ def generate_series_speaker_listing_dt(show_key: str, speakers_df: pd.DataFrame,
     speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors)
 
     return speaker_listing_dt
+
+
+def generate_series_topic_episodes_dt(show_key: str, topic_episodes_df: pd.DataFrame, parent_topic: str, score_type: str) -> dash_table.DataTable:
+    '''
+    Early attempt to extract the guts of dash datatable construction out of callback modules
+    '''
+    # vector operations on columns to generate presentation data
+    topic_episodes_df['air_date'] = topic_episodes_df['air_date'].apply(lambda x: x[:10])
+    topic_episodes_df['episode_title'] = topic_episodes_df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key'], x['episode_title']), axis=1)
+
+    # sort by / rename for display
+    topic_episodes_df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
+    topic_episodes_df.sort_values(score_type, ascending=False, inplace=True)
+
+    # define inputs for df->dt conversion
+    display_columns = ['topic_key', 'episode_title', 'season', 'episode', 'air_date', 'score', 'tfidf_score']
+    series_topic_episodes_dt = pc.pandas_df_to_dash_dt(topic_episodes_df, display_columns, 'parent_topic', [parent_topic], cm.TOPIC_COLORS,
+                                                       numeric_precision_overrides={'score': 2, 'tfidf_score': 2}, md_cols=['episode_title'])
+    
+    return series_topic_episodes_dt

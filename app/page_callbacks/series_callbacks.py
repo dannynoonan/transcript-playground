@@ -270,7 +270,7 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
         season = int(season)
 
     # fetch or generate aggregate speaker data and build speaker frequency bar chart
-    file_path = f'./app/data/speaker_episode_aggs_{show_key}.csv'
+    file_path = f'./app/data/{show_key}/speaker_episode_aggs_{show_key}.csv'
     if os.path.isfile(file_path):
         df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')
@@ -281,7 +281,7 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
             df = pd.read_csv(file_path)
             print(f'loading dataframe at file_path={file_path}')
         else:
-            raise Exception('Failure to render_speaker_frequency_bar_chart: unable to fetch or generate dataframe at file_path={file_path}')
+            raise Exception(f'Failure to render_speaker_frequency_bar_chart: unable to fetch or generate dataframe at file_path={file_path}')
     
     speaker_season_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, tally_by, aggregate_ratio=False, season=season)
     speaker_episode_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, tally_by, aggregate_ratio=False, season=season, sequence_in_season=sequence_in_season)
@@ -356,8 +356,7 @@ def render_series_topic_episodes_dt(show_key: str, show_dt_for_parent_topic: str
             child_topics.append(t['topic_key'])
 
     if not child_topics:
-        utils.hilite_in_logs(f'Failure to render_series_topic_episodes_dt, no child topics for parent_topic={show_dt_for_parent_topic} in topic_grouping={topic_grouping}')
-        return {}
+        child_topics = [show_dt_for_parent_topic]
 
     columns = ['topic_key', 'parent_topic', 'episode_key', 'episode_title', 'season', 'sequence_in_season', 'air_date', 'score', 'tfidf_score']
     topic_episodes_df = pd.DataFrame(columns=columns)
@@ -370,10 +369,7 @@ def render_series_topic_episodes_dt(show_key: str, show_dt_for_parent_topic: str
         df = df[(df['score'] > min_score) | (df['tfidf_score'] > min_score)]
         topic_episodes_df = pd.concat([topic_episodes_df, df])
 
-    topic_episodes_df.sort_values(score_type, ascending=False, inplace=True)
-
-    series_topic_episodes_dt = pc.pandas_df_to_dash_dt(topic_episodes_df, columns, 'parent_topic', [show_dt_for_parent_topic], cm.TOPIC_COLORS,
-                                                       numeric_precision_overrides={'score': 2, 'tfidf_score': 2})
+    series_topic_episodes_dt = sps.generate_series_topic_episodes_dt(show_key, topic_episodes_df, show_dt_for_parent_topic, score_type)
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts

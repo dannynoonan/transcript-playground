@@ -11,7 +11,7 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     print(f'in build_speaker_frequency_bar show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season} sequence_in_season={sequence_in_season} animate={animate}')
 
     animation_frame = None
-    title = 'Character frequency'
+    title = 'Character chatter'
 
     speakers = df['speaker'].unique()
     color_discrete_map = cm.generate_speaker_color_discrete_map(show_key, speakers)
@@ -32,9 +32,10 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
                 season = 1
             if not sequence_in_season:
                 sequence_in_season = 1
-            title = f'{title} in Season {season} Episode {sequence_in_season}'
             df = df.loc[df['season'] == season]
             df = df.loc[df['sequence_in_season'] <= sequence_in_season]
+            episode_title = list(df['episode_title'].unique())[0] # gulp
+            title = f'{title} in Season {season} Episode {sequence_in_season}: "{episode_title}"'
             x = f'{span_granularity}_count'
             # if `span_granularity='episode'` dynamically populate `episode_count` column using `scene_count` column to enable episode tabulation
             if span_granularity == 'episode':
@@ -49,7 +50,8 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
                 title = f'{title} in Season {season}'
                 if sequence_in_season:
                     df = df.loc[df['sequence_in_season'] == sequence_in_season]
-                    title = f'{title} Episode {sequence_in_season}'
+                    episode_title = list(df['episode_title'].unique())[0] # gulp
+                    title = f'{title} Episode {sequence_in_season}: "{episode_title}"'
         x = f'{span_granularity}_count'
         # if `span_granularity='episode'` dynamically populate `episode_count` column using `scene_count` column to enable episode tabulation
         if span_granularity == 'episode':
@@ -65,9 +67,11 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     #     file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_{season}_{sequence_in_season}.csv'
     # sum_df.to_csv(file_path)
 
+    sum_df.rename(columns={'speaker': 'character'}, inplace=True)
+    labels = {x: f'{span_granularity}s'}
     # custom_data = []  # TODO
 
-    fig = px.bar(sum_df, x=x, y='speaker', color='speaker', title=title, color_discrete_map=color_discrete_map, height=650,
+    fig = px.bar(sum_df, x=x, y='character', color='character', title=title, color_discrete_map=color_discrete_map, labels=labels, height=650,
                  animation_frame=animation_frame) # ignored if df is for single year
                 # custom_data=custom_data, hover_data=hover_data, category_orders=category_orders,
                 # range_x=[vw_min,vw_max], height=fig_height
