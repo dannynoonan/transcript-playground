@@ -29,6 +29,11 @@ def layout(show_key: str, episode_key: str) -> html.Div:
     # all series episodes into dropdown 
     episode_dropdown_options = eps.generate_episode_dropdown_options(show_key)
 
+    # speaker color map - NOTE this is redundant of `render_episode_summary` callback, which also populates `speaker_color_map`
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+    speakers_for_episode = speakers_for_episode_response['speaker_episodes']
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, [s['speaker'] for s in speakers_for_episode])
+
     # emotions
     emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
 
@@ -41,6 +46,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
     navbar = pc.generate_navbar(show_key, all_seasons)
 
     content = html.Div([
+        dcc.Store(id='speaker-color-map', data=speaker_color_map),
         navbar,
         dbc.Card(className="bg-dark", children=[
 
@@ -90,7 +96,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                         dbc.Tabs(className="nav nav-tabs", children=[
                             dbc.Tab(label="Timeline by dialog", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="episode-dialog-timeline-new"),
+                                    dcc.Graph(id="episode-dialog-timeline"),
                                 ]),
                                 dbc.Row([
                                     dbc.Col(md=2, style={'textAlign': 'center'}, children=[
@@ -108,7 +114,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                             ]),
                             dbc.Tab(label="Timeline by location", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="episode-location-timeline-new"),
+                                    dcc.Graph(id="episode-location-timeline"),
                                 ]),
                             ]),
                             dbc.Tab(label="Timeline by sentiment", tab_style={"font-size": "20px", "color": "white"}, children=[
@@ -120,7 +126,6 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                                     ]),
                                     dbc.Col(md=2, children=[
                                         html.Div([
-                                            # "Character ", dcc.Dropdown(id="speaker", options=speaker_dropdown_options, value='ALL')
                                             "Character ", dcc.Dropdown(id="episode-speakers")
                                         ]),
                                     ]),
@@ -143,7 +148,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                                 ]),
                                 html.Br(),
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="sentiment-line-chart-new"),
+                                    dcc.Graph(id="sentiment-line-chart"),
                                 ]),
                             ]),
                             dbc.Tab(label="Timeline search", tab_style={"font-size": "20px", "color": "white"}, children=[
@@ -174,12 +179,12 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                 html.H3("Characters in episode"),
                 dbc.Row([
                     dbc.Col(md=5, children=[
-                        html.Div(id="speaker-episode-summary-dt"),
+                        html.Div(id="speaker-summary-dt"),
                         html.Br(),
-                        html.Div(dcc.Graph(id="speaker-episode-frequency-bar-chart-new")),
+                        html.Div(dcc.Graph(id="speaker-frequency-bar-chart")),
                     ]),
                     dbc.Col(md=7, children=[
-                        html.Div(dcc.Graph(id="speaker-3d-network-graph-new")),
+                        html.Div(dcc.Graph(id="speaker-3d-network-graph")),
                         dcc.RadioItems(
                             id="scale-by",
                             className="text-white", 

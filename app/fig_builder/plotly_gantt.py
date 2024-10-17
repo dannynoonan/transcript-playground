@@ -10,7 +10,7 @@ import app.fig_meta.gantt_helper as gh
 from app.show_metadata import show_metadata
 
 
-def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interval_data: list = None) -> go.Figure:
+def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interval_data: list = None, speaker_color_map: dict = None) -> go.Figure:
     print(f'in build_episode_gantt show_key={show_key} y_axis={y_axis}')
 
     '''
@@ -21,9 +21,12 @@ def build_episode_gantt(show_key: str, y_axis: str, timeline_data: list, interva
     '''
 
     df = pd.DataFrame(timeline_data)
-    speaker_colors = cm.flatten_speaker_colors(show_key, to_rgb=True)
-    # if y_axis == 'speakers':
-    #     # title = 'Character dialog timeline'
+    if y_axis == 'speakers':
+        if speaker_color_map:
+            speaker_colors = cm.convert_speaker_color_discrete_map_to_rgb(speaker_color_map)
+        else:
+            speaker_colors = cm.flatten_speaker_colors(show_key, to_rgb=True)
+        # title = 'Character dialog timeline'
     # elif y_axis == 'locations':
     #     # title = 'Scene location timeline'
     # else:
