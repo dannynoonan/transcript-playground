@@ -6,7 +6,6 @@ import pandas as pd
 import app.es.es_read_router as esr
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
-import app.data_service.field_meta as fm
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_pie as ppie
@@ -243,16 +242,7 @@ def render_series_search_gantt(show_key: str, qt: str):
     series_search_results_gantt = pgantt.build_series_search_results_gantt(show_key, timeline_df, search_response['matches'], interval_data=season_interval_data)
 
     # build dash datatable
-    matching_lines_df = timeline_df.loc[timeline_df['matching_line_count'] > 0]
-    matching_lines_df.sort_values('score', ascending=False, inplace=True)
-    matching_lines_df.rename(columns={'Task': 'character', 'sequence_in_season': 'episode', 'matching_line_count': 'line_count', 'matching_lines': 'lines'}, inplace=True)
-    matching_lines_df['episode_title'] = matching_lines_df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key'], x['episode_title']), axis=1)
-    matching_speakers = matching_lines_df['character'].unique()
-    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
-    # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
-    display_cols = ['character', 'episode_title', 'season', 'episode', 'line_count', 'lines', 'score']
-    series_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map,
-                                                       numeric_precision_overrides={'score': 2}, md_cols=['episode_title', 'lines'])
+    series_search_results_dt = sps.generate_series_search_results_dt(show_key, timeline_df)
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
@@ -428,14 +418,7 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: lis
     episode_clusters_scatter = pscat.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
 
     if 'yes' in show_dt:
-        # generate dash_table div as part of callback output
-        episode_clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()
-        # TODO this flatten_and_format_cluster_df function is a holdover from a bygone era, figure out where/how to generically handle this
-        episode_clusters_df = sps.flatten_and_format_cluster_df(show_key, episode_clusters_df)
-        clusters = [str(c) for c in list(episode_clusters_df['cluster'].unique())]
-        bg_color_map = {str(i):color for i, color in enumerate(cm.colors)}
-        episode_clusters_dt = pc.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, 
-                                                      bg_color_map, md_cols=['title'])
+        episode_clusters_dt = sps.generate_series_clusters_dt(show_key, episode_embeddings_clusters_df)
     else:
         episode_clusters_dt = {}
 
@@ -462,18 +445,8 @@ def render_series_speaker_listing_dt(show_key: str):
     indexed_speakers = fflat.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
     indexed_speakers = fflat.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
     
-    speaker_names = [s['speaker'] for s in indexed_speakers]
-    speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
-    
     speakers_df = pd.DataFrame(indexed_speakers)
-    speakers_df.rename(columns={'speaker': 'character', 'scene_count': 'scenes', 'line_count': 'lines', 'word_count': 'words', 'season_count': 'seasons', 
-                                'episode_count': 'episodes', 'actor_names': 'actor(s)', 'topics_mbti': 'mbti'}, inplace=True)
-    display_cols = ['character', 'aka', 'actor(s)', 'seasons', 'episodes', 'scenes', 'lines', 'words', 'mbti']
-    # replace actor nan values with empty string, flatten list into string
-    speakers_df['actor(s)'].fillna('', inplace=True)
-    speakers_df['actor(s)'] = speakers_df['actor(s)'].apply(lambda x: ', '.join(x))
-
-    speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors)
+    speaker_listing_dt = sps.generate_series_speaker_listing_dt(show_key, speakers_df, indexed_speakers)
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts

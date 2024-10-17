@@ -2,8 +2,10 @@ import dash_bootstrap_components as dbc
 from dash import dash_table
 import pandas as pd
 
+import app.data_service.field_meta as fm
 import app.data_service.matrix_operations as mxop
 import app.es.es_read_router as esr
+import app.fig_meta.color_meta as cm
 import app.page_builder_service.page_components as pc
 from app.show_metadata import ShowKey
 from app import utils
@@ -151,27 +153,73 @@ def generate_season_episodes_dt(show_key: str, episodes: list) -> dash_table.Dat
     return episodes_dt
 
 
-# TODO this is an exact copy of flatten_and_format_cluster_df from dash.components
-def flatten_and_format_cluster_df(show_key: str, clusters_df: pd.DataFrame) -> pd.DataFrame:
+def generate_series_clusters_dt(show_key: str, episode_embeddings_clusters_df: pd.DataFrame) -> dash_table.DataTable:
     '''
-    TODO Holy smackers does this need to be cleaned up. Amazingly it sorta works against two different cluster data sets, but either
-    (a) needs to be made more generic or (b) any usage of it must share common column names and data types
+    Early attempt to extract the guts of dash datatable construction out of callback modules
     '''
+    clusters_df = episode_embeddings_clusters_df[fm.episode_keep_cols + fm.cluster_cols].copy()    
 
-    # reformat columns, sort table
+    # vector operations on columns to generate presentation data
     clusters_df['air_date'] = clusters_df['air_date'].apply(lambda x: x[:10])
     if 'focal_speakers' in clusters_df.columns:
         clusters_df['focal_speakers'] = clusters_df['focal_speakers'].apply(lambda x: ", ".join(x))
     if 'focal_locations' in clusters_df.columns:
         clusters_df['focal_locations'] = clusters_df['focal_locations'].apply(lambda x: ", ".join(x))
     clusters_df['title'] = clusters_df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key'], x['title']), axis=1)
+
+    # sort by / rename / drop columns for display
     clusters_df.sort_values(['cluster', 'season', 'sequence_in_season'], inplace=True)
-
-    # rename columns for display
     clusters_df.rename(columns={'sequence_in_season': 'episode', 'scene_count': 'scenes'}, inplace=True)
-
     clusters_df.drop('episode_key', axis=1, inplace=True) 
     # TODO stop populating this color column, row color is set within dash datatable using style_data_conditional filter_query
     clusters_df.drop('cluster_color', axis=1, inplace=True) 
 
-    return clusters_df
+    # define inputs for df->dt conversion
+    clusters = [str(c) for c in list(clusters_df['cluster'].unique())]
+    bg_color_map = {str(i):color for i, color in enumerate(cm.colors)}
+    episode_clusters_dt = pc.pandas_df_to_dash_dt(clusters_df, list(clusters_df.columns), 'cluster', clusters, 
+                                                    bg_color_map, md_cols=['title'])
+    
+    return episode_clusters_dt
+
+
+def generate_series_search_results_dt(show_key: str, timeline_df: pd.DataFrame) -> dash_table.DataTable:
+    '''
+    Early attempt to extract the guts of dash datatable construction out of callback modules
+    '''
+    matching_lines_df = timeline_df.loc[timeline_df['matching_line_count'] > 0]
+
+    # sort by / rename / drop columns for display
+    matching_lines_df.sort_values('score', ascending=False, inplace=True)
+    matching_lines_df.rename(columns={'Task': 'character', 'sequence_in_season': 'episode', 'matching_line_count': 'line_count', 'matching_lines': 'lines'}, inplace=True)
+    matching_lines_df['episode_title'] = matching_lines_df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key'], x['episode_title']), axis=1)
+
+    # define inputs for df->dt conversion
+    matching_speakers = matching_lines_df['character'].unique()
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
+    display_cols = ['character', 'episode_title', 'season', 'episode', 'line_count', 'lines', 'score']
+    series_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map,
+                                                       numeric_precision_overrides={'score': 2}, md_cols=['episode_title', 'lines'])
+    
+    return series_search_results_dt
+
+
+def generate_series_speaker_listing_dt(show_key: str, speakers_df: pd.DataFrame, indexed_speakers: list) -> dash_table.DataTable:
+    '''
+    Early attempt to extract the guts of dash datatable construction out of callback modules
+    '''
+    # vector operations on columns to generate presentation data
+    speakers_df['actor_names'].fillna('', inplace=True)
+    speakers_df['actor_names'] = speakers_df['actor_names'].apply(lambda x: ', '.join(x))
+
+    # rename / drop columns for display
+    speakers_df.rename(columns={'speaker': 'character', 'scene_count': 'scenes', 'line_count': 'lines', 'word_count': 'words', 'season_count': 'seasons', 
+                                'episode_count': 'episodes', 'actor_names': 'actor(s)', 'topics_mbti': 'mbti'}, inplace=True)
+    
+    # define inputs for df->dt conversion
+    speaker_names = [s['speaker'] for s in indexed_speakers]
+    speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
+    display_cols = ['character', 'aka', 'actor(s)', 'seasons', 'episodes', 'scenes', 'lines', 'words', 'mbti']
+    speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors)
+
+    return speaker_listing_dt

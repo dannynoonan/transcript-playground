@@ -3,6 +3,7 @@ from operator import itemgetter
 import os
 import pandas as pd
 
+import app.data_service.field_flattener as fflat
 import app.es.es_read_router as esr
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
@@ -11,9 +12,9 @@ import app.fig_builder.plotly_networkgraph as pgraph
 import app.fig_builder.plotly_scatter as pscat
 import app.fig_builder.plotly_treemap as ptree
 import app.fig_meta.color_meta as cm
-import app.data_service.field_flattener as fflat
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.page_builder_service.page_components as pc
+import app.page_builder_service.episode_page_service as eps
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -157,13 +158,7 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     episode_search_results_gantt = pgantt.build_episode_search_results_gantt(show_key, df, matching_lines_df)
 
     # build dash datatable
-    matching_lines_df.rename(columns={'Task': 'character', 'scene_event': 'line', 'Line': 'dialog'}, inplace=True)
-    matching_speakers = list(matching_lines_df['character'].unique())
-    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
-    # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
-    display_cols = ['character', 'scene', 'line', 'location', 'dialog']
-    episode_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map,
-                                                        numeric_precision_overrides={'scene': 0, 'line': 0}, md_cols=['dialog'])
+    episode_search_results_dt = eps.generate_episode_search_results_dt(show_key, matching_lines_df)
 
     response_text = f"{scene_event_count} line(s) matching query '{qt}'"
 
@@ -337,32 +332,8 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
         mlt_response = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key)
         mlt_matches = mlt_response['matches'][:30]
         
-    high_score = mlt_matches[0]['score']
     simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
-    all_episodes = simple_episodes_response['episodes']
-    all_episodes = [dict(episode, rank=len(mlt_matches)+1, rev_rank=1, score=0, group='all') for episode in all_episodes]
-    all_episodes_dict = {episode['episode_key']:episode for episode in all_episodes}
-    # transfer rank/score properties from mlt_matches to all_episodes_dict
-    for i, mlt_match in enumerate(mlt_matches):
-        if mlt_match['episode_key'] in all_episodes_dict:
-            ep = all_episodes_dict[mlt_match['episode_key']]
-            if mlt_type == 'openai_embeddings':
-                ep['rank'] = i+1
-            else:
-                ep['rank'] = mlt_match['rank']
-            ep['rev_rank'] = len(mlt_matches) - ep['rank']
-            ep['score'] = mlt_match['score']
-            ep['group'] = 'mlt'
-    # assign 'highest' rank/score properties to focal episode inside all_episodes_dict
-    all_episodes_dict[episode_key]['rank'] = 0
-    all_episodes_dict[episode_key]['rev_rank'] = len(mlt_matches) + 1
-    all_episodes_dict[episode_key]['score'] = high_score + .01
-    all_episodes_dict[episode_key]['group'] = 'focal'
-
-    all_episodes = list(all_episodes_dict.values())
-
-    # load all episodes, with ranks/scores assigned to focal episode and similar episodes, into dataframe
-    df = pd.DataFrame(all_episodes)
+    df = eps.generate_similar_episodes_df(mlt_matches, simple_episodes_response['episodes'], episode_key, mlt_type)
 
     # TODO would be great to extract these into a metadata constant like EPISODE_CORE_FIELDS (then add score, rank, & symbol)
     cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'score', 'rank', 'rev_rank', 'focal_speakers', 'focal_locations', 
@@ -377,17 +348,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     episode_similarity_scatter = pscat.build_episode_similarity_scatter(df, seasons)
 
     if 'yes' in show_dt:
-        # NOTE last-minute first draft effort to sync datatable colors with matplotlib/plotly figure color gradient
-        df['title'] = df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key'], x['title']), axis=1)
-        display_cols = ['title', 'season', 'episode', 'score', 'rank', 'flattened_topics']
-        df = df.loc[df['score'] > 0]
-        df = df.loc[df['rank'] > 0]
-        df.sort_values('rank', inplace=True, ascending=True)
-        similar_episode_scores = list(df['score'].values)
-        viridis_discrete_rgbs = cm.matplotlib_gradient_to_rgb_strings('viridis')
-        sim_ep_rgbs = cm.map_range_values_to_gradient(similar_episode_scores, viridis_discrete_rgbs)
-        # sim_ep_rgb_textcolors = {rgb:"Black" for rgb in sim_ep_rgbs}
-        episode_similarity_dt = pc.pandas_df_to_dash_dt(df, display_cols, 'rank', sim_ep_rgbs, {}, numeric_precision_overrides={'score': 2}, md_cols=['title'])
+        episode_similarity_dt = eps.generate_episode_similarity_dt(show_key, df)
     else: 
         episode_similarity_dt = {}
 
@@ -442,6 +403,7 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
                                                       numeric_precision_overrides=numeric_precision_overrides)
     episode_speaker_dnda_dt = pc.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', episode_speaker_names, speaker_color_map,
                                                       numeric_precision_overrides=numeric_precision_overrides)
+    
     return episode_speaker_mbti_scatter, episode_speaker_dnda_scatter, episode_speaker_mbti_dt, episode_speaker_dnda_dt
 
 
@@ -465,15 +427,18 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
     # topic_groupings = ['universalGenres', 'universalGenresGpt35_v2', f'focusedGpt35_{show_key}']
     topic_groupings = ['universalGenres', 'universalGenresGpt35_v2']
     topic_score_types = [ug_score_type, ug2_score_type]
+
     for i, tg in enumerate(topic_groupings):
         # fetch episode topics, load into df, modify / reformat
         r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
         df = fflat.flatten_and_format_topics_df(df, topic_score_types[i])
+
         # build treemap fig
         fig = ptree.build_episode_topic_treemap(df.copy(), tg, topic_score_types[i], max_per_parent=3)
         figs[tg] = fig
+
         # build dash datatable
         parent_topics = df['parent_topic'].unique()
         df.rename(columns={'scaled_score': 'score'}, inplace=True)
