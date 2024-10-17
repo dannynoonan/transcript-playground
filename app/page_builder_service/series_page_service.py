@@ -90,7 +90,7 @@ def get_parent_topics_for_grouping(topic_grouping: str):
     return parent_topics
 
 
-def generate_season_episodes_accordion_items(all_season_dicts: dict, speaker_color_map: dict) -> list:
+def generate_season_episodes_accordion_items(show_key: str, all_season_dicts: dict, speaker_color_map: dict) -> list:
     season_accordion_items = []
 
     for season, season_dict in all_season_dicts.items():
@@ -98,7 +98,7 @@ def generate_season_episodes_accordion_items(all_season_dicts: dict, speaker_col
         season_title_text = f"Season {season} ({season_dict['air_date_begin']} — {season_dict['air_date_end']}): {len(season_dict['episodes'])} episodes"
 
         # episode listing datatable for expanded season accordion item
-        season_episodes_dt = generate_season_episodes_dt(season_dict['episodes'])
+        season_episodes_dt = generate_season_episodes_dt(show_key, season_dict['episodes'])
         
         # recurring speaker datatable
         recurring_speaker_cols = ['character', 'lines']
@@ -129,10 +129,11 @@ def generate_season_episodes_accordion_items(all_season_dicts: dict, speaker_col
     return season_accordion_items
 
 
-def generate_season_episodes_dt(episodes: list) -> dash_table.DataTable:
+def generate_season_episodes_dt(show_key: str, episodes: list) -> dash_table.DataTable:
     episodes_df = pd.DataFrame(episodes)
 
     # field naming and processing
+    episodes_df['title'] = episodes_df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key'], x['title']), axis=1)
     episodes_df['focal_characters'] = episodes_df['focal_speakers'].apply(lambda x: ', '.join(x))
     episodes_df['genres'] = episodes_df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
     episodes_df['air_date'] = episodes_df['air_date'].apply(lambda x: x[:10])
@@ -144,8 +145,8 @@ def generate_season_episodes_dt(episodes: list) -> dash_table.DataTable:
     bg_color_map = {e:'Maroon' for e in episode_list}
 
     # convert to dash datatable
-    episodes_dt = pc.pandas_df_to_dash_dt(episodes_df, display_cols, 'episode', episode_list, bg_color_map, 
-                                       numeric_precision_overrides={'episode': 0})
+    episodes_dt = pc.pandas_df_to_dash_dt(episodes_df, display_cols, 'episode', episode_list, bg_color_map,
+                                          numeric_precision_overrides={'episode': 0}, md_cols=['title'])
 
     return episodes_dt
 
@@ -163,12 +164,13 @@ def flatten_and_format_cluster_df(show_key: str, clusters_df: pd.DataFrame) -> p
         clusters_df['focal_speakers'] = clusters_df['focal_speakers'].apply(lambda x: ", ".join(x))
     if 'focal_locations' in clusters_df.columns:
         clusters_df['focal_locations'] = clusters_df['focal_locations'].apply(lambda x: ", ".join(x))
-    clusters_df['link'] = clusters_df.apply(lambda x: utils.wrap_title_in_url(show_key, x['episode_key']), axis=1)
+    clusters_df['title'] = clusters_df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key'], x['title']), axis=1)
     clusters_df.sort_values(['cluster', 'season', 'sequence_in_season'], inplace=True)
 
     # rename columns for display
     clusters_df.rename(columns={'sequence_in_season': 'episode', 'scene_count': 'scenes'}, inplace=True)
 
+    clusters_df.drop('episode_key', axis=1, inplace=True) 
     # TODO stop populating this color column, row color is set within dash datatable using style_data_conditional filter_query
     clusters_df.drop('cluster_color', axis=1, inplace=True) 
 

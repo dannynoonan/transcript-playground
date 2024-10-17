@@ -163,7 +163,7 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
     display_cols = ['character', 'scene', 'line', 'location', 'dialog']
     episode_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map,
-                                                        numeric_precision_overrides={'scene': 0, 'line': 0})
+                                                        numeric_precision_overrides={'scene': 0, 'line': 0}, md_cols=['dialog'])
 
     response_text = f"{scene_event_count} line(s) matching query '{qt}'"
 
@@ -378,6 +378,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
 
     if 'yes' in show_dt:
         # NOTE last-minute first draft effort to sync datatable colors with matplotlib/plotly figure color gradient
+        df['title'] = df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key'], x['title']), axis=1)
         display_cols = ['title', 'season', 'episode', 'score', 'rank', 'flattened_topics']
         df = df.loc[df['score'] > 0]
         df = df.loc[df['rank'] > 0]
@@ -386,7 +387,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
         viridis_discrete_rgbs = cm.matplotlib_gradient_to_rgb_strings('viridis')
         sim_ep_rgbs = cm.map_range_values_to_gradient(similar_episode_scores, viridis_discrete_rgbs)
         # sim_ep_rgb_textcolors = {rgb:"Black" for rgb in sim_ep_rgbs}
-        episode_similarity_dt = pc.pandas_df_to_dash_dt(df, display_cols, 'rank', sim_ep_rgbs, {}, numeric_precision_overrides={'score': 2})
+        episode_similarity_dt = pc.pandas_df_to_dash_dt(df, display_cols, 'rank', sim_ep_rgbs, {}, numeric_precision_overrides={'score': 2}, md_cols=['title'])
     else: 
         episode_similarity_dt = {}
 

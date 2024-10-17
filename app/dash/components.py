@@ -3,7 +3,7 @@ from dash import dash_table, dcc, html
 import pandas as pd
 
 import app.fig_meta.color_meta as cm
-import app.utils as utils
+import app.page_builder_service.page_components as pc
 
 
 navbar = dbc.Card(className="text-white bg-primary", style={"z-index":"2000"}, children=[
@@ -40,7 +40,7 @@ def flatten_and_format_cluster_df(show_key: str, clusters_df: pd.DataFrame) -> p
         clusters_df['focal_speakers'] = clusters_df['focal_speakers'].apply(lambda x: ", ".join(x))
     if 'focal_locations' in clusters_df.columns:
         clusters_df['focal_locations'] = clusters_df['focal_locations'].apply(lambda x: ", ".join(x))
-    clusters_df['link'] = clusters_df.apply(lambda x: utils.wrap_title_in_url(show_key, x['episode_key']), axis=1)
+    clusters_df['link'] = clusters_df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key']), x['title']), axis=1)
     clusters_df.sort_values(['cluster', 'season', 'sequence_in_season'], inplace=True)
 
     # rename columns for display

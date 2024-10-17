@@ -30,7 +30,7 @@ def layout(show_key: str) -> html.Div:
     # series summary and season episode listing data
     series_summary, episodes_by_season = sps.generate_series_summary(show_key)
     all_season_episode_data = sps.generate_all_season_episode_data(show_key, episodes_by_season, series_summary)
-    season_accordion_items = sps.generate_season_episodes_accordion_items(all_season_episode_data, speaker_color_map)
+    season_accordion_items = sps.generate_season_episodes_accordion_items(show_key, all_season_episode_data, speaker_color_map)
 
     # topic listing data
     universal_genres_parent_topics = sps.get_parent_topics_for_grouping('universalGenres')

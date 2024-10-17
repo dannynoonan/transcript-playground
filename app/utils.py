@@ -45,10 +45,6 @@ def truncate(text: str) -> str:
     return text
 
 
-def wrap_title_in_url(show_key: str, episode_key: str) -> str:
-    return f'[link](/web/episode/{show_key}/{episode_key})'
-
-
 def set_dict_value_as_es_value(es_object: object, d: dict, k: str, es_field_prefix: str) -> None:
     if not d or k not in d:
         print(f'failed to set_dict_value_as_es_value, k={k} is not in d={d}')

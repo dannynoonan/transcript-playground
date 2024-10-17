@@ -42,7 +42,7 @@ url_bar_and_content_div = html.Div([
 
 
 def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: str, conditional_color_keys: list, bg_color_map: dict, 
-                         numeric_precision_overrides: dict = None) -> dash_table.DataTable:
+                         numeric_precision_overrides: dict = None, md_cols: list = []) -> dash_table.DataTable:
     '''
     Turn pandas dataframe into dash_table.DataTable
     '''
@@ -55,6 +55,14 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
     if numeric_precision_overrides:
         for col, precision in numeric_precision_overrides.items():
             numeric_precision[col] = precision
+
+    columns = [ 
+        {
+            "id": col, "name": col, "type": "numeric", "presentation": "markdown"} if col in md_cols 
+        else {
+            "id": col, "name": col, "type": "numeric", "format": dtf.Format(group=dtf.Group.yes, precision=numeric_precision[col], scheme=dtf.Scheme.fixed)
+        }
+        for col in display_cols]
 
     # https://dash.plotly.com/datatable/conditional-formatting
     style_data_conditional_list = []
@@ -78,22 +86,38 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
                 sdc['color'] = 'Black'
         style_data_conditional_list.append(sdc)
 
-    columns=[
-        {
-            "id": col, "name": col, "type": "numeric", 
-            # "presentation": "markdown",
-            "format": dtf.Format(group=dtf.Group.yes, precision=numeric_precision[col], scheme=dtf.Scheme.fixed)
-        }
-        for col in display_cols]
+    # https://dash.plotly.com/datatable/style
+    # style_cell_conditional_list = []
+    # for col in md_cols:
+    #     scc = {}
+    #     scc['if'] = {'column_id': col}
+    #     scc['verticalAlign'] = 'middle'
+    #     scc['font-family'] = 'courier'
+    #     style_cell_conditional_list.append(scc)
 
+    # https://dash.plotly.com/dash-ag-grid/styling-cells
+    # column_defs = []
+    # for col in md_cols:
+    #     cd = {}
+    #     cd['field'] = col
+    #     cd['cellStyle'] = {'font-family': 'courier'}
+    #     column_defs.append(cd)
+    
+    # TODO I've lost track of when or why each 'style_X' field was added, 'css' was added 10/15/24, needs to be standardized/de-duped
     dash_dt = dash_table.DataTable(
         data=df.to_dict("records"),
         columns=columns,
         style_header={'backgroundColor': 'white', 'fontWeight': 'bold', 'color': 'black', 'position': 'sticky', 'top': '0'},
-        style_cell={'textAlign': 'left', 'font-size': '10pt', 'whiteSpace': 'normal', 'height': 'auto'},
+        style_cell={'textAlign': 'left', 'font-size': '11pt', 'whiteSpace': 'normal', 'height': 'auto', 'font-family': 'arial'},
         style_data_conditional=style_data_conditional_list,
         markdown_options={"html": True},
-        style_table={'maxHeight': '850px', 'overflowY': 'auto'}
+        style_table={'maxHeight': '850px', 'overflowY': 'auto'},
+        # NOTE took a while to get to this; for all dash/bootstrap's visual slickness this datatable styling BS is a frickin backwater
+        css=[{"selector": "a", "rule": "color: inherit"}, {"selector": "p", "rule": "margin-bottom: 0"}],
     )
 
     return dash_dt
+
+
+def link_to_episode(show_key: str, episode_key: str, title: str) -> str:
+    return f'[{title}](/dash_pages/episode/{show_key}/{episode_key})'

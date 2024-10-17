@@ -246,12 +246,13 @@ def render_series_search_gantt(show_key: str, qt: str):
     matching_lines_df = timeline_df.loc[timeline_df['matching_line_count'] > 0]
     matching_lines_df.sort_values('score', ascending=False, inplace=True)
     matching_lines_df.rename(columns={'Task': 'character', 'sequence_in_season': 'episode', 'matching_line_count': 'line_count', 'matching_lines': 'lines'}, inplace=True)
+    matching_lines_df['episode_title'] = matching_lines_df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key'], x['episode_title']), axis=1)
     matching_speakers = matching_lines_df['character'].unique()
     speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, matching_speakers)
     # TODO matching_lines_df['dialog'] = matching_lines_df['dialog'].apply(convert_markup)
-    display_cols = ['character', 'episode_key', 'episode_title', 'season', 'episode', 'line_count', 'lines', 'score']
+    display_cols = ['character', 'episode_title', 'season', 'episode', 'line_count', 'lines', 'score']
     series_search_results_dt = pc.pandas_df_to_dash_dt(matching_lines_df, display_cols, 'character', matching_speakers, speaker_color_map,
-                                                       numeric_precision_overrides={'score': 2})
+                                                       numeric_precision_overrides={'score': 2}, md_cols=['episode_title', 'lines'])
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
@@ -433,7 +434,8 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: lis
         episode_clusters_df = sps.flatten_and_format_cluster_df(show_key, episode_clusters_df)
         clusters = [str(c) for c in list(episode_clusters_df['cluster'].unique())]
         bg_color_map = {str(i):color for i, color in enumerate(cm.colors)}
-        episode_clusters_dt = pc.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, bg_color_map)
+        episode_clusters_dt = pc.pandas_df_to_dash_dt(episode_clusters_df, list(episode_clusters_df.columns), 'cluster', clusters, 
+                                                      bg_color_map, md_cols=['title'])
     else:
         episode_clusters_dt = {}
 
