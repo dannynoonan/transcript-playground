@@ -46,8 +46,11 @@ def layout(show_key: str, episode_key: str) -> html.Div:
     navbar = pc.generate_navbar(show_key, all_seasons)
 
     content = html.Div([
+        # page storage
         dcc.Store(id='speaker-color-map', data=speaker_color_map),
         dcc.Store(id='show-key', data=show_key),
+
+        # page display
         navbar,
         dbc.Card(className="bg-dark", children=[
 

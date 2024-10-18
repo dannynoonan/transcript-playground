@@ -24,7 +24,7 @@ from app import utils
 ############ series summary callbacks
 @callback(
     Output("accordion-contents", "children"),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input("accordion", "active_item")
 )    
 def render_series_summary(show_key: str, expanded_season: str):
@@ -39,12 +39,14 @@ def render_series_summary(show_key: str, expanded_season: str):
 ############ all series episodes scatter
 @callback(
     Output('series-episodes-scatter-grid', 'figure'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('scatter-grid-hilite', 'value'),
     Input('speaker-color-map', 'data'),
+    Input('all-simple-episodes', 'data'),
+    Input('all-seasons', 'data'),
     background=True
 )    
-def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color_map: dict):
+def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color_map: dict, all_simple_episodes: list, all_seasons: list):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_all_series_episodes_scatter ts={callback_start_ts} show_key={show_key} hilite={hilite}')
 
@@ -60,16 +62,8 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color
     else:
         hilite_color_map = None
 
-    season_response = esr.list_seasons(ShowKey(show_key))
-    seasons = season_response['seasons']
-        
-    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
-    all_episodes = simple_episodes_response['episodes']
-    # all_episodes_dict = {episode['episode_key']:episode for episode in all_episodes}
-    # all_episodes = list(all_episodes_dict.values())
-
     # load all episodes into dataframe
-    df = pd.DataFrame(all_episodes)
+    df = pd.DataFrame(all_simple_episodes)
     df['air_date'] = df['air_date'].apply(lambda x: x[:10])
 
     cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'focal_speakers', 'focal_locations', 
@@ -77,7 +71,7 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color
 
     df = df[cols_to_keep]
 
-    all_series_episodes_scatter = pscat.build_all_series_episodes_scatter(df, seasons, hilite=hilite, hilite_color_map=hilite_color_map)
+    all_series_episodes_scatter = pscat.build_all_series_episodes_scatter(df, all_seasons, hilite=hilite, hilite_color_map=hilite_color_map)
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
@@ -89,7 +83,7 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color
 ############ series speakers gantt callback
 @callback(
     Output('series-speakers-gantt', 'figure'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     background=True
 )    
 def render_series_speakers_gantt(show_key: str):
@@ -124,7 +118,7 @@ def render_series_speakers_gantt(show_key: str):
 ############ series locations gantt callback
 @callback(
     Output('series-locations-gantt', 'figure'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     background=True
 )    
 def render_series_locations_gantt(show_key: str):
@@ -159,7 +153,7 @@ def render_series_locations_gantt(show_key: str):
 ############ series topics gantt callback
 @callback(
     Output('series-topics-gantt', 'figure'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('series-topics-gantt-score-type', 'value'),
     background=True
 )    
@@ -200,7 +194,7 @@ def render_series_topics_gantt(show_key: str, score_type: str):
     Output('series-search-response-text', 'children'),
     Output('series-search-results-gantt-new', 'figure'),
     Output('series-search-results-dt', 'children'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('series-search-qt', 'value')
 )    
 def render_series_search_gantt(show_key: str, qt: str):
@@ -209,8 +203,6 @@ def render_series_search_gantt(show_key: str, qt: str):
 
     episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
     season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
-
-    # execute search query and filter response into series gantt charts
 
     # TODO fetch from file, but file has to have all speaker data
     # file_path = f'./app/data/speaker_gantt_sequence_{show_key}.csv'
@@ -232,6 +224,7 @@ def render_series_search_gantt(show_key: str, qt: str):
     if not qt:
         return '', {}, {}
     
+    # execute search query and filter response into series gantt charts
     series_gantt_response = esr.generate_series_speaker_gantt_sequence(ShowKey(show_key))
     search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
     episode_count = search_response['episode_count']
@@ -255,7 +248,7 @@ def render_series_search_gantt(show_key: str, qt: str):
 @callback(
     Output('speaker-season-frequency-bar-chart', 'figure'),
     Output('speaker-episode-frequency-bar-chart', 'figure'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('speaker-chatter-tally-by', 'value'),
     Input('speaker-chatter-season', 'value'),
     Input('speaker-chatter-sequence-in-season', 'value')
@@ -297,19 +290,19 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
 @callback(
     Output('series-topic-pie', 'figure'),
     Output('series-parent-topic-pie', 'figure'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('series-topic-pie-topic-grouping', 'value'),
     Input('series-topic-pie-score-type', 'value'),
+    Input('all-simple-episodes', 'data'),
     background=True
 )    
-def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str):
+def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str, all_simple_episodes: str):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_topic_pies ts={callback_start_ts} show_key={show_key} topic_grouping={topic_grouping} score_type={score_type}')
 
     ##### TODO begin optimization block 
-    episode_response = esr.fetch_simple_episodes(ShowKey(show_key))
     episode_topic_lists = []
-    for episode in episode_response['episodes']:
+    for episode in all_simple_episodes:
         episode_topics_response = esr.fetch_episode_topics(ShowKey(show_key), episode['episode_key'], topic_grouping)
         episode_topic_lists.append(episode_topics_response['episode_topics'])
 
@@ -330,7 +323,7 @@ def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str
 ############ series topic episode datatable callback
 @callback(
     Output('series-topic-episodes-dt', 'children'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('show-series-topic-episodes-dt-for-topic', 'value'),
     Input('series-topic-pie-topic-grouping', 'value'),
     Input('series-topic-pie-score-type', 'value')
@@ -382,12 +375,13 @@ def render_series_topic_episodes_dt(show_key: str, show_dt_for_parent_topic: str
 @callback(
     Output('series-episodes-cluster-scatter', 'figure'),
     Output('series-episodes-cluster-dt', 'children'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('num-clusters', 'value'),
     Input('show-series-episodes-cluster-dt', 'value'),
+    Input('all-simple-episodes', 'data')
     # background=True
 )
-def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: list):
+def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: list, all_simple_episodes: list):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_cluster_scatter ts={callback_start_ts} show_key={show_key} num_clusters={num_clusters} show_dt={show_dt}')
 
@@ -403,8 +397,7 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: lis
     doc_embeddings_clusters_df['cluster_color'] = doc_embeddings_clusters_df['cluster'].apply(lambda x: cm.colors[x % 10])
 
     # fetch basic title/season data for all show episodes 
-    all_episodes = esr.fetch_simple_episodes(ShowKey(show_key))
-    episodes_df = pd.DataFrame(all_episodes['episodes'])
+    episodes_df = pd.DataFrame(all_simple_episodes)
 
     # merge basic episode data into cluster data
     episodes_df['doc_id'] = episodes_df['episode_key'].apply(lambda x: f'{show_key}_{x}')
@@ -428,7 +421,7 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: lis
 ############ series speaker listing callback
 @callback(
     Output('series-speaker-listing-dt', 'children'),
-    Input('show-key', 'value')
+    Input('show-key', 'data')
 )
 def render_series_speaker_listing_dt(show_key: str):
     callback_start_ts = dt.now()
@@ -458,7 +451,7 @@ def render_series_speaker_listing_dt(show_key: str):
     Output('series-speaker-dnda-scatter', 'figure'),
     Output('series-speaker-mbti-dt', 'children'),
     Output('series-speaker-dnda-dt', 'children'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('series-mbti-count', 'value'),
     Input('series-dnda-count', 'value'),
     Input('speaker-color-map', 'data')

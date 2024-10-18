@@ -32,6 +32,10 @@ def layout(show_key: str) -> html.Div:
     all_season_episode_data = sps.generate_all_season_episode_data(show_key, episodes_by_season, series_summary)
     season_accordion_items = sps.generate_season_episodes_accordion_items(show_key, all_season_episode_data, speaker_color_map)
 
+    # episode data
+    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+    all_simple_episodes = simple_episodes_response['episodes']
+
     # topic listing data
     universal_genres_parent_topics = sps.get_parent_topics_for_grouping('universalGenres')
 
@@ -50,14 +54,20 @@ def layout(show_key: str) -> html.Div:
 
     # define content div
     content = html.Div([
+        # page storage
+        dcc.Store(id='show-key', data=show_key),
+        dcc.Store(id='all-simple-episodes', data=all_simple_episodes),
+        dcc.Store(id='all-seasons', data=all_seasons),
         dcc.Store(id='speaker-color-map', data=speaker_color_map),
+
+        # page display
         navbar,
         dbc.Card(className="bg-dark", children=[
 
             # series summary
             dbc.CardBody([
                 dbc.Row([
-                    dbc.Col(md=8, children=[
+                    dbc.Col(md=12, children=[
                         html.H3(className="text-white", children=[
                             html.B(series_summary['series_title']), " (", series_summary['air_date_begin'], " — ", series_summary['air_date_end'], ")"
                         ]),
@@ -68,12 +78,12 @@ def layout(show_key: str) -> html.Div:
                             ]),
                         ]),
                     ]),
-                    dbc.Col(md=2),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            "Show: ", dcc.Dropdown(id="show-key", options=[show_key], value=show_key)
-                        ]),
-                    ]),
+                    # dbc.Col(md=2),
+                    # dbc.Col(md=2, children=[
+                    #     html.Div([
+                    #         "Show: ", dcc.Dropdown(id="show-key", options=[show_key], value=show_key)
+                    #     ]),
+                    # ]),
                 ]),
             ]),
 
