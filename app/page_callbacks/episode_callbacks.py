@@ -30,7 +30,7 @@ from app import utils
     Output('episode-speakers', 'options'),
     Output('episode-wordcloud-img', 'src'),
     Output('speaker-color-map', 'data'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('episode-key', 'value')
 )    
 def render_episode_summary(show_key: str, episode_key: str):
@@ -86,7 +86,7 @@ def render_episode_summary(show_key: str, episode_key: str):
 @callback(
     Output('episode-dialog-timeline', 'figure'),
     Output('episode-location-timeline', 'figure'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('show-layers', 'value'),
     Input('speaker-color-map', 'data')
@@ -114,7 +114,7 @@ def render_episode_gantts(show_key: str, episode_key: str, show_layers: list, sp
     Output('episode-search-response-text', 'children'),
     Output('episode-search-results-gantt', 'figure'),
     Output('episode-search-results-dt', 'children'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('episode-search-qt', 'value')
 )    
@@ -173,7 +173,7 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
 @callback(
     Output('sentiment-line-chart', 'figure'),
     # Output('episode-speaker-options', 'options'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('freeze-on', 'value'),
     Input('emotion', 'value'),
@@ -226,7 +226,7 @@ def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, fre
 ############ speaker 3d network graph callbacks
 @callback(
     Output('speaker-3d-network-graph', 'figure'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('scale-by', 'value'),
     Input('speaker-color-map', 'data')
@@ -259,7 +259,7 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_b
 @callback(
     Output('speaker-frequency-bar-chart', 'figure'),
     Output('speaker-summary-dt', 'children'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('scale-by', 'value'),
     Input('speaker-color-map', 'data')
@@ -313,7 +313,7 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
 @callback(
     Output('episode-similarity-scatter', 'figure'),
     Output('episode-similarity-dt', 'children'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('mlt-type', 'value'),
     Input('show-similar-episodes-dt', 'value')
@@ -362,7 +362,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     Output('episode-speaker-dnda-scatter', 'figure'),
     Output('episode-speaker-mbti-dt', 'children'),
     Output('episode-speaker-dnda-dt', 'children'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('episode-mbti-count', 'value'),
     Input('episode-dnda-count', 'value'),
@@ -414,7 +414,7 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
     Output('episode-universal-genres-gpt35-v2-treemap', 'figure'),
     Output('episode-universal-genres-gpt35-v2-dt', 'children'),
     # Output('episode-focused-gpt35-treemap', 'figure'),
-    Input('show-key', 'value'),
+    Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('universal-genres-score-type', 'value'),
     Input('universal-genres-gpt35-v2-score-type', 'value')
@@ -454,7 +454,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
 # ############ episode speaker chatter scatter callbacks
 # @callback(
 #     Output('speaker-chatter-scatter', 'figure'),
-#     Input('show-key', 'value'),
+#     Input('show-key', 'data'),
 #     Input('episode-key', 'value'),
 #     Input('x-axis', 'value'),
 #     Input('y-axis', 'value')

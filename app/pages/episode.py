@@ -47,13 +47,14 @@ def layout(show_key: str, episode_key: str) -> html.Div:
 
     content = html.Div([
         dcc.Store(id='speaker-color-map', data=speaker_color_map),
+        dcc.Store(id='show-key', data=show_key),
         navbar,
         dbc.Card(className="bg-dark", children=[
 
             # episode summary / listing dropdown
             dbc.CardBody([
                 dbc.Row([
-                    dbc.Col(md=8, children=[
+                    dbc.Col(md=10, children=[
                         html.H3(className="text-white", children=[html.Span(id='episode-title-summary')]),
                         html.H5(className="text-white", style={'display': 'flex'}, children=[
                             html.Div(style={"margin-right": "30px"}, children=[
@@ -72,18 +73,9 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                         #     html.B(episode['scene_count']), " scenes, ", html.B(episode['line_count']), " lines, ", html.B(episode['word_count']), " words"]),
                         # html.P(className="text-white", children=['<<  Previous episode  |  Next episode  >>']),
                     ]),
-                    dbc.Col(md=4, children=[
-                        dbc.Row([ 
-                            dbc.Col(md=6, children=[
-                                html.Div([
-                                    "Show: ", dcc.Dropdown(id="show-key", options=[show_key], value=show_key)
-                                ]),
-                            ]),
-                            dbc.Col(md=6, children=[
-                                html.Div([
-                                    "Episode: ", dcc.Dropdown(id="episode-key", options=episode_dropdown_options, value=episode_key)
-                                ]),
-                            ]),
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            "Episode: ", dcc.Dropdown(id="episode-key", options=episode_dropdown_options, value=episode_key)
                         ]),
                     ]),
                 ]),
