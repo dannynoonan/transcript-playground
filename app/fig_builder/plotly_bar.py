@@ -69,7 +69,7 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
 
     sum_df.rename(columns={'speaker': 'character'}, inplace=True)
     labels = {x: f'{span_granularity}s'}
-    # custom_data = []  # TODO
+    # custom_data = []  # TODO, though there isn't much value-add, just formatting and weird conditional logic
 
     fig = px.bar(sum_df, x=x, y='character', color='character', title=title, color_discrete_map=color_discrete_map, labels=labels, height=650,
                  animation_frame=animation_frame) # ignored if df is for single year

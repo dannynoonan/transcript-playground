@@ -31,7 +31,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
             "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b>",
             "Similarity score: %{customdata[3]:.2f} (#%{customdata[4]})",
             "Focal characters: %{customdata[5]}",
-            "Categories: %{customdata[6]}"
+            "Genres: %{customdata[6]}"
         ])
     )    
 
@@ -92,12 +92,11 @@ def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list, hilite: s
              
     fig.update_traces(
         hovertemplate="<br>".join([
-            "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b>",
-            "Date: %{customdata[3]}",
+            "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b> %{customdata[3]}",
             "Focal characters: %{customdata[4]}",
             "Focal locations: %{customdata[5]}",
-            "Genres (by freq): %{customdata[6]}",
-            "Genres (raw): %{customdata[7]}"
+            "'Contextual' genres: %{customdata[6]}",
+            "'Absolute' genres: %{customdata[7]}"
         ])
     )    
 
