@@ -9,7 +9,7 @@ from tortoise import Tortoise
 
 from app.config import settings, DATABASE_URL
 from app.dash_app import dapp
-from app.dash_app_new import dapp_new
+from app.dash_pages import dash_pages_app
 from app.database.connect import connect_to_database
 import app.database.dao as dao
 from app.es.es_read_router import esr_app
@@ -27,7 +27,7 @@ app.include_router(esw_app)
 app.include_router(esr_app)
 app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 app.mount('/tsp_dash', WSGIMiddleware(dapp.server))
-app.mount('/tsp_dash_new', WSGIMiddleware(dapp_new.server))
+app.mount('/dash_pages', WSGIMiddleware(dash_pages_app.server))
 # templates = Jinja2Templates(directory="templates")
 
 

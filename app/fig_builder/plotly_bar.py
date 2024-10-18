@@ -2,7 +2,8 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-import app.fig_builder.fig_helper as fh
+import app.fig_meta.layout_meta as lm
+import app.fig_meta.color_meta as cm
 
 
 def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularity: str, aggregate_ratio: bool, season: int, 
@@ -10,10 +11,16 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     print(f'in build_speaker_frequency_bar show_key={show_key} span_granularity={span_granularity} aggregate_ratio={aggregate_ratio} season={season} sequence_in_season={sequence_in_season} animate={animate}')
 
     animation_frame = None
+    title = 'Character chatter'
 
+    speakers = df['speaker'].unique()
+    color_discrete_map = cm.generate_speaker_color_discrete_map(show_key, speakers)
+
+    # TODO 10/10/24 aggregate_ratio param and descriptions of usage are super confusion. Was this mainly designed for animation?
     # in this context:
     #   - `aggregate_ratio=True`: intra-season episode-by-episode tabulation using sum()
-    #   - `aggregate_ratio=False`: inter-season comparison between totals using max() (and `sequence_in_season` is ignored)
+    #   - `aggregate_ratio=False`: inter-season comparison between totals using max() 
+    # NOTE: previously, when `aggregate_ratio=False` the `sequence_in_season` param was ignored. Made sense for animation, but not episode-by-episode browsing
     if aggregate_ratio:
         if animate:
             animation_frame = 'sequence_in_season'
@@ -27,6 +34,8 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
                 sequence_in_season = 1
             df = df.loc[df['season'] == season]
             df = df.loc[df['sequence_in_season'] <= sequence_in_season]
+            episode_title = list(df['episode_title'].unique())[0] # gulp
+            title = f'{title} in Season {season} Episode {sequence_in_season}: "{episode_title}"'
             x = f'{span_granularity}_count'
             # if `span_granularity='episode'` dynamically populate `episode_count` column using `scene_count` column to enable episode tabulation
             if span_granularity == 'episode':
@@ -38,6 +47,11 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
         else:
             if season:
                 df = df.loc[df['season'] == season]
+                title = f'{title} in Season {season}'
+                if sequence_in_season:
+                    df = df.loc[df['sequence_in_season'] == sequence_in_season]
+                    episode_title = list(df['episode_title'].unique())[0] # gulp
+                    title = f'{title} Episode {sequence_in_season}: "{episode_title}"'
         x = f'{span_granularity}_count'
         # if `span_granularity='episode'` dynamically populate `episode_count` column using `scene_count` column to enable episode tabulation
         if span_granularity == 'episode':
@@ -53,17 +67,14 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
     #     file_path = f'./app/data/speaker_frequency_bar_{show_key}_{span_granularity}_{season}_{sequence_in_season}.csv'
     # sum_df.to_csv(file_path)
 
-    # custom_data = []  # TODO
+    sum_df.rename(columns={'speaker': 'character'}, inplace=True)
+    labels = {x: f'{span_granularity}s'}
+    # custom_data = []  # TODO, though there isn't much value-add, just formatting and weird conditional logic
 
-    fig = px.bar(sum_df, x=x, y='speaker', color='speaker',
-                # custom_data=custom_data, hover_name=cols.VOTE_WEIGHT, hover_data=hover_data,
-                # text=cols.EC_VOTES, 
-                 animation_frame=animation_frame, # ignored if df is for single year
-                #  category_orders=category_orders,
-                # color_discrete_map=color_discrete_map, category_orders=category_orders,
-                # labels={cols.GROUP: groups_label},
-                # range_x=[vw_min,vw_max], log_x=True, height=fig_height
-    )
+    fig = px.bar(sum_df, x=x, y='character', color='character', title=title, color_discrete_map=color_discrete_map, labels=labels, height=650,
+                 animation_frame=animation_frame) # ignored if df is for single year
+                # custom_data=custom_data, hover_data=hover_data, category_orders=category_orders,
+                # range_x=[vw_min,vw_max], height=fig_height
 
     fig.update_layout(showlegend=False)
 
@@ -72,7 +83,7 @@ def build_speaker_frequency_bar(show_key: str, df: pd.DataFrame, span_granularit
         yaxis_categoryorder='total ascending') # yaxis_categoryorder
  
     if animate:
-        fh.apply_animation_settings(fig, 'TODO', frame_rate=1500)
+        lm.apply_animation_settings(fig, 'TODO', frame_rate=1500)
     
     return fig
 
@@ -81,7 +92,7 @@ def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, scale_b
     print(f'in build_speaker_frequency_bar scale_by={scale_by}')
 
     speakers = df['character'].unique()
-    color_discrete_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
+    color_discrete_map = cm.generate_speaker_color_discrete_map(show_key, speakers)
 
     custom_data = ['scenes', 'lines', 'words']
 

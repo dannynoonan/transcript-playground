@@ -1,20 +1,68 @@
-import dash_bootstrap_components as dbc
+import dash
 from dash import dcc, html
+import dash_bootstrap_components as dbc
+from datetime import datetime as dt
 
-import app.dash_new.components as cmp
+import app.es.es_read_router as esr
+from app.nlp.nlp_metadata import OPENAI_EMOTIONS
+import app.page_builder_service.episode_page_service as eps
+from app.page_callbacks.episode_callbacks import *
+import app.page_builder_service.page_components as pc
+from app.show_metadata import ShowKey
+from app import utils
 
 
-def generate_content(episode_key: str, all_seasons: list, episode_dropdown_options: list, emotion_dropdown_options: list) -> html.Div:
-    navbar = cmp.generate_navbar(all_seasons)
+dash.register_page(__name__, path_template='/episode/<show_key>/<episode_key>')
+
+
+def layout(show_key: str, episode_key: str) -> html.Div:
+
+    display_page_start_ts = dt.now()
+    utils.hilite_in_logs(f'PAGE LOAD: /episode/{show_key}/{episode_key} at ts={display_page_start_ts}')
+
+    ##################### BEGIN FETCH ON PAGE LOAD #####################
+
+    # all seasons
+    all_seasons_response = esr.list_seasons(ShowKey(show_key))
+    all_seasons = all_seasons_response['seasons']
+
+    # all_simple_episodes, episode_dropdown_options 
+    all_simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+    all_simple_episodes = all_simple_episodes_response['episodes']
+    episode_dropdown_options = eps.generate_episode_dropdown_options(show_key, all_simple_episodes)
+
+    # episode_speakers, speaker_color_map
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti,topics_dnda')
+    episode_speakers = speakers_for_episode_response['speaker_episodes']
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, [s['speaker'] for s in episode_speakers])
+
+    # emotions
+    emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
+
+    ##################### END FETCH ON PAGE LOAD #####################
+
+    display_page_end_ts = dt.now()
+    display_page_duration = display_page_end_ts - display_page_start_ts
+    utils.hilite_in_logs(f'LAYOUT: /episode/{show_key}/{episode_key} at ts={display_page_end_ts} duration={display_page_duration}')
+
+    navbar = pc.generate_navbar(show_key, all_seasons)
 
     content = html.Div([
+        # page storage
+        dcc.Store(id='show-key', data=show_key),
+        dcc.Store(id='all-simple-episodes', data=all_simple_episodes),
+        dcc.Store(id='all-seasons', data=all_seasons),
+        dcc.Store(id='episode-speakers', data=episode_speakers),
+        dcc.Store(id='speaker-color-map', data=speaker_color_map),
+
+        # page display
         navbar,
         dbc.Card(className="bg-dark", children=[
 
             # episode summary / listing dropdown
             dbc.CardBody([
                 dbc.Row([
-                    dbc.Col(md=8, children=[
+                    dbc.Col(md=10, children=[
                         html.H3(className="text-white", children=[html.Span(id='episode-title-summary')]),
                         html.H5(className="text-white", style={'display': 'flex'}, children=[
                             html.Div(style={"margin-right": "30px"}, children=[
@@ -33,18 +81,9 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                         #     html.B(episode['scene_count']), " scenes, ", html.B(episode['line_count']), " lines, ", html.B(episode['word_count']), " words"]),
                         # html.P(className="text-white", children=['<<  Previous episode  |  Next episode  >>']),
                     ]),
-                    dbc.Col(md=4, children=[
-                        dbc.Row([ 
-                            dbc.Col(md=6, children=[
-                                html.Div([
-                                    "Show: ", dcc.Dropdown(id="show-key", options=['TNG', 'GoT'], value='TNG')
-                                ]),
-                            ]),
-                            dbc.Col(md=6, children=[
-                                html.Div([
-                                    "Episode: ", dcc.Dropdown(id="episode-key", options=episode_dropdown_options, value=episode_key)
-                                ]),
-                            ]),
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            "Episode: ", dcc.Dropdown(id="episode-key", options=episode_dropdown_options, value=episode_key)
                         ]),
                     ]),
                 ]),
@@ -57,12 +96,12 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                         dbc.Tabs(className="nav nav-tabs", children=[
                             dbc.Tab(label="Timeline by dialog", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="episode-dialog-timeline-new"),
+                                    dcc.Graph(id="episode-dialog-timeline"),
                                 ]),
                                 dbc.Row([
                                     dbc.Col(md=2, style={'textAlign': 'center'}, children=[
                                         dcc.Checklist(
-                                            id="show-layers",
+                                            id="display-timeline-layers",
                                             # className="text-white", 
                                             options=[
                                                 {'label': 'Show scenes / locations', 'value': 'scene_locations'}
@@ -75,7 +114,7 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                             ]),
                             dbc.Tab(label="Timeline by location", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="episode-location-timeline-new"),
+                                    dcc.Graph(id="episode-location-timeline"),
                                 ]),
                             ]),
                             dbc.Tab(label="Timeline by sentiment", tab_style={"font-size": "20px", "color": "white"}, children=[
@@ -87,8 +126,7 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                                     ]),
                                     dbc.Col(md=2, children=[
                                         html.Div([
-                                            # "Character ", dcc.Dropdown(id="speaker", options=speaker_dropdown_options, value='ALL')
-                                            "Character ", dcc.Dropdown(id="episode-speakers")
+                                            "Character ", dcc.Dropdown(id="episode-speaker-options")
                                         ]),
                                     ]),
                                     dbc.Col(md=2, children=[
@@ -110,21 +148,21 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                                 ]),
                                 html.Br(),
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="sentiment-line-chart-new"),
+                                    dcc.Graph(id="sentiment-line-chart"),
                                 ]),
                             ]),
                             dbc.Tab(label="Timeline search", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row([
                                     dbc.Col(md=4, children=[
                                         html.Div([
-                                            "Search in dialog: ", dbc.Input(id="qt", type="text"),
+                                            "Search in dialog: ", dbc.Input(id="episode-search-qt", type="text"),
                                         ]),
                                     ]),
                                 ]),
                                 html.Br(),
                                 dbc.Row([
                                     dbc.Col(md=12, children=[
-                                        html.P(children=["Results: ", html.Span(id='out-text')]),
+                                        html.H5(children=["Results: ", html.Span(id='episode-search-response-text')]),
                                         html.Div(dcc.Graph(id="episode-search-results-gantt")),
                                         html.Br(),
                                         html.Div(id="episode-search-results-dt"),
@@ -141,12 +179,12 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                 html.H3("Characters in episode"),
                 dbc.Row([
                     dbc.Col(md=5, children=[
-                        html.Div(id="speaker-episode-summary-dt"),
+                        html.Div(id="speaker-summary-dt"),
                         html.Br(),
-                        html.Div(dcc.Graph(id="speaker-episode-frequency-bar-chart-new")),
+                        html.Div(dcc.Graph(id="speaker-frequency-bar-chart")),
                     ]),
                     dbc.Col(md=7, children=[
-                        html.Div(dcc.Graph(id="speaker-3d-network-graph-new")),
+                        html.Div(dcc.Graph(id="speaker-3d-network-graph")),
                         dcc.RadioItems(
                             id="scale-by",
                             className="text-white", 
@@ -179,7 +217,7 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                             ),
                             # TODO align with right side of episode-similarity-scatter
                             dcc.Checklist(
-                                id="show-similar-episodes-dt",
+                                id="display-similar-episodes-dt",
                                 options=[
                                     {'label': 'Display as table listing', 'value': 'yes'}
                                 ],
@@ -191,7 +229,7 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                     ]),
                     dbc.Col(md=4, children=[
                         # html.Div(html.Img(src=f"/static/wordclouds/TNG/TNG_{episode_key}.png", width='100%')),
-                        html.Div(html.Img(id='wordcloud-img', width='100%')),
+                        html.Div(html.Img(id='episode-wordcloud-img', width='100%')),
                     ]), 
                 ]),
             ]),
@@ -209,7 +247,7 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                                         dbc.Row([
                                             dbc.Col(md=5, style={"text-align": "right", "color": "white"}, children=['Alt temperaments:']),
                                             dbc.Col(md=4, children=[
-                                                dcc.Slider(id="mbti-count", min=1, max=4, step=1, value=3),
+                                                dcc.Slider(id="episode-mbti-count", min=1, max=4, step=1, value=3),
                                             ]),
                                         ]),
                                     ]),
@@ -226,7 +264,7 @@ def generate_content(episode_key: str, all_seasons: list, episode_dropdown_optio
                                         dbc.Row([
                                             dbc.Col(md=5, style={"text-align": "right", "color": "white"}, children=['Alt alignments:']),
                                             dbc.Col(md=4, children=[
-                                                dcc.Slider( id="dnda-count", min=1, max=3, step=1, value=2),
+                                                dcc.Slider( id="episode-dnda-count", min=1, max=3, step=1, value=2),
                                             ]),
                                         ]),
                                     ]),

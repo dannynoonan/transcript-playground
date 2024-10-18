@@ -1,5 +1,3 @@
-import math
-from operator import itemgetter
 import os
 
 
@@ -47,10 +45,6 @@ def truncate(text: str) -> str:
     return text
 
 
-def wrap_title_in_url(show_key: str, episode_key: str) -> str:
-    return f'[link](/web/episode/{show_key}/{episode_key})'
-
-
 def set_dict_value_as_es_value(es_object: object, d: dict, k: str, es_field_prefix: str) -> None:
     if not d or k not in d:
         print(f'failed to set_dict_value_as_es_value, k={k} is not in d={d}')
@@ -60,6 +54,9 @@ def set_dict_value_as_es_value(es_object: object, d: dict, k: str, es_field_pref
 
 
 def extract_phrase_qts(qt: str) -> tuple[str, list]:
+    if not qt:
+        return None, []
+    
     # remove internal whitespace
     qt = ' '.join(qt.split())
     # if no quotes present, there's no phrase to extract
@@ -70,8 +67,7 @@ def extract_phrase_qts(qt: str) -> tuple[str, list]:
     phrases = []
     qt_bits = qt.split('"')
     inside_quotes = False
-    # NOTE we're not verifying an even number of quotes
-    # text after an odd quote is always treated as a phrase until the next even quote
+    # NOTE we're not verifying an even number of quotes; text after an odd quote is always treated as a phrase until the next even quote
     for bit in qt_bits:
         if inside_quotes:
             phrases.append(bit.strip())
@@ -82,134 +78,8 @@ def extract_phrase_qts(qt: str) -> tuple[str, list]:
                 if bit:
                     tokens.append(bit)
             inside_quotes = True
-    # print(f'tokens={tokens}')
+
     return ' '.join(tokens), phrases
-
-
-# @DeprecationWarning
-# def split_parent_and_child_topics(topics: list, parent_limit: int = None, child_limit: int = None) -> tuple[list, list]:
-#     '''
-#     output ordered lists of topics (child_topics) and parent_topics
-#     parent_topics are implied by child_topics and added to respective parent_topics list when child_topics are encountered
-#     however, parent_topic data is not in scope when parent_key is referenced within child_topic
-#     parent_keys_to_topics accumulates parent_topic objects (and tracks membership) while parent_keys preserves sequence
-#     parent_keys_to_topics objects and parent_keys sequence are combined at the end
-#     '''
-#     parent_keys_to_topics = {}
-#     parent_keys = []
-#     child_topics = []
-#     for t in topics:
-#         parent_key = t['parent_key']
-#         topic_key = t['topic_key']
-#         # parent topics (which themselves have no parent) are added to parent_topics if not already present in parent_keys_added
-#         if not parent_key:
-#             if topic_key not in parent_keys_to_topics:
-#                 parent_keys.append(topic_key)
-#             parent_keys_to_topics[topic_key] = t # NOTE weird way to redundantly backfill topic data for parent keys as we go 
-#             # elif parent_keys_to_topics[topic_key] is None:
-#             #     parent_keys_to_topics[topic_key] = t
-#         # child topics also add their parent topics (if not already present in parent_keys_added)
-#         else:
-#             if parent_key not in parent_keys_to_topics:
-#                 parent_keys.append(parent_key)
-#                 parent_keys_to_topics[parent_key] = None
-#             if topic_key not in child_topics:
-#                 child_topics.append(t)
-#     # combine sequenced parent_keys with objects stored in parent_keys_to_topics to return sequenced parent_topics
-#     parent_topics = []
-#     for pk in parent_keys:
-#         if pk in parent_keys_to_topics:
-#             parent_topics.append(parent_keys_to_topics[pk])
-
-#     if parent_limit and len(parent_topics) > parent_limit:
-#         parent_topics = parent_topics[:parent_limit]
-#     if child_limit and len(child_topics) > child_limit:
-#         child_topics = child_topics[:child_limit]
-
-#     return parent_topics, child_topics
-
-
-class TopicAgg(object):
-
-    def __init__(self, reference_topics: dict):
-        self.reference_topics = reference_topics
-        self.keys_to_scores = {}
-        self.denominator = 0
-
-    def __repr__(self) -> str:
-        return f'keys_to_scores={self.keys_to_scores} denominator={self.denominator}'
-
-    def add_topics(self, topics: list, multiplier: int) -> None:
-        for t in topics:
-            if t['topic_key'] not in self.keys_to_scores:
-                self.keys_to_scores[t['topic_key']] = 0
-            self.keys_to_scores[t['topic_key']] += t['dist_score'] * multiplier
-
-        self.denominator += multiplier
-
-    def get_topics(self) -> list:
-        sorted_tuples = sorted(self.keys_to_scores.items(), key=itemgetter(1), reverse=True)
-        sorted_topics = []
-        for st in sorted_tuples:
-            if st[0] in self.reference_topics:
-                rt_copy = dict(self.reference_topics[st[0]])
-                rt_copy['dist_score'] = st[1] / self.denominator
-                rt_copy['is_aggregate'] = True
-                sorted_topics.append(rt_copy)
-            else:
-                print(f"TopicAgg.get() warning: topic_key={st[0]} wasn't in reference_topics, not adding to sorted_topic output")
-        return sorted_topics
-    
-    
-def flatten_topics(topics: list) -> list:
-    simple_topics = []
-    count = 0
-    for t in topics:
-        if 'is_parent' in t and t['is_parent']:
-            continue
-        simple_topic = dict(topic_key=t['topic_key'], topic_name=t['topic_name'], score=t['score'], raw_score=t['raw_score'])
-        if 'tfidf_score' in t:
-            simple_topic['tfidf_score'] = t['tfidf_score']
-        simple_topics.append(simple_topic)
-        count += 1
-        if count > 5:
-            break
-    return simple_topics
-
-
-def normalize_score(score: float, pct_distr_list: list) -> float:
-    '''
-    Created on the assumption that KNN cosine similarity between speaker embeddings and topic embeddings adhered to a corpus-wide
-    distribution of distances. Now I'm seeing that any given speaker in any given episode has a narrow range of cosine distances to
-    most topics. I'd like to think the topic rankings for a given speaker episode still have meaning, but often the lowest-scoring 
-    topic for one speaker episode exceeds the highest-scoring topic for another speaker in the same episode. And even when this 
-    function is applied the differences in 'normalized' distances between the same speaker episode and multiple topics are miniscule.
-    '''
-    low = 0
-    high = len(pct_distr_list)-1
-    percentile = -1
-    while low <= high:
-        mid = math.floor((high + low) / 2)
-        if score >= pct_distr_list[mid]:
-            if mid == len(pct_distr_list)-1:
-                return float(mid)
-            elif score < pct_distr_list[mid+1]:
-                percentile = mid
-                break
-            else:
-                low = mid+1
-        elif mid == 0 and score < pct_distr_list[mid]:
-            return 0.0
-        else:
-            high = mid-1
-    
-    if percentile == -1:
-        raise(f'Failure to normalize score={score} within percent distribution={pct_distr_list}')
-   
-    percentile_decimal = (score - pct_distr_list[percentile]) / (pct_distr_list[percentile+1] - pct_distr_list[percentile])
-    percentile += percentile_decimal
-
-    return round(percentile, 2)
 
 
 def hilite_in_logs(message: object) -> None:

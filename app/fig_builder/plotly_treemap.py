@@ -2,8 +2,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-import app.fig_builder.fig_helper as fh
-from app.show_metadata import TOPIC_COLORS
+import app.fig_meta.color_meta as cm
 
 
 def build_episode_topic_treemap(df: pd.DataFrame, topic_grouping: str, score_type: str, max_per_parent: int = None) -> go.Figure:
@@ -25,7 +24,7 @@ def build_episode_topic_treemap(df: pd.DataFrame, topic_grouping: str, score_typ
                 df.drop(index, inplace=True)
 
     fig = px.treemap(df, path=['parent_topic', 'topic_name'], values=score_type, title=title, color='parent_topic',
-                     custom_data=custom_data, color_discrete_map=TOPIC_COLORS, height=800)
+                     custom_data=custom_data, color_discrete_map=cm.TOPIC_COLORS, height=800)
     
     fig.update_traces(
         hovertemplate="<br>".join([

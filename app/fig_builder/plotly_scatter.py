@@ -3,12 +3,14 @@ import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.manifold import TSNE
 
-import app.fig_builder.fig_helper as fh
-import app.fig_builder.fig_metadata as fm
+import app.data_service.field_meta as fm
+import app.data_service.matrix_operations as mxop
+import app.fig_meta.color_meta as cm
+import app.fig_meta.speaker_topic_scatter_meta as stsm
 
 
 def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figure:
-    print(f"in build_episode_similarity_scatter len(df)={len(df)}")
+    print(f"in build_episode_similarity_scatter len(df)={len(df)} seasons={seasons}")
     
     # rename 'sequence_in_season' to 'episode' for display
     df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
@@ -16,7 +18,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
     symbol_map = {'all': 'square', 'mlt': 'circle', 'focal': 'star'}
 
     # ad-hoc method of flattening topic metadata for hovertemplate display
-    df['flattened_topics'] = df['topics_universal_tfidf'].apply(fh.flatten_topics)
+    df['flattened_topics'] = df['topics_universal_tfidf'].apply(mxop.flatten_df_topics)
 
     custom_data = ['title', 'season', 'episode', 'score', 'rank', 'focal_speakers', 'flattened_topics']
     
@@ -29,7 +31,7 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
             "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b>",
             "Similarity score: %{customdata[3]:.2f} (#%{customdata[4]})",
             "Focal characters: %{customdata[5]}",
-            "Categories: %{customdata[6]}"
+            "Genres: %{customdata[6]}"
         ])
     )    
 
@@ -45,27 +47,88 @@ def build_episode_similarity_scatter(df: pd.DataFrame, seasons: list) -> go.Figu
     return fig
 
 
-def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_type: str, speaker_color_map: dict = None) -> go.Figure:
-    print(f'in build_episode_speaker_topic_scatter show_key={show_key} topic_type={topic_type}')
+def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list, hilite: str = None, hilite_color_map: dict = None) -> go.Figure:
+    print(f"in build_all_series_episodes_scatter len(df)={len(df)} seasons={seasons} hilite={hilite}")
+    
+    # rename 'sequence_in_season' to 'episode' for display
+    df.rename(columns={'sequence_in_season': 'episode'}, inplace=True)
+
+    # tighten x axis margins to 2% of the x axis span
+    x_max = df['episode'].max()
+    buffer = x_max * 0.02
+    x_low = 1-buffer
+    x_high = x_max + buffer
+
+    # ad-hoc method of flattening topic metadata for hovertemplate display
+    df['flattened_topics_tfidf'] = df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal_tfidf'], parent_only=True), axis=1)
+    df['flattened_topics'] = df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal'], parent_only=True), axis=1)
+    df['flattened_speakers'] = df['focal_speakers'].apply(lambda x: ', '.join(x))
+    df['flattened_locations'] = df['focal_locations'].apply(lambda x: ', '.join(x))
+    df['size'] = 1
+
+    if hilite == 'topics_universal':
+        df['hilite'] = df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal'], parent_only=True, max_rank=1), axis=1)
+        legend_title = 'Primary genre'
+    elif hilite == 'topics_universal_tfidf':
+        df['hilite'] = df.apply(lambda x: mxop.flatten_df_topics(x['topics_universal_tfidf'], parent_only=True, max_rank=1), axis=1)
+        legend_title = 'Primary genre'
+    elif hilite == 'focal_speakers':
+        df['hilite'] = df.apply(lambda x: mxop.flatten_df_list_column(x['focal_speakers'], hilite_color_map, truncate_at=1), axis=1)
+        legend_title = 'Focal characters'
+    elif hilite == 'focal_locations':
+        df['hilite'] = df.apply(lambda x: mxop.flatten_df_list_column(x['focal_locations'], hilite_color_map, truncate_at=1), axis=1)
+        legend_title = 'Focal location'
+    else:
+        df['hilite'] = ''
+        legend_title = ''
+
+    custom_data = ['title', 'season', 'episode', 'air_date', 'flattened_speakers', 'flattened_locations', 'flattened_topics_tfidf', 'flattened_topics']
+
+    if hilite:
+        fig = px.scatter(df, x='episode', y='season', size='size', custom_data=custom_data,
+                         color='hilite', color_discrete_map=hilite_color_map, symbol='hilite')
+    else:
+        fig = px.scatter(df, x='episode', y='season', size='size', custom_data=custom_data)
+             
+    fig.update_traces(
+        hovertemplate="<br>".join([
+            "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b> %{customdata[3]}",
+            "Focal characters: %{customdata[4]}",
+            "Focal locations: %{customdata[5]}",
+            "'Contextual' genres: %{customdata[6]}",
+            "'Absolute' genres: %{customdata[7]}"
+        ])
+    )    
+
+    fig.update_yaxes(autorange="reversed")
+    
+    fig.update_layout(margin=dict(t=30, b=60), xaxis_range=(x_low, x_high), yaxis_range=(1, len(seasons)), legend_title_text=legend_title,
+                      yaxis=dict(tickmode='array', tickvals=seasons, ticktext=[f'Season {s}' for s in seasons]))
+
+    return fig
+
+
+def build_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_type: str, speaker_color_map: dict = None) -> go.Figure:
+    print(f'in build_speaker_topic_scatter show_key={show_key} topic_type={topic_type}')
 
     if not speaker_color_map:
         speakers = df['speaker'].unique()
-        speaker_color_map = fh.generate_speaker_color_discrete_map(show_key, speakers)
+        speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, speakers)
 
     shapes = []
 
     if topic_type == 'mbti':
-        topic_types = fm.mbti_types
-        df['ep_x'] = df['topic_key'].apply(fh.to_mbti_x)
-        df['ep_y'] = df['topic_key'].apply(fh.to_mbti_y)
+        topic_types = stsm.mbti_types
+        df['ep_x'] = df['topic_key'].apply(stsm.to_mbti_x)
+        df['ep_y'] = df['topic_key'].apply(stsm.to_mbti_y)
         title = "Myers-Briggs Temperaments"
         labels = {"ep_x": "←  personal                                            logical  →",
                   "ep_y": "←  present                                            possible  →"}
         high_x = high_y = 4
     elif topic_type == 'dnda':
-        topic_types = fm.dnda_types
-        df['ep_x'] = df['topic_key'].apply(fh.to_dnda_x)
-        df['ep_y'] = df['topic_key'].apply(fh.to_dnda_y)
+        topic_types = stsm.dnda_types
+        df['ep_x'] = df['topic_key'].apply(stsm.to_dnda_x)
+        df['ep_y'] = df['topic_key'].apply(stsm.to_dnda_y)
         title = "D & D Alignments"
         labels = {"ep_x": "←  evil                                                    good  →",
                   "ep_y": "←  chaotic                                               lawful  →"}
@@ -83,16 +146,16 @@ def build_episode_speaker_topic_scatter(show_key: str, df: pd.DataFrame, topic_t
         # NOTE Ick. When there's overflow of speakers mapped to a particular topic, things get messy
         # The topic_count and topic_i counters are off by 1, so the checks here are gross
         # Ultimately we df.drop any overflow speaker (current cut-off is 9) mapped to the same topic
-        if topic_count >= len(fm.topic_grid_coord_deltas):
-            topic_count = len(fm.topic_grid_coord_deltas) - 1
+        if topic_count >= len(stsm.topic_grid_coord_deltas):
+            topic_count = len(stsm.topic_grid_coord_deltas) - 1
         topic_i = topics_to_i[topic_key]
         # print(f'topic_key={topic_key} topics_to_counts[topic_key]={topics_to_counts[topic_key]} topic_count={topic_count} topic_i={topic_i}')
         if topic_i >= topic_count:
             # print(f"too many speakers mapped to topic_key={topic_key}, dropping row['speaker']={row['speaker']} from display")
             df.drop(index, inplace=True)
             continue
-        df.at[index, 'ep_x'] = row['ep_x'] + fm.topic_grid_coord_deltas[topic_count][topic_i][0]
-        df.at[index, 'ep_y'] = row['ep_y'] + fm.topic_grid_coord_deltas[topic_count][topic_i][1]
+        df.at[index, 'ep_x'] = row['ep_x'] + stsm.topic_grid_coord_deltas[topic_count][topic_i][0]
+        df.at[index, 'ep_y'] = row['ep_y'] + stsm.topic_grid_coord_deltas[topic_count][topic_i][1]
         topics_to_i[topic_key] += 1
         
     custom_data = ['speaker', 'rank', 'topic_key', 'score']
@@ -161,8 +224,8 @@ def build_speaker_chatter_scatter(df: pd.DataFrame, x_axis: str, y_axis: str) ->
 
 
 def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key: str, num_clusters: int) -> go.Figure:
-    fig_width = fm.fig_dims.MD11
-    fig_height = fm.fig_dims.hdef(fig_width)
+    # fig_width = fm.fig_dims.MD11
+    # fig_height = fm.fig_dims.hdef(fig_width)
     base_fig_title = f'{num_clusters} clusters for {show_key} visualized in 2D using t-SNE'
     custom_data = ['title', 'season', 'sequence_in_season', 'air_date', 'episode_key']
     # hover_data = {'title': True, 'season': True, 'sequence_in_season': True, 'air_date': True, 'episode_key': True}
@@ -181,10 +244,10 @@ def build_cluster_scatter(episode_embeddings_clusters_df: pd.DataFrame, show_key
     # init figure with core properties
     fig = px.scatter(episode_embeddings_clusters_df, x=x, y=y, 
                      color=episode_embeddings_clusters_df['cluster_color'],
-                     color_discrete_map=fm.color_map,
-                     title=base_fig_title, custom_data=custom_data,
+                     color_discrete_map=cm.color_map,
+                     title=base_fig_title, custom_data=custom_data, height=800)
                      # hover_name=episode_clusters_df.episode_key, hover_data=hover_data,
-                     height=fig_height, width=fig_width, opacity=0.7)
+                     # height=fig_height, width=fig_width, opacity=0.7
     
     # axis metadata
     fig.update_xaxes(title_text='x axis of t-SNE')

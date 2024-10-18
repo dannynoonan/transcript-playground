@@ -2,8 +2,8 @@ import dash_bootstrap_components as dbc
 from dash import dash_table, dcc, html
 import pandas as pd
 
-import app.fig_builder.fig_metadata as fm
-import app.utils as utils
+import app.fig_meta.color_meta as cm
+import app.page_builder_service.page_components as pc
 
 
 navbar = dbc.Card(className="text-white bg-primary", style={"z-index":"2000"}, children=[
@@ -40,7 +40,7 @@ def flatten_and_format_cluster_df(show_key: str, clusters_df: pd.DataFrame) -> p
         clusters_df['focal_speakers'] = clusters_df['focal_speakers'].apply(lambda x: ", ".join(x))
     if 'focal_locations' in clusters_df.columns:
         clusters_df['focal_locations'] = clusters_df['focal_locations'].apply(lambda x: ", ".join(x))
-    clusters_df['link'] = clusters_df.apply(lambda x: utils.wrap_title_in_url(show_key, x['episode_key']), axis=1)
+    clusters_df['link'] = clusters_df.apply(lambda x: pc.link_to_episode(show_key, x['episode_key'], x['title']), axis=1)
     clusters_df.sort_values(['cluster', 'season', 'sequence_in_season'], inplace=True)
 
     # rename columns for display
@@ -62,8 +62,8 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, num_groups: int) -> dash_table.DataTa
     for i in range(num_groups):
         sdc = {}
         sdc['if'] = dict(filter_query=f"{{cluster}} = {i}")
-        sdc['backgroundColor'] = fm.colors[i]
-        sdc['color'] = fm.text_colors[i]
+        sdc['backgroundColor'] = cm.colors[i % 10]
+        sdc['color'] = cm.text_colors[i % 10]
         style_data_conditional_list.append(sdc)
 
     dash_dt = dash_table.DataTable(

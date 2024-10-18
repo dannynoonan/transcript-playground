@@ -1,22 +1,10 @@
 from enum import Enum
-# from pydantic import BaseModel
 
 
 class ShowKey(str, Enum):
     TNG = "TNG"
     GoT = "GoT"
     Succession = "Succession"
-
-
-# class TranscriptType(str, Enum):
-#     Fanon = "Fanon"
-#     TOC = "TOC"
-#     Default = "Default"
-#     ALL = "ALL"
-
-
-# class Status(BaseModel):
-#     message: str
 
 
 show_metadata = {
@@ -63,18 +51,19 @@ show_metadata = {
             'PULASKI': {'color': 'RebeccaPurple'},
         },
         'recurring_cast': {
-            'OGAWA': {'color': 'Thistle'},
             'Q': {'color': 'DarkKhaki'},
-            'ALEXANDER': {'color': 'LightSalmon'}, 
-            'RO': {'color': 'DeepPink'},
-            'KEIKO': {'color': 'IndianRed'},
             'LWAXANA': {'color': 'Peru'},
+            'RO': {'color': 'DeepPink'},
             'BARCLAY': {'color': 'DodgerBlue'},
-            'LORE': {'color': 'Aquamarine'},
+            'ALEXANDER': {'color': 'LightSalmon'}, 
+            'VASH': {'color': 'DarkOrange'},
+            "K'EHLEYR": {'color': 'SlateBlue'},
+            'OGAWA': {'color': 'Thistle'},
+            'JELLICO': {'color': 'IndianRed'},
+            'MORIARTY': {'color': 'LawnGreen'},
             'GOWRON': {'color': 'DarkSeaGreen'},
-            'RAGER': {'color': 'LawnGreen'},
-            'FELTON': {'color': 'SlateBlue'},
-            'GATES': {'color': 'DarkOrange'},
+            'LEAH': {'color': 'Sienna'},
+            'LORE': {'color': 'Aquamarine'},
         },
     }
 }
@@ -83,93 +72,6 @@ EXTRA_SPEAKER_COLORS = ['PaleVioletRed', 'Tomato', 'Magenta', 'LightGreen', 'Ste
                         'BlueViolet', 'PaleGreen', 'Aqua', 'RosyBrown', 'FireBrick', 'Indigo', 'Olive', 'DeepSkyBlue', 'Maroon',
                         'PeachPuff', 'Orchid', 'ForestGreen', 'LightBlue', 'Tan', 'Violet', 'Orange', 'Purple', 'Chocolate',
                         'OrangeRed', 'PapayaWhip', 'DarkSlateBlue', 'MediumSeaGreen', 'DarkOliveGreen', 'PowderBlue', 'Sienna']
-
-TOPIC_COLORS = {
-    'Action': 'DarkGoldenrod',
-    'Comedy': 'Crimson',
-    'Horror': 'MediumSeaGreen',
-    'Drama': 'Fuchsia',
-    'SciFi': 'DeepSkyBlue',
-    'Fantasy': 'Orange',
-    'Thriller': 'MediumBlue',
-    'Crime': 'Maroon',
-    'War': 'Turquoise',
-    'Musical': 'SlateBlue',
-    'Romance': 'Coral',
-    'Western': 'Burlywood',
-    'Historical': 'LightSlateGray',
-    'Sports': 'SpringGreen',
-}
-
-
-# TODO needs to be an algorithm
-BGCOLORS_TO_TEXT_COLORS = {
-    'DarkGoldenrod': 'Black',
-    'Crimson': 'White',
-    'MediumSeaGreen': 'Black',
-    'Fuchsia': 'White',
-    'DeepSkyBlue': 'Black',
-    'Orange': 'Black',
-    'MediumBlue': 'White',
-    'Maroon': 'White',
-    'Turquoise': 'Black',
-    'SlateBlue': 'White',
-    'Coral': 'Black',
-    'Burlywood': 'Black',
-    'LightSlateGray': 'Black',
-    'SpringGreen': 'White',
-    'CornflowerBlue': 'Black',
-    'Chartreuse': 'Black',
-    'Cyan': 'Black',
-    'CadetBlue': 'Black',
-    'DarkCyan': 'White',
-    'Cornsilk': 'Black', 
-    'MediumVioletRed': 'White',
-    'MediumSlateBlue': 'White',
-    'RebeccaPurple': 'White',
-    'Thistle': 'Black',
-    'DarkKhaki': 'White', 
-    'LightSalmon': 'Black',
-    'DeepPink': 'White',
-    'IndianRed': 'Black',
-    'Peru': 'Black',
-    'DodgerBlue': 'Black',
-    'Aquamarine': 'Black',
-    'DarkSeaGreen': 'White',
-    'LawnGreen': 'Black', 
-    'DarkOrange': 'White',
-    'PaleVioletRed': 'Black', 
-    'Tomato': 'Black', 
-    'Magenta': 'Black', 
-    'LightGreen': 'Black', 
-    'SteelBlue': 'White', 
-    'Bisque': 'Black', 
-    'LightCoral': 'Black', 
-    'HotPink': 'Black', 
-    'Gold': 'Black',
-    'BlueViolet': 'White', 
-    'PaleGreen': 'Black', 
-    'Aqua': 'Black', 
-    'RosyBrown': 'Black', 
-    'FireBrick': 'Black', 
-    'Indigo': 'White', 
-    'Olive': 'Black', 
-    'PeachPuff': 'Black',
-    'Orchid': 'White', 
-    'ForestGreen': 'White', 
-    'LightBlue': 'Black', 
-    'Tan': 'Black', 
-    'Violet': 'White', 
-    'Purple': 'White', 
-    'Chocolate': 'White',
-    'OrangeRed': 'White', 
-    'PapayaWhip': 'Black', 
-    'DarkSlateBlue': 'White', 
-    'DarkOliveGreen': 'White', 
-    'PowderBlue': 'Black', 
-    'Sienna': 'Black',
-    'Red': 'White'
-}
 
 
 WIKIPEDIA_DOMAIN = 'https://en.wikipedia.org/wiki/'
