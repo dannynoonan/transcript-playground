@@ -27,7 +27,8 @@ from app import utils
     Output('episode-word-count', 'children'),
     Output('episode-focal-speakers', 'children'),
     Output('episode-topics', 'children'),
-    Output('episode-speakers', 'options'),
+    Output('episode-speakers', 'data'),
+    Output('episode-speaker-options', 'options'),
     Output('episode-wordcloud-img', 'src'),
     Output('speaker-color-map', 'data'),
     Input('show-key', 'data'),
@@ -72,14 +73,19 @@ def render_episode_summary(show_key: str, episode_key: str):
         word_count = ''
 
     # speakers in episode, for sentiment timeline pulldown
-    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
-    speakers_for_episode = speakers_for_episode_response['speaker_episodes']
-    episode_speakers = ['ALL'] + [s['speaker'] for s in speakers_for_episode]
-    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, [s['speaker'] for s in speakers_for_episode])
+    # speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+    # speakers_for_episode = speakers_for_episode_response['speaker_episodes']
+    # episode_speakers = ['ALL'] + [s['speaker'] for s in speakers_for_episode]
+
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti,topics_dnda')
+    episode_speakers = speakers_for_episode_response['speaker_episodes']
+    episode_speaker_options = ['ALL'] + [s['speaker'] for s in episode_speakers]
+
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, [s['speaker'] for s in episode_speakers])
 
     wordcloud_img = f"/static/wordclouds/{show_key}/{show_key}_{episode_key}.png"
 
-    return title_summary, scene_count, line_count, word_count, focal_speakers, parent_topics_tfidf, episode_speakers, wordcloud_img, speaker_color_map
+    return title_summary, scene_count, line_count, word_count, focal_speakers, parent_topics_tfidf, episode_speakers, episode_speaker_options, wordcloud_img, speaker_color_map
 
 
 ############ episode gantt callbacks
@@ -88,17 +94,17 @@ def render_episode_summary(show_key: str, episode_key: str):
     Output('episode-location-timeline', 'figure'),
     Input('show-key', 'data'),
     Input('episode-key', 'value'),
-    Input('show-layers', 'value'),
+    Input('display-timeline-layers', 'value'),
     Input('speaker-color-map', 'data')
 )    
-def render_episode_gantts(show_key: str, episode_key: str, show_layers: list, speaker_color_map: dict):
-    print(f'in render_episode_gantts, show_key={show_key} episode_key={episode_key}')
+def render_episode_gantts(show_key: str, episode_key: str, display_layers: list, speaker_color_map: dict):
+    print(f'in render_episode_gantts, show_key={show_key} episode_key={episode_key} display_layers={display_layers}')
 
     # generate timeline data
     response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
 
     interval_data = None
-    if 'scene_locations' in show_layers:
+    if 'scene_locations' in display_layers:
         interval_data = response['location_timeline']
 
     # build episode gantt charts
@@ -177,9 +183,9 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     Input('episode-key', 'value'),
     Input('freeze-on', 'value'),
     Input('emotion', 'value'),
-    Input('episode-speakers', 'value')
+    Input('episode-speaker-options', 'value')
 )    
-def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, freeze_on: str, emotion: str, speaker: str):
+def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_on: str, emotion: str, speaker: str):
     print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
 
    # fetch episode sentiment data and build line chart
@@ -231,8 +237,8 @@ def render_episode_sentiment_line_chart_new(show_key: str, episode_key: str, fre
     Input('scale-by', 'value'),
     Input('speaker-color-map', 'data')
 )    
-def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_by: str, speaker_color_map: dict):
-    print(f'in render_speaker_3d_network_graph_new, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
+def render_speaker_3d_network_graph(show_key: str, episode_key: str, scale_by: str, speaker_color_map: dict):
+    print(f'in render_speaker_3d_network_graph, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
     # generate speaker relations data and build 3d network graph
     speaker_relations_data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
@@ -262,17 +268,18 @@ def render_speaker_3d_network_graph_new(show_key: str, episode_key: str, scale_b
     Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('scale-by', 'value'),
+    Input('episode-speakers', 'data'),
     Input('speaker-color-map', 'data')
 )    
-def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scale_by: str, speaker_color_map: dict):
-    print(f'in render_speaker_frequency_bar_chart_new, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
+def render_speaker_frequency_bar_chart(show_key: str, episode_key: str, scale_by: str, episode_speakers: list, speaker_color_map: dict):
+    print(f'in render_speaker_frequency_bar_chart, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
-    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti')
-    speakers_for_episode = speakers_for_episode_response['speaker_episodes']
-    speakers_for_episode = fflat.flatten_speaker_topics(speakers_for_episode, 'mbti', 3)
-    episode_speaker_names = [s['speaker'] for s in speakers_for_episode]
+    # speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti')
+    # speakers_for_episode = speakers_for_episode_response['speaker_episodes']
+    episode_speakers = fflat.flatten_speaker_topics(episode_speakers, 'mbti', 3)
+    episode_speaker_names = [s['speaker'] for s in episode_speakers]
 
-    df = pd.DataFrame(speakers_for_episode, columns=['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count', 'topics_mbti'])
+    df = pd.DataFrame(episode_speakers, columns=['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count', 'topics_mbti'])
 
     # TODO incorporate episode-level sentiment into es writer workflow; for now it's a quick lookup in episode-level dfs
     emo_limit = 3
@@ -316,13 +323,12 @@ def render_speaker_frequency_bar_chart_new(show_key: str, episode_key: str, scal
     Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('mlt-type', 'value'),
-    Input('show-similar-episodes-dt', 'value')
+    Input('display-similar-episodes-dt', 'value'),
+    Input('all-simple-episodes', 'data'),
+    Input('all-seasons', 'data')
 )    
-def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type: str, show_dt: list):
-    print(f'in render_episode_similarity_scatter, show_key={show_key} episode_key={episode_key} mlt_type={mlt_type} show_dt={show_dt}')
-
-    season_response = esr.list_seasons(ShowKey(show_key))
-    seasons = season_response['seasons']
+def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type: str, display_dt: list, all_simple_episodes: list, all_seasons: list):
+    print(f'in render_episode_similarity_scatter, show_key={show_key} episode_key={episode_key} mlt_type={mlt_type} display_dt={display_dt}')
 
     if mlt_type == 'tfidf':
         mlt_response = esr.more_like_this(ShowKey(show_key), episode_key)
@@ -333,8 +339,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
         mlt_response = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key)
         mlt_matches = mlt_response['matches'][:30]
         
-    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
-    df = eps.generate_similar_episodes_df(mlt_matches, simple_episodes_response['episodes'], episode_key, mlt_type)
+    df = eps.generate_similar_episodes_df(mlt_matches, all_simple_episodes, episode_key, mlt_type)
 
     # TODO would be great to extract these into a metadata constant like EPISODE_CORE_FIELDS (then add score, rank, & symbol)
     cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'score', 'rank', 'rev_rank', 'focal_speakers', 'focal_locations', 
@@ -346,9 +351,9 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     # Symbol groupings are relevant, but the actual symbol values are ignored (those 2 words could be anything and result would be the same)
     df.sort_values('rev_rank', inplace=True)
 
-    episode_similarity_scatter = pscat.build_episode_similarity_scatter(df, seasons)
+    episode_similarity_scatter = pscat.build_episode_similarity_scatter(df, all_seasons)
 
-    if 'yes' in show_dt:
+    if 'yes' in display_dt:
         episode_similarity_dt = eps.generate_episode_similarity_dt(show_key, df)
     else: 
         episode_similarity_dt = {}
@@ -366,19 +371,14 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     Input('episode-key', 'value'),
     Input('episode-mbti-count', 'value'),
     Input('episode-dnda-count', 'value'),
+    Input('episode-speakers', 'data'),
     Input('speaker-color-map', 'data')
 )    
-def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_count: int, dnda_count: int, speaker_color_map: dict):
+def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_count: int, dnda_count: int, episode_speakers: list, speaker_color_map: dict):
     print(f'in render_episode_speaker_topic_scatter, show_key={show_key} episode_key={episode_key} mbti_count={mbti_count} dnda_count={dnda_count}')
 
-    # fetch episode speakers
-    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti,topics_dnda')
-    episode_speakers = speakers_for_episode_response['speaker_episodes']
     episode_speaker_names = [s['speaker'] for s in episode_speakers]
     
-    # fetched series-level indexed version of episode speakers
-    # indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(episode_speaker_names))
-
     # NOTE ended up not using this data downstream
     # mbti_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:meyersBriggsKiersey')
     # dnda_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:dndAlignments')

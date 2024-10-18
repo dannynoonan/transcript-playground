@@ -26,13 +26,15 @@ def layout(show_key: str, episode_key: str) -> html.Div:
     all_seasons_response = esr.list_seasons(ShowKey(show_key))
     all_seasons = all_seasons_response['seasons']
 
-    # all series episodes into dropdown 
-    episode_dropdown_options = eps.generate_episode_dropdown_options(show_key)
+    # all_simple_episodes, episode_dropdown_options 
+    all_simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+    all_simple_episodes = all_simple_episodes_response['episodes']
+    episode_dropdown_options = eps.generate_episode_dropdown_options(show_key, all_simple_episodes)
 
-    # speaker color map - NOTE this is redundant of `render_episode_summary` callback, which also populates `speaker_color_map`
-    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
-    speakers_for_episode = speakers_for_episode_response['speaker_episodes']
-    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, [s['speaker'] for s in speakers_for_episode])
+    # episode_speakers, speaker_color_map
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti,topics_dnda')
+    episode_speakers = speakers_for_episode_response['speaker_episodes']
+    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, [s['speaker'] for s in episode_speakers])
 
     # emotions
     emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
@@ -47,8 +49,11 @@ def layout(show_key: str, episode_key: str) -> html.Div:
 
     content = html.Div([
         # page storage
-        dcc.Store(id='speaker-color-map', data=speaker_color_map),
         dcc.Store(id='show-key', data=show_key),
+        dcc.Store(id='all-simple-episodes', data=all_simple_episodes),
+        dcc.Store(id='all-seasons', data=all_seasons),
+        dcc.Store(id='episode-speakers', data=episode_speakers),
+        dcc.Store(id='speaker-color-map', data=speaker_color_map),
 
         # page display
         navbar,
@@ -96,7 +101,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                                 dbc.Row([
                                     dbc.Col(md=2, style={'textAlign': 'center'}, children=[
                                         dcc.Checklist(
-                                            id="show-layers",
+                                            id="display-timeline-layers",
                                             # className="text-white", 
                                             options=[
                                                 {'label': 'Show scenes / locations', 'value': 'scene_locations'}
@@ -121,7 +126,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                                     ]),
                                     dbc.Col(md=2, children=[
                                         html.Div([
-                                            "Character ", dcc.Dropdown(id="episode-speakers")
+                                            "Character ", dcc.Dropdown(id="episode-speaker-options")
                                         ]),
                                     ]),
                                     dbc.Col(md=2, children=[
@@ -212,7 +217,7 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                             ),
                             # TODO align with right side of episode-similarity-scatter
                             dcc.Checklist(
-                                id="show-similar-episodes-dt",
+                                id="display-similar-episodes-dt",
                                 options=[
                                     {'label': 'Display as table listing', 'value': 'yes'}
                                 ],

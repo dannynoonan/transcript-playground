@@ -1,15 +1,11 @@
 from dash import dash_table
 import pandas as pd
 
-import app.es.es_read_router as esr
 import app.fig_meta.color_meta as cm
 import app.page_builder_service.page_components as pc
-from app.show_metadata import ShowKey
 
 
-def generate_episode_dropdown_options(show_key: str) -> list:
-    all_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
-    all_episodes = all_episodes_response['episodes']
+def generate_episode_dropdown_options(show_key: str, all_episodes: list) -> list:
     episode_dropdown_options = []
     for episode in all_episodes:
         label = f"{episode['title']} (S{episode['season']}:E{episode['sequence_in_season']})"

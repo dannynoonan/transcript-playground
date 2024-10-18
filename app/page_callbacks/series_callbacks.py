@@ -84,14 +84,14 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color
 @callback(
     Output('series-speakers-gantt', 'figure'),
     Input('show-key', 'data'),
+    Input('simple-episodes-by-season', 'data'),
     background=True
 )    
-def render_series_speakers_gantt(show_key: str):
+def render_series_speakers_gantt(show_key: str, simple_episodes_by_season: dict):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_speakers_gantt ts={callback_start_ts} show_key={show_key}')
 
-    episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
-    season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
+    season_interval_data = gh.simple_season_episode_i_map(simple_episodes_by_season)
 
     file_path = f'./app/data/{show_key}/speaker_gantt_sequence_{show_key}.csv'
     if os.path.isfile(file_path):
@@ -119,14 +119,14 @@ def render_series_speakers_gantt(show_key: str):
 @callback(
     Output('series-locations-gantt', 'figure'),
     Input('show-key', 'data'),
+    Input('simple-episodes-by-season', 'data'),
     background=True
 )    
-def render_series_locations_gantt(show_key: str):
+def render_series_locations_gantt(show_key: str, simple_episodes_by_season: dict):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_locations_gantt ts={callback_start_ts} show_key={show_key}')
 
-    episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
-    season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
+    season_interval_data = gh.simple_season_episode_i_map(simple_episodes_by_season)
 
     file_path = f'./app/data/{show_key}/location_gantt_sequence_{show_key}.csv'
     if os.path.isfile(file_path):
@@ -155,14 +155,14 @@ def render_series_locations_gantt(show_key: str):
     Output('series-topics-gantt', 'figure'),
     Input('show-key', 'data'),
     Input('series-topics-gantt-score-type', 'value'),
+    Input('simple-episodes-by-season', 'data'),
     background=True
 )    
-def render_series_topics_gantt(show_key: str, score_type: str):
+def render_series_topics_gantt(show_key: str, score_type: str, simple_episodes_by_season: dict):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_topics_gantt ts={callback_start_ts} show_key={show_key}')
 
-    episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
-    season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
+    season_interval_data = gh.simple_season_episode_i_map(simple_episodes_by_season)
 
     topic_grouping = 'universalGenres'
     topic_threshold = 20
@@ -195,14 +195,14 @@ def render_series_topics_gantt(show_key: str, score_type: str):
     Output('series-search-results-gantt-new', 'figure'),
     Output('series-search-results-dt', 'children'),
     Input('show-key', 'data'),
-    Input('series-search-qt', 'value')
+    Input('series-search-qt', 'value'),
+    Input('simple-episodes-by-season', 'data'),
 )    
-def render_series_search_gantt(show_key: str, qt: str):
+def render_series_search_gantt(show_key: str, qt: str, simple_episodes_by_season: dict):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_search_gantt ts={callback_start_ts} show_key={show_key} series_dialog_qt={qt}')
 
-    episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
-    season_interval_data = gh.simple_season_episode_i_map(episodes_by_season_response['episodes_by_season'])
+    season_interval_data = gh.simple_season_episode_i_map(simple_episodes_by_season)
 
     # TODO fetch from file, but file has to have all speaker data
     # file_path = f'./app/data/speaker_gantt_sequence_{show_key}.csv'
@@ -324,15 +324,15 @@ def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str
 @callback(
     Output('series-topic-episodes-dt', 'children'),
     Input('show-key', 'data'),
-    Input('show-series-topic-episodes-dt-for-topic', 'value'),
+    Input('display-episodes-dt-for-topic', 'value'),
     Input('series-topic-pie-topic-grouping', 'value'),
     Input('series-topic-pie-score-type', 'value')
 )    
-def render_series_topic_episodes_dt(show_key: str, show_dt_for_parent_topic: str, topic_grouping: str, score_type: str):
+def render_series_topic_episodes_dt(show_key: str, display_dt_for_topic: str, topic_grouping: str, score_type: str):
     callback_start_ts = dt.now()
-    utils.hilite_in_logs(f'callback invoked: render_series_topic_episodes_dt ts={callback_start_ts} show_key={show_key} show_dt_for_parent_topic={show_dt_for_parent_topic} topic_grouping={topic_grouping} score_type={score_type}')
+    utils.hilite_in_logs(f'callback invoked: render_series_topic_episodes_dt ts={callback_start_ts} show_key={show_key} display_dt_for_topic={display_dt_for_topic} topic_grouping={topic_grouping} score_type={score_type}')
 
-    if not show_dt_for_parent_topic:
+    if not display_dt_for_topic:
         return {}
     
     # configurable score threshold
@@ -345,11 +345,11 @@ def render_series_topic_episodes_dt(show_key: str, show_dt_for_parent_topic: str
         # only process topics that have parents (ignore the parents themselves)
         if not t['parent_key']:
             continue
-        if show_dt_for_parent_topic == t['topic_key'].split('.')[0]:
+        if display_dt_for_topic == t['topic_key'].split('.')[0]:
             child_topics.append(t['topic_key'])
 
     if not child_topics:
-        child_topics = [show_dt_for_parent_topic]
+        child_topics = [display_dt_for_topic]
 
     columns = ['topic_key', 'parent_topic', 'episode_key', 'episode_title', 'season', 'sequence_in_season', 'air_date', 'score', 'tfidf_score']
     topic_episodes_df = pd.DataFrame(columns=columns)
@@ -357,12 +357,12 @@ def render_series_topic_episodes_dt(show_key: str, show_dt_for_parent_topic: str
     for topic in child_topics:
         episodes_by_topic = esr.find_episodes_by_topic(ShowKey(show_key), topic_grouping, topic)
         df = pd.DataFrame(episodes_by_topic['episode_topics'])
-        df['parent_topic'] = show_dt_for_parent_topic
+        df['parent_topic'] = display_dt_for_topic
         df = df[columns]
         df = df[(df['score'] > min_score) | (df['tfidf_score'] > min_score)]
         topic_episodes_df = pd.concat([topic_episodes_df, df])
 
-    series_topic_episodes_dt = sps.generate_series_topic_episodes_dt(show_key, topic_episodes_df, show_dt_for_parent_topic, score_type)
+    series_topic_episodes_dt = sps.generate_series_topic_episodes_dt(show_key, topic_episodes_df, display_dt_for_topic, score_type)
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
@@ -377,13 +377,13 @@ def render_series_topic_episodes_dt(show_key: str, show_dt_for_parent_topic: str
     Output('series-episodes-cluster-dt', 'children'),
     Input('show-key', 'data'),
     Input('num-clusters', 'value'),
-    Input('show-series-episodes-cluster-dt', 'value'),
+    Input('display-series-episodes-cluster-dt', 'value'),
     Input('all-simple-episodes', 'data')
     # background=True
 )
-def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: list, all_simple_episodes: list):
+def render_series_cluster_scatter(show_key: str, num_clusters: int, display_dt: list, all_simple_episodes: list):
     callback_start_ts = dt.now()
-    utils.hilite_in_logs(f'callback invoked: render_series_cluster_scatter ts={callback_start_ts} show_key={show_key} num_clusters={num_clusters} show_dt={show_dt}')
+    utils.hilite_in_logs(f'callback invoked: render_series_cluster_scatter ts={callback_start_ts} show_key={show_key} num_clusters={num_clusters} display_dt={display_dt}')
 
     num_clusters = int(num_clusters)
     vector_field = 'openai_ada002_embeddings'
@@ -406,7 +406,7 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: lis
     # generate scatterplot
     episode_clusters_scatter = pscat.build_cluster_scatter(episode_embeddings_clusters_df, show_key, num_clusters)
 
-    if 'yes' in show_dt:
+    if 'yes' in display_dt:
         episode_clusters_dt = sps.generate_series_clusters_dt(show_key, episode_embeddings_clusters_df)
     else:
         episode_clusters_dt = {}
@@ -421,16 +421,13 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int, show_dt: lis
 ############ series speaker listing callback
 @callback(
     Output('series-speaker-listing-dt', 'children'),
-    Input('show-key', 'data')
+    Input('show-key', 'data'),
+    Input('indexed-speakers', 'data')
 )
-def render_series_speaker_listing_dt(show_key: str):
+def render_series_speaker_listing_dt(show_key: str, indexed_speakers: list):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_speaker_listing_dt ts={callback_start_ts} show_key={show_key}')
 
-    series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
-
-    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), speakers=','.join(series_speaker_names), extra_fields='topics_mbti')
-    indexed_speakers = indexed_speakers_response['speakers']
     indexed_speakers = fflat.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
     indexed_speakers = fflat.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
     
@@ -454,16 +451,14 @@ def render_series_speaker_listing_dt(show_key: str):
     Input('show-key', 'data'),
     Input('series-mbti-count', 'value'),
     Input('series-dnda-count', 'value'),
+    Input('indexed-speakers', 'data'),
     Input('speaker-color-map', 'data')
 )    
-def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_count: int, speaker_color_map: dict):
+def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_count: int, indexed_speakers: list, speaker_color_map: dict):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_speaker_topic_scatter ts={callback_start_ts} show_key={show_key} mbti_count={mbti_count} dnda_count={dnda_count}')
 
-    series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
-    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(series_speaker_names))
-    indexed_speakers = indexed_speakers_response['speakers']
-    # indexed_speakers = fh.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
+    speaker_names = [s['speaker'] for s in indexed_speakers]
 
     # flatten episode speaker topic data for each episode speaker
     exploded_speakers_mbti = fflat.explode_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=mbti_count)
@@ -476,9 +471,9 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     # build dash datatable
     display_cols = ['speaker', 'topic_key', 'topic_name', 'score']
     numeric_precision_overrides = {'score': 2}
-    series_speaker_mbti_dt = pc.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', series_speaker_names, speaker_color_map, 
+    series_speaker_mbti_dt = pc.pandas_df_to_dash_dt(mbti_df, display_cols, 'speaker', speaker_names, speaker_color_map, 
                                                      numeric_precision_overrides=numeric_precision_overrides)
-    series_speaker_dnda_dt = pc.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', series_speaker_names, speaker_color_map,
+    series_speaker_dnda_dt = pc.pandas_df_to_dash_dt(dnda_df, display_cols, 'speaker', speaker_names, speaker_color_map,
                                                      numeric_precision_overrides=numeric_precision_overrides)
 
     callback_end_ts = dt.now()
