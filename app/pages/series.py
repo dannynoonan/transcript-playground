@@ -50,6 +50,7 @@ def layout(show_key: str) -> html.Div:
 
     # define content div
     content = html.Div([
+        dcc.Store(id='speaker-color-map', data=speaker_color_map),
         navbar,
         dbc.Card(className="bg-dark", children=[
 

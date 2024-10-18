@@ -41,17 +41,17 @@ def render_series_summary(show_key: str, expanded_season: str):
     Output('series-episodes-scatter-grid', 'figure'),
     Input('show-key', 'value'),
     Input('scatter-grid-hilite', 'value'),
+    Input('speaker-color-map', 'data'),
     background=True
 )    
-def render_all_series_episodes_scatter(show_key: str, hilite: str):
+def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color_map: dict):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_all_series_episodes_scatter ts={callback_start_ts} show_key={show_key} hilite={hilite}')
 
     if hilite in ['topics_universal', 'topics_universal_tfidf']:
         hilite_color_map = cm.TOPIC_COLORS
     elif hilite == 'focal_speakers':
-        speakers = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
-        hilite_color_map = cm.generate_speaker_color_discrete_map(show_key, speakers)
+        hilite_color_map = speaker_color_map
     elif hilite == 'focal_locations':
         scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key))
         scenes_by_location = scenes_by_location_response['scenes_by_location']
@@ -460,9 +460,10 @@ def render_series_speaker_listing_dt(show_key: str):
     Output('series-speaker-dnda-dt', 'children'),
     Input('show-key', 'value'),
     Input('series-mbti-count', 'value'),
-    Input('series-dnda-count', 'value')
+    Input('series-dnda-count', 'value'),
+    Input('speaker-color-map', 'data')
 )    
-def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_count: int):
+def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_count: int, speaker_color_map: dict):
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_speaker_topic_scatter ts={callback_start_ts} show_key={show_key} mbti_count={mbti_count} dnda_count={dnda_count}')
 
@@ -470,8 +471,6 @@ def render_series_speaker_topic_scatter(show_key: str, mbti_count: int, dnda_cou
     indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(series_speaker_names))
     indexed_speakers = indexed_speakers_response['speakers']
     # indexed_speakers = fh.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
-
-    speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, series_speaker_names)
 
     # flatten episode speaker topic data for each episode speaker
     exploded_speakers_mbti = fflat.explode_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=mbti_count)

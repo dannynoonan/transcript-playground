@@ -238,7 +238,7 @@ def generate_series_topic_episodes_dt(show_key: str, topic_episodes_df: pd.DataF
     topic_episodes_df.sort_values(score_type, ascending=False, inplace=True)
 
     # define inputs for df->dt conversion
-    display_columns = ['topic_key', 'episode_title', 'season', 'episode', 'air_date', 'score', 'tfidf_score']
+    display_columns = ['parent_topic', 'topic_key', 'episode_title', 'season', 'episode', 'air_date', 'score', 'tfidf_score']
     series_topic_episodes_dt = pc.pandas_df_to_dash_dt(topic_episodes_df, display_columns, 'parent_topic', [parent_topic], cm.TOPIC_COLORS,
                                                        numeric_precision_overrides={'score': 2, 'tfidf_score': 2}, md_cols=['episode_title'])
     
