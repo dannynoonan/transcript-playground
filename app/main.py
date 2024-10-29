@@ -40,15 +40,14 @@ app.mount('/dash_pages', WSGIMiddleware(dash_pages_app.server))
 #     return templates.TemplateResponse('episode.html', {'request': request, 'show_key': show_key, 'episode_key': episode_key})
 
 
-# TODO temp commented during docker compose defibrillation
-# register_tortoise(
-#     app,
-#     # db_url="sqlite://db.sqlite3",
-#     db_url=DATABASE_URL,
-#     modules={"models": ["app.models"]},
-#     generate_schemas=True,
-#     add_exception_handlers=True,
-# )
+register_tortoise(
+    app,
+    # db_url="sqlite://db.sqlite3",
+    db_url=DATABASE_URL,
+    modules={"models": ["app.models"]},
+    generate_schemas=True,
+    add_exception_handlers=True,
+)
 
 # I used to think this duplicated the `register_tortoise` functionality and have never understood how/why
 # async def init():
@@ -63,9 +62,8 @@ app.mount('/dash_pages', WSGIMiddleware(dash_pages_app.server))
 #     await Tortoise.generate_schemas()
 
 
-# TODO temp commented during docker compose defibrillation
-# # TODO pretty sure this can be removed
-# Tortoise.init_models(["app.models"], "models")
+# TODO pretty sure this can be removed
+Tortoise.init_models(["app.models"], "models")
 
 
 @app.get("/", tags=['Admin'])

@@ -1,5 +1,5 @@
 volumes:
-  postgres_data:
+  pgdata1028:
     driver: local
   certs:
     driver: local
@@ -73,25 +73,25 @@ services:
       retries: 120
 
 
-  # pg1028:
-  #   container_name: container-pg1028
-  #   image: postgres:15-alpine
-  #   restart: always
-  #   ports:
-  #     - "${PG_PORT}:${PG_PORT}"
-  #   volumes:
-  #     - postgres_data:/var/lib/postgresql/data/
-  #   expose:
-  #     - ${PG_PORT}
-  #   command: postgres -c port=${PG_PORT}
-  #   environment:
-  #     POSTGRES_USER: ${PG_USER}
-  #     POSTGRES_PASSWORD: ${PG_PASSWORD}
-  #     POSTGRES_DB: ${PG_DB_NAME}
-  #   command:
-  #     - "postgres"
-  #     - "-c"
-  #     - "listen_addresses=*"
+  pg1028:
+    container_name: container-pg1028
+    image: postgres:15-alpine
+    restart: always
+    ports:
+      - "${PG_PORT}:${PG_PORT}"
+    volumes:
+      - pgdata1028:/var/lib/postgresql/data/
+    expose:
+      - ${PG_PORT}
+    command: postgres -c port=${PG_PORT}
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DB_NAME}
+    # command:
+    #   - "postgres"
+    #   - "-c"
+    #   - "listen_addresses=*"
 
 
   es1028:
@@ -185,5 +185,5 @@ services:
     environment:
       DATABASE_URL: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DB_NAME}
     depends_on:
-      # - pg1028
+      - pg1028
       - es1028
