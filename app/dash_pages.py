@@ -1,21 +1,21 @@
 import dash
 from dash import html, Dash, DiskcacheManager
 import dash_bootstrap_components as dbc
-import diskcache
-from uuid import uuid4
+# import diskcache
+# from uuid import uuid4
 
 
 # https://dash.plotly.com/background-callback-caching recommends for local dev only, but may work for prod MVP
-launch_uuid = uuid4()
-cache = diskcache.Cache("./cache")
-background_callback_manager = DiskcacheManager(
-    cache, cache_by=[lambda: launch_uuid], expire=60
-)
+# launch_uuid = uuid4()
+# cache = diskcache.Cache("./cache")
+# background_callback_manager = DiskcacheManager(
+#     cache, cache_by=[lambda: launch_uuid], expire=60
+# )
 
 
 dash_pages_app = Dash(__name__,
                       use_pages=True,
-                      background_callback_manager=background_callback_manager,
+                    #   background_callback_manager=background_callback_manager,
                       external_stylesheets=[dbc.themes.SOLAR],
                       requests_pathname_prefix='/dash_pages/')
 

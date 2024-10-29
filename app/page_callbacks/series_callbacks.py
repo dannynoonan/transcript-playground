@@ -44,7 +44,7 @@ def render_series_summary(show_key: str, expanded_season: str):
     Input('speaker-color-map', 'data'),
     Input('all-simple-episodes', 'data'),
     Input('all-seasons', 'data'),
-    background=True
+    # background=True
 )    
 def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color_map: dict, all_simple_episodes: list, all_seasons: list):
     callback_start_ts = dt.now()
@@ -85,7 +85,7 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color
     Output('series-speakers-gantt', 'figure'),
     Input('show-key', 'data'),
     Input('simple-episodes-by-season', 'data'),
-    background=True
+    # background=True
 )    
 def render_series_speakers_gantt(show_key: str, simple_episodes_by_season: dict):
     callback_start_ts = dt.now()
@@ -120,7 +120,7 @@ def render_series_speakers_gantt(show_key: str, simple_episodes_by_season: dict)
     Output('series-locations-gantt', 'figure'),
     Input('show-key', 'data'),
     Input('simple-episodes-by-season', 'data'),
-    background=True
+    # background=True
 )    
 def render_series_locations_gantt(show_key: str, simple_episodes_by_season: dict):
     callback_start_ts = dt.now()
@@ -156,7 +156,7 @@ def render_series_locations_gantt(show_key: str, simple_episodes_by_season: dict
     Input('show-key', 'data'),
     Input('series-topics-gantt-score-type', 'value'),
     Input('simple-episodes-by-season', 'data'),
-    background=True
+    # background=True
 )    
 def render_series_topics_gantt(show_key: str, score_type: str, simple_episodes_by_season: dict):
     callback_start_ts = dt.now()
@@ -294,7 +294,7 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
     Input('series-topic-pie-topic-grouping', 'value'),
     Input('series-topic-pie-score-type', 'value'),
     Input('all-simple-episodes', 'data'),
-    background=True
+    # background=True
 )    
 def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str, all_simple_episodes: str):
     callback_start_ts = dt.now()

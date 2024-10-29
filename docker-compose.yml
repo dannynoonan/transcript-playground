@@ -1,8 +1,23 @@
-version: '3.8'
+volumes:
+  postgres_data:
+    driver: local
+  certs:
+    driver: local
+  esdata1028:
+    driver: local
+  kibanadata:
+    driver: local
+    
+    
+networks:
+ default:
+   name: esnet1028
+   external: false
+
 
 services:
   setup:
-    container_name: setupTrp
+    container_name: container-setup
     image: docker.elastic.co/elasticsearch/elasticsearch:${ES_STACK_VERSION}
     volumes:
       - certs:/usr/share/elasticsearch/config/certs
@@ -31,6 +46,12 @@ services:
           "      - localhost\n"\
           "    ip:\n"\
           "      - 127.0.0.1\n"\
+          "  - name: ${KB_HOST}\n"\
+          "    dns:\n"\
+          "      - ${KB_HOST}\n"\
+          "      - localhost\n"\
+          "    ip:\n"\
+          "      - 127.0.0.1\n"\
           > config/certs/instances.yml;
           bin/elasticsearch-certutil cert --silent --pem -out config/certs/certs.zip --in config/certs/instances.yml --ca-cert config/certs/ca/ca.crt --ca-key config/certs/ca/ca.key;
           unzip config/certs/certs.zip -d config/certs;
@@ -40,9 +61,9 @@ services:
         find . -type d -exec chmod 750 \{\} \;;
         find . -type f -exec chmod 640 \{\} \;;
         echo "Waiting for Elasticsearch availability";
-        until curl -s --cacert config/certs/ca/ca.crt https://${ES_HOST}:${ES_PORT} | grep -q "missing authentication credentials"; do sleep 30; done;
+        until curl -s --cacert config/certs/ca/ca.crt https://${ES_HOST}:9200 | grep -q "missing authentication credentials"; do sleep 30; done;
         echo "Setting kibana_system password";
-        until curl -s -X POST --cacert config/certs/ca/ca.crt -u "elastic:${ES_PASSWORD}" -H "Content-Type: application/json" https://${ES_HOST}:${ES_PORT}/_security/user/kibana_system/_password -d "{\"password\":\"${KB_PASSWORD}\"}" | grep -q "^{}"; do sleep 10; done;
+        until curl -s -X POST --cacert config/certs/ca/ca.crt -u "elastic:${ES_PASSWORD}" -H "Content-Type: application/json" https://${ES_HOST}:9200/_security/user/kibana_system/_password -d "{\"password\":\"${KB_PASSWORD}\"}" | grep -q "^{}"; do sleep 10; done;
         echo "All done!";
       '
     healthcheck:
@@ -50,37 +71,41 @@ services:
       interval: 1s
       timeout: 5s
       retries: 120
-  pg:
-    container_name: ${PG_HOST}
-    image: postgres:15-alpine
-    restart: always
-    ports:
-      - "${PG_PORT}:${PG_PORT}"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    expose:
-      - ${PG_PORT}
-    command: postgres -c port=${PG_PORT}
-    environment:
-      POSTGRES_USER: ${PG_USER}
-      POSTGRES_PASSWORD: ${PG_PASSWORD}
-      POSTGRES_DB: ${PG_DB_NAME}
-    # command:
-    #   - "postgres"
-    #   - "-c"
-    #   - "listen_addresses=*"
-  es:
-    container_name: ${ES_HOST}
+
+
+  # pg1028:
+  #   container_name: container-pg1028
+  #   image: postgres:15-alpine
+  #   restart: always
+  #   ports:
+  #     - "${PG_PORT}:${PG_PORT}"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data/
+  #   expose:
+  #     - ${PG_PORT}
+  #   command: postgres -c port=${PG_PORT}
+  #   environment:
+  #     POSTGRES_USER: ${PG_USER}
+  #     POSTGRES_PASSWORD: ${PG_PASSWORD}
+  #     POSTGRES_DB: ${PG_DB_NAME}
+  #   command:
+  #     - "postgres"
+  #     - "-c"
+  #     - "listen_addresses=*"
+
+
+  es1028:
+    container_name: container-es1028
     depends_on:
       setup:
         condition: service_healthy
     image: docker.elastic.co/elasticsearch/elasticsearch:${ES_STACK_VERSION}
     volumes:
       - certs:/usr/share/elasticsearch/config/certs
-      - esdata02:/usr/share/elasticsearch/data
+      - esdata1028:/usr/share/elasticsearch/data
       # - ./elasticsearch.yml:/etc/elasticsearch/elasticsearch.yml
     ports:
-      - ${ES_PORT}:${ES_PORT}
+      - ${ES_PORT}:9200
     environment:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - MAX_LOCKED_MEMORY=unlimited
@@ -111,15 +136,17 @@ services:
       test:
         [
           "CMD-SHELL",
-          "curl -s --cacert config/certs/ca/ca.crt https://localhost:${ES_PORT} | grep -q 'missing authentication credentials'",
+          "curl -s --cacert config/certs/ca/ca.crt https://localhost:9200 | grep -q 'missing authentication credentials'",
         ]
       interval: 5s
       timeout: 5s
       retries: 5
-  kib:
-    container_name: kibTrp
+
+
+  kib1028:
+    container_name: container-kib1028
     depends_on:
-      es:
+      es1028:
         condition: service_healthy
     image: docker.elastic.co/kibana/kibana:${ES_STACK_VERSION}
     volumes:
@@ -143,8 +170,10 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+
+
   web:
-    container_name: webTrp
+    container_name: container-web
     build:
         context: .
         dockerfile: Dockerfile
@@ -156,20 +185,5 @@ services:
     environment:
       DATABASE_URL: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DB_NAME}
     depends_on:
-      - pg
-      - es
-
-volumes:
-  postgres_data:
-    driver: local
-  certs:
-    driver: local
-  esdata02:
-    driver: local
-  kibanadata:
-    driver: local
-
-networks:
- default:
-   name: esnet
-   external: false
+      # - pg1028
+      - es1028

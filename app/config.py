@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     es_port: int
 
     kb_password: str
+    kb_host: str
     kb_port: int
 
     es_stack_version: str
