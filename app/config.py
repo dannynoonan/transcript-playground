@@ -23,7 +23,13 @@ class Settings(BaseSettings):
     es_mem_limit: int
 
     openai_api_key: str
+
+    airflow_image_name: str
+    airflow_uid: int
+    pythonpath: str
+
     model_config = SettingsConfigDict(env_file=".env")
+
 
 # TODO use lru_cache with fastapi Depends
 # per https://fastapi.tiangolo.com/advanced/settings/#__tabbed_2_1

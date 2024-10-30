@@ -154,20 +154,20 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
 
 
 @esw_app.get("/esw/populate_focal_speakers/{show_key}", tags=['ES Writer'])
-async def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
+def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
     '''
     For each episode, query ElasticSearch to count the number of lines spoken per character, then write the top 3 characters back to their own ElasticSearch field
     '''
-    episodes_to_focal_speakers = await esqb.populate_focal_speakers(show_key.value, episode_key)
+    episodes_to_focal_speakers = esqb.populate_focal_speakers(show_key.value, episode_key)
     return {"episodes_to_focal_speakers": episodes_to_focal_speakers}
 
 
 @esw_app.get("/esw/populate_focal_locations/{show_key}", tags=['ES Writer'])
-async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
+def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
     '''
     For each episode, query ElasticSearch to count the number of scenes per location, then write the top 3 locations back to their own ElasticSearch field
     '''
-    episodes_to_focal_locations = await esqb.populate_focal_locations(show_key.value, episode_key)
+    episodes_to_focal_locations = esqb.populate_focal_locations(show_key.value, episode_key)
     return {"episodes_to_focal_locations": episodes_to_focal_locations}
 
 
