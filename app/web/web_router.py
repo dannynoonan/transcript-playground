@@ -19,7 +19,7 @@ web_app = APIRouter()
 
 
 @web_app.get("/web/show/{show_key}", response_class=HTMLResponse, tags=['Web'])
-async def show_page(request: Request, show_key: ShowKey):
+def show_page(request: Request, show_key: ShowKey):
 	tdata = {}
 
 	tdata['header'] = 'show'
@@ -86,7 +86,7 @@ async def show_page(request: Request, show_key: ShowKey):
 
 
 @web_app.get("/web/season/{show_key}/{season}", response_class=HTMLResponse, tags=['Web'])
-async def season_page(request: Request, show_key: ShowKey, season: str):
+def season_page(request: Request, show_key: ShowKey, season: str):
 	tdata = {}
 
 	tdata['header'] = 'season'

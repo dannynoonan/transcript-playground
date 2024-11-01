@@ -16,7 +16,7 @@ etl_app = APIRouter()
 
 
 @etl_app.get("/etl/copy_episode_listing/{show_key}", tags=['ETL'])
-async def copy_episode_listing(show_key: ShowKey):
+def copy_episode_listing(show_key: ShowKey):
     '''
     Copies html of external episode listing page (as configured in `show_metadata`) to `source/episode_listings/` 
     '''
@@ -36,7 +36,7 @@ async def copy_episode_listing(show_key: ShowKey):
 
 
 @etl_app.get("/etl/copy_transcript_sources/{show_key}", tags=['ETL'])
-async def copy_transcript_sources(show_key: ShowKey):
+def copy_transcript_sources(show_key: ShowKey):
     '''
     Copies html of external transcript url listing page (as configured in `show_metadata`) to `source/transcript_sources/`
     '''

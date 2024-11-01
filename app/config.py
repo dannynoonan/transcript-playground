@@ -25,6 +25,7 @@ class Settings(BaseSettings):
     openai_api_key: str
 
     airflow_image_name: str
+    airflow_version: str
     airflow_uid: int
     pythonpath: str
 

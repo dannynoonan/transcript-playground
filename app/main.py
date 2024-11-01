@@ -75,7 +75,7 @@ def root():
 ###################### METADATA ###########################
 
 @app.get("/show_meta/{show_key}", tags=['Metadata'])
-async def fetch_show_meta(show_key: ShowKey):
+def fetch_show_meta(show_key: ShowKey):
     show_meta = show_metadata[show_key]
     return {show_key: show_meta}
 

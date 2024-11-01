@@ -1,13 +1,4 @@
 aerich==0.7.2
-apache-airflow==2.8.0
-apache-airflow-providers-celery==3.1.0
-apache-airflow-providers-common-sql==1.18.0
-apache-airflow-providers-elasticsearch==5.5.2
-apache-airflow-providers-ftp==3.7.0
-apache-airflow-providers-http==4.8.0
-apache-airflow-providers-imap==3.5.0
-apache-airflow-providers-postgres==5.13.1
-apache-airflow-providers-sqlite==3.6.0
 asyncpg==0.28.0
 bertopic==0.16.0
 bs4==0.0.1
@@ -20,7 +11,7 @@ dash-table==5.0.0
 elasticsearch==8.8.0
 elasticsearch-dsl==8.9.0
 fastapi==0.109.2
-gensim==4.3.2
+gensim==4.3.3
 html5lib==1.1
 http-exceptions==0.2.10
 # huggingface-hub==0.22.2
@@ -46,7 +37,7 @@ pytest-asyncio==0.23.3
 python-multipart==0.0.6
 requests==2.30.0
 scikit-learn==1.4.0
-scipy==1.10.1
+scipy==1.11.4
 # starlette==0.27.0
 # statsmodels==0.14.3
 tiktoken==0.6.0
