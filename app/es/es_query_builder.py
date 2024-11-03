@@ -93,6 +93,10 @@ def init_speaker_episode_topics_index():
     es_conn.indices.put_settings(index="speaker_episode_topics", body={"index": {"max_inner_result_window": 1000}})
 
 
+def list_indices():
+    return es_conn.cat.indices(format='json')
+
+
 def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     # es_episode.save(using=es_client)
     es_episode.save()

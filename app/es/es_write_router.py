@@ -72,7 +72,7 @@ def init_es(index_name: str = None):
 
 
 @esw_app.get("/esw/index_episode/{show_key}/{episode_key}", tags=['ES Writer'])
-async def index_transcript(show_key: ShowKey, episode_key: str):
+async def index_episode(show_key: ShowKey, episode_key: str):
     '''
     Fetch `Episode` entity from Postgres `transcript_db`, transform Tortoise object to ElasticSearch object, and write it to ElasticSearch index.
     '''
@@ -105,7 +105,7 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
 
 
 @esw_app.get("/esw/index_all_episodes/{show_key}", tags=['ES Writer'])
-async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
+async def index_all_episodes(show_key: ShowKey, overwrite_all: bool = False):
     '''
     Bulk run of `/esw/index_episode` for all episodes of a given show
     '''
@@ -117,7 +117,7 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     if not episodes:
         return {"Error": f"No Episodes found having show_key={show_key}. You may need to run /load_episode_listing first."}
     if not overwrite_all:
-        return {"No-op": f"/index_transcripts was invoked on {len(episodes)} episodes, but `overwrite_all` flag was not set to True so no action was taken"}
+        return {"No-op": f"/index_all_episodes was invoked on {len(episodes)} episodes, but `overwrite_all` flag was not set to True so no action was taken"}
     
     # fetch and insert transcripts for all episodes
     attempts = 0
@@ -145,11 +145,11 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
             print(f"Failure to transform Episode {show_key}_{episode.external_key} to es-writable version or write it to es: {e}")
 
     return {
-        "index loading attempts": attempts, 
+        "episode_indexing_attempts": attempts, 
         "successful": len(successful_episode_keys),
-        "successful episode keys": successful_episode_keys, 
+        "successful_episode_keys": successful_episode_keys, 
         "failed": len(failed_episode_keys),
-        "failed episode keys": failed_episode_keys, 
+        "failed_episode_keys": failed_episode_keys, 
     }
 
 

@@ -15,6 +15,21 @@ esr_app = APIRouter()
 
 
 
+###################### METADATA LOOKUP ###########################
+
+@esr_app.get("/esr/does_index_exist/{index_name}", tags=['ES Reader'])
+def does_index_exist(index_name: str):
+    '''
+    Verify that an index exists 
+    '''
+    index_list = esqb.list_indices()
+    for index in index_list:
+        if index['index'] == index_name:
+            return {'index_exists': True} 
+    return {'index_exists': False}
+
+
+
 ###################### SIMPLE FETCH ###########################
 
 @esr_app.get("/esr/episode/{show_key}/{episode_key}", tags=['ES Reader'])
