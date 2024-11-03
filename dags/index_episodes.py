@@ -11,13 +11,13 @@ from airflow.providers.http.sensors.http import HttpSensor
 
 
 def _read_response(ti):
-    transcript_es_exists = ti.xcom_pull(
-        task_ids='does_transcript_es_exist',
+    transcripts_es_exists = ti.xcom_pull(
+        task_ids='does_transcripts_es_exist',
         key='return_value'
     )
-    print(f'transcript_es_exists={transcript_es_exists}')
-    if not transcript_es_exists:
-        raise AirflowException(f'transcript_es_exists={transcript_es_exists}, cannot proceed to index_all_episodes')
+    print(f'transcripts_es_exists={transcripts_es_exists}')
+    if not transcripts_es_exists:
+        raise AirflowException(f'transcripts_es_exists={transcripts_es_exists}, cannot proceed to index_all_episodes')
 
 
 # def _branch(ti):
@@ -50,8 +50,8 @@ with DAG('index_episodes', start_date=datetime(2024, 10, 1),
         mode='poke',
     )
 
-    does_transcript_es_exist = SimpleHttpOperator(
-        task_id='does_transcript_es_exist',
+    does_transcripts_es_exist = SimpleHttpOperator(
+        task_id='does_transcripts_es_exist',
         http_conn_id='tp_api',
         endpoint='/esr/does_index_exist/transcripts',
         method='GET', 
@@ -62,7 +62,6 @@ with DAG('index_episodes', start_date=datetime(2024, 10, 1),
     read_response = PythonOperator(
         task_id='read_response',
         python_callable=_read_response,
-        # dag=dag
     )
 
     # branch = BranchPythonOperator(
@@ -85,7 +84,25 @@ with DAG('index_episodes', start_date=datetime(2024, 10, 1),
         response_filter=lambda response: response.json()['successful'], # NOTE not actually using this value
         log_response=True
     )
-    
-    # is_api_available >> does_transcript_es_exist >> branch >> [index_all_episodes, do_nothing]
 
-    is_api_available >> does_transcript_es_exist >> read_response >> index_all_episodes
+    populate_focal_speakers = SimpleHttpOperator(
+        task_id='populate_focal_speakers',
+        http_conn_id='tp_api',
+        endpoint='esw/populate_focal_speakers/TNG',
+        method='GET',
+        response_filter=lambda response: response.json()['episodes_to_focal_speakers'], # NOTE not actually using this value
+        log_response=True
+    )
+
+    populate_focal_locations = SimpleHttpOperator(
+        task_id='populate_focal_locations',
+        http_conn_id='tp_api',
+        endpoint='esw/populate_focal_locations/TNG',
+        method='GET',
+        response_filter=lambda response: response.json()['episodes_to_focal_locations'], # NOTE not actually using this value
+        log_response=True
+    )
+    
+    # is_api_available >> does_transcripts_es_exist >> branch >> [index_all_episodes, do_nothing]
+
+    is_api_available >> does_transcripts_es_exist >> read_response >> index_all_episodes >> populate_focal_speakers >> populate_focal_locations
