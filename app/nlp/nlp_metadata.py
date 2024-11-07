@@ -84,7 +84,19 @@ TRANSFORMER_VENDOR_VERSIONS = {
                 'status': 'ACTIVE',
                 'true_name': 'text-embedding-ada-002',
                 'max_tokens': 8191
-            }
+            },
+            '3small': {
+                'dims': 1536,
+                'status': 'ACTIVE',
+                'true_name': 'text-embedding-3-small',
+                'max_tokens': 8191
+            },
+            # '3large': {
+            #     'dims': 3072,
+            #     'status': 'ACTIVE',
+            #     'true_name': 'text-embedding-3-large',
+            #     'max_tokens': 8191
+            # }
         }
     }
 }

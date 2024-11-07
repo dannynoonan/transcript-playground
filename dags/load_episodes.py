@@ -11,7 +11,7 @@ from airflow.providers.http.sensors.http import HttpSensor
 
 
 with DAG('load_episodes', start_date=datetime(2024, 10, 1),
-         schedule_interval='@daily', catchup=False) as dag:
+         schedule_interval=None, catchup=False) as dag:
     '''
     Load series listing and transcript source metadata, followed by episode transcript data, into transcript_db
     '''

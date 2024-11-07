@@ -213,7 +213,7 @@ def fetch_indexed_speakers(show_key: ShowKey, speakers: str = None, season: int 
     '''
     For speakers indexed in es, fetch info, lines, and aggregate counts
     '''
-    return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_ada002_word_count']
+    return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_word_count']
     speaker_list = []
     if speakers:
         speaker_list = speakers.split(',')
@@ -866,7 +866,7 @@ def search_speakers(qt: str, show_key: ShowKey = None, extra_fields: str = None)
     '''                
     if show_key:
         show_key = show_key.value
-    return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_ada002_word_count']
+    return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_word_count']
     if extra_fields:
         extra_fields = extra_fields.split(',')
         return_fields.extend(extra_fields)

@@ -36,7 +36,7 @@ def _check_responses(ti):
 
 
 with DAG('index_speakers', start_date=datetime(2024, 10, 1),
-         schedule_interval='@daily', catchup=False) as dag:
+         schedule_interval=None, catchup=False) as dag:
     '''
     Load speaker metadata from files and write to speakers es index
     '''
@@ -82,4 +82,22 @@ with DAG('index_speakers', start_date=datetime(2024, 10, 1),
         log_response=True
     )
 
-    [verify_speakers_es, verify_speaker_episodes_es, verify_speaker_seasons_es] >> check_responses >> index_all_speakers
+    populate_speaker_ada002_embeddings = SimpleHttpOperator(
+        task_id='populate_speaker_ada002_embeddings',
+        http_conn_id='tp_api',
+        endpoint='esw/populate_topic_grouping_embeddings/TNG/openai/ada002',
+        method='GET',
+        response_filter=lambda response: response.json()['success_count'], 
+        log_response=True
+    )
+
+    populate_speaker_3small_embeddings = SimpleHttpOperator(
+        task_id='populate_speaker_3small_embeddings',
+        http_conn_id='tp_api',
+        endpoint='esw/populate_all_speaker_embeddings/TNG/openai/3small',
+        method='GET',
+        response_filter=lambda response: response.json()['success_count'], 
+        log_response=True
+    )
+
+    [verify_speakers_es, verify_speaker_episodes_es, verify_speaker_seasons_es] >> check_responses >> index_all_speakers >> [populate_speaker_ada002_embeddings, populate_speaker_3small_embeddings]

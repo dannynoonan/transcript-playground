@@ -171,8 +171,8 @@ def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
     return {"episodes_to_focal_locations": episodes_to_focal_locations}
 
 
-@esw_app.get("/esw/populate_relations/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_relations(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str, limit: int = 30):
+@esw_app.get("/esw/populate_episode_relations/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_episode_relations(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str, limit: int = 30):
     '''
     Query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
     '''
@@ -192,13 +192,13 @@ def populate_relations(show_key: ShowKey, episode_key: str, model_vendor: str, m
     doc_id = f'{show_key}_{episode_key}'
     episode_relations[doc_id] = similar_episodes
     
-    episode_relations = esqb.populate_relations(show_key.value, model_vendor, model_version, episode_relations, limit=limit)
+    episode_relations = esqb.populate_episode_relations(show_key.value, model_vendor, model_version, episode_relations, limit=limit)
 
     return {"episode_relations": episode_relations}
 
 
-@esw_app.get("/esw/populate_all_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_relations(show_key: ShowKey, model_vendor: str, model_version: str, limit: int = 30, episode_key: str = None):
+@esw_app.get("/esw/populate_all_episode_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str, limit: int = 30, episode_key: str = None):
     '''
     For each episode, query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
     '''
@@ -219,18 +219,18 @@ def populate_all_relations(show_key: ShowKey, model_vendor: str, model_version: 
         # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
         episodes_to_relations[doc_id] = similar_episodes
     
-    episodes_to_relations = esqb.populate_relations(show_key.value, model_vendor, model_version, episodes_to_relations, limit=limit)
+    episodes_to_relations = esqb.populate_episode_relations(show_key.value, model_vendor, model_version, episodes_to_relations, limit=limit)
 
     return {"episodes_to_relations": episodes_to_relations}
 
 
-@esw_app.get("/esw/build_embeddings_model/{show_key}", tags=['ES Writer'])
-def build_embeddings_model(show_key: ShowKey):
-    '''
-    Experimental endpoint: goes thru the motions of building a language model using Word2Vec, but limits training data to a single show's text corpus, resulting in a (uselessly) tiny model
-    '''
-    model_info = ef.build_embeddings_model(show_key.value)
-    return {"model_info": model_info}
+# @esw_app.get("/esw/build_embeddings_model/{show_key}", tags=['ES Writer'])
+# def build_embeddings_model(show_key: ShowKey):
+#     '''
+#     Experimental endpoint: goes thru the motions of building a language model using Word2Vec, but limits training data to a single show's text corpus, resulting in a (uselessly) tiny model
+#     '''
+#     model_info = ef.build_embeddings_model(show_key.value)
+#     return {"model_info": model_info}
 
 
 @esw_app.get("/esw/populate_episode_embeddings/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
@@ -240,7 +240,8 @@ def populate_episode_embeddings(show_key: ShowKey, episode_key: str, model_vendo
     '''
     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
-        ef.generate_episode_embeddings(show_key.value, es_episode, model_vendor, model_version)
+        embeddings = ef.generate_episode_embeddings(es_episode, model_vendor, model_version)
+        es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
         esqb.save_es_episode(es_episode)
         return {"es_episode": es_episode}
     except Exception as e:
@@ -330,11 +331,11 @@ def index_speaker(show_key: ShowKey, speaker: str):
     es_speaker.season_count = len(es_speaker_seasons)
     es_speaker.episode_count = len(es_speaker_episodes)
     # special handling of openai token counters using `tiktoken`  
-    es_speaker.openai_ada002_word_count = ef.openai_token_counter(' '.join(es_speaker.lines), 'cl100k_base')
+    es_speaker.openai_word_count = ef.openai_token_counter(' '.join(es_speaker.lines), 'cl100k_base')
     for _, ess in es_speaker_seasons.items():
-        ess.openai_ada002_word_count = ef.openai_token_counter(' '.join(ess.lines), 'cl100k_base')
+        ess.openai_word_count = ef.openai_token_counter(' '.join(ess.lines), 'cl100k_base')
     for _, ese in es_speaker_episodes.items():
-        ese.openai_ada002_word_count = ef.openai_token_counter(' '.join(ese.lines), 'cl100k_base')
+        ese.openai_word_count = ef.openai_token_counter(' '.join(ese.lines), 'cl100k_base')
     
     # write to es
     try:    
@@ -779,7 +780,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
                 
                 # write simplified subset of episode_topics to es_speaker_episode.topics_X
                 simple_episode_topics = fflat.flatten_es_topics(es_speaker_episode_topics)
-                if topic_grouping == 'meyersBriggsKiersey':
+                if topic_grouping == 'mbti':
                     es_speaker_episode.topics_mbti = simple_episode_topics
                 elif topic_grouping == 'dndAlignments':
                     es_speaker_episode.topics_dnda = simple_episode_topics
@@ -799,7 +800,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
 
         # write simplified subset of season_topics to es_speaker_season.topics_X
         simple_season_topics = fflat.flatten_es_topics(es_speaker_season_topics)
-        if topic_grouping == 'meyersBriggsKiersey':
+        if topic_grouping == 'mbti':
             es_speaker_season.topics_mbti = simple_season_topics
         elif topic_grouping == 'dndAlignments':
             es_speaker_season.topics_dnda = simple_season_topics
@@ -818,7 +819,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
     
     # write simplified subset of speaker_topics to es_speaker.topics_X
     simple_series_topics = fflat.flatten_es_topics(es_speaker_topics)
-    if topic_grouping == 'meyersBriggsKiersey':
+    if topic_grouping == 'mbti':
         es_speaker.topics_mbti = simple_series_topics
     elif topic_grouping == 'dndAlignments':
         es_speaker.topics_dnda = simple_series_topics

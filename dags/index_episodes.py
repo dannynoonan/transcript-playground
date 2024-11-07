@@ -36,7 +36,7 @@ def _read_response(ti):
 
 
 with DAG('index_episodes', start_date=datetime(2024, 10, 1),
-         schedule_interval='@daily', catchup=False) as dag:
+         schedule_interval=None, catchup=False) as dag:
     '''
     Fetch episodes from transcript_db and write to transcripts es index
     '''
