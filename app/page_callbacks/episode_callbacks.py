@@ -343,7 +343,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
 
     # TODO would be great to extract these into a metadata constant like EPISODE_CORE_FIELDS (then add score, rank, & symbol)
     cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'score', 'rank', 'rev_rank', 'focal_speakers', 'focal_locations', 
-                    'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf', 'group']
+                    'topics_universal', 'topics_universal_tfidf', 'group']
 
     df = df[cols_to_keep]
     # NOTE sequence matters: sorting this way is an admission of defeat wrt symbol setting
@@ -411,22 +411,23 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
 @callback(
     Output('episode-universal-genres-treemap', 'figure'),
     Output('episode-universal-genres-dt', 'children'),
-    Output('episode-universal-genres-gpt35-v2-treemap', 'figure'),
-    Output('episode-universal-genres-gpt35-v2-dt', 'children'),
+    # Output('episode-universal-genres-gpt35-v2-treemap', 'figure'),
+    # Output('episode-universal-genres-gpt35-v2-dt', 'children'),
     # Output('episode-focused-gpt35-treemap', 'figure'),
     Input('show-key', 'data'),
     Input('episode-key', 'value'),
     Input('universal-genres-score-type', 'value'),
-    Input('universal-genres-gpt35-v2-score-type', 'value')
+    # Input('universal-genres-gpt35-v2-score-type', 'value')
 )    
-def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type: str, ug2_score_type: str):
-    print(f'in render_episode_topic_treemap, show_key={show_key} episode_key={episode_key} ug_score_type={ug_score_type} ug2_score_type={ug2_score_type}')
+def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type: str):
+    print(f'in render_episode_topic_treemap, show_key={show_key} episode_key={episode_key} ug_score_type={ug_score_type}')
 
     figs = {}
     dts = {}
     # topic_groupings = ['universalGenres', 'universalGenresGpt35_v2', f'focusedGpt35_{show_key}']
-    topic_groupings = ['universalGenres', 'universalGenresGpt35_v2']
-    topic_score_types = [ug_score_type, ug2_score_type]
+    topic_groupings = ['universalGenres']
+    # topic_score_types = [ug_score_type, ug2_score_type]
+    topic_score_types = [ug_score_type]
 
     for i, tg in enumerate(topic_groupings):
         # fetch episode topics, load into df, modify / reformat
@@ -447,7 +448,8 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
                                           numeric_precision_overrides={'score': 2, 'tfidf_score': 2})
         dts[tg] = dash_dt
 
-    return figs['universalGenres'], dts['universalGenres'], figs['universalGenresGpt35_v2'], dts['universalGenresGpt35_v2']
+    # return figs['universalGenres'], dts['universalGenres'], figs['universalGenresGpt35_v2'], dts['universalGenresGpt35_v2']
+    return figs['universalGenres'], dts['universalGenres']
 
 
 # # NOTE not being used

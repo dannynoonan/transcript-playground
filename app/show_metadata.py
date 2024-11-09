@@ -79,7 +79,8 @@ WIKIPEDIA_DOMAIN = 'https://en.wikipedia.org/wiki/'
 GOT_SCENE_CHANGE_PREFIXES = ['CUT TO: ', 'EXT. ', 'INT. ']
 TNG_CAPTAINS_LOG_PREFIX = "captain's log"
 
-EPISODE_TOPIC_GROUPINGS = ['universalGenres', 'focusedGpt35_TNG', 'universalGenresGpt35_v2']
+# EPISODE_TOPIC_GROUPINGS = ['universalGenres', 'focusedGpt35_TNG', 'universalGenresGpt35_v2']
+EPISODE_TOPIC_GROUPINGS = ['universalGenres']
 SPEAKER_TOPIC_GROUPINGS = ['mbti', 'dndAlignments']
 
 SPEAKERS_TO_IGNORE = ['_ALL_', 'ALL', 'BOTH']

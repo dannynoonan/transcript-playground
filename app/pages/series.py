@@ -199,7 +199,7 @@ def layout(show_key: str) -> html.Div:
                                             "Topic grouping: ", 
                                             dcc.Dropdown(
                                                 id="series-topic-pie-topic-grouping", 
-                                                options=['universalGenres', 'universalGenresGpt35_v2'], 
+                                                options=['universalGenres'], 
                                                 value='universalGenres')
                                         ]),
                                     ]),

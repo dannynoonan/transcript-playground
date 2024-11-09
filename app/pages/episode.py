@@ -304,27 +304,27 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                                     ]),
                                 ]),
                             ]),
-                            dbc.Tab(label="Cluster mappings", tab_style={"font-size": "20px", "color": "white"}, children=[
-                                dbc.Row([
-                                    dbc.Col(md=5, children=[
-                                        html.Div(id="episode-universal-genres-gpt35-v2-dt"),
-                                    ]),
-                                    dbc.Col(md=7, children=[
-                                        html.Div(dcc.Graph(id="episode-universal-genres-gpt35-v2-treemap")),
-                                        dcc.RadioItems(
-                                            id="universal-genres-gpt35-v2-score-type",
-                                            className="text-white", 
-                                            options=[
-                                                {'label': 'absolute scoring', 'value': 'scaled_score'},
-                                                {'label': 'frequency-based scoring', 'value': 'tfidf_score'},
-                                            ],
-                                            value='tfidf_score',
-                                            inputStyle={"margin-left": "12px", "margin-right": "4px"},
-                                            style={"display": "flex", "padding-bottom": "0"}
-                                        ),
-                                    ]),
-                                ]),
-                            ]),
+                            # dbc.Tab(label="Cluster mappings", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            #     dbc.Row([
+                            #         dbc.Col(md=5, children=[
+                            #             html.Div(id="episode-universal-genres-gpt35-v2-dt"),
+                            #         ]),
+                            #         dbc.Col(md=7, children=[
+                            #             html.Div(dcc.Graph(id="episode-universal-genres-gpt35-v2-treemap")),
+                            #             dcc.RadioItems(
+                            #                 id="universal-genres-gpt35-v2-score-type",
+                            #                 className="text-white", 
+                            #                 options=[
+                            #                     {'label': 'absolute scoring', 'value': 'scaled_score'},
+                            #                     {'label': 'frequency-based scoring', 'value': 'tfidf_score'},
+                            #                 ],
+                            #                 value='tfidf_score',
+                            #                 inputStyle={"margin-left": "12px", "margin-right": "4px"},
+                            #                 style={"display": "flex", "padding-bottom": "0"}
+                            #             ),
+                            #         ]),
+                            #     ]),
+                            # ]),
                         ]),
                     ]),
                 ]),
