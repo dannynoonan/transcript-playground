@@ -47,6 +47,7 @@ x-airflow-common:
     # - ./entrypoint.sh:/entrypoint.sh
     # - ./requirements.txt:/requirements.txt
     - ${AIRFLOW_PROJ_DIR:-.}/app:/opt/airflow/extensions/app
+    - ${AIRFLOW_PROJ_DIR:-.}/static:/opt/airflow/static
     - .env:/opt/airflow/.env
   user: "${AIRFLOW_UID:-50000}:0"
   # entrypoint: /entrypoint.sh

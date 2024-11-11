@@ -13,7 +13,7 @@ from airflow.providers.http.sensors.http import HttpSensor
 with DAG('load_episodes', start_date=datetime(2024, 10, 1),
          schedule_interval=None, catchup=False) as dag:
     '''
-    Load series listing and transcript source metadata, followed by episode transcript data, into transcript_db
+    Load series listing metadata, transcript source metadata, and episode transcript data into transcript_db
     '''
 
     is_api_available = HttpSensor(
@@ -51,7 +51,7 @@ with DAG('load_episodes', start_date=datetime(2024, 10, 1),
         endpoint='etl/load_all_transcripts/TNG',
         data={'overwrite_all': 'True'},
         method='GET',
-        response_filter=lambda response: response.json()['successful'],
+        response_filter=lambda response: response.json()['successful_episode_keys'],
         log_response=True
     )
 
