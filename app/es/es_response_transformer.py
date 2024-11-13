@@ -789,11 +789,12 @@ def return_numeric_distrib_into_percentiles(s: Search, numeric_field: str) -> di
 
 
 def return_keywords_by_episode(query_response: dict, exclude_terms: bool = False) -> list:
-    # print(f'begin return_keywords_by_episode for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
+    print(f'begin return_keywords_by_episode for len(query_response)={len(query_response)} exclude_terms={exclude_terms}')
 
+    print(f'query_response={query_response}')
     results = []
 
-    if not query_response["term_vectors"]:
+    if 'term_vectors' not in query_response:
         return results    
 
     # for term, data in query_response['term_vectors']['scenes.scene_events.dialog']['terms'].items():
@@ -820,7 +821,7 @@ def return_keywords_by_corpus(query_response: dict, exclude_terms: bool = False)
     # TODO if this is a partial corpus (e.g. single season) then need to aggregate term-freq-for-corpus ad hoc rather than use the 'ttf' value 
     results = []
 
-    if not query_response["docs"]:
+    if 'docs' not in query_response:
         return results
         
     all_term_dicts = {}

@@ -12,6 +12,7 @@ elasticsearch==8.8.0
 elasticsearch-dsl==8.9.0
 fastapi==0.109.2
 gensim==4.3.3
+hdbscan==0.8.32
 html5lib==1.1
 http-exceptions==0.2.10
 # huggingface-hub==0.22.2
@@ -25,7 +26,7 @@ networkx==3.2.1
 nltk==3.8.1
 numpy==1.26.3
 openai==1.6.1
-pandas==2.2.0
+pandas==2.2.3
 plotly==5.18.0
 # psutil==5.9.6
 pydantic==2.3.0

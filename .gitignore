@@ -2,9 +2,10 @@ __pycache__/
 .env
 .env.bk
 .DS_Store
+.ipynb_checkpoints/
 .vscode/
-*.ipynb
 *_notes.txt
+http_ca.crt
 /app/animations
 /app/data
 /bertopic_config_tests
@@ -15,9 +16,8 @@ __pycache__/
 /database/backups
 /es_data_volume
 /jupyter
-/my_venv
+/logs
+/myenv
 /sentiment_data
 /source
-/venv
-/w2v_models
-cleanup_csv.py
+/zzz
