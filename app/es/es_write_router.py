@@ -1177,7 +1177,7 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
 #     print(f'finish generate_emotional_sentiment against full episode at end_ts={end_ts}')
 
 #     # write dataframe to csv
-#     file_path = f'sentiment_data/{show_key.value}/{show_key.value}_{episode_key}.csv'
+#     file_path = f'{PATH_TO_SENTIMENT_DATA}/{show_key.value}/{show_key.value}_{episode_key}.csv'
 #     episode_emo_df.to_csv(file_path, sep=',', header=True)
 
 #     # write to es

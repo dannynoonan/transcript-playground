@@ -7,6 +7,7 @@ import os
 import pandas as pd
 import urllib.parse
 
+from app.app_metadata import PATH_TO_SENTIMENT_DATA
 import app.dash.components as cmp
 from app.dash import (
     bertopic_model_clusters, episode_gantt_chart, location_line_chart, sentiment_line_chart, series_gantt_chart, series_search_results_gantt, 
@@ -150,7 +151,7 @@ def display_page(pathname, search):
         speaker_dropdown_options = ['ALL'] + [s['speaker'] for s in episode_speakers]
 
         # # load sentiment df to get
-        # file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+        # file_path = f'{PATH_TO_SENTIMENT_DATA}/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
         # if os.path.isfile(file_path):
         #     df = pd.read_csv(file_path)
         #     print(f'loading dataframe at file_path={file_path}')
@@ -568,7 +569,7 @@ def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_
     print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
 
     # fetch episode sentiment data and build line chart
-    file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+    file_path = f'{PATH_TO_SENTIMENT_DATA}/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
     if os.path.isfile(file_path):
         df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')
@@ -618,7 +619,7 @@ def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_
     #     raise Exception(f"Failure to render_episode_sentiment_line_chart: freeze_on={freeze_on} is not supported, accepted values are ['emotion', 'speaker']")
 
     # # fetch episode sentiment data and build line chart
-    # file_path = f'./sentiment_data/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+    # file_path = f'{PATH_TO_SENTIMENT_DATA}/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
     # if os.path.isfile(file_path):
     #     df = pd.read_csv(file_path)
     #     print(f'loading dataframe at file_path={file_path}')

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# NOTE not verified since moving to /scripts dir
 NOW=$(date +"%Y-%m-%dT%T.%3N")
 PGDUMP="/Applications/Postgres.app/Contents/Versions/latest/bin/pg_dump -c"
 DB=transcript_db

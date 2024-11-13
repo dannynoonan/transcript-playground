@@ -1,4 +1,7 @@
 import argparse
+import os
+import sys
+sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
 import app.data_service.wordcloud_publisher as wp
 
@@ -29,9 +32,10 @@ def main():
 
 
     if episode_keys:
-        e_keys = episode_keys.split(',')
-        wp.publish_episode_wordclouds(show_key, e_keys, max_words=max_words)
+        episode_keys = episode_keys.split(',')
+        wp.publish_episode_wordclouds(show_key, episode_keys, max_words=max_words)
     elif seasons:
+        seasons = seasons.split(',')
         wp.publish_season_wordclouds(show_key, seasons, max_words=max_words, include_episodes=include_children)
     else:
         wp.publish_series_wordcloud(show_key, max_words=max_words, include_seasons=include_children, include_episodes=include_children)

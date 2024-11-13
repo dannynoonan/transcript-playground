@@ -11,12 +11,14 @@
 import argparse
 import os
 import pandas as pd
-# import time
+import sys
+sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
-import app.main as m
+from app.app_metadata import PATH_TO_ANALYTICS_DATA
+import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS, ACTIVE_VENDOR_VERSIONS
 from app.show_metadata import ShowKey
-from load_description_sources import DESCRIPTION_SOURCES
+from scripts.load_description_sources import DESCRIPTION_SOURCES
 
 
 def main():
@@ -32,27 +34,29 @@ def main():
     model_version = args.model_version
     print(f'begin eval_vector_search script for show_key={show_key} desc_source={desc_source} model_vendor={model_vendor} model_version={model_version}')
 
-    episode_desc_file_path = f'./analytics/desc_sources_{show_key}.csv'
+    episode_desc_file_path = f'{PATH_TO_ANALYTICS_DATA}/{show_key}/desc_sources_{show_key}.csv'
     if not os.path.isfile(episode_desc_file_path):
         print(f'no file found at episode_desc_file_path={episode_desc_file_path}, please run `load_description_sources` first')
         exit()
 
-    episode_desc_df = pd.read_csv(episode_desc_file_path, '\t')
+    # episode_desc_df = pd.read_csv(episode_desc_file_path, '\t')
+    episode_desc_df = pd.read_csv(episode_desc_file_path)
     print(f'loading description source dataframe from file found at episode_desc_file_path={episode_desc_file_path}')
     if desc_source not in episode_desc_df.columns:
         print(f'no column for desc_source={desc_source} found in episode_desc_file_path={episode_desc_file_path}, please run `load_description_sources` for desc_source first')
         exit()
 
-    episode_rank_file_path = f'./analytics/model_rankings_{show_key}_{desc_source}.csv'
+    episode_rank_file_path = f'{PATH_TO_ANALYTICS_DATA}/{show_key}/model_rankings_{show_key}_{desc_source}.csv'
     if not os.path.isfile(episode_rank_file_path):
         episode_rank_df = episode_desc_df.copy(deep=False)
         cols_to_remove = dict(DESCRIPTION_SOURCES)
         del cols_to_remove[desc_source]
         episode_rank_df.drop(cols_to_remove.keys(), axis=1, inplace=True)
         # current_ts = time.strftime("%Y%m%d-%H%M%S")
-        # os.rename(episode_rank_file_path, f'./analytics/model_rankings_{show_key}_{desc_source}_{current_ts}.csv')
+        # os.rename(episode_rank_file_path, f'{PATH_TO_ANALYTICS_DATA}/{show_key}/model_rankings_{show_key}_{desc_source}_{current_ts}.csv')
     else:
-        episode_rank_df = pd.read_csv(episode_rank_file_path, '\t')
+        # episode_rank_df = pd.read_csv(episode_rank_file_path, '\t')
+        episode_rank_df = pd.read_csv(episode_rank_file_path)
 
     if model_vendor == 'ALL':
         for vendor_version in ACTIVE_VENDOR_VERSIONS:
@@ -69,7 +73,8 @@ def main():
             episode_rank_df.drop(col, axis=1, inplace=True)
     print(f'episode_rank_df={episode_rank_df}')
 
-    episode_rank_df.to_csv(episode_rank_file_path, sep='\t')
+    # episode_rank_df.to_csv(episode_rank_file_path, sep='\t')
+    episode_rank_df.to_csv(episode_rank_file_path)
 
 
 def generate_vector_search_rankings(episode_rank_df: pd.DataFrame, desc_source: str, show_key: str, model_vendor: str, model_version: str) -> None:
@@ -94,7 +99,7 @@ def generate_vector_search_rankings(episode_rank_df: pd.DataFrame, desc_source: 
             print(f"description field `{desc_source}` is empty for episode_key={row['episode_key']}, skipping")
             continue
         episode_key = row['episode_key']
-        vector_search_response = m.vector_search(ShowKey(show_key), row[desc_source], model_vendor=model_vendor, model_version=model_version)
+        vector_search_response = esr.episode_vector_search(ShowKey(show_key), row[desc_source], model_vendor=model_vendor, model_version=model_version)
         if 'error' in vector_search_response:
             print(f"Failed to generate_vector_search_rankings for episode_key={episode_key}: {vector_search_response['error']}")
             continue
@@ -103,7 +108,7 @@ def generate_vector_search_rankings(episode_rank_df: pd.DataFrame, desc_source: 
         for match in vector_search_response['matches']:
             if match['episode_key'] == str(episode_key):
                 episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, rank_col] = int(rank)
-                episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, score_col] = match['agg_score']
+                episode_rank_df.loc[episode_rank_df['episode_key'] == episode_key, score_col] = match['score']
                 found = True
                 break
             rank += 1

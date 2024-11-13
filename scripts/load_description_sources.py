@@ -1,10 +1,13 @@
-from bs4 import BeautifulSoup
 import argparse
+from bs4 import BeautifulSoup
 import os
-import requests
 import pandas as pd
+import requests
+import sys
+sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
-import app.main as m
+from app.app_metadata import PATH_TO_ANALYTICS_DATA
+import app.es.es_read_router as esr
 import app.show_metadata as sm
 
 
@@ -17,9 +20,9 @@ def main():
     desc_source = args.desc_source
     print(f'begin load_description_sources script for show_key={show_key} desc_source={desc_source}')
 
-    file_path = f'./analytics/desc_sources_{show_key}.csv'
+    file_path = f'{PATH_TO_ANALYTICS_DATA}/{show_key}/desc_sources_{show_key}.csv'
     if os.path.isfile(file_path):
-        episodes_df = pd.read_csv(file_path, '\t')
+        episodes_df = pd.read_csv(file_path)
         print(f'loading episodes dataframe from file found at file_path={file_path}')
     else:
         print(f'no file found at file_path={file_path}, initializing new episodes dataframe')
@@ -32,11 +35,11 @@ def main():
             episodes_df.drop(col, axis=1, inplace=True)
     print(f'episodes_df={episodes_df}')
 
-    episodes_df.to_csv(file_path, sep='\t')
+    episodes_df.to_csv(file_path)
 
 
 def init_episode_df(show_key: str) -> pd.DataFrame:
-    episodes_by_season_resp = m.list_episodes_by_season(sm.ShowKey(show_key))
+    episodes_by_season_resp = esr.list_simple_episodes_by_season(sm.ShowKey(show_key))
     episodes_by_season = episodes_by_season_resp['episodes_by_season']
     
     episodes_list = []
@@ -159,7 +162,7 @@ MEMORY_ALPHA_TITLE_VARIATIONS = {
 DESCRIPTION_SOURCES = {
     'memory_alpha': 'https://memory-alpha.fandom.com/wiki/',
     'johanw': 'https://johanw.home.xs4all.nl/sttng.html',
-    'imdb': 'TODO'
+    # 'imdb': 'TODO'
 }
 
 

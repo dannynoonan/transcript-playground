@@ -1,9 +1,9 @@
-import argparse
 import os
 import pandas as pd
 import datetime
 
-from app.es.es_model import EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode
+from app.app_metadata import PATH_TO_SENTIMENT_DATA
+from app.es.es_model import EsEpisodeTranscript
 import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.sentiment_analyzer as sa
@@ -12,50 +12,8 @@ from app.show_metadata import ShowKey
 from app.utils import set_dict_value_as_es_value
 
 
-def main():
-    # parse script params
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--show_key", "-s", help="Show key", required=True)
-    parser.add_argument("--episode_keys", "-e", help="Episode keys", required=False)
-    parser.add_argument("--season", "-n", help="Season", required=False)
-    parser.add_argument("--analyzer", "-a", help="Analyzer", required=True)
-    parser.add_argument("--scene_level", "-c", help="Scene level", required=False)
-    parser.add_argument("--line_level", "-l", help="Line level", required=False)
-    parser.add_argument("--overwrite_csv", "-o", help="Overwrite CSV file", required=False)
-    parser.add_argument("--write_to_es", "-w", help="Write to es", required=False)
-    args = parser.parse_args()
-    # assign script params to vars
-    season = None
-    scene_level = False
-    line_level = False
-    overwrite_csv = False
-    write_to_es = False
-    if args.season: 
-        season = args.season
-    if args.scene_level: 
-        scene_level = args.scene_level
-    if args.line_level: 
-        line_level = args.line_level
-    if args.overwrite_csv: 
-        overwrite_csv = args.overwrite_csv
-    if args.write_to_es: 
-        write_to_es = args.write_to_es
-
-    if args.episode_keys:
-        e_keys = args.episode_keys.split(',')
-        for e_key in e_keys:
-            populate_episode_sentiment(args.show_key, e_key, args.analyzer, scene_level=scene_level, line_level=line_level, overwrite_csv=overwrite_csv, write_to_es=write_to_es)
-    elif season:
-        simple_episodes_response = esr.fetch_simple_episodes(ShowKey(args.show_key), season=season)
-        simple_episodes = simple_episodes_response['episodes']
-        for ep in simple_episodes:
-            populate_episode_sentiment(args.show_key, ep['episode_key'], args.analyzer, scene_level=scene_level, line_level=line_level, overwrite_csv=overwrite_csv, write_to_es=write_to_es)
-    else:
-        print(f'Either `episode_keys` (-e) or `season` (-n) is required, populating sentiment for an entire series in a single job is currently not supported')
-        return 
-
-
-def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, scene_level: bool = False, line_level: bool = False, overwrite_csv: bool = False, write_to_es: bool = False) -> tuple[pd.DataFrame, dict]:
+def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, scene_level: bool = False, 
+                               overwrite_csv: bool = False, write_to_es: bool = False) -> tuple[pd.DataFrame, dict]:
     '''
     Generate and populate sentiment for episode. Currently populating to 3 places: 
     1. dict -> response
@@ -64,7 +22,7 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
     '''
     start_ts = datetime.datetime.now()
     print('----------------------------------------------------------------------------------------------------')
-    print(f'begin populate_episode_sentiment episode_key={episode_key} analyzer={analyzer} scene_level={scene_level} line_level={line_level} overwrite_csv={overwrite_csv} write_to_es={write_to_es} at start_ts={str(start_ts)[:19]}')
+    print(f'Begin populate_episode_sentiment episode_key={episode_key} analyzer={analyzer} scene_level={scene_level} overwrite_csv={overwrite_csv} write_to_es={write_to_es} at start_ts={str(start_ts)[:19]}')
 
     if analyzer not in SENTIMENT_ANALYZERS:
         print(f'`{analyzer}` in not a valid sentiment analyzer, supported analyzers are {SENTIMENT_ANALYZERS}')
@@ -84,7 +42,7 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
     total_reqs += 1
     episode_sent_df, episode_sent_dict = sa.generate_sentiment(es_episode.flattened_text, analyzer)
     if episode_sent_df is None:
-        print(f"failure to execute populate_episode_sentiment at episode-level for show_key={show_key} episode_key={episode_key} analyzer={analyzer}")
+        print(f"Failure to execute populate_episode_sentiment at episode-level for show_key={show_key} episode_key={episode_key} analyzer={analyzer}")
         return
     success_reqs += 1
     # add contextual properties to episode_sent_df
@@ -102,8 +60,9 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
             for pol in NTLK_POLARITY:
                 set_dict_value_as_es_value(es_episode, episode_sent_dict, pol, 'nltk_sent_')
 
-    # scene- and line-level sentiment 
-    if scene_level or line_level:
+    # scene-level sentiment 
+    # if scene_level or line_level:
+    if scene_level:
 
         # scene-level processing will use fetch_flattened_scenes, trusting (gulp) that scene index positions align with their es_episode.scenes counterparts
         if scene_level:
@@ -169,36 +128,36 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
                         for pol in NTLK_POLARITY:
                             set_dict_value_as_es_value(es_scene, scene_sent_dict, pol, 'nltk_sent_')
 
-            # line-level: analyze dialog for each line in scene
-            if line_level:
-                line_i = 0
-                for es_scene_event in es_scene.scene_events:
-                    if es_scene_event.spoken_by and es_scene_event.dialog:
-                        print(f'executing populate_episode_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i}')
-                        total_reqs += 1
-                        line_sent_df, line_sent_dict = sa.generate_sentiment(es_scene_event.dialog, analyzer)
-                        if line_sent_df is None:
-                            failure_message = f'failure to execute populate_episode_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i} es_scene_event.dialog=`{es_scene_event.dialog}`'
-                            failure_reqs.append(failure_message)
-                            print(failure_message)
-                            continue
-                        success_reqs += 1
-                        # add contextual properties to line_sent_df, concat with episode_sent_df
-                        line_sent_df['key'] = f'S{scene_i}L{line_i}'
-                        line_sent_df['type'] = 'L'
-                        line_sent_df['scene'] = scene_i
-                        line_sent_df['line'] = line_i
-                        line_sent_df['speaker'] = es_scene_event.spoken_by
-                        line_i += 1
-                        episode_sent_df = pd.concat([episode_sent_df, line_sent_df], axis=0, ignore_index=True)
-                        # update es object
-                        if write_to_es:
-                            if analyzer == 'openai_emo':
-                                for emo in OPENAI_EMOTIONS:
-                                    set_dict_value_as_es_value(es_scene_event, line_sent_dict, emo, 'openai_sent_')
-                            elif analyzer == 'nltk_pol':
-                                for pol in NTLK_POLARITY:
-                                    set_dict_value_as_es_value(es_scene_event, line_sent_dict, pol, 'nltk_sent_')
+            # # line-level: analyze dialog for each line in scene
+            # if line_level:
+            #     line_i = 0
+            #     for es_scene_event in es_scene.scene_events:
+            #         if es_scene_event.spoken_by and es_scene_event.dialog:
+            #             print(f'executing populate_episode_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i}')
+            #             total_reqs += 1
+            #             line_sent_df, line_sent_dict = sa.generate_sentiment(es_scene_event.dialog, analyzer)
+            #             if line_sent_df is None:
+            #                 failure_message = f'failure to execute populate_episode_sentiment on flattened_scene at scene_i={scene_i} line_i={line_i} es_scene_event.dialog=`{es_scene_event.dialog}`'
+            #                 failure_reqs.append(failure_message)
+            #                 print(failure_message)
+            #                 continue
+            #             success_reqs += 1
+            #             # add contextual properties to line_sent_df, concat with episode_sent_df
+            #             line_sent_df['key'] = f'S{scene_i}L{line_i}'
+            #             line_sent_df['type'] = 'L'
+            #             line_sent_df['scene'] = scene_i
+            #             line_sent_df['line'] = line_i
+            #             line_sent_df['speaker'] = es_scene_event.spoken_by
+            #             line_i += 1
+            #             episode_sent_df = pd.concat([episode_sent_df, line_sent_df], axis=0, ignore_index=True)
+            #             # update es object
+            #             if write_to_es:
+            #                 if analyzer == 'openai_emo':
+            #                     for emo in OPENAI_EMOTIONS:
+            #                         set_dict_value_as_es_value(es_scene_event, line_sent_dict, emo, 'openai_sent_')
+            #                 elif analyzer == 'nltk_pol':
+            #                     for pol in NTLK_POLARITY:
+            #                         set_dict_value_as_es_value(es_scene_event, line_sent_dict, pol, 'nltk_sent_')
 
     # write to es
     if write_to_es:
@@ -210,15 +169,16 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
     print(f'finish populate_episode_sentiment for episode {episode_key} in {duration.seconds} seconds at end_ts={str(end_ts)[:19]}')
 
     # use dataframe to upsert csv file
-    file_path = f'sentiment_data/{show_key}/{analyzer}/{show_key}_{episode_key}.csv'
+    file_path = f'{PATH_TO_SENTIMENT_DATA}/{show_key}/{analyzer}/{show_key}_{episode_key}.csv'
     # episode_sent_df.to_csv(file_path, sep=',', header=True)
-    write_csv(file_path, episode_sent_df, scene_level=scene_level, line_level=line_level, overwrite=overwrite_csv)
+    # write_csv(file_path, episode_sent_df, scene_level=scene_level, line_level=line_level, overwrite=overwrite_csv)
+    write_csv(file_path, episode_sent_df, scene_level=scene_level, overwrite=overwrite_csv)
 
     req_report = {
         'episode_key': episode_key,
         'analyzer': analyzer,
         'scene_level': scene_level,
-        'line_level': line_level,
+        # 'line_level': line_level,
         'write_to_es': write_to_es,
         'total_reqs': total_reqs,
         'success_reqs': success_reqs,
@@ -233,7 +193,8 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
     # return episode_sent_df, req_report
 
 
-def write_csv(file_path: str, df: pd.DataFrame, scene_level: bool, line_level: bool, overwrite: bool = False):
+def write_csv(file_path: str, df: pd.DataFrame, scene_level: bool, overwrite: bool = False):
+    # print(f'os.path={os.getcwd()}')
     # if overwriting or previous file doesn't exist, simply write full df contents to file_path
     if overwrite or not os.path.isfile(file_path):
         df.to_csv(file_path, sep=',', header=True, index=False)
@@ -250,11 +211,7 @@ def write_csv(file_path: str, df: pd.DataFrame, scene_level: bool, line_level: b
             # prev_df = prev_df.loc[prev_df['type'] != 'S']
             # prev_df = prev_df.loc[prev_df['type'] != 'SD']
         # live-level data is only overwritten if it has been newly (re-)generated
-        if line_level:
-            prev_df = prev_df.loc[prev_df['type'] != 'L']
+        # if line_level:
+        #     prev_df = prev_df.loc[prev_df['type'] != 'L']
         df = pd.concat([prev_df, df], axis=0, ignore_index=True)
         df.to_csv(file_path, sep=',', header=True, index=False)
-
-
-if __name__ == '__main__':
-    main()
