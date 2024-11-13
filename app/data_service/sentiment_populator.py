@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import datetime
 
-from app.app_metadata import PATH_TO_SENTIMENT_DATA
+from app.app_metadata import SENTIMENT_DATA_DIR
 from app.es.es_model import EsEpisodeTranscript
 import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
@@ -169,7 +169,7 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
     print(f'finish populate_episode_sentiment for episode {episode_key} in {duration.seconds} seconds at end_ts={str(end_ts)[:19]}')
 
     # use dataframe to upsert csv file
-    file_path = f'{PATH_TO_SENTIMENT_DATA}/{show_key}/{analyzer}/{show_key}_{episode_key}.csv'
+    file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/{analyzer}/{show_key}_{episode_key}.csv'
     # episode_sent_df.to_csv(file_path, sep=',', header=True)
     # write_csv(file_path, episode_sent_df, scene_level=scene_level, line_level=line_level, overwrite=overwrite_csv)
     write_csv(file_path, episode_sent_df, scene_level=scene_level, overwrite=overwrite_csv)

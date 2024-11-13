@@ -4,6 +4,7 @@ import math
 import os
 import pandas as pd
 
+from app.app_metadata import BERTOPIC_DIR
 import app.database.dao as dao
 import app.data_service.field_flattener as fflat
 from app.data_service.topic_aggregator import TopicAgg
@@ -15,7 +16,7 @@ import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 import app.nlp.narrative_extractor as ne
-from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_DATA_DIR
+from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
 
 
@@ -953,7 +954,7 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
     
     # populate episode-narrative-speaker-groups with any model_clusters of which they are a member
     for bertopic_model_id in bertopic_model_ids:
-        df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{show_key.value}/{bertopic_model_id}.csv', sep='\t')
+        df = pd.read_csv(f'{BERTOPIC_DIR}/{show_key.value}/{bertopic_model_id}.csv', sep='\t')
         # model_id = bertopic_model_id.removesuffix('.csv')
         for _, row in df.iterrows():
             e_key = str(row['episode_key'])

@@ -16,12 +16,11 @@ logs/
 myenv/
 sentiment_data/
 source/
-static/animations
-static/wordclouds
+static/animations/
+static/wordclouds/
 zzz/
 *_notes.txt
 .env
 .env.bk
 .DS_Store
 http_ca.crt
-

@@ -3,10 +3,11 @@ from operator import itemgetter
 import os
 import pandas as pd
 
+from app.app_metadata import BERTOPIC_MODELS_DIR
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_MODELS_DIR
+from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 import app.nlp.query_preprocessor as qp
 from app.show_metadata import ShowKey, show_metadata, EPISODE_TOPIC_GROUPINGS
 

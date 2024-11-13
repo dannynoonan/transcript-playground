@@ -1,10 +1,6 @@
-# import gensim
 from gensim.models import Word2Vec, KeyedVectors
 # from gensim.scripts.glove2word2vec import glove2word2vec
-from gensim.test.utils import common_texts
 import math
-import matplotlib
-import matplotlib.pyplot as plt
 import numpy as np
 import openai
 from openai import OpenAI
@@ -23,7 +19,6 @@ from app.show_metadata import ShowKey
 
 
 warnings.filterwarnings(action = 'ignore')
-
 
 cached_models = {}
 

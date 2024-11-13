@@ -6,7 +6,7 @@ import requests
 import sys
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
-from app.app_metadata import PATH_TO_ANALYTICS_DATA
+from app.app_metadata import ANALYTICS_DIR
 import app.es.es_read_router as esr
 import app.show_metadata as sm
 
@@ -20,7 +20,7 @@ def main():
     desc_source = args.desc_source
     print(f'begin load_description_sources script for show_key={show_key} desc_source={desc_source}')
 
-    file_path = f'{PATH_TO_ANALYTICS_DATA}/{show_key}/desc_sources_{show_key}.csv'
+    file_path = f'{ANALYTICS_DIR}/{show_key}/desc_sources_{show_key}.csv'
     if os.path.isfile(file_path):
         episodes_df = pd.read_csv(file_path)
         print(f'loading episodes dataframe from file found at file_path={file_path}')

@@ -14,7 +14,7 @@ import pandas as pd
 import sys
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
-from app.app_metadata import PATH_TO_ANALYTICS_DATA
+from app.app_metadata import ANALYTICS_DIR
 import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS, ACTIVE_VENDOR_VERSIONS
 from app.show_metadata import ShowKey
@@ -34,19 +34,18 @@ def main():
     model_version = args.model_version
     print(f'begin eval_vector_search script for show_key={show_key} desc_source={desc_source} model_vendor={model_vendor} model_version={model_version}')
 
-    episode_desc_file_path = f'{PATH_TO_ANALYTICS_DATA}/{show_key}/desc_sources_{show_key}.csv'
+    episode_desc_file_path = f'{ANALYTICS_DIR}/{show_key}/desc_sources_{show_key}.csv'
     if not os.path.isfile(episode_desc_file_path):
         print(f'no file found at episode_desc_file_path={episode_desc_file_path}, please run `load_description_sources` first')
         exit()
 
-    # episode_desc_df = pd.read_csv(episode_desc_file_path, '\t')
     episode_desc_df = pd.read_csv(episode_desc_file_path)
     print(f'loading description source dataframe from file found at episode_desc_file_path={episode_desc_file_path}')
     if desc_source not in episode_desc_df.columns:
         print(f'no column for desc_source={desc_source} found in episode_desc_file_path={episode_desc_file_path}, please run `load_description_sources` for desc_source first')
         exit()
 
-    episode_rank_file_path = f'{PATH_TO_ANALYTICS_DATA}/{show_key}/model_rankings_{show_key}_{desc_source}.csv'
+    episode_rank_file_path = f'{ANALYTICS_DIR}/{show_key}/model_rankings_{show_key}_{desc_source}.csv'
     if not os.path.isfile(episode_rank_file_path):
         episode_rank_df = episode_desc_df.copy(deep=False)
         cols_to_remove = dict(DESCRIPTION_SOURCES)
@@ -55,7 +54,6 @@ def main():
         # current_ts = time.strftime("%Y%m%d-%H%M%S")
         # os.rename(episode_rank_file_path, f'{PATH_TO_ANALYTICS_DATA}/{show_key}/model_rankings_{show_key}_{desc_source}_{current_ts}.csv')
     else:
-        # episode_rank_df = pd.read_csv(episode_rank_file_path, '\t')
         episode_rank_df = pd.read_csv(episode_rank_file_path)
 
     if model_vendor == 'ALL':
@@ -73,7 +71,6 @@ def main():
             episode_rank_df.drop(col, axis=1, inplace=True)
     print(f'episode_rank_df={episode_rank_df}')
 
-    # episode_rank_df.to_csv(episode_rank_file_path, sep='\t')
     episode_rank_df.to_csv(episode_rank_file_path)
 
 
