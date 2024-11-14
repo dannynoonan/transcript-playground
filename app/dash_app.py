@@ -7,7 +7,7 @@ import os
 import pandas as pd
 import urllib.parse
 
-from app.app_metadata import PATH_TO_SENTIMENT_DATA
+from app.app_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR, SENTIMENT_DATA_DIR
 import app.dash.components as cmp
 from app.dash import (
     bertopic_model_clusters, episode_gantt_chart, location_line_chart, sentiment_line_chart, series_gantt_chart, series_search_results_gantt, 
@@ -17,7 +17,7 @@ import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR, OPENAI_EMOTIONS
+from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 from app.show_metadata import ShowKey
 import app.utils as utils
 import app.data_service.field_meta as fm
@@ -120,6 +120,7 @@ def display_page(pathname, search):
             bertopic_model_id = parsed_dict['bertopic_model_id']
             if isinstance(bertopic_model_id, list):
                 bertopic_model_id = bertopic_model_id[0]
+        print(f'bertopic_model_options={bertopic_model_options} bertopic_model_id={bertopic_model_id}')
         return bertopic_model_clusters.generate_content(bertopic_model_options, bertopic_model_id)
     
     elif pathname == "/tsp_dash/sentiment-line-chart":
@@ -513,52 +514,52 @@ def render_speaker_frequency_bar_chart(show_key: str, span_granularity: str, sea
     return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart, show_key
 
 
-############ bertopic-model-clusters callbacks
+############ bertopic-3d-clusters callbacks
 @dapp.callback(
-    Output('bertopic-model-clusters', 'figure'),
-    Output('bertopic-visualize-barchart', 'figure'),
-    Output('bertopic-visualize-topics', 'figure'),
-    Output('bertopic-visualize-hierarchy', 'figure'),
-    Output('show-key-display11', 'children'),
+    # Output('bertopic-model-clusters', 'figure'),
+    # Output('bertopic-visualize-barchart', 'figure'),
+    # Output('bertopic-visualize-topics', 'figure'),
+    # Output('bertopic-visualize-hierarchy', 'figure'),
     Output('bertopic-model-id-display', 'children'),
-    Output('episode-narratives-per-cluster-df', 'children'),
+    # Output('episode-narratives-per-cluster-df', 'children'),
     Input('show-key', 'value'),
     Input('bertopic-model-id', 'value'))    
 def render_bertopic_model_clusters(show_key: str, bertopic_model_id: str):
     print(f'in render_bertopic_model_clusters, show_key={show_key} bertopic_model_id={bertopic_model_id}')
 
     # load cluster data for bertopic model 
-    bertopic_model_docs_df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{show_key}/{bertopic_model_id}.csv', sep='\t')
+    # bertopic_model_docs_df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{show_key}/{bertopic_model_id}.csv', sep='\t')
 
-    bertopic_model_docs_df['cluster_title_short'] = bertopic_model_docs_df['cluster_title'].apply(utils.truncate)
-    bertopic_model_docs_df['cluster'] = bertopic_model_docs_df['cluster_id']
-    num_clusters = len(bertopic_model_docs_df['cluster'].unique())
+    # bertopic_model_docs_df['cluster_title_short'] = bertopic_model_docs_df['cluster_title'].apply(utils.truncate)
+    # bertopic_model_docs_df['cluster'] = bertopic_model_docs_df['cluster_id']
+    # # num_clusters = len(bertopic_model_docs_df['cluster'].unique())
 
-    # generate dash_table div as part of callback output
-    bertopic_model_docs_df = bertopic_model_docs_df[['cluster', 'cluster_title_short', 'Probability', 'wc', 'speaker_group', 'episode_key', 
-                                                     'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'focal_speakers', 'focal_locations',
-                                                     'topics_focused_tfidf_list', 'topics_universal_tfidf_list', 'x_coord', 'y_coord', 'z_coord', 'point_size']]
-    bertopic_model_docs_df['cluster_color'] = bertopic_model_docs_df['cluster'].apply(lambda x: cm.colors[x % 10])
-    bertopic_model_docs_df.drop(['focal_speakers', 'focal_locations'], axis=1, inplace=True) 
-    bertopic_model_docs_df = cmp.flatten_and_format_cluster_df(show_key, bertopic_model_docs_df)
-    dash_dt = cmp.pandas_df_to_dash_dt(bertopic_model_docs_df, num_clusters)
+    # # generate dash_table div as part of callback output
+    # bertopic_model_docs_df = bertopic_model_docs_df[['cluster', 'cluster_title_short', 'Probability', 'wc', 'speaker_group', 'episode_key', 
+    #                                                  'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'focal_speakers', 'focal_locations',
+    #                                                  'topics_universal_tfidf_list', 'x_coord', 'y_coord', 'z_coord', 'point_size']]
+    # bertopic_model_docs_df['cluster_color'] = bertopic_model_docs_df['cluster'].apply(lambda x: cm.colors[x % 10])
+    # bertopic_model_docs_df.drop(['focal_speakers', 'focal_locations'], axis=1, inplace=True) 
+    # bertopic_model_docs_df = cmp.flatten_and_format_cluster_df(show_key, bertopic_model_docs_df)
+    # dash_dt = cmp.pandas_df_to_dash_dt(bertopic_model_docs_df, num_clusters)
 
     # generate 3d scatter
-    bertopic_3d_scatter = pgraph.build_bertopic_model_3d_scatter(show_key, bertopic_model_id, bertopic_model_docs_df)
+    # bertopic_3d_scatter = pgraph.build_bertopic_model_3d_scatter(show_key, bertopic_model_id, bertopic_model_docs_df)
 
-    # generate topic keyword maps and topic graphs
-    mmr_bertopic_model = BERTopic.load(f'{BERTOPIC_MODELS_DIR}/{show_key}/{bertopic_model_id}/mmr')
-    openai_bertopic_model = BERTopic.load(f'{BERTOPIC_MODELS_DIR}/{show_key}/{bertopic_model_id}/openai')
-    bertopic_visualize_barchart = pbert.build_bertopic_visualize_barchart(mmr_bertopic_model)
-    bertopic_visualize_topics = pbert.build_bertopic_visualize_topics(openai_bertopic_model)
-    bertopic_visualize_hierarchy = pbert.build_bertopic_visualize_hierarchy(openai_bertopic_model)
+    # # generate topic keyword maps and topic graphs
+    # mmr_bertopic_model = BERTopic.load(f'{BERTOPIC_MODELS_DIR}/{show_key}/{bertopic_model_id}/mmr')
+    # openai_bertopic_model = BERTopic.load(f'{BERTOPIC_MODELS_DIR}/{show_key}/{bertopic_model_id}/openai')
+    # bertopic_visualize_barchart = pbert.build_bertopic_visualize_barchart(mmr_bertopic_model)
+    # bertopic_visualize_topics = pbert.build_bertopic_visualize_topics(openai_bertopic_model)
+    # bertopic_visualize_hierarchy = pbert.build_bertopic_visualize_hierarchy(openai_bertopic_model)
 
-    return bertopic_3d_scatter, bertopic_visualize_barchart, bertopic_visualize_topics, bertopic_visualize_hierarchy, show_key, bertopic_model_id, dash_dt
+    # return bertopic_3d_scatter, bertopic_visualize_barchart, bertopic_visualize_topics, bertopic_visualize_hierarchy, bertopic_model_id, dash_dt
+    return bertopic_model_id
 
 
 ############ sentiment-line-chart callbacks
 @dapp.callback(
-    Output('sentiment-line-chart', 'figure'),
+    Output('sentiment-line-chart-old', 'figure'),
     # Output('episode-speaker-options', 'options'),
     Input('show-key', 'value'),
     Input('episode-key', 'value'),
@@ -569,7 +570,7 @@ def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_
     print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
 
     # fetch episode sentiment data and build line chart
-    file_path = f'{PATH_TO_SENTIMENT_DATA}/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+    file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
     if os.path.isfile(file_path):
         df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')

@@ -13,7 +13,8 @@ def generate_content(bertopic_model_options: list, bertopic_model_id: str = None
         dbc.Card(className="bg-dark", children=[
             dbc.CardBody([
                 dbc.Row([
-                    html.H3(children=["BERTopic clusters for ", html.Span(id='show-key-display11'), " model ", html.Span(id='bertopic-model-id-display')]),
+                    html.H3(children=["BERTopic clusters for model ", html.Span(id='bertopic-model-id-display')]),
+                    # html.H3(children=["BERTopic clusters"]),
                     dbc.Col(md=2, children=[
                         html.Div([
                             "Show: ",
@@ -39,23 +40,23 @@ def generate_content(bertopic_model_options: list, bertopic_model_id: str = None
                     ]),
                 ]),
                 html.Br(),
-                dbc.Row(justify="evenly", children=[
-                    dcc.Graph(id="bertopic-model-clusters"),
-                ]),
-                html.Br(),
-                dbc.Row(justify="evenly", children=[
-                    dcc.Graph(id="bertopic-visualize-barchart"),
-                ]),
-                html.Br(),
-                dbc.Row(justify="evenly", children=[
-                    dcc.Graph(id="bertopic-visualize-topics"),
-                ]),
-                html.Br(),
-                dbc.Row(justify="evenly", children=[
-                    dcc.Graph(id="bertopic-visualize-hierarchy"),
-                ]),
-                html.Br(),
-                html.Div(id="episode-narratives-per-cluster-df"),
+                # dbc.Row(justify="evenly", children=[
+                #     dcc.Graph(id="bertopic-model-clusters"),
+                # ]),
+                # html.Br(),
+                # dbc.Row(justify="evenly", children=[
+                #     dcc.Graph(id="bertopic-visualize-barchart"),
+                # ]),
+                # html.Br(),
+                # dbc.Row(justify="evenly", children=[
+                #     dcc.Graph(id="bertopic-visualize-topics"),
+                # ]),
+                # html.Br(),
+                # dbc.Row(justify="evenly", children=[
+                #     dcc.Graph(id="bertopic-visualize-hierarchy"),
+                # ]),
+                # html.Br(),
+                # html.Div(id="episode-narratives-per-cluster-df"),
             ]),
         ])
     ])

@@ -71,7 +71,7 @@ def generate_content(episode_key: str, episode_dropdown_options: list, speaker_d
                 ]),
                 html.Br(),
                 dbc.Row(justify="evenly", children=[
-                    dcc.Graph(id="sentiment-line-chart"),
+                    dcc.Graph(id="sentiment-line-chart-old"),
                 ]),
                 html.Br(),
             ]),
