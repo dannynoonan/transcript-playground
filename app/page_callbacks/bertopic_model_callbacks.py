@@ -9,9 +9,6 @@ import app.fig_builder.plotly_networkgraph as pgraph
 import app.page_builder_service.bertopic_page_service as bps
 import app.utils as utils
 
-import app.dash.components as cmp
-import app.fig_meta.color_meta as cm
-
 
 ############ bertopic-3d-clusters callbacks
 @callback(
