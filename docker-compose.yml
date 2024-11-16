@@ -39,7 +39,6 @@ x-airflow-common:
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
     DATABASE_URL: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DB_NAME}
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
-    # _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:- aerich==0.7.2 asyncpg==0.28.0 bertopic==0.16.0 bs4==0.0.1 dash==2.15.0 dash-bootstrap-components==1.5.0 dash-core-components==2.0.0 dash-html-components==2.0.0 dash-table==5.0.0 elasticsearch==8.8.0 elasticsearch-dsl==8.9.0 fastapi==0.103.2 gensim==4.2.0 html5lib==1.1 http-exceptions==0.2.10 igraph==0.10.8 jinja2==3.0.2 lxml==4.9.3 matplotlib==3.5.3 networkx==2.6.3 nltk==3.8.1 numpy==1.21.6 openai==1.6.1 pandas==1.3.5 plotly==5.18.0 pydantic==2.3.0 pydantic_core==2.6.3 pydantic-extra-types==2.1.0 pydantic-settings==2.0.3 pytest==7.4.4 pytest-asyncio==0.21.2 python-multipart==0.0.6 requests==2.30.0 scikit-learn==1.0.2 scipy==1.7.3 tortoise-orm==0.19.3 uvicorn==0.22.0  urllib3==1.26.15 }  
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
@@ -48,6 +47,7 @@ x-airflow-common:
     # - ./requirements.txt:/requirements.txt
     - ${AIRFLOW_PROJ_DIR:-.}/app:/opt/airflow/extensions/app
     - ${AIRFLOW_PROJ_DIR:-.}/static:/opt/airflow/static
+    - ${AIRFLOW_PROJ_DIR:-.}/generated_data:/opt/airflow/generated_data
     - .env:/opt/airflow/.env
   user: "${AIRFLOW_UID:-50000}:0"
   # entrypoint: /entrypoint.sh

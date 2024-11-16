@@ -23,4 +23,5 @@ zzz/
 .env
 .env.bk
 .DS_Store
+cosign.pub
 http_ca.crt
