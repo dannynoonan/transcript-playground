@@ -55,11 +55,13 @@ def concat_vector_fields() -> list:
 VECTOR_FIELDS = concat_vector_fields()
 
 
-RELATIONS_FIELDS = ['es_mlt_relations_text', 'es_mlt_relations_dict', 'openai_ada002_relations_text', 'openai_ada002_relations_dict']
+RELATIONS_FIELDS = ['es_mlt_relations_text', 'es_mlt_relations_dict', 'openai_ada002_relations_text', 'openai_ada002_relations_dict', 
+                    'openai_3small_relations_text', 'openai_3small_relations_dict']
 
 FOCAL_FIELDS = ['focal_speakers', 'focal_locations']
 
-TOPICS_FIELDS = ['topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
+# TOPICS_FIELDS = ['topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
+TOPICS_FIELDS = ['topics_universal', 'topics_universal_tfidf']
 
 SENTIMENT_FIELDS = ['nltk_sent_pos', 'nltk_sent_neg', 'nltk_sent_neu', 
                     'openai_sent_joy', 'openai_sent_love', 'openai_sent_empathy', 'openai_sent_curiosity', 'openai_sent_sadness', 

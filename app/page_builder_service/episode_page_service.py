@@ -1,3 +1,4 @@
+import dash_bootstrap_components as dbc
 from dash import dash_table
 import pandas as pd
 
@@ -86,3 +87,50 @@ def generate_episode_similarity_dt(show_key: str, df: pd.DataFrame) -> dash_tabl
     episode_similarity_dt = pc.pandas_df_to_dash_dt(df, display_cols, 'rank', sim_ep_rgbs, {}, numeric_precision_overrides={'score': 2}, md_cols=['title'])
 
     return episode_similarity_dt
+
+
+def generate_episode_narrative_accordion_items(show_key: str, narrative_sequences: list) -> list:
+    narrative_accordion_items = []
+
+    for narr in narrative_sequences:
+        if 'cluster_memberships' not in narr:
+            continue
+
+        # label for collapsed narrative accordion item
+        speaker_lines = [f'{spkr} ({lc})' for spkr, lc in narr['speaker_line_counts'].items()]
+        narr_descr_text = f"{narr['speaker_group']} | {narr['word_count']} words | {', '.join(speaker_lines)} | {len(narr['cluster_memberships'])} clusters"
+        # source_scene_words = [f'{scene} ({wc})' for scene, wc in narr['source_scene_word_counts'].items()]
+        # narr_descr_text = f"Speaker group: {narr['speaker_group']} | Words: {narr['word_count']} | Speakers (lines): {', '.join(speaker_lines)} | Source scenes (words) {', '.join(source_scene_words)} | {len(narr['cluster_memberships'])} clusters"
+        
+        # narrative listing datatable for expanded season accordion item
+        narr_cluster_dt = generate_narrative_cluster_mappings_dt(show_key, narr['cluster_memberships'])
+
+        # combine elements into accordion item dash object
+        accordion_children = [
+            dbc.Row([
+                dbc.Col(md=12, children=[narr_cluster_dt])
+            ])
+        ]
+        narr_accordion_item = dbc.AccordionItem(title=narr_descr_text, item_id=narr['speaker_group'], children=accordion_children)
+        narrative_accordion_items.append(narr_accordion_item)
+
+    return narrative_accordion_items
+
+
+def generate_narrative_cluster_mappings_dt(show_key: str, clusters: list) -> dash_table.DataTable:
+    clusters_df = pd.DataFrame(clusters)
+
+    # field naming and processing
+    clusters_df['model_id'] = clusters_df.apply(lambda x: pc.link_to_bertopic_model(show_key, x['model_id'], x['model_id']), axis=1)
+    clusters_df['cluster_keywords'] = clusters_df['cluster_keywords'].apply(lambda x: ', '.join(x))
+
+    # table display input
+    display_cols = ['model_id', 'cluster_title', 'cluster_keywords', 'probability']
+    cluster_list = [str(c) for c in list(clusters_df['model_id'].unique())]
+    bg_color_map = {c:'Maroon' for c in cluster_list}
+
+    # convert to dash datatable
+    episodes_dt = pc.pandas_df_to_dash_dt(clusters_df, display_cols, 'model_id', cluster_list, bg_color_map, 
+                                          numeric_precision_overrides={'probability': 2}, md_cols=['model_id'])
+
+    return episodes_dt

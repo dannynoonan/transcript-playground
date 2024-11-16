@@ -181,8 +181,8 @@ def layout(show_key: str) -> html.Div:
             dbc.CardBody([
                 dbc.Row([
                     dbc.Col(md=12, children=[
-                        dbc.Accordion(id="accordion", active_item="acc_textarea", children=season_accordion_items),
-                        html.Div(id="accordion-contents", className="mt-3"),
+                        dbc.Accordion(id="series-episode-listing-accordion", active_item="acc_textarea", children=season_accordion_items),
+                        html.Div(id="series-episode-listing-accordion-contents", className="mt-3"),
                     ]),
                 ]),
             ]),

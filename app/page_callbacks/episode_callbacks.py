@@ -453,6 +453,21 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
     return figs['universalGenres'], dts['universalGenres']
 
 
+############ episode narrative listing callbacks
+@callback(
+    Output("episode-narrative-listing-accordion-contents", "children"),
+    Input('show-key', 'data'),
+    Input("episode-narrative-listing-accordion", "active_item")
+)    
+def render_episode_narrative_listing_accordion(show_key: str, expanded_narrative: str):
+    utils.hilite_in_logs(f'callback invoked: render_episode_narrative_listing_accordion, show_key={show_key} expanded_narrative={expanded_narrative}')
+
+    # TODO circle back to whether this is needed and how to label it
+    # accordion_contents = {}
+
+    return {}
+
+
 # # NOTE not being used
 # ############ episode speaker chatter scatter callbacks
 # @callback(
