@@ -107,7 +107,7 @@
                         {% for topic in speaker['topics_mbti'] %}
                             {% if loop.index < 4 %}
                                 {% set topic_names = topic['topic_name'].split('-') %}
-                                <a href="/web/topic/{{ tdata['show_key'] }}/meyersBriggsKiersey/{{ topic['topic_key'] }}" 
+                                <a href="/web/topic/{{ tdata['show_key'] }}/mbti/{{ topic['topic_key'] }}" 
                                     class="text-white" >{{ topic['topic_key'] }}</a>: {{ topic_names[0] }}{% if loop.index < 3 %}, {% endif %}
                             {% endif %}
                         {% endfor %}

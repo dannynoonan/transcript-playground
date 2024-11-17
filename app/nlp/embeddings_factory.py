@@ -1,10 +1,6 @@
-# import gensim
 from gensim.models import Word2Vec, KeyedVectors
 # from gensim.scripts.glove2word2vec import glove2word2vec
-from gensim.test.utils import common_texts
 import math
-import matplotlib
-import matplotlib.pyplot as plt
 import numpy as np
 import openai
 from openai import OpenAI
@@ -24,8 +20,9 @@ from app.show_metadata import ShowKey
 
 warnings.filterwarnings(action = 'ignore')
 
-
 cached_models = {}
+
+RETRY_SKIP_INCREMENT = 8
 
 
 # async def load_model(vendor: str, version: str) -> Word2Vec:
@@ -140,36 +137,49 @@ def generate_openai_embeddings(input_text: str, model_version: str) -> tuple[lis
         raise Exception(f'Failed to generate openai:{model_version} vector embeddings: {e}', e)
 
 
-@DeprecationWarning
-# TODO refactor to use generate_embeddings
-def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, model_vendor: str, model_version: str) -> None|Exception:
-    print(f'begin generate_episode_embeddings for {show_key}:{es_episode.episode_key} using model {model_vendor}:{model_version}')
+def generate_episode_embeddings(es_episode: EsEpisodeTranscript, model_vendor: str, model_version: str) -> list|Exception:
+    print(f'begin generate_episode_embeddings for {es_episode.show_key}:{es_episode.episode_key} using model {model_vendor}:{model_version}')
 
     if model_vendor == 'openai':
-        vendor_meta = TRF_MODELS[model_vendor]
-        true_model_version = vendor_meta['versions'][model_version]['true_name']
         try:
-            embeddings, tokens, no_match_tokens = generate_openai_embeddings(es_episode.flattened_text, true_model_version)
-            es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
+            embeddings = generate_embeddings(es_episode.flattened_text, model_vendor, model_version)
+            return embeddings
+        
         except openai.BadRequestError as bre:
-            print(f'Failed to generate openai:{model_version} vector embeddings: {bre}')
+            # NOTE nesting openai.BadRequestError checks within openai.BadRequestError checks is gross, but it kinda made sense to insulate the 
+            # simple success case from the wonky iterative logic for chipping away at the text and retrying embedding requests 
+            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key}: {bre}')
+
+            # If BadRequestError is not about token count, raise exception and give up 
+            if not "This model's maximum context length is" in bre.message:
+                raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key}: {bre}')
+
             # If BadRequestError is about token count, iteratively retry request with slightly smaller variation of content until request goes thru 
-            if "This model's maximum context length is 8192 tokens" in bre.message:
-                skip_increment = 8
-                success = False
-                while not success and skip_increment > 1:
-                    try:
-                        embeddings, tokens, no_match_tokens = generate_openai_embeddings(shorten_flattened_text(es_episode, skip_increment=skip_increment), true_model_version)
-                        es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
-                        success = True
-                    except Exception as e:
-                        print(f'On retry using shorterned content, still failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
+            skip_increment = RETRY_SKIP_INCREMENT
+            retry = 0
+            while skip_increment > 1:
+                retry += 1
+                # attempt to reduce content length without drastically altering its meaning by surgically zapping lines at recurring increments
+                shortened_text = shorten_episode_text(es_episode, skip_increment=skip_increment)
+                try:
+                    embeddings = generate_embeddings(shortened_text, model_vendor, model_version)
+                    return embeddings
+                except openai.BadRequestError as bre:
+                    print(f'On retry={retry} using skip_increment={skip_increment}, still failed to generate {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key}: {bre}')
+                    if "This model's maximum context length is" in bre.message:
                         skip_increment -= 1
-                if not success:
-                    raise Exception(f'On multiple retries using incrementally shorterned content, still failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
+                    else:
+                        raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key}: {bre}')
+                except Exception as e:
+                    print(f'On retry={retry} using skip_increment={skip_increment}, still failed to generate {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key}: {e}')
+                    raise Exception(f'On retry={retry} using skip_increment={skip_increment}, still failed to generate {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key}: {e}')
+            
+            # if after multiple retries with decreasing skip_increments we're still encountering a 'maximum content length' exception, give up on retries and throw exception
+            raise Exception(f'After {retry} retries using incrementally shorter content, still failed to generate {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key}: {bre}')
+        
         except Exception as e:
-            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
-            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
+            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key}: {e}')
+            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key}: {e}')
 
     else:
         vendor_meta = W2V_MODELS[model_vendor]
@@ -193,16 +203,13 @@ def generate_episode_embeddings(show_key: str, es_episode: EsEpisodeTranscript, 
             if len(scene_tokens) > 0:
                 doc_tokens.extend(scene_tokens)
 
-        print(f'+++++++++++ len(doc_tokens)={len(doc_tokens)}')
-
         if len(doc_tokens) > 0:
             try:
                 embeddings, tokens, no_match_tokens = calculate_embeddings(doc_tokens, model_vendor, model_version)
+                print(f'Generated {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key} for tokens={tokens} no_match_tokens={no_match_tokens}')
+                return embeddings
             except Exception as e:
-                raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {show_key}:{es_episode.episode_key}: {e}')
-            es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
-            es_episode[f'{model_vendor}_{model_version}_tokens'] = tokens
-            es_episode[f'{model_vendor}_{model_version}_no_match_tokens'] = no_match_tokens
+                raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for {es_episode.show_key}:{es_episode.episode_key}: {e}')
         
 
 # TODO incorporate Word2Vec embeddings generation from generate_episode_embeddings into this generic function
@@ -214,16 +221,15 @@ def generate_embeddings(text_to_vectorize: str, model_vendor: str, model_version
     if model_vendor == 'openai':
         vendor_meta = TRF_MODELS[model_vendor]
         true_model_version = vendor_meta['versions'][model_version]['true_name']
-        try:
-            embeddings, _, _ = generate_openai_embeddings(text_to_vectorize, true_model_version)
-            return embeddings
-        except openai.BadRequestError as bre:
-            # TODO slice up request and retry
-            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)}: {bre}')
-            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {bre}')
-        except Exception as e:
-            print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {e}')
-            raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {e}')
+        # try:
+        embeddings, _, _ = generate_openai_embeddings(text_to_vectorize, true_model_version)
+        return embeddings
+        # except openai.BadRequestError as bre:
+        #     print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} / openai_token_count={openai_token_count}: {bre}')
+        #     raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} / openai_token_count={openai_token_count} in text_to_vectorize={text_to_vectorize}: {bre}')
+        # except Exception as e:
+        #     print(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {e}')
+        #     raise Exception(f'Failed to generate {model_vendor}:{model_version} vector embeddings for len(tokens)={len(tokens)} in text_to_vectorize={text_to_vectorize}: {e}')
         
 
 def build_embeddings_model(show_key: str) -> dict:
@@ -299,9 +305,7 @@ def cluster_docs(doc_embeddings: dict, num_clusters: int):
     return doc_clusters_df
 
 
-@DeprecationWarning
-# TODO `generate_episode_embeddings` is only dependency and it is Deprecated, refactor everything to use generate_embeddings
-def shorten_flattened_text(es_episode: EsEpisodeTranscript, skip_increment: int = None) -> str:
+def shorten_episode_text(es_episode: EsEpisodeTranscript, skip_increment: int = None) -> str:
     flattened_text = f'{es_episode.title} '
     scene_i = 0
     for scene in es_episode.scenes:

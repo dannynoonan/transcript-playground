@@ -2,7 +2,7 @@ import dash
 from dash import dcc, html
 import dash_bootstrap_components as dbc
 
-from app.dash.components import navbar
+import app.page_builder_service.page_components as pc
 
 
 dash.register_page(__name__)
@@ -10,7 +10,7 @@ dash.register_page(__name__)
 
 def layout(err_msg: str) -> html.Div:
     content = html.Div([
-        navbar,
+        # pc.generate_navbar(),
         dbc.Card(className="bg-dark", children=[
             dbc.CardBody([
                 html.Br(),

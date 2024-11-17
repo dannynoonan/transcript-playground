@@ -3,8 +3,8 @@ MAX_WORDS_FOR_BERT = 500
 MIN_SPEAKER_LINES = 5
 MIN_SPEAKER_LINE_RATIOS = {2: 0.33, 3: 0.25, 4: 0.2}
 
-BERTOPIC_DATA_DIR = 'bertopic_data'
-BERTOPIC_MODELS_DIR = 'bertopic_models'
+# PATH_TO_BERTOPIC_DATA_DIR = 'bertopic_data'
+# PATH_TO_BERTOPIC_MODELS_DIR = 'bertopic_models'
 
 NTLK_POLARITY = ['pos', 'neg', 'neu']
 OPENAI_EMOTIONS = ['Joy', 'Love', 'Empathy', 'Curiosity', 'Sadness', 'Anger', 'Fear', 'Disgust', 'Surprise', 'Confusion']
@@ -84,7 +84,19 @@ TRANSFORMER_VENDOR_VERSIONS = {
                 'status': 'ACTIVE',
                 'true_name': 'text-embedding-ada-002',
                 'max_tokens': 8191
-            }
+            },
+            '3small': {
+                'dims': 1536,
+                'status': 'ACTIVE',
+                'true_name': 'text-embedding-3-small',
+                'max_tokens': 8191
+            },
+            # '3large': {
+            #     'dims': 3072,
+            #     'status': 'ACTIVE',
+            #     'true_name': 'text-embedding-3-large',
+            #     'max_tokens': 8191
+            # }
         }
     }
 }

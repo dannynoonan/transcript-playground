@@ -1,4 +1,4 @@
-# Dockerfile
+# Dockerfile for transcript-playground app
 
 # pull the official docker image
 FROM python:3.10.4

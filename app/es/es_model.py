@@ -14,19 +14,19 @@ class EsSceneEvent(InnerDoc):
     spoken_by = Text(analyzer='standard', fields={'keyword': Keyword()})
     dialog = Text(analyzer=freetext_analyzer, term_vector='yes', fields={'word_count': TokenCount(analyzer=token_count_analyzer, store='true')})
     # generated
-    nltk_sent_pos = Float()
-    nltk_sent_neg = Float()
-    nltk_sent_neu = Float()
-    openai_sent_joy = Float()
-    openai_sent_love = Float()
-    openai_sent_empathy = Float()
-    openai_sent_curiosity = Float()
-    openai_sent_sadness = Float()
-    openai_sent_anger = Float()
-    openai_sent_fear = Float()
-    openai_sent_disgust = Float()
-    openai_sent_surprise = Float()
-    openai_sent_confusion = Float()
+    # nltk_sent_pos = Float()
+    # nltk_sent_neg = Float()
+    # nltk_sent_neu = Float()
+    # openai_sent_joy = Float()
+    # openai_sent_love = Float()
+    # openai_sent_empathy = Float()
+    # openai_sent_curiosity = Float()
+    # openai_sent_sadness = Float()
+    # openai_sent_anger = Float()
+    # openai_sent_fear = Float()
+    # openai_sent_disgust = Float()
+    # openai_sent_surprise = Float()
+    # openai_sent_confusion = Float()
 
 
 class EsScene(InnerDoc):
@@ -74,6 +74,8 @@ class EsEpisodeTranscript(Document):
     es_mlt_relations_dict = Object(multi=True)
     openai_ada002_relations_text = Text(multi=True)
     openai_ada002_relations_dict = Object(multi=True)
+    openai_3small_relations_text = Text(multi=True)
+    openai_3small_relations_dict = Object(multi=True)
     # webvectors_enwiki223_relations = Text(multi=True)
     # glove_6B300d_relations = Text(multi=True)
     # fasttext_wikinews300d1M_relations = Text(multi=True)
@@ -82,6 +84,7 @@ class EsEpisodeTranscript(Document):
     glove_6B300d_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     fasttext_wikinews300d1M_embeddings = DenseVector(dims=300, index='true', similarity='cosine')
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    openai_3small_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     nltk_sent_pos = Float()
     nltk_sent_neg = Float()
     nltk_sent_neu = Float()
@@ -148,8 +151,9 @@ class EsSpeaker(Document):
     most_frequent_companions = Object(multi=True)
     topics_mbti = Object(multi=True)
     topics_dnda = Object(multi=True)
-    openai_ada002_word_count = Integer()
+    openai_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    openai_3small_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
     indexed_ts = Date()
     # generated
@@ -179,8 +183,9 @@ class EsSpeakerSeason(Document):
     most_frequent_companions = Object(multi=True)
     topics_mbti = Object(multi=True)
     topics_dnda = Object(multi=True)
-    openai_ada002_word_count = Integer()
+    openai_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    openai_3small_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
     indexed_ts = Date()
 
@@ -209,8 +214,9 @@ class EsSpeakerEpisode(Document):
     most_frequent_companions = Object(multi=True)
     topics_mbti = Object(multi=True)
     topics_dnda = Object(multi=True)
-    openai_ada002_word_count = Integer()
+    openai_word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    openai_3small_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     loaded_ts = Date()
     indexed_ts = Date()
     # generated
@@ -233,6 +239,7 @@ class EsSpeakerUnified(Document):
     layer_key = Keyword()
     word_count = Integer()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    openai_3small_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     indexed_ts = Date()
 
     class Index:
@@ -253,6 +260,7 @@ class EsTopic(Document):
     description = Text()
     parent_description = Text()
     openai_ada002_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
+    openai_3small_embeddings = DenseVector(dims=1536, index='true', similarity='cosine')
     indexed_ts = Date()
 
     class Index:

@@ -121,3 +121,7 @@ def pandas_df_to_dash_dt(df: pd.DataFrame, display_cols: list, color_key_col: st
 
 def link_to_episode(show_key: str, episode_key: str, title: str) -> str:
     return f'[{title}](/dash_pages/episode/{show_key}/{episode_key})'
+
+
+def link_to_bertopic_model(show_key: str, bertopic_model_id: str, title: str) -> str:
+    return f'[{title}](/dash_pages/bertopic_model/{show_key}/{bertopic_model_id})'

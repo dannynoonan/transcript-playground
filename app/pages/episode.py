@@ -36,6 +36,11 @@ def layout(show_key: str, episode_key: str) -> html.Div:
     episode_speakers = speakers_for_episode_response['speaker_episodes']
     speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, [s['speaker'] for s in episode_speakers])
 
+    # series summary and season episode listing data
+    narrative_sequences_response = esr.fetch_narrative_sequences(ShowKey(show_key), episode_key)
+    narrative_sequences = narrative_sequences_response['narrative_sequences']
+    narrative_accordion_items = eps.generate_episode_narrative_accordion_items(show_key, narrative_sequences)
+
     # emotions
     emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
 
@@ -306,22 +311,9 @@ def layout(show_key: str, episode_key: str) -> html.Div:
                             ]),
                             dbc.Tab(label="Cluster mappings", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row([
-                                    dbc.Col(md=5, children=[
-                                        html.Div(id="episode-universal-genres-gpt35-v2-dt"),
-                                    ]),
-                                    dbc.Col(md=7, children=[
-                                        html.Div(dcc.Graph(id="episode-universal-genres-gpt35-v2-treemap")),
-                                        dcc.RadioItems(
-                                            id="universal-genres-gpt35-v2-score-type",
-                                            className="text-white", 
-                                            options=[
-                                                {'label': 'absolute scoring', 'value': 'scaled_score'},
-                                                {'label': 'frequency-based scoring', 'value': 'tfidf_score'},
-                                            ],
-                                            value='tfidf_score',
-                                            inputStyle={"margin-left": "12px", "margin-right": "4px"},
-                                            style={"display": "flex", "padding-bottom": "0"}
-                                        ),
+                                    dbc.Col(md=12, children=[
+                                        dbc.Accordion(id="episode-narrative-listing-accordion", active_item="acc_textarea", children=narrative_accordion_items),
+                                        html.Div(id="episode-narrative-listing-accordion-contents", className="mt-3"),
                                     ]),
                                 ]),
                             ]),

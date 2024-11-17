@@ -3,15 +3,31 @@ from operator import itemgetter
 import os
 import pandas as pd
 
+from app.app_metadata import BERTOPIC_MODELS_DIR
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_MODELS_DIR
+from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 import app.nlp.query_preprocessor as qp
 from app.show_metadata import ShowKey, show_metadata, EPISODE_TOPIC_GROUPINGS
 
 
 esr_app = APIRouter()
+
+
+
+###################### METADATA LOOKUP ###########################
+
+@esr_app.get("/esr/does_index_exist/{index_name}", tags=['ES Reader'])
+def does_index_exist(index_name: str):
+    '''
+    Verify that an index exists 
+    '''
+    index_list = esqb.list_indices()
+    for index in index_list:
+        if index['index'] == index_name:
+            return {'index_exists': True} 
+    return {'index_exists': False}
 
 
 
@@ -198,7 +214,7 @@ def fetch_indexed_speakers(show_key: ShowKey, speakers: str = None, season: int 
     '''
     For speakers indexed in es, fetch info, lines, and aggregate counts
     '''
-    return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_ada002_word_count']
+    return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_word_count']
     speaker_list = []
     if speakers:
         speaker_list = speakers.split(',')
@@ -851,7 +867,7 @@ def search_speakers(qt: str, show_key: ShowKey = None, extra_fields: str = None)
     '''                
     if show_key:
         show_key = show_key.value
-    return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_ada002_word_count']
+    return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_word_count']
     if extra_fields:
         extra_fields = extra_fields.split(',')
         return_fields.extend(extra_fields)

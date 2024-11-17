@@ -17,67 +17,8 @@ import app.data_service.topic_aggregator as tagg
 import app.nlp.embeddings_factory as ef
 import app.page_builder_service.page_components as pc
 import app.page_builder_service.series_page_service as sps
-from app.show_metadata import show_metadata, ShowKey
+from app.show_metadata import ShowKey
 from app import utils
-
-
-############ series summary callbacks
-@callback(
-    Output("accordion-contents", "children"),
-    Input('show-key', 'data'),
-    Input("accordion", "active_item")
-)    
-def render_series_summary(show_key: str, expanded_season: str):
-    utils.hilite_in_logs(f'callback invoked: render_series_summary, show_key={show_key} expanded_season={expanded_season}')
-
-    # TODO circle back to whether this is needed and how to label it
-    # accordion_contents = {}
-
-    return {}
-
-
-############ all series episodes scatter
-@callback(
-    Output('series-episodes-scatter-grid', 'figure'),
-    Input('show-key', 'data'),
-    Input('scatter-grid-hilite', 'value'),
-    Input('speaker-color-map', 'data'),
-    Input('all-simple-episodes', 'data'),
-    Input('all-seasons', 'data'),
-    background=True
-)    
-def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color_map: dict, all_simple_episodes: list, all_seasons: list):
-    callback_start_ts = dt.now()
-    utils.hilite_in_logs(f'callback invoked: render_all_series_episodes_scatter ts={callback_start_ts} show_key={show_key} hilite={hilite}')
-
-    if hilite in ['topics_universal', 'topics_universal_tfidf']:
-        hilite_color_map = cm.TOPIC_COLORS
-    elif hilite == 'focal_speakers':
-        hilite_color_map = speaker_color_map
-    elif hilite == 'focal_locations':
-        scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key))
-        scenes_by_location = scenes_by_location_response['scenes_by_location']
-        locations = utils.truncate_dict(scenes_by_location, 500, start_index=1)
-        hilite_color_map = {loc:cm.colors[i % 10] for i, loc in enumerate(locations)}
-    else:
-        hilite_color_map = None
-
-    # load all episodes into dataframe
-    df = pd.DataFrame(all_simple_episodes)
-    df['air_date'] = df['air_date'].apply(lambda x: x[:10])
-
-    cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'focal_speakers', 'focal_locations', 
-                    'topics_universal', 'topics_universal_tfidf']
-
-    df = df[cols_to_keep]
-
-    all_series_episodes_scatter = pscat.build_all_series_episodes_scatter(df, all_seasons, hilite=hilite, hilite_color_map=hilite_color_map)
-
-    callback_end_ts = dt.now()
-    callback_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_all_series_episodes_scatter returned at ts={callback_end_ts} duration={callback_duration}')
-
-    return all_series_episodes_scatter
 
 
 ############ series speakers gantt callback
@@ -85,7 +26,7 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color
     Output('series-speakers-gantt', 'figure'),
     Input('show-key', 'data'),
     Input('simple-episodes-by-season', 'data'),
-    background=True
+    # background=True
 )    
 def render_series_speakers_gantt(show_key: str, simple_episodes_by_season: dict):
     callback_start_ts = dt.now()
@@ -120,7 +61,7 @@ def render_series_speakers_gantt(show_key: str, simple_episodes_by_season: dict)
     Output('series-locations-gantt', 'figure'),
     Input('show-key', 'data'),
     Input('simple-episodes-by-season', 'data'),
-    background=True
+    # background=True
 )    
 def render_series_locations_gantt(show_key: str, simple_episodes_by_season: dict):
     callback_start_ts = dt.now()
@@ -156,7 +97,7 @@ def render_series_locations_gantt(show_key: str, simple_episodes_by_season: dict
     Input('show-key', 'data'),
     Input('series-topics-gantt-score-type', 'value'),
     Input('simple-episodes-by-season', 'data'),
-    background=True
+    # background=True
 )    
 def render_series_topics_gantt(show_key: str, score_type: str, simple_episodes_by_season: dict):
     callback_start_ts = dt.now()
@@ -244,46 +185,63 @@ def render_series_search_gantt(show_key: str, qt: str, simple_episodes_by_season
     return response_text, series_search_results_gantt, series_search_results_dt
 
 
-############ speaker frequency bar chart callback
+############ all series episodes scatter
 @callback(
-    Output('speaker-season-frequency-bar-chart', 'figure'),
-    Output('speaker-episode-frequency-bar-chart', 'figure'),
+    Output('series-episodes-scatter-grid', 'figure'),
     Input('show-key', 'data'),
-    Input('speaker-chatter-tally-by', 'value'),
-    Input('speaker-chatter-season', 'value'),
-    Input('speaker-chatter-sequence-in-season', 'value')
+    Input('scatter-grid-hilite', 'value'),
+    Input('speaker-color-map', 'data'),
+    Input('all-simple-episodes', 'data'),
+    Input('all-seasons', 'data'),
+    # background=True
 )    
-def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str, sequence_in_season: str = None):
+def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color_map: dict, all_simple_episodes: list, all_seasons: list):
     callback_start_ts = dt.now()
-    utils.hilite_in_logs(f'callback invoked: render_speaker_frequency_bar_chart ts={callback_start_ts} show_key={show_key} tally_by={tally_by} season={season} sequence_in_season={sequence_in_season}')
+    utils.hilite_in_logs(f'callback invoked: render_all_series_episodes_scatter ts={callback_start_ts} show_key={show_key} hilite={hilite}')
 
-    if season in ['0', 0, 'All']:
-        season = None
+    if hilite in ['topics_universal', 'topics_universal_tfidf']:
+        hilite_color_map = cm.TOPIC_COLORS
+    elif hilite == 'focal_speakers':
+        hilite_color_map = speaker_color_map
+    elif hilite == 'focal_locations':
+        scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key))
+        scenes_by_location = scenes_by_location_response['scenes_by_location']
+        locations = utils.truncate_dict(scenes_by_location, 500, start_index=1)
+        hilite_color_map = {loc:cm.colors[i % 10] for i, loc in enumerate(locations)}
     else:
-        season = int(season)
+        hilite_color_map = None
 
-    # fetch or generate aggregate speaker data and build speaker frequency bar chart
-    file_path = f'./app/data/{show_key}/speaker_episode_aggs_{show_key}.csv'
-    if os.path.isfile(file_path):
-        df = pd.read_csv(file_path)
-        print(f'loading dataframe at file_path={file_path}')
-    else:
-        print(f'no file found at file_path={file_path}, running `/esr/generate_speaker_line_chart_sequences/{show_key}?overwrite_file=True` to generate')
-        esr.generate_speaker_line_chart_sequences(ShowKey(show_key), overwrite_file=True)
-        if os.path.isfile(file_path):
-            df = pd.read_csv(file_path)
-            print(f'loading dataframe at file_path={file_path}')
-        else:
-            raise Exception(f'Failure to render_speaker_frequency_bar_chart: unable to fetch or generate dataframe at file_path={file_path}')
-    
-    speaker_season_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, tally_by, aggregate_ratio=False, season=season)
-    speaker_episode_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, tally_by, aggregate_ratio=False, season=season, sequence_in_season=sequence_in_season)
+    # load all episodes into dataframe
+    df = pd.DataFrame(all_simple_episodes)
+    df['air_date'] = df['air_date'].apply(lambda x: x[:10])
+
+    cols_to_keep = ['episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'focal_speakers', 'focal_locations', 
+                    'topics_universal', 'topics_universal_tfidf']
+
+    df = df[cols_to_keep]
+
+    all_series_episodes_scatter = pscat.build_all_series_episodes_scatter(df, all_seasons, hilite=hilite, hilite_color_map=hilite_color_map)
 
     callback_end_ts = dt.now()
     callback_duration = callback_end_ts - callback_start_ts
-    utils.hilite_in_logs(f'render_speaker_frequency_bar_chart returned at ts={callback_end_ts} duration={callback_duration}')
+    utils.hilite_in_logs(f'render_all_series_episodes_scatter returned at ts={callback_end_ts} duration={callback_duration}')
 
-    return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart
+    return all_series_episodes_scatter
+
+
+############ series episode listing accordion callbacks
+@callback(
+    Output("series-episode-listing-accordion-contents", "children"),
+    Input('show-key', 'data'),
+    Input("series-episode-listing-accordion", "active_item")
+)    
+def render_series_episode_listing_accordion(show_key: str, expanded_season: str):
+    utils.hilite_in_logs(f'callback invoked: render_series_episode_listing_accordion, show_key={show_key} expanded_season={expanded_season}')
+
+    # TODO circle back to whether this is needed and how to label it
+    # accordion_contents = {}
+
+    return {}
 
 
 ############ series topic pie and bar chart callback
@@ -294,7 +252,7 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
     Input('series-topic-pie-topic-grouping', 'value'),
     Input('series-topic-pie-score-type', 'value'),
     Input('all-simple-episodes', 'data'),
-    background=True
+    # background=True
 )    
 def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str, all_simple_episodes: str):
     callback_start_ts = dt.now()
@@ -440,6 +398,48 @@ def render_series_speaker_listing_dt(show_key: str, indexed_speakers: list):
 
     # return speaker_qt, speaker_listing_dt, speaker_matches_dt
     return speaker_listing_dt
+
+
+############ speaker frequency bar chart callback
+@callback(
+    Output('speaker-season-frequency-bar-chart', 'figure'),
+    Output('speaker-episode-frequency-bar-chart', 'figure'),
+    Input('show-key', 'data'),
+    Input('speaker-chatter-tally-by', 'value'),
+    Input('speaker-chatter-season', 'value'),
+    Input('speaker-chatter-sequence-in-season', 'value')
+)    
+def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str, sequence_in_season: str = None):
+    callback_start_ts = dt.now()
+    utils.hilite_in_logs(f'callback invoked: render_speaker_frequency_bar_chart ts={callback_start_ts} show_key={show_key} tally_by={tally_by} season={season} sequence_in_season={sequence_in_season}')
+
+    if season in ['0', 0, 'All']:
+        season = None
+    else:
+        season = int(season)
+
+    # fetch or generate aggregate speaker data and build speaker frequency bar chart
+    file_path = f'./app/data/{show_key}/speaker_episode_aggs_{show_key}.csv'
+    if os.path.isfile(file_path):
+        df = pd.read_csv(file_path)
+        print(f'loading dataframe at file_path={file_path}')
+    else:
+        print(f'no file found at file_path={file_path}, running `/esr/generate_speaker_line_chart_sequences/{show_key}?overwrite_file=True` to generate')
+        esr.generate_speaker_line_chart_sequences(ShowKey(show_key), overwrite_file=True)
+        if os.path.isfile(file_path):
+            df = pd.read_csv(file_path)
+            print(f'loading dataframe at file_path={file_path}')
+        else:
+            raise Exception(f'Failure to render_speaker_frequency_bar_chart: unable to fetch or generate dataframe at file_path={file_path}')
+    
+    speaker_season_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, tally_by, aggregate_ratio=False, season=season)
+    speaker_episode_frequency_bar_chart = pbar.build_speaker_frequency_bar(show_key, df, tally_by, aggregate_ratio=False, season=season, sequence_in_season=sequence_in_season)
+
+    callback_end_ts = dt.now()
+    callback_duration = callback_end_ts - callback_start_ts
+    utils.hilite_in_logs(f'render_speaker_frequency_bar_chart returned at ts={callback_end_ts} duration={callback_duration}')
+
+    return speaker_season_frequency_bar_chart, speaker_episode_frequency_bar_chart
 
 
 ############ series speaker topic grid callback

@@ -16,7 +16,7 @@ etl_app = APIRouter()
 
 
 @etl_app.get("/etl/copy_episode_listing/{show_key}", tags=['ETL'])
-async def copy_episode_listing(show_key: ShowKey):
+def copy_episode_listing(show_key: ShowKey):
     '''
     Copies html of external episode listing page (as configured in `show_metadata`) to `source/episode_listings/` 
     '''
@@ -36,7 +36,7 @@ async def copy_episode_listing(show_key: ShowKey):
 
 
 @etl_app.get("/etl/copy_transcript_sources/{show_key}", tags=['ETL'])
-async def copy_transcript_sources(show_key: ShowKey):
+def copy_transcript_sources(show_key: ShowKey):
     '''
     Copies html of external transcript url listing page (as configured in `show_metadata`) to `source/transcript_sources/`
     '''
@@ -138,13 +138,13 @@ async def copy_all_transcripts_from_source(show_key: ShowKey):
             print(f"Failure to copy episode {show_key}:{episode.external_key} from url={transcript_source.transcript_url}: {e}")
 
     return {
-        "no transcripts": len(no_transcript_episode_keys),
-        "no transcripts episode keys": no_transcript_episode_keys,
-        "transcript copy attempts": attempts, 
+        "no_transcripts": len(no_transcript_episode_keys),
+        "no_transcripts_episode_keys": no_transcript_episode_keys,
+        "transcript_copy_attempts": attempts, 
         "successful": len(successful_episode_keys),
-        "successful episode keys": successful_episode_keys, 
+        "successful_episode_keys": successful_episode_keys, 
         "failed": len(failed_episode_keys),
-        "failed episode keys": failed_episode_keys, 
+        "failed_episode_keys": failed_episode_keys, 
     }
    
 
@@ -310,11 +310,11 @@ async def load_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
             print(f"Failure to insert Episode having show_key={show_key} external_key={episode.external_key}: {e}")
             
     return {
-        "no transcripts": len(no_transcript_episode_keys),
-        "no transcripts episode keys": no_transcript_episode_keys,
-        "transcript load attempts": attempts, 
+        "no_transcripts": len(no_transcript_episode_keys),
+        "no_transcripts_episode-keys": no_transcript_episode_keys,
+        "transcript_load_+attempts": attempts, 
         "successful": len(successful_episode_keys),
-        "successful episode keys": successful_episode_keys, 
+        "successful_episode_keys": successful_episode_keys, 
         "failed": len(failed_episode_keys),
-        "failed episode keys": failed_episode_keys, 
+        "failed_episode_keys": failed_episode_keys, 
     }

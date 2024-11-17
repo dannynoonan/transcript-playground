@@ -4,6 +4,7 @@ import math
 import os
 import pandas as pd
 
+from app.app_metadata import BERTOPIC_DIR
 import app.database.dao as dao
 import app.data_service.field_flattener as fflat
 from app.data_service.topic_aggregator import TopicAgg
@@ -15,7 +16,7 @@ import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 import app.nlp.narrative_extractor as ne
-from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS, BERTOPIC_DATA_DIR
+from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
 
 
@@ -72,7 +73,7 @@ def init_es(index_name: str = None):
 
 
 @esw_app.get("/esw/index_episode/{show_key}/{episode_key}", tags=['ES Writer'])
-async def index_transcript(show_key: ShowKey, episode_key: str):
+async def index_episode(show_key: ShowKey, episode_key: str):
     '''
     Fetch `Episode` entity from Postgres `transcript_db`, transform Tortoise object to ElasticSearch object, and write it to ElasticSearch index.
     '''
@@ -105,7 +106,7 @@ async def index_transcript(show_key: ShowKey, episode_key: str):
 
 
 @esw_app.get("/esw/index_all_episodes/{show_key}", tags=['ES Writer'])
-async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
+async def index_all_episodes(show_key: ShowKey, overwrite_all: bool = False):
     '''
     Bulk run of `/esw/index_episode` for all episodes of a given show
     '''
@@ -117,7 +118,7 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
     if not episodes:
         return {"Error": f"No Episodes found having show_key={show_key}. You may need to run /load_episode_listing first."}
     if not overwrite_all:
-        return {"No-op": f"/index_transcripts was invoked on {len(episodes)} episodes, but `overwrite_all` flag was not set to True so no action was taken"}
+        return {"No-op": f"/index_all_episodes was invoked on {len(episodes)} episodes, but `overwrite_all` flag was not set to True so no action was taken"}
     
     # fetch and insert transcripts for all episodes
     attempts = 0
@@ -145,34 +146,34 @@ async def index_all_transcripts(show_key: ShowKey, overwrite_all: bool = False):
             print(f"Failure to transform Episode {show_key}_{episode.external_key} to es-writable version or write it to es: {e}")
 
     return {
-        "index loading attempts": attempts, 
+        "episode_indexing_attempts": attempts, 
         "successful": len(successful_episode_keys),
-        "successful episode keys": successful_episode_keys, 
+        "successful_episode_keys": successful_episode_keys, 
         "failed": len(failed_episode_keys),
-        "failed episode keys": failed_episode_keys, 
+        "failed_episode_keys": failed_episode_keys, 
     }
 
 
 @esw_app.get("/esw/populate_focal_speakers/{show_key}", tags=['ES Writer'])
-async def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
+def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
     '''
     For each episode, query ElasticSearch to count the number of lines spoken per character, then write the top 3 characters back to their own ElasticSearch field
     '''
-    episodes_to_focal_speakers = await esqb.populate_focal_speakers(show_key.value, episode_key)
+    episodes_to_focal_speakers = esqb.populate_focal_speakers(show_key.value, episode_key)
     return {"episodes_to_focal_speakers": episodes_to_focal_speakers}
 
 
 @esw_app.get("/esw/populate_focal_locations/{show_key}", tags=['ES Writer'])
-async def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
+def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
     '''
     For each episode, query ElasticSearch to count the number of scenes per location, then write the top 3 locations back to their own ElasticSearch field
     '''
-    episodes_to_focal_locations = await esqb.populate_focal_locations(show_key.value, episode_key)
+    episodes_to_focal_locations = esqb.populate_focal_locations(show_key.value, episode_key)
     return {"episodes_to_focal_locations": episodes_to_focal_locations}
 
 
-@esw_app.get("/esw/populate_relations/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-async def populate_relations(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str, limit: int = 30):
+@esw_app.get("/esw/populate_episode_relations/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_episode_relations(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str, limit: int = 30):
     '''
     Query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
     '''
@@ -180,7 +181,7 @@ async def populate_relations(show_key: ShowKey, episode_key: str, model_vendor: 
         return {"error": f'invalid model_vendor:model_version combo {model_vendor}:{model_version}'}
  
     if (model_vendor, model_version) == ('es','mlt'):
-        similar_episodes = await esr.more_like_this(ShowKey(show_key), episode_key)
+        similar_episodes = esr.more_like_this(ShowKey(show_key), episode_key)
     else:
         similar_episodes = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
     # only keep the episode keys and corresponding scores 
@@ -192,13 +193,13 @@ async def populate_relations(show_key: ShowKey, episode_key: str, model_vendor: 
     doc_id = f'{show_key}_{episode_key}'
     episode_relations[doc_id] = similar_episodes
     
-    episode_relations = await esqb.populate_relations(show_key.value, model_vendor, model_version, episode_relations, limit=limit)
+    episode_relations = esqb.populate_episode_relations(show_key.value, model_vendor, model_version, episode_relations, limit=limit)
 
     return {"episode_relations": episode_relations}
 
 
-@esw_app.get("/esw/populate_all_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-async def populate_all_relations(show_key: ShowKey, model_vendor: str, model_version: str, limit: int = 30, episode_key: str = None):
+@esw_app.get("/esw/populate_all_episode_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str, limit: int = 30, episode_key: str = None):
     '''
     For each episode, query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
     '''
@@ -212,25 +213,25 @@ async def populate_all_relations(show_key: ShowKey, model_vendor: str, model_ver
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
         if (model_vendor, model_version) == ('es','mlt'):
-            similar_episodes = await esr.more_like_this(ShowKey(show_key), episode_key)
+            similar_episodes = esr.more_like_this(ShowKey(show_key), episode_key)
         else:
             similar_episodes = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
         # only keep the episode keys and corresponding scores 
         # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
         episodes_to_relations[doc_id] = similar_episodes
     
-    episodes_to_relations = await esqb.populate_relations(show_key.value, model_vendor, model_version, episodes_to_relations, limit=limit)
+    episodes_to_relations = esqb.populate_episode_relations(show_key.value, model_vendor, model_version, episodes_to_relations, limit=limit)
 
     return {"episodes_to_relations": episodes_to_relations}
 
 
-@esw_app.get("/esw/build_embeddings_model/{show_key}", tags=['ES Writer'])
-def build_embeddings_model(show_key: ShowKey):
-    '''
-    Experimental endpoint: goes thru the motions of building a language model using Word2Vec, but limits training data to a single show's text corpus, resulting in a (uselessly) tiny model
-    '''
-    model_info = ef.build_embeddings_model(show_key.value)
-    return {"model_info": model_info}
+# @esw_app.get("/esw/build_embeddings_model/{show_key}", tags=['ES Writer'])
+# def build_embeddings_model(show_key: ShowKey):
+#     '''
+#     Experimental endpoint: goes thru the motions of building a language model using Word2Vec, but limits training data to a single show's text corpus, resulting in a (uselessly) tiny model
+#     '''
+#     model_info = ef.build_embeddings_model(show_key.value)
+#     return {"model_info": model_info}
 
 
 @esw_app.get("/esw/populate_episode_embeddings/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
@@ -240,7 +241,8 @@ def populate_episode_embeddings(show_key: ShowKey, episode_key: str, model_vendo
     '''
     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
-        ef.generate_episode_embeddings(show_key.value, es_episode, model_vendor, model_version)
+        embeddings = ef.generate_episode_embeddings(es_episode, model_vendor, model_version)
+        es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
         esqb.save_es_episode(es_episode)
         return {"es_episode": es_episode}
     except Exception as e:
@@ -330,11 +332,11 @@ def index_speaker(show_key: ShowKey, speaker: str):
     es_speaker.season_count = len(es_speaker_seasons)
     es_speaker.episode_count = len(es_speaker_episodes)
     # special handling of openai token counters using `tiktoken`  
-    es_speaker.openai_ada002_word_count = ef.openai_token_counter(' '.join(es_speaker.lines), 'cl100k_base')
+    es_speaker.openai_word_count = ef.openai_token_counter(' '.join(es_speaker.lines), 'cl100k_base')
     for _, ess in es_speaker_seasons.items():
-        ess.openai_ada002_word_count = ef.openai_token_counter(' '.join(ess.lines), 'cl100k_base')
+        ess.openai_word_count = ef.openai_token_counter(' '.join(ess.lines), 'cl100k_base')
     for _, ese in es_speaker_episodes.items():
-        ese.openai_ada002_word_count = ef.openai_token_counter(' '.join(ese.lines), 'cl100k_base')
+        ese.openai_word_count = ef.openai_token_counter(' '.join(ese.lines), 'cl100k_base')
     
     # write to es
     try:    
@@ -485,7 +487,7 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
     Generate vector embedding for speaker using pre-trained Word2Vec and Transformer models
     '''
     max_tokens = TRF_MODELS[model_vendor]['versions'][model_version]['max_tokens']
-    word_count_field = f'{model_vendor}_{model_version}_word_count'
+    word_count_field = f'{model_vendor}_word_count'
     embeddings_field = f'{model_vendor}_{model_version}_embeddings'
 
     attempted_count = 0
@@ -645,10 +647,13 @@ def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping:
     # write simplified subset of episode_topics to es_episode.topics_X
     simple_episode_topics = fflat.flatten_es_topics(episode_topics)
     print(f'simple_episode_topics={simple_episode_topics}')
-    if topic_grouping == 'universalGenres':
-        es_episode.topics_universal = simple_episode_topics
-    elif topic_grouping == 'focusedGpt35_TNG':
-        es_episode.topics_focused = simple_episode_topics
+    # TODO this is out of date, topics_universal should either be topics_universal_{model_name} or it should be a dict keying off of model_name instead of a list of topics
+    # For now I'm only indexing topics generated with openai:3small embeddings 
+    if model_vendor == 'openai' and model_version == '3small':
+        if topic_grouping == 'universalGenres':
+            es_episode.topics_universal = simple_episode_topics
+        elif topic_grouping == 'focusedGpt35_TNG':
+            es_episode.topics_focused = simple_episode_topics
     esqb.save_es_episode(es_episode)
 
     return {"episode_topics": episode_topics}
@@ -717,7 +722,9 @@ def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, 
                 e_keys_to_episode_topics[e_key].append(episode_topic)
         
         # save simplified subset of season_topics to es_episode.topics_X_tfidf
-        if topic_grouping in ['universalGenres', 'focusedGpt35_TNG']:
+        # TODO this is out of date, topics_universal should either be topics_universal_{model_name} or it should be a dict keying off of model_name instead of a list of topics
+        # For now I'm only indexing topics generated with openai:3small embeddings 
+        if topic_grouping in ['universalGenres', 'focusedGpt35_TNG'] and model_vendor == 'openai' and model_version == '3small':
             tfidf_sorted_episode_topics = sorted(e_keys_to_episode_topics[e_key], key=itemgetter('tfidf_score'), reverse=True)
             es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{e_key}')
             simple_episode_topics = fflat.flatten_es_topics(tfidf_sorted_episode_topics)
@@ -778,12 +785,15 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
                                                                                  model_vendor, model_version)
                 
                 # write simplified subset of episode_topics to es_speaker_episode.topics_X
-                simple_episode_topics = fflat.flatten_es_topics(es_speaker_episode_topics)
-                if topic_grouping == 'meyersBriggsKiersey':
-                    es_speaker_episode.topics_mbti = simple_episode_topics
-                elif topic_grouping == 'dndAlignments':
-                    es_speaker_episode.topics_dnda = simple_episode_topics
-                esqb.save_es_speaker_episode(es_speaker_episode)
+                # TODO this is out of date, topics_mbti and topics_dnda should either be topics_{type}_{model_name} or it should be a dict keying off of model_name instead of a list of topics
+                # For now I'm only indexing topics generated with openai:3small embeddings 
+                if model_vendor == 'openai' and model_version == '3small':
+                    simple_episode_topics = fflat.flatten_es_topics(es_speaker_episode_topics)
+                    if topic_grouping == 'mbti':
+                        es_speaker_episode.topics_mbti = simple_episode_topics
+                    elif topic_grouping == 'dndAlignments':
+                        es_speaker_episode.topics_dnda = simple_episode_topics
+                    esqb.save_es_speaker_episode(es_speaker_episode)
 
                 # incorporate episode topics into season-level agg
                 season_topic_agg.add_topics(speaker_topics_by_episode[e_key], es_speaker_episode.word_count)
@@ -798,12 +808,15 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
         es_speaker_season_topics = esqb.populate_speaker_season_topics(show_key.value, speaker, es_speaker_season, speaker_season_topics, model_vendor, model_version)
 
         # write simplified subset of season_topics to es_speaker_season.topics_X
-        simple_season_topics = fflat.flatten_es_topics(es_speaker_season_topics)
-        if topic_grouping == 'meyersBriggsKiersey':
-            es_speaker_season.topics_mbti = simple_season_topics
-        elif topic_grouping == 'dndAlignments':
-            es_speaker_season.topics_dnda = simple_season_topics
-        esqb.save_es_speaker_season(es_speaker_season)
+        # TODO this is out of date, topics_mbti and topics_dnda should either be topics_{type}_{model_name} or it should be a dict keying off of model_name instead of a list of topics
+        # For now I'm only indexing topics generated with openai:3small embeddings 
+        if model_vendor == 'openai' and model_version == '3small':
+            simple_season_topics = fflat.flatten_es_topics(es_speaker_season_topics)
+            if topic_grouping == 'mbti':
+                es_speaker_season.topics_mbti = simple_season_topics
+            elif topic_grouping == 'dndAlignments':
+                es_speaker_season.topics_dnda = simple_season_topics
+            esqb.save_es_speaker_season(es_speaker_season)
 
         # incorporate season topics into series-level agg
         series_topic_agg.add_topics(speaker_season_topics, es_speaker_season.word_count)
@@ -817,12 +830,15 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
     es_speaker_topics = esqb.populate_speaker_topics(show_key.value, speaker, es_speaker, speaker_series_topics, model_vendor, model_version)
     
     # write simplified subset of speaker_topics to es_speaker.topics_X
-    simple_series_topics = fflat.flatten_es_topics(es_speaker_topics)
-    if topic_grouping == 'meyersBriggsKiersey':
-        es_speaker.topics_mbti = simple_series_topics
-    elif topic_grouping == 'dndAlignments':
-        es_speaker.topics_dnda = simple_series_topics
-    esqb.save_es_speaker(es_speaker)
+    # TODO this is out of date, topics_mbti and topics_dnda should either be topics_{type}_{model_name} or it should be a dict keying off of model_name instead of a list of topics
+    # For now I'm only indexing topics generated with openai:3small embeddings 
+    if model_vendor == 'openai' and model_version == '3small':
+        simple_series_topics = fflat.flatten_es_topics(es_speaker_topics)
+        if topic_grouping == 'mbti':
+            es_speaker.topics_mbti = simple_series_topics
+        elif topic_grouping == 'dndAlignments':
+            es_speaker.topics_dnda = simple_series_topics
+        esqb.save_es_speaker(es_speaker)
 
     # TODO ugh these's caching or latency with these lookups, responses are stale
     speaker_topics_response = esr.fetch_speaker_topics(speaker, show_key, topic_grouping)
@@ -938,7 +954,7 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
     
     # populate episode-narrative-speaker-groups with any model_clusters of which they are a member
     for bertopic_model_id in bertopic_model_ids:
-        df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{show_key.value}/{bertopic_model_id}.csv', sep='\t')
+        df = pd.read_csv(f'{BERTOPIC_DIR}/{show_key.value}/{bertopic_model_id}.csv', sep='\t')
         # model_id = bertopic_model_id.removesuffix('.csv')
         for _, row in df.iterrows():
             e_key = str(row['episode_key'])
@@ -1162,7 +1178,7 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
 #     print(f'finish generate_emotional_sentiment against full episode at end_ts={end_ts}')
 
 #     # write dataframe to csv
-#     file_path = f'sentiment_data/{show_key.value}/{show_key.value}_{episode_key}.csv'
+#     file_path = f'{PATH_TO_SENTIMENT_DATA}/{show_key.value}/{show_key.value}_{episode_key}.csv'
 #     episode_emo_df.to_csv(file_path, sep=',', header=True)
 
 #     # write to es

@@ -93,6 +93,10 @@ def init_speaker_episode_topics_index():
     es_conn.indices.put_settings(index="speaker_episode_topics", body={"index": {"max_inner_result_window": 1000}})
 
 
+def list_indices():
+    return es_conn.cat.indices(format='json')
+
+
 def save_es_episode(es_episode: EsEpisodeTranscript) -> None:
     # es_episode.save(using=es_client)
     es_episode.save()
@@ -1554,17 +1558,11 @@ def populate_speaker_episode_topics(show_key: str, speaker: str, speaker_episode
     return es_speaker_episode_topics
 
 
-def populate_relations(show_key: str, model_vendor: str, model_version: str, episodes_to_relations: dict, limit: int = None) -> dict:
-    print(f'begin populate_relations for show_key={show_key} model vendor:version={model_vendor}:{model_version} len(episodes_to_relations)={len(episodes_to_relations)} limit={limit}')
+def populate_episode_relations(show_key: str, model_vendor: str, model_version: str, episodes_to_relations: dict, limit: int = None) -> dict:
+    print(f'begin populate_episode_relations for show_key={show_key} model vendor:version={model_vendor}:{model_version} len(episodes_to_relations)={len(episodes_to_relations)} limit={limit}')
 
     for doc_id, similar_episodes in episodes_to_relations.items():
-        # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
-        # sim_eps = [(sim_ep['episode_key'], sim_ep['score']) for sim_ep in similar_episodes['matches']]
-        sim_eps = {sim_ep['episode_key']:sim_ep['score'] for sim_ep in similar_episodes['matches']}
-
-        # truncate response to limit (a more efficient way would be to limit the preceding query)
-        if limit and limit < len(sim_eps):
-            sim_eps = sim_eps[:limit]
+        sim_eps = {sim_ep['episode_key']:sim_ep['score'] for index, sim_ep in enumerate(similar_episodes['matches']) if index < limit}
         episodes_to_relations[doc_id] = sim_eps
 
         # write result to an `X_relations` field

@@ -19,7 +19,7 @@ web_app = APIRouter()
 
 
 @web_app.get("/web/show/{show_key}", response_class=HTMLResponse, tags=['Web'])
-async def show_page(request: Request, show_key: ShowKey):
+def show_page(request: Request, show_key: ShowKey):
 	tdata = {}
 
 	tdata['header'] = 'show'
@@ -86,7 +86,7 @@ async def show_page(request: Request, show_key: ShowKey):
 
 
 @web_app.get("/web/season/{show_key}/{season}", response_class=HTMLResponse, tags=['Web'])
-async def season_page(request: Request, show_key: ShowKey, season: str):
+def season_page(request: Request, show_key: ShowKey, season: str):
 	tdata = {}
 
 	tdata['header'] = 'season'
@@ -113,7 +113,7 @@ async def season_page(request: Request, show_key: ShowKey, season: str):
 	speaker_seasons_response = esr.fetch_speakers_for_season(show_key, season)
 	speaker_seasons = speaker_seasons_response['speaker_seasons']
 
-	speaker_season_topics_response = esr.fetch_speaker_season_topics(show_key, 'meyersBriggsKiersey', season=season, level='child')
+	speaker_season_topics_response = esr.fetch_speaker_season_topics(show_key, 'mbti', season=season, level='child')
 	speaker_season_topics = speaker_season_topics_response['speaker_season_topics']
 	for speaker_season in speaker_seasons:
 		speaker = speaker_season['speaker']

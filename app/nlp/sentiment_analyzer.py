@@ -1,10 +1,10 @@
 from io import StringIO
-import nltk
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import WordNetLemmatizer
-import openai
+# import nltk
+# from nltk.sentiment.vader import SentimentIntensityAnalyzer
+# from nltk.corpus import stopwords
+# from nltk.tokenize import word_tokenize
+# from nltk.stem import WordNetLemmatizer
+# import openai
 from openai import OpenAI
 import pandas as pd
 
@@ -13,32 +13,32 @@ from app.config import settings
 
 openai_client = OpenAI(api_key=settings.openai_api_key)
 
-NLTK_STOP_WORDS = set(stopwords.words('english'))
-analyzer = SentimentIntensityAnalyzer()
+# NLTK_STOP_WORDS = set(stopwords.words('english'))
+# analyzer = SentimentIntensityAnalyzer()
 
 
-def init_nltk() -> None:
-    nltk.download('all')
+# def init_nltk() -> None:
+#     nltk.download('all')
 
 
-def generate_polarity_sentiment(text: str, pre_process_text: bool = True) -> tuple[pd.DataFrame, dict]:
-    # init_nltk()
-    if pre_process_text:
-        tokens = word_tokenize(text)
-        filtered_tokens = [word for word in tokens if word.lower() not in NLTK_STOP_WORDS]
-        text = ' '.join(filtered_tokens)
+# def generate_polarity_sentiment(text: str, pre_process_text: bool = True) -> tuple[pd.DataFrame, dict]:
+#     # init_nltk()
+#     if pre_process_text:
+#         tokens = word_tokenize(text)
+#         filtered_tokens = [word for word in tokens if word.lower() not in NLTK_STOP_WORDS]
+#         text = ' '.join(filtered_tokens)
     
-    polarity_dict = analyzer.polarity_scores(text)
+#     polarity_dict = analyzer.polarity_scores(text)
 
-    # kind of a lot of steps to turn the output of polarity_scores into a properly indexed df with coherently named columns, but...
-    polarity_df = pd.DataFrame(polarity_dict, index=['score'])
-    polarity_df = polarity_df.transpose()
-    polarity_df.reset_index(inplace=True)
-    polarity_df = polarity_df.rename(columns={'index': 'polarity'})
-    # remove 'compound' polarity value, we're never using it
-    polarity_df = polarity_df.loc[polarity_df['polarity'] != 'compound']
+#     # kind of a lot of steps to turn the output of polarity_scores into a properly indexed df with coherently named columns, but...
+#     polarity_df = pd.DataFrame(polarity_dict, index=['score'])
+#     polarity_df = polarity_df.transpose()
+#     polarity_df.reset_index(inplace=True)
+#     polarity_df = polarity_df.rename(columns={'index': 'polarity'})
+#     # remove 'compound' polarity value, we're never using it
+#     polarity_df = polarity_df.loc[polarity_df['polarity'] != 'compound']
 
-    return polarity_df, polarity_dict
+#     return polarity_df, polarity_dict
 
 
 def generate_emotional_sentiment(text: str) -> tuple[pd.DataFrame, dict]:
@@ -179,17 +179,17 @@ def generate_emotional_sentiment_multi_speaker(text: str) -> tuple[pd.DataFrame,
 
 
 def generate_sentiment(text: str, analyzer: str, multi_speaker: bool = False) -> tuple[pd.DataFrame, dict]:
-    if analyzer == 'nltk_pol':
-        if multi_speaker:
-            print(f'multi_speaker not supported for analyzer={analyzer}')
-            return None, {}
-        else:
-            return generate_polarity_sentiment(text)
-    elif analyzer == 'openai_emo':
+    if analyzer == 'openai_emo':
         if multi_speaker:
             return generate_emotional_sentiment_multi_speaker(text)
         else:
             return generate_emotional_sentiment(text)
+    # elif analyzer == 'nltk_pol':
+    #     if multi_speaker:
+    #         print(f'multi_speaker not supported for analyzer={analyzer}')
+    #         return None, {}
+    #     else:
+    #         return generate_polarity_sentiment(text)
     else:
         print(f'Unsupported analyzer={analyzer}')
         return None, {}
