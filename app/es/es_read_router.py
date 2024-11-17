@@ -3,7 +3,7 @@ from operator import itemgetter
 import os
 import pandas as pd
 
-from app.app_metadata import BERTOPIC_MODELS_DIR
+from app.app_metadata import ANIMATION_DATA_DIR, BERTOPIC_MODELS_DIR, GANTT_DATA_DIR
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
@@ -1337,7 +1337,7 @@ def generate_series_speaker_gantt_sequence(show_key: ShowKey, limit_cast: bool =
         episode_speakers_sequence = trimmed_episode_speakers_sequence
 
     if overwrite_file:
-        file_path = f'./app/data/{show_key}/speaker_gantt_sequence_{show_key}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key}/speaker_gantt_sequence_{show_key}.csv'
         print(f'writing speaker gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_speakers_sequence)
         df.to_csv(file_path)
@@ -1391,7 +1391,7 @@ def generate_series_location_gantt_sequence(show_key: ShowKey, overwrite_file: b
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/{show_key}/location_gantt_sequence_{show_key}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key}/location_gantt_sequence_{show_key}.csv'
         print(f'writing location gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_locations_sequence)
         df.to_csv(file_path)
@@ -1458,7 +1458,7 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
         print(f'writing topic gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_topics_sequence)
         df.to_csv(file_path)
@@ -1583,7 +1583,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/{show_key}/speaker_episode_aggs_{show_key}.csv'
+        file_path = f'{ANIMATION_DATA_DIR}/{show_key}/speaker_episode_aggs_{show_key}.csv'
         print(f'writing speaker word/line/scene/episode counts and aggs dataframe to file_path={file_path}')
         df = pd.DataFrame(speaker_episode_rows)
         df.to_csv(file_path)
@@ -1673,7 +1673,7 @@ def generate_location_line_chart_sequences(show_key: ShowKey, overwrite_file: bo
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/location_episode_aggs_{show_key}.csv'
+        file_path = f'{ANIMATION_DATA_DIR}/{show_key}/location_episode_aggs_{show_key}.csv'
         print(f'writing location scene/episode counts and aggs dataframe to file_path={file_path}')
         df = pd.DataFrame(location_episode_rows)
         df.to_csv(file_path)

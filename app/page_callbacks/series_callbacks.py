@@ -3,6 +3,7 @@ from datetime import datetime as dt
 import os
 import pandas as pd
 
+from app.app_metadata import ANIMATION_DATA_DIR, GANTT_DATA_DIR
 import app.es.es_read_router as esr
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
@@ -34,7 +35,7 @@ def render_series_speakers_gantt(show_key: str, simple_episodes_by_season: dict)
 
     season_interval_data = gh.simple_season_episode_i_map(simple_episodes_by_season)
 
-    file_path = f'./app/data/{show_key}/speaker_gantt_sequence_{show_key}.csv'
+    file_path = f'{GANTT_DATA_DIR}/{show_key}/speaker_gantt_sequence_{show_key}.csv'
     if os.path.isfile(file_path):
         speaker_gantt_sequence_df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')
@@ -69,7 +70,7 @@ def render_series_locations_gantt(show_key: str, simple_episodes_by_season: dict
 
     season_interval_data = gh.simple_season_episode_i_map(simple_episodes_by_season)
 
-    file_path = f'./app/data/{show_key}/location_gantt_sequence_{show_key}.csv'
+    file_path = f'{GANTT_DATA_DIR}/{show_key}/location_gantt_sequence_{show_key}.csv'
     if os.path.isfile(file_path):
         location_gantt_sequence_df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')
@@ -107,7 +108,7 @@ def render_series_topics_gantt(show_key: str, score_type: str, simple_episodes_b
 
     topic_grouping = 'universalGenres'
     topic_threshold = 20
-    file_path = f'./app/data/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
+    file_path = f'{GANTT_DATA_DIR}/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
     if os.path.isfile(file_path):
         topic_gantt_sequence_df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')
@@ -146,7 +147,7 @@ def render_series_search_gantt(show_key: str, qt: str, simple_episodes_by_season
     season_interval_data = gh.simple_season_episode_i_map(simple_episodes_by_season)
 
     # TODO fetch from file, but file has to have all speaker data
-    # file_path = f'./app/data/speaker_gantt_sequence_{show_key}.csv'
+    # file_path = f'{GANTT_DATA_DIR}/{show_key}/speaker_gantt_sequence_{show_key}.csv'
     # if os.path.isfile(file_path):
     #     speaker_gantt_sequence_df = pd.read_csv(file_path)
     #     print(f'loading dataframe at file_path={file_path}')
@@ -419,7 +420,7 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
         season = int(season)
 
     # fetch or generate aggregate speaker data and build speaker frequency bar chart
-    file_path = f'./app/data/{show_key}/speaker_episode_aggs_{show_key}.csv'
+    file_path = f'{ANIMATION_DATA_DIR}/{show_key}/speaker_episode_aggs_{show_key}.csv'
     if os.path.isfile(file_path):
         df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')

@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 
+from app.app_metadata import ANIMATION_DATA_DIR
 import app.fig_builder.plotly_bar as pb
 
 
@@ -13,8 +14,7 @@ def publish_animation(show_key: str, fig_type: str, span_granularity: str = None
 
     # fetch or generate aggregate speaker data and build speaker frequency bar chart
     df_source = valid_fig_types_to_df_sources[fig_type]
-    # file_path = f'./extensions/app/data/{df_source}_{show_key}.csv'
-    file_path = f'./app/data/{df_source}_{show_key}.csv'
+    file_path = f'{ANIMATION_DATA_DIR}/{show_key}/{df_source}_{show_key}.csv'
     if os.path.isfile(file_path):
         df = pd.read_csv(file_path)
         print(f'Loading dataframe for fig_type={fig_type} df_source={df_source} using file_path={file_path}')
