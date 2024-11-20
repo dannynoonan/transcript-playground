@@ -22,16 +22,13 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shows</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/web/show/TNG">TNG</a>
-                            <a class="dropdown-item" href="/web/show/GoT">GoT</a>
+                            <a class="dropdown-item" href="/dash_pages/series/TNG">TNG</a>
+                            <!-- <a class="dropdown-item" href="/web/show/GoT">GoT</a> -->
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if tdata['header'] == 'show' %}active{% endif %}" href="/web/show/{{ tdata['show_key'] }}">{{ tdata['show_key'] }}</a>
+                        <a class="nav-link {% if tdata['header'] == 'show' %}active{% endif %}" href="/dash_pages/series/{{ tdata['show_key'] }}">{{ tdata['show_key'] }}</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link {% if tdata['header'] == 'season' %}active{% endif %}">Seasons</a>
-                    </li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle {% if tdata['header'] == 'season' %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seasons</a>
                         <div class="dropdown-menu">
@@ -47,10 +44,13 @@
                         <a class="nav-link {% if tdata['header'] == 'episode' %}active{% endif %}">Episodes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if tdata['header'] == 'character' %}active{% endif %}" href="/web/character_listing/{{ tdata['show_key'] }}">Characters</a>
+                        <a class="nav-link {% if tdata['header'] == 'character' %}active{% endif %}" href="/dash_pages/character_listing/{{ tdata['show_key'] }}">Characters</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if tdata['header'] == 'topic' %}active{% endif %}" href="/web/topic_listing/{{ tdata['show_key'] }}">Topics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if tdata['header'] == 'topic' %}active{% endif %}" href="/dash_pages/bertopic_model/{{ tdata['show_key'] }}/cosine_4_0_25">Clusters</a>
                     </li>
                 </ul>
                 <!-- <form class="d-flex">
