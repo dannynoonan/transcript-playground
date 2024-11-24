@@ -89,17 +89,20 @@ def layout(show_key: str, bertopic_model_id: str) -> html.Div:
                             ]),
                             dbc.Tab(label="Topic word scores", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="bertopic-visualize-barchart"),
+                                    html.Div('Temporarily disabled pending workaround, BERTopic lib deps are too massive for runtime/deployment')
+                                    # dcc.Graph(id="bertopic-visualize-barchart"),
                                 ]),
                             ]),
                             dbc.Tab(label="Topic distances", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="bertopic-visualize-topics"),
+                                    html.Div('Temporarily disabled pending workaround, BERTopic lib deps are too massive for runtime/deployment')
+                                    # dcc.Graph(id="bertopic-visualize-topics"),
                                 ]),
                             ]),
                             dbc.Tab(label="Topic hierarchy", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row(justify="evenly", children=[
-                                    dcc.Graph(id="bertopic-visualize-hierarchy"),
+                                    html.Div('Temporarily disabled pending workaround, BERTopic lib deps are too massive for runtime/deployment')
+                                    # dcc.Graph(id="bertopic-visualize-hierarchy"),
                                 ]),
                             ]),
                         ]),

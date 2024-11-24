@@ -416,18 +416,20 @@ def episode_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, 
             return {"error": e}
 
     else:
-        vendor_meta = W2V_MODELS[model_vendor]
-        tag_pos = vendor_meta['pos_tag']
-        try:
-            # TODO normalize_and_expand_query_vocab reduced performance noticeably, disabling for now
-            # qt = qp.normalize_and_expand_query_vocab(qt, show_key)
-            tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
-            vector_field = f'{model_vendor}_{model_version}_embeddings'
-            vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embeddings(tokenized_qt, model_vendor, model_version)
-            tokens_processed_count = len(tokens_processed)
-            tokens_failed_count = len(tokens_failed)
-        except Exception as e:
-            return {"error": e}
+        raise Exception(f'Word2Vec model {model_vendor}:{model_version} is no longer supported (phasing out gensim and nltk dependencies)')
+    
+        # vendor_meta = W2V_MODELS[model_vendor]
+        # tag_pos = vendor_meta['pos_tag']
+        # try:
+        #     # TODO normalize_and_expand_query_vocab reduced performance noticeably, disabling for now
+        #     # qt = qp.normalize_and_expand_query_vocab(qt, show_key)
+        #     tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
+        #     vector_field = f'{model_vendor}_{model_version}_embeddings'
+        #     vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embeddings(tokenized_qt, model_vendor, model_version)
+        #     tokens_processed_count = len(tokens_processed)
+        #     tokens_failed_count = len(tokens_failed)
+        # except Exception as e:
+        #     return {"error": e}
         
     es_response = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
     matches = esrt.return_vector_search(es_response)

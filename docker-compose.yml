@@ -143,19 +143,6 @@ services:
     #   - "listen_addresses=*"
 
 
-  redis1028:
-    container_name: container-redis1028
-    image: redis:latest
-    expose:
-      - 6379
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 5s
-      timeout: 30s
-      retries: 50
-    restart: always
-
-
   es1028:
     container_name: container-es1028
     depends_on:
@@ -232,6 +219,36 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+
+
+  web:
+    container_name: container-web
+    build:
+        context: .
+        dockerfile: Dockerfile
+    command: uvicorn app.main:app --host 0.0.0.0
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    environment:
+      DATABASE_URL: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DB_NAME}
+    depends_on:
+      - pg1028
+      - es1028
+
+
+  redis1028:
+    container_name: container-redis1028
+    image: redis:latest
+    expose:
+      - 6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 30s
+      retries: 50
+    restart: always
 
 
   airflow-init:
@@ -446,20 +463,3 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
-
-
-  web:
-    container_name: container-web
-    build:
-        context: .
-        dockerfile: Dockerfile
-    command: uvicorn app.main:app --host 0.0.0.0
-    volumes:
-      - .:/app
-    ports:
-      - 8000:8000
-    environment:
-      DATABASE_URL: postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DB_NAME}
-    depends_on:
-      - pg1028
-      - es1028
