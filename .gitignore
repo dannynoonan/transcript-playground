@@ -15,5 +15,6 @@ zzz/
 .env
 .env.aws
 .DS_Store
+.venv
 cosign.pub
 http_ca.crt
