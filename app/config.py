@@ -8,10 +8,13 @@ class Settings(BaseSettings):
     pg_port: int
     pg_db_name: str
 
+    es_toggle: str
+
     es_user: str
     es_password: str
     es_host: str
     es_port: int
+    es_scheme: str
 
     kb_password: str
     kb_host: str
@@ -21,6 +24,8 @@ class Settings(BaseSettings):
     es_cluster_name: str
     es_license: str
     es_mem_limit: int
+
+    opensearch_initial_admin_password: str
 
     openai_api_key: str
 

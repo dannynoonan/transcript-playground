@@ -1,15 +1,25 @@
 # from datetime import datetime
-# from elasticsearch import Elasticsearch
-# from elasticsearch import RequestsHttpConnection
-from elasticsearch_dsl import Search, connections, Q, A
-from elasticsearch_dsl.query import MoreLikeThis
 
 from app.config import settings
+
+if settings.es_toggle == 'oss':
+    from opensearch_dsl import Search, connections, Q
+    from opensearch_dsl.query import MoreLikeThis
+    from app.es.oss_model import (
+        EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, 
+        EsSpeakerUnified, EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
+    )
+else:
+    # from elasticsearch import Elasticsearch
+    # from elasticsearch import RequestsHttpConnection
+    from elasticsearch_dsl import Search, connections, Q, A
+    from elasticsearch_dsl.query import MoreLikeThis
+    from app.es.es_model import (
+        EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, 
+        EsSpeakerUnified, EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
+    )
+
 from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
-from app.es.es_model import (
-    EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, 
-    EsSpeakerUnified, EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
-)
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
 from app import utils
@@ -24,7 +34,7 @@ from app import utils
 
 # connections.create_connection(hosts=['http://localhost:9200'], timeout=20)
 
-es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': 'https'}],
+es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': settings.es_scheme}],
                                         basic_auth=(settings.es_user, settings.es_password), verify_certs=False, timeout=20)
 
 # connections.configure(
@@ -35,12 +45,24 @@ es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port'
     # }
 # )
 
+vector_field = dict(type='knn_vector', 
+                    dimension=1536, 
+                    # space_type='l2', 
+                    method=dict(name='hnsw', 
+                                engine='nmslib', 
+                                space_type='cosinesimil',
+                                parameters=dict(ef_construction=128, m=24)
+                    )
+                )
+
 
 def init_transcripts_index():
     # EsEpisodeTranscript.init(using=es_client)
     EsEpisodeTranscript.init()
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
     es_conn.indices.put_settings(index="transcripts", body={"index.mapping.total_fields.limit": 10000})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="transcripts", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
 
 
 def init_narratives_index():
@@ -51,26 +73,36 @@ def init_narratives_index():
 def init_speakers_index():
     EsSpeaker.init()
     es_conn.indices.put_settings(index="speakers", body={"index": {"max_inner_result_window": 1000}})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="speakers", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
 
 
 def init_speaker_seasons_index():
     EsSpeakerSeason.init()
     es_conn.indices.put_settings(index="speaker_seasons", body={"index": {"max_inner_result_window": 1000}})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="speaker_seasons", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
 
 
 def init_speaker_episodes_index():
     EsSpeakerEpisode.init()
     es_conn.indices.put_settings(index="speaker_episodes", body={"index": {"max_inner_result_window": 1000}})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="speaker_episodes", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
 
 
 def init_speaker_unified_index():
     EsSpeakerUnified.init()
     es_conn.indices.put_settings(index="speaker_embeddings_unified", body={"index": {"max_inner_result_window": 1000}})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="speaker_embeddings_unified", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
 
 
 def init_topics_index():
     EsTopic.init()
     es_conn.indices.put_settings(index="topics", body={"index": {"max_inner_result_window": 1000}})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="topics", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
 
 
 def init_episode_topics_index():
@@ -120,16 +152,22 @@ def save_episode_narrative(es_episode_narrative: EsEpisodeNarrativeSequence) -> 
 def save_es_speaker(es_speaker: EsSpeaker) -> None:
     es_speaker.save()
     es_speaker_unified = EsSpeakerUnified(show_key=es_speaker.show_key, speaker=es_speaker.speaker, 
-                                          layer_key='SERIES', word_count=es_speaker.word_count,
-                                          openai_ada002_embeddings=es_speaker.openai_ada002_embeddings)
+                                          layer_key='SERIES', word_count=es_speaker.word_count)
+    if settings.es_toggle == 'oss':
+        es_speaker_unified.openai_ada002_embeddings=es_speaker.openai_ada002_embeddings
+    else:
+        setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker, "openai_ada002_embeddings"))
     es_speaker_unified.save()
 
 
 def save_es_speaker_season(es_speaker_season: EsSpeakerSeason) -> None:
     es_speaker_season.save()
     es_speaker_unified = EsSpeakerUnified(show_key=es_speaker_season.show_key, speaker=es_speaker_season.speaker, 
-                                          layer_key=f'S{es_speaker_season.season}', word_count=es_speaker_season.word_count,
-                                          openai_ada002_embeddings=es_speaker_season.openai_ada002_embeddings)
+                                          layer_key=f'S{es_speaker_season.season}', word_count=es_speaker_season.word_count)
+    if settings.es_toggle == 'oss':
+        es_speaker_unified.openai_ada002_embeddings=es_speaker_season.openai_ada002_embeddings
+    else:
+        setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker_season, "openai_ada002_embeddings"))
     es_speaker_unified.save()
 
 
@@ -137,8 +175,11 @@ def save_es_speaker_episode(es_speaker_episode: EsSpeakerEpisode) -> None:
     es_speaker_episode.save()
     es_speaker_unified = EsSpeakerUnified(show_key=es_speaker_episode.show_key, speaker=es_speaker_episode.speaker, 
                                           layer_key=f'S{es_speaker_episode.season}E{es_speaker_episode.sequence_in_season}', 
-                                          word_count=es_speaker_episode.word_count,
-                                          openai_ada002_embeddings=es_speaker_episode.openai_ada002_embeddings)
+                                          word_count=es_speaker_episode.word_count)
+    if settings.es_toggle == 'oss':
+        es_speaker_unified.openai_ada002_embeddings=es_speaker_episode.openai_ada002_embeddings
+    else:
+        setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker_episode, "openai_ada002_embeddings"))
     es_speaker_unified.save()
 
 

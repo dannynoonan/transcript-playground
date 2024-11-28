@@ -27,6 +27,8 @@ networkx==3.2.1
 # nltk==3.8.1
 numpy==1.26.3
 openai==1.6.1
+opensearch-dsl==2.1.0
+opensearch-py==2.7.1
 pandas==2.2.3
 plotly==5.18.0
 # psutil==5.9.6
