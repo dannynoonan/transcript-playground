@@ -355,8 +355,8 @@ def index_speaker(show_key: ShowKey, speaker: str):
         for _, es_speaker_episode in es_speaker_episodes.items():
             print(f'saving es_speaker_episode={es_speaker_episode} with es_speaker_episode.episode_key={es_speaker_episode.episode_key}')
             esqb.save_es_speaker_episode(es_speaker_episode)
-    # except Exception as e:
-    #     return {"error": f"Failure indexing speaker lines and counts for speaker={speaker} show_key={show_key.value}: {e}"}
+    except Exception as e:
+        return {"error": f"Failure indexing speaker lines and counts for speaker={speaker} show_key={show_key.value}: {e}"}
 
     return {"speaker": speaker, "season_count": len(es_speaker_seasons), "episode_count": len(es_speaker_episodes)}
 
