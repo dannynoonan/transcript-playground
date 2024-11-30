@@ -431,7 +431,7 @@ def episode_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, 
         # except Exception as e:
         #     return {"error": e}
         
-    es_response = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
+    es_response, es_query = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
     matches = esrt.return_vector_search(es_response)
     return {
         "match_count": len(matches), 
@@ -440,7 +440,8 @@ def episode_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, 
         "tokens_processed_count": tokens_processed_count, 
         "tokens_failed": tokens_failed, 
         "tokens_failed_count": tokens_failed_count, 
-        "matches": matches
+        "matches": matches,
+        "es_query": es_query
     }
 
 
@@ -459,10 +460,11 @@ def episode_mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor:
     s = esqb.fetch_episode_embedding(show_key.value, episode_key, vector_field)
     episode_embedding = esrt.return_embedding(s, vector_field)
         
-    es_response = esqb.vector_search(show_key.value, vector_field, episode_embedding)
+    es_response, es_query = esqb.vector_search(show_key.value, vector_field, episode_embedding)
     matches = esrt.return_vector_search(es_response)
-    matches = matches[1:] # remove episode itself from results
-    return {"match_count": len(matches), "vector_field": vector_field, "matches": matches}
+    if matches:
+        matches = matches[1:] # remove episode itself from results
+    return {"match_count": len(matches), "vector_field": vector_field, "matches": matches, "es_query": es_query}
 
 
 # def util(speaker: str, m: dict, matches_by_speaker_series_embedding: dict, all_speaker_matches: list, other_speaker_count: int, other_speaker_quota: int):
@@ -521,7 +523,7 @@ def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool =
     if series_embeddings:
         other_speaker_count = 0
         matches_by_speaker_series_embedding = []
-        vec_search_response = esqb.vector_search(show_key.value, vector_field, series_embeddings, index_name='speaker_embeddings_unified', min_word_count=100)
+        vec_search_response, _ = esqb.vector_search(show_key.value, vector_field, series_embeddings, index_name='speaker_embeddings_unified', min_word_count=100)
         speaker_matches = esrt.return_vector_search(vec_search_response)
         for m in speaker_matches:
             if other_speaker_count >= other_speaker_quota:
@@ -543,7 +545,7 @@ def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool =
         for season, season_embedding in season_embeddings.items():
             other_speaker_count = 0
             matches_by_speaker_season_embedding[season] = []
-            vec_search_response = esqb.vector_search(show_key.value, vector_field, season_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
+            vec_search_response, _ = esqb.vector_search(show_key.value, vector_field, season_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
             speaker_matches = esrt.return_vector_search(vec_search_response)
             for m in speaker_matches:
                 if other_speaker_count >= other_speaker_quota:
@@ -565,7 +567,7 @@ def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool =
         for episode_key, episode_embedding in episode_embeddings.items():
             other_speaker_count = 0
             matches_by_speaker_episode_embedding[episode_key] = []
-            vec_search_response = esqb.vector_search(show_key.value, vector_field, episode_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
+            vec_search_response, _ = esqb.vector_search(show_key.value, vector_field, episode_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
             speaker_matches = esrt.return_vector_search(vec_search_response)
             for m in speaker_matches:
                 if other_speaker_count >= other_speaker_quota:
@@ -715,9 +717,9 @@ def topic_episode_vector_search(topic_grouping: str, topic_key: str, show_key: S
     if not topic_embedding:
         return {"error": f"Unable to run `topic_episode_vector_search`: No embeddings for topic_grouping={topic_grouping} topic_key={topic_key} vector_field={vector_field}"}
         
-    es_response = esqb.vector_search(show_key, vector_field, topic_embedding)
+    es_response, es_query = esqb.vector_search(show_key, vector_field, topic_embedding)
     episodes = esrt.return_vector_search(es_response)
-    return {"episodes_count": len(episodes), "vector_field": vector_field, "episodes": episodes}
+    return {"episodes_count": len(episodes), "vector_field": vector_field, "episodes": episodes, "es_query": es_query}
 
 
 @esr_app.get("/esr/speaker_topic_vector_search/{show_key}/{speaker}/{topic_grouping}", tags=['ES Reader'])
@@ -808,9 +810,9 @@ def topic_speaker_vector_search(topic_grouping: str, topic_key: str, show_key: S
         return {"error": f"Unable to run `topic_speaker_vector_search`: No embeddings for topic_grouping={topic_grouping} topic_key={topic_key} vector_field={vector_field}"}
         
     # TODO this only searches speakers who have series-level embeddings, needs work
-    es_response = esqb.vector_search(show_key, vector_field, topic_embedding, index_name='speakers')
+    es_response, es_query = esqb.vector_search(show_key, vector_field, topic_embedding, index_name='speakers')
     speakers = esrt.return_vector_search(es_response)
-    return {"speakers_count": len(speakers), "vector_field": vector_field, "speakers": speakers}
+    return {"speakers_count": len(speakers), "vector_field": vector_field, "speakers": speakers, "es_query": es_query}
 
 
 @DeprecationWarning

@@ -2,8 +2,13 @@ import os
 import pandas as pd
 import datetime
 
+from app.config import settings
+if settings.es_toggle == 'oss':
+    from app.es.oss_model import EsEpisodeTranscript
+else:
+    from app.es.es_model import EsEpisodeTranscript
+
 from app.app_metadata import SENTIMENT_DATA_DIR
-from app.es.es_model import EsEpisodeTranscript
 import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.sentiment_analyzer as sa

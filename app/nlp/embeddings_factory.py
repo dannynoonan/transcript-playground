@@ -4,18 +4,21 @@ import math
 import numpy as np
 import openai
 from openai import OpenAI
-import os
+# import os
 import pandas as pd
 from sklearn.cluster import KMeans
 import tiktoken
 import warnings
 
 from app.config import settings
-from app.es.es_model import EsEpisodeTranscript
-import app.es.es_read_router as esr
+if settings.es_toggle == 'oss':
+    from app.es.oss_model import EsEpisodeTranscript
+else:
+    from app.es.es_model import EsEpisodeTranscript
+# import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
-import app.nlp.query_preprocessor as qpp
-from app.show_metadata import ShowKey
+# import app.nlp.query_preprocessor as qpp
+# from app.show_metadata import ShowKey
 
 
 warnings.filterwarnings(action = 'ignore')

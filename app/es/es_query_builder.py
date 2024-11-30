@@ -1,7 +1,6 @@
 # from datetime import datetime
 
 from app.config import settings
-
 if settings.es_toggle == 'oss':
     from opensearch_dsl import Search, connections, Q
     from opensearch_dsl.query import MoreLikeThis
@@ -154,9 +153,13 @@ def save_es_speaker(es_speaker: EsSpeaker) -> None:
     es_speaker_unified = EsSpeakerUnified(show_key=es_speaker.show_key, speaker=es_speaker.speaker, 
                                           layer_key='SERIES', word_count=es_speaker.word_count)
     if settings.es_toggle == 'oss':
-        es_speaker_unified.openai_ada002_embeddings=es_speaker.openai_ada002_embeddings
+        if "openai_ada002_embeddings" in es_speaker:
+            setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker, "openai_ada002_embeddings"))
+        if "openai_3small_embeddings" in es_speaker:
+            setattr(es_speaker_unified, "openai_3small_embeddings", getattr(es_speaker, "openai_3small_embeddings"))
     else:
-        setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker, "openai_ada002_embeddings"))
+        es_speaker_unified.openai_ada002_embeddings=es_speaker.openai_ada002_embeddings
+        es_speaker_unified.openai_3small_embeddings=es_speaker.openai_3small_embeddings
     es_speaker_unified.save()
 
 
@@ -165,9 +168,13 @@ def save_es_speaker_season(es_speaker_season: EsSpeakerSeason) -> None:
     es_speaker_unified = EsSpeakerUnified(show_key=es_speaker_season.show_key, speaker=es_speaker_season.speaker, 
                                           layer_key=f'S{es_speaker_season.season}', word_count=es_speaker_season.word_count)
     if settings.es_toggle == 'oss':
-        es_speaker_unified.openai_ada002_embeddings=es_speaker_season.openai_ada002_embeddings
+        if "openai_ada002_embeddings" in es_speaker_season:
+            setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker_season, "openai_ada002_embeddings"))
+        if "openai_3small_embeddings" in es_speaker_season:
+            setattr(es_speaker_unified, "openai_3small_embeddings", getattr(es_speaker_season, "openai_3small_embeddings"))
     else:
-        setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker_season, "openai_ada002_embeddings"))
+        es_speaker_unified.openai_ada002_embeddings=es_speaker_season.openai_ada002_embeddings
+        es_speaker_unified.openai_3small_embeddings=es_speaker_season.openai_3small_embeddings
     es_speaker_unified.save()
 
 
@@ -177,9 +184,13 @@ def save_es_speaker_episode(es_speaker_episode: EsSpeakerEpisode) -> None:
                                           layer_key=f'S{es_speaker_episode.season}E{es_speaker_episode.sequence_in_season}', 
                                           word_count=es_speaker_episode.word_count)
     if settings.es_toggle == 'oss':
-        es_speaker_unified.openai_ada002_embeddings=es_speaker_episode.openai_ada002_embeddings
+        if "openai_ada002_embeddings" in es_speaker_episode:
+            setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker_episode, "openai_ada002_embeddings"))
+        if "openai_3small_embeddings" in es_speaker_episode:
+            setattr(es_speaker_unified, "openai_3small_embeddings", getattr(es_speaker_episode, "openai_3small_embeddings"))
     else:
-        setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker_episode, "openai_ada002_embeddings"))
+        es_speaker_unified.openai_ada002_embeddings=es_speaker_episode.openai_ada002_embeddings
+        es_speaker_unified.openai_3small_embeddings=es_speaker_episode.openai_3small_embeddings
     es_speaker_unified.save()
 
 
@@ -1615,8 +1626,15 @@ def populate_episode_relations(show_key: str, model_vendor: str, model_version: 
     return episodes_to_relations
 
 
-def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_name: str = None, min_word_count: int = None, season: str = None) -> Search:
-    print(f'begin vector_search for show_key={show_key} vector_field={vector_field} index_name={index_name} min_word_count={min_word_count} season={season}')
+def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_name: str = None, min_word_count: int = None, season: str = None) -> tuple[object, dict]:
+    if settings.es_toggle == 'oss':
+        return vector_search_oss(show_key, vector_field, vectorized_qt, index_name, min_word_count, season)
+    else:
+        return vector_search_es(show_key, vector_field, vectorized_qt, index_name, min_word_count, season)
+
+
+def vector_search_es(show_key: str, vector_field: str, vectorized_qt: list, index_name: str = None, min_word_count: int = None, season: str = None) -> tuple[object, dict]:
+    print(f'begin vector_search_es for show_key={show_key} vector_field={vector_field} index_name={index_name} min_word_count={min_word_count} season={season}')
 
     if not index_name:
         index_name = 'transcripts'
@@ -1660,8 +1678,8 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
     }
 
     if min_word_count:
-        min_wc_filer = dict(range=dict(word_count=dict(gte=min_word_count)))
-        filter_query['bool']['filter'].append(min_wc_filer)
+        min_wc_filter = dict(range=dict(word_count=dict(gte=min_word_count)))
+        filter_query['bool']['filter'].append(min_wc_filter)
 
     if index_name == 'speakers':
         source = ['show_key', 'speaker']
@@ -1682,7 +1700,197 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
     # print(f's.to_dict()={s.to_dict()}')
     # return s
 
-    return response
+    return response, dict(knn_query=knn_query, filter_query=filter_query)
+
+
+def vector_search_oss(show_key: str, vector_field: str, vectorized_qt: list, index_name: str = None, min_word_count: int = None, season: str = None) -> tuple[object, dict]:
+    print(f'begin vector_search_oss for show_key={show_key} vector_field={vector_field} index_name={index_name} min_word_count={min_word_count} season={season}')
+
+    if not index_name:
+        index_name = 'transcripts'
+
+    # filter_query = {
+    #     "bool": {
+    #         "filter": [
+    #             {
+    #                 "term": {
+    #                     "show_key": show_key
+    #                 }
+    #             }
+    #         ]
+    #     }
+    # }
+
+    # if min_word_count:
+    #     min_wc_filter = dict(range=dict(word_count=dict(gte=min_word_count)))
+    #     filter_query['bool']['filter'].append(min_wc_filter)
+
+    if index_name == 'speakers':
+        source = ['show_key', 'speaker']
+    elif index_name == 'speaker_seasons':
+        source = ['show_key', 'season', 'speaker']
+    elif index_name == 'speaker_episodes':
+        source = ['show_key', 'episode_key', 'season', 'sequence_in_season', 'speaker']
+    elif index_name == 'speaker_embeddings_unified':
+        source = ['show_key', 'layer_key', 'speaker']
+    else:
+        source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations', 
+                  'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
+    
+    # print(f'filter_query={filter_query}')
+
+    # TODO hard-mapped based on number of TNG episodes / arbitary speaker count, need to calculate this or pass as parameter
+    if index_name == 'transcripts':
+        k = 100
+    elif index_name in ['speakers', 'speaker_seasons', 'speaker_episodes']:
+        k = 50
+    elif index_name == 'speaker_embeddings_unified':
+        k = 100
+    else:
+        k = 100
+
+    '''
+    # (1) the bool/filter term/knn approach executes, but all results get 0 score, so results are nonsensical 
+    {
+        "query": {
+            "bool": {
+                "filter": [
+                    {
+                        "term": {
+                            "show_key": "TNG"
+                        }
+                    },
+                    {
+                        "knn": {
+                            "openai_ada002_embeddings": {
+                                "vector": [],
+                                "k": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+    '''
+
+    es_query_nope = {
+        "query": {
+            "bool": {
+                "filter": [
+                    {
+                        "term": {
+                            "show_key": show_key
+                        }
+                    },
+                    {
+                        "knn": {
+                            vector_field: {
+                                "vector": vectorized_qt,
+                                "k": k
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+
+    '''
+    (2) Similar to above: this query executes, but results are nonsensical (scores are non-zero, but result sequencing is similar, which is weird)
+    https://opster.com/guides/elasticsearch/machine-learning/vector-search-in-opensearch-vs-elasticsearch/
+    {
+        "query": {
+            "hybrid": {
+                "queries": [
+                    {
+                        "term": {                       # also tried 'match'
+                            "show_key": "TNG"
+                        }
+                    },
+                    {
+                        "knn": {
+                            "openai_ada002_embeddings": {
+                                "vector": [],
+                                "k": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+
+    (3) To get 'filter' working I might need to switch to faiss from nmslib (but... why?)
+    https://opster.com/guides/elasticsearch/machine-learning/vector-search-in-opensearch-vs-elasticsearch/
+    {
+        "query": {
+            "knn": {
+                "openai_ada002_embeddings": {
+                    "vector": [],
+                    "k": 100,
+                    "filter": {
+                        "term": {
+                            "show_key": "TNG"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+    '''
+
+    es_query = {
+        "query": {
+            "knn": {
+                vector_field: {
+                    "vector": vectorized_qt,
+                    "k": k,
+                    # TODO since this isn't working, I currently don't have a cross-show solution here
+                    # "filter": {
+                    #     "term": {
+                    #         "show_key": "TNG"
+                    #     }
+                    # }
+                }
+            }
+        }
+    }
+
+
+    # NOTE begin this worked
+    # show_filter = dict(term=dict(show_key=show_key))
+    # vector_q = {}
+    # vector_q[vector_field] = dict(vector=vectorized_qt, k=k)
+    # knn_filter = dict(knn=vector_q)
+    # filter_q = dict(filter=[show_filter, knn_filter])
+    # bool_q = dict(bool=filter_q)
+    # es_query = dict(query=bool_q)
+    # NOTE end this worked
+
+
+    # body_q = Q('bool', filter=[show_filter, knn_filter])
+    # query_body = dict(query=knn_query, filter=filter_query)
+
+    # NOTE these all get "KeyError: 'knn'" and "opensearch_dsl.exceptions.UnknownDslObject: DSL class `knn` does not exist in query."
+    # s = Search(index=index_name)
+    # s = s.extra(size=100)
+    # s = s.filter('term', show_key=show_key)
+    # s = s.filter('knn', knn=vector_q)
+    # if min_word_count:
+    #     s = s.filter('range', word_count={'gte': min_word_count})
+    # q = Q(vectorDataField=vector_field, value=qt)
+    # s = s.query(q)
+    # s = s.source(includes=source)
+    # es_query = s.to_dict()
+
+    # s = s.query(index="transcripts", knn=knn_query, source=source)
+    # return s
+
+    response = es_conn.search(index=index_name, body=es_query, _source=source)
+
+    return response, es_query
+
 
 
 def topic_vector_search(topic_grouping: str, vector_field: str, vectorized_qt: list):

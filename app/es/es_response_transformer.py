@@ -1,5 +1,11 @@
-from elasticsearch_dsl import Search
 from operator import itemgetter
+
+from app.config import settings
+
+if settings.es_toggle == 'oss':
+    from opensearch_dsl import Search
+else:
+    from elasticsearch_dsl import Search
 
 from app.es.es_metadata import STOPWORDS
 
@@ -860,6 +866,9 @@ def return_vector_search(es_response: dict) -> list:
     # print(f'begin return_vector_search')
 
     results = []
+
+    if not es_response:
+        return results
     
     rank = 1
     for hit in es_response['hits']['hits']:

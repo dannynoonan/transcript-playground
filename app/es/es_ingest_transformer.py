@@ -1,4 +1,9 @@
-from app.es.es_model import EsEpisodeTranscript, EsScene, EsSceneEvent
+from app.config import settings
+if settings.es_toggle == 'oss':
+    from app.es.oss_model import EsEpisodeTranscript, EsScene, EsSceneEvent
+else:
+    from app.es.es_model import EsEpisodeTranscript, EsScene, EsSceneEvent
+
 from app.models import Episode, Scene, SceneEvent
 
 

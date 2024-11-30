@@ -4,6 +4,12 @@ import math
 import os
 import pandas as pd
 
+from app.config import settings
+if settings.es_toggle == 'oss':
+    from app.es.oss_model import EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, EsTopic
+else:
+    from app.es.es_model import EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, EsTopic
+
 from app.app_metadata import BERTOPIC_DIR
 import app.database.dao as dao
 import app.data_service.field_flattener as fflat
@@ -11,7 +17,6 @@ from app.data_service.topic_aggregator import TopicAgg
 import app.es.es_ingest_transformer as esit
 import app.es.es_response_transformer as esrt
 from app.es.es_metadata import VALID_ES_INDEXES
-from app.es.es_model import EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsTopic, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode
 import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.nlp.embeddings_factory as ef
@@ -97,10 +102,13 @@ async def index_episode(show_key: ShowKey, episode_key: str):
         # f = open(f"test_data/es/es_episode_{show_key}_{episode_key}.json", "w")
         # f.write(es_episode_json)
         # f.close()
-            
-        esqb.save_es_episode(es_episode)
     except Exception as e:
         return {"Error": f"Failure to transform Episode {show_key}:{episode_key} to es-writable version: {e}"}
+    
+    try:
+        esqb.save_es_episode(es_episode)
+    except Exception as e:
+        return {"Error": f"Failure to save Episode {show_key}:{episode_key} to es: {e}"}
 
     return {"Success": f"Episode {show_key}_{episode_key} written to es index"}
 
@@ -347,8 +355,8 @@ def index_speaker(show_key: ShowKey, speaker: str):
         for _, es_speaker_episode in es_speaker_episodes.items():
             print(f'saving es_speaker_episode={es_speaker_episode} with es_speaker_episode.episode_key={es_speaker_episode.episode_key}')
             esqb.save_es_speaker_episode(es_speaker_episode)
-    except Exception as e:
-        return {"error": f"Failure indexing speaker lines and counts for speaker={speaker} show_key={show_key.value}: {e}"}
+    # except Exception as e:
+    #     return {"error": f"Failure indexing speaker lines and counts for speaker={speaker} show_key={show_key.value}: {e}"}
 
     return {"speaker": speaker, "season_count": len(es_speaker_seasons), "episode_count": len(es_speaker_episodes)}
 
