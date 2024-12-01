@@ -694,8 +694,9 @@ def episode_topic_vector_search(show_key: ShowKey, episode_key: str, topic_group
     s = esqb.fetch_episode_embedding(show_key.value, episode_key, vector_field)
     episode_embedding = esrt.return_embedding(s, vector_field)
         
-    es_response = esqb.topic_vector_search(topic_grouping, vector_field, episode_embedding)
-    topics = esrt.return_vector_search(es_response)
+    # es_response = esqb.topic_vector_search(topic_grouping, vector_field, episode_embedding)
+    es_response, _ = esqb.vector_search(show_key.value, vector_field, episode_embedding, index_name='topics', topic_grouping=topic_grouping)
+    topics = esrt.return_vector_search(es_response, filter_key='topic_grouping', filter_value=topic_grouping)
     return {"topic_count": len(topics), "vector_field": vector_field, "topics": topics}
 
 
@@ -764,16 +765,18 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
     # thing I need it to do right now, which is run a topic vector search for a single speaker_episode against a topic. I don't think there's
     # any other endpoint that's close to having that capability.
     if vector_field in es_speaker and not (episode_keys or seasons):
-        s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker[vector_field])
-        series_topics = esrt.return_vector_search(s)
+        # s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker[vector_field])
+        s, _ = esqb.vector_search(show_key.value, vector_field, es_speaker[vector_field], index_name='topics', topic_grouping=topic_grouping)
+        series_topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
 
     if 'episodes' in es_speaker and not seasons_only:
         for es_speaker_episode in es_speaker['episodes']:
             if episode_keys and es_speaker_episode['episode_key'] not in episode_keys:
                 continue
             if vector_field in es_speaker_episode:
-                s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_episode[vector_field])
-                topics = esrt.return_vector_search(s)
+                # s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_episode[vector_field])
+                s, _ = esqb.vector_search(show_key.value, vector_field, es_speaker_episode[vector_field], index_name='topics', topic_grouping=topic_grouping)
+                topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
                 if topics:
                     episode_topics[es_speaker_episode['episode_key']] = topics
 
@@ -782,8 +785,9 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
             if seasons and es_speaker_season['season'] not in seasons:
                 continue
             if vector_field in es_speaker_season:
-                s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_season[vector_field])
-                topics = esrt.return_vector_search(s)
+                # s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_season[vector_field])
+                s, _ = esqb.vector_search(show_key.value, vector_field, es_speaker_season[vector_field], index_name='topics', topic_grouping=topic_grouping)
+                topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
                 if topics:
                     season_topics[es_speaker_season['season']] = topics
 
@@ -810,7 +814,7 @@ def topic_speaker_vector_search(topic_grouping: str, topic_key: str, show_key: S
         return {"error": f"Unable to run `topic_speaker_vector_search`: No embeddings for topic_grouping={topic_grouping} topic_key={topic_key} vector_field={vector_field}"}
         
     # TODO this only searches speakers who have series-level embeddings, needs work
-    es_response, es_query = esqb.vector_search(show_key, vector_field, topic_embedding, index_name='speakers')
+    es_response, es_query = esqb.vector_search(show_key.value, vector_field, topic_embedding, index_name='speakers')
     speakers = esrt.return_vector_search(es_response)
     return {"speakers_count": len(speakers), "vector_field": vector_field, "speakers": speakers, "es_query": es_query}
 

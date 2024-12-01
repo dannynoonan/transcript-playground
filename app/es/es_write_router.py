@@ -10,7 +10,7 @@ if settings.es_toggle == 'oss':
 else:
     from app.es.es_model import EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, EsTopic
 
-from app.app_metadata import BERTOPIC_DIR
+from app.app_metadata import BERTOPIC_DATA_DIR
 import app.database.dao as dao
 import app.data_service.field_flattener as fflat
 from app.data_service.topic_aggregator import TopicAgg
@@ -962,7 +962,7 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
     
     # populate episode-narrative-speaker-groups with any model_clusters of which they are a member
     for bertopic_model_id in bertopic_model_ids:
-        df = pd.read_csv(f'{BERTOPIC_DIR}/{show_key.value}/{bertopic_model_id}.csv', sep='\t')
+        df = pd.read_csv(f'{BERTOPIC_DATA_DIR}/{show_key.value}/{bertopic_model_id}.csv', sep='\t')
         # model_id = bertopic_model_id.removesuffix('.csv')
         for _, row in df.iterrows():
             e_key = str(row['episode_key'])
