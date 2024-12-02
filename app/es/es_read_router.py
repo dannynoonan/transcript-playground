@@ -256,12 +256,13 @@ def fetch_topic_grouping(topic_grouping: str, return_fields: str = None):
     return {"topics": topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_episode_topics/{show_key}/{episode_key}/{topic_grouping}", tags=['ES Reader'])
-def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, level: str = None, limit: int = None, sort_by: str = None):
+@esr_app.get("/esr/fetch_episode_topics/{show_key}/{episode_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Reader'])
+def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str, 
+                         level: str = None, limit: int = None, sort_by: str = None):
     '''
     Fetch topics mapped to episode
     '''
-    s = esqb.fetch_episode_topics(show_key.value, episode_key, topic_grouping, level=level, limit=limit, sort_by=sort_by)
+    s = esqb.fetch_episode_topics(show_key.value, episode_key, topic_grouping, model_vendor, model_version, level=level, limit=limit, sort_by=sort_by)
     es_query = s.to_dict()
     episode_topics = esrt.return_topics(s)
     return {"episode_topics": episode_topics, "es_query": es_query}
@@ -696,7 +697,8 @@ def episode_topic_vector_search(show_key: ShowKey, episode_key: str, topic_group
         
     # es_response = esqb.topic_vector_search(topic_grouping, vector_field, episode_embedding)
     es_response, _ = esqb.vector_search(show_key.value, vector_field, episode_embedding, index_name='topics', topic_grouping=topic_grouping)
-    topics = esrt.return_vector_search(es_response, filter_key='topic_grouping', filter_value=topic_grouping)
+    # topics = esrt.return_vector_search(es_response, filter_key='topic_grouping', filter_value=topic_grouping)
+    topics = esrt.return_vector_search(es_response)
     return {"topic_count": len(topics), "vector_field": vector_field, "topics": topics}
 
 
@@ -767,7 +769,8 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
     if vector_field in es_speaker and not (episode_keys or seasons):
         # s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker[vector_field])
         s, _ = esqb.vector_search(show_key.value, vector_field, es_speaker[vector_field], index_name='topics', topic_grouping=topic_grouping)
-        series_topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
+        # series_topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
+        series_topics = esrt.return_vector_search(s)
 
     if 'episodes' in es_speaker and not seasons_only:
         for es_speaker_episode in es_speaker['episodes']:
@@ -776,7 +779,8 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
             if vector_field in es_speaker_episode:
                 # s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_episode[vector_field])
                 s, _ = esqb.vector_search(show_key.value, vector_field, es_speaker_episode[vector_field], index_name='topics', topic_grouping=topic_grouping)
-                topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
+                # topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
+                topics = esrt.return_vector_search(s)
                 if topics:
                     episode_topics[es_speaker_episode['episode_key']] = topics
 
@@ -787,7 +791,8 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
             if vector_field in es_speaker_season:
                 # s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_season[vector_field])
                 s, _ = esqb.vector_search(show_key.value, vector_field, es_speaker_season[vector_field], index_name='topics', topic_grouping=topic_grouping)
-                topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
+                # topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
+                topics = esrt.return_vector_search(s)
                 if topics:
                     season_topics[es_speaker_season['season']] = topics
 
@@ -1447,7 +1452,7 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
         sequence_in_season = episode['sequence_in_season']
 
         # fetch topics and scores
-        response = fetch_episode_topics(show_key, episode_key, topic_grouping)
+        response = fetch_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version)
         topics = response['episode_topics']
         if len(topics) > topic_threshold:
             topics = topics[:topic_threshold]

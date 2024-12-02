@@ -430,9 +430,13 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
     # topic_score_types = [ug_score_type, ug2_score_type]
     topic_score_types = [ug_score_type]
 
+    # TODO added during final MVP push, this might mean model version is the new toggle
+    model_vendor = 'openai'
+    model_version = '3small'
+
     for i, tg in enumerate(topic_groupings):
         # fetch episode topics, load into df, modify / reformat
-        r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg)
+        r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg, model_vendor, model_version)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
         df = fflat.flatten_and_format_topics_df(df, topic_score_types[i])

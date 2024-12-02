@@ -862,7 +862,8 @@ def return_more_like_this(s: Search) -> list:
     return results
 
 
-def return_vector_search(es_response: dict, filter_key: str = None, filter_value: str = None) -> list:
+def return_vector_search(es_response: dict) -> list:
+# def return_vector_search(es_response: dict, filter_key: str = None, filter_value: str = None) -> list:
     # print(f'begin return_vector_search')
 
     results = []
@@ -873,10 +874,10 @@ def return_vector_search(es_response: dict, filter_key: str = None, filter_value
     rank = 1
     for hit in es_response['hits']['hits']:
         match = hit['_source']
-        # NOTE workaround until I sort out filtering OpenSearch vector results in query itself
-        if filter_key and filter_key in match and match[filter_key] != filter_value:
-            print(f'ignoring result with {filter_key}={match[filter_key]}, only permitting {filter_key}={filter_value}')
-            continue
+        # # NOTE workaround until I sort out filtering OpenSearch vector results in query itself
+        # if filter_key and filter_key in match and match[filter_key] != filter_value:
+        #     print(f'ignoring result with {filter_key}={match[filter_key]}, only permitting {filter_key}={filter_value}')
+        #     continue
         match['score'] = hit['_score'] * 100
         match['rank'] = rank
         rank += 1

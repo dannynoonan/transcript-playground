@@ -259,10 +259,14 @@ def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str
     callback_start_ts = dt.now()
     utils.hilite_in_logs(f'callback invoked: render_series_topic_pies ts={callback_start_ts} show_key={show_key} topic_grouping={topic_grouping} score_type={score_type}')
 
+    # TODO added during final MVP push, this might mean model version is the new toggle
+    model_vendor = 'openai'
+    model_version = '3small'
+
     ##### TODO begin optimization block 
     episode_topic_lists = []
     for episode in all_simple_episodes:
-        episode_topics_response = esr.fetch_episode_topics(ShowKey(show_key), episode['episode_key'], topic_grouping)
+        episode_topics_response = esr.fetch_episode_topics(ShowKey(show_key), episode['episode_key'], topic_grouping, model_vendor, model_version)
         episode_topic_lists.append(episode_topics_response['episode_topics'])
 
     series_topics_df, series_parent_topics_df = tagg.generate_topic_aggs_from_episode_topics(episode_topic_lists, max_rank=20, max_parent_repeats=2)

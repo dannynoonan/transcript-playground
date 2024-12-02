@@ -46,10 +46,10 @@ es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port'
 
 vector_field = dict(type='knn_vector', 
                     dimension=1536, 
-                    # space_type='l2', 
+                    space_type='l2', 
                     method=dict(name='hnsw', 
-                                engine='nmslib', 
-                                space_type='cosinesimil',
+                                engine='faiss', 
+                                # space_type='cosinesimil',
                                 parameters=dict(ef_construction=128, m=24)
                     )
                 )
@@ -552,8 +552,9 @@ def fetch_episode_topic(show_key: str, episode_key: str, topic_grouping: str, to
     return episode_topic
 
 
-def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, level: str = None, limit: int = None, sort_by: str = None) -> Search:
-    print(f'begin fetch_speaker_episode_topics for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping} level={level}')
+def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str, 
+                         level: str = None, limit: int = None, sort_by: str = None) -> Search:
+    print(f'begin fetch_speaker_episode_topics for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version} level={level}')
 
     if not limit:
         limit = 100
@@ -566,6 +567,8 @@ def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, l
     s = s.filter('match', show_key=show_key)
     s = s.filter('term', episode_key=episode_key)
     s = s.filter('match', topic_grouping=topic_grouping)
+    s = s.filter('match', model_vendor=model_vendor)
+    s = s.filter('match', model_version=model_version)
     if level:
         if level in ['parent', 'root', 'top']:
             s = s.filter('term', is_parent=True)
@@ -1654,9 +1657,18 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
     else:
         k = 176
 
+    # TODO ewwwww this is getting gross
     if settings.es_toggle == 'oss':
-        return vector_search_oss(show_key, vector_field, vectorized_qt, index_name, k, min_word_count=min_word_count, season=season, topic_grouping=topic_grouping)
+        filters = {}
+        if season:
+            filters['season'] = season
+        if topic_grouping:
+            filters['topic_grouping'] = topic_grouping
+        else:
+            filters['show_key'] = show_key
+        return vector_search_oss(show_key, vector_field, vectorized_qt, index_name, k, filters=filters, min_word_count=min_word_count)
     else:
+        # TODO rework es search for generic term filter key-values as well
         return vector_search_es(show_key, vector_field, vectorized_qt, index_name, k, min_word_count=min_word_count, season=season, topic_grouping=topic_grouping)
 
 
@@ -1734,9 +1746,9 @@ def vector_search_es(show_key: str, vector_field: str, vectorized_qt: list, inde
     return response, dict(knn_query=knn_query, filter_query=filter_query)
 
 
-def vector_search_oss(show_key: str, vector_field: str, vectorized_qt: list, index_name: str, k: int,
-                      min_word_count: int = None, season: str = None, topic_grouping: str = None) -> tuple[object, dict]:
-    print(f'begin vector_search_oss for show_key={show_key} vector_field={vector_field} index_name={index_name} min_word_count={min_word_count} season={season}')
+def vector_search_oss(show_key: str, vector_field: str, vectorized_qt: list, index_name: str, k: int, filters: dict = {}, 
+                      min_word_count: int = None, season: str = None) -> tuple[object, dict]:
+    print(f'begin vector_search_oss for show_key={show_key} vector_field={vector_field} index_name={index_name} filters={filters} min_word_count={min_word_count} season={season}')
 
     # filter_query = {
     #     "bool": {
@@ -1756,12 +1768,16 @@ def vector_search_oss(show_key: str, vector_field: str, vectorized_qt: list, ind
 
     if index_name == 'speakers':
         source = ['show_key', 'speaker']
+        filters['show_key'] = show_key
     elif index_name == 'speaker_seasons':
         source = ['show_key', 'season', 'speaker']
+        filters['show_key'] = show_key
     elif index_name == 'speaker_episodes':
         source = ['show_key', 'episode_key', 'season', 'sequence_in_season', 'speaker']
+        filters['show_key'] = show_key
     elif index_name == 'speaker_embeddings_unified':
         source = ['show_key', 'layer_key', 'speaker']
+        filters['show_key'] = show_key
     elif index_name== 'topics':
         source = ['topic_grouping', 'topic_key', 'parent_key', 'topic_name', 'parent_name']
     else:
@@ -1861,22 +1877,48 @@ def vector_search_oss(show_key: str, vector_field: str, vectorized_qt: list, ind
     }
     '''
 
+
+    vector_query_obj = {
+        "vector": vectorized_qt,
+        "k": k,
+    }
+
+    if filters:
+        must_query_list = []
+        for f_key, f_val in filters.items():
+            filter = {'term': {f_key: f_val}}
+            must_query_list.append(filter)
+        vector_query_obj['filter'] = {
+            'bool': {
+                'must': must_query_list
+            }
+        }
+
     es_query = {
         "query": {
             "knn": {
-                vector_field: {
-                    "vector": vectorized_qt,
-                    "k": k,
-                    # TODO since this isn't working, I currently don't have a cross-show solution here
-                    # "filter": {
-                    #     "term": {
-                    #         "show_key": "TNG"
-                    #     }
-                    # }
-                }
+                vector_field: vector_query_obj
             }
         }
     }
+
+    # es_query = {
+    #     "query": {
+    #         "knn": {
+    #             vector_field: {
+    #                 "vector": vectorized_qt,
+    #                 "k": k,
+    #                 # TODO since this isn't working, I currently don't have a cross-show solution here
+    #                 "filter": {
+    #                     "term": {
+    #                         "show_key": show_key
+    #                     }
+    #                 }
+    #             }
+    #         }
+    #     }
+    # }
+
 
 
     # NOTE begin this worked
