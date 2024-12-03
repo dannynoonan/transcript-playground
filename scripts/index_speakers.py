@@ -9,6 +9,9 @@ from app.show_metadata import SPEAKERS_TO_IGNORE, ShowKey
 
 
 def main():
+    '''
+    Bulk run of `/esw/index_speaker` for all valid speakers with lines in a given show
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument("--show_key", "-s", help="Show key", required=True)
     args = parser.parse_args()

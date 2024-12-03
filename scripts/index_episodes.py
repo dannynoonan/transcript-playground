@@ -12,6 +12,9 @@ import app.es.es_query_builder as esqb
 
 
 async def main():
+    '''
+    Bulk run of `/esw/index_episode` for all episodes of a given show
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument("--show_key", "-s", help="Show key", required=True)
     args = parser.parse_args()

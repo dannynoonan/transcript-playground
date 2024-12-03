@@ -636,17 +636,228 @@ def populate_episode_narratives(show_key: ShowKey, episode_key: str):
     return {"narrative_sequences": narrative_sequences}
 
 
+
+
+
+##################### Legacy batch es writes, ported over to ./scripts (but still referenced by airflow dags) #######################
+
+@esw_app.get("/esw/index_all_episodes/{show_key}", tags=['ES Writer'])
+async def index_all_episodes(show_key: ShowKey, overwrite_all: bool = False):
+    '''
+    Bulk run of `/esw/index_episode` for all episodes of a given show
+    NOTE migrated to ./scripts/index_episodes.py
+    '''
+    episodes = []
+    try:
+        episodes = await dao.fetch_episodes(show_key.value)
+    except Exception as e:
+        return {"Error": f"Failure to fetch Episodes having show_key={show_key}: {e}"}
+    if not episodes:
+        return {"Error": f"No Episodes found having show_key={show_key}. You may need to run /load_episode_listing first."}
+    if not overwrite_all:
+        return {"No-op": f"/index_all_episodes was invoked on {len(episodes)} episodes, but `overwrite_all` flag was not set to True so no action was taken"}
+    
+    # fetch and insert transcripts for all episodes
+    attempts = 0
+    successful_episode_keys = []
+    failed_episode_keys = []
+    for episode in episodes:
+        attempts += 1
+
+        # fetch nested scene and scene_event data
+        await episode.fetch_related('scenes')
+        # if not episode.scenes:
+        #     print(f"No Scene data found for episode {show_key}_{episode.external_key}. You may need to run /load_transcript first.")
+        #     failed_episode_keys.append(episode.external_key)
+        #     continue
+        for scene in episode.scenes:
+            await scene.fetch_related('events')
+
+        # transform to es-writable object and write to es
+        try:
+            es_episode = esit.to_es_episode(episode)
+            esqb.save_es_episode(es_episode)
+            successful_episode_keys.append(episode.external_key)
+        except Exception as e:
+            failed_episode_keys.append(episode.external_key)
+            print(f"Failure to transform Episode {show_key}_{episode.external_key} to es-writable version or write it to es: {e}")
+
+    return {
+        "episode_indexing_attempts": attempts, 
+        "successful": len(successful_episode_keys),
+        "successful_episode_keys": successful_episode_keys, 
+        "failed": len(failed_episode_keys),
+        "failed_episode_keys": failed_episode_keys, 
+    }
+
+
+@esw_app.get("/esw/populate_all_episode_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_episode_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
+    '''
+    Bulk run of `/esw/populate_episode_embeddings` for all episodes of a given show
+    NOTE migrated to ./scripts/populate_episode_embeddings.py
+    '''
+    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
+    episode_doc_ids = doc_ids['doc_ids']
+    processed_episode_keys = []
+    failed_episode_keys = []
+    for doc_id in episode_doc_ids:
+        episode_key = doc_id.split('_')[-1]
+        try:
+            populate_episode_embeddings(ShowKey(show_key), episode_key, model_vendor, model_version)
+            processed_episode_keys.append(episode_key)
+        except Exception:
+            failed_episode_keys.append(episode_key)
+    return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
+
+
+@esw_app.get("/esw/populate_all_episode_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str, limit: int = 30, episode_key: str = None):
+    '''
+    For each episode, query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
+    NOTE migrated to ./scripts/populate_episode_relations.py
+    '''
+    if (model_vendor, model_version) not in ACTIVE_VENDOR_VERSIONS and (model_vendor, model_version) != ('es','mlt'):
+        return {"error": f'invalid model_vendor:model_version combo {model_vendor}:{model_version}'}
+    
+    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
+    episode_doc_ids = doc_ids['doc_ids']
+    
+    episodes_to_relations = {}
+    for doc_id in episode_doc_ids:
+        episode_key = doc_id.split('_')[-1]
+        if (model_vendor, model_version) == ('es','mlt'):
+            similar_episodes = esr.more_like_this(ShowKey(show_key), episode_key)
+        else:
+            similar_episodes = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
+        # only keep the episode keys and corresponding scores 
+        # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
+        episodes_to_relations[doc_id] = similar_episodes
+    
+    episodes_to_relations = esqb.populate_episode_relations(show_key.value, model_vendor, model_version, episodes_to_relations, limit=limit)
+
+    return {"episodes_to_relations": episodes_to_relations}
+
+
+@esw_app.get("/esw/populate_topic_grouping_embeddings/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, model_version: str):
+    '''
+    Generate vector embedding for all topics in topic_grouping using pre-trained Word2Vec and Transformer models
+    NOTE migrated to ./scripts/populate_topic_embeddings.py
+    '''
+    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping)
+    topic_keys = [t['topic_key'] for t in topic_grouping_response['topics']]
+    attempted_count = 0
+    successful_topics = []
+    failed_topics = []
+    failure_messages = []
+    for topic_key in topic_keys:
+        attempted_count += 1
+        topic_embeddings_response = populate_topic_embeddings(topic_grouping, topic_key, model_vendor, model_version)
+        if 'topic' in topic_embeddings_response:
+            successful_topics.append(topic_key)
+        else:
+            failed_topics.append(topic_key)
+            if 'error' in topic_embeddings_response:
+                failure_messages.append(topic_embeddings_response['error'])
+        
+    return {'attempted_count': attempted_count, 'successful_topics': successful_topics, 'failed_topics': failed_topics, 'failure_messages': failure_messages}
+
+
+@esw_app.get("/esw/index_all_speakers/{show_key}", tags=['ES Writer'])
+def index_all_speakers(show_key: ShowKey):
+    '''
+    Bulk run of `/esw/index_speaker` for all valid speakers with lines in a given show
+    NOTE migrated to ./scripts/index_speakers.py
+    '''
+    response = esr.agg_episodes_by_speaker(show_key)
+    speaker_episode_counts = response['episodes_by_speaker']
+    valid_speakers = [s for s,_ in speaker_episode_counts.items() if '+' not in s and s not in SPEAKERS_TO_IGNORE]
+    attempt_count = 0
+    successful = []
+    failed = []
+    for speaker in valid_speakers:
+        attempt_count += 1
+        try:
+            response = index_speaker(show_key, speaker)
+            if "speaker" in response:
+                print(f"Successfully indexed speaker={speaker}")
+                successful.append(speaker)
+            else:
+                print(f"Failed to index speaker={speaker}: {response['Error']}")
+                failed.append(speaker)
+        except Exception as e:
+            print(f"Failed to index speaker={speaker}: {e}")
+            failed.append(speaker)
+
+    return {"attempt_count": attempt_count, "successful": successful, "failed": failed}
+
+
+@esw_app.get("/esw/populate_all_speaker_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
+    '''
+    Generate vector embedding for all indexed speakers for a show using pre-trained Word2Vec and Transformer models
+    NOTE migrated to ./scripts/populate_speaker_embeddings.py
+    '''
+    s = esqb.fetch_indexed_speakers(show_key.value, return_fields=['speaker'])
+    matches = esrt.return_speakers(s)
+    if not matches:
+        return {"error": f"Failed to fetch_indexed_speakers for show_key={show_key}"}
+    
+    speakers = [m['speaker'] for m in matches]
+    request_count = 0
+    success_count = 0
+    skipped_count = 0
+    failure_count = 0
+    super_fails = []
+    speaker_responses = {}
+    for speaker in speakers:
+        try:
+            response = populate_speaker_embeddings(show_key, speaker, model_vendor, model_version)
+            speaker_responses[speaker] = response
+            request_count += response['attempted_count']
+            success_count += len(response['successful'])
+            skipped_count += len(response['skipped'])
+            failure_count += len(response['failed'])
+        except Exception as e:
+            print(f"Failed to populate_speaker_embeddings for speaker={speaker}: {e}")
+            super_fails.append(speaker)
+
+    return {"request_count": request_count, "success_count": success_count, "skipped_count": skipped_count, "failure_count": failure_count,
+            "super_fails": super_fails, "speaker_responses": speaker_responses}
+
+
+@esw_app.get("/esw/populate_all_episode_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
+def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str):
+    '''
+    For specified topic_grouping, generate and store topic mappings for all series episodes
+    NOTE migrated to ./scripts/populate_episode_topics.py
+    '''
+    doc_ids = esr.fetch_doc_ids(show_key)
+    episode_doc_ids = doc_ids['doc_ids']
+    processed_episode_keys = []
+    failed_episode_keys = []
+    for doc_id in episode_doc_ids:
+        episode_key = doc_id.split('_')[-1]
+        try:
+            populate_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version)
+            processed_episode_keys.append(episode_key)
+        except Exception:
+            failed_episode_keys.append(episode_key)
+
+    return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
+
+
 @esw_app.get("/esw/populate_bertopic_model_clusters/{show_key}/", tags=['ES Writer'])
-def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None):
+def populate_bertopic_model_clusters(show_key: ShowKey):
     '''
     Load each bertopic_model's csv into dataframe, upsert referenced episode_narratives with mapping back to bertopic_model
+    NOTE migrated to ./scripts/populate_bertopic_clusters.py
     '''
     # load bertopic_data files 
-    bertopic_model_list_response = esr.list_bertopic_models(show_key, umap_metric=umap_metric)
+    bertopic_model_list_response = esr.list_bertopic_models(show_key)
     bertopic_model_ids = bertopic_model_list_response['bertopic_model_ids']
-    # bertopic_data_files = [f for f in os.listdir(BERTOPIC_DATA_DIR) if os.path.isfile(os.path.join(BERTOPIC_DATA_DIR, f))]
-    # if umap_metric:
-    #     bertopic_data_files = [f for f in bertopic_data_files if f.startswith(umap_metric)]
+    # NOTE umap_metric was supported previously, but the way I'm setting es_episode_narrative.cluster_memberships below precludes restricting by umap_metric 
 
     # initialize dict of narrative-speaker-groups per episode
     epnarr_spkrgrps_to_model_clusters = {}
@@ -707,211 +918,6 @@ def populate_bertopic_model_clusters(show_key: ShowKey, umap_metric: str = None)
     return {"attempt_count": attempt_count, "success_count": success_count, "failure_count": failure_count}
 
 
-
-
-
-##################### Legacy batch es writes, ported over to ./scripts (but still referenced by airflow dags) #######################
-
-@esw_app.get("/esw/index_all_episodes/{show_key}", tags=['ES Writer'])
-async def index_all_episodes(show_key: ShowKey, overwrite_all: bool = False):
-    '''
-    Bulk run of `/esw/index_episode` for all episodes of a given show
-    NOTE migrated to ./scripts/index_episodes.py
-    '''
-    episodes = []
-    try:
-        episodes = await dao.fetch_episodes(show_key.value)
-    except Exception as e:
-        return {"Error": f"Failure to fetch Episodes having show_key={show_key}: {e}"}
-    if not episodes:
-        return {"Error": f"No Episodes found having show_key={show_key}. You may need to run /load_episode_listing first."}
-    if not overwrite_all:
-        return {"No-op": f"/index_all_episodes was invoked on {len(episodes)} episodes, but `overwrite_all` flag was not set to True so no action was taken"}
-    
-    # fetch and insert transcripts for all episodes
-    attempts = 0
-    successful_episode_keys = []
-    failed_episode_keys = []
-    for episode in episodes:
-        attempts += 1
-
-        # fetch nested scene and scene_event data
-        await episode.fetch_related('scenes')
-        # if not episode.scenes:
-        #     print(f"No Scene data found for episode {show_key}_{episode.external_key}. You may need to run /load_transcript first.")
-        #     failed_episode_keys.append(episode.external_key)
-        #     continue
-        for scene in episode.scenes:
-            await scene.fetch_related('events')
-
-        # transform to es-writable object and write to es
-        try:
-            es_episode = esit.to_es_episode(episode)
-            esqb.save_es_episode(es_episode)
-            successful_episode_keys.append(episode.external_key)
-        except Exception as e:
-            failed_episode_keys.append(episode.external_key)
-            print(f"Failure to transform Episode {show_key}_{episode.external_key} to es-writable version or write it to es: {e}")
-
-    return {
-        "episode_indexing_attempts": attempts, 
-        "successful": len(successful_episode_keys),
-        "successful_episode_keys": successful_episode_keys, 
-        "failed": len(failed_episode_keys),
-        "failed_episode_keys": failed_episode_keys, 
-    }
-
-
-@esw_app.get("/esw/populate_all_episode_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_episode_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
-    '''
-    Bulk run of `/esw/populate_episode_embeddings` for all episodes of a given show
-    '''
-    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
-    episode_doc_ids = doc_ids['doc_ids']
-    processed_episode_keys = []
-    failed_episode_keys = []
-    for doc_id in episode_doc_ids:
-        episode_key = doc_id.split('_')[-1]
-        try:
-            populate_episode_embeddings(ShowKey(show_key), episode_key, model_vendor, model_version)
-            processed_episode_keys.append(episode_key)
-        except Exception:
-            failed_episode_keys.append(episode_key)
-    return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
-
-
-@esw_app.get("/esw/populate_all_episode_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str, limit: int = 30, episode_key: str = None):
-    '''
-    For each episode, query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
-    '''
-    if (model_vendor, model_version) not in ACTIVE_VENDOR_VERSIONS and (model_vendor, model_version) != ('es','mlt'):
-        return {"error": f'invalid model_vendor:model_version combo {model_vendor}:{model_version}'}
-    
-    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
-    episode_doc_ids = doc_ids['doc_ids']
-    
-    episodes_to_relations = {}
-    for doc_id in episode_doc_ids:
-        episode_key = doc_id.split('_')[-1]
-        if (model_vendor, model_version) == ('es','mlt'):
-            similar_episodes = esr.more_like_this(ShowKey(show_key), episode_key)
-        else:
-            similar_episodes = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
-        # only keep the episode keys and corresponding scores 
-        # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
-        episodes_to_relations[doc_id] = similar_episodes
-    
-    episodes_to_relations = esqb.populate_episode_relations(show_key.value, model_vendor, model_version, episodes_to_relations, limit=limit)
-
-    return {"episodes_to_relations": episodes_to_relations}
-
-
-@esw_app.get("/esw/populate_topic_grouping_embeddings/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, model_version: str):
-    '''
-    Generate vector embedding for all topics in topic_grouping using pre-trained Word2Vec and Transformer models
-    '''
-    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping)
-    topic_keys = [t['topic_key'] for t in topic_grouping_response['topics']]
-    attempted_count = 0
-    successful_topics = []
-    failed_topics = []
-    failure_messages = []
-    for topic_key in topic_keys:
-        attempted_count += 1
-        topic_embeddings_response = populate_topic_embeddings(topic_grouping, topic_key, model_vendor, model_version)
-        if 'topic' in topic_embeddings_response:
-            successful_topics.append(topic_key)
-        else:
-            failed_topics.append(topic_key)
-            if 'error' in topic_embeddings_response:
-                failure_messages.append(topic_embeddings_response['error'])
-        
-    return {'attempted_count': attempted_count, 'successful_topics': successful_topics, 'failed_topics': failed_topics, 'failure_messages': failure_messages}
-
-
-@esw_app.get("/esw/index_all_speakers/{show_key}", tags=['ES Writer'])
-def index_all_speakers(show_key: ShowKey):
-    '''
-    TODO
-    '''
-    response = esr.agg_episodes_by_speaker(show_key)
-    speaker_episode_counts = response['episodes_by_speaker']
-    valid_speakers = [s for s,c in speaker_episode_counts.items() if '+' not in s and s not in SPEAKERS_TO_IGNORE]
-    attempt_count = 0
-    successful = []
-    failed = []
-    for speaker in valid_speakers:
-        attempt_count += 1
-        try:
-            response = index_speaker(show_key, speaker)
-            if "speaker" in response:
-                print(f"Successfully indexed speaker={speaker}")
-                successful.append(speaker)
-            else:
-                print(f"Failed to index speaker={speaker}: {response['Error']}")
-                failed.append(speaker)
-        except Exception as e:
-            print(f"Failed to index speaker={speaker}: {e}")
-            failed.append(speaker)
-
-    return {"attempt_count": attempt_count, "successful": successful, "failed": failed}
-
-
-@esw_app.get("/esw/populate_all_speaker_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
-    '''
-    Generate vector embedding for all indexed speakers for a show using pre-trained Word2Vec and Transformer models
-    '''
-
-    s = esqb.fetch_indexed_speakers(show_key.value, return_fields=['speaker'])
-    matches = esrt.return_speakers(s)
-    if not matches:
-        return {"error": f"Failed to fetch_indexed_speakers for show_key={show_key}"}
-    
-    speakers = [m['speaker'] for m in matches]
-    request_count = 0
-    success_count = 0
-    skipped_count = 0
-    failure_count = 0
-    super_fails = []
-    speaker_responses = {}
-    for speaker in speakers:
-        try:
-            response = populate_speaker_embeddings(show_key, speaker, model_vendor, model_version)
-            speaker_responses[speaker] = response
-            request_count += response['attempted_count']
-            success_count += len(response['successful'])
-            skipped_count += len(response['skipped'])
-            failure_count += len(response['failed'])
-        except Exception as e:
-            print(f"Failed to populate_speaker_embeddings for speaker={speaker}: {e}")
-            super_fails.append(speaker)
-
-    return {"request_count": request_count, "success_count": success_count, "skipped_count": skipped_count, "failure_count": failure_count,
-            "super_fails": super_fails, "speaker_responses": speaker_responses}
-
-
-@esw_app.get("/esw/populate_all_episode_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str):
-    '''
-    For specified topic_grouping, generate and store topic mappings for all series episodes  
-    '''
-    doc_ids = esr.fetch_doc_ids(show_key)
-    episode_doc_ids = doc_ids['doc_ids']
-    processed_episode_keys = []
-    failed_episode_keys = []
-    for doc_id in episode_doc_ids:
-        episode_key = doc_id.split('_')[-1]
-        try:
-            populate_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version)
-            processed_episode_keys.append(episode_key)
-        except Exception:
-            failed_episode_keys.append(episode_key)
-
-    return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
 
 
 # @esw_app.get("/esw/populate_episode_topic_tfidf_scores/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
@@ -975,7 +981,8 @@ def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_ve
 @esw_app.get("/esw/populate_episode_topic_tfidf_scores/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
 def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str):
     '''
-    For specified topic_grouping, calculate 'tfidf'-like scores for all episode_topics and store in `tfidf_score` field  
+    For specified topic_grouping, calculate 'tfidf'-like scores for all episode_topics and store in `tfidf_score` field
+    NOTE migrated to ./scripts/populate_episode_topics.py
     '''
     ekey_tkey_scores, topic_idfs = tfcalc.calculate_topic_freq_idf(show_key, topic_grouping, model_vendor, model_version)
 
@@ -1008,6 +1015,7 @@ def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, 
 def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str):
     '''
     Map speakers to topics (using knn vector cosine similarity) for all indexed speakers for a show 
+    NOTE migrated to ./scripts/populate_speaker_topics.py
     '''
     s = esqb.fetch_indexed_speakers(show_key.value, return_fields=['speaker'])
     matches = esrt.return_speakers(s)
@@ -1044,6 +1052,7 @@ def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_ve
 def populate_all_episode_narratives(show_key: ShowKey):
     '''
     Generate and populate all narrative sequences for a show
+    NOTE migrated to ./scripts/populate_episode_narratives.py
     '''
     successful_keys = []
     failed_keys = []

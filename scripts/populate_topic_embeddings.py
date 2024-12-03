@@ -8,6 +8,9 @@ import app.es.es_write_router as esw
 
 
 def main():
+    '''
+    Generate vector embedding for all topics in topic_grouping using pre-trained Word2Vec and Transformer models
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument("--topic_grouping", "-g", help="Topic grouping", required=True)
     parser.add_argument("--model_vendor", "-m", help="Model vendor", required=True)

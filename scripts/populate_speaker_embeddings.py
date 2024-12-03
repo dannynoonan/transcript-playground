@@ -10,6 +10,9 @@ from app.show_metadata import ShowKey
 
 
 def main():
+    '''
+    Generate vector embedding for all indexed speakers for a show using pre-trained Transformer models
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument("--show_key", "-s", help="Show key", required=True)
     parser.add_argument("--model_vendor", "-m", help="Model vendor", required=True)
@@ -20,7 +23,7 @@ def main():
     model_version = args.model_version
     print(f'Begin populate_speaker_embeddings script for show_key={show_key} model_vendor={model_vendor} model_version={model_version}')
 
-    # NOTE Copied from /esw/populate_all_speaker_embeddings, not sure why this one uses esqb/esrt directly and other batch indexers use esr 
+    # NOTE not sure why this one uses esqb/esrt directly and other batch indexers use esr 
     s = esqb.fetch_indexed_speakers(show_key, return_fields=['speaker'])
     matches = esrt.return_speakers(s)
     if not matches:

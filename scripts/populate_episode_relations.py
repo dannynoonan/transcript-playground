@@ -10,6 +10,9 @@ from app.show_metadata import ShowKey
 
 
 def main():
+    '''
+    For each episode, query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument("--show_key", "-s", help="Show key", required=True)
     parser.add_argument("--model_vendor", "-m", help="Model vendor", required=True)
@@ -50,7 +53,7 @@ def main():
     print(f'Finished writing relations for {len(episodes_to_relations)} episodes to es transcripts.')
 
     report = {"episodes_to_relations": episodes_to_relations}
-    # print(report)
+    print(report)
     return report
 
 

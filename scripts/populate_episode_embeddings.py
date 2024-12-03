@@ -9,6 +9,9 @@ from app.show_metadata import ShowKey
 
 
 def main():
+    '''
+    Bulk run of `/esw/populate_episode_embeddings` for all episodes of a given show
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument("--show_key", "-s", help="Show key", required=True)
     parser.add_argument("--model_vendor", "-m", help="Model vendor", required=True)

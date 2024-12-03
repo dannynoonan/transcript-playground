@@ -13,6 +13,10 @@ from app.show_metadata import ShowKey
 
 
 def main():
+    '''
+    For specified topic_grouping, generate and store topic mappings for all series episodes,
+    then calculate 'tfidf'-like scores for all episode_topics and store in `tfidf_score` field
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument("--show_key", "-s", help="Show key", required=True)
     parser.add_argument("--topic_grouping", "-g", help="Topic grouping", required=True)
