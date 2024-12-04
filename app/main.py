@@ -13,6 +13,8 @@ from app.config import settings, DATABASE_URL
 from app.dash_pages import dash_pages_app
 from app.database.connect import connect_to_database
 import app.database.dao as dao
+from app.es.es_admin_router import esa_app
+from app.es.es_bulk_write_router import esbw_app
 from app.es.es_read_router import esr_app
 from app.es.es_write_router import esw_app
 from app.etl.etl_router import etl_app
@@ -24,8 +26,10 @@ from app.web.web_router import web_app
 app = FastAPI()
 app.include_router(web_app)
 app.include_router(etl_app)
-app.include_router(esw_app)
+app.include_router(esa_app)
+app.include_router(esbw_app)
 app.include_router(esr_app)
+app.include_router(esw_app)
 app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 # app.mount('/tsp_dash', WSGIMiddleware(dapp.server))
 app.mount('/dash_pages', WSGIMiddleware(dash_pages_app.server))

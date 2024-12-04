@@ -7,8 +7,7 @@ from app.app_metadata import ANIMATION_DATA_DIR, BERTOPIC_MODELS_DIR, GANTT_DATA
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
-import app.nlp.query_preprocessor as qp
+from app.nlp.nlp_metadata import TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from app.show_metadata import ShowKey, show_metadata, EPISODE_TOPIC_GROUPINGS
 
 
@@ -849,31 +848,7 @@ def topic_speaker_search(topic_grouping: str, topic_key: str, show_key: ShowKey 
     return {"speakers_count": len(speakers), "is_parent_topic": is_parent, "speakers": speakers, "es_query": es_query}
 
 
-# @esr_app.get("/esr/test_vector_search/{show_key}", tags=['ES Reader'])
-# def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, normalize_and_expand: bool = False):
-#     '''
-#     Experimental endpoint for troubleshooting ontology overrides and other qt alterations preceding vectorization
-#     '''
-#     if not model_vendor:
-#         model_vendor = 'webvectors'
-#     if not model_version:
-#         model_version = '223'
-
-#     # NOTE currently only set up for word2vec, not for openai embeddings
-
-#     vendor_meta = W2V_MODELS[model_vendor]
-#     tag_pos = vendor_meta['pos_tag']
-
-#     try:
-#         if normalize_and_expand:
-#             qt = qp.normalize_and_expand_query_vocab(qt, show_key)
-#         tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
-#     except Exception as e:
-#         return {"error": e}
-#     return {"normd_expanded_qt": qt, "tokenized_qt": tokenized_qt}
-
-
-@esr_app.get("/esr/search_speakers/{qt}/", tags=['ES Reader'])
+@esr_app.get("/esr/search_speakers/{qt}", tags=['ES Reader'])
 def search_speakers(qt: str, show_key: ShowKey = None, extra_fields: str = None):
     '''
     Search for a speaker by query term

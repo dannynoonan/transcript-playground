@@ -6,7 +6,6 @@ sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
 import app.data_service.topicfidf_calculator as tfcalc
 import app.data_service.field_flattener as fflat
-import app.es.es_query_builder as esqb
 import app.es.es_read_router as esr
 import app.es.es_write_router as esw
 from app.show_metadata import ShowKey
