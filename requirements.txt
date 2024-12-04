@@ -39,7 +39,7 @@ pydantic-settings==2.0.3
 pytest==7.4.4
 pytest-asyncio==0.23.3
 python-multipart==0.0.6
-requests==2.30.0
+requests==2.32.3
 scikit-learn==1.4.0
 scipy==1.11.4
 # starlette==0.27.0
@@ -47,5 +47,5 @@ scipy==1.11.4
 tiktoken==0.6.0
 tortoise-orm==0.20.0
 uvicorn==0.23.2 
-urllib3==1.26.15
+urllib3==2.2.3
 wordcloud==1.9.3
