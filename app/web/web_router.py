@@ -192,12 +192,16 @@ def episode_page(request: Request, show_key: ShowKey, episode_key: str, search_t
 	mlt_embeddings = esr.episode_mlt_vector_search(show_key, episode_key)
 	tdata['mlt_embeddings'] = mlt_embeddings['matches'][:30]
 
+    # TODO added during final MVP push
+	model_vendor = 'openai'
+	model_version = '3small'
 	tdata['topics_by_grouping'] = {}
 	for topic_grouping in EPISODE_TOPIC_GROUPINGS:
 		sort_by = 'score'
-		if topic_grouping in ['universalGenres', 'focusedGpt35_TNG']:
+		# if topic_grouping in ['universalGenres', 'focusedGpt35_TNG']:
+		if topic_grouping in ['universalGenres']:
 			sort_by = 'tfidf_score'
-		episode_topics_response = esr.fetch_episode_topics(show_key, episode_key, topic_grouping, limit=50, sort_by=sort_by)
+		episode_topics_response = esr.fetch_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version, limit=50, sort_by=sort_by)
 		tdata['topics_by_grouping'][topic_grouping] = episode_topics_response['episode_topics']
 
 	narrative_sequences_response = esr.fetch_narrative_sequences(show_key, episode_key)

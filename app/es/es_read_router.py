@@ -3,12 +3,11 @@ from operator import itemgetter
 import os
 import pandas as pd
 
-from app.app_metadata import BERTOPIC_MODELS_DIR
+from app.app_metadata import ANIMATION_DATA_DIR, BERTOPIC_MODELS_DIR, GANTT_DATA_DIR
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
-from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS as W2V_MODELS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
-import app.nlp.query_preprocessor as qp
+from app.nlp.nlp_metadata import TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from app.show_metadata import ShowKey, show_metadata, EPISODE_TOPIC_GROUPINGS
 
 
@@ -256,12 +255,13 @@ def fetch_topic_grouping(topic_grouping: str, return_fields: str = None):
     return {"topics": topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_episode_topics/{show_key}/{episode_key}/{topic_grouping}", tags=['ES Reader'])
-def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, level: str = None, limit: int = None, sort_by: str = None):
+@esr_app.get("/esr/fetch_episode_topics/{show_key}/{episode_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Reader'])
+def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str, 
+                         level: str = None, limit: int = None, sort_by: str = None):
     '''
     Fetch topics mapped to episode
     '''
-    s = esqb.fetch_episode_topics(show_key.value, episode_key, topic_grouping, level=level, limit=limit, sort_by=sort_by)
+    s = esqb.fetch_episode_topics(show_key.value, episode_key, topic_grouping, model_vendor, model_version, level=level, limit=limit, sort_by=sort_by)
     es_query = s.to_dict()
     episode_topics = esrt.return_topics(s)
     return {"episode_topics": episode_topics, "es_query": es_query}
@@ -416,20 +416,22 @@ def episode_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, 
             return {"error": e}
 
     else:
-        vendor_meta = W2V_MODELS[model_vendor]
-        tag_pos = vendor_meta['pos_tag']
-        try:
-            # TODO normalize_and_expand_query_vocab reduced performance noticeably, disabling for now
-            # qt = qp.normalize_and_expand_query_vocab(qt, show_key)
-            tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
-            vector_field = f'{model_vendor}_{model_version}_embeddings'
-            vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embeddings(tokenized_qt, model_vendor, model_version)
-            tokens_processed_count = len(tokens_processed)
-            tokens_failed_count = len(tokens_failed)
-        except Exception as e:
-            return {"error": e}
+        raise Exception(f'Word2Vec model {model_vendor}:{model_version} is no longer supported (phasing out gensim and nltk dependencies)')
+    
+        # vendor_meta = W2V_MODELS[model_vendor]
+        # tag_pos = vendor_meta['pos_tag']
+        # try:
+        #     # TODO normalize_and_expand_query_vocab reduced performance noticeably, disabling for now
+        #     # qt = qp.normalize_and_expand_query_vocab(qt, show_key)
+        #     tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
+        #     vector_field = f'{model_vendor}_{model_version}_embeddings'
+        #     vectorized_qt, tokens_processed, tokens_failed = ef.calculate_embeddings(tokenized_qt, model_vendor, model_version)
+        #     tokens_processed_count = len(tokens_processed)
+        #     tokens_failed_count = len(tokens_failed)
+        # except Exception as e:
+        #     return {"error": e}
         
-    es_response = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
+    es_response, es_query = esqb.vector_search(show_key.value, vector_field, vectorized_qt, season=season)
     matches = esrt.return_vector_search(es_response)
     return {
         "match_count": len(matches), 
@@ -438,7 +440,8 @@ def episode_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, 
         "tokens_processed_count": tokens_processed_count, 
         "tokens_failed": tokens_failed, 
         "tokens_failed_count": tokens_failed_count, 
-        "matches": matches
+        "matches": matches,
+        "es_query": es_query
     }
 
 
@@ -457,10 +460,11 @@ def episode_mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor:
     s = esqb.fetch_episode_embedding(show_key.value, episode_key, vector_field)
     episode_embedding = esrt.return_embedding(s, vector_field)
         
-    es_response = esqb.vector_search(show_key.value, vector_field, episode_embedding)
+    es_response, es_query = esqb.vector_search(show_key.value, vector_field, episode_embedding)
     matches = esrt.return_vector_search(es_response)
-    matches = matches[1:] # remove episode itself from results
-    return {"match_count": len(matches), "vector_field": vector_field, "matches": matches}
+    if matches:
+        matches = matches[1:] # remove episode itself from results
+    return {"match_count": len(matches), "vector_field": vector_field, "matches": matches, "es_query": es_query}
 
 
 # def util(speaker: str, m: dict, matches_by_speaker_series_embedding: dict, all_speaker_matches: list, other_speaker_count: int, other_speaker_quota: int):
@@ -519,7 +523,7 @@ def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool =
     if series_embeddings:
         other_speaker_count = 0
         matches_by_speaker_series_embedding = []
-        vec_search_response = esqb.vector_search(show_key.value, vector_field, series_embeddings, index_name='speaker_embeddings_unified', min_word_count=100)
+        vec_search_response, _ = esqb.vector_search(show_key.value, vector_field, series_embeddings, index_name='speaker_embeddings_unified', min_word_count=100)
         speaker_matches = esrt.return_vector_search(vec_search_response)
         for m in speaker_matches:
             if other_speaker_count >= other_speaker_quota:
@@ -541,7 +545,7 @@ def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool =
         for season, season_embedding in season_embeddings.items():
             other_speaker_count = 0
             matches_by_speaker_season_embedding[season] = []
-            vec_search_response = esqb.vector_search(show_key.value, vector_field, season_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
+            vec_search_response, _ = esqb.vector_search(show_key.value, vector_field, season_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
             speaker_matches = esrt.return_vector_search(vec_search_response)
             for m in speaker_matches:
                 if other_speaker_count >= other_speaker_quota:
@@ -563,7 +567,7 @@ def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool =
         for episode_key, episode_embedding in episode_embeddings.items():
             other_speaker_count = 0
             matches_by_speaker_episode_embedding[episode_key] = []
-            vec_search_response = esqb.vector_search(show_key.value, vector_field, episode_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
+            vec_search_response, _ = esqb.vector_search(show_key.value, vector_field, episode_embedding, index_name='speaker_embeddings_unified', min_word_count=100)
             speaker_matches = esrt.return_vector_search(vec_search_response)
             for m in speaker_matches:
                 if other_speaker_count >= other_speaker_quota:
@@ -690,7 +694,9 @@ def episode_topic_vector_search(show_key: ShowKey, episode_key: str, topic_group
     s = esqb.fetch_episode_embedding(show_key.value, episode_key, vector_field)
     episode_embedding = esrt.return_embedding(s, vector_field)
         
-    es_response = esqb.topic_vector_search(topic_grouping, vector_field, episode_embedding)
+    # es_response = esqb.topic_vector_search(topic_grouping, vector_field, episode_embedding)
+    es_response, _ = esqb.vector_search(show_key.value, vector_field, episode_embedding, index_name='topics', topic_grouping=topic_grouping)
+    # topics = esrt.return_vector_search(es_response, filter_key='topic_grouping', filter_value=topic_grouping)
     topics = esrt.return_vector_search(es_response)
     return {"topic_count": len(topics), "vector_field": vector_field, "topics": topics}
 
@@ -713,9 +719,9 @@ def topic_episode_vector_search(topic_grouping: str, topic_key: str, show_key: S
     if not topic_embedding:
         return {"error": f"Unable to run `topic_episode_vector_search`: No embeddings for topic_grouping={topic_grouping} topic_key={topic_key} vector_field={vector_field}"}
         
-    es_response = esqb.vector_search(show_key, vector_field, topic_embedding)
+    es_response, es_query = esqb.vector_search(show_key, vector_field, topic_embedding)
     episodes = esrt.return_vector_search(es_response)
-    return {"episodes_count": len(episodes), "vector_field": vector_field, "episodes": episodes}
+    return {"episodes_count": len(episodes), "vector_field": vector_field, "episodes": episodes, "es_query": es_query}
 
 
 @esr_app.get("/esr/speaker_topic_vector_search/{show_key}/{speaker}/{topic_grouping}", tags=['ES Reader'])
@@ -760,7 +766,9 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
     # thing I need it to do right now, which is run a topic vector search for a single speaker_episode against a topic. I don't think there's
     # any other endpoint that's close to having that capability.
     if vector_field in es_speaker and not (episode_keys or seasons):
-        s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker[vector_field])
+        # s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker[vector_field])
+        s, _ = esqb.vector_search(show_key.value, vector_field, es_speaker[vector_field], index_name='topics', topic_grouping=topic_grouping)
+        # series_topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
         series_topics = esrt.return_vector_search(s)
 
     if 'episodes' in es_speaker and not seasons_only:
@@ -768,7 +776,9 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
             if episode_keys and es_speaker_episode['episode_key'] not in episode_keys:
                 continue
             if vector_field in es_speaker_episode:
-                s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_episode[vector_field])
+                # s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_episode[vector_field])
+                s, _ = esqb.vector_search(show_key.value, vector_field, es_speaker_episode[vector_field], index_name='topics', topic_grouping=topic_grouping)
+                # topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
                 topics = esrt.return_vector_search(s)
                 if topics:
                     episode_topics[es_speaker_episode['episode_key']] = topics
@@ -778,7 +788,9 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
             if seasons and es_speaker_season['season'] not in seasons:
                 continue
             if vector_field in es_speaker_season:
-                s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_season[vector_field])
+                # s = esqb.topic_vector_search(topic_grouping, vector_field, es_speaker_season[vector_field])
+                s, _ = esqb.vector_search(show_key.value, vector_field, es_speaker_season[vector_field], index_name='topics', topic_grouping=topic_grouping)
+                # topics = esrt.return_vector_search(s, filter_key='topic_grouping', filter_value=topic_grouping)
                 topics = esrt.return_vector_search(s)
                 if topics:
                     season_topics[es_speaker_season['season']] = topics
@@ -806,9 +818,9 @@ def topic_speaker_vector_search(topic_grouping: str, topic_key: str, show_key: S
         return {"error": f"Unable to run `topic_speaker_vector_search`: No embeddings for topic_grouping={topic_grouping} topic_key={topic_key} vector_field={vector_field}"}
         
     # TODO this only searches speakers who have series-level embeddings, needs work
-    es_response = esqb.vector_search(show_key, vector_field, topic_embedding, index_name='speakers')
+    es_response, es_query = esqb.vector_search(show_key.value, vector_field, topic_embedding, index_name='speakers')
     speakers = esrt.return_vector_search(es_response)
-    return {"speakers_count": len(speakers), "vector_field": vector_field, "speakers": speakers}
+    return {"speakers_count": len(speakers), "vector_field": vector_field, "speakers": speakers, "es_query": es_query}
 
 
 @DeprecationWarning
@@ -836,31 +848,7 @@ def topic_speaker_search(topic_grouping: str, topic_key: str, show_key: ShowKey 
     return {"speakers_count": len(speakers), "is_parent_topic": is_parent, "speakers": speakers, "es_query": es_query}
 
 
-# @esr_app.get("/esr/test_vector_search/{show_key}", tags=['ES Reader'])
-# def test_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, normalize_and_expand: bool = False):
-#     '''
-#     Experimental endpoint for troubleshooting ontology overrides and other qt alterations preceding vectorization
-#     '''
-#     if not model_vendor:
-#         model_vendor = 'webvectors'
-#     if not model_version:
-#         model_version = '223'
-
-#     # NOTE currently only set up for word2vec, not for openai embeddings
-
-#     vendor_meta = W2V_MODELS[model_vendor]
-#     tag_pos = vendor_meta['pos_tag']
-
-#     try:
-#         if normalize_and_expand:
-#             qt = qp.normalize_and_expand_query_vocab(qt, show_key)
-#         tokenized_qt = qp.tokenize_and_remove_stopwords(qt, tag_pos=tag_pos)
-#     except Exception as e:
-#         return {"error": e}
-#     return {"normd_expanded_qt": qt, "tokenized_qt": tokenized_qt}
-
-
-@esr_app.get("/esr/search_speakers/{qt}/", tags=['ES Reader'])
+@esr_app.get("/esr/search_speakers/{qt}", tags=['ES Reader'])
 def search_speakers(qt: str, show_key: ShowKey = None, extra_fields: str = None):
     '''
     Search for a speaker by query term
@@ -1337,7 +1325,7 @@ def generate_series_speaker_gantt_sequence(show_key: ShowKey, limit_cast: bool =
         episode_speakers_sequence = trimmed_episode_speakers_sequence
 
     if overwrite_file:
-        file_path = f'./app/data/{show_key}/speaker_gantt_sequence_{show_key}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key}/speaker_gantt_sequence_{show_key}.csv'
         print(f'writing speaker gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_speakers_sequence)
         df.to_csv(file_path)
@@ -1391,7 +1379,7 @@ def generate_series_location_gantt_sequence(show_key: ShowKey, overwrite_file: b
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/{show_key}/location_gantt_sequence_{show_key}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key}/location_gantt_sequence_{show_key}.csv'
         print(f'writing location gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_locations_sequence)
         df.to_csv(file_path)
@@ -1439,7 +1427,7 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
         sequence_in_season = episode['sequence_in_season']
 
         # fetch topics and scores
-        response = fetch_episode_topics(show_key, episode_key, topic_grouping)
+        response = fetch_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version)
         topics = response['episode_topics']
         if len(topics) > topic_threshold:
             topics = topics[:topic_threshold]
@@ -1458,7 +1446,7 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
         print(f'writing topic gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_topics_sequence)
         df.to_csv(file_path)
@@ -1583,7 +1571,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/{show_key}/speaker_episode_aggs_{show_key}.csv'
+        file_path = f'{ANIMATION_DATA_DIR}/{show_key}/speaker_episode_aggs_{show_key}.csv'
         print(f'writing speaker word/line/scene/episode counts and aggs dataframe to file_path={file_path}')
         df = pd.DataFrame(speaker_episode_rows)
         df.to_csv(file_path)
@@ -1673,7 +1661,7 @@ def generate_location_line_chart_sequences(show_key: ShowKey, overwrite_file: bo
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'./app/data/location_episode_aggs_{show_key}.csv'
+        file_path = f'{ANIMATION_DATA_DIR}/{show_key}/location_episode_aggs_{show_key}.csv'
         print(f'writing location scene/episode counts and aggs dataframe to file_path={file_path}')
         df = pd.DataFrame(location_episode_rows)
         df.to_csv(file_path)

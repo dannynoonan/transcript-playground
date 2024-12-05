@@ -9,25 +9,26 @@ import app.fig_meta.color_meta as cm
 def generate_navbar(show_key: str, season_dropdown_options: list) -> dbc.Card:
     season_dropdown_menu = []
     for season in season_dropdown_options:
-        season_menu_item = dbc.DropdownMenuItem(str(season), style={"color": "White"}, href='/web/show/TNG', target="_blank")
+        season_menu_item = dbc.DropdownMenuItem(str(season), style={"color": "White"}, href=f'/web/season/{show_key}/{season}', target="_blank", external_link=True)
         season_dropdown_menu.append(season_menu_item)
+
+    placeholder_episode_key = '218'
+    placeholder_model_id = 'cosine_4_0_25'
 
     navbar = dbc.Card(className="text-white bg-primary", style={"z-index":"2000"}, children=[
         dbc.CardBody([
             dbc.Nav(className="nav nav-pills", children=[
-                dbc.NavItem(dbc.NavLink("Transcript Playground", style={"color": "White", "font-size": "16pt"}, href="/dash_pages")),
+                dbc.NavItem(dbc.NavLink("Transcript Playground", style={"color": "White", "font-size": "16pt"}, href=f'/dash_pages/episode/{show_key}/{placeholder_episode_key}')),
                 dbc.DropdownMenu(label="Shows", color="primary", children=[
-                    dbc.DropdownMenuItem("TNG", style={"color": "White"}, target="_blank",
-                                         href=f'/dash_pages/series/{show_key}'), 
+                    dbc.DropdownMenuItem(show_key, style={"color": "White"}, href=f'/dash_pages/series/{show_key}', target="_blank", external_link=True), 
                 ]),
-                dbc.NavItem(dbc.NavLink(show_key, style={"color": "White"}, external_link=True,
-                                        href=f'/dash_pages/series/{show_key}')),
+                dbc.NavItem(dbc.NavLink(show_key, style={"color": "White"}, href=f'/dash_pages/series/{show_key}', external_link=True)),
                 dbc.DropdownMenu(label="Seasons", color="primary", children=season_dropdown_menu),
-                dbc.NavItem(dbc.NavLink("Search", style={"color": "White"}, href='/web/episode_search/TNG', external_link=True)),
-                dbc.NavItem(dbc.NavLink("Episodes", style={"color": "White"}, href='/web/episode_search/TNG', external_link=True)),
-                dbc.NavItem(dbc.NavLink("Characters", style={"color": "White"}, external_link=True,
-                                        href=f'/dash_pages/character_listing/{show_key}')),
-                dbc.NavItem(dbc.NavLink("Topics", style={"color": "White"}, href='/web/topic_listing/TNG', external_link=True)),
+                dbc.NavItem(dbc.NavLink("Search", style={"color": "White"}, href=f'/web/episode_search/{show_key}', external_link=True)),
+                dbc.NavItem(dbc.NavLink("Episodes", style={"color": "White"}, href=f'/web/episode_search/{show_key}', external_link=True)),
+                dbc.NavItem(dbc.NavLink("Characters", style={"color": "White"}, href=f'/dash_pages/character_listing/{show_key}', external_link=True)),
+                dbc.NavItem(dbc.NavLink("Topics", style={"color": "White"}, href=f'/web/topic_listing/{show_key}', external_link=True)),
+                dbc.NavItem(dbc.NavLink("Clusters", style={"color": "White"}, href=f'/dash_pages/bertopic_model/{show_key}/{placeholder_model_id}', external_link=True)),
             ])
         ])
     ])

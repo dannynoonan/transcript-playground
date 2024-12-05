@@ -1,38 +1,38 @@
-import nltk
-from nltk.corpus import stopwords
-from nltk.tag import pos_tag
-from nltk.tokenize import word_tokenize
-import re
+# import nltk
+# from nltk.corpus import stopwords
+# from nltk.tag import pos_tag
+# from nltk.tokenize import word_tokenize
+# import re
 
 # from app.show_metadata import build_query_replacement_map, build_query_supplement_map, build_query_expansion_map
 
 
-nltk.download('stopwords') # run this command to download the stopwords in the project
-nltk.download('punkt') # essential for tokenization
+# nltk.download('stopwords') # run this command to download the stopwords in the project
+# nltk.download('punkt') # essential for tokenization
 
 
-query_replacement_map = {}
-query_supplement_map = {}
-query_expansion_map = {}
+# query_replacement_map = {}
+# query_supplement_map = {}
+# query_expansion_map = {}
 
 
-def tokenize_and_remove_stopwords(text: str, tag_pos: bool = False) -> str:
-    # print(f'text before tokenize_and_remove_stopwords={text}')
-    text = text.lower()
-    # remove numbers and special characters
-    text = re.sub("[^A-Za-z]+", " ", text)
-    # tokenize
-    tokens = word_tokenize(text)
-    # remove stopwords
-    tokens = [w.lower().strip() for w in tokens if not w.lower() in stopwords.words("english")]
-    # pos tag
-    if tag_pos:
-        pos_tokens = pos_tag(tokens, tagset='universal')
-        for i in range(len(pos_tokens)):
-            tokens[i] = f'{pos_tokens[i][0]}_{pos_tokens[i][1]}'
+# def tokenize_and_remove_stopwords(text: str, tag_pos: bool = False) -> str:
+#     # print(f'text before tokenize_and_remove_stopwords={text}')
+#     text = text.lower()
+#     # remove numbers and special characters
+#     text = re.sub("[^A-Za-z]+", " ", text)
+#     # tokenize
+#     tokens = word_tokenize(text)
+#     # remove stopwords
+#     tokens = [w.lower().strip() for w in tokens if not w.lower() in stopwords.words("english")]
+#     # pos tag
+#     if tag_pos:
+#         pos_tokens = pos_tag(tokens, tagset='universal')
+#         for i in range(len(pos_tokens)):
+#             tokens[i] = f'{pos_tokens[i][0]}_{pos_tokens[i][1]}'
 
-    # print(f'tokens after tokenize_and_remove_stopwords={tokens}')
-    return tokens
+#     # print(f'tokens after tokenize_and_remove_stopwords={tokens}')
+#     return tokens
 
 
 # TODO normalize_and_expand_query_vocab reduced performance noticeably, only using in test_vector_search endpoint for now

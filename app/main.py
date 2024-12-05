@@ -4,6 +4,7 @@ from fastapi.exceptions import HTTPException
 from fastapi.middleware.wsgi import WSGIMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
+from mangum import Mangum
 from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
 from tortoise import Tortoise
 
@@ -12,6 +13,8 @@ from app.config import settings, DATABASE_URL
 from app.dash_pages import dash_pages_app
 from app.database.connect import connect_to_database
 import app.database.dao as dao
+from app.es.es_admin_router import esa_app
+from app.es.es_bulk_write_router import esbw_app
 from app.es.es_read_router import esr_app
 from app.es.es_write_router import esw_app
 from app.etl.etl_router import etl_app
@@ -23,21 +26,17 @@ from app.web.web_router import web_app
 app = FastAPI()
 app.include_router(web_app)
 app.include_router(etl_app)
-app.include_router(esw_app)
+app.include_router(esa_app)
+app.include_router(esbw_app)
 app.include_router(esr_app)
+app.include_router(esw_app)
 app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 # app.mount('/tsp_dash', WSGIMiddleware(dapp.server))
 app.mount('/dash_pages', WSGIMiddleware(dash_pages_app.server))
 # templates = Jinja2Templates(directory="templates")
 
 
-# @app.get("/web2")
-# async def home(request: Request):
-# 	return templates.TemplateResponse("index.html", {"request": request})
-
-# @app.get("/web2/episode/{show_key}/{episode_key}", response_class=HTMLResponse)
-# async def fetch_episode(request: Request, show_key: str, episode_key: str):
-#     return templates.TemplateResponse('episode.html', {'request': request, 'show_key': show_key, 'episode_key': episode_key})
+handler = Mangum(app)
 
 
 register_tortoise(
@@ -51,9 +50,6 @@ register_tortoise(
 
 # I used to think this duplicated the `register_tortoise` functionality and have never understood how/why
 # async def init():
-#     # Here we create a SQLite DB using file "db.sqlite3"
-#     #  also specify the app name of "models"
-#     #  which contain models from "app.models"
 #     await Tortoise.init(
 #         db_url=DATABASE_URL,
 #         modules={'models': ['app.models']}
@@ -119,6 +115,16 @@ async def fetch_db_episode(show_key: ShowKey, episode_key: str):
     #     json.dump(episode_json, file, indent=4)
 
     return {"show_meta": show_metadata[show_key], "episode": episode_pyd}
+
+
+
+# @app.get("/web2")
+# async def home(request: Request):
+# 	return templates.TemplateResponse("index.html", {"request": request})
+
+# @app.get("/web2/episode/{show_key}/{episode_key}", response_class=HTMLResponse)
+# async def fetch_episode(request: Request, show_key: str, episode_key: str):
+#     return templates.TemplateResponse('episode.html', {'request': request, 'show_key': show_key, 'episode_key': episode_key})
 
 
 

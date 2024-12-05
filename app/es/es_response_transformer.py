@@ -1,5 +1,11 @@
-from elasticsearch_dsl import Search
 from operator import itemgetter
+
+from app.config import settings
+
+if settings.es_toggle == 'oss':
+    from opensearch_dsl import Search
+else:
+    from elasticsearch_dsl import Search
 
 from app.es.es_metadata import STOPWORDS
 
@@ -857,13 +863,21 @@ def return_more_like_this(s: Search) -> list:
 
 
 def return_vector_search(es_response: dict) -> list:
+# def return_vector_search(es_response: dict, filter_key: str = None, filter_value: str = None) -> list:
     # print(f'begin return_vector_search')
 
     results = []
+
+    if not es_response:
+        return results
     
     rank = 1
     for hit in es_response['hits']['hits']:
         match = hit['_source']
+        # # NOTE workaround until I sort out filtering OpenSearch vector results in query itself
+        # if filter_key and filter_key in match and match[filter_key] != filter_value:
+        #     print(f'ignoring result with {filter_key}={match[filter_key]}, only permitting {filter_key}={filter_value}')
+        #     continue
         match['score'] = hit['_score'] * 100
         match['rank'] = rank
         rank += 1
@@ -872,22 +886,22 @@ def return_vector_search(es_response: dict) -> list:
     return results
 
 
-def return_topic_vector_search(es_response: dict) -> list:
-    # print(f'begin return_topic_vector_search')
+# def return_topic_vector_search(es_response: dict) -> list:
+#     # print(f'begin return_topic_vector_search')
 
-    # TODO currently exactly the same as `return_vector_search`, maybe we don't need both
+#     # TODO currently exactly the same as `return_vector_search`, maybe we don't need both
 
-    results = []
+#     results = []
     
-    rank = 1
-    for hit in es_response['hits']['hits']:
-        topic = hit['_source']
-        topic['score'] = hit['_score'] * 100
-        topic['rank'] = rank
-        rank += 1
-        results.append(topic)
+#     rank = 1
+#     for hit in es_response['hits']['hits']:
+#         topic = hit['_source']
+#         topic['score'] = hit['_score'] * 100
+#         topic['rank'] = rank
+#         rank += 1
+#         results.append(topic)
 
-    return results
+#     return results
 
 
 def return_embedding(s: Search, vector_field: str) -> dict:

@@ -97,7 +97,7 @@ def generate_episode_narrative_accordion_items(show_key: str, narrative_sequence
             continue
 
         # label for collapsed narrative accordion item
-        speaker_lines = [f'{spkr} ({lc})' for spkr, lc in narr['speaker_line_counts'].items()]
+        speaker_lines = [f'{spkr} ({lc} lines)' for spkr, lc in narr['speaker_line_counts'].items()]
         narr_descr_text = f"{narr['speaker_group']} | {narr['word_count']} words | {', '.join(speaker_lines)} | {len(narr['cluster_memberships'])} clusters"
         # source_scene_words = [f'{scene} ({wc})' for scene, wc in narr['source_scene_word_counts'].items()]
         # narr_descr_text = f"Speaker group: {narr['speaker_group']} | Words: {narr['word_count']} | Speakers (lines): {', '.join(speaker_lines)} | Source scenes (words) {', '.join(source_scene_words)} | {len(narr['cluster_memberships'])} clusters"

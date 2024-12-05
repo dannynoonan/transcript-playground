@@ -55,6 +55,17 @@ def concat_vector_fields() -> list:
 VECTOR_FIELDS = concat_vector_fields()
 
 
+VECTOR_FIELD_DEF = dict(type='knn_vector', 
+                        dimension=1536, 
+                        space_type='l2', 
+                        method=dict(name='hnsw', 
+                                    engine='faiss', 
+                                    # space_type='cosinesimil',
+                                    parameters=dict(ef_construction=128, m=24)
+                        )
+                    )
+
+
 RELATIONS_FIELDS = ['es_mlt_relations_text', 'es_mlt_relations_dict', 'openai_ada002_relations_text', 'openai_ada002_relations_dict', 
                     'openai_3small_relations_text', 'openai_3small_relations_dict']
 
@@ -63,9 +74,9 @@ FOCAL_FIELDS = ['focal_speakers', 'focal_locations']
 # TOPICS_FIELDS = ['topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
 TOPICS_FIELDS = ['topics_universal', 'topics_universal_tfidf']
 
-SENTIMENT_FIELDS = ['nltk_sent_pos', 'nltk_sent_neg', 'nltk_sent_neu', 
-                    'openai_sent_joy', 'openai_sent_love', 'openai_sent_empathy', 'openai_sent_curiosity', 'openai_sent_sadness', 
+SENTIMENT_FIELDS = ['openai_sent_joy', 'openai_sent_love', 'openai_sent_empathy', 'openai_sent_curiosity', 'openai_sent_sadness', 
                     'openai_sent_anger', 'openai_sent_fear', 'openai_sent_disgust', 'openai_sent_surprise', 'openai_sent_confusion']
+                    # 'nltk_sent_pos', 'nltk_sent_neg', 'nltk_sent_neu']
 
 VALID_ES_INDEXES = ['transcripts', 'narratives', 'speakers', 'speaker_seasons', 'speaker_episodes', 'speaker_embeddings_unified',
                     'topics', 'episode_topics', 'speaker_topics', 'speaker_season_topics', 'speaker_episode_topics']

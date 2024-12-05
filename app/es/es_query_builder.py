@@ -1,15 +1,24 @@
 # from datetime import datetime
-# from elasticsearch import Elasticsearch
-# from elasticsearch import RequestsHttpConnection
-from elasticsearch_dsl import Search, connections, Q, A
-from elasticsearch_dsl.query import MoreLikeThis
 
 from app.config import settings
-from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
-from app.es.es_model import (
-    EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, 
-    EsSpeakerUnified, EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
-)
+if settings.es_toggle == 'oss':
+    from opensearch_dsl import Search, connections, Q
+    from opensearch_dsl.query import MoreLikeThis
+    from app.es.oss_model import (
+        EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, 
+        EsSpeakerUnified, EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
+    )
+else:
+    # from elasticsearch import Elasticsearch
+    # from elasticsearch import RequestsHttpConnection
+    from elasticsearch_dsl import Search, connections, Q, A
+    from elasticsearch_dsl.query import MoreLikeThis
+    from app.es.es_model import (
+        EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, 
+        EsSpeakerUnified, EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
+    )
+
+from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS, VECTOR_FIELD_DEF
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
 from app import utils
@@ -24,8 +33,9 @@ from app import utils
 
 # connections.create_connection(hosts=['http://localhost:9200'], timeout=20)
 
-es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': 'https'}],
-                                        basic_auth=(settings.es_user, settings.es_password), verify_certs=False, timeout=20)
+es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': settings.es_scheme}],
+                                        basic_auth=(settings.es_user, settings.es_password), http_auth=(settings.es_user, settings.es_password), 
+                                        verify_certs=False, timeout=20)
 
 # connections.configure(
 #     default={'hosts': 'http://localhost:9200'},
@@ -41,6 +51,8 @@ def init_transcripts_index():
     EsEpisodeTranscript.init()
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
     es_conn.indices.put_settings(index="transcripts", body={"index.mapping.total_fields.limit": 10000})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="transcripts", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_narratives_index():
@@ -51,26 +63,36 @@ def init_narratives_index():
 def init_speakers_index():
     EsSpeaker.init()
     es_conn.indices.put_settings(index="speakers", body={"index": {"max_inner_result_window": 1000}})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="speakers", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_speaker_seasons_index():
     EsSpeakerSeason.init()
     es_conn.indices.put_settings(index="speaker_seasons", body={"index": {"max_inner_result_window": 1000}})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="speaker_seasons", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_speaker_episodes_index():
     EsSpeakerEpisode.init()
     es_conn.indices.put_settings(index="speaker_episodes", body={"index": {"max_inner_result_window": 1000}})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="speaker_episodes", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_speaker_unified_index():
     EsSpeakerUnified.init()
     es_conn.indices.put_settings(index="speaker_embeddings_unified", body={"index": {"max_inner_result_window": 1000}})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="speaker_embeddings_unified", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_topics_index():
     EsTopic.init()
     es_conn.indices.put_settings(index="topics", body={"index": {"max_inner_result_window": 1000}})
+    if settings.es_toggle == 'oss':
+        es_conn.indices.put_mapping(index="topics", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_episode_topics_index():
@@ -120,16 +142,30 @@ def save_episode_narrative(es_episode_narrative: EsEpisodeNarrativeSequence) -> 
 def save_es_speaker(es_speaker: EsSpeaker) -> None:
     es_speaker.save()
     es_speaker_unified = EsSpeakerUnified(show_key=es_speaker.show_key, speaker=es_speaker.speaker, 
-                                          layer_key='SERIES', word_count=es_speaker.word_count,
-                                          openai_ada002_embeddings=es_speaker.openai_ada002_embeddings)
+                                          layer_key='SERIES', word_count=es_speaker.word_count)
+    if settings.es_toggle == 'oss':
+        if "openai_ada002_embeddings" in es_speaker:
+            setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker, "openai_ada002_embeddings"))
+        if "openai_3small_embeddings" in es_speaker:
+            setattr(es_speaker_unified, "openai_3small_embeddings", getattr(es_speaker, "openai_3small_embeddings"))
+    else:
+        es_speaker_unified.openai_ada002_embeddings=es_speaker.openai_ada002_embeddings
+        es_speaker_unified.openai_3small_embeddings=es_speaker.openai_3small_embeddings
     es_speaker_unified.save()
 
 
 def save_es_speaker_season(es_speaker_season: EsSpeakerSeason) -> None:
     es_speaker_season.save()
     es_speaker_unified = EsSpeakerUnified(show_key=es_speaker_season.show_key, speaker=es_speaker_season.speaker, 
-                                          layer_key=f'S{es_speaker_season.season}', word_count=es_speaker_season.word_count,
-                                          openai_ada002_embeddings=es_speaker_season.openai_ada002_embeddings)
+                                          layer_key=f'S{es_speaker_season.season}', word_count=es_speaker_season.word_count)
+    if settings.es_toggle == 'oss':
+        if "openai_ada002_embeddings" in es_speaker_season:
+            setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker_season, "openai_ada002_embeddings"))
+        if "openai_3small_embeddings" in es_speaker_season:
+            setattr(es_speaker_unified, "openai_3small_embeddings", getattr(es_speaker_season, "openai_3small_embeddings"))
+    else:
+        es_speaker_unified.openai_ada002_embeddings=es_speaker_season.openai_ada002_embeddings
+        es_speaker_unified.openai_3small_embeddings=es_speaker_season.openai_3small_embeddings
     es_speaker_unified.save()
 
 
@@ -137,8 +173,15 @@ def save_es_speaker_episode(es_speaker_episode: EsSpeakerEpisode) -> None:
     es_speaker_episode.save()
     es_speaker_unified = EsSpeakerUnified(show_key=es_speaker_episode.show_key, speaker=es_speaker_episode.speaker, 
                                           layer_key=f'S{es_speaker_episode.season}E{es_speaker_episode.sequence_in_season}', 
-                                          word_count=es_speaker_episode.word_count,
-                                          openai_ada002_embeddings=es_speaker_episode.openai_ada002_embeddings)
+                                          word_count=es_speaker_episode.word_count)
+    if settings.es_toggle == 'oss':
+        if "openai_ada002_embeddings" in es_speaker_episode:
+            setattr(es_speaker_unified, "openai_ada002_embeddings", getattr(es_speaker_episode, "openai_ada002_embeddings"))
+        if "openai_3small_embeddings" in es_speaker_episode:
+            setattr(es_speaker_unified, "openai_3small_embeddings", getattr(es_speaker_episode, "openai_3small_embeddings"))
+    else:
+        es_speaker_unified.openai_ada002_embeddings=es_speaker_episode.openai_ada002_embeddings
+        es_speaker_unified.openai_3small_embeddings=es_speaker_episode.openai_3small_embeddings
     es_speaker_unified.save()
 
 
@@ -500,8 +543,9 @@ def fetch_episode_topic(show_key: str, episode_key: str, topic_grouping: str, to
     return episode_topic
 
 
-def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, level: str = None, limit: int = None, sort_by: str = None) -> Search:
-    print(f'begin fetch_speaker_episode_topics for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping} level={level}')
+def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str, 
+                         level: str = None, limit: int = None, sort_by: str = None) -> Search:
+    print(f'begin fetch_speaker_episode_topics for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version} level={level}')
 
     if not limit:
         limit = 100
@@ -514,6 +558,8 @@ def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, l
     s = s.filter('match', show_key=show_key)
     s = s.filter('term', episode_key=episode_key)
     s = s.filter('match', topic_grouping=topic_grouping)
+    s = s.filter('match', model_vendor=model_vendor)
+    s = s.filter('match', model_version=model_version)
     if level:
         if level in ['parent', 'root', 'top']:
             s = s.filter('term', is_parent=True)
@@ -1519,7 +1565,12 @@ def populate_speaker_season_topics(show_key: str, speaker: str, speaker_season: 
         # TODO this got hackey due to score normalization being added late
         # this assumes that if first topic had dist_score then all of them did
         if 'dist_score' not in topic:
-            topic['dist_score'] = (topic['score'] - low_score) / score_range
+            # TODO even hackier during OpenSearch migration, as some score_ranges are 0
+            # not sure what a proper default is for 'dist_score' - going with 1, but maybe should be topic['score'], 0, or -1?
+            if not score_range:
+                topic['dist_score'] = 1
+            else:
+                topic['dist_score'] = (topic['score'] - low_score) / score_range
         if 'score' not in topic:
             topic['score'] = -1
         is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
@@ -1535,7 +1586,7 @@ def populate_speaker_season_topics(show_key: str, speaker: str, speaker_season: 
 
 
 def populate_speaker_episode_topics(show_key: str, speaker: str, speaker_episode: EsSpeakerEpisode, topics: list, model_vendor: str, model_version: str) -> list:
-    print(f'begin populate_speaker_season_topics for show_key={show_key} speaker={speaker} episode_key={speaker_episode.episode_key} len(topics)={len(topics)}')
+    print(f'begin populate_speaker_episode_topics for show_key={show_key} speaker={speaker} episode_key={speaker_episode.episode_key} len(topics)={len(topics)}')
     if not topics:
         return []
     es_speaker_episode_topics = []
@@ -1544,16 +1595,21 @@ def populate_speaker_episode_topics(show_key: str, speaker: str, speaker_episode
     low_score = topics[len(topics)-1]['score']
     score_range = high_score - low_score
     for topic in topics:
-        topic['dist_score'] = (topic['score'] - low_score) / score_range
-        is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
-        es_speaker_episode_topic = EsSpeakerEpisodeTopic(show_key=show_key, speaker=speaker, episode_key=speaker_episode.episode_key, 
-                                                         episode_title=speaker_episode.title, season=speaker_episode.season, 
-                                                         sequence_in_season=speaker_episode.sequence_in_season, air_date=speaker_episode.air_date, 
-                                                         word_count=speaker_episode.word_count, topic_grouping=topic['topic_grouping'], 
-                                                         topic_key=topic['topic_key'], topic_name=topic['topic_name'], raw_score=topic['score'],
-                                                         score=topic['dist_score'], is_parent=is_parent, model_vendor=model_vendor, model_version=model_version)
-        es_speaker_episode_topics.append(es_speaker_episode_topic)
-        es_speaker_episode_topic.save()
+        # TODO even hackier during OpenSearch migration, as some score_ranges are 0
+        # not sure what a proper default is for 'dist_score' - going with 1, but maybe should be topic['score'], 0, or -1?
+        if not score_range:
+            topic['dist_score'] = 1
+        else:
+            topic['dist_score'] = (topic['score'] - low_score) / score_range
+            is_parent = 'parent_key' not in topic or topic['parent_key'] == ''
+            es_speaker_episode_topic = EsSpeakerEpisodeTopic(show_key=show_key, speaker=speaker, episode_key=speaker_episode.episode_key, 
+                                                            episode_title=speaker_episode.title, season=speaker_episode.season, 
+                                                            sequence_in_season=speaker_episode.sequence_in_season, air_date=speaker_episode.air_date, 
+                                                            word_count=speaker_episode.word_count, topic_grouping=topic['topic_grouping'], 
+                                                            topic_key=topic['topic_key'], topic_name=topic['topic_name'], raw_score=topic['score'],
+                                                            score=topic['dist_score'], is_parent=is_parent, model_vendor=model_vendor, model_version=model_version)
+            es_speaker_episode_topics.append(es_speaker_episode_topic)
+            es_speaker_episode_topic.save()
 
     return es_speaker_episode_topics
 
@@ -1574,21 +1630,42 @@ def populate_episode_relations(show_key: str, model_vendor: str, model_version: 
     return episodes_to_relations
 
 
-def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_name: str = None, min_word_count: int = None, season: str = None) -> Search:
-    print(f'begin vector_search for show_key={show_key} vector_field={vector_field} index_name={index_name} min_word_count={min_word_count} season={season}')
-
+def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_name: str = None, 
+                  min_word_count: int = None, season: str = None, topic_grouping: str = None) -> tuple[object, dict]:
+    
     if not index_name:
         index_name = 'transcripts'
 
-    # TODO hard-mapped based on number of TNG episodes / arbitary speaker count, need to calculate this or pass as parameter
+    # TODO originally hard-mapped based on number of TNG episodes / arbitary speaker & topic counts, need to understand better / calculate this or pass as parameter
     if index_name == 'transcripts':
         k = 176
     elif index_name in ['speakers', 'speaker_seasons', 'speaker_episodes']:
         k = 50
     elif index_name == 'speaker_embeddings_unified':
         k = 100
+    elif index_name == 'topics':
+        k = 50
     else:
         k = 176
+
+    # TODO ewwwww this is getting gross
+    if settings.es_toggle == 'oss':
+        filters = {}
+        if season:
+            filters['season'] = season
+        if topic_grouping:
+            filters['topic_grouping'] = topic_grouping
+        else:
+            filters['show_key'] = show_key
+        return vector_search_oss(show_key, vector_field, vectorized_qt, index_name, k, filters=filters, min_word_count=min_word_count)
+    else:
+        # TODO rework es search for generic term filter key-values as well
+        return vector_search_es(show_key, vector_field, vectorized_qt, index_name, k, min_word_count=min_word_count, season=season, topic_grouping=topic_grouping)
+
+
+def vector_search_es(show_key: str, vector_field: str, vectorized_qt: list, index_name: str, k: int,
+                     min_word_count: int = None, season: str = None, topic_grouping: str = None) -> tuple[object, dict]:
+    print(f'begin vector_search_es for show_key={show_key} vector_field={vector_field} index_name={index_name} min_word_count={min_word_count} season={season}')
 
     # s = Search(index='transcripts')
     # s = s.extra(size=1000)
@@ -1606,21 +1683,35 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
         "num_candidates": k
     }
 
-    filter_query = {
-        "bool": {
-            "filter": [
-                {
-                    "term": {
-                        "show_key": show_key
+    # TODO topic vector search was hastily combined with generic vector search during OpenSearch migration, the rote copy-paste of this if/else reveals opportunity for clean-up
+    if topic_grouping:
+        filter_query = {
+            "bool": {
+                "filter": [
+                    {
+                        "term": {
+                            "topic_grouping": topic_grouping
+                        }
                     }
-                }
-            ]
+                ]
+            }
         }
-    }
+    else:
+        filter_query = {
+            "bool": {
+                "filter": [
+                    {
+                        "term": {
+                            "show_key": show_key
+                        }
+                    }
+                ]
+            }
+        }
 
     if min_word_count:
-        min_wc_filer = dict(range=dict(word_count=dict(gte=min_word_count)))
-        filter_query['bool']['filter'].append(min_wc_filer)
+        min_wc_filter = dict(range=dict(word_count=dict(gte=min_word_count)))
+        filter_query['bool']['filter'].append(min_wc_filter)
 
     if index_name == 'speakers':
         source = ['show_key', 'speaker']
@@ -1630,47 +1721,258 @@ def vector_search(show_key: str, vector_field: str, vectorized_qt: list, index_n
         source = ['show_key', 'episode_key', 'season', 'sequence_in_season', 'speaker']
     elif index_name == 'speaker_embeddings_unified':
         source = ['show_key', 'layer_key', 'speaker']
+    elif index_name== 'topics':
+        source = ['topic_grouping', 'topic_key', 'parent_key', 'topic_name', 'parent_name']
     else:
         source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations', 
                   'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
     
-    print(f'filter_query={filter_query}')
+    # print(f'filter_query={filter_query}')
     response = es_conn.knn_search(index=index_name, knn=knn_query, filter=filter_query, source=source)
 
     # s = s.query(index="transcripts", knn=knn_query, source=source)
     # print(f's.to_dict()={s.to_dict()}')
     # return s
 
-    return response
+    return response, dict(knn_query=knn_query, filter_query=filter_query)
 
 
-def topic_vector_search(topic_grouping: str, vector_field: str, vectorized_qt: list):
-    print(f'begin topic_vector_search for topic_grouping={topic_grouping} vector_field={vector_field}')
+def vector_search_oss(show_key: str, vector_field: str, vectorized_qt: list, index_name: str, k: int, filters: dict = {}, 
+                      min_word_count: int = None, season: str = None) -> tuple[object, dict]:
+    print(f'begin vector_search_oss for show_key={show_key} vector_field={vector_field} index_name={index_name} filters={filters} min_word_count={min_word_count} season={season}')
 
-    knn_query = {
-        "field": vector_field,
-        "query_vector": vectorized_qt,
-        "k": 50,
-        "num_candidates": 50
-    }
+    # filter_query = {
+    #     "bool": {
+    #         "filter": [
+    #             {
+    #                 "term": {
+    #                     "show_key": show_key
+    #                 }
+    #             }
+    #         ]
+    #     }
+    # }
 
-    filter_query = {
-        "bool": {
-            "filter": [
-                {
-                    "term": {
-                        "topic_grouping": topic_grouping
+    # if min_word_count:
+    #     min_wc_filter = dict(range=dict(word_count=dict(gte=min_word_count)))
+    #     filter_query['bool']['filter'].append(min_wc_filter)
+
+    if index_name == 'speakers':
+        source = ['show_key', 'speaker']
+        filters['show_key'] = show_key
+    elif index_name == 'speaker_seasons':
+        source = ['show_key', 'season', 'speaker']
+        filters['show_key'] = show_key
+    elif index_name == 'speaker_episodes':
+        source = ['show_key', 'episode_key', 'season', 'sequence_in_season', 'speaker']
+        filters['show_key'] = show_key
+    elif index_name == 'speaker_embeddings_unified':
+        source = ['show_key', 'layer_key', 'speaker']
+        filters['show_key'] = show_key
+    elif index_name== 'topics':
+        source = ['topic_grouping', 'topic_key', 'parent_key', 'topic_name', 'parent_name']
+    else:
+        source = ['show_key', 'episode_key', 'title', 'season', 'sequence_in_season', 'air_date', 'scene_count', 'indexed_ts', 'focal_speakers', 'focal_locations', 
+                  'topics_universal', 'topics_focused', 'topics_universal_tfidf', 'topics_focused_tfidf']
+    
+    # print(f'filter_query={filter_query}')
+
+    '''
+    # (1) the bool/filter term/knn approach executes, but all results get 0 score, so results are nonsensical 
+    {
+        "query": {
+            "bool": {
+                "filter": [
+                    {
+                        "term": {
+                            "show_key": "TNG"
+                        }
+                    },
+                    {
+                        "knn": {
+                            "openai_ada002_embeddings": {
+                                "vector": [],
+                                "k": 100
+                            }
+                        }
                     }
-                }
-            ]
+                ]
+            }
+        }
+    }
+    '''
+
+    es_query_nope = {
+        "query": {
+            "bool": {
+                "filter": [
+                    {
+                        "term": {
+                            "show_key": show_key
+                        }
+                    },
+                    {
+                        "knn": {
+                            vector_field: {
+                                "vector": vectorized_qt,
+                                "k": k
+                            }
+                        }
+                    }
+                ]
+            }
         }
     }
 
-    source = ['topic_grouping', 'topic_key', 'parent_key', 'topic_name', 'parent_name']
+    '''
+    (2) Similar to above: this query executes, but results are nonsensical (scores are non-zero, but result sequencing is similar, which is weird)
+    https://opster.com/guides/elasticsearch/machine-learning/vector-search-in-opensearch-vs-elasticsearch/
+    {
+        "query": {
+            "hybrid": {
+                "queries": [
+                    {
+                        "term": {                       # also tried 'match'
+                            "show_key": "TNG"
+                        }
+                    },
+                    {
+                        "knn": {
+                            "openai_ada002_embeddings": {
+                                "vector": [],
+                                "k": 100
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
 
-    response = es_conn.knn_search(index="topics", knn=knn_query, filter=filter_query, source=source)
+    (3) To get 'filter' working I might need to switch to faiss from nmslib (but... why?)
+    https://opster.com/guides/elasticsearch/machine-learning/vector-search-in-opensearch-vs-elasticsearch/
+    {
+        "query": {
+            "knn": {
+                "openai_ada002_embeddings": {
+                    "vector": [],
+                    "k": 100,
+                    "filter": {
+                        "term": {
+                            "show_key": "TNG"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+    '''
 
-    return response
+
+    vector_query_obj = {
+        "vector": vectorized_qt,
+        "k": k,
+    }
+
+    if filters:
+        must_query_list = []
+        for f_key, f_val in filters.items():
+            filter = {'term': {f_key: f_val}}
+            must_query_list.append(filter)
+        vector_query_obj['filter'] = {
+            'bool': {
+                'must': must_query_list
+            }
+        }
+
+    es_query = {
+        "query": {
+            "knn": {
+                vector_field: vector_query_obj
+            }
+        }
+    }
+
+    # es_query = {
+    #     "query": {
+    #         "knn": {
+    #             vector_field: {
+    #                 "vector": vectorized_qt,
+    #                 "k": k,
+    #                 # TODO since this isn't working, I currently don't have a cross-show solution here
+    #                 "filter": {
+    #                     "term": {
+    #                         "show_key": show_key
+    #                     }
+    #                 }
+    #             }
+    #         }
+    #     }
+    # }
+
+
+
+    # NOTE begin this worked
+    # show_filter = dict(term=dict(show_key=show_key))
+    # vector_q = {}
+    # vector_q[vector_field] = dict(vector=vectorized_qt, k=k)
+    # knn_filter = dict(knn=vector_q)
+    # filter_q = dict(filter=[show_filter, knn_filter])
+    # bool_q = dict(bool=filter_q)
+    # es_query = dict(query=bool_q)
+    # NOTE end this worked
+
+
+    # body_q = Q('bool', filter=[show_filter, knn_filter])
+    # query_body = dict(query=knn_query, filter=filter_query)
+
+    # NOTE these all get "KeyError: 'knn'" and "opensearch_dsl.exceptions.UnknownDslObject: DSL class `knn` does not exist in query."
+    # s = Search(index=index_name)
+    # s = s.extra(size=100)
+    # s = s.filter('term', show_key=show_key)
+    # s = s.filter('knn', knn=vector_q)
+    # if min_word_count:
+    #     s = s.filter('range', word_count={'gte': min_word_count})
+    # q = Q(vectorDataField=vector_field, value=qt)
+    # s = s.query(q)
+    # s = s.source(includes=source)
+    # es_query = s.to_dict()
+
+    # s = s.query(index="transcripts", knn=knn_query, source=source)
+    # return s
+
+    response = es_conn.search(index=index_name, body=es_query, _source=source, size=k)
+
+    return response, es_query
+
+
+# def topic_vector_search(topic_grouping: str, vector_field: str, vectorized_qt: list):
+#     print(f'begin topic_vector_search for topic_grouping={topic_grouping} vector_field={vector_field}')
+
+#     knn_query = {
+#         "field": vector_field,
+#         "query_vector": vectorized_qt,
+#         "k": 50,
+#         "num_candidates": 50
+#     }
+
+#     filter_query = {
+#         "bool": {
+#             "filter": [
+#                 {
+#                     "term": {
+#                         "topic_grouping": topic_grouping
+#                     }
+#                 }
+#             ]
+#         }
+#     }
+
+#     source = ['topic_grouping', 'topic_key', 'parent_key', 'topic_name', 'parent_name']
+
+#     response = es_conn.knn_search(index="topics", knn=knn_query, filter=filter_query, source=source)
+
+#     return response
 
 
 def fetch_episode_embedding(show_key: str, episode_key: str, vector_field: str) -> Search:
@@ -1711,12 +2013,12 @@ def fetch_topic_embedding(topic_grouping: str, topic_key: str, vector_field: str
     return s
 
 
-def save_episode_sentiment(es_episode: EsEpisodeTranscript, episode_sentiment: dict) -> None:
-    print(f'begin save_episode_sentiment for es_episode={es_episode.title}')
+# def save_episode_sentiment(es_episode: EsEpisodeTranscript, episode_sentiment: dict) -> None:
+#     print(f'begin save_episode_sentiment for es_episode={es_episode.title}')
 
-    es_episode.nltk_sent_pos = episode_sentiment['pos']
-    es_episode.nltk_sent_neg = episode_sentiment['neg']
-    es_episode.nltk_sent_neu = episode_sentiment['neu']
+#     es_episode.nltk_sent_pos = episode_sentiment['pos']
+#     es_episode.nltk_sent_neg = episode_sentiment['neg']
+#     es_episode.nltk_sent_neu = episode_sentiment['neu']
 
-    es_episode.save()
+#     es_episode.save()
 

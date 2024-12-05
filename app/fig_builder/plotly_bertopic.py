@@ -1,8 +1,9 @@
-from bertopic import BERTopic
+# from bertopic import BERTopic
 import plotly.graph_objects as go
 
 
-def build_bertopic_visualize_barchart(bertopic_model: BERTopic) -> go.Figure:
+# def build_bertopic_visualize_barchart(bertopic_model: BERTopic) -> go.Figure:
+def build_bertopic_visualize_barchart(bertopic_model) -> go.Figure:
     '''
     Generate topic keyword barcharts using saved model file
     '''
@@ -17,7 +18,8 @@ def build_bertopic_visualize_barchart(bertopic_model: BERTopic) -> go.Figure:
     return fig
 
 
-def build_bertopic_visualize_topics(bertopic_model: BERTopic) -> go.Figure:
+# def build_bertopic_visualize_topics(bertopic_model: BERTopic) -> go.Figure:
+def build_bertopic_visualize_topics(bertopic_model) -> go.Figure:
     '''
     Generate topic graphs using saved model file
     '''
@@ -26,7 +28,8 @@ def build_bertopic_visualize_topics(bertopic_model: BERTopic) -> go.Figure:
     return fig
 
 
-def build_bertopic_visualize_hierarchy(bertopic_model: BERTopic) -> go.Figure:
+# def build_bertopic_visualize_hierarchy(bertopic_model: BERTopic) -> go.Figure:
+def build_bertopic_visualize_hierarchy(bertopic_model) -> go.Figure:
     '''
     Generate topic hierarchy using saved model file
     '''
