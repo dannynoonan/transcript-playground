@@ -1,20 +1,26 @@
-from fastapi import APIRouter
+import argparse
+import os
+import sys
+sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
 from app.es.es_metadata import VALID_ES_INDEXES
 import app.es.es_query_builder as esqb
 
 
-esa_app = APIRouter()
-
-
-@esa_app.get("/esa/init_es", tags=['ES Admin'])
-def init_es(index_name: str = None):
+def main():
     '''
     Run this to explicitly define index mappings anytime an index is blown away. Not doing so will result in an index being auto-created with the wrong
     auto-assigned data types, breaking query functionality down the line.
     '''
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--index_name", "-i", help="Index name", required=False)
+    args = parser.parse_args()
+    index_name = None
+    if args.index_name:
+        index_name = args.index_name
+    print(f'Begin init_es script for index_name={index_name}')
+
     if index_name:
-        print(f'in init_es index_name={index_name}')
         if index_name not in VALID_ES_INDEXES:
             return {"error": f"Failed to initialize index_name=`{index_name}`, valid_indexes={VALID_ES_INDEXES}"}
         if index_name == 'transcripts':
@@ -55,4 +61,13 @@ def init_es(index_name: str = None):
         esqb.init_speaker_episode_topics_index()
         initialized_indexes = VALID_ES_INDEXES
 
-    return {"initialized_indexes": initialized_indexes}
+    print(f'Successfully initialized es indices: {initialized_indexes}')
+
+    report = {"initialized_indexes": initialized_indexes}
+    print(report)
+    return report
+
+
+if __name__ == '__main__':
+    main()
+    

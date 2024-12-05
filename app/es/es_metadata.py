@@ -55,6 +55,17 @@ def concat_vector_fields() -> list:
 VECTOR_FIELDS = concat_vector_fields()
 
 
+VECTOR_FIELD_DEF = dict(type='knn_vector', 
+                        dimension=1536, 
+                        space_type='l2', 
+                        method=dict(name='hnsw', 
+                                    engine='faiss', 
+                                    # space_type='cosinesimil',
+                                    parameters=dict(ef_construction=128, m=24)
+                        )
+                    )
+
+
 RELATIONS_FIELDS = ['es_mlt_relations_text', 'es_mlt_relations_dict', 'openai_ada002_relations_text', 'openai_ada002_relations_dict', 
                     'openai_3small_relations_text', 'openai_3small_relations_dict']
 

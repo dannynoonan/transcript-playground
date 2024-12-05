@@ -18,7 +18,7 @@ else:
         EsSpeakerUnified, EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
     )
 
-from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS
+from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS, VECTOR_FIELD_DEF
 import app.es.es_read_router as esr
 from app.show_metadata import ShowKey
 from app import utils
@@ -34,7 +34,8 @@ from app import utils
 # connections.create_connection(hosts=['http://localhost:9200'], timeout=20)
 
 es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port': settings.es_port, 'scheme': settings.es_scheme}],
-                                        basic_auth=(settings.es_user, settings.es_password), verify_certs=False, timeout=20)
+                                        basic_auth=(settings.es_user, settings.es_password), http_auth=(settings.es_user, settings.es_password), 
+                                        verify_certs=False, timeout=20)
 
 # connections.configure(
 #     default={'hosts': 'http://localhost:9200'},
@@ -44,16 +45,6 @@ es_conn = connections.create_connection(hosts=[{'host': settings.es_host, 'port'
     # }
 # )
 
-vector_field = dict(type='knn_vector', 
-                    dimension=1536, 
-                    space_type='l2', 
-                    method=dict(name='hnsw', 
-                                engine='faiss', 
-                                # space_type='cosinesimil',
-                                parameters=dict(ef_construction=128, m=24)
-                    )
-                )
-
 
 def init_transcripts_index():
     # EsEpisodeTranscript.init(using=es_client)
@@ -61,7 +52,7 @@ def init_transcripts_index():
     es_conn.indices.put_settings(index="transcripts", body={"index": {"max_inner_result_window": 1000}})
     es_conn.indices.put_settings(index="transcripts", body={"index.mapping.total_fields.limit": 10000})
     if settings.es_toggle == 'oss':
-        es_conn.indices.put_mapping(index="transcripts", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
+        es_conn.indices.put_mapping(index="transcripts", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_narratives_index():
@@ -73,35 +64,35 @@ def init_speakers_index():
     EsSpeaker.init()
     es_conn.indices.put_settings(index="speakers", body={"index": {"max_inner_result_window": 1000}})
     if settings.es_toggle == 'oss':
-        es_conn.indices.put_mapping(index="speakers", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
+        es_conn.indices.put_mapping(index="speakers", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_speaker_seasons_index():
     EsSpeakerSeason.init()
     es_conn.indices.put_settings(index="speaker_seasons", body={"index": {"max_inner_result_window": 1000}})
     if settings.es_toggle == 'oss':
-        es_conn.indices.put_mapping(index="speaker_seasons", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
+        es_conn.indices.put_mapping(index="speaker_seasons", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_speaker_episodes_index():
     EsSpeakerEpisode.init()
     es_conn.indices.put_settings(index="speaker_episodes", body={"index": {"max_inner_result_window": 1000}})
     if settings.es_toggle == 'oss':
-        es_conn.indices.put_mapping(index="speaker_episodes", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
+        es_conn.indices.put_mapping(index="speaker_episodes", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_speaker_unified_index():
     EsSpeakerUnified.init()
     es_conn.indices.put_settings(index="speaker_embeddings_unified", body={"index": {"max_inner_result_window": 1000}})
     if settings.es_toggle == 'oss':
-        es_conn.indices.put_mapping(index="speaker_embeddings_unified", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
+        es_conn.indices.put_mapping(index="speaker_embeddings_unified", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_topics_index():
     EsTopic.init()
     es_conn.indices.put_settings(index="topics", body={"index": {"max_inner_result_window": 1000}})
     if settings.es_toggle == 'oss':
-        es_conn.indices.put_mapping(index="topics", body=dict(properties=dict(openai_ada002_embeddings=vector_field, openai_3small_embeddings=vector_field)))
+        es_conn.indices.put_mapping(index="topics", body=dict(properties=dict(openai_ada002_embeddings=VECTOR_FIELD_DEF, openai_3small_embeddings=VECTOR_FIELD_DEF)))
 
 
 def init_episode_topics_index():
