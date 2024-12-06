@@ -1,15 +1,12 @@
-from fastapi import FastAPI, Request, Response
-from fastapi.encoders import jsonable_encoder
-from fastapi.exceptions import HTTPException
+from fastapi import FastAPI, status, Depends, HTTPException
 from fastapi.middleware.wsgi import WSGIMiddleware
-from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from mangum import Mangum
-from tortoise.contrib.fastapi import HTTPNotFoundError, register_tortoise
+from tortoise.contrib.fastapi import register_tortoise
 from tortoise import Tortoise
 
-from app.config import settings, DATABASE_URL
-# from app.dash_app import dapp
+from app.auth import auth_app, user_dependency
+from app.config import DATABASE_URL
 from app.dash_pages import dash_pages_app
 from app.database.connect import connect_to_database
 import app.database.dao as dao
@@ -24,16 +21,15 @@ from app.web.web_router import web_app
 
 
 app = FastAPI()
+app.include_router(auth_app)
+app.include_router(esr_app)
 app.include_router(web_app)
+app.include_router(esw_app)
+app.include_router(esbw_app)
 app.include_router(etl_app)
 app.include_router(esa_app)
-app.include_router(esbw_app)
-app.include_router(esr_app)
-app.include_router(esw_app)
 app.mount('/static', StaticFiles(directory='static', html=True), name='static')
-# app.mount('/tsp_dash', WSGIMiddleware(dapp.server))
 app.mount('/dash_pages', WSGIMiddleware(dash_pages_app.server))
-# templates = Jinja2Templates(directory="templates")
 
 
 handler = Mangum(app)
@@ -57,9 +53,20 @@ register_tortoise(
 #     # Generate the schema
 #     await Tortoise.generate_schemas()
 
-
 # TODO pretty sure this can be removed
 Tortoise.init_models(["app.models"], "models")
+
+
+
+
+
+# @app.get('/', status_code=status.HTTP_200_OK, tags=['Admin'])
+# async def user(user: user_dependency):
+#     if user is None:
+#         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+#     return {'user': user} 
+
+
 
 
 @app.get("/", tags=['Admin'])
@@ -71,7 +78,9 @@ def root():
 ###################### METADATA ###########################
 
 @app.get("/show_meta/{show_key}", tags=['Metadata'])
-def fetch_show_meta(show_key: ShowKey):
+def fetch_show_meta(show_key: ShowKey, user: user_dependency):
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
     show_meta = show_metadata[show_key]
     return {show_key: show_meta}
 
@@ -80,13 +89,17 @@ def fetch_show_meta(show_key: ShowKey):
 ###################### DB ADMIN ###########################
 
 @app.get("/db_connect", tags=['Admin'])
-async def db_connect():
+async def db_connect(user: user_dependency):
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
     await connect_to_database()
     return {"DB connection": "Indeed"}
 
 
 @app.get("/backup_db", tags=['Admin'])
-async def backup_db():
+async def backup_db(user: user_dependency):
+    if user is None:
+        raise HTTPException(status_code=401, detail='Authentication failed')
     await connect_to_database()
     output, error = await dao.backup_db()
     return {"Output": str(output), "Error": str(error)}

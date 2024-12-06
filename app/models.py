@@ -88,3 +88,18 @@ class SceneEvent(Model):
     
     def __repr__(self):
         return str(self)
+    
+
+class APIUser(Model):
+    username = fields.CharField(max_length=255, unique=True)
+    hashed_password = fields.CharField(max_length=255)
+    role = fields.CharField(max_length=255)
+
+    class Meta:
+        table=("api_user")
+
+    def __str__(self):
+        return str(self.username)
+    
+    def __repr__(self):
+        return str(self)

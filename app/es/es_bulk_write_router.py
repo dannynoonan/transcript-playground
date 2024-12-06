@@ -1,8 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, status, HTTPException
 from operator import itemgetter
 import pandas as pd
 
 from app.app_metadata import BERTOPIC_DATA_DIR
+from app.auth import user_dependency
 import app.data_service.field_flattener as fflat
 import app.data_service.topicfidf_calculator as tfcalc
 import app.database.dao as dao
@@ -15,18 +16,21 @@ from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
 
 
-esbw_app = APIRouter()
-
+esbw_app = APIRouter(tags=['ES Bulk Writer'])
 
 
 ##################### Legacy batch es writes, ported over to ./scripts (but still referenced by airflow dags) #######################
 
-@esbw_app.get("/esw/index_all_episodes/{show_key}", tags=['ES Writer'])
-async def index_all_episodes(show_key: ShowKey, overwrite_all: bool = False):
+@esbw_app.get("/esw/index_all_episodes/{show_key}")
+async def index_all_episodes(show_key: ShowKey, user: user_dependency, 
+                             overwrite_all: bool = False):
     '''
     Bulk run of `/esw/index_episode` for all episodes of a given show
     NOTE migrated to ./scripts/index_episodes.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     episodes = []
     try:
         episodes = await dao.fetch_episodes(show_key.value)
@@ -71,12 +75,15 @@ async def index_all_episodes(show_key: ShowKey, overwrite_all: bool = False):
     }
 
 
-@esbw_app.get("/esw/populate_all_episode_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_episode_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
+@esbw_app.get("/esw/populate_all_episode_embeddings/{show_key}/{model_vendor}/{model_version}")
+def populate_all_episode_embeddings(show_key: ShowKey, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Bulk run of `/esw/populate_episode_embeddings` for all episodes of a given show
     NOTE migrated to ./scripts/populate_episode_embeddings.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']
     processed_episode_keys = []
@@ -91,12 +98,16 @@ def populate_all_episode_embeddings(show_key: ShowKey, model_vendor: str, model_
     return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
 
 
-@esbw_app.get("/esw/populate_all_episode_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str, limit: int = 30, episode_key: str = None):
+@esbw_app.get("/esw/populate_all_episode_relations/{show_key}/{model_vendor}/{model_version}")
+def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str, user: user_dependency, 
+                                   limit: int = 30):
     '''
     For each episode, query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
     NOTE migrated to ./scripts/populate_episode_relations.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     if (model_vendor, model_version) not in ACTIVE_VENDOR_VERSIONS and (model_vendor, model_version) != ('es','mlt'):
         return {"error": f'invalid model_vendor:model_version combo {model_vendor}:{model_version}'}
     
@@ -119,12 +130,15 @@ def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_v
     return {"episodes_to_relations": episodes_to_relations}
 
 
-@esbw_app.get("/esw/populate_topic_grouping_embeddings/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, model_version: str):
+@esbw_app.get("/esw/populate_topic_grouping_embeddings/{topic_grouping}/{model_vendor}/{model_version}")
+def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Generate vector embedding for all topics in topic_grouping using pre-trained Word2Vec and Transformer models
     NOTE migrated to ./scripts/populate_topic_embeddings.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     topic_grouping_response = esr.fetch_topic_grouping(topic_grouping)
     topic_keys = [t['topic_key'] for t in topic_grouping_response['topics']]
     attempted_count = 0
@@ -144,12 +158,15 @@ def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, m
     return {'attempted_count': attempted_count, 'successful_topics': successful_topics, 'failed_topics': failed_topics, 'failure_messages': failure_messages}
 
 
-@esbw_app.get("/esw/index_all_speakers/{show_key}", tags=['ES Writer'])
-def index_all_speakers(show_key: ShowKey):
+@esbw_app.get("/esw/index_all_speakers/{show_key}")
+def index_all_speakers(show_key: ShowKey, user: user_dependency):
     '''
     Bulk run of `/esw/index_speaker` for all valid speakers with lines in a given show
     NOTE migrated to ./scripts/index_speakers.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     response = esr.agg_episodes_by_speaker(show_key)
     speaker_episode_counts = response['episodes_by_speaker']
     valid_speakers = [s for s,_ in speaker_episode_counts.items() if '+' not in s and s not in SPEAKERS_TO_IGNORE]
@@ -173,12 +190,15 @@ def index_all_speakers(show_key: ShowKey):
     return {"attempt_count": attempt_count, "successful": successful, "failed": failed}
 
 
-@esbw_app.get("/esw/populate_all_speaker_embeddings/{show_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_version: str):
+@esbw_app.get("/esw/populate_all_speaker_embeddings/{show_key}/{model_vendor}/{model_version}")
+def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Generate vector embedding for all indexed speakers for a show using pre-trained Word2Vec and Transformer models
     NOTE migrated to ./scripts/populate_speaker_embeddings.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     s = esqb.fetch_indexed_speakers(show_key.value, return_fields=['speaker'])
     matches = esrt.return_speakers(s)
     if not matches:
@@ -207,12 +227,15 @@ def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_
             "super_fails": super_fails, "speaker_responses": speaker_responses}
 
 
-@esbw_app.get("/esw/populate_all_episode_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str):
+@esbw_app.get("/esw/populate_all_episode_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}")
+def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     For specified topic_grouping, generate and store topic mappings for all series episodes
     NOTE migrated to ./scripts/populate_episode_topics.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     doc_ids = esr.fetch_doc_ids(show_key)
     episode_doc_ids = doc_ids['doc_ids']
     processed_episode_keys = []
@@ -228,12 +251,15 @@ def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_ve
     return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
 
 
-@esbw_app.get("/esw/populate_episode_topic_tfidf_scores/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str):
+@esbw_app.get("/esw/populate_episode_topic_tfidf_scores/{show_key}/{topic_grouping}/{model_vendor}/{model_version}")
+def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     For specified topic_grouping, calculate 'tfidf'-like scores for all episode_topics and store in `tfidf_score` field
     NOTE migrated to ./scripts/populate_episode_topics.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     ekey_tkey_scores, topic_idfs = tfcalc.calculate_topic_freq_idf(show_key, topic_grouping, model_vendor, model_version)
 
     successful_episode_keys = []
@@ -261,12 +287,15 @@ def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, 
     return {"attempted": len(ekey_tkey_scores), "successful": len(successful_episode_keys), "successful_episode_keys": successful_episode_keys}
 
 
-@esbw_app.get("/esw/populate_all_speaker_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str):
+@esbw_app.get("/esw/populate_all_speaker_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}")
+def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Map speakers to topics (using knn vector cosine similarity) for all indexed speakers for a show 
     NOTE migrated to ./scripts/populate_speaker_topics.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     s = esqb.fetch_indexed_speakers(show_key.value, return_fields=['speaker'])
     matches = esrt.return_speakers(s)
     if not matches:
@@ -298,12 +327,15 @@ def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_ve
             "successful_speakers": successful_speakers, "failed_speakers": failed_speakers}
 
 
-@esbw_app.get("/esw/populate_all_episode_narratives/{show_key}/", tags=['ES Writer'])
-def populate_all_episode_narratives(show_key: ShowKey):
+@esbw_app.get("/esw/populate_all_episode_narratives/{show_key}/")
+def populate_all_episode_narratives(show_key: ShowKey, user: user_dependency):
     '''
     Generate and populate all narrative sequences for a show
     NOTE migrated to ./scripts/populate_episode_narratives.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     successful_keys = []
     failed_keys = []
 
@@ -320,12 +352,15 @@ def populate_all_episode_narratives(show_key: ShowKey):
     return {"successful_keys": successful_keys, "failed_keys": failed_keys}
 
 
-@esbw_app.get("/esw/populate_bertopic_model_clusters/{show_key}/", tags=['ES Writer'])
-def populate_bertopic_model_clusters(show_key: ShowKey):
+@esbw_app.get("/esw/populate_bertopic_model_clusters/{show_key}/")
+def populate_bertopic_model_clusters(show_key: ShowKey, user: user_dependency):
     '''
     Load each bertopic_model's csv into dataframe, upsert referenced episode_narratives with mapping back to bertopic_model
     NOTE migrated to ./scripts/populate_bertopic_clusters.py
     '''
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    
     # load bertopic_data files 
     bertopic_model_list_response = esr.list_bertopic_models(show_key)
     bertopic_model_ids = bertopic_model_list_response['bertopic_model_ids']
@@ -390,7 +425,7 @@ def populate_bertopic_model_clusters(show_key: ShowKey):
     return {"attempt_count": attempt_count, "success_count": success_count, "failure_count": failure_count}
 
 
-# @esbw_app.get("/esw/generate_all_episode_polarity_sentiments/{show_key}", tags=['ES Writer'])
+# @esbw_app.get("/esw/generate_all_episode_polarity_sentiments/{show_key}")
 # def generate_all_episode_polarity_sentiments(show_key: ShowKey, scene_level: bool = False, scene_event_level: bool = False):
 #     '''
 #     Generate and  populate nltk polarity sentiment for all episodes in series

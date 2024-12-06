@@ -34,6 +34,9 @@ class Settings(BaseSettings):
     airflow_uid: int
     pythonpath: str
 
+    jwt_secret_key: str
+    jwt_algorithm: str
+
     model_config = SettingsConfigDict(env_file=".env")
 
 
