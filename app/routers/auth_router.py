@@ -12,6 +12,9 @@ from app.pydantic_models import CreateUserRequest, Token
 auth_app = APIRouter(tags=['Auth'])
 
 
+TOKEN_EXPIRE_DURATION = 20
+
+
 @auth_app.get("/")
 def root():
     return {"message": "Welcome to transcript playground! To use the 'read' API please visit '/docs', invoke the '/auth/create_user' endpoint to set up credentials, then click 'Authorize'."}
@@ -32,6 +35,7 @@ async def create_user(create_user_req: CreateUserRequest):
 async def login_for_access_token(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
     api_user = await authenticate_user(form_data.username, form_data.password)
     exit_if_unauthorized(api_user)
-    token = create_access_token(api_user.username, api_user.id, timedelta(minutes=20))
+    token_str = create_access_token(api_user.username, api_user.id, timedelta(minutes=TOKEN_EXPIRE_DURATION))
 
-    return {'access_token': token, 'token_type': 'bearer'} 
+    # return Token(access_token=token_str, token_type='bearer')
+    return {'access_token': token_str, 'token_type': 'bearer'} 

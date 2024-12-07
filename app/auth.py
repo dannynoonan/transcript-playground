@@ -11,7 +11,7 @@ from app.models import APIUser
 
 
 bcrypt_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
-oath2_bearer = OAuth2PasswordBearer(tokenUrl='auth/token')
+oath2_scheme = OAuth2PasswordBearer(tokenUrl='auth/token')
 
 
 async def authenticate_user(username: str, password: str) -> APIUser|None:
@@ -26,14 +26,15 @@ async def authenticate_user(username: str, password: str) -> APIUser|None:
 
 
 def create_access_token(username: str, user_id: int, expires_delta: timedelta) -> str:
-    encode = {'sub': username, 'id': user_id}
+    to_encode = {'sub': username, 'id': user_id}
     expires = datetime.now(timezone.utc) + expires_delta
-    encode.update({'exp': expires})
+    # to_encode['exp'] = expires
+    to_encode.update({'exp': expires})
 
-    return jwt.encode(encode, settings.jwt_secret_key, algorithm=settings.jwt_algorithm)
+    return jwt.encode(to_encode, settings.jwt_secret_key, algorithm=settings.jwt_algorithm)
 
 
-async def get_current_user(token: Annotated[str, Depends(oath2_bearer)]):
+async def get_current_user(token: Annotated[str, Depends(oath2_scheme)]):
     try:
         payload = jwt.decode(token, settings.jwt_secret_key, algorithms=[settings.jwt_algorithm])
         username: str = payload.get('sub')
@@ -41,6 +42,7 @@ async def get_current_user(token: Annotated[str, Depends(oath2_bearer)]):
         if username is None or user_id is None:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                                 detail='Could not validate user')
+        # user = await APIUser.filter(username=username).first()
         return {'username': username, 'id': user_id}
     except JWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
