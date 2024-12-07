@@ -5,7 +5,7 @@ sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
-import app.es.es_write_router as esw
+import app.routers.es_write_router as esw
 from app.show_metadata import ShowKey
 
 
@@ -22,6 +22,9 @@ def main():
     model_vendor = args.model_vendor
     model_version = args.model_version
     print(f'Begin populate_speaker_embeddings script for show_key={show_key} model_vendor={model_vendor} model_version={model_version}')
+
+    # TODO haven't solved for setting this correctly, requires altering exit_if_unauthorized to run 
+    user_dependency = None
 
     # NOTE not sure why this one uses esqb/esrt directly and other batch indexers use esr 
     s = esqb.fetch_indexed_speakers(show_key, return_fields=['speaker'])
@@ -40,7 +43,7 @@ def main():
     speaker_responses = {}
     for speaker in speakers:
         try:
-            response = esw.populate_speaker_embeddings(ShowKey(show_key), speaker, model_vendor, model_version)
+            response = esw.populate_speaker_embeddings(ShowKey(show_key), speaker, model_vendor, model_version, user_dependency)
             speaker_responses[speaker] = response
             request_count += response['attempted_count']
             success_count += len(response['successful'])

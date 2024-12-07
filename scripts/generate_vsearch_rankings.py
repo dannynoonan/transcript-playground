@@ -15,7 +15,7 @@ import sys
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
 from app.app_metadata import ANALYTICS_DIR
-import app.es.es_read_router as esr
+import app.routers.es_read_router as esr
 from app.nlp.nlp_metadata import WORD2VEC_VENDOR_VERSIONS, ACTIVE_VENDOR_VERSIONS
 from app.show_metadata import ShowKey
 from scripts.load_description_sources import DESCRIPTION_SOURCES
@@ -77,6 +77,9 @@ def main():
 def generate_vector_search_rankings(episode_rank_df: pd.DataFrame, desc_source: str, show_key: str, model_vendor: str, model_version: str) -> None:
     print(f'begin generate_vector_search_rankings for model_vendor={model_vendor} model_version={model_version}')
 
+    # TODO haven't solved for setting this correctly, requires altering exit_if_unauthorized to run 
+    user_dependency = None
+
     rank_col = f'rank_{model_vendor}_{model_version}'
     score_col = f'score_{model_vendor}_{model_version}'
     matched_tokens_count_col = f'matched_tokens_count_{model_vendor}_{model_version}'
@@ -96,7 +99,7 @@ def generate_vector_search_rankings(episode_rank_df: pd.DataFrame, desc_source: 
             print(f"description field `{desc_source}` is empty for episode_key={row['episode_key']}, skipping")
             continue
         episode_key = row['episode_key']
-        vector_search_response = esr.episode_vector_search(ShowKey(show_key), row[desc_source], model_vendor=model_vendor, model_version=model_version)
+        vector_search_response = esr.episode_vector_search(ShowKey(show_key), row[desc_source], user_dependency, model_vendor=model_vendor, model_version=model_version)
         if 'error' in vector_search_response:
             print(f"Failed to generate_vector_search_rankings for episode_key={episode_key}: {vector_search_response['error']}")
             continue

@@ -82,7 +82,7 @@
                     <div class="col-12">
                         <div class="row input-group">
                             <div class="col-2">
-                                <label class="col-form-label">Query:</label>
+                                <label class="col-form-label">Describe an episode:</label>
                             </div>
                             <div class="col-10"> 
                                 <input type="text" class="form-control" name="qtSemantic" value="{{ tdata['qtSemantic'] }}" id="qtSemanticInput">
@@ -93,7 +93,7 @@
                                 <label class="col-form-label">Model vendor:</label>
                             </div>
                             <div class="col-2"> 
-                                <input type="text" class="form-control" name="model_vendor" value="{{ tdata['model_vendor'] }}" id="modelVendorInput">
+                                <input type="text" class="form-control" name="model_vendor" value="{{ tdata['model_vendor'] }}" id="modelVendorInput" readonly>
                             </div>
                         </div>
                         <div class="row input-group">
@@ -101,7 +101,10 @@
                                 <label class="col-form-label">Model version:</label>
                             </div>
                             <div class="col-2"> 
-                                <input type="text" class="form-control" name="model_version" value="{{ tdata['model_version'] }}" id="modelVersionInput">
+                                <select class="form-select" name="model_version" id="modelVersionInput">
+                                    <option {% if tdata['model_version'] == '3small' %} selected {% endif %}>3small</option>
+                                    <option {% if tdata['model_version'] == 'ada002' %} selected {% endif %}>ada002</option>
+                                </select>
                             </div>
                         </div>
                         <br/>
@@ -206,7 +209,7 @@
                             <td>{{ episode['season'] }}</td>
                             <td>{{ episode['sequence_in_season'] }}</td>
                             <td>
-                                <a class="alert-link" href="/web/episode/{{ tdata['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title'] }}</a>
+                                <a class="alert-link" href="/dash_pages/episode/{{ tdata['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title'] }}</a>
                             </td>
                             <td>{{ episode['air_date']|truncate(10,true,'') }}</td>
                             <td>{{ episode['focal_speakers']|join(', ') }}</td>
@@ -225,7 +228,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         <button type="button" class="btn btn-primary">{{ '%0.2f'|format(episode['agg_score']|float) }}</button>&nbsp;&nbsp;
-                        <a class="alert-link" href="/web/episode/{{ episode['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title']|safe }}</a> 
+                        <a class="alert-link" href="/dash_pages/episode/{{ episode['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title']|safe }}</a> 
                     </h5>
                     <div class="overflow-scroll" style="max-height: 300px;">
                     {% for scene in episode['scenes'] %}

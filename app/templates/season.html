@@ -132,7 +132,7 @@
                 <tr class="table-secondary">
                     <th scope="row">{{ episode['sequence_in_season'] }}</th>
                     <td>
-                        <a class="alert-link" href="/web/episode/{{ tdata['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title'] }}</a>
+                        <a class="alert-link" href="/dash_pages/episode/{{ tdata['show_key'] }}/{{ episode['episode_key'] }}">{{ episode['title'] }}</a>
                     </td>
                     <td><nobr>{{ episode['air_date']|truncate(10,true,'') }}</nobr></td>
                     <td>{{ episode['focal_speakers']|join(', ') }}</td>

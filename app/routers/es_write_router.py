@@ -8,26 +8,29 @@ if settings.es_toggle == 'oss':
 else:
     from app.es.es_model import EsEpisodeTranscript, EsEpisodeNarrativeSequence, EsSpeaker, EsSpeakerSeason, EsSpeakerEpisode, EsTopic
 
+from app.auth import user_dependency, exit_if_unauthorized
 import app.database.dao as dao
 import app.data_service.field_flattener as fflat
 from app.data_service.topic_aggregator import TopicAgg
 import app.es.es_ingest_transformer as esit
 import app.es.es_query_builder as esqb
-import app.es.es_read_router as esr
+import app.routers.es_read_router as esr
 import app.nlp.embeddings_factory as ef
 import app.nlp.narrative_extractor as ne
 from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS, TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from app.show_metadata import ShowKey
 
 
-esw_app = APIRouter()
+esw_app = APIRouter(prefix='/esw', tags=['ES Writer'])
 
 
-@esw_app.get("/esw/index_episode/{show_key}/{episode_key}", tags=['ES Writer'])
-async def index_episode(show_key: ShowKey, episode_key: str):
+@esw_app.get("/index_episode/{show_key}/{episode_key}")
+async def index_episode(show_key: ShowKey, episode_key: str, user: user_dependency):
     '''
     Fetch `Episode` entity from Postgres `transcript_db`, transform Tortoise object to ElasticSearch object, and write it to ElasticSearch index.
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     # fetch episode, throw errors if not found
     episode = None
     try:
@@ -59,29 +62,35 @@ async def index_episode(show_key: ShowKey, episode_key: str):
     return {"Success": f"Episode {show_key}_{episode_key} written to es index"}
 
 
-@esw_app.get("/esw/populate_focal_speakers/{show_key}", tags=['ES Writer'])
-def populate_focal_speakers(show_key: ShowKey, episode_key: str = None):
+@esw_app.get("/populate_focal_speakers/{show_key}")
+def populate_focal_speakers(show_key: ShowKey, user: user_dependency, episode_key: str = None):
     '''
     For each episode, query ElasticSearch to count the number of lines spoken per character, then write the top 3 characters back to their own ElasticSearch field
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     episodes_to_focal_speakers = esqb.populate_focal_speakers(show_key.value, episode_key=episode_key)
     return {"episodes_to_focal_speakers": episodes_to_focal_speakers}
 
 
-@esw_app.get("/esw/populate_focal_locations/{show_key}", tags=['ES Writer'])
-def populate_focal_locations(show_key: ShowKey, episode_key: str = None):
+@esw_app.get("/populate_focal_locations/{show_key}")
+def populate_focal_locations(show_key: ShowKey, user: user_dependency, episode_key: str = None):
     '''
     For each episode, query ElasticSearch to count the number of scenes per location, then write the top 3 locations back to their own ElasticSearch field
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     episodes_to_focal_locations = esqb.populate_focal_locations(show_key.value, episode_key=episode_key)
     return {"episodes_to_focal_locations": episodes_to_focal_locations}
 
 
-@esw_app.get("/esw/populate_episode_relations/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_episode_relations(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str, limit: int = 30):
+@esw_app.get("/populate_episode_relations/{show_key}/{episode_key}/{model_vendor}/{model_version}")
+def populate_episode_relations(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str, user: user_dependency, limit: int = 30):
     '''
     Query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     if (model_vendor, model_version) not in ACTIVE_VENDOR_VERSIONS and (model_vendor, model_version) != ('es','mlt'):
         return {"error": f'invalid model_vendor:model_version combo {model_vendor}:{model_version}'}
  
@@ -103,7 +112,7 @@ def populate_episode_relations(show_key: ShowKey, episode_key: str, model_vendor
     return {"episode_relations": episode_relations}
 
 
-# @esw_app.get("/esw/build_embeddings_model/{show_key}", tags=['ES Writer'])
+# @esw_app.get("/build_embeddings_model/{show_key}")
 # def build_embeddings_model(show_key: ShowKey):
 #     '''
 #     Experimental endpoint: goes thru the motions of building a language model using Word2Vec, but limits training data to a single show's text corpus, resulting in a (uselessly) tiny model
@@ -112,11 +121,13 @@ def populate_episode_relations(show_key: ShowKey, episode_key: str, model_vendor
 #     return {"model_info": model_info}
 
 
-@esw_app.get("/esw/populate_episode_embeddings/{show_key}/{episode_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_episode_embeddings(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str):
+@esw_app.get("/populate_episode_embeddings/{show_key}/{episode_key}/{model_vendor}/{model_version}")
+def populate_episode_embeddings(show_key: ShowKey, episode_key: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Generate vector embedding for episode using pre-trained Word2Vec and Transformer models (enumerated in `nlp/nlp_metadata.py`)
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
         embeddings = ef.generate_episode_embeddings(es_episode, model_vendor, model_version)
@@ -127,11 +138,14 @@ def populate_episode_embeddings(show_key: ShowKey, episode_key: str, model_vendo
         return {f"Failed to populate {model_vendor}:{model_version} embeddings for episode {show_key.value}_{episode_key}": e}
 
 
-@esw_app.get("/esw/index_speaker/{show_key}/{speaker}", tags=['ES Writer'])
-def index_speaker(show_key: ShowKey, speaker: str):
+@esw_app.get("/index_speaker/{show_key}/{speaker}")
+def index_speaker(show_key: ShowKey, speaker: str, user: user_dependency):
     '''
-    TODO
+    Combine aggregate episode and series count data and dialog text for a series speaker with metadata loaded from csv file into standalone speaker index
+    In addition to speakers index, also populate season-level and episode-level speaker indices for speaker
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     es_speaker = EsSpeaker(show_key=show_key.value, speaker=speaker, scene_count=0, line_count=0, word_count=0, lines=[], seasons_to_episode_keys={})
     es_speaker_seasons = {}
     es_speaker_episodes = {}
@@ -212,11 +226,13 @@ def index_speaker(show_key: ShowKey, speaker: str):
     return {"speaker": speaker, "season_count": len(es_speaker_seasons), "episode_count": len(es_speaker_episodes)}
 
 
-@esw_app.get("/esw/index_topic_grouping/{topic_grouping}", tags=['ES Writer'])
-def index_topic_grouping(topic_grouping: str):
+@esw_app.get("/index_topic_grouping/{topic_grouping}")
+def index_topic_grouping(topic_grouping: str, user: user_dependency):
     '''
     Load set of Topics from csv file into es `topics` index.
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     file_path = f'./source/topics/{topic_grouping}.csv'
     if os.path.isfile(file_path):
         print(f'Loading topic_grouping dataframe from file_path={file_path}')
@@ -267,11 +283,13 @@ def index_topic_grouping(topic_grouping: str):
     return {'attempted_count': attempted_count, 'successful_topics': successful_topics, 'failed_topics': failed_topics}
 
 
-@esw_app.get("/esw/populate_topic_embeddings/{topic_grouping}/{topic_key}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_topic_embeddings(topic_grouping: str, topic_key: str, model_vendor: str, model_version: str, prefix_parent_descs: bool = False):
+@esw_app.get("/populate_topic_embeddings/{topic_grouping}/{topic_key}/{model_vendor}/{model_version}")
+def populate_topic_embeddings(topic_grouping: str, topic_key: str, model_vendor: str, model_version: str, user: user_dependency, prefix_parent_descs: bool = False):
     '''
     Generate vector embedding for topic using pre-trained Word2Vec and Transformer models
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     embeddings_field = f'{model_vendor}_{model_version}_embeddings'
     doc_id = f'{topic_grouping}_{topic_key}'
     
@@ -288,11 +306,13 @@ def populate_topic_embeddings(topic_grouping: str, topic_key: str, model_vendor:
         return {f"error": f"Failed to populate {model_vendor}:{model_version} embeddings for topic {topic_grouping}:{topic_key}, {e}"}
     
 
-@esw_app.get("/esw/populate_speaker_embeddings/{show_key}/{speaker}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: str, model_version: str):
+@esw_app.get("/populate_speaker_embeddings/{show_key}/{speaker}/{model_vendor}/{model_version}")
+def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Generate vector embedding for speaker using pre-trained Word2Vec and Transformer models
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     max_tokens = TRF_MODELS[model_vendor]['versions'][model_version]['max_tokens']
     word_count_field = f'{model_vendor}_word_count'
     embeddings_field = f'{model_vendor}_{model_version}_embeddings'
@@ -399,11 +419,13 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
     return {'attempted_count': attempted_count, 'successful': successful, 'skipped': skipped, 'failed': failed, 'failure_messages': failure_messages}
 
 
-@esw_app.get("/esw/populate_episode_topics/{show_key}/{episode_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str):
+@esw_app.get("/populate_episode_topics/{show_key}/{episode_key}/{topic_grouping}/{model_vendor}/{model_version}")
+def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Generate and store topic mappings for episode, via knn cosine similarity to vector embeddings within topic_grouping 
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
         response = esr.episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor=model_vendor, model_version=model_version)
@@ -429,11 +451,13 @@ def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping:
     return {"episode_topics": episode_topics}
 
 
-@esw_app.post("/esw/populate_episode_tfidf_topics/", tags=['ES Writer'])
-def populate_episode_tfidf_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, simple_episode_topics: list):
+@esw_app.post("/populate_episode_tfidf_topics")
+def populate_episode_tfidf_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, simple_episode_topics: list, user: user_dependency):
     '''
     Store tfidf-style topic mappings for episode 
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     episode_id = f'{show_key.value}_{episode_key}'
     if not simple_episode_topics:
         print(f'Failed to populate_episode_tfidf_topics for episode {episode_id}, simple_episode_topics list was empty')
@@ -449,13 +473,15 @@ def populate_episode_tfidf_topics(show_key: ShowKey, episode_key: str, topic_gro
     return {"es_episode": episode_id}
 
 
-@esw_app.get("/esw/populate_speaker_topics/{show_key}/{speaker}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Writer'])
-def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str, model_vendor: str, model_version: str):
+@esw_app.get("/populate_speaker_topics/{show_key}/{speaker}/{topic_grouping}/{model_vendor}/{model_version}")
+def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Using previously generated vector embeddings for speakers and topics, use knn vector cosine similarity to map speakers to topics, then populate speaker indexes with topics
     Populate speaker topics at series-, season-, and episode-level, using vector embeddings at each level where possible (when text corpus is small enough for embeddings generation)
     When a series- or season-level text corpus is too large for its own embedding, use topics mapped to sub-elements (episodes in season, seasons in series) to aggregate topic mappings
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     es_speaker = EsSpeaker.get(id=f'{show_key.value}_{speaker}')
 
     topic_fields = 'topic_grouping,topic_key,parent_key,topic_name,parent_name'
@@ -562,11 +588,13 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
             "speaker_episode_topics": speaker_episode_topics_response['speaker_episode_topics']}
 
 
-@esw_app.get("/esw/populate_episode_narratives/{show_key}/{episode_key}/", tags=['ES Writer'])
-def populate_episode_narratives(show_key: ShowKey, episode_key: str):
+@esw_app.get("/populate_episode_narratives/{show_key}/{episode_key}")
+def populate_episode_narratives(show_key: ShowKey, episode_key: str, user: user_dependency):
     '''
     Generate and populate narrative sequences for a given episode
     '''
+    exit_if_unauthorized(user, level='admin')
+    
     narrative_sequences = ne.extract_narrative_sequences(show_key, episode_key)
 
     for ns in narrative_sequences:
@@ -582,7 +610,7 @@ def populate_episode_narratives(show_key: ShowKey, episode_key: str):
 
 
 
-# @esw_app.get("/esw/populate_episode_polarity_sentiment/{show_key}/{episode_key}", tags=['ES Writer'])
+# @esw_app.get("/populate_episode_polarity_sentiment/{show_key}/{episode_key}")
 # def populate_episode_polarity_sentiment(show_key: ShowKey, episode_key: str, scene_level: bool = False, scene_event_level: bool = False):
 #     '''
 #     Generate and populate nltk polarity sentiment for episode
@@ -643,7 +671,7 @@ def populate_episode_narratives(show_key: ShowKey, episode_key: str):
 #              "scene_sentiments": scene_sentiments}
 
 
-# @esw_app.get("/esw/populate_episode_emotional_sentiment/{show_key}/{episode_key}", tags=['ES Writer'])
+# @esw_app.get("/populate_episode_emotional_sentiment/{show_key}/{episode_key}")
 # def populate_episode_emotional_sentiment(show_key: ShowKey, episode_key: str, scene_level: bool = False, line_level: bool = False, write_to_es: bool = False):
 #     '''
 #     Generate and populate openai emotional sentiment for episode. Currently populating to 3 places: 
@@ -761,7 +789,7 @@ def populate_episode_narratives(show_key: ShowKey, episode_key: str):
 #             "scene_emo_dicts": scene_emo_dicts}
 
 
-# @esw_app.get("/esw/test_episode_emotional_sentiment", tags=['ES Writer'])
+# @esw_app.get("/test_episode_emotional_sentiment")
 # def test_episode_emotional_sentiment():
     
 #     flattened_scenes = ["PICARD: Captain's log, stardate 43930.7. The Enterprise has been in attendance at the biennial Trade Agreements Conference on Betazed. For the first time, the Ferengi are present, and I have reluctantly consented to their boarding the Enterprise for the closing reception.\n\nRIKER: Check and mate.\n\nWESLEY: Perfect. The queen's gambit finished off with the Aldabren Exchange.\n\nNIBOR: That is unfair. I couldn't concentrate with all that noise.\n\nWESLEY: Noise? It's Algolian ceremonial rhythms.\n\nPICARD: A toast to the success of the trade conference, Reittan. I must admit, I had some doubts when you invited the Ferengi.\n\nGRAX: They made a profit and behaved themselves. What more could one ask? Still, they trouble me. We Betazeds are uncomfortable with species like the Ferengi whose minds we can't read.\n\nDATA: Perhaps your telepathic abilities are ineffective owing to the anomalous construction of the Ferengi brain, which is composed of four different\n\nPICARD: Thank you, Mister Data. It was thoughtful of you to invite Lwaxana Troi to be part of the Betazed delegation.\n\nGRAX: Yes, Lwaxana and I go way back. Her first husband and I were old friends, and I've known Deanna since she was a child.\n\nPICARD: I'm sure Counsellor Troi appreciates the opportunity to spend time with her mother.\n\nLWAXANA: Little One, you could at least pretend you're happy to see me.\n\nTROI: Mother, we're among non-telepaths. It's impolite not to speak aloud.\n\nLWAXANA: You mean talk with my mouth full? Deanna, please!\n\nLWAXANA: All right, you want me to say something aloud? Have you considered if you had stayed on Betazed, you might have been a happier person.\n\nTROI: Let's not guess what might have been. I love my work aboard the Enterprise.\n\nLWAXANA: Yes, of course you do, but its all business and no play. You've got to enjoy life, relax, like I do. Find yourself the right man, think of your future. Think of my future.\n\nRIKER: Lwaxana, Deanna. Anything I can do for you?\n\nTROI: Could I?\n\nFAREK: She's as repulsive as the rest of them.\n\nTOG: Repulsive? I find her exotic. And what an advantage her telepathy would be in our negotiations.\n\nFAREK: To read our competitors' minds? Yes, that would be valuable. But she'd never agree to use her powers to help us.\n\nTOG: I'm not so sure.\n\nTOG: Lwaxana Troi of Betazed, I believe. I am DaiMon Tog of the Ferengi vessel Krayton. May I join you?\n\nLWAXANA: I was just going to see Captain Picard. Excuse me.\n\nLWAXANA: Oh, Jean-Luc! Jean-Luc! Come have a drink with me. Tell me what you've been up to.\n\nPICARD: Perhaps later, Lwaxana. Mister Data and I were just about to show Reittan Grax the er, the er, the new door mechanisms on the aft turbolifts. If you'll excuse us?\n\nTOG: Lwaxana Troi. I desire you.\n\nLWAXANA: What?\n\nTOG: You see, your Betazoid skills would be very useful to me, and I find you very attractive. I am willing to pay handsomely for you.\n\nLWAXANA: I don't believe this.\n\nTOG: You must be aware that every female has her price.\n\nLWAXANA: Let's get one thing straight, little man. I am not for sale. And if, by some chance I were to become available, I would rather eat Orion wing-slugs than deal with a toad-faced troll like you! So go away and find someone else to become your property.\n\nTOG: As you wish.\n\nFAREK: Now that you've totally humiliated us, may we return to our vessel?\n\nTOG: She is exhilarating, isn't she? Now I want her more than ever. Lwaxana Troi, you will be mine.",

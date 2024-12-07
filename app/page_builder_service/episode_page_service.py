@@ -121,7 +121,7 @@ def generate_narrative_cluster_mappings_dt(show_key: str, clusters: list) -> das
     clusters_df = pd.DataFrame(clusters)
 
     # field naming and processing
-    clusters_df['model_id'] = clusters_df.apply(lambda x: pc.link_to_bertopic_model(show_key, x['model_id'], x['model_id']), axis=1)
+    clusters_df['model_id'] = clusters_df.apply(lambda x: pc.link_to_bertopic_model(show_key, x['model_id']), axis=1)
     clusters_df['cluster_keywords'] = clusters_df['cluster_keywords'].apply(lambda x: ', '.join(x))
 
     # table display input

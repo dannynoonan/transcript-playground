@@ -27,7 +27,6 @@ SceneEventPydanticExcluding = pydantic_model_creator(SceneEvent, exclude=("id", 
 class CreateUserRequest(BaseModel):
     username: str
     password: str
-    role: str
 
 class Token(BaseModel):
     access_token: str

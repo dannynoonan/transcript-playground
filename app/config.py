@@ -37,6 +37,9 @@ class Settings(BaseSettings):
     jwt_secret_key: str
     jwt_algorithm: str
 
+    api_admin_user: str
+    api_admin_password: str
+
     model_config = SettingsConfigDict(env_file=".env")
 
 

@@ -3,15 +3,15 @@ from operator import itemgetter
 import pandas as pd
 
 from app.app_metadata import BERTOPIC_DATA_DIR
-from app.auth import user_dependency
+from app.auth import user_dependency, exit_if_unauthorized
 import app.data_service.field_flattener as fflat
 import app.data_service.topicfidf_calculator as tfcalc
 import app.database.dao as dao
 import app.es.es_ingest_transformer as esit
 import app.es.es_response_transformer as esrt
 import app.es.es_query_builder as esqb
-import app.es.es_read_router as esr
-import app.es.es_write_router as esw
+import app.routers.es_read_router as esr
+import app.routers.es_write_router as esw
 from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
 
@@ -28,8 +28,7 @@ async def index_all_episodes(show_key: ShowKey, user: user_dependency,
     Bulk run of `/esw/index_episode` for all episodes of a given show
     NOTE migrated to ./scripts/index_episodes.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     episodes = []
     try:
@@ -81,8 +80,7 @@ def populate_all_episode_embeddings(show_key: ShowKey, model_vendor: str, model_
     Bulk run of `/esw/populate_episode_embeddings` for all episodes of a given show
     NOTE migrated to ./scripts/populate_episode_embeddings.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
     episode_doc_ids = doc_ids['doc_ids']
@@ -105,8 +103,7 @@ def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_v
     For each episode, query ElasticSearch for most similar episodes vis-a-vis a given model:vendor, then write the top X episode|score pairs to corresponding relations field
     NOTE migrated to ./scripts/populate_episode_relations.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     if (model_vendor, model_version) not in ACTIVE_VENDOR_VERSIONS and (model_vendor, model_version) != ('es','mlt'):
         return {"error": f'invalid model_vendor:model_version combo {model_vendor}:{model_version}'}
@@ -136,8 +133,7 @@ def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, m
     Generate vector embedding for all topics in topic_grouping using pre-trained Word2Vec and Transformer models
     NOTE migrated to ./scripts/populate_topic_embeddings.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     topic_grouping_response = esr.fetch_topic_grouping(topic_grouping)
     topic_keys = [t['topic_key'] for t in topic_grouping_response['topics']]
@@ -164,8 +160,7 @@ def index_all_speakers(show_key: ShowKey, user: user_dependency):
     Bulk run of `/esw/index_speaker` for all valid speakers with lines in a given show
     NOTE migrated to ./scripts/index_speakers.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     response = esr.agg_episodes_by_speaker(show_key)
     speaker_episode_counts = response['episodes_by_speaker']
@@ -196,8 +191,7 @@ def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_
     Generate vector embedding for all indexed speakers for a show using pre-trained Word2Vec and Transformer models
     NOTE migrated to ./scripts/populate_speaker_embeddings.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     s = esqb.fetch_indexed_speakers(show_key.value, return_fields=['speaker'])
     matches = esrt.return_speakers(s)
@@ -233,8 +227,7 @@ def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_ve
     For specified topic_grouping, generate and store topic mappings for all series episodes
     NOTE migrated to ./scripts/populate_episode_topics.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     doc_ids = esr.fetch_doc_ids(show_key)
     episode_doc_ids = doc_ids['doc_ids']
@@ -257,8 +250,7 @@ def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, 
     For specified topic_grouping, calculate 'tfidf'-like scores for all episode_topics and store in `tfidf_score` field
     NOTE migrated to ./scripts/populate_episode_topics.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     ekey_tkey_scores, topic_idfs = tfcalc.calculate_topic_freq_idf(show_key, topic_grouping, model_vendor, model_version)
 
@@ -293,8 +285,7 @@ def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_ve
     Map speakers to topics (using knn vector cosine similarity) for all indexed speakers for a show 
     NOTE migrated to ./scripts/populate_speaker_topics.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     s = esqb.fetch_indexed_speakers(show_key.value, return_fields=['speaker'])
     matches = esrt.return_speakers(s)
@@ -333,8 +324,7 @@ def populate_all_episode_narratives(show_key: ShowKey, user: user_dependency):
     Generate and populate all narrative sequences for a show
     NOTE migrated to ./scripts/populate_episode_narratives.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     successful_keys = []
     failed_keys = []
@@ -358,8 +348,7 @@ def populate_bertopic_model_clusters(show_key: ShowKey, user: user_dependency):
     Load each bertopic_model's csv into dataframe, upsert referenced episode_narratives with mapping back to bertopic_model
     NOTE migrated to ./scripts/populate_bertopic_clusters.py
     '''
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
+    exit_if_unauthorized(user, level='admin')
     
     # load bertopic_data files 
     bertopic_model_list_response = esr.list_bertopic_models(show_key)

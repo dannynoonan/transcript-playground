@@ -18,8 +18,9 @@ else:
         EsSpeakerUnified, EsTopic, EsEpisodeTopic, EsSpeakerTopic, EsSpeakerSeasonTopic, EsSpeakerEpisodeTopic
     )
 
+from app.auth import ADMIN_USER
 from app.es.es_metadata import STOPWORDS, VECTOR_FIELDS, RELATIONS_FIELDS, VECTOR_FIELD_DEF
-import app.es.es_read_router as esr
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -453,9 +454,15 @@ def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, min
 
     try:
         es_speaker = fetch_speaker(show_key, speaker)
-        speaker_series_embeddings = getattr(es_speaker, vector_field)
+        if settings.es_toggle == 'oss':
+            speaker_series_embeddings = None
+            if vector_field in es_speaker:
+                speaker_series_embeddings = es_speaker[vector_field]
+        else:
+            speaker_series_embeddings = getattr(es_speaker, vector_field)
     except Exception as e:
-        return {"error": f"Failed fetch_speaker for show_key={show_key} speaker={speaker}: {e}"}
+        print(f"Failed fetch_speaker embeddings for show_key={show_key} speaker={speaker}: {e}")
+        raise e
     
     # min_depth: if we found series-level embeddings, return them - we're done 
     if min_depth and speaker_series_embeddings:
@@ -470,11 +477,16 @@ def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, min
             if not es_speaker_season:
                 print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} season={season}")
                 continue
-            speaker_season_embeddings = getattr(es_speaker_season, vector_field)
+            if settings.es_toggle == 'oss':
+                speaker_season_embeddings = None
+                if vector_field in es_speaker_season:
+                    speaker_season_embeddings = es_speaker_season[vector_field]
+            else:
+                speaker_season_embeddings = getattr(es_speaker_season, vector_field)
             if speaker_season_embeddings:
                 all_speaker_season_embeddings[season] = speaker_season_embeddings
         except Exception as e:
-            print(f"Failed fetch_speaker_season for show_key={show_key} speaker={speaker} season={season}: {e}")
+            print(f"Failed fetch_speaker_season embeddings for show_key={show_key} speaker={speaker} season={season}: {e}")
 
     # min_depth: if we found season-level embeddings for all seasons, return them - we're done 
     if min_depth and len(all_speaker_season_embeddings) == len(seasons):
@@ -491,7 +503,12 @@ def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, min
                 if not es_speaker_episode:
                     print(f"Failed fetch_speaker_episode for show_key={show_key} speaker={speaker} episode_key={episode_key}")
                     continue
-                speaker_episode_embeddings = getattr(es_speaker_episode, vector_field)
+                if settings.es_toggle == 'oss':
+                    speaker_episode_embeddings = None
+                    if vector_field in es_speaker_episode:
+                        speaker_episode_embeddings = es_speaker_episode[vector_field]
+                else:
+                    speaker_episode_embeddings = getattr(es_speaker_episode, vector_field)
                 if speaker_episode_embeddings:
                     all_speaker_episode_embeddings[episode_key] = speaker_episode_embeddings
             except Exception as e:
@@ -801,7 +818,7 @@ def search_speakers_by_topic(topic_grouping: str, topic_key: str, is_parent: boo
     topic_score_path = f'{topic_path}.score'
     s = s.sort(topic_score_path)
 
-    s = s.source(excludes=['lines', 'seasons_to_episode_keys', 'openai_ada002_embeddings'])
+    s = s.source(excludes=['lines', 'seasons_to_episode_keys', 'openai_ada002_embeddings', 'openai_3small_embeddings'])
 
     return s
 
@@ -1424,7 +1441,7 @@ def keywords_by_episode(show_key: str, episode_key: str) -> dict:
 def keywords_by_corpus(show_key: str, season: str = None) -> dict:
     print(f'begin keywords_by_corpus for show_key={show_key} season={season}')
 
-    keys = esr.fetch_doc_ids(ShowKey(show_key), season=season)
+    keys = esr.fetch_doc_ids(ShowKey(show_key), ADMIN_USER, season=season)
 
     if not keys:
         return {}
@@ -1454,13 +1471,13 @@ def populate_focal_speakers(show_key: str, episode_key: str = None):
     if episode_key:
         episode_doc_ids = [f'{show_key}_{episode_key}']
     else:
-        doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
+        doc_ids = esr.fetch_doc_ids(ShowKey(show_key), ADMIN_USER)
         episode_doc_ids = doc_ids['doc_ids']
     
     episodes_to_focal_speakers = {}
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
-        episode_speakers = esr.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
+        episode_speakers = esr.agg_scene_events_by_speaker(ShowKey(show_key), ADMIN_USER, episode_key=episode_key)
         episode_focal_speakers = list(episode_speakers['scene_events_by_speaker'].keys())
         focal_speaker_count = min(len(episode_focal_speakers), 4)
         focal_speakers = episode_focal_speakers[1:focal_speaker_count]
@@ -1479,13 +1496,13 @@ def populate_focal_locations(show_key: str, episode_key: str = None):
     if episode_key:
         episode_doc_ids = [f'{show_key}_{episode_key}']
     else:
-        doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
+        doc_ids = esr.fetch_doc_ids(ShowKey(show_key), ADMIN_USER)
         episode_doc_ids = doc_ids['doc_ids']
     
     episodes_to_focal_locations = {}
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
-        episode_locations = esr.agg_scenes_by_location(ShowKey(show_key), episode_key=episode_key)
+        episode_locations = esr.agg_scenes_by_location(ShowKey(show_key), ADMIN_USER, episode_key=episode_key)
         episode_focal_locations = list(episode_locations['scenes_by_location'].keys())
         focal_location_count = min(len(episode_focal_locations), 4)
         focal_locations = episode_focal_locations[1:focal_location_count]

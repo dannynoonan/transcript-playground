@@ -3,8 +3,8 @@ import os
 import sys
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
-import app.es.es_read_router as esr
-import app.es.es_write_router as esw
+import app.routers.es_read_router as esr
+import app.routers.es_write_router as esw
 
 
 def main():
@@ -21,7 +21,10 @@ def main():
     model_version = args.model_version
     print(f'Begin populate_topic_embeddings script for topic_grouping={topic_grouping} model_vendor={model_vendor} model_version={model_version}')
 
-    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping)
+    # TODO haven't solved for setting this correctly, requires altering exit_if_unauthorized to run 
+    user_dependency = None
+
+    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping, user_dependency)
     topic_keys = [t['topic_key'] for t in topic_grouping_response['topics']]
     print(f'Fetched {len(topic_keys)} topics for topic_grouping={topic_grouping}. Begin generating and writing embeddings to es topics index.')
 
@@ -32,7 +35,7 @@ def main():
     for topic_key in topic_keys:
         attempted_count += 1
         print(f'Begin populate_topic_embeddings for topic_key {topic_key}')
-        topic_embeddings_response = esw.populate_topic_embeddings(topic_grouping, topic_key, model_vendor, model_version)
+        topic_embeddings_response = esw.populate_topic_embeddings(topic_grouping, topic_key, model_vendor, model_version, user_dependency)
         if 'topic' in topic_embeddings_response:
             successful_topics.append(topic_key)
         else:

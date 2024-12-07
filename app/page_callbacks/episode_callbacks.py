@@ -3,9 +3,9 @@ from operator import itemgetter
 import os
 import pandas as pd
 
+from app.auth import ADMIN_USER
 from app.app_metadata import SENTIMENT_DATA_DIR
 import app.data_service.field_flattener as fflat
-import app.es.es_read_router as esr
 import app.fig_builder.plotly_bar as pbar
 import app.fig_builder.plotly_gantt as pgantt
 import app.fig_builder.plotly_line as pline
@@ -16,6 +16,7 @@ import app.fig_meta.color_meta as cm
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.page_builder_service.page_components as pc
 import app.page_builder_service.episode_page_service as eps
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -38,7 +39,7 @@ from app import utils
 def render_episode_summary(show_key: str, episode_key: str):
     print(f'in render_episode_summary, show_key={show_key} episode_key={episode_key}')
 
-    episode_response = esr.fetch_episode(ShowKey(show_key), episode_key)
+    episode_response = esr.fetch_episode(ShowKey(show_key), episode_key, ADMIN_USER)
     if not 'es_episode' in episode_response:
         err_msg = f'no episode matching show_key={show_key} episode_key={episode_key}'
         print(err_msg)
@@ -61,24 +62,24 @@ def render_episode_summary(show_key: str, episode_key: str):
         parent_topics_tfidf = ''
     
     # supplement episode data with line_count and word_count
-    scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), episode_key=episode_key)
+    scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), ADMIN_USER, episode_key=episode_key)
     if 'scene_events_by_speaker' in scene_events_by_speaker_response and '_ALL_' in scene_events_by_speaker_response['scene_events_by_speaker']:
         line_count = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
     else:
         line_count = ''
 
-    dialog_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), episode_key=episode_key)
+    dialog_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), ADMIN_USER, episode_key=episode_key)
     if 'dialog_word_counts' in dialog_word_counts_response and '_ALL_' in dialog_word_counts_response['dialog_word_counts']:
         word_count = round(dialog_word_counts_response['dialog_word_counts']['_ALL_'])
     else:
         word_count = ''
 
     # speakers in episode, for sentiment timeline pulldown
-    # speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+    # speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, ADMIN_USER)
     # speakers_for_episode = speakers_for_episode_response['speaker_episodes']
     # episode_speakers = ['ALL'] + [s['speaker'] for s in speakers_for_episode]
 
-    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti,topics_dnda')
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, ADMIN_USER, extra_fields='topics_mbti,topics_dnda')
     episode_speakers = speakers_for_episode_response['speaker_episodes']
     episode_speaker_options = ['ALL'] + [s['speaker'] for s in episode_speakers]
 
@@ -102,7 +103,7 @@ def render_episode_gantts(show_key: str, episode_key: str, display_layers: list,
     print(f'in render_episode_gantts, show_key={show_key} episode_key={episode_key} display_layers={display_layers}')
 
     # generate timeline data
-    response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
+    response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key, ADMIN_USER)
 
     interval_data = None
     if 'scene_locations' in display_layers:
@@ -135,7 +136,7 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
         return 'No query specified', {}, ''
     
     match_coords = []
-    search_response = esr.search_scene_events(ShowKey(show_key), episode_key=str(episode_key), dialog=qt)
+    search_response = esr.search_scene_events(ShowKey(show_key), ADMIN_USER, episode_key=str(episode_key), dialog=qt)
     scene_count = search_response['scene_count']
     scene_event_count = search_response['scene_event_count']
     if scene_count > 0:
@@ -148,7 +149,7 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
         return f"No episode dialog matching query '{qt}'", {}, ''
 
     # generate timeline data
-    response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key)
+    response = esr.generate_episode_gantt_sequence(ShowKey(show_key), episode_key, ADMIN_USER)
 
     # load full time-series sequence of speakers by episode into a dataframe
     df = pd.DataFrame(response['dialog_timeline'])
@@ -242,7 +243,7 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str, scale_by: s
     print(f'in render_speaker_3d_network_graph, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
     # generate speaker relations data and build 3d network graph
-    speaker_relations_data = esr.speaker_relations_graph(ShowKey(show_key), episode_key)
+    speaker_relations_data = esr.speaker_relations_graph(ShowKey(show_key), episode_key, ADMIN_USER)
 
     for n in speaker_relations_data['nodes']:
         n['color'] = speaker_color_map[n['speaker']].lower() # ugh with the lowercase
@@ -275,7 +276,7 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str, scale_by: s
 def render_speaker_frequency_bar_chart(show_key: str, episode_key: str, scale_by: str, episode_speakers: list, speaker_color_map: dict):
     print(f'in render_speaker_frequency_bar_chart, show_key={show_key} episode_key={episode_key} scale_by={scale_by}')
 
-    # speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti')
+    # speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, ADMIN_USER, extra_fields='topics_mbti')
     # speakers_for_episode = speakers_for_episode_response['speaker_episodes']
     episode_speakers = fflat.flatten_speaker_topics(episode_speakers, 'mbti', 3)
     episode_speaker_names = [s['speaker'] for s in episode_speakers]
@@ -332,12 +333,12 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     print(f'in render_episode_similarity_scatter, show_key={show_key} episode_key={episode_key} mlt_type={mlt_type} display_dt={display_dt}')
 
     if mlt_type == 'tfidf':
-        mlt_response = esr.more_like_this(ShowKey(show_key), episode_key)
+        mlt_response = esr.more_like_this(ShowKey(show_key), episode_key, ADMIN_USER)
         mlt_matches = mlt_response['matches']
         for i, match in enumerate(mlt_matches):
             match['rank'] = i+1
     elif mlt_type == 'openai_embeddings':
-        mlt_response = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key)
+        mlt_response = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, ADMIN_USER)
         mlt_matches = mlt_response['matches'][:30]
         
     df = eps.generate_similar_episodes_df(mlt_matches, all_simple_episodes, episode_key, mlt_type)
@@ -381,8 +382,8 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
     episode_speaker_names = [s['speaker'] for s in episode_speakers]
     
     # NOTE ended up not using this data downstream
-    # mbti_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:meyersBriggsKiersey')
-    # dnda_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', constraints='topic_grouping:dndAlignments')
+    # mbti_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', ADMIN_USER, constraints='topic_grouping:meyersBriggsKiersey')
+    # dnda_distribution_response = esr.agg_numeric_distrib_into_percentiles(ShowKey(show_key), 'speaker_episode_topics', 'raw_score', ADMIN_USER, constraints='topic_grouping:dndAlignments')
 
     # mbti_percent_distrib = mbti_distribution_response["percentile_distribution"]
     # mbti_percent_distrib_list = list(mbti_percent_distrib.values())
@@ -436,7 +437,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
 
     for i, tg in enumerate(topic_groupings):
         # fetch episode topics, load into df, modify / reformat
-        r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg, model_vendor, model_version)
+        r = esr.fetch_episode_topics(ShowKey(show_key), episode_key, tg, model_vendor, model_version, ADMIN_USER)
         episode_topics = r['episode_topics']
         df = pd.DataFrame(episode_topics)
         df = fflat.flatten_and_format_topics_df(df, topic_score_types[i])
@@ -484,7 +485,7 @@ def render_episode_narrative_listing_accordion(show_key: str, expanded_narrative
 # def render_speaker_chatter_scatter(show_key: str, episode_key: str, x_axis: str, y_axis: str):
 #     print(f'in render_speaker_chatter_scatter, show_key={show_key} episode_key={episode_key} x_axis={x_axis} y_axis={y_axis}')
 
-#     speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key)
+#     speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, ADMIN_USER)
 #     speakers_for_episode = speakers_for_episode_response['speaker_episodes']
 #     df = pd.DataFrame(speakers_for_episode, columns=['speaker', 'agg_score', 'scene_count', 'line_count', 'word_count'])
     

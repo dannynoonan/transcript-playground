@@ -2,10 +2,11 @@ from dash import callback, Input, Output
 import dash_bootstrap_components as dbc
 import pandas as pd
 
-import app.es.es_read_router as esr
+from app.auth import ADMIN_USER
 import app.data_service.field_flattener as fflat 
 import app.fig_meta.color_meta as cm
 import app.page_builder_service.page_components as pc
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -23,7 +24,7 @@ def render_speaker_listing_dt(show_key: str):
 # def render_speaker_listing_dt(show_key: str, speaker_qt: str):
 #     print(f'in render_speaker_listing_dt, show_key={show_key} speaker_qt={speaker_qt}')
 
-    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti')
+    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), ADMIN_USER, extra_fields='topics_mbti')
     indexed_speakers = indexed_speakers_response['speakers']
     indexed_speakers = fflat.flatten_speaker_topics(indexed_speakers, 'mbti', limit_per_speaker=3) 
     indexed_speakers = fflat.flatten_and_refine_alt_names(indexed_speakers, limit_per_speaker=1) 
@@ -32,7 +33,7 @@ def render_speaker_listing_dt(show_key: str):
 
 	# # TODO well THIS is inefficient...
     # indexed_speaker_keys = [s['speaker'] for s in indexed_speakers]
-    # speaker_aggs_response = esr.composite_speaker_aggs(show_key)
+    # speaker_aggs_response = esr.composite_speaker_aggs(show_key, ADMIN_USER)
     # speaker_aggs = speaker_aggs_response['speaker_agg_composite']
     # non_indexed_speakers = [s for s in speaker_aggs if s['speaker'] not in indexed_speaker_keys]
 
@@ -40,15 +41,16 @@ def render_speaker_listing_dt(show_key: str):
 
     speakers_df.rename(columns={'speaker': 'character', 'scene_count': 'scenes', 'line_count': 'lines', 'word_count': 'words', 'season_count': 'seasons', 
                                 'episode_count': 'episodes', 'actor_names': 'actor(s)', 'topics_mbti': 'mbti'}, inplace=True)
-    display_cols = ['character', 'aka', 'actor(s)', 'seasons', 'episodes', 'scenes', 'lines', 'words', 'mbti']
+    display_cols = ['character', 'link', 'aka', 'actor(s)', 'seasons', 'episodes', 'scenes', 'lines', 'words', 'mbti']
 
     # replace actor nan values with empty string, flatten list into string
     speakers_df['actor(s)'].fillna('', inplace=True)
     speakers_df['actor(s)'] = speakers_df['actor(s)'].apply(lambda x: ', '.join(x))
+    speakers_df['link'] = speakers_df.apply(lambda x: pc.link_to_speaker(show_key, x['character']), axis=1)
 
     speaker_colors = cm.generate_speaker_color_discrete_map(show_key, speaker_names)
 
-    speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors)
+    speaker_listing_dt = pc.pandas_df_to_dash_dt(speakers_df, display_cols, 'character', speaker_names, speaker_colors, md_cols=['link'])
 
     # print('speaker_listing_dt:')
     # utils.hilite_in_logs(speaker_listing_dt)
@@ -56,7 +58,7 @@ def render_speaker_listing_dt(show_key: str):
     # speaker_matches = []
     # if speaker_qt:
     # 	# speaker_qt_display = speaker_qt
-    #     speaker_search_response = esr.search_speakers(speaker_qt, show_key=show_key)
+    #     speaker_search_response = esr.search_speakers(speaker_qt, ADMIN_USER, show_key=show_key)
     #     speaker_matches = speaker_search_response['speaker_matches']
     #     speaker_matches_dt = None
 

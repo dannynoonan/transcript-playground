@@ -3,8 +3,8 @@ from datetime import datetime as dt
 import os
 import pandas as pd
 
+from app.auth import ADMIN_USER
 from app.app_metadata import ANIMATION_DATA_DIR, GANTT_DATA_DIR
-import app.es.es_read_router as esr
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.fig_builder.plotly_bar as pbar
@@ -18,6 +18,7 @@ import app.data_service.topic_aggregator as tagg
 import app.nlp.embeddings_factory as ef
 import app.page_builder_service.page_components as pc
 import app.page_builder_service.series_page_service as sps
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -41,7 +42,7 @@ def render_series_speakers_gantt(show_key: str, simple_episodes_by_season: dict)
         print(f'loading dataframe at file_path={file_path}')
     else:
         print(f'no file found at file_path={file_path}, running `/esr/generate_series_speaker_gantt_sequence/{show_key}?overwrite_file=True` to generate')
-        esr.generate_series_speaker_gantt_sequence(ShowKey(show_key), overwrite_file=True, limit_cast=True)
+        esr.generate_series_speaker_gantt_sequence(ShowKey(show_key), ADMIN_USER, overwrite_file=True, limit_cast=True)
         if os.path.isfile(file_path):
             speaker_gantt_sequence_df = pd.read_csv(file_path)
             print(f'loading dataframe at file_path={file_path}')
@@ -76,7 +77,7 @@ def render_series_locations_gantt(show_key: str, simple_episodes_by_season: dict
         print(f'loading dataframe at file_path={file_path}')
     else:
         print(f'no file found at file_path={file_path}, running `/esr/generate_series_location_gantt_sequence/{show_key}?overwrite_file=True` to generate')
-        esr.generate_series_location_gantt_sequence(ShowKey(show_key), overwrite_file=True)
+        esr.generate_series_location_gantt_sequence(ShowKey(show_key), ADMIN_USER, overwrite_file=True)
         if os.path.isfile(file_path):
             location_gantt_sequence_df = pd.read_csv(file_path)
             print(f'loading dataframe at file_path={file_path}')
@@ -114,7 +115,7 @@ def render_series_topics_gantt(show_key: str, score_type: str, simple_episodes_b
         print(f'loading dataframe at file_path={file_path}')
     else:
         print(f'no file found at file_path={file_path}, running `/esr/generate_series_topic_gantt_sequence/{show_key}?overwrite_file=True` with params to generate')
-        esr.generate_series_topic_gantt_sequence(ShowKey(show_key), overwrite_file=True, topic_grouping=topic_grouping, 
+        esr.generate_series_topic_gantt_sequence(ShowKey(show_key), ADMIN_USER, overwrite_file=True, topic_grouping=topic_grouping, 
                                                  topic_threshold=topic_threshold, score_type=score_type)
         if os.path.isfile(file_path):
             topic_gantt_sequence_df = pd.read_csv(file_path)
@@ -167,8 +168,8 @@ def render_series_search_gantt(show_key: str, qt: str, simple_episodes_by_season
         return '', {}, {}
     
     # execute search query and filter response into series gantt charts
-    series_gantt_response = esr.generate_series_speaker_gantt_sequence(ShowKey(show_key))
-    search_response = esr.search_scene_events(ShowKey(show_key), dialog=qt)
+    series_gantt_response = esr.generate_series_speaker_gantt_sequence(ShowKey(show_key), ADMIN_USER)
+    search_response = esr.search_scene_events(ShowKey(show_key), ADMIN_USER, dialog=qt)
     episode_count = search_response['episode_count']
     scene_event_count = search_response['scene_event_count']
     response_text = f"{scene_event_count} line(s) in {episode_count} episode(s) matching query '{qt}'"
@@ -205,7 +206,7 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color
     elif hilite == 'focal_speakers':
         hilite_color_map = speaker_color_map
     elif hilite == 'focal_locations':
-        scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key))
+        scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key), ADMIN_USER)
         scenes_by_location = scenes_by_location_response['scenes_by_location']
         locations = utils.truncate_dict(scenes_by_location, 500, start_index=1)
         hilite_color_map = {loc:cm.colors[i % 10] for i, loc in enumerate(locations)}
@@ -266,7 +267,7 @@ def render_series_topic_pies(show_key: str, topic_grouping: str, score_type: str
     ##### TODO begin optimization block 
     episode_topic_lists = []
     for episode in all_simple_episodes:
-        episode_topics_response = esr.fetch_episode_topics(ShowKey(show_key), episode['episode_key'], topic_grouping, model_vendor, model_version)
+        episode_topics_response = esr.fetch_episode_topics(ShowKey(show_key), episode['episode_key'], topic_grouping, model_vendor, model_version, ADMIN_USER)
         episode_topic_lists.append(episode_topics_response['episode_topics'])
 
     series_topics_df, series_parent_topics_df = tagg.generate_topic_aggs_from_episode_topics(episode_topic_lists, max_rank=20, max_parent_repeats=2)
@@ -303,7 +304,7 @@ def render_series_topic_episodes_dt(show_key: str, display_dt_for_topic: str, to
 
     # NOTE assembling entire parent-child topic hierarchy here, but only using one branch of the tree
     child_topics = []
-    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping)
+    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping, ADMIN_USER)
     for t in topic_grouping_response['topics']:
         # only process topics that have parents (ignore the parents themselves)
         if not t['parent_key']:
@@ -318,7 +319,8 @@ def render_series_topic_episodes_dt(show_key: str, display_dt_for_topic: str, to
     topic_episodes_df = pd.DataFrame(columns=columns)
     # for parent_topic, child_topics in parent_to_leaf_topics.items():
     for topic in child_topics:
-        episodes_by_topic = esr.find_episodes_by_topic(ShowKey(show_key), topic_grouping, topic)
+        print(f'processing topic={topic}')
+        episodes_by_topic = esr.find_episodes_by_topic(ShowKey(show_key), topic_grouping, topic, ADMIN_USER)
         df = pd.DataFrame(episodes_by_topic['episode_topics'])
         df['parent_topic'] = display_dt_for_topic
         df = df[columns]
@@ -349,7 +351,7 @@ def render_series_cluster_scatter(show_key: str, num_clusters: int, display_dt: 
     utils.hilite_in_logs(f'callback invoked: render_series_cluster_scatter ts={callback_start_ts} show_key={show_key} num_clusters={num_clusters} display_dt={display_dt}')
 
     num_clusters = int(num_clusters)
-    vector_field = 'openai_ada002_embeddings'
+    vector_field = 'openai_3small_embeddings'
 
     # fetch embeddings for all show episodes 
     s = esqb.fetch_series_embeddings(show_key, vector_field)
@@ -430,7 +432,7 @@ def render_speaker_frequency_bar_chart(show_key: str, tally_by: str, season: str
         print(f'loading dataframe at file_path={file_path}')
     else:
         print(f'no file found at file_path={file_path}, running `/esr/generate_speaker_line_chart_sequences/{show_key}?overwrite_file=True` to generate')
-        esr.generate_speaker_line_chart_sequences(ShowKey(show_key), overwrite_file=True)
+        esr.generate_speaker_line_chart_sequences(ShowKey(show_key), ADMIN_USER, overwrite_file=True)
         if os.path.isfile(file_path):
             df = pd.read_csv(file_path)
             print(f'loading dataframe at file_path={file_path}')

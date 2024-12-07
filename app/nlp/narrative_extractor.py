@@ -1,6 +1,6 @@
-from app.show_metadata import ShowKey
-import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import MIN_SPEAKER_LINES, MIN_SPEAKER_LINE_RATIOS
+import app.routers.es_read_router as esr
+from app.show_metadata import ShowKey
 
 
 def extract_narrative_sequences(show_key: ShowKey, episode_key: str) -> list:

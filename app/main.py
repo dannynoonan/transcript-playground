@@ -1,43 +1,43 @@
-from fastapi import FastAPI, status, Depends, HTTPException
+from fastapi import FastAPI
 from fastapi.middleware.wsgi import WSGIMiddleware
 from fastapi.staticfiles import StaticFiles
 from mangum import Mangum
 from tortoise.contrib.fastapi import register_tortoise
 from tortoise import Tortoise
 
-from app.auth import auth_app, user_dependency
 from app.config import DATABASE_URL
 from app.dash_pages import dash_pages_app
-from app.database.connect import connect_to_database
-import app.database.dao as dao
-from app.es.es_admin_router import esa_app
-from app.es.es_bulk_write_router import esbw_app
-from app.es.es_read_router import esr_app
-from app.es.es_write_router import esw_app
-from app.etl.etl_router import etl_app
-import app.pydantic_models as pymod
-from app.show_metadata import ShowKey, show_metadata
-from app.web.web_router import web_app
+from app.routers.auth_router import auth_app
+# from app.routers.db_admin_router import dba_app
+# from app.routers.db_read_router import dbr_app
+# from app.routers.es_admin_router import esa_app
+# from app.routers.es_bulk_write_router import esbw_app
+from app.routers.es_read_router import esr_app
+from app.routers.es_write_router import esw_app
+from app.routers.etl_router import etl_app
+from app.routers.web_router import web_app
 
 
 app = FastAPI()
 app.include_router(auth_app)
 app.include_router(esr_app)
+# app.include_router(dbr_app)
 app.include_router(web_app)
 app.include_router(esw_app)
-app.include_router(esbw_app)
+# app.include_router(esbw_app)
 app.include_router(etl_app)
-app.include_router(esa_app)
+# app.include_router(dba_app)
+# app.include_router(esa_app)
 app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 app.mount('/dash_pages', WSGIMiddleware(dash_pages_app.server))
 
 
+# NOTE was I using this during a brief fling with Lambda deployment?
 handler = Mangum(app)
 
 
 register_tortoise(
     app,
-    # db_url="sqlite://db.sqlite3",
     db_url=DATABASE_URL,
     modules={"models": ["app.models"]},
     generate_schemas=True,
@@ -59,75 +59,13 @@ Tortoise.init_models(["app.models"], "models")
 
 
 
-
-# @app.get('/', status_code=status.HTTP_200_OK, tags=['Admin'])
-# async def user(user: user_dependency):
-#     if user is None:
-#         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
-#     return {'user': user} 
-
-
-
-
-@app.get("/", tags=['Admin'])
-def root():
-    return {"message": "Welcome to transcript playground"}
-
-
-
 ###################### METADATA ###########################
 
-@app.get("/show_meta/{show_key}", tags=['Metadata'])
-def fetch_show_meta(show_key: ShowKey, user: user_dependency):
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
-    show_meta = show_metadata[show_key]
-    return {show_key: show_meta}
-
-
-
-###################### DB ADMIN ###########################
-
-@app.get("/db_connect", tags=['Admin'])
-async def db_connect(user: user_dependency):
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authentication failed')
-    await connect_to_database()
-    return {"DB connection": "Indeed"}
-
-
-@app.get("/backup_db", tags=['Admin'])
-async def backup_db(user: user_dependency):
-    if user is None:
-        raise HTTPException(status_code=401, detail='Authentication failed')
-    await connect_to_database()
-    output, error = await dao.backup_db()
-    return {"Output": str(output), "Error": str(error)}
-
-
-
-###################### DB READ / ID-BASED LOOKUP ###########################
-
-@app.get("/db_episode/{show_key}/{episode_key}", tags=['DB Reader'])
-async def fetch_db_episode(show_key: ShowKey, episode_key: str):
-    # fetch episode from db
-    episode = None
-    try:
-        episode = await dao.fetch_episode(show_key.value, episode_key, fetch_related=['scenes', 'events'])
-    except Exception as e:
-        return {"Error": f"Failure to fetch Episode having show_key={show_key} external_key={episode_key} (have run /load_episode_listing?): {e}"}
-    if not episode:
-        return {"Error": f"No Episode found having show_key={show_key} external_key={episode_key}. You may need to run /load_episode_listing first."}
-    
-    episode_pyd = await pymod.EpisodePydantic.from_tortoise_orm(episode)
-
-    # NOTE this generates json versions of pydantic model, not sure where to put this code 
-    # episode_json = episode_pyd.model_dump_json()
-    # print(f'episode_json={episode_json}')
-    # with open(f"episode_{show_key}_{episode_key}.json", "w") as file:
-    #     json.dump(episode_json, file, indent=4)
-
-    return {"show_meta": show_metadata[show_key], "episode": episode_pyd}
+# @app.get("/show_meta/{show_key}", tags=['Metadata'])
+# def fetch_show_meta(show_key: ShowKey, user: user_dependency):
+#     exit_if_unauthorized(user, level='admin')
+#     show_meta = show_metadata[show_key]
+#     return {show_key: show_meta}
 
 
 

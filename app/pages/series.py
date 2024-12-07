@@ -3,11 +3,12 @@ from dash import dcc, html
 import dash_bootstrap_components as dbc
 from datetime import datetime as dt
 
-import app.es.es_read_router as esr
+from app.auth import ADMIN_USER
 import app.fig_meta.color_meta as cm
 import app.page_builder_service.series_page_service as sps
 from app.page_callbacks.series_callbacks import *
 import app.page_builder_service.page_components as pc
+import app.routers.es_read_router as esr
 from app.show_metadata import show_metadata, ShowKey
 from app import utils
 
@@ -23,13 +24,13 @@ def layout(show_key: str) -> html.Div:
     ##################### BEGIN FETCH ON PAGE LOAD #####################
     
     # speaker_color_map - NOTE this could probably be generated just as quickly with /fetch_indexed_speakers and avoid the /agg_episodes_by_speaker call
-    series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(ShowKey(show_key))
+    series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(ShowKey(show_key), ADMIN_USER)
     all_series_speakers = list(series_speaker_episode_counts_response['episodes_by_speaker'].keys())
     speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, all_series_speakers)
 
     # indexed_speakers - limit to regular and recurring cast
     series_speaker_names = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
-    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), extra_fields='topics_mbti,topics_dnda', speakers=','.join(series_speaker_names))
+    indexed_speakers_response = esr.fetch_indexed_speakers(ShowKey(show_key), ADMIN_USER, extra_fields='topics_mbti,topics_dnda', speakers=','.join(series_speaker_names))
     indexed_speakers = indexed_speakers_response['speakers']
     
     # series summary and season episode listing data
@@ -38,9 +39,9 @@ def layout(show_key: str) -> html.Div:
     season_accordion_items = sps.generate_season_episodes_accordion_items(show_key, all_season_episode_data, speaker_color_map)
 
     # episode data, in two formats for now
-    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key), ADMIN_USER)
     all_simple_episodes = simple_episodes_response['episodes']
-    simple_episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
+    simple_episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key), ADMIN_USER)
     simple_episodes_by_season = simple_episodes_by_season_response['episodes_by_season']
 
     # topic listing data

@@ -3,9 +3,10 @@ from dash import dcc, html
 import dash_bootstrap_components as dbc
 from datetime import datetime as dt
 
-import app.es.es_read_router as esr
+from app.auth import ADMIN_USER
 from app.page_callbacks.bertopic_model_callbacks import *
 import app.page_builder_service.page_components as pc
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -21,11 +22,11 @@ def layout(show_key: str, bertopic_model_id: str) -> html.Div:
     ##################### BEGIN FETCH ON PAGE LOAD #####################
 
     # all seasons
-    all_seasons_response = esr.list_seasons(ShowKey(show_key))
+    all_seasons_response = esr.list_seasons(ShowKey(show_key), ADMIN_USER)
     all_seasons = all_seasons_response['seasons']
 
     # all bertopic models
-    bertopic_model_list_response = esr.list_bertopic_models(show_key)
+    bertopic_model_list_response = esr.list_bertopic_models(show_key, ADMIN_USER)
     bertopic_model_options = bertopic_model_list_response['bertopic_model_ids']
 
     ##################### END FETCH ON PAGE LOAD #####################

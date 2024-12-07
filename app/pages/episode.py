@@ -3,11 +3,12 @@ from dash import dcc, html
 import dash_bootstrap_components as dbc
 from datetime import datetime as dt
 
-import app.es.es_read_router as esr
+from app.auth import ADMIN_USER
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS
 import app.page_builder_service.episode_page_service as eps
 from app.page_callbacks.episode_callbacks import *
 import app.page_builder_service.page_components as pc
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -23,21 +24,21 @@ def layout(show_key: str, episode_key: str) -> html.Div:
     ##################### BEGIN FETCH ON PAGE LOAD #####################
 
     # all seasons
-    all_seasons_response = esr.list_seasons(ShowKey(show_key))
+    all_seasons_response = esr.list_seasons(ShowKey(show_key), ADMIN_USER)
     all_seasons = all_seasons_response['seasons']
 
     # all_simple_episodes, episode_dropdown_options 
-    all_simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+    all_simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key), ADMIN_USER)
     all_simple_episodes = all_simple_episodes_response['episodes']
     episode_dropdown_options = eps.generate_episode_dropdown_options(show_key, all_simple_episodes)
 
     # episode_speakers, speaker_color_map
-    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, extra_fields='topics_mbti,topics_dnda')
+    speakers_for_episode_response = esr.fetch_speakers_for_episode(ShowKey(show_key), episode_key, ADMIN_USER, extra_fields='topics_mbti,topics_dnda')
     episode_speakers = speakers_for_episode_response['speaker_episodes']
     speaker_color_map = cm.generate_speaker_color_discrete_map(show_key, [s['speaker'] for s in episode_speakers])
 
     # series summary and season episode listing data
-    narrative_sequences_response = esr.fetch_narrative_sequences(ShowKey(show_key), episode_key)
+    narrative_sequences_response = esr.fetch_narrative_sequences(ShowKey(show_key), episode_key, ADMIN_USER)
     narrative_sequences = narrative_sequences_response['narrative_sequences']
     narrative_accordion_items = eps.generate_episode_narrative_accordion_items(show_key, narrative_sequences)
 
