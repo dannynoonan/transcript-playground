@@ -16,12 +16,13 @@ from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS
 from app.show_metadata import ShowKey, SPEAKERS_TO_IGNORE
 
 
-esbw_app = APIRouter(tags=['ES Bulk Writer'])
+esbw_app = APIRouter(prefix='/esw', tags=['ES Bulk Writer'])
 
 
 ##################### Legacy batch es writes, ported over to ./scripts (but still referenced by airflow dags) #######################
 
-@esbw_app.get("/esw/index_all_episodes/{show_key}")
+# @esbw_app.get("/index_all_episodes/{show_key}")
+@esbw_app.post("/index_all_episodes")
 async def index_all_episodes(show_key: ShowKey, user: user_dependency, 
                              overwrite_all: bool = False):
     '''
@@ -74,7 +75,8 @@ async def index_all_episodes(show_key: ShowKey, user: user_dependency,
     }
 
 
-@esbw_app.get("/esw/populate_all_episode_embeddings/{show_key}/{model_vendor}/{model_version}")
+# @esbw_app.get("/populate_all_episode_embeddings/{show_key}/{model_vendor}/{model_version}")
+@esbw_app.post("/populate_all_episode_embeddings")
 def populate_all_episode_embeddings(show_key: ShowKey, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Bulk run of `/esw/populate_episode_embeddings` for all episodes of a given show
@@ -82,21 +84,22 @@ def populate_all_episode_embeddings(show_key: ShowKey, model_vendor: str, model_
     '''
     exit_if_unauthorized(user, level='admin')
     
-    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
+    doc_ids = esr.fetch_doc_ids(ShowKey(show_key), user)
     episode_doc_ids = doc_ids['doc_ids']
     processed_episode_keys = []
     failed_episode_keys = []
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
         try:
-            esw.populate_episode_embeddings(ShowKey(show_key), episode_key, model_vendor, model_version)
+            esw.populate_episode_embeddings(ShowKey(show_key), episode_key, model_vendor, model_version, user)
             processed_episode_keys.append(episode_key)
         except Exception:
             failed_episode_keys.append(episode_key)
     return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
 
 
-@esbw_app.get("/esw/populate_all_episode_relations/{show_key}/{model_vendor}/{model_version}")
+# @esbw_app.get("/populate_all_episode_relations/{show_key}/{model_vendor}/{model_version}")
+@esbw_app.post("/populate_all_episode_relations")
 def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str, user: user_dependency, 
                                    limit: int = 30):
     '''
@@ -108,16 +111,16 @@ def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_v
     if (model_vendor, model_version) not in ACTIVE_VENDOR_VERSIONS and (model_vendor, model_version) != ('es','mlt'):
         return {"error": f'invalid model_vendor:model_version combo {model_vendor}:{model_version}'}
     
-    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
+    doc_ids = esr.fetch_doc_ids(ShowKey(show_key), user)
     episode_doc_ids = doc_ids['doc_ids']
     
     episodes_to_relations = {}
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
         if (model_vendor, model_version) == ('es','mlt'):
-            similar_episodes = esr.more_like_this(ShowKey(show_key), episode_key)
+            similar_episodes = esr.more_like_this(ShowKey(show_key), episode_key, user)
         else:
-            similar_episodes = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
+            similar_episodes = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, user, model_vendor=model_vendor, model_version=model_version)
         # only keep the episode keys and corresponding scores 
         # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
         episodes_to_relations[doc_id] = similar_episodes
@@ -127,7 +130,8 @@ def populate_all_episode_relations(show_key: ShowKey, model_vendor: str, model_v
     return {"episodes_to_relations": episodes_to_relations}
 
 
-@esbw_app.get("/esw/populate_topic_grouping_embeddings/{topic_grouping}/{model_vendor}/{model_version}")
+# @esbw_app.get("/populate_topic_grouping_embeddings/{topic_grouping}/{model_vendor}/{model_version}")
+@esbw_app.post("/populate_topic_grouping_embeddings")
 def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Generate vector embedding for all topics in topic_grouping using pre-trained Word2Vec and Transformer models
@@ -135,7 +139,7 @@ def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, m
     '''
     exit_if_unauthorized(user, level='admin')
     
-    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping)
+    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping, user)
     topic_keys = [t['topic_key'] for t in topic_grouping_response['topics']]
     attempted_count = 0
     successful_topics = []
@@ -143,7 +147,7 @@ def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, m
     failure_messages = []
     for topic_key in topic_keys:
         attempted_count += 1
-        topic_embeddings_response = esw.populate_topic_embeddings(topic_grouping, topic_key, model_vendor, model_version)
+        topic_embeddings_response = esw.populate_topic_embeddings(topic_grouping, topic_key, model_vendor, model_version, user)
         if 'topic' in topic_embeddings_response:
             successful_topics.append(topic_key)
         else:
@@ -154,7 +158,8 @@ def populate_topic_grouping_embeddings(topic_grouping: str, model_vendor: str, m
     return {'attempted_count': attempted_count, 'successful_topics': successful_topics, 'failed_topics': failed_topics, 'failure_messages': failure_messages}
 
 
-@esbw_app.get("/esw/index_all_speakers/{show_key}")
+# @esbw_app.get("/index_all_speakers/{show_key}")
+@esbw_app.post("/index_all_speakers")
 def index_all_speakers(show_key: ShowKey, user: user_dependency):
     '''
     Bulk run of `/esw/index_speaker` for all valid speakers with lines in a given show
@@ -162,7 +167,7 @@ def index_all_speakers(show_key: ShowKey, user: user_dependency):
     '''
     exit_if_unauthorized(user, level='admin')
     
-    response = esr.agg_episodes_by_speaker(show_key)
+    response = esr.agg_episodes_by_speaker(show_key, user)
     speaker_episode_counts = response['episodes_by_speaker']
     valid_speakers = [s for s,_ in speaker_episode_counts.items() if '+' not in s and s not in SPEAKERS_TO_IGNORE]
     attempt_count = 0
@@ -171,7 +176,7 @@ def index_all_speakers(show_key: ShowKey, user: user_dependency):
     for speaker in valid_speakers:
         attempt_count += 1
         try:
-            response = esw.index_speaker(show_key, speaker)
+            response = esw.index_speaker(show_key, speaker, user)
             if "speaker" in response:
                 print(f"Successfully indexed speaker={speaker}")
                 successful.append(speaker)
@@ -185,7 +190,8 @@ def index_all_speakers(show_key: ShowKey, user: user_dependency):
     return {"attempt_count": attempt_count, "successful": successful, "failed": failed}
 
 
-@esbw_app.get("/esw/populate_all_speaker_embeddings/{show_key}/{model_vendor}/{model_version}")
+# @esbw_app.get("/populate_all_speaker_embeddings/{show_key}/{model_vendor}/{model_version}")
+@esbw_app.post("/populate_all_speaker_embeddings")
 def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Generate vector embedding for all indexed speakers for a show using pre-trained Word2Vec and Transformer models
@@ -207,7 +213,7 @@ def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_
     speaker_responses = {}
     for speaker in speakers:
         try:
-            response = esw.populate_speaker_embeddings(show_key, speaker, model_vendor, model_version)
+            response = esw.populate_speaker_embeddings(show_key, speaker, model_vendor, model_version, user)
             speaker_responses[speaker] = response
             request_count += response['attempted_count']
             success_count += len(response['successful'])
@@ -221,7 +227,8 @@ def populate_all_speaker_embeddings(show_key: ShowKey, model_vendor: str, model_
             "super_fails": super_fails, "speaker_responses": speaker_responses}
 
 
-@esbw_app.get("/esw/populate_all_episode_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}")
+# @esbw_app.get("/populate_all_episode_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}")
+@esbw_app.post("/populate_all_episode_topics")
 def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     For specified topic_grouping, generate and store topic mappings for all series episodes
@@ -236,7 +243,7 @@ def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_ve
     for doc_id in episode_doc_ids:
         episode_key = doc_id.split('_')[-1]
         try:
-            esw.populate_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version)
+            esw.populate_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version, user)
             processed_episode_keys.append(episode_key)
         except Exception:
             failed_episode_keys.append(episode_key)
@@ -244,7 +251,8 @@ def populate_all_episode_topics(show_key: ShowKey, topic_grouping: str, model_ve
     return {"processed_episode_keys": processed_episode_keys, "failed_episode_keys": failed_episode_keys}
 
 
-@esbw_app.get("/esw/populate_episode_topic_tfidf_scores/{show_key}/{topic_grouping}/{model_vendor}/{model_version}")
+# @esbw_app.get("/populate_episode_topic_tfidf_scores/{show_key}/{topic_grouping}/{model_vendor}/{model_version}")
+@esbw_app.post("/populate_episode_topic_tfidf_scores")
 def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     For specified topic_grouping, calculate 'tfidf'-like scores for all episode_topics and store in `tfidf_score` field
@@ -271,7 +279,7 @@ def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, 
             print(f'storing tfidf topics at episode level for {e_key}')
             tfidf_sorted_episode_topics = sorted(episode_topics, key=itemgetter('tfidf_score'), reverse=True)
             simple_episode_topics = fflat.flatten_es_topics(tfidf_sorted_episode_topics)
-            esw.populate_episode_tfidf_topics(show_key, e_key, topic_grouping, simple_episode_topics)
+            esw.populate_episode_tfidf_topics(show_key, e_key, topic_grouping, simple_episode_topics, user)
             successful_episode_keys.append(e_key)
         else:
             successful_episode_keys.append(e_key)
@@ -279,7 +287,8 @@ def populate_episode_topic_tfidf_scores(show_key: ShowKey, topic_grouping: str, 
     return {"attempted": len(ekey_tkey_scores), "successful": len(successful_episode_keys), "successful_episode_keys": successful_episode_keys}
 
 
-@esbw_app.get("/esw/populate_all_speaker_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}")
+# @esbw_app.get("/populate_all_speaker_topics/{show_key}/{topic_grouping}/{model_vendor}/{model_version}")
+@esbw_app.post("/populate_all_speaker_topics")
 def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency):
     '''
     Map speakers to topics (using knn vector cosine similarity) for all indexed speakers for a show 
@@ -301,7 +310,7 @@ def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_ve
     for speaker in speakers:
         attempt_count += 1
         try:
-            response = esw.populate_speaker_topics(show_key, speaker, topic_grouping, model_vendor, model_version)
+            response = esw.populate_speaker_topics(show_key, speaker, topic_grouping, model_vendor, model_version, user)
             if "error" in response:
                 print(f"Failed to populate_speaker_topics for speaker={speaker}: {response['error']}")
                 failed_speakers.append(speaker)
@@ -318,7 +327,8 @@ def populate_all_speaker_topics(show_key: ShowKey, topic_grouping: str, model_ve
             "successful_speakers": successful_speakers, "failed_speakers": failed_speakers}
 
 
-@esbw_app.get("/esw/populate_all_episode_narratives/{show_key}/")
+# @esbw_app.get("/populate_all_episode_narratives/{show_key}/")
+@esbw_app.post("/populate_all_episode_narratives")
 def populate_all_episode_narratives(show_key: ShowKey, user: user_dependency):
     '''
     Generate and populate all narrative sequences for a show
@@ -329,10 +339,10 @@ def populate_all_episode_narratives(show_key: ShowKey, user: user_dependency):
     successful_keys = []
     failed_keys = []
 
-    doc_ids_response = esr.fetch_doc_ids(ShowKey(show_key))
+    doc_ids_response = esr.fetch_doc_ids(ShowKey(show_key), user)
     for doc_id in doc_ids_response['doc_ids']:
         episode_key = doc_id.split('_')[1]
-        narrative_sequences_response = esw.populate_episode_narratives(show_key, episode_key)
+        narrative_sequences_response = esw.populate_episode_narratives(show_key, episode_key, user)
         if 'narrative_sequences' not in narrative_sequences_response:
             print(f'Failed to populate_episode_narratives for show_key={show_key} episode_key={episode_key}')
             failed_keys.append(episode_key)
@@ -342,7 +352,8 @@ def populate_all_episode_narratives(show_key: ShowKey, user: user_dependency):
     return {"successful_keys": successful_keys, "failed_keys": failed_keys}
 
 
-@esbw_app.get("/esw/populate_bertopic_model_clusters/{show_key}/")
+# @esbw_app.get("/populate_bertopic_model_clusters/{show_key}/")
+@esbw_app.post("/populate_bertopic_model_clusters")
 def populate_bertopic_model_clusters(show_key: ShowKey, user: user_dependency):
     '''
     Load each bertopic_model's csv into dataframe, upsert referenced episode_narratives with mapping back to bertopic_model
@@ -351,19 +362,19 @@ def populate_bertopic_model_clusters(show_key: ShowKey, user: user_dependency):
     exit_if_unauthorized(user, level='admin')
     
     # load bertopic_data files 
-    bertopic_model_list_response = esr.list_bertopic_models(show_key)
+    bertopic_model_list_response = esr.list_bertopic_models(show_key, user)
     bertopic_model_ids = bertopic_model_list_response['bertopic_model_ids']
     # NOTE umap_metric was supported previously, but the way I'm setting es_episode_narrative.cluster_memberships below precludes restricting by umap_metric 
 
     # initialize dict of narrative-speaker-groups per episode
     epnarr_spkrgrps_to_model_clusters = {}
-    simple_episodes_response = esr.fetch_simple_episodes(show_key)
+    simple_episodes_response = esr.fetch_simple_episodes(show_key, user)
     if 'episodes' not in simple_episodes_response:
         print(f'Failure to /populate_bertopic_model_clusters for show_key={show_key}: /fetch_simple_episodes returned no episodes')
         return None
     for episode in simple_episodes_response['episodes']:
         e_key = episode['episode_key']
-        narrative_sequences_response = esr.fetch_narrative_sequences(show_key, e_key)
+        narrative_sequences_response = esr.fetch_narrative_sequences(show_key, e_key, user)
         if 'narrative_sequences' not in narrative_sequences_response:
             print(f'Unable to /populate_bertopic_model_clusters for e_key={e_key} show_key={show_key}: /fetch_narrative_sequences returned no narrative_sequences. Skipping episode.')
             continue
@@ -414,7 +425,7 @@ def populate_bertopic_model_clusters(show_key: ShowKey, user: user_dependency):
     return {"attempt_count": attempt_count, "success_count": success_count, "failure_count": failure_count}
 
 
-# @esbw_app.get("/esw/generate_all_episode_polarity_sentiments/{show_key}")
+# @esbw_app.get("/generate_all_episode_polarity_sentiments/{show_key}")
 # def generate_all_episode_polarity_sentiments(show_key: ShowKey, scene_level: bool = False, scene_event_level: bool = False):
 #     '''
 #     Generate and  populate nltk polarity sentiment for all episodes in series

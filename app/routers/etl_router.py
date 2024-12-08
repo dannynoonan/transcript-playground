@@ -16,7 +16,8 @@ import app.utils as utils
 etl_app = APIRouter(prefix='/etl', tags=['ETL'])
 
 
-@etl_app.get("/copy_episode_listing/{show_key}")
+# @etl_app.get("/copy_episode_listing/{show_key}")
+@etl_app.post("/copy_episode_listing")
 def copy_episode_listing(show_key: ShowKey, user: user_dependency):
     '''
     Copies html of external episode listing page (as configured in `show_metadata`) to `source/episode_listings/` 
@@ -38,7 +39,8 @@ def copy_episode_listing(show_key: ShowKey, user: user_dependency):
     return {'show_key': show_key.value, 'file_path': file_path, 'backup_file_path': backup_file_path, 'episode_listing_html': episode_listing_html.text}
 
 
-@etl_app.get("/copy_transcript_sources/{show_key}")
+# @etl_app.get("/copy_transcript_sources/{show_key}")
+@etl_app.post("/copy_transcript_sources")
 def copy_transcript_sources(show_key: ShowKey, user: user_dependency):
     '''
     Copies html of external transcript url listing page (as configured in `show_metadata`) to `source/transcript_sources/`
@@ -62,7 +64,8 @@ def copy_transcript_sources(show_key: ShowKey, user: user_dependency):
     return {'show_key': show_key.value, 'file_path': file_path, 'backup_file_path': backup_file_path, 'transcript_source_html': transcript_source_html.text}
     
 
-@etl_app.get("/copy_transcript_from_source/{show_key}/{episode_key}")
+# @etl_app.get("/copy_transcript_from_source/{show_key}/{episode_key}")
+@etl_app.post("/copy_transcript_from_source")
 async def copy_transcript_from_source(show_key: ShowKey, episode_key: str, user: user_dependency):
     '''
     Copies html of external episode page (fetched from `TranscriptSource`) to `source/episodes/`
@@ -99,7 +102,8 @@ async def copy_transcript_from_source(show_key: ShowKey, episode_key: str, user:
     return {'show_key': show_key.value, 'episode_key': episode_key, 'file_path': file_path, 'backup_file_path': backup_file_path, 'transcript_html': transcript_html.text}
 
 
-@etl_app.get("/copy_all_transcripts_from_source/{show_key}")
+# @etl_app.get("/copy_all_transcripts_from_source/{show_key}")
+@etl_app.post("/copy_all_transcripts_from_source")
 async def copy_all_transcripts_from_source(show_key: ShowKey, user: user_dependency):
     '''
     Bulk copies html of external episode pages (fetched from `TranscriptSource` entities) to `source/episodes/`. Bulk equivalent of `/etl/copy_transcript_from_source`.
@@ -159,7 +163,8 @@ async def copy_all_transcripts_from_source(show_key: ShowKey, user: user_depende
 
 ################### WRITE EXTERNALLY SOURCED EPISODE LISTING METADATA TO DB ###################
 
-@etl_app.get("/load_episode_listing/{show_key}")
+# @etl_app.get("/load_episode_listing/{show_key}")
+@etl_app.post("/load_episode_listing")
 async def load_episode_listing(show_key: ShowKey, user: user_dependency, write_to_db: bool = False):
     '''
     Load raw episode listing html from `source/episode_listings/` into transcript_db. Initializes `Episode` db entities in Postgres.
@@ -198,7 +203,8 @@ async def load_episode_listing(show_key: ShowKey, user: user_dependency, write_t
         return {'episode_count': len(episodes_excl), 'write_to_db': write_to_db, 'episodes': episodes_excl}
 
 
-@etl_app.get("/load_transcript_sources/{show_key}")
+# @etl_app.get("/load_transcript_sources/{show_key}")
+@etl_app.post("/load_transcript_sources")
 async def load_transcript_sources(show_key: ShowKey, user: user_dependency, write_to_db: bool = False):
     '''
     Load raw transcript source html from `source/transcript_sources/` into transcript_db. Initializes `TranscriptSource` db entities.
@@ -222,7 +228,8 @@ async def load_transcript_sources(show_key: ShowKey, user: user_dependency, writ
         return {'transcript_sources_count': len(transcript_sources), 'transcript_sources': transcript_sources}
 
 
-@etl_app.get("/load_transcript/{show_key}/{episode_key}")
+# @etl_app.get("/load_transcript/{show_key}/{episode_key}")
+@etl_app.post("/load_transcript")
 async def load_transcript(show_key: ShowKey, episode_key: str, user: user_dependency, write_to_db: bool = False):
     '''
     Parse and load transcript html from `source/episodes/` to transcript_db. Generates `Scene` and `SceneEvent` db entities.
@@ -276,7 +283,8 @@ async def load_transcript(show_key: ShowKey, episode_key: str, user: user_depend
         return {'show': show_metadata[show_key], 'episode': episode_excl}
 
 
-@etl_app.get("/load_all_transcripts/{show_key}")
+# @etl_app.get("/load_all_transcripts/{show_key}")
+@etl_app.post("/load_all_transcripts")
 async def load_all_transcripts(show_key: ShowKey, user: user_dependency, overwrite_all: bool = False):
     '''
     Parse and load transcript html from `source/episodes/` to transcript_db. Bulk equivalent of `/etl/load_transcript/`.

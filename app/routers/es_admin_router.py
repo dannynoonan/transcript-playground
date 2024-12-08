@@ -8,7 +8,8 @@ import app.es.es_query_builder as esqb
 esa_app = APIRouter(prefix='/esa', tags=['Admin'])
 
 
-@esa_app.get("/init_es")
+# @esa_app.get("/init_es")
+@esa_app.post("/init_es")
 def init_es(user: user_dependency, index_name: str = None):
     '''
     Run this to explicitly define index mappings anytime an index is blown away. Not doing so will result in an index being auto-created with the wrong
@@ -61,7 +62,8 @@ def init_es(user: user_dependency, index_name: str = None):
     return {"initialized_indexes": initialized_indexes}
 
 
-@esa_app.get("/does_index_exist/{index_name}")
+# @esa_app.get("/does_index_exist/{index_name}")
+@esa_app.post("/does_index_exist")
 def does_index_exist(index_name: str, user: user_dependency):
     '''
     Verify that an index exists 

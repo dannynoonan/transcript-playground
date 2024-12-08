@@ -8,7 +8,8 @@ from app.database.connect import connect_to_database
 dba_app = APIRouter(prefix='/dba', tags=['Admin'])
 
 
-@dba_app.get("/db_connect")
+# @dba_app.get("/db_connect")
+@dba_app.post("/db_connect")
 async def db_connect(user: user_dependency):
     exit_if_unauthorized(user, level='admin')
 
@@ -16,7 +17,8 @@ async def db_connect(user: user_dependency):
     return {"DB connection": "Indeed"}
 
 
-@dba_app.get("/backup_db")
+# @dba_app.get("/backup_db")
+@dba_app.post("/backup_db")
 async def backup_db(user: user_dependency):
     exit_if_unauthorized(user, level='admin')
 
