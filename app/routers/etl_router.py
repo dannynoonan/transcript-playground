@@ -328,8 +328,8 @@ async def load_all_transcripts(show_key: ShowKey, user: user_dependency, overwri
             
     return {
         "no_transcripts": len(no_transcript_episode_keys),
-        "no_transcripts_episode-keys": no_transcript_episode_keys,
-        "transcript_load_+attempts": attempts, 
+        "no_transcripts_episode_keys": no_transcript_episode_keys,
+        "transcript_load_attempts": attempts, 
         "successful": len(successful_episode_keys),
         "successful_episode_keys": successful_episode_keys, 
         "failed": len(failed_episode_keys),

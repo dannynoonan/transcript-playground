@@ -150,7 +150,7 @@ def index_speaker(show_key: ShowKey, speaker: str, user: user_dependency):
     es_speaker_seasons = {}
     es_speaker_episodes = {}
 
-    response = esr.search_scene_events(show_key, speaker=speaker)
+    response = esr.search_scene_events(show_key, user, speaker=speaker)
     if 'matches' not in response:
         return {"error": f"No scene_events found matching show_key={show_key.value} speaker={speaker}"}
     
@@ -428,11 +428,15 @@ def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping:
     
     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
-        response = esr.episode_topic_vector_search(show_key, episode_key, topic_grouping, model_vendor=model_vendor, model_version=model_version)
+        response = esr.episode_topic_vector_search(show_key, episode_key, topic_grouping, user, model_vendor=model_vendor, model_version=model_version)
         if 'topics' not in response:
-            return {"error": f"Failed to populate_episode_topics, episode_topic_vector_search returned no topics for {show_key.value}:{episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version}"}
+            error_msg = f"Failed to populate_episode_topics, episode_topic_vector_search returned no topics for {show_key.value}:{episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version}"
+            print(error_msg)
+            return {"error": error_msg}
     except Exception as e:
-        return {"error": f"Failed to populate_episode_topics, episode_topic_vector_search failed for {show_key.value}:{episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version}: {e}"}
+        error_msg = f"Failed to populate_episode_topics, episode_topic_vector_search failed for {show_key.value}:{episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version}: {e}"
+        print(error_msg)
+        return {"error": error_msg}
     
     # write to episode_topics
     episode_topics = esqb.populate_episode_topics(show_key.value, es_episode, response['topics'], model_vendor, model_version)

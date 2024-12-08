@@ -52,7 +52,7 @@ def main():
         episodes_to_relations[doc_id] = similar_episodes
     
     print(f'Begin writing relations for {len(episodes_to_relations)} episodes to es transcripts.')
-    episodes_to_relations = esqb.populate_episode_relations(show_key, model_vendor, model_version, episodes_to_relations, user_dependency, limit=limit)
+    episodes_to_relations = esqb.populate_episode_relations(show_key, model_vendor, model_version, episodes_to_relations, limit=limit)
     print(f'Finished writing relations for {len(episodes_to_relations)} episodes to es transcripts.')
 
     report = {"episodes_to_relations": episodes_to_relations}
