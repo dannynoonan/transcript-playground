@@ -133,7 +133,7 @@ def populate_episode_embeddings(show_key: ShowKey, episode_key: str, model_vendo
     '''
     exit_if_unauthorized(user, level='admin')
     
-    es_episode = EsEpisodeTranscript.post(id=f'{show_key.value}_{episode_key}')
+    es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
         embeddings = ef.generate_episode_embeddings(es_episode, model_vendor, model_version)
         es_episode[f'{model_vendor}_{model_version}_embeddings'] = embeddings
@@ -302,7 +302,7 @@ def populate_topic_embeddings(topic_grouping: str, topic_key: str, model_vendor:
     doc_id = f'{topic_grouping}_{topic_key}'
     
     try:
-        es_topic = EsTopic.post(id=doc_id)
+        es_topic = EsTopic.get(id=doc_id)
         text_to_vectorize = es_topic.description
         if prefix_parent_descs and es_topic.parent_description:
             text_to_vectorize = f'{es_topic.parent_description} {text_to_vectorize}'
@@ -335,7 +335,7 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
     attempted_count += 1
     es_speaker_id = f'{show_key.value}_{speaker}'
     try:
-        es_speaker = EsSpeaker.post(id=es_speaker_id)
+        es_speaker = EsSpeaker.get(id=es_speaker_id)
     except Exception as e:
         return {"error": f"Failure to populate speaker embeddings, no match in `speakers` index for es_speaker_id={es_speaker_id}, {e}"}
     
@@ -362,7 +362,7 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
         attempted_count += 1
         es_speaker_season_id = f'{show_key.value}_{speaker}_{season}'
         try:
-            es_speaker_season = EsSpeakerSeason.post(id=es_speaker_season_id)
+            es_speaker_season = EsSpeakerSeason.get(id=es_speaker_season_id)
         except Exception as e:
             err = f"Failure to fetch EsSpeakerSeason with id={es_speaker_season_id}: {e}"
             print(err)
@@ -396,7 +396,7 @@ def populate_speaker_embeddings(show_key: ShowKey, speaker: str, model_vendor: s
             attempted_count += 1
             es_speaker_episode_id = f'{show_key.value}_{speaker}_{episode_key}'
             try:
-                es_speaker_episode = EsSpeakerEpisode.post(id=es_speaker_episode_id)
+                es_speaker_episode = EsSpeakerEpisode.get(id=es_speaker_episode_id)
             except Exception as e:
                 err = f"Failure to fetch EsSpeakerEpisode with id={es_speaker_episode_id}: {e}"
                 print(err)
@@ -436,7 +436,7 @@ def populate_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping:
     '''
     exit_if_unauthorized(user, level='admin')
     
-    es_episode = EsEpisodeTranscript.post(id=f'{show_key.value}_{episode_key}')
+    es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
     try:
         response = esr.episode_topic_vector_search(show_key, episode_key, topic_grouping, user, model_vendor=model_vendor, model_version=model_version)
         if 'topics' not in response:
@@ -477,7 +477,7 @@ def populate_episode_tfidf_topics(show_key: ShowKey, episode_key: str, topic_gro
         print(f'Failed to populate_episode_tfidf_topics for episode {episode_id}, simple_episode_topics list was empty')
         return {}
     
-    es_episode = EsEpisodeTranscript.post(id=episode_id)
+    es_episode = EsEpisodeTranscript.get(id=episode_id)
     if topic_grouping == 'universalGenres':
         es_episode.topics_universal_tfidf = simple_episode_topics
     # elif topic_grouping == 'focusedGpt35_TNG':
@@ -497,7 +497,7 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
     '''
     exit_if_unauthorized(user, level='admin')
     
-    es_speaker = EsSpeaker.post(id=f'{show_key.value}_{speaker}')
+    es_speaker = EsSpeaker.get(id=f'{show_key.value}_{speaker}')
 
     topic_fields = 'topic_grouping,topic_key,parent_key,topic_name,parent_name'
     reference_topics_response = esr.fetch_topic_grouping(topic_grouping, user, return_fields=topic_fields)
@@ -526,13 +526,13 @@ def populate_speaker_topics(show_key: ShowKey, speaker: str, topic_grouping: str
         season = int(season)
         season_topics_found = False
         season_topic_agg = TopicAgg(reference_topics)
-        es_speaker_season = EsSpeakerSeason.post(id=f'{show_key.value}_{speaker}_{season}')
+        es_speaker_season = EsSpeakerSeason.get(id=f'{show_key.value}_{speaker}_{season}')
         if season in speaker_topics_by_season:
             speaker_season_topics = speaker_topics_by_season[season]
             season_topics_found = True
         for e_key in episode_keys:
             if e_key in speaker_topics_by_episode:
-                es_speaker_episode = EsSpeakerEpisode.post(id=f'{show_key.value}_{speaker}_{e_key}')
+                es_speaker_episode = EsSpeakerEpisode.get(id=f'{show_key.value}_{speaker}_{e_key}')
                 # write to speaker_episode_topics
                 es_speaker_episode_topics = esqb.populate_speaker_episode_topics(show_key.value, speaker, es_speaker_episode, speaker_topics_by_episode[e_key],
                                                                                  model_vendor, model_version)
@@ -631,7 +631,7 @@ def populate_episode_narratives(show_key: ShowKey, episode_key: str, user: user_
 #     '''
 #     Generate and populate nltk polarity sentiment for episode
 #     '''
-#     es_episode = EsEpisodeTranscript.post(id=f'{show_key.value}_{episode_key}')
+#     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
 #     scene_sentiments = []
 #     if scene_level:
 #         flattened_scenes_response = esr.fetch_flattened_scenes(show_key, episode_key)
@@ -695,7 +695,7 @@ def populate_episode_narratives(show_key: ShowKey, episode_key: str, user: user_
 #     2. dataframe
 #     3. es index (optional)
 #     '''
-#     es_episode = EsEpisodeTranscript.post(id=f'{show_key.value}_{episode_key}')
+#     es_episode = EsEpisodeTranscript.get(id=f'{show_key.value}_{episode_key}')
 
 #     openai_total_reqs = 0
 #     openai_success_reqs = 0
