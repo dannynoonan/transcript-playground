@@ -1438,12 +1438,12 @@ def generate_series_speaker_gantt_sequence(show_key: ShowKey, user: user_depende
     if limit_cast:
         trimmed_episode_speakers_sequence = []
         for d in episode_speakers_sequence:
-            if d['Task'] in show_metadata[show_key]['regular_cast'].keys() or d['Task'] in show_metadata[show_key]['recurring_cast'].keys():
+            if d['Task'] in show_metadata[show_key.value]['regular_cast'].keys() or d['Task'] in show_metadata[show_key.value]['recurring_cast'].keys():
                 trimmed_episode_speakers_sequence.append(d)
         episode_speakers_sequence = trimmed_episode_speakers_sequence
 
     if overwrite_file:
-        file_path = f'{GANTT_DATA_DIR}/{show_key}/speaker_gantt_sequence_{show_key}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key.value}/speaker_gantt_sequence_{show_key.value}.csv'
         print(f'writing speaker gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_speakers_sequence)
         df.to_csv(file_path)
@@ -1496,7 +1496,7 @@ def generate_series_location_gantt_sequence(show_key: ShowKey, user: user_depend
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'{GANTT_DATA_DIR}/{show_key}/location_gantt_sequence_{show_key}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key.value}/location_gantt_sequence_{show_key.value}.csv'
         print(f'writing location gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_locations_sequence)
         df.to_csv(file_path)
@@ -1563,7 +1563,7 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, user: user_dependenc
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'{GANTT_DATA_DIR}/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key.value}/topic_gantt_sequence_{show_key.value}_{topic_grouping}_{score_type}.csv'
         print(f'writing topic gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_topics_sequence)
         df.to_csv(file_path)
@@ -1577,7 +1577,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, user: user_dependen
     exit_if_unauthorized(user)
 
     # TODO distinguish between regular and recurring cast?
-    speakers = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
+    speakers = list(show_metadata[show_key.value]['regular_cast'].keys()) + list(show_metadata[show_key.value]['recurring_cast'].keys())
 
     speaker_series_agg_word_counts = {spkr:0 for spkr in speakers}
     speaker_series_agg_line_counts = {spkr:0 for spkr in speakers}
@@ -1688,7 +1688,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, user: user_dependen
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'{ANIMATION_DATA_DIR}/{show_key}/speaker_episode_aggs_{show_key}.csv'
+        file_path = f'{ANIMATION_DATA_DIR}/{show_key.value}/speaker_episode_aggs_{show_key.value}.csv'
         print(f'writing speaker word/line/scene/episode counts and aggs dataframe to file_path={file_path}')
         df = pd.DataFrame(speaker_episode_rows)
         df.to_csv(file_path)
@@ -1777,7 +1777,7 @@ def generate_location_line_chart_sequences(show_key: ShowKey, user: user_depende
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'{ANIMATION_DATA_DIR}/{show_key}/location_episode_aggs_{show_key}.csv'
+        file_path = f'{ANIMATION_DATA_DIR}/{show_key.value}/location_episode_aggs_{show_key.value}.csv'
         print(f'writing location scene/episode counts and aggs dataframe to file_path={file_path}')
         df = pd.DataFrame(location_episode_rows)
         df.to_csv(file_path)
