@@ -562,7 +562,7 @@ def fetch_episode_topic(show_key: str, episode_key: str, topic_grouping: str, to
 
 def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str, 
                          level: str = None, limit: int = None, sort_by: str = None) -> Search:
-    print(f'begin fetch_speaker_episode_topics for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version} level={level}')
+    print(f'begin fetch_episode_topics for show_key={show_key} episode_key={episode_key} topic_grouping={topic_grouping} model={model_vendor}:{model_version} level={level}')
 
     if not limit:
         limit = 100
