@@ -193,51 +193,51 @@ def layout(show_key: str) -> html.Div:
                 dbc.Row([
                     dbc.Col(md=12, children=[
                         dbc.Tabs(className="nav nav-tabs", children=[
-                            dbc.Tab(label="Episode genres", tab_style={"font-size": "20px", "color": "white"}, children=[
-                                dbc.Row([
-                                    dbc.Col(md=2, children=[
-                                        html.Div([
-                                            "Topic grouping: ", 
-                                            dcc.Dropdown(
-                                                id="series-topic-pie-topic-grouping", 
-                                                options=['universalGenres'], 
-                                                value='universalGenres')
-                                        ]),
-                                    ]),
-                                    dbc.Col(md=2, children=[
-                                        html.Div([
-                                            "Score type: ", 
-                                            dcc.Dropdown(
-                                                id="series-topic-pie-score-type", 
-                                                options=['score', 'tfidf_score'], 
-                                                value='tfidf_score')
-                                        ]),
-                                    ]),
-                                ]),
-                                html.Br(),
-                                dbc.Row([
-                                    dbc.Col(md=6, children=[
-                                        html.Div(dcc.Graph(id="series-parent-topic-pie")),
-                                    ]),
-                                    dbc.Col(md=6, children=[
-                                        html.Div(dcc.Graph(id="series-topic-pie")),
-                                    ]),
-                                ]),
-                                html.Br(),
-                                dbc.Row([
-                                    dbc.Col(md=2, children=[
-                                        html.Div([
-                                            "List episodes for topic: ", dcc.Dropdown(id="display-episodes-dt-for-topic", options=universal_genres_parent_topics)
-                                        ]),
-                                    ]),
-                                ]),
-                                html.Br(),
-                                dbc.Row([
-                                    dbc.Col(md=12, children=[
-                                        html.Div(id="series-topic-episodes-dt"),
-                                    ]),
-                                ]),
-                            ]),
+                            # dbc.Tab(label="Episode genres", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            #     dbc.Row([
+                            #         dbc.Col(md=2, children=[
+                            #             html.Div([
+                            #                 "Topic grouping: ", 
+                            #                 dcc.Dropdown(
+                            #                     id="series-topic-pie-topic-grouping", 
+                            #                     options=['universalGenres'], 
+                            #                     value='universalGenres')
+                            #             ]),
+                            #         ]),
+                            #         dbc.Col(md=2, children=[
+                            #             html.Div([
+                            #                 "Score type: ", 
+                            #                 dcc.Dropdown(
+                            #                     id="series-topic-pie-score-type", 
+                            #                     options=['score', 'tfidf_score'], 
+                            #                     value='tfidf_score')
+                            #             ]),
+                            #         ]),
+                            #     ]),
+                            #     html.Br(),
+                            #     dbc.Row([
+                            #         dbc.Col(md=6, children=[
+                            #             html.Div(dcc.Graph(id="series-parent-topic-pie")),
+                            #         ]),
+                            #         dbc.Col(md=6, children=[
+                            #             html.Div(dcc.Graph(id="series-topic-pie")),
+                            #         ]),
+                            #     ]),
+                            #     html.Br(),
+                            #     dbc.Row([
+                            #         dbc.Col(md=2, children=[
+                            #             html.Div([
+                            #                 "List episodes for topic: ", dcc.Dropdown(id="display-episodes-dt-for-topic", options=universal_genres_parent_topics)
+                            #             ]),
+                            #         ]),
+                            #     ]),
+                            #     html.Br(),
+                            #     dbc.Row([
+                            #         dbc.Col(md=12, children=[
+                            #             html.Div(id="series-topic-episodes-dt"),
+                            #         ]),
+                            #     ]),
+                            # ]),
                             dbc.Tab(label="Episode clusters", tab_style={"font-size": "20px", "color": "white"}, children=[
                                 dbc.Row([
                                     dbc.Col(md=2, children=[

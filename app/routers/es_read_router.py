@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 from app.auth import user_dependency, exit_if_unauthorized
-from app.app_metadata import ANIMATION_DATA_DIR, BERTOPIC_MODELS_DIR, GANTT_DATA_DIR
+from app.app_metadata import ANIMATION_DATA_DIR, BERTOPIC_DATA_DIR, GANTT_DATA_DIR
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
@@ -340,9 +340,8 @@ def list_bertopic_models(show_key: str, user: user_dependency, umap_metric: str 
     '''
     exit_if_unauthorized(user)
 
-    bertopic_models_dir = f'{BERTOPIC_MODELS_DIR}/{show_key}'
-    # bertopic_model_id_options = [f.removesuffix('.csv') for f in os.listdir(bertopic_data_dir) if os.path.isfile(os.path.join(bertopic_data_dir, f))]
-    bertopic_model_ids = [m for m in os.listdir(bertopic_models_dir)]
+    bertopic_data_dir = f'{BERTOPIC_DATA_DIR}/{show_key}'
+    bertopic_model_ids = [f.removesuffix('.csv') for f in os.listdir(bertopic_data_dir)]
     if umap_metric:
         bertopic_model_ids = [m for m in bertopic_model_ids if m.startswith(umap_metric)]
     bertopic_model_ids = sorted(bertopic_model_ids)
