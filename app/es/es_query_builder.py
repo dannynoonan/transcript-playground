@@ -537,8 +537,6 @@ def fetch_topic(topic_grouping: str, topic_key: str) -> EsTopic|None:
     except Exception as e:
         print(f'Failed to fetch topic with topic_grouping={topic_grouping} topic_key={topic_key}')
         return None
-    
-    s = s.params(request_cache=True)
 
     return topic
 
