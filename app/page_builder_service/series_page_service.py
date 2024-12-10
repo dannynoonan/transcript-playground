@@ -2,11 +2,12 @@ import dash_bootstrap_components as dbc
 from dash import dash_table
 import pandas as pd
 
+from app.auth import ADMIN_USER
 import app.data_service.field_meta as fm
 import app.data_service.matrix_operations as mxop
-import app.es.es_read_router as esr
 import app.fig_meta.color_meta as cm
 import app.page_builder_service.page_components as pc
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 from app import utils
 
@@ -15,19 +16,19 @@ def generate_series_summary(show_key: str) -> tuple[dict, dict]:
     series_summary = {}
     series_summary['series_title'] = 'Star Trek: The Next Generation'
 
-    series_speaker_scene_counts_response = esr.agg_scenes_by_speaker(ShowKey(show_key))
+    series_speaker_scene_counts_response = esr.agg_scenes_by_speaker(ShowKey(show_key), ADMIN_USER)
     series_summary['scene_count'] = series_speaker_scene_counts_response['scenes_by_speaker']['_ALL_']
 
-    series_speakers_response = esr.agg_scene_events_by_speaker(ShowKey(show_key))
+    series_speakers_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), ADMIN_USER)
     series_summary['line_count'] = series_speakers_response['scene_events_by_speaker']['_ALL_']
 
-    series_speaker_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key))
+    series_speaker_word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), ADMIN_USER)
     series_summary['word_count'] = int(series_speaker_word_counts_response['dialog_word_counts']['_ALL_'])
 
-    # series_locations_response = esr.agg_scenes_by_location(ShowKey(show_key))
+    # series_locations_response = esr.agg_scenes_by_location(ShowKey(show_key), ADMIN_USER)
     # location_count = series_locations_response['location_count']
 
-    episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key))
+    episodes_by_season_response = esr.list_simple_episodes_by_season(ShowKey(show_key), ADMIN_USER)
     episodes_by_season = episodes_by_season_response['episodes_by_season']
 
     series_summary['season_count'] = len(episodes_by_season)
@@ -48,21 +49,21 @@ def generate_all_season_episode_data(show_key: str, episodes_by_season: dict, se
         season_episode_count = len(episodes_by_season[season])
         series_summary['episode_count'] += len(episodes_by_season[season])
         
-        scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key), season=season)
+        scenes_by_location_response = esr.agg_scenes_by_location(ShowKey(show_key), ADMIN_USER, season=season)
         season_episode_data_dict['location_count'] = scenes_by_location_response['location_count']
         season_episode_data_dict['location_counts'] = utils.truncate_dict(scenes_by_location_response['scenes_by_location'], season_episode_count, start_index=1)
 
-        scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), season=season)
+        scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(ShowKey(show_key), ADMIN_USER, season=season)
         season_episode_data_dict['line_count'] = scene_events_by_speaker_response['scene_events_by_speaker']['_ALL_']
         season_episode_data_dict['speaker_line_counts'] = utils.truncate_dict(scene_events_by_speaker_response['scene_events_by_speaker'], season_episode_count, start_index=1)
         
-        scenes_by_speaker_response = esr.agg_scenes_by_speaker(ShowKey(show_key), season=season)
+        scenes_by_speaker_response = esr.agg_scenes_by_speaker(ShowKey(show_key), ADMIN_USER, season=season)
         season_episode_data_dict['scene_count'] = scenes_by_speaker_response['scenes_by_speaker']['_ALL_']
 
-        episodes_by_speaker_response = esr.agg_episodes_by_speaker(ShowKey(show_key), season=season)
+        episodes_by_speaker_response = esr.agg_episodes_by_speaker(ShowKey(show_key), ADMIN_USER, season=season)
         season_episode_data_dict['speaker_count'] = episodes_by_speaker_response['speaker_count']
 
-        word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), season=season)
+        word_counts_response = esr.agg_dialog_word_counts(ShowKey(show_key), ADMIN_USER, season=season)
         season_episode_data_dict['word_count'] = int(word_counts_response['dialog_word_counts']['_ALL_'])
 
         # air_date range
@@ -83,7 +84,7 @@ def generate_all_season_episode_data(show_key: str, episodes_by_season: dict, se
 
 def get_parent_topics_for_grouping(topic_grouping: str):
     parent_topics = []
-    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping)
+    topic_grouping_response = esr.fetch_topic_grouping(topic_grouping, ADMIN_USER)
     for t in topic_grouping_response['topics']:
         # only process topics that have parents (ignore the parents themselves)
         if not t['parent_key']:

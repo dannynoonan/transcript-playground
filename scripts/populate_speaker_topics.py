@@ -5,7 +5,7 @@ sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
-import app.es.es_write_router as esw
+import app.routers.es_write_router as esw
 from app.show_metadata import ShowKey
 
 
@@ -25,6 +25,9 @@ def main():
     model_version = args.model_version
     print(f'Begin populate_speaker_topics script for show_key={show_key} topic_grouping={topic_grouping} model_vendor={model_vendor} model_version={model_version}')
 
+    # TODO haven't solved for setting this correctly, requires altering exit_if_unauthorized to run 
+    user_dependency = None
+
     # TODO again, not sure what's what with inconsistent usage of esr vs esqb/esrt
     s = esqb.fetch_indexed_speakers(show_key, return_fields=['speaker'])
     matches = esrt.return_speakers(s)
@@ -42,7 +45,7 @@ def main():
         attempt_count += 1
         print(f'Begin populating topics for speaker={speaker}')
         try:
-            response = esw.populate_speaker_topics(ShowKey(show_key), speaker, topic_grouping, model_vendor, model_version)
+            response = esw.populate_speaker_topics(ShowKey(show_key), speaker, topic_grouping, model_vendor, model_version, user_dependency)
             if "error" in response:
                 print(f"Failed to populate_speaker_topics for speaker={speaker}: {response['error']}")
                 failed_speakers.append(speaker)

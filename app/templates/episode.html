@@ -42,7 +42,7 @@
 						<tbody>
 							{% for sim_ep in tdata['mlt_tfidf'] %}
 							<tr class="table-light">
-								<th scope="row"><a href="/web/episode/{{ sim_ep['show_key'] }}/{{ sim_ep['episode_key'] }}">{{ sim_ep['title'] }}</a></th>
+								<th scope="row"><a href="/dash_pages/episode/{{ sim_ep['show_key'] }}/{{ sim_ep['episode_key'] }}">{{ sim_ep['title'] }}</a></th>
 								<td>{{ sim_ep['season'] }}</td>
 								<td>{{ sim_ep['sequence_in_season'] }}</td>
 								<td>{{ sim_ep['focal_speakers']|join(', ') }}</td>
@@ -91,7 +91,7 @@
 						<tbody>
 							{% for sim_ep in tdata['mlt_embeddings'] %}
 							<tr class="table-secondary">
-								<th scope="row"><a href="/web/episode/{{ sim_ep['show_key'] }}/{{ sim_ep['episode_key'] }}" 
+								<th scope="row"><a href="/dash_pages/episode/{{ sim_ep['show_key'] }}/{{ sim_ep['episode_key'] }}" 
 									class="alert-link">{{ sim_ep['title'] }}</a></th>
 								<td>{{ sim_ep['season'] }}</td>
 								<td>{{ sim_ep['sequence_in_season'] }}</td>
@@ -196,7 +196,7 @@
 				<!-- begin in-episode search form -->
 				<h3>In-episode search</h3>
 				<br/>
-				<form action="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}" method="GET">
+				<form action="/dash_pages/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}" method="GET">
 					<!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/#javascript-behavior -->
 					<nav>
 						<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -212,7 +212,7 @@
 									data-bs-toggle="tab" data-bs-target="#nav-advanced-multi-character" type="button" role="tab" aria-controls="nav-advanced-multi-character" aria-selected="false">
 								Multi-character search
 							</button>
-							<button class="nav-link" id="nav-reset-tab" href="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}">
+							<button class="nav-link" id="nav-reset-tab" href="/dash_pages/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}">
 								Clear search/reload transcript
 							</button>
 						</div>
@@ -402,9 +402,9 @@
 									<th scope="row">
 										<a href="/web/character/{{ tdata['show_key'] }}/{{ speaker['speaker'] }}" 
 											class="alert-link">{{ speaker['speaker'] }}</a></th>
-									<td><a href="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?speaker={{ speaker['speaker'] }}&search_type=advanced" 
+									<td><a href="/dash_pages/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?speaker={{ speaker['speaker'] }}&search_type=advanced" 
 											class="alert-link">{{ speaker['scene_count'] }}</a></td>
-									<td><a href="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?speaker={{ speaker['speaker'] }}&search_type=advanced" 
+									<td><a href="/dash_pages/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?speaker={{ speaker['speaker'] }}&search_type=advanced" 
 										class="alert-link">{{ speaker['line_count'] }}</a></td>
 									<td>{{ speaker['word_count'] }}</td>
 									<td>{{ '%0.2f'|format(speaker['agg_score']|float) }}</td>
@@ -486,7 +486,7 @@
 										{% else %}
 										<th scope="row">{{ location }}</th>
 										<td>
-											<a href="/web/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?location={{ location }}&search_type=advanced" 
+											<a href="/dash_pages/episode/{{ tdata['show_key'] }}/{{ tdata['episode_key'] }}/?location={{ location }}&search_type=advanced" 
 												class="alert-link" >{{ count }}</a>
 										</td>
 										{% endif %}

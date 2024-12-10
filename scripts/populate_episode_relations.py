@@ -4,7 +4,7 @@ import sys
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
 import app.es.es_query_builder as esqb
-import app.es.es_read_router as esr
+import app.routers.es_read_router as esr
 from app.nlp.nlp_metadata import ACTIVE_VENDOR_VERSIONS
 from app.show_metadata import ShowKey
 
@@ -32,7 +32,10 @@ def main():
         print(f'invalid model_vendor:model_version combo {model_vendor}:{model_version}')
         return
     
-    doc_ids = esr.fetch_doc_ids(ShowKey(show_key))
+    # TODO haven't solved for setting this correctly, requires altering exit_if_unauthorized to run 
+    user_dependency = None
+    
+    doc_ids = esr.fetch_doc_ids(ShowKey(show_key), user_dependency)
     episode_doc_ids = doc_ids['doc_ids']
     print(f'Fetched {len(episode_doc_ids)} episodes for show_key={show_key}. Begin generating and writing relations to es transcripts index.')
     
@@ -41,9 +44,9 @@ def main():
         episode_key = doc_id.split('_')[-1]
         print(f'Begin generating relations for episode {show_key}_{episode_key}.')
         if (model_vendor, model_version) == ('es','mlt'):
-            similar_episodes = esr.more_like_this(ShowKey(show_key), episode_key)
+            similar_episodes = esr.more_like_this(ShowKey(show_key), episode_key, user_dependency)
         else:
-            similar_episodes = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, model_vendor=model_vendor, model_version=model_version)
+            similar_episodes = esr.episode_mlt_vector_search(ShowKey(show_key), episode_key, user_dependency, model_vendor=model_vendor, model_version=model_version)
         # only keep the episode keys and corresponding scores 
         # sim_eps = [f"{sim_ep['episode_key']}|{sim_ep['score']}" for sim_ep in similar_episodes['matches']]
         episodes_to_relations[doc_id] = similar_episodes

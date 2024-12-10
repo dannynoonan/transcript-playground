@@ -12,6 +12,7 @@ static/animations/
 static/wordclouds/
 zzz/
 *_notes.txt
+*.pem
 .env
 .env.aws
 .DS_Store

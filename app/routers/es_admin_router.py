@@ -1,18 +1,22 @@
 from fastapi import APIRouter
 
+from app.auth import user_dependency, exit_if_unauthorized
 from app.es.es_metadata import VALID_ES_INDEXES
 import app.es.es_query_builder as esqb
 
 
-esa_app = APIRouter()
+esa_app = APIRouter(prefix='/esa', tags=['Admin'])
 
 
-@esa_app.get("/esa/init_es", tags=['ES Admin'])
-def init_es(index_name: str = None):
+# @esa_app.get("/init_es")
+@esa_app.post("/init_es")
+def init_es(user: user_dependency, index_name: str = None):
     '''
     Run this to explicitly define index mappings anytime an index is blown away. Not doing so will result in an index being auto-created with the wrong
     auto-assigned data types, breaking query functionality down the line.
     '''
+    exit_if_unauthorized(user, level='admin')
+
     if index_name:
         print(f'in init_es index_name={index_name}')
         if index_name not in VALID_ES_INDEXES:
@@ -56,3 +60,18 @@ def init_es(index_name: str = None):
         initialized_indexes = VALID_ES_INDEXES
 
     return {"initialized_indexes": initialized_indexes}
+
+
+# @esa_app.get("/does_index_exist/{index_name}")
+@esa_app.post("/does_index_exist")
+def does_index_exist(index_name: str, user: user_dependency):
+    '''
+    Verify that an index exists 
+    '''
+    exit_if_unauthorized(user, level='admin')
+
+    index_list = esqb.list_indices()
+    for index in index_list:
+        if index['index'] == index_name:
+            return {'index_exists': True} 
+    return {'index_exists': False}

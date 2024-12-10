@@ -3,7 +3,8 @@ from operator import itemgetter
 import os
 import pandas as pd
 
-from app.app_metadata import ANIMATION_DATA_DIR, BERTOPIC_MODELS_DIR, GANTT_DATA_DIR
+from app.auth import user_dependency, exit_if_unauthorized
+from app.app_metadata import ANIMATION_DATA_DIR, BERTOPIC_DATA_DIR, GANTT_DATA_DIR
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
@@ -11,54 +12,45 @@ from app.nlp.nlp_metadata import TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
 from app.show_metadata import ShowKey, show_metadata, EPISODE_TOPIC_GROUPINGS
 
 
-esr_app = APIRouter()
-
-
-
-###################### METADATA LOOKUP ###########################
-
-@esr_app.get("/esr/does_index_exist/{index_name}", tags=['ES Reader'])
-def does_index_exist(index_name: str):
-    '''
-    Verify that an index exists 
-    '''
-    index_list = esqb.list_indices()
-    for index in index_list:
-        if index['index'] == index_name:
-            return {'index_exists': True} 
-    return {'index_exists': False}
+esr_app = APIRouter(prefix='/esr', tags=['ES Reader'])
 
 
 
 ###################### SIMPLE FETCH ###########################
 
-@esr_app.get("/esr/episode/{show_key}/{episode_key}", tags=['ES Reader'])
-def fetch_episode(show_key: ShowKey, episode_key: str, all_fields: bool = False):
+@esr_app.get("/episode/{show_key}/{episode_key}")
+def fetch_episode(show_key: ShowKey, episode_key: str, user: user_dependency, all_fields: bool = False):
     '''
     Fetch individual episode 
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_episode_by_key(show_key.value, episode_key, all_fields=all_fields)
     es_query = s.to_dict()
     match = esrt.return_episode_by_key(s)
     return {"es_episode": match, 'es_query': es_query}
 
 
-@esr_app.get("/esr/fetch_doc_ids/{show_key}", tags=['ES Reader'])
-def fetch_doc_ids(show_key: ShowKey, season: str = None):
+@esr_app.get("/fetch_doc_ids/{show_key}")
+def fetch_doc_ids(show_key: ShowKey, user: user_dependency, season: str = None):
     '''
     Get all es source _ids for show 
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_doc_ids(show_key.value, season=season)
     es_query = s.to_dict()
     matches = esrt.return_doc_ids(s)
     return {"doc_count": len(matches), "doc_ids": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/list_seasons/{show_key}", tags=['ES Reader'])
-def list_seasons(show_key: ShowKey):
+@esr_app.get("/list_seasons/{show_key}")
+def list_seasons(show_key: ShowKey, user: user_dependency):
     '''
     List all distincts seasons, sorted ascending
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.agg_seasons(show_key.value)
     es_query = s.to_dict()
     seasons = esrt.return_seasons(s)
@@ -67,7 +59,7 @@ def list_seasons(show_key: ShowKey):
 
 
 # NOTE I'm not sure what this was for, probably created during BERTopic experimentation
-# @esr_app.get("/esr/fetch_flattened_episodes/{show_key}", tags=['ES Reader'])
+# @esr_app.get("/fetch_flattened_episodes/{show_key}")
 # def fetch_flattened_episodes(show_key: ShowKey, season: str = None):
 #     '''
 #     Fetch episodes with full flattened text, but lacking scene or scene_event structure
@@ -78,33 +70,39 @@ def list_seasons(show_key: ShowKey):
 #     return {"episodes": episodes, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_simple_episodes/{show_key}", tags=['ES Reader'])
-def fetch_simple_episodes(show_key: ShowKey, season: str = None):
+@esr_app.get("/fetch_simple_episodes/{show_key}")
+def fetch_simple_episodes(show_key: ShowKey, user: user_dependency, season: str = None):
     '''
     Fetch simple (sceneless) episodes 
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_simple_episodes(show_key.value, season=season)
     es_query = s.to_dict()
     episodes = esrt.return_simple_episodes(s)
     return {"episodes": episodes, "es_query": es_query}
 
 
-@esr_app.get("/esr/list_simple_episodes_by_season/{show_key}", tags=['ES Reader'])
-def list_simple_episodes_by_season(show_key: ShowKey):
+@esr_app.get("/list_simple_episodes_by_season/{show_key}")
+def list_simple_episodes_by_season(show_key: ShowKey, user: user_dependency):
     '''
     Fetch simple (sceneless) episodes sequenced and grouped by season
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_simple_episodes(show_key.value)
     es_query = s.to_dict()
     episodes_by_season = esrt.return_episodes_by_season(s)
     return {"episodes_by_season": episodes_by_season, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_episode_narrative/{show_key}/{episode_key}/{speaker_group}", tags=['ES Reader'])
-def fetch_episode_narrative(show_key: ShowKey, episode_key: str, speaker_group: str):
+@esr_app.get("/fetch_episode_narrative/{show_key}/{episode_key}/{speaker_group}")
+def fetch_episode_narrative(show_key: ShowKey, episode_key: str, speaker_group: str, user: user_dependency):
     '''
     Fetch individual pre-generated narrative sequence for a given episode + speaker_group
     '''
+    exit_if_unauthorized(user)
+
     episode_narrative = esqb.fetch_episode_narrative(show_key.value, episode_key, speaker_group)
     if not episode_narrative:
         return {"error": f"Failed to /fetch_episode_narrative for show_key=`{show_key.value}` episode_key=`{episode_key}` speaker_group=`{speaker_group}`"}
@@ -113,44 +111,53 @@ def fetch_episode_narrative(show_key: ShowKey, episode_key: str, speaker_group: 
     return {"episode_narrative": episode_narrative}
 
 
-@esr_app.get("/esr/fetch_narrative_sequences/{show_key}/{episode_key}", tags=['ES Reader'])
-def fetch_narrative_sequences(show_key: ShowKey, episode_key: str):
+@esr_app.get("/fetch_narrative_sequences/{show_key}/{episode_key}")
+def fetch_narrative_sequences(show_key: ShowKey, episode_key: str, user: user_dependency):
     '''
     Fetch pre-generated narrative sequences for a given episode
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_narrative_sequences(show_key.value, episode_key)
     es_query = s.to_dict()
     narrative_sequences = esrt.return_narrative_sequences(s)
     return {"narrative_sequences": narrative_sequences, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_flattened_scenes/{show_key}/{episode_key}", tags=['ES Reader'])
-def fetch_flattened_scenes(show_key: ShowKey, episode_key: str, include_speakers: bool = False, include_context: bool = False, line_breaks: bool = False):
+@esr_app.get("/fetch_flattened_scenes/{show_key}/{episode_key}")
+def fetch_flattened_scenes(show_key: ShowKey, episode_key: str, user: user_dependency, include_speakers: bool = False, include_context: bool = False, line_breaks: bool = False):
     '''
     Fetch denormalized scene text for a given episode
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_episode_by_key(show_key.value, episode_key)
     es_query = s.to_dict()
     flattened_scenes = esrt.return_flattened_scenes(s, include_speakers=include_speakers, include_context=include_context, line_breaks=line_breaks)
     return {"flattened_scenes": flattened_scenes, "es_query": es_query}
  
 
-@esr_app.get("/esr/fetch_all_episode_relations/{show_key}/{model_vendor}/{model_version}", tags=['ES Reader'])
-def fetch_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str):
+@esr_app.get("/fetch_all_episode_relations/{show_key}/{model_vendor}/{model_version}")
+def fetch_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str, user: user_dependency):
     '''
+    NOTE only dependency is currently not used
     Fetch all (sceneless) episodes and their relations data for a given model vendor/version
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_all_episode_relations(show_key.value, model_vendor, model_version)
     es_query = s.to_dict()
     episode_relations = esrt.return_all_episode_relations(s)
     return {"episode_relations": episode_relations, "es_query": es_query}
 
 
-@esr_app.get("/esr/speaker/{show_key}/{speaker_name}", tags=['ES Reader'])
-def fetch_speaker(show_key: ShowKey, speaker_name: str, include_seasons: bool = False, include_episodes: bool = False):
+@esr_app.get("/speaker/{show_key}/{speaker_name}")
+def fetch_speaker(show_key: ShowKey, speaker_name: str, user: user_dependency, include_seasons: bool = False, include_episodes: bool = False):
     '''
     Fetch speaker info, lines, and aggregate counts (optionally across seasons and episodes)
     '''
+    exit_if_unauthorized(user)
+
     speaker = esqb.fetch_speaker(show_key.value, speaker_name)
     if not speaker:
         return {"error": f"Failed to fetch speaker `{speaker_name}` for show_key=`{show_key.value}`"}
@@ -174,11 +181,13 @@ def fetch_speaker(show_key: ShowKey, speaker_name: str, include_seasons: bool = 
     return {"speaker": speaker, "es_queries": es_queries}
 
 
-@esr_app.get("/esr/fetch_speakers_for_episode/{show_key}/{episode_key}", tags=['ES Reader'])
-def fetch_speakers_for_episode(show_key: ShowKey, episode_key: str, extra_fields: str = None):
+@esr_app.get("/fetch_speakers_for_episode/{show_key}/{episode_key}")
+def fetch_speakers_for_episode(show_key: ShowKey, episode_key: str, user: user_dependency, extra_fields: str = None):
     '''
     Fetch speaker_episodes for a given episode 
     '''
+    exit_if_unauthorized(user)
+
     return_fields = ['speaker','scene_count','line_count','word_count','agg_score']
     if extra_fields:
         extra_fields = extra_fields.split(',')
@@ -191,11 +200,13 @@ def fetch_speakers_for_episode(show_key: ShowKey, episode_key: str, extra_fields
     return {"speaker_episodes": speaker_episodes, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_speakers_for_season/{show_key}/{season}", tags=['ES Reader'])
-def fetch_speakers_for_season(show_key: ShowKey, season: str, extra_fields: str = None):
+@esr_app.get("/fetch_speakers_for_season/{show_key}/{season}")
+def fetch_speakers_for_season(show_key: ShowKey, season: str, user: user_dependency, extra_fields: str = None):
     '''
     Fetch speaker_seasons for a given season 
     '''
+    exit_if_unauthorized(user)
+
     return_fields = ['speaker','episode_count','scene_count','line_count','word_count','agg_score']
     if extra_fields:
         extra_fields = extra_fields.split(',')
@@ -208,11 +219,13 @@ def fetch_speakers_for_season(show_key: ShowKey, season: str, extra_fields: str 
     return {"speaker_seasons": speaker_seasons, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_indexed_speakers/{show_key}", tags=['ES Reader'])
-def fetch_indexed_speakers(show_key: ShowKey, speakers: str = None, season: int = None, extra_fields: str = None, min_episode_count: int = None):
+@esr_app.get("/fetch_indexed_speakers/{show_key}")
+def fetch_indexed_speakers(show_key: ShowKey, user: user_dependency, speakers: str = None, season: int = None, extra_fields: str = None, min_episode_count: int = None):
     '''
     For speakers indexed in es, fetch info, lines, and aggregate counts
     '''
+    exit_if_unauthorized(user)
+
     return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_word_count']
     speaker_list = []
     if speakers:
@@ -231,22 +244,26 @@ def fetch_indexed_speakers(show_key: ShowKey, speakers: str = None, season: int 
     return {"speakers": speakers, "es_query": es_query}
 
 
-@esr_app.get("/esr/topic/{topic_grouping}/{topic_key}", tags=['ES Reader'])
-def fetch_topic(topic_grouping: str, topic_key: str):
+@esr_app.get("/topic/{topic_grouping}/{topic_key}")
+def fetch_topic(topic_grouping: str, topic_key: str, user: user_dependency):
     '''
     Fetch individual topic 
     '''
+    exit_if_unauthorized(user)
+
     topic = esqb.fetch_topic(topic_grouping, topic_key)
     if not topic:
         return {"error": f"Failed to fetch topic for topic_grouping=`{topic_grouping}` topic_key=`{topic_key}`"}
     return {"topic": topic._d_}
 
 
-@esr_app.get("/esr/fetch_topic_grouping/{topic_grouping}", tags=['ES Reader'])
-def fetch_topic_grouping(topic_grouping: str, return_fields: str = None):
+@esr_app.get("/fetch_topic_grouping/{topic_grouping}")
+def fetch_topic_grouping(topic_grouping: str, user: user_dependency, return_fields: str = None):
     '''
     Fetch all topics in a topic_grouping 
     '''
+    exit_if_unauthorized(user)
+
     if return_fields:
         return_fields = return_fields.split(',')
     s = esqb.fetch_topic_grouping(topic_grouping, return_fields=return_fields)
@@ -255,34 +272,42 @@ def fetch_topic_grouping(topic_grouping: str, return_fields: str = None):
     return {"topics": topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_episode_topics/{show_key}/{episode_key}/{topic_grouping}/{model_vendor}/{model_version}", tags=['ES Reader'])
-def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str, 
+@esr_app.get("/fetch_episode_topics/{show_key}/{episode_key}/{topic_grouping}/{model_vendor}/{model_version}")
+def fetch_episode_topics(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str, model_version: str, user: user_dependency, 
                          level: str = None, limit: int = None, sort_by: str = None):
     '''
     Fetch topics mapped to episode
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_episode_topics(show_key.value, episode_key, topic_grouping, model_vendor, model_version, level=level, limit=limit, sort_by=sort_by)
     es_query = s.to_dict()
     episode_topics = esrt.return_topics(s)
     return {"episode_topics": episode_topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_speaker_topics/{speaker}/{show_key}/{topic_grouping}", tags=['ES Reader'])
-def fetch_speaker_topics(speaker: str, show_key: ShowKey, topic_grouping: str, level: str = None, limit: int = None):
+@esr_app.get("/fetch_speaker_topics/{speaker}/{show_key}/{topic_grouping}")
+def fetch_speaker_topics(speaker: str, show_key: ShowKey, topic_grouping: str, user: user_dependency, 
+                         level: str = None, limit: int = None):
     '''
     Fetch topics mapped to speaker 
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_speaker_topics(speaker, show_key.value, topic_grouping, level=level, limit=limit)
     es_query = s.to_dict()
     speaker_topics = esrt.return_topics(s)
     return {"speaker_topics": speaker_topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_speaker_season_topics/{show_key}/{topic_grouping}", tags=['ES Reader'])
-def fetch_speaker_season_topics(show_key: ShowKey, topic_grouping: str, speaker: str = None, season: int = None, level: str = None, limit: int = None):
+@esr_app.get("/fetch_speaker_season_topics/{show_key}/{topic_grouping}")
+def fetch_speaker_season_topics(show_key: ShowKey, topic_grouping: str, user: user_dependency, 
+                                speaker: str = None, season: int = None, level: str = None, limit: int = None):
     '''
     Fetch topics mapped to speaker_season
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_speaker_season_topics(show_key.value, topic_grouping, speaker=speaker, season=season, level=level, limit=limit)
     es_query = s.to_dict()
     # TODO feels like I should either do this in more places or not do it here
@@ -293,27 +318,31 @@ def fetch_speaker_season_topics(show_key: ShowKey, topic_grouping: str, speaker:
     return {"speaker_season_topics": speaker_season_topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/fetch_speaker_episode_topics/{show_key}/{topic_grouping}", tags=['ES Reader'])
-def fetch_speaker_episode_topics(show_key: ShowKey, topic_grouping: str, speaker: str = None, episode_key: str = None, season: int = None, 
+@esr_app.get("/fetch_speaker_episode_topics/{show_key}/{topic_grouping}")
+def fetch_speaker_episode_topics(show_key: ShowKey, topic_grouping: str, user: user_dependency, 
+                                 speaker: str = None, episode_key: str = None, season: int = None, 
                                  level: str = None, limit: int = None):
     '''
     Fetch topics mapped to speaker_episode
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.fetch_speaker_episode_topics(show_key.value, topic_grouping, speaker=speaker, episode_key=episode_key, season=season, level=level, limit=limit)
     es_query = s.to_dict()
     speaker_episode_topics = esrt.return_topics_by_episode(s)
     return {"speaker_episode_topics": speaker_episode_topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/list_bertopic_models/{show_key}", tags=['ES Reader'])
-def list_bertopic_models(show_key: str, umap_metric: str = None):
+@esr_app.get("/list_bertopic_models/{show_key}")
+def list_bertopic_models(show_key: str, user: user_dependency, umap_metric: str = None):
     '''
     List bertopic models for show using a directory scan
     NOTE this isn't an `es_read` but it might be in the future (and there's no other obvious place for it to live)
     '''
-    bertopic_models_dir = f'{BERTOPIC_MODELS_DIR}/{show_key}'
-    # bertopic_model_id_options = [f.removesuffix('.csv') for f in os.listdir(bertopic_data_dir) if os.path.isfile(os.path.join(bertopic_data_dir, f))]
-    bertopic_model_ids = [m for m in os.listdir(bertopic_models_dir)]
+    exit_if_unauthorized(user)
+
+    bertopic_data_dir = f'{BERTOPIC_DATA_DIR}/{show_key}'
+    bertopic_model_ids = [f.removesuffix('.csv') for f in os.listdir(bertopic_data_dir)]
     if umap_metric:
         bertopic_model_ids = [m for m in bertopic_model_ids if m.startswith(umap_metric)]
     bertopic_model_ids = sorted(bertopic_model_ids)
@@ -324,22 +353,28 @@ def list_bertopic_models(show_key: str, umap_metric: str = None):
 
 ###################### SEARCH ###########################
 
-@esr_app.get("/esr/search_episodes_by_title/{show_key}", tags=['ES Reader'])
-def search_episodes_by_title(show_key: ShowKey, title: str = None):
+@esr_app.get("/search_episodes_by_title/{show_key}")
+def search_episodes_by_title(show_key: ShowKey, user: user_dependency, title: str = None):
     '''
     Free text episode search by title
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.search_episodes_by_title(show_key.value, title)
     es_query = s.to_dict()
     matches = esrt.return_episodes_by_title(s)
     return {"episode_count": len(matches), "episodes": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/search_scenes/{show_key}", tags=['ES Reader'])
-def search_scenes(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, description: str = None):
+@esr_app.get("/search_scenes/{show_key}")
+def search_scenes(show_key: ShowKey, user: user_dependency, 
+                  season: str = None, episode_key: str = None, 
+                  location: str = None, description: str = None):
     '''
     Facet query of nested Scene fields 
     '''
+    exit_if_unauthorized(user)
+
     if not (location or description):
         error = 'Unable to execute search_scenes without at least one scene property set (location or description)'
         print(error)
@@ -350,11 +385,15 @@ def search_scenes(show_key: ShowKey, season: str = None, episode_key: str = None
     return {"episode_count": len(matches), "scene_count": scene_count, "matches": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/search_scene_events/{show_key}", tags=['ES Reader'])
-def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None, dialog: str = None, location: str = None):
+@esr_app.get("/search_scene_events/{show_key}")
+def search_scene_events(show_key: ShowKey, user: user_dependency, 
+                        season: str = None, episode_key: str = None, speaker: str = None, 
+                        dialog: str = None, location: str = None):
     '''
     Facet query of nested Scene and SceneEvent fields 
     '''
+    exit_if_unauthorized(user)
+
     if not speaker and not dialog:
         return {"error": "Unable to execute search_scene_events without at least one scene_event property set: speaker or dialog"}
     s = esqb.search_scene_events(show_key.value, season=season, episode_key=episode_key, speaker=speaker, dialog=dialog)
@@ -363,30 +402,36 @@ def search_scene_events(show_key: ShowKey, season: str = None, episode_key: str 
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/search_scene_events_multi_speaker/{show_key}/{speakers}", tags=['ES Reader'])
-def search_scene_events_multi_speaker(show_key: ShowKey, speakers: str, season: str = None, episode_key: str = None, location: str = None, intersection: bool = False):
+@esr_app.get("/search_scene_events_multi_speaker/{show_key}/{speakers}")
+def search_scene_events_multi_speaker(show_key: ShowKey, speakers: str, user: user_dependency, 
+                                      season: str = None, episode_key: str = None, location: str = None, intersection: bool = False):
     '''
     Facet query of Scenes comprised of SceneEvents matching 1-n speakers
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.search_scene_events_multi_speaker(show_key.value, speakers, season=season, episode_key=episode_key)
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = esrt.return_scene_events_multi_speaker(s, speakers, location=location, intersection=intersection)
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/search/{show_key}", tags=['ES Reader'])
-def search(show_key: ShowKey, season: str = None, episode_key: str = None, qt: str = None):
+@esr_app.get("/search/{show_key}")
+def search(show_key: ShowKey, user: user_dependency, 
+           season: str = None, episode_key: str = None, qt: str = None):
     '''
     Generic free text search of Episodes and nested Scenes and SceneEvents
     '''
+    exit_if_unauthorized(user)
+
     s = esqb.search_episodes(show_key.value, season=season, episode_key=episode_key, qt=qt)
     es_query = s.to_dict()
     matches, scene_count, scene_event_count = esrt.return_episodes(s)
     return {"episode_count": len(matches), "scene_count": scene_count, "scene_event_count": scene_event_count, "matches": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/more_like_this/{show_key}/{episode_key}", tags=['ES Reader'])
-def more_like_this(show_key: ShowKey, episode_key: str):
+@esr_app.get("/more_like_this/{show_key}/{episode_key}")
+def more_like_this(show_key: ShowKey, episode_key: str, user: user_dependency):
     s = esqb.more_like_this(show_key.value, episode_key)
     es_query = s.to_dict()
     matches = esrt.return_more_like_this(s)
@@ -394,15 +439,18 @@ def more_like_this(show_key: ShowKey, episode_key: str):
 
 
 # TODO support POST for long requests?
-@esr_app.get("/esr/episode_vector_search/{show_key}", tags=['ES Reader'])
-def episode_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, model_version: str = None, season: str = None):
+@esr_app.get("/episode_vector_search/{show_key}")
+def episode_vector_search(show_key: ShowKey, qt: str, user: user_dependency, 
+                          model_vendor: str = None, model_version: str = None, season: str = None):
     '''
     Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
     '''
+    exit_if_unauthorized(user)
+
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
-        model_version = 'ada002'
+        model_version = '3small'
 
     if model_vendor == 'openai':
         vendor_meta = TRF_MODELS[model_vendor]
@@ -445,15 +493,18 @@ def episode_vector_search(show_key: ShowKey, qt: str, model_vendor: str = None, 
     }
 
 
-@esr_app.get("/esr/episode_mlt_vector_search/{show_key}/{episode_key}", tags=['ES Reader'])
-def episode_mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor: str = None, model_version: str = None):
+@esr_app.get("/episode_mlt_vector_search/{show_key}/{episode_key}")
+def episode_mlt_vector_search(show_key: ShowKey, episode_key: str, user: user_dependency, 
+                              model_vendor: str = None, model_version: str = None):
     '''
     Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
     '''
+    exit_if_unauthorized(user)
+
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
-        model_version = 'ada002'
+        model_version = '3small'
 
     vector_field = f'{model_vendor}_{model_version}_embeddings'
         
@@ -483,15 +534,18 @@ def episode_mlt_vector_search(show_key: ShowKey, episode_key: str, model_vendor:
 #     all_speaker_matches[match_speaker] += inv_rank
 
 
-@esr_app.get("/esr/speaker_mlt_vector_search/{show_key}/{speaker}", tags=['ES Reader'])
-def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool = True, model_vendor: str = None, model_version: str = None):
+@esr_app.get("/speaker_mlt_vector_search/{show_key}/{speaker}")
+def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, user: user_dependency, 
+                              min_depth: bool = True, model_vendor: str = None, model_version: str = None):
     '''
     Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
     '''
+    exit_if_unauthorized(user)
+
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
-        model_version = 'ada002'
+        model_version = '3small'
 
     vector_field = f'{model_vendor}_{model_version}_embeddings'
         
@@ -679,15 +733,18 @@ def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, min_depth: bool =
     }
 
 
-@esr_app.get("/esr/episode_topic_vector_search/{show_key}/{episode_key}/{topic_grouping}", tags=['ES Reader'])
-def episode_topic_vector_search(show_key: ShowKey, episode_key: str, topic_grouping: str, model_vendor: str = None, model_version: str = None):
+@esr_app.get("/episode_topic_vector_search/{show_key}/{episode_key}/{topic_grouping}")
+def episode_topic_vector_search(show_key: ShowKey, episode_key: str, topic_grouping: str, user: user_dependency, 
+                                model_vendor: str = None, model_version: str = None):
     '''
     Fetches vector embedding for episode, then determines vector cosine similarity to indexed topics using k-nearest neighbors search
     '''
+    exit_if_unauthorized(user)
+
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
-        model_version = 'ada002'
+        model_version = '3small'
 
     vector_field = f'{model_vendor}_{model_version}_embeddings'
         
@@ -701,16 +758,18 @@ def episode_topic_vector_search(show_key: ShowKey, episode_key: str, topic_group
     return {"topic_count": len(topics), "vector_field": vector_field, "topics": topics}
 
 
-@esr_app.get("/esr/topic_episode_vector_search/{topic_grouping}/{topic_key}/{show_key}", tags=['ES Reader'])
-def topic_episode_vector_search(topic_grouping: str, topic_key: str, show_key: ShowKey, model_vendor: str = None, model_version: str = None):
+@esr_app.get("/topic_episode_vector_search/{topic_grouping}/{topic_key}/{show_key}")
+def topic_episode_vector_search(topic_grouping: str, topic_key: str, show_key: ShowKey, user: user_dependency, 
+                                model_vendor: str = None, model_version: str = None):
     '''
     Fetches vector embedding for topic, then determines vector cosine similarity to indexed episodes using k-nearest neighbors search
     '''
-    print(f'begin topic_episode_vector_search for topic_grouping={topic_grouping} topic_key={topic_key} show_key={show_key}')
+    exit_if_unauthorized(user)
+
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
-        model_version = 'ada002'
+        model_version = '3small'
 
     vector_field = f'{model_vendor}_{model_version}_embeddings'
         
@@ -724,16 +783,19 @@ def topic_episode_vector_search(topic_grouping: str, topic_key: str, show_key: S
     return {"episodes_count": len(episodes), "vector_field": vector_field, "episodes": episodes, "es_query": es_query}
 
 
-@esr_app.get("/esr/speaker_topic_vector_search/{show_key}/{speaker}/{topic_grouping}", tags=['ES Reader'])
-def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping: str, model_vendor: str = None, model_version: str = None,
-                                seasons: str = None, episode_keys: str = None, min_depth: bool = False):
+@esr_app.get("/speaker_topic_vector_search/{show_key}/{speaker}/{topic_grouping}")
+def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping: str, user: user_dependency, 
+                                model_vendor: str = None, model_version: str = None, seasons: str = None, 
+                                episode_keys: str = None, min_depth: bool = False):
     '''
     Fetches (does not generate) vector embedding for speaker, then determines vector cosine similarity to indexed topics using k-nearest neighbors search
     '''
+    exit_if_unauthorized(user)
+
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
-        model_version = 'ada002'
+        model_version = '3small'
 
     # this got hella ugly
     if seasons:
@@ -756,7 +818,7 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
     season_topics = {}
     episode_topics = {}
     
-    es_speaker_response = fetch_speaker(show_key, speaker, include_seasons=True, include_episodes=True)
+    es_speaker_response = fetch_speaker(show_key, speaker, user, include_seasons=True, include_episodes=True)
     if 'speaker' not in es_speaker_response:
         return {"error": f"Failed to speaker_topic_vector_search for show_key={show_key.value} speaker={speaker}: speaker lookup failed"}
     es_speaker = es_speaker_response['speaker']
@@ -800,15 +862,18 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
 
 @DeprecationWarning
 # TODO should this be deprecated, or just discouraged? Used as a fallback when `topic_speaker_search` fails?
-@esr_app.get("/esr/topic_speaker_vector_search/{topic_grouping}/{topic_key}/{show_key}", tags=['ES Reader'])
-def topic_speaker_vector_search(topic_grouping: str, topic_key: str, show_key: ShowKey, model_vendor: str = None, model_version: str = None):
+@esr_app.get("/topic_speaker_vector_search/{topic_grouping}/{topic_key}/{show_key}")
+def topic_speaker_vector_search(topic_grouping: str, topic_key: str, show_key: ShowKey, user: user_dependency, 
+                                model_vendor: str = None, model_version: str = None):
     '''
     Fetches vector embedding for topic, then determines vector cosine similarity to indexed speakers using k-nearest neighbors search
     '''
+    exit_if_unauthorized(user)
+
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
-        model_version = 'ada002'
+        model_version = '3small'
 
     vector_field = f'{model_vendor}_{model_version}_embeddings'
         
@@ -824,11 +889,14 @@ def topic_speaker_vector_search(topic_grouping: str, topic_key: str, show_key: S
 
 
 @DeprecationWarning
-@esr_app.get("/esr/topic_speaker_search/{topic_grouping}/{topic_key}", tags=['ES Reader'])
-def topic_speaker_search(topic_grouping: str, topic_key: str, show_key: ShowKey = None, min_word_count: int = None):
+@esr_app.get("/topic_speaker_search/{topic_grouping}/{topic_key}")
+def topic_speaker_search(topic_grouping: str, topic_key: str, user: user_dependency, 
+                         show_key: ShowKey = None, min_word_count: int = None):
     '''
     Search speakers by topic mapping
-    '''                
+    '''
+    exit_if_unauthorized(user)
+
     if show_key:
         show_key = show_key.value
 
@@ -848,11 +916,13 @@ def topic_speaker_search(topic_grouping: str, topic_key: str, show_key: ShowKey 
     return {"speakers_count": len(speakers), "is_parent_topic": is_parent, "speakers": speakers, "es_query": es_query}
 
 
-@esr_app.get("/esr/search_speakers/{qt}", tags=['ES Reader'])
-def search_speakers(qt: str, show_key: ShowKey = None, extra_fields: str = None):
+@esr_app.get("/search_speakers/{qt}")
+def search_speakers(qt: str, user: user_dependency, show_key: ShowKey = None, extra_fields: str = None):
     '''
     Search for a speaker by query term
-    '''                
+    '''
+    exit_if_unauthorized(user)
+
     if show_key:
         show_key = show_key.value
     return_fields = ['speaker', 'alt_names', 'actor_names', 'season_count', 'episode_count', 'scene_count', 'line_count', 'word_count', 'openai_word_count']
@@ -865,11 +935,14 @@ def search_speakers(qt: str, show_key: ShowKey = None, extra_fields: str = None)
     return {"speaker_matches": speaker_matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/find_episodes_by_topic/{show_key}/{topic_grouping}/{topic_key}", tags=['ES Reader'])
-def find_episodes_by_topic(show_key: ShowKey, topic_grouping: str, topic_key: str, season: int = None, sort_by: str = None):
+@esr_app.get("/find_episodes_by_topic/{show_key}/{topic_grouping}/{topic_key}")
+def find_episodes_by_topic(show_key: ShowKey, topic_grouping: str, topic_key: str, user: user_dependency, 
+                           season: int = None, sort_by: str = None):
     '''
     Search episodes by topic
-    '''                
+    '''
+    exit_if_unauthorized(user)
+
     if not sort_by:
         sort_by = 'score'
     s = esqb.search_episode_topics(show_key, topic_grouping, topic_key, season=season, sort_by=sort_by)
@@ -878,11 +951,14 @@ def find_episodes_by_topic(show_key: ShowKey, topic_grouping: str, topic_key: st
     return {"episode_topics": episode_topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/find_speakers_by_topic/{topic_grouping}/{topic_key}", tags=['ES Reader'])
-def find_speakers_by_topic(topic_grouping: str, topic_key: str, show_key: ShowKey = None, min_word_count: int = None):
+@esr_app.get("/find_speakers_by_topic/{topic_grouping}/{topic_key}")
+def find_speakers_by_topic(topic_grouping: str, topic_key: str, user: user_dependency, 
+                           show_key: ShowKey = None, min_word_count: int = None):
     '''
     Search speakers by topic. Not restricted to a given show. 
-    '''    
+    '''
+    exit_if_unauthorized(user)
+
     if show_key:
         show_key = show_key.value
     s = esqb.search_speaker_topics(topic_grouping, topic_key, show_key=show_key, min_word_count=min_word_count)
@@ -891,22 +967,28 @@ def find_speakers_by_topic(topic_grouping: str, topic_key: str, show_key: ShowKe
     return {"speaker_topics": speaker_topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/find_speaker_seasons_by_topic/{topic_grouping}/{topic_key}/{show_key}", tags=['ES Reader'])
-def find_speaker_seasons_by_topic(topic_grouping: str, topic_key: str, show_key: ShowKey, season: int = None, min_word_count: int = None):
+@esr_app.get("/find_speaker_seasons_by_topic/{topic_grouping}/{topic_key}/{show_key}")
+def find_speaker_seasons_by_topic(topic_grouping: str, topic_key: str, show_key: ShowKey, user: user_dependency, 
+                                  season: int = None, min_word_count: int = None):
     '''
     Search speaker_seasons by topic 
-    '''    
+    '''
+    exit_if_unauthorized(user)
+
     s = esqb.search_speaker_season_topics(topic_grouping, topic_key, show_key.value, season=season, min_word_count=min_word_count)
     es_query = s.to_dict()
     speaker_season_topics = esrt.return_topics(s)
     return {"speaker_season_topics": speaker_season_topics, "es_query": es_query}
 
 
-@esr_app.get("/esr/find_speaker_episodes_by_topic/{topic_grouping}/{topic_key}/{show_key}", tags=['ES Reader'])
-def find_speaker_episodes_by_topic(topic_grouping: str, topic_key: str, show_key: ShowKey, season: int = None, episode_key: str = None, min_word_count: int = None):
+@esr_app.get("/find_speaker_episodes_by_topic/{topic_grouping}/{topic_key}/{show_key}")
+def find_speaker_episodes_by_topic(topic_grouping: str, topic_key: str, show_key: ShowKey, user: user_dependency, 
+                                   season: int = None, episode_key: str = None, min_word_count: int = None):
     '''
     Search speaker_episodes by topic 
-    '''    
+    '''
+    exit_if_unauthorized(user)
+
     s = esqb.search_speaker_episode_topics(topic_grouping, topic_key, show_key.value, season=season, episode_key=episode_key, min_word_count=min_word_count)
     es_query = s.to_dict()
     speaker_episode_topics = esrt.return_topics(s)
@@ -916,96 +998,123 @@ def find_speaker_episodes_by_topic(topic_grouping: str, topic_key: str, show_key
 
 ###################### AGGREGATIONS ###########################
 
-@esr_app.get("/esr/agg_seasons/{show_key}", tags=['ES Reader'])
-def agg_seasons(show_key: ShowKey, location: str = None):
+@esr_app.get("/agg_seasons/{show_key}")
+def agg_seasons(show_key: ShowKey, user: user_dependency, location: str = None):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_seasons(show_key.value, location=location)
     es_query = s.to_dict()
     season_count = esrt.return_season_count(s)
     return {"season_count": season_count, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_seasons_by_speaker/{show_key}", tags=['ES Reader'])
-def agg_seasons_by_speaker(show_key: ShowKey, location: str = None):
+@esr_app.get("/agg_seasons_by_speaker/{show_key}")
+def agg_seasons_by_speaker(show_key: ShowKey, user: user_dependency, location: str = None):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_seasons_by_speaker(show_key.value, location=location)
     es_query = s.to_dict()
-    season_count = agg_seasons(show_key, location=location)
+    season_count = agg_seasons(show_key, user, location=location)
     matches = esrt.return_seasons_by_speaker(s, season_count['season_count'], location=location)
     return {"speaker_count": len(matches), "seasons_by_speaker": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_seasons_by_location/{show_key}", tags=['ES Reader'])
-def agg_seasons_by_location(show_key: ShowKey):
+@esr_app.get("/agg_seasons_by_location/{show_key}")
+def agg_seasons_by_location(show_key: ShowKey, user: user_dependency):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_seasons_by_location(show_key.value)
     es_query = s.to_dict()
-    season_count = agg_seasons(show_key)
+    season_count = agg_seasons(show_key, user)
     matches = esrt.return_seasons_by_location(s, season_count['season_count'])
     return {"location_count": len(matches), "seasons_by_location": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_episodes/{show_key}", tags=['ES Reader'])
-def agg_episodes(show_key: ShowKey, season: str = None, location: str = None):
+@esr_app.get("/agg_episodes/{show_key}")
+def agg_episodes(show_key: ShowKey, user: user_dependency, season: str = None, location: str = None):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_episodes(show_key.value, season=season, location=location)
     es_query = s.to_dict()
     episode_count = esrt.return_episode_count(s)
     return {"episode_count": episode_count, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_episodes_by_speaker/{show_key}", tags=['ES Reader'])
-def agg_episodes_by_speaker(show_key: ShowKey, season: str = None, location: str = None, other_speaker: str = None):
+@esr_app.get("/agg_episodes_by_speaker/{show_key}")
+def agg_episodes_by_speaker(show_key: ShowKey, user: user_dependency, season: str = None, location: str = None, other_speaker: str = None):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_episodes_by_speaker(show_key.value, season=season, location=location, other_speaker=other_speaker)
     es_query = s.to_dict()
     # separate call to get episode_count without double-counting per speaker
-    episode_count = agg_episodes(show_key, season=season, location=location)
+    episode_count = agg_episodes(show_key, user, season=season, location=location)
     matches = esrt.return_episodes_by_speaker(s, episode_count['episode_count'], location=location, other_speaker=other_speaker)
     return {"speaker_count": len(matches), "episodes_by_speaker": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_episodes_by_location/{show_key}", tags=['ES Reader'])
-def agg_episodes_by_location(show_key: ShowKey, season: str = None):
+@esr_app.get("/agg_episodes_by_location/{show_key}")
+def agg_episodes_by_location(show_key: ShowKey, user: user_dependency, season: str = None):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_episodes_by_location(show_key.value, season=season)
     es_query = s.to_dict()
     # separate call to get episode_count without double-counting per speaker
-    episode_count = agg_episodes(show_key, season=season)
+    episode_count = agg_episodes(show_key, user, season=season)
     matches = esrt.return_episodes_by_location(s, episode_count['episode_count'])
     return {"location_count": len(matches), "episodes_by_location": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_scenes/{show_key}", tags=['ES Reader'])
-def agg_scenes(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None):
+@esr_app.get("/agg_scenes/{show_key}")
+def agg_scenes(show_key: ShowKey, user: user_dependency, season: str = None, episode_key: str = None, location: str = None):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_scenes(show_key.value, season=season, episode_key=episode_key, location=location)
     es_query = s.to_dict()
     scene_count = esrt.return_scene_count(s)
     return {"scene_count": scene_count, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_scenes_by_speaker/{show_key}", tags=['ES Reader'])
-def agg_scenes_by_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, location: str = None, other_speaker: str = None):
+@esr_app.get("/agg_scenes_by_speaker/{show_key}")
+def agg_scenes_by_speaker(show_key: ShowKey, user: user_dependency = None, 
+                          season: str = None, episode_key: str = None, 
+                          location: str = None, other_speaker: str = None):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_scenes_by_speaker(show_key.value, season=season, episode_key=episode_key, location=location, other_speaker=other_speaker)
     es_query = s.to_dict()
     # separate call to get scene_count without double-counting per speaker
-    scene_count = agg_scenes(show_key, season=season, episode_key=episode_key, location=location)
+    scene_count = agg_scenes(show_key, user, season=season, episode_key=episode_key, location=location)
     matches = esrt.return_scenes_by_speaker(s, scene_count['scene_count'], location=location, other_speaker=other_speaker)
     return {"speaker_count": len(matches), "scenes_by_speaker": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_scenes_by_location/{show_key}", tags=['ES Reader'])
-def agg_scenes_by_location(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None):
+@esr_app.get("/agg_scenes_by_location/{show_key}")
+def agg_scenes_by_location(show_key: ShowKey, user: user_dependency, 
+                           season: str = None, episode_key: str = None, speaker: str = None):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_scenes_by_location(show_key.value, season=season, episode_key=episode_key, speaker=speaker)
     es_query = s.to_dict()
     matches = esrt.return_scenes_by_location(s, speaker=speaker)
     return {"location_count": len(matches), "scenes_by_location": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_scene_events_by_speaker/{show_key}", tags=['ES Reader'])
-def agg_scene_events_by_speaker(show_key: ShowKey, season: str = None, episode_key: str = None, dialog: str = None):
+@esr_app.get("/agg_scene_events_by_speaker/{show_key}")
+def agg_scene_events_by_speaker(show_key: ShowKey, user: user_dependency, 
+                                season: str = None, episode_key: str = None, dialog: str = None):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_scene_events_by_speaker(show_key.value, season=season, episode_key=episode_key, dialog=dialog)
     es_query = s.to_dict()
     matches = esrt.return_scene_events_by_speaker(s, dialog=dialog)
     return {"speaker_count": len(matches), "scene_events_by_speaker": matches, "es_query": es_query}
 
 
-@esr_app.get("/esr/agg_dialog_word_counts/{show_key}", tags=['ES Reader'])
-def agg_dialog_word_counts(show_key: ShowKey, season: str = None, episode_key: str = None, speaker: str = None):
+@esr_app.get("/agg_dialog_word_counts/{show_key}")
+def agg_dialog_word_counts(show_key: ShowKey, user: user_dependency, 
+                           season: str = None, episode_key: str = None, speaker: str = None):
+    exit_if_unauthorized(user)
+
     s = esqb.agg_dialog_word_counts(show_key.value, season=season, episode_key=episode_key, speaker=speaker)
     es_query = s.to_dict()
     matches = esrt.return_dialog_word_counts(s, speaker=speaker)
@@ -1013,15 +1122,17 @@ def agg_dialog_word_counts(show_key: ShowKey, season: str = None, episode_key: s
 
 
 # TODO this might be going away as it's largely replaced by speaker index
-@esr_app.get("/esr/composite_speaker_aggs/{show_key}", tags=['ES Reader'])
-def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_key: str = None):
+@esr_app.get("/composite_speaker_aggs/{show_key}")
+def composite_speaker_aggs(show_key: ShowKey, user: user_dependency, season: str = None, episode_key: str = None):
+    exit_if_unauthorized(user)
+
     if not season and not episode_key:
-        speaker_season_counts = agg_seasons_by_speaker(show_key)
+        speaker_season_counts = agg_seasons_by_speaker(show_key, user)
     if not episode_key:
-        speaker_episode_counts = agg_episodes_by_speaker(show_key, season=season)
-    speaker_scene_counts = agg_scenes_by_speaker(show_key, season=season, episode_key=episode_key)
-    speaker_line_counts = agg_scene_events_by_speaker(show_key, season=season, episode_key=episode_key)
-    speaker_word_counts = agg_dialog_word_counts(show_key, season=season, episode_key=episode_key)
+        speaker_episode_counts = agg_episodes_by_speaker(show_key, user, season=season)
+    speaker_scene_counts = agg_scenes_by_speaker(show_key, user, season=season, episode_key=episode_key)
+    speaker_line_counts = agg_scene_events_by_speaker(show_key, user, season=season, episode_key=episode_key)
+    speaker_word_counts = agg_dialog_word_counts(show_key, user, season=season, episode_key=episode_key)
 
     # TODO refactor this to generically handle dicts threading together
     speakers = {}
@@ -1063,13 +1174,15 @@ def composite_speaker_aggs(show_key: ShowKey, season: str = None, episode_key: s
     return {"speaker_count": len(speaker_agg_composite), "speaker_agg_composite": speaker_agg_composite} 
 
 
-@esr_app.get("/esr/composite_location_aggs/{show_key}", tags=['ES Reader'])
-def composite_location_aggs(show_key: ShowKey, season: str = None, episode_key: str = None):
+@esr_app.get("/composite_location_aggs/{show_key}")
+def composite_location_aggs(show_key: ShowKey, user: user_dependency, season: str = None, episode_key: str = None):
+    exit_if_unauthorized(user)
+
     if not season and not episode_key:
-        location_season_counts = agg_seasons_by_location(show_key)
+        location_season_counts = agg_seasons_by_location(show_key, user)
     if not episode_key:
-        location_episode_counts = agg_episodes_by_location(show_key, season=season)
-    location_scene_counts = agg_scenes_by_location(show_key, season=season, episode_key=episode_key)
+        location_episode_counts = agg_episodes_by_location(show_key, user, season=season)
+    location_scene_counts = agg_scenes_by_location(show_key, user, season=season, episode_key=episode_key)
 
     # TODO refactor this to generically handle dicts threading together
     locations = {}
@@ -1101,8 +1214,8 @@ def composite_location_aggs(show_key: ShowKey, season: str = None, episode_key: 
     return {"location_count": len(location_agg_composite), "location_agg_composite": location_agg_composite} 
 
 
-@esr_app.get("/esr/agg_numeric_distrib_into_percentiles/{show_key}/{index}/{numeric_field}", tags=['ES Reader'])
-def agg_numeric_distrib_into_percentiles(show_key: ShowKey, index: str, numeric_field: str, constraints: str = None):
+@esr_app.get("/agg_numeric_distrib_into_percentiles/{show_key}/{index}/{numeric_field}")
+def agg_numeric_distrib_into_percentiles(show_key: ShowKey, index: str, numeric_field: str, user: user_dependency, constraints: str = None):
     '''
     Slice up the distribution of values for a numeric field into 100 percentile slots, so it's easier to compare those values
     Motivation: KNN similarity of episode topics, ranging from 81-91, with most results between 84-86, being difficult to usefully compare in a pie chart
@@ -1111,6 +1224,7 @@ def agg_numeric_distrib_into_percentiles(show_key: ShowKey, index: str, numeric_
         (b) added as a new downstream dependency in the broader speaker_episode_topics index populating pipeline
         (c) invoked in real time rather than baked into an index
     '''
+    exit_if_unauthorized(user)
 
     constraints_dict = {}
     if constraints:
@@ -1132,12 +1246,17 @@ def agg_numeric_distrib_into_percentiles(show_key: ShowKey, index: str, numeric_
 
 ###################### RELATIONS ###########################
 
-@esr_app.get("/esr/episode_relations_graph/{show_key}/{model_vendor}/{model_version}", tags=['ES Reader'])
-def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version: str, max_edges: int = None, season: str = None):
+@esr_app.get("/episode_relations_graph/{show_key}/{model_vendor}/{model_version}")
+def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version: str, user: user_dependency, max_edges: int = None, season: str = None):
+    '''
+    NOTE currently not used
+    '''
+    exit_if_unauthorized(user)
+
     if not max_edges:
         max_edges = 5
     # nodes 
-    episodes_and_relations = fetch_all_episode_relations(show_key, model_vendor, model_version)
+    episodes_and_relations = fetch_all_episode_relations(show_key, model_vendor, model_version, user)
     nodes = []
     links = []
     episode_keys_to_indexes = {}
@@ -1168,13 +1287,14 @@ def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version:
     return {"nodes": nodes, "links": links}
 
 
-@esr_app.get("/esr/speaker_relations_graph/{show_key}/{episode_key}", tags=['ES Reader'])
-def speaker_relations_graph(show_key: ShowKey, episode_key: str):
+@esr_app.get("/speaker_relations_graph/{show_key}/{episode_key}")
+def speaker_relations_graph(show_key: ShowKey, episode_key: str, user: user_dependency):
+    exit_if_unauthorized(user)
     
-    episode_response = fetch_episode(show_key, episode_key)
+    episode_response = fetch_episode(show_key, episode_key, user)
     episode = episode_response['es_episode']
 
-    episode_speakers_response = fetch_speakers_for_episode(show_key, episode_key)
+    episode_speakers_response = fetch_speakers_for_episode(show_key, episode_key, user)
     speakers = episode_speakers_response['speaker_episodes']
     speakers_to_node_i = {s['speaker']:i for i, s in enumerate(speakers)}
     speaker_associations = {s['speaker']:set() for i, s in enumerate(speakers)}
@@ -1218,41 +1338,43 @@ def speaker_relations_graph(show_key: ShowKey, episode_key: str):
 
 ###################### OTHER ###########################
 
-@esr_app.get("/esr/keywords_by_episode/{show_key}/{episode_key}", tags=['ES Reader'])
-def keywords_by_episode(show_key: ShowKey, episode_key: str, exclude_speakers: bool = False):
+@esr_app.get("/keywords_by_episode/{show_key}/{episode_key}")
+def keywords_by_episode(show_key: ShowKey, episode_key: str, user: user_dependency, exclude_speakers: bool = False):
+    exit_if_unauthorized(user)
+
     response = esqb.keywords_by_episode(show_key.value, episode_key)
     all_speakers = []
     if exclude_speakers:
-        res = agg_scenes_by_speaker(show_key, episode_key=episode_key) # TODO should this use agg_episodes_by_speaker now?
+        res = agg_scenes_by_speaker(show_key, user, episode_key=episode_key) # TODO should this use agg_episodes_by_speaker now?
         all_speakers = res['scenes_by_speaker'].keys()
     matches = esrt.return_keywords_by_episode(response, exclude_terms=all_speakers)
     return {"keyword_count": len(matches), "keywords": matches}
 
 
-@esr_app.get("/esr/keywords_by_corpus/{show_key}", tags=['ES Reader'])
-def keywords_by_corpus(show_key: ShowKey, season: str = None, exclude_speakers: bool = False):
+@esr_app.get("/keywords_by_corpus/{show_key}")
+def keywords_by_corpus(show_key: ShowKey, user: user_dependency, season: str = None, exclude_speakers: bool = False):
+    exit_if_unauthorized(user)
+
     response = esqb.keywords_by_corpus(show_key.value, season=season)
     all_speakers = []
     if exclude_speakers:
-        res = agg_episodes_by_speaker(show_key, season=season)
+        res = agg_episodes_by_speaker(show_key, user, season=season)
         all_speakers = res['episodes_by_speaker'].keys()
     matches = esrt.return_keywords_by_corpus(response, exclude_terms=all_speakers)
     return {"keyword_count": len(matches), "keywords": matches}
 
 
-@esr_app.get("/esr/generate_episode_gantt_sequence/{show_key}/{episode_key}", tags=['ES Reader'])
-def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
-    '''
-    TODO
-    '''
+@esr_app.get("/generate_episode_gantt_sequence/{show_key}/{episode_key}")
+def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str, user: user_dependency):
+    exit_if_unauthorized(user)
+
     max_line_chars = 280
-    
     dialog_timeline = []
     location_timeline = []
     word_i = 0
     scene_start_i = 0
     # fetch episode data
-    episode = fetch_episode(show_key, episode_key)
+    episode = fetch_episode(show_key, episode_key, user)
     es_episode = episode['es_episode']
     if 'scenes' not in es_episode:
         return {"dialog_timeline": [], "location_timeline": []}
@@ -1280,16 +1402,15 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str):
     return {"dialog_timeline": dialog_timeline, "location_timeline": location_timeline}
 
 
-@esr_app.get("/esr/generate_series_speaker_gantt_sequence/{show_key}", tags=['ES Reader'])
-def generate_series_speaker_gantt_sequence(show_key: ShowKey, limit_cast: bool = False, overwrite_file: bool = False):
-    '''
-    TODO 
-    '''
+@esr_app.get("/generate_series_speaker_gantt_sequence/{show_key}")
+def generate_series_speaker_gantt_sequence(show_key: ShowKey, user: user_dependency, limit_cast: bool = False, overwrite_file: bool = False):
+    exit_if_unauthorized(user)
+
     episodes_to_speaker_line_counts = {}
     episode_speakers_sequence = []
     
     # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key)
+    response = fetch_simple_episodes(show_key, user)
     episodes = response['episodes']
 
     # for each episode:
@@ -1303,7 +1424,7 @@ def generate_series_speaker_gantt_sequence(show_key: ShowKey, limit_cast: bool =
         sequence_in_season = episode['sequence_in_season']
 
         # fetch speakers and line counts
-        response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
+        response = agg_scene_events_by_speaker(show_key, user, episode_key=episode_key)
         speaker_line_counts = response['scene_events_by_speaker']
         del speaker_line_counts['_ALL_']
         episodes_to_speaker_line_counts[episode_key] = speaker_line_counts
@@ -1320,12 +1441,12 @@ def generate_series_speaker_gantt_sequence(show_key: ShowKey, limit_cast: bool =
     if limit_cast:
         trimmed_episode_speakers_sequence = []
         for d in episode_speakers_sequence:
-            if d['Task'] in show_metadata[show_key]['regular_cast'].keys() or d['Task'] in show_metadata[show_key]['recurring_cast'].keys():
+            if d['Task'] in show_metadata[show_key.value]['regular_cast'].keys() or d['Task'] in show_metadata[show_key.value]['recurring_cast'].keys():
                 trimmed_episode_speakers_sequence.append(d)
         episode_speakers_sequence = trimmed_episode_speakers_sequence
 
     if overwrite_file:
-        file_path = f'{GANTT_DATA_DIR}/{show_key}/speaker_gantt_sequence_{show_key}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key.value}/speaker_gantt_sequence_{show_key.value}.csv'
         print(f'writing speaker gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_speakers_sequence)
         df.to_csv(file_path)
@@ -1334,22 +1455,21 @@ def generate_series_speaker_gantt_sequence(show_key: ShowKey, limit_cast: bool =
             "episode_speakers_sequence": episode_speakers_sequence}
 
 
-@esr_app.get("/esr/generate_series_location_gantt_sequence/{show_key}", tags=['ES Reader'])
-def generate_series_location_gantt_sequence(show_key: ShowKey, overwrite_file: bool = False):
-    '''
-    TODO 
-    '''
+@esr_app.get("/generate_series_location_gantt_sequence/{show_key}")
+def generate_series_location_gantt_sequence(show_key: ShowKey, user: user_dependency, overwrite_file: bool = False):
+    exit_if_unauthorized(user)
+
     episodes_to_location_counts = {}
     episode_locations_sequence = []
 
     # limit the superset of locations to those occurring in at least 3 episodes
-    response = agg_episodes_by_location(show_key)
+    response = agg_episodes_by_location(show_key, user)
     location_episode_counts = response['episodes_by_location']
     del location_episode_counts['_ALL_']
     recurring_locations = [location for location, episode_count in location_episode_counts.items() if episode_count > 2]
     
     # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key)
+    response = fetch_simple_episodes(show_key, user)
     episodes = response['episodes']
 
     # for each episode:
@@ -1364,7 +1484,7 @@ def generate_series_location_gantt_sequence(show_key: ShowKey, overwrite_file: b
         sequence_in_season = episode['sequence_in_season']
 
         # fetch locations and scene counts
-        response = agg_scenes_by_location(show_key, episode_key=episode_key)
+        response = agg_scenes_by_location(show_key, user, episode_key=episode_key)
         location_counts = response['scenes_by_location']
         del location_counts['_ALL_']
         episodes_to_location_counts[episode_key] = location_counts
@@ -1379,7 +1499,7 @@ def generate_series_location_gantt_sequence(show_key: ShowKey, overwrite_file: b
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'{GANTT_DATA_DIR}/{show_key}/location_gantt_sequence_{show_key}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key.value}/location_gantt_sequence_{show_key.value}.csv'
         print(f'writing location gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_locations_sequence)
         df.to_csv(file_path)
@@ -1388,12 +1508,12 @@ def generate_series_location_gantt_sequence(show_key: ShowKey, overwrite_file: b
             "episode_locations_sequence": episode_locations_sequence}
 
 
-@esr_app.get("/esr/generate_series_topic_gantt_sequence/{show_key}", tags=['ES Reader'])
-def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str = None, topic_threshold: int = None, level: str = None,
-                                         score_type: str = None, model_vendor: str = None, model_version: str = None, overwrite_file: bool = False):
-    '''
-    TODO Generate composite of all scene_event aggs per speaker for each individual episode
-    '''
+@esr_app.get("/generate_series_topic_gantt_sequence/{show_key}")
+def generate_series_topic_gantt_sequence(show_key: ShowKey, user: user_dependency, 
+                                         topic_grouping: str = None, topic_threshold: int = None, level: str = None, score_type: str = None, 
+                                         model_vendor: str = None, model_version: str = None, overwrite_file: bool = False):
+    exit_if_unauthorized(user)
+
     if not topic_grouping:
         topic_grouping = EPISODE_TOPIC_GROUPINGS[0]
     if not topic_threshold:
@@ -1406,13 +1526,13 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
     if not model_vendor:
         model_vendor = 'openai'
     if not model_version:
-        model_version = 'ada002'
+        model_version = '3small'
 
     episodes_to_topics = {}
     episode_topics_sequence = []
     
     # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key)
+    response = fetch_simple_episodes(show_key, user)
     episodes = response['episodes']
 
     # for each episode:
@@ -1427,7 +1547,7 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
         sequence_in_season = episode['sequence_in_season']
 
         # fetch topics and scores
-        response = fetch_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version)
+        response = fetch_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version, user)
         topics = response['episode_topics']
         if len(topics) > topic_threshold:
             topics = topics[:topic_threshold]
@@ -1446,7 +1566,7 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'{GANTT_DATA_DIR}/{show_key}/topic_gantt_sequence_{show_key}_{topic_grouping}_{score_type}.csv'
+        file_path = f'{GANTT_DATA_DIR}/{show_key.value}/topic_gantt_sequence_{show_key.value}_{topic_grouping}_{score_type}.csv'
         print(f'writing topic gantt sequence dataframe to file_path={file_path}')
         df = pd.DataFrame(episode_topics_sequence)
         df.to_csv(file_path)
@@ -1455,12 +1575,12 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, topic_grouping: str 
             "episode_topics_sequence": episode_topics_sequence}
 
 
-@esr_app.get("/esr/generate_speaker_line_chart_sequences/{show_key}", tags=['ES Reader'])
-def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: bool = False):
-    '''
-    TODO distinguish between regular and recurring cast?
-    '''
-    speakers = list(show_metadata[show_key]['regular_cast'].keys()) + list(show_metadata[show_key]['recurring_cast'].keys())
+@esr_app.get("/generate_speaker_line_chart_sequences/{show_key}")
+def generate_speaker_line_chart_sequences(show_key: ShowKey, user: user_dependency, overwrite_file: bool = False):
+    exit_if_unauthorized(user)
+
+    # TODO distinguish between regular and recurring cast?
+    speakers = list(show_metadata[show_key.value]['regular_cast'].keys()) + list(show_metadata[show_key.value]['recurring_cast'].keys())
 
     speaker_series_agg_word_counts = {spkr:0 for spkr in speakers}
     speaker_series_agg_line_counts = {spkr:0 for spkr in speakers}
@@ -1473,7 +1593,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
     series_agg_episode_count = 0
 
     # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key)
+    response = fetch_simple_episodes(show_key, user)
     episodes = response['episodes']
     
     speaker_episode_rows = []
@@ -1500,19 +1620,19 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
         series_agg_episode_count += 1
 
         # fetch speakers and word counts
-        word_count_agg_response = agg_dialog_word_counts(show_key, episode_key=episode_key)
+        word_count_agg_response = agg_dialog_word_counts(show_key, user, episode_key=episode_key)
         speaker_word_counts = word_count_agg_response['dialog_word_counts']
         episode_word_count = speaker_word_counts['_ALL_']
         season_agg_word_count += episode_word_count
         series_agg_word_count += episode_word_count
         # fetch speakers and line counts
-        scene_event_agg_response = agg_scene_events_by_speaker(show_key, episode_key=episode_key)
+        scene_event_agg_response = agg_scene_events_by_speaker(show_key, user, episode_key=episode_key)
         speaker_line_counts = scene_event_agg_response['scene_events_by_speaker']
         episode_line_count = speaker_line_counts['_ALL_']
         season_agg_line_count += episode_line_count
         series_agg_line_count += episode_line_count
         # fetch speakers and scene/episode counts
-        scene_agg_response = agg_scenes_by_speaker(show_key, episode_key=episode_key)
+        scene_agg_response = agg_scenes_by_speaker(show_key, user, episode_key=episode_key)
         speaker_scene_counts = scene_agg_response['scenes_by_speaker']
         episode_scene_count = speaker_scene_counts['_ALL_']
         season_agg_scene_count += episode_scene_count
@@ -1571,7 +1691,7 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'{ANIMATION_DATA_DIR}/{show_key}/speaker_episode_aggs_{show_key}.csv'
+        file_path = f'{ANIMATION_DATA_DIR}/{show_key.value}/speaker_episode_aggs_{show_key.value}.csv'
         print(f'writing speaker word/line/scene/episode counts and aggs dataframe to file_path={file_path}')
         df = pd.DataFrame(speaker_episode_rows)
         df.to_csv(file_path)
@@ -1579,12 +1699,11 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, overwrite_file: boo
     return {"speaker_episode_rows": speaker_episode_rows}
 
 
-@esr_app.get("/esr/generate_location_line_chart_sequences/{show_key}", tags=['ES Reader'])
-def generate_location_line_chart_sequences(show_key: ShowKey, overwrite_file: bool = False):
-    '''
-    TODO 
-    '''
-    response = agg_scenes_by_location(show_key)
+@esr_app.get("/generate_location_line_chart_sequences/{show_key}")
+def generate_location_line_chart_sequences(show_key: ShowKey, user: user_dependency, overwrite_file: bool = False):
+    exit_if_unauthorized(user)
+
+    response = agg_scenes_by_location(show_key, user)
     locations = response['scenes_by_location']
     top_locations = [location for location, count in locations.items() if count > 10]
     location_series_agg_scene_counts = {location:0 for location in top_locations}
@@ -1594,7 +1713,7 @@ def generate_location_line_chart_sequences(show_key: ShowKey, overwrite_file: bo
     series_agg_episode_count = 0
 
     # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key)
+    response = fetch_simple_episodes(show_key, user)
     episodes = response['episodes']
     
     location_episode_rows = []
@@ -1617,7 +1736,7 @@ def generate_location_line_chart_sequences(show_key: ShowKey, overwrite_file: bo
         series_agg_episode_count += 1
 
         # fetch locations and scene/episode counts
-        scene_agg_response = agg_scenes_by_location(show_key, episode_key=episode_key)
+        scene_agg_response = agg_scenes_by_location(show_key, user, episode_key=episode_key)
         location_scene_counts = scene_agg_response['scenes_by_location']
         episode_scene_count = location_scene_counts['_ALL_']
         del location_scene_counts['_ALL_']
@@ -1661,7 +1780,7 @@ def generate_location_line_chart_sequences(show_key: ShowKey, overwrite_file: bo
         episode_i += 1
 
     if overwrite_file:
-        file_path = f'{ANIMATION_DATA_DIR}/{show_key}/location_episode_aggs_{show_key}.csv'
+        file_path = f'{ANIMATION_DATA_DIR}/{show_key.value}/location_episode_aggs_{show_key.value}.csv'
         print(f'writing location scene/episode counts and aggs dataframe to file_path={file_path}')
         df = pd.DataFrame(location_episode_rows)
         df.to_csv(file_path)
@@ -1669,12 +1788,12 @@ def generate_location_line_chart_sequences(show_key: ShowKey, overwrite_file: bo
     return {"location_episode_rows": location_episode_rows}
 
 
-# @esr_app.get("/esr/cluster_content/{show_key}/{num_clusters}", tags=['ES Reader'])
+# @esr_app.get("/cluster_content/{show_key}/{num_clusters}")
 # def cluster_content(show_key: ShowKey, num_clusters: int, model_vendor: str = None, model_version: str = None):
 #     if not model_vendor:
 #         model_vendor = 'openai'
 #     if not model_version:
-#         model_version = 'ada002'
+#         model_version = '3small'
 
 #     true_model_version = None
 

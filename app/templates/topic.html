@@ -78,7 +78,7 @@
                     <tbody>
                     {% for episode_topic in tdata['episode_topics'] %}
                         <tr class="table-secondary">
-                            <th scope="row"><a href="/web/episode/{{ episode_topic['show_key'] }}/{{ episode_topic['episode_key'] }}" 
+                            <th scope="row"><a href="/dash_pages/episode/{{ episode_topic['show_key'] }}/{{ episode_topic['episode_key'] }}" 
                                 class="alert-link">{{ episode_topic['episode_title'] }}</a></th>
                             <td>{{ episode_topic['season'] }}</td>
                             <td>{{ episode_topic['sequence_in_season'] }}</td>
@@ -109,7 +109,7 @@
                     <tbody>
                     {% for episode_topic in tdata['episode_topics_raw_sort'] %}
                         <tr class="table-secondary">
-                            <th scope="row"><a href="/web/episode/{{ episode_topic['show_key'] }}/{{ episode_topic['episode_key'] }}" 
+                            <th scope="row"><a href="/dash_pages/episode/{{ episode_topic['show_key'] }}/{{ episode_topic['episode_key'] }}" 
                                 class="alert-link">{{ episode_topic['episode_title'] }}</a></th>
                             <td>{{ episode_topic['season'] }}</td>
                             <td>{{ episode_topic['sequence_in_season'] }}</td>
@@ -202,7 +202,7 @@
                                 class="alert-link">{{ speaker_episode_topic['speaker'] }}</a></th>
                             <td>{{ speaker_episode_topic['season'] }}</td>
                             <td>{{ speaker_episode_topic['sequence_in_season'] }}</td>
-                            <td><a href="/web/episode/{{ tdata['show_key'] }}/{{ speaker_episode_topic['episode_key'] }}" 
+                            <td><a href="/dash_pages/episode/{{ tdata['show_key'] }}/{{ speaker_episode_topic['episode_key'] }}" 
                                 class="alert-link">{{ speaker_episode_topic['episode_title'] }}</a></td>
                             <td>{{ '%0.2f'|format(speaker_episode_topic['score']|float) }}</td>
                             <td>{{ '%0.2f'|format(speaker_episode_topic['raw_score']|float) }}</td>

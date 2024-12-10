@@ -13,8 +13,8 @@ from umap import UMAP
 
 from app.app_metadata import BERTOPIC_DATA_DIR, BERTOPIC_MODELS_DIR, BERTOPIC_LOGS_DIR
 from app.config import settings
-import app.es.es_read_router as esr
 from app.nlp.nlp_metadata import MIN_WORDS_FOR_BERT, MAX_WORDS_FOR_BERT
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 import app.utils as utils
 

@@ -7,8 +7,8 @@ import sys
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
 from app.app_metadata import ANALYTICS_DIR
-import app.es.es_read_router as esr
-import app.show_metadata as sm
+import app.routers.es_read_router as esr
+from app.show_metadata import ShowKey
 
 
 def main():
@@ -39,7 +39,10 @@ def main():
 
 
 def init_episode_df(show_key: str) -> pd.DataFrame:
-    episodes_by_season_resp = esr.list_simple_episodes_by_season(sm.ShowKey(show_key))
+    # TODO haven't solved for setting this correctly, requires altering exit_if_unauthorized to run 
+    user_dependency = None
+
+    episodes_by_season_resp = esr.list_simple_episodes_by_season(ShowKey(show_key), user_dependency)
     episodes_by_season = episodes_by_season_resp['episodes_by_season']
     
     episodes_list = []

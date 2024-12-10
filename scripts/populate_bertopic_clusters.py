@@ -5,7 +5,7 @@ import sys
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
 import app.es.es_query_builder as esqb
-import app.es.es_read_router as esr
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 from app.app_metadata import BERTOPIC_DATA_DIR
 
@@ -21,20 +21,23 @@ def main():
     # umap_metric = None NOTE the way I'm setting es_episode_narrative.cluster_memberships below precludes restricting by umap_metric 
     print(f'Begin populate_bertopic_clusters script for show_key={show_key}')
 
+    # TODO haven't solved for setting this correctly, requires altering exit_if_unauthorized to run 
+    user_dependency = None
+
     # load bertopic_data files 
-    bertopic_model_list_response = esr.list_bertopic_models(show_key)
+    bertopic_model_list_response = esr.list_bertopic_models(show_key, user_dependency)
     bertopic_model_ids = bertopic_model_list_response['bertopic_model_ids']
     print(f'Found {len(bertopic_model_ids)} bertopic_model_ids matching show_key={show_key}.')
 
     # initialize dict of narrative-speaker-groups per episode
     epnarr_spkrgrps_to_model_clusters = {}
-    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key), user_dependency)
     if 'episodes' not in simple_episodes_response:
         print(f'Failure to populate_bertopic_clusters for show_key={show_key}: /fetch_simple_episodes returned no episodes')
         return None
     for episode in simple_episodes_response['episodes']:
         e_key = episode['episode_key']
-        narrative_sequences_response = esr.fetch_narrative_sequences(ShowKey(show_key), e_key)
+        narrative_sequences_response = esr.fetch_narrative_sequences(ShowKey(show_key), e_key, user_dependency)
         if 'narrative_sequences' not in narrative_sequences_response:
             print(f'Unable to populate_bertopic_clusters for e_key={e_key} show_key={show_key}: /fetch_narrative_sequences returned no narrative_sequences. Skipping episode.')
             continue

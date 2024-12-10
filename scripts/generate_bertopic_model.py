@@ -7,7 +7,7 @@ import sys
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 
 from app.app_metadata import BERTOPIC_LOGS_DIR
-import app.es.es_read_router as esr
+import app.routers.es_read_router as esr
 import app.nlp.bertopic_model_builder as bmb
 from app.show_metadata import ShowKey
 
@@ -70,9 +70,12 @@ def main():
     print(f"override_config={override_config}")
     configs, config_params_to_values = generate_configs(override_config)
 
+    # TODO haven't solved for setting this correctly, requires altering exit_if_unauthorized to run 
+    user_dependency = None
+
     bert_text_inputs, bert_text_sources = bmb.generate_bert_text_inputs(ShowKey(show_key), narrative_only=False)
 
-    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key))
+    simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key), user_dependency)
     episodes = simple_episodes_response['episodes']
     episodes_df = pd.DataFrame(episodes)
     sources_df = pd.DataFrame(bert_text_sources, columns=['episode_key', 'speaker_group', 'wc'])

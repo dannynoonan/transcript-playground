@@ -1,6 +1,7 @@
-from app.show_metadata import ShowKey
-import app.es.es_read_router as esr
+from app.auth import ADMIN_USER
 from app.nlp.nlp_metadata import MIN_SPEAKER_LINES, MIN_SPEAKER_LINE_RATIOS
+import app.routers.es_read_router as esr
+from app.show_metadata import ShowKey
 
 
 def extract_narrative_sequences(show_key: ShowKey, episode_key: str) -> list:
@@ -8,7 +9,7 @@ def extract_narrative_sequences(show_key: ShowKey, episode_key: str) -> list:
     Brute force attempt to extract narrative subplots via speaker co-occurrence    
     '''
     # compile list of episode speakers sorted desc by line count
-    scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(show_key, episode_key=episode_key)
+    scene_events_by_speaker_response = esr.agg_scene_events_by_speaker(show_key, ADMIN_USER, episode_key=episode_key)
     speaker_line_counts = scene_events_by_speaker_response['scene_events_by_speaker']
     del speaker_line_counts['_ALL_']
     sorted_speakers = [spkr for spkr, ct in speaker_line_counts.items() if ct > MIN_SPEAKER_LINES]
@@ -41,7 +42,7 @@ def extract_narrative_sequences(show_key: ShowKey, episode_key: str) -> list:
     for speaker_group in speaker_groups:
         # print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
         # print(f'BEGIN `search_scene_events_multi_speaker` for speaker_group={speaker_group}')
-        search_response = esr.search_scene_events_multi_speaker(show_key, ','.join(speaker_group), episode_key=episode_key, intersection=True)
+        search_response = esr.search_scene_events_multi_speaker(show_key, ','.join(speaker_group), ADMIN_USER, episode_key=episode_key, intersection=True)
         if 'scene_count' not in search_response or search_response['scene_count'] < 2:
             # print(f'fewer than 2 scenes match speaker_group={speaker_group}, skipping')
             continue

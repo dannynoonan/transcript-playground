@@ -124,5 +124,10 @@ def link_to_episode(show_key: str, episode_key: str, title: str) -> str:
     return f'[{title}](/dash_pages/episode/{show_key}/{episode_key})'
 
 
-def link_to_bertopic_model(show_key: str, bertopic_model_id: str, title: str) -> str:
-    return f'[{title}](/dash_pages/bertopic_model/{show_key}/{bertopic_model_id})'
+def link_to_speaker(show_key: str, speaker: str) -> str:
+    speaker = speaker.replace(' ', '+')
+    return f'[>>](/web/character/{show_key}/{speaker})'
+
+
+def link_to_bertopic_model(show_key: str, bertopic_model_id: str) -> str:
+    return f'[{bertopic_model_id}](/dash_pages/bertopic_model/{show_key}/{bertopic_model_id})'

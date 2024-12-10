@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
-import app.es.es_read_router as esr
+from app.auth import ADMIN_USER
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 
 
@@ -16,7 +17,7 @@ def publish_season_wordclouds(show_key: str, seasons: list, max_words: int = Non
     for season in seasons:
         publish_wordcloud(show_key, 'season', level_key=season, max_words=max_words)
         if include_episodes:
-            simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key), season=season)
+            simple_episodes_response = esr.fetch_simple_episodes(ShowKey(show_key), ADMIN_USER, season=season)
             simple_episodes = simple_episodes_response['episodes']
             publish_episode_wordclouds(show_key, [ep['episode_key'] for ep in simple_episodes], max_words=max_words)
 
@@ -25,7 +26,7 @@ def publish_series_wordcloud(show_key: str, max_words: int = None, include_seaso
     print(f'Begin publish_series_wordcloud for show_key={show_key} max_words={max_words} include_seasons={include_seasons} include_episodes={include_episodes}')
     publish_wordcloud(show_key, 'series', max_words=max_words)
     if include_seasons:
-        seasons_response = esr.list_seasons(ShowKey(show_key))
+        seasons_response = esr.list_seasons(ShowKey(show_key), ADMIN_USER)
         seasons = seasons_response['seasons']
         publish_season_wordclouds(show_key, [s for s in seasons], max_words=max_words, include_episodes=include_episodes)
 
@@ -40,17 +41,17 @@ def publish_wordcloud(show_key: str, level: str, level_key: str = None, max_word
     file_name = show_key
 
     if level == 'episode':
-        episode_keywords_response = esr.keywords_by_episode(ShowKey(show_key), level_key, exclude_speakers=True)
+        episode_keywords_response = esr.keywords_by_episode(ShowKey(show_key), level_key, ADMIN_USER, exclude_speakers=True)
         keywords = episode_keywords_response['keywords']
         file_name = f'{show_key}_{level_key}'
         multiplier = 'score'
     elif level == 'season':
-        season_keywords_response = esr.keywords_by_corpus(ShowKey(show_key), season=level_key, exclude_speakers=True)
+        season_keywords_response = esr.keywords_by_corpus(ShowKey(show_key), ADMIN_USER, season=level_key, exclude_speakers=True)
         keywords = season_keywords_response['keywords']
         file_name = f'{show_key}_SEASON{level_key}'
         multiplier = 'ttf'
     elif level == 'series':
-        series_keywords_response = esr.keywords_by_corpus(ShowKey(show_key), exclude_speakers=True) # level_key is ignored
+        series_keywords_response = esr.keywords_by_corpus(ShowKey(show_key), ADMIN_USER, exclude_speakers=True) # level_key is ignored
         keywords = series_keywords_response['keywords']
         file_name = f'{show_key}_SERIES'
         multiplier = 'ttf'

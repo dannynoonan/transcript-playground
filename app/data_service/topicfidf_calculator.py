@@ -1,23 +1,24 @@
 import math
 
+from app.auth import ADMIN_USER
 import app.es.es_query_builder as esqb
-import app.es.es_read_router as esr
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 
 
 def calculate_topic_freq_idf(show_key: ShowKey, topic_grouping: str, model_vendor: str, model_version: str) -> tuple[dict, dict]:
 
-    all_topics_response = esr.fetch_topic_grouping(topic_grouping)
+    all_topics_response = esr.fetch_topic_grouping(topic_grouping, ADMIN_USER)
     # topic_agg_scores is a stand-in for "document frequency"
     topic_agg_scores = {t['topic_key']:0 for t in all_topics_response['topics']}
 
-    simple_episodes_response = esr.fetch_simple_episodes(show_key)
+    simple_episodes_response = esr.fetch_simple_episodes(show_key, ADMIN_USER)
     e_keys = [e['episode_key'] for e in simple_episodes_response['episodes']]
     ekey_tkey_scores = {ek:{} for ek in e_keys}
 
     # TODO replace with agg query? since we're not actually fetching the `episode_topic` entities by id to update them
     for e_key in e_keys:
-        episode_topics_response = esr.fetch_episode_topics(show_key, e_key, topic_grouping, model_vendor, model_version)
+        episode_topics_response = esr.fetch_episode_topics(show_key, e_key, topic_grouping, model_vendor, model_version, ADMIN_USER)
         episode_topics = episode_topics_response['episode_topics']
         # topic_agg_scores is a stand-in for "document frequency"
         for topic in episode_topics:

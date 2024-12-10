@@ -10,9 +10,9 @@ else:
 
 from app.app_metadata import SENTIMENT_DATA_DIR
 import app.es.es_query_builder as esqb
-import app.es.es_read_router as esr
 import app.nlp.sentiment_analyzer as sa
 from app.nlp.nlp_metadata import OPENAI_EMOTIONS, NTLK_POLARITY, SENTIMENT_ANALYZERS
+import app.routers.es_read_router as esr
 from app.show_metadata import ShowKey
 from app.utils import set_dict_value_as_es_value
 
