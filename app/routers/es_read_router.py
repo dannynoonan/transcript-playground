@@ -140,6 +140,7 @@ def fetch_flattened_scenes(show_key: ShowKey, episode_key: str, user: user_depen
 @esr_app.get("/fetch_all_episode_relations/{show_key}/{model_vendor}/{model_version}")
 def fetch_all_episode_relations(show_key: ShowKey, model_vendor: str, model_version: str, user: user_dependency):
     '''
+    NOTE only dependency is currently not used
     Fetch all (sceneless) episodes and their relations data for a given model vendor/version
     '''
     exit_if_unauthorized(user)
@@ -1247,6 +1248,9 @@ def agg_numeric_distrib_into_percentiles(show_key: ShowKey, index: str, numeric_
 
 @esr_app.get("/episode_relations_graph/{show_key}/{model_vendor}/{model_version}")
 def episode_relations_graph(show_key: ShowKey, model_vendor: str, model_version: str, user: user_dependency, max_edges: int = None, season: str = None):
+    '''
+    NOTE currently not used
+    '''
     exit_if_unauthorized(user)
 
     if not max_edges:

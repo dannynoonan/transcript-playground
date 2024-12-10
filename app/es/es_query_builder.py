@@ -198,6 +198,8 @@ def fetch_episode_by_key(show_key: str, episode_key: str, all_fields: bool = Fal
     if not all_fields:
         s = s.source(excludes=['flattened_text'] + VECTOR_FIELDS + RELATIONS_FIELDS)
 
+    s = s.params(request_cache=True)
+
     return s
 
 
@@ -211,6 +213,8 @@ def fetch_doc_ids(show_key: str, season: str = None) -> Search:
     s = s.filter('term', show_key=show_key)
     if season:
         s = s.filter('term', season=season)
+
+    s = s.params(request_cache=True)
     
     return s
 
@@ -246,6 +250,8 @@ def fetch_simple_episodes(show_key: str, season: str = None) -> Search:
     s = s.sort('season', 'sequence_in_season')
 
     s = s.source(excludes=['flattened_text', 'scenes'] + VECTOR_FIELDS + RELATIONS_FIELDS)
+
+    s = s.params(request_cache=True)
 
     return s
 
@@ -345,6 +351,10 @@ def fetch_indexed_speakers(show_key: str, speaker_list: str = None, season: int 
 
     if return_fields:
         s = s.source(includes=return_fields)
+
+    s = s.params(request_cache=True)
+
+    s = s.params(request_cache=True)
 
     return s
 
@@ -527,6 +537,8 @@ def fetch_topic(topic_grouping: str, topic_key: str) -> EsTopic|None:
     except Exception as e:
         print(f'Failed to fetch topic with topic_grouping={topic_grouping} topic_key={topic_key}')
         return None
+    
+    s = s.params(request_cache=True)
 
     return topic
 
@@ -544,6 +556,8 @@ def fetch_topic_grouping(topic_grouping: str, return_fields: list = None) -> Sea
     if return_fields:
         s = s.source(includes=return_fields)
 
+    s = s.params(request_cache=True)
+
     return s
 
 
@@ -556,6 +570,8 @@ def fetch_episode_topic(show_key: str, episode_key: str, topic_grouping: str, to
     except Exception as e:
         print(f'Failed to fetch episode_topic with doc_id={doc_id}')
         return None
+    
+    # s = s.params(request_cache=True)
 
     return episode_topic
 
@@ -585,6 +601,8 @@ def fetch_episode_topics(show_key: str, episode_key: str, topic_grouping: str, m
 
     s = s.sort({sort_by: {'order': 'desc'}})
 
+    s = s.params(request_cache=True)
+
     return s
 
 
@@ -607,6 +625,8 @@ def fetch_speaker_topics(speaker: str, show_key: str, topic_grouping: str, level
             s = s.filter('term', is_parent=False)
 
     s = s.sort({'score': {'order': 'desc'}})
+
+    s = s.params(request_cache=True)
 
     return s
 
@@ -667,6 +687,8 @@ def fetch_speaker_episode_topics(show_key: str, topic_grouping: str, speaker: st
 
     s = s.sort({'season': {'order': 'asc'}}, {'episode_key': {'order': 'asc'}}, {'score': {'order': 'desc'}})
 
+    s = s.params(request_cache=True)
+
     return s
 
 
@@ -689,6 +711,8 @@ def fetch_speaker_topics_for_episode(show_key: str, episode_key: str, topic_grou
         s = s.filter('range', word_count={'gt': min_word_count})
 
     s = s.sort({'score': {'order': 'desc'}})
+
+    s = s.params(request_cache=True)
 
     return s
 
@@ -1058,6 +1082,9 @@ def search_episodes(show_key: str, season: str = None, episode_key: str = None, 
 
 
 def fetch_all_episode_relations(show_key: str, model_vendor: str, model_version: str) -> Search:
+    '''
+    NOTE only dependency is currently not used
+    '''
     print(f'begin fetch_all_episode_relations for show_key={show_key} model_vendor={model_vendor} model_version={model_version}')
 
     s = Search(index='transcripts')
@@ -1087,6 +1114,8 @@ def agg_seasons(show_key: str, location: str = None) -> Search:
 
     # TODO location
 
+    s = s.params(request_cache=True)
+
     return s
 
 
@@ -1101,6 +1130,8 @@ def agg_episodes(show_key: str, season: str = None, location: str = None) -> Sea
         s = s.filter('term', season=season)
 
     # TODO location
+
+    s = s.params(request_cache=True)
 
     return s
 
@@ -1207,6 +1238,8 @@ def agg_episodes_by_speaker(show_key: str, season: str = None, location: str = N
         ).bucket(
             'for_episode', 'reverse_nested' # TODO differs from agg_scenes_by_speaker
         )
+
+    s = s.params(request_cache=True)
     
     return s
 
@@ -1228,6 +1261,8 @@ def agg_episodes_by_location(show_key: str, season: str = None) -> Search:
     ).bucket(
         'by_episode', 'reverse_nested'
     )
+
+    s = s.params(request_cache=True)
     
     return s
 
@@ -1247,6 +1282,8 @@ def agg_scenes(show_key: str, season: str = None, episode_key: str = None, locat
     # TODO location
 
     s.aggs.bucket('scene_count', 'sum', field='scene_count')
+
+    s = s.params(request_cache=True)
 
     return s
 
@@ -1277,6 +1314,8 @@ def agg_scenes_by_location(show_key: str, season: str = None, episode_key: str =
             'scenes', 'nested', path='scenes'
         ).bucket(
             'by_location', 'terms', field='scenes.location.keyword', size=1000)
+
+    s = s.params(request_cache=True)
 
     return s
 
@@ -1328,6 +1367,8 @@ def agg_scenes_by_speaker(show_key: str, season: str = None, episode_key: str = 
         ).bucket(
             'for_scene', 'reverse_nested', path='scenes'
         )
+
+    s = s.params(request_cache=True)
     
     return s
 
@@ -1380,6 +1421,8 @@ def agg_scene_events_by_speaker(show_key: str, season: str = None, episode_key: 
             'scene_events', 'nested', path='scenes.scene_events'
         ).bucket(
             'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000)
+        
+    s = s.params(request_cache=True)
 
     return s
 
@@ -1410,6 +1453,8 @@ def agg_dialog_word_counts(show_key: str, season: str = None, episode_key: str =
             'by_speaker', 'terms', field='scenes.scene_events.spoken_by.keyword', size=1000
         ).bucket(
             'word_count', 'sum', field='scenes.scene_events.dialog.word_count')
+        
+    s = s.params(request_cache=True)
         
     return s
 
