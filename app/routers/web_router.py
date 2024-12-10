@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Request, Response, BackgroundTasks
 from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from operator import itemgetter
 
@@ -15,6 +16,8 @@ import app.fig_builder.matplotlib_any as mpl
 
 templates = Jinja2Templates(directory="app/templates")
 web_app = APIRouter(prefix='/web', tags=['Web'])
+# NOTE re-added this last-minute during MVP launch, just in case it's related somehow to css meltdown
+web_app.mount('/static', StaticFiles(directory='static', html=True), name='static')
 
 
 @web_app.get("/show/{show_key}", response_class=HTMLResponse)
