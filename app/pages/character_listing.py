@@ -16,10 +16,10 @@ dash.register_page(__name__, path_template='/character_listing/<show_key>')
 
 def layout(show_key: str) -> html.Div:
 
+    ########################## BEGIN FETCH ON PAGE LOAD ##########################
     display_page_start_ts = dt.now()
     utils.hilite_in_logs(f'PAGE LOAD: /character_listing/{show_key} at ts={display_page_start_ts}')
     
-    ########################## TODO BEGIN DATA PRE-AMBLE ##########################
     # all seasons
     series_summary = {}
     series_summary['series_title'] = 'Star Trek: The Next Generation'
@@ -49,8 +49,7 @@ def layout(show_key: str) -> html.Div:
     display_page_end_ts = dt.now()
     display_page_duration = display_page_end_ts - display_page_start_ts
     utils.hilite_in_logs(f'LAYOUT: /character_listing/{show_key} at ts={display_page_end_ts} duration={display_page_duration}')
-    ########################## TODO END DATA PRE-AMBLE ##########################
-
+    ########################## END FETCH ON PAGE LOAD ##########################
 
     # generate navbar
     navbar = pc.generate_navbar(show_key, all_seasons)

@@ -2,6 +2,7 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 cache/
+credentials/
 database/backups/
 es_data_volume/
 generated_data/
@@ -14,8 +15,6 @@ zzz/
 *_notes.txt
 *.pem
 .env
-.env.aws
+.env.*
 .DS_Store
 .venv
-cosign.pub
-http_ca.crt

@@ -18,10 +18,9 @@ dash.register_page(__name__, path_template='/series/<show_key>')
 
 def layout(show_key: str) -> html.Div:
 
+    ########################## BEGIN FETCH ON PAGE LOAD ##########################
     display_page_start_ts = dt.now()
     utils.hilite_in_logs(f'PAGE LOAD: /series/{show_key} at ts={display_page_start_ts}')
-
-    ##################### BEGIN FETCH ON PAGE LOAD #####################
     
     # speaker_color_map - NOTE this could probably be generated just as quickly with /fetch_indexed_speakers and avoid the /agg_episodes_by_speaker call
     series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(ShowKey(show_key), ADMIN_USER)
@@ -47,11 +46,10 @@ def layout(show_key: str) -> html.Div:
     # topic listing data
     universal_genres_parent_topics = sps.get_parent_topics_for_grouping('universalGenres')
 
-    ##################### END FETCH ON PAGE LOAD ##################### 
-
     display_page_end_ts = dt.now()
     display_page_duration = display_page_end_ts - display_page_start_ts
     utils.hilite_in_logs(f'LAYOUT: /episode/{show_key} at ts={display_page_end_ts} duration={display_page_duration}')
+    ########################## END FETCH ON PAGE LOAD ##########################
 
     # generate navbar
     all_seasons = list(episodes_by_season.keys())

@@ -16,10 +16,9 @@ dash.register_page(__name__, path_template='/bertopic_model/<show_key>/<bertopic
 
 def layout(show_key: str, bertopic_model_id: str) -> html.Div:
 
+    ########################## BEGIN FETCH ON PAGE LOAD ##########################
     display_page_start_ts = dt.now()
     utils.hilite_in_logs(f'PAGE LOAD: /bertopic_model/{show_key}/{bertopic_model_id} at ts={display_page_start_ts}')
-
-    ##################### BEGIN FETCH ON PAGE LOAD #####################
 
     # all seasons
     all_seasons_response = esr.list_seasons(ShowKey(show_key), ADMIN_USER)
@@ -29,11 +28,10 @@ def layout(show_key: str, bertopic_model_id: str) -> html.Div:
     bertopic_model_list_response = esr.list_bertopic_models(show_key, ADMIN_USER)
     bertopic_model_options = bertopic_model_list_response['bertopic_model_ids']
 
-    ##################### END FETCH ON PAGE LOAD #####################
-
     display_page_end_ts = dt.now()
     display_page_duration = display_page_end_ts - display_page_start_ts
     utils.hilite_in_logs(f'LAYOUT: /bertopic_model/{show_key}/{bertopic_model_id} at ts={display_page_end_ts} duration={display_page_duration}')
+    ########################## END FETCH ON PAGE LOAD ##########################
 
     navbar = pc.generate_navbar(show_key, all_seasons)
 
