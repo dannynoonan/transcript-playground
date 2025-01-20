@@ -1,15 +1,17 @@
 from fastapi import APIRouter
 from operator import itemgetter
 import os
-import pandas as pd
 
 from app.auth import user_dependency, exit_if_unauthorized
-from app.app_metadata import ANIMATION_DATA_DIR, BERTOPIC_DATA_DIR, GANTT_DATA_DIR
+from app.app_metadata import BERTOPIC_DATA_DIR
+import app.data_service.bar_transformer as bt
+import app.data_service.gantt_transformer as gt
+import app.data_service.line_transformer as lt
 import app.es.es_query_builder as esqb
 import app.es.es_response_transformer as esrt
 import app.nlp.embeddings_factory as ef
 from app.nlp.nlp_metadata import TRANSFORMER_VENDOR_VERSIONS as TRF_MODELS
-from app.show_metadata import ShowKey, show_metadata, EPISODE_TOPIC_GROUPINGS
+from app.show_metadata import ShowKey, EPISODE_TOPIC_GROUPINGS
 
 
 esr_app = APIRouter(prefix='/esr', tags=['ES Reader'])
@@ -152,27 +154,38 @@ def fetch_all_episode_relations(show_key: ShowKey, model_vendor: str, model_vers
 
 
 @esr_app.get("/speaker/{show_key}/{speaker_name}")
-def fetch_speaker(show_key: ShowKey, speaker_name: str, user: user_dependency, include_seasons: bool = False, include_episodes: bool = False):
+def fetch_speaker(show_key: ShowKey, speaker_name: str, user: user_dependency, include_dialog: bool = False, include_embeddings: bool = False,
+                  include_seasons: bool = False, include_episodes: bool = False):
     '''
     Fetch speaker info, lines, and aggregate counts (optionally across seasons and episodes)
     '''
     exit_if_unauthorized(user)
 
-    speaker = esqb.fetch_speaker(show_key.value, speaker_name)
+    speaker = esqb.fetch_speaker(show_key.value, speaker_name, include_dialog=include_dialog, include_embeddings=include_embeddings)
     if not speaker:
         return {"error": f"Failed to fetch speaker `{speaker_name}` for show_key=`{show_key.value}`"}
     speaker.seasons_to_episode_keys = speaker.seasons_to_episode_keys._d_
     speaker = speaker._d_
 
+    # NOTE this is getting precarious
+    speaker_fields = ['speaker', 'season', 'scene_count', 'line_count', 'word_count', 'openai_word_count', 'topics_mbti', 'topics_dnda']
+    if include_dialog:
+        speaker_fields.append('lines')
+    if include_embeddings:
+        speaker_fields.append('openai_ada002_embeddings')
+        speaker_fields.append('openai_3small_embeddings')
+    speaker_season_fields = speaker_fields + ['episode_count']
+    speaker_episode_fields = speaker_fields + ['episode_key', 'title', 'air_date', 'sequence_in_season', 'agg_score']
+    
     es_queries = []
     if include_seasons:
-        s = esqb.fetch_speaker_seasons(show_key.value, speaker=speaker_name)
+        s = esqb.fetch_speaker_seasons(show_key.value, speaker=speaker_name, return_fields=speaker_season_fields)
         es_queries.append(s.to_dict())
         speaker_seasons = esrt.return_speaker_seasons(s)
         if speaker_seasons:
             speaker['seasons'] = speaker_seasons
     if include_episodes:
-        s = esqb.fetch_speaker_episodes(show_key.value, speaker=speaker_name)
+        s = esqb.fetch_speaker_episodes(show_key.value, speaker=speaker_name, return_fields=speaker_episode_fields)
         es_queries.append(s.to_dict())
         speaker_episodes = esrt.return_speaker_episodes(s)
         if speaker_episodes:
@@ -188,7 +201,7 @@ def fetch_speakers_for_episode(show_key: ShowKey, episode_key: str, user: user_d
     '''
     exit_if_unauthorized(user)
 
-    return_fields = ['speaker','scene_count','line_count','word_count','agg_score']
+    return_fields = ['speaker', 'scene_count', 'line_count', 'word_count', 'agg_score']
     if extra_fields:
         extra_fields = extra_fields.split(',')
         return_fields.extend(extra_fields)
@@ -207,7 +220,7 @@ def fetch_speakers_for_season(show_key: ShowKey, season: str, user: user_depende
     '''
     exit_if_unauthorized(user)
 
-    return_fields = ['speaker','episode_count','scene_count','line_count','word_count','agg_score']
+    return_fields = ['speaker', 'episode_count', 'scene_count', 'line_count', 'word_count', 'agg_score']
     if extra_fields:
         extra_fields = extra_fields.split(',')
         return_fields.extend(extra_fields)
@@ -1366,38 +1379,40 @@ def keywords_by_corpus(show_key: ShowKey, user: user_dependency, season: str = N
 
 @esr_app.get("/generate_episode_gantt_sequence/{show_key}/{episode_key}")
 def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str, user: user_dependency):
-    exit_if_unauthorized(user)
+    exit_if_unauthorized(user) 
 
-    max_line_chars = 280
-    dialog_timeline = []
-    location_timeline = []
-    word_i = 0
-    scene_start_i = 0
-    # fetch episode data
-    episode = fetch_episode(show_key, episode_key, user)
-    es_episode = episode['es_episode']
-    if 'scenes' not in es_episode:
-        return {"dialog_timeline": [], "location_timeline": []}
-    # for each scene containing dialog:
-    #   - for each dialog scene_event, add a dialog_span specifying speaker and start/end word index of dialog
-    #   - add a location_span specifying location and start/end word index of scene
-    for i, s in enumerate(es_episode['scenes']):
-        if 'scene_events' not in s:
-            continue
-        scene_lines = []
-        for j, se in enumerate(s['scene_events']):
-            if 'spoken_by' and 'dialog' in se:
-                line_dialog = se['dialog']
-                line_wc = len(line_dialog.split())
-                if len(line_dialog) > max_line_chars:
-                    line_dialog = f'{line_dialog[:max_line_chars]}...'
-                dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_wc-1), Line=line_dialog, scene=i, scene_event=j)
-                dialog_timeline.append(dialog_span)
-                word_i += line_wc
-                scene_lines.append(f"{se['spoken_by']}: {line_dialog}")
-        location_span = dict(Task=s['location'], Start=scene_start_i, Finish=(word_i-1), Line='<br>'.join(scene_lines), scene=i)
-        location_timeline.append(location_span)
-        scene_start_i = word_i
+    dialog_timeline, location_timeline = gt.generate_episode_gantt_sequence(show_key, episode_key)
+
+    # max_line_chars = 280
+    # dialog_timeline = []
+    # location_timeline = []
+    # word_i = 0
+    # scene_start_i = 0
+    # # fetch episode data
+    # episode = fetch_episode(show_key, episode_key, user)
+    # es_episode = episode['es_episode']
+    # if 'scenes' not in es_episode:
+    #     return {"dialog_timeline": [], "location_timeline": []}
+    # # for each scene containing dialog:
+    # #   - for each dialog scene_event, add a dialog_span specifying speaker and start/end word index of dialog
+    # #   - add a location_span specifying location and start/end word index of scene
+    # for i, s in enumerate(es_episode['scenes']):
+    #     if 'scene_events' not in s:
+    #         continue
+    #     scene_lines = []
+    #     for j, se in enumerate(s['scene_events']):
+    #         if 'spoken_by' and 'dialog' in se:
+    #             line_dialog = se['dialog']
+    #             line_wc = len(line_dialog.split())
+    #             if len(line_dialog) > max_line_chars:
+    #                 line_dialog = f'{line_dialog[:max_line_chars]}...'
+    #             dialog_span = dict(Task=se['spoken_by'], Start=word_i, Finish=(word_i+line_wc-1), Line=line_dialog, scene=i, scene_event=j)
+    #             dialog_timeline.append(dialog_span)
+    #             word_i += line_wc
+    #             scene_lines.append(f"{se['spoken_by']}: {line_dialog}")
+    #     location_span = dict(Task=s['location'], Start=scene_start_i, Finish=(word_i-1), Line='<br>'.join(scene_lines), scene=i)
+    #     location_timeline.append(location_span)
+    #     scene_start_i = word_i
 
     return {"dialog_timeline": dialog_timeline, "location_timeline": location_timeline}
 
@@ -1406,50 +1421,52 @@ def generate_episode_gantt_sequence(show_key: ShowKey, episode_key: str, user: u
 def generate_series_speaker_gantt_sequence(show_key: ShowKey, user: user_dependency, limit_cast: bool = False, overwrite_file: bool = False):
     exit_if_unauthorized(user)
 
-    episodes_to_speaker_line_counts = {}
-    episode_speakers_sequence = []
+    episodes_to_speaker_line_counts, episode_speakers_sequence = gt.generate_series_speaker_gantt_sequence(show_key, limit_cast=limit_cast, overwrite_file=overwrite_file)
+
+    # episodes_to_speaker_line_counts = {}
+    # episode_speakers_sequence = []
     
-    # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key, user)
-    episodes = response['episodes']
+    # # get ordered list of all episodes
+    # response = fetch_simple_episodes(show_key, user)
+    # episodes = response['episodes']
 
-    # for each episode:
-    # - fetch all speakers ordered by scene_event count (how many lines they have)
-    # - transform results into lists of span dicts for creating plotly gantt charts
-    episode_i = 0
-    for episode in episodes:
-        episode_key = episode['episode_key']
-        episode_title = episode['title']
-        episode_season = episode['season']
-        sequence_in_season = episode['sequence_in_season']
+    # # for each episode:
+    # # - fetch all speakers ordered by scene_event count (how many lines they have)
+    # # - transform results into lists of span dicts for creating plotly gantt charts
+    # episode_i = 0
+    # for episode in episodes:
+    #     episode_key = episode['episode_key']
+    #     episode_title = episode['title']
+    #     episode_season = episode['season']
+    #     sequence_in_season = episode['sequence_in_season']
 
-        # fetch speakers and line counts
-        response = agg_scene_events_by_speaker(show_key, user, episode_key=episode_key)
-        speaker_line_counts = response['scene_events_by_speaker']
-        del speaker_line_counts['_ALL_']
-        episodes_to_speaker_line_counts[episode_key] = speaker_line_counts
-        # transform speakers/line counts to plotly-gantt-friendly span dicts
-        for speaker, line_count in speaker_line_counts.items():
-            speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
-                                count=line_count, season=episode_season, sequence_in_season=sequence_in_season,
-                                info=f'{episode_title} ({line_count} lines)')
-            episode_speakers_sequence.append(speaker_span)
+    #     # fetch speakers and line counts
+    #     response = agg_scene_events_by_speaker(show_key, user, episode_key=episode_key)
+    #     speaker_line_counts = response['scene_events_by_speaker']
+    #     del speaker_line_counts['_ALL_']
+    #     episodes_to_speaker_line_counts[episode_key] = speaker_line_counts
+    #     # transform speakers/line counts to plotly-gantt-friendly span dicts
+    #     for speaker, line_count in speaker_line_counts.items():
+    #         speaker_span = dict(Task=speaker, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
+    #                             count=line_count, season=episode_season, sequence_in_season=sequence_in_season,
+    #                             info=f'{episode_title} ({line_count} lines)')
+    #         episode_speakers_sequence.append(speaker_span)
 
-        episode_i += 1
+    #     episode_i += 1
 
-    # TODO move this to fig_builder? (where it has to filter rows from the df)
-    if limit_cast:
-        trimmed_episode_speakers_sequence = []
-        for d in episode_speakers_sequence:
-            if d['Task'] in show_metadata[show_key.value]['regular_cast'].keys() or d['Task'] in show_metadata[show_key.value]['recurring_cast'].keys():
-                trimmed_episode_speakers_sequence.append(d)
-        episode_speakers_sequence = trimmed_episode_speakers_sequence
+    # # TODO move this to fig_builder? (where it has to filter rows from the df)
+    # if limit_cast:
+    #     trimmed_episode_speakers_sequence = []
+    #     for d in episode_speakers_sequence:
+    #         if d['Task'] in show_metadata[show_key.value]['regular_cast'].keys() or d['Task'] in show_metadata[show_key.value]['recurring_cast'].keys():
+    #             trimmed_episode_speakers_sequence.append(d)
+    #     episode_speakers_sequence = trimmed_episode_speakers_sequence
 
-    if overwrite_file:
-        file_path = f'{GANTT_DATA_DIR}/{show_key.value}/speaker_gantt_sequence_{show_key.value}.csv'
-        print(f'writing speaker gantt sequence dataframe to file_path={file_path}')
-        df = pd.DataFrame(episode_speakers_sequence)
-        df.to_csv(file_path)
+    # if overwrite_file:
+    #     file_path = f'{GANTT_DATA_DIR}/{show_key.value}/speaker_gantt_sequence_{show_key.value}.csv'
+    #     print(f'writing speaker gantt sequence dataframe to file_path={file_path}')
+    #     df = pd.DataFrame(episode_speakers_sequence)
+    #     df.to_csv(file_path)
 
     return {"episodes_to_speaker_line_counts": episodes_to_speaker_line_counts, 
             "episode_speakers_sequence": episode_speakers_sequence}
@@ -1459,50 +1476,52 @@ def generate_series_speaker_gantt_sequence(show_key: ShowKey, user: user_depende
 def generate_series_location_gantt_sequence(show_key: ShowKey, user: user_dependency, overwrite_file: bool = False):
     exit_if_unauthorized(user)
 
-    episodes_to_location_counts = {}
-    episode_locations_sequence = []
+    episodes_to_location_counts, episode_locations_sequence = gt.generate_series_location_gantt_sequence(show_key, overwrite_file=overwrite_file)
 
-    # limit the superset of locations to those occurring in at least 3 episodes
-    response = agg_episodes_by_location(show_key, user)
-    location_episode_counts = response['episodes_by_location']
-    del location_episode_counts['_ALL_']
-    recurring_locations = [location for location, episode_count in location_episode_counts.items() if episode_count > 2]
+    # episodes_to_location_counts = {}
+    # episode_locations_sequence = []
+
+    # # limit the superset of locations to those occurring in at least 3 episodes
+    # response = agg_episodes_by_location(show_key, user)
+    # location_episode_counts = response['episodes_by_location']
+    # del location_episode_counts['_ALL_']
+    # recurring_locations = [location for location, episode_count in location_episode_counts.items() if episode_count > 2]
     
-    # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key, user)
-    episodes = response['episodes']
+    # # get ordered list of all episodes
+    # response = fetch_simple_episodes(show_key, user)
+    # episodes = response['episodes']
 
-    # for each episode:
-    # - fetch all speakers ordered by scene_event count (how many lines they have)
-    # - fetch all locations ordered by scene count
-    # - transform results of both into lists of span dicts for creating plotly gantt charts
-    episode_i = 0
-    for episode in episodes:
-        episode_key = episode['episode_key']
-        episode_title = episode['title']
-        episode_season = episode['season']
-        sequence_in_season = episode['sequence_in_season']
+    # # for each episode:
+    # # - fetch all speakers ordered by scene_event count (how many lines they have)
+    # # - fetch all locations ordered by scene count
+    # # - transform results of both into lists of span dicts for creating plotly gantt charts
+    # episode_i = 0
+    # for episode in episodes:
+    #     episode_key = episode['episode_key']
+    #     episode_title = episode['title']
+    #     episode_season = episode['season']
+    #     sequence_in_season = episode['sequence_in_season']
 
-        # fetch locations and scene counts
-        response = agg_scenes_by_location(show_key, user, episode_key=episode_key)
-        location_counts = response['scenes_by_location']
-        del location_counts['_ALL_']
-        episodes_to_location_counts[episode_key] = location_counts
-        # transform locations/counts to plotly-gantt-friendly span dicts
-        for location, scene_count in location_counts.items():
-            if location in recurring_locations:
-                location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
-                                     count=scene_count, season=episode_season, sequence_in_season=sequence_in_season,
-                                     info=f'{episode_title} ({scene_count} scenes)')
-                episode_locations_sequence.append(location_span)
+    #     # fetch locations and scene counts
+    #     response = agg_scenes_by_location(show_key, user, episode_key=episode_key)
+    #     location_counts = response['scenes_by_location']
+    #     del location_counts['_ALL_']
+    #     episodes_to_location_counts[episode_key] = location_counts
+    #     # transform locations/counts to plotly-gantt-friendly span dicts
+    #     for location, scene_count in location_counts.items():
+    #         if location in recurring_locations:
+    #             location_span = dict(Task=location, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
+    #                                  count=scene_count, season=episode_season, sequence_in_season=sequence_in_season,
+    #                                  info=f'{episode_title} ({scene_count} scenes)')
+    #             episode_locations_sequence.append(location_span)
 
-        episode_i += 1
+    #     episode_i += 1
 
-    if overwrite_file:
-        file_path = f'{GANTT_DATA_DIR}/{show_key.value}/location_gantt_sequence_{show_key.value}.csv'
-        print(f'writing location gantt sequence dataframe to file_path={file_path}')
-        df = pd.DataFrame(episode_locations_sequence)
-        df.to_csv(file_path)
+    # if overwrite_file:
+    #     file_path = f'{GANTT_DATA_DIR}/{show_key.value}/location_gantt_sequence_{show_key.value}.csv'
+    #     print(f'writing location gantt sequence dataframe to file_path={file_path}')
+    #     df = pd.DataFrame(episode_locations_sequence)
+    #     df.to_csv(file_path)
 
     return {"episodes_to_location_counts": episodes_to_location_counts,
             "episode_locations_sequence": episode_locations_sequence}
@@ -1528,48 +1547,51 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, user: user_dependenc
     if not model_version:
         model_version = '3small'
 
-    episodes_to_topics = {}
-    episode_topics_sequence = []
+    episodes_to_topics, episode_topics_sequence = gt.generate_series_topic_gantt_sequence(show_key, topic_grouping, topic_threshold, level, score_type, 
+                                                                                          model_vendor, model_version, overwrite_file)
+
+    # episodes_to_topics = {}
+    # episode_topics_sequence = []
     
-    # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key, user)
-    episodes = response['episodes']
+    # # get ordered list of all episodes
+    # response = fetch_simple_episodes(show_key, user)
+    # episodes = response['episodes']
 
-    # for each episode:
-    # - fetch all speakers ordered by scene_event count (how many lines they have)
-    # - fetch all locations ordered by scene count
-    # - transform results of both into lists of span dicts for creating plotly gantt charts
-    episode_i = 0
-    for episode in episodes:
-        episode_key = episode['episode_key']
-        episode_title = episode['title']
-        episode_season = episode['season']
-        sequence_in_season = episode['sequence_in_season']
+    # # for each episode:
+    # # - fetch all speakers ordered by scene_event count (how many lines they have)
+    # # - fetch all locations ordered by scene count
+    # # - transform results of both into lists of span dicts for creating plotly gantt charts
+    # episode_i = 0
+    # for episode in episodes:
+    #     episode_key = episode['episode_key']
+    #     episode_title = episode['title']
+    #     episode_season = episode['season']
+    #     sequence_in_season = episode['sequence_in_season']
 
-        # fetch topics and scores
-        response = fetch_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version, user)
-        topics = response['episode_topics']
-        if len(topics) > topic_threshold:
-            topics = topics[:topic_threshold]
-        simple_topics = [dict(topic_key=t['topic_key'], score=t[score_type]) for t in topics]
-        simple_topics = sorted(simple_topics, key=itemgetter('score'), reverse=True)
-        episodes_to_topics[episode_key] = simple_topics
-        # transform topics/scores to plotly-gantt-friendly span dicts
-        for i in range(len(simple_topics)):
-            topic_key = simple_topics[i]['topic_key']
-            topic_cat = topic_key.split('.')[0]
-            topic_span = dict(Task=topic_key, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
-                              rank=i, topic_cat=topic_cat, season=episode_season, sequence_in_season=sequence_in_season,
-                              info=f'{episode_title} (#{i+1} topic)')
-            episode_topics_sequence.append(topic_span)
+    #     # fetch topics and scores
+    #     response = fetch_episode_topics(show_key, episode_key, topic_grouping, model_vendor, model_version, user)
+    #     topics = response['episode_topics']
+    #     if len(topics) > topic_threshold:
+    #         topics = topics[:topic_threshold]
+    #     simple_topics = [dict(topic_key=t['topic_key'], score=t[score_type]) for t in topics]
+    #     simple_topics = sorted(simple_topics, key=itemgetter('score'), reverse=True)
+    #     episodes_to_topics[episode_key] = simple_topics
+    #     # transform topics/scores to plotly-gantt-friendly span dicts
+    #     for i in range(len(simple_topics)):
+    #         topic_key = simple_topics[i]['topic_key']
+    #         topic_cat = topic_key.split('.')[0]
+    #         topic_span = dict(Task=topic_key, Start=episode_i, Finish=(episode_i+1), episode_key=episode_key, episode_title=episode_title, 
+    #                           rank=i, topic_cat=topic_cat, season=episode_season, sequence_in_season=sequence_in_season,
+    #                           info=f'{episode_title} (#{i+1} topic)')
+    #         episode_topics_sequence.append(topic_span)
 
-        episode_i += 1
+    #     episode_i += 1
 
-    if overwrite_file:
-        file_path = f'{GANTT_DATA_DIR}/{show_key.value}/topic_gantt_sequence_{show_key.value}_{topic_grouping}_{score_type}.csv'
-        print(f'writing topic gantt sequence dataframe to file_path={file_path}')
-        df = pd.DataFrame(episode_topics_sequence)
-        df.to_csv(file_path)
+    # if overwrite_file:
+    #     file_path = f'{GANTT_DATA_DIR}/{show_key.value}/topic_gantt_sequence_{show_key.value}_{topic_grouping}_{score_type}.csv'
+    #     print(f'writing topic gantt sequence dataframe to file_path={file_path}')
+    #     df = pd.DataFrame(episode_topics_sequence)
+    #     df.to_csv(file_path)
 
     return {"episodes_to_topics": episodes_to_topics,
             "episode_topics_sequence": episode_topics_sequence}
@@ -1579,122 +1601,124 @@ def generate_series_topic_gantt_sequence(show_key: ShowKey, user: user_dependenc
 def generate_speaker_line_chart_sequences(show_key: ShowKey, user: user_dependency, overwrite_file: bool = False):
     exit_if_unauthorized(user)
 
-    # TODO distinguish between regular and recurring cast?
-    speakers = list(show_metadata[show_key.value]['regular_cast'].keys()) + list(show_metadata[show_key.value]['recurring_cast'].keys())
+    speaker_episode_rows = lt.generate_speaker_line_chart_sequences(show_key, overwrite_file=overwrite_file)
 
-    speaker_series_agg_word_counts = {spkr:0 for spkr in speakers}
-    speaker_series_agg_line_counts = {spkr:0 for spkr in speakers}
-    speaker_series_agg_scene_counts = {spkr:0 for spkr in speakers}
-    speaker_series_agg_episode_counts = {spkr:0 for spkr in speakers}
+    # # TODO distinguish between regular and recurring cast?
+    # speakers = list(show_metadata[show_key.value]['regular_cast'].keys()) + list(show_metadata[show_key.value]['recurring_cast'].keys())
 
-    series_agg_word_count = 0
-    series_agg_line_count = 0
-    series_agg_scene_count = 0
-    series_agg_episode_count = 0
+    # speaker_series_agg_word_counts = {spkr:0 for spkr in speakers}
+    # speaker_series_agg_line_counts = {spkr:0 for spkr in speakers}
+    # speaker_series_agg_scene_counts = {spkr:0 for spkr in speakers}
+    # speaker_series_agg_episode_counts = {spkr:0 for spkr in speakers}
 
-    # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key, user)
-    episodes = response['episodes']
+    # series_agg_word_count = 0
+    # series_agg_line_count = 0
+    # series_agg_scene_count = 0
+    # series_agg_episode_count = 0
+
+    # # get ordered list of all episodes
+    # response = fetch_simple_episodes(show_key, user)
+    # episodes = response['episodes']
     
-    speaker_episode_rows = []
-    episode_i = 0
-    curr_season = None
-    for episode in episodes:
-        episode_key = str(episode['episode_key'])
-        episode_title = episode['title']
-        season = episode['season']
-        sequence_in_season = episode['sequence_in_season']
+    # speaker_episode_rows = []
+    # episode_i = 0
+    # curr_season = None
+    # for episode in episodes:
+    #     episode_key = str(episode['episode_key'])
+    #     episode_title = episode['title']
+    #     season = episode['season']
+    #     sequence_in_season = episode['sequence_in_season']
 
-        if not curr_season or season != curr_season:
-            curr_season = season
-            season_agg_word_count = 0
-            season_agg_line_count = 0
-            season_agg_scene_count = 0
-            season_agg_episode_count = 0
-            speaker_season_agg_word_counts = {spkr:0 for spkr in speakers}
-            speaker_season_agg_line_counts = {spkr:0 for spkr in speakers}
-            speaker_season_agg_scene_counts = {spkr:0 for spkr in speakers}
-            speaker_season_agg_episode_counts = {spkr:0 for spkr in speakers}
+    #     if not curr_season or season != curr_season:
+    #         curr_season = season
+    #         season_agg_word_count = 0
+    #         season_agg_line_count = 0
+    #         season_agg_scene_count = 0
+    #         season_agg_episode_count = 0
+    #         speaker_season_agg_word_counts = {spkr:0 for spkr in speakers}
+    #         speaker_season_agg_line_counts = {spkr:0 for spkr in speakers}
+    #         speaker_season_agg_scene_counts = {spkr:0 for spkr in speakers}
+    #         speaker_season_agg_episode_counts = {spkr:0 for spkr in speakers}
 
-        season_agg_episode_count += 1
-        series_agg_episode_count += 1
+    #     season_agg_episode_count += 1
+    #     series_agg_episode_count += 1
 
-        # fetch speakers and word counts
-        word_count_agg_response = agg_dialog_word_counts(show_key, user, episode_key=episode_key)
-        speaker_word_counts = word_count_agg_response['dialog_word_counts']
-        episode_word_count = speaker_word_counts['_ALL_']
-        season_agg_word_count += episode_word_count
-        series_agg_word_count += episode_word_count
-        # fetch speakers and line counts
-        scene_event_agg_response = agg_scene_events_by_speaker(show_key, user, episode_key=episode_key)
-        speaker_line_counts = scene_event_agg_response['scene_events_by_speaker']
-        episode_line_count = speaker_line_counts['_ALL_']
-        season_agg_line_count += episode_line_count
-        series_agg_line_count += episode_line_count
-        # fetch speakers and scene/episode counts
-        scene_agg_response = agg_scenes_by_speaker(show_key, user, episode_key=episode_key)
-        speaker_scene_counts = scene_agg_response['scenes_by_speaker']
-        episode_scene_count = speaker_scene_counts['_ALL_']
-        season_agg_scene_count += episode_scene_count
-        series_agg_scene_count += episode_scene_count
-        # episodes_to_speaker_counts[episode_key] = speaker_scene_counts.keys()
+    #     # fetch speakers and word counts
+    #     word_count_agg_response = agg_dialog_word_counts(show_key, user, episode_key=episode_key)
+    #     speaker_word_counts = word_count_agg_response['dialog_word_counts']
+    #     episode_word_count = speaker_word_counts['_ALL_']
+    #     season_agg_word_count += episode_word_count
+    #     series_agg_word_count += episode_word_count
+    #     # fetch speakers and line counts
+    #     scene_event_agg_response = agg_scene_events_by_speaker(show_key, user, episode_key=episode_key)
+    #     speaker_line_counts = scene_event_agg_response['scene_events_by_speaker']
+    #     episode_line_count = speaker_line_counts['_ALL_']
+    #     season_agg_line_count += episode_line_count
+    #     series_agg_line_count += episode_line_count
+    #     # fetch speakers and scene/episode counts
+    #     scene_agg_response = agg_scenes_by_speaker(show_key, user, episode_key=episode_key)
+    #     speaker_scene_counts = scene_agg_response['scenes_by_speaker']
+    #     episode_scene_count = speaker_scene_counts['_ALL_']
+    #     season_agg_scene_count += episode_scene_count
+    #     series_agg_scene_count += episode_scene_count
+    #     # episodes_to_speaker_counts[episode_key] = speaker_scene_counts.keys()
 
-        for speaker in speakers:
-            if speaker in speaker_word_counts:
-                # speaker_episode_row = {}
-                word_count = speaker_word_counts[speaker] 
-                line_count = speaker_line_counts[speaker]
-                scene_count = speaker_scene_counts[speaker]
-                # increment agg speaker counts
-                speaker_season_agg_word_counts[speaker] += word_count
-                speaker_series_agg_word_counts[speaker] += word_count
-                speaker_season_agg_line_counts[speaker] += line_count
-                speaker_series_agg_line_counts[speaker] += line_count
-                speaker_season_agg_scene_counts[speaker] += scene_count
-                speaker_series_agg_scene_counts[speaker] += scene_count
-                speaker_season_agg_episode_counts[speaker] += 1
-                speaker_series_agg_episode_counts[speaker] += 1
-            else:
-                word_count = 0 
-                line_count = 0
-                scene_count = 0
+    #     for speaker in speakers:
+    #         if speaker in speaker_word_counts:
+    #             # speaker_episode_row = {}
+    #             word_count = speaker_word_counts[speaker] 
+    #             line_count = speaker_line_counts[speaker]
+    #             scene_count = speaker_scene_counts[speaker]
+    #             # increment agg speaker counts
+    #             speaker_season_agg_word_counts[speaker] += word_count
+    #             speaker_series_agg_word_counts[speaker] += word_count
+    #             speaker_season_agg_line_counts[speaker] += line_count
+    #             speaker_series_agg_line_counts[speaker] += line_count
+    #             speaker_season_agg_scene_counts[speaker] += scene_count
+    #             speaker_series_agg_scene_counts[speaker] += scene_count
+    #             speaker_season_agg_episode_counts[speaker] += 1
+    #             speaker_series_agg_episode_counts[speaker] += 1
+    #         else:
+    #             word_count = 0 
+    #             line_count = 0
+    #             scene_count = 0
 
-            # init speaker_episode_row
-            speaker_episode_row = dict(
-                speaker=speaker,
-                episode_key=episode_key,
-                episode_i=episode_i, 
-                episode_title=episode_title,
-                season=season,
-                sequence_in_season=sequence_in_season,
-                word_count=word_count, 
-                line_count=line_count, 
-                scene_count=scene_count)
-            # speaker X counts as a % of episode X count
-            speaker_episode_row['word_count_pct_of_episode'] = word_count / episode_word_count
-            speaker_episode_row['line_count_pct_of_episode'] = line_count / episode_line_count
-            speaker_episode_row['scene_count_pct_of_episode'] = scene_count / episode_scene_count
-            # season agg speaker X counts as a % of season agg X count
-            speaker_episode_row['word_count_pct_of_season'] = speaker_season_agg_word_counts[speaker] / season_agg_word_count
-            speaker_episode_row['line_count_pct_of_season'] = speaker_season_agg_line_counts[speaker] / season_agg_line_count
-            speaker_episode_row['scene_count_pct_of_season'] = speaker_season_agg_scene_counts[speaker] / season_agg_scene_count
-            speaker_episode_row['episode_count_pct_of_season'] = speaker_season_agg_episode_counts[speaker] / season_agg_episode_count
-            # overall agg speaker X counts as a % of overall agg X count
-            speaker_episode_row['word_count_pct_of_series'] = speaker_series_agg_word_counts[speaker] / series_agg_word_count
-            speaker_episode_row['line_count_pct_of_series'] = speaker_series_agg_line_counts[speaker] / series_agg_line_count
-            speaker_episode_row['scene_count_pct_of_series'] = speaker_series_agg_scene_counts[speaker] / series_agg_scene_count
-            speaker_episode_row['episode_count_pct_of_series'] = speaker_series_agg_episode_counts[speaker] / series_agg_episode_count
+    #         # init speaker_episode_row
+    #         speaker_episode_row = dict(
+    #             speaker=speaker,
+    #             episode_key=episode_key,
+    #             episode_i=episode_i, 
+    #             episode_title=episode_title,
+    #             season=season,
+    #             sequence_in_season=sequence_in_season,
+    #             word_count=word_count, 
+    #             line_count=line_count, 
+    #             scene_count=scene_count)
+    #         # speaker X counts as a % of episode X count
+    #         speaker_episode_row['word_count_pct_of_episode'] = word_count / episode_word_count
+    #         speaker_episode_row['line_count_pct_of_episode'] = line_count / episode_line_count
+    #         speaker_episode_row['scene_count_pct_of_episode'] = scene_count / episode_scene_count
+    #         # season agg speaker X counts as a % of season agg X count
+    #         speaker_episode_row['word_count_pct_of_season'] = speaker_season_agg_word_counts[speaker] / season_agg_word_count
+    #         speaker_episode_row['line_count_pct_of_season'] = speaker_season_agg_line_counts[speaker] / season_agg_line_count
+    #         speaker_episode_row['scene_count_pct_of_season'] = speaker_season_agg_scene_counts[speaker] / season_agg_scene_count
+    #         speaker_episode_row['episode_count_pct_of_season'] = speaker_season_agg_episode_counts[speaker] / season_agg_episode_count
+    #         # overall agg speaker X counts as a % of overall agg X count
+    #         speaker_episode_row['word_count_pct_of_series'] = speaker_series_agg_word_counts[speaker] / series_agg_word_count
+    #         speaker_episode_row['line_count_pct_of_series'] = speaker_series_agg_line_counts[speaker] / series_agg_line_count
+    #         speaker_episode_row['scene_count_pct_of_series'] = speaker_series_agg_scene_counts[speaker] / series_agg_scene_count
+    #         speaker_episode_row['episode_count_pct_of_series'] = speaker_series_agg_episode_counts[speaker] / series_agg_episode_count
             
-            speaker_episode_row['info'] = f'{speaker} in {episode_title}: {scene_count} scenes, {line_count} lines, {word_count} words'
-            speaker_episode_rows.append(speaker_episode_row)
+    #         speaker_episode_row['info'] = f'{speaker} in {episode_title}: {scene_count} scenes, {line_count} lines, {word_count} words'
+    #         speaker_episode_rows.append(speaker_episode_row)
 
-        episode_i += 1
+    #     episode_i += 1
 
-    if overwrite_file:
-        file_path = f'{ANIMATION_DATA_DIR}/{show_key.value}/speaker_episode_aggs_{show_key.value}.csv'
-        print(f'writing speaker word/line/scene/episode counts and aggs dataframe to file_path={file_path}')
-        df = pd.DataFrame(speaker_episode_rows)
-        df.to_csv(file_path)
+    # if overwrite_file:
+    #     file_path = f'{ANIMATION_DATA_DIR}/{show_key.value}/speaker_episode_aggs_{show_key.value}.csv'
+    #     print(f'writing speaker word/line/scene/episode counts and aggs dataframe to file_path={file_path}')
+    #     df = pd.DataFrame(speaker_episode_rows)
+    #     df.to_csv(file_path)
 
     return {"speaker_episode_rows": speaker_episode_rows}
 
@@ -1703,89 +1727,100 @@ def generate_speaker_line_chart_sequences(show_key: ShowKey, user: user_dependen
 def generate_location_line_chart_sequences(show_key: ShowKey, user: user_dependency, overwrite_file: bool = False):
     exit_if_unauthorized(user)
 
-    response = agg_scenes_by_location(show_key, user)
-    locations = response['scenes_by_location']
-    top_locations = [location for location, count in locations.items() if count > 10]
-    location_series_agg_scene_counts = {location:0 for location in top_locations}
-    location_series_agg_episode_counts = {location:0 for location in top_locations}
+    location_episode_rows = lt.generate_location_line_chart_sequences(show_key, overwrite_file=overwrite_file)
 
-    series_agg_scene_count = 0
-    series_agg_episode_count = 0
+    # response = agg_scenes_by_location(show_key, user)
+    # locations = response['scenes_by_location']
+    # top_locations = [location for location, count in locations.items() if count > 10]
+    # location_series_agg_scene_counts = {location:0 for location in top_locations}
+    # location_series_agg_episode_counts = {location:0 for location in top_locations}
 
-    # get ordered list of all episodes
-    response = fetch_simple_episodes(show_key, user)
-    episodes = response['episodes']
+    # series_agg_scene_count = 0
+    # series_agg_episode_count = 0
+
+    # # get ordered list of all episodes
+    # response = fetch_simple_episodes(show_key, user)
+    # episodes = response['episodes']
     
-    location_episode_rows = []
-    episode_i = 0
-    curr_season = None
-    for episode in episodes:
-        episode_key = episode['episode_key']
-        episode_title = episode['title']
-        season = episode['season']
-        sequence_in_season = episode['sequence_in_season']
+    # location_episode_rows = []
+    # episode_i = 0
+    # curr_season = None
+    # for episode in episodes:
+    #     episode_key = episode['episode_key']
+    #     episode_title = episode['title']
+    #     season = episode['season']
+    #     sequence_in_season = episode['sequence_in_season']
 
-        if not curr_season or season != curr_season:
-            curr_season = season
-            season_agg_scene_count = 0
-            season_agg_episode_count = 0
-            location_season_agg_scene_counts = {location:0 for location in top_locations}
-            location_season_agg_episode_counts = {location:0 for location in top_locations}
+    #     if not curr_season or season != curr_season:
+    #         curr_season = season
+    #         season_agg_scene_count = 0
+    #         season_agg_episode_count = 0
+    #         location_season_agg_scene_counts = {location:0 for location in top_locations}
+    #         location_season_agg_episode_counts = {location:0 for location in top_locations}
 
-        season_agg_episode_count += 1
-        series_agg_episode_count += 1
+    #     season_agg_episode_count += 1
+    #     series_agg_episode_count += 1
 
-        # fetch locations and scene/episode counts
-        scene_agg_response = agg_scenes_by_location(show_key, user, episode_key=episode_key)
-        location_scene_counts = scene_agg_response['scenes_by_location']
-        episode_scene_count = location_scene_counts['_ALL_']
-        del location_scene_counts['_ALL_']
-        season_agg_scene_count += episode_scene_count
-        series_agg_scene_count += episode_scene_count
-        # episodes_to_speaker_counts[episode_key] = speaker_scene_counts.keys()
+    #     # fetch locations and scene/episode counts
+    #     scene_agg_response = agg_scenes_by_location(show_key, user, episode_key=episode_key)
+    #     location_scene_counts = scene_agg_response['scenes_by_location']
+    #     episode_scene_count = location_scene_counts['_ALL_']
+    #     del location_scene_counts['_ALL_']
+    #     season_agg_scene_count += episode_scene_count
+    #     series_agg_scene_count += episode_scene_count
+    #     # episodes_to_speaker_counts[episode_key] = speaker_scene_counts.keys()
 
-        for location in top_locations:
-            if location in location_scene_counts:
-                # location_episode_row = {}
+    #     for location in top_locations:
+    #         if location in location_scene_counts:
+    #             # location_episode_row = {}
 
-                scene_count = location_scene_counts[location]
-                # increment agg location counts
-                location_season_agg_scene_counts[location] += scene_count
-                location_series_agg_scene_counts[location] += scene_count
-                location_season_agg_episode_counts[location] += 1
-                location_series_agg_episode_counts[location] += 1
-            else:
-                scene_count = 0
+    #             scene_count = location_scene_counts[location]
+    #             # increment agg location counts
+    #             location_season_agg_scene_counts[location] += scene_count
+    #             location_series_agg_scene_counts[location] += scene_count
+    #             location_season_agg_episode_counts[location] += 1
+    #             location_series_agg_episode_counts[location] += 1
+    #         else:
+    #             scene_count = 0
 
-            # init location_episode_row
-            location_episode_row = dict(
-                location=location,
-                episode_i=episode_i, 
-                episode_title=episode_title,
-                season=season,
-                sequence_in_season=sequence_in_season,
-                scene_count=scene_count)
-            # location scene counts as a % of episode scene count
-            location_episode_row['scene_count_pct_of_episode'] = scene_count / episode_scene_count
-            # season agg speaker scene/episode counts as a % of season agg scene/episode count
-            location_episode_row['scene_count_pct_of_season'] = location_season_agg_scene_counts[location] / season_agg_scene_count
-            location_episode_row['episode_count_pct_of_season'] = location_season_agg_episode_counts[location] / season_agg_episode_count
-            # overall agg speaker scene/episode counts as a % of overall agg scene/episode count
-            location_episode_row['scene_count_pct_of_series'] = location_series_agg_scene_counts[location] / series_agg_scene_count
-            location_episode_row['episode_count_pct_of_series'] = location_series_agg_episode_counts[location] / series_agg_episode_count
+    #         # init location_episode_row
+    #         location_episode_row = dict(
+    #             location=location,
+    #             episode_i=episode_i, 
+    #             episode_title=episode_title,
+    #             season=season,
+    #             sequence_in_season=sequence_in_season,
+    #             scene_count=scene_count)
+    #         # location scene counts as a % of episode scene count
+    #         location_episode_row['scene_count_pct_of_episode'] = scene_count / episode_scene_count
+    #         # season agg speaker scene/episode counts as a % of season agg scene/episode count
+    #         location_episode_row['scene_count_pct_of_season'] = location_season_agg_scene_counts[location] / season_agg_scene_count
+    #         location_episode_row['episode_count_pct_of_season'] = location_season_agg_episode_counts[location] / season_agg_episode_count
+    #         # overall agg speaker scene/episode counts as a % of overall agg scene/episode count
+    #         location_episode_row['scene_count_pct_of_series'] = location_series_agg_scene_counts[location] / series_agg_scene_count
+    #         location_episode_row['episode_count_pct_of_series'] = location_series_agg_episode_counts[location] / series_agg_episode_count
             
-            location_episode_row['info'] = f'{location} in {episode_title}: {scene_count} scenes'
-            location_episode_rows.append(location_episode_row)
+    #         location_episode_row['info'] = f'{location} in {episode_title}: {scene_count} scenes'
+    #         location_episode_rows.append(location_episode_row)
 
-        episode_i += 1
+    #     episode_i += 1
 
-    if overwrite_file:
-        file_path = f'{ANIMATION_DATA_DIR}/{show_key.value}/location_episode_aggs_{show_key.value}.csv'
-        print(f'writing location scene/episode counts and aggs dataframe to file_path={file_path}')
-        df = pd.DataFrame(location_episode_rows)
-        df.to_csv(file_path)
+    # if overwrite_file:
+    #     file_path = f'{ANIMATION_DATA_DIR}/{show_key.value}/location_episode_aggs_{show_key.value}.csv'
+    #     print(f'writing location scene/episode counts and aggs dataframe to file_path={file_path}')
+    #     df = pd.DataFrame(location_episode_rows)
+    #     df.to_csv(file_path)
 
     return {"location_episode_rows": location_episode_rows}
+
+
+@esr_app.get("/generate_speaker_episode_bar_sequence/{show_key}/{speaker}")
+def generate_speaker_episode_bar_sequence(show_key: ShowKey, speaker: str, user: user_dependency):
+    exit_if_unauthorized(user)
+
+    speaker_episode_bar_sequence = bt.generate_speaker_episode_bar_sequence(show_key, speaker)
+
+    return {"speaker_episode_bar_sequence": speaker_episode_bar_sequence}
 
 
 # @esr_app.get("/cluster_content/{show_key}/{num_clusters}")

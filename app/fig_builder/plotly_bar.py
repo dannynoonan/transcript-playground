@@ -115,3 +115,11 @@ def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, scale_b
         yaxis_categoryorder='total ascending') # yaxis_categoryorder
     
     return fig
+
+
+def build_character_series_hist(show_key: str, speaker: str, df: pd.DataFrame, granularity: str) -> go.Figure:
+    print(f'in build_character_series_hist show_key={show_key} speaker={speaker} len(df)={len(df)} granularity={granularity}')
+
+    fig = px.bar(df, x='episode_key', y=granularity, color='season')
+    
+    return fig

@@ -117,7 +117,9 @@ def layout(show_key: str, speaker_key: str) -> html.Div:
             dbc.CardBody([
                 dbc.Row([
                     dbc.Col(md=10, children=[
-                        html.H3(className="text-white", children=[html.Span(id='character-summary')]),
+                        html.H3(className="text-white", children=[
+                            html.B(id='character-summary'), " character page"
+                        ]),
                         html.H5(className="text-white", style={'display': 'flex'}, children=[
                             html.Div(style={"margin-right": "30px"}, children=[
                                 "a.k.a. ", html.B(id='character-alt-names'),
@@ -133,10 +135,10 @@ def layout(show_key: str, speaker_key: str) -> html.Div:
                                 html.B(id='character-season-count'), " seasons, ", html.B(id='character-episode-count'), " episodes, ", html.B(id='character-scene-count'), " scenes, ", html.B(id='character-line-count'), " lines, ", html.B(id='character-word-count'), " words",
                             ]),
                             html.Div(style={"margin-right": "30px"}, children=[
-                                "MBTI: ", html.Span(id='character-top-mbti')
+                                html.B("MBTI: "), html.Span(id='character-top-mbti')
                             ]),
                             html.Div(style={"margin-right": "10px"}, children=[
-                                "D&D: ", html.Span(id='character-top-dnda')
+                                html.B("D&D: "), html.Span(id='character-top-dnda')
                             ]),
                         ]),
                     ]),
@@ -148,28 +150,21 @@ def layout(show_key: str, speaker_key: str) -> html.Div:
                 ]),
             ]),
 
-            # # character episodes
-            # dbc.CardBody([
-            #     html.H3("Characters in episode"),
-            #     dbc.Row([
-            #         dbc.Col(md=5, children=[
-            #             html.Div(id="speaker-summary-dt"),
-            #             html.Br(),
-            #             html.Div(dcc.Graph(id="speaker-frequency-bar-chart")),
-            #         ]),
-            #         dbc.Col(md=7, children=[
-            #             html.Div(dcc.Graph(id="speaker-3d-network-graph")),
-            #             dcc.RadioItems(
-            #                 id="scale-by",
-            #                 className="text-white", 
-            #                 options=['scenes', 'lines', 'words'],
-            #                 value='lines',
-            #                 inputStyle={"margin-left": "12px", "margin-right": "4px"},
-            #                 style={"display": "flex", "padding-bottom": "0"}
-            #             ),
-            #         ]),
-            #     ]),
-            # ]),
+            # character episodes
+            dbc.CardBody([
+                html.H3("Character over course of series"),
+                dbc.Row([
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                            dcc.Dropdown(id="granularity", options=['scene_count', 'line_count', 'word_count'], value='scene_count')
+                        ]),
+                    ]),
+                ]),
+                html.Br(),
+                dbc.Row([
+                    html.Div(dcc.Graph(id="character-series-hist-bar")),
+                ]),
+            ]),
         ])
     ])
 

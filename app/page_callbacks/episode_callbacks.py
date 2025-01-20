@@ -21,7 +21,7 @@ from app.show_metadata import ShowKey
 from app import utils
 
 
-############ episode summary callbacks
+############ episode summary callback
 @callback(
     Output('episode-title-summary', 'children'),
     Output('episode-scene-count', 'children'),
@@ -90,7 +90,7 @@ def render_episode_summary(show_key: str, episode_key: str):
     return title_summary, scene_count, line_count, word_count, focal_speakers, parent_topics_tfidf, episode_speakers, episode_speaker_options, wordcloud_img, speaker_color_map
 
 
-############ episode gantt callbacks
+############ episode gantt callback
 @callback(
     Output('episode-dialog-timeline', 'figure'),
     Output('episode-location-timeline', 'figure'),
@@ -117,7 +117,7 @@ def render_episode_gantts(show_key: str, episode_key: str, display_layers: list,
     return episode_dialog_timeline, episode_location_timeline
 
 
-############ episode search gantt callbacks
+############ episode search gantt callback
 @callback(
     Output('episode-search-response-text', 'children'),
     Output('episode-search-results-gantt', 'figure'),
@@ -177,7 +177,7 @@ def render_episode_search_gantt(show_key: str, episode_key: str, qt: str):
     return response_text, episode_search_results_gantt, episode_search_results_dt
 
 
-############ sentiment line chart callbacks
+############ sentiment line chart callback
 @callback(
     Output('sentiment-line-chart', 'figure'),
     # Output('episode-speaker-options', 'options'),
@@ -231,7 +231,7 @@ def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_
     return sentiment_line_chart
 
 
-############ speaker 3d network graph callbacks
+############ speaker 3d network graph callback
 @callback(
     Output('speaker-3d-network-graph', 'figure'),
     Input('show-key', 'data'),
@@ -263,7 +263,7 @@ def render_speaker_3d_network_graph(show_key: str, episode_key: str, scale_by: s
     return fig_scatter
 
 
-############ speaker frequency bar chart callbacks
+############ speaker frequency bar chart callback
 @callback(
     Output('speaker-frequency-bar-chart', 'figure'),
     Output('speaker-summary-dt', 'children'),
@@ -318,7 +318,7 @@ def render_speaker_frequency_bar_chart(show_key: str, episode_key: str, scale_by
     return speaker_frequency_bar_chart, speaker_summary_dt
 
 
-############ episode similarity scatter callbacks
+############ episode similarity scatter callback
 @callback(
     Output('episode-similarity-scatter', 'figure'),
     Output('episode-similarity-dt', 'children'),
@@ -363,7 +363,7 @@ def render_episode_similarity_scatter(show_key: str, episode_key: str, mlt_type:
     return episode_similarity_scatter, episode_similarity_dt
 
 
-############ episode speaker topic grid callbacks
+############ episode speaker topic grid callback
 @callback(
     Output('episode-speaker-mbti-scatter', 'figure'),
     Output('episode-speaker-dnda-scatter', 'figure'),
@@ -409,7 +409,7 @@ def render_episode_speaker_topic_scatter(show_key: str, episode_key: str, mbti_c
     return episode_speaker_mbti_scatter, episode_speaker_dnda_scatter, episode_speaker_mbti_dt, episode_speaker_dnda_dt
 
 
-############ episode topic treemap callbacks
+############ episode topic treemap callback
 @callback(
     Output('episode-universal-genres-treemap', 'figure'),
     Output('episode-universal-genres-dt', 'children'),
@@ -458,7 +458,7 @@ def render_episode_topic_treemap(show_key: str, episode_key: str, ug_score_type:
     return figs['universalGenres'], dts['universalGenres']
 
 
-############ episode narrative listing callbacks
+############ episode narrative listing callback
 @callback(
     Output("episode-narrative-listing-accordion-contents", "children"),
     Input('show-key', 'data'),
@@ -474,7 +474,7 @@ def render_episode_narrative_listing_accordion(show_key: str, expanded_narrative
 
 
 # # NOTE not being used
-# ############ episode speaker chatter scatter callbacks
+# ############ episode speaker chatter scatter callback
 # @callback(
 #     Output('speaker-chatter-scatter', 'figure'),
 #     Input('show-key', 'data'),

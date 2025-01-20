@@ -307,8 +307,8 @@ def search_episodes_by_title(show_key: str, qt: str) -> Search:
     return s
 
 
-def fetch_speaker(show_key: str, speaker_name: str) -> EsSpeaker|None:
-    print(f'begin fetch_speaker for show_key={show_key} speaker_name={speaker_name}')
+def fetch_speaker(show_key: str, speaker_name: str, include_dialog: bool = False, include_embeddings: bool = False) -> EsSpeaker|None:
+    print(f'begin fetch_speaker for show_key={show_key} speaker_name={speaker_name} include_dialog={include_dialog} include_embeddings={include_embeddings}')
 
     doc_id = f'{show_key}_{speaker_name}'
 
@@ -317,6 +317,15 @@ def fetch_speaker(show_key: str, speaker_name: str) -> EsSpeaker|None:
     except Exception as e:
         print(f'Failed to fetch speaker `{speaker_name}` for show_key=`{show_key}`')
         return None
+    
+    # NOTE I'd rather consistently handle this with `return_fields`, but id-based object fetch makes it cleaner to remove unwanted fields
+    if not include_dialog and 'lines' in speaker:
+        del speaker.lines
+    if not include_embeddings:
+        if 'openai_3small_embeddings' in speaker:
+            del speaker.openai_3small_embeddings
+        if 'openai_ada002_embeddings' in speaker:
+            del speaker.openai_ada002_embeddings
     
     # TODO don't like having to do this 
     # if speaker.child_topics:
@@ -463,7 +472,7 @@ def fetch_speaker_embeddings(show_key: str, speaker: str, vector_field: str, min
     print(f'begin fetch_speaker_embeddings for show_key={show_key} speaker={speaker} vector_field={vector_field}')
 
     try:
-        es_speaker = fetch_speaker(show_key, speaker)
+        es_speaker = fetch_speaker(show_key, speaker, include_embeddings=True)
         if settings.es_toggle == 'oss':
             speaker_series_embeddings = None
             if vector_field in es_speaker:

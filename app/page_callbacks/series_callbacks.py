@@ -231,7 +231,7 @@ def render_all_series_episodes_scatter(show_key: str, hilite: str, speaker_color
     return all_series_episodes_scatter
 
 
-############ series episode listing accordion callbacks
+############ series episode listing accordion callback
 @callback(
     Output("series-episode-listing-accordion-contents", "children"),
     Input('show-key', 'data'),

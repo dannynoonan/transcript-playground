@@ -11,7 +11,7 @@ from app.models import APIUser
 
 
 bcrypt_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
-oath2_scheme = OAuth2PasswordBearer(tokenUrl='auth/token')
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl='auth/token')
 
 
 async def authenticate_user(username: str, password: str) -> APIUser|None:
@@ -34,7 +34,7 @@ def create_access_token(username: str, user_id: int, expires_delta: timedelta) -
     return jwt.encode(to_encode, settings.jwt_secret_key, algorithm=settings.jwt_algorithm)
 
 
-async def get_current_user(token: Annotated[str, Depends(oath2_scheme)]):
+async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
     try:
         payload = jwt.decode(token, settings.jwt_secret_key, algorithms=[settings.jwt_algorithm])
         username: str = payload.get('sub')
