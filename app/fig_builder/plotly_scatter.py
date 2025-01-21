@@ -92,7 +92,7 @@ def build_all_series_episodes_scatter(df: pd.DataFrame, seasons: list, hilite: s
              
     fig.update_traces(
         hovertemplate="<br>".join([
-            "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b> %{customdata[3]}",
+            "<b>S%{customdata[1]}, E%{customdata[2]}: \"%{customdata[0]}\"</b> (%{customdata[3]})",
             "Focal characters: %{customdata[4]}",
             "Focal locations: %{customdata[5]}",
             "'Contextual' genres: %{customdata[6]}",

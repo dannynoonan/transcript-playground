@@ -7,18 +7,37 @@ def generate_speaker_episode_bar_sequence(show_key: ShowKey, speaker_name: str) 
     '''
     TODO
     '''
-    response = esr.fetch_speaker(show_key, speaker_name, ADMIN_USER, include_episodes=True)
-
     speaker_episode_bar_sequence = []
+
+    # load all episodes into dict
+    response = esr.fetch_simple_episodes(show_key, ADMIN_USER)
+    if 'episodes' not in response:
+        print(f'Failure to fetch_simple_episodes for show_key={show_key.value}')
+        return speaker_episode_bar_sequence
+    all_episodes = {e['episode_key']:e for e in response['episodes']}
+
+    # load speaker episode data into list of dicts
+    response = esr.fetch_speaker(show_key, speaker_name, ADMIN_USER, include_episodes=True)
     if 'speaker' not in response or 'episodes' not in response['speaker']:
         print(f'Failure to fetch episodes for speaker={speaker_name}')
         return speaker_episode_bar_sequence
-    for episode in response['speaker']['episodes']:
-        speaker_episode_row = dict(episode_key=episode['episode_key'], season=episode['season'], sequence_in_season=episode['sequence_in_season'], 
-                                   title=episode['title'], air_date=episode['air_date'], 
-                                #    topics_mbti=episode['topics_mbti'], topics_dnda=episode['topics_dnda'], 
-                                   scene_count=episode['scene_count'], line_count=episode['line_count'], word_count=episode['word_count'], 
-                                   openai_word_count=episode['openai_word_count'], agg_score=episode['agg_score'])
+    for e in response['speaker']['episodes']:
+        speaker_episode_row = dict(episode_key=e['episode_key'], season=e['season'], sequence_in_season=e['sequence_in_season'], 
+                                   title=e['title'], air_date=e['air_date'], 
+                                #    topics_mbti=e['topics_mbti'], topics_dnda=e['topics_dnda'], 
+                                   scene_count=e['scene_count'], line_count=e['line_count'], word_count=e['word_count'], 
+                                   openai_word_count=e['openai_word_count'], agg_score=e['agg_score'])
+        speaker_episode_bar_sequence.append(speaker_episode_row)
+        # delete episode from all_episodes after loading
+        del all_episodes[e['episode_key']]
+
+    # episodes remaining in all_episodes are the ones speaker did not speak in, 
+    # add corresponding speaker_episode_row to speaker_episode_bar_sequence for each.
+    for e_key, e in all_episodes.items():
+        speaker_episode_row = dict(episode_key=e_key, season=e['season'], sequence_in_season=e['sequence_in_season'], 
+                                   title=e['title'], air_date=e['air_date'], 
+                                #    topics_mbti=e['topics_mbti'], topics_dnda=e['topics_dnda'], 
+                                   scene_count=0, line_count=0, word_count=0, openai_word_count=0, agg_score=0)
         speaker_episode_bar_sequence.append(speaker_episode_row)
 
     return speaker_episode_bar_sequence

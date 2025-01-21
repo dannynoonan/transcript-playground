@@ -86,9 +86,13 @@ def render_character_series_histogram(show_key: str, speaker_key: str, granulari
         # TODO
         return None
     
+    # load into df, sort / rank / tweak cell contents
     df = pd.DataFrame(response['speaker_episode_bar_sequence'])
+    df['air_date'] = df['air_date'].apply(lambda x: x[:10])
+    df['scene_count_rank'] = df['scene_count'].rank(ascending=False, method='min').astype(int)
+    df['line_count_rank'] = df['line_count'].rank(ascending=False, method='min').astype(int)
+    df['word_count_rank'] = df['word_count'].rank(ascending=False, method='min').astype(int)
     df.sort_values(['season', 'sequence_in_season'], ascending=[True, True], inplace=True)
-    # print(f'df={df}')
 
     # build speaker episode histogram chart
     character_series_hist_bar = pb.build_character_series_hist(show_key, speaker_key, df, granularity)
