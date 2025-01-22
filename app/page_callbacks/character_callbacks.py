@@ -76,10 +76,11 @@ def render_character_summary(show_key: str, speaker_key: str):
     # Output('character-series-hist-dt', 'children'),
     Input('show-key', 'data'),
     Input('speaker-key', 'value'),
-    Input('granularity', 'value')
+    Input('granularity', 'value'),
+    Input('focus', 'value')
 )   
-def render_character_series_histogram(show_key: str, speaker_key: str, granularity: str):
-    print(f'in render_character_series_histogram, show_key={show_key} speaker_key={speaker_key} granularity={granularity}')
+def render_character_series_histogram(show_key: str, speaker_key: str, granularity: str, focus: str):
+    print(f'in render_character_series_histogram, show_key={show_key} speaker_key={speaker_key} granularity={granularity} focus={focus}')
 
     response = esr.generate_speaker_episode_bar_sequence(ShowKey(show_key), speaker_key, ADMIN_USER)
     if 'speaker_episode_bar_sequence' not in response:
@@ -93,8 +94,9 @@ def render_character_series_histogram(show_key: str, speaker_key: str, granulari
     df['line_count_rank'] = df['line_count'].rank(ascending=False, method='min').astype(int)
     df['word_count_rank'] = df['word_count'].rank(ascending=False, method='min').astype(int)
     df.sort_values(['season', 'sequence_in_season'], ascending=[True, True], inplace=True)
+    df['sequence'] = range(1, len(df) + 1)
 
     # build speaker episode histogram chart
-    character_series_hist_bar = pb.build_character_series_hist(show_key, speaker_key, df, granularity)
+    character_series_hist_bar = pb.build_character_series_hist(show_key, speaker_key, df, granularity, color_col=focus)
 
     return character_series_hist_bar

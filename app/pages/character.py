@@ -156,7 +156,12 @@ def layout(show_key: str, speaker_key: str) -> html.Div:
                 dbc.Row([
                     dbc.Col(md=2, children=[
                         html.Div([
-                            dcc.Dropdown(id="granularity", options=['scene_count', 'line_count', 'word_count'], value='scene_count')
+                            'y axis: ', dcc.Dropdown(id="granularity", options=['scene_count', 'line_count', 'word_count'], value='scene_count')
+                        ]),
+                    ]),
+                    dbc.Col(md=2, children=[
+                        html.Div([
+                             'color: ', dcc.Dropdown(id="focus", options=['season', 'mbti', 'dnda'], value='season')
                         ]),
                     ]),
                 ]),
