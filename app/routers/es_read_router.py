@@ -175,8 +175,8 @@ def fetch_speaker(show_key: ShowKey, speaker_name: str, user: user_dependency, i
         speaker_fields.append('openai_ada002_embeddings')
         speaker_fields.append('openai_3small_embeddings')
     speaker_season_fields = speaker_fields + ['episode_count']
-    speaker_episode_fields = speaker_fields + ['episode_key', 'title', 'air_date', 'sequence_in_season', 'agg_score']
-    
+    speaker_episode_fields = speaker_fields + ['episode_key', 'title', 'air_date', 'sequence_in_season', 'agg_score', 
+                                               'top_locations', 'top_companions', 'similar_speakers']
     es_queries = []
     if include_seasons:
         s = esqb.fetch_speaker_seasons(show_key.value, speaker=speaker_name, return_fields=speaker_season_fields)
@@ -551,7 +551,7 @@ def episode_mlt_vector_search(show_key: ShowKey, episode_key: str, user: user_de
 def speaker_mlt_vector_search(show_key: ShowKey, speaker: str, user: user_dependency, 
                               min_depth: bool = True, model_vendor: str = None, model_version: str = None):
     '''
-    Generates vector embedding for qt, then determines vector cosine similarity to indexed documents using k-nearest neighbors search
+    Fetch vector embeddings for speaker, then determine vector cosine similarity to other speakers using k-nearest neighbors search
     '''
     exit_if_unauthorized(user)
 
@@ -831,7 +831,7 @@ def speaker_topic_vector_search(show_key: ShowKey, speaker: str, topic_grouping:
     season_topics = {}
     episode_topics = {}
     
-    es_speaker_response = fetch_speaker(show_key, speaker, user, include_seasons=True, include_episodes=True)
+    es_speaker_response = fetch_speaker(show_key, speaker, user, include_seasons=True, include_episodes=True, include_embeddings=True)
     if 'speaker' not in es_speaker_response:
         return {"error": f"Failed to speaker_topic_vector_search for show_key={show_key.value} speaker={speaker}: speaker lookup failed"}
     es_speaker = es_speaker_response['speaker']

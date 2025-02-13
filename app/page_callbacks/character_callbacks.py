@@ -4,6 +4,7 @@ import pandas as pd
 from app.auth import ADMIN_USER
 import app.fig_builder.plotly_bar as pb
 import app.routers.es_read_router as esr
+# import app.page_builder_service.character_page_service as cps
 from app.show_metadata import ShowKey
 
 
@@ -70,7 +71,7 @@ def render_character_summary(show_key: str, speaker_key: str):
     return speaker_key, alt_names, actor_names, season_count, episode_count, scene_count, line_count, word_count, top_mbti, top_dnda
 
 
-############ character espisode callback
+############ character series hist-bar chart callback
 @callback(
     Output('character-series-hist-bar', 'figure'),
     # Output('character-series-hist-dt', 'children'),
@@ -90,6 +91,8 @@ def render_character_series_histogram(show_key: str, speaker_key: str, granulari
     # load into df, sort / rank / tweak cell contents
     df = pd.DataFrame(response['speaker_episode_bar_sequence'])
     df['air_date'] = df['air_date'].apply(lambda x: x[:10])
+    # df.rename(columns={'top_locations': 'locations', 'top_companions': 'companions'}, inplace=True)
+    # print(f'df.columns={df.columns}')
     df['scene_count_rank'] = df['scene_count'].rank(ascending=False, method='min').astype(int)
     df['line_count_rank'] = df['line_count'].rank(ascending=False, method='min').astype(int)
     df['word_count_rank'] = df['word_count'].rank(ascending=False, method='min').astype(int)
@@ -97,6 +100,39 @@ def render_character_series_histogram(show_key: str, speaker_key: str, granulari
     df['sequence'] = range(1, len(df) + 1)
 
     # build speaker episode histogram chart
-    character_series_hist_bar = pb.build_character_series_hist(show_key, speaker_key, df, granularity, color_col=focus)
+    character_series_hist_bar = pb.build_speaker_series_hist(show_key, speaker_key, df, granularity, color_col=focus)
 
     return character_series_hist_bar
+
+
+# ############ character series sentiment bar chart callback
+# @callback(
+#     Output('character-series-sentiment-bar', 'figure'),
+#     # Output('character-series-sentiment-dt', 'children'),
+#     Input('show-key', 'data'),
+#     Input('speaker-key', 'value'),
+#     Input('emotion', 'value')
+# )   
+# def render_character_series_sentiment_hist(show_key: str, speaker_key: str, emotion: str):
+#     print(f'in render_character_series_sentiment_hist, show_key={show_key} speaker_key={speaker_key} emotion={emotion}')
+
+#     response = esr.generate_speaker_episode_bar_sequence(ShowKey(show_key), speaker_key, ADMIN_USER)
+#     if 'speaker_episode_bar_sequence' not in response:
+#         # TODO
+#         return None
+    
+#     # load into df, sort / rank / tweak cell contents
+#     df = pd.DataFrame(response['speaker_episode_bar_sequence'])
+#     df['air_date'] = df['air_date'].apply(lambda x: x[:10])
+#     # df.rename(columns={'top_locations': 'locations', 'top_companions': 'companions'}, inplace=True)
+#     print(f'df.columns={df.columns}')
+#     df['scene_count_rank'] = df['scene_count'].rank(ascending=False, method='min').astype(int)
+#     df['line_count_rank'] = df['line_count'].rank(ascending=False, method='min').astype(int)
+#     df['word_count_rank'] = df['word_count'].rank(ascending=False, method='min').astype(int)
+#     df.sort_values(['season', 'sequence_in_season'], ascending=[True, True], inplace=True)
+#     df['sequence'] = range(1, len(df) + 1)
+
+#     # build speaker episode histogram chart
+#     character_series_hist_bar = pb.build_speaker_series_hist(show_key, speaker_key, df, granularity, color_col=focus)
+
+#     return character_series_hist_bar

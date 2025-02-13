@@ -26,7 +26,7 @@ def main():
 
     season = None
     scene_level = False
-    line_level = False
+    # line_level = False
     overwrite_csv = False
     write_to_es = False
     if args.season: 

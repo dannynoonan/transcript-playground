@@ -177,9 +177,32 @@ def index_speaker(show_key: ShowKey, speaker: str, user: user_dependency):
     for episode in response['matches']:
         season = str(episode['season'])
         episode_key = episode['episode_key']
+
+        # fetch speaker location aggs for episode
+        response = esr.agg_scenes_by_location(ShowKey(show_key), user, episode_key=episode_key, speaker=speaker)
+        top_locations = []
+        if 'scenes_by_location' in response:
+            # locations = {loc:count for loc,count in response['scenes_by_location'].items() if loc != '_ALL_'}
+            top_locations = [loc for loc,_ in response['scenes_by_location'].items() if loc != '_ALL_']
+            if len(top_locations) > 3:
+                top_locations = top_locations[:3]
+
+        # fetch speaker companions for episode
+        response = esr.agg_scenes_by_speaker(ShowKey(show_key), user, episode_key=episode_key, other_speaker=speaker)
+        top_companions = []
+        if 'scenes_by_speaker' in response:
+            # companions = {cmp:count for cmp,count in response['scenes_by_speaker'].items() if cmp not in ['_ALL_', speaker]}
+            top_companions = [cmp for cmp,_ in response['scenes_by_speaker'].items() if cmp not in ['_ALL_', speaker]]
+            if len(top_companions) > 3:
+                top_companions = top_companions[:3]
+
+        # TODO populate most-similar speakers, which will involve updates to esr.speaker_mlt_vector_search
+        similar_speakers = []
+
         es_speaker_episode = EsSpeakerEpisode(show_key=show_key.value, speaker=speaker, episode_key=episode_key, title=episode['title'], 
                                               air_date=episode['air_date'], season=season, sequence_in_season=episode['sequence_in_season'], 
-                                              agg_score=episode['agg_score'], scene_count=0, line_count=0, word_count=0, lines=[])
+                                              agg_score=episode['agg_score'], scene_count=0, line_count=0, word_count=0, lines=[],
+                                              top_locations=top_locations, top_companions=top_companions, similar_speakers=similar_speakers)
         print(f'init-ing es_speaker_episode={es_speaker_episode} with es_speaker_episode.episode_key={es_speaker_episode.episode_key}')
         es_speaker_episodes[episode_key] = es_speaker_episode
         if season in es_speaker_seasons:

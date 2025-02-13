@@ -174,7 +174,7 @@ def populate_episode_sentiment(show_key: str, episode_key: str, analyzer: str, s
     print(f'finish populate_episode_sentiment for episode {episode_key} in {duration.seconds} seconds at end_ts={str(end_ts)[:19]}')
 
     # use dataframe to upsert csv file
-    file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/{analyzer}/{show_key}_{episode_key}.csv'
+    file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/episodes/{analyzer}/{show_key}_{episode_key}.csv'
     # episode_sent_df.to_csv(file_path, sep=',', header=True)
     # write_csv(file_path, episode_sent_df, scene_level=scene_level, line_level=line_level, overwrite=overwrite_csv)
     write_csv(file_path, episode_sent_df, scene_level=scene_level, overwrite=overwrite_csv)
@@ -220,3 +220,57 @@ def write_csv(file_path: str, df: pd.DataFrame, scene_level: bool, overwrite: bo
         #     prev_df = prev_df.loc[prev_df['type'] != 'L']
         df = pd.concat([prev_df, df], axis=0, ignore_index=True)
         df.to_csv(file_path, sep=',', header=True, index=False)
+
+
+def copy_episode_sentiment(show_key: ShowKey, speaker: str, episode_key: str, analyzer: str, aggregate: bool = False):
+    '''
+    Copy a single speaker's episode sentiment data from previously-generated episode-centric df over to a speaker-specific df
+    Fetch speaker-specific df if it already exists, then overwrite lines pertaining only to that episode before upserting csv
+    '''    
+    if analyzer not in SENTIMENT_ANALYZERS:
+        print(f'`{analyzer}` in not a valid sentiment analyzer, supported analyzers are {SENTIMENT_ANALYZERS}')
+        return
+    
+    episode_file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/episodes/{analyzer}/{show_key}_{episode_key}.csv'
+    if not os.path.isfile(episode_file_path):
+        print(f'Failure to load episode sentiment df at path={episode_file_path}. Skipping episode={episode_key} for speaker={speaker}')
+        return
+    episode_df = pd.read_csv(episode_file_path, sep=',')
+    # isolate rows for speaker  
+    speaker_episode_df = episode_df[episode_df['speaker'] == speaker]
+    # add column for episode_key (not explicitly set in source episode df)
+    speaker_episode_df['episode_key'] = episode_key
+    # print(f'for episode_key={episode_key} len(speaker_episode_df)={len(speaker_episode_df)}')
+
+    if aggregate:
+        speaker_episode_emo_avgs = []
+        all_emos = speaker_episode_df['emotion'].unique()
+        # TODO incorporate word count 
+        for emo in all_emos:
+            speaker_episode_emo_df = speaker_episode_df[speaker_episode_df['emotion'] == emo]
+            emo_avg = speaker_episode_emo_df['score'].mean()
+            # print(f'for emo={emo} len(speaker_episode_emo_df)={len(speaker_episode_emo_df)} emo_avg={emo_avg}')
+            speaker_episode_emo_avg = dict(speaker=speaker, emotion=emo, score=emo_avg, explanation='', key='E', type='E', 
+                                           scene='ALL', line='ALL', episode_key=episode_key)
+            speaker_episode_emo_avgs.append(speaker_episode_emo_avg)
+        speaker_episode_df = pd.DataFrame(speaker_episode_emo_avgs)
+
+    speaker_file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/speakers/{analyzer}/{show_key}_{speaker}.csv'    
+    if os.path.isfile(speaker_file_path):
+        # print(f'previous speaker_file found at path={speaker_file_path}')
+        speaker_df = pd.read_csv(speaker_file_path, sep=',')
+        # remove pre-existing rows for speaker episodes
+        # NOTE I wish this `astype(str)` call weren't necessary, can this be enforced when df is created?
+        speaker_df = speaker_df[speaker_df['episode_key'].astype(str) != episode_key]
+        # merge speaker_episode_df into speaker_df 
+        speaker_df = pd.concat([speaker_df, speaker_episode_df])
+    else:
+        # set speaker_df to speaker_episode_df
+        # print(f'NO previous speaker_file found at path={speaker_file_path}, setting speaker_df to speaker_episode_df')
+        speaker_df = speaker_episode_df
+
+    if len(speaker_df) == 0:
+        print(f'empty df generated for speaker={speaker} episdoe_key={episode_key}, no reason to write file, exiting')
+        return
+
+    speaker_df.to_csv(speaker_file_path, index=False)

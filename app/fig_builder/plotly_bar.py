@@ -117,14 +117,14 @@ def build_speaker_episode_frequency_bar(show_key: str, df: pd.DataFrame, scale_b
     return fig
 
 
-def build_character_series_hist(show_key: str, speaker: str, df: pd.DataFrame, granularity: str, color_col: str = None) -> go.Figure:
-    print(f'in build_character_series_hist show_key={show_key} speaker={speaker} len(df)={len(df)} granularity={granularity} color_col={color_col}')
+def build_speaker_series_hist(show_key: str, speaker: str, df: pd.DataFrame, granularity: str, color_col: str = None) -> go.Figure:
+    print(f'in build_speaker_series_hist show_key={show_key} speaker={speaker} len(df)={len(df)} granularity={granularity} color_col={color_col}')
 
     if not color_col:
         color_col = 'season'
 
     custom_data = ['season', 'sequence_in_season', 'title', 'air_date', 'scene_count', 'line_count', 'word_count', 
-                   'scene_count_rank', 'line_count_rank', 'word_count_rank', 'mbti', 'dnda']
+                   'scene_count_rank', 'line_count_rank', 'word_count_rank', 'mbti', 'dnda', 'locations', 'companions']
 
     fig = px.bar(df, x='sequence', y=granularity, color=color_col, custom_data=custom_data,
                  range_x=[df['sequence'].min(), df['sequence'].max()])
@@ -139,6 +139,8 @@ def build_character_series_hist(show_key: str, speaker: str, df: pd.DataFrame, g
             "Words: %{customdata[6]} (#%{customdata[9]})",
             "MBTI: %{customdata[10]}",
             "D&D: %{customdata[11]}",
+            "Locations: %{customdata[12]}",
+            "Companions: %{customdata[13]}",
             "<extra></extra>"
         ])
     )

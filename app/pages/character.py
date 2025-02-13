@@ -27,11 +27,15 @@ def layout(show_key: str, speaker_key: str) -> html.Div:
     all_seasons_response = esr.list_seasons(ShowKey(show_key), ADMIN_USER)
     all_seasons = all_seasons_response['seasons']
 
+    granularity_options = ['scene_count', 'line_count', 'word_count']
+    character_focus_options = ['season', 'mbti', 'dnda', 'top_location', 'top_companion']
+    emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
+
     # TODO this is excessive, just hit the speakers index
     # all speakers
     series_speaker_episode_counts_response = esr.agg_episodes_by_speaker(ShowKey(show_key), ADMIN_USER)
     all_series_speakers = list(series_speaker_episode_counts_response['episodes_by_speaker'].keys())
-    character_dropdown_options = cps.generate_character_dropdown_options(show_key, all_series_speakers)
+    # character_dropdown_options = cps.generate_character_dropdown_options(show_key, all_series_speakers)
 
     # core speaker data
     speaker_es_response = esr.fetch_speaker(ShowKey(show_key), speaker_key, ADMIN_USER, include_seasons=True, include_episodes=True)
@@ -154,20 +158,40 @@ def layout(show_key: str, speaker_key: str) -> html.Div:
             dbc.CardBody([
                 html.H3("Character over course of series"),
                 dbc.Row([
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                            'y axis: ', dcc.Dropdown(id="granularity", options=['scene_count', 'line_count', 'word_count'], value='scene_count')
+                    dbc.Col(md=12, children=[
+                        dbc.Tabs(className="nav nav-tabs", children=[
+                            dbc.Tab(label="Overall", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row([
+                                    dbc.Col(md=2, children=[
+                                        html.Div([
+                                            'y axis: ', dcc.Dropdown(id="granularity", options=granularity_options, value='scene_count')
+                                        ]),
+                                    ]),
+                                    dbc.Col(md=2, children=[
+                                        html.Div([
+                                            'color: ', dcc.Dropdown(id="focus", options=character_focus_options, value='season')
+                                        ]),
+                                    ]),
+                                ]),
+                                html.Br(),
+                                dbc.Row([
+                                    html.Div(dcc.Graph(id="character-series-hist-bar")),
+                                ]),
+                            ]),
+                            # dbc.Tab(label="Sentiment", tab_style={"font-size": "20px", "color": "white"}, children=[
+                            #     dbc.Row([
+                            #         dbc.Col(md=2, children=[
+                            #             html.Div([
+                            #                 'emotion: ', dcc.Dropdown(id="emotion", options=emotion_dropdown_options, value='ALL')
+                            #             ]),
+                            #         ]),
+                            #     ]),
+                            #     dbc.Row([
+                            #         html.Div(dcc.Graph(id="character-series-sentiment-bar")),
+                            #     ]),
+                            # ]),
                         ]),
                     ]),
-                    dbc.Col(md=2, children=[
-                        html.Div([
-                             'color: ', dcc.Dropdown(id="focus", options=['season', 'mbti', 'dnda'], value='season')
-                        ]),
-                    ]),
-                ]),
-                html.Br(),
-                dbc.Row([
-                    html.Div(dcc.Graph(id="character-series-hist-bar")),
                 ]),
             ]),
         ])

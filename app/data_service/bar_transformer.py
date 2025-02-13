@@ -25,20 +25,13 @@ def generate_speaker_episode_bar_sequence(show_key: ShowKey, speaker_name: str) 
         speaker_episode_row = dict(episode_key=e['episode_key'], season=e['season'], sequence_in_season=e['sequence_in_season'], 
                                    title=e['title'], air_date=e['air_date'], mbti=e['topics_mbti'][0]['topic_key'], dnda=e['topics_dnda'][0]['topic_key'], 
                                    scene_count=e['scene_count'], line_count=e['line_count'], word_count=e['word_count'], 
+                                   locations=e['top_locations'], top_location=e['top_locations'][0], 
+                                   companions=e['top_companions'], top_companion=e['top_companions'][0], 
+                                #    similar_speakers=e['similar_speakers'][0],
                                    openai_word_count=e['openai_word_count'], agg_score=e['agg_score'])
-        # if 'topics_mbti' in e and len(e['topics_mbti']) > 0:
-        #     speaker_episode_row['mbti'] = e['topics_mbti'][0]
-        # else:
-        #     speaker_episode_row['mbti'] = ''
-        # if 'topics_dnda' in e and len(e['topics_dnda']) > 0:
-        #     speaker_episode_row['dnda'] = e['topics_dnda'][0]
-        # else:
-        #     speaker_episode_row['dnda'] = ''
         speaker_episode_bar_sequence.append(speaker_episode_row)
         # delete episode from all_episodes after loading
         del all_episodes[e['episode_key']]
-
-    # load speaker episode location, co-occurrent char, similar char
 
     # episodes remaining in all_episodes are the ones speaker did not speak in, 
     # add corresponding speaker_episode_row to speaker_episode_bar_sequence for each.

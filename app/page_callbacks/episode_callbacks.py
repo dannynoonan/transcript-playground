@@ -191,7 +191,7 @@ def render_episode_sentiment_line_chart(show_key: str, episode_key: str, freeze_
     print(f'in render_episode_sentiment_line_chart, show_key={show_key} episode_key={episode_key} freeze_on={freeze_on} emotion={emotion} speaker={speaker}')
 
    # fetch episode sentiment data and build line chart
-    file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+    file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/episodes/openai_emo/{show_key}_{episode_key}.csv'
     if os.path.isfile(file_path):
         df = pd.read_csv(file_path)
         print(f'loading dataframe at file_path={file_path}')
@@ -285,7 +285,7 @@ def render_speaker_frequency_bar_chart(show_key: str, episode_key: str, scale_by
 
     # TODO incorporate episode-level sentiment into es writer workflow; for now it's a quick lookup in episode-level dfs
     emo_limit = 3
-    file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/openai_emo/{show_key}_{episode_key}.csv'
+    file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/episodes/openai_emo/{show_key}_{episode_key}.csv'
     if not os.path.isfile(file_path):
         utils.hilite_in_logs(f'No sentiment data found at file_path={file_path}, continuing without it')
         pass
