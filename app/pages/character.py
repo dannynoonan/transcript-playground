@@ -178,18 +178,24 @@ def layout(show_key: str, speaker_key: str) -> html.Div:
                                     html.Div(dcc.Graph(id="character-series-hist-bar")),
                                 ]),
                             ]),
-                            # dbc.Tab(label="Sentiment", tab_style={"font-size": "20px", "color": "white"}, children=[
-                            #     dbc.Row([
-                            #         dbc.Col(md=2, children=[
-                            #             html.Div([
-                            #                 'emotion: ', dcc.Dropdown(id="emotion", options=emotion_dropdown_options, value='ALL')
-                            #             ]),
-                            #         ]),
-                            #     ]),
-                            #     dbc.Row([
-                            #         html.Div(dcc.Graph(id="character-series-sentiment-bar")),
-                            #     ]),
-                            # ]),
+                            dbc.Tab(label="Sentiment", tab_style={"font-size": "20px", "color": "white"}, children=[
+                                dbc.Row([
+                                    dbc.Col(md=2, children=[
+                                        html.Div([
+                                            'emotion: ', dcc.Dropdown(id="emotion", options=emotion_dropdown_options, value='Joy')
+                                        ]),
+                                    ]),
+                                    # dbc.Col(md=2, children=[
+                                    #     html.Div([
+                                    #         'freeze on: ', dcc.Dropdown(id="emotion", options=['highlight', 'strongest'], value='ALL')
+                                    #     ]),
+                                    # ]),
+                                ]),
+                                html.Br(),
+                                dbc.Row([
+                                    html.Div(dcc.Graph(id="character-series-sentiment-bar")),
+                                ]),
+                            ]),
                         ]),
                     ]),
                 ]),

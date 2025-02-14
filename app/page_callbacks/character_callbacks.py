@@ -1,6 +1,8 @@
 from dash import callback, Input, Output
+import os
 import pandas as pd
 
+from app.app_metadata import SENTIMENT_DATA_DIR
 from app.auth import ADMIN_USER
 import app.fig_builder.plotly_bar as pb
 import app.routers.es_read_router as esr
@@ -89,50 +91,68 @@ def render_character_series_histogram(show_key: str, speaker_key: str, granulari
         return None
     
     # load into df, sort / rank / tweak cell contents
-    df = pd.DataFrame(response['speaker_episode_bar_sequence'])
-    df['air_date'] = df['air_date'].apply(lambda x: x[:10])
+    speaker_df = pd.DataFrame(response['speaker_episode_bar_sequence'])
+    speaker_df['air_date'] = speaker_df['air_date'].apply(lambda x: x[:10])
     # df.rename(columns={'top_locations': 'locations', 'top_companions': 'companions'}, inplace=True)
     # print(f'df.columns={df.columns}')
-    df['scene_count_rank'] = df['scene_count'].rank(ascending=False, method='min').astype(int)
-    df['line_count_rank'] = df['line_count'].rank(ascending=False, method='min').astype(int)
-    df['word_count_rank'] = df['word_count'].rank(ascending=False, method='min').astype(int)
-    df.sort_values(['season', 'sequence_in_season'], ascending=[True, True], inplace=True)
-    df['sequence'] = range(1, len(df) + 1)
+    speaker_df['scene_count_rank'] = speaker_df['scene_count'].rank(ascending=False, method='min').astype(int)
+    speaker_df['line_count_rank'] = speaker_df['line_count'].rank(ascending=False, method='min').astype(int)
+    speaker_df['word_count_rank'] = speaker_df['word_count'].rank(ascending=False, method='min').astype(int)
+    speaker_df.sort_values(['season', 'sequence_in_season'], ascending=[True, True], inplace=True)
+    speaker_df['sequence'] = range(1, len(speaker_df) + 1)
 
     # build speaker episode histogram chart
-    character_series_hist_bar = pb.build_speaker_series_hist(show_key, speaker_key, df, granularity, color_col=focus)
+    character_series_hist_bar = pb.build_speaker_series_hist(show_key, speaker_key, speaker_df, granularity, color_col=focus)
 
     return character_series_hist_bar
 
 
-# ############ character series sentiment bar chart callback
-# @callback(
-#     Output('character-series-sentiment-bar', 'figure'),
-#     # Output('character-series-sentiment-dt', 'children'),
-#     Input('show-key', 'data'),
-#     Input('speaker-key', 'value'),
-#     Input('emotion', 'value')
-# )   
-# def render_character_series_sentiment_hist(show_key: str, speaker_key: str, emotion: str):
-#     print(f'in render_character_series_sentiment_hist, show_key={show_key} speaker_key={speaker_key} emotion={emotion}')
+############ character series sentiment bar chart callback
+@callback(
+    Output('character-series-sentiment-bar', 'figure'),
+    # Output('character-series-sentiment-dt', 'children'),
+    Input('show-key', 'data'),
+    Input('speaker-key', 'value'),
+    Input('emotion', 'value')
+    # Input('focus', 'value')
+)   
+def render_character_series_sentiment_hist(show_key: str, speaker_key: str, emotion: str):
+    print(f'in render_character_series_sentiment_hist, show_key={show_key} speaker_key={speaker_key} emotion={emotion}')
 
-#     response = esr.generate_speaker_episode_bar_sequence(ShowKey(show_key), speaker_key, ADMIN_USER)
-#     if 'speaker_episode_bar_sequence' not in response:
-#         # TODO
-#         return None
+    response = esr.generate_speaker_episode_bar_sequence(ShowKey(show_key), speaker_key, ADMIN_USER)
+    if 'speaker_episode_bar_sequence' not in response:
+        # TODO
+        return None
     
-#     # load into df, sort / rank / tweak cell contents
-#     df = pd.DataFrame(response['speaker_episode_bar_sequence'])
-#     df['air_date'] = df['air_date'].apply(lambda x: x[:10])
-#     # df.rename(columns={'top_locations': 'locations', 'top_companions': 'companions'}, inplace=True)
-#     print(f'df.columns={df.columns}')
-#     df['scene_count_rank'] = df['scene_count'].rank(ascending=False, method='min').astype(int)
-#     df['line_count_rank'] = df['line_count'].rank(ascending=False, method='min').astype(int)
-#     df['word_count_rank'] = df['word_count'].rank(ascending=False, method='min').astype(int)
-#     df.sort_values(['season', 'sequence_in_season'], ascending=[True, True], inplace=True)
-#     df['sequence'] = range(1, len(df) + 1)
+    # load into df, sort / rank / tweak cell contents
+    speaker_df = pd.DataFrame(response['speaker_episode_bar_sequence'])
 
-#     # build speaker episode histogram chart
-#     character_series_hist_bar = pb.build_speaker_series_hist(show_key, speaker_key, df, granularity, color_col=focus)
+    speaker_sent_file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/speakers/openai_emo/{show_key}_{speaker_key}.csv'    
+    if os.path.isfile(speaker_sent_file_path):
+        # merge episode-level speaker emotion averages into full episode listing df
+        speaker_sent_df = pd.read_csv(speaker_sent_file_path, sep=',')
+        # limit to the emotion in focus
+        speaker_emo_df = speaker_sent_df[speaker_sent_df['emotion'] == emotion]
+        speaker_emo_df = speaker_emo_df[['emotion', 'score', 'episode_key']]
+        speaker_emo_df['episode_key'] = speaker_emo_df['episode_key'].astype(str) # TODO grumble grumble why why
+        # print(f'speaker_emo_df={speaker_emo_df}')
+        speaker_merged_df = pd.merge(speaker_df, speaker_emo_df, on='episode_key', how='outer')
+    else:
+        # TODO
+        pass
 
-#     return character_series_hist_bar
+    # print(f'speaker_merged_df={speaker_merged_df}')
+
+    speaker_merged_df['air_date'] = speaker_merged_df['air_date'].apply(lambda x: x[:10])
+    # df.rename(columns={'top_locations': 'locations', 'top_companions': 'companions'}, inplace=True)
+    # print(f'df.columns={speaker_merged_df.columns}')
+    speaker_merged_df['scene_count_rank'] = speaker_merged_df['scene_count'].rank(ascending=False, method='min').astype(int)
+    speaker_merged_df['line_count_rank'] = speaker_merged_df['line_count'].rank(ascending=False, method='min').astype(int)
+    speaker_merged_df['word_count_rank'] = speaker_merged_df['word_count'].rank(ascending=False, method='min').astype(int)
+    speaker_merged_df.sort_values(['season', 'sequence_in_season'], ascending=[True, True], inplace=True)
+    speaker_merged_df['sequence'] = range(1, len(speaker_merged_df) + 1)
+
+    # build speaker episode histogram chart
+    character_series_sentiment_bar = pb.build_speaker_series_sentiment_hist(show_key, speaker_key, speaker_merged_df, emotion)
+
+    return character_series_sentiment_bar

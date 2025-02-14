@@ -152,3 +152,43 @@ def build_speaker_series_hist(show_key: str, speaker: str, df: pd.DataFrame, gra
     )
     
     return fig
+
+
+def build_speaker_series_sentiment_hist(show_key: str, speaker: str, df: pd.DataFrame, emotion: str) -> go.Figure:
+    print(f'in build_speaker_series_sentiment_hist show_key={show_key} speaker={speaker} len(df)={len(df)} emotion={emotion}')
+
+    color_col = 'season'
+
+    custom_data = ['season', 'sequence_in_season', 'title', 'air_date', 'scene_count', 'line_count', 'word_count', 
+                   'scene_count_rank', 'line_count_rank', 'word_count_rank', 'mbti', 'dnda', 'locations', 'companions']
+    
+    # df['focus'] = emotion
+    custom_data.extend(['emotion', 'score'])
+
+    fig = px.bar(df, x='sequence', y='score', color=color_col, custom_data=custom_data)
+                #  range_x=[df['sequence'].min(), df['sequence'].max()])
+
+    fig.update_traces(
+        hovertemplate="<br>".join([
+            "<b>%{customdata[14]}: %{customdata[15]}</b><br>",
+            "<b>S%{customdata[0]}, E%{customdata[1]}: \"%{customdata[2]}\"</b> (%{customdata[3]})",
+            "Scenes: %{customdata[4]} (#%{customdata[7]})",
+            "Lines: %{customdata[5]} (#%{customdata[8]})",
+            "Words: %{customdata[6]} (#%{customdata[9]})",
+            "MBTI: %{customdata[10]}",
+            "D&D: %{customdata[11]}",
+            "Locations: %{customdata[12]}",
+            "Companions: %{customdata[13]}",
+            "<extra></extra>"
+        ])
+    )
+
+    fig.update_layout(
+        title=dict(text="episode", font=dict(size=14), y=0.1, x=0.5),
+        xaxis=dict(showticklabels=False, visible=False),
+        yaxis_title=emotion
+    )
+
+    # print(f'in build_speaker_series_sentiment_hist, df={df}')
+    
+    return fig
