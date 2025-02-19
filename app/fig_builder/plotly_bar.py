@@ -155,18 +155,25 @@ def build_speaker_series_hist(show_key: str, speaker: str, df: pd.DataFrame, gra
 
 
 def build_speaker_series_sentiment_hist(show_key: str, speaker: str, df: pd.DataFrame, emotion: str) -> go.Figure:
+    '''
+    Almost combined into build_speaker_series_hist, but enough slight differences to keep separate
+    '''
     print(f'in build_speaker_series_sentiment_hist show_key={show_key} speaker={speaker} len(df)={len(df)} emotion={emotion}')
 
-    color_col = 'season'
+    if emotion == 'Highest':
+        color_col = 'emotion'
+    else:
+        color_col = 'season'
+
+    # TODO pivot data so all emotions for episode are in a single row 
 
     custom_data = ['season', 'sequence_in_season', 'title', 'air_date', 'scene_count', 'line_count', 'word_count', 
                    'scene_count_rank', 'line_count_rank', 'word_count_rank', 'mbti', 'dnda', 'locations', 'companions']
     
-    # df['focus'] = emotion
     custom_data.extend(['emotion', 'score'])
 
-    fig = px.bar(df, x='sequence', y='score', color=color_col, custom_data=custom_data)
-                #  range_x=[df['sequence'].min(), df['sequence'].max()])
+    fig = px.bar(df, x='sequence', y='score', color=color_col, custom_data=custom_data,
+                 range_x=[df['sequence'].min(), df['sequence'].max()])
 
     fig.update_traces(
         hovertemplate="<br>".join([
@@ -188,7 +195,5 @@ def build_speaker_series_sentiment_hist(show_key: str, speaker: str, df: pd.Data
         xaxis=dict(showticklabels=False, visible=False),
         yaxis_title=emotion
     )
-
-    # print(f'in build_speaker_series_sentiment_hist, df={df}')
     
     return fig

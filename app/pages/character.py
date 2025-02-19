@@ -29,7 +29,7 @@ def layout(show_key: str, speaker_key: str) -> html.Div:
 
     granularity_options = ['scene_count', 'line_count', 'word_count']
     character_focus_options = ['season', 'mbti', 'dnda', 'top_location', 'top_companion']
-    emotion_dropdown_options = ['ALL'] + OPENAI_EMOTIONS
+    emotion_dropdown_options = ['Highest'] + OPENAI_EMOTIONS
 
     # TODO this is excessive, just hit the speakers index
     # all speakers

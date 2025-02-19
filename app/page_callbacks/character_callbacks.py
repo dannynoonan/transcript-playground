@@ -128,20 +128,28 @@ def render_character_series_sentiment_hist(show_key: str, speaker_key: str, emot
     speaker_df = pd.DataFrame(response['speaker_episode_bar_sequence'])
 
     speaker_sent_file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/speakers/openai_emo/{show_key}_{speaker_key}.csv'    
-    if os.path.isfile(speaker_sent_file_path):
-        # merge episode-level speaker emotion averages into full episode listing df
-        speaker_sent_df = pd.read_csv(speaker_sent_file_path, sep=',')
-        # limit to the emotion in focus
-        speaker_emo_df = speaker_sent_df[speaker_sent_df['emotion'] == emotion]
-        speaker_emo_df = speaker_emo_df[['emotion', 'score', 'episode_key']]
-        speaker_emo_df['episode_key'] = speaker_emo_df['episode_key'].astype(str) # TODO grumble grumble why why
-        # print(f'speaker_emo_df={speaker_emo_df}')
-        speaker_merged_df = pd.merge(speaker_df, speaker_emo_df, on='episode_key', how='outer')
-    else:
+    if not os.path.isfile(speaker_sent_file_path):
         # TODO
-        pass
+        print(f'Failure to render_character_series_sentiment_hist, no file found at speaker_sent_file_path={speaker_sent_file_path}')
+        return None
 
-    # print(f'speaker_merged_df={speaker_merged_df}')
+    # merge episode-level speaker emotion averages into full episode listing df
+    speaker_sent_df = pd.read_csv(speaker_sent_file_path, sep=',')
+
+    # keep either (a) the highest scoring emotions per episode or (b) the specific emotion specified
+    if emotion == 'Highest':
+        # limit df to the highest scoring emotion per episode
+        speaker_emo_df = speaker_sent_df[speaker_sent_df['high_score'] == True]
+    else:
+        # limit df to a single selected emotion across episodes
+        speaker_emo_df = speaker_sent_df[speaker_sent_df['emotion'] == emotion]
+        
+    speaker_emo_df = speaker_emo_df[['emotion', 'score', 'episode_key']]
+    speaker_emo_df['episode_key'] = speaker_emo_df['episode_key'].astype(str) # TODO grumble grumble why why
+    # print(f'speaker_key={speaker_key} emotion={emotion} len(speaker_emo_df={len(speaker_emo_df)})')
+    speaker_merged_df = pd.merge(speaker_df, speaker_emo_df, on='episode_key', how='outer')
+    # print(f'len(speaker_merged_df={len(speaker_merged_df)})')
+    # print(f'speaker_merged_df={speaker_merged_df})')
 
     speaker_merged_df['air_date'] = speaker_merged_df['air_date'].apply(lambda x: x[:10])
     # df.rename(columns={'top_locations': 'locations', 'top_companions': 'companions'}, inplace=True)

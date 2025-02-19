@@ -251,9 +251,22 @@ def copy_episode_sentiment(show_key: ShowKey, speaker: str, episode_key: str, an
             emo_avg = speaker_episode_emo_df['score'].mean()
             # print(f'for emo={emo} len(speaker_episode_emo_df)={len(speaker_episode_emo_df)} emo_avg={emo_avg}')
             speaker_episode_emo_avg = dict(speaker=speaker, emotion=emo, score=emo_avg, explanation='', key='E', type='E', 
-                                           scene='ALL', line='ALL', episode_key=episode_key)
+                                           scene='ALL', line='ALL', high_score=False, episode_key=episode_key)
             speaker_episode_emo_avgs.append(speaker_episode_emo_avg)
-        speaker_episode_df = pd.DataFrame(speaker_episode_emo_avgs)
+        if len(speaker_episode_emo_avgs) > 1:
+            speaker_episode_df = pd.DataFrame(speaker_episode_emo_avgs)
+            high_score = speaker_episode_df['score'].max()
+            high_score_rows = speaker_episode_df.loc[speaker_episode_df['score'] == high_score]
+            if len(high_score_rows) > 1:
+                # if there's a tie for high_score emotion, pick the first one in the list, reset high_score to False in main df, 
+                # and assign high_score to that emotion  # TODO this is jank AF, I should at least log the arbitrarily chosen losers
+                tie_break_emo = high_score_rows.iloc[0]['emotion']
+                speaker_episode_df['high_score'] = False
+                speaker_episode_df.loc[speaker_episode_df['emotion'] == tie_break_emo, 'high_score'] = True
+            else:
+                speaker_episode_df.loc[speaker_episode_df['score'] == high_score, 'high_score'] = True
+        else:
+            print(f'Warning: len(speaker_episode_emo_avgs) == 0 for speaker={speaker} episode_key={episode_key}')
 
     speaker_file_path = f'{SENTIMENT_DATA_DIR}/{show_key}/speakers/{analyzer}/{show_key}_{speaker}.csv'    
     if os.path.isfile(speaker_file_path):

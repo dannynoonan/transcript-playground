@@ -35,7 +35,8 @@ def main():
     speakers_to_episode_keys = {}
 
     if speaker:
-        response = esr.fetch_speaker(ShowKey(args.show_key), speaker, user_dependency)
+        # response = esr.fetch_speaker(ShowKey(args.show_key), speaker, user_dependency)
+        response = esr.fetch_speaker(ShowKey(args.show_key), speaker)
         if 'speaker' not in response or 'seasons_to_episode_keys' not in response['speaker']:
             print(f'Failure to fetch speaker={speaker} for show_key={args.show_key}, `speaker` or `seasons_to_episode_keys` were not in `fetch_speaker` response')
             return
@@ -48,6 +49,7 @@ def main():
         speakers_to_episode_keys[speaker] = episode_keys
         
     elif min_episode_count:
+        # response = esr.fetch_indexed_speakers(ShowKey(args.show_key), user_dependency, extra_fields='seasons_to_episode_keys', min_episode_count=min_episode_count)
         response = esr.fetch_indexed_speakers(ShowKey(args.show_key), extra_fields='seasons_to_episode_keys', min_episode_count=min_episode_count)
         if not 'speakers' in response:
             print(f'Failure to fetch indexed speakers for show_key={args.show_key} with min_episode_count={min_episode_count}, `speakers` was not in `fetch_indexed_speakers` response')
