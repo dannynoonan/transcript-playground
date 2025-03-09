@@ -126,7 +126,7 @@ def layout(show_key: str, speaker_key: str) -> html.Div:
                         ]),
                         html.H5(className="text-white", style={'display': 'flex'}, children=[
                             html.Div(style={"margin-right": "30px"}, children=[
-                                "a.k.a. ", html.B(id='character-alt-names'),
+                                html.B(id='character-alt-names'),
                             ]),
                         ]),
                         html.H5(className="text-white", style={'display': 'flex'}, children=[

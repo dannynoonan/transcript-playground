@@ -22,13 +22,34 @@ def generate_speaker_episode_bar_sequence(show_key: ShowKey, speaker_name: str) 
         print(f'Failure to fetch episodes for speaker={speaker_name}')
         return speaker_episode_bar_sequence
     for e in response['speaker']['episodes']:
-        speaker_episode_row = dict(episode_key=e['episode_key'], season=e['season'], sequence_in_season=e['sequence_in_season'], 
-                                   title=e['title'], air_date=e['air_date'], mbti=e['topics_mbti'][0]['topic_key'], dnda=e['topics_dnda'][0]['topic_key'], 
-                                   scene_count=e['scene_count'], line_count=e['line_count'], word_count=e['word_count'], 
-                                   locations=e['top_locations'], top_location=e['top_locations'][0], 
-                                   companions=e['top_companions'], top_companion=e['top_companions'][0], 
-                                #    similar_speakers=e['similar_speakers'][0],
+        speaker_episode_row = dict(episode_key=e['episode_key'], season=e['season'], sequence_in_season=e['sequence_in_season'], title=e['title'], 
+                                   air_date=e['air_date'], scene_count=e['scene_count'], line_count=e['line_count'], word_count=e['word_count'],
                                    openai_word_count=e['openai_word_count'], agg_score=e['agg_score'])
+        # TODO clean up this clusterfuck of fragile upstream dependencies
+        # topics
+        if 'topics_mbti' in e and len(e['topics_mbti']) > 0 and 'topic_key' in e['topics_mbti'][0]:
+            speaker_episode_row['mbti'] = e['topics_mbti'][0]['topic_key']
+        else:
+            speaker_episode_row['mbti'] = '(not set)'
+        if 'topics_dnda' in e and len(e['topics_dnda']) > 0 and 'topic_key' in e['topics_dnda'][0]:
+            speaker_episode_row['dnda'] = e['topics_dnda'][0]['topic_key']
+        else:
+            speaker_episode_row['dnda'] = '(not set)'
+        # locations
+        if 'top_locations' in e and len(e['top_locations']) > 0:
+            speaker_episode_row['locations'] = e['top_locations']
+            speaker_episode_row['top_location'] = e['top_locations'][0]
+        else:
+            speaker_episode_row['locations'] = '(not set)'
+            speaker_episode_row['top_location'] = '(not set)'
+        # companions
+        if 'top_companions' in e and len(e['top_companions']) > 0:
+            speaker_episode_row['companions'] = e['top_companions']
+            speaker_episode_row['top_companion'] = e['top_companions'][0]
+        else:
+            speaker_episode_row['companions'] = '(not set)'
+            speaker_episode_row['top_companion'] = '(not set)'
+
         speaker_episode_bar_sequence.append(speaker_episode_row)
         # delete episode from all_episodes after loading
         del all_episodes[e['episode_key']]

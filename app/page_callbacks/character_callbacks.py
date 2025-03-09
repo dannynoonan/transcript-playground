@@ -40,6 +40,8 @@ def render_character_summary(show_key: str, speaker_key: str):
     if 'alt_names' in speaker:
         alt_names = [name for name in speaker['alt_names'] if name.upper() != speaker_key]
         alt_names = ', '.join(alt_names)
+        if len(alt_names) > 0:
+            alt_names = f'a.k.a. {alt_names}'
     actor_names = None
     if 'actor_names' in speaker:
         actor_names = speaker['actor_names']
